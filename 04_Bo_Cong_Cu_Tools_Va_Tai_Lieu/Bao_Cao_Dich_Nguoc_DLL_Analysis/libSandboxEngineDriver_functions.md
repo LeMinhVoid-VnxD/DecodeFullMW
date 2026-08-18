@@ -1,0 +1,4575 @@
+# Danh mục Hàm & Cấu trúc C++: `libSandboxEngineDriver.dll`
+
+- **Dung lượng**: 3.85 MB
+- **Tổng số hàm Export**: 4,415
+- **Tổng số lớp RTTI**: 145
+
+## Danh sách C++ Classes (RTTI)
+
+| STT | Tên Lớp (Class / Struct) |
+| :---: | :--- |
+| 1 | `<lambda_006bb2941f50150e37914d8eb660d988>` |
+| 2 | `<lambda_07b8f8f49a35a92dc4f9752d0096e968>` |
+| 3 | `<lambda_0861c63df05d6a78da8ceee2f68b8e84>` |
+| 4 | `<lambda_0950e4bb3c33ad03020bad2574233019>` |
+| 5 | `<lambda_0989381bed76fbcdb0f6bb47a1414918>` |
+| 6 | `<lambda_09c9387d4dd83c8acc73a3afd84b1e14>` |
+| 7 | `<lambda_0cf24c705433fad99b1755da09d972e6>` |
+| 8 | `<lambda_0ef8743decd3ba2e0f97b92b130e620f>` |
+| 9 | `<lambda_102749c79cac5e25848034dd7efc9a2f>` |
+| 10 | `<lambda_12e929635cd595e3740cd9ed7de92f9a>` |
+| 11 | `<lambda_15d9b54db301981ac9e8fa7a6339bdb0>` |
+| 12 | `<lambda_16477bce135520c031f1e692ae58c85d>` |
+| 13 | `<lambda_16e64b59618b7365d05fa7e7ccff4d26>` |
+| 14 | `<lambda_18725e0fe6b10e6db40f736532f54397>` |
+| 15 | `<lambda_1a225dedd8ea5ddc628ce23fb0fb71a1>` |
+| 16 | `<lambda_1b9d2410954b7ac40292a4ff412df0c3>` |
+| 17 | `<lambda_1e5e22a7e0d8b764d1a248b5b0076d1f>` |
+| 18 | `<lambda_1ed46283151a4c9671780854889f78fb>` |
+| 19 | `<lambda_2359eed5fbf9624b8f39566c59dd3a87>` |
+| 20 | `<lambda_246561bdbba55b1df9e8567202a949b4>` |
+| 21 | `<lambda_274407b176a0b19cf0cc82d12f4bab1e>` |
+| 22 | `<lambda_2967db7d2b5c3d008de850d4eecd0428>` |
+| 23 | `<lambda_2a4f04d82f1690736fbd742879c6ce01>` |
+| 24 | `<lambda_2b54be7ddf68f5b4cb5f421b748a7795>` |
+| 25 | `<lambda_2cc79a86982ccfa7e5512348191d9705>` |
+| 26 | `<lambda_2d02d88734c3074188a8bed74d802c39>` |
+| 27 | `<lambda_2d948f155357a95b25160c431c75635e>` |
+| 28 | `<lambda_2d9b84492c6e6bc88f0993ce58cda9c9>` |
+| 29 | `<lambda_2e0d7405c52c72b1eda0a524403bfc0e>` |
+| 30 | `<lambda_2fc4f1cf970d99c9e83dab0c74da24b7>` |
+| 31 | `<lambda_3328ccae5bbee535e6f1d0694d442b79>` |
+| 32 | `<lambda_34221b0eaa8457108cb9742d2aab2fdc>` |
+| 33 | `<lambda_36aa3df3c49f6d609b9d97562d2b60eb>` |
+| 34 | `<lambda_3975ead7023341a6ca2502a9b6ec9787>` |
+| 35 | `<lambda_39f153cf2a86145d5a2f86b3aa09b3ba>` |
+| 36 | `<lambda_3d950efd1b810eb379af461585427e3d>` |
+| 37 | `<lambda_3e783b7f693be6f21770cb84797b67b1>` |
+| 38 | `<lambda_432a27a1c3b219c2353a5ef50807fd3e>` |
+| 39 | `<lambda_451db60e8cd0e24eec26dd971e4fc9a1>` |
+| 40 | `<lambda_493c113d8314cdbf9a272f4e2f1c84ce>` |
+| 41 | `<lambda_4b1842f91e217e78460b7e43140ca3cc>` |
+| 42 | `<lambda_4fb7c34759eb9073c6393bcb6bbf2da3>` |
+| 43 | `<lambda_5496ca09819e956d03cc9c30be9105f3>` |
+| 44 | `<lambda_54db7aa7b990583331c35ea32e677ab6>` |
+| 45 | `<lambda_57adfeb13883a60957f702254608beda>` |
+| 46 | `<lambda_58feaf976418e008ccfe2bd3d1c96b46>` |
+| 47 | `<lambda_5cabafa199e68bedbcf61f4f40906e46>` |
+| 48 | `<lambda_5ddaa8ce64cb9d89ef89917654f96dde>` |
+| 49 | `<lambda_609102da9613a324f2786922b0ed998a>` |
+| 50 | `<lambda_64d80189902700947bd65f14b18caa22>` |
+| 51 | `<lambda_6601b10d6d7a76fda7ad8eccbc182f51>` |
+| 52 | `<lambda_6b7eaae7b73fadcaf29d071f66f109d4>` |
+| 53 | `<lambda_6e5cc7e0f43a8d2ef14d66aa081883e0>` |
+| 54 | `<lambda_702fa6dc828a729c72e0b56a67d7089f>` |
+| 55 | `<lambda_713b18b3ba15e6424ae305335fe87aae>` |
+| 56 | `<lambda_72deb3b7beb7cf57447235b3c2f1730c>` |
+| 57 | `<lambda_72e731c45167e8f5604136a589b69319>` |
+| 58 | `<lambda_75144db8276fa53ace02b0e53f5b9358>` |
+| 59 | `<lambda_754339f9bfa7284102baf925832e412f>` |
+| 60 | `<lambda_75d74bdc45765df316e5a158d258b669>` |
+| 61 | `<lambda_783c4e754d3c743e6314506bb82f2951>` |
+| 62 | `<lambda_78d3bcab637e7656c9c760d5b249c9ea>` |
+| 63 | `<lambda_7932d2a05651a1bdaaa68b2ebc9d441b>` |
+| 64 | `<lambda_7d8dec7aa40308ecace0345b7f011b41>` |
+| 65 | `<lambda_7d9828a4dd51d8f9afd641fd82bc28f7>` |
+| 66 | `<lambda_7edd1c28498be4fb75bc0e8d0e5fd93a>` |
+| 67 | `<lambda_802809ad99e1bc33a79103c90ba9ae9b>` |
+| 68 | `<lambda_82728af46d49e2e06d0d8f27b0c5288e>` |
+| 69 | `<lambda_857f284cf1b9a0d67937093b1daa1dab>` |
+| 70 | `<lambda_87f87a6658dbfe0227e2e06015dde769>` |
+| 71 | `<lambda_88529d21fa1c75c345524fc3adc5cae7>` |
+| 72 | `<lambda_88d7817f8c939bffb159b8d20f60a4e7>` |
+| 73 | `<lambda_8a894a258c2a64190db7084a8faf21de>` |
+| 74 | `<lambda_8e7325ae73ea3ff58316740a5be6c1f7>` |
+| 75 | `<lambda_8eea701d483856d6656dcf9fa79ab480>` |
+| 76 | `<lambda_91784bc0c39eae7263bb56a4228366b9>` |
+| 77 | `<lambda_969e88bfd40ece749dbc37d05fca5321>` |
+| 78 | `<lambda_96a973959393269dd60d924664b2bdbb>` |
+| 79 | `<lambda_977537b841d04f76aca17c8f0c99a6c1>` |
+| 80 | `<lambda_98dafbe0910de5e2b41bbbf1f554741b>` |
+| 81 | `<lambda_9934fd4848b8e426608a570aba5229ab>` |
+| 82 | `<lambda_9b442db73ebcda8fbaa7d7d7676b2135>` |
+| 83 | `<lambda_9b5173bf776397c7df92ba07c9c0950f>` |
+| 84 | `<lambda_9e52fdf0468f38cbc049794ad21d310e>` |
+| 85 | `<lambda_9f8159f6312d6f60fa818125918f8b9c>` |
+| 86 | `<lambda_9fa25e82d78960f98abadc56d01bb448>` |
+| 87 | `<lambda_a0a1269a110e35bdd87e31d47f5d1bf7>` |
+| 88 | `<lambda_a2320ff77c376180320ff9999a68c6db>` |
+| 89 | `<lambda_a25f0eee293b8aa96918970aba7288cd>` |
+| 90 | `<lambda_a5af1ad7a88e083a2fdec26934c61d5a>` |
+| 91 | `<lambda_a6c531c7fe743d1830a2cb909aaf8389>` |
+| 92 | `<lambda_a77164be3c7b9ab6665b5016990fa190>` |
+| 93 | `<lambda_a7aec0006ac2149fdfdba90ca9aa4bc4>` |
+| 94 | `<lambda_a8dc1b094c6a6051c7094dff72db7972>` |
+| 95 | `<lambda_a9002822742662cd7985ceb956f1f6a8>` |
+| 96 | `<lambda_ac6afbc76a05b0a18ebaa44b5393b475>` |
+| 97 | `<lambda_ad740bfb343525a38e1cfa85c094961c>` |
+| 98 | `<lambda_af6eb6261c71da916ec245c4ad21dbf6>` |
+| 99 | `<lambda_b08f206378b1ea796206004bb55f02d2>` |
+| 100 | `<lambda_b320a8f7674f3ca57c7a5c2a24aa1d59>` |
+| 101 | `<lambda_b4e426c123f483d344f0af66273a4c70>` |
+| 102 | `<lambda_b9eb31af5ebb1d3820fe4ee819c30f6f>` |
+| 103 | `<lambda_bdf4b5b168666785918f411d93f90749>` |
+| 104 | `<lambda_c0fa6b08de2af868074466dc00ed440c>` |
+| 105 | `<lambda_c17560d4d4d38ed7928942198dac4992>` |
+| 106 | `<lambda_c195e94c30e074e99ed6cdeda7f3fe7c>` |
+| 107 | `<lambda_c58c609031bd10d1fa8b5c371c706642>` |
+| 108 | `<lambda_c76060f4d245a8162e249f963132350d>` |
+| 109 | `<lambda_c969b8c815fc6dba86f55158808ab2a9>` |
+| 110 | `<lambda_ca0bb01624e85b2fd28a0b642a579388>` |
+| 111 | `<lambda_ca19dd272524b4fe69997dcc09115c9d>` |
+| 112 | `<lambda_ca2c2da7f8a9ace36b90e42ee174a567>` |
+| 113 | `<lambda_cd64dfbf54520b651fc4b1d4804e921c>` |
+| 114 | `<lambda_cf34c0e4e4530de52fb2f19f54782743>` |
+| 115 | `<lambda_d0cb5fb4639858209f78d77009589894>` |
+| 116 | `<lambda_d3a0c7b74e61ee5674e6b3aaad8f8288>` |
+| 117 | `<lambda_d54227197fc9d8441056b79b9ec58afb>` |
+| 118 | `<lambda_d55cfd30deff5cc0a5f17d8486e0b633>` |
+| 119 | `<lambda_dd6faef18c8457cc68ea6b73dbb3aeb3>` |
+| 120 | `<lambda_df3c85fadf83472bc87c907ca4b6a2eb>` |
+| 121 | `<lambda_e1e5812478df7d0a03a11da8094f4008>` |
+| 122 | `<lambda_e382c55cc549f12e0006320db771da1e>` |
+| 123 | `<lambda_e4bc981d812828fb94f9868a7d0e2a28>` |
+| 124 | `<lambda_e5333408e1a859000b59056012626d51>` |
+| 125 | `<lambda_e65873c5b2427479fcd8b5e926e10f85>` |
+| 126 | `<lambda_e65ddd6269e31c87de8151d0f30aeb95>` |
+| 127 | `<lambda_e77e92abc137df797ea2ca49713985fc>` |
+| 128 | `<lambda_e915e08378ebe573907aa10fc4c92c88>` |
+| 129 | `<lambda_e967e18e06d7439cabb1a2df3b22b3c6>` |
+| 130 | `<lambda_e99118e828af5b6088290b66beb9b544>` |
+| 131 | `<lambda_e9e3892b60cefdca8145711c5d654ae4>` |
+| 132 | `<lambda_e9f7a5521c4fb4b031d6d271c80cc844>` |
+| 133 | `<lambda_ed5aca6e3269cd41e87d27150d6b3657>` |
+| 134 | `<lambda_eec0e27df1fdffec604ea5e95617ffde>` |
+| 135 | `<lambda_ef8ae8caa6602538f4bb72b45692ce28>` |
+| 136 | `<lambda_f16cb4bc2feb455850b8235757fa9276>` |
+| 137 | `<lambda_f6e2838109f104928fc9e4ced9d0708b>` |
+| 138 | `<lambda_f866840c5615dc8b14abaf41c117e075>` |
+| 139 | `<lambda_fa06ab56a61ddcc677aeec0ea8ccb6ab>` |
+| 140 | `<lambda_fbe314ca2ab4b26b23d72a6f1d92f10e>` |
+| 141 | `<lambda_fcb36c84b8ea9fb6af6c471a0d9e4d16>` |
+| 142 | `<lambda_ff95a7e96152f602c5838214865d1dd1>` |
+| 143 | `SandboxMgrBase` |
+| 144 | `WCoord` |
+| 145 | `type_info` |
+
+## Danh sách Hàm C++ (Demangled Functions)
+
+| Địa chỉ RVA | Tên Hàm C++ |
+| :---: | :--- |
+| `0x432f0` | `private: void __thiscall MNSandbox::RemoteMsg::ArgsToJson<char const *>(class jsonxx::Array &,char const * const &)` |
+| `0x12bcf0` | `public: int __thiscall MNSandbox::ReflexVariant::GetData<int>(int *)const ` |
+| `0x57910` | `unsigned int __cdecl MNSandbox::GetNumberSize<char>(void)` |
+| `0x57910` | `unsigned int __cdecl MNSandbox::GetNumberSize<unsigned char>(void)` |
+| `0x96280` | `unsigned int __cdecl MNSandbox::GetNumberSize<short>(void)` |
+| `0x96280` | `unsigned int __cdecl MNSandbox::GetNumberSize<unsigned short>(void)` |
+| `0x96260` | `unsigned int __cdecl MNSandbox::GetNumberSize<int>(void)` |
+| `0x96260` | `unsigned int __cdecl MNSandbox::GetNumberSize<unsigned int>(void)` |
+| `0x129fa0` | `unsigned int __cdecl MNSandbox::GetNumberSize<long>(void)` |
+| `0x129fa0` | `unsigned int __cdecl MNSandbox::GetNumberSize<unsigned long>(void)` |
+| `0x96260` | `unsigned int __cdecl MNSandbox::GetNumberSize<float>(void)` |
+| `0x129fa0` | `unsigned int __cdecl MNSandbox::GetNumberSize<double>(void)` |
+| `0x129fa0` | `unsigned int __cdecl MNSandbox::GetNumberSize<__int64>(void)` |
+| `0x129fa0` | `unsigned int __cdecl MNSandbox::GetNumberSize<unsigned __int64>(void)` |
+| `0x12bfd0` | `public: bool __thiscall MNSandbox::ReflexVariant::GetValue<int>(int &)const ` |
+| `0x43540` | `public: void __thiscall MNSandbox::RuntimeClass::Container::InsertRTTIs<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >(class MNSandbox::RuntimeClass const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x12b800` | `public: void __thiscall MNSandbox::ReflexValue::NotifyAttrChangedT<>(void *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *)` |
+| `0x23c190` | `public: static class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> __cdecl MNSandbox::LuaFunction::PushParamsToLinkerData<>(void)` |
+| `0x12c030` | `public: bool __thiscall MNSandbox::ReflexVariant::SetData<int>(int const &)` |
+| `0x12c140` | `public: bool __thiscall MNSandbox::ReflexVariant::SetValue<int>(int const &)` |
+| `0x48380` | `public: __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SandboxParamObject<class MNSandbox::SandboxContext>(class MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext> const &)` |
+| `0x483c0` | `public: __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SandboxParamObject<class MNSandbox::SandboxContext>(void)` |
+| `0x483f0` | `public: __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SandboxParamObject<class MNSandbox::SandboxResult>(class MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult> const &)` |
+| `0x48430` | `public: __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SandboxParamObject<class MNSandbox::SandboxResult>(void)` |
+| `0x91340` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::AssetPool>::Singleton<class MNSandbox::AssetPool>(class MNSandbox::Singleton<class MNSandbox::AssetPool> const &)` |
+| `0x91350` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::AssetPool>::Singleton<class MNSandbox::AssetPool>(void)` |
+| `0xbc700` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::Singleton<class MNSandbox::AssetSyncMgrInterface>(class MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface> const &)` |
+| `0xbc710` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::Singleton<class MNSandbox::AssetSyncMgrInterface>(void)` |
+| `0xa37f0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::Singleton<class MNSandbox::AssetSyncPool>(class MNSandbox::Singleton<class MNSandbox::AssetSyncPool> const &)` |
+| `0xa3800` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::Singleton<class MNSandbox::AssetSyncPool>(void)` |
+| `0x1c0900` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::CollectionService>::Singleton<class MNSandbox::CollectionService>(class MNSandbox::Singleton<class MNSandbox::CollectionService> const &)` |
+| `0x1c0910` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::CollectionService>::Singleton<class MNSandbox::CollectionService>(void)` |
+| `0x19ad00` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::GameInput>::Singleton<class MNSandbox::GameInput>(class MNSandbox::Singleton<class MNSandbox::GameInput> const &)` |
+| `0x19ad10` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::GameInput>::Singleton<class MNSandbox::GameInput>(void)` |
+| `0x485d0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::GameStep>::Singleton<class MNSandbox::GameStep>(class MNSandbox::Singleton<class MNSandbox::GameStep> const &)` |
+| `0x485e0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::GameStep>::Singleton<class MNSandbox::GameStep>(void)` |
+| `0xd5f20` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::Singleton<class MNSandbox::IDGeneratorManager>(class MNSandbox::Singleton<class MNSandbox::IDGeneratorManager> const &)` |
+| `0xd5f30` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::Singleton<class MNSandbox::IDGeneratorManager>(void)` |
+| `0x91380` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::Singleton<class MNSandbox::ListenRainbowCallbackMgr>(class MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr> const &)` |
+| `0x91390` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::Singleton<class MNSandbox::ListenRainbowCallbackMgr>(void)` |
+| `0x1570b0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::Singleton<class MNSandbox::Statistics::LoadCost>(class MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost> const &)` |
+| `0x1570c0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::Singleton<class MNSandbox::Statistics::LoadCost>(void)` |
+| `0x1a4510` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::MainStorage>::Singleton<class MNSandbox::MainStorage>(class MNSandbox::Singleton<class MNSandbox::MainStorage> const &)` |
+| `0x1a4520` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::MainStorage>::Singleton<class MNSandbox::MainStorage>(void)` |
+| `0x48610` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::Singleton<class MNSandbox::Thread::MultiThreadPool>(class MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool> const &)` |
+| `0x48620` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::Singleton<class MNSandbox::Thread::MultiThreadPool>(void)` |
+| `0x8c1d0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::Singleton<class MNSandbox::NodePacketContainer>(class MNSandbox::Singleton<class MNSandbox::NodePacketContainer> const &)` |
+| `0x8c1e0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::Singleton<class MNSandbox::NodePacketContainer>(void)` |
+| `0x84280` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::RefPool>::Singleton<class MNSandbox::RefPool>(class MNSandbox::Singleton<class MNSandbox::RefPool> const &)` |
+| `0x84290` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::RefPool>::Singleton<class MNSandbox::RefPool>(void)` |
+| `0xda080` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::Singleton<class MNSandbox::RemoteInstanceListenPool>(class MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool> const &)` |
+| `0xda090` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::Singleton<class MNSandbox::RemoteInstanceListenPool>(void)` |
+| `0x48650` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::RemoteMsg>::Singleton<class MNSandbox::RemoteMsg>(class MNSandbox::Singleton<class MNSandbox::RemoteMsg> const &)` |
+| `0x48660` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::RemoteMsg>::Singleton<class MNSandbox::RemoteMsg>(void)` |
+| `0x1525c0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::Singleton<class MNSandbox::Profile::RunDebugMgr>(class MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr> const &)` |
+| `0x1525d0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::Singleton<class MNSandbox::Profile::RunDebugMgr>(void)` |
+| `0x858f0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::Singleton<class MNSandbox::SandboxAssetCache>(class MNSandbox::Singleton<class MNSandbox::SandboxAssetCache> const &)` |
+| `0x85900` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::Singleton<class MNSandbox::SandboxAssetCache>(void)` |
+| `0x9d5a0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::Singleton<class MNSandbox::SandboxAssetRequestMgr>(class MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr> const &)` |
+| `0x9d5b0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::Singleton<class MNSandbox::SandboxAssetRequestMgr>(void)` |
+| `0x1dcb40` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::Singleton<class MNSandbox::SandboxDebugHelper>(class MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper> const &)` |
+| `0x1dcb50` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::Singleton<class MNSandbox::SandboxDebugHelper>(void)` |
+| `0x1990c0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::Singleton<class MNSandbox::SandboxMiscDataMgr>(class MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr> const &)` |
+| `0x1990d0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::Singleton<class MNSandbox::SandboxMiscDataMgr>(void)` |
+| `0x48690` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::Singleton<class MNSandbox::ScopeFuncContainer>(class MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer> const &)` |
+| `0x486a0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::Singleton<class MNSandbox::ScopeFuncContainer>(void)` |
+| `0x1e8640` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::ScriptService>::Singleton<class MNSandbox::ScriptService>(class MNSandbox::Singleton<class MNSandbox::ScriptService> const &)` |
+| `0x1e8650` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::ScriptService>::Singleton<class MNSandbox::ScriptService>(void)` |
+| `0x486d0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::Singleton<class MNSandbox::SdbSceneManager>(class MNSandbox::Singleton<class MNSandbox::SdbSceneManager> const &)` |
+| `0x486e0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::Singleton<class MNSandbox::SdbSceneManager>(void)` |
+| `0x1e8680` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SupplementInterface>::Singleton<class MNSandbox::SupplementInterface>(class MNSandbox::Singleton<class MNSandbox::SupplementInterface> const &)` |
+| `0x1e8690` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::SupplementInterface>::Singleton<class MNSandbox::SupplementInterface>(void)` |
+| `0x972d0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::Singleton<class MNSandbox::Thread::ThreadTaskManager>(class MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager> const &)` |
+| `0x972e0` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::Singleton<class MNSandbox::Thread::ThreadTaskManager>(void)` |
+| `0x149f30` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::Singleton<class MNSandbox::Debug::UIDebug>(class MNSandbox::Singleton<class MNSandbox::Debug::UIDebug> const &)` |
+| `0x149f40` | `public: __thiscall MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::Singleton<class MNSandbox::Debug::UIDebug>(void)` |
+| `0x913c0` | `public: __thiscall MNSandbox::ArchiveData::ArchiveData(class MNSandbox::ArchiveData &&)` |
+| `0xc2110` | `public: __thiscall MNSandbox::ArchiveData::ArchiveData(class MNSandbox::ArchiveData const &)` |
+| `0x161aa0` | `public: __thiscall MNSandbox::ArchiveData::ArchiveData(char const *,__int64)` |
+| `0x88f00` | `public: __thiscall MNSandbox::AssetConfig::AssetConfig(class MNSandbox::GameMap *)` |
+| `0x8c210` | `public: __thiscall MNSandbox::AssetInsNodePacket::AssetInsNodePacket(void)` |
+| `0x914c0` | `public: __thiscall MNSandbox::AssetObject::AssetObject(class MNSandbox::AssetObject const &)` |
+| `0x916e0` | `public: __thiscall MNSandbox::AssetObject::AssetObject(void)` |
+| `0x91840` | `public: __thiscall MNSandbox::AssetObjectContainer::AssetObjectContainer(void)` |
+| `0x97630` | `public: __thiscall MNSandbox::AssetPool::AssetPool(void)` |
+| `0xa3c70` | `public: __thiscall MNSandbox::AssetRef::AssetRef(void)` |
+| `0xbc740` | `protected: __thiscall MNSandbox::AssetService::AssetService(void)` |
+| `0xbca10` | `protected: __thiscall MNSandbox::AssetServiceHost::AssetServiceHost(void)` |
+| `0xbcb10` | `protected: __thiscall MNSandbox::AssetServiceRemote::AssetServiceRemote(void)` |
+| `0xbcee0` | `public: __thiscall MNSandbox::AssetSyncMgrInterface::AssetSyncMgrInterface(class MNSandbox::AssetSyncMgrInterface &&)` |
+| `0xbcee0` | `public: __thiscall MNSandbox::AssetSyncMgrInterface::AssetSyncMgrInterface(class MNSandbox::AssetSyncMgrInterface const &)` |
+| `0xbcef0` | `public: __thiscall MNSandbox::AssetSyncMgrInterface::AssetSyncMgrInterface(void)` |
+| `0xa3ec0` | `public: __thiscall MNSandbox::AssetSyncPool::AssetSyncPool(class MNSandbox::AssetSyncPool const &)` |
+| `0xca670` | `public: __thiscall MNSandbox::AssetSyncPool::AssetSyncPool(void)` |
+| `0xa4000` | `public: __thiscall MNSandbox::AssetSyncPoolHost::AssetSyncPoolHost(class MNSandbox::AssetSyncPoolHost &&)` |
+| `0xa4100` | `public: __thiscall MNSandbox::AssetSyncPoolHost::AssetSyncPoolHost(class MNSandbox::AssetSyncPoolHost const &)` |
+| `0xa41d0` | `public: __thiscall MNSandbox::AssetSyncPoolHost::AssetSyncPoolHost(void)` |
+| `0xa4290` | `public: __thiscall MNSandbox::AssetSyncPoolRemote::AssetSyncPoolRemote(void)` |
+| `0xcd3e0` | `public: __thiscall MNSandbox::Attribute::Attribute(class MNSandbox::AttributeContainer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::Attribute::TYPE)` |
+| `0x48860` | `public: __thiscall MNSandbox::AttributeContainer::AttributeContainer(class MNSandbox::AttributeContainer const &)` |
+| `0x48910` | `public: __thiscall MNSandbox::AttributeContainer::AttributeContainer(class MNSandbox::SandboxNode *)` |
+| `0x489a0` | `public: __thiscall MNSandbox::AttributeContainer::AttributeContainer(void)` |
+| `0x48a30` | `public: __thiscall MNSandbox::BindRefUserdata::BindRefUserdata(class MNSandbox::BindRefUserdata &&)` |
+| `0x48a70` | `public: __thiscall MNSandbox::BindRefUserdata::BindRefUserdata(class MNSandbox::BindRefUserdata const &)` |
+| `0x48b00` | `public: __thiscall MNSandbox::BindRefUserdata::BindRefUserdata(void)` |
+| `0xd0b30` | `public: __thiscall MNSandbox::ByteBuffer::ByteBuffer(int)` |
+| `0x48b20` | `public: __thiscall MNSandbox::CE_And::CE_And(class MNSandbox::CE_And &&)` |
+| `0x48b70` | `public: __thiscall MNSandbox::CE_And::CE_And(class MNSandbox::CE_And const &)` |
+| `0x48ba0` | `public: __thiscall MNSandbox::CE_And::CE_And(void)` |
+| `0x48bd0` | `public: __thiscall MNSandbox::CE_Not::CE_Not(class MNSandbox::CE_Not &&)` |
+| `0x48c20` | `public: __thiscall MNSandbox::CE_Not::CE_Not(class MNSandbox::CE_Not const &)` |
+| `0x48c50` | `public: __thiscall MNSandbox::CE_Not::CE_Not(void)` |
+| `0x48c80` | `public: __thiscall MNSandbox::CE_Or::CE_Or(class MNSandbox::CE_Or &&)` |
+| `0x48cd0` | `public: __thiscall MNSandbox::CE_Or::CE_Or(class MNSandbox::CE_Or const &)` |
+| `0x48d00` | `public: __thiscall MNSandbox::CE_Or::CE_Or(void)` |
+| `0x48d30` | `public: __thiscall MNSandbox::CE_Sequence::CE_Sequence(class MNSandbox::CE_Sequence &&)` |
+| `0x48d80` | `public: __thiscall MNSandbox::CE_Sequence::CE_Sequence(class MNSandbox::CE_Sequence const &)` |
+| `0x48e40` | `public: __thiscall MNSandbox::CE_Sequence::CE_Sequence(void)` |
+| `0x48e70` | `public: __thiscall MNSandbox::CE_Single::CE_Single(class MNSandbox::CE_Single &&)` |
+| `0x48ee0` | `public: __thiscall MNSandbox::CE_Single::CE_Single(class MNSandbox::CE_Single const &)` |
+| `0x48f50` | `public: __thiscall MNSandbox::CE_Single::CE_Single(void)` |
+| `0x138300` | `public: __thiscall MNSandbox::Callback::Callback(class MNSandbox::Callback const &)` |
+| `0x138320` | `public: __thiscall MNSandbox::Callback::Callback(class MNSandbox::SandboxScheduler *)` |
+| `0x138340` | `public: __thiscall MNSandbox::Callback::Callback(void)` |
+| `0x2257a0` | `public: __thiscall MNSandbox::CheckStackTop::CheckStackTop(struct lua_State *)` |
+| `0x2257d0` | `public: __thiscall MNSandbox::CheckStackTop::CheckStackTop(struct lua_State *,int)` |
+| `0x1bc210` | `protected: __thiscall MNSandbox::CloudServerConfigService::CloudServerConfigService(void)` |
+| `0x1c0940` | `public: __thiscall MNSandbox::CollectionService::CollectionService(void)` |
+| `0xd1140` | `public: __thiscall MNSandbox::Component::Component(void)` |
+| `0x48f60` | `public: __thiscall MNSandbox::Config::Config(class MNSandbox::Config &&)` |
+| `0x49280` | `public: __thiscall MNSandbox::Config::Config(class MNSandbox::Config const &)` |
+| `0x246c30` | `public: __thiscall MNSandbox::Config::Config(void)` |
+| `0x1c40c0` | `protected: __thiscall MNSandbox::ConfigService::ConfigService(void)` |
+| `0x49440` | `public: __thiscall MNSandbox::ReflexType::Container::Container(class MNSandbox::ReflexType::Container &&)` |
+| `0x495e0` | `public: __thiscall MNSandbox::ReflexType::Container::Container(class MNSandbox::ReflexType::Container const &)` |
+| `0x496c0` | `public: __thiscall MNSandbox::ReflexType::Container::Container(void)` |
+| `0x49440` | `public: __thiscall MNSandbox::RuntimeClass::Container::Container(class MNSandbox::RuntimeClass::Container &&)` |
+| `0x497e0` | `public: __thiscall MNSandbox::RuntimeClass::Container::Container(class MNSandbox::RuntimeClass::Container const &)` |
+| `0x496c0` | `public: __thiscall MNSandbox::RuntimeClass::Container::Container(void)` |
+| `0x1d17d0` | `protected: __thiscall MNSandbox::ContextActionService::ContextActionService(void)` |
+| `0x1db930` | `protected: __thiscall MNSandbox::CoreScript::CoreScript(void)` |
+| `0x49920` | `protected: __thiscall MNSandbox::CustomBuffer::CustomBuffer(unsigned int)` |
+| `0x499e0` | `protected: __thiscall MNSandbox::CustomBuffer::CustomBuffer(void *,unsigned int)` |
+| `0x49a60` | `protected: __thiscall MNSandbox::CustomBuffer::CustomBuffer(void *,unsigned int,enum MNSandbox::CustomBuffer::BUFFERTYPE)` |
+| `0x49ae0` | `protected: __thiscall MNSandbox::CustomBuffer::CustomBuffer(void *,unsigned int,bool)` |
+| `0x49b60` | `protected: __thiscall MNSandbox::CustomBuffer::CustomBuffer(void)` |
+| `0x13f3f0` | `protected: __thiscall MNSandbox::CustomFunction::CustomFunction(void)` |
+| `0x141960` | `protected: __thiscall MNSandbox::CustomNotify::CustomNotify(void)` |
+| `0x248820` | `public: __thiscall MNSandbox::DebugAction::DebugAction(void)` |
+| `0x152600` | `public: __thiscall MNSandbox::Profile::ErrorLogMgr::ErrorLogMgr(void)` |
+| `0x49bf0` | `public: __thiscall MNSandbox::ErrorResult::ErrorResult(enum MNSandbox::SANDBOXERR)` |
+| `0x49c00` | `public: __thiscall MNSandbox::ErrorResult::ErrorResult(void)` |
+| `0x49c10` | `public: __thiscall MNSandbox::EventObjectManager::EventObjectManager(class MNSandbox::Object *)` |
+| `0x24ad80` | `public: __thiscall MNSandbox::FrameLimit::FrameLimit(unsigned int)` |
+| `0x24adc0` | `public: __thiscall MNSandbox::FrameLimit::FrameLimit(void)` |
+| `0x19ad40` | `public: __thiscall MNSandbox::GameInput::GameInput(void)` |
+| `0x19cca0` | `protected: __thiscall MNSandbox::GameMap::GameMap(void)` |
+| `0x1a2100` | `public: __thiscall MNSandbox::GameMapClient::GameMapClient(void)` |
+| `0x1a4550` | `public: __thiscall MNSandbox::GameMapHost::GameMapHost(void)` |
+| `0x1e0da0` | `private: __thiscall MNSandbox::GameNode::GameNode(void)` |
+| `0xd1b00` | `public: __thiscall MNSandbox::GameObject::GameObject(void)` |
+| `0x918a0` | `public: __thiscall MNSandbox::GameStage::GameStage(class MNSandbox::GameStage const &)` |
+| `0x1a9b60` | `public: __thiscall MNSandbox::GameStage::GameStage(class MNSandbox::GameMap *)` |
+| `0x918c0` | `public: __thiscall MNSandbox::GameStageClient::GameStageClient(class MNSandbox::GameStageClient &&)` |
+| `0x918c0` | `public: __thiscall MNSandbox::GameStageClient::GameStageClient(class MNSandbox::GameStageClient const &)` |
+| `0x1a9b80` | `public: __thiscall MNSandbox::GameStageClient::GameStageClient(class MNSandbox::GameMapClient *)` |
+| `0x918f0` | `public: __thiscall MNSandbox::GameStageHost::GameStageHost(class MNSandbox::GameStageHost &&)` |
+| `0x919a0` | `public: __thiscall MNSandbox::GameStageHost::GameStageHost(class MNSandbox::GameStageHost const &)` |
+| `0x1a9bb0` | `public: __thiscall MNSandbox::GameStageHost::GameStageHost(class MNSandbox::GameMapHost *)` |
+| `0x14b060` | `public: __thiscall MNSandbox::GameStep::GameStep(void)` |
+| `0x49d70` | `public: __thiscall MNSandbox::GlobalNotify::GlobalNotify(void)` |
+| `0x1e8720` | `protected: __thiscall MNSandbox::GlobalServiceNode::GlobalServiceNode(void)` |
+| `0x15d960` | `public: __thiscall MNSandbox::HostNodeIdAllocator::HostNodeIdAllocator(int)` |
+| `0xd5f60` | `public: __thiscall MNSandbox::IDGeneratorManager::IDGeneratorManager(class MNSandbox::IDGeneratorManager const &)` |
+| `0xd5f80` | `public: __thiscall MNSandbox::IDGeneratorManager::IDGeneratorManager(void)` |
+| `0xd6060` | `public: __thiscall MNSandbox::IDGeneratorMessage::IDGeneratorMessage(enum MNSandbox::IDGeneratorType,enum MNSandbox::IDGENDATATYPE)` |
+| `0x1b8160` | `public: __thiscall MNSandbox::InputObject::InputObject(void)` |
+| `0x1b8240` | `protected: __thiscall MNSandbox::InputObjectSignal::InputObjectSignal(void)` |
+| `0x2257a0` | `public: __thiscall MNSandbox::KeepStackTop::KeepStackTop(struct lua_State *)` |
+| `0x2257d0` | `public: __thiscall MNSandbox::KeepStackTop::KeepStackTop(struct lua_State *,int)` |
+| `0x23ec60` | `public: __thiscall MNSandbox::Lua::LinkerData::LinkerData(void)` |
+| `0x91a50` | `public: __thiscall MNSandbox::ListenRainbowCallbackMgr::ListenRainbowCallbackMgr(class MNSandbox::ListenRainbowCallbackMgr const &)` |
+| `0x979a0` | `public: __thiscall MNSandbox::ListenRainbowCallbackMgr::ListenRainbowCallbackMgr(void)` |
+| `0x1450e0` | `public: __thiscall MNSandbox::ListenerInterface::ListenerInterface(void)` |
+| `0x144170` | `public: __thiscall MNSandbox::ListenerLua::ListenerLua(class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x144350` | `protected: __thiscall MNSandbox::ListenersInterface::ListenersInterface(class MNSandbox::NotifyInterface *)` |
+| `0x1443b0` | `protected: __thiscall MNSandbox::ListenersInterface::ListenersInterface(void)` |
+| `0x1570f0` | `public: __thiscall MNSandbox::Statistics::LoadCost::LoadCost(class MNSandbox::Statistics::LoadCost const &)` |
+| `0x158540` | `public: __thiscall MNSandbox::Statistics::LoadCost::LoadCost(void)` |
+| `0x1ed730` | `protected: __thiscall MNSandbox::LocalScriptNode::LocalScriptNode(void)` |
+| `0x23bd00` | `public: __thiscall MNSandbox::LuaArgument::LuaArgument(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,int)` |
+| `0x23bda0` | `public: __thiscall MNSandbox::LuaArguments::LuaArguments(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,int)` |
+| `0x20e1a0` | `public: __thiscall MNSandbox::LuaCoroutine::LuaCoroutine(class MNSandbox::AutoRef<class MNSandbox::Lua::CoJobData> const &,class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine> const &)` |
+| `0x23c230` | `public: __thiscall MNSandbox::LuaFunction::LuaFunction(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,int)` |
+| `0x23e6d0` | `public: __thiscall MNSandbox::LuaLinker::LuaLinker(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,int)` |
+| `0x4a410` | `public: __thiscall MNSandbox::LuaLinkerManager::LuaLinkerManager(class MNSandbox::LuaLinkerManager &&)` |
+| `0x4a500` | `public: __thiscall MNSandbox::LuaLinkerManager::LuaLinkerManager(class MNSandbox::LuaLinkerManager const &)` |
+| `0x4a5c0` | `public: __thiscall MNSandbox::LuaLinkerManager::LuaLinkerManager(void)` |
+| `0x1ef040` | `protected: __thiscall MNSandbox::LuaProfileService::LuaProfileService(void)` |
+| `0x2168f0` | `public: __thiscall MNSandbox::LuaScript::LuaScript(class MNSandbox::WeakRef<class MNSandbox::ScriptNode>)` |
+| `0x12d870` | `public: __thiscall MNSandbox::MNTimer::MNTimer(double,bool,double)` |
+| `0x1f0e50` | `protected: __thiscall MNSandbox::MainStorage::MainStorage(void)` |
+| `0x251120` | `public: __thiscall MNSandbox::Thread::MainThreadTaskGroup::MainThreadTaskGroup(void)` |
+| `0x97a80` | `public: __thiscall MNSandbox::Thread::MainThreadTaskInterface::MainThreadTaskInterface(void)` |
+| `0x1ac550` | `public: __thiscall MNSandbox::MapSave::MapSave(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1f1a20` | `protected: __thiscall MNSandbox::ModuleScriptNode::ModuleScriptNode(void)` |
+| `0x15c8d0` | `public: __thiscall MNSandbox::Thread::MultiThreadPool::MultiThreadPool(void)` |
+| `0x15a1e0` | `public: __thiscall MNSandbox::Statistics::NodeCount::NodeCount(void)` |
+| `0x15da80` | `public: __thiscall MNSandbox::NodeIdAllocator::NodeIdAllocator(int)` |
+| `0x16a360` | `public: __thiscall MNSandbox::NodeInstanceReflex::NodeInstanceReflex(struct MNSandbox::NodeInstanceReflex &&)` |
+| `0x16a360` | `public: __thiscall MNSandbox::NodeInstanceReflex::NodeInstanceReflex(struct MNSandbox::NodeInstanceReflex const &)` |
+| `0x16a390` | `public: __thiscall MNSandbox::NodeInstanceReflex::NodeInstanceReflex(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,__int64)` |
+| `0x16a410` | `public: __thiscall MNSandbox::NodeInstanceReflex::NodeInstanceReflex(void)` |
+| `0xc2130` | `public: __thiscall MNSandbox::NodePacket::NodePacket(void)` |
+| `0xc23f0` | `public: __thiscall MNSandbox::NodePacketContainer::NodePacketContainer(void)` |
+| `0x16baf0` | `public: __thiscall MNSandbox::NodeSyncMode::NodeSyncMode(class MNSandbox::SandboxNode *)` |
+| `0x134420` | `private: __thiscall MNSandbox::NodeWatcher::NodeWatcher(class MNSandbox::NodeWatcherGroup *,int)` |
+| `0x1344f0` | `public: __thiscall MNSandbox::NodeWatcherGroup::NodeWatcherGroup(void)` |
+| `0x145190` | `public: __thiscall MNSandbox::NotifyInterface::NotifyInterface(void)` |
+| `0xd8780` | `public: __thiscall MNSandbox::Object::Object(void)` |
+| `0x15ae20` | `public: __thiscall MNSandbox::Pool::ObjectPoolInstance::ObjectPoolInstance(class MNSandbox::Pool::ObjectPoolInstance const &)` |
+| `0x15ae30` | `public: __thiscall MNSandbox::Pool::ObjectPoolInstance::ObjectPoolInstance(void)` |
+| `0x4a670` | `public: __thiscall MNSandbox::ReflexContainer::Pool::Pool(class MNSandbox::ReflexContainer::Pool &&)` |
+| `0x4a760` | `public: __thiscall MNSandbox::ReflexContainer::Pool::Pool(class MNSandbox::ReflexContainer::Pool const &)` |
+| `0x4a820` | `public: __thiscall MNSandbox::ReflexContainer::Pool::Pool(void)` |
+| `0x15af00` | `public: __thiscall MNSandbox::Ray::Ray(struct MNSandbox::Ray const &)` |
+| `0x15af50` | `public: __thiscall MNSandbox::Ray::Ray(struct MNSandbox::Coord3<float> const &,struct MNSandbox::Coord3<float> const &,bool)` |
+| `0x15afa0` | `public: __thiscall MNSandbox::Ray::Ray(class MINIW::Ray const &)` |
+| `0x15afa0` | `public: __thiscall MNSandbox::Ray::Ray(class Rainbow::Ray const &)` |
+| `0x15aff0` | `public: __thiscall MNSandbox::Ray::Ray(void)` |
+| `0xd9370` | `public: __thiscall MNSandbox::Ref::Ref(void)` |
+| `0xd9a80` | `public: __thiscall MNSandbox::RefPool::RefPool(void)` |
+| `0x4fec0` | `public: __thiscall MNSandbox::ReflexConfig::ReflexConfig(class MNSandbox::ReflexConfig const &)` |
+| `0x49bf0` | `public: __thiscall MNSandbox::ReflexConfig::ReflexConfig(unsigned int)` |
+| `0x4a8d0` | `public: __thiscall MNSandbox::ReflexContainer::ReflexContainer(class MNSandbox::ReflexContainer const &)` |
+| `0x4a9f0` | `public: __thiscall MNSandbox::ReflexEnum::ReflexEnum(class MNSandbox::ReflexEnum const &)` |
+| `0xdca40` | `public: __thiscall MNSandbox::ReflexEnum::ReflexEnum(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexConfig)` |
+| `0x4aba0` | `public: __thiscall MNSandbox::ReflexEnumContainer::ReflexEnumContainer(class MNSandbox::ReflexEnumContainer &&)` |
+| `0x4ac90` | `public: __thiscall MNSandbox::ReflexEnumContainer::ReflexEnumContainer(class MNSandbox::ReflexEnumContainer const &)` |
+| `0x4ad50` | `public: __thiscall MNSandbox::ReflexEnumContainer::ReflexEnumContainer(void)` |
+| `0xdf2c0` | `public: __thiscall MNSandbox::ReflexLuaTuple::ReflexLuaTuple(void)` |
+| `0xdfbb0` | `public: __thiscall MNSandbox::ReflexMap::ReflexMap(class MNSandbox::ReflexMap const &)` |
+| `0xdfc80` | `public: __thiscall MNSandbox::ReflexMap::ReflexMap(void)` |
+| `0x4a760` | `public: __thiscall MNSandbox::ReflexReferenceContainer::ReflexReferenceContainer(class MNSandbox::ReflexReferenceContainer const &)` |
+| `0x4a820` | `public: __thiscall MNSandbox::ReflexReferenceContainer::ReflexReferenceContainer(void)` |
+| `0x4b220` | `public: __thiscall MNSandbox::ReflexReferenceIns::ReflexReferenceIns(void *,class MNSandbox::ReflexType const *)` |
+| `0x4c570` | `public: __thiscall MNSandbox::ReflexReferenceIns::ReflexReferenceIns(void)` |
+| `0x4ae00` | `public: __thiscall MNSandbox::ReflexReferenceLinker::ReflexReferenceLinker(class MNSandbox::ReflexReferenceLinker &&)` |
+| `0x4ae50` | `public: __thiscall MNSandbox::ReflexReferenceLinker::ReflexReferenceLinker(class MNSandbox::ReflexReferenceLinker const &)` |
+| `0x4aed0` | `public: __thiscall MNSandbox::ReflexReferenceLinker::ReflexReferenceLinker(void)` |
+| `0xe2990` | `public: __thiscall MNSandbox::ReflexTuple::ReflexTuple(unsigned int)` |
+| `0xe2a60` | `public: __thiscall MNSandbox::ReflexTuple::ReflexTuple(void)` |
+| `0x4af10` | `public: __thiscall MNSandbox::ReflexType::ReflexType(class MNSandbox::ReflexType &&)` |
+| `0x4afb0` | `public: __thiscall MNSandbox::ReflexType::ReflexType(class MNSandbox::ReflexType const &)` |
+| `0x4b030` | `public: __thiscall MNSandbox::ReflexType::ReflexType(void)` |
+| `0x4b0a0` | `public: __thiscall MNSandbox::ReflexTypePolicy::ReflexTypePolicy(class MNSandbox::ReflexTypePolicy const &)` |
+| `0xe3fe0` | `public: __thiscall MNSandbox::ReflexTypePolicy::ReflexTypePolicy(void)` |
+| `0x10c5c0` | `public: __thiscall MNSandbox::ReflexTypePolicyRegister::ReflexTypePolicyRegister(class MNSandbox::ReflexType &,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void (__cdecl*)(class MNSandbox::ReflexTypePolicy &),enum MNSandbox::ReflexType::TYPE)` |
+| `0x4b1f0` | `public: __thiscall MNSandbox::ReflexType::ReflexType_Ins::ReflexType_Ins(void)` |
+| `0x12b820` | `public: __thiscall MNSandbox::ReflexValue::ReflexValue(class MNSandbox::ReflexContainer &,enum MNSandbox::ReflexValue::TYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexConfig,class MNSandbox::ReflexVersion)` |
+| `0x12c480` | `public: __thiscall MNSandbox::ReflexVariant::ReflexVariant(class MNSandbox::ReflexVariant const &)` |
+| `0x12c540` | `public: __thiscall MNSandbox::ReflexVariant::ReflexVariant(void)` |
+| `0x4b200` | `public: __thiscall MNSandbox::ReflexVersion::ReflexVersion(class MNSandbox::ReflexVersion const &)` |
+| `0x4b220` | `public: __thiscall MNSandbox::ReflexVersion::ReflexVersion(unsigned int,unsigned int)` |
+| `0xda0c0` | `public: __thiscall MNSandbox::RemoteInstanceListenPool::RemoteInstanceListenPool(void)` |
+| `0x146710` | `public: __thiscall MNSandbox::RemoteMsg::RemoteMsg(void)` |
+| `0x4b240` | `public: __thiscall MNSandbox::RemoteMsgInfo::RemoteMsgInfo(class MNSandbox::RemoteMsgInfo const &)` |
+| `0x4b320` | `public: __thiscall MNSandbox::RemoteMsgInfo::RemoteMsgInfo(void)` |
+| `0x152730` | `public: __thiscall MNSandbox::Profile::RunData::RunData(void)` |
+| `0x152740` | `public: __thiscall MNSandbox::Profile::RunDataAssetInfo::RunDataAssetInfo(void)` |
+| `0x152750` | `public: __thiscall MNSandbox::Profile::RunDataFrame::RunDataFrame(void)` |
+| `0x152760` | `public: __thiscall MNSandbox::Profile::RunDataInstanceCnt::RunDataInstanceCnt(void)` |
+| `0x152770` | `public: __thiscall MNSandbox::Profile::RunDataMemory::RunDataMemory(enum MNSandbox::Profile::RunDataMemory::TYPE)` |
+| `0x152790` | `public: __thiscall MNSandbox::Profile::RunDataMgr::RunDataMgr(void)` |
+| `0x152a50` | `public: __thiscall MNSandbox::Profile::RunDataNodeCnt::RunDataNodeCnt(void)` |
+| `0x152a60` | `public: __thiscall MNSandbox::Profile::RunDataPhysLog::RunDataPhysLog(void)` |
+| `0x152a70` | `public: __thiscall MNSandbox::Profile::RunDataRenderLog::RunDataRenderLog(void)` |
+| `0x152a80` | `public: __thiscall MNSandbox::Profile::RunDebugMgr::RunDebugMgr(void)` |
+| `0x152d80` | `public: __thiscall MNSandbox::Profile::RunLogMgr::RunLogMgr(void)` |
+| `0x4b3a0` | `public: __thiscall MNSandbox::RuntimeClass::RuntimeClass(class MNSandbox::RuntimeClass &&)` |
+| `0x4b4d0` | `public: __thiscall MNSandbox::RuntimeClass::RuntimeClass(class MNSandbox::RuntimeClass const &)` |
+| `0x4b5e0` | `public: __thiscall MNSandbox::RuntimeClass::RuntimeClass(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::RuntimeClass const *)` |
+| `0x85930` | `public: __thiscall MNSandbox::SandboxAssetCache::SandboxAssetCache(void)` |
+| `0x91b20` | `public: __thiscall MNSandbox::SandboxAssetObject::SandboxAssetObject(class MNSandbox::AssetRef *)` |
+| `0x91bd0` | `public: __thiscall MNSandbox::SandboxAssetObject::SandboxAssetObject(void)` |
+| `0xb2f60` | `public: __thiscall MNSandbox::SandboxAssetRequestMgr::SandboxAssetRequestMgr(void)` |
+| `0x138450` | `public: __thiscall MNSandbox::SandboxContext::SandboxContext(class MNSandbox::SandboxContext const &)` |
+| `0x1384e0` | `public: __thiscall MNSandbox::SandboxContext::SandboxContext(class MNSandbox::Object *)` |
+| `0x138560` | `public: __thiscall MNSandbox::SandboxContext::SandboxContext(void)` |
+| `0x4b690` | `private: __thiscall MNSandbox::SandboxCoreDriver::SandboxCoreDriver(class MINIW::ScriptVM *)` |
+| `0x4bb10` | `public: __thiscall MNSandbox::SandboxCoreDriver::SandboxCoreDriver(class MNSandbox::SandboxCoreDriver const &)` |
+| `0x4bbd0` | `public: __thiscall MNSandbox::SandboxCoreFactorys::SandboxCoreFactorys(class MNSandbox::SandboxCoreFactorys const &)` |
+| `0x4bcd0` | `public: __thiscall MNSandbox::SandboxCoreFactorys::SandboxCoreFactorys(class MNSandbox::SandboxCoreDriver *)` |
+| `0x20a250` | `public: __thiscall MNSandbox::SandboxCoreLuaDirector::SandboxCoreLuaDirector(class MNSandbox::SandboxCoreDriver *,class MINIW::ScriptVM *)` |
+| `0x81c20` | `public: __thiscall MNSandbox::SandboxCoreManagers::SandboxCoreManagers(class MNSandbox::SandboxCoreDriver *)` |
+| `0x842c0` | `public: __thiscall MNSandbox::SandboxCorePools::SandboxCorePools(class MNSandbox::SandboxCoreDriver *)` |
+| `0x1dcb80` | `public: __thiscall MNSandbox::SandboxDebugHelper::SandboxDebugHelper(void)` |
+| `0x4bd70` | `public: __thiscall MNSandbox::SandboxEventDispatcherManager::SandboxEventDispatcherManager(class MNSandbox::SandboxEventDispatcherManager const &)` |
+| `0x139460` | `public: __thiscall MNSandbox::SandboxEventDispatcherManager::SandboxEventDispatcherManager(class MNSandbox::Object *)` |
+| `0x4bea0` | `public: __thiscall MNSandbox::SandboxEventQueue::SandboxEventQueue(class MNSandbox::SandboxEventQueue const &)` |
+| `0x13a650` | `public: __thiscall MNSandbox::SandboxEventQueue::SandboxEventQueue(class MNSandbox::Object *,enum MNSandbox::SandboxEventQueue::EventTriggerMode)` |
+| `0x4c210` | `public: __thiscall MNSandbox::SandboxEventQueueManager::SandboxEventQueueManager(class MNSandbox::SandboxEventQueueManager const &)` |
+| `0x13b2d0` | `public: __thiscall MNSandbox::SandboxEventQueueManager::SandboxEventQueueManager(class MNSandbox::Object *)` |
+| `0x1ec600` | `public: __thiscall MNSandbox::SandboxLoadedService::SandboxLoadedService(void)` |
+| `0x49bf0` | `public: __thiscall MNSandbox::SandboxLuaPluginManager::SandboxLuaPluginManager(class MNSandbox::Object *)` |
+| `0x257550` | `public: __thiscall MNSandbox::SandboxMiscDataMgr::SandboxMiscDataMgr(void)` |
+| `0x17f0b0` | `protected: __thiscall MNSandbox::SandboxNode::SandboxNode(void)` |
+| `0x13b400` | `public: __thiscall MNSandbox::SandboxParam::SandboxParam(void)` |
+| `0x13b8e0` | `private: __thiscall MNSandbox::SandboxParamGroup::SandboxParamGroup(class MNSandbox::SandboxParamGroup const &)` |
+| `0x13b950` | `private: __thiscall MNSandbox::SandboxParamGroup::SandboxParamGroup(void)` |
+| `0x59dd0` | `public: __thiscall MNSandbox::SandboxParamPool::SandboxParamPool(void)` |
+| `0x13c8f0` | `public: __thiscall MNSandbox::SandboxResult::SandboxResult(class MNSandbox::SandboxResult const &)` |
+| `0x13c990` | `public: __thiscall MNSandbox::SandboxResult::SandboxResult(class MNSandbox::Object *,bool)` |
+| `0x13ca20` | `public: __thiscall MNSandbox::SandboxResult::SandboxResult(void)` |
+| `0x13cc80` | `public: __thiscall MNSandbox::SandboxScheduler::SandboxScheduler(class MNSandbox::Object *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x4c280` | `public: __thiscall MNSandbox::SandboxSchedulerManager::SandboxSchedulerManager(class MNSandbox::SandboxSchedulerManager const &)` |
+| `0x13d020` | `public: __thiscall MNSandbox::SandboxSchedulerManager::SandboxSchedulerManager(class MNSandbox::Object *)` |
+| `0x13d040` | `public: __thiscall MNSandbox::SandboxSchedulerManager::SandboxSchedulerManager(void)` |
+| `0x16c450` | `public: __thiscall MNSandbox::Scene::Scene(unsigned short)` |
+| `0x16def0` | `public: __thiscall MNSandbox::SceneChunk::SceneChunk(int,int,class MNSandbox::Scene *)` |
+| `0x199100` | `public: __thiscall MNSandbox::SceneRoot::SceneRoot(class MNSandbox::Scene *,unsigned short)` |
+| `0x14d4b0` | `public: __thiscall MNSandbox::ScopeFuncContainer::ScopeFuncContainer(void)` |
+| `0x4c340` | `public: __thiscall MNSandbox::ScopeFuncInfo::ScopeFuncInfo(class MNSandbox::ScopeFuncInfo &&)` |
+| `0x4c400` | `public: __thiscall MNSandbox::ScopeFuncInfo::ScopeFuncInfo(class MNSandbox::ScopeFuncInfo const &)` |
+| `0x14d6d0` | `public: __thiscall MNSandbox::ScopeFuncInfo::ScopeFuncInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x14d770` | `public: __thiscall MNSandbox::ScopeFuncInfoWrap::ScopeFuncInfoWrap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x14d860` | `public: __thiscall MNSandbox::ScopeFuncTemp::ScopeFuncTemp(void)` |
+| `0x1f4410` | `public: __thiscall MNSandbox::ScriptContext::ScriptContext(void)` |
+| `0x1f5fb0` | `protected: __thiscall MNSandbox::ScriptNode::ScriptNode(void)` |
+| `0x1f7b00` | `protected: __thiscall MNSandbox::ScriptObject::ScriptObject(void)` |
+| `0x1fb350` | `protected: __thiscall MNSandbox::ScriptService::ScriptService(void)` |
+| `0x1fb4f0` | `public: __thiscall MNSandbox::ScriptServiceHost::ScriptServiceHost(void)` |
+| `0x1fb8b0` | `public: __thiscall MNSandbox::ScriptServiceRemote::ScriptServiceRemote(void)` |
+| `0x21a690` | `public: __thiscall MNSandbox::ScriptState::ScriptState(void)` |
+| `0x16f4e0` | `public: __thiscall MNSandbox::SdbSceneManager::SdbSceneManager(class MNSandbox::WeakRef<class MNSandbox::GameMap>)` |
+| `0x15dac0` | `public: __thiscall MNSandbox::SectionList::SectionList(class jsonxx::Object const &)` |
+| `0x15db60` | `public: __thiscall MNSandbox::SectionList::SectionList(void)` |
+| `0x201270` | `protected: __thiscall MNSandbox::ServerScriptService::ServerScriptService(void)` |
+| `0x201820` | `private: __thiscall MNSandbox::ServerStorage::ServerStorage(void)` |
+| `0x201e90` | `protected: __thiscall MNSandbox::ServiceNode::ServiceNode(void)` |
+| `0x4c4a0` | `public: __thiscall MNSandbox::Signal::Signal(void)` |
+| `0x4c4c0` | `public: __thiscall MNSandbox::SignalConnect::SignalConnect(void)` |
+| `0x15dc50` | `public: __thiscall MNSandbox::SingleNodeIdAllocator::SingleNodeIdAllocator(int)` |
+| `0x4c510` | `public: __thiscall MNSandbox::SortCompareExe::SortCompareExe(class MNSandbox::SortCompareExe &&)` |
+| `0x4c540` | `public: __thiscall MNSandbox::SortCompareExe::SortCompareExe(class MNSandbox::SortCompareExe const &)` |
+| `0x4c570` | `public: __thiscall MNSandbox::SortCompareExe::SortCompareExe(void)` |
+| `0x4c580` | `public: __thiscall MNSandbox::SortCompareExpression::SortCompareExpression(class MNSandbox::SortCompareExpression &&)` |
+| `0x4c580` | `public: __thiscall MNSandbox::SortCompareExpression::SortCompareExpression(class MNSandbox::SortCompareExpression const &)` |
+| `0x4c590` | `public: __thiscall MNSandbox::SortCompareExpression::SortCompareExpression(void)` |
+| `0x21a850` | `public: __thiscall MNSandbox::Lua::StateLevel::StateLevel(struct lua_State *)` |
+| `0x48a30` | `public: __thiscall MNSandbox::Lua::StateStack::StateStack(class MNSandbox::Lua::StateStack &&)` |
+| `0x4c5a0` | `public: __thiscall MNSandbox::Lua::StateStack::StateStack(class MNSandbox::Lua::StateStack const &)` |
+| `0x48b00` | `public: __thiscall MNSandbox::Lua::StateStack::StateStack(void)` |
+| `0x130760` | `public: __thiscall MNSandbox::Stream::Stream(enum MNSandbox::Stream::IO)` |
+| `0x132590` | `public: __thiscall MNSandbox::StreamBuffer::StreamBuffer(enum MNSandbox::Stream::IO)` |
+| `0x1e8d80` | `public: __thiscall MNSandbox::SupplementInterface::SupplementInterface(class MNSandbox::SupplementInterface &&)` |
+| `0x1e8d80` | `public: __thiscall MNSandbox::SupplementInterface::SupplementInterface(class MNSandbox::SupplementInterface const &)` |
+| `0x1e8d90` | `public: __thiscall MNSandbox::SupplementInterface::SupplementInterface(void)` |
+| `0x4c620` | `public: __thiscall MNSandbox::Thread::ThreadJobTask::ThreadJobTask(class MNSandbox::Thread::ThreadJobTask const &)` |
+| `0x15c9c0` | `public: __thiscall MNSandbox::Thread::ThreadJobTask::ThreadJobTask(class MNSandbox::TCallback<void *> *,void *,bool)` |
+| `0x97a90` | `public: __thiscall MNSandbox::Thread::ThreadTaskGroup::ThreadTaskGroup(void)` |
+| `0x252a30` | `public: __thiscall MNSandbox::Thread::ThreadTaskManager::ThreadTaskManager(void)` |
+| `0x207310` | `protected: __thiscall MNSandbox::TimerNode::TimerNode(void)` |
+| `0x149f70` | `public: __thiscall MNSandbox::Debug::UIDebug::UIDebug(void)` |
+| `0x4d460` | `public: virtual __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::~SandboxParamObject<class MNSandbox::SandboxContext>(void)` |
+| `0x4d460` | `public: virtual __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::~SandboxParamObject<class MNSandbox::SandboxResult>(void)` |
+| `0x91de0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::AssetPool>::~Singleton<class MNSandbox::AssetPool>(void)` |
+| `0xbd030` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::~Singleton<class MNSandbox::AssetSyncMgrInterface>(void)` |
+| `0xa47a0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::~Singleton<class MNSandbox::AssetSyncPool>(void)` |
+| `0x1c0dd0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::CollectionService>::~Singleton<class MNSandbox::CollectionService>(void)` |
+| `0x19b0e0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::GameInput>::~Singleton<class MNSandbox::GameInput>(void)` |
+| `0x4d520` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::GameStep>::~Singleton<class MNSandbox::GameStep>(void)` |
+| `0xd62b0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::~Singleton<class MNSandbox::IDGeneratorManager>(void)` |
+| `0x91e10` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::~Singleton<class MNSandbox::ListenRainbowCallbackMgr>(void)` |
+| `0x1571c0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::~Singleton<class MNSandbox::Statistics::LoadCost>(void)` |
+| `0x1a4be0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::MainStorage>::~Singleton<class MNSandbox::MainStorage>(void)` |
+| `0x4d550` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::~Singleton<class MNSandbox::Thread::MultiThreadPool>(void)` |
+| `0x8c330` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::~Singleton<class MNSandbox::NodePacketContainer>(void)` |
+| `0x846d0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::RefPool>::~Singleton<class MNSandbox::RefPool>(void)` |
+| `0xda160` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::~Singleton<class MNSandbox::RemoteInstanceListenPool>(void)` |
+| `0x4d580` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::RemoteMsg>::~Singleton<class MNSandbox::RemoteMsg>(void)` |
+| `0x152dd0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::~Singleton<class MNSandbox::Profile::RunDebugMgr>(void)` |
+| `0x85c10` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::~Singleton<class MNSandbox::SandboxAssetCache>(void)` |
+| `0x9d650` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::~Singleton<class MNSandbox::SandboxAssetRequestMgr>(void)` |
+| `0x1dce90` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::~Singleton<class MNSandbox::SandboxDebugHelper>(void)` |
+| `0x199320` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::~Singleton<class MNSandbox::SandboxMiscDataMgr>(void)` |
+| `0x4d5b0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::~Singleton<class MNSandbox::ScopeFuncContainer>(void)` |
+| `0x1e8dd0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::ScriptService>::~Singleton<class MNSandbox::ScriptService>(void)` |
+| `0x4d5e0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::~Singleton<class MNSandbox::SdbSceneManager>(void)` |
+| `0x1e8e20` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::SupplementInterface>::~Singleton<class MNSandbox::SupplementInterface>(void)` |
+| `0x97b70` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::~Singleton<class MNSandbox::Thread::ThreadTaskManager>(void)` |
+| `0x14a1a0` | `public: virtual __thiscall MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::~Singleton<class MNSandbox::Debug::UIDebug>(void)` |
+| `0x4dec0` | `public: __thiscall MNSandbox::ArchiveData::~ArchiveData(void)` |
+| `0x89220` | `public: virtual __thiscall MNSandbox::AssetConfig::~AssetConfig(void)` |
+| `0x8c360` | `public: virtual __thiscall MNSandbox::AssetInsNodePacket::~AssetInsNodePacket(void)` |
+| `0x91fd0` | `public: __thiscall MNSandbox::AssetObject::~AssetObject(void)` |
+| `0x92230` | `public: __thiscall MNSandbox::AssetObjectContainer::~AssetObjectContainer(void)` |
+| `0x98440` | `public: virtual __thiscall MNSandbox::AssetPool::~AssetPool(void)` |
+| `0xa5060` | `public: virtual __thiscall MNSandbox::AssetRef::~AssetRef(void)` |
+| `0xbd190` | `protected: virtual __thiscall MNSandbox::AssetService::~AssetService(void)` |
+| `0x92310` | `public: virtual __thiscall MNSandbox::AssetServiceHost::~AssetServiceHost(void)` |
+| `0x923f0` | `public: virtual __thiscall MNSandbox::AssetServiceRemote::~AssetServiceRemote(void)` |
+| `0xbd030` | `public: virtual __thiscall MNSandbox::AssetSyncMgrInterface::~AssetSyncMgrInterface(void)` |
+| `0xca890` | `public: virtual __thiscall MNSandbox::AssetSyncPool::~AssetSyncPool(void)` |
+| `0xa52a0` | `public: virtual __thiscall MNSandbox::AssetSyncPoolHost::~AssetSyncPoolHost(void)` |
+| `0xa52c0` | `public: virtual __thiscall MNSandbox::AssetSyncPoolRemote::~AssetSyncPoolRemote(void)` |
+| `0x4e150` | `public: virtual __thiscall MNSandbox::Attribute::~Attribute(void)` |
+| `0x4e1b0` | `public: __thiscall MNSandbox::AttributeContainer::~AttributeContainer(void)` |
+| `0x4e1e0` | `public: __thiscall MNSandbox::BindRefUserdata::~BindRefUserdata(void)` |
+| `0xd0b80` | `public: __thiscall MNSandbox::ByteBuffer::~ByteBuffer(void)` |
+| `0x4e1f0` | `public: __thiscall MNSandbox::CE_And::~CE_And(void)` |
+| `0x4e1f0` | `public: __thiscall MNSandbox::CE_Not::~CE_Not(void)` |
+| `0x4e1f0` | `public: __thiscall MNSandbox::CE_Or::~CE_Or(void)` |
+| `0x4e1f0` | `public: __thiscall MNSandbox::CE_Sequence::~CE_Sequence(void)` |
+| `0x4e220` | `public: __thiscall MNSandbox::CE_Single::~CE_Single(void)` |
+| `0x10c600` | `public: __thiscall MNSandbox::Callback::~Callback(void)` |
+| `0x577f0` | `public: __thiscall MNSandbox::CheckStackTop::~CheckStackTop(void)` |
+| `0x1bc500` | `public: virtual __thiscall MNSandbox::CloudServerConfigService::~CloudServerConfigService(void)` |
+| `0x1c0f20` | `public: virtual __thiscall MNSandbox::CollectionService::~CollectionService(void)` |
+| `0xd1230` | `public: virtual __thiscall MNSandbox::Component::~Component(void)` |
+| `0x4e250` | `public: __thiscall MNSandbox::Config::~Config(void)` |
+| `0x1c41d0` | `public: virtual __thiscall MNSandbox::ConfigService::~ConfigService(void)` |
+| `0x4e490` | `public: __thiscall MNSandbox::ReflexType::Container::~Container(void)` |
+| `0x4e490` | `public: __thiscall MNSandbox::RuntimeClass::Container::~Container(void)` |
+| `0x1d22f0` | `public: virtual __thiscall MNSandbox::ContextActionService::~ContextActionService(void)` |
+| `0x1db950` | `public: virtual __thiscall MNSandbox::CoreScript::~CoreScript(void)` |
+| `0x4e4b0` | `public: virtual __thiscall MNSandbox::CustomBuffer::~CustomBuffer(void)` |
+| `0x13f440` | `public: virtual __thiscall MNSandbox::CustomFunction::~CustomFunction(void)` |
+| `0x141ae0` | `public: virtual __thiscall MNSandbox::CustomNotify::~CustomNotify(void)` |
+| `0x248d70` | `public: virtual __thiscall MNSandbox::DebugAction::~DebugAction(void)` |
+| `0x152e90` | `public: virtual __thiscall MNSandbox::Profile::ErrorLogMgr::~ErrorLogMgr(void)` |
+| `0x139ec0` | `public: virtual __thiscall MNSandbox::EventObjectManager::~EventObjectManager(void)` |
+| `0x577f0` | `public: __thiscall MNSandbox::FrameLimit::~FrameLimit(void)` |
+| `0x19b120` | `public: virtual __thiscall MNSandbox::GameInput::~GameInput(void)` |
+| `0x19dba0` | `public: virtual __thiscall MNSandbox::GameMap::~GameMap(void)` |
+| `0x1a2850` | `public: virtual __thiscall MNSandbox::GameMapClient::~GameMapClient(void)` |
+| `0x1a4c30` | `public: virtual __thiscall MNSandbox::GameMapHost::~GameMapHost(void)` |
+| `0x1e1310` | `public: virtual __thiscall MNSandbox::GameNode::~GameNode(void)` |
+| `0xd1c50` | `public: virtual __thiscall MNSandbox::GameObject::~GameObject(void)` |
+| `0x1a9c40` | `public: virtual __thiscall MNSandbox::GameStage::~GameStage(void)` |
+| `0x924c0` | `public: virtual __thiscall MNSandbox::GameStageClient::~GameStageClient(void)` |
+| `0x924d0` | `public: virtual __thiscall MNSandbox::GameStageHost::~GameStageHost(void)` |
+| `0x14b210` | `public: virtual __thiscall MNSandbox::GameStep::~GameStep(void)` |
+| `0x4e590` | `public: __thiscall MNSandbox::GlobalNotify::~GlobalNotify(void)` |
+| `0x1e8f10` | `public: virtual __thiscall MNSandbox::GlobalServiceNode::~GlobalServiceNode(void)` |
+| `0x4e7a0` | `public: virtual __thiscall MNSandbox::HostNodeIdAllocator::~HostNodeIdAllocator(void)` |
+| `0xd63c0` | `public: virtual __thiscall MNSandbox::IDGeneratorManager::~IDGeneratorManager(void)` |
+| `0x1b8400` | `public: virtual __thiscall MNSandbox::InputObject::~InputObject(void)` |
+| `0x1b8470` | `public: virtual __thiscall MNSandbox::InputObjectSignal::~InputObjectSignal(void)` |
+| `0x225800` | `public: __thiscall MNSandbox::KeepStackTop::~KeepStackTop(void)` |
+| `0x23ec90` | `public: virtual __thiscall MNSandbox::Lua::LinkerData::~LinkerData(void)` |
+| `0x98690` | `public: virtual __thiscall MNSandbox::ListenRainbowCallbackMgr::~ListenRainbowCallbackMgr(void)` |
+| `0x1451a0` | `public: virtual __thiscall MNSandbox::ListenerInterface::~ListenerInterface(void)` |
+| `0x144490` | `public: virtual __thiscall MNSandbox::ListenerLua::~ListenerLua(void)` |
+| `0x144570` | `public: virtual __thiscall MNSandbox::ListenersInterface::~ListenersInterface(void)` |
+| `0x158950` | `public: virtual __thiscall MNSandbox::Statistics::LoadCost::~LoadCost(void)` |
+| `0x1ed750` | `public: virtual __thiscall MNSandbox::LocalScriptNode::~LocalScriptNode(void)` |
+| `0x23be40` | `public: virtual __thiscall MNSandbox::LuaArgument::~LuaArgument(void)` |
+| `0x23be50` | `public: virtual __thiscall MNSandbox::LuaArguments::~LuaArguments(void)` |
+| `0x20e7a0` | `public: virtual __thiscall MNSandbox::LuaCoroutine::~LuaCoroutine(void)` |
+| `0x23c380` | `public: virtual __thiscall MNSandbox::LuaFunction::~LuaFunction(void)` |
+| `0x23e940` | `public: virtual __thiscall MNSandbox::LuaLinker::~LuaLinker(void)` |
+| `0x4e850` | `public: __thiscall MNSandbox::LuaLinkerManager::~LuaLinkerManager(void)` |
+| `0x1ef1e0` | `public: virtual __thiscall MNSandbox::LuaProfileService::~LuaProfileService(void)` |
+| `0x216c40` | `public: virtual __thiscall MNSandbox::LuaScript::~LuaScript(void)` |
+| `0x12da00` | `public: virtual __thiscall MNSandbox::MNTimer::~MNTimer(void)` |
+| `0x1f0f60` | `public: virtual __thiscall MNSandbox::MainStorage::~MainStorage(void)` |
+| `0x251180` | `public: __thiscall MNSandbox::Thread::MainThreadTaskGroup::~MainThreadTaskGroup(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Thread::MainThreadTaskInterface::~MainThreadTaskInterface(void)` |
+| `0x1acc80` | `public: virtual __thiscall MNSandbox::MapSave::~MapSave(void)` |
+| `0x1f1d70` | `public: virtual __thiscall MNSandbox::ModuleScriptNode::~ModuleScriptNode(void)` |
+| `0x15ca70` | `public: virtual __thiscall MNSandbox::Thread::MultiThreadPool::~MultiThreadPool(void)` |
+| `0x152f50` | `public: __thiscall MNSandbox::Statistics::NodeCount::~NodeCount(void)` |
+| `0x4e860` | `public: virtual __thiscall MNSandbox::NodeIdAllocator::~NodeIdAllocator(void)` |
+| `0x10c600` | `public: __thiscall MNSandbox::NodeInstanceReflex::~NodeInstanceReflex(void)` |
+| `0xc2bf0` | `public: virtual __thiscall MNSandbox::NodePacket::~NodePacket(void)` |
+| `0xc2d60` | `public: virtual __thiscall MNSandbox::NodePacketContainer::~NodePacketContainer(void)` |
+| `0x4e870` | `public: __thiscall MNSandbox::NodeSyncMode::~NodeSyncMode(void)` |
+| `0x134d50` | `public: virtual __thiscall MNSandbox::NodeWatcher::~NodeWatcher(void)` |
+| `0x134db0` | `public: __thiscall MNSandbox::NodeWatcherGroup::~NodeWatcherGroup(void)` |
+| `0x145280` | `public: virtual __thiscall MNSandbox::NotifyInterface::~NotifyInterface(void)` |
+| `0xd87f0` | `public: virtual __thiscall MNSandbox::Object::~Object(void)` |
+| `0x15ae40` | `public: virtual __thiscall MNSandbox::Pool::ObjectPoolInstance::~ObjectPoolInstance(void)` |
+| `0x4e090` | `public: __thiscall MNSandbox::ReflexContainer::Pool::~Pool(void)` |
+| `0xd93c0` | `public: virtual __thiscall MNSandbox::Ref::~Ref(void)` |
+| `0x84720` | `public: virtual __thiscall MNSandbox::RefPool::~RefPool(void)` |
+| `0xdb1a0` | `public: __thiscall MNSandbox::ReflexContainer::~ReflexContainer(void)` |
+| `0xdcc00` | `public: __thiscall MNSandbox::ReflexEnum::~ReflexEnum(void)` |
+| `0x4e0a0` | `public: __thiscall MNSandbox::ReflexEnumContainer::~ReflexEnumContainer(void)` |
+| `0x4e8c0` | `public: virtual __thiscall MNSandbox::ReflexLuaTuple::~ReflexLuaTuple(void)` |
+| `0xdfe60` | `public: virtual __thiscall MNSandbox::ReflexMap::~ReflexMap(void)` |
+| `0xdb270` | `public: __thiscall MNSandbox::ReflexReferenceContainer::~ReflexReferenceContainer(void)` |
+| `0x4e990` | `public: __thiscall MNSandbox::ReflexReferenceLinker::~ReflexReferenceLinker(void)` |
+| `0x4e9a0` | `public: virtual __thiscall MNSandbox::ReflexTuple::~ReflexTuple(void)` |
+| `0x4ea30` | `public: __thiscall MNSandbox::ReflexType::~ReflexType(void)` |
+| `0x4ea90` | `public: __thiscall MNSandbox::ReflexTypePolicy::~ReflexTypePolicy(void)` |
+| `0xe4090` | `public: __thiscall MNSandbox::ReflexType::ReflexType_Ins::~ReflexType_Ins(void)` |
+| `0x12b8d0` | `public: virtual __thiscall MNSandbox::ReflexValue::~ReflexValue(void)` |
+| `0x12c580` | `public: __thiscall MNSandbox::ReflexVariant::~ReflexVariant(void)` |
+| `0xda190` | `public: virtual __thiscall MNSandbox::RemoteInstanceListenPool::~RemoteInstanceListenPool(void)` |
+| `0x146bb0` | `public: virtual __thiscall MNSandbox::RemoteMsg::~RemoteMsg(void)` |
+| `0x4eaa0` | `public: __thiscall MNSandbox::RemoteMsgInfo::~RemoteMsgInfo(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunData::~RunData(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataAssetInfo::~RunDataAssetInfo(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataFrame::~RunDataFrame(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataInstanceCnt::~RunDataInstanceCnt(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataMemory::~RunDataMemory(void)` |
+| `0x153010` | `public: virtual __thiscall MNSandbox::Profile::RunDataMgr::~RunDataMgr(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataNodeCnt::~RunDataNodeCnt(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataPhysLog::~RunDataPhysLog(void)` |
+| `0x577f0` | `public: virtual __thiscall MNSandbox::Profile::RunDataRenderLog::~RunDataRenderLog(void)` |
+| `0x153140` | `public: virtual __thiscall MNSandbox::Profile::RunDebugMgr::~RunDebugMgr(void)` |
+| `0x153260` | `public: virtual __thiscall MNSandbox::Profile::RunLogMgr::~RunLogMgr(void)` |
+| `0x4eb00` | `public: __thiscall MNSandbox::RuntimeClass::~RuntimeClass(void)` |
+| `0x85f50` | `public: virtual __thiscall MNSandbox::SandboxAssetCache::~SandboxAssetCache(void)` |
+| `0x924f0` | `public: virtual __thiscall MNSandbox::SandboxAssetObject::~SandboxAssetObject(void)` |
+| `0xb3b80` | `public: virtual __thiscall MNSandbox::SandboxAssetRequestMgr::~SandboxAssetRequestMgr(void)` |
+| `0x1385e0` | `public: virtual __thiscall MNSandbox::SandboxContext::~SandboxContext(void)` |
+| `0x4ebe0` | `public: virtual __thiscall MNSandbox::SandboxCoreDriver::~SandboxCoreDriver(void)` |
+| `0x4edc0` | `public: virtual __thiscall MNSandbox::SandboxCoreFactorys::~SandboxCoreFactorys(void)` |
+| `0x20a2c0` | `public: virtual __thiscall MNSandbox::SandboxCoreLuaDirector::~SandboxCoreLuaDirector(void)` |
+| `0x81cc0` | `public: virtual __thiscall MNSandbox::SandboxCoreManagers::~SandboxCoreManagers(void)` |
+| `0x84810` | `public: virtual __thiscall MNSandbox::SandboxCorePools::~SandboxCorePools(void)` |
+| `0x1dcee0` | `public: virtual __thiscall MNSandbox::SandboxDebugHelper::~SandboxDebugHelper(void)` |
+| `0x139530` | `public: __thiscall MNSandbox::SandboxEventDispatcherManager::~SandboxEventDispatcherManager(void)` |
+| `0x13a740` | `public: __thiscall MNSandbox::SandboxEventQueue::~SandboxEventQueue(void)` |
+| `0x13b340` | `public: __thiscall MNSandbox::SandboxEventQueueManager::~SandboxEventQueueManager(void)` |
+| `0x1ec700` | `public: virtual __thiscall MNSandbox::SandboxLoadedService::~SandboxLoadedService(void)` |
+| `0x577f0` | `public: __thiscall MNSandbox::SandboxLuaPluginManager::~SandboxLuaPluginManager(void)` |
+| `0x257950` | `public: virtual __thiscall MNSandbox::SandboxMiscDataMgr::~SandboxMiscDataMgr(void)` |
+| `0x17fa00` | `public: virtual __thiscall MNSandbox::SandboxNode::~SandboxNode(void)` |
+| `0x13b420` | `public: virtual __thiscall MNSandbox::SandboxParam::~SandboxParam(void)` |
+| `0x13b9f0` | `private: virtual __thiscall MNSandbox::SandboxParamGroup::~SandboxParamGroup(void)` |
+| `0x577f0` | `public: __thiscall MNSandbox::SandboxParamPool::~SandboxParamPool(void)` |
+| `0x13cab0` | `public: virtual __thiscall MNSandbox::SandboxResult::~SandboxResult(void)` |
+| `0x13cd10` | `public: virtual __thiscall MNSandbox::SandboxScheduler::~SandboxScheduler(void)` |
+| `0x13d060` | `public: __thiscall MNSandbox::SandboxSchedulerManager::~SandboxSchedulerManager(void)` |
+| `0x16c730` | `public: virtual __thiscall MNSandbox::Scene::~Scene(void)` |
+| `0x16e3e0` | `public: virtual __thiscall MNSandbox::SceneChunk::~SceneChunk(void)` |
+| `0x199360` | `public: virtual __thiscall MNSandbox::SceneRoot::~SceneRoot(void)` |
+| `0x4edf0` | `public: virtual __thiscall MNSandbox::ScopeFuncContainer::~ScopeFuncContainer(void)` |
+| `0x4ef60` | `public: __thiscall MNSandbox::ScopeFuncInfo::~ScopeFuncInfo(void)` |
+| `0x14db60` | `public: __thiscall MNSandbox::ScopeFuncInfoWrap::~ScopeFuncInfoWrap(void)` |
+| `0x14dc00` | `public: __thiscall MNSandbox::ScopeFuncTemp::~ScopeFuncTemp(void)` |
+| `0x1f44d0` | `public: virtual __thiscall MNSandbox::ScriptContext::~ScriptContext(void)` |
+| `0x1f6100` | `public: virtual __thiscall MNSandbox::ScriptNode::~ScriptNode(void)` |
+| `0x1f7b20` | `public: virtual __thiscall MNSandbox::ScriptObject::~ScriptObject(void)` |
+| `0x1fbe90` | `public: virtual __thiscall MNSandbox::ScriptService::~ScriptService(void)` |
+| `0x1e9160` | `public: virtual __thiscall MNSandbox::ScriptServiceHost::~ScriptServiceHost(void)` |
+| `0x1e92c0` | `public: virtual __thiscall MNSandbox::ScriptServiceRemote::~ScriptServiceRemote(void)` |
+| `0x21a900` | `public: __thiscall MNSandbox::ScriptState::~ScriptState(void)` |
+| `0x16fab0` | `public: virtual __thiscall MNSandbox::SdbSceneManager::~SdbSceneManager(void)` |
+| `0x4eff0` | `public: virtual __thiscall MNSandbox::SectionList::~SectionList(void)` |
+| `0x201340` | `public: virtual __thiscall MNSandbox::ServerScriptService::~ServerScriptService(void)` |
+| `0x2018f0` | `public: virtual __thiscall MNSandbox::ServerStorage::~ServerStorage(void)` |
+| `0x202330` | `public: virtual __thiscall MNSandbox::ServiceNode::~ServiceNode(void)` |
+| `0x4e860` | `public: virtual __thiscall MNSandbox::Signal::~Signal(void)` |
+| `0x4f050` | `public: virtual __thiscall MNSandbox::SignalConnect::~SignalConnect(void)` |
+| `0x4e860` | `public: virtual __thiscall MNSandbox::SingleNodeIdAllocator::~SingleNodeIdAllocator(void)` |
+| `0x4f0d0` | `public: __thiscall MNSandbox::SortCompareExe::~SortCompareExe(void)` |
+| `0x21aac0` | `public: __thiscall MNSandbox::Lua::StateLevel::~StateLevel(void)` |
+| `0x4e0c0` | `public: __thiscall MNSandbox::Lua::StateStack::~StateStack(void)` |
+| `0x130890` | `public: virtual __thiscall MNSandbox::Stream::~Stream(void)` |
+| `0x1325c0` | `public: virtual __thiscall MNSandbox::StreamBuffer::~StreamBuffer(void)` |
+| `0x1e8e20` | `public: virtual __thiscall MNSandbox::SupplementInterface::~SupplementInterface(void)` |
+| `0x15cba0` | `public: __thiscall MNSandbox::Thread::ThreadJobTask::~ThreadJobTask(void)` |
+| `0x2539d0` | `public: __thiscall MNSandbox::Thread::ThreadTaskGroup::~ThreadTaskGroup(void)` |
+| `0x253a20` | `public: virtual __thiscall MNSandbox::Thread::ThreadTaskManager::~ThreadTaskManager(void)` |
+| `0x207460` | `public: virtual __thiscall MNSandbox::TimerNode::~TimerNode(void)` |
+| `0x14a1d0` | `public: virtual __thiscall MNSandbox::Debug::UIDebug::~UIDebug(void)` |
+| `0x4f3d0` | `public: class MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns> & __thiscall MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::operator=(class MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns> &&)` |
+| `0x4f3d0` | `public: class MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns> & __thiscall MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::operator=(class MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns> const &)` |
+| `0x4f390` | `public: class MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext> & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::operator=(class MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext> const &)` |
+| `0x4f390` | `public: class MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult> & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::operator=(class MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::AssetPool> & __thiscall MNSandbox::Singleton<class MNSandbox::AssetPool>::operator=(class MNSandbox::Singleton<class MNSandbox::AssetPool> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface> & __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::operator=(class MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::AssetSyncPool> & __thiscall MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::operator=(class MNSandbox::Singleton<class MNSandbox::AssetSyncPool> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::CollectionService> & __thiscall MNSandbox::Singleton<class MNSandbox::CollectionService>::operator=(class MNSandbox::Singleton<class MNSandbox::CollectionService> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::GameInput> & __thiscall MNSandbox::Singleton<class MNSandbox::GameInput>::operator=(class MNSandbox::Singleton<class MNSandbox::GameInput> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::GameStep> & __thiscall MNSandbox::Singleton<class MNSandbox::GameStep>::operator=(class MNSandbox::Singleton<class MNSandbox::GameStep> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::IDGeneratorManager> & __thiscall MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::operator=(class MNSandbox::Singleton<class MNSandbox::IDGeneratorManager> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr> & __thiscall MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::operator=(class MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost> & __thiscall MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::operator=(class MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::MainStorage> & __thiscall MNSandbox::Singleton<class MNSandbox::MainStorage>::operator=(class MNSandbox::Singleton<class MNSandbox::MainStorage> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool> & __thiscall MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::operator=(class MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::NodePacketContainer> & __thiscall MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::operator=(class MNSandbox::Singleton<class MNSandbox::NodePacketContainer> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::RefPool> & __thiscall MNSandbox::Singleton<class MNSandbox::RefPool>::operator=(class MNSandbox::Singleton<class MNSandbox::RefPool> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool> & __thiscall MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::operator=(class MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::RemoteMsg> & __thiscall MNSandbox::Singleton<class MNSandbox::RemoteMsg>::operator=(class MNSandbox::Singleton<class MNSandbox::RemoteMsg> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr> & __thiscall MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::operator=(class MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::SandboxAssetCache> & __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::operator=(class MNSandbox::Singleton<class MNSandbox::SandboxAssetCache> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr> & __thiscall MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::operator=(class MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper> & __thiscall MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::operator=(class MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr> & __thiscall MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::operator=(class MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer> & __thiscall MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::operator=(class MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::ScriptService> & __thiscall MNSandbox::Singleton<class MNSandbox::ScriptService>::operator=(class MNSandbox::Singleton<class MNSandbox::ScriptService> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::SdbSceneManager> & __thiscall MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::operator=(class MNSandbox::Singleton<class MNSandbox::SdbSceneManager> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::SupplementInterface> & __thiscall MNSandbox::Singleton<class MNSandbox::SupplementInterface>::operator=(class MNSandbox::Singleton<class MNSandbox::SupplementInterface> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager> & __thiscall MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::operator=(class MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager> const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Singleton<class MNSandbox::Debug::UIDebug> & __thiscall MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::operator=(class MNSandbox::Singleton<class MNSandbox::Debug::UIDebug> const &)` |
+| `0xc2f20` | `public: class MNSandbox::ArchiveData & __thiscall MNSandbox::ArchiveData::operator=(class MNSandbox::ArchiveData &&)` |
+| `0xb3e50` | `public: class MNSandbox::ArchiveData & __thiscall MNSandbox::ArchiveData::operator=(class MNSandbox::ArchiveData const &)` |
+| `0x4f3d0` | `public: class MNSandbox::AssetIdParse & __thiscall MNSandbox::AssetIdParse::operator=(class MNSandbox::AssetIdParse &&)` |
+| `0x4f3d0` | `public: class MNSandbox::AssetIdParse & __thiscall MNSandbox::AssetIdParse::operator=(class MNSandbox::AssetIdParse const &)` |
+| `0x4f3d0` | `public: class MNSandbox::AssetSyncMgrInterface & __thiscall MNSandbox::AssetSyncMgrInterface::operator=(class MNSandbox::AssetSyncMgrInterface &&)` |
+| `0x4f3d0` | `public: class MNSandbox::AssetSyncMgrInterface & __thiscall MNSandbox::AssetSyncMgrInterface::operator=(class MNSandbox::AssetSyncMgrInterface const &)` |
+| `0xa5380` | `public: class MNSandbox::AssetSyncPool & __thiscall MNSandbox::AssetSyncPool::operator=(class MNSandbox::AssetSyncPool const &)` |
+| `0xa5440` | `public: class MNSandbox::AssetSyncPoolHost & __thiscall MNSandbox::AssetSyncPoolHost::operator=(class MNSandbox::AssetSyncPoolHost &&)` |
+| `0xa54d0` | `public: class MNSandbox::AssetSyncPoolHost & __thiscall MNSandbox::AssetSyncPoolHost::operator=(class MNSandbox::AssetSyncPoolHost const &)` |
+| `0x4f650` | `public: class MNSandbox::AttributeContainer & __thiscall MNSandbox::AttributeContainer::operator=(class MNSandbox::AttributeContainer const &)` |
+| `0x4f6a0` | `public: class MNSandbox::BindRefUserdata & __thiscall MNSandbox::BindRefUserdata::operator=(class MNSandbox::BindRefUserdata &&)` |
+| `0x4f6e0` | `public: class MNSandbox::BindRefUserdata & __thiscall MNSandbox::BindRefUserdata::operator=(class MNSandbox::BindRefUserdata const &)` |
+| `0xd0bf0` | `public: class MNSandbox::ByteBuffer & __thiscall MNSandbox::ByteBuffer::operator=(class MNSandbox::ByteBuffer const &)` |
+| `0x4f710` | `public: class MNSandbox::CE_And & __thiscall MNSandbox::CE_And::operator=(class MNSandbox::CE_And &&)` |
+| `0x4f760` | `public: class MNSandbox::CE_And & __thiscall MNSandbox::CE_And::operator=(class MNSandbox::CE_And const &)` |
+| `0x4f710` | `public: class MNSandbox::CE_Not & __thiscall MNSandbox::CE_Not::operator=(class MNSandbox::CE_Not &&)` |
+| `0x4f760` | `public: class MNSandbox::CE_Not & __thiscall MNSandbox::CE_Not::operator=(class MNSandbox::CE_Not const &)` |
+| `0x4f710` | `public: class MNSandbox::CE_Or & __thiscall MNSandbox::CE_Or::operator=(class MNSandbox::CE_Or &&)` |
+| `0x4f760` | `public: class MNSandbox::CE_Or & __thiscall MNSandbox::CE_Or::operator=(class MNSandbox::CE_Or const &)` |
+| `0x4f710` | `public: class MNSandbox::CE_Sequence & __thiscall MNSandbox::CE_Sequence::operator=(class MNSandbox::CE_Sequence &&)` |
+| `0x4f760` | `public: class MNSandbox::CE_Sequence & __thiscall MNSandbox::CE_Sequence::operator=(class MNSandbox::CE_Sequence const &)` |
+| `0x4f7a0` | `public: class MNSandbox::CE_Single & __thiscall MNSandbox::CE_Single::operator=(class MNSandbox::CE_Single &&)` |
+| `0x4f820` | `public: class MNSandbox::CE_Single & __thiscall MNSandbox::CE_Single::operator=(class MNSandbox::CE_Single const &)` |
+| `0x925d0` | `public: class MNSandbox::Callback & __thiscall MNSandbox::Callback::operator=(class MNSandbox::Callback const &)` |
+| `0x4f840` | `public: class MNSandbox::Config & __thiscall MNSandbox::Config::operator=(class MNSandbox::Config &&)` |
+| `0x4fa00` | `public: class MNSandbox::Config & __thiscall MNSandbox::Config::operator=(class MNSandbox::Config const &)` |
+| `0x4fbe0` | `public: class MNSandbox::ReflexType::Container & __thiscall MNSandbox::ReflexType::Container::operator=(class MNSandbox::ReflexType::Container &&)` |
+| `0x4fcc0` | `public: class MNSandbox::ReflexType::Container & __thiscall MNSandbox::ReflexType::Container::operator=(class MNSandbox::ReflexType::Container const &)` |
+| `0x4fd50` | `public: class MNSandbox::RuntimeClass::Container & __thiscall MNSandbox::RuntimeClass::Container::operator=(class MNSandbox::RuntimeClass::Container &&)` |
+| `0x4fe30` | `public: class MNSandbox::RuntimeClass::Container & __thiscall MNSandbox::RuntimeClass::Container::operator=(class MNSandbox::RuntimeClass::Container const &)` |
+| `0x4fec0` | `public: struct MNSandbox::ErrorResult & __thiscall MNSandbox::ErrorResult::operator=(struct MNSandbox::ErrorResult &&)` |
+| `0x4fec0` | `public: struct MNSandbox::ErrorResult & __thiscall MNSandbox::ErrorResult::operator=(struct MNSandbox::ErrorResult const &)` |
+| `0x92610` | `public: class MNSandbox::FrameLimit & __thiscall MNSandbox::FrameLimit::operator=(class MNSandbox::FrameLimit const &)` |
+| `0x92640` | `public: class MNSandbox::GameStage & __thiscall MNSandbox::GameStage::operator=(class MNSandbox::GameStage const &)` |
+| `0x92660` | `public: class MNSandbox::GameStageClient & __thiscall MNSandbox::GameStageClient::operator=(class MNSandbox::GameStageClient &&)` |
+| `0x92660` | `public: class MNSandbox::GameStageClient & __thiscall MNSandbox::GameStageClient::operator=(class MNSandbox::GameStageClient const &)` |
+| `0x92690` | `public: class MNSandbox::GameStageHost & __thiscall MNSandbox::GameStageHost::operator=(class MNSandbox::GameStageHost &&)` |
+| `0x926e0` | `public: class MNSandbox::GameStageHost & __thiscall MNSandbox::GameStageHost::operator=(class MNSandbox::GameStageHost const &)` |
+| `0xd6470` | `public: class MNSandbox::IDGeneratorManager & __thiscall MNSandbox::IDGeneratorManager::operator=(class MNSandbox::IDGeneratorManager const &)` |
+| `0x92720` | `public: class MNSandbox::ListenRainbowCallbackMgr & __thiscall MNSandbox::ListenRainbowCallbackMgr::operator=(class MNSandbox::ListenRainbowCallbackMgr const &)` |
+| `0x157400` | `public: class MNSandbox::Statistics::LoadCost & __thiscall MNSandbox::Statistics::LoadCost::operator=(class MNSandbox::Statistics::LoadCost const &)` |
+| `0x4fed0` | `public: class MNSandbox::LuaLinkerManager & __thiscall MNSandbox::LuaLinkerManager::operator=(class MNSandbox::LuaLinkerManager &&)` |
+| `0x4ff50` | `public: class MNSandbox::LuaLinkerManager & __thiscall MNSandbox::LuaLinkerManager::operator=(class MNSandbox::LuaLinkerManager const &)` |
+| `0x4f3d0` | `public: class MNSandbox::LuaRegisterAddress & __thiscall MNSandbox::LuaRegisterAddress::operator=(class MNSandbox::LuaRegisterAddress &&)` |
+| `0x4f3d0` | `public: class MNSandbox::LuaRegisterAddress & __thiscall MNSandbox::LuaRegisterAddress::operator=(class MNSandbox::LuaRegisterAddress const &)` |
+| `0x4f3d0` | `public: class MNSandbox::MNStringUtil & __thiscall MNSandbox::MNStringUtil::operator=(class MNSandbox::MNStringUtil &&)` |
+| `0x4f3d0` | `public: class MNSandbox::MNStringUtil & __thiscall MNSandbox::MNStringUtil::operator=(class MNSandbox::MNStringUtil const &)` |
+| `0x16a440` | `public: struct MNSandbox::NodeInstanceReflex & __thiscall MNSandbox::NodeInstanceReflex::operator=(struct MNSandbox::NodeInstanceReflex &&)` |
+| `0x16a440` | `public: struct MNSandbox::NodeInstanceReflex & __thiscall MNSandbox::NodeInstanceReflex::operator=(struct MNSandbox::NodeInstanceReflex const &)` |
+| `0x4f3d0` | `public: class MNSandbox::NodeSerialize & __thiscall MNSandbox::NodeSerialize::operator=(class MNSandbox::NodeSerialize &&)` |
+| `0x4f3d0` | `public: class MNSandbox::NodeSerialize & __thiscall MNSandbox::NodeSerialize::operator=(class MNSandbox::NodeSerialize const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Pool::ObjectPoolInstance & __thiscall MNSandbox::Pool::ObjectPoolInstance::operator=(class MNSandbox::Pool::ObjectPoolInstance const &)` |
+| `0x4ffc0` | `public: class MNSandbox::ReflexContainer::Pool & __thiscall MNSandbox::ReflexContainer::Pool::operator=(class MNSandbox::ReflexContainer::Pool &&)` |
+| `0x50040` | `public: class MNSandbox::ReflexContainer::Pool & __thiscall MNSandbox::ReflexContainer::Pool::operator=(class MNSandbox::ReflexContainer::Pool const &)` |
+| `0x15b030` | `public: struct MNSandbox::Ray & __thiscall MNSandbox::Ray::operator=(struct MNSandbox::Ray const &)` |
+| `0x4fec0` | `public: class MNSandbox::ReflexConfig & __thiscall MNSandbox::ReflexConfig::operator=(class MNSandbox::ReflexConfig const &)` |
+| `0x50070` | `public: class MNSandbox::ReflexContainer & __thiscall MNSandbox::ReflexContainer::operator=(class MNSandbox::ReflexContainer const &)` |
+| `0x501f0` | `public: class MNSandbox::ReflexEnum & __thiscall MNSandbox::ReflexEnum::operator=(class MNSandbox::ReflexEnum const &)` |
+| `0x502c0` | `public: class MNSandbox::ReflexEnumContainer & __thiscall MNSandbox::ReflexEnumContainer::operator=(class MNSandbox::ReflexEnumContainer &&)` |
+| `0x50340` | `public: class MNSandbox::ReflexEnumContainer & __thiscall MNSandbox::ReflexEnumContainer::operator=(class MNSandbox::ReflexEnumContainer const &)` |
+| `0x4f3d0` | `public: class MNSandbox::ReflexPolicyFuncBase & __thiscall MNSandbox::ReflexPolicyFuncBase::operator=(class MNSandbox::ReflexPolicyFuncBase &&)` |
+| `0x4f3d0` | `public: class MNSandbox::ReflexPolicyFuncBase & __thiscall MNSandbox::ReflexPolicyFuncBase::operator=(class MNSandbox::ReflexPolicyFuncBase const &)` |
+| `0x4f3d0` | `public: class MNSandbox::ReflexReferenceBridge & __thiscall MNSandbox::ReflexReferenceBridge::operator=(class MNSandbox::ReflexReferenceBridge &&)` |
+| `0x4f3d0` | `public: class MNSandbox::ReflexReferenceBridge & __thiscall MNSandbox::ReflexReferenceBridge::operator=(class MNSandbox::ReflexReferenceBridge const &)` |
+| `0x503b0` | `public: class MNSandbox::ReflexReferenceContainer & __thiscall MNSandbox::ReflexReferenceContainer::operator=(class MNSandbox::ReflexReferenceContainer const &)` |
+| `0x4b200` | `public: struct MNSandbox::ReflexReferenceIns & __thiscall MNSandbox::ReflexReferenceIns::operator=(struct MNSandbox::ReflexReferenceIns &&)` |
+| `0x504d0` | `public: struct MNSandbox::ReflexReferenceIns & __thiscall MNSandbox::ReflexReferenceIns::operator=(struct MNSandbox::ReflexReferenceIns const &)` |
+| `0x503e0` | `public: class MNSandbox::ReflexReferenceLinker & __thiscall MNSandbox::ReflexReferenceLinker::operator=(class MNSandbox::ReflexReferenceLinker &&)` |
+| `0x50410` | `public: class MNSandbox::ReflexReferenceLinker & __thiscall MNSandbox::ReflexReferenceLinker::operator=(class MNSandbox::ReflexReferenceLinker const &)` |
+| `0x50440` | `public: class MNSandbox::ReflexType & __thiscall MNSandbox::ReflexType::operator=(class MNSandbox::ReflexType &&)` |
+| `0x50480` | `public: class MNSandbox::ReflexType & __thiscall MNSandbox::ReflexType::operator=(class MNSandbox::ReflexType const &)` |
+| `0xe40c0` | `public: class MNSandbox::ReflexTypePolicy & __thiscall MNSandbox::ReflexTypePolicy::operator=(class MNSandbox::ReflexTypePolicy const &)` |
+| `0x4f3d0` | `public: class MNSandbox::ReflexTypePolicyRegister & __thiscall MNSandbox::ReflexTypePolicyRegister::operator=(class MNSandbox::ReflexTypePolicyRegister &&)` |
+| `0x4f3d0` | `public: class MNSandbox::ReflexTypePolicyRegister & __thiscall MNSandbox::ReflexTypePolicyRegister::operator=(class MNSandbox::ReflexTypePolicyRegister const &)` |
+| `0x504d0` | `public: struct MNSandbox::ReflexType::ReflexType_Ins & __thiscall MNSandbox::ReflexType::ReflexType_Ins::operator=(struct MNSandbox::ReflexType::ReflexType_Ins const &)` |
+| `0x504f0` | `public: class MNSandbox::ReflexVariant & __thiscall MNSandbox::ReflexVariant::operator=(class MNSandbox::ReflexVariant const &)` |
+| `0x4b200` | `public: class MNSandbox::ReflexVersion & __thiscall MNSandbox::ReflexVersion::operator=(class MNSandbox::ReflexVersion const &)` |
+| `0x50530` | `public: class MNSandbox::RemoteMsgInfo & __thiscall MNSandbox::RemoteMsgInfo::operator=(class MNSandbox::RemoteMsgInfo const &)` |
+| `0x50590` | `public: class MNSandbox::RuntimeClass & __thiscall MNSandbox::RuntimeClass::operator=(class MNSandbox::RuntimeClass &&)` |
+| `0x50670` | `public: class MNSandbox::RuntimeClass & __thiscall MNSandbox::RuntimeClass::operator=(class MNSandbox::RuntimeClass const &)` |
+| `0x138660` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxContext::operator=(class MNSandbox::SandboxContext const &)` |
+| `0x50740` | `public: class MNSandbox::SandboxCoreDriver & __thiscall MNSandbox::SandboxCoreDriver::operator=(class MNSandbox::SandboxCoreDriver const &)` |
+| `0x50890` | `public: class MNSandbox::SandboxCoreFactorys & __thiscall MNSandbox::SandboxCoreFactorys::operator=(class MNSandbox::SandboxCoreFactorys const &)` |
+| `0x508f0` | `public: class MNSandbox::SandboxEventDispatcherManager & __thiscall MNSandbox::SandboxEventDispatcherManager::operator=(class MNSandbox::SandboxEventDispatcherManager const &)` |
+| `0x50970` | `public: class MNSandbox::SandboxEventQueue & __thiscall MNSandbox::SandboxEventQueue::operator=(class MNSandbox::SandboxEventQueue const &)` |
+| `0x50a10` | `public: class MNSandbox::SandboxEventQueueManager & __thiscall MNSandbox::SandboxEventQueueManager::operator=(class MNSandbox::SandboxEventQueueManager const &)` |
+| `0x4fec0` | `public: class MNSandbox::SandboxLuaPluginManager & __thiscall MNSandbox::SandboxLuaPluginManager::operator=(class MNSandbox::SandboxLuaPluginManager const &)` |
+| `0x4f3d0` | `public: class MNSandbox::SandboxParamPool & __thiscall MNSandbox::SandboxParamPool::operator=(class MNSandbox::SandboxParamPool const &)` |
+| `0x13cb30` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxResult::operator=(class MNSandbox::SandboxResult const &)` |
+| `0x50a40` | `public: class MNSandbox::SandboxSchedulerManager & __thiscall MNSandbox::SandboxSchedulerManager::operator=(class MNSandbox::SandboxSchedulerManager const &)` |
+| `0x50ac0` | `public: class MNSandbox::ScopeFuncInfo & __thiscall MNSandbox::ScopeFuncInfo::operator=(class MNSandbox::ScopeFuncInfo &&)` |
+| `0x50b30` | `public: class MNSandbox::ScopeFuncInfo & __thiscall MNSandbox::ScopeFuncInfo::operator=(class MNSandbox::ScopeFuncInfo const &)` |
+| `0x4f3d0` | `public: class MNSandbox::ScopeFuncTemp & __thiscall MNSandbox::ScopeFuncTemp::operator=(class MNSandbox::ScopeFuncTemp const &)` |
+| `0x4f3d0` | `public: struct MNSandbox::ReflexEnumContainer::Singleton & __thiscall MNSandbox::ReflexEnumContainer::Singleton::operator=(struct MNSandbox::ReflexEnumContainer::Singleton &&)` |
+| `0x4f3d0` | `public: struct MNSandbox::ReflexEnumContainer::Singleton & __thiscall MNSandbox::ReflexEnumContainer::Singleton::operator=(struct MNSandbox::ReflexEnumContainer::Singleton const &)` |
+| `0x50bc0` | `public: class MNSandbox::SortCompareExe & __thiscall MNSandbox::SortCompareExe::operator=(class MNSandbox::SortCompareExe &&)` |
+| `0x50c20` | `public: class MNSandbox::SortCompareExe & __thiscall MNSandbox::SortCompareExe::operator=(class MNSandbox::SortCompareExe const &)` |
+| `0x4f3d0` | `public: class MNSandbox::SortCompareExpression & __thiscall MNSandbox::SortCompareExpression::operator=(class MNSandbox::SortCompareExpression &&)` |
+| `0x4f3d0` | `public: class MNSandbox::SortCompareExpression & __thiscall MNSandbox::SortCompareExpression::operator=(class MNSandbox::SortCompareExpression const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Lua::StateLevel & __thiscall MNSandbox::Lua::StateLevel::operator=(class MNSandbox::Lua::StateLevel const &)` |
+| `0x50c80` | `public: class MNSandbox::Lua::StateStack & __thiscall MNSandbox::Lua::StateStack::operator=(class MNSandbox::Lua::StateStack &&)` |
+| `0x50d10` | `public: class MNSandbox::Lua::StateStack & __thiscall MNSandbox::Lua::StateStack::operator=(class MNSandbox::Lua::StateStack const &)` |
+| `0x4f3d0` | `public: class MNSandbox::SupplementInterface & __thiscall MNSandbox::SupplementInterface::operator=(class MNSandbox::SupplementInterface &&)` |
+| `0x4f3d0` | `public: class MNSandbox::SupplementInterface & __thiscall MNSandbox::SupplementInterface::operator=(class MNSandbox::SupplementInterface const &)` |
+| `0x50d70` | `public: class MNSandbox::Thread::ThreadJobTask & __thiscall MNSandbox::Thread::ThreadJobTask::operator=(class MNSandbox::Thread::ThreadJobTask const &)` |
+| `0x4f3d0` | `public: class MNSandbox::Type2Lua & __thiscall MNSandbox::Type2Lua::operator=(class MNSandbox::Type2Lua &&)` |
+| `0x4f3d0` | `public: class MNSandbox::Type2Lua & __thiscall MNSandbox::Type2Lua::operator=(class MNSandbox::Type2Lua const &)` |
+| `0x50e00` | `public: bool __thiscall MNSandbox::AttributeContainer::operator==(class MNSandbox::AttributeContainer const &)const ` |
+| `0x50f10` | `public: bool __thiscall MNSandbox::Callback::operator==(class MNSandbox::Callback const &)const ` |
+| `0x16a490` | `public: bool __thiscall MNSandbox::NodeInstanceReflex::operator==(struct MNSandbox::NodeInstanceReflex const &)const ` |
+| `0x15b080` | `public: bool __thiscall MNSandbox::Ray::operator==(struct MNSandbox::Ray const &)const ` |
+| `0x10c7c0` | `public: bool __thiscall MNSandbox::ReflexReferenceIns::operator==(struct MNSandbox::ReflexReferenceIns const &)const ` |
+| `0x50f30` | `public: bool __thiscall MNSandbox::ReflexType::operator==(class MNSandbox::ReflexType const &)const ` |
+| `0x50f40` | `public: bool __thiscall MNSandbox::ReflexVariant::operator==(class MNSandbox::ReflexVariant const &)const ` |
+| `0x13ba60` | `public: bool __thiscall MNSandbox::SandboxParamGroup::operator==(class MNSandbox::SandboxParamGroup const &)` |
+| `0x50f80` | `public: bool __thiscall MNSandbox::ReflexType::operator!=(class MNSandbox::ReflexType const &)const ` |
+| `0x50f90` | `public: __thiscall MNSandbox::ErrorResult::operator enum MNSandbox::SANDBOXERR(void)` |
+| `0x50fa0` | `public: __thiscall MNSandbox::ErrorResult::operator bool(void)` |
+| `0x15b120` | `public: __thiscall MNSandbox::Ray::operator class MINIW::Ray(void)const ` |
+| `0x15b190` | `public: __thiscall MNSandbox::Ray::operator class Rainbow::Ray(void)const ` |
+| `0x2b743c` | `const MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::`vftable'` |
+| `0x2b7458` | `const MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::`vftable'` |
+| `0x2b91d4` | `const MNSandbox::Singleton<class MNSandbox::AssetPool>::`vftable'` |
+| `0x2bb338` | `const MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::`vftable'` |
+| `0x2b9794` | `const MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::`vftable'` |
+| `0x2c45b4` | `const MNSandbox::Singleton<class MNSandbox::CollectionService>::`vftable'` |
+| `0x2c27e8` | `const MNSandbox::Singleton<class MNSandbox::GameInput>::`vftable'` |
+| `0x2b777c` | `const MNSandbox::Singleton<class MNSandbox::GameStep>::`vftable'` |
+| `0x2bbb88` | `const MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::`vftable'` |
+| `0x2b91c4` | `const MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::`vftable'` |
+| `0x2c02f8` | `const MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::`vftable'` |
+| `0x2c2d8c` | `const MNSandbox::Singleton<class MNSandbox::MainStorage>::`vftable'` |
+| `0x2b7774` | `const MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::`vftable'` |
+| `0x2b8b04` | `const MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::`vftable'` |
+| `0x2b8848` | `const MNSandbox::Singleton<class MNSandbox::RefPool>::`vftable'` |
+| `0x2bbeb4` | `const MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::`vftable'` |
+| `0x2b760c` | `const MNSandbox::Singleton<class MNSandbox::RemoteMsg>::`vftable'` |
+| `0x2bfff4` | `const MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::`vftable'` |
+| `0x2b8908` | `const MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::`vftable'` |
+| `0x2b9634` | `const MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::`vftable'` |
+| `0x2c640c` | `const MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::`vftable'` |
+| `0x2c2798` | `const MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::`vftable'` |
+| `0x2b7528` | `const MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::`vftable'` |
+| `0x2c7304` | `const MNSandbox::Singleton<class MNSandbox::ScriptService>::`vftable'` |
+| `0x2b74f0` | `const MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::`vftable'` |
+| `0x2c730c` | `const MNSandbox::Singleton<class MNSandbox::SupplementInterface>::`vftable'` |
+| `0x2b93e0` | `const MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::`vftable'` |
+| `0x2bfc5c` | `const MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::`vftable'` |
+| `0x2b8a20` | `const MNSandbox::AssetConfig::`vftable'` |
+| `0x2b8ad4` | `const MNSandbox::AssetInsNodePacket::`vftable'` |
+| `0x2b93c4` | `const MNSandbox::AssetPool::`vftable'` |
+| `0x2b9764` | `const MNSandbox::AssetRef::`vftable'` |
+| `0x2bacd8` | `const MNSandbox::AssetService::`vftable'` |
+| `0x2baee0` | `const MNSandbox::AssetServiceHost::`vftable'` |
+| `0x2bb130` | `const MNSandbox::AssetServiceRemote::`vftable'` |
+| `0x2bb340` | `const MNSandbox::AssetSyncMgrInterface::`vftable'` |
+| `0x2b979c` | `const MNSandbox::AssetSyncPool::`vftable'` |
+| `0x2b97b4` | `const MNSandbox::AssetSyncPoolHost::`vftable'` |
+| `0x2b980c` | `const MNSandbox::AssetSyncPoolRemote::`vftable'` |
+| `0x2bb964` | `const MNSandbox::Attribute::`vftable'` |
+| `0x2b7510` | `const MNSandbox::CE_And::`vftable'` |
+| `0x2b7520` | `const MNSandbox::CE_Not::`vftable'` |
+| `0x2b7518` | `const MNSandbox::CE_Or::`vftable'` |
+| `0x2b7508` | `const MNSandbox::CE_Sequence::`vftable'` |
+| `0x2b7500` | `const MNSandbox::CE_Single::`vftable'` |
+| `0x2c40c8` | `const MNSandbox::CloudServerConfigService::`vftable'` |
+| `0x2c4814` | `const MNSandbox::CollectionService::`vftable'{for `MNSandbox::Singleton<class MNSandbox::CollectionService>'}` |
+| `0x2c4620` | `const MNSandbox::CollectionService::`vftable'{for `MNSandbox::ServiceNode'}` |
+| `0x2bba18` | `const MNSandbox::Component::`vftable'` |
+| `0x2c4a3c` | `const MNSandbox::ConfigService::`vftable'` |
+| `0x2c5eb8` | `const MNSandbox::ContextActionService::`vftable'` |
+| `0x2c61e0` | `const MNSandbox::CoreScript::`vftable'` |
+| `0x2b7784` | `const MNSandbox::CustomBuffer::`vftable'` |
+| `0x2bf28c` | `const MNSandbox::CustomFunction::`vftable'` |
+| `0x2bf680` | `const MNSandbox::CustomNotify::`vftable'` |
+| `0x2cc7c8` | `const MNSandbox::DebugAction::`vftable'` |
+| `0x2bffdc` | `const MNSandbox::Profile::ErrorLogMgr::`vftable'` |
+| `0x2b74d4` | `const MNSandbox::EventObjectManager::`vftable'` |
+| `0x2c286c` | `const MNSandbox::GameInput::`vftable'{for `MNSandbox::Singleton<class MNSandbox::GameInput>'}` |
+| `0x2c2850` | `const MNSandbox::GameInput::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2c2a7c` | `const MNSandbox::GameMap::`vftable'` |
+| `0x2c2b4c` | `const MNSandbox::GameMapClient::`vftable'` |
+| `0x2c2d1c` | `const MNSandbox::GameMapHost::`vftable'` |
+| `0x2c6960` | `const MNSandbox::GameNode::`vftable'` |
+| `0x2bbad4` | `const MNSandbox::GameObject::`vftable'` |
+| `0x2b91dc` | `const MNSandbox::GameStage::`vftable'` |
+| `0x2b922c` | `const MNSandbox::GameStageClient::`vftable'` |
+| `0x2b9204` | `const MNSandbox::GameStageHost::`vftable'` |
+| `0x2bfdd4` | `const MNSandbox::GameStep::`vftable'` |
+| `0x2c7110` | `const MNSandbox::GlobalServiceNode::`vftable'` |
+| `0x2c064c` | `const MNSandbox::HostNodeIdAllocator::`vftable'{for `MNSandbox::JsonSerializableInterface'}` |
+| `0x2c062c` | `const MNSandbox::HostNodeIdAllocator::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2bbb90` | `const MNSandbox::IDGeneratorManager::`vftable'` |
+| `0x2bbb64` | `const MNSandbox::IDGeneratorMessage::`vftable'` |
+| `0x2c3b54` | `const MNSandbox::InputObject::`vftable'` |
+| `0x2c3d1c` | `const MNSandbox::InputObjectSignal::`vftable'` |
+| `0x2cc424` | `const MNSandbox::Lua::LinkerData::`vftable'` |
+| `0x2b91cc` | `const MNSandbox::ListenRainbowCallbackMgr::`vftable'` |
+| `0x2bfa58` | `const MNSandbox::ListenerInterface::`vftable'` |
+| `0x2bf9d0` | `const MNSandbox::ListenerLua::`vftable'` |
+| `0x2bf9f0` | `const MNSandbox::ListenersInterface::`vftable'` |
+| `0x2c0300` | `const MNSandbox::Statistics::LoadCost::`vftable'` |
+| `0x2c7818` | `const MNSandbox::LocalScriptNode::`vftable'` |
+| `0x2cc26c` | `const MNSandbox::LuaArgument::`vftable'` |
+| `0x2cc28c` | `const MNSandbox::LuaArguments::`vftable'` |
+| `0x2ca8b4` | `const MNSandbox::LuaCoroutine::`vftable'` |
+| `0x2cc2e0` | `const MNSandbox::LuaFunction::`vftable'` |
+| `0x2cc3fc` | `const MNSandbox::LuaLinker::`vftable'` |
+| `0x2c7ad0` | `const MNSandbox::LuaProfileService::`vftable'` |
+| `0x2cacdc` | `const MNSandbox::LuaScript::`vftable'` |
+| `0x2be854` | `const MNSandbox::MNTimer::`vftable'` |
+| `0x2c7f60` | `const MNSandbox::MainStorage::`vftable'{for `MNSandbox::Singleton<class MNSandbox::MainStorage>'}` |
+| `0x2c7d6c` | `const MNSandbox::MainStorage::`vftable'{for `MNSandbox::ServiceNode'}` |
+| `0x2b93d0` | `const MNSandbox::Thread::MainThreadTaskInterface::`vftable'` |
+| `0x2c30d0` | `const MNSandbox::MapSave::`vftable'` |
+| `0x2c8060` | `const MNSandbox::ModuleScriptNode::`vftable'` |
+| `0x2c04a4` | `const MNSandbox::Thread::MultiThreadPool::`vftable'` |
+| `0x2c05f4` | `const MNSandbox::NodeIdAllocator::`vftable'{for `MNSandbox::JsonSerializableInterface'}` |
+| `0x2c05d4` | `const MNSandbox::NodeIdAllocator::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2bb564` | `const MNSandbox::NodePacket::`vftable'` |
+| `0x2bb5a4` | `const MNSandbox::NodePacketContainer::`vftable'` |
+| `0x2becb8` | `const MNSandbox::NodeWatcher::`vftable'` |
+| `0x2bfa78` | `const MNSandbox::NotifyInterface::`vftable'` |
+| `0x2bbda0` | `const MNSandbox::Object::`vftable'` |
+| `0x2c0430` | `const MNSandbox::Pool::ObjectPoolInstance::`vftable'` |
+| `0x2bbe44` | `const MNSandbox::Ref::`vftable'` |
+| `0x2bbea0` | `const MNSandbox::RefPool::`vftable'` |
+| `0x2bbf4c` | `const MNSandbox::ReflexLuaTuple::`vftable'` |
+| `0x2bbfa4` | `const MNSandbox::ReflexMap::`vftable'` |
+| `0x2bc028` | `const MNSandbox::ReflexTuple::`vftable'` |
+| `0x2be774` | `const MNSandbox::ReflexValue::`vftable'` |
+| `0x2bbebc` | `const MNSandbox::RemoteInstanceListenPool::`vftable'` |
+| `0x2bfb64` | `const MNSandbox::RemoteMsg::`vftable'` |
+| `0x2bff04` | `const MNSandbox::Profile::RunData::`vftable'` |
+| `0x2bff40` | `const MNSandbox::Profile::RunDataAssetInfo::`vftable'` |
+| `0x2bff10` | `const MNSandbox::Profile::RunDataFrame::`vftable'` |
+| `0x2bff34` | `const MNSandbox::Profile::RunDataInstanceCnt::`vftable'` |
+| `0x2bff1c` | `const MNSandbox::Profile::RunDataMemory::`vftable'` |
+| `0x2bff88` | `const MNSandbox::Profile::RunDataMgr::`vftable'` |
+| `0x2bff28` | `const MNSandbox::Profile::RunDataNodeCnt::`vftable'` |
+| `0x2bff58` | `const MNSandbox::Profile::RunDataPhysLog::`vftable'` |
+| `0x2bff4c` | `const MNSandbox::Profile::RunDataRenderLog::`vftable'` |
+| `0x2c0044` | `const MNSandbox::Profile::RunDebugMgr::`vftable'` |
+| `0x2bffa0` | `const MNSandbox::Profile::RunLogMgr::`vftable'` |
+| `0x2b8958` | `const MNSandbox::SandboxAssetCache::`vftable'` |
+| `0x2b8ffc` | `const MNSandbox::SandboxAssetObject::`vftable'` |
+| `0x2ba614` | `const MNSandbox::SandboxAssetRequestMgr::`vftable'{for `MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>'}` |
+| `0x2ba5f8` | `const MNSandbox::SandboxAssetRequestMgr::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2bedd0` | `const MNSandbox::SandboxContext::`vftable'` |
+| `0x2b7604` | `const MNSandbox::SandboxCoreDriver::`vftable'` |
+| `0x2b742c` | `const MNSandbox::SandboxCoreFactorys::`vftable'` |
+| `0x2ca3e8` | `const MNSandbox::SandboxCoreLuaDirector::`vftable'` |
+| `0x2b8658` | `const MNSandbox::SandboxCoreManagers::`vftable'` |
+| `0x2b8838` | `const MNSandbox::SandboxCorePools::`vftable'` |
+| `0x2c6648` | `const MNSandbox::SandboxDebugHelper::`vftable'{for `MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>'}` |
+| `0x2c6454` | `const MNSandbox::SandboxDebugHelper::`vftable'{for `MNSandbox::ServiceNode'}` |
+| `0x2c755c` | `const MNSandbox::SandboxLoadedService::`vftable'` |
+| `0x2ccd04` | `const MNSandbox::SandboxMiscDataMgr::`vftable'{for `MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>'}` |
+| `0x2ccce8` | `const MNSandbox::SandboxMiscDataMgr::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2c1bbc` | `const MNSandbox::SandboxNode::`vftable'` |
+| `0x2beecc` | `const MNSandbox::SandboxParam::`vftable'` |
+| `0x2bef20` | `const MNSandbox::SandboxParamGroup::`vftable'` |
+| `0x2befb8` | `const MNSandbox::SandboxResult::`vftable'` |
+| `0x2befdc` | `const MNSandbox::SandboxScheduler::`vftable'` |
+| `0x2c0960` | `const MNSandbox::Scene::`vftable'` |
+| `0x2c0a78` | `const MNSandbox::SceneChunk::`vftable'` |
+| `0x2c25a4` | `const MNSandbox::SceneRoot::`vftable'` |
+| `0x2bfe24` | `const MNSandbox::ScopeFuncContainer::`vftable'` |
+| `0x2c8368` | `const MNSandbox::ScriptContext::`vftable'` |
+| `0x2c87d8` | `const MNSandbox::ScriptNode::`vftable'` |
+| `0x2c8a44` | `const MNSandbox::ScriptObject::`vftable'` |
+| `0x2c90b4` | `const MNSandbox::ScriptService::`vftable'{for `MNSandbox::Singleton<class MNSandbox::ScriptService>'}` |
+| `0x2c8eac` | `const MNSandbox::ScriptService::`vftable'{for `MNSandbox::ServiceNode'}` |
+| `0x2c92e8` | `const MNSandbox::ScriptServiceHost::`vftable'{for `MNSandbox::Singleton<class MNSandbox::ScriptService>'}` |
+| `0x2c90e0` | `const MNSandbox::ScriptServiceHost::`vftable'{for `MNSandbox::ServiceNode'}` |
+| `0x2c951c` | `const MNSandbox::ScriptServiceRemote::`vftable'{for `MNSandbox::Singleton<class MNSandbox::ScriptService>'}` |
+| `0x2c9314` | `const MNSandbox::ScriptServiceRemote::`vftable'{for `MNSandbox::ServiceNode'}` |
+| `0x2c0bbc` | `const MNSandbox::SdbSceneManager::`vftable'{for `MNSandbox::Singleton<class MNSandbox::SdbSceneManager>'}` |
+| `0x2c0ba0` | `const MNSandbox::SdbSceneManager::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2c0594` | `const MNSandbox::SectionList::`vftable'{for `MNSandbox::JsonSerializableInterface'}` |
+| `0x2c0578` | `const MNSandbox::SectionList::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2c05a0` | `const MNSandbox::SectionList::`vftable'{for `MNSandbox::StreamSerializableInterface'}` |
+| `0x2c9680` | `const MNSandbox::ServerScriptService::`vftable'` |
+| `0x2c98c8` | `const MNSandbox::ServerStorage::`vftable'` |
+| `0x2c9bf0` | `const MNSandbox::ServiceNode::`vftable'` |
+| `0x2b7530` | `const MNSandbox::Signal::`vftable'` |
+| `0x2b755c` | `const MNSandbox::SignalConnect::`vftable'` |
+| `0x2c0620` | `const MNSandbox::SingleNodeIdAllocator::`vftable'{for `MNSandbox::JsonSerializableInterface'}` |
+| `0x2c0600` | `const MNSandbox::SingleNodeIdAllocator::`vftable'{for `MNSandbox::Ref'}` |
+| `0x2b74f8` | `const MNSandbox::SortCompareExpression::`vftable'` |
+| `0x2be96c` | `const MNSandbox::Stream::`vftable'` |
+| `0x2beb10` | `const MNSandbox::StreamBuffer::`vftable'` |
+| `0x2c7314` | `const MNSandbox::SupplementInterface::`vftable'` |
+| `0x2cca3c` | `const MNSandbox::Thread::ThreadTaskManager::`vftable'` |
+| `0x2ca158` | `const MNSandbox::TimerNode::`vftable'` |
+| `0x2bfcac` | `const MNSandbox::Debug::UIDebug::`vftable'` |
+| `0x89860` | `public: void __thiscall MNSandbox::AssetConfig::`default constructor closure'(void)` |
+| `0xd0c10` | `public: void __thiscall MNSandbox::ByteBuffer::`default constructor closure'(void)` |
+| `0x51960` | `public: void __thiscall MNSandbox::ReflexVersion::`default constructor closure'(void)` |
+| `0x51970` | `public: void __thiscall MNSandbox::SandboxEventDispatcherManager::`default constructor closure'(void)` |
+| `0x51980` | `public: void __thiscall MNSandbox::SandboxEventQueue::`default constructor closure'(void)` |
+| `0x51990` | `public: void __thiscall MNSandbox::SandboxEventQueueManager::`default constructor closure'(void)` |
+| `0x89870` | `public: void __thiscall MNSandbox::Stream::`default constructor closure'(void)` |
+| `0x89880` | `public: void __thiscall MNSandbox::StreamBuffer::`default constructor closure'(void)` |
+| `0x3bdf31` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::ContextActionService::Enum> MNSandbox::ContextActionService::ActionEnum` |
+| `0x181310` | `public: void __thiscall MNSandbox::SandboxNode::AddAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::Attribute::TYPE const &)` |
+| `0x1453f0` | `public: void __thiscall MNSandbox::ListenerInterface::AddBindNotify(class MNSandbox::NotifyInterface *,int)` |
+| `0x15a440` | `public: void __thiscall MNSandbox::Statistics::NodeCount::AddByRTTIid(class MNSandbox::RuntimeClass const *)` |
+| `0x20ef60` | `public: void __thiscall MNSandbox::LuaCoroutine::AddChild(class MNSandbox::LuaCoroutine *)` |
+| `0xd1f40` | `public: void __thiscall MNSandbox::GameObject::AddComponent(class MNSandbox::Component *)` |
+| `0x13bc30` | `public: bool __thiscall MNSandbox::SandboxParamGroup::AddData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::SandboxParam *)` |
+| `0xdcdd0` | `public: void __thiscall MNSandbox::ReflexEnumContainer::AddEnum(class MNSandbox::ReflexEnum *)` |
+| `0xdcdf0` | `public: void __thiscall MNSandbox::ReflexEnumContainer::AddEnumSubName(class MNSandbox::ReflexEnum *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x524a0` | `public: void __thiscall MNSandbox::SandboxResult::AddExecCount(void)` |
+| `0x1538d0` | `public: void __thiscall MNSandbox::Statistics::InstanceCount::AddInstanceByType(enum MNSandbox::Statistics::INSCOUNT_TYPE)` |
+| `0xdce60` | `public: bool __thiscall MNSandbox::ReflexEnum::AddItem(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0xdd100` | `private: void __thiscall MNSandbox::ReflexEnum::AddItemSubName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0x144770` | `public: void __thiscall MNSandbox::ListenersInterface::AddListener(class MNSandbox::AutoRef<class MNSandbox::ListenerInterface> const &,int)` |
+| `0x524b0` | `private: bool __thiscall MNSandbox::SandboxCoreDriver::AddModule(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::SandboxCoreModule *,bool)` |
+| `0x135340` | `private: void __thiscall MNSandbox::NodeWatcher::AddNode(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x135520` | `public: void __thiscall MNSandbox::NodeWatcherGroup::AddNodeWatcher(int)` |
+| `0x158b80` | `public: void __thiscall MNSandbox::Statistics::LoadCost::AddPoint(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xa5e10` | `private: void __thiscall MNSandbox::AssetRef::AddRainbowAssetCallbackFlag(void)` |
+| `0x98f50` | `public: void __thiscall MNSandbox::ListenRainbowCallbackMgr::AddRainbowAssetCallbackFlag(class MNSandbox::AssetRef *,struct UGUID)` |
+| `0xe4250` | `private: void __thiscall MNSandbox::ReflexType::Container::AddReflexType(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexType *)` |
+| `0xe4440` | `private: void __thiscall MNSandbox::ReflexType::Container::AddReflexTypeEnum(enum MNSandbox::REFLEXTYPEENUM,class MNSandbox::ReflexType *)` |
+| `0x16c9d0` | `public: virtual void __thiscall MNSandbox::Scene::AddSceneObj(class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *)` |
+| `0x1c1490` | `public: void __thiscall MNSandbox::CollectionService::AddTag(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x19ea80` | `public: void __thiscall MNSandbox::GameMap::AddWorkspace(class MNSandbox::SceneRoot *)` |
+| `0x52600` | `private: void __thiscall MNSandbox::CustomBuffer::Alloc(unsigned int)` |
+| `0x15e0d0` | `public: virtual __int64 __thiscall MNSandbox::HostNodeIdAllocator::AllocID(void)` |
+| `0x57ac0` | `public: virtual __int64 __thiscall MNSandbox::NodeIdAllocator::AllocID(void)` |
+| `0x15e1f0` | `public: virtual __int64 __thiscall MNSandbox::SingleNodeIdAllocator::AllocID(void)` |
+| `0x15e220` | `private: class MNSandbox::AutoRef<class MNSandbox::SectionList> __thiscall MNSandbox::HostNodeIdAllocator::AllocSections(void)` |
+| `0x15e410` | `public: void __thiscall MNSandbox::SectionList::Append(class MNSandbox::SectionList const &)` |
+| `0x15e4b0` | `public: void __thiscall MNSandbox::SectionList::Append(class MNSandbox::NodeIdSection const &)` |
+| `0x15e510` | `public: class MNSandbox::AutoRef<class MNSandbox::SectionList> __thiscall MNSandbox::HostNodeIdAllocator::AppendAllocSections(int)` |
+| `0x529f0` | `public: virtual bool __thiscall MNSandbox::Stream::AppendBuffer(unsigned int)` |
+| `0x1327c0` | `public: virtual bool __thiscall MNSandbox::StreamBuffer::AppendBuffer(unsigned int)` |
+| `0xdf3b0` | `public: static void __cdecl MNSandbox::ReflexLuaTuple::ApplyLuaLinkerData(class MNSandbox::AutoRef<class MNSandbox::ReflexLuaTuple> &,class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0xa5ea0` | `private: void __thiscall MNSandbox::AssetRef::ApproveFunc(class MNSandbox::WeakRef<class MNSandbox::AssetRef>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x162730` | `private: static void * __cdecl MNSandbox::ArchiveData::Archive(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,unsigned int &)` |
+| `0x52680` | `private: void __thiscall MNSandbox::RemoteMsg::ArgsToJson(class jsonxx::Array &)` |
+| `0x9da50` | `public: static bool __cdecl MNSandbox::AssetIdParse::AssetIdInfoToAssetId(struct MNSandbox::AssetIdInfo const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x93130` | `public: void __thiscall MNSandbox::AssetObjectContainer::AssetLoaded(class MNSandbox::ListNode<class MNSandbox::AssetObject *> *,bool)` |
+| `0x93210` | `public: void __thiscall MNSandbox::AssetObjectContainer::AssetLoading(class MNSandbox::ListNode<class MNSandbox::AssetObject *> *)` |
+| `0x52690` | `public: class MNSandbox::ReflexVariant & __thiscall MNSandbox::ReflexTuple::At(unsigned int)` |
+| `0x52690` | `public: class MNSandbox::ReflexVariant const & __thiscall MNSandbox::ReflexTuple::At(unsigned int)const ` |
+| `0x3a86dd` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::Attribute::TYPE> MNSandbox::Attribute::AttributeEnum` |
+| `0x526d0` | `public: class MNSandbox::SandboxEventQueue & __thiscall MNSandbox::SandboxEventQueueManager::AutoQueue(void)` |
+| `0x24ae20` | `public: void __thiscall MNSandbox::FrameLimit::Begin(void)` |
+| `0x526e0` | `public: void __thiscall MNSandbox::SandboxCoreDriver::BeginGame(bool)` |
+| `0x20a410` | `public: void __thiscall MNSandbox::SandboxCoreLuaDirector::BeginGame(void)` |
+| `0x1813b0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::BeginPlay(void)` |
+| `0x16c9f0` | `public: virtual bool __thiscall MNSandbox::Scene::BeginPlay(void)` |
+| `0x16ff30` | `public: void __thiscall MNSandbox::SdbSceneManager::BeginPlay(void)` |
+| `0x158df0` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Statistics::LoadCost::BeginToString(struct MNSandbox::Statistics::LoadCost::StepInfo const &)` |
+| `0xc32b0` | `public: void __thiscall MNSandbox::NodePacket::BinTimeOver(double)` |
+| `0x1d2670` | `private: void __thiscall MNSandbox::ContextActionService::BindAction(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int)` |
+| `0x1d2760` | `private: void __thiscall MNSandbox::ContextActionService::BindActionAtPriority(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int,int)` |
+| `0x1d2850` | `private: void __thiscall MNSandbox::ContextActionService::BindActionCoreImp(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int,int,bool)` |
+| `0x1d2a40` | `private: void __thiscall MNSandbox::ContextActionService::BindActionWithButton(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int)` |
+| `0x52860` | `private: void __thiscall MNSandbox::ContextActionService::BindActivate(int,int)` |
+| `0x89b80` | `public: void __thiscall MNSandbox::AssetConfig::BindAsset(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct MNSandbox::AssetIdInfo const &)` |
+| `0xd05a0` | `public: void __thiscall MNSandbox::BindRefUserdata::BindAutoUserdata(class MNSandbox::AutoRef<class MNSandbox::Ref>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x23c720` | `public: static void __cdecl MNSandbox::LuaFunction::BindCallback(class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::LuaCoroutine *,bool> > const &)` |
+| `0x23c7a0` | `public: static void __cdecl MNSandbox::LuaFunction::BindCallback(class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::ReflexLuaTuple> > > const &)` |
+| `0x23c890` | `public: static void __cdecl MNSandbox::LuaFunction::BindCallback(class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::ReflexTuple> > > const &)` |
+| `0xda840` | `public: static void __cdecl MNSandbox::RuntimeClass::Container::BindClassId(int,class MNSandbox::RuntimeClass const *)` |
+| `0x1d2b30` | `private: void __thiscall MNSandbox::ContextActionService::BindContext(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,bool,class MNSandbox::ReflexVariant)` |
+| `0x1d2c30` | `private: void __thiscall MNSandbox::ContextActionService::BindContextAtPriority(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,bool,int,class MNSandbox::ReflexVariant)` |
+| `0x52710` | `public: void __thiscall MNSandbox::LuaCoroutine::BindCoroutineRewrite(class MNSandbox::AutoRef<class MNSandbox::CoroutineRewrite> const &)` |
+| `0xdf4d0` | `public: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::Lua::LinkerData::BindData(struct lua_State *,int)` |
+| `0x23edd0` | `public: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::Lua::LinkerData::BindDatas(struct lua_State *,int,int)` |
+| `0x19b4e0` | `public: void __thiscall MNSandbox::GameInput::BindInput(void)` |
+| `0x23c970` | `protected: static void __cdecl MNSandbox::LuaFunction::BindListenCoCallback(class MNSandbox::LuaCoroutine *)` |
+| `0x20f000` | `public: void __thiscall MNSandbox::LuaCoroutine::BindLuaLinker(class MNSandbox::WeakRef<class MNSandbox::LuaLinker>)` |
+| `0x216770` | `public: bool __thiscall MNSandbox::SandboxLuaPluginManager::BindLuaPluginByCode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x216810` | `public: bool __thiscall MNSandbox::SandboxLuaPluginManager::BindLuaPluginByFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x21b560` | `public: void __thiscall MNSandbox::ScriptState::BindLuaStateRef(struct lua_State *,class MNSandbox::LuaCoroutine *)` |
+| `0x16ff60` | `public: void __thiscall MNSandbox::SdbSceneManager::BindMapSave(class MNSandbox::AutoRef<class MNSandbox::MapSave> const &)` |
+| `0x16ca20` | `private: void __thiscall MNSandbox::Scene::BindNode(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x181470` | `public: virtual void __thiscall MNSandbox::SandboxNode::BindNodeID(void)` |
+| `0x1701e0` | `public: void __thiscall MNSandbox::SdbSceneManager::BindNodeID(class MNSandbox::SandboxNode *)` |
+| `0xa6270` | `protected: void __thiscall MNSandbox::AssetRef::BindRainbowLoadEvent(void)` |
+| `0x1ad400` | `public: void __thiscall MNSandbox::MapSave::BindSaveData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::TCallback<enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> &> *,class MNSandbox::TCallback<enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool> *)` |
+| `0x1702d0` | `public: void __thiscall MNSandbox::SdbSceneManager::BindScene(class MNSandbox::Scene *)` |
+| `0x16ca90` | `public: virtual bool __thiscall MNSandbox::Scene::BindSceneObj(class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *)` |
+| `0x1f6420` | `private: void __thiscall MNSandbox::ScriptNode::BindScriptId(void)` |
+| `0x1fc280` | `public: void __thiscall MNSandbox::ScriptService::BindScriptId(class MNSandbox::ScriptNode *,unsigned int)` |
+| `0xd1450` | `public: virtual void __thiscall MNSandbox::Component::BindTick(void)` |
+| `0xd8930` | `public: virtual void __thiscall MNSandbox::Object::BindTick(void)` |
+| `0x181510` | `public: virtual void __thiscall MNSandbox::SandboxNode::BindTick(void)` |
+| `0x1e15a0` | `protected: void __thiscall MNSandbox::GameNode::BindToClose(class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x16cab0` | `public: virtual void __thiscall MNSandbox::Scene::BindToGameMap(class MNSandbox::GameMap *)` |
+| `0x181560` | `protected: virtual void __thiscall MNSandbox::SandboxNode::BindToScene(class MNSandbox::Scene *)` |
+| `0x52750` | `public: void __thiscall MNSandbox::BindRefUserdata::BindUserdata(class MNSandbox::AutoRef<class MNSandbox::Ref>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x527d0` | `public: void __thiscall MNSandbox::BindRefUserdata::BindUserdata(class MNSandbox::WeakRef<class MNSandbox::Ref>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xd0730` | `public: void __thiscall MNSandbox::BindRefUserdata::BindWeakUserdata(class MNSandbox::WeakRef<class MNSandbox::Ref>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x15b1f0` | `public: struct MNSandbox::Coord3<float> __thiscall MNSandbox::Ray::CalcClosestToPoint(struct MNSandbox::Coord3<float> const &)` |
+| `0x15b350` | `public: float __thiscall MNSandbox::Ray::CalcDistanceToPoint(struct MNSandbox::Coord3<float> const &)` |
+| `0x15b550` | `public: float __thiscall MNSandbox::Ray::CalcDistanceToPointSquare(struct MNSandbox::Coord3<float> const &)` |
+| `0x24f0b0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CalcFileMD5(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1ad630` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::MapSave::CalcFullPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1ad940` | `protected: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::MapSave::CalcFullPathLegacy(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x12dcf0` | `public: double __thiscall MNSandbox::MNTimer::CalcLeftTime(void)` |
+| `0x24f160` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CalcMD5(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x24f190` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CalcMD5(void const *,unsigned int)` |
+| `0x63400` | `public: virtual bool __thiscall MNSandbox::Stream::CalcMD5(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,int,int)` |
+| `0x132840` | `public: virtual bool __thiscall MNSandbox::StreamBuffer::CalcMD5(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,int,int)` |
+| `0x181580` | `protected: bool __thiscall MNSandbox::SandboxNode::CalcStopDynamicState(void)` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::ReflexValue::Call(void *,class jsonxx::Value const &)` |
+| `0x52870` | `public: virtual void __thiscall MNSandbox::ReflexValue::CallEvent(void *,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>)` |
+| `0x20a450` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunction(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,...)` |
+| `0x20a580` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunction(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x20a5a0` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionM2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,...)` |
+| `0x20a730` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionM2(char const *,char const *,char *,char const *,...)` |
+| `0x528d0` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionM2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x528f0` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionM2(char const *,char const *,char *)` |
+| `0x20a8c0` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionM3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,...)` |
+| `0x20aa90` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionM3(char const *,char const *,char const *,char const *,char const *,...)` |
+| `0x52910` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionM3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x52930` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionM3(char const *,char const *,char const *,char const *)` |
+| `0x20ac50` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionM(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,...)` |
+| `0x20add0` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionM(char const *,char const *,char const *,...)` |
+| `0x52950` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionM(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x52970` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionM(char const *,char const *)` |
+| `0x20af40` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionMGroup(class MNSandbox::SandboxVector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,...)` |
+| `0x52990` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionMGroup(class MNSandbox::SandboxVector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x20b120` | `public: bool __cdecl MNSandbox::SandboxCoreLuaDirector::CallFunctionUD(void *,char const *,char const *,char const *,...)` |
+| `0x529b0` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::CallFunctionUD(void *,char const *,char const *)` |
+| `0x23cad0` | `protected: enum MNSandbox::LuaFunction::RUNSTATE __thiscall MNSandbox::LuaFunction::CallFunctionWithParams(class std::function<void __cdecl(class MNSandbox::LuaCoroutine *)>,class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x529d0` | `public: virtual int __thiscall MNSandbox::ReflexValue::CallLua(struct lua_State *,int)` |
+| `0x52c30` | `public: static bool __cdecl MNSandbox::ScriptState::CallLuaFunction(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x23cc20` | `public: enum MNSandbox::LuaFunction::RUNSTATE __thiscall MNSandbox::LuaFunction::CallLuaFunctionLinkerData(class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x147000` | `private: bool __thiscall MNSandbox::RemoteMsg::CallNodeReflex(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class jsonxx::Value const &)` |
+| `0x147250` | `private: bool __thiscall MNSandbox::RemoteMsg::CallNodeReflex(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class jsonxx::Value const &)` |
+| `0x1703a0` | `private: void __thiscall MNSandbox::SdbSceneManager::CallbackLoad(class jsonxx::Object const &,bool)` |
+| `0x2027b0` | `protected: virtual void __thiscall MNSandbox::ServiceNode::CallbackLoad(class jsonxx::Object const &,bool)` |
+| `0x16a4c0` | `public: static int __cdecl MNSandbox::ReflexPolicyLua<class MNSandbox::SandboxNode *>::CallbackLuaPushC(void const *,struct lua_State *)` |
+| `0xdd380` | `public: int __thiscall MNSandbox::ReflexEnum::CallbackLuaPushC(int const &,struct lua_State *)` |
+| `0x5ac20` | `public: static int __cdecl MNSandbox::ReflexPolicyFuncBase::CallbackLuaPushC(void const *,struct lua_State *)` |
+| `0x181740` | `public: static bool __cdecl MNSandbox::ReflexPolicyLua<class MNSandbox::SandboxNode *>::CallbackLuaToC(void *,struct lua_State *,int)` |
+| `0xdd500` | `public: bool __thiscall MNSandbox::ReflexEnum::CallbackLuaToC(int &,struct lua_State *,int)` |
+| `0x529e0` | `public: static bool __cdecl MNSandbox::ReflexPolicyFuncBase::CallbackLuaToC(void *,struct lua_State *,int)` |
+| `0x202910` | `public: virtual void __thiscall MNSandbox::ServiceNode::CallbackNodeChanged(class MNSandbox::SandboxNode *,enum MNSandbox::SandboxNode::NODECHANGE)` |
+| `0x1703c0` | `private: void __thiscall MNSandbox::SdbSceneManager::CallbackSave(class jsonxx::Object &)` |
+| `0x202920` | `protected: virtual void __thiscall MNSandbox::ServiceNode::CallbackSave(class jsonxx::Object &)` |
+| `0x577f0` | `public: static void __cdecl MNSandbox::ReflexPolicyFuncBase::CallbackSerialize(void const *,class jsonxx::Value &)` |
+| `0x181ab0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ReflexPolicyToString<class MNSandbox::SandboxNode *>::CallbackToString(void const *)` |
+| `0xdd8e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ReflexEnum::CallbackToString(int const &)` |
+| `0x119310` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ReflexPolicyFuncBase::CallbackToString(void const *)` |
+| `0x529e0` | `public: static bool __cdecl MNSandbox::ReflexPolicyFuncBase::CallbackUnserialize(void *,class jsonxx::Value const &)` |
+| `0x1adc50` | `protected: void __thiscall MNSandbox::MapSave::CallbackWorldsLoad(void)` |
+| `0x1adef0` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::MapSave::CallbackWorldsLoadJson(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x1adfb0` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::MapSave::CallbackWorldsLoadStream(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x1ae200` | `protected: void __thiscall MNSandbox::MapSave::CallbackWorldsSave(bool)` |
+| `0x1ae340` | `protected: void __thiscall MNSandbox::MapSave::CallbackWorldsSaveJson(bool)` |
+| `0x1ae4d0` | `protected: void __thiscall MNSandbox::MapSave::CallbackWorldsSaveStream(bool)` |
+| `0x529e0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CanActiveGUI(void)` |
+| `0x1e1630` | `public: virtual bool __thiscall MNSandbox::GameNode::CanAttachChild(class MNSandbox::SandboxNode *)const ` |
+| `0x529f0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CanAttachChild(class MNSandbox::SandboxNode *)const ` |
+| `0x52a00` | `public: bool __thiscall MNSandbox::ListenerInterface::CanBindMultiNotify(void)const ` |
+| `0xe45a0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::CanCastTo(class MNSandbox::ReflexType const *)const ` |
+| `0x52a10` | `public: bool __thiscall MNSandbox::ReflexVariant::CanCastTo(class MNSandbox::ReflexType const *)const ` |
+| `0x52a40` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CanClone(void)` |
+| `0x52a50` | `public: bool __thiscall MNSandbox::ReflexValue::CanCompress(void)const ` |
+| `0x52a60` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CanDelete(void)` |
+| `0x52a70` | `public: bool __thiscall MNSandbox::ReflexValue::CanGet(void)const ` |
+| `0x52a80` | `public: bool __thiscall MNSandbox::ReflexValue::CanLoad(unsigned int)const ` |
+| `0x52ac0` | `public: bool __thiscall MNSandbox::ReflexValue::CanPublicGet(void)const ` |
+| `0x52b00` | `public: bool __thiscall MNSandbox::ReflexValue::CanPublicSet(void)const ` |
+| `0x89c70` | `public: bool __thiscall MNSandbox::Stream::CanRead(void)const ` |
+| `0x52b40` | `public: static bool __cdecl MNSandbox::NodeSyncMode::CanReceive(struct MNSandbox::SyncMode const &)` |
+| `0x16bd30` | `public: static bool __cdecl MNSandbox::NodeSyncMode::CanReceiveByLocalFlag(enum MNSandbox::SYNCLOCALFLAG)` |
+| `0x16bd60` | `public: static bool __cdecl MNSandbox::NodeSyncMode::CanReceiveByMode(enum MNSandbox::SYNCMODE)` |
+| `0x52b70` | `public: bool __thiscall MNSandbox::ReflexValue::CanScriptGet(void)const ` |
+| `0x52bb0` | `public: bool __thiscall MNSandbox::ReflexValue::CanScriptSet(void)const ` |
+| `0x52bf0` | `public: static bool __cdecl MNSandbox::NodeSyncMode::CanSend(struct MNSandbox::SyncMode const &)` |
+| `0x16bda0` | `public: static bool __cdecl MNSandbox::NodeSyncMode::CanSendByLocalFlag(enum MNSandbox::SYNCLOCALFLAG)` |
+| `0x16bdd0` | `public: static bool __cdecl MNSandbox::NodeSyncMode::CanSendByMode(enum MNSandbox::SYNCMODE)` |
+| `0x52c20` | `public: bool __thiscall MNSandbox::ReflexValue::CanSet(void)const ` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CanSimulate(void)` |
+| `0x12ba20` | `public: bool __thiscall MNSandbox::ReflexValue::CanSyncReceive(void *)const ` |
+| `0x12ba60` | `public: bool __thiscall MNSandbox::ReflexValue::CanSyncSend(void *)const ` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CanSyncSimulate(void)` |
+| `0x89c90` | `public: bool __thiscall MNSandbox::Stream::CanWrite(void)const ` |
+| `0xe45e0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::CastTo(class MNSandbox::ReflexType const *,void const *,void *)const ` |
+| `0xa63a0` | `private: void __thiscall MNSandbox::AssetRef::ChangeFEtchStatus(enum MNSandbox::AssetFetchStatus)` |
+| `0xbd7c0` | `public: void __thiscall MNSandbox::AssetServiceRemote::CheckAssetConfigFileLoadFinish(void)` |
+| `0xb44f0` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::CheckAssetRequestCallback(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::SandboxAssetRequestMgr::RspItem const &)` |
+| `0x52c40` | `public: bool __thiscall MNSandbox::GameStep::CheckCurTickElapseOver(double)` |
+| `0x52c60` | `public: bool __thiscall MNSandbox::GameStep::CheckCurTickElapseOver(void)` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::SandboxNode::CheckExclusionReflex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x52c90` | `public: bool __thiscall MNSandbox::ReflexConfig::CheckFlag(unsigned int)const ` |
+| `0x52cb0` | `public: bool __thiscall MNSandbox::ReflexConfig::CheckFlagOnce(unsigned int)const ` |
+| `0x181e40` | `public: bool __thiscall MNSandbox::SandboxNode::CheckGUIActive(void)` |
+| `0x52a70` | `public: bool __thiscall MNSandbox::ReflexValue::CheckGet(void)const ` |
+| `0x52cc0` | `public: bool __thiscall MNSandbox::ReflexValue::CheckHost(void)const ` |
+| `0x15a540` | `private: static bool __cdecl MNSandbox::Statistics::InstanceCount::CheckInherit(enum MNSandbox::Statistics::INSCOUNT_TYPE,enum MNSandbox::Statistics::INSCOUNT_TYPE)` |
+| `0x162880` | `public: static bool __cdecl MNSandbox::NodeSerialize::CheckJsonHasNodeAttribute(class jsonxx::Object const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1628b0` | `public: static bool __cdecl MNSandbox::NodeSerialize::CheckJsonHasNodeAttribute(class jsonxx::Object const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x52ce0` | `protected: bool __thiscall MNSandbox::NotifyInterface::CheckListenSelf(class MNSandbox::AutoRef<class MNSandbox::ListenerInterface>)` |
+| `0x932c0` | `protected: bool __thiscall MNSandbox::AssetObject::CheckLoadFinish(void)` |
+| `0x1f6440` | `public: bool __thiscall MNSandbox::ScriptNode::CheckLuaCodeSame(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x23cd60` | `protected: bool __thiscall MNSandbox::LuaFunction::CheckLuaRunning(struct lua_State *)` |
+| `0x24e760` | `public: static bool __cdecl MNSandbox::Type2Lua::CheckLuaType2LuaType(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x52d90` | `public: bool __thiscall MNSandbox::Config::CheckMapId(__int64)const ` |
+| `0x1a51f0` | `protected: bool __thiscall MNSandbox::GameMapHost::CheckMapLoadFlagFinish(void)` |
+| `0x1703e0` | `public: static bool __cdecl MNSandbox::SdbSceneManager::CheckNodeIsLegacyWorkspace(class MNSandbox::SandboxNode *)` |
+| `0x170420` | `public: static bool __cdecl MNSandbox::SdbSceneManager::CheckNodeIsWorkspace(class MNSandbox::SandboxNode *)` |
+| `0x1628e0` | `public: static bool __cdecl MNSandbox::NodeSerialize::CheckNodeSaveAble(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,struct MNSandbox::SerializeFlags const &)` |
+| `0x1356b0` | `public: bool __thiscall MNSandbox::NodeWatcher::CheckNodeState(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x181e70` | `protected: bool __thiscall MNSandbox::SandboxNode::CheckParentValid(class MNSandbox::SandboxNode *)` |
+| `0x52dc0` | `protected: bool __thiscall MNSandbox::SandboxNode::CheckResourceDynamicLoad(void)` |
+| `0x52c30` | `protected: virtual bool __thiscall MNSandbox::SandboxNode::CheckResourceLoadCondition(void)` |
+| `0x52c30` | `protected: virtual bool __thiscall MNSandbox::SandboxNode::CheckResourceUnoadCondition(void)` |
+| `0x181ef0` | `public: bool __thiscall MNSandbox::SandboxNode::CheckSelectedUin(int)const ` |
+| `0x52c20` | `public: bool __thiscall MNSandbox::ReflexValue::CheckSet(void)const ` |
+| `0x135740` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckState(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x135750` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateActive(enum MNSandbox::WATCHERSTATE)` |
+| `0x135760` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateActiveDisable(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x135780` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateActiveEnable(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x1357a0` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateDisable(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x1357c0` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateEnable(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x1357e0` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateLoad(enum MNSandbox::WATCHERSTATE)` |
+| `0x1357f0` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateLoadDisable(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x135810` | `public: static bool __cdecl MNSandbox::NodeWatcher::CheckStateLoadEnable(enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x24e7e0` | `private: static bool __cdecl MNSandbox::Type2Lua::CheckType2Type(int,int,bool)` |
+| `0x52c30` | `public: static bool __cdecl MNSandbox::LuaArgument::CheckType(struct lua_State *,int)` |
+| `0x52c30` | `public: static bool __cdecl MNSandbox::LuaArguments::CheckType(struct lua_State *,int)` |
+| `0x23cda0` | `public: static bool __cdecl MNSandbox::LuaFunction::CheckType(struct lua_State *,int)` |
+| `0x52de0` | `public: bool __thiscall MNSandbox::ReflexValue::CheckVersion(unsigned int)const ` |
+| `0x52e10` | `public: bool __thiscall MNSandbox::ReflexVersion::CheckVersion(unsigned int)const ` |
+| `0x52e40` | `public: bool __thiscall MNSandbox::GlobalServiceNode::CheckVersionInit(int)const ` |
+| `0x24f230` | `bool __cdecl MNSandbox::CheckWritePathFileExist(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8c6b0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::AssetInsNodePacket::ClassType(void)` |
+| `0x862b0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::AssetRef::ClassType(void)` |
+| `0x93300` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::AssetService::ClassType(void)` |
+| `0x93310` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::AssetServiceHost::ClassType(void)` |
+| `0x93320` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::AssetServiceRemote::ClassType(void)` |
+| `0x19eb50` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::CloudServerConfigService::ClassType(void)` |
+| `0x1c1b60` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::CollectionService::ClassType(void)` |
+| `0x52e90` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::Component::ClassType(void)` |
+| `0x19eb60` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ConfigService::ClassType(void)` |
+| `0x1d30a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ContextActionService::ClassType(void)` |
+| `0x1dba10` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::CoreScript::ClassType(void)` |
+| `0x13f5a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::CustomFunction::ClassType(void)` |
+| `0x141c70` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::CustomNotify::ClassType(void)` |
+| `0x52ea0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::GameMap::ClassType(void)` |
+| `0x81e20` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::GameMapClient::ClassType(void)` |
+| `0x81e30` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::GameMapHost::ClassType(void)` |
+| `0x52eb0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::GameNode::ClassType(void)` |
+| `0x52ec0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::GameObject::ClassType(void)` |
+| `0x52ed0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::GlobalServiceNode::ClassType(void)` |
+| `0x1b88d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::InputObject::ClassType(void)` |
+| `0x1b88e0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::InputObjectSignal::ClassType(void)` |
+| `0x52ee0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ListenerInterface::ClassType(void)` |
+| `0x52ef0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ListenerLua::ClassType(void)` |
+| `0x1ed810` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LocalScriptNode::ClassType(void)` |
+| `0x52f00` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LuaArgument::ClassType(void)` |
+| `0x52f10` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LuaArguments::ClassType(void)` |
+| `0x52f20` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LuaCoroutine::ClassType(void)` |
+| `0x52f30` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LuaFunction::ClassType(void)` |
+| `0x52f40` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LuaLinker::ClassType(void)` |
+| `0x1ef550` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::LuaProfileService::ClassType(void)` |
+| `0x52f50` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::MNTimer::ClassType(void)` |
+| `0x1a5200` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::MainStorage::ClassType(void)` |
+| `0x1f2100` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ModuleScriptNode::ClassType(void)` |
+| `0x8c6c0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::NodePacket::ClassType(void)` |
+| `0x52f60` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::Object::ClassType(void)` |
+| `0x52f70` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::Ref::ClassType(void)` |
+| `0x52f80` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ReflexLuaTuple::ClassType(void)` |
+| `0xe0280` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ReflexMap::ClassType(void)` |
+| `0x52f90` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ReflexTuple::ClassType(void)` |
+| `0x52fa0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ReflexValue::ClassType(void)` |
+| `0x8c6d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::SandboxAssetObject::ClassType(void)` |
+| `0x1dd510` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::SandboxDebugHelper::ClassType(void)` |
+| `0x1e1650` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::SandboxLoadedService::ClassType(void)` |
+| `0x52fb0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::SandboxNode::ClassType(void)` |
+| `0x52fc0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::Scene::ClassType(void)` |
+| `0x52fd0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::SceneRoot::ClassType(void)` |
+| `0x1f4590` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ScriptContext::ClassType(void)` |
+| `0x1dba20` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ScriptNode::ClassType(void)` |
+| `0x1f7be0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ScriptObject::ClassType(void)` |
+| `0x1e97c0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ScriptService::ClassType(void)` |
+| `0x1e97d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ScriptServiceHost::ClassType(void)` |
+| `0x1e97e0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ScriptServiceRemote::ClassType(void)` |
+| `0x19eb70` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ServerScriptService::ClassType(void)` |
+| `0x19eb80` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ServerStorage::ClassType(void)` |
+| `0x52fe0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::ServiceNode::ClassType(void)` |
+| `0x52ff0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::Signal::ClassType(void)` |
+| `0x53000` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::SignalConnect::ClassType(void)` |
+| `0x89cb0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::Stream::ClassType(void)` |
+| `0x89cc0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::StreamBuffer::ClassType(void)` |
+| `0x2076c0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MNSandbox::TimerNode::ClassType(void)` |
+| `0x93330` | `public: void __thiscall MNSandbox::AssetObject::Clear(void)` |
+| `0x53390` | `public: void __thiscall MNSandbox::CustomBuffer::Clear(void)` |
+| `0x93510` | `public: virtual void __thiscall MNSandbox::GameStage::Clear(void)` |
+| `0x93520` | `public: virtual void __thiscall MNSandbox::GameStageClient::Clear(void)` |
+| `0x93530` | `public: virtual void __thiscall MNSandbox::GameStageHost::Clear(void)` |
+| `0x1448c0` | `public: void __thiscall MNSandbox::ListenersInterface::Clear(void)` |
+| `0x158e60` | `public: void __thiscall MNSandbox::Statistics::LoadCost::Clear(void)` |
+| `0x23c0d0` | `public: void __thiscall MNSandbox::LuaArguments::Clear(void)` |
+| `0x12dd10` | `private: void __thiscall MNSandbox::MNTimer::Clear(void)` |
+| `0xc3400` | `public: void __thiscall MNSandbox::NodePacketContainer::Clear(void)` |
+| `0xdf670` | `public: void __thiscall MNSandbox::ReflexLuaTuple::Clear(void)` |
+| `0xe0290` | `public: void __thiscall MNSandbox::ReflexMap::Clear(void)` |
+| `0x533a0` | `public: void __thiscall MNSandbox::ReflexTuple::Clear(void)` |
+| `0x12c700` | `public: void __thiscall MNSandbox::ReflexVariant::Clear(void)` |
+| `0xda360` | `public: void __thiscall MNSandbox::RemoteInstanceListenPool::Clear(void)` |
+| `0xda390` | `public: void __thiscall MNSandbox::RemoteInstanceListenPool::Clear(__int64)` |
+| `0x13d080` | `public: void __thiscall MNSandbox::SandboxSchedulerManager::Clear(void)` |
+| `0x533d0` | `public: void __thiscall MNSandbox::Lua::StateStack::Clear(void)` |
+| `0x1309f0` | `public: virtual void __thiscall MNSandbox::Stream::Clear(void)` |
+| `0x132980` | `public: virtual void __thiscall MNSandbox::StreamBuffer::Clear(void)` |
+| `0xce230` | `public: void __thiscall MNSandbox::AttributeContainer::ClearAllAttributes(void)` |
+| `0x181f50` | `public: void __thiscall MNSandbox::SandboxNode::ClearAllChildren(void)` |
+| `0x16cad0` | `public: void __thiscall MNSandbox::Scene::ClearAllChunkBindedObjs(void)` |
+| `0x144910` | `private: void __thiscall MNSandbox::ListenersInterface::ClearAllListenersInRunning(class std::vector<struct MNSandbox::ListenersInterface::ListenerInfo,class std::allocator<struct MNSandbox::ListenersInterface::ListenerInfo> > &)` |
+| `0x144970` | `private: void __thiscall MNSandbox::ListenersInterface::ClearAllListenersOutRunning(class std::vector<struct MNSandbox::ListenersInterface::ListenerInfo,class std::allocator<struct MNSandbox::ListenersInterface::ListenerInfo> > &)` |
+| `0x1c1b70` | `private: void __thiscall MNSandbox::CollectionService::ClearAllTags(void)` |
+| `0xd08d0` | `public: void __thiscall MNSandbox::BindRefUserdata::ClearAllUserdata(void)` |
+| `0x145530` | `public: void __thiscall MNSandbox::ListenerInterface::ClearBindNotify(void)` |
+| `0x16e630` | `public: void __thiscall MNSandbox::SceneChunk::ClearBindedObjs(void)` |
+| `0x181fe0` | `private: void __thiscall MNSandbox::SandboxNode::ClearContainerDatas(void)` |
+| `0x1e97f0` | `public: void __thiscall MNSandbox::GlobalServiceNode::ClearData(void)` |
+| `0x257ac0` | `public: void __thiscall MNSandbox::SandboxMiscDataMgr::ClearDirtyData(void)` |
+| `0xddb10` | `public: void __thiscall MNSandbox::ReflexEnum::ClearItems(void)` |
+| `0xd9710` | `private: void __thiscall MNSandbox::Ref::ClearLinker(void)` |
+| `0x23f800` | `private: void __thiscall MNSandbox::LuaLinkerManager::ClearLuaLinker(int)` |
+| `0x20f130` | `public: void __thiscall MNSandbox::LuaCoroutine::ClearLuaState(void)` |
+| `0x1a5210` | `protected: void __thiscall MNSandbox::GameMapHost::ClearMapLoadFlag(void)` |
+| `0x12dd30` | `private: void __thiscall MNSandbox::MNTimer::ClearMgrPieceIdx(void)` |
+| `0x1c1b90` | `private: void __thiscall MNSandbox::CollectionService::ClearNodeTags(class MNSandbox::SandboxNode *)` |
+| `0x135830` | `public: void __thiscall MNSandbox::NodeWatcher::ClearNodes(void)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::Scene::ClearOctreeNode(class Rainbow::TSceneMGTNode<class Rainbow::Algorithm::OctreeObjectHandle> *)` |
+| `0x862c0` | `private: void __thiscall MNSandbox::SandboxAssetCache::ClearOutDataAssets(void)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::Scene::ClearOverlapBox(unsigned short)` |
+| `0x135890` | `public: void __thiscall MNSandbox::NodeWatcher::ClearOwner(void)` |
+| `0x84a40` | `private: void __thiscall MNSandbox::RefPool::ClearPool(void)` |
+| `0x1ae5c0` | `public: void __thiscall MNSandbox::MapSave::ClearSaveData(void)` |
+| `0x202a60` | `protected: void __thiscall MNSandbox::ServiceNode::ClearSaveData(void)` |
+| `0x93540` | `protected: void __thiscall MNSandbox::AssetObject::ClearState(void)` |
+| `0xa64b0` | `protected: void __thiscall MNSandbox::AssetSyncPool::ClearSyncRef(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x52860` | `public: void __thiscall MNSandbox::ScriptServiceHost::ClientKickSelf(int,int)` |
+| `0x533e0` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_HostKick(int)` |
+| `0x53400` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_IDGeneratorAlloc(int const &,class std::vector<unsigned int,class std::allocator<unsigned int> > const &,class std::vector<unsigned int,class std::allocator<unsigned int> > const &)` |
+| `0x53420` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_LogToRoomMaster(int const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned int const &)` |
+| `0x53440` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_OnRecvHostSandboxVersion(unsigned int)` |
+| `0x53460` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_SyncHostGameStage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x53480` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_ToLoadAssetDesc(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x534a0` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Client_ToLoadNetworkIndices(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1820c0` | `public: virtual class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxNode::Clone(class MNSandbox::TCallback<class MNSandbox::SandboxNode *> *)` |
+| `0x534c0` | `public: virtual class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxNode::Clone(void)` |
+| `0x132990` | `public: virtual class MNSandbox::AutoRef<class MNSandbox::Stream> __thiscall MNSandbox::StreamBuffer::Clone(void)` |
+| `0x1821c0` | `public: void __thiscall MNSandbox::SandboxNode::CloneAsync(class MNSandbox::AutoRef<class MNSandbox::CustomRef<class MNSandbox::TCallback<enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > *> >)` |
+| `0x182480` | `public: void __thiscall MNSandbox::SandboxNode::CloneAsyncFunction(class std::function<void __cdecl(enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)> const &)` |
+| `0x182500` | `public: void __thiscall MNSandbox::SandboxNode::CloneAsyncMethod(void (__cdecl*)(enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>))` |
+| `0x182650` | `protected: int __thiscall MNSandbox::SandboxNode::CloneLua(struct lua_State *)` |
+| `0x182800` | `public: virtual void __thiscall MNSandbox::SandboxNode::CloneTo(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class MNSandbox::TCallback<class MNSandbox::SandboxNode *> *)` |
+| `0x1a5220` | `public: void __thiscall MNSandbox::GameMapHost::CloseAutoSaveTimer(void)` |
+| `0x257ad0` | `public: bool __thiscall MNSandbox::SandboxMiscDataMgr::CloseData(void)` |
+| `0x15a5a0` | `public: void __thiscall MNSandbox::Statistics::NodeCount::CloseSort(void)` |
+| `0x21b5b0` | `public: void __thiscall MNSandbox::ScriptState::CloseState(void)` |
+| `0x577f0` | `void __cdecl MNSandbox::CloseStream(void *)` |
+| `0x249040` | `public: void __thiscall MNSandbox::DebugAction::CloudPrintNodeTree(void)` |
+| `0x249120` | `public: void __thiscall MNSandbox::DebugAction::CloudSaveDecode(void)` |
+| `0x23cdc0` | `public: static bool __cdecl MNSandbox::LuaFunction::CoIsPause(class MNSandbox::LuaCoroutine *)` |
+| `0x23cde0` | `public: static bool __cdecl MNSandbox::LuaFunction::CoIsValid(class MNSandbox::LuaCoroutine *)` |
+| `0x23ce00` | `public: static int __cdecl MNSandbox::LuaFunction::CoPause(class MNSandbox::LuaCoroutine *)` |
+| `0x23ce20` | `public: static void __cdecl MNSandbox::LuaFunction::CoResume(class MNSandbox::LuaCoroutine *,int)` |
+| `0x534e0` | `public: virtual class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > __thiscall MNSandbox::Scene::CollideModelsInRadius(class Rainbow::Vector3f const &,float)` |
+| `0x199540` | `public: class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > __thiscall MNSandbox::SceneRoot::CollideModelsInRadius(class Rainbow::Vector3f,float)` |
+| `0xd2010` | `public: void __thiscall MNSandbox::GameObject::ComponentPreTick(void)` |
+| `0xd2030` | `public: void __thiscall MNSandbox::GameObject::ComponentTick(void)` |
+| `0x1b88f0` | `private: int __thiscall MNSandbox::InputObjectSignal::Connect(class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x3bba60` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::InputObjectSignal,int,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > MNSandbox::InputObjectSignal::ConnectLuaFuncRef` |
+| `0x3bdf36` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::ContextActionService::EnumContextActionPriority> MNSandbox::ContextActionService::ContextActionPriorityEnum` |
+| `0x3bdf35` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::ContextActionService::EnumContextActionResult> MNSandbox::ContextActionService::ContextActionResultEnum` |
+| `0x3bdf34` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::ContextActionService::EnumContextActionType> MNSandbox::ContextActionService::ContextActionTypeEnum` |
+| `0x53500` | `public: virtual class WCoord __thiscall MNSandbox::Scene::CoordBlockPositin(class Rainbow::Vector3f const &)` |
+| `0x199600` | `public: class WCoord __thiscall MNSandbox::SceneRoot::CoordBlockPositin(class Rainbow::Vector3f)` |
+| `0x577f0` | `public: static void __cdecl MNSandbox::ReflexPolicyFuncBase::Copy(void const *,void *)` |
+| `0x1a5260` | `public: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::GameMapHost::CopyAllSaveFileAndRemoveSigns(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x182840` | `public: void __thiscall MNSandbox::SandboxNode::CopyChildrenTo(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,bool,class MNSandbox::TCallback<class MNSandbox::SandboxNode *> *)` |
+| `0x182980` | `protected: void __thiscall MNSandbox::SandboxNode::CopyCustomAttributesTo(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &)` |
+| `0x132a70` | `public: virtual bool __thiscall MNSandbox::StreamBuffer::CopyData(unsigned int,unsigned int,unsigned int)` |
+| `0x130a10` | `public: void __thiscall MNSandbox::Stream::CopyDataWithReset(unsigned int,unsigned int,unsigned int)` |
+| `0x182b30` | `protected: void __thiscall MNSandbox::SandboxNode::CopyReflexContainerTo(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &)` |
+| `0x130a70` | `public: virtual void __thiscall MNSandbox::Stream::CopyTo(class MNSandbox::AutoRef<class MNSandbox::Stream>)` |
+| `0x132b00` | `public: virtual void __thiscall MNSandbox::StreamBuffer::CopyTo(class MNSandbox::AutoRef<class MNSandbox::Stream>)` |
+| `0x21b680` | `public: void __thiscall MNSandbox::ScriptState::CoroutineRunOver(class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine>)` |
+| `0x15e700` | `public: __int64 __thiscall MNSandbox::SectionList::CostID(void)` |
+| `0x145600` | `public: void __thiscall MNSandbox::ListenerInterface::CostRunTime(void)` |
+| `0x53520` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::CustomBuffer::Create(unsigned int)` |
+| `0x535c0` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::CustomBuffer::Create(void *,unsigned int)` |
+| `0x536a0` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::CustomBuffer::Create(void)` |
+| `0x53740` | `public: static class MNSandbox::SandboxCoreDriver * __cdecl MNSandbox::SandboxCoreDriver::Create(class MINIW::ScriptVM *)` |
+| `0x13bdf0` | `public: static class MNSandbox::SandboxParamGroup * __cdecl MNSandbox::SandboxParamGroup::Create(void)` |
+| `0x23f920` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaArgument> __thiscall MNSandbox::LuaLinkerManager::CreateArgumentLinker(struct lua_State *,int)` |
+| `0x23f940` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaArguments> __thiscall MNSandbox::LuaLinkerManager::CreateArgumentsLinker(struct lua_State *,int)` |
+| `0x99190` | `protected: virtual class MNSandbox::AutoRef<class MNSandbox::AssetRef> __thiscall MNSandbox::AssetPool::CreateAssetInstance(enum MNSandbox::AssetResType)` |
+| `0x99290` | `protected: class MNSandbox::AutoRef<class MNSandbox::AssetRef> __thiscall MNSandbox::AssetPool::CreateAssetRef(enum MNSandbox::AssetResType,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetIdInfo const *)` |
+| `0x537e0` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::CustomBuffer::CreateCopy(void const *,unsigned int)` |
+| `0x21b720` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::ScriptState::CreateCoroutine(class MNSandbox::AutoRef<class MNSandbox::Lua::CoJobData> const &,class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine> const &)` |
+| `0x1f45a0` | `protected: void __thiscall MNSandbox::ScriptContext::CreateDefaultChildren(void)` |
+| `0x864e0` | `private: void __thiscall MNSandbox::SandboxAssetCache::CreateDir(void)` |
+| `0x139580` | `public: bool __thiscall MNSandbox::SandboxEventDispatcherManager::CreateEventDispatcher(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned __int64)` |
+| `0x1ec980` | `public: void __thiscall MNSandbox::SandboxLoadedService::CreateEvevt(void)` |
+| `0x23f960` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaFunction> __thiscall MNSandbox::LuaLinkerManager::CreateFunctionLinker(struct lua_State *,int)` |
+| `0x81e40` | `public: class MNSandbox::WeakRef<class MNSandbox::GameMap> __thiscall MNSandbox::SandboxCoreManagers::CreateGameMap(void)` |
+| `0x53810` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::CustomBuffer::CreateGlobal(void *,unsigned int)` |
+| `0x182c70` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::CreateInstance(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x23ce40` | `protected: class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::ReflexTuple> > > __thiscall MNSandbox::LuaFunction::CreateListener(class std::function<void __cdecl(class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>)>)` |
+| `0x23cf80` | `protected: class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::ReflexLuaTuple> > > __thiscall MNSandbox::LuaFunction::CreateListenerLua(class std::function<void __cdecl(class MNSandbox::AutoRef<class MNSandbox::ReflexLuaTuple>)>)` |
+| `0x21b7d0` | `protected: struct lua_State * __thiscall MNSandbox::ScriptState::CreateMainL(void)` |
+| `0x21b8b0` | `protected: struct lua_State * __thiscall MNSandbox::ScriptState::CreateMainThread(struct lua_State *)` |
+| `0xd8b70` | `protected: void __thiscall MNSandbox::Object::CreateManagers(void)` |
+| `0x1a5f70` | `public: class MNSandbox::WeakRef<class MNSandbox::MapSave> __thiscall MNSandbox::GameMapHost::CreateMapSave(enum MNSandbox::SAVEMODE)` |
+| `0x182cd0` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::CreateNodeByFactory(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x182d90` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::CreateNodeByType(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x15cda0` | `public: void __thiscall MNSandbox::Thread::MultiThreadPool::CreatePrivateThreads(int)` |
+| `0xdb460` | `public: void __thiscall MNSandbox::ReflexReferenceContainer::CreateReferenceLinkerByType(class MNSandbox::ReflexType const *)` |
+| `0x538f0` | `public: virtual class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::Scene::CreateSceneObjByType(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x13d0d0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxSchedulerManager::CreateScheduler(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x13d1a0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxSchedulerManager::CreateScheduler(class std::function<class MNSandbox::SandboxResult __cdecl(class MNSandbox::SandboxContext)> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x13d270` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxSchedulerManager::CreateScheduler(__int64 const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x13d340` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxSchedulerManager::CreateScheduler(class MNSandbox::SandboxResult (__stdcall MNSandbox::Object::*)(class MNSandbox::SandboxContext),class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x53900` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::CustomBuffer::CreateStatic(void *,unsigned int)` |
+| `0x1a6210` | `public: static class MNSandbox::AutoRef<class MNSandbox::MapSave> __cdecl MNSandbox::GameMapHost::CreateStaticMapSave(enum MNSandbox::SAVEMODE)` |
+| `0x23f980` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaTable> __thiscall MNSandbox::LuaLinkerManager::CreateTableLinker(struct lua_State *,int)` |
+| `0x1ae690` | `protected: void __thiscall MNSandbox::MapSave::CreateThread(void)` |
+| `0x15cf40` | `public: void __thiscall MNSandbox::Thread::MultiThreadPool::CreateThreads(int)` |
+| `0x539e0` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(double)` |
+| `0x12dd40` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(double,bool,double,bool)` |
+| `0x53a20` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(void (__cdecl*)(class MNSandbox::AutoRef<class MNSandbox::MNTimer>),double)` |
+| `0x12de50` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(void (__cdecl*)(class MNSandbox::AutoRef<class MNSandbox::MNTimer>),double,bool,double,bool)` |
+| `0x53a60` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::MNTimer> > >,double)` |
+| `0x12dfd0` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::MNTimer> > >,double,bool,double,bool)` |
+| `0x53b00` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(class std::function<void __cdecl(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)>,double)` |
+| `0x12e110` | `public: static class MNSandbox::AutoRef<class MNSandbox::MNTimer> __cdecl MNSandbox::MNTimer::CreateTimer(class std::function<void __cdecl(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)>,double,bool,double,bool)` |
+| `0x13be80` | `public: int __thiscall MNSandbox::SandboxParamGroup::DataToLua(struct lua_State *)const ` |
+| `0x1538e0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::ErrorLogMgr::DataToMsg(void)const ` |
+| `0x153ae0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataAssetInfo::DataToMsg(void)const ` |
+| `0x153d30` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataFrame::DataToMsg(void)const ` |
+| `0x153dc0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataInstanceCnt::DataToMsg(void)const ` |
+| `0x153f90` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataMemory::DataToMsg(void)const ` |
+| `0x1541a0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataMgr::DataToMsg(void)const ` |
+| `0x1543a0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataNodeCnt::DataToMsg(void)const ` |
+| `0x154460` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataPhysLog::DataToMsg(void)const ` |
+| `0x154660` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunDataRenderLog::DataToMsg(void)const ` |
+| `0x1549b0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Profile::RunLogMgr::DataToMsg(void)const ` |
+| `0x53ea0` | `public: void __thiscall MNSandbox::Ref::DecrementRef(void)` |
+| `0x24f250` | `char * __cdecl MNSandbox::Decrypt(void const *,unsigned int,unsigned int &)` |
+| `0x24f300` | `char * __cdecl MNSandbox::DecryptEasy(void const *,unsigned int,unsigned int &)` |
+| `0x24f3e0` | `class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::DecryptEasySafe(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x24f480` | `class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::DecryptSafe(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x3a9394` | `public: static class MNSandbox::ReflexConfig const MNSandbox::ReflexConfig::Def` |
+| `0xd9720` | `private: void __thiscall MNSandbox::Ref::DeleateLinker(void)` |
+| `0x93690` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::AssetPool>::Delete(void)` |
+| `0xbd800` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::Delete(void)` |
+| `0xa65a0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::Delete(void)` |
+| `0x1c1dc0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::CollectionService>::Delete(void)` |
+| `0x19b640` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::GameInput>::Delete(void)` |
+| `0x53ec0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::GameStep>::Delete(void)` |
+| `0xd70e0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::Delete(void)` |
+| `0x93720` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::Delete(void)` |
+| `0x1575b0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::Delete(void)` |
+| `0x1a6420` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::MainStorage>::Delete(void)` |
+| `0x53f50` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::Delete(void)` |
+| `0x8c6e0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::Delete(void)` |
+| `0x84a50` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::RefPool>::Delete(void)` |
+| `0xda3b0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::Delete(void)` |
+| `0x53fe0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::RemoteMsg>::Delete(void)` |
+| `0x154bb0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::Delete(void)` |
+| `0x865f0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::Delete(void)` |
+| `0x9dcb0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::Delete(void)` |
+| `0x1dd520` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::Delete(void)` |
+| `0x1996a0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::Delete(void)` |
+| `0x54070` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::Delete(void)` |
+| `0x1e98c0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::ScriptService>::Delete(void)` |
+| `0x54100` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::Delete(void)` |
+| `0x1e9950` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::SupplementInterface>::Delete(void)` |
+| `0x99560` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::Delete(void)` |
+| `0x14a6a0` | `public: static void __cdecl MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::Delete(void)` |
+| `0xe4630` | `public: void __thiscall MNSandbox::ReflexTypePolicy::Delete(void *,void (__cdecl*)(void *))const ` |
+| `0xce330` | `public: void __thiscall MNSandbox::AttributeContainer::DeleteAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x182ea0` | `public: void __thiscall MNSandbox::SandboxNode::DeleteAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2511e0` | `protected: void __thiscall MNSandbox::Thread::MainThreadTaskGroup::DeleteMainTasks(void)` |
+| `0x1bc7a0` | `public: int __thiscall MNSandbox::CloudServerConfigService::DeleteRobotRequest(struct lua_State *,int,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x182eb0` | `private: void __thiscall MNSandbox::SandboxNode::DeleteSelf(void)` |
+| `0x2547f0` | `public: void __thiscall MNSandbox::Thread::ThreadTaskGroup::DeleteThreadTasks(void)` |
+| `0x3bb840` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::InputObject,class Rainbow::Vector2f> MNSandbox::InputObject::Delta` |
+| `0x54190` | `public: unsigned int __thiscall MNSandbox::Lua::StateStack::Depth(void)const ` |
+| `0x541a0` | `protected: void __thiscall MNSandbox::SandboxNode::DescendantNodeEnter(class MNSandbox::SandboxNode *)` |
+| `0x182f40` | `protected: virtual void __thiscall MNSandbox::SandboxNode::DescendantNodeEnter(class MNSandbox::SandboxNode *,bool)` |
+| `0x202ae0` | `protected: virtual void __thiscall MNSandbox::ServiceNode::DescendantNodeEnter(class MNSandbox::SandboxNode *,bool)` |
+| `0x541c0` | `protected: void __thiscall MNSandbox::SandboxNode::DescendantNodeLeave(class MNSandbox::SandboxNode *)` |
+| `0x182f90` | `protected: virtual void __thiscall MNSandbox::SandboxNode::DescendantNodeLeave(class MNSandbox::SandboxNode *,bool)` |
+| `0x202b00` | `protected: virtual void __thiscall MNSandbox::ServiceNode::DescendantNodeLeave(class MNSandbox::SandboxNode *,bool)` |
+| `0x12e310` | `public: void __thiscall MNSandbox::MNTimer::Destroy(void)` |
+| `0x541e0` | `public: static void __cdecl MNSandbox::SandboxCoreDriver::Destroy(void)` |
+| `0x182fe0` | `public: void __thiscall MNSandbox::SandboxNode::Destroy(void)` |
+| `0x60890` | `public: void __thiscall MNSandbox::SandboxEventDispatcherManager::DestroyAllDispatchers(void)` |
+| `0xd2050` | `public: bool __thiscall MNSandbox::GameObject::DestroyComponent(class MNSandbox::Component *)` |
+| `0x21ba40` | `public: void __thiscall MNSandbox::ScriptState::DestroyCoroutine(class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine>)` |
+| `0x139680` | `public: bool __thiscall MNSandbox::SandboxEventDispatcherManager::DestroyEventDispatcher(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x82030` | `public: void __thiscall MNSandbox::SandboxCoreManagers::DestroyGameMap(class MNSandbox::WeakRef<class MNSandbox::GameMap>)` |
+| `0x23f9a0` | `public: void __thiscall MNSandbox::LuaLinkerManager::DestroyLinker(int)` |
+| `0x21bc70` | `protected: void __thiscall MNSandbox::ScriptState::DestroyMainL(void)` |
+| `0x995f0` | `public: void __thiscall MNSandbox::Thread::MainThreadTaskGroup::DestroyMainTask(unsigned int)` |
+| `0xd8c00` | `protected: void __thiscall MNSandbox::Object::DestroyManagers(void)` |
+| `0x15d000` | `public: void __thiscall MNSandbox::Thread::MultiThreadPool::DestroyPrivateThreads(void)` |
+| `0x170460` | `public: bool __thiscall MNSandbox::SdbSceneManager::DestroyScene(class MNSandbox::Scene *)` |
+| `0x13d410` | `public: void __thiscall MNSandbox::SandboxSchedulerManager::DestroyScheduler(class MNSandbox::Callback const &)` |
+| `0x13d430` | `public: void __thiscall MNSandbox::SandboxSchedulerManager::DestroySchedulerByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x99600` | `public: bool __thiscall MNSandbox::Thread::ThreadTaskManager::DestroyThreadTask(unsigned int)` |
+| `0x15d0d0` | `public: void __thiscall MNSandbox::Thread::MultiThreadPool::DestroyThreads(void)` |
+| `0x12e340` | `public: static void __cdecl MNSandbox::MNTimer::DestroyTimer(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x577f0` | `public: static void __cdecl MNSandbox::ReflexPolicyFuncBase::Destructor(void *)` |
+| `0x1b8a40` | `private: void __thiscall MNSandbox::InputObjectSignal::Disconnect(int)` |
+| `0x145840` | `public: void __thiscall MNSandbox::SignalConnect::Disconnect(void)` |
+| `0x3bb550` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::InputObjectSignal,int> MNSandbox::InputObjectSignal::DisconnectLuaFuncRef` |
+| `0xa6630` | `public: void __thiscall MNSandbox::AssetRef::DoFinish(void)` |
+| `0x14b3e0` | `public: void __thiscall MNSandbox::GameStep::DoGameStep(int)` |
+| `0x89cd0` | `protected: void __thiscall MNSandbox::AssetConfig::DoLoadStream(enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x20b2a0` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::DoLuaFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xb4620` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::DoNetworkIdRequest(class std::vector<struct MNSandbox::SandboxAssetRequestMgr::ReqItem,class std::allocator<struct MNSandbox::SandboxAssetRequestMgr::ReqItem> > const &)` |
+| `0x249400` | `public: void __thiscall MNSandbox::DebugAction::DoPrintNodeTree(void)` |
+| `0x14b440` | `public: void __thiscall MNSandbox::GameStep::DoRenderStep(float)` |
+| `0x249510` | `public: void __thiscall MNSandbox::DebugAction::DoSaveDecode(void)` |
+| `0x89cf0` | `protected: void __thiscall MNSandbox::AssetConfig::DoSaveStream(enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0xb4a30` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::DoShortIdRequest(class std::vector<struct MNSandbox::SandboxAssetRequestMgr::ReqItem,class std::allocator<struct MNSandbox::SandboxAssetRequestMgr::ReqItem> > const &)` |
+| `0x54240` | `private: void __thiscall MNSandbox::SdbSceneManager::DoStreamLoad(enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x202b20` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ServiceNode::DoStreamLoad(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x54260` | `protected: void __thiscall MNSandbox::ServiceNode::DoStreamLoad(enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x54280` | `private: void __thiscall MNSandbox::SdbSceneManager::DoStreamSave(enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x202b80` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ServiceNode::DoStreamSave(class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x542a0` | `protected: void __thiscall MNSandbox::ServiceNode::DoStreamSave(enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x2512b0` | `public: void __thiscall MNSandbox::Thread::MainThreadTaskGroup::DoTask(unsigned int)` |
+| `0x99a70` | `public: virtual void __thiscall MNSandbox::Thread::MainThreadTaskInterface::DoTask(void)` |
+| `0x1fc4a0` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptService::DownloadScript(unsigned int)` |
+| `0x14b460` | `public: void __thiscall MNSandbox::GameStep::DriveTick(void)` |
+| `0x542c0` | `public: void __thiscall MNSandbox::SandboxCoreDriver::DriveTick(int)` |
+| `0x553e0` | `public: void __thiscall MNSandbox::MNTimer::Emit(void)` |
+| `0x139690` | `public: class MNSandbox::SandboxResult __thiscall MNSandbox::SandboxEventDispatcherManager::Emit(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::SandboxContext const &)` |
+| `0x184730` | `private: bool __thiscall MNSandbox::SandboxNode::EnabledGet(void)const ` |
+| `0x184740` | `private: void __thiscall MNSandbox::SandboxNode::EnabledSet(bool const &)` |
+| `0x24f520` | `char * __cdecl MNSandbox::Encrypt(void const *,unsigned int,unsigned int &)` |
+| `0x24f5e0` | `char * __cdecl MNSandbox::EncryptEasy(void const *,unsigned int,unsigned int &)` |
+| `0x24f660` | `class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::EncryptEasySafe(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x24f700` | `class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::EncryptSafe(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x24aea0` | `public: void __thiscall MNSandbox::FrameLimit::End(void)` |
+| `0x55400` | `public: void __thiscall MNSandbox::SandboxCoreDriver::EndGame(bool)` |
+| `0x20b480` | `public: void __thiscall MNSandbox::SandboxCoreLuaDirector::EndGame(void)` |
+| `0x184760` | `public: virtual void __thiscall MNSandbox::SandboxNode::EndPlay(void)` |
+| `0x16cc40` | `public: virtual bool __thiscall MNSandbox::Scene::EndPlay(void)` |
+| `0x1704b0` | `public: void __thiscall MNSandbox::SdbSceneManager::EndPlay(void)` |
+| `0x1f65c0` | `protected: virtual void __thiscall MNSandbox::ScriptNode::EndPlayScript(void)` |
+| `0x159130` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Statistics::LoadCost::EndToString(struct MNSandbox::Statistics::LoadCost::StepInfo const &,struct MNSandbox::Statistics::LoadCost::StepInfo const &)` |
+| `0x1847e0` | `protected: void __thiscall MNSandbox::SandboxNode::EnterParent(class MNSandbox::SandboxNode *,class MNSandbox::Scene *,bool,class MNSandbox::ServiceNode *)` |
+| `0x3bdf37` | `private: static class MNSandbox::ReflexEnumDesc<enum Rainbow::InputKeyCode> MNSandbox::ContextActionService::EnumKeyboardCode` |
+| `0xc38f0` | `public: void __thiscall MNSandbox::NodePacketContainer::Erase(int)` |
+| `0x15a610` | `private: void __thiscall MNSandbox::Statistics::NodeCount::EraseDataFromSortList(struct std::pair<class MNSandbox::RuntimeClass const *,unsigned int> const &)` |
+| `0x15d140` | `public: void __thiscall MNSandbox::Thread::ThreadJobTask::EraseDestructCallback(class MNSandbox::TCallback<class MNSandbox::Thread::ThreadJobTask *> *)` |
+| `0x202c80` | `protected: void __thiscall MNSandbox::ServiceNode::EraseFromLoadList(void)` |
+| `0x1a64b0` | `public: void __thiscall MNSandbox::GameMapHost::EraseLoadNode(class MNSandbox::SandboxNode *)` |
+| `0x2513d0` | `protected: void __thiscall MNSandbox::Thread::MainThreadTaskGroup::EraseMainTask(unsigned int)` |
+| `0x13d550` | `private: void __thiscall MNSandbox::SandboxSchedulerManager::EraseScheduler(class MNSandbox::SandboxScheduler *)` |
+| `0x254eb0` | `public: bool __thiscall MNSandbox::Thread::ThreadTaskGroup::EraseThreadTask(unsigned int)` |
+| `0x2be958` | `public: static unsigned int const MNSandbox::Stream::Error` |
+| `0xdb630` | `public: void __thiscall MNSandbox::ReflexContainer::Pool::ErseData(class MNSandbox::ReflexType const *)` |
+| `0xd8df0` | `public: class MNSandbox::EventObjectManager & __thiscall MNSandbox::Object::Event2(void)` |
+| `0xd8e90` | `public: class MNSandbox::SandboxEventDispatcherManager & __thiscall MNSandbox::Object::Event(void)` |
+| `0xd8f30` | `public: class MNSandbox::SandboxEventQueueManager & __thiscall MNSandbox::Object::EventQueue(void)` |
+| `0x15d1b0` | `public: void __thiscall MNSandbox::Thread::ThreadJobTask::Exe(void)` |
+| `0x57610` | `public: bool __thiscall MNSandbox::ListenerLua::ExecLinkerdata(class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x24f7a0` | `bool __cdecl MNSandbox::FileCopyTo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x24f990` | `bool __cdecl MNSandbox::FileRenameTo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xdb6f0` | `protected: void __thiscall MNSandbox::ReflexContainer::FillParentReflex(void)` |
+| `0x1d3d40` | `private: class MNSandbox::AutoRef<struct MNSandbox::ContextActionService::ActionFunc> __thiscall MNSandbox::ContextActionService::FindActionData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0xda9b0` | `public: class MNSandbox::RuntimeClass const * __thiscall MNSandbox::RuntimeClass::Container::FindRTTI(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1591f0` | `public: void __thiscall MNSandbox::Statistics::LoadCost::Finish(void)` |
+| `0x254f30` | `public: void __thiscall MNSandbox::Thread::ThreadTaskManager::FinishAllTask(void)` |
+| `0x254f90` | `public: void __thiscall MNSandbox::Thread::ThreadTaskGroup::FinishThreadTasks(void)` |
+| `0xa7ca0` | `public: void __thiscall MNSandbox::AssetRef::FinishToCheckMd5(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x142040` | `public: void __thiscall MNSandbox::CustomNotify::Fire(class MNSandbox::AutoRef<class MNSandbox::ReflexTuple> const &)` |
+| `0x142070` | `public: void __thiscall MNSandbox::CustomNotify::Fire(void)` |
+| `0x187440` | `private: unsigned int __thiscall MNSandbox::SandboxNode::FlagFilterGet(class MNSandbox::SandboxFlags<unsigned int> const &)const ` |
+| `0x1874b0` | `private: void __thiscall MNSandbox::SandboxNode::FlagFilterSet(class MNSandbox::SandboxFlags<unsigned int> const &,unsigned int const &)` |
+| `0x57650` | `private: unsigned int __thiscall MNSandbox::SandboxNode::FlagGet(void)const ` |
+| `0x57660` | `private: unsigned int __thiscall MNSandbox::SandboxNode::FlagSaveGet(void)const ` |
+| `0x57670` | `private: void __thiscall MNSandbox::SandboxNode::FlagSaveSet(unsigned int const &)` |
+| `0x57690` | `private: unsigned int __thiscall MNSandbox::SandboxNode::FlagSyncGet(void)const ` |
+| `0x576a0` | `private: void __thiscall MNSandbox::SandboxNode::FlagSyncSet(unsigned int const &)` |
+| `0xce5c0` | `public: void __thiscall MNSandbox::AttributeContainer::ForEach(class std::function<void __cdecl(struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::Attribute> >)>)` |
+| `0xce680` | `public: void __thiscall MNSandbox::AttributeContainer::ForEach(class std::function<void __cdecl(struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::Attribute> >)>)const ` |
+| `0xe0310` | `public: void __thiscall MNSandbox::ReflexMap::ForEach(class std::function<void __cdecl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexVariant const &)>)` |
+| `0x15a6e0` | `public: void __thiscall MNSandbox::Statistics::NodeCount::ForeachSortList(class std::function<bool __cdecl(struct std::pair<class MNSandbox::RuntimeClass const *,unsigned int> const &)>)` |
+| `0x57740` | `private: void __thiscall MNSandbox::CustomBuffer::Free(void)` |
+| `0x12c7d0` | `private: void __thiscall MNSandbox::ReflexVariant::Free(void)` |
+| `0x577c0` | `public: static void __cdecl MNSandbox::Config::FromVersion(unsigned int,unsigned char &,unsigned char &,unsigned char &)` |
+| `0x3be1c0` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int> MNSandbox::ContextActionService::FuncBindAction` |
+| `0x3bdfe0` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int,int> MNSandbox::ContextActionService::FuncBindActionAtPriority` |
+| `0x3be120` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,int,int> MNSandbox::ContextActionService::FuncBindActionWithButton` |
+| `0x3bebc0` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,int,int> MNSandbox::ContextActionService::FuncBindActivate` |
+| `0x3bec60` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,bool,class MNSandbox::ReflexVariant> MNSandbox::ContextActionService::FuncBindContext` |
+| `0x3be530` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>,bool,int,class MNSandbox::ReflexVariant> MNSandbox::ContextActionService::FuncBindContextAtPriority` |
+| `0x3b95a0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SceneRoot,class WCoord,class Rainbow::Vector3f> MNSandbox::SceneRoot::FuncCoordBlockPosition` |
+| `0x13a8e0` | `private: void __thiscall MNSandbox::SandboxEventQueue::FuncEmit(unsigned int,class MNSandbox::SandboxEventDispatcherManager &)` |
+| `0x3b97c0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SceneRoot,class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > >,class Rainbow::Vector3f,float> MNSandbox::SceneRoot::FuncFindModelsInRadius` |
+| `0x3beb30` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::ContextActionService,class MNSandbox::AutoRef<class MNSandbox::ReflexMap> > MNSandbox::ContextActionService::FuncGetAllBoundActionInfo` |
+| `0x3b9510` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SceneRoot,float,class WCoord> MNSandbox::SceneRoot::FuncGetBlockBright` |
+| `0x3b96c0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SceneRoot,int,class WCoord> MNSandbox::SceneRoot::FuncGetBlockID` |
+| `0x3be4a0` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::ContextActionService,class MNSandbox::AutoRef<class MNSandbox::ReflexMap>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncGetBoundActionInfo` |
+| `0x3be670` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::ContextActionService,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncGetButton` |
+| `0x3b9460` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SceneRoot,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SceneRoot::FuncGetCurrentCamera` |
+| `0x3be820` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncGetCurrentLocalToolIcon` |
+| `0x3bb6b0` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::InputObject,bool,int> MNSandbox::InputObject::FuncIsModifierKeyDown` |
+| `0x3be080` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncSetDescription` |
+| `0x3be950` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncSetImage` |
+| `0x3be260` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Rainbow::Vector2f> MNSandbox::ContextActionService::FuncSetPosition` |
+| `0x3bdf40` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncSetTitle` |
+| `0x3be780` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncUnbindAction` |
+| `0x3be9f0` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,int,int> MNSandbox::ContextActionService::FuncUnbindActivate` |
+| `0x3bed00` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService> MNSandbox::ContextActionService::FuncUnbindAllActions` |
+| `0x3be360` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService> MNSandbox::ContextActionService::FuncUnbindAllContexts` |
+| `0x3be5d0` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ContextActionService::FuncUnbindContext` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::ServiceNode::GameStart(void)` |
+| `0x52860` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::GenerateRequestServerUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0xe4680` | `public: static class MNSandbox::ReflexType::Container & __cdecl MNSandbox::ReflexType::Container::Get(void)` |
+| `0xda9e0` | `public: static class MNSandbox::RuntimeClass::Container & __cdecl MNSandbox::RuntimeClass::Container::Get(void)` |
+| `0x15e780` | `public: class MNSandbox::AutoRef<class MNSandbox::SectionList> __thiscall MNSandbox::HostNodeIdAllocator::Get(int)` |
+| `0xe0410` | `public: bool __thiscall MNSandbox::ReflexMap::Get(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexVariant &)` |
+| `0xddca0` | `public: static class MNSandbox::ReflexEnumContainer & __cdecl MNSandbox::ReflexEnumContainer::Singleton::Get(void)` |
+| `0x57800` | `public: class MNSandbox::GlobalServiceNodeBase * __thiscall MNSandbox::GlobalServiceNode::GetActive(void)const ` |
+| `0x578b0` | `public: bool __thiscall MNSandbox::SandboxNode::GetActiveFlag(void)const ` |
+| `0x58280` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct MNSandbox::AssetConfig::AssetInfo,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct MNSandbox::AssetConfig::AssetInfo> > > const & __thiscall MNSandbox::AssetConfig::GetAllAssetInfos(void)const ` |
+| `0x1d4030` | `private: class MNSandbox::AutoRef<class MNSandbox::ReflexMap> __thiscall MNSandbox::ContextActionService::GetAllBoundActionInfo(void)` |
+| `0x1875f0` | `public: class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > __thiscall MNSandbox::SandboxNode::GetAllChildren(void)const ` |
+| `0x578c0` | `public: class MNSandbox::List<class MNSandbox::Component *> & __thiscall MNSandbox::GameObject::GetAllComponents(void)` |
+| `0x16e640` | `public: void __thiscall MNSandbox::SceneChunk::GetAllObjects(class std::vector<class MNSandbox::SandboxNode *,class std::allocator<class MNSandbox::SandboxNode *> > &)` |
+| `0x578d0` | `public: class std::unordered_map<int,struct MNSandbox::GameMap::PlayerInfo,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,struct MNSandbox::GameMap::PlayerInfo> > > const & __thiscall MNSandbox::GameMap::GetAllPlayers(void)const ` |
+| `0x578e0` | `public: class std::vector<class MNSandbox::AutoRef<class MNSandbox::Scene>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::Scene> > > const & __thiscall MNSandbox::SdbSceneManager::GetAllScenes(void)const ` |
+| `0x578f0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::WeakRef<class MNSandbox::SandboxNode>,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class MNSandbox::WeakRef<class MNSandbox::SandboxNode> > > > const & __thiscall MNSandbox::GameNode::GetAllServices(void)const ` |
+| `0x57900` | `public: static int __cdecl MNSandbox::LuaArguments::GetArgumentCount(void)` |
+| `0x57910` | `public: static int __cdecl MNSandbox::LuaLinker::GetArgumentCount(void)` |
+| `0x58730` | `public: class MNSandbox::AutoRef<class MNSandbox::AssetRef> __thiscall MNSandbox::AssetObject::GetAsset(void)` |
+| `0x99eb0` | `public: class MNSandbox::WeakRef<class MNSandbox::AssetRef> __thiscall MNSandbox::AssetPool::GetAsset(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x99f00` | `public: class MNSandbox::WeakRef<class MNSandbox::AssetRef> __thiscall MNSandbox::AssetPool::GetAsset(enum MNSandbox::AssetResType,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9dd40` | `public: static int __cdecl MNSandbox::AssetIdParse::GetAssetCloudTypeId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x57920` | `public: class MNSandbox::AutoRef<class MNSandbox::AssetConfig> __thiscall MNSandbox::GameMap::GetAssetConfig(void)const ` |
+| `0x8c770` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::AssetObject::GetAssetId(void)const ` |
+| `0x579e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::AssetRef::GetAssetId(void)const ` |
+| `0x8c780` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::NodePacket::GetAssetId(void)const ` |
+| `0x8c790` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::SandboxAssetObject::GetAssetId(void)` |
+| `0x57ae0` | `public: struct MNSandbox::AssetIdInfo const & __thiscall MNSandbox::AssetObject::GetAssetIdInfo(void)const ` |
+| `0x58540` | `public: unsigned int __thiscall MNSandbox::AssetObjectContainer::GetAssetLoadedNum(void)const ` |
+| `0x8c7b0` | `public: unsigned int __thiscall MNSandbox::AssetObjectContainer::GetAssetLoadedNumMax(void)const ` |
+| `0x58310` | `public: unsigned int __thiscall MNSandbox::AssetObjectContainer::GetAssetLoadedSuccessNum(void)const ` |
+| `0x584f0` | `public: unsigned int __thiscall MNSandbox::AssetObjectContainer::GetAssetLoadingNum(void)const ` |
+| `0xa7cc0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::AssetRef::GetAssetLocalFullPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x8c7c0` | `public: unsigned int __thiscall MNSandbox::AssetObjectContainer::GetAssetNum(void)const ` |
+| `0x57940` | `public: class MNSandbox::AssetObjectContainer * __thiscall MNSandbox::GameMap::GetAssetObjectContainer(void)` |
+| `0x8c7d0` | `public: enum MNSandbox::AssetResType __thiscall MNSandbox::SandboxAssetObject::GetAssetResType(void)` |
+| `0xbd890` | `class MNSandbox::AutoRef<class MNSandbox::AssetService> const __cdecl MNSandbox::GetAssetService(void)` |
+| `0x57950` | `public: enum MNSandbox::Attribute::TYPE __thiscall MNSandbox::Attribute::GetAttrType(void)const ` |
+| `0xce7c0` | `public: static enum MNSandbox::Attribute::TYPE __cdecl MNSandbox::Attribute::GetAttrTypeByRefexType(class MNSandbox::ReflexType const *)` |
+| `0xce800` | `public: class MNSandbox::AutoRef<class MNSandbox::Attribute> __thiscall MNSandbox::AttributeContainer::GetAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x187700` | `public: class MNSandbox::AutoRef<class MNSandbox::Attribute> __thiscall MNSandbox::SandboxNode::GetAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x57960` | `public: class MNSandbox::AttributeContainer & __thiscall MNSandbox::SandboxNode::GetAttributeContainer(void)` |
+| `0x57960` | `public: class MNSandbox::AttributeContainer const & __thiscall MNSandbox::SandboxNode::GetAttributeContainer(void)const ` |
+| `0x187720` | `public: class MNSandbox::ReflexVariant __thiscall MNSandbox::SandboxNode::GetAttributeValue(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)const ` |
+| `0x13b360` | `public: static class MNSandbox::SandboxEventQueue & __cdecl MNSandbox::SandboxEventQueueManager::GetAutoQueue(class MNSandbox::Object *)` |
+| `0xd0c60` | `public: int __thiscall MNSandbox::ByteBuffer::GetAvailableReadBytes(void)const ` |
+| `0xd0c70` | `public: int __thiscall MNSandbox::ByteBuffer::GetAvailableWriteBytes(void)const ` |
+| `0x93880` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const & __thiscall MNSandbox::AssetService::GetBackgroundAssets(void)` |
+| `0x57970` | `public: class MNSandbox::RuntimeClass const * __thiscall MNSandbox::RuntimeClass::GetBase(void)const ` |
+| `0x57900` | `public: virtual int __thiscall MNSandbox::ReflexValue::GetBaseIndexId(void)const ` |
+| `0x57980` | `public: virtual float __thiscall MNSandbox::Scene::GetBlockBright(class WCoord const &)` |
+| `0x199730` | `public: float __thiscall MNSandbox::SceneRoot::GetBlockBright(class WCoord)` |
+| `0x57990` | `public: virtual int __thiscall MNSandbox::Scene::GetBlockID(class WCoord const &)` |
+| `0x1997d0` | `public: int __thiscall MNSandbox::SceneRoot::GetBlockID(class WCoord)` |
+| `0x1d4320` | `private: class MNSandbox::AutoRef<class MNSandbox::ReflexMap> __thiscall MNSandbox::ContextActionService::GetBoundActionInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x579a0` | `public: class MNSandbox::AutoRef<class MNSandbox::NodeBoundingBoxEmpty> __thiscall MNSandbox::SandboxNode::GetBoundingBox(void)` |
+| `0xd0c80` | `public: char * __thiscall MNSandbox::ByteBuffer::GetBuffer(int)const ` |
+| `0x1d4400` | `private: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::ContextActionService::GetButton(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0xa82c0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::AssetRef::GetCacheFullPath(void)` |
+| `0x13d6c0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxSchedulerManager::GetCallback(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x579e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ReflexValue::GetCategory(void)const ` |
+| `0x579f0` | `public: enum MNSandbox::ReflexType::TYPE __thiscall MNSandbox::ReflexType::GetCategoryType(void)const ` |
+| `0x57a00` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetCdnDecompressPath(void)const ` |
+| `0x57a20` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetCdnDownloadPath(void)const ` |
+| `0xcab10` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::AssetSyncPool::GetCdnMd5(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x57a40` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetCdnUploadPath(void)const ` |
+| `0xcab40` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::AssetSyncPool::GetCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x187910` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxNode::GetChildByID(__int64)const ` |
+| `0x1e1b00` | `public: virtual class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameNode::GetChildByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x187970` | `public: virtual class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxNode::GetChildByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x57a60` | `public: unsigned int __thiscall MNSandbox::SandboxNode::GetChildrenCount(void)const ` |
+| `0x57a70` | `public: class MNSandbox::List<class MNSandbox::SandboxNode *> & __thiscall MNSandbox::SandboxNode::GetChildrenList(void)` |
+| `0x57a70` | `public: class MNSandbox::List<class MNSandbox::SandboxNode *> const & __thiscall MNSandbox::SandboxNode::GetChildrenList(void)const ` |
+| `0x16cef0` | `public: class MNSandbox::SceneChunk * __thiscall MNSandbox::Scene::GetChunk(int,int)` |
+| `0x57a80` | `public: class MNSandbox::List<class MNSandbox::SceneChunk *> & __thiscall MNSandbox::Scene::GetChunkList(void)` |
+| `0x16cf60` | `public: class MNSandbox::ListNode<class MNSandbox::SceneChunk *> * __thiscall MNSandbox::SceneChunk::GetChunkNode(void)` |
+| `0x58300` | `public: int __thiscall MNSandbox::SceneChunk::GetChunkX(void)` |
+| `0x584c0` | `public: int __thiscall MNSandbox::SceneChunk::GetChunkZ(void)` |
+| `0x57a90` | `public: int const __thiscall MNSandbox::RuntimeClass::GetClassId(void)const ` |
+| `0x57aa0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::Ref::GetClassType(void)const ` |
+| `0x57ab0` | `public: class MNSandbox::AutoRef<class MNSandbox::GlobalServiceNodeRemote> const & __thiscall MNSandbox::GlobalServiceNode::GetClient(void)const ` |
+| `0x1aa1c0` | `public: enum MNSandbox::GAMESTAGE __thiscall MNSandbox::GameStageHost::GetClientGameStage(int)` |
+| `0x1dba30` | `public: class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::LuaScript::GetCo(void)` |
+| `0x23d130` | `protected: enum MNSandbox::LuaFunction::RUNSTATE __thiscall MNSandbox::LuaFunction::GetCoState(class MNSandbox::LuaCoroutine *)` |
+| `0x57ac0` | `public: virtual __int64 __thiscall MNSandbox::SandboxNode::GetCompatibleSaveID(void)const ` |
+| `0xd2490` | `public: class MNSandbox::Component * __thiscall MNSandbox::GameObject::GetComponentByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x57ad0` | `public: class MNSandbox::ReflexConfig & __thiscall MNSandbox::ReflexValue::GetConfig(void)` |
+| `0x57ad0` | `public: class MNSandbox::ReflexConfig const & __thiscall MNSandbox::ReflexValue::GetConfig(void)const ` |
+| `0x57ae0` | `public: class MNSandbox::SandboxMemoryPool<class MNSandbox::SandboxContext> & __thiscall MNSandbox::SandboxCorePools::GetContextPool(void)` |
+| `0x20b490` | `class MNSandbox::SandboxCoreLuaDirector & __cdecl MNSandbox::GetCoreLuaDirector(void)` |
+| `0x820e0` | `class MNSandbox::SandboxCoreManagers & __cdecl MNSandbox::GetCoreManagers(void)` |
+| `0x57af0` | `public: class MNSandbox::AutoRef<class MNSandbox::CoroutineRewrite> const & __thiscall MNSandbox::LuaCoroutine::GetCoroutineRewrite(void)` |
+| `0x23c150` | `public: int __thiscall MNSandbox::LuaArguments::GetCount(void)const ` |
+| `0x24fc10` | `unsigned __int64 __cdecl MNSandbox::GetCurCpuTick(void)` |
+| `0x57ce0` | `public: __int64 __thiscall MNSandbox::GameMap::GetCurLoadedServiceNodeId(void)` |
+| `0x93950` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::AssetObjectContainer::GetCurLoadingAssetInfo(void)` |
+| `0x820f0` | `public: enum MNSandbox::SAVEMODE __thiscall MNSandbox::GameMapHost::GetCurMapLoadMode(void)` |
+| `0xd0c90` | `public: char * __thiscall MNSandbox::ByteBuffer::GetCurReadBuffer(void)const ` |
+| `0x59e60` | `public: enum MNSandbox::LuaScript::RUNSTATE __thiscall MNSandbox::LuaScript::GetCurRunState(void)const ` |
+| `0x199930` | `protected: enum MNSandbox::SAVEMODE __thiscall MNSandbox::SceneRoot::GetCurSavemode(void)` |
+| `0x588e0` | `public: enum MNSandbox::NodePacket::STATUS const __thiscall MNSandbox::NodePacket::GetCurStatus(void)const ` |
+| `0x24fc20` | `unsigned __int64 __cdecl MNSandbox::GetCurSysMicroSecond(void)` |
+| `0x24fc30` | `unsigned __int64 __cdecl MNSandbox::GetCurSysMilliSecond(void)` |
+| `0x14b8b0` | `public: unsigned __int64 __thiscall MNSandbox::GameStep::GetCurTickElapse(void)` |
+| `0x57d00` | `public: enum MNSandbox::AssetObjectContainer::WAITASSETFINISH __thiscall MNSandbox::AssetObjectContainer::GetCurWaitFinishFlag(void)` |
+| `0xd0ca0` | `public: char * __thiscall MNSandbox::ByteBuffer::GetCurWriteBuffer(int)const ` |
+| `0x199970` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SceneRoot::GetCurrentCamera(void)const ` |
+| `0x1bcbd0` | `class MNSandbox::WeakRef<class MNSandbox::CloudServerConfigService> __cdecl MNSandbox::GetCurrentCloudServerConfigService(void)` |
+| `0x19eb90` | `class MNSandbox::WeakRef<class MNSandbox::GameMap> __cdecl MNSandbox::GetCurrentGameMap(void)` |
+| `0x1e1c70` | `class MNSandbox::AutoRef<class MNSandbox::GameNode> __cdecl MNSandbox::GetCurrentGameRoot(void)` |
+| `0x1d44b0` | `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ContextActionService::GetCurrentLocalToolIcon(void)` |
+| `0x1704e0` | `public: class MNSandbox::WeakRef<class MNSandbox::Scene> __thiscall MNSandbox::SdbSceneManager::GetCurrentScene(void)` |
+| `0x19ebd0` | `class MNSandbox::WeakRef<class MNSandbox::SceneRoot> __cdecl MNSandbox::GetCurrentWorkspace(void)` |
+| `0x57cf0` | `public: class MNSandbox::ReflexEnum * __thiscall MNSandbox::ReflexType::GetCustomDataForEnum(void)const ` |
+| `0x59c70` | `public: class MNSandbox::ReflexContainer * __thiscall MNSandbox::ReflexContainer::Pool::GetData(class MNSandbox::ReflexType const *)` |
+| `0x50f90` | `public: unsigned int __thiscall MNSandbox::ReflexConfig::GetData(void)` |
+| `0x13bff0` | `public: class MNSandbox::SandboxParam * __thiscall MNSandbox::SandboxParamGroup::GetData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x584f0` | `public: enum MNSandbox::IDGENDATATYPE __thiscall MNSandbox::IDGeneratorMessage::GetDataType(void)const ` |
+| `0x57d10` | `public: bool __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetData_Bool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x57d10` | `public: bool __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetData_Bool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x57e00` | `public: double __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetData_Number(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,double)` |
+| `0x57e00` | `public: double __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetData_Number(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,double)` |
+| `0x57ef0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x57ef0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x58070` | `public: void * __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetData_Userdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58070` | `public: void * __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetData_Userdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58180` | `public: char const * __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetData_str(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58180` | `public: char const * __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetData_str(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58270` | `public: class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::Attribute>,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class MNSandbox::AutoRef<class MNSandbox::Attribute> > > > const & __thiscall MNSandbox::AttributeContainer::GetDatas(void)const ` |
+| `0x23ee70` | `public: int __thiscall MNSandbox::Lua::LinkerData::GetDatas(struct lua_State *,int,int)` |
+| `0x57ad0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::ReflexVariant,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class MNSandbox::ReflexVariant> > > const & __thiscall MNSandbox::ReflexMap::GetDatas(void)` |
+| `0x58280` | `public: class MNSandbox::AutoRef<class MNSandbox::DebugAction> const & __thiscall MNSandbox::SandboxCoreDriver::GetDebugAction(void)` |
+| `0x187ed0` | `public: unsigned int __thiscall MNSandbox::SandboxNode::GetDescendantCount(void)const ` |
+| `0x59dd0` | `public: struct MNSandbox::Coord3<float> const & __thiscall MNSandbox::Ray::GetDir(void)const ` |
+| `0x246df0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetDirectoryPath(enum MNSandbox::Config::DIRECTORY)const ` |
+| `0x58290` | `public: int __thiscall MNSandbox::SandboxScheduler::GetDoTimes(void)const ` |
+| `0x582a0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetDownloadPath(void)const ` |
+| `0x1c4350` | `protected: bool __thiscall MNSandbox::ConfigService::GetEditorVersion(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)const ` |
+| `0x582c0` | `public: float __thiscall MNSandbox::GameStep::GetElapse(void)const ` |
+| `0xddd40` | `public: class MNSandbox::ReflexEnum * __thiscall MNSandbox::ReflexEnumContainer::GetEnum(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x529e0` | `public: static bool __cdecl MNSandbox::ReflexPolicyFuncBase::GetEnumVal(void *,int)` |
+| `0x59dd0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::ReflexEnum *,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class MNSandbox::ReflexEnum *> > > const & __thiscall MNSandbox::ReflexEnumContainer::GetEnums(void)` |
+| `0x58310` | `public: class MNSandbox::Profile::ErrorLogMgr * __thiscall MNSandbox::Profile::RunDebugMgr::GetErrLogMgr(void)` |
+| `0x582d0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::LuaCoroutine::GetErrorLog(void)const ` |
+| `0x582e0` | `public: class MNSandbox::SandboxEventDispatcherManager & __thiscall MNSandbox::SandboxCoreManagers::GetEventDispatcherMgr(void)` |
+| `0x582f0` | `public: class MNSandbox::SandboxEventQueueManager & __thiscall MNSandbox::SandboxCoreManagers::GetEventQueueMgr(void)` |
+| `0x58300` | `public: unsigned int __thiscall MNSandbox::SandboxResult::GetExecutedCount(void)const ` |
+| `0x58310` | `public: int __thiscall MNSandbox::GameStep::GetFPS(void)const ` |
+| `0x149650` | `public: class MNSandbox::SandboxFactory * __thiscall MNSandbox::SandboxCoreFactorys::GetFactory(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58310` | `public: class MNSandbox::SandboxCoreFactorys & __thiscall MNSandbox::SandboxCoreDriver::GetFactorys(void)` |
+| `0x86900` | `public: enum MNSandbox::AssetFetchStatus __thiscall MNSandbox::AssetRef::GetFetchStatus(void)` |
+| `0xa8520` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::AssetRef::GetFileLocalCacheFullPath(void)` |
+| `0x58670` | `public: class std::unordered_map<__int64,struct MNSandbox::ListenRainbowCallbackMgr::FlagInfo,struct std::hash<__int64>,struct std::equal_to<__int64>,class std::allocator<struct std::pair<__int64 const ,struct MNSandbox::ListenRainbowCallbackMgr::FlagInfo> > > const & __thiscall MNSandbox::ListenRainbowCallbackMgr::GetFlagList(void)` |
+| `0x58320` | `public: class MNSandbox::SandboxFlags<unsigned int> const & __thiscall MNSandbox::SandboxNode::GetFlags(void)const ` |
+| `0x58330` | `public: int __thiscall MNSandbox::ReflexContainer::GetForceSaveList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,unsigned int)` |
+| `0x50f90` | `public: unsigned int __thiscall MNSandbox::FrameLimit::GetFrame(void)const ` |
+| `0x14b8c0` | `public: int __thiscall MNSandbox::GameStep::GetFramePerSecond(void)` |
+| `0x162920` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ArchiveData::GetFullPath(char const *)` |
+| `0x58350` | `public: enum MNSandbox::GAMEENV __thiscall MNSandbox::Config::GetGameEnv(void)const ` |
+| `0x1c43d0` | `protected: bool __thiscall MNSandbox::ConfigService::GetGameLanguage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)const ` |
+| `0x58360` | `public: class MNSandbox::WeakRef<class MNSandbox::GameMap> __thiscall MNSandbox::SandboxCoreManagers::GetGameMap(void)` |
+| `0x583a0` | `public: enum MNSandbox::Config::GAMEPLAYMODE __thiscall MNSandbox::Config::GetGamePlayMode(void)const ` |
+| `0x1e1df0` | `class MNSandbox::AutoRef<class MNSandbox::ServiceNode> __cdecl MNSandbox::GetGameServiceNode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1e1ef0` | `class MNSandbox::AutoRef<class MNSandbox::ServiceNode> __cdecl MNSandbox::GetGameServiceNode(__int64 const &)` |
+| `0x583b0` | `public: class MNSandbox::GameStage * __thiscall MNSandbox::GameMap::GetGameStage(void)` |
+| `0x583b0` | `public: class MNSandbox::GameStage const * __thiscall MNSandbox::GameMap::GetGameStage(void)const ` |
+| `0x583c0` | `public: class MNSandbox::GameStep & __thiscall MNSandbox::SandboxCoreDriver::GetGameStepManager(void)` |
+| `0x139f60` | `class MNSandbox::EventObjectManager & __cdecl MNSandbox::GetGlobalEvent(class MNSandbox::Object *)` |
+| `0x139830` | `public: static class MNSandbox::SandboxEventDispatcherManager & __cdecl MNSandbox::SandboxEventDispatcherManager::GetGlobalInstance(void)` |
+| `0x1e9a70` | `class MNSandbox::WeakRef<class MNSandbox::GlobalServiceNode> __cdecl MNSandbox::GetGlobalServiceNode(void)` |
+| `0x583d0` | `public: class MNSandbox::WeakRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxCoreDriver::GetGlobalServiceNode(void)` |
+| `0x1e9b50` | `class MNSandbox::GlobalServiceNodeBase * __cdecl MNSandbox::GetGlobalServiceNodeActive(void)` |
+| `0x57ae0` | `public: class MNSandbox::SandboxFlags<unsigned int> & __thiscall MNSandbox::Stream::GetHeadFlag(void)` |
+| `0x57ae0` | `public: class MNSandbox::SandboxFlags<unsigned int> const & __thiscall MNSandbox::Stream::GetHeadFlag(void)const ` |
+| `0x58410` | `public: class MNSandbox::AutoRef<class MNSandbox::GlobalServiceNodeHost> const & __thiscall MNSandbox::GlobalServiceNode::GetHost(void)const ` |
+| `0xd7170` | `private: class MNSandbox::IDGeneratorMessage * __thiscall MNSandbox::IDGeneratorManager::GetIDGenMsgPrivate(enum MNSandbox::IDGeneratorType,enum MNSandbox::IDGENDATATYPE)const ` |
+| `0x8c7e0` | `public: int __thiscall MNSandbox::NodePacket::GetId(void)const ` |
+| `0x9df50` | `public: static bool __cdecl MNSandbox::AssetIdParse::GetIdInfoFromCache(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetIdInfo &)` |
+| `0x57900` | `public: virtual int __thiscall MNSandbox::ReflexValue::GetIndexId(void)const ` |
+| `0x93970` | `public: static class MNSandbox::AssetObjectContainer * __cdecl MNSandbox::AssetObjectContainer::GetInstance(void)` |
+| `0x143940` | `public: static class MNSandbox::GlobalNotify & __cdecl MNSandbox::GlobalNotify::GetInstance(void)` |
+| `0x15a770` | `public: static class MNSandbox::Statistics::InstanceCount & __cdecl MNSandbox::Statistics::InstanceCount::GetInstance(void)` |
+| `0x23f9c0` | `public: static class MNSandbox::LuaLinkerManager & __cdecl MNSandbox::LuaLinkerManager::GetInstance(void)` |
+| `0x15a780` | `public: static class MNSandbox::Statistics::NodeCount & __cdecl MNSandbox::Statistics::NodeCount::GetInstance(void)` |
+| `0xdba60` | `public: static class MNSandbox::ReflexReferenceContainer & __cdecl MNSandbox::ReflexReferenceContainer::GetInstance(void)` |
+| `0x58420` | `public: static class MNSandbox::SandboxCoreDriver & __cdecl MNSandbox::SandboxCoreDriver::GetInstance(void)` |
+| `0x1496c0` | `public: static class MNSandbox::SandboxCoreFactorys & __cdecl MNSandbox::SandboxCoreFactorys::GetInstance(void)` |
+| `0x84ae0` | `public: static class MNSandbox::SandboxCorePools & __cdecl MNSandbox::SandboxCorePools::GetInstance(void)` |
+| `0x13b390` | `public: static class MNSandbox::SandboxEventQueueManager & __cdecl MNSandbox::SandboxEventQueueManager::GetInstance(class MNSandbox::Object *)` |
+| `0xd9320` | `public: static class MNSandbox::SandboxParamPool & __cdecl MNSandbox::SandboxParamPool::GetInstance(void)` |
+| `0x13d720` | `public: static class MNSandbox::SandboxSchedulerManager & __cdecl MNSandbox::SandboxSchedulerManager::GetInstance(class MNSandbox::Object *)` |
+| `0x15a820` | `public: unsigned int __thiscall MNSandbox::Statistics::InstanceCount::GetInstanceCount(enum MNSandbox::Statistics::INSCOUNT_TYPE)const ` |
+| `0x58420` | `public: static class MNSandbox::SandboxCoreDriver * __cdecl MNSandbox::SandboxCoreDriver::GetInstancePtr(void)` |
+| `0x13f7e0` | `public: bool __thiscall MNSandbox::CustomFunction::GetInvoke(class MNSandbox::AutoRef<class MNSandbox::LuaFunction> &)const ` |
+| `0xdddc0` | `public: class MNSandbox::ReflexEnum::Item * __thiscall MNSandbox::ReflexEnum::GetItem(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58430` | `public: class MNSandbox::ReflexEnum::Item const & __thiscall MNSandbox::ReflexEnum::GetItem(int)const ` |
+| `0xdde00` | `public: class MNSandbox::ReflexEnum::Item * __thiscall MNSandbox::ReflexEnum::GetItemByVal(int)` |
+| `0x58470` | `public: class std::vector<class MNSandbox::ReflexEnum::Item,class std::allocator<class MNSandbox::ReflexEnum::Item> > const & __thiscall MNSandbox::ReflexEnum::GetItems(void)const ` |
+| `0x58480` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetLanguage(void)const ` |
+| `0x89d60` | `public: unsigned int __thiscall MNSandbox::Stream::GetLeft(void)const ` |
+| `0x585b0` | `public: unsigned int __thiscall MNSandbox::FrameLimit::GetLimitMS(void)const ` |
+| `0xd98c0` | `public: class MNSandbox::LinkerRef * __thiscall MNSandbox::Ref::GetLinker(void)` |
+| `0x584a0` | `public: class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const & __thiscall MNSandbox::LuaLinker::GetLinkerData(void)const ` |
+| `0x23fa50` | `private: class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> __thiscall MNSandbox::LuaLinkerManager::GetLinkerData(struct lua_State *,int,int)` |
+| `0x584b0` | `public: int __thiscall MNSandbox::LuaLinker::GetLinkerid(void)const ` |
+| `0x584c0` | `private: class MNSandbox::ListNode<class MNSandbox::Component *> * __thiscall MNSandbox::Component::GetListNode(void)` |
+| `0x82100` | `public: class MNSandbox::AutoRef<class MNSandbox::Listener<> > __thiscall MNSandbox::GameMapHost::GetListenEnterPlayMode(void)` |
+| `0x82180` | `public: class MNSandbox::AutoRef<class MNSandbox::Listener<> > __thiscall MNSandbox::GameMapHost::GetListenLeavePlayMode(void)` |
+| `0x138360` | `public: class MNSandbox::Object * __thiscall MNSandbox::Callback::GetListener(void)const ` |
+| `0x57d00` | `public: virtual enum MNSandbox::ListenerInterface::LISTENERTYPE __thiscall MNSandbox::ListenerInterface::GetListenerType(void)` |
+| `0x93a20` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::AssetService::GetLoadDesc(void)` |
+| `0xbdbe0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::AssetServiceRemote::GetLoadDesc(void)` |
+| `0x584d0` | `public: int __thiscall MNSandbox::ReflexContainer::GetLoadList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,unsigned int)` |
+| `0x1dba70` | `public: enum MNSandbox::ScriptNode::LoadMode __thiscall MNSandbox::ScriptNode::GetLoadMode(void)const ` |
+| `0x86910` | `public: enum MNSandbox::AssetResType __thiscall MNSandbox::AssetRef::GetLoadResType(void)const ` |
+| `0x86920` | `public: enum MNSandbox::AssetLoadResult __thiscall MNSandbox::AssetRef::GetLoadResult(void)const ` |
+| `0x8c7f0` | `public: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::NodePacket::GetLoadResult(void)` |
+| `0x86930` | `public: enum MNSandbox::AssetLoadState __thiscall MNSandbox::AssetRef::GetLoadState(void)const ` |
+| `0x1e1fc0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameNode::GetLoadedNode(void)const ` |
+| `0x8c800` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::NodePacket::GetLoadedNode(void)` |
+| `0x584f0` | `public: enum MNSandbox::SYNCLOCALFLAG __thiscall MNSandbox::NodeSyncMode::GetLocalSyncFlag(void)const ` |
+| `0x58500` | `public: enum MNSandbox::SYNCLOCALFLAG __thiscall MNSandbox::SandboxNode::GetLocalSyncFlag(void)const ` |
+| `0x58510` | `public: int __thiscall MNSandbox::Config::GetLocalUin(void)` |
+| `0x584a0` | `public: class MNSandbox::AutoRef<class MNSandbox::Log> const & __thiscall MNSandbox::SandboxCoreDriver::GetLog(void)` |
+| `0x58520` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetLogPath(void)const ` |
+| `0x23eb60` | `public: static class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine> __cdecl MNSandbox::LuaLinker::GetLua(struct lua_State *)` |
+| `0x58540` | `public: class MNSandbox::SandboxCoreLuaDirector & __thiscall MNSandbox::SandboxCoreDriver::GetLua(void)` |
+| `0x1f6910` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ScriptNode::GetLuaCode(void)const ` |
+| `0x1dba80` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ScriptNode::GetLuaFile(void)` |
+| `0x23fb10` | `private: class MNSandbox::WeakRef<class MNSandbox::LuaLinker> __thiscall MNSandbox::LuaLinkerManager::GetLuaLinker(int)` |
+| `0x57ad0` | `public: class MNSandbox::AutoRef<class MNSandbox::Log> const & __thiscall MNSandbox::SandboxCoreDriver::GetLuaLog(void)` |
+| `0x20f980` | `public: static class MNSandbox::WeakRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::LuaCoroutine::GetLuaNodeBySource(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x21cfd0` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::ScriptState::GetLuaRunCoroutine(void)const ` |
+| `0x1dba90` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaScript> __thiscall MNSandbox::ScriptNode::GetLuaScript(void)` |
+| `0x20fb00` | `public: struct lua_State * __thiscall MNSandbox::LuaCoroutine::GetLuaState(void)const ` |
+| `0x23ec00` | `public: static struct lua_State * __cdecl MNSandbox::LuaLinker::GetLuaState(class MNSandbox::LuaCoroutine *)` |
+| `0x20b4a0` | `public: struct lua_State * __thiscall MNSandbox::SandboxCoreLuaDirector::GetLuaState(void)const ` |
+| `0x58540` | `public: struct lua_State * __thiscall MNSandbox::ScriptState::GetLuaState(void)` |
+| `0x21d010` | `public: class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::ScriptState::GetLuaStateRef(struct lua_State *)` |
+| `0x58280` | `protected: class MNSandbox::Lua::StateStack & __thiscall MNSandbox::ScriptState::GetLuaStateStack(void)` |
+| `0x21d0a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptState::GetLuaTraceBack(struct lua_State *)` |
+| `0xdf700` | `private: struct lua_State * __thiscall MNSandbox::Lua::LinkerData::GetMainL(void)` |
+| `0xdf700` | `public: static struct lua_State * __cdecl MNSandbox::LuaLinker::GetMainL(void)` |
+| `0xdf700` | `private: static struct lua_State * __cdecl MNSandbox::ReflexLuaTuple::GetMainL(void)` |
+| `0x8c770` | `public: class MNSandbox::Thread::MainThreadTaskGroup & __thiscall MNSandbox::Thread::ThreadTaskManager::GetMainTaskGroup(void)` |
+| `0x2514b0` | `protected: class MNSandbox::Thread::MainThreadTaskInterface * __thiscall MNSandbox::Thread::MainThreadTaskGroup::GetMainTaskInterface(unsigned int)` |
+| `0x585b0` | `public: class MNSandbox::SandboxCoreManagers & __thiscall MNSandbox::SandboxCoreDriver::GetManagers(void)` |
+| `0x13b3b0` | `public: static class MNSandbox::SandboxEventQueue & __cdecl MNSandbox::SandboxEventQueueManager::GetManualQueue(class MNSandbox::Object *)` |
+| `0x585c0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetMapAssetPath(void)const ` |
+| `0x585e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetMapDir(void)const ` |
+| `0x247450` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetMapDirBranch(void)const ` |
+| `0x2474b0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetMapFullPath(void)const ` |
+| `0x58600` | `public: __int64 __thiscall MNSandbox::Config::GetMapId(void)const ` |
+| `0x58610` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetMapSandboxPath(void)const ` |
+| `0x1a6580` | `public: class MNSandbox::WeakRef<class MNSandbox::MapSave> __thiscall MNSandbox::GameMapHost::GetMapSave(enum MNSandbox::SAVEMODE)` |
+| `0x585b0` | `public: int __thiscall MNSandbox::ReflexVersion::GetMax(void)const ` |
+| `0x93a50` | `public: float __thiscall MNSandbox::FrameLimit::GetMaxFps(void)const ` |
+| `0x1fc7b0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ScriptService::GetMd5ByUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x584c0` | `private: int __thiscall MNSandbox::MNTimer::GetMgrPieceIdx(void)const ` |
+| `0x50f90` | `public: int __thiscall MNSandbox::ReflexVersion::GetMin(void)const ` |
+| `0x93a60` | `public: float __thiscall MNSandbox::FrameLimit::GetMinFps(void)const ` |
+| `0x19b8c0` | `public: struct MNSandbox::Coord2<short> const & __thiscall MNSandbox::GameInput::GetMouseLocation(void)const ` |
+| `0x19b8d0` | `public: struct MNSandbox::Coord2<float> __thiscall MNSandbox::GameInput::GetMouseRatio(void)const ` |
+| `0x58630` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::Attribute::GetName(void)const ` |
+| `0x58640` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::Component::GetName(void)const ` |
+| `0x58650` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ReflexEnum::GetName(void)const ` |
+| `0x58670` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ReflexType::GetName(void)const ` |
+| `0x58280` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ReflexValue::GetName(void)const ` |
+| `0x58680` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::SandboxNode::GetName(void)const ` |
+| `0x57ae0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::SandboxScheduler::GetName(void)const ` |
+| `0x58640` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::SceneChunk::GetName(void)const ` |
+| `0x93a70` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const & __thiscall MNSandbox::AssetService::GetNecessaryAssets(void)` |
+| `0xbde30` | `public: bool __thiscall MNSandbox::AssetService::GetNetworkAssetId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xbdec0` | `public: bool __thiscall MNSandbox::AssetService::GetNetworkAssetIdByShortId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x93a80` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetObject::GetNetworkId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x58690` | `private: int __thiscall MNSandbox::LuaLinkerManager::GetNewLinkerID(void)` |
+| `0x170530` | `public: int __thiscall MNSandbox::SdbSceneManager::GetNewNodeIndex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x170650` | `public: __int64 __thiscall MNSandbox::SdbSceneManager::GetNewSceneObjid(void)` |
+| `0x1f6950` | `private: unsigned int __thiscall MNSandbox::ScriptNode::GetNewScriptId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x1fc890` | `public: unsigned int __thiscall MNSandbox::ScriptService::GetNewScriptId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x187f00` | `public: class MNSandbox::SandboxNode * __thiscall MNSandbox::SandboxNode::GetNext(void)const ` |
+| `0x586a0` | `public: class MNSandbox::Notify<> & __thiscall MNSandbox::GlobalNotify::GetNextTick(void)` |
+| `0x586c0` | `public: class MNSandbox::WeakRef<class MNSandbox::ScriptNode> __thiscall MNSandbox::LuaCoroutine::GetNode(void)` |
+| `0x1c1fb0` | `public: class MNSandbox::AutoRef<class MNSandbox::Signal> __thiscall MNSandbox::CollectionService::GetNodeAddedSignal(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x170670` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SdbSceneManager::GetNodeById(__int64)` |
+| `0x1706f0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SdbSceneManager::GetNodeByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x187f20` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxNode::GetNodeByPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x586e0` | `public: unsigned int __thiscall MNSandbox::GameNode::GetNodeCount(void)const ` |
+| `0x586f0` | `public: class MNSandbox::WeakRef<class MNSandbox::GameNode> __thiscall MNSandbox::GameMap::GetNodeGame(void)` |
+| `0x58730` | `public: class MNSandbox::AutoRef<class MNSandbox::NodeIdAllocator> __thiscall MNSandbox::SdbSceneManager::GetNodeIdAllocator(void)` |
+| `0x162ae0` | `public: static class jsonxx::Object const * __cdecl MNSandbox::NodeSerialize::GetNodeJson(class jsonxx::Object const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const *)` |
+| `0x58750` | `public: class MNSandbox::NodePacketContainer & __thiscall MNSandbox::GameMap::GetNodePacketContainer(void)` |
+| `0x584b0` | `public: class MNSandbox::NodePacketThread * __thiscall MNSandbox::NodePacketContainer::GetNodePacketThread(void)` |
+| `0x21d630` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptState::GetNodePath(struct lua_State *,int *)` |
+| `0x21d890` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptState::GetNodePath(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,int *)` |
+| `0x1c2030` | `public: class MNSandbox::AutoRef<class MNSandbox::Signal> __thiscall MNSandbox::CollectionService::GetNodeRemovedSignal(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x585b0` | `public: enum MNSandbox::SYNCMODE __thiscall MNSandbox::NodeSyncMode::GetNodeSyncMode(void)const ` |
+| `0x58760` | `public: class MNSandbox::NodeSyncMode & __thiscall MNSandbox::SandboxNode::GetNodeSyncMode(void)` |
+| `0x136040` | `class MNSandbox::WeakRef<class MNSandbox::NodeWatcher> __cdecl MNSandbox::GetNodeWatcher(int)` |
+| `0x136070` | `public: class MNSandbox::WeakRef<class MNSandbox::NodeWatcher> __thiscall MNSandbox::NodeWatcherGroup::GetNodeWatcher(int)` |
+| `0x58770` | `public: class MNSandbox::NodeWatcherGroup * __thiscall MNSandbox::GameMap::GetNodeWatcherGroup(void)` |
+| `0x1360e0` | `class MNSandbox::NodeWatcherGroup * __cdecl MNSandbox::GetNodeWatcherGroup(void)` |
+| `0x58780` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameMap::GetNode_BlockService(void)` |
+| `0x587a0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameMap::GetNode_ContextActionService(void)` |
+| `0x587c0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameMap::GetNode_Game(void)` |
+| `0x587e0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameMap::GetNode_PlayerRoot(void)` |
+| `0x58800` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameMap::GetNode_UserInputService(void)` |
+| `0x58820` | `public: __int64 __thiscall MNSandbox::SandboxNode::GetNodeid(void)const ` |
+| `0x142230` | `public: class MNSandbox::Notify<class MNSandbox::AutoRef<class MNSandbox::ReflexTuple> > & __thiscall MNSandbox::CustomNotify::GetNotify(void)` |
+| `0x58290` | `public: class MNSandbox::NotifyInterface * __thiscall MNSandbox::ListenersInterface::GetNotify(void)const ` |
+| `0x57960` | `public: class MNSandbox::Notify<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > * __thiscall MNSandbox::SandboxNode::GetNotifyAttributeChanged(void)` |
+| `0x58830` | `public: class MNSandbox::NotifyInterface * __thiscall MNSandbox::LuaLinker::GetNotifyRelease(void)` |
+| `0x11b8f0` | `public: static struct MNSandbox::ReflexReferenceIns * __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::GetObjectW(struct lua_State *,int)` |
+| `0x584b0` | `public: unsigned int __thiscall MNSandbox::Stream::GetOffset(void)const ` |
+| `0x58840` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::ReflexValue *,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class MNSandbox::ReflexValue *> > > & __thiscall MNSandbox::ReflexContainer::GetOrigin(void)` |
+| `0x58290` | `public: class MNSandbox::ReflexValue * __thiscall MNSandbox::ReflexValue::GetOrigin(void)const ` |
+| `0xdbb00` | `public: class MNSandbox::ReflexValue * __thiscall MNSandbox::ReflexContainer::GetOriginReflex(class MNSandbox::ReflexValue *)` |
+| `0x58300` | `public: class MNSandbox::GameObject * __thiscall MNSandbox::Component::GetOwner(void)const ` |
+| `0x58850` | `public: class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::LuaCoroutine::GetOwner(void)` |
+| `0x58290` | `public: int __thiscall MNSandbox::NodeIdAllocator::GetOwner(void)const ` |
+| `0x50f90` | `public: class MNSandbox::Object * __thiscall MNSandbox::SandboxLuaPluginManager::GetOwner(void)` |
+| `0x57d00` | `public: class MNSandbox::Object * __thiscall MNSandbox::SandboxScheduler::GetOwner(void)` |
+| `0x58870` | `public: __int64 __thiscall MNSandbox::Config::GetOwnerMapId(void)const ` |
+| `0x579f0` | `public: int __thiscall MNSandbox::Config::GetOwnerUin(void)const ` |
+| `0x188300` | `public: int __thiscall MNSandbox::SandboxNode::GetOwnerUin(void)const ` |
+| `0x225820` | `public: static void * __cdecl MNSandbox::LuaRegisterAddress::GetP(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58880` | `public: static void * __cdecl MNSandbox::LuaRegisterAddress::GetP(enum MNSandbox::LuaRegisterAddress::TYPE)` |
+| `0x58890` | `public: class MNSandbox::SandboxParamGroup & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetParamGroup(void)` |
+| `0x58890` | `public: class MNSandbox::SandboxParamGroup & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetParamGroup(void)` |
+| `0x58270` | `public: class MNSandbox::SandboxMemoryPool<class MNSandbox::SandboxParamGroup> & __thiscall MNSandbox::SandboxCorePools::GetParamGroupPool(void)` |
+| `0x588e0` | `public: class MNSandbox::SandboxParamGroup * __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::GetParamGroupPtr(void)` |
+| `0x588e0` | `public: class MNSandbox::SandboxParamGroup * __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::GetParamGroupPtr(void)` |
+| `0x588f0` | `public: class MNSandbox::SandboxParamPool & __thiscall MNSandbox::SandboxCorePools::GetParamPool(void)` |
+| `0x57990` | `public: virtual void * __thiscall MNSandbox::ReflexValue::GetParamRef(void *)` |
+| `0x57990` | `public: virtual void const * __thiscall MNSandbox::ReflexValue::GetParamRef(void const *)` |
+| `0x58900` | `public: bool __thiscall MNSandbox::SandboxNode::GetParent(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &)const ` |
+| `0x58940` | `public: virtual class MNSandbox::SandboxNode * __thiscall MNSandbox::SandboxNode::GetParent(void)const ` |
+| `0x58960` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SandboxNode::GetParentReflex(void)const ` |
+| `0x188350` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::SandboxNode::GetPath(void)const ` |
+| `0x58980` | `public: class MNSandbox::ReflexTypePolicy & __thiscall MNSandbox::ReflexType::GetPolicy(void)` |
+| `0x58980` | `public: class MNSandbox::ReflexTypePolicy const & __thiscall MNSandbox::ReflexType::GetPolicy(void)const ` |
+| `0xdbbb0` | `protected: static class MNSandbox::ReflexContainer::Pool & __cdecl MNSandbox::ReflexContainer::GetPool(void)` |
+| `0x584f0` | `public: class MNSandbox::SandboxCorePools & __thiscall MNSandbox::SandboxCoreDriver::GetPools(void)` |
+| `0x58840` | `public: struct MNSandbox::Coord3<float> const & __thiscall MNSandbox::Ray::GetPos(void)const ` |
+| `0x1885e0` | `public: class MNSandbox::SandboxNode * __thiscall MNSandbox::SandboxNode::GetPrev(void)const ` |
+| `0x15d4f0` | `unsigned int __cdecl MNSandbox::Platform::GetProcessId(void)` |
+| `0x86940` | `public: class MNSandbox::AssetProvenance & __thiscall MNSandbox::AssetRef::GetProvenance(void)` |
+| `0x86940` | `public: class MNSandbox::AssetProvenance const & __thiscall MNSandbox::AssetRef::GetProvenance(void)const ` |
+| `0x58990` | `public: int __thiscall MNSandbox::ReflexContainer::GetPublicList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,unsigned int)` |
+| `0x8c980` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::AssetInsNodePacket::GetRTTI(void)const ` |
+| `0x86ab0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::AssetRef::GetRTTI(void)const ` |
+| `0x94450` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::AssetService::GetRTTI(void)const ` |
+| `0x94460` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::AssetServiceHost::GetRTTI(void)const ` |
+| `0x94470` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::AssetServiceRemote::GetRTTI(void)const ` |
+| `0x19f790` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::CloudServerConfigService::GetRTTI(void)const ` |
+| `0x1c2270` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::CollectionService::GetRTTI(void)const ` |
+| `0x59ac0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::Component::GetRTTI(void)const ` |
+| `0x19f7a0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ConfigService::GetRTTI(void)const ` |
+| `0x1d4990` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ContextActionService::GetRTTI(void)const ` |
+| `0x1dbab0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::CoreScript::GetRTTI(void)const ` |
+| `0x13f820` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::CustomFunction::GetRTTI(void)const ` |
+| `0x142390` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::CustomNotify::GetRTTI(void)const ` |
+| `0x59ad0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::GameMap::GetRTTI(void)const ` |
+| `0x82200` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::GameMapClient::GetRTTI(void)const ` |
+| `0x82210` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::GameMapHost::GetRTTI(void)const ` |
+| `0x59ae0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::GameNode::GetRTTI(void)const ` |
+| `0x59af0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::GameObject::GetRTTI(void)const ` |
+| `0x59b00` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::GlobalServiceNode::GetRTTI(void)const ` |
+| `0x1b8d40` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::InputObject::GetRTTI(void)const ` |
+| `0x1b8d50` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::InputObjectSignal::GetRTTI(void)const ` |
+| `0x59b10` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ListenerInterface::GetRTTI(void)const ` |
+| `0x59b20` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ListenerLua::GetRTTI(void)const ` |
+| `0x1ed820` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LocalScriptNode::GetRTTI(void)const ` |
+| `0x59b30` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LuaArgument::GetRTTI(void)const ` |
+| `0x59b40` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LuaArguments::GetRTTI(void)const ` |
+| `0x59b50` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LuaCoroutine::GetRTTI(void)const ` |
+| `0x59b60` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LuaFunction::GetRTTI(void)const ` |
+| `0x59b70` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LuaLinker::GetRTTI(void)const ` |
+| `0x1efa60` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::LuaProfileService::GetRTTI(void)const ` |
+| `0x59b80` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::MNTimer::GetRTTI(void)const ` |
+| `0x1a6890` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::MainStorage::GetRTTI(void)const ` |
+| `0x1f28f0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ModuleScriptNode::GetRTTI(void)const ` |
+| `0x8c990` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::NodePacket::GetRTTI(void)const ` |
+| `0x59b90` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::NotifyInterface::GetRTTI(void)const ` |
+| `0x59ba0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::Object::GetRTTI(void)const ` |
+| `0x59bb0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::Ref::GetRTTI(void)const ` |
+| `0x59bc0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ReflexLuaTuple::GetRTTI(void)const ` |
+| `0xe0470` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ReflexMap::GetRTTI(void)const ` |
+| `0x59bd0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ReflexTuple::GetRTTI(void)const ` |
+| `0x59be0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ReflexValue::GetRTTI(void)const ` |
+| `0x8c9a0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::SandboxAssetObject::GetRTTI(void)const ` |
+| `0x1de2a0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::SandboxDebugHelper::GetRTTI(void)const ` |
+| `0x1e2300` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::SandboxLoadedService::GetRTTI(void)const ` |
+| `0x59bf0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::SandboxNode::GetRTTI(void)const ` |
+| `0x59c00` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::Scene::GetRTTI(void)const ` |
+| `0x59c10` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::SceneRoot::GetRTTI(void)const ` |
+| `0x1f47e0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ScriptContext::GetRTTI(void)const ` |
+| `0x1dbac0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ScriptNode::GetRTTI(void)const ` |
+| `0x1f7bf0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ScriptObject::GetRTTI(void)const ` |
+| `0x1e9f50` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ScriptService::GetRTTI(void)const ` |
+| `0x1e9f60` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ScriptServiceHost::GetRTTI(void)const ` |
+| `0x1e9f70` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ScriptServiceRemote::GetRTTI(void)const ` |
+| `0x19f7b0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ServerScriptService::GetRTTI(void)const ` |
+| `0x19f7c0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ServerStorage::GetRTTI(void)const ` |
+| `0x59c20` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::ServiceNode::GetRTTI(void)const ` |
+| `0x59c30` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::Signal::GetRTTI(void)const ` |
+| `0x59c40` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::SignalConnect::GetRTTI(void)const ` |
+| `0x8a040` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::Stream::GetRTTI(void)const ` |
+| `0x8a050` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::StreamBuffer::GetRTTI(void)const ` |
+| `0x2078e0` | `public: virtual class MNSandbox::RuntimeClass const * __thiscall MNSandbox::TimerNode::GetRTTI(void)const ` |
+| `0xdaa80` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::RuntimeClass::Container::GetRTTIById(int)` |
+| `0xa8d40` | `public: static void __cdecl MNSandbox::AssetRef::GetRainbowAssetLoadInfo(struct Rainbow::AssetLoadStatus,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x86ac0` | `public: virtual class Rainbow::SharePtr<class Rainbow::Asset> __thiscall MNSandbox::AssetRef::GetRainbowAssetObject(void)` |
+| `0x8c9b0` | `public: class MNSandbox::AutoRef<class MNSandbox::Stream> __thiscall MNSandbox::AssetInsNodePacket::GetRealRes(void)` |
+| `0x59c50` | `public: class MNSandbox::Object * __thiscall MNSandbox::SandboxResult::GetReceiver(void)` |
+| `0x59c60` | `public: unsigned int __thiscall MNSandbox::Ref::GetRefCount(void)const ` |
+| `0x11b8f0` | `public: static struct MNSandbox::ReflexReferenceIns * __cdecl MNSandbox::ReflexReferenceBridge::GetRefInstance(struct lua_State *,int)` |
+| `0x94480` | `public: float __thiscall MNSandbox::FrameLimit::GetReferFps(void)const ` |
+| `0x59c70` | `public: class MNSandbox::ReflexReferenceLinker * __thiscall MNSandbox::ReflexReferenceContainer::GetReferenceLinkerByType(class MNSandbox::ReflexType const *)` |
+| `0xdbc50` | `public: class MNSandbox::ReflexValue * __thiscall MNSandbox::ReflexContainer::GetReflex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned int)` |
+| `0xdbca0` | `public: class MNSandbox::ReflexValue * __thiscall MNSandbox::ReflexContainer::GetReflexById(int)` |
+| `0x94490` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::AssetService::GetReflexContainer(void)const ` |
+| `0x944a0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::AssetServiceHost::GetReflexContainer(void)const ` |
+| `0x944b0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::AssetServiceRemote::GetReflexContainer(void)const ` |
+| `0x19f7d0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::CloudServerConfigService::GetReflexContainer(void)const ` |
+| `0x1c2280` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::CollectionService::GetReflexContainer(void)const ` |
+| `0x19f7e0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ConfigService::GetReflexContainer(void)const ` |
+| `0x1d49a0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ContextActionService::GetReflexContainer(void)const ` |
+| `0x1dbad0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::CoreScript::GetReflexContainer(void)const ` |
+| `0x13f830` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::CustomFunction::GetReflexContainer(void)const ` |
+| `0x1423a0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::CustomNotify::GetReflexContainer(void)const ` |
+| `0x59cf0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::GameNode::GetReflexContainer(void)const ` |
+| `0x59d00` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::GlobalServiceNode::GetReflexContainer(void)const ` |
+| `0x1b8d60` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::InputObject::GetReflexContainer(void)const ` |
+| `0x1b8d70` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::InputObjectSignal::GetReflexContainer(void)const ` |
+| `0x1ed830` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::LocalScriptNode::GetReflexContainer(void)const ` |
+| `0x1efa70` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::LuaProfileService::GetReflexContainer(void)const ` |
+| `0x1a68a0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::MainStorage::GetReflexContainer(void)const ` |
+| `0x1f2900` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ModuleScriptNode::GetReflexContainer(void)const ` |
+| `0x8c9d0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::SandboxAssetObject::GetReflexContainer(void)const ` |
+| `0x1de2b0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::SandboxDebugHelper::GetReflexContainer(void)const ` |
+| `0x1e2310` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::SandboxLoadedService::GetReflexContainer(void)const ` |
+| `0x59d10` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::SandboxNode::GetReflexContainer(void)const ` |
+| `0x59d20` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::SceneRoot::GetReflexContainer(void)const ` |
+| `0x1f47f0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ScriptContext::GetReflexContainer(void)const ` |
+| `0x1dbae0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ScriptNode::GetReflexContainer(void)const ` |
+| `0x1f7c00` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ScriptObject::GetReflexContainer(void)const ` |
+| `0x1e9f80` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ScriptService::GetReflexContainer(void)const ` |
+| `0x1e9f90` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ScriptServiceHost::GetReflexContainer(void)const ` |
+| `0x1e9fa0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ScriptServiceRemote::GetReflexContainer(void)const ` |
+| `0x19f7f0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ServerScriptService::GetReflexContainer(void)const ` |
+| `0x19f800` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ServerStorage::GetReflexContainer(void)const ` |
+| `0x59d30` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::ServiceNode::GetReflexContainer(void)const ` |
+| `0x2078f0` | `public: virtual class MNSandbox::ReflexContainer & __thiscall MNSandbox::TimerNode::GetReflexContainer(void)const ` |
+| `0xdbcf0` | `public: int __thiscall MNSandbox::ReflexContainer::GetReflexList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,enum MNSandbox::ReflexConfig::FLAG,enum MNSandbox::ReflexConfig::FLAG,unsigned int)` |
+| `0x16be50` | `public: struct MNSandbox::SyncMode const * __thiscall MNSandbox::NodeSyncMode::GetReflexLocalSync(class MNSandbox::ReflexValue const *)const ` |
+| `0x16bea0` | `public: enum MNSandbox::SYNCLOCALFLAG __thiscall MNSandbox::NodeSyncMode::GetReflexLocalSyncFlag(class MNSandbox::ReflexValue const *)const ` |
+| `0x59d40` | `public: enum MNSandbox::SYNCLOCALFLAG __thiscall MNSandbox::SandboxNode::GetReflexLocalSyncFlag(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x16bef0` | `public: enum MNSandbox::SYNCMODE __thiscall MNSandbox::NodeSyncMode::GetReflexSyncMode(class MNSandbox::ReflexValue const *)const ` |
+| `0x59d60` | `public: enum MNSandbox::SYNCMODE __thiscall MNSandbox::SandboxNode::GetReflexSyncMode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x59d80` | `public: class MNSandbox::ReflexType const * __thiscall MNSandbox::ReflexValue::GetReflexType(void)const ` |
+| `0xe4720` | `public: class MNSandbox::ReflexType const * __thiscall MNSandbox::ReflexTypePolicy::GetReflexTypeByVersion(unsigned int)const ` |
+| `0x59d90` | `public: enum MNSandbox::REFLEXTYPEENUM __thiscall MNSandbox::ReflexType::GetReflexTypeEnum(void)const ` |
+| `0x189db0` | `public: class MNSandbox::ReflexValue * __thiscall MNSandbox::SandboxNode::GetReflexValue(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0xdbdc0` | `protected: class MNSandbox::ReflexValue * __thiscall MNSandbox::ReflexContainer::GetReflexValueOriginByVersion(class MNSandbox::ReflexValue *,unsigned int)` |
+| `0x15e7f0` | `public: int __thiscall MNSandbox::SectionList::GetRemainNum(void)const ` |
+| `0xbe0b0` | `private: bool __thiscall MNSandbox::AssetServiceRemote::GetRemoteConfigUrlByReceve(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x58630` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct MNSandbox::SandboxAssetRequestMgr::ReqItem,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct MNSandbox::SandboxAssetRequestMgr::ReqItem> > > const & __thiscall MNSandbox::SandboxAssetRequestMgr::GetReqItems(void)` |
+| `0xb5010` | `public: void __thiscall MNSandbox::SandboxAssetRequestMgr::GetRequestUrlByResId_Cloud(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0xb5210` | `public: void __thiscall MNSandbox::SandboxAssetRequestMgr::GetRequestUrlByResId_Server(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0xb5560` | `public: void __thiscall MNSandbox::SandboxAssetRequestMgr::GetRequestUrlByShortId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x583a0` | `public: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::AssetInsNodePacket::GetResult(void)` |
+| `0x59da0` | `public: class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const __thiscall MNSandbox::LuaCoroutine::GetResult(void)const ` |
+| `0x59dc0` | `public: class MNSandbox::SandboxMemoryPool<class MNSandbox::SandboxResult> & __thiscall MNSandbox::SandboxCorePools::GetResultPool(void)` |
+| `0x1bce40` | `public: struct std::pair<int,int> __thiscall MNSandbox::CloudServerConfigService::GetRoomMatchWeight(void)` |
+| `0x189dd0` | `public: virtual class MNSandbox::SandboxNode * __thiscall MNSandbox::SandboxNode::GetRoot(void)` |
+| `0x189dd0` | `public: virtual class MNSandbox::SandboxNode const * __thiscall MNSandbox::SandboxNode::GetRoot(void)const ` |
+| `0x582f0` | `public: class MNSandbox::AutoRef<class MNSandbox::SceneRoot> const & __thiscall MNSandbox::Scene::GetRoot(void)` |
+| `0x59dd0` | `public: virtual class MNSandbox::SandboxNode * __thiscall MNSandbox::ServiceNode::GetRoot(void)` |
+| `0x59dd0` | `public: virtual class MNSandbox::SandboxNode const * __thiscall MNSandbox::ServiceNode::GetRoot(void)const ` |
+| `0x59de0` | `public: class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::LuaCoroutine::GetRootCo(void)` |
+| `0xb5ad0` | `public: bool __thiscall MNSandbox::SandboxAssetRequestMgr::GetRspItemByResid(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::SandboxAssetRequestMgr::RspItem &)` |
+| `0x58540` | `public: class MNSandbox::Profile::RunDataFrame * __thiscall MNSandbox::Profile::RunDataMgr::GetRunDataFrame(void)` |
+| `0x58310` | `public: class MNSandbox::Profile::RunDataMemory * __thiscall MNSandbox::Profile::RunDataMgr::GetRunDataMemoryCpp(void)` |
+| `0x8c7b0` | `public: class MNSandbox::Profile::RunDataMemory * __thiscall MNSandbox::Profile::RunDataMgr::GetRunDataMemoryLua(void)` |
+| `0x584f0` | `public: class MNSandbox::Profile::RunDataMgr * __thiscall MNSandbox::Profile::RunDebugMgr::GetRunDataMgr(void)` |
+| `0x58510` | `public: class MNSandbox::Profile::RunDataNodeCnt * __thiscall MNSandbox::Profile::RunDataMgr::GetRunDataNodeCnt(void)` |
+| `0x58540` | `public: class MNSandbox::Profile::RunLogMgr * __thiscall MNSandbox::Profile::RunDebugMgr::GetRunLogMgr(void)` |
+| `0x59e50` | `public: enum MNSandbox::Config::RUNMODE __thiscall MNSandbox::Config::GetRunMode(void)const ` |
+| `0x59e60` | `public: enum MNSandbox::ScriptState::RUNSTATE __thiscall MNSandbox::ScriptState::GetRunState(void)const ` |
+| `0x588e0` | `public: int __thiscall MNSandbox::ListenerInterface::GetRunTimes(void)const ` |
+| `0x210070` | `public: enum MNSandbox::Lua::JOBSTATE __thiscall MNSandbox::LuaCoroutine::GetRunningState(void)const ` |
+| `0x59e70` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetSDBEditorMapVersion(void)const ` |
+| `0x58270` | `public: class MNSandbox::ScriptState & __thiscall MNSandbox::SandboxCoreLuaDirector::GetSandboxLuaVM(void)` |
+| `0x21e6d0` | `class MNSandbox::ScriptState & __cdecl MNSandbox::GetSandboxScriptVM(void)` |
+| `0x59e90` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetSandboxWritePath(void)const ` |
+| `0x1affb0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::MapSave::GetSaveFilepath(void)` |
+| `0x59eb0` | `public: int __thiscall MNSandbox::ReflexContainer::GetSaveList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,unsigned int)` |
+| `0x82220` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,int> > > & __thiscall MNSandbox::GameMapHost::GetSaveMeshesName(void)` |
+| `0x59ed0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetSavePath(void)const ` |
+| `0x59ef0` | `public: unsigned int __thiscall MNSandbox::Config::GetSaveVersion(void)const ` |
+| `0x59f00` | `public: class MNSandbox::WeakRef<class MNSandbox::Scene> __thiscall MNSandbox::SandboxNode::GetScene(void)const ` |
+| `0x16d0c0` | `public: class MNSandbox::Scene * __thiscall MNSandbox::SceneChunk::GetScene(void)` |
+| `0x170be0` | `public: class MNSandbox::WeakRef<class MNSandbox::Scene> __thiscall MNSandbox::SdbSceneManager::GetScene(unsigned short)` |
+| `0x189e00` | `public: class MNSandbox::SceneChunk * __thiscall MNSandbox::SandboxNode::GetSceneChunk(void)const ` |
+| `0x170c40` | `class MNSandbox::SdbSceneManager & __cdecl MNSandbox::GetSceneManager(void)` |
+| `0x82230` | `public: class MNSandbox::SdbSceneManager & __thiscall MNSandbox::SandboxCoreManagers::GetSceneManager(void)` |
+| `0x5abf0` | `class MNSandbox::SdbSceneManager * __cdecl MNSandbox::GetSceneManagerPtr(void)` |
+| `0x82330` | `public: class MNSandbox::SdbSceneManager * __thiscall MNSandbox::SandboxCoreManagers::GetSceneManagerPtr(void)` |
+| `0x59f20` | `public: class MNSandbox::WeakRef<class MNSandbox::SdbSceneManager> __thiscall MNSandbox::GameMap::GetSceneMgr(void)` |
+| `0x16d0d0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::Scene::GetSceneObjById(__int64)` |
+| `0x16d220` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::Scene::GetSceneObjByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x59f60` | `public: unsigned short __thiscall MNSandbox::Scene::GetSceneid(void)const ` |
+| `0x50f90` | `public: class MNSandbox::SandboxScheduler * __thiscall MNSandbox::Callback::GetScheduler(void)const ` |
+| `0x588f0` | `public: class MNSandbox::SandboxSchedulerManager & __thiscall MNSandbox::SandboxCoreManagers::GetSchedulerMgr(void)` |
+| `0x1fcbb0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ScriptService::GetScript(unsigned int,bool)` |
+| `0x1f6ac0` | `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ScriptNode::GetScriptCodeById(void)const ` |
+| `0x59f70` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetScriptDownloadPath(void)const ` |
+| `0x1fcc90` | `protected: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ScriptService::GetScriptDownloadUrl(unsigned int)` |
+| `0x1fcd20` | `protected: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ScriptServiceHost::GetScriptFile(unsigned int)` |
+| `0x1fcd50` | `protected: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ScriptServiceRemote::GetScriptFile(unsigned int)` |
+| `0x1dbaf0` | `public: unsigned int __thiscall MNSandbox::ScriptNode::GetScriptId(void)const ` |
+| `0x1fce40` | `protected: struct MNSandbox::ScriptService::ScriptInfo * __thiscall MNSandbox::ScriptService::GetScriptInfo(unsigned int)` |
+| `0x1fced0` | `public: struct MNSandbox::ScriptService::ScriptInfo const & __thiscall MNSandbox::ScriptService::GetScriptInfoById(unsigned int)const ` |
+| `0x59f90` | `public: int __thiscall MNSandbox::ReflexContainer::GetScriptList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,unsigned int)` |
+| `0x210090` | `public: class MNSandbox::WeakRef<class MNSandbox::ScriptNode> __thiscall MNSandbox::LuaCoroutine::GetScriptNode(void)` |
+| `0x189e10` | `public: void __thiscall MNSandbox::SandboxNode::GetSelectedDescendants(class std::vector<class MNSandbox::SandboxNode *,class std::allocator<class MNSandbox::SandboxNode *> > &)` |
+| `0x59c50` | `public: class MNSandbox::Object * __thiscall MNSandbox::SandboxContext::GetSender(void)` |
+| `0x57970` | `public: int __thiscall MNSandbox::GameStep::GetServerFPS(void)const ` |
+| `0x1e2320` | `public: class MNSandbox::AutoRef<class MNSandbox::ServiceNode> __thiscall MNSandbox::GameNode::GetService(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x1e23a0` | `public: class MNSandbox::AutoRef<class MNSandbox::ServiceNode> __thiscall MNSandbox::GameNode::GetService(__int64)const ` |
+| `0x189e40` | `public: class MNSandbox::ServiceNode * __thiscall MNSandbox::SandboxNode::GetService(void)` |
+| `0x1e2420` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameNode::GetServiceNode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x1e24d0` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameNode::GetServiceNode(__int64)const ` |
+| `0x19f810` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::GameMap::GetServiceNodeByID(__int64)const ` |
+| `0x944c0` | `public: static class MNSandbox::AssetPool & __cdecl MNSandbox::Singleton<class MNSandbox::AssetPool>::GetSingleton(void)` |
+| `0xbe1a0` | `public: static class MNSandbox::AssetSyncMgrInterface & __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::GetSingleton(void)` |
+| `0xa9300` | `public: static class MNSandbox::AssetSyncPool & __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::GetSingleton(void)` |
+| `0x1c2290` | `public: static class MNSandbox::CollectionService & __cdecl MNSandbox::Singleton<class MNSandbox::CollectionService>::GetSingleton(void)` |
+| `0x19bab0` | `public: static class MNSandbox::GameInput & __cdecl MNSandbox::Singleton<class MNSandbox::GameInput>::GetSingleton(void)` |
+| `0x5abb0` | `public: static class MNSandbox::GameStep & __cdecl MNSandbox::Singleton<class MNSandbox::GameStep>::GetSingleton(void)` |
+| `0xd76a0` | `public: static class MNSandbox::IDGeneratorManager & __cdecl MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::GetSingleton(void)` |
+| `0x944d0` | `public: static class MNSandbox::ListenRainbowCallbackMgr & __cdecl MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::GetSingleton(void)` |
+| `0x157640` | `public: static class MNSandbox::Statistics::LoadCost & __cdecl MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::GetSingleton(void)` |
+| `0x1a68b0` | `public: static class MNSandbox::MainStorage & __cdecl MNSandbox::Singleton<class MNSandbox::MainStorage>::GetSingleton(void)` |
+| `0x5abc0` | `public: static class MNSandbox::Thread::MultiThreadPool & __cdecl MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::GetSingleton(void)` |
+| `0x8c9e0` | `public: static class MNSandbox::NodePacketContainer & __cdecl MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::GetSingleton(void)` |
+| `0x84af0` | `public: static class MNSandbox::RefPool & __cdecl MNSandbox::Singleton<class MNSandbox::RefPool>::GetSingleton(void)` |
+| `0xda440` | `public: static class MNSandbox::RemoteInstanceListenPool & __cdecl MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::GetSingleton(void)` |
+| `0x5abd0` | `public: static class MNSandbox::RemoteMsg & __cdecl MNSandbox::Singleton<class MNSandbox::RemoteMsg>::GetSingleton(void)` |
+| `0x155400` | `public: static class MNSandbox::Profile::RunDebugMgr & __cdecl MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::GetSingleton(void)` |
+| `0x86af0` | `public: static class MNSandbox::SandboxAssetCache & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::GetSingleton(void)` |
+| `0x9e0c0` | `public: static class MNSandbox::SandboxAssetRequestMgr & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::GetSingleton(void)` |
+| `0x1de2c0` | `public: static class MNSandbox::SandboxDebugHelper & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::GetSingleton(void)` |
+| `0x199a30` | `public: static class MNSandbox::SandboxMiscDataMgr & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::GetSingleton(void)` |
+| `0x5abe0` | `public: static class MNSandbox::ScopeFuncContainer & __cdecl MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::GetSingleton(void)` |
+| `0x1e9fb0` | `public: static class MNSandbox::ScriptService & __cdecl MNSandbox::Singleton<class MNSandbox::ScriptService>::GetSingleton(void)` |
+| `0x5abf0` | `public: static class MNSandbox::SdbSceneManager & __cdecl MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::GetSingleton(void)` |
+| `0x1e9fc0` | `public: static class MNSandbox::SupplementInterface & __cdecl MNSandbox::Singleton<class MNSandbox::SupplementInterface>::GetSingleton(void)` |
+| `0x9a510` | `public: static class MNSandbox::Thread::ThreadTaskManager & __cdecl MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::GetSingleton(void)` |
+| `0x14a9d0` | `public: static class MNSandbox::Debug::UIDebug & __cdecl MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::GetSingleton(void)` |
+| `0x2474d0` | `public: static class MNSandbox::Config & __cdecl MNSandbox::Config::GetSingleton(void)` |
+| `0xdbe00` | `public: static class MNSandbox::ReflexContainer * __cdecl MNSandbox::ReflexContainer::GetSingletonByType(class MNSandbox::ReflexType const *)` |
+| `0x944c0` | `public: static class MNSandbox::AssetPool * __cdecl MNSandbox::Singleton<class MNSandbox::AssetPool>::GetSingletonPtr(void)` |
+| `0xbe1a0` | `public: static class MNSandbox::AssetSyncMgrInterface * __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::GetSingletonPtr(void)` |
+| `0xa9300` | `public: static class MNSandbox::AssetSyncPool * __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::GetSingletonPtr(void)` |
+| `0x1c2290` | `public: static class MNSandbox::CollectionService * __cdecl MNSandbox::Singleton<class MNSandbox::CollectionService>::GetSingletonPtr(void)` |
+| `0x19bab0` | `public: static class MNSandbox::GameInput * __cdecl MNSandbox::Singleton<class MNSandbox::GameInput>::GetSingletonPtr(void)` |
+| `0x5abb0` | `public: static class MNSandbox::GameStep * __cdecl MNSandbox::Singleton<class MNSandbox::GameStep>::GetSingletonPtr(void)` |
+| `0xd76a0` | `public: static class MNSandbox::IDGeneratorManager * __cdecl MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::GetSingletonPtr(void)` |
+| `0x944d0` | `public: static class MNSandbox::ListenRainbowCallbackMgr * __cdecl MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::GetSingletonPtr(void)` |
+| `0x157640` | `public: static class MNSandbox::Statistics::LoadCost * __cdecl MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::GetSingletonPtr(void)` |
+| `0x1a68b0` | `public: static class MNSandbox::MainStorage * __cdecl MNSandbox::Singleton<class MNSandbox::MainStorage>::GetSingletonPtr(void)` |
+| `0x5abc0` | `public: static class MNSandbox::Thread::MultiThreadPool * __cdecl MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::GetSingletonPtr(void)` |
+| `0x8c9e0` | `public: static class MNSandbox::NodePacketContainer * __cdecl MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::GetSingletonPtr(void)` |
+| `0x84af0` | `public: static class MNSandbox::RefPool * __cdecl MNSandbox::Singleton<class MNSandbox::RefPool>::GetSingletonPtr(void)` |
+| `0xda440` | `public: static class MNSandbox::RemoteInstanceListenPool * __cdecl MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::GetSingletonPtr(void)` |
+| `0x5abd0` | `public: static class MNSandbox::RemoteMsg * __cdecl MNSandbox::Singleton<class MNSandbox::RemoteMsg>::GetSingletonPtr(void)` |
+| `0x155400` | `public: static class MNSandbox::Profile::RunDebugMgr * __cdecl MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::GetSingletonPtr(void)` |
+| `0x86af0` | `public: static class MNSandbox::SandboxAssetCache * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::GetSingletonPtr(void)` |
+| `0x9e0c0` | `public: static class MNSandbox::SandboxAssetRequestMgr * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::GetSingletonPtr(void)` |
+| `0x1de2c0` | `public: static class MNSandbox::SandboxDebugHelper * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::GetSingletonPtr(void)` |
+| `0x199a30` | `public: static class MNSandbox::SandboxMiscDataMgr * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::GetSingletonPtr(void)` |
+| `0x5abe0` | `public: static class MNSandbox::ScopeFuncContainer * __cdecl MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::GetSingletonPtr(void)` |
+| `0x1e9fb0` | `public: static class MNSandbox::ScriptService * __cdecl MNSandbox::Singleton<class MNSandbox::ScriptService>::GetSingletonPtr(void)` |
+| `0x5abf0` | `public: static class MNSandbox::SdbSceneManager * __cdecl MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::GetSingletonPtr(void)` |
+| `0x1e9fc0` | `public: static class MNSandbox::SupplementInterface * __cdecl MNSandbox::Singleton<class MNSandbox::SupplementInterface>::GetSingletonPtr(void)` |
+| `0x9a510` | `public: static class MNSandbox::Thread::ThreadTaskManager * __cdecl MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::GetSingletonPtr(void)` |
+| `0x14a9d0` | `public: static class MNSandbox::Debug::UIDebug * __cdecl MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::GetSingletonPtr(void)` |
+| `0x58310` | `public: unsigned int __thiscall MNSandbox::AttributeContainer::GetSize(void)const ` |
+| `0x58540` | `public: int __thiscall MNSandbox::ByteBuffer::GetSize(void)const ` |
+| `0x57d00` | `public: int __thiscall MNSandbox::Lua::LinkerData::GetSize(void)const ` |
+| `0x5ac00` | `public: unsigned int __thiscall MNSandbox::ReflexEnum::GetSize(void)const ` |
+| `0x58510` | `public: unsigned int __thiscall MNSandbox::SandboxEventQueue::GetSize(void)const ` |
+| `0x8a060` | `public: unsigned int __thiscall MNSandbox::Stream::GetSize(void)const ` |
+| `0x1fcf60` | `protected: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::ScriptService::GetSpecialCode(unsigned int)` |
+| `0x584f0` | `public: enum MNSandbox::GAMESTAGE __thiscall MNSandbox::GameStage::GetStage(void)const ` |
+| `0x1aa370` | `public: static enum MNSandbox::GAMESTAGE __cdecl MNSandbox::GameStage::GetStageByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x585b0` | `public: enum MNSandbox::Thread::MainThreadTaskInterface::STATE __thiscall MNSandbox::Thread::MainThreadTaskInterface::GetState(void)const ` |
+| `0x583c0` | `public: enum MNSandbox::SandboxScheduler::STATE __thiscall MNSandbox::SandboxScheduler::GetState(void)` |
+| `0x23d590` | `protected: static class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &> > & __cdecl MNSandbox::LuaFunction::GetStaticListenerCoCallback(void)` |
+| `0x189e60` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,bool> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyActiveChanged(void)` |
+| `0xa9310` | `public: static class MNSandbox::Notify<class MNSandbox::AssetRef *> & __cdecl MNSandbox::AssetRef::GetStaticNotifyAssetCacheUpdate(void)` |
+| `0x189e80` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyAttributeChanged(void)` |
+| `0x189ea0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyBeginPlay(void)` |
+| `0x189ec0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyChildEnter(void)` |
+| `0x189ee0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyChildLeave(void)` |
+| `0x21e6e0` | `public: static class MNSandbox::Notify<struct lua_State *,struct lua_State *> & __cdecl MNSandbox::ScriptState::GetStaticNotifyCoroutineNew(void)` |
+| `0x21e700` | `public: static class MNSandbox::Notify<struct lua_State *> & __cdecl MNSandbox::ScriptState::GetStaticNotifyCoroutineRelease(void)` |
+| `0x21e720` | `public: static class MNSandbox::Notify<struct lua_State *> & __cdecl MNSandbox::ScriptState::GetStaticNotifyCoroutineResume(void)` |
+| `0x189f00` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,enum MNSandbox::SandboxNode::NODECHANGE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > & __cdecl MNSandbox::SandboxNode::GetStaticNotifyCustomAttrChanged(void)` |
+| `0x1bce90` | `public: static class MNSandbox::Notify<int,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > & __cdecl MNSandbox::CloudServerConfigService::GetStaticNotifyDeleteRobotRequest(void)` |
+| `0x189f20` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,bool> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyEnableChanged(void)` |
+| `0x189f40` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyEndPlay(void)` |
+| `0x189f60` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyEnterGame(void)` |
+| `0x189f80` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::Scene *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyEnterScene(void)` |
+| `0x189fa0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,bool> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyHidden(void)` |
+| `0x143960` | `public: static class MNSandbox::Notify<> & __cdecl MNSandbox::GlobalNotify::GetStaticNotifyInitSandboxGameEnd(void)` |
+| `0x189fc0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyLeaveGame(void)` |
+| `0x189fe0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::Scene *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyLeaveScene(void)` |
+| `0x21e740` | `public: static class MNSandbox::Notify<class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine>,class MNSandbox::WeakRef<class MNSandbox::SandboxNode> > & __cdecl MNSandbox::ScriptState::GetStaticNotifyLoadScriptNode(void)` |
+| `0x1efa80` | `public: static class MNSandbox::Notify<double,class std::vector<struct MNSandbox::tagLuaProfilerInfo,class std::allocator<struct MNSandbox::tagLuaProfilerInfo> > > & __cdecl MNSandbox::LuaProfileService::GetStaticNotifyLuaProfile(void)` |
+| `0x18a000` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyNameChanged(void)` |
+| `0x1bceb0` | `public: static class MNSandbox::Notify<int,int> & __cdecl MNSandbox::CloudServerConfigService::GetStaticNotifyNewRobotRequest(void)` |
+| `0x18a020` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,enum MNSandbox::SandboxNode::NODECHANGE> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyNodeChanged(void)` |
+| `0x18a040` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyNodeDirty(void)` |
+| `0x18a060` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyParentChanged(void)` |
+| `0x18a080` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyParentChangedEx(void)` |
+| `0x21e760` | `public: static class MNSandbox::Notify<struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > & __cdecl MNSandbox::ScriptState::GetStaticNotifyPrint(void)` |
+| `0x18a0a0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *,enum MNSandbox::SYNCLOCALFLAG> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyRValueLocalSyncFlagChanged(void)` |
+| `0x18a0c0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *,enum MNSandbox::SYNCMODE> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyRValueSyncModeChanged(void)` |
+| `0x21e780` | `public: static class MNSandbox::Notify<struct lua_State *> & __cdecl MNSandbox::ScriptState::GetStaticNotifyRegisterClassLibrary(void)` |
+| `0x21e7a0` | `public: static class MNSandbox::Notify<struct lua_State *> & __cdecl MNSandbox::ScriptState::GetStaticNotifyRegisterMetatable(void)` |
+| `0x18a0e0` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>,int> & __cdecl MNSandbox::SandboxNode::GetStaticNotifyRemoteInvocation(void)` |
+| `0x21e7c0` | `public: static class MNSandbox::Notify<struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::WeakRef<class MNSandbox::SandboxNode>,int> & __cdecl MNSandbox::ScriptState::GetStaticNotifyRunError(void)` |
+| `0x1f6ae0` | `public: static class MNSandbox::Notify<class MNSandbox::ScriptNode *> & __cdecl MNSandbox::ScriptNode::GetStaticNotifyScriptNodeEnter(void)` |
+| `0x1f6b00` | `public: static class MNSandbox::Notify<class MNSandbox::ScriptNode *> & __cdecl MNSandbox::ScriptNode::GetStaticNotifyScriptNodeLeave(void)` |
+| `0x21e7e0` | `public: static class MNSandbox::Notify<bool> & __cdecl MNSandbox::ScriptState::GetStaticNotifyScriptState(void)` |
+| `0x18a100` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,bool,int> & __cdecl MNSandbox::SandboxNode::GetStaticNotifySelectedChanged(void)` |
+| `0x1aa430` | `public: static class MNSandbox::Notify<enum MNSandbox::GAMESTAGE> & __cdecl MNSandbox::GameStage::GetStaticNotifyStageChanged(void)` |
+| `0x18a120` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,enum MNSandbox::SYNCLOCALFLAG,enum MNSandbox::SYNCLOCALFLAG> & __cdecl MNSandbox::SandboxNode::GetStaticNotifySyncLocalFlagChanged(void)` |
+| `0x18a140` | `public: static class MNSandbox::Notify<class MNSandbox::SandboxNode *,enum MNSandbox::SYNCMODE,enum MNSandbox::SYNCMODE> & __cdecl MNSandbox::SandboxNode::GetStaticNotifySyncModeChanged(void)` |
+| `0x1b01b0` | `public: static class MNSandbox::Notify<class MNSandbox::ThreadBase *,bool> & __cdecl MNSandbox::MapSave::GetStaticNotifyThreadSave(void)` |
+| `0x5ac20` | `public: virtual unsigned int __thiscall MNSandbox::SandboxNode::GetStep(void)` |
+| `0x5ac30` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetStudioAssetPath(void)const ` |
+| `0x5ac50` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Config::GetStudioWorkPath(void)const ` |
+| `0x5ac70` | `public: class MNSandbox::RuntimeClass const * __thiscall MNSandbox::RuntimeClass::GetSuper(void)const ` |
+| `0x12baa0` | `protected: enum MNSandbox::ReflexValue::SYNCABLE __thiscall MNSandbox::ReflexValue::GetSyncAbleState(void)const ` |
+| `0x5ac80` | `public: int __thiscall MNSandbox::ReflexContainer::GetSyncList(class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > &,unsigned int)` |
+| `0x58630` | `public: class MNSandbox::AutoRef<class MNSandbox::Log> const & __thiscall MNSandbox::SandboxCoreDriver::GetSyncLog(void)` |
+| `0x5aca0` | `public: enum MNSandbox::SYNCMODE __thiscall MNSandbox::SandboxNode::GetSyncMode(void)const ` |
+| `0xcacd0` | `public: class MNSandbox::AutoRef<class MNSandbox::AssetSync> __thiscall MNSandbox::AssetSyncPool::GetSyncRef(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x18a160` | `public: virtual int __thiscall MNSandbox::SandboxNode::GetTag(void)const ` |
+| `0x5ac20` | `public: virtual int __thiscall MNSandbox::ServiceNode::GetTag(void)const ` |
+| `0x1c22a0` | `public: class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > __thiscall MNSandbox::CollectionService::GetTagged(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1c22e0` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > __thiscall MNSandbox::CollectionService::GetTags(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &)` |
+| `0x199b80` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::SceneRoot::GetTerrainNode(void)` |
+| `0x9a7a0` | `protected: class MNSandbox::ThreadObjectInterface * & __thiscall MNSandbox::Thread::ThreadTaskManager::GetThread(enum MNSandbox::Thread::ThreadTaskManager::THREADTYPE)` |
+| `0x15d500` | `unsigned int __cdecl MNSandbox::Platform::GetThreadId(void)` |
+| `0x5acb0` | `public: class MNSandbox::Thread::MultiThreadJob & __thiscall MNSandbox::Thread::MultiThreadPool::GetThreadJob(void)` |
+| `0x9a7b0` | `public: class MNSandbox::ThreadObjectInterface * __thiscall MNSandbox::Thread::ThreadTaskGroup::GetThreadTaskGroup(unsigned int)` |
+| `0x5acc0` | `public: class MNSandbox::NodeTickManager * __thiscall MNSandbox::ServiceNode::GetTickMgr(void)` |
+| `0x24aec0` | `public: unsigned int __thiscall MNSandbox::FrameLimit::GetTimeMSec(bool)` |
+| `0x57af0` | `public: class MNSandbox::TimerManager & __thiscall MNSandbox::GameMap::GetTimerMgr(void)` |
+| `0x5acd0` | `public: class MNSandbox::TimerManager * __thiscall MNSandbox::MNTimer::GetTimerMgr(void)const ` |
+| `0x5ace0` | `public: class MNSandbox::TimerManager & __thiscall MNSandbox::SandboxCoreManagers::GetTimerMgr(void)` |
+| `0x207e00` | `protected: enum MNSandbox::TimerNode::RUNSTATE __thiscall MNSandbox::TimerNode::GetTimerRunState(void)` |
+| `0x5acf0` | `public: struct lua_State * __thiscall MNSandbox::Lua::StateStack::GetTop(void)const ` |
+| `0x5ad00` | `public: struct lua_State * __thiscall MNSandbox::ScriptState::GetTopLuaState(void)const ` |
+| `0x585b0` | `public: unsigned int __thiscall MNSandbox::Statistics::NodeCount::GetTotal(void)const ` |
+| `0x58830` | `public: unsigned int __thiscall MNSandbox::Stream::GetTotal(void)const ` |
+| `0x155690` | `private: unsigned int __thiscall MNSandbox::Statistics::InstanceCount::GetTotalCount(enum MNSandbox::Statistics::INSCOUNT_TYPE)const ` |
+| `0x585b0` | `public: enum MNSandbox::IDGeneratorType __thiscall MNSandbox::IDGeneratorMessage::GetType(void)const ` |
+| `0x584b0` | `public: enum MNSandbox::ReflexValue::TYPE __thiscall MNSandbox::ReflexValue::GetType(void)const ` |
+| `0x50f90` | `public: class MNSandbox::ReflexType const * __thiscall MNSandbox::ReflexVariant::GetType(void)const ` |
+| `0x58670` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall MNSandbox::RuntimeClass::GetType(void)const ` |
+| `0xe4760` | `public: class MNSandbox::ReflexType * __thiscall MNSandbox::ReflexType::Container::GetTypeByEnum(enum MNSandbox::REFLEXTYPEENUM)` |
+| `0xe47b0` | `public: class MNSandbox::ReflexType * __thiscall MNSandbox::ReflexType::Container::GetTypeByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x15e840` | `public: void __thiscall MNSandbox::SectionList::GetUnCostedSections(class std::vector<class MNSandbox::NodeIdSection,class std::allocator<class MNSandbox::NodeIdSection> > &)` |
+| `0x579f0` | `public: int __thiscall MNSandbox::GameStep::GetUpdateFPS(void)const ` |
+| `0xd0900` | `public: class MNSandbox::AutoRef<class MNSandbox::Ref> __thiscall MNSandbox::BindRefUserdata::GetUserdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8a2f0` | `public: class MNSandbox::AutoRef<class MNSandbox::Ref> const & __thiscall MNSandbox::Stream::GetUserdata(void)` |
+| `0x11b930` | `public: static bool __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::GetValue(struct lua_State *,unsigned int,struct MNSandbox::ReflexReferenceIns &)` |
+| `0x5ad10` | `public: virtual class MNSandbox::ReflexType const * __thiscall MNSandbox::ReflexValue::GetValueType(void)const ` |
+| `0x578c0` | `public: class MNSandbox::ReflexVariant & __thiscall MNSandbox::Attribute::GetVariant(void)` |
+| `0x578c0` | `public: class MNSandbox::ReflexVariant const & __thiscall MNSandbox::Attribute::GetVariant(void)const ` |
+| `0x5ae50` | `public: virtual bool __thiscall MNSandbox::ReflexValue::GetVariant(void const *,class MNSandbox::ReflexVariant &)` |
+| `0x5ae60` | `public: static unsigned int __cdecl MNSandbox::Config::GetVersion(void)` |
+| `0x5ae70` | `public: unsigned int __thiscall MNSandbox::GlobalServiceNode::GetVersion(int)const ` |
+| `0x57d00` | `public: unsigned int __thiscall MNSandbox::Stream::GetVersion(void)const ` |
+| `0x8a300` | `public: void __thiscall MNSandbox::Stream::GetVersion(unsigned char &,unsigned char &,unsigned char &)const ` |
+| `0x585b0` | `public: void * __thiscall MNSandbox::ReflexVariant::GetVoidPtr(void)` |
+| `0x585b0` | `public: void const * __thiscall MNSandbox::ReflexVariant::GetVoidPtr(void)const ` |
+| `0x5ae90` | `public: class MNSandbox::WeakRef<class MNSandbox::SceneRoot> __thiscall MNSandbox::GameMap::GetWorkspace(void)` |
+| `0x170d90` | `public: class MNSandbox::AutoRef<class MNSandbox::SceneRoot> __thiscall MNSandbox::SdbSceneManager::GetWorkspace(void)` |
+| `0x5afc0` | `public: class std::vector<class MNSandbox::WeakRef<class MNSandbox::SceneRoot>,class std::allocator<class MNSandbox::WeakRef<class MNSandbox::SceneRoot> > > const & __thiscall MNSandbox::GameMap::GetWorkspaces(void)const ` |
+| `0x58600` | `public: __int64 __thiscall MNSandbox::NodeInstanceReflex::Getid(void)const ` |
+| `0x5c5d0` | `public: bool __thiscall MNSandbox::RemoteInstanceListenPool::HadListener(void)const ` |
+| `0x18be70` | `public: virtual void __thiscall MNSandbox::SandboxNode::HandleInit(void)` |
+| `0xe0480` | `public: bool __thiscall MNSandbox::ReflexMap::Has(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x257b10` | `public: bool __thiscall MNSandbox::SandboxMiscDataMgr::HasData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x13aa10` | `public: bool __thiscall MNSandbox::SandboxEventQueue::HasEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x5afd0` | `public: bool __thiscall MNSandbox::SandboxEventDispatcherManager::HasEventDispatcher(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1b0310` | `public: bool __thiscall MNSandbox::MapSave::HasJsonData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x5b040` | `public: bool __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::HasKey(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5b040` | `public: bool __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::HasKey(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5b0a0` | `protected: bool __thiscall MNSandbox::ServiceNode::HasNeedSaveFlag(void)` |
+| `0x1633f0` | `public: static bool __cdecl MNSandbox::NodeSerialize::HasNodeAttribute(class jsonxx::Object const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8a330` | `public: bool __thiscall MNSandbox::MapSave::HasSaveData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5b0b0` | `public: bool __thiscall MNSandbox::SandboxNode::HasStopDynamicLoadFlag(void)const ` |
+| `0x1b0460` | `public: bool __thiscall MNSandbox::MapSave::HasStreamData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x5b0c0` | `protected: bool __thiscall MNSandbox::ReflexValue::HasSyncFlag(void)const ` |
+| `0x1c24d0` | `public: bool __thiscall MNSandbox::CollectionService::HasTag(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5b0d0` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_ClientKick(int,int)` |
+| `0x5b0f0` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_DevPrintNodeTree(int)` |
+| `0x5b110` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_DevSaveDecode(int)` |
+| `0x5b130` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_IDGeneratorRequire(int,int)` |
+| `0x5b150` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_IDGeneratorUsed(int,int,unsigned int)` |
+| `0x5b170` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_OnRecvClientSandboxVersion(int,unsigned int)` |
+| `0x5b190` | `protected: void __thiscall MNSandbox::GlobalServiceNode::Host_SyncClientGameStage(int const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3a9890` | `public: static class MNSandbox::ReflexType * MNSandbox::ReflexType::Idle` |
+| `0x5b1b0` | `public: void __thiscall MNSandbox::Ref::IncrementRef(void)` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::SandboxNode::InheritParentVisible(void)const ` |
+| `0xd9120` | `public: virtual bool __thiscall MNSandbox::Object::Init(void)` |
+| `0x5b1c0` | `public: bool __thiscall MNSandbox::SandboxCoreDriver::Init(void)` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::SandboxCoreFactorys::Init(void)` |
+| `0x20b4b0` | `public: virtual bool __thiscall MNSandbox::SandboxCoreLuaDirector::Init(void)` |
+| `0x18bec0` | `public: void __thiscall MNSandbox::SandboxNode::InitBindChunks(bool)` |
+| `0x1e2800` | `protected: virtual void __thiscall MNSandbox::GameNode::InitBoundingBox(void)` |
+| `0x18bf10` | `protected: virtual void __thiscall MNSandbox::SandboxNode::InitBoundingBox(void)` |
+| `0x203390` | `protected: virtual void __thiscall MNSandbox::ServiceNode::InitBoundingBox(void)` |
+| `0xe47e0` | `public: void __thiscall MNSandbox::ReflexType::ReflexType_Ins::InitByTypeName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x199c40` | `public: void __thiscall MNSandbox::SceneRoot::InitDefault(void)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::SandboxNode::InitDefaultChildren(void)` |
+| `0x1f4800` | `public: virtual void __thiscall MNSandbox::ScriptContext::InitDefaultChildren(void)` |
+| `0x577f0` | `public: void __thiscall MNSandbox::SandboxAssetCache::InitEngine(void)` |
+| `0x14ba20` | `private: void __thiscall MNSandbox::GameStep::InitHighTick(void)` |
+| `0xdaaf0` | `private: void __thiscall MNSandbox::RuntimeClass::InitInherit(void)` |
+| `0x18bfd0` | `public: virtual void __thiscall MNSandbox::SandboxNode::InitInstance(void)` |
+| `0x5ba60` | `public: virtual void __thiscall MNSandbox::ServiceNode::InitInstance(void)` |
+| `0x21ea80` | `protected: void __thiscall MNSandbox::ScriptState::InitLuaDefaultLibs(struct lua_State *)` |
+| `0x21eb20` | `protected: bool __thiscall MNSandbox::ScriptState::InitMainL(struct lua_State *)` |
+| `0x5ba60` | `public: virtual void __thiscall MNSandbox::SandboxNode::InitNodeLonely(void)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::GameMap::InitNodes(void)` |
+| `0x1a2c00` | `public: virtual void __thiscall MNSandbox::GameMapClient::InitNodes(void)` |
+| `0x1a68c0` | `public: virtual void __thiscall MNSandbox::GameMapHost::InitNodes(void)` |
+| `0x19fe70` | `public: void __thiscall MNSandbox::GameMap::InitRootNode(void)` |
+| `0x199ca0` | `protected: void __thiscall MNSandbox::SceneRoot::InitSave(void)` |
+| `0x1a68e0` | `protected: void __thiscall MNSandbox::GameMapHost::InitSaves(void)` |
+| `0x3bb6a8` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::UserInputKeyCode> MNSandbox::InputObjectSignal::InputKeyCodeEnum` |
+| `0x3bb6a3` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::UserInputState> MNSandbox::InputObjectSignal::InputStateEnum` |
+| `0x3bb6a9` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::UserInputType> MNSandbox::InputObjectSignal::InputTypeEnum` |
+| `0xc4500` | `public: int __thiscall MNSandbox::NodePacketContainer::Insert(class MNSandbox::AutoRef<class MNSandbox::NodePacket> const &)` |
+| `0xe04a0` | `public: bool __thiscall MNSandbox::ReflexMap::Insert(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexVariant const &)` |
+| `0x52c30` | `public: bool __thiscall MNSandbox::ReflexTuple::Insert(void)` |
+| `0xcf120` | `public: void __thiscall MNSandbox::AttributeContainer::InsertAttribute(class MNSandbox::AutoRef<class MNSandbox::Attribute>)` |
+| `0xdbe80` | `public: bool __thiscall MNSandbox::ReflexContainer::Pool::InsertData(class MNSandbox::ReflexType const *,class MNSandbox::ReflexContainer *)` |
+| `0x15a9f0` | `private: void __thiscall MNSandbox::Statistics::NodeCount::InsertDataToSortList(struct std::pair<class MNSandbox::RuntimeClass const *,unsigned int> const &)` |
+| `0xdc000` | `protected: void __thiscall MNSandbox::ReflexContainer::InsertIndexDatas(int,class MNSandbox::ReflexValue *)` |
+| `0xdf710` | `public: void __thiscall MNSandbox::ReflexLuaTuple::InsertLinkerData(class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x1a6cb0` | `public: void __thiscall MNSandbox::GameMapHost::InsertLoadNode(class MNSandbox::SandboxNode *)` |
+| `0x2514e0` | `protected: unsigned int __thiscall MNSandbox::Thread::MainThreadTaskGroup::InsertMainTask(class MNSandbox::Thread::MainThreadTaskInterface *)` |
+| `0xdab50` | `public: void __thiscall MNSandbox::RuntimeClass::Container::InsertRTTI(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::RuntimeClass const *)` |
+| `0xdc130` | `public: void __thiscall MNSandbox::ReflexContainer::InsertReflex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexValue *)` |
+| `0x13d740` | `private: class MNSandbox::Callback __thiscall MNSandbox::SandboxSchedulerManager::InsertScheduler(class MNSandbox::SandboxScheduler *)` |
+| `0x255ba0` | `public: unsigned int __thiscall MNSandbox::Thread::ThreadTaskGroup::InsertThreadTask(class MNSandbox::ThreadObjectInterface *)` |
+| `0x203530` | `protected: void __thiscall MNSandbox::ServiceNode::InsertToLoadList(void)` |
+| `0x15b6f0` | `public: bool __thiscall MNSandbox::Ray::IntersectBox(struct MNSandbox::Box<float> const &,struct MNSandbox::Coord3<float> *,float *,enum MNSandbox::WORLDFACE *)` |
+| `0x15bcf0` | `public: bool __thiscall MNSandbox::Ray::IntersectBoxSketchy(struct MNSandbox::Box<float> const &)` |
+| `0x15be20` | `public: bool __thiscall MNSandbox::Ray::IntersectPlane(class MNSandbox::Plane const &,struct MNSandbox::Coord3<float> *,float *,bool)` |
+| `0x15c090` | `public: bool __thiscall MNSandbox::Ray::IntersectRay(struct MNSandbox::Ray const &,struct MNSandbox::Coord3<float> *,float *,float *)` |
+| `0x15c430` | `public: bool __thiscall MNSandbox::Ray::IntersectTriangle(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float *)` |
+| `0x5be70` | `public: bool __thiscall MNSandbox::CustomBuffer::Invalid(void)const ` |
+| `0x138370` | `public: class MNSandbox::SandboxResult __thiscall MNSandbox::Callback::Invoke(class MNSandbox::SandboxContext const &)` |
+| `0x13fac0` | `public: int __thiscall MNSandbox::CustomFunction::Invoke(struct lua_State *,class MNSandbox::AutoRef<class MNSandbox::ReflexLuaTuple>)` |
+| `0x13ce70` | `public: class MNSandbox::SandboxResult __thiscall MNSandbox::SandboxScheduler::Invoke(class MNSandbox::SandboxContext const &)` |
+| `0x13fbe0` | `protected: void __thiscall MNSandbox::CustomFunction::InvokeFinish(class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>,class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>)` |
+| `0x18c950` | `private: bool __thiscall MNSandbox::SandboxNode::IsA(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)const ` |
+| `0x8a3f0` | `public: bool __thiscall MNSandbox::AssetConfig::IsActive(void)const ` |
+| `0x5be90` | `public: bool __thiscall MNSandbox::SandboxNode::IsActive(void)` |
+| `0x5bea0` | `public: bool __thiscall MNSandbox::Thread::ThreadJobTask::IsActive(void)const ` |
+| `0x18c9f0` | `public: bool __thiscall MNSandbox::SandboxNode::IsAncestorOf(class MNSandbox::SandboxNode const *)const ` |
+| `0x18ca30` | `public: bool __thiscall MNSandbox::SandboxNode::IsAncestorSelected(void)const ` |
+| `0xbe2f0` | `public: bool __thiscall MNSandbox::AssetServiceRemote::IsAssetConfigFileLoadFinish(void)` |
+| `0x86c40` | `private: bool __thiscall MNSandbox::SandboxAssetCache::IsAssetOutDate(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x132be0` | `public: bool __thiscall MNSandbox::StreamBuffer::IsAtEnd(void)const ` |
+| `0x5bec0` | `public: bool __thiscall MNSandbox::GameStep::IsAutoTick(void)` |
+| `0x5bed0` | `public: bool __thiscall MNSandbox::ListenerInterface::IsBindNotify(class MNSandbox::NotifyInterface *)const ` |
+| `0x5bf20` | `public: bool __thiscall MNSandbox::ListenerInterface::IsBindNotify(void)const ` |
+| `0x5bf30` | `public: bool __thiscall MNSandbox::ReflexValue::IsBroadcast(void)const ` |
+| `0x5bf40` | `public: bool __thiscall MNSandbox::ReflexType::IsCategory(enum MNSandbox::ReflexType::TYPE)const ` |
+| `0x5bf50` | `public: bool __thiscall MNSandbox::Config::IsClient(void)const ` |
+| `0x529e0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::IsClientActor(void)` |
+| `0x529e0` | `public: bool __thiscall MNSandbox::Config::IsCloudServer(void)const ` |
+| `0x1458b0` | `public: bool __thiscall MNSandbox::SignalConnect::IsConnected(void)` |
+| `0x5bf70` | `public: bool __thiscall MNSandbox::SandboxNode::IsCreateBySync(void)const ` |
+| `0x82340` | `public: bool __thiscall MNSandbox::GameMapClient::IsDataReady(void)const ` |
+| `0x18ca50` | `public: bool __thiscall MNSandbox::SandboxNode::IsDescendantOf(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x18caa0` | `public: bool __thiscall MNSandbox::SandboxNode::IsDescendantOf(class MNSandbox::SandboxNode const *)const ` |
+| `0x52c80` | `public: bool __thiscall MNSandbox::Config::IsDevelopGameEnv(bool)const ` |
+| `0x5bf80` | `public: bool __thiscall MNSandbox::SandboxNode::IsDynamicLoadAble(void)const ` |
+| `0x5bf90` | `public: bool __thiscall MNSandbox::Config::IsEditMode(void)const ` |
+| `0x5bfb0` | `public: bool __thiscall MNSandbox::Config::IsEditorEditMode(void)const ` |
+| `0x5bfd0` | `public: bool __thiscall MNSandbox::Config::IsEditorPlayMode(void)const ` |
+| `0x20b590` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::IsEnable(char const *)` |
+| `0x18cae0` | `public: bool __thiscall MNSandbox::SandboxNode::IsEnable(bool)` |
+| `0x5bff0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableCopy(void)const ` |
+| `0x5c000` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableDestructor(void)const ` |
+| `0x5c010` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableGetEnumVal(void)const ` |
+| `0x5c020` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableIsSame(void)const ` |
+| `0x5c030` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableLuaPushC(void)const ` |
+| `0x5c040` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableLuaToC(void)const ` |
+| `0x5c050` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableReflexFromBinary(void)const ` |
+| `0x5c060` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableReflexToBinary(void)const ` |
+| `0x5c070` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableSerialize(void)const ` |
+| `0x5c080` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableSizeOf(void)const ` |
+| `0x5c090` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableStructure(void)const ` |
+| `0x5c0a0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableToEnumVal(void)const ` |
+| `0x5c0b0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableToString(void)const ` |
+| `0x5c0c0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::IsEnableUnserialize(void)const ` |
+| `0x8a400` | `public: bool __thiscall MNSandbox::Stream::IsEnd(void)const ` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::ReflexValue::IsEqualDefaultValue(void *)const ` |
+| `0x5c0d0` | `public: bool __thiscall MNSandbox::Config::IsErrlogOpen(void)const ` |
+| `0x5c0e0` | `public: bool __thiscall MNSandbox::SandboxResult::IsExecSuccessed(void)const ` |
+| `0x5c100` | `public: bool __thiscall MNSandbox::SandboxResult::IsExecuted(void)const ` |
+| `0x2104e0` | `public: bool __thiscall MNSandbox::LuaCoroutine::IsFailed(void)const ` |
+| `0x1dbb00` | `public: bool __thiscall MNSandbox::LuaScript::IsFailed(void)` |
+| `0x5c110` | `public: bool __thiscall MNSandbox::SandboxResult::IsFailed(void)const ` |
+| `0xa95b0` | `protected: bool __thiscall MNSandbox::AssetRef::IsFileTypeValid(void)` |
+| `0x9a830` | `public: bool __thiscall MNSandbox::Thread::MainThreadTaskInterface::IsFinish(void)const ` |
+| `0x94da0` | `public: bool __thiscall MNSandbox::AssetObjectContainer::IsFinished(void)` |
+| `0x82360` | `public: bool __thiscall MNSandbox::GameMapClient::IsFirstDownloadFinish(void)const ` |
+| `0x5c120` | `public: bool __thiscall MNSandbox::Config::IsForceOpenDebugWindow(void)const ` |
+| `0x5c130` | `protected: bool __thiscall MNSandbox::ReflexValue::IsForceSync(void)const ` |
+| `0x19ff20` | `public: bool __thiscall MNSandbox::SandboxLoadedService::IsGameLoadedOver(void)` |
+| `0x5c140` | `public: bool __thiscall MNSandbox::SandboxCoreDriver::IsGamePlaying(void)` |
+| `0x5c150` | `public: bool __thiscall MNSandbox::SandboxNode::IsHideOnSceneTree(void)const ` |
+| `0x5c160` | `public: bool __thiscall MNSandbox::Config::IsHost(void)const ` |
+| `0x18cb30` | `public: bool __thiscall MNSandbox::SandboxNode::IsIgnoreSafeMode(void)const ` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::SandboxNode::IsInExclusionReflex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5c170` | `public: bool __thiscall MNSandbox::Scene::IsKeepInChunk(void)const ` |
+| `0x19bac0` | `public: static bool __cdecl MNSandbox::GameInput::IsKeyKeep(enum MNSandbox::InputKey,int)` |
+| `0x5c180` | `public: bool __thiscall MNSandbox::Ref::IsKindOf(class MNSandbox::RuntimeClass const *)const ` |
+| `0xdad40` | `public: bool __thiscall MNSandbox::RuntimeClass::IsKindOf(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0xdadb0` | `public: bool __thiscall MNSandbox::RuntimeClass::IsKindOf(class MNSandbox::RuntimeClass const *)const ` |
+| `0xdae00` | `public: bool __thiscall MNSandbox::RuntimeClass::IsKindOfLegacy(class MNSandbox::RuntimeClass const *)const ` |
+| `0x247570` | `public: bool __thiscall MNSandbox::Config::IsLCSMode(void)const ` |
+| `0x19ff20` | `public: bool __thiscall MNSandbox::ConfigService::IsLCSMode(void)const ` |
+| `0x5c1a0` | `protected: bool __thiscall MNSandbox::ReflexValue::IsLoad(void)const ` |
+| `0x16d370` | `public: bool __thiscall MNSandbox::SceneChunk::IsLoadDone(void)const ` |
+| `0x86cd0` | `public: bool __thiscall MNSandbox::AssetRef::IsLoadFailed(void)const ` |
+| `0x86cf0` | `public: bool __thiscall MNSandbox::AssetRef::IsLoadFinish(void)const ` |
+| `0x82370` | `public: bool __thiscall MNSandbox::GameMapHost::IsLoadNodeFinish(void)const ` |
+| `0x86d00` | `public: bool __thiscall MNSandbox::AssetRef::IsLoadSuccess(void)const ` |
+| `0x1e28c0` | `public: bool __thiscall MNSandbox::GameNode::IsLoaded(void)const ` |
+| `0x1f2a50` | `public: bool __thiscall MNSandbox::ModuleScriptNode::IsLoaded(void)` |
+| `0x5c1b0` | `public: bool __thiscall MNSandbox::NodeIdAllocator::IsLoaded(void)const ` |
+| `0x86d20` | `public: bool __thiscall MNSandbox::AssetRef::IsLoading(void)const ` |
+| `0x5c1c0` | `public: bool __thiscall MNSandbox::SandboxNode::IsLoadingReflex(void)const ` |
+| `0x5c1d0` | `public: bool __thiscall MNSandbox::Config::IsLocalMode(void)const ` |
+| `0x5c1e0` | `public: bool __thiscall MNSandbox::Config::IsLockOnlyHost(void)` |
+| `0x5c1f0` | `public: bool __thiscall MNSandbox::Config::IsLockStepPlayMode(void)const ` |
+| `0x1b93c0` | `public: bool __thiscall MNSandbox::InputObject::IsModifierKeyDown(int)` |
+| `0x5c200` | `public: bool __thiscall MNSandbox::Config::IsNeedAutoSave(void)const ` |
+| `0x8cb30` | `public: bool __thiscall MNSandbox::AssetObject::IsNeedLoadSuccess(void)` |
+| `0x5c220` | `public: bool __thiscall MNSandbox::Config::IsNeedSave(void)const ` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::AssetServiceHost::IsNetworkLoadFinish(void)` |
+| `0xbe350` | `public: virtual bool __thiscall MNSandbox::AssetServiceRemote::IsNetworkLoadFinish(void)` |
+| `0x136820` | `public: bool __thiscall MNSandbox::NodeWatcher::IsNodeActive(class MNSandbox::SandboxNode *)` |
+| `0x1368b0` | `public: bool __thiscall MNSandbox::NodeWatcher::IsNodeLoad(class MNSandbox::SandboxNode *)` |
+| `0x5c240` | `public: bool __thiscall MNSandbox::Config::IsOnlineMode(void)const ` |
+| `0x5c250` | `public: bool __thiscall MNSandbox::Config::IsOnlyHost(void)const ` |
+| `0x5c280` | `public: bool __thiscall MNSandbox::Config::IsOpenMiniCraftRender(void)const ` |
+| `0x5c290` | `public: bool __thiscall MNSandbox::SandboxNode::IsParentLocked(void)const ` |
+| `0x210500` | `public: bool __thiscall MNSandbox::LuaCoroutine::IsPause(void)const ` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::SandboxNode::IsPhysicsSyncAtrr(class MNSandbox::ReflexValue *)` |
+| `0x5c2a0` | `public: bool __thiscall MNSandbox::Config::IsPlayMode(void)const ` |
+| `0x19ff30` | `public: bool __thiscall MNSandbox::GameMap::IsPlaying(void)const ` |
+| `0x5c2c0` | `public: bool __thiscall MNSandbox::MNTimer::IsPlaying(void)const ` |
+| `0x5c2d0` | `public: bool __thiscall MNSandbox::SandboxNode::IsPlaying(void)` |
+| `0x5c2e0` | `public: bool __thiscall MNSandbox::Config::IsPublicEditMode(void)const ` |
+| `0x5c2f0` | `public: bool __thiscall MNSandbox::Config::IsPublicMode(void)const ` |
+| `0x5c310` | `public: bool __thiscall MNSandbox::Config::IsPublicPlayMode(void)const ` |
+| `0x5c320` | `protected: bool __thiscall MNSandbox::ReflexValue::IsPublicRead(void)const ` |
+| `0x5c330` | `protected: bool __thiscall MNSandbox::ReflexValue::IsPublicWrite(void)const ` |
+| `0x9a840` | `public: bool __thiscall MNSandbox::ListenRainbowCallbackMgr::IsRainbowAssetCallbackFinish(struct UGUID)` |
+| `0x1ea020` | `public: virtual bool __thiscall MNSandbox::ScriptServiceHost::IsReady(void)const ` |
+| `0x1ea030` | `public: virtual bool __thiscall MNSandbox::ScriptServiceRemote::IsReady(void)const ` |
+| `0x82380` | `public: bool __thiscall MNSandbox::GameMapClient::IsReadyNodeCreate(void)const ` |
+| `0x5c340` | `public: virtual bool __thiscall MNSandbox::SandboxNode::IsRealVisible(void)const ` |
+| `0x16bf40` | `public: bool __thiscall MNSandbox::NodeSyncMode::IsReceiveEnable(class MNSandbox::ReflexValue const *,bool)const ` |
+| `0x2477e0` | `public: bool __thiscall MNSandbox::Config::IsReleaseGameEnv(void)const ` |
+| `0x5c350` | `public: bool __thiscall MNSandbox::Config::IsRemote(void)const ` |
+| `0x5c360` | `public: bool __thiscall MNSandbox::SandboxNode::IsResourceLoaded(void)const ` |
+| `0x5c370` | `public: bool __thiscall MNSandbox::SandboxNode::IsResourceLoading(void)const ` |
+| `0x1dbb10` | `public: bool __thiscall MNSandbox::LuaScript::IsRunOver(void)` |
+| `0x5c380` | `public: bool __thiscall MNSandbox::ListenersInterface::IsRunning(void)const ` |
+| `0x1dbb30` | `public: bool __thiscall MNSandbox::LuaScript::IsRunning(void)` |
+| `0x5c390` | `public: bool __thiscall MNSandbox::Thread::ThreadJobTask::IsRunning(void)const ` |
+| `0x5c3a0` | `public: bool __thiscall MNSandbox::Config::IsRunningInEditor(void)const ` |
+| `0x1dbb40` | `public: bool __thiscall MNSandbox::LuaScript::IsRunningOrPause(void)` |
+| `0x5c3b0` | `public: bool __thiscall MNSandbox::Config::IsSDBEditorMap(void)const ` |
+| `0x529e0` | `public: static bool __cdecl MNSandbox::ReflexPolicyFuncBase::IsSame(void const *,void const *)` |
+| `0x5c3c0` | `public: bool __thiscall MNSandbox::RuntimeClass::IsSame(class MNSandbox::RuntimeClass const *)const ` |
+| `0x50f10` | `public: bool __thiscall MNSandbox::ReflexVariant::IsSameType(class MNSandbox::ReflexVariant const &)const ` |
+| `0x5c3e0` | `public: bool __thiscall MNSandbox::Config::IsSandboxMode(void)const ` |
+| `0x5c400` | `protected: bool __thiscall MNSandbox::ReflexValue::IsSave(void)const ` |
+| `0x82390` | `public: bool __thiscall MNSandbox::GameMapClient::IsScriptLoadFinish(void)const ` |
+| `0x5c410` | `protected: bool __thiscall MNSandbox::ReflexValue::IsScriptRead(void)const ` |
+| `0x5c420` | `protected: bool __thiscall MNSandbox::ReflexValue::IsScriptWrite(void)const ` |
+| `0x5c430` | `public: bool __thiscall MNSandbox::SandboxNode::IsSelected(void)const ` |
+| `0x16bfe0` | `public: bool __thiscall MNSandbox::NodeSyncMode::IsSendEnable(class MNSandbox::ReflexValue const *,bool)const ` |
+| `0x5c440` | `public: bool __thiscall MNSandbox::SandboxNode::IsSerializable(void)const ` |
+| `0x5c450` | `public: bool __thiscall MNSandbox::SandboxNode::IsSerializableInChunk(void)const ` |
+| `0x5c460` | `public: bool __thiscall MNSandbox::GameStep::IsSetAutoSimulation(void)` |
+| `0x9e0d0` | `public: static bool __cdecl MNSandbox::AssetIdParse::IsShortId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5c470` | `public: bool __thiscall MNSandbox::Config::IsShowDebugInfoAble(void)const ` |
+| `0x1ea040` | `protected: bool __thiscall MNSandbox::ScriptService::IsSpecialId(unsigned int)` |
+| `0x5c480` | `public: bool __thiscall MNSandbox::CustomBuffer::IsStatic(void)const ` |
+| `0x5c490` | `public: bool __thiscall MNSandbox::SandboxNode::IsStopDynamicLoad(void)const ` |
+| `0x15c4a0` | `public: bool __thiscall MNSandbox::Ray::IsStraight(void)const ` |
+| `0x529e0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::IsStreamLoad(void)const ` |
+| `0x210520` | `public: bool __thiscall MNSandbox::LuaCoroutine::IsSuccess(void)const ` |
+| `0x1dbb60` | `public: bool __thiscall MNSandbox::LuaScript::IsSuccess(void)` |
+| `0x5c4a0` | `public: bool __thiscall MNSandbox::SandboxResult::IsSuccessed(void)const ` |
+| `0x5c4b0` | `protected: bool __thiscall MNSandbox::ReflexValue::IsSyncOnlyHost(void)const ` |
+| `0x5c4c0` | `public: bool __thiscall MNSandbox::SandboxNode::IsSyncReceiveable(void)const ` |
+| `0x5c4d0` | `public: bool __thiscall MNSandbox::SandboxNode::IsSyncSendable(class MNSandbox::ReflexValue const *)const ` |
+| `0x5c4f0` | `public: bool __thiscall MNSandbox::SandboxNode::IsSyncSendableAll(void)` |
+| `0x5c500` | `public: bool __thiscall MNSandbox::SandboxNode::IsSyncSendable_NoRecursive(class MNSandbox::ReflexValue const *)const ` |
+| `0x5c520` | `public: bool __thiscall MNSandbox::SandboxNode::IsSyncable(void)const ` |
+| `0x823a0` | `public: bool __thiscall MNSandbox::GameMapClient::IsSynced(void)const ` |
+| `0x5c530` | `public: bool __thiscall MNSandbox::Config::IsTemplateMap(void)const ` |
+| `0x5c550` | `public: bool __thiscall MNSandbox::ReflexVariant::IsType(class MNSandbox::ReflexType const *)const ` |
+| `0x138440` | `public: bool __thiscall MNSandbox::Callback::IsValid(void)const ` |
+| `0x5c580` | `public: bool __thiscall MNSandbox::ListenersInterface::IsValid(void)const ` |
+| `0x210540` | `public: bool __thiscall MNSandbox::LuaCoroutine::IsValid(void)const ` |
+| `0x5c5a0` | `public: bool __thiscall MNSandbox::MNTimer::IsValid(void)` |
+| `0x15c4b0` | `public: bool __thiscall MNSandbox::Ray::IsValid(void)const ` |
+| `0x11c2f0` | `public: bool __thiscall MNSandbox::ReflexReferenceIns::IsValid(void)` |
+| `0x5c5b0` | `public: bool __thiscall MNSandbox::ReflexVariant::IsValid(void)const ` |
+| `0x5c5c0` | `public: virtual bool __thiscall MNSandbox::SandboxScheduler::IsValid(void)const ` |
+| `0x5c5d0` | `public: bool __thiscall MNSandbox::Thread::ThreadJobTask::IsValid(void)const ` |
+| `0x5c5e0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::IsVisible(void)const ` |
+| `0x5c5f0` | `public: bool __thiscall MNSandbox::ScriptState::IsWaitToClose(void)const ` |
+| `0x5c600` | `public: bool __thiscall MNSandbox::Thread::ThreadJobTask::IsWaiting(void)const ` |
+| `0x3bb4b0` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::InputObject,int> MNSandbox::InputObject::KeyCode` |
+| `0x18cbd0` | `protected: void __thiscall MNSandbox::SandboxNode::LeaveParent(class MNSandbox::SandboxNode *,class MNSandbox::Scene *,bool,class MNSandbox::ServiceNode *)` |
+| `0x24aee0` | `public: bool __thiscall MNSandbox::FrameLimit::Limit(void)` |
+| `0x163560` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::ArchiveData::Load(void)const ` |
+| `0x163600` | `public: void __thiscall MNSandbox::ArchiveData::Load(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &)const ` |
+| `0x163660` | `public: static void __cdecl MNSandbox::ArchiveData::Load(char const *,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &)` |
+| `0x950a0` | `public: bool __thiscall MNSandbox::AssetObject::Load(enum MNSandbox::AssetResType)` |
+| `0x952a0` | `public: bool __thiscall MNSandbox::AssetObject::Load(enum MNSandbox::AssetResType,class MNSandbox::AutoRef<class MNSandbox::Listener<bool> >)` |
+| `0x95390` | `public: bool __thiscall MNSandbox::AssetObject::Load(enum MNSandbox::AssetResType,class std::function<void __cdecl(bool)>)` |
+| `0xa9660` | `public: void __thiscall MNSandbox::AssetRef::Load(void)` |
+| `0x15e910` | `public: virtual bool __thiscall MNSandbox::HostNodeIdAllocator::Load(class jsonxx::Object const &)` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::NodeIdAllocator::Load(class jsonxx::Object const &)` |
+| `0x16d380` | `public: virtual bool __thiscall MNSandbox::Scene::Load(void)` |
+| `0x15f1c0` | `public: virtual bool __thiscall MNSandbox::SectionList::Load(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x15f2c0` | `public: virtual bool __thiscall MNSandbox::SectionList::Load(class jsonxx::Object const &)` |
+| `0x15f530` | `public: virtual bool __thiscall MNSandbox::SingleNodeIdAllocator::Load(class jsonxx::Object const &)` |
+| `0x132bf0` | `public: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::StreamBuffer::Load(class std::function<bool __cdecl(void *,unsigned int)> const &,unsigned int)` |
+| `0x577f0` | `private: virtual void __thiscall MNSandbox::AssetService::LoadAllConfigFile(void)` |
+| `0xbe360` | `private: virtual void __thiscall MNSandbox::AssetServiceHost::LoadAllConfigFile(void)` |
+| `0xbe5d0` | `private: virtual void __thiscall MNSandbox::AssetServiceRemote::LoadAllConfigFile(void)` |
+| `0xc45a0` | `public: enum MNSandbox::NodePacket::STATUS __thiscall MNSandbox::NodePacket::LoadAsset(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,double)` |
+| `0x9a8b0` | `public: class MNSandbox::AutoRef<class MNSandbox::AssetRef> __thiscall MNSandbox::AssetPool::LoadAssetByType(enum MNSandbox::AssetResType,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetIdInfo const *)` |
+| `0x8a410` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetConfig> __cdecl MNSandbox::AssetConfig::LoadAssetConfig(void)` |
+| `0xbe760` | `public: virtual bool __thiscall MNSandbox::AssetService::LoadAssetConfigFile(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xbe800` | `public: virtual bool __thiscall MNSandbox::AssetServiceHost::LoadAssetConfigFile(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xbe8b0` | `public: bool __thiscall MNSandbox::AssetService::LoadAssetConfigFileByBuffer(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x95510` | `public: virtual bool __thiscall MNSandbox::AssetService::LoadAssetConfigFileByUrl(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xbe960` | `public: virtual bool __thiscall MNSandbox::AssetServiceRemote::LoadAssetConfigFileByUrl(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xbed50` | `protected: bool __thiscall MNSandbox::AssetService::LoadAssetDesc(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x9aa50` | `public: bool __thiscall MNSandbox::AssetPool::LoadAssetFile(class MNSandbox::Ref *,void (__thiscall MNSandbox::Ref::*)(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class Rainbow::SharePtr<class Rainbow::DataStream> const &),class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xa98b0` | `protected: bool __thiscall MNSandbox::AssetRef::LoadAssetFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xc4650` | `public: static void __cdecl MNSandbox::NodePacket::LoadAssetNodePacket(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::AutoRef<class MNSandbox::Listener<enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::Stream> > >)` |
+| `0xc4c40` | `public: static void __cdecl MNSandbox::NodePacket::LoadAssetNodePacketJson(class jsonxx::Object &,class MNSandbox::AutoRef<class MNSandbox::Listener<enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::Stream> > >)` |
+| `0xc4e40` | `public: static void __cdecl MNSandbox::NodePacket::LoadAssetNodePacketStream(void *,unsigned int,class MNSandbox::AutoRef<class MNSandbox::Listener<enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::Stream> > >)` |
+| `0xc4f20` | `public: static void __cdecl MNSandbox::NodePacket::LoadAssetNodePacketStreamAsync(void *,unsigned int,class MNSandbox::AutoRef<class MNSandbox::Listener<enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::Stream> > >)` |
+| `0xc5180` | `public: static void __cdecl MNSandbox::NodePacket::LoadAssetNodePacketStreamSync(void *,unsigned int,enum MNSandbox::SANDBOXERR &,class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0xbf930` | `protected: bool __thiscall MNSandbox::AssetService::LoadCloudMap(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer>)` |
+| `0x1fcf90` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptServiceHost::LoadData(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x577f0` | `public: void __thiscall MNSandbox::SandboxCoreDriver::LoadDebugConfig(void)` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::Scene::LoadDefaultNode(void)` |
+| `0x19ff40` | `private: void __thiscall MNSandbox::GameMap::LoadDynamicNode(class MNSandbox::SandboxNode *)` |
+| `0x1b0670` | `protected: bool __thiscall MNSandbox::MapSave::LoadFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class jsonxx::Object &)` |
+| `0x86d40` | `private: void __thiscall MNSandbox::SandboxAssetCache::LoadFile(void)` |
+| `0x1b0ad0` | `protected: bool __thiscall MNSandbox::MapSave::LoadFileLegacy(class jsonxx::Object &,class Rainbow::SharePtr<class Rainbow::DataStream>)` |
+| `0x1b0d60` | `protected: bool __thiscall MNSandbox::MapSave::LoadFileVersion01(class jsonxx::Object &,class Rainbow::SharePtr<class Rainbow::DataStream>,unsigned int)` |
+| `0x130b30` | `public: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::Stream::LoadFromBinary(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> const &)` |
+| `0x130be0` | `public: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::Stream::LoadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x20b5c0` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::LoadLuaFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5c610` | `private: void __thiscall MNSandbox::SandboxCoreDriver::LoadLuaToc(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1a6d80` | `public: void __thiscall MNSandbox::GameMapHost::LoadMap(enum MNSandbox::GameMapHost::MAPLOAD)` |
+| `0xbfe40` | `protected: void __thiscall MNSandbox::AssetServiceRemote::LoadNetworkFinish(void)` |
+| `0x1636b0` | `public: static bool __cdecl MNSandbox::NodeSerialize::LoadNode(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x8cb40` | `protected: void __thiscall MNSandbox::AssetInsNodePacket::LoadNodeFinish(enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::Stream>)` |
+| `0x18cd30` | `public: void __thiscall MNSandbox::SandboxNode::LoadReflexEnd(void)` |
+| `0x18cd90` | `public: void __thiscall MNSandbox::SandboxNode::LoadReflexStart(void)` |
+| `0x1f2a70` | `public: bool __thiscall MNSandbox::ModuleScriptNode::LoadScript(class std::function<void __cdecl(class MNSandbox::WeakRef<class MNSandbox::ModuleScriptNode>)>)` |
+| `0x1f2b90` | `public: bool __thiscall MNSandbox::ModuleScriptNode::LoadScript(void)` |
+| `0x1fd140` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptService::LoadScript(unsigned int,struct MNSandbox::ScriptService::ScriptInfo &)` |
+| `0x1fd390` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptServiceRemote::LoadScriptUrls(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1fd4d0` | `protected: bool __thiscall MNSandbox::ScriptServiceRemote::LoadScriptUrlsFromBuffer(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> const &)` |
+| `0x1fd5c0` | `protected: bool __thiscall MNSandbox::ScriptServiceRemote::LoadScriptUrlsFromFile(void)` |
+| `0x20ba90` | `public: bool __thiscall MNSandbox::SandboxCoreLuaDirector::LoadTocFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x199f30` | `public: void __thiscall MNSandbox::SceneRoot::LoadWorkspace(void)` |
+| `0x5c630` | `public: void __thiscall MNSandbox::Config::LockOnlyHost(void)` |
+| `0x5c640` | `public: void __thiscall MNSandbox::SandboxNode::LockParent(void)` |
+| `0x210590` | `public: int __thiscall MNSandbox::LuaCoroutine::LockSyncRun(bool)` |
+| `0x5c680` | `public: void __thiscall MNSandbox::ReflexVariant::LockType(void)` |
+| `0x21f9a0` | `public: static void __cdecl MNSandbox::ScriptState::LogLuaRunError(struct lua_State *,struct MNSandbox::LuaError const &)` |
+| `0x21fba0` | `public: static void __cdecl MNSandbox::ScriptState::LogLuaRunError(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x21fcc0` | `public: static void __cdecl MNSandbox::ScriptState::LogRunError(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x21fe50` | `public: static void __cdecl MNSandbox::ScriptState::LogRunError(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x23d860` | `protected: int __thiscall MNSandbox::LuaFunction::LuaCallFuntion(struct lua_State *,int)` |
+| `0xd9130` | `public: class MNSandbox::SandboxLuaPluginManager & __thiscall MNSandbox::Object::LuaPluginMgr(void)` |
+| `0x12c860` | `public: int __thiscall MNSandbox::ReflexVariant::LuaPushC(struct lua_State *)const ` |
+| `0x23d8b0` | `public: static void __cdecl MNSandbox::LuaFunction::LuaThrowError(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x21ff10` | `public: static void __cdecl MNSandbox::ScriptState::LuaThrowError(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x12c8a0` | `public: bool __thiscall MNSandbox::ReflexVariant::LuaToC(struct lua_State *,int)` |
+| `0x220010` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptState::LuaToString(struct lua_State *,int)` |
+| `0x24fc40` | `void __cdecl MNSandbox::MNPrint(enum MNSandbox::PrintLevel,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,unsigned int)` |
+| `0x3bbb70` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::InputObject,int> MNSandbox::InputObject::M_UserInputState` |
+| `0x3bb740` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::InputObject,int> MNSandbox::InputObject::M_UserInputType` |
+| `0x12c8e0` | `public: bool __thiscall MNSandbox::ReflexVariant::MakeByLua(struct lua_State *,int)` |
+| `0x12d030` | `private: void __thiscall MNSandbox::ReflexVariant::Malloc(void)` |
+| `0x58670` | `public: class MNSandbox::SandboxEventQueue & __thiscall MNSandbox::SandboxEventQueueManager::ManualQueue(void)` |
+| `0x3bb6a5` | `private: static class MNSandbox::ReflexEnumDesc<enum MNSandbox::ModifierKey> MNSandbox::InputObjectSignal::ModifierKeyEnum` |
+| `0xcf210` | `public: bool __thiscall MNSandbox::AttributeContainer::ModifyAttrName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x16e690` | `public: bool __thiscall MNSandbox::SceneChunk::NeedSave(bool,unsigned int)` |
+| `0xe48d0` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::New(void * *,void * (__cdecl*)(unsigned int))const ` |
+| `0xcf360` | `public: class MNSandbox::AutoRef<class MNSandbox::Attribute> __thiscall MNSandbox::AttributeContainer::NewAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::Attribute::TYPE,class MNSandbox::ReflexVariant const &)` |
+| `0x18ce40` | `public: class MNSandbox::AutoRef<class MNSandbox::Attribute> __thiscall MNSandbox::SandboxNode::NewAttribute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::Attribute::TYPE)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetService> __cdecl MNSandbox::AssetService::NewInstance(void)` |
+| `0x95520` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetServiceHost> __cdecl MNSandbox::AssetServiceHost::NewInstance(void)` |
+| `0x955d0` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetServiceRemote> __cdecl MNSandbox::AssetServiceRemote::NewInstance(void)` |
+| `0x19ff60` | `public: static class MNSandbox::AutoRef<class MNSandbox::CloudServerConfigService> __cdecl MNSandbox::CloudServerConfigService::NewInstance(void)` |
+| `0x1c2560` | `public: static class MNSandbox::AutoRef<class MNSandbox::CollectionService> __cdecl MNSandbox::CollectionService::NewInstance(void)` |
+| `0x1a0010` | `public: static class MNSandbox::AutoRef<class MNSandbox::ConfigService> __cdecl MNSandbox::ConfigService::NewInstance(void)` |
+| `0x1d5130` | `public: static class MNSandbox::AutoRef<class MNSandbox::ContextActionService> __cdecl MNSandbox::ContextActionService::NewInstance(void)` |
+| `0x1dbb70` | `public: static class MNSandbox::AutoRef<class MNSandbox::CoreScript> __cdecl MNSandbox::CoreScript::NewInstance(void)` |
+| `0x13fd50` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomFunction> __cdecl MNSandbox::CustomFunction::NewInstance(void)` |
+| `0x142630` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomNotify> __cdecl MNSandbox::CustomNotify::NewInstance(void)` |
+| `0x5c690` | `public: static class MNSandbox::AutoRef<class MNSandbox::GameNode> __cdecl MNSandbox::GameNode::NewInstance(void)` |
+| `0x5c740` | `public: static class MNSandbox::AutoRef<class MNSandbox::GlobalServiceNode> __cdecl MNSandbox::GlobalServiceNode::NewInstance(void)` |
+| `0x1b9400` | `public: static class MNSandbox::AutoRef<class MNSandbox::InputObject> __cdecl MNSandbox::InputObject::NewInstance(void)` |
+| `0x1b94b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::InputObjectSignal> __cdecl MNSandbox::InputObjectSignal::NewInstance(void)` |
+| `0x1ed840` | `public: static class MNSandbox::AutoRef<class MNSandbox::LocalScriptNode> __cdecl MNSandbox::LocalScriptNode::NewInstance(void)` |
+| `0x1efb40` | `public: static class MNSandbox::AutoRef<class MNSandbox::LuaProfileService> __cdecl MNSandbox::LuaProfileService::NewInstance(void)` |
+| `0x1a6f50` | `public: static class MNSandbox::AutoRef<class MNSandbox::MainStorage> __cdecl MNSandbox::MainStorage::NewInstance(void)` |
+| `0x1f2be0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ModuleScriptNode> __cdecl MNSandbox::ModuleScriptNode::NewInstance(void)` |
+| `0x8cbf0` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxAssetObject> __cdecl MNSandbox::SandboxAssetObject::NewInstance(void)` |
+| `0x1de550` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxDebugHelper> __cdecl MNSandbox::SandboxDebugHelper::NewInstance(void)` |
+| `0x1e29d0` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxLoadedService> __cdecl MNSandbox::SandboxLoadedService::NewInstance(void)` |
+| `0x5c800` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::NewInstance(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::SceneRoot> __cdecl MNSandbox::SceneRoot::NewInstance(void)` |
+| `0x1f4810` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptContext> __cdecl MNSandbox::ScriptContext::NewInstance(void)` |
+| `0x1dbc30` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptNode> __cdecl MNSandbox::ScriptNode::NewInstance(void)` |
+| `0x1f7c10` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptObject> __cdecl MNSandbox::ScriptObject::NewInstance(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptService> __cdecl MNSandbox::ScriptService::NewInstance(void)` |
+| `0x1ea070` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptServiceHost> __cdecl MNSandbox::ScriptServiceHost::NewInstance(void)` |
+| `0x1ea130` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptServiceRemote> __cdecl MNSandbox::ScriptServiceRemote::NewInstance(void)` |
+| `0x1a00c0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ServerScriptService> __cdecl MNSandbox::ServerScriptService::NewInstance(void)` |
+| `0x1a0170` | `public: static class MNSandbox::AutoRef<class MNSandbox::ServerStorage> __cdecl MNSandbox::ServerStorage::NewInstance(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ServiceNode> __cdecl MNSandbox::ServiceNode::NewInstance(void)` |
+| `0x207e10` | `public: static class MNSandbox::AutoRef<class MNSandbox::TimerNode> __cdecl MNSandbox::TimerNode::NewInstance(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetService> __cdecl MNSandbox::AssetService::NewLonelyObject(void)` |
+| `0x95680` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetServiceHost> __cdecl MNSandbox::AssetServiceHost::NewLonelyObject(void)` |
+| `0x95730` | `public: static class MNSandbox::AutoRef<class MNSandbox::AssetServiceRemote> __cdecl MNSandbox::AssetServiceRemote::NewLonelyObject(void)` |
+| `0x1a0220` | `public: static class MNSandbox::AutoRef<class MNSandbox::CloudServerConfigService> __cdecl MNSandbox::CloudServerConfigService::NewLonelyObject(void)` |
+| `0x1c2610` | `public: static class MNSandbox::AutoRef<class MNSandbox::CollectionService> __cdecl MNSandbox::CollectionService::NewLonelyObject(void)` |
+| `0x1a02d0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ConfigService> __cdecl MNSandbox::ConfigService::NewLonelyObject(void)` |
+| `0x1d51e0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ContextActionService> __cdecl MNSandbox::ContextActionService::NewLonelyObject(void)` |
+| `0x1dbce0` | `public: static class MNSandbox::AutoRef<class MNSandbox::CoreScript> __cdecl MNSandbox::CoreScript::NewLonelyObject(void)` |
+| `0x13fe30` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomFunction> __cdecl MNSandbox::CustomFunction::NewLonelyObject(void)` |
+| `0x142710` | `public: static class MNSandbox::AutoRef<class MNSandbox::CustomNotify> __cdecl MNSandbox::CustomNotify::NewLonelyObject(void)` |
+| `0x5c8c0` | `public: static class MNSandbox::AutoRef<class MNSandbox::GameNode> __cdecl MNSandbox::GameNode::NewLonelyObject(void)` |
+| `0x5c970` | `public: static class MNSandbox::AutoRef<class MNSandbox::GlobalServiceNode> __cdecl MNSandbox::GlobalServiceNode::NewLonelyObject(void)` |
+| `0x1b9560` | `public: static class MNSandbox::AutoRef<class MNSandbox::InputObject> __cdecl MNSandbox::InputObject::NewLonelyObject(void)` |
+| `0x1b9610` | `public: static class MNSandbox::AutoRef<class MNSandbox::InputObjectSignal> __cdecl MNSandbox::InputObjectSignal::NewLonelyObject(void)` |
+| `0x1ed900` | `public: static class MNSandbox::AutoRef<class MNSandbox::LocalScriptNode> __cdecl MNSandbox::LocalScriptNode::NewLonelyObject(void)` |
+| `0x1efbf0` | `public: static class MNSandbox::AutoRef<class MNSandbox::LuaProfileService> __cdecl MNSandbox::LuaProfileService::NewLonelyObject(void)` |
+| `0x1a7000` | `public: static class MNSandbox::AutoRef<class MNSandbox::MainStorage> __cdecl MNSandbox::MainStorage::NewLonelyObject(void)` |
+| `0x1f2c90` | `public: static class MNSandbox::AutoRef<class MNSandbox::ModuleScriptNode> __cdecl MNSandbox::ModuleScriptNode::NewLonelyObject(void)` |
+| `0x8ccb0` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxAssetObject> __cdecl MNSandbox::SandboxAssetObject::NewLonelyObject(void)` |
+| `0x1de600` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxDebugHelper> __cdecl MNSandbox::SandboxDebugHelper::NewLonelyObject(void)` |
+| `0x1e2a80` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxLoadedService> __cdecl MNSandbox::SandboxLoadedService::NewLonelyObject(void)` |
+| `0x5ca30` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::NewLonelyObject(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::SceneRoot> __cdecl MNSandbox::SceneRoot::NewLonelyObject(void)` |
+| `0x1f48c0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptContext> __cdecl MNSandbox::ScriptContext::NewLonelyObject(void)` |
+| `0x1dbda0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptNode> __cdecl MNSandbox::ScriptNode::NewLonelyObject(void)` |
+| `0x1f7cd0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptObject> __cdecl MNSandbox::ScriptObject::NewLonelyObject(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptService> __cdecl MNSandbox::ScriptService::NewLonelyObject(void)` |
+| `0x1ea1f0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptServiceHost> __cdecl MNSandbox::ScriptServiceHost::NewLonelyObject(void)` |
+| `0x1ea2b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ScriptServiceRemote> __cdecl MNSandbox::ScriptServiceRemote::NewLonelyObject(void)` |
+| `0x1a0380` | `public: static class MNSandbox::AutoRef<class MNSandbox::ServerScriptService> __cdecl MNSandbox::ServerScriptService::NewLonelyObject(void)` |
+| `0x1a0430` | `public: static class MNSandbox::AutoRef<class MNSandbox::ServerStorage> __cdecl MNSandbox::ServerStorage::NewLonelyObject(void)` |
+| `0x5c8b0` | `public: static class MNSandbox::AutoRef<class MNSandbox::ServiceNode> __cdecl MNSandbox::ServiceNode::NewLonelyObject(void)` |
+| `0x207ec0` | `public: static class MNSandbox::AutoRef<class MNSandbox::TimerNode> __cdecl MNSandbox::TimerNode::NewLonelyObject(void)` |
+| `0x23d8c0` | `protected: class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine> __thiscall MNSandbox::LuaFunction::NewLuaCoroutine(class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x23da40` | `protected: static class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> __cdecl MNSandbox::LuaFunction::NewLuaLinkerData(struct lua_State *,int,int)` |
+| `0xdf750` | `private: static class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> __cdecl MNSandbox::ReflexLuaTuple::NewLuaLinkerData(struct lua_State *,int,int)` |
+| `0x5cae0` | `public: class MNSandbox::SandboxParam * __thiscall MNSandbox::SandboxParamPool::NewParamBool(bool)` |
+| `0x5cbf0` | `public: class MNSandbox::SandboxParam * __thiscall MNSandbox::SandboxParamPool::NewParamLuaNumber(double)` |
+| `0x5cd00` | `public: class MNSandbox::SandboxParam * __thiscall MNSandbox::SandboxParamPool::NewParamRef(class MNSandbox::Ref *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5ce10` | `public: class MNSandbox::SandboxParam * __thiscall MNSandbox::SandboxParamPool::NewParamString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x5cf30` | `public: class MNSandbox::SandboxParam * __thiscall MNSandbox::SandboxParamPool::NewParamUserdata(void *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1bd010` | `public: int __thiscall MNSandbox::CloudServerConfigService::NewRobotRequest(struct lua_State *,int,int,class MNSandbox::AutoRef<class MNSandbox::LuaTable>,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x5cfe0` | `public: void __thiscall MNSandbox::CloudServerConfigService::NewRobotResp(int,int,bool)` |
+| `0x1483c0` | `private: void __thiscall MNSandbox::RemoteMsg::NextRun(class MNSandbox::RemoteMsgInfo const &)` |
+| `0x18ced0` | `protected: void __thiscall MNSandbox::SandboxNode::NodeEnterGame(void)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::GameNode::NodeEnterScene(class MNSandbox::Scene *)` |
+| `0x18cf10` | `protected: virtual void __thiscall MNSandbox::SandboxNode::NodeEnterScene(class MNSandbox::Scene *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::SceneRoot::NodeEnterScene(class MNSandbox::Scene *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::ServiceNode::NodeEnterScene(class MNSandbox::Scene *)` |
+| `0x18cfb0` | `protected: void __thiscall MNSandbox::SandboxNode::NodeLeaveGame(void)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::GameNode::NodeLeaveScene(class MNSandbox::Scene *)` |
+| `0x18cff0` | `protected: virtual void __thiscall MNSandbox::SandboxNode::NodeLeaveScene(class MNSandbox::Scene *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::SceneRoot::NodeLeaveScene(class MNSandbox::Scene *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::ServiceNode::NodeLeaveScene(class MNSandbox::Scene *)` |
+| `0x15c500` | `public: struct MNSandbox::Ray & __thiscall MNSandbox::Ray::Normalize(void)` |
+| `0x15c5d0` | `public: struct MNSandbox::Ray __thiscall MNSandbox::Ray::NormalizeTo(void)const ` |
+| `0x1d5290` | `private: void __thiscall MNSandbox::ContextActionService::NotifyActionAdded(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class MNSandbox::AutoRef<struct MNSandbox::ContextActionService::ActionFunc>)` |
+| `0x1d5370` | `private: void __thiscall MNSandbox::ContextActionService::NotifyActionDataChange(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<struct MNSandbox::ContextActionService::ActionFunc>)` |
+| `0x1d54b0` | `private: void __thiscall MNSandbox::ContextActionService::NotifyActionRemoved(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class MNSandbox::AutoRef<struct MNSandbox::ContextActionService::ActionFunc>)` |
+| `0xdc160` | `public: void __thiscall MNSandbox::ReflexReferenceLinker::NotifyAttrChanged(void *,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *)` |
+| `0x5cfe0` | `public: virtual void __thiscall MNSandbox::ReflexValue::NotifyAttrChanged(void *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *)` |
+| `0x143ab0` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyClientAoiEnterRoom(int)` |
+| `0x143af0` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyClientAoiLeaveRoom(int)` |
+| `0x143b30` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyClientBeginPlay(void)` |
+| `0x143b90` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyClientEndPlay(void)` |
+| `0x5cff0` | `public: static void __cdecl MNSandbox::ScriptState::NotifyCoroutineNew(struct lua_State *,struct lua_State *)` |
+| `0x5d010` | `public: static void __cdecl MNSandbox::ScriptState::NotifyCoroutineRelease(struct lua_State *)` |
+| `0x5d030` | `public: static void __cdecl MNSandbox::ScriptState::NotifyCoroutineResume(struct lua_State *)` |
+| `0x18d070` | `public: virtual void __thiscall MNSandbox::SandboxNode::NotifyEnterService(class MNSandbox::ServiceNode *)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::ServiceNode::NotifyEnterService(class MNSandbox::ServiceNode *)` |
+| `0x143bf0` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyGameToClose(void)` |
+| `0x143c00` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyHostBeginPlay(void)` |
+| `0x143c50` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyHostClientEnterRoom(int)` |
+| `0x143c80` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyHostClientLeaveRoom(int)` |
+| `0x143cb0` | `public: void __thiscall MNSandbox::GlobalNotify::NotifyHostEndPlay(void)` |
+| `0x18d0d0` | `public: virtual void __thiscall MNSandbox::SandboxNode::NotifyLeaveService(class MNSandbox::ServiceNode *)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::ServiceNode::NotifyLeaveService(class MNSandbox::ServiceNode *)` |
+| `0x5d050` | `public: static void __cdecl MNSandbox::ScriptState::NotifyLoadScript(class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine> &,class MNSandbox::WeakRef<class MNSandbox::SandboxNode>)` |
+| `0x1fd790` | `protected: void __thiscall MNSandbox::ScriptService::NotifyScriptNodeCodeChanged(unsigned int)` |
+| `0x874d0` | `private: void __thiscall MNSandbox::SandboxAssetCache::NotifySetAssetId(class MNSandbox::AssetRef *)` |
+| `0x8a7a0` | `public: void __thiscall MNSandbox::Stream::Offset(int)` |
+| `0x8a800` | `public: void __thiscall MNSandbox::Stream::OffsetAdd(unsigned int)` |
+| `0x8a840` | `public: void __thiscall MNSandbox::Stream::OffsetSub(unsigned int)` |
+| `0x1556a0` | `protected: virtual void __thiscall MNSandbox::Profile::ErrorLogMgr::OnActive(void)` |
+| `0x155770` | `protected: virtual void __thiscall MNSandbox::Profile::RunDataMgr::OnActive(void)` |
+| `0x155840` | `protected: virtual void __thiscall MNSandbox::Profile::RunLogMgr::OnActive(void)` |
+| `0x18d120` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnActive(void)` |
+| `0x18d150` | `protected: void __thiscall MNSandbox::SandboxNode::OnActiveChanged(bool)` |
+| `0x1e2b30` | `protected: virtual void __thiscall MNSandbox::GameNode::OnAddChild(class MNSandbox::SandboxNode *)` |
+| `0x18d200` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnAddChild(class MNSandbox::SandboxNode *)` |
+| `0x19a150` | `public: virtual void __thiscall MNSandbox::SceneRoot::OnAddChild(class MNSandbox::SandboxNode *)` |
+| `0xd2620` | `protected: virtual void __thiscall MNSandbox::GameObject::OnAddComponent(class MNSandbox::Component *)` |
+| `0x16e6f0` | `public: void __thiscall MNSandbox::SceneChunk::OnAddObject(class MNSandbox::SandboxNode *)` |
+| `0x18e510` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnAncestryChanged(class MNSandbox::ServiceNode *,class MNSandbox::ServiceNode *)` |
+| `0x1f7060` | `protected: virtual void __thiscall MNSandbox::ScriptNode::OnAncestryChanged(class MNSandbox::ServiceNode *,class MNSandbox::ServiceNode *)` |
+| `0x957e0` | `protected: void __thiscall MNSandbox::AssetObject::OnAssetLoadFinish(bool)` |
+| `0x5dc40` | `public: static void __cdecl MNSandbox::SandboxNode::OnAttributeChanged(class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *)` |
+| `0x5dc60` | `public: static void __cdecl MNSandbox::SandboxNode::OnAttributeChanged(class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *)` |
+| `0x5dc80` | `public: static void __cdecl MNSandbox::SandboxNode::OnAttributeChanged(class MNSandbox::SandboxNode *,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *)` |
+| `0x95850` | `protected: void __thiscall MNSandbox::AssetObject::OnBeginLoading(void)` |
+| `0x1dbe50` | `protected: virtual void __thiscall MNSandbox::CoreScript::OnBeginPlay(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnBeginPlay(void)` |
+| `0x1a2c20` | `protected: virtual void __thiscall MNSandbox::GameMapClient::OnBeginPlay(void)` |
+| `0x1a2c20` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnBeginPlay(void)` |
+| `0x1dbe50` | `protected: virtual void __thiscall MNSandbox::LocalScriptNode::OnBeginPlay(void)` |
+| `0x19a160` | `protected: virtual void __thiscall MNSandbox::ModuleScriptNode::OnBeginPlay(void)` |
+| `0x18e570` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnBeginPlay(void)` |
+| `0x16d470` | `protected: virtual bool __thiscall MNSandbox::Scene::OnBeginPlay(void)` |
+| `0x19a160` | `public: virtual void __thiscall MNSandbox::SceneRoot::OnBeginPlay(void)` |
+| `0x1f4970` | `protected: virtual void __thiscall MNSandbox::ScriptContext::OnBeginPlay(void)` |
+| `0x1dbe50` | `protected: virtual void __thiscall MNSandbox::ScriptObject::OnBeginPlay(void)` |
+| `0x19a160` | `protected: virtual void __thiscall MNSandbox::TimerNode::OnBeginPlay(void)` |
+| `0x95870` | `protected: void __thiscall MNSandbox::AssetObject::OnBindAssetid(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetIdInfo const &)` |
+| `0x16d540` | `public: void __thiscall MNSandbox::Scene::OnBindChunk(class MNSandbox::SceneChunk *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::Component::OnBindGameObject(class MNSandbox::GameObject *)` |
+| `0xd2620` | `public: virtual void __thiscall MNSandbox::Scene::OnBindObject(class MNSandbox::SandboxNode *)` |
+| `0x1fd890` | `protected: void __thiscall MNSandbox::ScriptServiceHost::OnBroadcastScriptUrls(void)` |
+| `0x23db00` | `public: static void __cdecl MNSandbox::LuaFunction::OnCallback(class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x144b10` | `private: void __thiscall MNSandbox::ListenerLua::OnCallbackRelease(void)` |
+| `0x1a04e0` | `protected: virtual bool __thiscall MNSandbox::GameMap::OnCheckLoadedStageActive(void)` |
+| `0x1a2e70` | `protected: virtual bool __thiscall MNSandbox::GameMapClient::OnCheckLoadedStageActive(void)` |
+| `0x1a70b0` | `protected: virtual bool __thiscall MNSandbox::GameMapHost::OnCheckLoadedStageActive(void)` |
+| `0x529f0` | `protected: virtual bool __thiscall MNSandbox::ReflexValue::OnCheckSyncReceiveAble(void *)const ` |
+| `0x529f0` | `protected: virtual bool __thiscall MNSandbox::ReflexValue::OnCheckSyncSendAble(void *)const ` |
+| `0x203650` | `protected: void __thiscall MNSandbox::ServiceNode::OnClearNeedSave(void)` |
+| `0xbfe70` | `protected: virtual void __thiscall MNSandbox::AssetService::OnClearNotify(void)` |
+| `0x1d60c0` | `protected: virtual void __thiscall MNSandbox::ContextActionService::OnClearNotify(void)` |
+| `0x142b90` | `protected: virtual void __thiscall MNSandbox::CustomNotify::OnClearNotify(void)` |
+| `0x1e3020` | `protected: virtual void __thiscall MNSandbox::GameNode::OnClearNotify(void)` |
+| `0x1f30e0` | `protected: virtual void __thiscall MNSandbox::ModuleScriptNode::OnClearNotify(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::Object::OnClearNotify(void)` |
+| `0x1dee20` | `protected: virtual void __thiscall MNSandbox::SandboxDebugHelper::OnClearNotify(void)` |
+| `0x1ecd40` | `protected: virtual void __thiscall MNSandbox::SandboxLoadedService::OnClearNotify(void)` |
+| `0x191620` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnClearNotify(void)` |
+| `0x19a170` | `protected: virtual void __thiscall MNSandbox::SceneRoot::OnClearNotify(void)` |
+| `0x1a71c0` | `protected: void __thiscall MNSandbox::GameMapHost::OnClientInited(int)` |
+| `0x1a72b0` | `protected: void __thiscall MNSandbox::GameMapHost::OnClientLoaded(int)` |
+| `0x1a72d0` | `protected: void __thiscall MNSandbox::GameMapHost::OnClientReadied(int)` |
+| `0x1916c0` | `private: void __thiscall MNSandbox::SandboxNode::OnCloseStopDynamic(void)` |
+| `0x221570` | `private: void __thiscall MNSandbox::ScriptState::OnCoroutineDirtyRelease(void)` |
+| `0x191760` | `protected: void __thiscall MNSandbox::SandboxNode::OnCustomAttrAdd(class MNSandbox::Attribute *)` |
+| `0xcf510` | `public: void __thiscall MNSandbox::AttributeContainer::OnCustomAttrChanged(class MNSandbox::Attribute *)` |
+| `0x1917f0` | `protected: void __thiscall MNSandbox::SandboxNode::OnCustomAttrChanged(class MNSandbox::Attribute *)` |
+| `0x191880` | `protected: void __thiscall MNSandbox::SandboxNode::OnCustomAttrRemove(class MNSandbox::Attribute *)` |
+| `0x155bf0` | `protected: virtual void __thiscall MNSandbox::Profile::ErrorLogMgr::OnDeactive(void)` |
+| `0x155c30` | `protected: virtual void __thiscall MNSandbox::Profile::RunDataMgr::OnDeactive(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::Profile::RunLogMgr::OnDeactive(void)` |
+| `0x1e3050` | `protected: virtual void __thiscall MNSandbox::GameNode::OnDescendantNodeEnter(class MNSandbox::SandboxNode *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnDescendantNodeEnter(class MNSandbox::SandboxNode *)` |
+| `0x203780` | `protected: virtual void __thiscall MNSandbox::ServiceNode::OnDescendantNodeEnter(class MNSandbox::SandboxNode *)` |
+| `0x1e30b0` | `protected: virtual void __thiscall MNSandbox::GameNode::OnDescendantNodeLeave(class MNSandbox::SandboxNode *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnDescendantNodeLeave(class MNSandbox::SandboxNode *)` |
+| `0x2037a0` | `protected: virtual void __thiscall MNSandbox::ServiceNode::OnDescendantNodeLeave(class MNSandbox::SandboxNode *)` |
+| `0xd9920` | `protected: virtual void __thiscall MNSandbox::Ref::OnDirty(void)` |
+| `0x13b4e0` | `protected: virtual void __thiscall MNSandbox::SandboxParam::OnDirty(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::SandboxScheduler::OnDoTimesChanged(void)` |
+| `0x1fd970` | `protected: virtual void __thiscall MNSandbox::ScriptServiceHost::OnDownloadScriptFinish(unsigned int,bool)` |
+| `0x1fd9d0` | `protected: virtual void __thiscall MNSandbox::ScriptServiceRemote::OnDownloadScriptFinish(unsigned int,bool)` |
+| `0x1fda00` | `protected: void __thiscall MNSandbox::ScriptServiceRemote::OnDownloadScriptUrls(bool)` |
+| `0x1dbe80` | `protected: virtual void __thiscall MNSandbox::CoreScript::OnEndPlay(void)` |
+| `0x1a05a0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnEndPlay(void)` |
+| `0x1a2fb0` | `protected: virtual void __thiscall MNSandbox::GameMapClient::OnEndPlay(void)` |
+| `0x1a2fb0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnEndPlay(void)` |
+| `0x1dbe80` | `protected: virtual void __thiscall MNSandbox::LocalScriptNode::OnEndPlay(void)` |
+| `0x1f3100` | `protected: virtual void __thiscall MNSandbox::ModuleScriptNode::OnEndPlay(void)` |
+| `0x191920` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnEndPlay(void)` |
+| `0x16d930` | `protected: virtual bool __thiscall MNSandbox::Scene::OnEndPlay(void)` |
+| `0x19a1a0` | `public: virtual void __thiscall MNSandbox::SceneRoot::OnEndPlay(void)` |
+| `0x19a1a0` | `protected: virtual void __thiscall MNSandbox::ScriptContext::OnEndPlay(void)` |
+| `0x1dbe80` | `protected: virtual void __thiscall MNSandbox::ScriptObject::OnEndPlay(void)` |
+| `0x207f70` | `protected: virtual void __thiscall MNSandbox::TimerNode::OnEndPlay(void)` |
+| `0xbfe90` | `protected: virtual void __thiscall MNSandbox::AssetService::OnEnterParent(class MNSandbox::SandboxNode *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnEnterParent(class MNSandbox::SandboxNode *)` |
+| `0x2037c0` | `protected: virtual void __thiscall MNSandbox::ServiceNode::OnEnterParent(class MNSandbox::SandboxNode *)` |
+| `0x577f0` | `protected: void __thiscall MNSandbox::GameMapHost::OnEnterPlayMode(void)` |
+| `0x191950` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnEnterScene(class MNSandbox::Scene *)` |
+| `0x16e700` | `public: void __thiscall MNSandbox::SceneChunk::OnEnterScene(class MNSandbox::Scene *)` |
+| `0x19a1b0` | `public: virtual void __thiscall MNSandbox::SceneRoot::OnEnterScene(class MNSandbox::Scene *)` |
+| `0xc5640` | `protected: void __thiscall MNSandbox::NodePacket::OnFinish(enum MNSandbox::SANDBOXERR)` |
+| `0x1919a0` | `private: void __thiscall MNSandbox::SandboxNode::OnFlagsChanged(unsigned int)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::ServiceNode::OnGameModeEnter(void)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::ServiceNode::OnGameModeLeave(void)` |
+| `0x1e3120` | `protected: void __thiscall MNSandbox::GameNode::OnGameToClose(void)` |
+| `0x2215a0` | `public: static int __cdecl MNSandbox::ScriptState::OnGetInfo(struct lua_State *)` |
+| `0x1a31d0` | `protected: void __thiscall MNSandbox::GameMapClient::OnHeartBeatTick(void)` |
+| `0x1919e0` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnInactive(void)` |
+| `0x232940` | `public: static int __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::OnIndex(struct lua_State *,struct MNSandbox::ReflexReferenceIns &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::Object::OnInit(void)` |
+| `0x1fda60` | `protected: void __thiscall MNSandbox::ScriptServiceHost::OnInitUploadFinish(bool)` |
+| `0x19bf60` | `protected: bool __thiscall MNSandbox::GameInput::OnInputEvent(struct Rainbow::InputEvent const &)` |
+| `0x19c150` | `protected: bool __thiscall MNSandbox::GameInput::OnKeyDown(int,int)` |
+| `0x19c170` | `protected: bool __thiscall MNSandbox::GameInput::OnKeyUp(int,int)` |
+| `0x1e97f0` | `private: void __thiscall MNSandbox::GlobalServiceNode::OnLeaveMap(void)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnLeaveParent(class MNSandbox::SandboxNode *)` |
+| `0x2037e0` | `protected: virtual void __thiscall MNSandbox::ServiceNode::OnLeaveParent(class MNSandbox::SandboxNode *)` |
+| `0x1a7420` | `protected: void __thiscall MNSandbox::GameMapHost::OnLeavePlayMode(void)` |
+| `0x191a10` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnLeaveScene(class MNSandbox::Scene *)` |
+| `0x16e720` | `public: void __thiscall MNSandbox::SceneChunk::OnLeaveScene(void)` |
+| `0xc5670` | `protected: void __thiscall MNSandbox::NodePacket::OnListenAssetLoad(bool)` |
+| `0xbfeb0` | `private: void __thiscall MNSandbox::AssetServiceRemote::OnListenHostVersion(unsigned int)` |
+| `0x8a880` | `protected: void __thiscall MNSandbox::AssetConfig::OnListenLoad(class jsonxx::Object const &,bool)` |
+| `0x2174d0` | `private: void __thiscall MNSandbox::LuaScript::OnListenLuaOver(class MNSandbox::LuaCoroutine *,bool)` |
+| `0x1f3120` | `private: void __thiscall MNSandbox::ModuleScriptNode::OnListenLuaOver(void)` |
+| `0x217500` | `private: void __thiscall MNSandbox::LuaScript::OnListenLuaPause(void)` |
+| `0x217510` | `private: void __thiscall MNSandbox::LuaScript::OnListenLuaReturn(class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x1f3280` | `private: void __thiscall MNSandbox::ModuleScriptNode::OnListenLuaReturn(class MNSandbox::LuaCoroutine *,class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x8ae40` | `protected: void __thiscall MNSandbox::AssetConfig::OnListenSave(class jsonxx::Object &)` |
+| `0xc58a0` | `protected: void __thiscall MNSandbox::NodePacket::OnListenTimeOver(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x95970` | `protected: void __thiscall MNSandbox::AssetObject::OnLoad(void)` |
+| `0x52860` | `protected: virtual void __thiscall MNSandbox::AssetRef::OnLoadAssetFileFinish(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class Rainbow::SharePtr<class Rainbow::DataStream> const &)` |
+| `0x19a1c0` | `public: virtual void __thiscall MNSandbox::SceneRoot::OnLoadFinish(bool)` |
+| `0x203800` | `protected: virtual void __thiscall MNSandbox::ServiceNode::OnLoadFinish(bool)` |
+| `0x95ae0` | `protected: void __thiscall MNSandbox::AssetObject::OnLoadOvertime(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::SandboxNode::OnLoadReflexEnd(void)` |
+| `0x191a60` | `public: virtual void __thiscall MNSandbox::SandboxNode::OnLoadReflexFinish(void)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::SandboxNode::OnLoadReflexStart(void)` |
+| `0x1fdcf0` | `protected: void __thiscall MNSandbox::ScriptServiceRemote::OnLoadScriptUrlsFinish(bool)` |
+| `0x8af40` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::AssetConfig::OnLoadStream(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x9b250` | `protected: void __thiscall MNSandbox::AssetPool::OnLoadTick(void)` |
+| `0x95c10` | `protected: void __thiscall MNSandbox::AssetObject::OnLoaded(bool)` |
+| `0x19c190` | `protected: void __thiscall MNSandbox::GameInput::OnLostFocus(void)` |
+| `0x221830` | `public: static int __cdecl MNSandbox::ScriptState::OnLuaAssert(struct lua_State *)` |
+| `0x221860` | `private: void __thiscall MNSandbox::ScriptState::OnLuaCoroutineAdd(class MNSandbox::Lua::LuaCoroutineInstance *,struct lua_State *)` |
+| `0x221890` | `private: void __thiscall MNSandbox::ScriptState::OnLuaCoroutineRemove(class MNSandbox::Lua::LuaCoroutineInstance *,struct lua_State *)` |
+| `0x210d10` | `private: void __thiscall MNSandbox::LuaCoroutine::OnLuaFinish(class MNSandbox::Lua::CoroutineJob *,bool)` |
+| `0x1e3220` | `public: virtual int __thiscall MNSandbox::GameNode::OnLuaIndex(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x529d0` | `public: virtual int __thiscall MNSandbox::SandboxNode::OnLuaIndex(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x63400` | `public: virtual bool __thiscall MNSandbox::SandboxNode::OnLuaNewIndex(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0x60130` | `protected: void __thiscall MNSandbox::LuaFunction::OnLuaStateRelease(struct lua_State *)` |
+| `0x1a05b0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnMapActive(void)` |
+| `0x1a7440` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnMapActive(void)` |
+| `0x19c1b0` | `protected: bool __thiscall MNSandbox::GameInput::OnMouseDrag(int)` |
+| `0x19c1d0` | `protected: bool __thiscall MNSandbox::GameInput::OnMouseLeftBtnDown(int)` |
+| `0x19c1f0` | `protected: bool __thiscall MNSandbox::GameInput::OnMouseLeftBtnUp(int)` |
+| `0x19c210` | `protected: bool __thiscall MNSandbox::GameInput::OnMouseMove(int)` |
+| `0x19c230` | `protected: bool __thiscall MNSandbox::GameInput::OnMouseRightBtnDown(int)` |
+| `0x19c250` | `protected: bool __thiscall MNSandbox::GameInput::OnMouseRightBtnUp(int)` |
+| `0x52860` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnNameChanged(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2329a0` | `public: static void __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::OnNewIndex(struct lua_State *,struct MNSandbox::ReflexReferenceIns &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0x148c10` | `private: void __thiscall MNSandbox::RemoteMsg::OnNextRun(void)` |
+| `0x191a90` | `public: virtual void __thiscall MNSandbox::SandboxNode::OnNodeAttributeChanged(class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *)` |
+| `0x1a05e0` | `private: void __thiscall MNSandbox::GameMap::OnNodeBeWatched(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x1370b0` | `private: void __thiscall MNSandbox::NodeWatcherGroup::OnNodeBeWatched(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x1371d0` | `private: void __thiscall MNSandbox::NodeWatcherGroup::OnNodeDirty(class MNSandbox::SandboxNode *)` |
+| `0x191b70` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnNodeEnterGame(void)` |
+| `0x191c40` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnNodeLeaveGame(void)` |
+| `0x1c26c0` | `private: void __thiscall MNSandbox::CollectionService::OnNodeLeaveScene(class MNSandbox::SandboxNode *,class MNSandbox::Scene *)` |
+| `0x170ed0` | `public: void __thiscall MNSandbox::SdbSceneManager::OnNodeNameChanged(class MNSandbox::SandboxNode *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1a0620` | `private: void __thiscall MNSandbox::GameMap::OnNodeUnwatched(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x137280` | `private: void __thiscall MNSandbox::NodeWatcherGroup::OnNodeUnwatched(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x1a0670` | `private: void __thiscall MNSandbox::GameMap::OnNodeWatchChanged(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x1373a0` | `private: void __thiscall MNSandbox::NodeWatcherGroup::OnNodeWatchChanged(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE,enum MNSandbox::WATCHERSTATE)` |
+| `0x60150` | `public: void __thiscall MNSandbox::SandboxNode::OnNotifyAttributeChanged(class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *)` |
+| `0x191d10` | `public: void __thiscall MNSandbox::SandboxNode::OnNotifyDataSync(class MNSandbox::ReflexValue const *,bool,bool &)` |
+| `0x191d40` | `protected: void __thiscall MNSandbox::SandboxNode::OnNotifyNodeChanged(enum MNSandbox::SandboxNode::NODECHANGE)` |
+| `0x1fdd60` | `protected: void __thiscall MNSandbox::ScriptServiceHost::OnNotifyScriptChanged(unsigned int)` |
+| `0x191d90` | `private: void __thiscall MNSandbox::SandboxNode::OnOpenStopDynamic(void)` |
+| `0x191e10` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnParentChangeAfter(class MNSandbox::SandboxNode *)` |
+| `0x191ec0` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnParentChanged(class MNSandbox::SandboxNode *)` |
+| `0x2218c0` | `public: static int __cdecl MNSandbox::ScriptState::OnPcall(struct lua_State *)` |
+| `0x1fddb0` | `protected: void __thiscall MNSandbox::ScriptServiceHost::OnPlayerEnter(int)` |
+| `0x1a06f0` | `protected: void __thiscall MNSandbox::GameMap::OnPlayerEnterGame(int)` |
+| `0x1a3210` | `protected: virtual void __thiscall MNSandbox::GameMapClient::OnPlayerEnterRoom(int)` |
+| `0x1a7460` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnPlayerEnterRoom(int)` |
+| `0x1a0720` | `private: void __thiscall MNSandbox::GameMap::OnPlayerEnterScene(int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,bool)` |
+| `0x52680` | `protected: void __thiscall MNSandbox::ScriptServiceHost::OnPlayerLeave(int)` |
+| `0x1a0960` | `protected: void __thiscall MNSandbox::GameMap::OnPlayerLeaveGame(int)` |
+| `0x1a3220` | `protected: virtual void __thiscall MNSandbox::GameMapClient::OnPlayerLeaveRoom(int)` |
+| `0x1a3220` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnPlayerLeaveRoom(int)` |
+| `0x1a0990` | `private: void __thiscall MNSandbox::GameMap::OnPlayerLeaveScene(int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::Object::OnPostTick(void)` |
+| `0x52c30` | `public: virtual bool __thiscall MNSandbox::SandboxNode::OnPreSave(void)` |
+| `0x60160` | `public: virtual void __thiscall MNSandbox::GameObject::OnPreTick(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::Object::OnPreTick(void)` |
+| `0x221a70` | `public: static int __cdecl MNSandbox::ScriptState::OnPrint(struct lua_State *)` |
+| `0x249860` | `protected: void __thiscall MNSandbox::DebugAction::OnPrintNodeTree(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::DebugAction::Info &)` |
+| `0x2499e0` | `protected: void __thiscall MNSandbox::DebugAction::OnPrintNodeTree(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class jsonxx::Object,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class jsonxx::Object> > > &)` |
+| `0x249b60` | `protected: void __thiscall MNSandbox::DebugAction::OnPrintNodeTree(class MNSandbox::ServiceNode *,struct MNSandbox::DebugAction::Info &)` |
+| `0x249c50` | `protected: void __thiscall MNSandbox::DebugAction::OnPrintNodeTree(class MNSandbox::ServiceNode *,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class jsonxx::Object,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class jsonxx::Object> > > &)` |
+| `0x1a3230` | `protected: void __thiscall MNSandbox::GameMapClient::OnReadyNodeCreate(void)` |
+| `0x1a0ad0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnReadyPlay(void)` |
+| `0x1a33b0` | `protected: virtual void __thiscall MNSandbox::GameMapClient::OnReadyPlay(void)` |
+| `0x1a33b0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnReadyPlay(void)` |
+| `0xbfee0` | `protected: void __thiscall MNSandbox::AssetServiceRemote::OnReceiveCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1fddf0` | `protected: void __thiscall MNSandbox::ScriptServiceRemote::OnReceiveHostVersion(unsigned int)` |
+| `0x148dc0` | `private: void __thiscall MNSandbox::RemoteMsg::OnReceiveMsg(class MNSandbox::RemoteMsgInfo const &)` |
+| `0xda450` | `public: void __thiscall MNSandbox::RemoteInstanceListenPool::OnRecvRemoteInstance(__int64,class MNSandbox::SandboxNode *)` |
+| `0x155c70` | `protected: void __thiscall MNSandbox::Profile::ErrorLogMgr::OnRefresh(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x2515a0` | `private: void __thiscall MNSandbox::Thread::MainThreadTaskGroup::OnRefresh(void)` |
+| `0x1562d0` | `protected: void __thiscall MNSandbox::Profile::RunDataMgr::OnRefresh(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x60170` | `protected: virtual void __thiscall MNSandbox::Object::OnRelease(void)` |
+| `0x1e3300` | `protected: virtual void __thiscall MNSandbox::GameNode::OnRemoveChild(class MNSandbox::SandboxNode *)` |
+| `0x191f00` | `protected: virtual void __thiscall MNSandbox::SandboxNode::OnRemoveChild(class MNSandbox::SandboxNode *)` |
+| `0x19a2c0` | `public: virtual void __thiscall MNSandbox::SceneRoot::OnRemoveChild(class MNSandbox::SandboxNode *)` |
+| `0xd29f0` | `protected: virtual void __thiscall MNSandbox::GameObject::OnRemoveComponent(class MNSandbox::Component *)` |
+| `0x16e740` | `public: void __thiscall MNSandbox::SceneChunk::OnRemoveObject(class MNSandbox::SandboxNode *)` |
+| `0xb5c00` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::OnRequestCallback_Cloud(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,int)` |
+| `0xb6200` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::OnRequestCallback_Server(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,int)` |
+| `0xb6990` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::OnRequestCallback_ShortId(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,int)` |
+| `0x221bb0` | `public: static int __cdecl MNSandbox::ScriptState::OnRequire(struct lua_State *)` |
+| `0xbff00` | `protected: void __thiscall MNSandbox::AssetServiceHost::OnRequireCdnUrl(int const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2223d0` | `public: static void __cdecl MNSandbox::ScriptState::OnRequireIsOver(class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,class MNSandbox::WeakRef<class MNSandbox::ModuleScriptNode>)` |
+| `0x1921b0` | `public: virtual void __thiscall MNSandbox::SandboxNode::OnResourceFinish(void)` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::Scene::OnRootUpdateSaveData(class jsonxx::Value * &,class MNSandbox::SandboxNode *)` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::Scene::OnRootUpdateSaveDataStream(class MNSandbox::AutoRef<class MNSandbox::Stream> &,class MNSandbox::SandboxNode *)` |
+| `0x1a7670` | `protected: void __thiscall MNSandbox::GameMapHost::OnRunAfterEnter(void)` |
+| `0x15aae0` | `private: void __thiscall MNSandbox::Statistics::NodeCount::OnRunDebugTypeChanged(enum MNSandbox::RUNDEBUGTYPE)` |
+| `0x156330` | `protected: void __thiscall MNSandbox::Profile::RunDebugMgr::OnRunDebugTypeChanged(enum MNSandbox::RUNDEBUGTYPE)` |
+| `0x249d30` | `protected: void __thiscall MNSandbox::DebugAction::OnSaveDecode(struct MNSandbox::DebugAction::Info &)` |
+| `0x24a010` | `protected: void __thiscall MNSandbox::DebugAction::OnSaveDecode(class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class jsonxx::Object,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class jsonxx::Object> > > &)` |
+| `0x1fde50` | `protected: void __thiscall MNSandbox::ScriptService::OnSaveScriptFinish(unsigned int,bool)` |
+| `0x8b2d0` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::AssetConfig::OnSaveStream(class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x1dbeb0` | `public: void __thiscall MNSandbox::ScriptNode::OnScriptChanged(void)` |
+| `0x1a34e0` | `protected: void __thiscall MNSandbox::GameMapClient::OnScriptDownloadFinish(void)` |
+| `0x1fde80` | `protected: void __thiscall MNSandbox::ScriptService::OnScriptUrlChange(unsigned int const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1fdeb0` | `protected: void __thiscall MNSandbox::ScriptService::OnScriptUrlChange(unsigned int const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64 const &)` |
+| `0x1fdee0` | `protected: void __thiscall MNSandbox::ScriptServiceRemote::OnScriptUrls(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1a34f0` | `public: void __thiscall MNSandbox::GameMapClient::OnScriptsDownloaded(void)` |
+| `0x601a0` | `private: void __thiscall MNSandbox::RemoteMsg::OnSendBoradcast(class MNSandbox::RemoteMsgInfo const &)` |
+| `0x601e0` | `private: void __thiscall MNSandbox::RemoteMsg::OnSendMsgToClient(int,class MNSandbox::RemoteMsgInfo const &)` |
+| `0x60250` | `private: void __thiscall MNSandbox::RemoteMsg::OnSendMsgToHost(class MNSandbox::RemoteMsgInfo const &)` |
+| `0x211020` | `private: void __thiscall MNSandbox::LuaCoroutine::OnSetLuaState(class MNSandbox::Lua::CoroutineJob *,struct lua_State *)` |
+| `0x2038c0` | `protected: void __thiscall MNSandbox::ServiceNode::OnSetNeedSave(void)` |
+| `0x1aa890` | `protected: virtual void __thiscall MNSandbox::GameStage::OnStageChanged(void)` |
+| `0x1aa8c0` | `protected: virtual void __thiscall MNSandbox::GameStageClient::OnStageChanged(void)` |
+| `0x1aa900` | `protected: virtual void __thiscall MNSandbox::GameStageHost::OnStageChanged(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnStageEnd(void)` |
+| `0x1a78d0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnStageEnd(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnStageInit(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnStageLoaded(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnStageReady(void)` |
+| `0x1a79b0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnStageReady(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::GameMap::OnStageRun(void)` |
+| `0x1a7a70` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnStageRun(void)` |
+| `0x1fe1a0` | `protected: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptServiceHost::OnStreamLoad(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x171160` | `private: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::SdbSceneManager::OnStreamLoad(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x203c60` | `protected: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ServiceNode::OnStreamLoad(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x1b19c0` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::MapSave::OnStreamLoadData(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x1fe2f0` | `protected: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptServiceHost::OnStreamSave(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x171370` | `private: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::SdbSceneManager::OnStreamSave(class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x203d50` | `protected: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ServiceNode::OnStreamSave(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1b1f40` | `protected: unsigned int __thiscall MNSandbox::MapSave::OnStreamSaveData(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1a3500` | `protected: void __thiscall MNSandbox::GameMapClient::OnSynced(void)` |
+| `0x577f0` | `private: void __thiscall MNSandbox::NodeWatcher::OnSysTick(void)` |
+| `0x1374c0` | `private: void __thiscall MNSandbox::NodeWatcherGroup::OnSysTick(void)` |
+| `0x9b2e0` | `protected: void __thiscall MNSandbox::AssetPool::OnThreadCallback(struct MNSandbox::AssetPool::ThreadTaskData &)` |
+| `0x24a020` | `protected: void __thiscall MNSandbox::DebugAction::OnThreadPrintNodeTree(struct MNSandbox::DebugAction::Info const &)` |
+| `0x9b370` | `protected: void __thiscall MNSandbox::AssetPool::OnThreadRun(struct MNSandbox::AssetPool::ThreadTaskData &)` |
+| `0x24a2a0` | `protected: void __thiscall MNSandbox::DebugAction::OnThreadRun(struct MNSandbox::DebugAction::Info &)` |
+| `0x24a2d0` | `protected: void __thiscall MNSandbox::DebugAction::OnThreadSaveDecode(struct MNSandbox::DebugAction::Info const &)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::Component::OnTick(void)` |
+| `0x60290` | `public: virtual void __thiscall MNSandbox::GameObject::OnTick(void)` |
+| `0xc5a20` | `private: void __thiscall MNSandbox::NodePacketContainer::OnTick(void)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::Object::OnTick(void)` |
+| `0x84a40` | `private: void __thiscall MNSandbox::RefPool::OnTick(void)` |
+| `0xb6e20` | `private: void __thiscall MNSandbox::SandboxAssetRequestMgr::OnTick(void)` |
+| `0x256090` | `protected: void __thiscall MNSandbox::Thread::ThreadTaskManager::OnTick(void)` |
+| `0xd91d0` | `protected: void __thiscall MNSandbox::Object::OnTickMgrs(void)` |
+| `0x9b680` | `protected: void __thiscall MNSandbox::AssetPool::OnTick_AssetFinish(void)` |
+| `0x9b830` | `protected: void __thiscall MNSandbox::AssetPool::OnTick_AssetToLoad(void)` |
+| `0x9b9e0` | `protected: void __thiscall MNSandbox::AssetPool::OnTick_ThreadCallback(void)` |
+| `0x1a7b50` | `protected: void __thiscall MNSandbox::GameMapHost::OnTimerSaveConfig(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x1a7bc0` | `protected: void __thiscall MNSandbox::GameMapHost::OnTimerSaveService(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x222510` | `public: static int __cdecl MNSandbox::ScriptState::OnTraceback(struct lua_State *)` |
+| `0x95c60` | `protected: void __thiscall MNSandbox::AssetObject::OnUnbindAssetid(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x16da00` | `public: void __thiscall MNSandbox::Scene::OnUnbindChunk(class MNSandbox::SceneChunk *)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::Component::OnUnbindGameObject(class MNSandbox::GameObject *)` |
+| `0xd29f0` | `public: virtual void __thiscall MNSandbox::Scene::OnUnbindObject(class MNSandbox::SandboxNode *)` |
+| `0x1a0ae0` | `protected: void __thiscall MNSandbox::GameMap::OnUpdateMapActive(bool)` |
+| `0x14ad40` | `protected: void __thiscall MNSandbox::Debug::UIDebug::OnUpdateTag(enum MNSandbox::RUNDEBUGTYPE)` |
+| `0x1fe3f0` | `protected: void __thiscall MNSandbox::ScriptServiceHost::OnUploadAllScriptFailed(void)` |
+| `0x1fe410` | `protected: virtual void __thiscall MNSandbox::ScriptServiceHost::OnUploadScriptFinish(unsigned int,bool)` |
+| `0x1fe670` | `protected: virtual void __thiscall MNSandbox::ScriptServiceRemote::OnUploadScriptFinish(unsigned int,bool)` |
+| `0x2225a0` | `public: static int __cdecl MNSandbox::ScriptState::OnWait(struct lua_State *)` |
+| `0x222af0` | `public: static void __cdecl MNSandbox::ScriptState::OnWaitIsOver(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x19c400` | `protected: bool __thiscall MNSandbox::GameInput::OnWinSizeChange(void)` |
+| `0x1a36d0` | `protected: virtual void __thiscall MNSandbox::GameMapClient::OnWorldLoaded(int,class MNSandbox::Scene *)` |
+| `0x1a36d0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::OnWorldLoaded(int,class MNSandbox::Scene *)` |
+| `0x222d70` | `public: static int __cdecl MNSandbox::ScriptState::OnXpcall(struct lua_State *)` |
+| `0x1a7c50` | `public: void __thiscall MNSandbox::GameMapHost::OpenAutoSaveTimer(class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::MNTimer> > > const &,double)` |
+| `0x257b40` | `public: bool __thiscall MNSandbox::SandboxMiscDataMgr::OpenData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x15ab20` | `public: void __thiscall MNSandbox::Statistics::NodeCount::OpenSort(void)` |
+| `0x223010` | `public: bool __thiscall MNSandbox::ScriptState::OpenState(struct lua_State *)` |
+| `0x24ffc0` | `void * __cdecl MNSandbox::OpenStream(char const *)` |
+| `0x9ba00` | `protected: void __thiscall MNSandbox::AssetPool::OpenTickTask(void)` |
+| `0x874e0` | `private: void __thiscall MNSandbox::SandboxAssetCache::OutJson(class jsonxx::Object &)` |
+| `0x1597d0` | `private: void __thiscall MNSandbox::Statistics::LoadCost::OutputLog(void)` |
+| `0x602a0` | `public: virtual struct dynamic_array<class MNSandbox::SandboxNode *,0> const & __thiscall MNSandbox::Scene::OverlapBox(class Rainbow::AABB const &)` |
+| `0x602b0` | `public: virtual void __thiscall MNSandbox::Scene::OverlapBoxEx(class Rainbow::AABB const &,unsigned short,struct dynamic_array<class MNSandbox::SandboxNode *,0> *,struct dynamic_array<class MNSandbox::SandboxNode *,0> *)` |
+| `0x3b5ac0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::Parent2` |
+| `0x3b6520` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::Parent` |
+| `0x9e1a0` | `public: static bool __cdecl MNSandbox::AssetIdParse::ParseAssetId(char const *,struct MNSandbox::AssetIdInfo &,bool)` |
+| `0x9e330` | `public: static void __cdecl MNSandbox::AssetIdParse::ParseAssetIdByCallback(char const *,class std::function<void __cdecl(bool,struct MNSandbox::AssetIdInfo)>)` |
+| `0x9e8b0` | `public: static int __cdecl MNSandbox::AssetIdParse::ParseAssetIdForParams(char const *,struct MNSandbox::AssetIdInfo &)` |
+| `0x9ea30` | `public: static bool __cdecl MNSandbox::AssetIdParse::ParseAssetIdForParamsKV(char const *,char const *,struct MNSandbox::AssetIdInfo &)` |
+| `0x9cb20` | `public: static void __cdecl MNSandbox::AssetIdParse::ParseAssetIdForParams_filetype(char const *,char const *,struct MNSandbox::AssetIdInfo &)` |
+| `0x9cad0` | `public: static void __cdecl MNSandbox::AssetIdParse::ParseAssetIdForParams_restype(char const *,char const *,struct MNSandbox::AssetIdInfo &)` |
+| `0x9cb40` | `public: static void __cdecl MNSandbox::AssetIdParse::ParseAssetIdForParams_shortidVersion(char const *,char const *,struct MNSandbox::AssetIdInfo &)` |
+| `0x9caf0` | `public: static void __cdecl MNSandbox::AssetIdParse::ParseAssetIdForParams_type(char const *,char const *,struct MNSandbox::AssetIdInfo &)` |
+| `0x9eaa0` | `public: static bool __cdecl MNSandbox::AssetIdParse::ParseAssetIdLocalFileSuffix(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetIdInfo &)` |
+| `0x24ffe0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ParseBase64(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x163bf0` | `public: static bool __cdecl MNSandbox::NodeSerialize::ParseForCustomAttributes(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value const &)` |
+| `0x163da0` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseForNodeList002(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value const &,unsigned int,struct MNSandbox::ParseFlags const &)` |
+| `0x163e80` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseForNodeTree002(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Value const &,class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > &,struct MNSandbox::ParseFlags const &)` |
+| `0x529e0` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseForNodeTree003(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Value const &,class std::unordered_map<__int64,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,struct std::hash<__int64>,struct std::equal_to<__int64>,class std::allocator<struct std::pair<__int64 const ,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > > &,struct MNSandbox::ParseFlags const &)` |
+| `0x164700` | `public: static bool __cdecl MNSandbox::NodeSerialize::ParseForReflexContainer(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value const &)` |
+| `0x164720` | `public: static bool __cdecl MNSandbox::NodeSerialize::ParseForReflexContainer(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value const &,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > const &)` |
+| `0xe15a0` | `bool __cdecl MNSandbox::ParseFromJson(class MNSandbox::ReflexType const *,void *,class jsonxx::Value const &)` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::Object::ParseFromJson(class jsonxx::Object const &)` |
+| `0x12d090` | `public: bool __thiscall MNSandbox::ReflexVariant::ParseFromJson(class jsonxx::Value const &)` |
+| `0x192230` | `public: virtual bool __thiscall MNSandbox::SandboxNode::ParseFromJson(class jsonxx::Object const &)` |
+| `0xe1690` | `enum MNSandbox::SANDBOXERR __cdecl MNSandbox::ParseFromStream(class MNSandbox::ReflexType const *,void *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1922d0` | `public: virtual enum MNSandbox::SANDBOXERR __thiscall MNSandbox::SandboxNode::ParseFromStream(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x148e30` | `public: bool __thiscall MNSandbox::RemoteMsgInfo::ParseJsonObject(class jsonxx::Object &)` |
+| `0x211070` | `public: static bool __cdecl MNSandbox::LuaCoroutine::ParseLuaError(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::LuaError &)` |
+| `0x164750` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseNodeFromBinaryData(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Value const &,struct MNSandbox::ParseFlags const &)` |
+| `0x164870` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseNodeFromJson002(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Object const &,struct MNSandbox::ParseFlags const &)` |
+| `0x52c30` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseNodeFromJson003(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Object const &,struct MNSandbox::ParseFlags const &)` |
+| `0x164d90` | `public: static bool __cdecl MNSandbox::NodeSerialize::ParseNodeFromJson(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Value const &,struct MNSandbox::ParseFlags const &)` |
+| `0x164f40` | `protected: static bool __cdecl MNSandbox::NodeSerialize::ParseNodeFromJsonData(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class jsonxx::Value const &,struct MNSandbox::ParseFlags const &)` |
+| `0x165130` | `public: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseNodeFromSpecs(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class std::vector<struct MNSandbox::NodeSerialize::SaveNodeDataStream,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeDataStream> > const &,struct MNSandbox::ParseFlags const &)` |
+| `0x1657f0` | `public: static struct std::pair<enum MNSandbox::SANDBOXERR,class MNSandbox::AutoRef<class MNSandbox::CustomRef<struct MNSandbox::NodeSerialize::SaveNodeDatas> > > __cdecl MNSandbox::NodeSerialize::ParseNodeFromStream(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,struct MNSandbox::ParseFlags const &)` |
+| `0x166180` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForNodeAttributes(struct MNSandbox::NodeSerialize::SaveNodeData2 const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1661e0` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForNodeAttributes(struct MNSandbox::NodeSerialize::SaveNodeData const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x166240` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForNodeBase(struct MNSandbox::NodeSerialize::SaveNodeData2 &,struct MNSandbox::ParseFlags const &)` |
+| `0x166370` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForNodeBase(class std::vector<struct MNSandbox::NodeSerialize::SaveNodeData,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeData> > &,int,struct MNSandbox::ParseFlags const &)` |
+| `0x1664f0` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForNodeCustomAttributes(struct MNSandbox::NodeSerialize::SaveNodeData2 const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x166550` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForNodeCustomAttributes(struct MNSandbox::NodeSerialize::SaveNodeData const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1665b0` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForReadNodeData(struct MNSandbox::NodeSerialize::SaveNodeData2 &,struct MNSandbox::NodeSerialize::SaveNodeDataStream const &)` |
+| `0x166960` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::ParseStreamForReadNodeData(class std::vector<struct MNSandbox::NodeSerialize::SaveNodeData,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeData> > &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x2112f0` | `public: int __thiscall MNSandbox::LuaCoroutine::Pause(int)` |
+| `0x217540` | `public: int __thiscall MNSandbox::LuaScript::Pause(void)` |
+| `0x12ef20` | `public: void __thiscall MNSandbox::MNTimer::Pause(void)` |
+| `0x207fd0` | `public: void __thiscall MNSandbox::TimerNode::Pause(void)` |
+| `0x211310` | `public: void __thiscall MNSandbox::LuaCoroutine::Play(void)` |
+| `0x12ef60` | `public: void __thiscall MNSandbox::MNTimer::Play(void)` |
+| `0x2175d0` | `private: bool __thiscall MNSandbox::LuaScript::PlayScript(void)` |
+| `0x1a0b00` | `protected: void __thiscall MNSandbox::GameMap::PlayerEnterGame(int)` |
+| `0x1a3700` | `protected: virtual void __thiscall MNSandbox::GameMapClient::PlayerEnterScene(int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x1a7dc0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::PlayerEnterScene(int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x1a0cc0` | `protected: void __thiscall MNSandbox::GameMap::PlayerLeaveGame(int)` |
+| `0x1a3790` | `protected: virtual void __thiscall MNSandbox::GameMapClient::PlayerLeaveScene(int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x1a7e40` | `protected: virtual void __thiscall MNSandbox::GameMapHost::PlayerLeaveScene(int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x52680` | `protected: virtual void __thiscall MNSandbox::GameMap::PlayerReadied(int)` |
+| `0x1a7ec0` | `protected: virtual void __thiscall MNSandbox::GameMapHost::PlayerReadied(int)` |
+| `0x602c0` | `public: void __thiscall MNSandbox::Lua::StateStack::Pop(void)` |
+| `0x1a0e90` | `public: void __thiscall MNSandbox::GameMap::PopActiveServiceNode(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x13aa70` | `public: bool __thiscall MNSandbox::SandboxEventQueue::PopEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class MNSandbox::SandboxContext &)` |
+| `0x3bb5f0` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::InputObject,class Rainbow::Vector3f> MNSandbox::InputObject::Position` |
+| `0x602d0` | `public: static void __cdecl MNSandbox::SandboxCoreDriver::PostDestroy(void)` |
+| `0x60320` | `public: virtual void __thiscall MNSandbox::Object::PostTick(void)` |
+| `0x60330` | `public: static void __cdecl MNSandbox::SandboxCoreDriver::PreCreate(void)` |
+| `0x1a0fc0` | `public: virtual void __thiscall MNSandbox::GameMap::PreTick(void)` |
+| `0x603c0` | `public: virtual void __thiscall MNSandbox::Object::PreTick(void)` |
+| `0x603d0` | `public: void __thiscall MNSandbox::SandboxCoreDriver::PreTick(void)` |
+| `0x203df0` | `public: virtual void __thiscall MNSandbox::ServiceNode::PreTick(void)` |
+| `0x603e0` | `private: void __thiscall MNSandbox::GameObject::PreTickCallback(class MNSandbox::Component * &)` |
+| `0x1fe6a0` | `public: static void __cdecl MNSandbox::ScriptServiceHost::PreUploadAllScripts(class std::function<void __cdecl(enum MNSandbox::SANDBOXERR,int,int)> const &)` |
+| `0x223210` | `public: static void __cdecl MNSandbox::ScriptState::PrintLuaLog(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2232d0` | `public: static void __cdecl MNSandbox::ScriptState::PrintLuaLog(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xaade0` | `private: void __thiscall MNSandbox::AssetRef::PrintPrefabError(class Rainbow::SharePtr<class Rainbow::Asset>)` |
+| `0x2235a0` | `public: static void __cdecl MNSandbox::ScriptState::PrintRunError(struct lua_State *,class MNSandbox::WeakRef<class MNSandbox::LuaCoroutine>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1923a0` | `public: virtual void __thiscall MNSandbox::SandboxNode::ProcessRemoteEvent(class MNSandbox::ReflexValue *,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>,int)` |
+| `0x60400` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::Produce(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x604c0` | `public: void __thiscall MNSandbox::Lua::StateStack::Push(struct lua_State *)` |
+| `0x1a0ff0` | `public: void __thiscall MNSandbox::GameMap::PushActiveServiceNode(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x87870` | `private: void __thiscall MNSandbox::SandboxAssetCache::PushAsset(class MNSandbox::AssetRef *)` |
+| `0x9baf0` | `public: void __thiscall MNSandbox::AssetPool::PushAssetFinishTask(class MNSandbox::WeakRef<class MNSandbox::AssetRef> const &)` |
+| `0x9bba0` | `private: void __thiscall MNSandbox::AssetPool::PushAssetNode(class MNSandbox::WeakRef<class MNSandbox::AssetRef>)` |
+| `0x604f0` | `public: void __thiscall MNSandbox::ReflexTuple::PushBack(class MNSandbox::ReflexVariant const &)` |
+| `0xdc270` | `protected: void __thiscall MNSandbox::ReflexContainer::PushBackData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::ReflexValue *)` |
+| `0x2560a0` | `public: void __thiscall MNSandbox::Thread::ThreadTaskManager::PushCalcMd5Task(struct MNSandbox::Thread::CalcMd5Data const &)` |
+| `0x23e040` | `protected: static int __cdecl MNSandbox::LuaFunction::PushCoResult(struct lua_State *,class MNSandbox::LuaCoroutine *)` |
+| `0x23c160` | `private: int __thiscall MNSandbox::LuaArguments::PushData(struct lua_State *,int)` |
+| `0x13ab20` | `public: bool __thiscall MNSandbox::SandboxEventQueue::PushEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::SandboxContext,bool)` |
+| `0x156380` | `public: void __thiscall MNSandbox::Profile::ErrorLogMgr::PushLog(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1566b0` | `public: void __thiscall MNSandbox::Profile::RunLogMgr::PushLog(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x529d0` | `public: virtual int __thiscall MNSandbox::ReflexValue::PushLuaValue(void *,struct lua_State *)` |
+| `0x127650` | `public: static struct MNSandbox::ReflexReferenceIns * __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::PushNewObject(struct lua_State *)` |
+| `0x256190` | `public: void __thiscall MNSandbox::Thread::ThreadTaskManager::PushNodeCloneTask(struct MNSandbox::Thread::NodeCloneData const &)` |
+| `0xd9dd0` | `public: void __thiscall MNSandbox::RefPool::PushRef(class MNSandbox::Ref *)` |
+| `0x232bc0` | `public: static void __cdecl MNSandbox::ReflexReferenceBridge::PushRefInstance(struct lua_State *,void *,class MNSandbox::ReflexType *)` |
+| `0x23ef10` | `private: void __thiscall MNSandbox::Lua::LinkerData::PushRegisterTable(struct lua_State *)` |
+| `0xb7050` | `public: void __thiscall MNSandbox::SandboxAssetRequestMgr::PushRequest(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::function<void __cdecl(bool,struct MNSandbox::SandboxAssetRequestMgr::RspItem const &)>,bool)` |
+| `0x2237d0` | `protected: void __thiscall MNSandbox::ScriptState::PushSandboxMetatable(struct lua_State *)` |
+| `0x256380` | `public: void __thiscall MNSandbox::Thread::ThreadTaskManager::PushSaveFileTask(struct MNSandbox::Thread::SaveFileData const &)` |
+| `0x256590` | `public: void __thiscall MNSandbox::Thread::ThreadTaskManager::PushSaveStreamTask(struct MNSandbox::Thread::SaveStreamData const &)` |
+| `0x213fc0` | `public: virtual int __thiscall MNSandbox::LuaLinker::PushSelf(struct lua_State *)` |
+| `0x60520` | `public: void __thiscall MNSandbox::Thread::MultiThreadPool::PushTask(class MNSandbox::Thread::ThreadJobTask *)` |
+| `0x15d290` | `public: void __thiscall MNSandbox::Thread::MultiThreadPool::PushTask(enum MNSandbox::Thread::USEDTHREAD,class MNSandbox::Thread::ThreadJobTask *)` |
+| `0x1b23d0` | `protected: void __thiscall MNSandbox::MapSave::PushThreadBuffer(class jsonxx::Object *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9bd10` | `public: void __thiscall MNSandbox::AssetPool::PushThreadTask(struct MNSandbox::AssetPool::ThreadTaskData const &)` |
+| `0xdf810` | `public: int __thiscall MNSandbox::ReflexLuaTuple::PushToLua(struct lua_State *)` |
+| `0xdf850` | `public: int __thiscall MNSandbox::ReflexLuaTuple::PushToLua(struct lua_State *,int,int)` |
+| `0xaaee0` | `protected: void __thiscall MNSandbox::AssetRef::PushValidFileType(enum MNSandbox::AssetFileType)` |
+| `0x15c740` | `void __cdecl QuaternionLookAt(class Rainbow::Quaternionf &,class Rainbow::Vector3f const &,class Rainbow::Vector3f)` |
+| `0x8cd70` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::AssetInsNodePacket::RTTI(void)` |
+| `0x87ab0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::AssetRef::RTTI(void)` |
+| `0x95d60` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::AssetService::RTTI(void)` |
+| `0x95d70` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::AssetServiceHost::RTTI(void)` |
+| `0x95d80` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::AssetServiceRemote::RTTI(void)` |
+| `0x1a10f0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::CloudServerConfigService::RTTI(void)` |
+| `0x1c28e0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::CollectionService::RTTI(void)` |
+| `0x60530` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::Component::RTTI(void)` |
+| `0x1a1100` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ConfigService::RTTI(void)` |
+| `0x1d77b0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ContextActionService::RTTI(void)` |
+| `0x1dbed0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::CoreScript::RTTI(void)` |
+| `0x1402a0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::CustomFunction::RTTI(void)` |
+| `0x142bb0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::CustomNotify::RTTI(void)` |
+| `0x60540` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::GameMap::RTTI(void)` |
+| `0x823b0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::GameMapClient::RTTI(void)` |
+| `0x823c0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::GameMapHost::RTTI(void)` |
+| `0x60550` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::GameNode::RTTI(void)` |
+| `0x60560` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::GameObject::RTTI(void)` |
+| `0x60570` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::GlobalServiceNode::RTTI(void)` |
+| `0x1b9880` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::InputObject::RTTI(void)` |
+| `0x1b9890` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::InputObjectSignal::RTTI(void)` |
+| `0x60580` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ListenerInterface::RTTI(void)` |
+| `0x60590` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ListenerLua::RTTI(void)` |
+| `0x1ed9c0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LocalScriptNode::RTTI(void)` |
+| `0x605a0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LuaArgument::RTTI(void)` |
+| `0x605b0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LuaArguments::RTTI(void)` |
+| `0x605c0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LuaCoroutine::RTTI(void)` |
+| `0x605d0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LuaFunction::RTTI(void)` |
+| `0x605e0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LuaLinker::RTTI(void)` |
+| `0x1f01a0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::LuaProfileService::RTTI(void)` |
+| `0x605f0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::MNTimer::RTTI(void)` |
+| `0x1a7ee0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::MainStorage::RTTI(void)` |
+| `0x1f32c0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ModuleScriptNode::RTTI(void)` |
+| `0x8cd80` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::NodePacket::RTTI(void)` |
+| `0x59b90` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::NotifyInterface::RTTI(void)` |
+| `0x60600` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::Object::RTTI(void)` |
+| `0x59bb0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::Ref::RTTI(void)` |
+| `0x60610` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ReflexLuaTuple::RTTI(void)` |
+| `0xe0680` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ReflexMap::RTTI(void)` |
+| `0x60620` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ReflexTuple::RTTI(void)` |
+| `0x60630` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ReflexValue::RTTI(void)` |
+| `0x8cd90` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::SandboxAssetObject::RTTI(void)` |
+| `0x1dee50` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::SandboxDebugHelper::RTTI(void)` |
+| `0x1e3680` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::SandboxLoadedService::RTTI(void)` |
+| `0x60640` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::SandboxNode::RTTI(void)` |
+| `0x60650` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::Scene::RTTI(void)` |
+| `0x60660` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::SceneRoot::RTTI(void)` |
+| `0x1f4b10` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ScriptContext::RTTI(void)` |
+| `0x1dbee0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ScriptNode::RTTI(void)` |
+| `0x1f7d90` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ScriptObject::RTTI(void)` |
+| `0x1ebbb0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ScriptService::RTTI(void)` |
+| `0x1ebbc0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ScriptServiceHost::RTTI(void)` |
+| `0x1ebbd0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ScriptServiceRemote::RTTI(void)` |
+| `0x1a1110` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ServerScriptService::RTTI(void)` |
+| `0x1a1120` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ServerStorage::RTTI(void)` |
+| `0x60670` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::ServiceNode::RTTI(void)` |
+| `0x60680` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::Signal::RTTI(void)` |
+| `0x60690` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::SignalConnect::RTTI(void)` |
+| `0x8b4c0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::Stream::RTTI(void)` |
+| `0x8b4d0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::StreamBuffer::RTTI(void)` |
+| `0x2083d0` | `public: static class MNSandbox::RuntimeClass const * __cdecl MNSandbox::TimerNode::RTTI(void)` |
+| `0x3b6a10` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum MNSandbox::Attribute::TYPE> MNSandbox::SandboxNode::R_AddAtrribute` |
+| `0x3c1d60` | `protected: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::ScriptContext,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::ScriptContext::R_AddCoreScriptLocal` |
+| `0x3bc8b0` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::CollectionService,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::CollectionService::R_AddTag` |
+| `0x3b5d90` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_AncestryChanged` |
+| `0x3b5b80` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_AncestryChanged_s` |
+| `0x3a63e0` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::SandboxAssetObject,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxAssetObject::R_AssetId` |
+| `0x3a64f0` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::SandboxAssetObject,enum MNSandbox::AssetResType> MNSandbox::SandboxAssetObject::R_AssetResType` |
+| `0x3b63d0` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_AttributeChanged` |
+| `0x3b54f0` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_AttributeChanged_s` |
+| `0x3bfbc0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GameNode,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > MNSandbox::GameNode::R_BindToClose` |
+| `0x3bde90` | `private: static class MNSandbox::ReflexClassNotify<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,class MNSandbox::AutoRef<class MNSandbox::ReflexMap> > MNSandbox::ContextActionService::R_BoundActionAddedNotify` |
+| `0x3be8b0` | `private: static class MNSandbox::ReflexClassNotify<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::ReflexMap> > MNSandbox::ContextActionService::R_BoundActionChangedNotify` |
+| `0x3be400` | `private: static class MNSandbox::ReflexClassNotify<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::ReflexMap> > MNSandbox::ContextActionService::R_BoundActionRemovedNotify` |
+| `0x3bea90` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::ContextActionService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum MNSandbox::UserInputState,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::ContextActionService::R_CallActionFunc` |
+| `0x3c4560` | `public: static class MNSandbox::ReflexClassMember<class MNSandbox::TimerNode,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > MNSandbox::TimerNode::R_Callback` |
+| `0x3b5780` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_ChildAdded` |
+| `0x3b5090` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_ChildAdded_s` |
+| `0x3b6b60` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_ChildRemoved` |
+| `0x3b61d0` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_ChildRemoved_s` |
+| `0x3b6680` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > > MNSandbox::SandboxNode::R_Children` |
+| `0x3b4fd0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_ClassType` |
+| `0x3b5820` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode> MNSandbox::SandboxNode::R_ClearAllChild` |
+| `0x3c0ae0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int> MNSandbox::GlobalServiceNode::R_Client_HostKick` |
+| `0x3c04d0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,class std::vector<unsigned int,class std::allocator<unsigned int> >,class std::vector<unsigned int,class std::allocator<unsigned int> > > MNSandbox::GlobalServiceNode::R_Client_IDGeneratorAlloc` |
+| `0x3c0b90` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,unsigned int> MNSandbox::GlobalServiceNode::R_Client_LogToRoomMaster` |
+| `0x3c0760` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,unsigned int> MNSandbox::GlobalServiceNode::R_Client_OnRecvHostSandboxVersion` |
+| `0x3c06c0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::GlobalServiceNode::R_Client_SyncHostGameStage` |
+| `0x3c0390` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::GlobalServiceNode::R_Client_ToLoadAssetDesc` |
+| `0x3c0c30` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::GlobalServiceNode::R_Client_ToLoadNetworkIndices` |
+| `0x3b6010` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_Clone` |
+| `0x3b5970` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_CustomAttrChanged` |
+| `0x3b5e30` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_CustomAttrChanged_s` |
+| `0x3c4690` | `public: static class MNSandbox::ReflexClassMember<class MNSandbox::TimerNode,double> MNSandbox::TimerNode::R_Delay` |
+| `0x3b53a0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_DeleteAtrribute` |
+| `0x3bbf50` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CloudServerConfigService,int,int,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > MNSandbox::CloudServerConfigService::R_DeleteRobot` |
+| `0x3b6ab0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode> MNSandbox::SandboxNode::R_Destroy` |
+| `0x3bce50` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ConfigService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ConfigService::R_EditorVer` |
+| `0x3b67a0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,bool> MNSandbox::SandboxNode::R_Enabled` |
+| `0x3b6130` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_FindFirstChild` |
+| `0x3b2cd0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::CustomNotify,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple> > MNSandbox::CustomNotify::R_Fire` |
+| `0x3b5440` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,unsigned int> MNSandbox::SandboxNode::R_Flag` |
+| `0x3b5ee0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,unsigned int> MNSandbox::SandboxNode::R_FlagSave` |
+| `0x3bb420` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::InputObject,int> MNSandbox::InputObject::R_FunGetTouchCount` |
+| `0x3bbc10` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::InputObject,class MNSandbox::AutoRef<class MNSandbox::ReflexMap>,int> MNSandbox::InputObject::R_FunGetTouchInfo` |
+| `0x3bcf10` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ConfigService,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ConfigService::R_GameLanguage` |
+| `0x3bc550` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CollectionService,class MNSandbox::AutoRef<class MNSandbox::Signal>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::CollectionService::R_GetNodeAddedSignal` |
+| `0x3bc5e0` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CollectionService,class MNSandbox::AutoRef<class MNSandbox::Signal>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::CollectionService::R_GetNodeRemovedSingal` |
+| `0x3b68f0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,__int64> MNSandbox::SandboxNode::R_GetNodeid` |
+| `0x3b6c00` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,enum MNSandbox::SYNCLOCALFLAG,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_GetReflexLocalSyncFlag` |
+| `0x3b51c0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,enum MNSandbox::SYNCMODE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_GetReflexSyncMode` |
+| `0x3bfc60` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::GameNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::GameNode::R_GetService` |
+| `0x3bc670` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CollectionService,class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::CollectionService::R_GetTagged` |
+| `0x3bc4c0` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CollectionService,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::CollectionService::R_GetTags` |
+| `0x3bc700` | `private: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CollectionService,bool,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::CollectionService::R_HasTag` |
+| `0x3c0800` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,int> MNSandbox::GlobalServiceNode::R_Host_ClientKick` |
+| `0x3c08a0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int> MNSandbox::GlobalServiceNode::R_Host_DevPrintNodeTree` |
+| `0x3c0570` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int> MNSandbox::GlobalServiceNode::R_Host_DevSaveDecode` |
+| `0x3c0610` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,int> MNSandbox::GlobalServiceNode::R_Host_IDGeneratorRequire` |
+| `0x3c09e0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,int,unsigned int> MNSandbox::GlobalServiceNode::R_Host_IDGeneratorUsed` |
+| `0x3c0430` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,unsigned int> MNSandbox::GlobalServiceNode::R_Host_OnRecvClientSandboxVersion` |
+| `0x3c0940` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::GlobalServiceNode,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::GlobalServiceNode::R_Host_SyncClientGameStage` |
+| `0x3b6330` | `public: static class MNSandbox::ReflexClassMember<class MNSandbox::SandboxNode,__int64> MNSandbox::SandboxNode::R_ID` |
+| `0x3b5a10` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,bool> MNSandbox::SandboxNode::R_IgnoreSafeMode` |
+| `0x3c42e0` | `public: static class MNSandbox::ReflexClassMember<class MNSandbox::TimerNode,double> MNSandbox::TimerNode::R_Interval` |
+| `0x3b5130` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_IsA` |
+| `0x3bd030` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ConfigService,bool> MNSandbox::ConfigService::R_LCSMode` |
+| `0x3b5c20` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,enum MNSandbox::SYNCLOCALFLAG> MNSandbox::SandboxNode::R_LocalSyncFlag` |
+| `0x3c4140` | `public: static class MNSandbox::ReflexClassMember<class MNSandbox::TimerNode,bool> MNSandbox::TimerNode::R_Loop` |
+| `0x3c24c0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ScriptNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ScriptNode::R_LuaCode2` |
+| `0x3c2350` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ScriptNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ScriptNode::R_LuaCode` |
+| `0x3c26a0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ScriptNode,int> MNSandbox::ScriptNode::R_LuaMode` |
+| `0x3c2590` | `public: static class MNSandbox::ReflexClassMember<class MNSandbox::ScriptNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ScriptNode::R_Luafile` |
+| `0x3bcdb0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::ConfigService,int> MNSandbox::ConfigService::R_MatchMode` |
+| `0x3bfa40` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::GameNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::GameNode::R_Name` |
+| `0x3b6270` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::R_Name` |
+| `0x3c3740` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ServiceNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ServiceNode::R_Name` |
+| `0x3bbec0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::CloudServerConfigService,int,int,int,class MNSandbox::AutoRef<class MNSandbox::LuaTable>,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > MNSandbox::CloudServerConfigService::R_NewRobot` |
+| `0x3b2c30` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::CustomNotify,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple> > MNSandbox::CustomNotify::R_Notify` |
+| `0x3b6480` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_ParentChanged` |
+| `0x3b5300` | `public: static class MNSandbox::ReflexClassNotify<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::R_ParentChanged_s` |
+| `0x3c4380` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::TimerNode> MNSandbox::TimerNode::R_Pause` |
+| `0x3a7950` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::AssetServiceRemote,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::AssetServiceRemote::R_ReceiveCdnUrl` |
+| `0x3bfb10` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::GameNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::GameNode::R_ReflexLoaded` |
+| `0x3bc810` | `private: static class MNSandbox::ReflexClassMethod<class MNSandbox::CollectionService,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::CollectionService::R_RemoveTag` |
+| `0x3c1500` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::LuaProfileService,int,double,class MNSandbox::AutoRef<class MNSandbox::LuaArguments> > MNSandbox::LuaProfileService::R_ReportLuaProfile` |
+| `0x3a7850` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::AssetServiceHost,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::AssetServiceHost::R_RequireCdnUrl` |
+| `0x3b5630` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,bool> MNSandbox::SandboxNode::R_ResourceDynamicLoad` |
+| `0x3c4090` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::TimerNode> MNSandbox::TimerNode::R_Resume` |
+| `0x3c4600` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::TimerNode,enum MNSandbox::TimerNode::RUNSTATE> MNSandbox::TimerNode::R_RunState` |
+| `0x3c2410` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::ScriptNode,unsigned int> MNSandbox::ScriptNode::R_ScriptId` |
+| `0x3c2df0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::ScriptService,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64> MNSandbox::ScriptService::R_ScriptUrlChange2` |
+| `0x3c2fd0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::ScriptService,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ScriptService::R_ScriptUrlChange` |
+| `0x3c2d50` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::ScriptServiceRemote,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::ScriptServiceRemote::R_ScriptUrls` |
+| `0x3b5590` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum MNSandbox::SYNCLOCALFLAG> MNSandbox::SandboxNode::R_SetReflexLocalSyncFlag` |
+| `0x3b56e0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum MNSandbox::SYNCMODE> MNSandbox::SandboxNode::R_SetReflexSyncMode` |
+| `0x3c4420` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::TimerNode> MNSandbox::TimerNode::R_Start` |
+| `0x3c44c0` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::TimerNode,double,bool,double,class MNSandbox::AutoRef<class MNSandbox::LuaFunction> > MNSandbox::TimerNode::R_StartEx` |
+| `0x3c4240` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::TimerNode> MNSandbox::TimerNode::R_Stop` |
+| `0x3b58c0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,enum MNSandbox::SYNCMODE> MNSandbox::SandboxNode::R_SyncMode` |
+| `0x3b6c90` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,int> MNSandbox::SandboxNode::R_SyncOwnerUin` |
+| `0x3b65d0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,bool> MNSandbox::SandboxNode::R_Syncable` |
+| `0x3b5250` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,int> MNSandbox::SandboxNode::R_Tag` |
+| `0x3b9630` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SceneRoot,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SceneRoot::R_TerrainNode` |
+| `0x3bb9c0` | `private: static class MNSandbox::ReflexClassMember<class MNSandbox::InputObject,int> MNSandbox::InputObject::R_TouchId` |
+| `0x3c0f90` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxLoadedService> MNSandbox::SandboxLoadedService::R_WaitLoaded` |
+| `0xaafb0` | `public: static enum MNSandbox::AssetResType __cdecl MNSandbox::AssetRef::RainbowTypeIdToSandboxResType(unsigned int)` |
+| `0x166af0` | `private: static void * __cdecl MNSandbox::ArchiveData::Read(char const *,unsigned int &)` |
+| `0x132e40` | `public: virtual unsigned int __thiscall MNSandbox::StreamBuffer::Read(void *,unsigned int)` |
+| `0x130ed0` | `public: bool __thiscall MNSandbox::Stream::ReadBool(bool &)` |
+| `0x130f10` | `public: bool __thiscall MNSandbox::Stream::ReadBuffer(class std::vector<char,class std::allocator<char> > &)` |
+| `0x130fb0` | `public: bool __thiscall MNSandbox::Stream::ReadBufferData(void *,unsigned int)` |
+| `0x130fe0` | `public: unsigned int __thiscall MNSandbox::Stream::ReadBufferLen(void)` |
+| `0xd0cb0` | `public: bool __thiscall MNSandbox::ByteBuffer::ReadChar(char &)` |
+| `0xd0ce0` | `public: bool __thiscall MNSandbox::ByteBuffer::ReadChars(char *,int)` |
+| `0x257db0` | `public: bool __thiscall MNSandbox::SandboxMiscDataMgr::ReadData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x131000` | `protected: unsigned int __thiscall MNSandbox::Stream::ReadFlags(class MNSandbox::SandboxFlags<unsigned int> &,class std::function<bool __cdecl(void *,unsigned int)> const &)` |
+| `0x2501a0` | `class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> __cdecl MNSandbox::ReadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1311b0` | `protected: unsigned int __thiscall MNSandbox::Stream::ReadHeader(class MNSandbox::SandboxFlags<unsigned int> &,class std::function<bool __cdecl(void *,unsigned int)> const &)` |
+| `0xd0d20` | `public: bool __thiscall MNSandbox::ByteBuffer::ReadInt(int &)` |
+| `0x131230` | `public: bool __thiscall MNSandbox::Stream::ReadReflex(class MNSandbox::ReflexType const *,void *)` |
+| `0xd0d70` | `public: bool __thiscall MNSandbox::ByteBuffer::ReadShort(short &)` |
+| `0x250450` | `char * __cdecl MNSandbox::ReadStream(char *,int,void *)` |
+| `0x1312b0` | `public: bool __thiscall MNSandbox::Stream::ReadStream(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x1313d0` | `public: bool __thiscall MNSandbox::Stream::ReadString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x1314a0` | `protected: unsigned int __thiscall MNSandbox::Stream::ReadVersion(class std::function<bool __cdecl(void *,unsigned int)> const &)` |
+| `0x1a1130` | `public: virtual void __thiscall MNSandbox::GameMap::ReadyToLeave(void)` |
+| `0x1a3810` | `public: virtual void __thiscall MNSandbox::GameMapClient::ReadyToLeave(void)` |
+| `0x1a7ef0` | `public: virtual void __thiscall MNSandbox::GameMapHost::ReadyToLeave(void)` |
+| `0x1a1150` | `public: virtual void __thiscall MNSandbox::GameMap::ReadyToRun(void)` |
+| `0x1a3930` | `public: virtual void __thiscall MNSandbox::GameMapClient::ReadyToRun(void)` |
+| `0x1a8030` | `public: virtual void __thiscall MNSandbox::GameMapHost::ReadyToRun(void)` |
+| `0x5cfe0` | `public: virtual void __thiscall MNSandbox::AssetSyncPool::Receive_GetCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xcbc50` | `public: virtual void __thiscall MNSandbox::AssetSyncPoolRemote::Receive_GetCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::AssetSyncPool::Receive_RequireCdnUrl(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xcbc90` | `public: virtual void __thiscall MNSandbox::AssetSyncPoolHost::Receive_RequireCdnUrl(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x577f0` | `public: void __thiscall MNSandbox::SandboxParamPool::Recycle(void)` |
+| `0x192dc0` | `protected: void __thiscall MNSandbox::SandboxNode::ReflexDestroy(void)` |
+| `0x529e0` | `public: static bool __cdecl MNSandbox::ReflexPolicyFuncBase::ReflexFromBinary(void *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0xe4930` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::ReflexFromBinary(void *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)const ` |
+| `0x12d0c0` | `public: bool __thiscall MNSandbox::ReflexVariant::ReflexFromBinary(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0xe4960` | `public: bool __thiscall MNSandbox::ReflexTypePolicy::ReflexFromBinaryEx(class MNSandbox::ReflexType const *,void *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)const ` |
+| `0x129580` | `public: static unsigned int __cdecl MNSandbox::ReflexPolicyFuncBase::ReflexToBinary(void const *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x12d260` | `public: unsigned int __thiscall MNSandbox::ReflexVariant::ReflexToBinary(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)const ` |
+| `0xe4ad0` | `public: unsigned int __thiscall MNSandbox::ReflexTypePolicy::ReflexToBinaryEx(class MNSandbox::ReflexType const *,void const *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)const ` |
+| `0x144b70` | `public: void __thiscall MNSandbox::ListenersInterface::Refresh(void)` |
+| `0x14af40` | `protected: void __thiscall MNSandbox::Debug::UIDebug::RefreshAddMsg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x144bb0` | `private: void __thiscall MNSandbox::ListenersInterface::RefreshAllListeners2(class std::vector<struct MNSandbox::ListenersInterface::ListenerInfo,class std::allocator<struct MNSandbox::ListenersInterface::ListenerInfo> > &)` |
+| `0x144d00` | `private: void __thiscall MNSandbox::ListenersInterface::RefreshAllListeners(class std::vector<struct MNSandbox::ListenersInterface::ListenerInfo,class std::allocator<struct MNSandbox::ListenersInterface::ListenerInfo> > &)` |
+| `0x14af50` | `protected: void __thiscall MNSandbox::Debug::UIDebug::RefreshMsg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9be70` | `protected: void __thiscall MNSandbox::AssetPool::RefreshTickTaskFinish(void)` |
+| `0xe4c10` | `public: void __thiscall MNSandbox::ReflexTypePolicy::RegCastTo(class MNSandbox::ReflexType const *,bool (__cdecl*)(void const *,void *))` |
+| `0xd2a10` | `public: void __thiscall MNSandbox::GameObject::RegComponentTick(class MNSandbox::Component *)` |
+| `0x52680` | `protected: void __thiscall MNSandbox::ServiceNode::RegDescendantNodeEnterNotify(class MNSandbox::SandboxNode *)` |
+| `0x223830` | `protected: void __thiscall MNSandbox::ScriptState::RegLimitDefaultLibApis(struct lua_State *,int)` |
+| `0x16b1e0` | `public: static void __cdecl MNSandbox::NodeInstanceReflex::RegNodeReady(__int64,class MNSandbox::TCallback<__int64,class MNSandbox::SandboxNode *> *)` |
+| `0x223990` | `protected: void __thiscall MNSandbox::ScriptState::RegSandboxLocalMetatable(struct lua_State *,int)` |
+| `0x823d0` | `public: void __thiscall MNSandbox::SandboxCoreManagers::RegSceneManager(class MNSandbox::SdbSceneManager *)` |
+| `0x129e90` | `public: static void __cdecl MNSandbox::ReflexTypePolicyRegister::Register(class MNSandbox::ReflexType &,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void (__cdecl*)(class MNSandbox::ReflexTypePolicy &),enum MNSandbox::ReflexType::TYPE)` |
+| `0xdc340` | `public: void __thiscall MNSandbox::ReflexReferenceLinker::RegisterIns(void *,class MNSandbox::ReflexValue *,void *)` |
+| `0xda4e0` | `public: void __thiscall MNSandbox::RemoteInstanceListenPool::RegisterListen(__int64,class MNSandbox::TCallback<__int64,class MNSandbox::SandboxNode *> *)` |
+| `0x8b4e0` | `public: bool __thiscall MNSandbox::AssetConfig::RegisterLoadSaveEvent(void)` |
+| `0x129ec0` | `public: static void __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::RegisterMetatable(struct lua_State *)` |
+| `0x232c10` | `public: static void __cdecl MNSandbox::ReflexReferenceBridge::RegisterMetatable(struct lua_State *)` |
+| `0x87ac0` | `private: void __thiscall MNSandbox::SandboxAssetCache::RegisterNotify(void)` |
+| `0x606a0` | `public: static bool __cdecl MNSandbox::SandboxNode::RegisterProduct(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl(void)>)` |
+| `0x12efb0` | `private: void __thiscall MNSandbox::MNTimer::RegisterTimer(double)` |
+| `0xddf40` | `public: void __thiscall MNSandbox::ReflexEnum::RegisterTypePolicy(class MNSandbox::ReflexType &,class MNSandbox::ReflexTypePolicy const &)` |
+| `0x8b800` | `public: virtual void __thiscall MNSandbox::AssetConfig::Release(void)` |
+| `0xd14a0` | `public: virtual void __thiscall MNSandbox::Component::Release(void)` |
+| `0x53390` | `public: virtual void __thiscall MNSandbox::CustomBuffer::Release(void)` |
+| `0x1a1180` | `public: virtual void __thiscall MNSandbox::GameMap::Release(void)` |
+| `0xdf8c0` | `public: virtual void __thiscall MNSandbox::Lua::LinkerData::Release(void)` |
+| `0x60760` | `public: virtual void __thiscall MNSandbox::ListenerInterface::Release(void)` |
+| `0x60770` | `public: virtual void __thiscall MNSandbox::ListenersInterface::Release(void)` |
+| `0x211330` | `public: virtual void __thiscall MNSandbox::LuaCoroutine::Release(void)` |
+| `0x23ec20` | `public: virtual void __thiscall MNSandbox::LuaLinker::Release(void)` |
+| `0x60780` | `public: virtual void __thiscall MNSandbox::MNTimer::Release(void)` |
+| `0x137690` | `public: virtual void __thiscall MNSandbox::NodeWatcher::Release(void)` |
+| `0xd91f0` | `public: virtual void __thiscall MNSandbox::Object::Release(void)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::Ref::Release(void)` |
+| `0x60790` | `public: void __thiscall MNSandbox::SandboxCoreDriver::Release(void)` |
+| `0x1496d0` | `public: virtual void __thiscall MNSandbox::SandboxCoreFactorys::Release(void)` |
+| `0x20c9c0` | `public: virtual void __thiscall MNSandbox::SandboxCoreLuaDirector::Release(void)` |
+| `0x82410` | `public: virtual void __thiscall MNSandbox::SandboxCoreManagers::Release(void)` |
+| `0x60890` | `public: void __thiscall MNSandbox::SandboxEventDispatcherManager::Release(void)` |
+| `0x608a0` | `public: void __thiscall MNSandbox::SandboxEventQueue::Release(void)` |
+| `0x608c0` | `public: void __thiscall MNSandbox::SandboxEventQueueManager::Release(void)` |
+| `0x608f0` | `public: void __thiscall MNSandbox::SandboxSchedulerManager::Release(void)` |
+| `0x171560` | `public: virtual void __thiscall MNSandbox::SdbSceneManager::Release(void)` |
+| `0x2083e0` | `public: virtual void __thiscall MNSandbox::TimerNode::Release(void)` |
+| `0x211370` | `public: void __thiscall MNSandbox::LuaCoroutine::ReleaseAllLuaLinkers(void)` |
+| `0x9be90` | `public: bool __thiscall MNSandbox::AssetPool::ReleaseAsset(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::WeakRef<class MNSandbox::AssetRef>)` |
+| `0x223a20` | `protected: void __thiscall MNSandbox::ScriptState::ReleaseMainL(void)` |
+| `0x223a80` | `protected: void __thiscall MNSandbox::ScriptState::ReleaseMainThread(void)` |
+| `0xd9330` | `public: void __thiscall MNSandbox::SandboxParamPool::ReleaseParam(class MNSandbox::SandboxParam *)` |
+| `0x1a1220` | `public: void __thiscall MNSandbox::GameMap::ReleaseRootNode(void)` |
+| `0xd9200` | `protected: virtual void __thiscall MNSandbox::Object::ReleaseSelf(void)` |
+| `0xd9a20` | `protected: virtual void __thiscall MNSandbox::Ref::ReleaseSelf(void)` |
+| `0x1933a0` | `protected: virtual void __thiscall MNSandbox::SandboxNode::ReleaseSelf(void)` |
+| `0x144970` | `private: void __thiscall MNSandbox::ListenersInterface::ReleaseSelfListeners(class std::vector<struct MNSandbox::ListenersInterface::ListenerInfo,class std::allocator<struct MNSandbox::ListenersInterface::ListenerInfo> > &)` |
+| `0x16daf0` | `public: virtual bool __thiscall MNSandbox::Scene::Reload(void)` |
+| `0x19a5e0` | `public: void __thiscall MNSandbox::SceneRoot::Reload(void)` |
+| `0x1a12a0` | `public: void __thiscall MNSandbox::GameMap::ReloadPlayers(void)` |
+| `0x1aa940` | `public: void __thiscall MNSandbox::GameStageClient::RemotePerpare(void)` |
+| `0xe0690` | `public: void __thiscall MNSandbox::ReflexMap::Remove(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x144e10` | `private: void __thiscall MNSandbox::ListenersInterface::RemoveAllListeners(bool &,class MNSandbox::AutoRef<class MNSandbox::ListenerInterface> const &,class std::vector<struct MNSandbox::ListenersInterface::ListenerInfo,class std::allocator<struct MNSandbox::ListenersInterface::ListenerInfo> > &)` |
+| `0x145610` | `public: void __thiscall MNSandbox::ListenerInterface::RemoveBindNotify(class MNSandbox::NotifyInterface *)` |
+| `0x15ac80` | `public: void __thiscall MNSandbox::Statistics::NodeCount::RemoveByRTTIid(class MNSandbox::RuntimeClass const *)` |
+| `0x2114e0` | `public: void __thiscall MNSandbox::LuaCoroutine::RemoveChild(class MNSandbox::LuaCoroutine *)` |
+| `0xd2ac0` | `public: void __thiscall MNSandbox::GameObject::RemoveComponent(class MNSandbox::Component *)` |
+| `0x156b20` | `public: void __thiscall MNSandbox::Statistics::InstanceCount::RemoveInstanceByType(enum MNSandbox::Statistics::INSCOUNT_TYPE)` |
+| `0xddf60` | `public: bool __thiscall MNSandbox::ReflexEnum::RemoveItem(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x144e70` | `public: void __thiscall MNSandbox::ListenersInterface::RemoveListener(class MNSandbox::AutoRef<class MNSandbox::ListenerInterface> const &)` |
+| `0xc0490` | `public: void __thiscall MNSandbox::AssetService::RemoveLocalToNetworkAssetId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1376a0` | `private: void __thiscall MNSandbox::NodeWatcher::RemoveNode(class MNSandbox::SandboxNode *)` |
+| `0x137840` | `public: void __thiscall MNSandbox::NodeWatcherGroup::RemoveNodeWatcher(int)` |
+| `0xab5e0` | `private: void __thiscall MNSandbox::AssetRef::RemoveRainbowAssetCallbackFlag(void)` |
+| `0x9c090` | `public: void __thiscall MNSandbox::ListenRainbowCallbackMgr::RemoveRainbowAssetCallbackFlag(class MNSandbox::AssetRef *,struct UGUID)` |
+| `0xab670` | `protected: void __thiscall MNSandbox::AssetRef::RemoveRainbowLoadEvent(void)` |
+| `0x1b26b0` | `public: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::MapSave::RemoveSaveFileSign(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x16db20` | `public: virtual void __thiscall MNSandbox::Scene::RemoveSceneObj(class MNSandbox::SandboxNode *)` |
+| `0x1c28f0` | `public: void __thiscall MNSandbox::CollectionService::RemoveTag(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1a1320` | `public: void __thiscall MNSandbox::GameMap::RemoveWorkspace(class MNSandbox::SceneRoot *)` |
+| `0x1f01b0` | `public: int __thiscall MNSandbox::LuaProfileService::ReportLuaProfile(struct lua_State *,double,class MNSandbox::AutoRef<class MNSandbox::LuaArguments>)` |
+| `0x1f32d0` | `public: int __thiscall MNSandbox::ModuleScriptNode::Require(struct lua_State *)` |
+| `0xd0db0` | `public: void __thiscall MNSandbox::ByteBuffer::Reset(void)` |
+| `0xc0510` | `private: void __thiscall MNSandbox::AssetServiceRemote::ResetLoadFileFinishSign(bool)` |
+| `0x1a1470` | `public: void __thiscall MNSandbox::GameMap::ResetPlayers(void)` |
+| `0xd9a60` | `public: virtual void __thiscall MNSandbox::Ref::ResetSelf(void)` |
+| `0x24af40` | `public: void __thiscall MNSandbox::FrameLimit::ResetTime(void)` |
+| `0xd0dc0` | `public: bool __thiscall MNSandbox::ByteBuffer::Resize(int)` |
+| `0x60900` | `public: void __thiscall MNSandbox::CustomBuffer::Resize(unsigned int)` |
+| `0x132ea0` | `private: bool __thiscall MNSandbox::StreamBuffer::ResizeBuffer(unsigned int)` |
+| `0x193440` | `public: virtual bool __thiscall MNSandbox::SandboxNode::ResourceDynamicLoad(void)` |
+| `0x1934c0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::ResourceDynamicUnload(void)` |
+| `0x193530` | `public: virtual bool __thiscall MNSandbox::SandboxNode::ResourceLoad(void)` |
+| `0x193580` | `public: virtual bool __thiscall MNSandbox::SandboxNode::ResourceUnload(void)` |
+| `0x2115d0` | `public: void __thiscall MNSandbox::LuaCoroutine::Resume(int)` |
+| `0x217790` | `public: void __thiscall MNSandbox::LuaScript::Resume(int)` |
+| `0x12efe0` | `public: void __thiscall MNSandbox::MNTimer::Resume(void)` |
+| `0x208440` | `public: void __thiscall MNSandbox::TimerNode::Resume(void)` |
+| `0x23e0d0` | `protected: int __thiscall MNSandbox::LuaFunction::ReturnLuaResult(struct lua_State *)` |
+| `0x208560` | `public: void __thiscall MNSandbox::TimerNode::RunDelay(double)` |
+| `0x208690` | `public: void __thiscall MNSandbox::TimerNode::RunImmediately(void)` |
+| `0x23e1a0` | `protected: void __thiscall MNSandbox::LuaFunction::RunLua(class MNSandbox::AutoRef<class MNSandbox::LuaCoroutine>)` |
+| `0x2115f0` | `public: void __thiscall MNSandbox::LuaCoroutine::RunOver(bool)` |
+| `0x157650` | `void __cdecl MNSandbox::Statistics::SandboxInstanceCnt_Add(enum MNSandbox::Statistics::INSCOUNT_TYPE)` |
+| `0x157660` | `void __cdecl MNSandbox::Statistics::SandboxInstanceCnt_Remove(enum MNSandbox::Statistics::INSCOUNT_TYPE)` |
+| `0x157670` | `void * __cdecl MNSandbox::Statistics::SandboxInstance_Add(void)` |
+| `0x157680` | `void __cdecl MNSandbox::Statistics::SandboxInstance_Remove(void)` |
+| `0x157690` | `void __cdecl MNSandbox::Statistics::SandboxLoadCost_Finish(void)` |
+| `0x1576a0` | `void __cdecl MNSandbox::Statistics::SandboxLoadCost_Step(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x250540` | `void __cdecl MNSandbox::SandboxToAssert(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,unsigned int)` |
+| `0x250600` | `void __cdecl MNSandbox::SandboxToDebug(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,unsigned int)` |
+| `0x250780` | `void __cdecl MNSandbox::SandboxToWarning(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,unsigned int)` |
+| `0x166c40` | `public: bool __thiscall MNSandbox::ArchiveData::Save(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x166cd0` | `public: static bool __cdecl MNSandbox::ArchiveData::Save(char const *,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x15f6f0` | `public: virtual bool __thiscall MNSandbox::HostNodeIdAllocator::Save(class jsonxx::Object &)const ` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::NodeIdAllocator::Save(class jsonxx::Object &)const ` |
+| `0x16db40` | `public: virtual bool __thiscall MNSandbox::Scene::Save(bool)` |
+| `0x16e750` | `public: void __thiscall MNSandbox::SceneChunk::Save(unsigned int)` |
+| `0x15fca0` | `public: virtual bool __thiscall MNSandbox::SectionList::Save(class jsonxx::Object &)const ` |
+| `0x15fed0` | `public: virtual bool __thiscall MNSandbox::SectionList::Save(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)const ` |
+| `0x15ffc0` | `public: virtual bool __thiscall MNSandbox::SingleNodeIdAllocator::Save(class jsonxx::Object &)const ` |
+| `0x132f90` | `public: virtual bool __thiscall MNSandbox::StreamBuffer::Save(class std::function<bool __cdecl(void *,unsigned int)> const &,class MNSandbox::SandboxFlags<unsigned int> const &)` |
+| `0x257f00` | `public: void __thiscall MNSandbox::SandboxMiscDataMgr::SaveAllData(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,int> > > &)` |
+| `0x1a8040` | `public: void __thiscall MNSandbox::GameMapHost::SaveAllMap(bool)` |
+| `0x1fec90` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptServiceHost::SaveData(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x258210` | `public: void __thiscall MNSandbox::SandboxMiscDataMgr::SaveDirtyData(void)` |
+| `0x1b2930` | `protected: void __thiscall MNSandbox::MapSave::SaveFile(class jsonxx::Object *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,bool)` |
+| `0x1b2a00` | `protected: static bool __cdecl MNSandbox::MapSave::SaveFileSync(class jsonxx::Object &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1b2d10` | `protected: static bool __cdecl MNSandbox::MapSave::SaveFileSync(class MNSandbox::AutoRef<class MNSandbox::Stream> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1b2dc0` | `protected: static bool __cdecl MNSandbox::MapSave::SaveFileVersion(class jsonxx::Object &,class Rainbow::FileAccessor &)` |
+| `0x1a8090` | `public: void __thiscall MNSandbox::GameMapHost::SaveMap(enum MNSandbox::GameMapHost::MAPLOAD,bool)` |
+| `0x166d90` | `public: static bool __cdecl MNSandbox::NodeSerialize::SaveNode(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &)` |
+| `0x1fef20` | `protected: bool __thiscall MNSandbox::ScriptService::SaveScript(unsigned int,struct MNSandbox::ScriptService::ScriptInfo &)` |
+| `0x1ff180` | `protected: unsigned int __thiscall MNSandbox::ScriptServiceHost::SaveScriptUrlsToFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8b960` | `public: bool __thiscall MNSandbox::Stream::SaveToBinary(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> &)` |
+| `0x131510` | `public: virtual bool __thiscall MNSandbox::Stream::SaveToBinary(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> &,bool)` |
+| `0x1316b0` | `public: virtual bool __thiscall MNSandbox::Stream::SaveToFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x19a5f0` | `public: void __thiscall MNSandbox::SceneRoot::SaveWorkspace(bool)` |
+| `0xd9210` | `public: class MNSandbox::SandboxSchedulerManager & __thiscall MNSandbox::Object::SchedulerMgr(void)` |
+| `0xd0e10` | `public: bool __thiscall MNSandbox::ByteBuffer::SeekRead(int)` |
+| `0xd0e30` | `public: bool __thiscall MNSandbox::ByteBuffer::SeekWrite(int)` |
+| `0xc0550` | `private: void __thiscall MNSandbox::AssetServiceHost::SendDatasToBroadcast(void)` |
+| `0xc06e0` | `private: void __thiscall MNSandbox::AssetServiceHost::SendDatasToClient(int)` |
+| `0x52870` | `public: virtual void __thiscall MNSandbox::ReflexValue::SendEvent(class MNSandbox::SandboxNode *,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>)` |
+| `0x1935d0` | `public: virtual void __thiscall MNSandbox::SandboxNode::SendEventInvocation(class MNSandbox::ReflexValue *,class MNSandbox::AutoRef<class MNSandbox::ReflexTuple>,int)` |
+| `0xc0870` | `public: void __thiscall MNSandbox::AssetServiceHost::SendNetworkAssetsFileToClient(int)` |
+| `0xc09f0` | `public: void __thiscall MNSandbox::AssetServiceHost::SendNetworkAssetsFileToWaitClients(void)` |
+| `0x1aa950` | `protected: void __thiscall MNSandbox::GameStageHost::SendStageToClient(enum MNSandbox::GAMESTAGE)` |
+| `0x1aaa40` | `protected: void __thiscall MNSandbox::GameStageClient::SendStageToHost(enum MNSandbox::GAMESTAGE)` |
+| `0x5cfe0` | `public: virtual void __thiscall MNSandbox::AssetSyncPool::Send_GetCdnUrl(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetSyncPool::CdnData const &)` |
+| `0xcbfc0` | `public: virtual void __thiscall MNSandbox::AssetSyncPoolHost::Send_GetCdnUrl(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetSyncPool::CdnData const &)` |
+| `0xab6c0` | `public: virtual void __thiscall MNSandbox::AssetSyncPool::Send_RequireCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)>)` |
+| `0xcc140` | `public: virtual void __thiscall MNSandbox::AssetSyncPoolRemote::Send_RequireCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)>)` |
+| `0x1ff320` | `protected: virtual void __thiscall MNSandbox::ScriptServiceHost::Send_ScriptUrlChange(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)` |
+| `0x1ff400` | `protected: virtual void __thiscall MNSandbox::ScriptServiceRemote::Send_ScriptUrlChange(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)` |
+| `0x193670` | `private: void __thiscall MNSandbox::SandboxNode::SerializableGet(bool &)const ` |
+| `0x16e770` | `public: bool __thiscall MNSandbox::SceneChunk::Serialize(void * &,int &)const ` |
+| `0xe4cd0` | `public: void __thiscall MNSandbox::ReflexTypePolicy::SerializeEx(class MNSandbox::ReflexType const *,void const *,class jsonxx::Value &)const ` |
+| `0x167080` | `public: static bool __cdecl MNSandbox::NodeSerialize::SerializeForCustomAttributes(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value &)` |
+| `0x167140` | `protected: static bool __cdecl MNSandbox::NodeSerialize::SerializeForNodeList(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value &,unsigned int,struct MNSandbox::SerializeFlags const &)` |
+| `0x167270` | `protected: static bool __cdecl MNSandbox::NodeSerialize::SerializeForNodeTree(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value &,class std::vector<class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class std::allocator<class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > > &,struct MNSandbox::SerializeFlags const &)` |
+| `0x1675f0` | `public: static bool __cdecl MNSandbox::NodeSerialize::SerializeForReflexContainer(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value &)` |
+| `0x167610` | `public: static bool __cdecl MNSandbox::NodeSerialize::SerializeNodeToJson(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class jsonxx::Value &,struct MNSandbox::SerializeFlags const &)` |
+| `0x167820` | `public: static bool __cdecl MNSandbox::NodeSerialize::SerializeNodeToSpecs(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class std::vector<struct MNSandbox::NodeSerialize::SaveNodeDataStream,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeDataStream> > &,struct MNSandbox::SerializeFlags const &)` |
+| `0x167c40` | `public: static bool __cdecl MNSandbox::NodeSerialize::SerializeNodeToStream(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &,struct MNSandbox::SerializeFlags const &)` |
+| `0x1681e0` | `protected: static bool __cdecl MNSandbox::NodeSerialize::SerializeStreamForNodeAttributes(struct MNSandbox::NodeSerialize::SaveNodeData const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x168230` | `protected: static bool __cdecl MNSandbox::NodeSerialize::SerializeStreamForNodeBase(struct MNSandbox::NodeSerialize::SaveNodeData const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x168470` | `protected: static bool __cdecl MNSandbox::NodeSerialize::SerializeStreamForNodeCustomAttributes(struct MNSandbox::NodeSerialize::SaveNodeData const &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0xd1610` | `public: virtual bool __thiscall MNSandbox::Component::SerializeToJson(class jsonxx::Object &)` |
+| `0xe2560` | `void __cdecl MNSandbox::SerializeToJson(class MNSandbox::ReflexType const *,void const *,class jsonxx::Value &)` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::Object::SerializeToJson(class jsonxx::Object &)` |
+| `0x12d4c0` | `public: void __thiscall MNSandbox::ReflexVariant::SerializeToJson(class jsonxx::Value &)const ` |
+| `0x60930` | `public: static bool __cdecl MNSandbox::SandboxNode::SerializeToJson(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class jsonxx::Object &)` |
+| `0x193690` | `public: virtual bool __thiscall MNSandbox::SandboxNode::SerializeToJson(class jsonxx::Object &)` |
+| `0xe2640` | `unsigned int __cdecl MNSandbox::SerializeToStream(class MNSandbox::ReflexType const *,void const *,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x609b0` | `public: static bool __cdecl MNSandbox::SandboxNode::SerializeToStream(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>,class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x193770` | `public: virtual bool __thiscall MNSandbox::SandboxNode::SerializeToStream(class MNSandbox::AutoRef<class MNSandbox::Stream> &)` |
+| `0x193880` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetActive(bool,bool)` |
+| `0x95d90` | `public: void __thiscall MNSandbox::AssetObject::SetAssetId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0xab7f0` | `public: void __thiscall MNSandbox::AssetRef::SetAssetId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct MNSandbox::AssetIdInfo const *)` |
+| `0x8cda0` | `public: void __thiscall MNSandbox::SandboxAssetObject::SetAssetId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x8ce30` | `public: void __thiscall MNSandbox::SandboxAssetObject::SetAssetResType(enum MNSandbox::AssetResType)` |
+| `0x193920` | `public: bool __thiscall MNSandbox::SandboxNode::SetAttributeValue(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::ReflexVariant)` |
+| `0x14bec0` | `public: void __thiscall MNSandbox::GameStep::SetAutoSimulation(bool)` |
+| `0x14bee0` | `public: void __thiscall MNSandbox::GameStep::SetAutoTick(bool)` |
+| `0x133170` | `public: void __thiscall MNSandbox::StreamBuffer::SetBuffer(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> const &)` |
+| `0x60a30` | `public: void __thiscall MNSandbox::ListenerInterface::SetCanBindMultiNotify(void)` |
+| `0x60a40` | `public: void __thiscall MNSandbox::ReflexType::SetCategoryType(enum MNSandbox::ReflexType::TYPE)` |
+| `0xaba70` | `public: void __thiscall MNSandbox::AssetSyncPool::SetCdnUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x60a50` | `public: void __thiscall MNSandbox::Config::SetClient(bool)` |
+| `0x1aabb0` | `public: void __thiscall MNSandbox::GameStageHost::SetClientGameStage(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x60a70` | `public: void __thiscall MNSandbox::SandboxNode::SetCreateBySync(bool)` |
+| `0x60ad0` | `public: void __thiscall MNSandbox::GameMap::SetCurLoadedServiceNodeId(__int64)` |
+| `0x1a80c0` | `public: void __thiscall MNSandbox::GameMapHost::SetCurMapLoadMode(enum MNSandbox::SAVEMODE const &)` |
+| `0x19a610` | `public: void __thiscall MNSandbox::SceneRoot::SetCurrentCamera(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &)` |
+| `0x8b980` | `public: void __thiscall MNSandbox::Stream::SetCurrentOffset(unsigned int)` |
+| `0x60af0` | `public: void __thiscall MNSandbox::ReflexType::SetCustomData(void *)` |
+| `0x13c400` | `public: bool __thiscall MNSandbox::SandboxParamGroup::SetData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::SandboxParam *)` |
+| `0x60c10` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Bool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x60e80` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Bool(bool)` |
+| `0x60ea0` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Bool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x61110` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Bool(bool)` |
+| `0x61130` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Number(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,double)` |
+| `0x613c0` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Number(double)` |
+| `0x613e0` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Number(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,double)` |
+| `0x61670` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Number(double)` |
+| `0x61690` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Ref(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Ref *)` |
+| `0x61930` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Ref(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Ref *)` |
+| `0x61950` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Ref(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Ref *)` |
+| `0x61bf0` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Ref(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Ref *)` |
+| `0x61c10` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x61e80` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x61ea0` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *)` |
+| `0x61f80` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_String(char const *)` |
+| `0x61fa0` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x62210` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x62230` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *)` |
+| `0x62310` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_String(char const *)` |
+| `0x62330` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Userdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void *)` |
+| `0x625d0` | `public: class MNSandbox::SandboxContext & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetData_Userdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void *)` |
+| `0x625f0` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Userdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void *)` |
+| `0x62890` | `public: class MNSandbox::SandboxResult & __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetData_Userdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void *)` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::ReflexValue::SetDefaultValue(void *)` |
+| `0x1d7830` | `private: void __thiscall MNSandbox::ContextActionService::SetDescription(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x15c6e0` | `public: void __thiscall MNSandbox::Ray::SetDir(struct MNSandbox::Coord3<float> const &)` |
+| `0x628b0` | `public: void __thiscall MNSandbox::SandboxEventQueue::SetDispatchMaxNum(unsigned int)` |
+| `0x13cf50` | `public: void __thiscall MNSandbox::SandboxScheduler::SetDoTimes(int)` |
+| `0x193eb0` | `public: void __thiscall MNSandbox::SandboxNode::SetDynamicLoadAble(bool)` |
+| `0x1c46d0` | `protected: void __thiscall MNSandbox::ConfigService::SetEditorVersion(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x193f40` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetEnable(bool,bool)` |
+| `0x628c0` | `public: void __thiscall MNSandbox::Config::SetErrlogOpen(bool)` |
+| `0x217810` | `private: void __thiscall MNSandbox::LuaScript::SetFenv(struct lua_State *,int)` |
+| `0x628e0` | `public: void __thiscall MNSandbox::ReflexConfig::SetFlag(unsigned int,bool)` |
+| `0x62910` | `public: void __thiscall MNSandbox::Config::SetForceOpenDebugWindow(bool)` |
+| `0x24af50` | `public: void __thiscall MNSandbox::FrameLimit::SetFrame(unsigned int)` |
+| `0x14bf00` | `public: void __thiscall MNSandbox::GameStep::SetFramePerSecond(unsigned int)` |
+| `0x62930` | `public: void __thiscall MNSandbox::Config::SetGameEnv(enum MNSandbox::GAMEENV)` |
+| `0x52680` | `protected: void __thiscall MNSandbox::ConfigService::SetGameLanguage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x62940` | `public: void __thiscall MNSandbox::Config::SetGamePlayMode(enum MNSandbox::Config::GAMEPLAYMODE)` |
+| `0x62950` | `public: void __thiscall MNSandbox::SandboxNode::SetHideOnSceneTree(bool)` |
+| `0x1aad80` | `public: void __thiscall MNSandbox::GameStageClient::SetHostStageByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8ce50` | `public: void __thiscall MNSandbox::NodePacket::SetId(int)` |
+| `0x194000` | `public: void __thiscall MNSandbox::SandboxNode::SetIgnoreSafeMode(bool const &)` |
+| `0x1d79b0` | `private: void __thiscall MNSandbox::ContextActionService::SetImage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::ReflexValue::SetIndexId(int)` |
+| `0x140350` | `public: void __thiscall MNSandbox::CustomFunction::SetInvoke(class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x1a14f0` | `public: void __thiscall MNSandbox::ConfigService::SetLCSMode(bool)` |
+| `0x629c0` | `public: void __thiscall MNSandbox::Config::SetLanguage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x24af80` | `public: void __thiscall MNSandbox::FrameLimit::SetLimitMS(unsigned int)` |
+| `0x62a50` | `public: void __thiscall MNSandbox::LuaLinker::SetLinkerData(class MNSandbox::AutoRef<class MNSandbox::Lua::LinkerData> const &)` |
+| `0x62a90` | `public: void __thiscall MNSandbox::SignalConnect::SetListener(class MNSandbox::ListenerLua *)` |
+| `0x1dbfd0` | `public: void __thiscall MNSandbox::ScriptNode::SetLoadMode(enum MNSandbox::ScriptNode::LoadMode)` |
+| `0x87b70` | `public: void __thiscall MNSandbox::AssetRef::SetLoadResType(enum MNSandbox::AssetResType)` |
+| `0x62af0` | `public: void __thiscall MNSandbox::NodeIdAllocator::SetLoadedStatus(void)` |
+| `0x16c0d0` | `protected: bool __thiscall MNSandbox::NodeSyncMode::SetLocalSyncFlag(enum MNSandbox::SYNCLOCALFLAG)` |
+| `0x194150` | `public: void __thiscall MNSandbox::SandboxNode::SetLocalSyncFlag(enum MNSandbox::SYNCLOCALFLAG)` |
+| `0x62b00` | `public: void __thiscall MNSandbox::Config::SetLocalUin(int)` |
+| `0x1f7390` | `public: void __thiscall MNSandbox::ScriptNode::SetLuaCode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1f7470` | `public: void __thiscall MNSandbox::ScriptNode::SetLuaFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x23fc90` | `private: void __thiscall MNSandbox::LuaLinkerManager::SetLuaLinker(int,class MNSandbox::WeakRef<class MNSandbox::LuaLinker>)` |
+| `0x23e220` | `protected: void __thiscall MNSandbox::LuaFunction::SetLuaRunning(struct lua_State *,bool)` |
+| `0x62b10` | `public: void __thiscall MNSandbox::SandboxScheduler::SetManager(class MNSandbox::SandboxSchedulerManager *)` |
+| `0x247800` | `public: void __thiscall MNSandbox::Config::SetMapDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1bd840` | `public: void __thiscall MNSandbox::CloudServerConfigService::SetMapId(__int64)` |
+| `0x2478f0` | `public: void __thiscall MNSandbox::Config::SetMapId(__int64)` |
+| `0x1a80e0` | `protected: void __thiscall MNSandbox::GameMapHost::SetMapLoadFlagFinish(void)` |
+| `0x52680` | `public: void __thiscall MNSandbox::ConfigService::SetMatchMode(int)` |
+| `0x1bd870` | `public: void __thiscall MNSandbox::CloudServerConfigService::SetMatchType(enum MNSandbox::MATCHSTATUS)` |
+| `0x156b30` | `public: void __thiscall MNSandbox::Profile::ErrorLogMgr::SetMaxCnt(unsigned int)` |
+| `0x156b50` | `public: void __thiscall MNSandbox::Profile::RunLogMgr::SetMaxCnt(unsigned int)` |
+| `0x960d0` | `public: void __thiscall MNSandbox::FrameLimit::SetMaxFps(float)` |
+| `0x12f030` | `private: void __thiscall MNSandbox::MNTimer::SetMgrPieceIdx(int,class MNSandbox::TimerManager *)` |
+| `0x960f0` | `public: void __thiscall MNSandbox::FrameLimit::SetMinFps(float)` |
+| `0xd1520` | `public: void __thiscall MNSandbox::Component::SetName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0xe4d70` | `public: void __thiscall MNSandbox::ReflexType::SetName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1941b0` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x16db60` | `public: void __thiscall MNSandbox::SceneChunk::SetName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x62b20` | `public: virtual void __thiscall MNSandbox::ServiceNode::SetName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x62b60` | `public: void __thiscall MNSandbox::Config::SetNeedAutoSave(bool)` |
+| `0x8ce60` | `public: void __thiscall MNSandbox::AssetObject::SetNeedLoadSuccess(bool)` |
+| `0x62b80` | `public: void __thiscall MNSandbox::Config::SetNeedSave(class std::function<bool __cdecl(void)>)` |
+| `0x203e10` | `protected: void __thiscall MNSandbox::ServiceNode::SetNeedSave(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::SAVEMODE)` |
+| `0x62bf0` | `public: void __thiscall MNSandbox::LuaCoroutine::SetNode(class MNSandbox::WeakRef<class MNSandbox::ScriptNode>)` |
+| `0x137910` | `public: void __thiscall MNSandbox::NodeWatcher::SetNodeActive(class MNSandbox::SandboxNode *,bool)` |
+| `0x171590` | `public: void __thiscall MNSandbox::SdbSceneManager::SetNodeIdAllocator(class MNSandbox::AutoRef<class MNSandbox::NodeIdAllocator>)` |
+| `0x137930` | `public: void __thiscall MNSandbox::NodeWatcher::SetNodeLoad(class MNSandbox::SandboxNode *,bool)` |
+| `0x137950` | `public: void __thiscall MNSandbox::NodeWatcher::SetNodeState(class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE,bool)` |
+| `0x16c0f0` | `protected: bool __thiscall MNSandbox::NodeSyncMode::SetNodeSyncMode(enum MNSandbox::SYNCMODE)` |
+| `0x194330` | `public: void __thiscall MNSandbox::SandboxNode::SetNodeid(__int64)` |
+| `0x62cc0` | `public: void __thiscall MNSandbox::ListenersInterface::SetNotify(class MNSandbox::NotifyInterface *)` |
+| `0x62cd0` | `public: void __thiscall MNSandbox::Config::SetOnlineMode(bool)` |
+| `0x62cf0` | `public: void __thiscall MNSandbox::Config::SetOpenMiniCraftRender(bool)` |
+| `0x62cc0` | `public: void __thiscall MNSandbox::ReflexValue::SetOrigin(class MNSandbox::ReflexValue *)` |
+| `0xd15a0` | `private: void __thiscall MNSandbox::Component::SetOwner(class MNSandbox::GameObject *)` |
+| `0x62d10` | `public: void __thiscall MNSandbox::Config::SetOwnerMapId(__int64)` |
+| `0x60a40` | `public: void __thiscall MNSandbox::Config::SetOwnerUin(int)` |
+| `0x194350` | `public: void __thiscall MNSandbox::SandboxNode::SetOwnerUin(int const &)` |
+| `0x194390` | `public: void __thiscall MNSandbox::SandboxNode::SetOwnerUinRecursive(int)` |
+| `0x62d30` | `public: void __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxContext>::SetParamGroupPtr(class MNSandbox::SandboxParamGroup *)` |
+| `0x62d30` | `public: void __thiscall MNSandbox::SandboxParamObject<class MNSandbox::SandboxResult>::SetParamGroupPtr(class MNSandbox::SandboxParamGroup *)` |
+| `0x52c80` | `public: virtual bool __thiscall MNSandbox::GameNode::SetParent(class MNSandbox::SandboxNode *)` |
+| `0x194400` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetParent(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &)` |
+| `0x1944d0` | `public: virtual bool __thiscall MNSandbox::SandboxNode::SetParent(class MNSandbox::SandboxNode *)` |
+| `0x203e60` | `public: virtual bool __thiscall MNSandbox::ServiceNode::SetParent(class MNSandbox::SandboxNode *)` |
+| `0x194600` | `private: virtual bool __thiscall MNSandbox::SandboxNode::SetParentCommon(class MNSandbox::SandboxNode *,class MNSandbox::SandboxNode *)` |
+| `0x62d70` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetParentReflex(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x15c700` | `public: void __thiscall MNSandbox::Ray::SetPos(struct MNSandbox::Coord3<float> const &)` |
+| `0x1d7b30` | `private: void __thiscall MNSandbox::ContextActionService::SetPosition(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Rainbow::Vector2f)` |
+| `0x62de0` | `public: void __thiscall MNSandbox::SandboxNode::SetProductName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xabc80` | `protected: void __thiscall MNSandbox::AssetRef::SetRainbowAssetPtr(class Rainbow::SharePtr<class Rainbow::Asset>)` |
+| `0x62e10` | `public: void __thiscall MNSandbox::SandboxResult::SetReceiver(class MNSandbox::Object *)` |
+| `0x96110` | `public: void __thiscall MNSandbox::FrameLimit::SetReferFps(float)` |
+| `0x16c110` | `protected: bool __thiscall MNSandbox::NodeSyncMode::SetReflexLocalSyncFlag(class MNSandbox::ReflexValue const *,enum MNSandbox::SYNCLOCALFLAG)` |
+| `0x194960` | `public: void __thiscall MNSandbox::SandboxNode::SetReflexLocalSyncFlag(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::SYNCLOCALFLAG const &)` |
+| `0x16c140` | `protected: bool __thiscall MNSandbox::NodeSyncMode::SetReflexSyncMode(class MNSandbox::ReflexValue const *,enum MNSandbox::SYNCMODE)` |
+| `0x1949d0` | `public: void __thiscall MNSandbox::SandboxNode::SetReflexSyncMode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum MNSandbox::SYNCMODE const &)` |
+| `0x12d4e0` | `public: void __thiscall MNSandbox::ReflexVariant::SetReflexType(class MNSandbox::ReflexType const *)` |
+| `0xe4db0` | `public: void __thiscall MNSandbox::ReflexType::SetReflexTypeEnum(enum MNSandbox::REFLEXTYPEENUM)` |
+| `0xabd60` | `public: void __thiscall MNSandbox::AssetRef::SetReload(void)` |
+| `0x62e20` | `public: void __thiscall MNSandbox::Config::SetRemote(bool)` |
+| `0x62e40` | `public: void __thiscall MNSandbox::Config::SetRunMode(enum MNSandbox::Config::RUNMODE)` |
+| `0x223ab0` | `public: void __thiscall MNSandbox::ScriptState::SetRunState(enum MNSandbox::ScriptState::RUNSTATE)` |
+| `0x62e50` | `public: void __thiscall MNSandbox::ListenerInterface::SetRunTimes(int)` |
+| `0x62e60` | `public: void __thiscall MNSandbox::Thread::ThreadJobTask::SetRunning(bool)` |
+| `0x62e90` | `public: void __thiscall MNSandbox::Config::SetRunningInEditor(bool)` |
+| `0x62eb0` | `public: void __thiscall MNSandbox::Config::SetSDBEditorMap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x62ee0` | `public: void __thiscall MNSandbox::Config::SetSaveVersion(unsigned int)` |
+| `0x62f00` | `protected: void __thiscall MNSandbox::SandboxNode::SetScene(class MNSandbox::Scene *)` |
+| `0x194a40` | `public: void __thiscall MNSandbox::SandboxNode::SetSceneChunk(class MNSandbox::SceneChunk *)` |
+| `0x1ff820` | `public: void __thiscall MNSandbox::ScriptService::SetScript(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1f74d0` | `private: void __thiscall MNSandbox::ScriptNode::SetScriptCodeById(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1ff9f0` | `protected: bool __thiscall MNSandbox::ScriptService::SetScriptDownloadUrl(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1ffab0` | `protected: bool __thiscall MNSandbox::ScriptService::SetScriptDownloadUrl(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)` |
+| `0x1ffee0` | `protected: void __thiscall MNSandbox::ScriptServiceRemote::SetScriptDownloaded(void)` |
+| `0x1f7500` | `private: void __thiscall MNSandbox::ScriptNode::SetScriptId(unsigned int)` |
+| `0x194a50` | `public: void __thiscall MNSandbox::SandboxNode::SetSelected(bool,int)` |
+| `0x62e10` | `public: void __thiscall MNSandbox::SandboxContext::SetSender(class MNSandbox::Object *)` |
+| `0x194c50` | `public: void __thiscall MNSandbox::SandboxNode::SetSerializable(bool const &)` |
+| `0x62f60` | `public: void __thiscall MNSandbox::SandboxNode::SetSerializableInChunk(bool)` |
+| `0x62fc0` | `public: void __thiscall MNSandbox::GameStep::SetServerFPS(int)` |
+| `0x62fd0` | `public: void __thiscall MNSandbox::Config::SetShowDebugInfoAble(bool)` |
+| `0x1aae70` | `public: void __thiscall MNSandbox::GameStage::SetStage(enum MNSandbox::GAMESTAGE)` |
+| `0x8b9b0` | `public: void __thiscall MNSandbox::AssetConfig::SetState(enum MNSandbox::AssetConfig::STATE)` |
+| `0x9c140` | `public: void __thiscall MNSandbox::Thread::MainThreadTaskInterface::SetState(enum MNSandbox::Thread::MainThreadTaskInterface::STATE)` |
+| `0x62ff0` | `public: void __thiscall MNSandbox::SandboxScheduler::SetState(enum MNSandbox::SandboxScheduler::STATE)` |
+| `0xabd80` | `protected: void __thiscall MNSandbox::AssetRef::SetStep(enum MNSandbox::AssetLoadState)` |
+| `0x15c730` | `public: void __thiscall MNSandbox::Ray::SetStraight(bool)` |
+| `0x63000` | `public: void __thiscall MNSandbox::Config::SetStudioSanboxAssetsPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x63030` | `public: void __thiscall MNSandbox::Config::SetStudioWorkpath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x63060` | `public: void __thiscall MNSandbox::SandboxResult::SetSuccess(bool)` |
+| `0x194cb0` | `public: void __thiscall MNSandbox::SandboxNode::SetSyncMode(enum MNSandbox::SYNCMODE)` |
+| `0x63070` | `public: void __thiscall MNSandbox::SandboxNode::SetSyncOnlyParent(bool)` |
+| `0x630d0` | `public: void __thiscall MNSandbox::SandboxNode::SetSyncSendableAll(bool)` |
+| `0x63130` | `public: void __thiscall MNSandbox::SandboxNode::SetSyncable(bool const &)` |
+| `0x194d10` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetTag(int)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::ServiceNode::SetTag(int)` |
+| `0x63150` | `public: void __thiscall MNSandbox::Config::SetTemplateMapType(int)` |
+| `0x15d5a0` | `void __cdecl MNSandbox::Thread::SetThreadName(char const *)` |
+| `0xabe60` | `public: void __thiscall MNSandbox::AssetRef::SetTimeOut(void)` |
+| `0x1d7c60` | `private: void __thiscall MNSandbox::ContextActionService::SetTitle(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x96130` | `public: void __thiscall MNSandbox::FrameLimit::SetUseScale(bool)` |
+| `0x8ba00` | `public: void __thiscall MNSandbox::Stream::SetUserdata(class MNSandbox::AutoRef<class MNSandbox::Ref> const &)` |
+| `0xcfb80` | `public: bool __thiscall MNSandbox::Attribute::SetVariant(class MNSandbox::ReflexVariant const &)` |
+| `0x5ae50` | `public: virtual bool __thiscall MNSandbox::ReflexValue::SetVariant(void *,class MNSandbox::ReflexVariant const &)` |
+| `0x8ba40` | `public: void __thiscall MNSandbox::Stream::SetVersion(unsigned char,unsigned char,unsigned char)` |
+| `0x60b20` | `public: void __thiscall MNSandbox::Stream::SetVersion(unsigned int)` |
+| `0x63160` | `public: virtual void __thiscall MNSandbox::SandboxNode::SetVisible(bool const &)` |
+| `0x60a50` | `public: void __thiscall MNSandbox::Thread::ThreadJobTask::SetWaiting(bool)` |
+| `0x9f060` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetIdParse::ShortIdNoPrefix(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x58290` | `public: unsigned int __thiscall MNSandbox::CustomBuffer::Size(void)const ` |
+| `0xdf8d0` | `public: unsigned int __thiscall MNSandbox::ReflexLuaTuple::Size(void)const ` |
+| `0x584b0` | `public: unsigned int __thiscall MNSandbox::ReflexMap::Size(void)const ` |
+| `0x631c0` | `public: unsigned int __thiscall MNSandbox::ReflexTuple::Size(void)const ` |
+| `0x631e0` | `public: unsigned int __thiscall MNSandbox::SandboxParamGroup::Size(void)const ` |
+| `0x5ac20` | `public: static unsigned int __cdecl MNSandbox::ReflexPolicyFuncBase::SizeOf(void)` |
+| `0x15d6a0` | `void __cdecl MNSandbox::Thread::Sleep(int)` |
+| `0x1684d0` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::SpliceNodesToNodeTree(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct MNSandbox::NodeSerialize::SaveNodeData2,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct MNSandbox::NodeSerialize::SaveNodeData2> > > &)` |
+| `0x168600` | `protected: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::NodeSerialize::SpliceNodesToNodeTree(class std::vector<struct MNSandbox::NodeSerialize::SaveNodeData,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeData> > &)` |
+| `0x168690` | `protected: static unsigned int __cdecl MNSandbox::NodeSerialize::SplitNodeTreeToNodes(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class std::vector<struct MNSandbox::NodeSerialize::SaveNodeData,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeData> > &,struct MNSandbox::SerializeFlags const &)` |
+| `0x1686c0` | `protected: static void __cdecl MNSandbox::NodeSerialize::SplitNodeTreeToNodes(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,int &,int,class std::vector<struct MNSandbox::NodeSerialize::SaveNodeData,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeData> > &,struct MNSandbox::SerializeFlags const &)` |
+| `0x250860` | `unsigned int __cdecl MNSandbox::SplitStringToGroup(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &)` |
+| `0x168860` | `protected: static void __cdecl MNSandbox::NodeSerialize::SplitTreeToVector(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> const &,class std::vector<struct MNSandbox::NodeSerialize::SaveNodeDataSpec,class std::allocator<struct MNSandbox::NodeSerialize::SaveNodeDataSpec> > &,struct MNSandbox::SerializeFlags const &)` |
+| `0x1aafc0` | `protected: virtual void __thiscall MNSandbox::GameStage::StageToEnd(void)` |
+| `0x1aafe0` | `protected: virtual void __thiscall MNSandbox::GameStageClient::StageToEnd(void)` |
+| `0x1ab020` | `protected: virtual void __thiscall MNSandbox::GameStageHost::StageToEnd(void)` |
+| `0x1ab060` | `protected: virtual void __thiscall MNSandbox::GameStage::StageToInit(void)` |
+| `0x1ab060` | `protected: virtual void __thiscall MNSandbox::GameStageClient::StageToInit(void)` |
+| `0x1ab060` | `protected: virtual void __thiscall MNSandbox::GameStageHost::StageToInit(void)` |
+| `0x1ab080` | `protected: virtual void __thiscall MNSandbox::GameStage::StageToLoaded(void)` |
+| `0x1ab0d0` | `protected: virtual void __thiscall MNSandbox::GameStageClient::StageToLoaded(void)` |
+| `0x1ab120` | `protected: virtual void __thiscall MNSandbox::GameStageHost::StageToLoaded(void)` |
+| `0x1ab270` | `protected: virtual void __thiscall MNSandbox::GameStage::StageToReady(void)` |
+| `0x1ab2a0` | `protected: virtual void __thiscall MNSandbox::GameStageClient::StageToReady(void)` |
+| `0x1ab300` | `protected: virtual void __thiscall MNSandbox::GameStageHost::StageToReady(void)` |
+| `0x1ab360` | `protected: virtual void __thiscall MNSandbox::GameStage::StageToRun(void)` |
+| `0x1ab390` | `protected: virtual void __thiscall MNSandbox::GameStageClient::StageToRun(void)` |
+| `0x1ab3f0` | `protected: virtual void __thiscall MNSandbox::GameStageHost::StageToRun(void)` |
+| `0x208960` | `public: void __thiscall MNSandbox::TimerNode::Start(void)` |
+| `0x208a50` | `public: void __thiscall MNSandbox::TimerNode::StartEx(double,bool,double,class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x1f75f0` | `protected: virtual void __thiscall MNSandbox::ScriptNode::StartPlayScript(void)` |
+| `0x1f7630` | `private: void __thiscall MNSandbox::ScriptNode::StartPlayScriptCode(void)` |
+| `0x1f7690` | `private: void __thiscall MNSandbox::ScriptNode::StartPlayScriptFile(void)` |
+| `0x63200` | `public: void __thiscall MNSandbox::SandboxCoreDriver::StartSandbox(void)` |
+| `0x20cae0` | `public: void __thiscall MNSandbox::SandboxCoreLuaDirector::StartSandbox(void)` |
+| `0x2178d0` | `public: bool __thiscall MNSandbox::LuaScript::StartScript(class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> &)` |
+| `0x217b50` | `public: bool __thiscall MNSandbox::LuaScript::StartScript(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x94490` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::AssetService::StaticReflexContainer(void)` |
+| `0x944a0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::AssetServiceHost::StaticReflexContainer(void)` |
+| `0x944b0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::AssetServiceRemote::StaticReflexContainer(void)` |
+| `0x19f7d0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::CloudServerConfigService::StaticReflexContainer(void)` |
+| `0x1c2280` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::CollectionService::StaticReflexContainer(void)` |
+| `0x19f7e0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ConfigService::StaticReflexContainer(void)` |
+| `0x1d49a0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ContextActionService::StaticReflexContainer(void)` |
+| `0x1dbad0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::CoreScript::StaticReflexContainer(void)` |
+| `0x13f830` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::CustomFunction::StaticReflexContainer(void)` |
+| `0x1423a0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::CustomNotify::StaticReflexContainer(void)` |
+| `0x59cf0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::GameNode::StaticReflexContainer(void)` |
+| `0x59d00` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::GlobalServiceNode::StaticReflexContainer(void)` |
+| `0x1b8d60` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::InputObject::StaticReflexContainer(void)` |
+| `0x1b8d70` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::InputObjectSignal::StaticReflexContainer(void)` |
+| `0x1ed830` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::LocalScriptNode::StaticReflexContainer(void)` |
+| `0x1efa70` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::LuaProfileService::StaticReflexContainer(void)` |
+| `0x1a68a0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::MainStorage::StaticReflexContainer(void)` |
+| `0x1f2900` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ModuleScriptNode::StaticReflexContainer(void)` |
+| `0x8c9d0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::SandboxAssetObject::StaticReflexContainer(void)` |
+| `0x1de2b0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::SandboxDebugHelper::StaticReflexContainer(void)` |
+| `0x1e2310` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::SandboxLoadedService::StaticReflexContainer(void)` |
+| `0x59d10` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::SandboxNode::StaticReflexContainer(void)` |
+| `0x59d20` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::SceneRoot::StaticReflexContainer(void)` |
+| `0x1f47f0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ScriptContext::StaticReflexContainer(void)` |
+| `0x1dbae0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ScriptNode::StaticReflexContainer(void)` |
+| `0x1f7c00` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ScriptObject::StaticReflexContainer(void)` |
+| `0x1e9f80` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ScriptService::StaticReflexContainer(void)` |
+| `0x1e9f90` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ScriptServiceHost::StaticReflexContainer(void)` |
+| `0x1e9fa0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ScriptServiceRemote::StaticReflexContainer(void)` |
+| `0x19f7f0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ServerScriptService::StaticReflexContainer(void)` |
+| `0x19f800` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ServerStorage::StaticReflexContainer(void)` |
+| `0x59d30` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::ServiceNode::StaticReflexContainer(void)` |
+| `0x2078f0` | `public: static class MNSandbox::ReflexContainer & __cdecl MNSandbox::TimerNode::StaticReflexContainer(void)` |
+| `0x211690` | `public: void __thiscall MNSandbox::LuaCoroutine::Stop(void)` |
+| `0x12f050` | `public: void __thiscall MNSandbox::MNTimer::Stop(void)` |
+| `0x208b10` | `public: void __thiscall MNSandbox::TimerNode::Stop(void)` |
+| `0x5c490` | `protected: bool __thiscall MNSandbox::SandboxNode::StopDynamicLoadAble(void)` |
+| `0x194fc0` | `public: void __thiscall MNSandbox::SandboxNode::StopDynamicRecursion(void)` |
+| `0x217be0` | `public: void __thiscall MNSandbox::LuaScript::StopScript(void)` |
+| `0x24a6f0` | `protected: void __thiscall MNSandbox::DebugAction::Stream2String(class MNSandbox::Stream *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x3b4f50` | `public: static bool MNSandbox::SandboxNode::StreamEnableGameSet` |
+| `0xde7a0` | `public: static bool __cdecl MNSandbox::ReflexEnum::StreamReadNumber(int &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0xde8b0` | `public: static unsigned int __cdecl MNSandbox::ReflexEnum::StreamWriteNumber(int,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x577f0` | `public: static void __cdecl MNSandbox::ReflexPolicyFuncBase::Structure(void *)` |
+| `0x12f080` | `public: void __thiscall MNSandbox::MNTimer::Subscribe(class MNSandbox::AutoRef<class MNSandbox::Listener<class MNSandbox::AutoRef<class MNSandbox::MNTimer> > >)` |
+| `0x139840` | `public: bool __thiscall MNSandbox::SandboxEventDispatcherManager::Subscribe(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Callback const &)` |
+| `0x1399a0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1399d0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,__int64 const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x139b00` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,class MNSandbox::SandboxResult (__stdcall MNSandbox::Object::*)(class MNSandbox::SandboxContext),class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x139c30` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,class std::function<class MNSandbox::SandboxResult __cdecl(class MNSandbox::SandboxContext)>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1399a0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEventWithCreateEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1399d0` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEventWithCreateEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,__int64 const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x139b00` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEventWithCreateEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,class MNSandbox::SandboxResult (__stdcall MNSandbox::Object::*)(class MNSandbox::SandboxContext),class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x139c30` | `public: class MNSandbox::Callback __thiscall MNSandbox::SandboxEventDispatcherManager::SubscribeEventWithCreateEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Object *,class std::function<class MNSandbox::SandboxResult __cdecl(class MNSandbox::SandboxContext)>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xc5a40` | `private: void __thiscall MNSandbox::NodePacketContainer::SubscribeTick(void)` |
+| `0x60b20` | `public: void __thiscall MNSandbox::Attribute::SyncContainer(class MNSandbox::AttributeContainer *)` |
+| `0x15d2d0` | `public: void __thiscall MNSandbox::Thread::ThreadJobTask::SyncFinish(void)` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::Scene::SyncLoadSceneChunk(int,int)` |
+| `0x1ab460` | `public: virtual void __thiscall MNSandbox::GameStageClient::SyncStage(void)` |
+| `0x1ab470` | `public: virtual void __thiscall MNSandbox::GameStageHost::SyncStage(void)` |
+| `0x63210` | `public: void __thiscall MNSandbox::SandboxCoreDriver::SystemSetChange(void)` |
+| `0x2b6f94` | `public: static int const MNSandbox::NodeIdAllocator::THREDHOLD_NUMS` |
+| `0x577f0` | `private: static void __cdecl MNSandbox::ScriptState::ThreadLRegisterUd(void)` |
+| `0x1b2fa0` | `protected: static void __cdecl MNSandbox::MapSave::ThreadSave(struct MNSandbox::MapSave::SaveBuffer &)` |
+| `0x1599d0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::Statistics::LoadCost::Thread_ToString(void)` |
+| `0x63220` | `public: static void __cdecl MNSandbox::ScriptState::ThrowError(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1a1510` | `public: virtual void __thiscall MNSandbox::GameMap::Tick(void)` |
+| `0x63240` | `public: virtual void __thiscall MNSandbox::Object::Tick(void)` |
+| `0x63250` | `public: void __thiscall MNSandbox::SandboxCoreDriver::Tick(int)` |
+| `0x82480` | `public: void __thiscall MNSandbox::SandboxCoreManagers::Tick(void)` |
+| `0x84bb0` | `public: void __thiscall MNSandbox::SandboxCorePools::Tick(void)` |
+| `0x632a0` | `private: void __thiscall MNSandbox::SandboxEventQueue::Tick(void)` |
+| `0x13b3e0` | `private: void __thiscall MNSandbox::SandboxEventQueueManager::Tick(void)` |
+| `0x577f0` | `public: virtual void __thiscall MNSandbox::Scene::Tick(void)` |
+| `0x203ea0` | `public: virtual void __thiscall MNSandbox::ServiceNode::Tick(void)` |
+| `0x632b0` | `private: void __thiscall MNSandbox::GameObject::TickCallback(class MNSandbox::Component * &)` |
+| `0x203ec0` | `protected: void __thiscall MNSandbox::ServiceNode::TickForSetParentList(void)` |
+| `0x159c70` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Statistics::LoadCost::TimeToString(struct MNSandbox::Statistics::LoadCost::StepInfo const &,struct MNSandbox::Statistics::LoadCost::StepInfo const &)` |
+| `0x208b60` | `protected: void __thiscall MNSandbox::TimerNode::TimerCallback(class MNSandbox::AutoRef<class MNSandbox::MNTimer>)` |
+| `0x250bc0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ToBase64(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8bae0` | `public: void __thiscall MNSandbox::Stream::ToBegin(void)` |
+| `0xabf00` | `protected: void __thiscall MNSandbox::AssetRef::ToCallbackRainbowFailed(class Rainbow::EventContent const *)` |
+| `0xabf20` | `protected: void __thiscall MNSandbox::AssetRef::ToCallbackRainbowLoad(class Rainbow::EventContent const *)` |
+| `0x8baf0` | `public: void __thiscall MNSandbox::Stream::ToEnd(void)` |
+| `0x529e0` | `public: static bool __cdecl MNSandbox::ReflexPolicyFuncBase::ToEnumVal(void const *,int &)` |
+| `0xac040` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishCheckDownloadMd5(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xac0d0` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishDownloadCdn(bool)` |
+| `0xac150` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishDownloadCloud(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xac2d0` | `protected: virtual void __thiscall MNSandbox::AssetRef::ToFinishLoad(bool)` |
+| `0xac300` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishRequireCdn(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xac360` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishRequireCloudUrl(bool)` |
+| `0xac390` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishRequireShortId(bool)` |
+| `0xac400` | `protected: void __thiscall MNSandbox::AssetRef::ToFinishUploadCdn(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x149480` | `public: bool __thiscall MNSandbox::RemoteMsgInfo::ToJsonObject(class jsonxx::Object &)const ` |
+| `0x195010` | `private: void __thiscall MNSandbox::SandboxNode::ToLoadResource(void)` |
+| `0x15b120` | `public: class MINIW::Ray __thiscall MNSandbox::Ray::ToRayMINIW(void)const ` |
+| `0x15b190` | `public: class Rainbow::Ray __thiscall MNSandbox::Ray::ToRayRainbow(void)const ` |
+| `0x577f0` | `protected: void __thiscall MNSandbox::AssetRef::ToStepCheckDownloadMd5(void)` |
+| `0xac490` | `protected: void __thiscall MNSandbox::AssetRef::ToStepDownloadCdn(void)` |
+| `0xac640` | `protected: void __thiscall MNSandbox::AssetRef::ToStepDownloadCloud(void)` |
+| `0xac9e0` | `protected: void __thiscall MNSandbox::AssetRef::ToStepFinish(void)` |
+| `0x8ce80` | `protected: virtual void __thiscall MNSandbox::AssetInsNodePacket::ToStepLocalLoad(void)` |
+| `0xacad0` | `protected: virtual void __thiscall MNSandbox::AssetRef::ToStepRainbowLoad(void)` |
+| `0xacae0` | `protected: void __thiscall MNSandbox::AssetRef::ToStepRainbowLoadPrepare(void)` |
+| `0xacb90` | `protected: void __thiscall MNSandbox::AssetRef::ToStepRequireCdn(void)` |
+| `0xacd40` | `protected: void __thiscall MNSandbox::AssetRef::ToStepRequireCloudUrl(void)` |
+| `0xad060` | `protected: void __thiscall MNSandbox::AssetRef::ToStepRequireShortId(void)` |
+| `0xad250` | `protected: void __thiscall MNSandbox::AssetRef::ToStepUploadCdn(void)` |
+| `0x12d570` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MNSandbox::ReflexVariant::ToString(void)const ` |
+| `0x632d0` | `private: void __thiscall MNSandbox::SandboxNode::ToUnloadResource(void)` |
+| `0x247910` | `public: static unsigned int __cdecl MNSandbox::Config::ToVersion(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x63310` | `public: static unsigned int __cdecl MNSandbox::Config::ToVersion(unsigned char,unsigned char,unsigned char)` |
+| `0x13af90` | `public: void __thiscall MNSandbox::SandboxEventQueue::TriggerEvent(int)` |
+| `0x13afb0` | `private: void __thiscall MNSandbox::SandboxEventQueue::TriggerEventPrivate(int)` |
+| `0x204110` | `public: virtual void __thiscall MNSandbox::ServiceNode::TryCreateDefaultChildren(void)` |
+| `0x16b220` | `public: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::NodeInstanceReflex::TryGetReadyNode(void)const ` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::Scene::TryLoadSceneChunk(int,int)` |
+| `0x195030` | `protected: void __thiscall MNSandbox::SandboxNode::TryRegisterTick(void)` |
+| `0x5c1b0` | `public: bool __thiscall MNSandbox::ReflexValue::TypeIsAttribute(void)const ` |
+| `0x63330` | `public: bool __thiscall MNSandbox::ReflexValue::TypeIsMethod(void)const ` |
+| `0x63340` | `public: bool __thiscall MNSandbox::ReflexValue::TypeIsNotify(void)const ` |
+| `0x168ef0` | `private: static void __cdecl MNSandbox::ArchiveData::UnArchive(void const *,unsigned int,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &)` |
+| `0xda630` | `public: void __thiscall MNSandbox::RemoteInstanceListenPool::UnRegisterListen(__int64,class MNSandbox::TCallback<__int64,class MNSandbox::SandboxNode *> *)` |
+| `0x87be0` | `private: void __thiscall MNSandbox::SandboxAssetCache::UnRegisterNotify(void)` |
+| `0x1d7de0` | `private: void __thiscall MNSandbox::ContextActionService::UnbindAction(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x52860` | `private: void __thiscall MNSandbox::ContextActionService::UnbindActivate(int,int)` |
+| `0x1d80e0` | `private: void __thiscall MNSandbox::ContextActionService::UnbindAllActions(void)` |
+| `0x16db90` | `public: virtual void __thiscall MNSandbox::Scene::UnbindAllObjs(void)` |
+| `0x8bbd0` | `public: void __thiscall MNSandbox::AssetConfig::UnbindAsset(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x23ef30` | `public: void __thiscall MNSandbox::Lua::LinkerData::UnbindDatas(void)` |
+| `0x16dba0` | `public: virtual void __thiscall MNSandbox::Scene::UnbindFromGameMap(class MNSandbox::GameMap *)` |
+| `0x195120` | `protected: virtual void __thiscall MNSandbox::SandboxNode::UnbindFromScene(class MNSandbox::Scene *)` |
+| `0x19c440` | `public: void __thiscall MNSandbox::GameInput::UnbindInput(void)` |
+| `0x211710` | `public: void __thiscall MNSandbox::LuaCoroutine::UnbindLuaLinker(class MNSandbox::WeakRef<class MNSandbox::LuaLinker>)` |
+| `0x223bc0` | `public: void __thiscall MNSandbox::ScriptState::UnbindLuaStateRef(struct lua_State *,class MNSandbox::LuaCoroutine *)` |
+| `0x16dbc0` | `private: void __thiscall MNSandbox::Scene::UnbindNode(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x195160` | `public: virtual void __thiscall MNSandbox::SandboxNode::UnbindNodeID(void)` |
+| `0x1716a0` | `public: void __thiscall MNSandbox::SdbSceneManager::UnbindNodeID(class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x1b3040` | `public: void __thiscall MNSandbox::MapSave::UnbindSaveData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x171870` | `public: void __thiscall MNSandbox::SdbSceneManager::UnbindScene(class MNSandbox::Scene *)` |
+| `0x16dc30` | `public: virtual void __thiscall MNSandbox::Scene::UnbindSceneObj(class MNSandbox::SandboxNode *,bool)` |
+| `0x1f77a0` | `private: void __thiscall MNSandbox::ScriptNode::UnbindScriptId(void)` |
+| `0x200010` | `public: void __thiscall MNSandbox::ScriptService::UnbindScriptId(class MNSandbox::ScriptNode *,unsigned int)` |
+| `0xd15f0` | `public: virtual void __thiscall MNSandbox::Component::UnbindTick(void)` |
+| `0xd92b0` | `public: virtual void __thiscall MNSandbox::Object::UnbindTick(void)` |
+| `0x195230` | `public: virtual void __thiscall MNSandbox::SandboxNode::UnbindTick(void)` |
+| `0xd0980` | `public: void __thiscall MNSandbox::BindRefUserdata::UnbindUserdata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1a16b0` | `private: void __thiscall MNSandbox::GameMap::UnloadDynamicNode(class MNSandbox::SandboxNode *)` |
+| `0x63350` | `public: void __thiscall MNSandbox::Config::UnlockOnlyHost(void)` |
+| `0x2117a0` | `public: int __thiscall MNSandbox::LuaCoroutine::UnlockSyncRun(void)` |
+| `0xd2b90` | `public: void __thiscall MNSandbox::GameObject::UnregComponentTick(class MNSandbox::Component *)` |
+| `0x52680` | `protected: void __thiscall MNSandbox::ServiceNode::UnregDescendantNodeEnterNotify(class MNSandbox::SandboxNode *)` |
+| `0x16b270` | `public: static void __cdecl MNSandbox::NodeInstanceReflex::UnregNodeReady(__int64,class MNSandbox::TCallback<__int64,class MNSandbox::SandboxNode *> *)` |
+| `0x82490` | `public: void __thiscall MNSandbox::SandboxCoreManagers::UnregSceneManager(class MNSandbox::SdbSceneManager *)` |
+| `0xdc410` | `public: void __thiscall MNSandbox::ReflexReferenceLinker::UnregisterIns(void *)` |
+| `0x63360` | `public: static void __cdecl MNSandbox::SandboxNode::UnregisterProduct(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x195280` | `protected: void __thiscall MNSandbox::SandboxNode::UnregisterTick(void)` |
+| `0x12f290` | `private: void __thiscall MNSandbox::MNTimer::UnregisterTimer(void)` |
+| `0x16e9d0` | `public: bool __thiscall MNSandbox::SceneChunk::Unserialize(void const *,int)` |
+| `0x195350` | `public: static class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __cdecl MNSandbox::SandboxNode::UnserializeFromJson(class jsonxx::Object const &)` |
+| `0x1953e0` | `public: static enum MNSandbox::SANDBOXERR __cdecl MNSandbox::SandboxNode::UnserializeFromStream(class MNSandbox::AutoRef<class MNSandbox::SandboxNode> &,class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x139ce0` | `public: bool __thiscall MNSandbox::SandboxEventDispatcherManager::Unsubscribe(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::Callback const &)` |
+| `0x13a150` | `public: void __thiscall MNSandbox::EventObjectManager::UnsubscribeAll(void)` |
+| `0xc5c80` | `private: void __thiscall MNSandbox::NodePacketContainer::UnsubscribeTick(void)` |
+| `0x633b0` | `public: void __thiscall MNSandbox::SandboxCoreDriver::Update(float)` |
+| `0x195460` | `protected: void __thiscall MNSandbox::SandboxNode::UpdateBindNodeID(class MNSandbox::SandboxNode *)` |
+| `0x1456d0` | `public: void __thiscall MNSandbox::ListenerInterface::UpdateClearNotify(class MNSandbox::NotifyInterface *)` |
+| `0x14bf80` | `private: void __thiscall MNSandbox::GameStep::UpdateFps(int)` |
+| `0x9f180` | `public: static bool __cdecl MNSandbox::AssetIdParse::UpdateLocalAssetToDownload(struct MNSandbox::AssetIdInfo &)` |
+| `0x1a80f0` | `protected: void __thiscall MNSandbox::GameMapHost::UpdateMapLoadFlag(enum MNSandbox::SAVEMODE)` |
+| `0x19a660` | `protected: virtual void __thiscall MNSandbox::SceneRoot::UpdateSaveData(void)` |
+| `0x204140` | `protected: virtual void __thiscall MNSandbox::ServiceNode::UpdateSaveData(void)` |
+| `0x1ab480` | `public: void __thiscall MNSandbox::GameStageClient::UpdateStage(void)` |
+| `0x1954b0` | `protected: void __thiscall MNSandbox::SandboxNode::UpdateStopDynamicFlag(void)` |
+| `0x14bfd0` | `private: void __thiscall MNSandbox::GameStep::UpdateSubTickParams(void)` |
+| `0x1a16d0` | `protected: void __thiscall MNSandbox::GameMap::UpdateToLoadedStage(void)` |
+| `0x200130` | `protected: enum MNSandbox::SANDBOXERR __thiscall MNSandbox::ScriptServiceHost::UploadAllScripts(void)` |
+| `0x200270` | `protected: void __thiscall MNSandbox::ScriptServiceHost::UploadAllScriptsWithCallback(class std::function<void __cdecl(enum MNSandbox::SANDBOXERR,int,int)> const &)` |
+| `0xc0d50` | `public: void __thiscall MNSandbox::AssetSyncMgrInterface::UploadFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)> const &)` |
+| `0xc0d70` | `protected: void __thiscall MNSandbox::AssetServiceHost::UploadNetworkToCdn(enum MNSandbox::AssetService::ASSET_CONFIG_ID,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x200490` | `protected: bool __thiscall MNSandbox::ScriptService::UploadScript(unsigned int,struct MNSandbox::ScriptService::ScriptInfo *,bool)` |
+| `0x3b5cd0` | `public: static class MNSandbox::ReflexClassParam<class MNSandbox::SandboxNode,class MNSandbox::AttributeContainer> MNSandbox::SandboxNode::UseAttributes` |
+| `0x195510` | `protected: void __thiscall MNSandbox::SandboxNode::UseDefaultName(void)` |
+| `0x3b60a0` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,class MNSandbox::ReflexVariant,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > MNSandbox::SandboxNode::UseGetAttribute` |
+| `0x63400` | `public: virtual bool __thiscall MNSandbox::ReflexValue::UseLuaValue(void *,struct lua_State *,int)` |
+| `0x63410` | `public: void __thiscall MNSandbox::GlobalNotify::UseNextTickNextPiece(void)` |
+| `0x59dd0` | `public: class MNSandbox::ReflexConfig & __thiscall MNSandbox::ReflexConfig::UsePublicRead(void)` |
+| `0x3b6980` | `public: static class MNSandbox::ReflexClassMethodRet<class MNSandbox::SandboxNode,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::ReflexVariant> MNSandbox::SandboxNode::UseSetAttribute` |
+| `0x3b6850` | `public: static class MNSandbox::ReflexClassMethod<class MNSandbox::SandboxNode,class MNSandbox::AutoRef<class MNSandbox::SandboxNode> > MNSandbox::SandboxNode::UseSetParent` |
+| `0xdae40` | `public: class MNSandbox::ReflexConfig & __thiscall MNSandbox::ReflexConfig::UseWin32Debug(unsigned int,bool)` |
+| `0x63430` | `public: bool __thiscall MNSandbox::CustomBuffer::Valid(void)const ` |
+| `0x247bc0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Config::VersionToStr(unsigned int)` |
+| `0x1ece10` | `protected: int __thiscall MNSandbox::SandboxLoadedService::WaitLoaded(struct lua_State *)` |
+| `0x137a40` | `public: void __thiscall MNSandbox::NodeWatcherGroup::WatcherAddNode(class MNSandbox::NodeWatcher *,class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x137ba0` | `public: void __thiscall MNSandbox::NodeWatcherGroup::WatcherRemoveNode(class MNSandbox::NodeWatcher *,class MNSandbox::SandboxNode *,enum MNSandbox::WATCHERSTATE)` |
+| `0x169140` | `private: static bool __cdecl MNSandbox::ArchiveData::Write(char const *,void const *,unsigned int)` |
+| `0x1331d0` | `public: virtual unsigned int __thiscall MNSandbox::StreamBuffer::Write(void const *,unsigned int)` |
+| `0x131990` | `public: unsigned int __thiscall MNSandbox::Stream::WriteBool(bool)` |
+| `0x1319b0` | `public: unsigned int __thiscall MNSandbox::Stream::WriteBuffer(void const *,unsigned int)` |
+| `0xd0e50` | `public: bool __thiscall MNSandbox::ByteBuffer::WriteChar(char)` |
+| `0xd0ec0` | `public: bool __thiscall MNSandbox::ByteBuffer::WriteChars(char const *,int)` |
+| `0x258250` | `public: bool __thiscall MNSandbox::SandboxMiscDataMgr::WriteData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x1319e0` | `protected: unsigned int __thiscall MNSandbox::Stream::WriteFlags(class MNSandbox::SandboxFlags<unsigned int> const &,class std::function<bool __cdecl(void *,unsigned int)> const &)` |
+| `0x131b60` | `protected: unsigned int __thiscall MNSandbox::Stream::WriteHeader(class MNSandbox::SandboxFlags<unsigned int> const &,class std::function<bool __cdecl(void *,unsigned int)> const &)` |
+| `0xd0f50` | `public: bool __thiscall MNSandbox::ByteBuffer::WriteInt(int)` |
+| `0x131be0` | `public: unsigned int __thiscall MNSandbox::Stream::WriteReflex(class MNSandbox::ReflexType const *,void const *)` |
+| `0xd0fe0` | `public: bool __thiscall MNSandbox::ByteBuffer::WriteShort(short)` |
+| `0x131c60` | `public: unsigned int __thiscall MNSandbox::Stream::WriteStream(class MNSandbox::AutoRef<class MNSandbox::Stream> const &)` |
+| `0x131dc0` | `public: unsigned int __thiscall MNSandbox::Stream::WriteString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xd1060` | `public: bool __thiscall MNSandbox::ByteBuffer::WriteStringStream(class std::basic_stringstream<char,struct std::char_traits<char>,class std::allocator<char> > &,int)` |
+| `0x250ca0` | `bool __cdecl MNSandbox::WriteToFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class MNSandbox::AutoRef<class MNSandbox::CustomBuffer> const &)` |
+| `0x87c90` | `private: void __thiscall MNSandbox::SandboxAssetCache::WriteToFile(void)` |
+| `0x131e10` | `protected: unsigned int __thiscall MNSandbox::Stream::WriteVersion(class std::function<bool __cdecl(void *,unsigned int)> const &)` |
+| `0x1dba70` | `private: int __thiscall MNSandbox::ScriptNode::_GetMode(void)const ` |
+| `0x1dbfe0` | `private: void __thiscall MNSandbox::ScriptNode::_SetMode(int const &)` |
+| `0x12a9f0` | `public: static int __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::__gc(struct lua_State *)` |
+| `0x12aa20` | `public: static int __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::__index(struct lua_State *)` |
+| `0x12ab50` | `public: static int __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::__newindex(struct lua_State *)` |
+| `0x12ac70` | `public: static int __cdecl MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::__tostring(struct lua_State *)` |
+| `0x16ec80` | `private: void __thiscall MNSandbox::SceneChunk::_add(class MNSandbox::SandboxNode *)` |
+| `0x3b3b80` | `private: static unsigned __int64 MNSandbox::ScopeFuncTemp::_counts` |
+| `0x3b3b90` | `private: static unsigned __int64 MNSandbox::ScopeFuncTemp::_currCost` |
+| `0x3b3b88` | `private: static unsigned __int64 MNSandbox::ScopeFuncTemp::_maxCost` |
+| `0x16ed90` | `private: void __thiscall MNSandbox::SceneChunk::_remove(class MNSandbox::SandboxNode *)` |
+| `0x381d70` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MNSandbox::ScopeFuncTemp::_shotcut` |
+| `0x145790` | `protected: void __thiscall MNSandbox::NotifyInterface::_subscribe(class MNSandbox::AutoRef<class MNSandbox::ListenerInterface> const &,int)` |
+| `0x3b3b98` | `private: static unsigned __int64 MNSandbox::ScopeFuncTemp::_tempTimeStamp` |
+| `0x1457b0` | `protected: void __thiscall MNSandbox::NotifyInterface::_unsubscribe(class MNSandbox::AutoRef<class MNSandbox::ListenerInterface> const &)` |
+| `0x1f4c00` | `protected: class MNSandbox::AutoRef<class MNSandbox::SandboxNode> __thiscall MNSandbox::ScriptContext::addCoreScriptLocal(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x14de40` | `public: class MNSandbox::CE_Sequence & __thiscall MNSandbox::CE_Sequence::addFormula(class std::function<bool __cdecl(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)>)` |
+| `0x14e050` | `public: class MNSandbox::SortCompareExpression & __thiscall MNSandbox::CE_Single::addFormula(class std::function<bool __cdecl(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)>)` |
+| `0x14e090` | `public: void __thiscall MNSandbox::ScopeFuncInfo::beginScope(void)` |
+| `0x14e0b0` | `public: void __thiscall MNSandbox::ScopeFuncTemp::beginScope(void)` |
+| `0x1df100` | `public: class MNSandbox::AutoRef<class MNSandbox::Listener<enum MNSandbox::UserInputType,enum MNSandbox::UserInputState,class MNSandbox::AutoRef<class MNSandbox::InputObject> const > > __thiscall MNSandbox::SandboxDebugHelper::bindInputEvent(class std::function<void __cdecl(enum MNSandbox::UserInputType,enum MNSandbox::UserInputState,class MNSandbox::AutoRef<class MNSandbox::InputObject>)>)` |
+| `0x1df2f0` | `public: class MNSandbox::AutoRef<class MNSandbox::Listener<int,bool> > __thiscall MNSandbox::SandboxDebugHelper::bindKeyboard(class std::function<void __cdecl(int,bool)>)` |
+| `0x1d83d0` | `private: void __thiscall MNSandbox::ContextActionService::callActionFunction(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum MNSandbox::UserInputState,class MNSandbox::AutoRef<class MNSandbox::SandboxNode>)` |
+| `0x1600c0` | `private: void __thiscall MNSandbox::HostNodeIdAllocator::checkFree(void)` |
+| `0x52c30` | `protected: virtual bool __thiscall MNSandbox::CoreScript::checkIsCanPlay(void)const ` |
+| `0x1edab0` | `protected: virtual bool __thiscall MNSandbox::LocalScriptNode::checkIsCanPlay(void)const ` |
+| `0x52c30` | `protected: virtual bool __thiscall MNSandbox::ScriptNode::checkIsCanPlay(void)const ` |
+| `0x1f7e80` | `protected: virtual bool __thiscall MNSandbox::ScriptObject::checkIsCanPlay(void)const ` |
+| `0x16ee90` | `private: void __thiscall MNSandbox::SceneChunk::clear(bool)` |
+| `0x1da5e0` | `private: static class MNSandbox::AutoRef<class MNSandbox::ReflexMap> __cdecl MNSandbox::ContextActionService::constructTableFromActionFuncData(class MNSandbox::AutoRef<struct MNSandbox::ContextActionService::ActionFunc>)` |
+| `0x1dac70` | `private: void __thiscall MNSandbox::ContextActionService::dealActionAfterProcessing(void)` |
+| `0x14e0d0` | `public: void __thiscall MNSandbox::ScopeFuncInfo::endScope(void)` |
+| `0x14e100` | `public: void __thiscall MNSandbox::ScopeFuncTemp::endScope(void)` |
+| `0x14e150` | `public: virtual bool __thiscall MNSandbox::CE_And::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x14e190` | `public: virtual bool __thiscall MNSandbox::CE_Not::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x14e1d0` | `public: virtual bool __thiscall MNSandbox::CE_Or::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x5ae50` | `public: virtual bool __thiscall MNSandbox::CE_Sequence::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x14e210` | `public: virtual bool __thiscall MNSandbox::CE_Single::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x14e240` | `public: bool __thiscall MNSandbox::SortCompareExe::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x5ae50` | `public: virtual bool __thiscall MNSandbox::SortCompareExpression::expression(class MNSandbox::ScopeFuncInfo const *,class MNSandbox::ScopeFuncInfo const *)` |
+| `0x14e250` | `public: class std::shared_ptr<class MNSandbox::ScopeFuncInfo> __thiscall MNSandbox::ScopeFuncContainer::findOrAddNode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3b3ae0` | `double MNSandbox::g_TickElapse` |
+| `0x3b3ae8` | `double MNSandbox::g_TickElapseTwice` |
+| `0x5abe0` | `public: static class MNSandbox::ScopeFuncContainer * __cdecl MNSandbox::ScopeFuncContainer::getInstance(void)` |
+| `0x20b4a0` | `public: struct lua_State * __thiscall MNSandbox::SandboxCoreLuaDirector::getLuaState(void)` |
+| `0x944c0` | `public: static class MNSandbox::AssetPool & __cdecl MNSandbox::Singleton<class MNSandbox::AssetPool>::getSingleton(void)` |
+| `0xbe1a0` | `public: static class MNSandbox::AssetSyncMgrInterface & __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::getSingleton(void)` |
+| `0xa9300` | `public: static class MNSandbox::AssetSyncPool & __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::getSingleton(void)` |
+| `0x1c2290` | `public: static class MNSandbox::CollectionService & __cdecl MNSandbox::Singleton<class MNSandbox::CollectionService>::getSingleton(void)` |
+| `0x19bab0` | `public: static class MNSandbox::GameInput & __cdecl MNSandbox::Singleton<class MNSandbox::GameInput>::getSingleton(void)` |
+| `0x5abb0` | `public: static class MNSandbox::GameStep & __cdecl MNSandbox::Singleton<class MNSandbox::GameStep>::getSingleton(void)` |
+| `0xd76a0` | `public: static class MNSandbox::IDGeneratorManager & __cdecl MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::getSingleton(void)` |
+| `0x944d0` | `public: static class MNSandbox::ListenRainbowCallbackMgr & __cdecl MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::getSingleton(void)` |
+| `0x157640` | `public: static class MNSandbox::Statistics::LoadCost & __cdecl MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::getSingleton(void)` |
+| `0x1a68b0` | `public: static class MNSandbox::MainStorage & __cdecl MNSandbox::Singleton<class MNSandbox::MainStorage>::getSingleton(void)` |
+| `0x5abc0` | `public: static class MNSandbox::Thread::MultiThreadPool & __cdecl MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::getSingleton(void)` |
+| `0x8c9e0` | `public: static class MNSandbox::NodePacketContainer & __cdecl MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::getSingleton(void)` |
+| `0x84af0` | `public: static class MNSandbox::RefPool & __cdecl MNSandbox::Singleton<class MNSandbox::RefPool>::getSingleton(void)` |
+| `0xda440` | `public: static class MNSandbox::RemoteInstanceListenPool & __cdecl MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::getSingleton(void)` |
+| `0x5abd0` | `public: static class MNSandbox::RemoteMsg & __cdecl MNSandbox::Singleton<class MNSandbox::RemoteMsg>::getSingleton(void)` |
+| `0x155400` | `public: static class MNSandbox::Profile::RunDebugMgr & __cdecl MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::getSingleton(void)` |
+| `0x86af0` | `public: static class MNSandbox::SandboxAssetCache & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::getSingleton(void)` |
+| `0x9e0c0` | `public: static class MNSandbox::SandboxAssetRequestMgr & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::getSingleton(void)` |
+| `0x1de2c0` | `public: static class MNSandbox::SandboxDebugHelper & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::getSingleton(void)` |
+| `0x199a30` | `public: static class MNSandbox::SandboxMiscDataMgr & __cdecl MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::getSingleton(void)` |
+| `0x5abe0` | `public: static class MNSandbox::ScopeFuncContainer & __cdecl MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::getSingleton(void)` |
+| `0x1e9fb0` | `public: static class MNSandbox::ScriptService & __cdecl MNSandbox::Singleton<class MNSandbox::ScriptService>::getSingleton(void)` |
+| `0x5abf0` | `public: static class MNSandbox::SdbSceneManager & __cdecl MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::getSingleton(void)` |
+| `0x1e9fc0` | `public: static class MNSandbox::SupplementInterface & __cdecl MNSandbox::Singleton<class MNSandbox::SupplementInterface>::getSingleton(void)` |
+| `0x9a510` | `public: static class MNSandbox::Thread::ThreadTaskManager & __cdecl MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::getSingleton(void)` |
+| `0x14a9d0` | `public: static class MNSandbox::Debug::UIDebug & __cdecl MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::getSingleton(void)` |
+| `0x944c0` | `public: static class MNSandbox::AssetPool * __cdecl MNSandbox::Singleton<class MNSandbox::AssetPool>::getSingletonPtr(void)` |
+| `0xbe1a0` | `public: static class MNSandbox::AssetSyncMgrInterface * __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::getSingletonPtr(void)` |
+| `0xa9300` | `public: static class MNSandbox::AssetSyncPool * __cdecl MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::getSingletonPtr(void)` |
+| `0x1c2290` | `public: static class MNSandbox::CollectionService * __cdecl MNSandbox::Singleton<class MNSandbox::CollectionService>::getSingletonPtr(void)` |
+| `0x19bab0` | `public: static class MNSandbox::GameInput * __cdecl MNSandbox::Singleton<class MNSandbox::GameInput>::getSingletonPtr(void)` |
+| `0x5abb0` | `public: static class MNSandbox::GameStep * __cdecl MNSandbox::Singleton<class MNSandbox::GameStep>::getSingletonPtr(void)` |
+| `0xd76a0` | `public: static class MNSandbox::IDGeneratorManager * __cdecl MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::getSingletonPtr(void)` |
+| `0x944d0` | `public: static class MNSandbox::ListenRainbowCallbackMgr * __cdecl MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::getSingletonPtr(void)` |
+| `0x157640` | `public: static class MNSandbox::Statistics::LoadCost * __cdecl MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::getSingletonPtr(void)` |
+| `0x1a68b0` | `public: static class MNSandbox::MainStorage * __cdecl MNSandbox::Singleton<class MNSandbox::MainStorage>::getSingletonPtr(void)` |
+| `0x5abc0` | `public: static class MNSandbox::Thread::MultiThreadPool * __cdecl MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::getSingletonPtr(void)` |
+| `0x8c9e0` | `public: static class MNSandbox::NodePacketContainer * __cdecl MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::getSingletonPtr(void)` |
+| `0x84af0` | `public: static class MNSandbox::RefPool * __cdecl MNSandbox::Singleton<class MNSandbox::RefPool>::getSingletonPtr(void)` |
+| `0xda440` | `public: static class MNSandbox::RemoteInstanceListenPool * __cdecl MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::getSingletonPtr(void)` |
+| `0x5abd0` | `public: static class MNSandbox::RemoteMsg * __cdecl MNSandbox::Singleton<class MNSandbox::RemoteMsg>::getSingletonPtr(void)` |
+| `0x155400` | `public: static class MNSandbox::Profile::RunDebugMgr * __cdecl MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::getSingletonPtr(void)` |
+| `0x86af0` | `public: static class MNSandbox::SandboxAssetCache * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::getSingletonPtr(void)` |
+| `0x9e0c0` | `public: static class MNSandbox::SandboxAssetRequestMgr * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::getSingletonPtr(void)` |
+| `0x1de2c0` | `public: static class MNSandbox::SandboxDebugHelper * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::getSingletonPtr(void)` |
+| `0x199a30` | `public: static class MNSandbox::SandboxMiscDataMgr * __cdecl MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::getSingletonPtr(void)` |
+| `0x5abe0` | `public: static class MNSandbox::ScopeFuncContainer * __cdecl MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::getSingletonPtr(void)` |
+| `0x1e9fb0` | `public: static class MNSandbox::ScriptService * __cdecl MNSandbox::Singleton<class MNSandbox::ScriptService>::getSingletonPtr(void)` |
+| `0x5abf0` | `public: static class MNSandbox::SdbSceneManager * __cdecl MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::getSingletonPtr(void)` |
+| `0x1e9fc0` | `public: static class MNSandbox::SupplementInterface * __cdecl MNSandbox::Singleton<class MNSandbox::SupplementInterface>::getSingletonPtr(void)` |
+| `0x9a510` | `public: static class MNSandbox::Thread::ThreadTaskManager * __cdecl MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::getSingletonPtr(void)` |
+| `0x14a9d0` | `public: static class MNSandbox::Debug::UIDebug * __cdecl MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::getSingletonPtr(void)` |
+| `0x1c2fe0` | `private: struct MNSandbox::CollectionService::TagData * __thiscall MNSandbox::CollectionService::getTagData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x1ba0c0` | `public: int __thiscall MNSandbox::InputObject::getTouchCount(void)` |
+| `0x1ba0d0` | `public: class MNSandbox::AutoRef<class MNSandbox::ReflexMap> __thiscall MNSandbox::InputObject::getTouchInfo(int)` |
+| `0x52860` | `public: virtual void __thiscall MNSandbox::Scene::handleTeleporWorldDone(int,class MNSandbox::SandboxNode *)` |
+| `0x196d00` | `protected: static bool __cdecl MNSandbox::SandboxNode::isChildCanBindChunk(class MNSandbox::SandboxNode *)` |
+| `0x1ba4c0` | `private: bool __thiscall MNSandbox::InputObjectSignal::isConnected(int)` |
+| `0x1ba540` | `private: bool __thiscall MNSandbox::InputObjectSignal::isConnected(class MNSandbox::AutoRef<class MNSandbox::LuaFunction>)` |
+| `0x196d60` | `public: bool __thiscall MNSandbox::SandboxNode::isScriptScopeRun(enum MNSandbox::ScriptScope)const ` |
+| `0x661c0` | `protected: virtual bool __thiscall MNSandbox::SandboxNode::isSupportScriptScope(enum MNSandbox::ScriptScope)const ` |
+| `0x661c0` | `protected: virtual bool __thiscall MNSandbox::ServerScriptService::isSupportScriptScope(enum MNSandbox::ScriptScope)const ` |
+| `0xc1610` | `protected: bool __thiscall MNSandbox::AssetServiceHost::isWaitLoadConfigFile(void)` |
+| `0x225950` | `int __cdecl MNSandbox::lua_getlightmetatable(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2259d0` | `int __cdecl MNSandbox::lua_getlightmetatable(struct lua_State *,void *,bool)` |
+| `0x225a50` | `int __cdecl MNSandbox::lua_getlightmetatable(struct lua_State *,enum MNSandbox::LuaRegisterAddress::TYPE)` |
+| `0x225b20` | `void __cdecl MNSandbox::lua_protectedMetatable(struct lua_State *,int)` |
+| `0x225b50` | `int __cdecl MNSandbox::lua_pushCFunctionWithUserdata(struct lua_State *,void *,int (__cdecl*)(struct lua_State *))` |
+| `0x3a5d40` | `private: static class MNSandbox::RuntimeClass const MNSandbox::AssetInsNodePacket::m_RTTI` |
+| `0x3a7010` | `private: static class MNSandbox::RuntimeClass const MNSandbox::AssetRef::m_RTTI` |
+| `0x3a77c0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::AssetService::m_RTTI` |
+| `0x3a7a70` | `private: static class MNSandbox::RuntimeClass const MNSandbox::AssetServiceHost::m_RTTI` |
+| `0x3a79f0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::AssetServiceRemote::m_RTTI` |
+| `0x3bbfe8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::CloudServerConfigService::m_RTTI` |
+| `0x3bc790` | `private: static class MNSandbox::RuntimeClass const MNSandbox::CollectionService::m_RTTI` |
+| `0x3a8828` | `private: static class MNSandbox::RuntimeClass const MNSandbox::Component::m_RTTI` |
+| `0x3bd0e0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ConfigService::m_RTTI` |
+| `0x3be700` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ContextActionService::m_RTTI` |
+| `0x3befe0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::CoreScript::m_RTTI` |
+| `0x3b2720` | `private: static class MNSandbox::RuntimeClass const MNSandbox::CustomFunction::m_RTTI` |
+| `0x3b2dd0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::CustomNotify::m_RTTI` |
+| `0x3b99c8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::GameMap::m_RTTI` |
+| `0x3ba1a8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::GameMapClient::m_RTTI` |
+| `0x3ba338` | `private: static class MNSandbox::RuntimeClass const MNSandbox::GameMapHost::m_RTTI` |
+| `0x3bf9c0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::GameNode::m_RTTI` |
+| `0x3a8968` | `private: static class MNSandbox::RuntimeClass const MNSandbox::GameObject::m_RTTI` |
+| `0x3c0cd0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::GlobalServiceNode::m_RTTI` |
+| `0x3bbaf0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::InputObject::m_RTTI` |
+| `0x3bb940` | `private: static class MNSandbox::RuntimeClass const MNSandbox::InputObjectSignal::m_RTTI` |
+| `0x3b3238` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ListenerInterface::m_RTTI` |
+| `0x3b3068` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ListenerLua::m_RTTI` |
+| `0x3c12b0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LocalScriptNode::m_RTTI` |
+| `0x3c62a0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LuaArgument::m_RTTI` |
+| `0x3c6328` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LuaArguments::m_RTTI` |
+| `0x3c49d0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LuaCoroutine::m_RTTI` |
+| `0x3c63f8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LuaFunction::m_RTTI` |
+| `0x3c6768` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LuaLinker::m_RTTI` |
+| `0x3c1478` | `private: static class MNSandbox::RuntimeClass const MNSandbox::LuaProfileService::m_RTTI` |
+| `0x3b1490` | `private: static class MNSandbox::RuntimeClass const MNSandbox::MNTimer::m_RTTI` |
+| `0x3c1788` | `private: static class MNSandbox::RuntimeClass const MNSandbox::MainStorage::m_RTTI` |
+| `0x3c1918` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ModuleScriptNode::m_RTTI` |
+| `0x3a7d50` | `private: static class MNSandbox::RuntimeClass const MNSandbox::NodePacket::m_RTTI` |
+| `0x3b31b8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::NotifyInterface::m_RTTI` |
+| `0x3a8ea0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::Object::m_RTTI` |
+| `0x3a90b8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::Ref::m_RTTI` |
+| `0x3a9510` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ReflexLuaTuple::m_RTTI` |
+| `0x3a9600` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ReflexMap::m_RTTI` |
+| `0x3a97c8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ReflexTuple::m_RTTI` |
+| `0x3b1358` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ReflexValue::m_RTTI` |
+| `0x3a6590` | `private: static class MNSandbox::RuntimeClass const MNSandbox::SandboxAssetObject::m_RTTI` |
+| `0x3bf1d8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::SandboxDebugHelper::m_RTTI` |
+| `0x3c1098` | `private: static class MNSandbox::RuntimeClass const MNSandbox::SandboxLoadedService::m_RTTI` |
+| `0x3b5f90` | `private: static class MNSandbox::RuntimeClass const MNSandbox::SandboxNode::m_RTTI` |
+| `0x3b4908` | `private: static class MNSandbox::RuntimeClass const MNSandbox::Scene::m_RTTI` |
+| `0x3b93d0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::SceneRoot::m_RTTI` |
+| `0x3c1df0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ScriptContext::m_RTTI` |
+| `0x3c22d0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ScriptNode::m_RTTI` |
+| `0x3c28e8` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ScriptObject::m_RTTI` |
+| `0x3c3078` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ScriptService::m_RTTI` |
+| `0x3c2cc0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ScriptServiceHost::m_RTTI` |
+| `0x3c2e90` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ScriptServiceRemote::m_RTTI` |
+| `0x3c3310` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ServerScriptService::m_RTTI` |
+| `0x3c3498` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ServerStorage::m_RTTI` |
+| `0x3c3800` | `private: static class MNSandbox::RuntimeClass const MNSandbox::ServiceNode::m_RTTI` |
+| `0x3b3300` | `private: static class MNSandbox::RuntimeClass const MNSandbox::Signal::m_RTTI` |
+| `0x3b3380` | `private: static class MNSandbox::RuntimeClass const MNSandbox::SignalConnect::m_RTTI` |
+| `0x3b1908` | `private: static class MNSandbox::RuntimeClass const MNSandbox::Stream::m_RTTI` |
+| `0x3b19d0` | `private: static class MNSandbox::RuntimeClass const MNSandbox::StreamBuffer::m_RTTI` |
+| `0x3c4010` | `private: static class MNSandbox::RuntimeClass const MNSandbox::TimerNode::m_RTTI` |
+| `0x3c7304` | `private: static class std::vector<class MNSandbox::LuaRTTI,class std::allocator<class MNSandbox::LuaRTTI> > MNSandbox::Type2Lua::m_buffer` |
+| `0x3c72e4` | `private: static class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,int> > > MNSandbox::Type2Lua::m_cTypes` |
+| `0x3b3c78` | `public: static int MNSandbox::Profile::RunDataRenderLog::m_drawcall` |
+| `0x3a4cf0` | `private: static bool MNSandbox::SandboxCoreDriver::m_flagLoadToc` |
+| `0x3c7310` | `private: static class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,int> > > MNSandbox::Type2Lua::m_luaTypes` |
+| `0x3a7440` | `private: static int MNSandbox::SandboxAssetRequestMgr::m_mapReqListKeyIdx` |
+| `0x2b7008` | `protected: static unsigned int const MNSandbox::ListenersInterface::m_runningMaxTimes` |
+| `0x2c8c64` | `protected: static unsigned int const MNSandbox::ScriptService::ms_AllScriptLimit` |
+| `0x2c0938` | `public: static unsigned int const MNSandbox::SceneChunk::ms_ChunkSize` |
+| `0x384ab8` | `protected: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const MNSandbox::Bridge<struct MNSandbox::ReflexReferenceIns>::ms_ClassName` |
+| `0x3a7848` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::AssetService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::AssetService::ms_NotifyRegAttrChanged` |
+| `0x3a7842` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::AssetServiceHost,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::AssetServiceHost::ms_NotifyRegAttrChanged` |
+| `0x3a7840` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::AssetServiceRemote,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::AssetServiceRemote::ms_NotifyRegAttrChanged` |
+| `0x3bbfe0` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::CloudServerConfigService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::CloudServerConfigService::ms_NotifyRegAttrChanged` |
+| `0x3bc451` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::CollectionService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::CollectionService::ms_NotifyRegAttrChanged` |
+| `0x3bcda0` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ConfigService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ConfigService::ms_NotifyRegAttrChanged` |
+| `0x3bdf32` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ContextActionService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ContextActionService::ms_NotifyRegAttrChanged` |
+| `0x3befda` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::CoreScript,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::CoreScript::ms_NotifyRegAttrChanged` |
+| `0x3b2842` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::CustomFunction,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::CustomFunction::ms_NotifyRegAttrChanged` |
+| `0x3b2e52` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::CustomNotify,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::CustomNotify::ms_NotifyRegAttrChanged` |
+| `0x3bfb02` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::GameNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::GameNode::ms_NotifyRegAttrChanged` |
+| `0x3c06b2` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::GlobalServiceNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::GlobalServiceNode::ms_NotifyRegAttrChanged` |
+| `0x3bb6a1` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::InputObject,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::InputObject::ms_NotifyRegAttrChanged` |
+| `0x3bb6a4` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::InputObjectSignal,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::InputObjectSignal::ms_NotifyRegAttrChanged` |
+| `0x3c12a9` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::LocalScriptNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::LocalScriptNode::ms_NotifyRegAttrChanged` |
+| `0x3c1471` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::LuaProfileService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::LuaProfileService::ms_NotifyRegAttrChanged` |
+| `0x3c1722` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::MainStorage,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::MainStorage::ms_NotifyRegAttrChanged` |
+| `0x3c18b0` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ModuleScriptNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ModuleScriptNode::ms_NotifyRegAttrChanged` |
+| `0x3a63d1` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::SandboxAssetObject,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::SandboxAssetObject::ms_NotifyRegAttrChanged` |
+| `0x3bf1d0` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::SandboxDebugHelper,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::SandboxDebugHelper::ms_NotifyRegAttrChanged` |
+| `0x3c1031` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::SandboxLoadedService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::SandboxLoadedService::ms_NotifyRegAttrChanged` |
+| `0x3b5b7c` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::SandboxNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::SandboxNode::ms_NotifyRegAttrChanged` |
+| `0x3b9451` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::SceneRoot,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::SceneRoot::ms_NotifyRegAttrChanged` |
+| `0x3c1cf0` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ScriptContext,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ScriptContext::ms_NotifyRegAttrChanged` |
+| `0x3c2582` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ScriptNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ScriptNode::ms_NotifyRegAttrChanged` |
+| `0x3c2880` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ScriptObject,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ScriptObject::ms_NotifyRegAttrChanged` |
+| `0x3c2d46` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ScriptService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ScriptService::ms_NotifyRegAttrChanged` |
+| `0x3c2d45` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ScriptServiceHost,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ScriptServiceHost::ms_NotifyRegAttrChanged` |
+| `0x3c2d41` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ScriptServiceRemote,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ScriptServiceRemote::ms_NotifyRegAttrChanged` |
+| `0x3c3309` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ServerScriptService,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ServerScriptService::ms_NotifyRegAttrChanged` |
+| `0x3c351a` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ServerStorage,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ServerStorage::ms_NotifyRegAttrChanged` |
+| `0x3c36d1` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::ServiceNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::ServiceNode::ms_NotifyRegAttrChanged` |
+| `0x3c4133` | `private: static class MNSandbox::NodeNotify<0,class MNSandbox::TimerNode,class MNSandbox::ReflexValue *,class std::vector<class MNSandbox::ReflexValue *,class std::allocator<class MNSandbox::ReflexValue *> > *,class MNSandbox::ReflexVariant *>::Register MNSandbox::TimerNode::ms_NotifyRegAttrChanged` |
+| `0x3a7844` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::AssetService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::AssetService::ms_NotifyRegDataSync` |
+| `0x3a7843` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::AssetServiceHost,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::AssetServiceHost::ms_NotifyRegDataSync` |
+| `0x3a7841` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::AssetServiceRemote,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::AssetServiceRemote::ms_NotifyRegDataSync` |
+| `0x3bbfe1` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::CloudServerConfigService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::CloudServerConfigService::ms_NotifyRegDataSync` |
+| `0x3bc452` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::CollectionService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::CollectionService::ms_NotifyRegDataSync` |
+| `0x3bcda2` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ConfigService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ConfigService::ms_NotifyRegDataSync` |
+| `0x3bdf30` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ContextActionService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ContextActionService::ms_NotifyRegDataSync` |
+| `0x3befd9` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::CoreScript,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::CoreScript::ms_NotifyRegDataSync` |
+| `0x3b2840` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::CustomFunction,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::CustomFunction::ms_NotifyRegDataSync` |
+| `0x3b2e51` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::CustomNotify,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::CustomNotify::ms_NotifyRegDataSync` |
+| `0x3bfb00` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::GameNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::GameNode::ms_NotifyRegDataSync` |
+| `0x3c06b1` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::GlobalServiceNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::GlobalServiceNode::ms_NotifyRegDataSync` |
+| `0x3bb6a6` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::InputObject,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::InputObject::ms_NotifyRegDataSync` |
+| `0x3bb6a2` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::InputObjectSignal,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::InputObjectSignal::ms_NotifyRegDataSync` |
+| `0x3c12aa` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::LocalScriptNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::LocalScriptNode::ms_NotifyRegDataSync` |
+| `0x3c1472` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::LuaProfileService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::LuaProfileService::ms_NotifyRegDataSync` |
+| `0x3c1720` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::MainStorage,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::MainStorage::ms_NotifyRegDataSync` |
+| `0x3c18b2` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ModuleScriptNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ModuleScriptNode::ms_NotifyRegDataSync` |
+| `0x3a63d2` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::SandboxAssetObject,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::SandboxAssetObject::ms_NotifyRegDataSync` |
+| `0x3bf1d1` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::SandboxDebugHelper,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::SandboxDebugHelper::ms_NotifyRegDataSync` |
+| `0x3c1032` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::SandboxLoadedService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::SandboxLoadedService::ms_NotifyRegDataSync` |
+| `0x3b4f52` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::SandboxNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::SandboxNode::ms_NotifyRegDataSync` |
+| `0x3b9450` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::SceneRoot,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::SceneRoot::ms_NotifyRegDataSync` |
+| `0x3c1cf1` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ScriptContext,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ScriptContext::ms_NotifyRegDataSync` |
+| `0x3c2580` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ScriptNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ScriptNode::ms_NotifyRegDataSync` |
+| `0x3c2881` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ScriptObject,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ScriptObject::ms_NotifyRegDataSync` |
+| `0x3c2d48` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ScriptService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ScriptService::ms_NotifyRegDataSync` |
+| `0x3c2d43` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ScriptServiceHost,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ScriptServiceHost::ms_NotifyRegDataSync` |
+| `0x3c2d44` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ScriptServiceRemote,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ScriptServiceRemote::ms_NotifyRegDataSync` |
+| `0x3c3308` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ServerScriptService,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ServerScriptService::ms_NotifyRegDataSync` |
+| `0x3c3518` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ServerStorage,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ServerStorage::ms_NotifyRegDataSync` |
+| `0x3c36d0` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::ServiceNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::ServiceNode::ms_NotifyRegDataSync` |
+| `0x3c4131` | `private: static class MNSandbox::NodeNotify<1,class MNSandbox::TimerNode,class MNSandbox::ReflexValue const *,bool,bool &>::Register MNSandbox::TimerNode::ms_NotifyRegDataSync` |
+| `0x3c5a70` | `private: static char * MNSandbox::LuaRegisterAddress::ms_RegBuffer` |
+| `0x3c5bb4` | `private: static class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,char,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,char> > > MNSandbox::LuaRegisterAddress::ms_RegString` |
+| `0x2c8c60` | `protected: static unsigned int const MNSandbox::ScriptService::ms_ShortCodeLen` |
+| `0x2beaf4` | `protected: static unsigned int const MNSandbox::StreamBuffer::ms_allocMaxSize` |
+| `0x2beaf0` | `protected: static unsigned int const MNSandbox::StreamBuffer::ms_allocMinSize` |
+| `0x3b5ed0` | `private: static class MNSandbox::DataContainer<class MNSandbox::SandboxNode const *,bool,class std::map<class MNSandbox::SandboxNode const *,bool,struct std::less<class MNSandbox::SandboxNode const *>,class std::allocator<struct std::pair<class MNSandbox::SandboxNode const * const,bool> > > > MNSandbox::SandboxNode::ms_dataIgnoreSafeMode` |
+| `0x3b4fc4` | `private: static class MNSandbox::DataContainer<class MNSandbox::SandboxNode const *,int,class std::map<class MNSandbox::SandboxNode const *,int,struct std::less<class MNSandbox::SandboxNode const *>,class std::allocator<struct std::pair<class MNSandbox::SandboxNode const * const,int> > > > MNSandbox::SandboxNode::ms_dataOwnerUins` |
+| `0x3b5b70` | `private: static class MNSandbox::DataContainer<class MNSandbox::SandboxNode const *,int,class std::map<class MNSandbox::SandboxNode const *,int,struct std::less<class MNSandbox::SandboxNode const *>,class std::allocator<struct std::pair<class MNSandbox::SandboxNode const * const,int> > > > MNSandbox::SandboxNode::ms_dataTags` |
+| `0x381290` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const MNSandbox::SandboxParamGroup::ms_defKey` |
+| `0x383cd8` | `protected: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MNSandbox::ScriptService::ms_defaultCode` |
+| `0x2c0480` | `public: static int const MNSandbox::Thread::MultiThreadPool::ms_defaultCount` |
+| `0x2c8c5c` | `protected: static unsigned int const MNSandbox::ScriptService::ms_defaultId` |
+| `0x2bfef8` | `private: static unsigned int const MNSandbox::Profile::ErrorLogMgr::ms_defaultMax` |
+| `0x2bfef4` | `private: static unsigned int const MNSandbox::Profile::RunLogMgr::ms_defaultMax` |
+| `0x3a6358` | `protected: static class MNSandbox::AssetPool * MNSandbox::Singleton<class MNSandbox::AssetPool>::ms_dirtyIns` |
+| `0x3a759c` | `protected: static class MNSandbox::AssetSyncMgrInterface * MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::ms_dirtyIns` |
+| `0x3a6ec8` | `protected: static class MNSandbox::AssetSyncPool * MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::ms_dirtyIns` |
+| `0x3bc110` | `protected: static class MNSandbox::CollectionService * MNSandbox::Singleton<class MNSandbox::CollectionService>::ms_dirtyIns` |
+| `0x3b9854` | `protected: static class MNSandbox::GameInput * MNSandbox::Singleton<class MNSandbox::GameInput>::ms_dirtyIns` |
+| `0x3a4d84` | `protected: static class MNSandbox::GameStep * MNSandbox::Singleton<class MNSandbox::GameStep>::ms_dirtyIns` |
+| `0x3a8ad0` | `protected: static class MNSandbox::IDGeneratorManager * MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::ms_dirtyIns` |
+| `0x3a62fc` | `protected: static class MNSandbox::ListenRainbowCallbackMgr * MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::ms_dirtyIns` |
+| `0x3b4010` | `protected: static class MNSandbox::Statistics::LoadCost * MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::ms_dirtyIns` |
+| `0x3ba2c4` | `protected: static class MNSandbox::MainStorage * MNSandbox::Singleton<class MNSandbox::MainStorage>::ms_dirtyIns` |
+| `0x3a4d74` | `protected: static class MNSandbox::Thread::MultiThreadPool * MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::ms_dirtyIns` |
+| `0x3a5cc8` | `protected: static class MNSandbox::NodePacketContainer * MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::ms_dirtyIns` |
+| `0x3a5850` | `protected: static class MNSandbox::RefPool * MNSandbox::Singleton<class MNSandbox::RefPool>::ms_dirtyIns` |
+| `0x3a9240` | `protected: static class MNSandbox::RemoteInstanceListenPool * MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::ms_dirtyIns` |
+| `0x3a4d8c` | `protected: static class MNSandbox::RemoteMsg * MNSandbox::Singleton<class MNSandbox::RemoteMsg>::ms_dirtyIns` |
+| `0x3b3cfc` | `protected: static class MNSandbox::Profile::RunDebugMgr * MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::ms_dirtyIns` |
+| `0x3a58d0` | `protected: static class MNSandbox::SandboxAssetCache * MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::ms_dirtyIns` |
+| `0x3a6db4` | `protected: static class MNSandbox::SandboxAssetRequestMgr * MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::ms_dirtyIns` |
+| `0x3bf0ec` | `protected: static class MNSandbox::SandboxDebugHelper * MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::ms_dirtyIns` |
+| `0x3b9350` | `protected: static class MNSandbox::SandboxMiscDataMgr * MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::ms_dirtyIns` |
+| `0x3a4d94` | `protected: static class MNSandbox::ScopeFuncContainer * MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::ms_dirtyIns` |
+| `0x3c02e0` | `protected: static class MNSandbox::ScriptService * MNSandbox::Singleton<class MNSandbox::ScriptService>::ms_dirtyIns` |
+| `0x3a4d7c` | `protected: static class MNSandbox::SdbSceneManager * MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::ms_dirtyIns` |
+| `0x3bfe14` | `protected: static class MNSandbox::SupplementInterface * MNSandbox::Singleton<class MNSandbox::SupplementInterface>::ms_dirtyIns` |
+| `0x3a69f4` | `protected: static class MNSandbox::Thread::ThreadTaskManager * MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::ms_dirtyIns` |
+| `0x3b3800` | `protected: static class MNSandbox::Debug::UIDebug * MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::ms_dirtyIns` |
+| `0x2c8c58` | `protected: static unsigned int const MNSandbox::ScriptService::ms_emptyId` |
+| `0x3c2f10` | `protected: static struct MNSandbox::ScriptService::ScriptInfo const MNSandbox::ScriptService::ms_emptyScriptInfo` |
+| `0x383cc0` | `protected: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MNSandbox::ScriptService::ms_errorCode` |
+| `0x3b61c0` | `protected: static class MNSandbox::SandboxFlags<unsigned int> const MNSandbox::SandboxNode::ms_flagsSaveCfg` |
+| `0x3b6470` | `protected: static class MNSandbox::SandboxFlags<unsigned int> const MNSandbox::SandboxNode::ms_flagsSyncCfg` |
+| `0x3a6354` | `protected: static class MNSandbox::AssetPool * MNSandbox::Singleton<class MNSandbox::AssetPool>::ms_instance` |
+| `0x3a7598` | `protected: static class MNSandbox::AssetSyncMgrInterface * MNSandbox::Singleton<class MNSandbox::AssetSyncMgrInterface>::ms_instance` |
+| `0x3a6ec4` | `protected: static class MNSandbox::AssetSyncPool * MNSandbox::Singleton<class MNSandbox::AssetSyncPool>::ms_instance` |
+| `0x3bc10c` | `protected: static class MNSandbox::CollectionService * MNSandbox::Singleton<class MNSandbox::CollectionService>::ms_instance` |
+| `0x3b9850` | `protected: static class MNSandbox::GameInput * MNSandbox::Singleton<class MNSandbox::GameInput>::ms_instance` |
+| `0x3a4d80` | `protected: static class MNSandbox::GameStep * MNSandbox::Singleton<class MNSandbox::GameStep>::ms_instance` |
+| `0x3a8acc` | `protected: static class MNSandbox::IDGeneratorManager * MNSandbox::Singleton<class MNSandbox::IDGeneratorManager>::ms_instance` |
+| `0x3a62f8` | `protected: static class MNSandbox::ListenRainbowCallbackMgr * MNSandbox::Singleton<class MNSandbox::ListenRainbowCallbackMgr>::ms_instance` |
+| `0x3b400c` | `protected: static class MNSandbox::Statistics::LoadCost * MNSandbox::Singleton<class MNSandbox::Statistics::LoadCost>::ms_instance` |
+| `0x3ba2c0` | `protected: static class MNSandbox::MainStorage * MNSandbox::Singleton<class MNSandbox::MainStorage>::ms_instance` |
+| `0x3a4d70` | `protected: static class MNSandbox::Thread::MultiThreadPool * MNSandbox::Singleton<class MNSandbox::Thread::MultiThreadPool>::ms_instance` |
+| `0x3a5cc4` | `protected: static class MNSandbox::NodePacketContainer * MNSandbox::Singleton<class MNSandbox::NodePacketContainer>::ms_instance` |
+| `0x3a584c` | `protected: static class MNSandbox::RefPool * MNSandbox::Singleton<class MNSandbox::RefPool>::ms_instance` |
+| `0x3a923c` | `protected: static class MNSandbox::RemoteInstanceListenPool * MNSandbox::Singleton<class MNSandbox::RemoteInstanceListenPool>::ms_instance` |
+| `0x3a4d88` | `protected: static class MNSandbox::RemoteMsg * MNSandbox::Singleton<class MNSandbox::RemoteMsg>::ms_instance` |
+| `0x3b3cf8` | `protected: static class MNSandbox::Profile::RunDebugMgr * MNSandbox::Singleton<class MNSandbox::Profile::RunDebugMgr>::ms_instance` |
+| `0x3a58cc` | `protected: static class MNSandbox::SandboxAssetCache * MNSandbox::Singleton<class MNSandbox::SandboxAssetCache>::ms_instance` |
+| `0x3a6db0` | `protected: static class MNSandbox::SandboxAssetRequestMgr * MNSandbox::Singleton<class MNSandbox::SandboxAssetRequestMgr>::ms_instance` |
+| `0x3bf0e8` | `protected: static class MNSandbox::SandboxDebugHelper * MNSandbox::Singleton<class MNSandbox::SandboxDebugHelper>::ms_instance` |
+| `0x3b934c` | `protected: static class MNSandbox::SandboxMiscDataMgr * MNSandbox::Singleton<class MNSandbox::SandboxMiscDataMgr>::ms_instance` |
+| `0x3a4d90` | `protected: static class MNSandbox::ScopeFuncContainer * MNSandbox::Singleton<class MNSandbox::ScopeFuncContainer>::ms_instance` |
+| `0x3c02dc` | `protected: static class MNSandbox::ScriptService * MNSandbox::Singleton<class MNSandbox::ScriptService>::ms_instance` |
+| `0x3a4d78` | `protected: static class MNSandbox::SdbSceneManager * MNSandbox::Singleton<class MNSandbox::SdbSceneManager>::ms_instance` |
+| `0x3bfe10` | `protected: static class MNSandbox::SupplementInterface * MNSandbox::Singleton<class MNSandbox::SupplementInterface>::ms_instance` |
+| `0x3a69f0` | `protected: static class MNSandbox::Thread::ThreadTaskManager * MNSandbox::Singleton<class MNSandbox::Thread::ThreadTaskManager>::ms_instance` |
+| `0x3b37fc` | `protected: static class MNSandbox::Debug::UIDebug * MNSandbox::Singleton<class MNSandbox::Debug::UIDebug>::ms_instance` |
+| `0x3a4cf4` | `private: static class MNSandbox::SandboxCoreDriver * MNSandbox::SandboxCoreDriver::ms_instance` |
+| `0x382180` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MNSandbox::Statistics::LoadCost::ms_logfile` |
+| `0x2c7f70` | `private: static int const MNSandbox::ModuleScriptNode::ms_maxCount` |
+| `0x384e80` | `private: static int MNSandbox::LuaLinkerManager::ms_nextLinkerID` |
+| `0x3b46f8` | `private: static __int64 MNSandbox::NodeSerialize::ms_node_index` |
+| `0x2b6f98` | `public: static __int64 const MNSandbox::SdbSceneManager::ms_oneStepIds` |
+| `0x3a7b50` | `private: static class MNSandbox::ReflexContainer MNSandbox::AssetService::ms_reflexContainer` |
+| `0x3a78f0` | `private: static class MNSandbox::ReflexContainer MNSandbox::AssetServiceHost::ms_reflexContainer` |
+| `0x3a7af0` | `private: static class MNSandbox::ReflexContainer MNSandbox::AssetServiceRemote::ms_reflexContainer` |
+| `0x3bbe60` | `private: static class MNSandbox::ReflexContainer MNSandbox::CloudServerConfigService::ms_reflexContainer` |
+| `0x3bc458` | `private: static class MNSandbox::ReflexContainer MNSandbox::CollectionService::ms_reflexContainer` |
+| `0x3bcfd0` | `private: static class MNSandbox::ReflexContainer MNSandbox::ConfigService::ms_reflexContainer` |
+| `0x3be300` | `private: static class MNSandbox::ReflexContainer MNSandbox::ContextActionService::ms_reflexContainer` |
+| `0x3bf060` | `private: static class MNSandbox::ReflexContainer MNSandbox::CoreScript::ms_reflexContainer` |
+| `0x3b2848` | `private: static class MNSandbox::ReflexContainer MNSandbox::CustomFunction::ms_reflexContainer` |
+| `0x3b2d70` | `private: static class MNSandbox::ReflexContainer MNSandbox::CustomNotify::ms_reflexContainer` |
+| `0x3bf960` | `private: static class MNSandbox::ReflexContainer MNSandbox::GameNode::ms_reflexContainer` |
+| `0x3c0a80` | `private: static class MNSandbox::ReflexContainer MNSandbox::GlobalServiceNode::ms_reflexContainer` |
+| `0x3bb7e0` | `private: static class MNSandbox::ReflexContainer MNSandbox::InputObject::ms_reflexContainer` |
+| `0x3bb8e0` | `private: static class MNSandbox::ReflexContainer MNSandbox::InputObjectSignal::ms_reflexContainer` |
+| `0x3c1248` | `private: static class MNSandbox::ReflexContainer MNSandbox::LocalScriptNode::ms_reflexContainer` |
+| `0x3c1590` | `private: static class MNSandbox::ReflexContainer MNSandbox::LuaProfileService::ms_reflexContainer` |
+| `0x3c1728` | `private: static class MNSandbox::ReflexContainer MNSandbox::MainStorage::ms_reflexContainer` |
+| `0x3c18b8` | `private: static class MNSandbox::ReflexContainer MNSandbox::ModuleScriptNode::ms_reflexContainer` |
+| `0x3a6490` | `private: static class MNSandbox::ReflexContainer MNSandbox::SandboxAssetObject::ms_reflexContainer` |
+| `0x3bf170` | `private: static class MNSandbox::ReflexContainer MNSandbox::SandboxDebugHelper::ms_reflexContainer` |
+| `0x3c1038` | `private: static class MNSandbox::ReflexContainer MNSandbox::SandboxLoadedService::ms_reflexContainer` |
+| `0x3b6740` | `private: static class MNSandbox::ReflexContainer MNSandbox::SandboxNode::ms_reflexContainer` |
+| `0x3b9750` | `private: static class MNSandbox::ReflexContainer MNSandbox::SceneRoot::ms_reflexContainer` |
+| `0x3c1cf8` | `private: static class MNSandbox::ReflexContainer MNSandbox::ScriptContext::ms_reflexContainer` |
+| `0x3c2640` | `private: static class MNSandbox::ReflexContainer MNSandbox::ScriptNode::ms_reflexContainer` |
+| `0x3c2888` | `private: static class MNSandbox::ReflexContainer MNSandbox::ScriptObject::ms_reflexContainer` |
+| `0x3c2f70` | `private: static class MNSandbox::ReflexContainer MNSandbox::ScriptService::ms_reflexContainer` |
+| `0x3c2c60` | `private: static class MNSandbox::ReflexContainer MNSandbox::ScriptServiceHost::ms_reflexContainer` |
+| `0x3c2c00` | `private: static class MNSandbox::ReflexContainer MNSandbox::ScriptServiceRemote::ms_reflexContainer` |
+| `0x3c32a8` | `private: static class MNSandbox::ReflexContainer MNSandbox::ServerScriptService::ms_reflexContainer` |
+| `0x3c3438` | `private: static class MNSandbox::ReflexContainer MNSandbox::ServerStorage::ms_reflexContainer` |
+| `0x3c36d8` | `private: static class MNSandbox::ReflexContainer MNSandbox::ServiceNode::ms_reflexContainer` |
+| `0x3c41e0` | `private: static class MNSandbox::ReflexContainer MNSandbox::TimerNode::ms_reflexContainer` |
+| `0x37f420` | `protected: static char const * const MNSandbox::AssetConfig::ms_savekey` |
+| `0x3c6ca8` | `public: static unsigned int const MNSandbox::Config::ms_saveversion` |
+| `0x381ea8` | `public: static unsigned int MNSandbox::Profile::RunDataNodeCnt::ms_showMax` |
+| `0x2c0484` | `public: static int const MNSandbox::Thread::MultiThreadPool::ms_threadIdOffset` |
+| `0x385458` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const MNSandbox::MNStringUtil::ms_trimDefaultSpace` |
+| `0x385470` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const MNSandbox::MNStringUtil::ms_trimDefaultSpaceLine` |
+| `0x3a9040` | `public: static unsigned int MNSandbox::Ref::ms_uObjectCount` |
+| `0x385180` | `public: static unsigned int const MNSandbox::Config::ms_version` |
+| `0x3826c0` | `private: static char const * const MNSandbox::NodeSerialize::ms_version_002` |
+| `0x3826c4` | `private: static char const * const MNSandbox::NodeSerialize::ms_version_003` |
+| `0x3b4770` | `private: static char const * const MNSandbox::NodeSerialize::ms_version_cur` |
+| `0x3843f0` | `public: static double MNSandbox::ScriptState::ms_waitTimeMax` |
+| `0x3843e8` | `public: static double MNSandbox::ScriptState::ms_waitTimeMin` |
+| `0x2b6fa8` | `public: static __int64 const MNSandbox::SdbSceneManager::ms_workspaceLegacyNodeid` |
+| `0x2b6fa0` | `public: static __int64 const MNSandbox::SdbSceneManager::ms_workspaceNodeid` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::Scene::onAddOctreeNode(class Rainbow::TSceneMGTNode<class Rainbow::Algorithm::OctreeObjectHandle> *)` |
+| `0x160120` | `public: void __thiscall MNSandbox::HostNodeIdAllocator::onCostedNodeId(int,__int64)` |
+| `0x1601e0` | `public: void __thiscall MNSandbox::SectionList::onCostedNodeId(__int64)` |
+| `0x661d0` | `public: virtual void __thiscall MNSandbox::SandboxNode::onPhysXTouch(class MNSandbox::SandboxNode *,class Rainbow::Vector3f,class Rainbow::Vector3f)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::SandboxNode::onPhysXTouchEnd(class MNSandbox::SandboxNode *)` |
+| `0x160270` | `public: void __thiscall MNSandbox::HostNodeIdAllocator::onPlayerEnter(int)` |
+| `0x160520` | `public: void __thiscall MNSandbox::HostNodeIdAllocator::onPlayerExit(int)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::Scene::onRemoveOctreeNode(class Rainbow::TSceneMGTNode<class Rainbow::Algorithm::OctreeObjectHandle> *)` |
+| `0x52680` | `public: virtual void __thiscall MNSandbox::Scene::onUpdateOctreeNode(class Rainbow::TSceneMGTNode<class Rainbow::Algorithm::OctreeObjectHandle> *)` |
+| `0x1df4f0` | `public: void __thiscall MNSandbox::SandboxDebugHelper::processEvent(struct Rainbow::InputEvent const &,enum MNSandbox::UserInputType,enum MNSandbox::UserInputState,class MNSandbox::AutoRef<class MNSandbox::InputObject>)` |
+| `0x1dad90` | `private: bool __thiscall MNSandbox::ContextActionService::processInputEvent(class MNSandbox::AutoRef<class MNSandbox::InputObject>)` |
+| `0x1dafc0` | `private: bool __thiscall MNSandbox::ContextActionService::processKeyboardEvent(class MNSandbox::AutoRef<class MNSandbox::InputObject>)` |
+| `0x1ba620` | `private: bool __thiscall MNSandbox::InputObjectSignal::processSignal(class MNSandbox::AutoRef<class MNSandbox::InputObject>,bool)` |
+| `0xd10f0` | `private: bool __thiscall MNSandbox::ByteBuffer::reallocate(void)` |
+| `0x196db0` | `protected: void __thiscall MNSandbox::SandboxNode::recursiveCheckBindChunk(bool)` |
+| `0x8d000` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetInsNodePacket::rtti_type_name(void)` |
+| `0x885a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetRef::rtti_type_name(void)` |
+| `0x96870` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetService::rtti_type_name(void)` |
+| `0x968c0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetServiceHost::rtti_type_name(void)` |
+| `0x96910` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::AssetServiceRemote::rtti_type_name(void)` |
+| `0x1a16f0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CloudServerConfigService::rtti_type_name(void)` |
+| `0x1c3320` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CollectionService::rtti_type_name(void)` |
+| `0x661f0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Component::rtti_type_name(void)` |
+| `0x1a1740` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ConfigService::rtti_type_name(void)` |
+| `0x1db5a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ContextActionService::rtti_type_name(void)` |
+| `0x1dc000` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CoreScript::rtti_type_name(void)` |
+| `0x140550` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CustomFunction::rtti_type_name(void)` |
+| `0x1438f0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::CustomNotify::rtti_type_name(void)` |
+| `0x66240` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::GameMap::rtti_type_name(void)` |
+| `0x824d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::GameMapClient::rtti_type_name(void)` |
+| `0x82520` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::GameMapHost::rtti_type_name(void)` |
+| `0x66290` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::GameNode::rtti_type_name(void)` |
+| `0x662e0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::GameObject::rtti_type_name(void)` |
+| `0x66330` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::GlobalServiceNode::rtti_type_name(void)` |
+| `0x1baa60` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::InputObject::rtti_type_name(void)` |
+| `0x1baab0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::InputObjectSignal::rtti_type_name(void)` |
+| `0x66380` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ListenerInterface::rtti_type_name(void)` |
+| `0x663d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ListenerLua::rtti_type_name(void)` |
+| `0x1edaf0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LocalScriptNode::rtti_type_name(void)` |
+| `0x66420` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LuaArgument::rtti_type_name(void)` |
+| `0x66470` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LuaArguments::rtti_type_name(void)` |
+| `0x664c0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LuaCoroutine::rtti_type_name(void)` |
+| `0x66510` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LuaFunction::rtti_type_name(void)` |
+| `0x66560` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LuaLinker::rtti_type_name(void)` |
+| `0x1f0ac0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::LuaProfileService::rtti_type_name(void)` |
+| `0x665b0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::MNTimer::rtti_type_name(void)` |
+| `0x1a8160` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::MainStorage::rtti_type_name(void)` |
+| `0x1f3530` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ModuleScriptNode::rtti_type_name(void)` |
+| `0x8d050` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::NodePacket::rtti_type_name(void)` |
+| `0x66600` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Object::rtti_type_name(void)` |
+| `0x66650` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ReflexLuaTuple::rtti_type_name(void)` |
+| `0xe0960` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ReflexMap::rtti_type_name(void)` |
+| `0x666a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ReflexTuple::rtti_type_name(void)` |
+| `0x666f0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ReflexValue::rtti_type_name(void)` |
+| `0x8d0a0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::SandboxAssetObject::rtti_type_name(void)` |
+| `0x1df5c0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::SandboxDebugHelper::rtti_type_name(void)` |
+| `0x1e3690` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::SandboxLoadedService::rtti_type_name(void)` |
+| `0x66740` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::SandboxNode::rtti_type_name(void)` |
+| `0x66790` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Scene::rtti_type_name(void)` |
+| `0x667e0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::SceneRoot::rtti_type_name(void)` |
+| `0x1f5030` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptContext::rtti_type_name(void)` |
+| `0x1dc050` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptNode::rtti_type_name(void)` |
+| `0x1f7eb0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptObject::rtti_type_name(void)` |
+| `0x1ebc50` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptService::rtti_type_name(void)` |
+| `0x1ebca0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptServiceHost::rtti_type_name(void)` |
+| `0x1ebcf0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ScriptServiceRemote::rtti_type_name(void)` |
+| `0x1a1790` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ServerScriptService::rtti_type_name(void)` |
+| `0x1a17e0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ServerStorage::rtti_type_name(void)` |
+| `0x66830` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::ServiceNode::rtti_type_name(void)` |
+| `0x66880` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Signal::rtti_type_name(void)` |
+| `0x668d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::SignalConnect::rtti_type_name(void)` |
+| `0x8c130` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::Stream::rtti_type_name(void)` |
+| `0x8c180` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::StreamBuffer::rtti_type_name(void)` |
+| `0x208bc0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MNSandbox::TimerNode::rtti_type_name(void)` |
+| `0x3a58d4` | `private: static bool MNSandbox::SandboxAssetCache::s_bInitEngine` |
+| `0x385518` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MNSandbox::DefaultEmpty::s_emptyString` |
+| `0x3c5340` | `public: static unsigned int MNSandbox::ScriptState::s_luaAllocTotal` |
+| `0x3a7846` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::AssetService::s_policyReg_Lua` |
+| `0x3a7847` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::AssetServiceHost::s_policyReg_Lua` |
+| `0x3a7845` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::AssetServiceRemote::s_policyReg_Lua` |
+| `0x3bbfe2` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::CloudServerConfigService::s_policyReg_Lua` |
+| `0x3bc450` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::CollectionService::s_policyReg_Lua` |
+| `0x3bcda1` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ConfigService::s_policyReg_Lua` |
+| `0x3bdf33` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ContextActionService::s_policyReg_Lua` |
+| `0x3befd8` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::CoreScript::s_policyReg_Lua` |
+| `0x3b2841` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::CustomFunction::s_policyReg_Lua` |
+| `0x3b2e50` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::CustomNotify::s_policyReg_Lua` |
+| `0x3bfb01` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::GameNode::s_policyReg_Lua` |
+| `0x3c06b0` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::GlobalServiceNode::s_policyReg_Lua` |
+| `0x3bb6a0` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::InputObject::s_policyReg_Lua` |
+| `0x3bb6a7` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::InputObjectSignal::s_policyReg_Lua` |
+| `0x3c12a8` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::LocalScriptNode::s_policyReg_Lua` |
+| `0x3c1470` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::LuaProfileService::s_policyReg_Lua` |
+| `0x3c1721` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::MainStorage::s_policyReg_Lua` |
+| `0x3c18b1` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ModuleScriptNode::s_policyReg_Lua` |
+| `0x3a63d0` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::SandboxAssetObject::s_policyReg_Lua` |
+| `0x3bf1d2` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::SandboxDebugHelper::s_policyReg_Lua` |
+| `0x3c1030` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::SandboxLoadedService::s_policyReg_Lua` |
+| `0x3b9452` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::SceneRoot::s_policyReg_Lua` |
+| `0x3c1cf2` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ScriptContext::s_policyReg_Lua` |
+| `0x3c2581` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ScriptNode::s_policyReg_Lua` |
+| `0x3c2882` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ScriptObject::s_policyReg_Lua` |
+| `0x3c2d40` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ScriptService::s_policyReg_Lua` |
+| `0x3c2d47` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ScriptServiceHost::s_policyReg_Lua` |
+| `0x3c2d42` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ScriptServiceRemote::s_policyReg_Lua` |
+| `0x3c330a` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ServerScriptService::s_policyReg_Lua` |
+| `0x3c3519` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ServerStorage::s_policyReg_Lua` |
+| `0x3c36d2` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::ServiceNode::s_policyReg_Lua` |
+| `0x3c4130` | `private: static class MNSandbox::ReflexTypePolicyRegister MNSandbox::TimerNode::s_policyReg_Lua` |
+| `0x3a6e28` | `public: static class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::pair<enum MNSandbox::AssetFileType,enum Rainbow::CloudAssetNS::CloudAssetKind>,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct std::pair<enum MNSandbox::AssetFileType,enum Rainbow::CloudAssetNS::CloudAssetKind> > > > MNSandbox::AssetIdParse::s_suffixTypes` |
+| `0x82c10` | `int __cdecl sandboxcoredriver_open_manual_tolua(struct lua_State *)` |
+| `0x14e630` | `public: void __thiscall MNSandbox::ScopeFuncContainer::saveToFile(void)` |
+| `0x14ea10` | `public: void __thiscall MNSandbox::ScopeFuncContainer::serialize(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x14eb80` | `public: void __thiscall MNSandbox::ScopeFuncInfo::serialize(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0xd0230` | `public: void __thiscall MNSandbox::Attribute::setName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x24e360` | `public: static void __cdecl MNSandbox::MNStringUtil::trim(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,bool)` |
+| `0x24e520` | `public: static void __cdecl MNSandbox::MNStringUtil::trim(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,bool,bool)` |
+| `0x196e30` | `protected: void __thiscall MNSandbox::SandboxNode::unBindChunk(void)` |
+| `0x1df610` | `public: void __thiscall MNSandbox::SandboxDebugHelper::unbindInputEvent(class MNSandbox::AutoRef<class MNSandbox::Listener<enum MNSandbox::UserInputType,enum MNSandbox::UserInputState,class MNSandbox::AutoRef<class MNSandbox::InputObject> const > >)` |
+| `0x1df6b0` | `public: void __thiscall MNSandbox::SandboxDebugHelper::unbindKeyboard(class MNSandbox::AutoRef<class MNSandbox::Listener<int,bool> >)` |
+| `0x577f0` | `protected: virtual void __thiscall MNSandbox::SandboxNode::updateBindChunk(void)` |
+| `0x1bab00` | `private: void __thiscall MNSandbox::InputObjectSignal::updateFunctionList(void)` |

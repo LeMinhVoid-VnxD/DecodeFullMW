@@ -1,0 +1,8408 @@
+# Danh mục Hàm & Cấu trúc C++: `libMiniBaseEngine.dll`
+
+- **Dung lượng**: 9.81 MB
+- **Tổng số hàm Export**: 8,192
+- **Tổng số lớp RTTI**: 263
+
+## Danh sách C++ Classes (RTTI)
+
+| STT | Tên Lớp (Class / Struct) |
+| :---: | :--- |
+| 1 | `<lambda_013f140cadf86d00c96f663949366671>` |
+| 2 | `<lambda_039f978d9d22068a572af93200b30389>` |
+| 3 | `<lambda_06500679219d223743ed61b9908bfcbb>` |
+| 4 | `<lambda_0740d5618b191bd0a785b3264f967927>` |
+| 5 | `<lambda_09344eeb3638908803fbc4c1e10ea2e2>` |
+| 6 | `<lambda_0a0474738248f68df2ff775c674b598f>` |
+| 7 | `<lambda_0ea1aaeb7f21c55136af1980c2581ccd>` |
+| 8 | `<lambda_117fc3cd5a09d9f7ae6edb3cd7240856>` |
+| 9 | `<lambda_1475eaa9e8d61c570e0729cc8d9c638d>` |
+| 10 | `<lambda_15384246a0ca2911be1f0995b1a0258b>` |
+| 11 | `<lambda_1571061ae917f93a5bbadb24519b30f3>` |
+| 12 | `<lambda_158dd20337bf292ac0284b5bbb25b540>` |
+| 13 | `<lambda_1b6b8d49d973e3111dcfe453af95d94b>` |
+| 14 | `<lambda_21fab9a528d156228920a2d96657d3ba>` |
+| 15 | `<lambda_255e066618c0285d4fea260a92bf096d>` |
+| 16 | `<lambda_25c4b8cb8ecbbb4dd91283b5e402a4ac>` |
+| 17 | `<lambda_2af39e6056de6178335e29cf9f20d6ea>` |
+| 18 | `<lambda_2b584c564386a699863e674f067a32a4>` |
+| 19 | `<lambda_2cb92d0a4dbce53634feec52bcd4a14a>` |
+| 20 | `<lambda_2d69593dac84eb750770cf9aedbf0cf1>` |
+| 21 | `<lambda_30b591bcaf16a603d05bc057913b1bf2>` |
+| 22 | `<lambda_3bef8f6d590d53dc396123db3e611eef>` |
+| 23 | `<lambda_449e52fb9ed40247692b341131565344>` |
+| 24 | `<lambda_49b33224d49352d91d4e5b1983ab6ce2>` |
+| 25 | `<lambda_4b1528f97189d9ac9d5f431171a79d42>` |
+| 26 | `<lambda_4d758614a3931a3e977e8eb37a5f8a57>` |
+| 27 | `<lambda_5abb40138e87cd3510113cf7b7edab4f>` |
+| 28 | `<lambda_5f97a42dd6cc02b9fd12c0d33e680a98>` |
+| 29 | `<lambda_65a91eb04dc332f91fc67a48c0b765a5>` |
+| 30 | `<lambda_6a0d49e24e2c55b9686db383dcb0ecfc>` |
+| 31 | `<lambda_6a887ffe2082aa930a2d718157837e6f>` |
+| 32 | `<lambda_6ca4b1adb586f75cf0917e1a628168a9>` |
+| 33 | `<lambda_6f63e4352f4fa1965cc8a08ac8f651b5>` |
+| 34 | `<lambda_6f912fc6fbd12f8e6b2c2e7044db2d83>` |
+| 35 | `<lambda_703682a63261b1e93baa217b86afd69b>` |
+| 36 | `<lambda_70ef2e119e847acee468f8643f4b6b9e>` |
+| 37 | `<lambda_746bbf96de4ac2094af91e4a0fcdaa89>` |
+| 38 | `<lambda_7505025a8963e6c2baac48249a51840c>` |
+| 39 | `<lambda_772c5b076eb61d3c5fc976c20bc31a05>` |
+| 40 | `<lambda_78817083cef8c6ba94ae560220a0495d>` |
+| 41 | `<lambda_78a412c1b2f524430c29f3a67c1822f4>` |
+| 42 | `<lambda_799bdeeb6d3470e72ee723b284a4bcd6>` |
+| 43 | `<lambda_7bd02cab94a1f562acc9c2b5f30be8b0>` |
+| 44 | `<lambda_7f1cb6089b68d00d4328fa2c26629263>` |
+| 45 | `<lambda_7f85ee7c1502f74efaad37a3b65904f7>` |
+| 46 | `<lambda_802c494954e9501b4d97bd15c0cdecaa>` |
+| 47 | `<lambda_83c596ebe140701183f658ee4305d02e>` |
+| 48 | `<lambda_8542ff5b09f61be5997adad43d7d8664>` |
+| 49 | `<lambda_889338d17cb712be5e6116c8ff97502e>` |
+| 50 | `<lambda_8d580ee6d3337bdbe143392f183646ea>` |
+| 51 | `<lambda_94666fbc8852c866bb49aee89976f814>` |
+| 52 | `<lambda_963631c04b21a1d6c53d99b26f6c1199>` |
+| 53 | `<lambda_988674e2730d846717e61f1fc78c7f1a>` |
+| 54 | `<lambda_9a30c106f92ffa5efcf5f079b1d08285>` |
+| 55 | `<lambda_9cc497905d4b622a486b43dd6b707a29>` |
+| 56 | `<lambda_9e2df67f3d6aa7a0a54b2d7bdf150bf4>` |
+| 57 | `<lambda_9f74ec94e201288a05e5d7a69a1f3a40>` |
+| 58 | `<lambda_9f8e31904670e5f04729a4360c2c9e77>` |
+| 59 | `<lambda_a0e6fcb115cf5107b91947cfadf3c470>` |
+| 60 | `<lambda_a2a6d6b27654d63f1970292542341f8f>` |
+| 61 | `<lambda_a51fa2729fbbc2b2f8f8b663e0332afc>` |
+| 62 | `<lambda_a598b0f8403267619af9e7d9cdffa29c>` |
+| 63 | `<lambda_a7c5c9665aa814296811e6bb1f3281d8>` |
+| 64 | `<lambda_aace5a8642278375781ad366b2eda913>` |
+| 65 | `<lambda_ac07cfc3f6e74e334a45b2c2b2791d4c>` |
+| 66 | `<lambda_adb50b76ad9d21c632e15c83d62ff205>` |
+| 67 | `<lambda_adc3cd65ba56cc0c0268400accd34656>` |
+| 68 | `<lambda_aff82ef2bfb19b38bede52dcbb5cbebf>` |
+| 69 | `<lambda_b151a3519a7f97e0b49eca4562d38a68>` |
+| 70 | `<lambda_b2d8e2a09ada60143a051e5805ed6f22>` |
+| 71 | `<lambda_b4da96a92eda2945eeff44765c96d3d0>` |
+| 72 | `<lambda_b5204407c5d73e9abaf8f8199b9f7d9f>` |
+| 73 | `<lambda_b9b9292bef74a3e76cbe97c83ed1f9e6>` |
+| 74 | `<lambda_bcf20f9ec7d0d5803bca4b1708e166e2>` |
+| 75 | `<lambda_c69157fae67d8e4f8bd01d945fab964f>` |
+| 76 | `<lambda_cfd0becadea72076fc331fee403c11a5>` |
+| 77 | `<lambda_d33b0d9b85484298bc323229afb09bb4>` |
+| 78 | `<lambda_d460db2efa780a561834a52bb37246fe>` |
+| 79 | `<lambda_d51bf4248f691de6a5b03b5550fbddb4>` |
+| 80 | `<lambda_d74616d13bc8231dd749aac1c3f552ac>` |
+| 81 | `<lambda_dd20d0a2952e5f1f69b09190243ecd98>` |
+| 82 | `<lambda_e5dbd51387bb564a830b4188afa6f63b>` |
+| 83 | `<lambda_e85ce1bf0fa56500363134513e363e3e>` |
+| 84 | `<lambda_ed77499ffb652c52616f25f28433c555>` |
+| 85 | `<lambda_fe050bf80f9b1d9bfb672d56942f3e6a>` |
+| 86 | `CSimpleClient` |
+| 87 | `CefAccessibilityHandlerCppToC` |
+| 88 | `CefApp` |
+| 89 | `CefAppCppToC` |
+| 90 | `CefAuthCallback` |
+| 91 | `CefAuthCallbackCToCpp` |
+| 92 | `CefBaseRefCounted` |
+| 93 | `CefBaseRefCountedCppToC` |
+| 94 | `CefBaseScoped` |
+| 95 | `CefBeforeDownloadCallback` |
+| 96 | `CefBeforeDownloadCallbackCToCpp` |
+| 97 | `CefBinaryValue` |
+| 98 | `CefBinaryValueCToCpp` |
+| 99 | `CefBrowser` |
+| 100 | `CefBrowserCToCpp` |
+| 101 | `CefBrowserHost` |
+| 102 | `CefBrowserHostCToCpp` |
+| 103 | `CefBrowserProcessHandler` |
+| 104 | `CefBrowserProcessHandlerCppToC` |
+| 105 | `CefCallback` |
+| 106 | `CefCallbackCToCpp` |
+| 107 | `CefClient` |
+| 108 | `CefClientCppToC` |
+| 109 | `CefCommandLine` |
+| 110 | `CefCommandLineCToCpp` |
+| 111 | `CefCompletionCallbackCppToC` |
+| 112 | `CefContextMenuHandler` |
+| 113 | `CefContextMenuHandlerCppToC` |
+| 114 | `CefContextMenuParams` |
+| 115 | `CefContextMenuParamsCToCpp` |
+| 116 | `CefCookieManager` |
+| 117 | `CefCookieManagerCToCpp` |
+| 118 | `CefCookieVisitorCppToC` |
+| 119 | `CefDOMDocument` |
+| 120 | `CefDOMDocumentCToCpp` |
+| 121 | `CefDOMNode` |
+| 122 | `CefDOMNodeCToCpp` |
+| 123 | `CefDOMVisitorCppToC` |
+| 124 | `CefDeleteCookiesCallbackCppToC` |
+| 125 | `CefDialogHandler` |
+| 126 | `CefDialogHandlerCppToC` |
+| 127 | `CefDictionaryValue` |
+| 128 | `CefDictionaryValueCToCpp` |
+| 129 | `CefDisplayHandlerCppToC` |
+| 130 | `CefDownloadHandler` |
+| 131 | `CefDownloadHandlerCppToC` |
+| 132 | `CefDownloadImageCallbackCppToC` |
+| 133 | `CefDownloadItem` |
+| 134 | `CefDownloadItemCToCpp` |
+| 135 | `CefDownloadItemCallback` |
+| 136 | `CefDownloadItemCallbackCToCpp` |
+| 137 | `CefDragData` |
+| 138 | `CefDragDataCToCpp` |
+| 139 | `CefDragHandler` |
+| 140 | `CefDragHandlerCppToC` |
+| 141 | `CefDraggableRegion` |
+| 142 | `CefExtension` |
+| 143 | `CefExtensionCToCpp` |
+| 144 | `CefExtensionHandlerCppToC` |
+| 145 | `CefFileDialogCallback` |
+| 146 | `CefFileDialogCallbackCToCpp` |
+| 147 | `CefFindHandlerCppToC` |
+| 148 | `CefFocusHandlerCppToC` |
+| 149 | `CefFrame` |
+| 150 | `CefFrameCToCpp` |
+| 151 | `CefGetExtensionResourceCallback` |
+| 152 | `CefGetExtensionResourceCallbackCToCpp` |
+| 153 | `CefImage` |
+| 154 | `CefImageCToCpp` |
+| 155 | `CefJSDialogCallback` |
+| 156 | `CefJSDialogCallbackCToCpp` |
+| 157 | `CefJSDialogHandler` |
+| 158 | `CefJSDialogHandlerCppToC` |
+| 159 | `CefKeyboardHandler` |
+| 160 | `CefKeyboardHandlerCppToC` |
+| 161 | `CefLifeSpanHandler` |
+| 162 | `CefLifeSpanHandlerCppToC` |
+| 163 | `CefListValue` |
+| 164 | `CefListValueCToCpp` |
+| 165 | `CefLoadHandler` |
+| 166 | `CefLoadHandlerCppToC` |
+| 167 | `CefMainArgs` |
+| 168 | `CefMenuModel` |
+| 169 | `CefMenuModelCToCpp` |
+| 170 | `CefNavigationEntry` |
+| 171 | `CefNavigationEntryCToCpp` |
+| 172 | `CefNavigationEntryVisitorCppToC` |
+| 173 | `CefPdfPrintCallbackCppToC` |
+| 174 | `CefPoint` |
+| 175 | `CefPostData` |
+| 176 | `CefPostDataCToCpp` |
+| 177 | `CefPostDataElement` |
+| 178 | `CefPostDataElementCToCpp` |
+| 179 | `CefPrintDialogCallback` |
+| 180 | `CefPrintDialogCallbackCToCpp` |
+| 181 | `CefPrintHandlerCppToC` |
+| 182 | `CefPrintJobCallback` |
+| 183 | `CefPrintJobCallbackCToCpp` |
+| 184 | `CefPrintSettings` |
+| 185 | `CefPrintSettingsCToCpp` |
+| 186 | `CefProcessMessage` |
+| 187 | `CefProcessMessageCToCpp` |
+| 188 | `CefRange` |
+| 189 | `CefRect` |
+| 190 | `CefRenderHandlerCppToC` |
+| 191 | `CefRenderProcessHandler` |
+| 192 | `CefRenderProcessHandlerCppToC` |
+| 193 | `CefRequest` |
+| 194 | `CefRequestCToCpp` |
+| 195 | `CefRequestCallback` |
+| 196 | `CefRequestCallbackCToCpp` |
+| 197 | `CefRequestContext` |
+| 198 | `CefRequestContextCToCpp` |
+| 199 | `CefRequestHandlerCppToC` |
+| 200 | `CefResolveCallbackCppToC` |
+| ... | *Và 63 lớp khác...* |
+
+## Danh sách Hàm C++ (Demangled Functions)
+
+| Địa chỉ RVA | Tên Hàm C++ |
+| :---: | :--- |
+| `0x9c560` | `public: class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> const __thiscall Rainbow::MiniLua::LuaValue::GetValue<class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> >(void)const ` |
+| `0x9c560` | `public: class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> const __thiscall Rainbow::MiniLua::LuaValue::GetValue<class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> >(void)const ` |
+| `0x11bbc0` | `public: __thiscall Rainbow::AssetTextureSettingLoader<1,1>::AssetTextureSettingLoader<1,1>(void)` |
+| `0x11bbc0` | `public: __thiscall Rainbow::AssetTextureSettingLoader<1,0>::AssetTextureSettingLoader<1,0>(void)` |
+| `0x11bbc0` | `public: __thiscall Rainbow::AssetTextureSettingLoader<0,1>::AssetTextureSettingLoader<0,1>(void)` |
+| `0x11bbc0` | `public: __thiscall Rainbow::AssetTextureSettingLoader<0,0>::AssetTextureSettingLoader<0,0>(void)` |
+| `0xf2350` | `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload> const &)` |
+| `0xf2420` | `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>(void)` |
+| `0xf2460` | `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload> const &)` |
+| `0xf2530` | `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>(void)` |
+| `0xf2570` | `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload> const &)` |
+| `0xf2640` | `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>(void)` |
+| `0x2a9910` | `public: __thiscall Rainbow::Singleton<class MINIW::SnapshotInterface>::Singleton<class MINIW::SnapshotInterface>(void)` |
+| `0x9cf40` | `public: __thiscall Rainbow::Singleton<class Rainbow::SoundSystem>::Singleton<class Rainbow::SoundSystem>(void)` |
+| `0x9cf60` | `public: __thiscall Rainbow::ZipAssetLoader<1,1>::ZipAssetLoader<1,1>(class Rainbow::ZipAssetLoader<1,1> const &)` |
+| `0x9cfe0` | `public: __thiscall Rainbow::ZipAssetLoader<1,1>::ZipAssetLoader<1,1>(void)` |
+| `0x9cf60` | `public: __thiscall Rainbow::ZipAssetLoader<1,0>::ZipAssetLoader<1,0>(class Rainbow::ZipAssetLoader<1,0> const &)` |
+| `0x9cfe0` | `public: __thiscall Rainbow::ZipAssetLoader<1,0>::ZipAssetLoader<1,0>(void)` |
+| `0x9cf60` | `public: __thiscall Rainbow::ZipAssetLoader<0,1>::ZipAssetLoader<0,1>(class Rainbow::ZipAssetLoader<0,1> const &)` |
+| `0x9cfe0` | `public: __thiscall Rainbow::ZipAssetLoader<0,1>::ZipAssetLoader<0,1>(void)` |
+| `0x9cf60` | `public: __thiscall Rainbow::ZipAssetLoader<0,0>::ZipAssetLoader<0,0>(class Rainbow::ZipAssetLoader<0,0> const &)` |
+| `0x9cfe0` | `public: __thiscall Rainbow::ZipAssetLoader<0,0>::ZipAssetLoader<0,0>(void)` |
+| `0x33df90` | `public: __thiscall cocos2d::Action::Action(void)` |
+| `0x83360` | `public: __thiscall cocos2d::ActionInterval::ActionInterval(void)` |
+| `0x2e9990` | `public: __thiscall fairygui::ActionMovieClip::ActionMovieClip(void)` |
+| `0x83390` | `public: __thiscall ActorBodySafeHandle::ActorBodySafeHandle(class ActorBodySafeHandle const &)` |
+| `0x833d0` | `public: __thiscall ActorBodySafeHandle::ActorBodySafeHandle(void)` |
+| `0x83400` | `public: __thiscall Rainbow::AnimOjbectMotion::AnimOjbectMotion(class Rainbow::AnimOjbectMotion &&)` |
+| `0x83400` | `public: __thiscall Rainbow::AnimOjbectMotion::AnimOjbectMotion(class Rainbow::AnimOjbectMotion const &)` |
+| `0x83430` | `public: __thiscall Rainbow::AnimOjbectMotion::AnimOjbectMotion(void)` |
+| `0x350820` | `public: __thiscall cocos2d::Animation::Animation(void)` |
+| `0x2e2e80` | `public: __thiscall spine::Animation::Animation(class spine::Animation const &)` |
+| `0x3cbeb0` | `public: __thiscall spine::Animation::Animation(class spine::String const &,class spine::Vector<class spine::Timeline *> &,float)` |
+| `0xdb260` | `public: __thiscall Rainbow::AnimationData::AnimationData(void)` |
+| `0x83450` | `public: __thiscall cocos2d::AnimationFrameData::AnimationFrameData(struct cocos2d::AnimationFrameData &&)` |
+| `0x83450` | `public: __thiscall cocos2d::AnimationFrameData::AnimationFrameData(struct cocos2d::AnimationFrameData const &)` |
+| `0x83490` | `public: __thiscall cocos2d::AnimationFrameData::AnimationFrameData(void)` |
+| `0xdf730` | `public: __thiscall Rainbow::AnimationPlayer::AnimationPlayer(struct MemLabelId)` |
+| `0x2e2f70` | `public: __thiscall spine::AnimationStateData::AnimationStateData(class spine::AnimationStateData &&)` |
+| `0x2e2f70` | `public: __thiscall spine::AnimationStateData::AnimationStateData(class spine::AnimationStateData const &)` |
+| `0x3cf970` | `public: __thiscall spine::AnimationStateData::AnimationStateData(class spine::SkeletonData *)` |
+| `0x2e2fb0` | `public: __thiscall spine::AnimationStateListenerObject::AnimationStateListenerObject(class spine::AnimationStateListenerObject const &)` |
+| `0x2e2fc0` | `public: __thiscall spine::AnimationStateListenerObject::AnimationStateListenerObject(void)` |
+| `0xfe380` | `public: __thiscall Rainbow::CloudAssetNS::AssetUploadManager::AssetUploadManager(class Rainbow::CloudAssetNS::AssetUploadManager const &)` |
+| `0xfe4b0` | `public: __thiscall Rainbow::CloudAssetNS::AssetUploadManager::AssetUploadManager(void)` |
+| `0x226560` | `public: __thiscall Rainbow::AsyncCombineTask::AsyncCombineTask(struct dynamic_array<class Rainbow::GameObject *,0> const &,class std::function<void __cdecl(class Rainbow::GameObject *)> const &,struct UGUID,unsigned int)` |
+| `0x2266d0` | `public: __thiscall Rainbow::AsyncSubCombineTask::AsyncSubCombineTask(class Rainbow::AsyncSubCombineTask const &)` |
+| `0x226820` | `public: __thiscall Rainbow::AsyncSubCombineTask::AsyncSubCombineTask(void)` |
+| `0x2e2fd0` | `public: __thiscall spine::Atlas::Atlas(class spine::Atlas const &)` |
+| `0x3cfcc0` | `public: __thiscall spine::Atlas::Atlas(class spine::String const &,class spine::TextureLoader *,bool)` |
+| `0x3cfeb0` | `public: __thiscall spine::Atlas::Atlas(char const *,int,char const *,class spine::TextureLoader *,bool)` |
+| `0x2e3100` | `public: __thiscall spine::AtlasAttachmentLoader::AtlasAttachmentLoader(class spine::AtlasAttachmentLoader &&)` |
+| `0x2e3100` | `public: __thiscall spine::AtlasAttachmentLoader::AtlasAttachmentLoader(class spine::AtlasAttachmentLoader const &)` |
+| `0x3d12c0` | `public: __thiscall spine::AtlasAttachmentLoader::AtlasAttachmentLoader(class spine::Atlas *)` |
+| `0x2e3120` | `public: __thiscall spine::AtlasPage::AtlasPage(class spine::AtlasPage &&)` |
+| `0x2e3120` | `public: __thiscall spine::AtlasPage::AtlasPage(class spine::AtlasPage const &)` |
+| `0x2e31e0` | `public: __thiscall spine::AtlasPage::AtlasPage(class spine::String const &)` |
+| `0x2e32a0` | `public: __thiscall spine::AtlasRegion::AtlasRegion(class spine::AtlasRegion &&)` |
+| `0x2e32a0` | `public: __thiscall spine::AtlasRegion::AtlasRegion(class spine::AtlasRegion const &)` |
+| `0x2e3380` | `public: __thiscall spine::AtlasRegion::AtlasRegion(void)` |
+| `0x834e0` | `public: __thiscall Rainbow::BINDOBJ_T::BINDOBJ_T(struct Rainbow::BINDOBJ_T const &)` |
+| `0x1c1b40` | `public: __thiscall Rainbow::BINDOBJ_T::BINDOBJ_T(void)` |
+| `0x1d6d20` | `public: __thiscall Rainbow::BSPData::BSPData(class Rainbow::BSPData const &)` |
+| `0x835c0` | `public: __thiscall Rainbow::BSPData::BSPData(void)` |
+| `0x83640` | `public: __thiscall Rainbow::BaseAnimationData::BaseAnimationData(void)` |
+| `0x20bd50` | `public: __thiscall Rainbow::BillboardMeshBatch::BillboardMeshBatch(void)` |
+| `0x83770` | `public: __thiscall Rainbow::BindOjbect2Motion::BindOjbect2Motion(class Rainbow::BindOjbect2Motion const &)` |
+| `0x1c33d0` | `public: __thiscall Rainbow::BindOjbect2Motion::BindOjbect2Motion(void)` |
+| `0x2e33e0` | `public: __thiscall spine::Bone::Bone(class spine::Bone &&)` |
+| `0x3d21f0` | `public: __thiscall spine::Bone::Bone(class spine::BoneData &,class spine::Skeleton &,class spine::Bone *)` |
+| `0x2e33e0` | `public: __thiscall spine::Bone::Bone(class spine::Bone const &)` |
+| `0xd68b0` | `protected: __thiscall Rainbow::BoneTrack::BoneTrack(struct MemLabelId)` |
+| `0x68c60` | `public: __thiscall Rainbow::BoxBound::BoxBound(class Rainbow::BoxBound const &)` |
+| `0x68ca0` | `public: __thiscall Rainbow::BoxBound::BoxBound(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)` |
+| `0x68ce0` | `public: __thiscall Rainbow::BoxBound::BoxBound(void)` |
+| `0x68cf0` | `public: __thiscall Rainbow::BoxSphereBound::BoxSphereBound(class Rainbow::BoxSphereBound &&)` |
+| `0x68cf0` | `public: __thiscall Rainbow::BoxSphereBound::BoxSphereBound(class Rainbow::BoxSphereBound const &)` |
+| `0x68d30` | `public: __thiscall Rainbow::BoxSphereBound::BoxSphereBound(class Rainbow::BoxBound const &)` |
+| `0x68e10` | `public: __thiscall Rainbow::BoxSphereBound::BoxSphereBound(void)` |
+| `0x12ecc0` | `public: __thiscall Rainbow::UILib::CCoord::CCoord(void)` |
+| `0x293250` | `public: __thiscall MINIW::CSVParser::CSVParser(class MINIW::CSVParser const &)` |
+| `0x297b50` | `public: __thiscall MINIW::CSVParser::CSVParser(void)` |
+| `0x29c450` | `public: __thiscall MINIW::Cef3Manager::Cef3Manager(class MINIW::Cef3Manager const &)` |
+| `0x29c550` | `public: __thiscall MINIW::Cef3Manager::Cef3Manager(void)` |
+| `0x3c63a0` | `private: __thiscall ChannelList::ChannelList(void)` |
+| `0x3c63f0` | `public: __thiscall ChannelList::ChannelList(class ChannelList const &)` |
+| `0x100f20` | `public: __thiscall Rainbow::CloudAssetLoader::CloudAssetLoader(class Rainbow::CloudAssetLoader &&)` |
+| `0x100ff0` | `public: __thiscall Rainbow::CloudAssetLoader::CloudAssetLoader(class Rainbow::CloudAssetLoader const &)` |
+| `0x1010b0` | `public: __thiscall Rainbow::CloudAssetLoader::CloudAssetLoader(void)` |
+| `0xf27a0` | `public: __thiscall Rainbow::CloudAssetUser::CloudAssetUser(class Rainbow::CloudAssetUser &&)` |
+| `0xf2890` | `public: __thiscall Rainbow::CloudAssetUser::CloudAssetUser(class Rainbow::CloudAssetUser const &)` |
+| `0xf2930` | `public: __thiscall Rainbow::CloudAssetUser::CloudAssetUser(void)` |
+| `0x2e34e0` | `public: __thiscall spine::Cocos2dAtlasAttachmentLoader::Cocos2dAtlasAttachmentLoader(class spine::Cocos2dAtlasAttachmentLoader const &)` |
+| `0x4029f0` | `public: __thiscall spine::Cocos2dAtlasAttachmentLoader::Cocos2dAtlasAttachmentLoader(class spine::Atlas *)` |
+| `0x2e3500` | `public: __thiscall spine::Cocos2dTextureLoader::Cocos2dTextureLoader(class spine::Cocos2dTextureLoader const &)` |
+| `0x402a20` | `public: __thiscall spine::Cocos2dTextureLoader::Cocos2dTextureLoader(void)` |
+| `0x3a5e70` | `public: __thiscall cocos2d::Color3B::Color3B(unsigned char,unsigned char,unsigned char)` |
+| `0x3a5e90` | `public: __thiscall cocos2d::Color3B::Color3B(void)` |
+| `0x3a5ea0` | `public: __thiscall cocos2d::Color4B::Color4B(struct cocos2d::Color3B const &,unsigned char)` |
+| `0x3a5ed0` | `public: __thiscall cocos2d::Color4B::Color4B(struct cocos2d::Color4F const &)` |
+| `0x3a5f00` | `public: __thiscall cocos2d::Color4B::Color4B(unsigned char,unsigned char,unsigned char,unsigned char)` |
+| `0x871d0` | `public: __thiscall cocos2d::Color4B::Color4B(void)` |
+| `0x3a5f20` | `public: __thiscall cocos2d::Color4F::Color4F(struct cocos2d::Color3B const &,float)` |
+| `0x3a5f80` | `public: __thiscall cocos2d::Color4F::Color4F(struct cocos2d::Color4B const &)` |
+| `0x83840` | `public: __thiscall cocos2d::Color4F::Color4F(float,float,float,float)` |
+| `0x87cb0` | `public: __thiscall cocos2d::Color4F::Color4F(void)` |
+| `0x837f0` | `public: __thiscall Rainbow::ColorQuad::ColorQuad(class Rainbow::ColourValue const &)` |
+| `0x83810` | `public: __thiscall Rainbow::ColorQuad::ColorQuad(unsigned char,unsigned char,unsigned char,unsigned char)` |
+| `0x83830` | `public: __thiscall Rainbow::ColorQuad::ColorQuad(unsigned int)` |
+| `0x68e10` | `public: __thiscall Rainbow::ColorQuad::ColorQuad(void)` |
+| `0x83840` | `public: __thiscall Rainbow::ColourValue::ColourValue(float,float,float,float)` |
+| `0x226920` | `public: __thiscall Rainbow::CombineInstance::CombineInstance(void)` |
+| `0x226940` | `public: __thiscall Rainbow::CombineManager::CombineManager(void)` |
+| `0x83870` | `public: __thiscall cocos2d::Component::Component(class cocos2d::Component const &)` |
+| `0x354bc0` | `public: __thiscall cocos2d::Component::Component(void)` |
+| `0x2a32e0` | `public: __thiscall Rainbow::CompressSystem::CompressSystem(int)` |
+| `0x83830` | `public: __thiscall Rainbow::CompressTool::CompressTool(int)` |
+| `0x115030` | `public: __thiscall CoordAxis::CoordAxis(class Rainbow::Camera *)` |
+| `0x12f230` | `public: __thiscall Rainbow::UILib::CoordInteract::CoordInteract(class Rainbow::UILib::CoordInteract const &)` |
+| `0x12f370` | `public: __thiscall Rainbow::UILib::CoordInteract::CoordInteract(class Rainbow::Camera *)` |
+| `0x12f4b0` | `public: __thiscall Rainbow::UILib::CoordInteract::CoordInteract(class Rainbow::Camera *,class Rainbow::GameScene *)` |
+| `0x115a90` | `public: __thiscall Rainbow::UILib::CoordInteract::CoordInteract(void)` |
+| `0x293380` | `public: __thiscall CsvManager::CsvManager(class CsvManager const &)` |
+| `0x2966c0` | `public: __thiscall CsvManager::CsvManager(void)` |
+| `0x293560` | `public: __thiscall CsvTable::CsvTable(class CsvTable &&)` |
+| `0x293630` | `public: __thiscall CsvTable::CsvTable(class CsvTable const &)` |
+| `0x293780` | `public: __thiscall CsvTable::CsvTable(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x293860` | `public: __thiscall CsvTable::CsvTable(void)` |
+| `0x232a90` | `public: __thiscall Rainbow::CubeBorder::CubeBorder(void)` |
+| `0x9d230` | `public: __thiscall Rainbow::UILib::CustomView::CustomView(class Rainbow::UILib::CustomView const &)` |
+| `0x134c40` | `public: __thiscall Rainbow::UILib::CustomView::CustomView(void)` |
+| `0x38b2a0` | `public: __thiscall cocos2d::Data::Data(class cocos2d::Data &&)` |
+| `0x38b2d0` | `public: __thiscall cocos2d::Data::Data(class cocos2d::Data const &)` |
+| `0x883f0` | `public: __thiscall cocos2d::Data::Data(void)` |
+| `0x24ba20` | `public: __thiscall cocos2d::DataVisitor::DataVisitor(class cocos2d::DataVisitor const &)` |
+| `0x24ba30` | `public: __thiscall cocos2d::DataVisitor::DataVisitor(void)` |
+| `0x83910` | `public: __thiscall Rainbow::DebugMgr::DebugMgr(class Rainbow::DebugMgr const &)` |
+| `0xbb070` | `public: __thiscall Rainbow::DebugMgr::DebugMgr(void)` |
+| `0x275900` | `public: __thiscall Rainbow::DecalRenderer::DecalRenderer(void)` |
+| `0x9d2b0` | `public: __thiscall Rainbow::Setting::DeviceModel::DeviceModel(struct Rainbow::Setting::DeviceModel &&)` |
+| `0x9d380` | `public: __thiscall Rainbow::Setting::DeviceModel::DeviceModel(struct Rainbow::Setting::DeviceModel const &)` |
+| `0x9d410` | `public: __thiscall Rainbow::Setting::DeviceModel::DeviceModel(void)` |
+| `0x9d480` | `public: __thiscall Rainbow::Setting::DeviceModelData::DeviceModelData(class Rainbow::Setting::DeviceModelData const &)` |
+| `0x2cab10` | `public: __thiscall Rainbow::Setting::DeviceModelData::DeviceModelData(void)` |
+| `0x4070c0` | `private: __thiscall cocos2d::DictElement::DictElement(int,class cocos2d::Ref *)` |
+| `0x4070f0` | `private: __thiscall cocos2d::DictElement::DictElement(char const *,class cocos2d::Ref *)` |
+| `0x83b60` | `public: __thiscall cocos2d::Director::Director(class cocos2d::Director const &)` |
+| `0x38b5e0` | `public: __thiscall cocos2d::Director::Director(void)` |
+| `0x1fb0d0` | `public: __thiscall Rainbow::Downloader::Downloader(int)` |
+| `0x83ff0` | `public: __thiscall fairygui::DragDropManager::DragDropManager(class fairygui::DragDropManager const &)` |
+| `0x2cdbf0` | `public: __thiscall fairygui::DragDropManager::DragDropManager(void)` |
+| `0x3558f0` | `public: __thiscall cocos2d::DrawNode::DrawNode(float)` |
+| `0xc0240` | `public: __thiscall Rainbow::DummyMaterialTemplate::DummyMaterialTemplate(class Rainbow::DummyMaterialTemplate &&)` |
+| `0xc0240` | `public: __thiscall Rainbow::DummyMaterialTemplate::DummyMaterialTemplate(class Rainbow::DummyMaterialTemplate const &)` |
+| `0xc0270` | `public: __thiscall Rainbow::DummyMaterialTemplate::DummyMaterialTemplate(class Rainbow::FixedString const &)` |
+| `0x1dcb30` | `public: __thiscall Rainbow::DummyNode::DummyNode(class Rainbow::SharePtr<class Rainbow::DummyNodeData>)` |
+| `0x137450` | `public: __thiscall Rainbow::UILib::EditBox::EditBox(class Rainbow::UILib::EditBox const &)` |
+| `0x137770` | `public: __thiscall Rainbow::UILib::EditBox::EditBox(void)` |
+| `0x256e00` | `public: __thiscall Rainbow::Empty3DUIRenderer::Empty3DUIRenderer(void)` |
+| `0x1b4620` | `private: __thiscall Rainbow::Entity::Entity(void)` |
+| `0x1be630` | `public: __thiscall Rainbow::EntityData::EntityData(void)` |
+| `0x1c1be0` | `public: __thiscall Rainbow::EntityMotionData::EntityMotionData(void)` |
+| `0x2e3510` | `public: __thiscall spine::Event::Event(class spine::Event &&)` |
+| `0x2e3510` | `public: __thiscall spine::Event::Event(class spine::Event const &)` |
+| `0x3d67e0` | `public: __thiscall spine::Event::Event(float,class spine::EventData const &)` |
+| `0x2e3590` | `public: __thiscall spine::EventData::EventData(class spine::EventData &&)` |
+| `0x2e3590` | `public: __thiscall spine::EventData::EventData(class spine::EventData const &)` |
+| `0x3d6910` | `public: __thiscall spine::EventData::EventData(class spine::String const &)` |
+| `0x84020` | `public: __thiscall cocos2d::EventDispatcher::EventDispatcher(class cocos2d::EventDispatcher const &)` |
+| `0x393190` | `public: __thiscall cocos2d::EventDispatcher::EventDispatcher(void)` |
+| `0x84560` | `public: __thiscall cocos2d::EventListenerCustom::EventListenerCustom(class cocos2d::EventListenerCustom &&)` |
+| `0x845e0` | `public: __thiscall cocos2d::EventListenerCustom::EventListenerCustom(class cocos2d::EventListenerCustom const &)` |
+| `0x397f90` | `public: __thiscall cocos2d::EventListenerCustom::EventListenerCustom(void)` |
+| `0x84660` | `public: __thiscall cocos2d::EventListenerMouse::EventListenerMouse(class cocos2d::EventListenerMouse &&)` |
+| `0x847c0` | `public: __thiscall cocos2d::EventListenerMouse::EventListenerMouse(class cocos2d::EventListenerMouse const &)` |
+| `0x398c00` | `public: __thiscall cocos2d::EventListenerMouse::EventListenerMouse(void)` |
+| `0x848b0` | `public: __thiscall cocos2d::EventListenerTouchOneByOne::EventListenerTouchOneByOne(class cocos2d::EventListenerTouchOneByOne const &)` |
+| `0x399120` | `public: __thiscall cocos2d::EventListenerTouchOneByOne::EventListenerTouchOneByOne(void)` |
+| `0x84a20` | `public: __thiscall cocos2d::EventMouse::EventMouse(class cocos2d::EventMouse &&)` |
+| `0x84a20` | `public: __thiscall cocos2d::EventMouse::EventMouse(class cocos2d::EventMouse const &)` |
+| `0x399a20` | `public: __thiscall cocos2d::EventMouse::EventMouse(enum cocos2d::EventMouse::MouseEventType)` |
+| `0x329d50` | `public: __thiscall fairygui::EventTag::EventTag(class fairygui::EventTag &&)` |
+| `0x329d70` | `public: __thiscall fairygui::EventTag::EventTag(class fairygui::EventTag const &)` |
+| `0x83830` | `public: __thiscall fairygui::EventTag::EventTag(int)` |
+| `0x83830` | `public: __thiscall fairygui::EventTag::EventTag(void *)` |
+| `0x871d0` | `public: __thiscall fairygui::EventTag::EventTag(void)` |
+| `0x1b48d0` | `public: __thiscall Rainbow::EventTriggerObjectMotion::EventTriggerObjectMotion(class Rainbow::EventTriggerObjectMotion const &)` |
+| `0x1b4980` | `public: __thiscall Rainbow::EventTriggerObjectMotion::EventTriggerObjectMotion(void)` |
+| `0x21c920` | `public: __thiscall Rainbow::Exception::Exception(class Rainbow::Exception const &)` |
+| `0x21ca00` | `public: __thiscall Rainbow::Exception::Exception(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x21cae0` | `public: __thiscall Rainbow::Exception::Exception(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,char const *,long)` |
+| `0x3179d0` | `public: __thiscall fairygui::FUIContainer::FUIContainer(void)` |
+| `0x31aa80` | `public: __thiscall fairygui::FUIModelSprite::FUIModelSprite(void)` |
+| `0x3204b0` | `public: __thiscall fairygui::FUIRenderTexture::FUIRenderTexture(void)` |
+| `0x324390` | `public: __thiscall fairygui::FUISprite::FUISprite(void)` |
+| `0x224e80` | `public: __thiscall FileAutoClose::FileAutoClose(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0x224f40` | `public: __thiscall FileAutoClose::FileAutoClose(char const *,int)` |
+| `0x1fc7e0` | `public: __thiscall Rainbow::FileManagerWeb::FileManagerWeb(void)` |
+| `0x21cc00` | `public: __thiscall Rainbow::FileNotFoundException::FileNotFoundException(class Rainbow::FileNotFoundException &&)` |
+| `0x21cc00` | `public: __thiscall Rainbow::FileNotFoundException::FileNotFoundException(class Rainbow::FileNotFoundException const &)` |
+| `0x21cc30` | `public: __thiscall Rainbow::FileNotFoundException::FileNotFoundException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x2140a0` | `public: __thiscall Rainbow::FmodSound::FmodSound(class Rainbow::FmodSound const &)` |
+| `0x214120` | `public: __thiscall Rainbow::FmodSound::FmodSound(class FMOD::Channel *)` |
+| `0x214160` | `public: __thiscall Rainbow::FmodSound::FmodSound(class FMOD::Channel *,class Rainbow::AudioGroup *)` |
+| `0x84ad0` | `public: __thiscall cocos2d::FontDefinition::FontDefinition(struct cocos2d::FontDefinition &&)` |
+| `0x84bd0` | `public: __thiscall cocos2d::FontDefinition::FontDefinition(struct cocos2d::FontDefinition const &)` |
+| `0x84ca0` | `public: __thiscall cocos2d::FontDefinition::FontDefinition(void)` |
+| `0x13e910` | `public: __thiscall Rainbow::UILib::FontInstance::FontInstance(class Rainbow::UILib::FontInstance const &)` |
+| `0x13ea60` | `public: __thiscall Rainbow::UILib::FontInstance::FontInstance(void)` |
+| `0x84d80` | `public: __thiscall cocos2d::FontShadow::FontShadow(struct cocos2d::FontShadow &&)` |
+| `0x84d80` | `public: __thiscall cocos2d::FontShadow::FontShadow(struct cocos2d::FontShadow const &)` |
+| `0x84db0` | `public: __thiscall cocos2d::FontShadow::FontShadow(void)` |
+| `0x13eb00` | `public: __thiscall Rainbow::UILib::FontString::FontString(class Rainbow::UILib::FontString const &)` |
+| `0x13ecd0` | `public: __thiscall Rainbow::UILib::FontString::FontString(void)` |
+| `0x84dd0` | `public: __thiscall cocos2d::FontStroke::FontStroke(void)` |
+| `0x142010` | `public: __thiscall Rainbow::UILib::Frame::Frame(class Rainbow::UILib::Frame const &)` |
+| `0x142ef0` | `public: __thiscall Rainbow::UILib::Frame::Frame(void)` |
+| `0x14bf00` | `public: __thiscall Rainbow::UILib::FrameManager::FrameManager(void)` |
+| `0x84e00` | `public: __thiscall fairygui::GBasicTextField::GBasicTextField(class fairygui::GBasicTextField const &)` |
+| `0x2f4ce0` | `public: __thiscall fairygui::GBasicTextField::GBasicTextField(void)` |
+| `0x84e40` | `public: __thiscall fairygui::GButton::GButton(class fairygui::GButton const &)` |
+| `0x2ce120` | `public: __thiscall fairygui::GButton::GButton(void)` |
+| `0x84fd0` | `public: __thiscall fairygui::GColorTextureLoader::GColorTextureLoader(class fairygui::GColorTextureLoader const &)` |
+| `0x2cfaf0` | `public: __thiscall fairygui::GColorTextureLoader::GColorTextureLoader(void)` |
+| `0x85130` | `public: __thiscall fairygui::GComboBox::GComboBox(class fairygui::GComboBox const &)` |
+| `0x2d02a0` | `public: __thiscall fairygui::GComboBox::GComboBox(void)` |
+| `0x85260` | `public: __thiscall fairygui::GComponent::GComponent(class fairygui::GComponent const &)` |
+| `0x2d1950` | `public: __thiscall fairygui::GComponent::GComponent(void)` |
+| `0x85510` | `public: __thiscall fairygui::GController::GController(class fairygui::GController const &)` |
+| `0x2cd3e0` | `public: __thiscall fairygui::GController::GController(void)` |
+| `0x85610` | `public: __thiscall fairygui::GGraph::GGraph(class fairygui::GGraph const &)` |
+| `0x2d5950` | `public: __thiscall fairygui::GGraph::GGraph(void)` |
+| `0x856d0` | `public: __thiscall fairygui::GImage::GImage(class fairygui::GImage const &)` |
+| `0x2d7df0` | `public: __thiscall fairygui::GImage::GImage(void)` |
+| `0x85710` | `public: __thiscall cocos2d::GLView::GLView(class cocos2d::GLView const &)` |
+| `0x3a9b10` | `public: __thiscall cocos2d::GLView::GLView(void)` |
+| `0x3c32b0` | `protected: __thiscall cocos2d::GLViewImpl::GLViewImpl(void)` |
+| `0x857e0` | `public: __thiscall cocos2d::GLViewImpl::GLViewImpl(class cocos2d::GLViewImpl const &)` |
+| `0x85840` | `public: __thiscall fairygui::GList::GList(class fairygui::GList const &)` |
+| `0x2d8da0` | `public: __thiscall fairygui::GList::GList(void)` |
+| `0x85ab0` | `public: __thiscall fairygui::GLoader3D::GLoader3D(class fairygui::GLoader3D const &)` |
+| `0x2e3630` | `public: __thiscall fairygui::GLoader3D::GLoader3D(void)` |
+| `0x85c00` | `public: __thiscall fairygui::GLoader::GLoader(class fairygui::GLoader const &)` |
+| `0x2e06d0` | `public: __thiscall fairygui::GLoader::GLoader(void)` |
+| `0x85d60` | `public: __thiscall fairygui::GModelView::GModelView(class fairygui::GModelView const &)` |
+| `0x2e9930` | `public: __thiscall fairygui::GModelView::GModelView(void)` |
+| `0x85d90` | `public: __thiscall fairygui::GObject::GObject(class fairygui::GObject const &)` |
+| `0x2ea960` | `public: __thiscall fairygui::GObject::GObject(void)` |
+| `0x860f0` | `public: __thiscall fairygui::GProgressBar::GProgressBar(class fairygui::GProgressBar const &)` |
+| `0x2eecf0` | `public: __thiscall fairygui::GProgressBar::GProgressBar(void)` |
+| `0x861d0` | `public: __thiscall fairygui::GRichTextField::GRichTextField(class fairygui::GRichTextField const &)` |
+| `0x2efe60` | `public: __thiscall fairygui::GRichTextField::GRichTextField(void)` |
+| `0x86210` | `public: __thiscall fairygui::GRoot::GRoot(class fairygui::GRoot const &)` |
+| `0x2f0c20` | `public: __thiscall fairygui::GRoot::GRoot(void)` |
+| `0x86370` | `public: __thiscall fairygui::GTextInput::GTextInput(class fairygui::GTextInput const &)` |
+| `0x2f69a0` | `public: __thiscall fairygui::GTextInput::GTextInput(void)` |
+| `0x863c0` | `public: __thiscall fairygui::GTreeNode::GTreeNode(class fairygui::GTreeNode const &)` |
+| `0x2f86f0` | `public: __thiscall fairygui::GTreeNode::GTreeNode(void)` |
+| `0x86500` | `public: __thiscall fairygui::GTweener::GTweener(class fairygui::GTweener const &)` |
+| `0x332c00` | `public: __thiscall fairygui::GTweener::GTweener(void)` |
+| `0x2f9150` | `public: __thiscall fairygui::GUIGenIcon::GUIGenIcon(class fairygui::GUIGenIcon const &)` |
+| `0x2f9180` | `public: __thiscall fairygui::GUIGenIcon::GUIGenIcon(void)` |
+| `0x86780` | `public: __thiscall fairygui::GUIRenderTexture::GUIRenderTexture(class fairygui::GUIRenderTexture const &)` |
+| `0x2fb180` | `public: __thiscall fairygui::GUIRenderTexture::GUIRenderTexture(void)` |
+| `0x867b0` | `public: __thiscall fairygui::GWebView::GWebView(class fairygui::GWebView const &)` |
+| `0x2fb4e0` | `public: __thiscall fairygui::GWebView::GWebView(void)` |
+| `0x2c66b0` | `public: __thiscall Rainbow::Setting::GameConfigMgr::GameConfigMgr(void)` |
+| `0x9d4d0` | `public: __thiscall Rainbow::Setting::GameConfiguration::GameConfiguration(class Rainbow::Setting::GameConfiguration const &)` |
+| `0x2cab40` | `public: __thiscall Rainbow::Setting::GameConfiguration::GameConfiguration(void)` |
+| `0x212890` | `public: __thiscall GameEventQueInterface::GameEventQueInterface(class GameEventQueInterface &&)` |
+| `0x212890` | `public: __thiscall GameEventQueInterface::GameEventQueInterface(class GameEventQueInterface const &)` |
+| `0x2a9700` | `public: __thiscall GameEventQueInterface::GameEventQueInterface(void)` |
+| `0x218c80` | `public: __thiscall MINIW::GameRuntimeInitializeAndCleanup::GameRuntimeInitializeAndCleanup(void (__cdecl*)(void *),void (__cdecl*)(void *),int,void *)` |
+| `0xbb520` | `public: __thiscall Rainbow::GameSetting::GameSetting(class Rainbow::GameSetting &&)` |
+| `0xbb820` | `public: __thiscall Rainbow::GameSetting::GameSetting(class Rainbow::GameSetting const &)` |
+| `0xc4740` | `public: __thiscall Rainbow::GameSetting::GameSetting(void)` |
+| `0x86830` | `public: __thiscall GameUI::GameUI(class GameUI const &)` |
+| `0x86960` | `public: __thiscall GameUI::GameUI(void)` |
+| `0xcb490` | `public: __thiscall Rainbow::GameUserSetting::GameUserSetting(class Rainbow::GameUserSetting &&)` |
+| `0xcb500` | `public: __thiscall Rainbow::GameUserSetting::GameUserSetting(class Rainbow::GameUserSetting const &)` |
+| `0xcb5f0` | `public: __thiscall Rainbow::GameUserSetting::GameUserSetting(void)` |
+| `0x86c90` | `public: __thiscall Rainbow::GaussBlurRenderer::GaussBlurRenderer(class Rainbow::GaussBlurRenderer const &)` |
+| `0x20e350` | `public: __thiscall Rainbow::GaussBlurRenderer::GaussBlurRenderer(void)` |
+| `0x21b930` | `public: __thiscall Rainbow::GaussGenerator::GaussGenerator(int)` |
+| `0x21b960` | `public: __thiscall Rainbow::GaussGenerator::GaussGenerator(char const *,int)` |
+| `0x32bf80` | `public: __thiscall fairygui::GearColor::GearColor(class fairygui::GearColor const &)` |
+| `0x32d430` | `public: __thiscall fairygui::GearColor::GearColor(class fairygui::GObject *)` |
+| `0x2eaeb0` | `public: __thiscall fairygui::GearDisplay::GearDisplay(class fairygui::GearDisplay const &)` |
+| `0x32de50` | `public: __thiscall fairygui::GearDisplay::GearDisplay(class fairygui::GObject *)` |
+| `0x32c070` | `public: __thiscall fairygui::GearFontSize::GearFontSize(class fairygui::GearFontSize const &)` |
+| `0x32e2a0` | `public: __thiscall fairygui::GearFontSize::GearFontSize(class fairygui::GObject *)` |
+| `0x32c150` | `public: __thiscall fairygui::GearIcon::GearIcon(class fairygui::GearIcon const &)` |
+| `0x32e720` | `public: __thiscall fairygui::GearIcon::GearIcon(class fairygui::GObject *)` |
+| `0x32c1e0` | `public: __thiscall fairygui::GearLook::GearLook(class fairygui::GearLook const &)` |
+| `0x32ea40` | `public: __thiscall fairygui::GearLook::GearLook(class fairygui::GObject *)` |
+| `0x32c2d0` | `public: __thiscall fairygui::GearText::GearText(class fairygui::GearText const &)` |
+| `0x3300c0` | `public: __thiscall fairygui::GearText::GearText(class fairygui::GObject *)` |
+| `0x2358a0` | `public: __thiscall Rainbow::GifAsset::GifAsset(void)` |
+| `0x235970` | `public: __thiscall Rainbow::GifSequenceTexture::GifSequenceTexture(class Rainbow::GifSequenceTexture const &)` |
+| `0x235a10` | `public: __thiscall Rainbow::GifSequenceTexture::GifSequenceTexture(void)` |
+| `0xc29d0` | `public: __thiscall Guid::Guid(class Guid const &)` |
+| `0xc29d0` | `public: __thiscall Guid::Guid(class std::vector<unsigned char,class std::allocator<unsigned char> > const &)` |
+| `0xc2a60` | `public: __thiscall Guid::Guid(unsigned char const *)` |
+| `0xc2ae0` | `public: __thiscall Guid::Guid(void)` |
+| `0x68e10` | `public: __thiscall GuidGenerator::GuidGenerator(void)` |
+| `0x2b3330` | `public: __thiscall Rainbow::HUDBloodBar::HUDBloodBar(class Rainbow::HUDBloodBar const &)` |
+| `0x2c2980` | `public: __thiscall Rainbow::HUDBloodBar::HUDBloodBar(void)` |
+| `0x2b3430` | `public: __thiscall Rainbow::HUDChatBubble::HUDChatBubble(class Rainbow::HUDChatBubble const &)` |
+| `0x2c3250` | `public: __thiscall Rainbow::HUDChatBubble::HUDChatBubble(void)` |
+| `0x2b3490` | `public: __thiscall Rainbow::HUDLevitationFont::HUDLevitationFont(class Rainbow::HUDLevitationFont const &)` |
+| `0x2c3750` | `public: __thiscall Rainbow::HUDLevitationFont::HUDLevitationFont(void)` |
+| `0x2b3530` | `public: __thiscall Rainbow::HUDLevitationFontRenderer::HUDLevitationFontRenderer(class Rainbow::HUDLevitationFontRenderer const &)` |
+| `0x2bc100` | `public: __thiscall Rainbow::HUDLevitationFontRenderer::HUDLevitationFontRenderer(void)` |
+| `0x86dc0` | `public: __thiscall fairygui::HUDRoot::HUDRoot(class fairygui::HUDRoot const &)` |
+| `0x2b2e40` | `public: __thiscall fairygui::HUDRoot::HUDRoot(void)` |
+| `0x2b3690` | `public: __thiscall fairygui::HUDScene::HUDScene(void)` |
+| `0x2b36f0` | `public: __thiscall Rainbow::HUDTitleBase::HUDTitleBase(class Rainbow::HUDTitleBase const &)` |
+| `0x2c45e0` | `public: __thiscall Rainbow::HUDTitleBase::HUDTitleBase(void)` |
+| `0x2b3830` | `public: __thiscall Rainbow::HUDTitleInfo::HUDTitleInfo(class Rainbow::HUDTitleInfo const &)` |
+| `0x2c5a40` | `public: __thiscall Rainbow::HUDTitleInfo::HUDTitleInfo(void)` |
+| `0x2b39a0` | `public: __thiscall Rainbow::HUDTitleLine::HUDTitleLine(class Rainbow::HUDTitleLine const &)` |
+| `0x2c46e0` | `public: __thiscall Rainbow::HUDTitleLine::HUDTitleLine(void)` |
+| `0x2b3a30` | `public: __thiscall Rainbow::HUDTitleRender::HUDTitleRender(class Rainbow::HUDTitleRender const &)` |
+| `0x2bd210` | `public: __thiscall Rainbow::HUDTitleRender::HUDTitleRender(void)` |
+| `0x2b3c30` | `public: __thiscall Rainbow::HudBitMapFontAttribute::HudBitMapFontAttribute(class Rainbow::HudBitMapFontAttribute const &)` |
+| `0x2bb750` | `public: __thiscall Rainbow::HudBitMapFontAttribute::HudBitMapFontAttribute(void)` |
+| `0x2b3ca0` | `public: __thiscall Rainbow::HudConfigSetting::HudConfigSetting(class Rainbow::HudConfigSetting const &)` |
+| `0x2c0c00` | `public: __thiscall Rainbow::HudConfigSetting::HudConfigSetting(void)` |
+| `0x2b46c0` | `public: __thiscall Rainbow::HudFontBaseAttribute::HudFontBaseAttribute(class Rainbow::HudFontBaseAttribute const &)` |
+| `0x2bb7d0` | `public: __thiscall Rainbow::HudFontBaseAttribute::HudFontBaseAttribute(void)` |
+| `0x2b47a0` | `public: __thiscall Rainbow::HudImageAttribute::HudImageAttribute(class Rainbow::HudImageAttribute const &)` |
+| `0x2bb880` | `public: __thiscall Rainbow::HudImageAttribute::HudImageAttribute(void)` |
+| `0x2b4870` | `public: __thiscall Rainbow::HudLayoutAttribute::HudLayoutAttribute(class Rainbow::HudLayoutAttribute const &)` |
+| `0x2bb930` | `public: __thiscall Rainbow::HudLayoutAttribute::HudLayoutAttribute(void)` |
+| `0x2b48d0` | `public: __thiscall Rainbow::HudLevBitMapFontAttribute::HudLevBitMapFontAttribute(class Rainbow::HudLevBitMapFontAttribute const &)` |
+| `0x2b9450` | `public: __thiscall Rainbow::HudLevBitMapFontAttribute::HudLevBitMapFontAttribute(void)` |
+| `0x2b4950` | `public: __thiscall Rainbow::HudLevNormalFontAttribute::HudLevNormalFontAttribute(class Rainbow::HudLevNormalFontAttribute const &)` |
+| `0x2b94e0` | `public: __thiscall Rainbow::HudLevNormalFontAttribute::HudLevNormalFontAttribute(void)` |
+| `0x2b49c0` | `public: __thiscall Rainbow::HudLevSpriteAndFontAttribute::HudLevSpriteAndFontAttribute(class Rainbow::HudLevSpriteAndFontAttribute const &)` |
+| `0x2b9570` | `public: __thiscall Rainbow::HudLevSpriteAndFontAttribute::HudLevSpriteAndFontAttribute(void)` |
+| `0x2b4a40` | `public: __thiscall Rainbow::HudLevSpriteAttribute::HudLevSpriteAttribute(class Rainbow::HudLevSpriteAttribute const &)` |
+| `0x2b9610` | `public: __thiscall Rainbow::HudLevSpriteAttribute::HudLevSpriteAttribute(void)` |
+| `0x2b4ab0` | `public: __thiscall Rainbow::HudLevitationBaseAttribute::HudLevitationBaseAttribute(class Rainbow::HudLevitationBaseAttribute const &)` |
+| `0x2b96a0` | `public: __thiscall Rainbow::HudLevitationBaseAttribute::HudLevitationBaseAttribute(void)` |
+| `0x2b4c00` | `public: __thiscall Rainbow::HudMovieClipAttribute::HudMovieClipAttribute(class Rainbow::HudMovieClipAttribute const &)` |
+| `0x2bb9b0` | `public: __thiscall Rainbow::HudMovieClipAttribute::HudMovieClipAttribute(void)` |
+| `0x2b4c30` | `public: __thiscall Rainbow::HudNormalFontAttribute::HudNormalFontAttribute(class Rainbow::HudNormalFontAttribute const &)` |
+| `0x2bb9e0` | `public: __thiscall Rainbow::HudNormalFontAttribute::HudNormalFontAttribute(void)` |
+| `0x2b4cb0` | `public: __thiscall Rainbow::HudSetting::HudSetting(class Rainbow::HudSetting const &)` |
+| `0x2c1a50` | `public: __thiscall Rainbow::HudSetting::HudSetting(void)` |
+| `0x2b4fa0` | `public: __thiscall Rainbow::HudSpineAttribute::HudSpineAttribute(class Rainbow::HudSpineAttribute const &)` |
+| `0x2bba50` | `public: __thiscall Rainbow::HudSpineAttribute::HudSpineAttribute(void)` |
+| `0x2b5040` | `public: __thiscall Rainbow::HudTitleAttribute::HudTitleAttribute(class Rainbow::HudTitleAttribute const &)` |
+| `0x2bbb30` | `public: __thiscall Rainbow::HudTitleAttribute::HudTitleAttribute(void)` |
+| `0x68e20` | `public: __thiscall Rainbow::HudTitleLabelSet::HudTitleLabelSet(class Rainbow::HudTitleLabelSet const &)` |
+| `0xe62e0` | `public: __thiscall Rainbow::HudTitleLabelSet::HudTitleLabelSet(void)` |
+| `0x2b50b0` | `public: __thiscall Rainbow::HudTitleNormalFontAttribute::HudTitleNormalFontAttribute(class Rainbow::HudTitleNormalFontAttribute const &)` |
+| `0x2bbb50` | `public: __thiscall Rainbow::HudTitleNormalFontAttribute::HudTitleNormalFontAttribute(void)` |
+| `0x2b5160` | `public: __thiscall Rainbow::HudTitleSpriteAttribute::HudTitleSpriteAttribute(class Rainbow::HudTitleSpriteAttribute const &)` |
+| `0x2bbbb0` | `public: __thiscall Rainbow::HudTitleSpriteAttribute::HudTitleSpriteAttribute(void)` |
+| `0x2b5210` | `public: __thiscall Rainbow::HudTitleSpriteFontAttribute::HudTitleSpriteFontAttribute(class Rainbow::HudTitleSpriteFontAttribute const &)` |
+| `0x2bbc10` | `public: __thiscall Rainbow::HudTitleSpriteFontAttribute::HudTitleSpriteFontAttribute(void)` |
+| `0x194300` | `public: __thiscall Rainbow::ICef3Manager::ICef3Manager(class Rainbow::ICef3Manager const &)` |
+| `0x2a9750` | `public: __thiscall Rainbow::ICef3Manager::ICef3Manager(void)` |
+| `0x2881a0` | `public: __thiscall Rainbow::IClientDnsCache::IClientDnsCache(class Rainbow::IClientDnsCache const &)` |
+| `0x2a9770` | `public: __thiscall Rainbow::IClientDnsCache::IClientDnsCache(void)` |
+| `0x86df0` | `public: __thiscall Rainbow::IClientInfo::IClientInfo(class Rainbow::IClientInfo const &)` |
+| `0x2a9830` | `public: __thiscall Rainbow::IClientInfo::IClientInfo(void)` |
+| `0x2a98a0` | `public: __thiscall Rainbow::ICloudProxy::ICloudProxy(class Rainbow::ICloudProxy const &)` |
+| `0x2a98b0` | `public: __thiscall Rainbow::ICloudProxy::ICloudProxy(void)` |
+| `0x86e00` | `public: __thiscall Rainbow::IModelAnimationPlayer::IModelAnimationPlayer(class Rainbow::IModelAnimationPlayer const &)` |
+| `0xdf850` | `public: __thiscall Rainbow::IModelAnimationPlayer::IModelAnimationPlayer(void)` |
+| `0x21cc70` | `public: __thiscall Rainbow::IOException::IOException(class Rainbow::IOException &&)` |
+| `0x21cc70` | `public: __thiscall Rainbow::IOException::IOException(class Rainbow::IOException const &)` |
+| `0x21cca0` | `public: __thiscall Rainbow::IOException::IOException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x2a9a90` | `public: __thiscall MINIW::IStatisticsToolsInterface::IStatisticsToolsInterface(class MINIW::IStatisticsToolsInterface const &)` |
+| `0x2a9aa0` | `public: __thiscall MINIW::IStatisticsToolsInterface::IStatisticsToolsInterface(void)` |
+| `0x2577f0` | `public: __thiscall Rainbow::Image3D::Image3D(float,float,float,float,bool,bool,unsigned long)` |
+| `0x257b00` | `public: __thiscall Rainbow::Image3D::Image3D(void)` |
+| `0x258f10` | `public: __thiscall Rainbow::ImageBoard3D::ImageBoard3D(int,int,int,int)` |
+| `0xe5ac0` | `public: __thiscall Rainbow::IndexData::IndexData(class Rainbow::IndexData const &)` |
+| `0xe5b70` | `public: __thiscall Rainbow::IndexData::IndexData(unsigned int)` |
+| `0xe5c10` | `public: __thiscall Rainbow::IndexData::IndexData(unsigned int,class Rainbow::IndexData * *,unsigned int *,enum Rainbow::PrimitiveType)` |
+| `0xe5f90` | `public: __thiscall Rainbow::IndexData::IndexData(void)` |
+| `0x3265a0` | `public: __thiscall fairygui::InputEvent::InputEvent(void)` |
+| `0x35cee0` | `public: __thiscall cocos2d::InputLabel::InputLabel(enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x86ea0` | `public: __thiscall fairygui::InputProcessor::InputProcessor(class fairygui::InputProcessor const &)` |
+| `0x326a40` | `public: __thiscall fairygui::InputProcessor::InputProcessor(class fairygui::GComponent *,bool)` |
+| `0x21cce0` | `public: __thiscall Rainbow::InternalErrorException::InternalErrorException(class Rainbow::InternalErrorException &&)` |
+| `0x21cce0` | `public: __thiscall Rainbow::InternalErrorException::InternalErrorException(class Rainbow::InternalErrorException const &)` |
+| `0x21cd10` | `public: __thiscall Rainbow::InternalErrorException::InternalErrorException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x21cd50` | `public: __thiscall Rainbow::InvalidParametersException::InvalidParametersException(class Rainbow::InvalidParametersException &&)` |
+| `0x21cd50` | `public: __thiscall Rainbow::InvalidParametersException::InvalidParametersException(class Rainbow::InvalidParametersException const &)` |
+| `0x21cd80` | `public: __thiscall Rainbow::InvalidParametersException::InvalidParametersException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x21cdc0` | `public: __thiscall Rainbow::InvalidStateException::InvalidStateException(class Rainbow::InvalidStateException &&)` |
+| `0x21cdc0` | `public: __thiscall Rainbow::InvalidStateException::InvalidStateException(class Rainbow::InvalidStateException const &)` |
+| `0x21cdf0` | `public: __thiscall Rainbow::InvalidStateException::InvalidStateException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x118b10` | `private: __thiscall Rainbow::UILib::Invocation::Invocation(char const *,char const *,char const *)` |
+| `0x118c20` | `private: __thiscall Rainbow::UILib::Invocation::Invocation(char const *,char const *,char const *,class std::vector<union Rainbow::UILib::jvalue,class std::allocator<union Rainbow::UILib::jvalue> > const &,class std::vector<enum Rainbow::UILib::DataType,class std::allocator<enum Rainbow::UILib::DataType> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9d5e0` | `public: __thiscall Rainbow::UILib::Invocation::Invocation(class Rainbow::UILib::Invocation &&)` |
+| `0x9d6a0` | `public: __thiscall Rainbow::UILib::Invocation::Invocation(class Rainbow::UILib::Invocation const &)` |
+| `0x9d780` | `public: __thiscall Rainbow::UILib::InvocationBuilder::InvocationBuilder(class Rainbow::UILib::InvocationBuilder const &)` |
+| `0x9d850` | `public: __thiscall Rainbow::UILib::InvocationBuilder::InvocationBuilder(void)` |
+| `0x21ce30` | `public: __thiscall Rainbow::ItemIdentityException::ItemIdentityException(class Rainbow::ItemIdentityException &&)` |
+| `0x21ce30` | `public: __thiscall Rainbow::ItemIdentityException::ItemIdentityException(class Rainbow::ItemIdentityException const &)` |
+| `0x21ce60` | `public: __thiscall Rainbow::ItemIdentityException::ItemIdentityException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x25a7b0` | `public: __thiscall Rainbow::ItemImage3D::ItemImage3D(float,float,float,float,bool,bool,unsigned long)` |
+| `0x25abf0` | `public: __thiscall Rainbow::ItemImage3D::ItemImage3D(void)` |
+| `0x3602d0` | `public: __thiscall cocos2d::Label::Label(enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x1591b0` | `public: __thiscall Rainbow::UILib::LayoutFrame::LayoutFrame(class Rainbow::UILib::LayoutFrame const &)` |
+| `0x1594e0` | `public: __thiscall Rainbow::UILib::LayoutFrame::LayoutFrame(void)` |
+| `0xd0030` | `public: __thiscall czy::LeastSquaresFit::LeastSquaresFit(class czy::LeastSquaresFit const &)` |
+| `0xd00c0` | `public: __thiscall czy::LeastSquaresFit::LeastSquaresFit(void)` |
+| `0x86fd0` | `public: __thiscall Rainbow::LegacyAsset::LegacyAsset(void)` |
+| `0x2552a0` | `public: __thiscall Rainbow::LegacyCommon3DUI::LegacyCommon3DUI(void)` |
+| `0x20f040` | `public: __thiscall Rainbow::LegacyDefault3DObject::LegacyDefault3DObject(void)` |
+| `0xbe440` | `public: __thiscall Rainbow::LegacyGlobalShaderParamManager::LegacyGlobalShaderParamManager(class Rainbow::LegacyGlobalShaderParamManager &&)` |
+| `0xbe620` | `public: __thiscall Rainbow::LegacyGlobalShaderParamManager::LegacyGlobalShaderParamManager(class Rainbow::LegacyGlobalShaderParamManager const &)` |
+| `0xbe850` | `public: __thiscall Rainbow::LegacyGlobalShaderParamManager::LegacyGlobalShaderParamManager(void)` |
+| `0xd4a30` | `public: __thiscall Rainbow::LegacyMeshRenderObject::LegacyMeshRenderObject(class Rainbow::Renderer *)` |
+| `0xe76e0` | `public: __thiscall Rainbow::LegacySkinMeshRenderer::LegacySkinMeshRenderer(class Rainbow::SharePtr<class Rainbow::ModelData>)` |
+| `0xe7930` | `public: __thiscall Rainbow::LegacySkinMeshRenderer::LegacySkinMeshRenderer(void)` |
+| `0x253090` | `public: __thiscall MINIW::LuaCallHelper::LuaCallHelper(class MINIW::LuaCallHelper const &)` |
+| `0x2531a0` | `public: __thiscall MINIW::LuaCallHelper::LuaCallHelper(void)` |
+| `0x24ba40` | `private: __thiscall cocos2d::LuaEngine::LuaEngine(void)` |
+| `0x24ba60` | `public: __thiscall cocos2d::LuaEngine::LuaEngine(class cocos2d::LuaEngine const &)` |
+| `0x9d8c0` | `public: __thiscall Rainbow::MiniLua::LuaFunctionLinker::LuaFunctionLinker(class Rainbow::MiniLua::LuaFunctionLinker &&)` |
+| `0x9d8c0` | `public: __thiscall Rainbow::MiniLua::LuaFunctionLinker::LuaFunctionLinker(class Rainbow::MiniLua::LuaFunctionLinker const &)` |
+| `0x248640` | `public: __thiscall Rainbow::MiniLua::LuaFunctionLinker::LuaFunctionLinker(struct lua_State *)` |
+| `0x2486e0` | `public: __thiscall Rainbow::MiniLua::LuaFunctionLinker::LuaFunctionLinker(struct lua_State *,int)` |
+| `0x9d8f0` | `public: __thiscall Rainbow::MiniLua::LuaLinker::LuaLinker(class Rainbow::MiniLua::LuaLinker const &)` |
+| `0x248790` | `public: __thiscall Rainbow::MiniLua::LuaLinker::LuaLinker(struct lua_State *)` |
+| `0xbbb40` | `public: __thiscall Rainbow::MiniLua::LuaReturnValues::LuaReturnValues(class Rainbow::MiniLua::LuaReturnValues &&)` |
+| `0xbbb60` | `public: __thiscall Rainbow::MiniLua::LuaReturnValues::LuaReturnValues(class Rainbow::MiniLua::LuaReturnValues const &)` |
+| `0xbbc00` | `public: __thiscall Rainbow::MiniLua::LuaReturnValues::LuaReturnValues(struct lua_State *,int)` |
+| `0x9d920` | `public: __thiscall Rainbow::MiniLua::LuaTableLinker::LuaTableLinker(class Rainbow::MiniLua::LuaTableLinker &&)` |
+| `0x9d920` | `public: __thiscall Rainbow::MiniLua::LuaTableLinker::LuaTableLinker(class Rainbow::MiniLua::LuaTableLinker const &)` |
+| `0x2487c0` | `public: __thiscall Rainbow::MiniLua::LuaTableLinker::LuaTableLinker(struct lua_State *,int)` |
+| `0x248870` | `public: __thiscall Rainbow::MiniLua::LuaTableLinker::LuaTableLinker(struct lua_State *,bool)` |
+| `0x9d950` | `public: __thiscall Rainbow::MiniLua::LuaValue::LuaValue(class Rainbow::MiniLua::LuaValue const &)` |
+| `0x2497a0` | `public: __thiscall Rainbow::MiniLua::LuaValue::LuaValue(void)` |
+| `0x68e20` | `public: __thiscall LuaWebSocketMgr::LuaWebSocketMgr(class LuaWebSocketMgr const &)` |
+| `0xe62e0` | `public: __thiscall LuaWebSocketMgr::LuaWebSocketMgr(void)` |
+| `0x8b010` | `public: __thiscall fairygui::Margin::Margin(class fairygui::Margin const &)` |
+| `0x83840` | `public: __thiscall fairygui::Margin::Margin(float,float,float,float)` |
+| `0x87cb0` | `public: __thiscall fairygui::Margin::Margin(void)` |
+| `0x226a10` | `public: __thiscall Rainbow::MaterialInstanceCombineArgs::MaterialInstanceCombineArgs(class Rainbow::MaterialInstanceCombineArgs &&)` |
+| `0x226ae0` | `public: __thiscall Rainbow::MaterialInstanceCombineArgs::MaterialInstanceCombineArgs(class Rainbow::MaterialInstanceCombineArgs const &)` |
+| `0x226cf0` | `public: __thiscall Rainbow::MaterialInstanceCombineArgs::MaterialInstanceCombineArgs(void)` |
+| `0xc04d0` | `public: __thiscall Rainbow::MaterialTemplate::MaterialTemplate(class Rainbow::MaterialTemplate const &)` |
+| `0xc1bc0` | `public: __thiscall Rainbow::MaterialTemplate::MaterialTemplate(class Rainbow::NoFreeFixedString const &)` |
+| `0x2e3780` | `public: __thiscall spine::MathUtil::MathUtil(class spine::MathUtil &&)` |
+| `0x2e3780` | `public: __thiscall spine::MathUtil::MathUtil(class spine::MathUtil const &)` |
+| `0xd46e0` | `protected: __thiscall Rainbow::MeshData::MeshData(struct MemLabelId)` |
+| `0x87030` | `public: __thiscall Rainbow::MeshInstance::MeshInstance(class Rainbow::MeshInstance const &)` |
+| `0xd1c80` | `public: __thiscall Rainbow::MeshInstance::MeshInstance(class Rainbow::MeshData *,bool)` |
+| `0x870e0` | `public: __thiscall Rainbow::MeshInstanceContainer::MeshInstanceContainer(class Rainbow::MeshInstanceContainer &&)` |
+| `0x870e0` | `public: __thiscall Rainbow::MeshInstanceContainer::MeshInstanceContainer(class Rainbow::MeshInstanceContainer const &)` |
+| `0x870f0` | `public: __thiscall Rainbow::MeshInstanceContainer::MeshInstanceContainer(void)` |
+| `0x281c20` | `protected: __thiscall Rainbow::Http::MiniBreakResumeUpload::MiniBreakResumeUpload(class core::basic_string<char,class core::StringStorageDefault<char> >,struct dynamic_array<struct Rainbow::Http::CurlUpLoadFileInfo,0>,class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0xf29f0` | `public: __thiscall Rainbow::Http::MiniBreakResumeUpload::MiniBreakResumeUpload(class Rainbow::Http::MiniBreakResumeUpload const &)` |
+| `0x284bb0` | `protected: __thiscall Rainbow::Http::MiniCustomUpload::MiniCustomUpload(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int,bool)` |
+| `0xf2ba0` | `protected: __thiscall Rainbow::Http::MiniCustomUpload::MiniCustomUpload(void)` |
+| `0xf2cd0` | `public: __thiscall Rainbow::Http::MiniCustomUpload::MiniCustomUpload(class Rainbow::Http::MiniCustomUpload const &)` |
+| `0x287680` | `protected: __thiscall Rainbow::Http::MiniDownloader::MiniDownloader(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0x9d9a0` | `public: __thiscall Rainbow::MiniEventDispatcher::MiniEventDispatcher(class Rainbow::MiniEventDispatcher const &)` |
+| `0x279140` | `public: __thiscall Rainbow::MiniEventDispatcher::MiniEventDispatcher(void)` |
+| `0x2312e0` | `protected: __thiscall Rainbow::MiniGameScene::MiniGameScene(void)` |
+| `0x9d9d0` | `public: __thiscall Rainbow::MiniGlobalEvent::MiniGlobalEvent(class Rainbow::MiniGlobalEvent const &)` |
+| `0x9db20` | `public: __thiscall Rainbow::MiniGlobalEvent::MiniGlobalEvent(void)` |
+| `0x2881b0` | `protected: __thiscall Rainbow::Http::MiniHttpRequest::MiniHttpRequest(class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0xf2e30` | `public: __thiscall Rainbow::Http::MiniHttpRequest::MiniHttpRequest(class Rainbow::Http::MiniHttpRequest const &)` |
+| `0x87100` | `public: __thiscall Rainbow::MiniObject::MiniObject(void)` |
+| `0x24ba80` | `public: __thiscall fairygui::MiniUIGameEventMgr::MiniUIGameEventMgr(class fairygui::MiniUIGameEventMgr const &)` |
+| `0x3294a0` | `public: __thiscall fairygui::MiniUIGameEventMgr::MiniUIGameEventMgr(void)` |
+| `0x288fc0` | `protected: __thiscall Rainbow::Http::MiniUpload::MiniUpload(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0xf2f00` | `public: __thiscall Rainbow::Http::MiniUpload::MiniUpload(class Rainbow::Http::MiniUpload const &)` |
+| `0x20fe90` | `public: __thiscall Rainbow::MobileCameraRenderer::MobileCameraRenderer(class Rainbow::MobileCameraRenderer const &)` |
+| `0x210090` | `public: __thiscall Rainbow::MobileCameraRenderer::MobileCameraRenderer(void)` |
+| `0x87130` | `protected: __thiscall Rainbow::Model::Model(void)` |
+| `0x1a8130` | `public: __thiscall Rainbow::ModelAnimationPlayer::ModelAnimationPlayer(void)` |
+| `0x1d6f00` | `public: __thiscall Rainbow::ModelData::ModelData(void)` |
+| `0x871d0` | `public: __thiscall Rainbow::ModelDataRetainSettingLoader::ModelDataRetainSettingLoader(void)` |
+| `0x871e0` | `public: __thiscall Rainbow::ModelLegacy::ModelLegacy(void)` |
+| `0x1ac450` | `public: __thiscall Rainbow::ModelMeshRenderers::ModelMeshRenderers(class Rainbow::ModelMeshRenderers const &)` |
+| `0x1ac570` | `public: __thiscall Rainbow::ModelMeshRenderers::ModelMeshRenderers(void)` |
+| `0x12f5f0` | `public: __thiscall Rainbow::ModelMotion::ModelMotion(void)` |
+| `0x87230` | `public: __thiscall Rainbow::ModelNew::ModelNew(void)` |
+| `0x1ac650` | `public: __thiscall Rainbow::ModelRenderer::ModelRenderer(struct MemLabelId)` |
+| `0x1657f0` | `public: __thiscall Rainbow::UILib::ModelView::ModelView(class Rainbow::UILib::ModelView const &)` |
+| `0x165a00` | `public: __thiscall Rainbow::UILib::ModelView::ModelView(void)` |
+| `0x87270` | `public: __thiscall cocos2d::ModelViewCommand::ModelViewCommand(class cocos2d::ModelViewCommand const &)` |
+| `0x3ada40` | `public: __thiscall cocos2d::ModelViewCommand::ModelViewCommand(void)` |
+| `0x87310` | `public: __thiscall Rainbow::MotionObjLife::MotionObjLife(class Rainbow::MotionObjLife const &)` |
+| `0x87350` | `public: __thiscall Rainbow::MotionObjLife::MotionObjLife(void)` |
+| `0x230cc0` | `protected: __thiscall Rainbow::MovableObject::MovableObject(void)` |
+| `0x25d6a0` | `protected: __thiscall Rainbow::MoveByText::MoveByText(char const *,int,class Rainbow::ColorRGBAf const &,class Rainbow::MoveByTextMgr *)` |
+| `0x25d760` | `protected: __thiscall Rainbow::MoveByText::MoveByText(void)` |
+| `0x25d7f0` | `public: __thiscall Rainbow::MoveByTextMgr::MoveByTextMgr(class Rainbow::MoveByTextMgr const &)` |
+| `0x25de10` | `public: __thiscall Rainbow::MoveByTextMgr::MoveByTextMgr(int)` |
+| `0x25dec0` | `public: __thiscall Rainbow::MoveByTextMgr::MoveByTextMgr(void)` |
+| `0x16b8e0` | `public: __thiscall Rainbow::UILib::MultiEditBox::MultiEditBox(class Rainbow::UILib::MultiEditBox const &)` |
+| `0x16bc90` | `public: __thiscall Rainbow::UILib::MultiEditBox::MultiEditBox(void)` |
+| `0x25ebd0` | `public: __thiscall Rainbow::MusicClubChatBubble3D::MusicClubChatBubble3D(int,float,float,float,float,bool,bool)` |
+| `0x25eeb0` | `public: __thiscall Rainbow::MusicClubChatBubble3D::MusicClubChatBubble3D(void)` |
+| `0x2128a0` | `public: __thiscall Rainbow::MusicManager::MusicManager(void)` |
+| `0x2636d0` | `public: __thiscall Rainbow::NameText3D::NameText3D(int,float,float,float,float,bool,bool,char const *,int)` |
+| `0x263a50` | `public: __thiscall Rainbow::NameText3D::NameText3D(void)` |
+| `0x370d50` | `public: __thiscall cocos2d::Node::Node(void)` |
+| `0x265670` | `public: __thiscall Rainbow::NormalText3D::NormalText3D(int,float,float,float,float,bool,bool)` |
+| `0x265840` | `public: __thiscall Rainbow::NormalText3D::NormalText3D(void)` |
+| `0x24bb20` | `public: __thiscall cocos2d::NotificationObserver::NotificationObserver(class cocos2d::NotificationObserver const &)` |
+| `0x409b30` | `public: __thiscall cocos2d::NotificationObserver::NotificationObserver(class cocos2d::Ref *,void (__thiscall cocos2d::Ref::*)(class cocos2d::Ref *),class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Ref *)` |
+| `0x87360` | `public: __thiscall Rainbow::ObjectMotion::ObjectMotion(class Rainbow::ObjectMotion const &)` |
+| `0x1c3450` | `public: __thiscall Rainbow::ObjectMotion::ObjectMotion(void)` |
+| `0x278110` | `public: __thiscall Rainbow::Algorithm::OctreeNodeContext::OctreeNodeContext(class Rainbow::Algorithm::OctreeNodeContext &&)` |
+| `0x278140` | `public: __thiscall Rainbow::Algorithm::OctreeNodeContext::OctreeNodeContext(class Rainbow::Algorithm::OctreeNodeContext const &)` |
+| `0x278170` | `public: __thiscall Rainbow::Algorithm::OctreeNodeContext::OctreeNodeContext(class Rainbow::AABB const &)` |
+| `0xe5fe0` | `public: __thiscall Rainbow::OgreVertexData::OgreVertexData(class Rainbow::OgreVertexData const &)` |
+| `0xe6120` | `public: __thiscall Rainbow::OgreVertexData::OgreVertexData(class Rainbow::VertexFormat const &,unsigned int)` |
+| `0xe6200` | `public: __thiscall Rainbow::OgreVertexData::OgreVertexData(void)` |
+| `0x873f0` | `public: __thiscall cocos2d::OldUIRenderCommand::OldUIRenderCommand(class cocos2d::OldUIRenderCommand const &)` |
+| `0x3adc80` | `public: __thiscall cocos2d::OldUIRenderCommand::OldUIRenderCommand(void)` |
+| `0x266070` | `public: __thiscall Rainbow::OnlyText3D::OnlyText3D(char const *,int,class Rainbow::ColorRGBAf const &)` |
+| `0x266270` | `public: __thiscall Rainbow::OnlyText3D::OnlyText3D(void)` |
+| `0x1ddea0` | `public: __thiscall Rainbow::ParticleManager::ParticleManager(class Rainbow::ParticleManager const &)` |
+| `0x1ddf20` | `public: __thiscall Rainbow::ParticleManager::ParticleManager(void)` |
+| `0x1ddfa0` | `public: __thiscall Rainbow::ParticleNode::ParticleNode(class Rainbow::ParticleManager *,struct Rainbow::ParticleDesc const &,class Rainbow::Texture *)` |
+| `0x1de470` | `public: __thiscall Rainbow::ParticleNode::ParticleNode(class Rainbow::ParticleManager *,class Rainbow::ParticleTemplate *)` |
+| `0x211c90` | `public: __thiscall Rainbow::PerlinNoise2D::PerlinNoise2D(int,int)` |
+| `0x87420` | `public: __thiscall cocos2d::PointSprite::PointSprite(void)` |
+| `0x87450` | `public: __thiscall fairygui::PopupMenu::PopupMenu(class fairygui::PopupMenu const &)` |
+| `0x2fcba0` | `public: __thiscall fairygui::PopupMenu::PopupMenu(void)` |
+| `0x874a0` | `public: __thiscall Rainbow::PostObjMotion::PostObjMotion(class Rainbow::PostObjMotion const &)` |
+| `0x874d0` | `public: __thiscall Rainbow::PostObjMotion::PostObjMotion(void)` |
+| `0x24bbc0` | `public: __thiscall cocos2d::PrettyPrinter::PrettyPrinter(class cocos2d::PrettyPrinter &&)` |
+| `0x24bc50` | `public: __thiscall cocos2d::PrettyPrinter::PrettyPrinter(class cocos2d::PrettyPrinter const &)` |
+| `0x4058a0` | `public: __thiscall cocos2d::PrettyPrinter::PrettyPrinter(int)` |
+| `0x266a90` | `public: __thiscall Rainbow::ProgressBarIn3D::ProgressBarIn3D(char const *,char const *)` |
+| `0x266e80` | `public: __thiscall Rainbow::ProgressBarIn3D::ProgressBarIn3D(void)` |
+| `0x268280` | `public: __thiscall Rainbow::ProgressBarWithText3D::ProgressBarWithText3D(int,float,float,float,float,bool,bool)` |
+| `0x2685e0` | `public: __thiscall Rainbow::ProgressBarWithText3D::ProgressBarWithText3D(void)` |
+| `0x37a590` | `public: __thiscall cocos2d::ProtectedNode::ProtectedNode(void)` |
+| `0x87500` | `public: __thiscall cocos2d::Quad2::Quad2(void)` |
+| `0x87540` | `public: __thiscall cocos2d::Quad3::Quad3(struct cocos2d::Quad3 &&)` |
+| `0x87540` | `public: __thiscall cocos2d::Quad3::Quad3(struct cocos2d::Quad3 const &)` |
+| `0x875a0` | `public: __thiscall cocos2d::Quad3::Quad3(void)` |
+| `0x10f7d0` | `public: __thiscall Rainbow::RFontBase::RFontBase(class Rainbow::RFontBase const &)` |
+| `0x10fa90` | `public: __thiscall Rainbow::RFontBase::RFontBase(void)` |
+| `0x231650` | `protected: __thiscall Rainbow::RainbowEffectProxy::RainbowEffectProxy(void)` |
+| `0x1a6c70` | `public: __thiscall Rainbow::RainbowEffectProxyHolder::RainbowEffectProxyHolder(class Rainbow::RainbowEffectProxyHolder const &)` |
+| `0x1a6cc0` | `public: __thiscall Rainbow::RainbowEffectProxyHolder::RainbowEffectProxyHolder(void)` |
+| `0x83830` | `public: __thiscall Rainbow::RandomGenerator::RandomGenerator(int)` |
+| `0x1b49c0` | `public: __thiscall Rainbow::RandomPool::RandomPool(class Rainbow::RandomPool const &)` |
+| `0x1b4a40` | `public: __thiscall Rainbow::RandomPool::RandomPool(int,int)` |
+| `0x68cf0` | `public: __thiscall MINIW::Ray::Ray(class MINIW::Ray &&)` |
+| `0x68cf0` | `public: __thiscall MINIW::Ray::Ray(class MINIW::Ray const &)` |
+| `0x115ae0` | `public: __thiscall MINIW::Ray::Ray(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float)` |
+| `0x115b20` | `public: __thiscall MINIW::Ray::Ray(void)` |
+| `0x2a98e0` | `public: __thiscall MINIW::RecordInterface::RecordInterface(class MINIW::RecordInterface const &)` |
+| `0x2a98f0` | `public: __thiscall MINIW::RecordInterface::RecordInterface(void)` |
+| `0x3a8d10` | `public: __thiscall cocos2d::Rect::Rect(class cocos2d::Rect const &)` |
+| `0x3a8d50` | `public: __thiscall cocos2d::Rect::Rect(class Rainbow::Vector2f const &,class cocos2d::Size const &)` |
+| `0x3a8d90` | `public: __thiscall cocos2d::Rect::Rect(float,float,float,float)` |
+| `0x3a8dd0` | `public: __thiscall cocos2d::Rect::Rect(void)` |
+| `0x39c160` | `protected: __thiscall cocos2d::Ref::Ref(void)` |
+| `0x87600` | `public: __thiscall cocos2d::Ref::Ref(class cocos2d::Ref const &)` |
+| `0x87630` | `public: __thiscall Rainbow::RefObjectNoName::RefObjectNoName(struct MemLabelId)` |
+| `0x87660` | `public: __thiscall fairygui::Relations::Relations(class fairygui::Relations const &)` |
+| `0x2ff930` | `public: __thiscall fairygui::Relations::Relations(class fairygui::GObject *)` |
+| `0xec8c0` | `public: __thiscall Rainbow::RemoteAssetsManager::RemoteAssetsManager(class Rainbow::RemoteAssetsManager &&)` |
+| `0xeca90` | `public: __thiscall Rainbow::RemoteAssetsManager::RemoteAssetsManager(class Rainbow::RemoteAssetsManager const &)` |
+| `0xf8ac0` | `public: __thiscall Rainbow::RemoteAssetsManager::RemoteAssetsManager(void)` |
+| `0x87770` | `public: __thiscall cocos2d::Renderer::Renderer(class cocos2d::Renderer const &)` |
+| `0x3af200` | `public: __thiscall cocos2d::Renderer::Renderer(void)` |
+| `0x21cea0` | `public: __thiscall Rainbow::RenderingAPIException::RenderingAPIException(class Rainbow::RenderingAPIException &&)` |
+| `0x21cea0` | `public: __thiscall Rainbow::RenderingAPIException::RenderingAPIException(class Rainbow::RenderingAPIException const &)` |
+| `0x21ced0` | `public: __thiscall Rainbow::RenderingAPIException::RenderingAPIException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x87c30` | `public: __thiscall cocos2d::ResizeTo::ResizeTo(void)` |
+| `0x21cf10` | `public: __thiscall Rainbow::RuntimeAssertionException::RuntimeAssertionException(class Rainbow::RuntimeAssertionException &&)` |
+| `0x21cf10` | `public: __thiscall Rainbow::RuntimeAssertionException::RuntimeAssertionException(class Rainbow::RuntimeAssertionException const &)` |
+| `0x21cf40` | `public: __thiscall Rainbow::RuntimeAssertionException::RuntimeAssertionException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x871d0` | `public: __thiscall cocos2d::SAXParser::SAXParser(void)` |
+| `0x37b4d0` | `public: __thiscall cocos2d::Scene::Scene(void)` |
+| `0x39c430` | `public: __thiscall cocos2d::Scheduler::Scheduler(void)` |
+| `0x87cb0` | `public: __thiscall cocos2d::ScissorRect::ScissorRect(void)` |
+| `0x68e90` | `public: __thiscall MINIW::ScriptVM::ScriptVM(class MINIW::ScriptVM const &)` |
+| `0x24bcd0` | `public: __thiscall MINIW::ScriptVM::ScriptVM(unsigned __int64)` |
+| `0x87cd0` | `public: __thiscall fairygui::ScrollPane::ScrollPane(class fairygui::ScrollPane const &)` |
+| `0x300070` | `public: __thiscall fairygui::ScrollPane::ScrollPane(class fairygui::GComponent *)` |
+| `0xdf880` | `public: __thiscall Rainbow::SequenceMap::SequenceMap(class Rainbow::SequenceMap const &)` |
+| `0x1a7580` | `public: __thiscall Rainbow::SequenceMap::SequenceMap(void)` |
+| `0x17e3f0` | `public: __thiscall Rainbow::SequenceTexture::SequenceTexture(class Rainbow::SequenceTexture const &)` |
+| `0x17e400` | `public: __thiscall Rainbow::SequenceTexture::SequenceTexture(void)` |
+| `0x254260` | `public: __thiscall Rainbow::ShadowFace::ShadowFace(void)` |
+| `0x69000` | `public: __thiscall Rainbow::Setting::ShadowSettingCfg::ShadowSettingCfg(void)` |
+| `0x2324a0` | `public: __thiscall Rainbow::SimpleGameScene::SimpleGameScene(void)` |
+| `0x8af90` | `public: __thiscall cocos2d::Size::Size(class cocos2d::Size const &)` |
+| `0x883d0` | `public: __thiscall cocos2d::Size::Size(float,float)` |
+| `0x883f0` | `public: __thiscall cocos2d::Size::Size(void)` |
+| `0x2e3790` | `public: __thiscall spine::Skeleton::Skeleton(class spine::Skeleton const &)` |
+| `0x3df000` | `public: __thiscall spine::Skeleton::Skeleton(class spine::SkeletonData *)` |
+| `0x3e1500` | `public: __thiscall spine::SkeletonAnimation::SkeletonAnimation(void)` |
+| `0xe1bb0` | `public: __thiscall Rainbow::SkeletonComponent::SkeletonComponent(struct MemLabelId)` |
+| `0xe1c20` | `public: __thiscall Rainbow::SkeletonComponent::SkeletonComponent(struct MemLabelId,class Rainbow::SkeletonData *)` |
+| `0xe3490` | `public: __thiscall Rainbow::SkeletonData::SkeletonData(void)` |
+| `0x2e3a40` | `public: __thiscall spine::SkeletonData::SkeletonData(class spine::SkeletonData const &)` |
+| `0x3ed770` | `public: __thiscall spine::SkeletonData::SkeletonData(void)` |
+| `0x2e3ea0` | `public: __thiscall spine::SkeletonJson::SkeletonJson(class spine::SkeletonJson const &)` |
+| `0x3ee700` | `public: __thiscall spine::SkeletonJson::SkeletonJson(class spine::Atlas *)` |
+| `0x3ee7c0` | `public: __thiscall spine::SkeletonJson::SkeletonJson(class spine::AttachmentLoader *)` |
+| `0x3f87a0` | `public: __thiscall spine::SkeletonRenderer::SkeletonRenderer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x3f8890` | `public: __thiscall spine::SkeletonRenderer::SkeletonRenderer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x3f8980` | `public: __thiscall spine::SkeletonRenderer::SkeletonRenderer(class spine::Skeleton *,bool,bool,bool)` |
+| `0x3f8aa0` | `public: __thiscall spine::SkeletonRenderer::SkeletonRenderer(class spine::SkeletonData *,bool)` |
+| `0x3f8b80` | `public: __thiscall spine::SkeletonRenderer::SkeletonRenderer(void)` |
+| `0x2e3f80` | `public: __thiscall spine::Skin::Skin(class spine::Skin const &)` |
+| `0x3fcaf0` | `public: __thiscall spine::Skin::Skin(class spine::String const &)` |
+| `0x87fe0` | `public: __thiscall Rainbow::SkinAnimContainer::SkinAnimContainer(void)` |
+| `0xe9f20` | `protected: __thiscall Rainbow::SkinPatch::SkinPatch(struct MemLabelId)` |
+| `0x88020` | `public: __thiscall Rainbow::UILib::SkinResource::SkinResource(class Rainbow::UILib::SkinResource &&)` |
+| `0x881d0` | `public: __thiscall Rainbow::UILib::SkinResource::SkinResource(class Rainbow::UILib::SkinResource const &)` |
+| `0x11bc80` | `public: __thiscall Rainbow::UILib::SkinResource::SkinResource(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x11d5a0` | `private: __thiscall Rainbow::UILib::SkinTextColorLoader::SkinTextColorLoader(void)` |
+| `0x11d5c0` | `public: __thiscall Rainbow::SkinTextColorLoaderBase::SkinTextColorLoaderBase(class Rainbow::SkinTextColorLoaderBase const &)` |
+| `0x11ea20` | `public: __thiscall Rainbow::SkinTextColorLoaderBase::SkinTextColorLoaderBase(void)` |
+| `0x2e41b0` | `public: __thiscall spine::Slot::Slot(class spine::Slot &&)` |
+| `0x3fde40` | `public: __thiscall spine::Slot::Slot(class spine::SlotData &,class spine::Bone &)` |
+| `0x2e41b0` | `public: __thiscall spine::Slot::Slot(class spine::Slot const &)` |
+| `0x2e4270` | `public: __thiscall spine::SlotData::SlotData(class spine::SlotData &&)` |
+| `0x2e4270` | `public: __thiscall spine::SlotData::SlotData(class spine::SlotData const &)` |
+| `0x3fe150` | `public: __thiscall spine::SlotData::SlotData(int,class spine::String const &,class spine::BoneData &)` |
+| `0xc1f90` | `public: __thiscall Rainbow::SnapshotHelper::SnapshotHelper(class Rainbow::SnapshotHelper const &)` |
+| `0xc1ff0` | `public: __thiscall Rainbow::SnapshotHelper::SnapshotHelper(void)` |
+| `0x2a9930` | `public: __thiscall MINIW::SnapshotInterface::SnapshotInterface(class MINIW::SnapshotInterface const &)` |
+| `0x2a9940` | `public: __thiscall MINIW::SnapshotInterface::SnapshotInterface(void)` |
+| `0x9db80` | `public: __thiscall Rainbow::SoundSystem::SoundSystem(class Rainbow::SoundSystem const &)` |
+| `0x9dbb0` | `public: __thiscall Rainbow::SoundSystem::SoundSystem(void)` |
+| `0x3d6ef0` | `protected: __thiscall spine::SpineExtension::SpineExtension(void)` |
+| `0x2e4340` | `public: __thiscall spine::SpineExtension::SpineExtension(class spine::SpineExtension const &)` |
+| `0x2e4350` | `public: __thiscall spine::SpineObject::SpineObject(class spine::SpineObject const &)` |
+| `0x2e4360` | `public: __thiscall spine::SpineObject::SpineObject(void)` |
+| `0x37bf20` | `public: __thiscall cocos2d::Sprite::Sprite(void)` |
+| `0x380d60` | `public: __thiscall cocos2d::SpriteBatchNode::SpriteBatchNode(void)` |
+| `0x2a9720` | `public: __thiscall MINIW::StatisticRainforestInterface::StatisticRainforestInterface(class MINIW::StatisticRainforestInterface const &)` |
+| `0x2a9730` | `public: __thiscall MINIW::StatisticRainforestInterface::StatisticRainforestInterface(void)` |
+| `0x2b2e10` | `public: __thiscall MINIW::StatisticTerrgenInterface::StatisticTerrgenInterface(class MINIW::StatisticTerrgenInterface const &)` |
+| `0x2b2e20` | `public: __thiscall MINIW::StatisticTerrgenInterface::StatisticTerrgenInterface(void)` |
+| `0x26aab0` | `public: __thiscall Rainbow::StoveProgressBar3D::StoveProgressBar3D(char const *,char const *)` |
+| `0x26aec0` | `public: __thiscall Rainbow::StoveProgressBar3D::StoveProgressBar3D(void)` |
+| `0xe9f80` | `protected: __thiscall Rainbow::SubMeshData::SubMeshData(struct MemLabelId)` |
+| `0x882c0` | `public: __thiscall Rainbow::SubMeshInstance::SubMeshInstance(class Rainbow::SubMeshInstance const &)` |
+| `0xd1db0` | `public: __thiscall Rainbow::SubMeshInstance::SubMeshInstance(class Rainbow::SubMeshData *)` |
+| `0x2e4410` | `public: __thiscall spine::SwirlVertexEffect::SwirlVertexEffect(class spine::SwirlVertexEffect &&)` |
+| `0x2e4410` | `public: __thiscall spine::SwirlVertexEffect::SwirlVertexEffect(class spine::SwirlVertexEffect const &)` |
+| `0x402840` | `public: __thiscall spine::SwirlVertexEffect::SwirlVertexEffect(float,struct spine::Interpolation &)` |
+| `0x88390` | `public: __thiscall cocos2d::T2F_Quad::T2F_Quad(void)` |
+| `0x3a49d0` | `public: __thiscall cocos2d::ObjectFactory::TInfo::TInfo(struct cocos2d::ObjectFactory::TInfo const &)` |
+| `0x3a4a70` | `public: __thiscall cocos2d::ObjectFactory::TInfo::TInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Ref * (__cdecl*)(void))` |
+| `0x3a4ae0` | `public: __thiscall cocos2d::ObjectFactory::TInfo::TInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<class cocos2d::Ref * __cdecl(void)>)` |
+| `0x3a4b90` | `public: __thiscall cocos2d::ObjectFactory::TInfo::TInfo(void)` |
+| `0x83830` | `public: __thiscall MINIW::CSVParser::TableItem::TableItem(char const *)` |
+| `0x275f00` | `public: __thiscall Rainbow::TerrainDecalEffect::TerrainDecalEffect(struct MemLabelId)` |
+| `0x276030` | `public: __thiscall Rainbow::TerrainDecalSubMesh::TerrainDecalSubMesh(class Rainbow::TerrainDecalSubMesh const &)` |
+| `0x2761b0` | `public: __thiscall Rainbow::TerrainDecalSubMesh::TerrainDecalSubMesh(void)` |
+| `0x883d0` | `public: __thiscall cocos2d::Tex2F::Tex2F(float,float)` |
+| `0x883f0` | `public: __thiscall cocos2d::Tex2F::Tex2F(void)` |
+| `0x26d230` | `public: __thiscall Rainbow::Text3D::Text3D(int,float,float,float,float,bool,bool)` |
+| `0x26d650` | `public: __thiscall Rainbow::Text3D::Text3D(void)` |
+| `0x26e630` | `public: __thiscall Rainbow::TextBoardIn3D::TextBoardIn3D(void)` |
+| `0x325fe0` | `public: __thiscall fairygui::TextFormat::TextFormat(class fairygui::TextFormat const &)` |
+| `0x326090` | `public: __thiscall fairygui::TextFormat::TextFormat(void)` |
+| `0x23b210` | `public: __thiscall Rainbow::TextureRenderGen::TextureRenderGen(class Rainbow::TextureRenderGen const &)` |
+| `0x23b2a0` | `public: __thiscall Rainbow::TextureRenderGen::TextureRenderGen(enum Rainbow::DepthBufferFormat,enum Rainbow::GraphicsFormat)` |
+| `0x224d20` | `public: __thiscall Rainbow::Timer::Timer(void)` |
+| `0x2e4450` | `public: __thiscall spine::TrackEntry::TrackEntry(class spine::TrackEntry const &)` |
+| `0x3cc440` | `public: __thiscall spine::TrackEntry::TrackEntry(void)` |
+| `0x10ee90` | `public: __thiscall MINIW::Transform_::Transform_(class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x10eee0` | `public: __thiscall MINIW::Transform_::Transform_(class MINIW::Transform_ const &)` |
+| `0x10ef60` | `public: __thiscall MINIW::Transform_::Transform_(class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x10efe0` | `public: __thiscall MINIW::Transform_::Transform_(void)` |
+| `0x88400` | `public: __thiscall fairygui::Transition::Transition(class fairygui::Transition const &)` |
+| `0x306460` | `public: __thiscall fairygui::Transition::Transition(class fairygui::GComponent *)` |
+| `0x88590` | `public: __thiscall cocos2d::TransitionEaseScene::TransitionEaseScene(class cocos2d::TransitionEaseScene const &)` |
+| `0x885a0` | `public: __thiscall cocos2d::TransitionEaseScene::TransitionEaseScene(void)` |
+| `0x383a10` | `public: __thiscall cocos2d::TransitionFade::TransitionFade(void)` |
+| `0x232dd0` | `public: __thiscall Rainbow::TriangleMeshNormalAndEdge::TriangleMeshNormalAndEdge(void)` |
+| `0x2b52d0` | `public: __thiscall Rainbow::TweenParam::TweenParam(class Rainbow::TweenParam const &)` |
+| `0x2bbc80` | `public: __thiscall Rainbow::TweenParam::TweenParam(void)` |
+| `0x2efe90` | `public: __thiscall fairygui::UBBParser::UBBParser(class fairygui::UBBParser const &)` |
+| `0x3354d0` | `public: __thiscall fairygui::UBBParser::UBBParser(void)` |
+| `0x885b0` | `public: __thiscall fairygui::UI3DRenderer::UI3DRenderer(class fairygui::UI3DRenderer const &)` |
+| `0x30bb30` | `public: __thiscall fairygui::UI3DRenderer::UI3DRenderer(void)` |
+| `0x88600` | `public: __thiscall fairygui::UI3DRoot::UI3DRoot(class fairygui::UI3DRoot const &)` |
+| `0x30ce40` | `public: __thiscall fairygui::UI3DRoot::UI3DRoot(void)` |
+| `0x30e0c0` | `public: __thiscall fairygui::UI3DScene::UI3DScene(void)` |
+| `0x886c0` | `public: __thiscall fairygui::UIEventDispatcher::UIEventDispatcher(class fairygui::UIEventDispatcher const &)` |
+| `0x329d90` | `public: __thiscall fairygui::UIEventDispatcher::UIEventDispatcher(void)` |
+| `0x271730` | `public: __thiscall Rainbow::UIIn3DSceneMerger::UIIn3DSceneMerger(void)` |
+| `0x1232d0` | `public: __thiscall Rainbow::UILib::UIRenderer::UIRenderer(void)` |
+| `0x314bb0` | `private: __thiscall fairygui::UISkinColorManager::UISkinColorManager(void)` |
+| `0x2e0820` | `public: __thiscall fairygui::UISkinColorManager::UISkinColorManager(class fairygui::UISkinColorManager const &)` |
+| `0x17e410` | `public: __thiscall Rainbow::UILib::UITexture::UITexture(class Rainbow::UILib::UITexture const &)` |
+| `0x17e920` | `public: __thiscall Rainbow::UILib::UITexture::UITexture(void)` |
+| `0x21cf80` | `public: __thiscall Rainbow::UnimplementedException::UnimplementedException(class Rainbow::UnimplementedException &&)` |
+| `0x21cf80` | `public: __thiscall Rainbow::UnimplementedException::UnimplementedException(class Rainbow::UnimplementedException const &)` |
+| `0x21cfb0` | `public: __thiscall Rainbow::UnimplementedException::UnimplementedException(int,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,char const *,long)` |
+| `0x1f9140` | `public: __thiscall Rainbow::UpDownloadManager::UpDownloadManager(void)` |
+| `0x887e0` | `public: __thiscall cocos2d::V2F_C4B_T2F_Quad::V2F_C4B_T2F_Quad(void)` |
+| `0x88880` | `public: __thiscall cocos2d::V2F_C4B_T2F_Triangle::V2F_C4B_T2F_Triangle(void)` |
+| `0x88900` | `public: __thiscall cocos2d::V2F_C4F_T2F::V2F_C4F_T2F(void)` |
+| `0x88930` | `public: __thiscall cocos2d::V2F_C4F_T2F_Quad::V2F_C4F_T2F_Quad(void)` |
+| `0x889d0` | `public: __thiscall cocos2d::V3F_C4B_T2F::V3F_C4B_T2F(struct cocos2d::V3F_C4B_T2F &&)` |
+| `0x889d0` | `public: __thiscall cocos2d::V3F_C4B_T2F::V3F_C4B_T2F(struct cocos2d::V3F_C4B_T2F const &)` |
+| `0x88a00` | `public: __thiscall cocos2d::V3F_C4B_T2F::V3F_C4B_T2F(void)` |
+| `0x88a40` | `public: __thiscall cocos2d::V3F_C4B_T2F_Quad::V3F_C4B_T2F_Quad(struct cocos2d::V3F_C4B_T2F_Quad &&)` |
+| `0x88a40` | `public: __thiscall cocos2d::V3F_C4B_T2F_Quad::V3F_C4B_T2F_Quad(struct cocos2d::V3F_C4B_T2F_Quad const &)` |
+| `0x88ae0` | `public: __thiscall cocos2d::V3F_C4B_T2F_Quad::V3F_C4B_T2F_Quad(void)` |
+| `0x88ba0` | `public: __thiscall cocos2d::V3F_C4F::V3F_C4F(struct cocos2d::V3F_C4F &&)` |
+| `0x88ba0` | `public: __thiscall cocos2d::V3F_C4F::V3F_C4F(struct cocos2d::V3F_C4F const &)` |
+| `0x88bd0` | `public: __thiscall cocos2d::V3F_C4F::V3F_C4F(void)` |
+| `0x88c00` | `public: __thiscall cocos2d::V3F_T2F::V3F_T2F(struct cocos2d::V3F_T2F &&)` |
+| `0x88c00` | `public: __thiscall cocos2d::V3F_T2F::V3F_T2F(struct cocos2d::V3F_T2F const &)` |
+| `0x88c30` | `public: __thiscall cocos2d::V3F_T2F::V3F_T2F(void)` |
+| `0x88c60` | `public: __thiscall cocos2d::V3F_T2F_Quad::V3F_T2F_Quad(struct cocos2d::V3F_T2F_Quad &&)` |
+| `0x88c60` | `public: __thiscall cocos2d::V3F_T2F_Quad::V3F_T2F_Quad(struct cocos2d::V3F_T2F_Quad const &)` |
+| `0x88cf0` | `public: __thiscall cocos2d::V3F_T2F_Quad::V3F_T2F_Quad(void)` |
+| `0x29a370` | `public: __thiscall Value::Value(class Value &&)` |
+| `0x29a390` | `public: __thiscall Value::Value(class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > &&)` |
+| `0x29a410` | `public: __thiscall Value::Value(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > &&)` |
+| `0x29a490` | `public: __thiscall Value::Value(class std::vector<class Value,class std::allocator<class Value> > &&)` |
+| `0x29a510` | `public: __thiscall Value::Value(class Value const &)` |
+| `0x29a530` | `public: __thiscall Value::Value(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x29a590` | `public: __thiscall Value::Value(class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > const &)` |
+| `0x29a610` | `public: __thiscall Value::Value(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > const &)` |
+| `0x29a690` | `public: __thiscall Value::Value(class std::vector<class Value,class std::allocator<class Value> > const &)` |
+| `0x29a6f0` | `public: __thiscall Value::Value(int)` |
+| `0x29a710` | `public: __thiscall Value::Value(double)` |
+| `0x29a730` | `public: __thiscall Value::Value(char const *)` |
+| `0x29a7a0` | `public: __thiscall Value::Value(void)` |
+| `0x29a7c0` | `public: __thiscall Value::Value(bool)` |
+| `0x3a2030` | `public: __thiscall cocos2d::Value::Value(class cocos2d::Value &&)` |
+| `0x3a2050` | `public: __thiscall cocos2d::Value::Value(class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > &&)` |
+| `0x3a20e0` | `public: __thiscall cocos2d::Value::Value(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > &&)` |
+| `0x3a2170` | `public: __thiscall cocos2d::Value::Value(class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > &&)` |
+| `0x3a2200` | `public: __thiscall cocos2d::Value::Value(class cocos2d::Value const &)` |
+| `0x3a2220` | `public: __thiscall cocos2d::Value::Value(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3a2290` | `public: __thiscall cocos2d::Value::Value(class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > const &)` |
+| `0x3a2330` | `public: __thiscall cocos2d::Value::Value(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > const &)` |
+| `0x3a23c0` | `public: __thiscall cocos2d::Value::Value(class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > const &)` |
+| `0x3a2430` | `public: __thiscall cocos2d::Value::Value(unsigned char)` |
+| `0x3a2450` | `public: __thiscall cocos2d::Value::Value(int)` |
+| `0x3a2470` | `public: __thiscall cocos2d::Value::Value(unsigned int)` |
+| `0x3a2490` | `public: __thiscall cocos2d::Value::Value(float)` |
+| `0x3a24b0` | `public: __thiscall cocos2d::Value::Value(double)` |
+| `0x3a24d0` | `public: __thiscall cocos2d::Value::Value(char const *)` |
+| `0x29a7a0` | `public: __thiscall cocos2d::Value::Value(void)` |
+| `0x3a2560` | `public: __thiscall cocos2d::Value::Value(bool)` |
+| `0xe6260` | `public: __thiscall Rainbow::VertexFormat::VertexFormat(class Rainbow::VertexFormat const &)` |
+| `0xe62e0` | `public: __thiscall Rainbow::VertexFormat::VertexFormat(void)` |
+| `0x87cb0` | `public: __thiscall cocos2d::Viewport::Viewport(void)` |
+| `0x9dbe0` | `public: __thiscall Rainbow::Setting::VisionConfig::VisionConfig(void)` |
+| `0x271b10` | `public: __thiscall Rainbow::Voice3D::Voice3D(float,float,float,float,bool,bool)` |
+| `0x271e60` | `public: __thiscall Rainbow::Voice3D::Voice3D(void)` |
+| `0x68f80` | `public: __thiscall WCoord::WCoord(struct BlockPos const &)` |
+| `0x225c50` | `public: __thiscall WCoord::WCoord(class Rainbow::Vector3f const &)` |
+| `0x225c50` | `public: __thiscall WCoord::WCoord(class WPreciseCoord const &)` |
+| `0x225c80` | `public: __thiscall WCoord::WCoord(class Rainbow::WorldPos const &)` |
+| `0x225cd0` | `public: __thiscall WCoord::WCoord(int)` |
+| `0x68fa0` | `public: __thiscall WCoord::WCoord(int,int,int)` |
+| `0x68fc0` | `public: __thiscall WCoord::WCoord(float,int,float)` |
+| `0x68fe0` | `public: __thiscall WCoord::WCoord(float,float,float)` |
+| `0x69000` | `public: __thiscall WCoord::WCoord(void)` |
+| `0x9dc20` | `public: __thiscall Rainbow::UILib::WebFrame::WebFrame(class Rainbow::UILib::WebFrame const &)` |
+| `0x194310` | `public: __thiscall Rainbow::UILib::WebFrame::WebFrame(void)` |
+| `0x69020` | `public: __thiscall MINIW::WebSocket::WebSocket(class MINIW::WebSocket const &)` |
+| `0x28b5c0` | `public: __thiscall MINIW::WebSocket::WebSocket(void)` |
+| `0x28f420` | `public: __thiscall WebSocketCallbackWrapper::WebSocketCallbackWrapper(class WebSocketCallbackWrapper const &)` |
+| `0x28f440` | `public: __thiscall WebSocketCallbackWrapper::WebSocketCallbackWrapper(void)` |
+| `0x28ff30` | `private: __thiscall WebSocketEventHandler::WebSocketEventHandler(void)` |
+| `0x28f470` | `public: __thiscall WebSocketEventHandler::WebSocketEventHandler(class WebSocketEventHandler const &)` |
+| `0x290730` | `public: __thiscall WebSocketServer::WebSocketServer(void)` |
+| `0x28db50` | `public: __thiscall MINIW::WebSocketSvr::WebSocketSvr(class MINIW::WebSocketSvr::Delegate &,unsigned short)` |
+| `0x88d80` | `public: __thiscall fairygui::Window::Window(class fairygui::Window const &)` |
+| `0x3161b0` | `public: __thiscall fairygui::Window::Window(void)` |
+| `0x68fa0` | `public: __thiscall Rainbow::WorldPos::WorldPos(int,int,int)` |
+| `0x68e10` | `public: __thiscall Rainbow::WorldPos::WorldPos(void)` |
+| `0x691f0` | `public: __thiscall Rainbow::WorldPrecisePos::WorldPrecisePos(float,float,float)` |
+| `0x68e10` | `public: __thiscall Rainbow::WorldPrecisePos::WorldPrecisePos(void)` |
+| `0x115b30` | `public: __thiscall MINIW::WorldRay::WorldRay(class MINIW::WorldRay &&)` |
+| `0x115b30` | `public: __thiscall MINIW::WorldRay::WorldRay(class MINIW::WorldRay const &)` |
+| `0x115b20` | `public: __thiscall MINIW::WorldRay::WorldRay(void)` |
+| `0x19d1e0` | `public: __thiscall Rainbow::UILib::XMLManager::XMLManager(void)` |
+| `0x272860` | `public: __thiscall Rainbow::ZipFilePkg::ZipFilePkg(void)` |
+| `0x24be80` | `public: __thiscall cocos2d::__Array::__Array(class cocos2d::__Array const &)` |
+| `0x404e50` | `public: __thiscall cocos2d::__Array::__Array(void)` |
+| `0x405960` | `public: __thiscall cocos2d::__Bool::__Bool(class cocos2d::__Bool &&)` |
+| `0x405960` | `public: __thiscall cocos2d::__Bool::__Bool(class cocos2d::__Bool const &)` |
+| `0x4059b0` | `public: __thiscall cocos2d::__Bool::__Bool(bool)` |
+| `0x4059f0` | `public: __thiscall cocos2d::__Dictionary::__Dictionary(class cocos2d::__Dictionary const &)` |
+| `0x407160` | `public: __thiscall cocos2d::__Dictionary::__Dictionary(void)` |
+| `0x405a40` | `public: __thiscall cocos2d::__Double::__Double(class cocos2d::__Double &&)` |
+| `0x405a40` | `public: __thiscall cocos2d::__Double::__Double(class cocos2d::__Double const &)` |
+| `0x405a90` | `public: __thiscall cocos2d::__Double::__Double(double)` |
+| `0x405ad0` | `public: __thiscall cocos2d::__Float::__Float(class cocos2d::__Float &&)` |
+| `0x405ad0` | `public: __thiscall cocos2d::__Float::__Float(class cocos2d::__Float const &)` |
+| `0x405b20` | `public: __thiscall cocos2d::__Float::__Float(float)` |
+| `0x405b60` | `public: __thiscall cocos2d::__Integer::__Integer(class cocos2d::__Integer const &)` |
+| `0x405bb0` | `public: __thiscall cocos2d::__Integer::__Integer(int)` |
+| `0x24bed0` | `public: __thiscall cocos2d::__NotificationCenter::__NotificationCenter(class cocos2d::__NotificationCenter const &)` |
+| `0x409bd0` | `public: __thiscall cocos2d::__NotificationCenter::__NotificationCenter(void)` |
+| `0x40a260` | `public: __thiscall cocos2d::__Set::__Set(class cocos2d::__Set const &)` |
+| `0x40a3c0` | `public: __thiscall cocos2d::__Set::__Set(void)` |
+| `0x40a990` | `public: __thiscall cocos2d::__String::__String(class cocos2d::__String const &)` |
+| `0x40aa40` | `public: __thiscall cocos2d::__String::__String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x40aab0` | `public: __thiscall cocos2d::__String::__String(char const *)` |
+| `0x40ab50` | `public: __thiscall cocos2d::__String::__String(void)` |
+| `0x3c7150` | `public: __thiscall winSystemInfo::winSystemInfo(class winSystemInfo const &)` |
+| `0x3c7220` | `public: __thiscall winSystemInfo::winSystemInfo(void)` |
+| `0x272570` | `public: __thiscall Rainbow::AssetTextureSettingLoader<1,1>::~AssetTextureSettingLoader<1,1>(void)` |
+| `0x272570` | `public: __thiscall Rainbow::AssetTextureSettingLoader<1,0>::~AssetTextureSettingLoader<1,0>(void)` |
+| `0x272570` | `public: __thiscall Rainbow::AssetTextureSettingLoader<0,1>::~AssetTextureSettingLoader<0,1>(void)` |
+| `0x272570` | `public: __thiscall Rainbow::AssetTextureSettingLoader<0,0>::~AssetTextureSettingLoader<0,0>(void)` |
+| `0xf3140` | `public: virtual __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::~IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>(void)` |
+| `0xf3140` | `public: virtual __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::~IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>(void)` |
+| `0xf3140` | `public: virtual __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::~IHttpTaskIterFace<class Rainbow::Http::MiniUpload>(void)` |
+| `0x2a9970` | `public: __thiscall Rainbow::Singleton<class MINIW::SnapshotInterface>::~Singleton<class MINIW::SnapshotInterface>(void)` |
+| `0x9de10` | `public: __thiscall Rainbow::Singleton<class Rainbow::SoundSystem>::~Singleton<class Rainbow::SoundSystem>(void)` |
+| `0x9de20` | `public: __thiscall Rainbow::ZipAssetLoader<1,1>::~ZipAssetLoader<1,1>(void)` |
+| `0x9de20` | `public: __thiscall Rainbow::ZipAssetLoader<1,0>::~ZipAssetLoader<1,0>(void)` |
+| `0x9de20` | `public: __thiscall Rainbow::ZipAssetLoader<0,1>::~ZipAssetLoader<0,1>(void)` |
+| `0x9de20` | `public: __thiscall Rainbow::ZipAssetLoader<0,0>::~ZipAssetLoader<0,0>(void)` |
+| `0x33e080` | `public: virtual __thiscall cocos2d::Action::~Action(void)` |
+| `0x89e50` | `public: virtual __thiscall cocos2d::ActionInterval::~ActionInterval(void)` |
+| `0x2e9a80` | `public: virtual __thiscall fairygui::ActionMovieClip::~ActionMovieClip(void)` |
+| `0x89e70` | `public: __thiscall ActorBodySafeHandle::~ActorBodySafeHandle(void)` |
+| `0x89f20` | `public: virtual __thiscall Rainbow::AnimOjbectMotion::~AnimOjbectMotion(void)` |
+| `0x350900` | `public: virtual __thiscall cocos2d::Animation::~Animation(void)` |
+| `0x3cbfd0` | `public: virtual __thiscall spine::Animation::~Animation(void)` |
+| `0xdb300` | `public: virtual __thiscall Rainbow::AnimationData::~AnimationData(void)` |
+| `0xdfa00` | `public: virtual __thiscall Rainbow::AnimationPlayer::~AnimationPlayer(void)` |
+| `0x2e4fb0` | `public: virtual __thiscall spine::AnimationStateData::~AnimationStateData(void)` |
+| `0x2e5000` | `public: virtual __thiscall spine::AnimationStateListenerObject::~AnimationStateListenerObject(void)` |
+| `0xfe610` | `public: __thiscall Rainbow::CloudAssetNS::AssetUploadManager::~AssetUploadManager(void)` |
+| `0x2270e0` | `public: virtual __thiscall Rainbow::AsyncCombineTask::~AsyncCombineTask(void)` |
+| `0x2273c0` | `public: virtual __thiscall Rainbow::AsyncSubCombineTask::~AsyncSubCombineTask(void)` |
+| `0x3cffc0` | `public: virtual __thiscall spine::Atlas::~Atlas(void)` |
+| `0x2e5010` | `public: virtual __thiscall spine::AtlasAttachmentLoader::~AtlasAttachmentLoader(void)` |
+| `0x2e5020` | `public: virtual __thiscall spine::AtlasPage::~AtlasPage(void)` |
+| `0x2e50f0` | `public: virtual __thiscall spine::AtlasRegion::~AtlasRegion(void)` |
+| `0x1c2050` | `public: __thiscall Rainbow::BINDOBJ_T::~BINDOBJ_T(void)` |
+| `0x89f30` | `public: virtual __thiscall Rainbow::BSPData::~BSPData(void)` |
+| `0x8a000` | `public: virtual __thiscall Rainbow::BaseAnimationData::~BaseAnimationData(void)` |
+| `0x20bf20` | `public: virtual __thiscall Rainbow::BillboardMeshBatch::~BillboardMeshBatch(void)` |
+| `0x1c34a0` | `public: virtual __thiscall Rainbow::BindOjbect2Motion::~BindOjbect2Motion(void)` |
+| `0x2e5200` | `public: virtual __thiscall spine::Bone::~Bone(void)` |
+| `0xd6b90` | `public: virtual __thiscall Rainbow::BoneTrack::~BoneTrack(void)` |
+| `0x12f740` | `public: virtual __thiscall Rainbow::UILib::CCoord::~CCoord(void)` |
+| `0x297c40` | `public: virtual __thiscall MINIW::CSVParser::~CSVParser(void)` |
+| `0x29c7a0` | `public: virtual __thiscall MINIW::Cef3Manager::~Cef3Manager(void)` |
+| `0x3c6490` | `public: virtual __thiscall ChannelList::~ChannelList(void)` |
+| `0x1011e0` | `public: virtual __thiscall Rainbow::CloudAssetLoader::~CloudAssetLoader(void)` |
+| `0xf32c0` | `public: __thiscall Rainbow::CloudAssetUser::~CloudAssetUser(void)` |
+| `0x402a40` | `public: virtual __thiscall spine::Cocos2dAtlasAttachmentLoader::~Cocos2dAtlasAttachmentLoader(void)` |
+| `0x402a50` | `public: virtual __thiscall spine::Cocos2dTextureLoader::~Cocos2dTextureLoader(void)` |
+| `0x227480` | `public: __thiscall Rainbow::CombineManager::~CombineManager(void)` |
+| `0x354c70` | `public: virtual __thiscall cocos2d::Component::~Component(void)` |
+| `0x2a33b0` | `public: __thiscall Rainbow::CompressSystem::~CompressSystem(void)` |
+| `0x115c10` | `public: virtual __thiscall CoordAxis::~CoordAxis(void)` |
+| `0x12f810` | `public: virtual __thiscall Rainbow::UILib::CoordInteract::~CoordInteract(void)` |
+| `0x296900` | `public: __thiscall CsvManager::~CsvManager(void)` |
+| `0x293b60` | `public: __thiscall CsvTable::~CsvTable(void)` |
+| `0x233040` | `public: virtual __thiscall Rainbow::CubeBorder::~CubeBorder(void)` |
+| `0x134c70` | `public: virtual __thiscall Rainbow::UILib::CustomView::~CustomView(void)` |
+| `0x38b310` | `public: __thiscall cocos2d::Data::~Data(void)` |
+| `0x24bfa0` | `public: virtual __thiscall cocos2d::DataVisitor::~DataVisitor(void)` |
+| `0xbc070` | `public: __thiscall Rainbow::DebugMgr::~DebugMgr(void)` |
+| `0x275af0` | `public: virtual __thiscall Rainbow::DecalRenderer::~DecalRenderer(void)` |
+| `0x9df60` | `public: __thiscall Rainbow::Setting::DeviceModel::~DeviceModel(void)` |
+| `0x2cacf0` | `public: virtual __thiscall Rainbow::Setting::DeviceModelData::~DeviceModelData(void)` |
+| `0x4071a0` | `public: __thiscall cocos2d::DictElement::~DictElement(void)` |
+| `0x38b9b0` | `public: virtual __thiscall cocos2d::Director::~Director(void)` |
+| `0x1fb360` | `public: virtual __thiscall Rainbow::Downloader::~Downloader(void)` |
+| `0x2cdd20` | `public: __thiscall fairygui::DragDropManager::~DragDropManager(void)` |
+| `0x355a30` | `public: virtual __thiscall cocos2d::DrawNode::~DrawNode(void)` |
+| `0xc0650` | `public: virtual __thiscall Rainbow::DummyMaterialTemplate::~DummyMaterialTemplate(void)` |
+| `0x1dcbd0` | `public: virtual __thiscall Rainbow::DummyNode::~DummyNode(void)` |
+| `0x1378d0` | `public: virtual __thiscall Rainbow::UILib::EditBox::~EditBox(void)` |
+| `0x256ef0` | `public: virtual __thiscall Rainbow::Empty3DUIRenderer::~Empty3DUIRenderer(void)` |
+| `0x1b4c90` | `public: virtual __thiscall Rainbow::Entity::~Entity(void)` |
+| `0x1be6e0` | `public: virtual __thiscall Rainbow::EntityData::~EntityData(void)` |
+| `0x2e5290` | `public: virtual __thiscall spine::Event::~Event(void)` |
+| `0x2e5310` | `public: virtual __thiscall spine::EventData::~EventData(void)` |
+| `0x393840` | `public: virtual __thiscall cocos2d::EventDispatcher::~EventDispatcher(void)` |
+| `0x8a0e0` | `public: virtual __thiscall cocos2d::EventListenerCustom::~EventListenerCustom(void)` |
+| `0x8a110` | `public: virtual __thiscall cocos2d::EventListenerMouse::~EventListenerMouse(void)` |
+| `0x399190` | `public: virtual __thiscall cocos2d::EventListenerTouchOneByOne::~EventListenerTouchOneByOne(void)` |
+| `0x8a1b0` | `public: virtual __thiscall cocos2d::EventMouse::~EventMouse(void)` |
+| `0x8a250` | `public: __thiscall fairygui::EventTag::~EventTag(void)` |
+| `0x1c4950` | `public: virtual __thiscall Rainbow::EventTriggerObjectMotion::~EventTriggerObjectMotion(void)` |
+| `0x21cff0` | `public: virtual __thiscall Rainbow::Exception::~Exception(void)` |
+| `0x317ce0` | `public: virtual __thiscall fairygui::FUIContainer::~FUIContainer(void)` |
+| `0x31b130` | `public: virtual __thiscall fairygui::FUIModelSprite::~FUIModelSprite(void)` |
+| `0x320770` | `public: virtual __thiscall fairygui::FUIRenderTexture::~FUIRenderTexture(void)` |
+| `0x324480` | `public: virtual __thiscall fairygui::FUISprite::~FUISprite(void)` |
+| `0x225080` | `public: __thiscall FileAutoClose::~FileAutoClose(void)` |
+| `0x1fc950` | `public: __thiscall Rainbow::FileManagerWeb::~FileManagerWeb(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::FileNotFoundException::~FileNotFoundException(void)` |
+| `0x2141c0` | `public: virtual __thiscall Rainbow::FmodSound::~FmodSound(void)` |
+| `0x69380` | `public: __thiscall cocos2d::FontDefinition::~FontDefinition(void)` |
+| `0x13eee0` | `public: __thiscall Rainbow::UILib::FontInstance::~FontInstance(void)` |
+| `0x13efc0` | `public: virtual __thiscall Rainbow::UILib::FontString::~FontString(void)` |
+| `0x143420` | `protected: virtual __thiscall Rainbow::UILib::Frame::~Frame(void)` |
+| `0x14ca10` | `public: __thiscall Rainbow::UILib::FrameManager::~FrameManager(void)` |
+| `0x2f4f30` | `public: virtual __thiscall fairygui::GBasicTextField::~GBasicTextField(void)` |
+| `0x2ce2f0` | `public: virtual __thiscall fairygui::GButton::~GButton(void)` |
+| `0x2cfc70` | `public: virtual __thiscall fairygui::GColorTextureLoader::~GColorTextureLoader(void)` |
+| `0x2d0370` | `public: virtual __thiscall fairygui::GComboBox::~GComboBox(void)` |
+| `0x2d1a90` | `public: virtual __thiscall fairygui::GComponent::~GComponent(void)` |
+| `0x2cd470` | `public: virtual __thiscall fairygui::GController::~GController(void)` |
+| `0x2d59e0` | `public: virtual __thiscall fairygui::GGraph::~GGraph(void)` |
+| `0x2d7e30` | `public: virtual __thiscall fairygui::GImage::~GImage(void)` |
+| `0x3a9c50` | `public: virtual __thiscall cocos2d::GLView::~GLView(void)` |
+| `0x3c32f0` | `public: virtual __thiscall cocos2d::GLViewImpl::~GLViewImpl(void)` |
+| `0x2d8fb0` | `public: virtual __thiscall fairygui::GList::~GList(void)` |
+| `0x2e5400` | `public: virtual __thiscall fairygui::GLoader3D::~GLoader3D(void)` |
+| `0x2e08f0` | `public: virtual __thiscall fairygui::GLoader::~GLoader(void)` |
+| `0x2e9950` | `public: virtual __thiscall fairygui::GModelView::~GModelView(void)` |
+| `0x2eaf30` | `public: virtual __thiscall fairygui::GObject::~GObject(void)` |
+| `0x2eeda0` | `public: virtual __thiscall fairygui::GProgressBar::~GProgressBar(void)` |
+| `0x2f0050` | `public: virtual __thiscall fairygui::GRichTextField::~GRichTextField(void)` |
+| `0x2f0cb0` | `public: virtual __thiscall fairygui::GRoot::~GRoot(void)` |
+| `0x2f69e0` | `public: virtual __thiscall fairygui::GTextInput::~GTextInput(void)` |
+| `0x2f87a0` | `public: virtual __thiscall fairygui::GTreeNode::~GTreeNode(void)` |
+| `0x332cc0` | `public: virtual __thiscall fairygui::GTweener::~GTweener(void)` |
+| `0x2f9200` | `public: virtual __thiscall fairygui::GUIGenIcon::~GUIGenIcon(void)` |
+| `0x2fb1a0` | `public: virtual __thiscall fairygui::GUIRenderTexture::~GUIRenderTexture(void)` |
+| `0x2fb530` | `public: virtual __thiscall fairygui::GWebView::~GWebView(void)` |
+| `0x2c66e0` | `public: __thiscall Rainbow::Setting::GameConfigMgr::~GameConfigMgr(void)` |
+| `0x2cad00` | `public: virtual __thiscall Rainbow::Setting::GameConfiguration::~GameConfiguration(void)` |
+| `0xbc2e0` | `public: __thiscall Rainbow::GameSetting::~GameSetting(void)` |
+| `0x8a1c0` | `public: virtual __thiscall GameUI::~GameUI(void)` |
+| `0xcb840` | `public: __thiscall Rainbow::GameUserSetting::~GameUserSetting(void)` |
+| `0x20e520` | `public: __thiscall Rainbow::GaussBlurRenderer::~GaussBlurRenderer(void)` |
+| `0x8a250` | `public: __thiscall Rainbow::GaussGenerator::~GaussGenerator(void)` |
+| `0x32d510` | `public: virtual __thiscall fairygui::GearColor::~GearColor(void)` |
+| `0x32dea0` | `public: virtual __thiscall fairygui::GearDisplay::~GearDisplay(void)` |
+| `0x32e360` | `public: virtual __thiscall fairygui::GearFontSize::~GearFontSize(void)` |
+| `0x32e800` | `public: virtual __thiscall fairygui::GearIcon::~GearIcon(void)` |
+| `0x32eb80` | `public: virtual __thiscall fairygui::GearLook::~GearLook(void)` |
+| `0x3301a0` | `public: virtual __thiscall fairygui::GearText::~GearText(void)` |
+| `0x235a60` | `public: virtual __thiscall Rainbow::GifAsset::~GifAsset(void)` |
+| `0x235be0` | `public: virtual __thiscall Rainbow::GifSequenceTexture::~GifSequenceTexture(void)` |
+| `0x693d0` | `public: __thiscall Guid::~Guid(void)` |
+| `0x2c2a00` | `public: virtual __thiscall Rainbow::HUDBloodBar::~HUDBloodBar(void)` |
+| `0x2c32a0` | `public: virtual __thiscall Rainbow::HUDChatBubble::~HUDChatBubble(void)` |
+| `0x2c37c0` | `public: virtual __thiscall Rainbow::HUDLevitationFont::~HUDLevitationFont(void)` |
+| `0x2bc190` | `public: __thiscall Rainbow::HUDLevitationFontRenderer::~HUDLevitationFontRenderer(void)` |
+| `0x2b2e70` | `public: virtual __thiscall fairygui::HUDRoot::~HUDRoot(void)` |
+| `0x2b5590` | `public: virtual __thiscall fairygui::HUDScene::~HUDScene(void)` |
+| `0x2c4780` | `public: virtual __thiscall Rainbow::HUDTitleBase::~HUDTitleBase(void)` |
+| `0x2c5ba0` | `public: virtual __thiscall Rainbow::HUDTitleInfo::~HUDTitleInfo(void)` |
+| `0x2c47e0` | `public: virtual __thiscall Rainbow::HUDTitleLine::~HUDTitleLine(void)` |
+| `0x2bd340` | `public: __thiscall Rainbow::HUDTitleRender::~HUDTitleRender(void)` |
+| `0x2bbd10` | `public: virtual __thiscall Rainbow::HudBitMapFontAttribute::~HudBitMapFontAttribute(void)` |
+| `0x2c1170` | `public: __thiscall Rainbow::HudConfigSetting::~HudConfigSetting(void)` |
+| `0x2bbdc0` | `public: virtual __thiscall Rainbow::HudFontBaseAttribute::~HudFontBaseAttribute(void)` |
+| `0x2bbe40` | `public: virtual __thiscall Rainbow::HudImageAttribute::~HudImageAttribute(void)` |
+| `0x2bbec0` | `public: virtual __thiscall Rainbow::HudLayoutAttribute::~HudLayoutAttribute(void)` |
+| `0x2b9780` | `public: virtual __thiscall Rainbow::HudLevBitMapFontAttribute::~HudLevBitMapFontAttribute(void)` |
+| `0x2b97b0` | `public: virtual __thiscall Rainbow::HudLevNormalFontAttribute::~HudLevNormalFontAttribute(void)` |
+| `0x2b97e0` | `public: virtual __thiscall Rainbow::HudLevSpriteAndFontAttribute::~HudLevSpriteAndFontAttribute(void)` |
+| `0x2b9820` | `public: virtual __thiscall Rainbow::HudLevSpriteAttribute::~HudLevSpriteAttribute(void)` |
+| `0x2b9850` | `public: virtual __thiscall Rainbow::HudLevitationBaseAttribute::~HudLevitationBaseAttribute(void)` |
+| `0x2bbe40` | `public: virtual __thiscall Rainbow::HudMovieClipAttribute::~HudMovieClipAttribute(void)` |
+| `0x2bbdc0` | `public: virtual __thiscall Rainbow::HudNormalFontAttribute::~HudNormalFontAttribute(void)` |
+| `0x2c1d70` | `public: __thiscall Rainbow::HudSetting::~HudSetting(void)` |
+| `0x2bbed0` | `public: virtual __thiscall Rainbow::HudSpineAttribute::~HudSpineAttribute(void)` |
+| `0x2bbec0` | `public: virtual __thiscall Rainbow::HudTitleAttribute::~HudTitleAttribute(void)` |
+| `0x89af0` | `public: __thiscall Rainbow::HudTitleLabelSet::~HudTitleLabelSet(void)` |
+| `0x2bbfb0` | `public: virtual __thiscall Rainbow::HudTitleNormalFontAttribute::~HudTitleNormalFontAttribute(void)` |
+| `0x2bc040` | `public: virtual __thiscall Rainbow::HudTitleSpriteAttribute::~HudTitleSpriteAttribute(void)` |
+| `0x2bc060` | `public: virtual __thiscall Rainbow::HudTitleSpriteFontAttribute::~HudTitleSpriteFontAttribute(void)` |
+| `0x8a250` | `public: virtual __thiscall Rainbow::ICef3Manager::~ICef3Manager(void)` |
+| `0x8a250` | `public: virtual __thiscall Rainbow::IClientDnsCache::~IClientDnsCache(void)` |
+| `0x8a250` | `public: virtual __thiscall Rainbow::IClientInfo::~IClientInfo(void)` |
+| `0x8a250` | `public: virtual __thiscall Rainbow::ICloudProxy::~ICloudProxy(void)` |
+| `0x8a260` | `public: virtual __thiscall Rainbow::IModelAnimationPlayer::~IModelAnimationPlayer(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::IOException::~IOException(void)` |
+| `0x8a250` | `public: virtual __thiscall MINIW::IStatisticsToolsInterface::~IStatisticsToolsInterface(void)` |
+| `0x257e00` | `public: virtual __thiscall Rainbow::Image3D::~Image3D(void)` |
+| `0x259540` | `public: virtual __thiscall Rainbow::ImageBoard3D::~ImageBoard3D(void)` |
+| `0xe6310` | `public: virtual __thiscall Rainbow::IndexData::~IndexData(void)` |
+| `0x8a250` | `public: __thiscall fairygui::InputEvent::~InputEvent(void)` |
+| `0x35d040` | `public: virtual __thiscall cocos2d::InputLabel::~InputLabel(void)` |
+| `0x326e70` | `public: __thiscall fairygui::InputProcessor::~InputProcessor(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::InternalErrorException::~InternalErrorException(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::InvalidParametersException::~InvalidParametersException(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::InvalidStateException::~InvalidStateException(void)` |
+| `0x9e0a0` | `public: __thiscall Rainbow::UILib::Invocation::~Invocation(void)` |
+| `0x9e180` | `public: __thiscall Rainbow::UILib::InvocationBuilder::~InvocationBuilder(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::ItemIdentityException::~ItemIdentityException(void)` |
+| `0x25b010` | `public: virtual __thiscall Rainbow::ItemImage3D::~ItemImage3D(void)` |
+| `0x3607f0` | `public: virtual __thiscall cocos2d::Label::~Label(void)` |
+| `0x159790` | `protected: virtual __thiscall Rainbow::UILib::LayoutFrame::~LayoutFrame(void)` |
+| `0xd01e0` | `public: __thiscall czy::LeastSquaresFit::~LeastSquaresFit(void)` |
+| `0xcd5a0` | `public: virtual __thiscall Rainbow::LegacyAsset::~LegacyAsset(void)` |
+| `0x2553c0` | `public: virtual __thiscall Rainbow::LegacyCommon3DUI::~LegacyCommon3DUI(void)` |
+| `0x8a310` | `public: virtual __thiscall Rainbow::LegacyDefault3DObject::~LegacyDefault3DObject(void)` |
+| `0xbe9a0` | `public: __thiscall Rainbow::LegacyGlobalShaderParamManager::~LegacyGlobalShaderParamManager(void)` |
+| `0xd4c10` | `public: virtual __thiscall Rainbow::LegacyMeshRenderObject::~LegacyMeshRenderObject(void)` |
+| `0xe7b10` | `public: virtual __thiscall Rainbow::LegacySkinMeshRenderer::~LegacySkinMeshRenderer(void)` |
+| `0x2533a0` | `public: __thiscall MINIW::LuaCallHelper::~LuaCallHelper(void)` |
+| `0x4d36f0` | `public: virtual __thiscall cocos2d::LuaEngine::~LuaEngine(void)` |
+| `0x9e260` | `public: virtual __thiscall Rainbow::MiniLua::LuaFunctionLinker::~LuaFunctionLinker(void)` |
+| `0x248960` | `public: virtual __thiscall Rainbow::MiniLua::LuaLinker::~LuaLinker(void)` |
+| `0xbc470` | `public: __thiscall Rainbow::MiniLua::LuaReturnValues::~LuaReturnValues(void)` |
+| `0x9e260` | `public: virtual __thiscall Rainbow::MiniLua::LuaTableLinker::~LuaTableLinker(void)` |
+| `0x9e270` | `public: __thiscall Rainbow::MiniLua::LuaValue::~LuaValue(void)` |
+| `0x281240` | `public: __thiscall LuaWebSocketMgr::~LuaWebSocketMgr(void)` |
+| `0x227560` | `public: __thiscall Rainbow::MaterialInstanceCombineArgs::~MaterialInstanceCombineArgs(void)` |
+| `0xc1cc0` | `public: virtual __thiscall Rainbow::MaterialTemplate::~MaterialTemplate(void)` |
+| `0x2e5280` | `public: virtual __thiscall spine::MathUtil::~MathUtil(void)` |
+| `0xd4740` | `public: virtual __thiscall Rainbow::MeshData::~MeshData(void)` |
+| `0xd2000` | `public: __thiscall Rainbow::MeshInstance::~MeshInstance(void)` |
+| `0x2820b0` | `public: virtual __thiscall Rainbow::Http::MiniBreakResumeUpload::~MiniBreakResumeUpload(void)` |
+| `0x284fd0` | `public: virtual __thiscall Rainbow::Http::MiniCustomUpload::~MiniCustomUpload(void)` |
+| `0x2877b0` | `public: virtual __thiscall Rainbow::Http::MiniDownloader::~MiniDownloader(void)` |
+| `0x279160` | `public: virtual __thiscall Rainbow::MiniEventDispatcher::~MiniEventDispatcher(void)` |
+| `0x231300` | `protected: virtual __thiscall Rainbow::MiniGameScene::~MiniGameScene(void)` |
+| `0x279f60` | `public: virtual __thiscall Rainbow::MiniGlobalEvent::~MiniGlobalEvent(void)` |
+| `0x288960` | `public: virtual __thiscall Rainbow::Http::MiniHttpRequest::~MiniHttpRequest(void)` |
+| `0x8a270` | `public: virtual __thiscall Rainbow::MiniObject::~MiniObject(void)` |
+| `0x329570` | `public: virtual __thiscall fairygui::MiniUIGameEventMgr::~MiniUIGameEventMgr(void)` |
+| `0x289260` | `public: virtual __thiscall Rainbow::Http::MiniUpload::~MiniUpload(void)` |
+| `0x2101e0` | `public: __thiscall Rainbow::MobileCameraRenderer::~MobileCameraRenderer(void)` |
+| `0x1c7360` | `public: virtual __thiscall Rainbow::Model::~Model(void)` |
+| `0x1a83b0` | `public: virtual __thiscall Rainbow::ModelAnimationPlayer::~ModelAnimationPlayer(void)` |
+| `0x1d70e0` | `public: virtual __thiscall Rainbow::ModelData::~ModelData(void)` |
+| `0x1d73a0` | `public: __thiscall Rainbow::ModelDataRetainSettingLoader::~ModelDataRetainSettingLoader(void)` |
+| `0x8a280` | `public: virtual __thiscall Rainbow::ModelLegacy::~ModelLegacy(void)` |
+| `0x1ac950` | `public: __thiscall Rainbow::ModelMeshRenderers::~ModelMeshRenderers(void)` |
+| `0x1bf1e0` | `protected: virtual __thiscall Rainbow::ModelMotion::~ModelMotion(void)` |
+| `0x8a2f0` | `public: virtual __thiscall Rainbow::ModelNew::~ModelNew(void)` |
+| `0x1aca30` | `public: virtual __thiscall Rainbow::ModelRenderer::~ModelRenderer(void)` |
+| `0x166260` | `public: virtual __thiscall Rainbow::UILib::ModelView::~ModelView(void)` |
+| `0x3adad0` | `public: virtual __thiscall cocos2d::ModelViewCommand::~ModelViewCommand(void)` |
+| `0x8a300` | `public: virtual __thiscall Rainbow::MotionObjLife::~MotionObjLife(void)` |
+| `0x8a310` | `public: virtual __thiscall Rainbow::MovableObject::~MovableObject(void)` |
+| `0x25d830` | `public: virtual __thiscall Rainbow::MoveByText::~MoveByText(void)` |
+| `0x25df80` | `public: virtual __thiscall Rainbow::MoveByTextMgr::~MoveByTextMgr(void)` |
+| `0x16bf40` | `public: virtual __thiscall Rainbow::UILib::MultiEditBox::~MultiEditBox(void)` |
+| `0x25f190` | `public: virtual __thiscall Rainbow::MusicClubChatBubble3D::~MusicClubChatBubble3D(void)` |
+| `0x212a50` | `public: __thiscall Rainbow::MusicManager::~MusicManager(void)` |
+| `0x263cf0` | `public: virtual __thiscall Rainbow::NameText3D::~NameText3D(void)` |
+| `0x371320` | `public: virtual __thiscall cocos2d::Node::~Node(void)` |
+| `0x265990` | `public: virtual __thiscall Rainbow::NormalText3D::~NormalText3D(void)` |
+| `0x409c40` | `public: virtual __thiscall cocos2d::NotificationObserver::~NotificationObserver(void)` |
+| `0x1c35e0` | `public: virtual __thiscall Rainbow::ObjectMotion::~ObjectMotion(void)` |
+| `0xe6330` | `public: virtual __thiscall Rainbow::OgreVertexData::~OgreVertexData(void)` |
+| `0x3adcb0` | `public: virtual __thiscall cocos2d::OldUIRenderCommand::~OldUIRenderCommand(void)` |
+| `0x266460` | `public: virtual __thiscall Rainbow::OnlyText3D::~OnlyText3D(void)` |
+| `0x1deac0` | `public: __thiscall Rainbow::ParticleManager::~ParticleManager(void)` |
+| `0x1debd0` | `public: virtual __thiscall Rainbow::ParticleNode::~ParticleNode(void)` |
+| `0x211cd0` | `public: __thiscall Rainbow::PerlinNoise2D::~PerlinNoise2D(void)` |
+| `0x2fcbd0` | `public: virtual __thiscall fairygui::PopupMenu::~PopupMenu(void)` |
+| `0x1c3680` | `public: virtual __thiscall Rainbow::PostObjMotion::~PostObjMotion(void)` |
+| `0x24c010` | `public: virtual __thiscall cocos2d::PrettyPrinter::~PrettyPrinter(void)` |
+| `0x2672b0` | `public: virtual __thiscall Rainbow::ProgressBarIn3D::~ProgressBarIn3D(void)` |
+| `0x268a10` | `public: virtual __thiscall Rainbow::ProgressBarWithText3D::~ProgressBarWithText3D(void)` |
+| `0x37a5e0` | `public: virtual __thiscall cocos2d::ProtectedNode::~ProtectedNode(void)` |
+| `0x10fe80` | `public: virtual __thiscall Rainbow::RFontBase::~RFontBase(void)` |
+| `0x2316b0` | `protected: virtual __thiscall Rainbow::RainbowEffectProxy::~RainbowEffectProxy(void)` |
+| `0x231740` | `public: virtual __thiscall Rainbow::RainbowEffectProxyHolder::~RainbowEffectProxyHolder(void)` |
+| `0xe7ab0` | `public: __thiscall Rainbow::RandomPool::~RandomPool(void)` |
+| `0x8a250` | `public: virtual __thiscall MINIW::RecordInterface::~RecordInterface(void)` |
+| `0x39c190` | `public: virtual __thiscall cocos2d::Ref::~Ref(void)` |
+| `0x8a320` | `public: virtual __thiscall Rainbow::RefObjectNoName::~RefObjectNoName(void)` |
+| `0x2ff960` | `public: __thiscall fairygui::Relations::~Relations(void)` |
+| `0xecf50` | `public: __thiscall Rainbow::RemoteAssetsManager::~RemoteAssetsManager(void)` |
+| `0x3af5d0` | `public: __thiscall cocos2d::Renderer::~Renderer(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::RenderingAPIException::~RenderingAPIException(void)` |
+| `0x89e50` | `public: virtual __thiscall cocos2d::ResizeTo::~ResizeTo(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::RuntimeAssertionException::~RuntimeAssertionException(void)` |
+| `0x8a250` | `public: __thiscall cocos2d::SAXParser::~SAXParser(void)` |
+| `0x37b6b0` | `public: virtual __thiscall cocos2d::Scene::~Scene(void)` |
+| `0x39c620` | `public: virtual __thiscall cocos2d::Scheduler::~Scheduler(void)` |
+| `0x24c0b0` | `public: __thiscall MINIW::ScriptVM::~ScriptVM(void)` |
+| `0x300410` | `public: virtual __thiscall fairygui::ScrollPane::~ScrollPane(void)` |
+| `0x1a7600` | `public: __thiscall Rainbow::SequenceMap::~SequenceMap(void)` |
+| `0x23a7c0` | `public: virtual __thiscall Rainbow::SequenceTexture::~SequenceTexture(void)` |
+| `0x254290` | `public: virtual __thiscall Rainbow::ShadowFace::~ShadowFace(void)` |
+| `0x2276a0` | `public: virtual __thiscall Rainbow::SimpleAsyncCombineTask::~SimpleAsyncCombineTask(void)` |
+| `0x2324c0` | `protected: virtual __thiscall Rainbow::SimpleGameScene::~SimpleGameScene(void)` |
+| `0x3dfa30` | `public: virtual __thiscall spine::Skeleton::~Skeleton(void)` |
+| `0x3e1580` | `public: virtual __thiscall spine::SkeletonAnimation::~SkeletonAnimation(void)` |
+| `0xe1d40` | `public: virtual __thiscall Rainbow::SkeletonComponent::~SkeletonComponent(void)` |
+| `0xe36a0` | `public: virtual __thiscall Rainbow::SkeletonData::~SkeletonData(void)` |
+| `0x3ed960` | `public: virtual __thiscall spine::SkeletonData::~SkeletonData(void)` |
+| `0x3ee820` | `public: virtual __thiscall spine::SkeletonJson::~SkeletonJson(void)` |
+| `0x3f8c50` | `public: virtual __thiscall spine::SkeletonRenderer::~SkeletonRenderer(void)` |
+| `0x3fcc70` | `public: virtual __thiscall spine::Skin::~Skin(void)` |
+| `0x8a330` | `public: virtual __thiscall Rainbow::SkinAnimContainer::~SkinAnimContainer(void)` |
+| `0x8a350` | `public: virtual __thiscall Rainbow::SkinPatch::~SkinPatch(void)` |
+| `0x8a400` | `public: __thiscall Rainbow::UILib::SkinResource::~SkinResource(void)` |
+| `0x11d790` | `public: virtual __thiscall Rainbow::UILib::SkinTextColorLoader::~SkinTextColorLoader(void)` |
+| `0x11eb50` | `public: virtual __thiscall Rainbow::SkinTextColorLoaderBase::~SkinTextColorLoaderBase(void)` |
+| `0x2e55d0` | `public: virtual __thiscall spine::Slot::~Slot(void)` |
+| `0x2e5660` | `public: virtual __thiscall spine::SlotData::~SlotData(void)` |
+| `0xc2050` | `public: __thiscall Rainbow::SnapshotHelper::~SnapshotHelper(void)` |
+| `0x2a9970` | `public: virtual __thiscall MINIW::SnapshotInterface::~SnapshotInterface(void)` |
+| `0x9e2d0` | `public: virtual __thiscall Rainbow::SoundSystem::~SoundSystem(void)` |
+| `0x3d6f00` | `public: virtual __thiscall spine::SpineExtension::~SpineExtension(void)` |
+| `0x3fe2f0` | `public: virtual __thiscall spine::SpineObject::~SpineObject(void)` |
+| `0x37c170` | `public: virtual __thiscall cocos2d::Sprite::~Sprite(void)` |
+| `0x380e00` | `public: virtual __thiscall cocos2d::SpriteBatchNode::~SpriteBatchNode(void)` |
+| `0x8a250` | `public: virtual __thiscall MINIW::StatisticRainforestInterface::~StatisticRainforestInterface(void)` |
+| `0x8a250` | `public: virtual __thiscall MINIW::StatisticTerrgenInterface::~StatisticTerrgenInterface(void)` |
+| `0x26b380` | `public: virtual __thiscall Rainbow::StoveProgressBar3D::~StoveProgressBar3D(void)` |
+| `0xea070` | `public: virtual __thiscall Rainbow::SubMeshData::~SubMeshData(void)` |
+| `0xd2130` | `public: __thiscall Rainbow::SubMeshInstance::~SubMeshInstance(void)` |
+| `0x2e5280` | `public: virtual __thiscall spine::SwirlVertexEffect::~SwirlVertexEffect(void)` |
+| `0x3a4d10` | `public: __thiscall cocos2d::ObjectFactory::TInfo::~TInfo(void)` |
+| `0x276240` | `public: virtual __thiscall Rainbow::TerrainDecalEffect::~TerrainDecalEffect(void)` |
+| `0x2764d0` | `public: __thiscall Rainbow::TerrainDecalSubMesh::~TerrainDecalSubMesh(void)` |
+| `0x26d8f0` | `public: virtual __thiscall Rainbow::Text3D::~Text3D(void)` |
+| `0x26e990` | `public: virtual __thiscall Rainbow::TextBoardIn3D::~TextBoardIn3D(void)` |
+| `0x69380` | `public: __thiscall fairygui::TextFormat::~TextFormat(void)` |
+| `0x23b3f0` | `public: __thiscall Rainbow::TextureRenderGen::~TextureRenderGen(void)` |
+| `0x8a250` | `public: __thiscall Rainbow::Timer::~Timer(void)` |
+| `0x3cc870` | `public: virtual __thiscall spine::TrackEntry::~TrackEntry(void)` |
+| `0x306770` | `public: virtual __thiscall fairygui::Transition::~Transition(void)` |
+| `0x8a670` | `public: virtual __thiscall cocos2d::TransitionEaseScene::~TransitionEaseScene(void)` |
+| `0x384120` | `public: virtual __thiscall cocos2d::TransitionFade::~TransitionFade(void)` |
+| `0x2330b0` | `public: virtual __thiscall Rainbow::TriangleMeshNormalAndEdge::~TriangleMeshNormalAndEdge(void)` |
+| `0x2bc0f0` | `public: virtual __thiscall Rainbow::TweenParam::~TweenParam(void)` |
+| `0x335c00` | `public: virtual __thiscall fairygui::UBBParser::~UBBParser(void)` |
+| `0x30bb60` | `public: virtual __thiscall fairygui::UI3DRenderer::~UI3DRenderer(void)` |
+| `0x30cee0` | `public: virtual __thiscall fairygui::UI3DRoot::~UI3DRoot(void)` |
+| `0x30e0f0` | `public: virtual __thiscall fairygui::UI3DScene::~UI3DScene(void)` |
+| `0x329e30` | `public: virtual __thiscall fairygui::UIEventDispatcher::~UIEventDispatcher(void)` |
+| `0x271780` | `public: virtual __thiscall Rainbow::UIIn3DSceneMerger::~UIIn3DSceneMerger(void)` |
+| `0x123e70` | `public: __thiscall Rainbow::UILib::UIRenderer::~UIRenderer(void)` |
+| `0x314bf0` | `public: __thiscall fairygui::UISkinColorManager::~UISkinColorManager(void)` |
+| `0x17eb00` | `public: virtual __thiscall Rainbow::UILib::UITexture::~UITexture(void)` |
+| `0x21d120` | `public: virtual __thiscall Rainbow::UnimplementedException::~UnimplementedException(void)` |
+| `0x1f9340` | `public: __thiscall Rainbow::UpDownloadManager::~UpDownloadManager(void)` |
+| `0x29a940` | `public: __thiscall Value::~Value(void)` |
+| `0x3a26a0` | `public: __thiscall cocos2d::Value::~Value(void)` |
+| `0x89af0` | `public: __thiscall Rainbow::VertexFormat::~VertexFormat(void)` |
+| `0x271f00` | `public: virtual __thiscall Rainbow::Voice3D::~Voice3D(void)` |
+| `0x194370` | `public: virtual __thiscall Rainbow::UILib::WebFrame::~WebFrame(void)` |
+| `0x28b6d0` | `public: virtual __thiscall MINIW::WebSocket::~WebSocket(void)` |
+| `0x28f550` | `public: virtual __thiscall WebSocketCallbackWrapper::~WebSocketCallbackWrapper(void)` |
+| `0x290020` | `public: __thiscall WebSocketEventHandler::~WebSocketEventHandler(void)` |
+| `0x290920` | `public: virtual __thiscall WebSocketServer::~WebSocketServer(void)` |
+| `0x28dd30` | `public: __thiscall MINIW::WebSocketSvr::~WebSocketSvr(void)` |
+| `0x316260` | `public: virtual __thiscall fairygui::Window::~Window(void)` |
+| `0x272af0` | `public: virtual __thiscall Rainbow::ZipFilePkg::~ZipFilePkg(void)` |
+| `0x404e90` | `public: virtual __thiscall cocos2d::__Array::~__Array(void)` |
+| `0x405bf0` | `public: virtual __thiscall cocos2d::__Bool::~__Bool(void)` |
+| `0x407240` | `public: virtual __thiscall cocos2d::__Dictionary::~__Dictionary(void)` |
+| `0x405bf0` | `public: virtual __thiscall cocos2d::__Double::~__Double(void)` |
+| `0x405bf0` | `public: virtual __thiscall cocos2d::__Float::~__Float(void)` |
+| `0x405c00` | `public: virtual __thiscall cocos2d::__Integer::~__Integer(void)` |
+| `0x409ca0` | `public: virtual __thiscall cocos2d::__NotificationCenter::~__NotificationCenter(void)` |
+| `0x40a490` | `public: virtual __thiscall cocos2d::__Set::~__Set(void)` |
+| `0x40abc0` | `public: virtual __thiscall cocos2d::__String::~__String(void)` |
+| `0x3c7450` | `public: virtual __thiscall winSystemInfo::~winSystemInfo(void)` |
+| `0x3fe300` | `public: static void * __cdecl spine::SpineObject::operator new(unsigned int)` |
+| `0x3fe320` | `public: static void * __cdecl spine::SpineObject::operator new(unsigned int,void *)` |
+| `0x3fe330` | `public: static void * __cdecl spine::SpineObject::operator new(unsigned int,char const *,int)` |
+| `0x3fe350` | `public: static void * __cdecl spine::SpineObject::operator new(unsigned int,struct std::nothrow_t)` |
+| `0x3fe370` | `public: static void __cdecl spine::SpineObject::operator delete(void *,void *)` |
+| `0x3fe3c0` | `public: static void __cdecl spine::SpineObject::operator delete(void *)` |
+| `0x3fe410` | `public: static void __cdecl spine::SpineObject::operator delete(void *,char const *,int)` |
+| `0x694e0` | `public: class Rainbow::AssetTextureSettingLoader<1,1> & __thiscall Rainbow::AssetTextureSettingLoader<1,1>::operator=(class Rainbow::AssetTextureSettingLoader<1,1> const &)` |
+| `0x694e0` | `public: class Rainbow::AssetTextureSettingLoader<1,0> & __thiscall Rainbow::AssetTextureSettingLoader<1,0>::operator=(class Rainbow::AssetTextureSettingLoader<1,0> const &)` |
+| `0x694e0` | `public: class Rainbow::AssetTextureSettingLoader<0,1> & __thiscall Rainbow::AssetTextureSettingLoader<0,1>::operator=(class Rainbow::AssetTextureSettingLoader<0,1> const &)` |
+| `0x694e0` | `public: class Rainbow::AssetTextureSettingLoader<0,0> & __thiscall Rainbow::AssetTextureSettingLoader<0,0>::operator=(class Rainbow::AssetTextureSettingLoader<0,0> const &)` |
+| `0xf3450` | `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload> &&)` |
+| `0xf35a0` | `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload> const &)` |
+| `0xf3450` | `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload> &&)` |
+| `0xf35a0` | `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload> const &)` |
+| `0xf3450` | `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload> &&)` |
+| `0xf35a0` | `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload> const &)` |
+| `0x8d6a0` | `public: class Rainbow::Singleton<class MINIW::SnapshotInterface> & __thiscall Rainbow::Singleton<class MINIW::SnapshotInterface>::operator=(class Rainbow::Singleton<class MINIW::SnapshotInterface> const &)` |
+| `0x8d6a0` | `public: class Rainbow::Singleton<class Rainbow::SoundSystem> & __thiscall Rainbow::Singleton<class Rainbow::SoundSystem>::operator=(class Rainbow::Singleton<class Rainbow::SoundSystem> const &)` |
+| `0x9e330` | `public: class Rainbow::ZipAssetLoader<1,1> & __thiscall Rainbow::ZipAssetLoader<1,1>::operator=(class Rainbow::ZipAssetLoader<1,1> const &)` |
+| `0x9e330` | `public: class Rainbow::ZipAssetLoader<1,0> & __thiscall Rainbow::ZipAssetLoader<1,0>::operator=(class Rainbow::ZipAssetLoader<1,0> const &)` |
+| `0x9e330` | `public: class Rainbow::ZipAssetLoader<0,1> & __thiscall Rainbow::ZipAssetLoader<0,1>::operator=(class Rainbow::ZipAssetLoader<0,1> const &)` |
+| `0x9e330` | `public: class Rainbow::ZipAssetLoader<0,0> & __thiscall Rainbow::ZipAssetLoader<0,0>::operator=(class Rainbow::ZipAssetLoader<0,0> const &)` |
+| `0x8add0` | `public: class ActorBodySafeHandle & __thiscall ActorBodySafeHandle::operator=(class ActorBodySafeHandle const &)` |
+| `0x8adf0` | `public: struct cocos2d::AffineTransform & __thiscall cocos2d::AffineTransform::operator=(struct cocos2d::AffineTransform &&)` |
+| `0x8ae20` | `public: struct cocos2d::AffineTransform & __thiscall cocos2d::AffineTransform::operator=(struct cocos2d::AffineTransform const &)` |
+| `0x8ae40` | `public: class Rainbow::AnimOjbectMotion & __thiscall Rainbow::AnimOjbectMotion::operator=(class Rainbow::AnimOjbectMotion &&)` |
+| `0x8ae40` | `public: class Rainbow::AnimOjbectMotion & __thiscall Rainbow::AnimOjbectMotion::operator=(class Rainbow::AnimOjbectMotion const &)` |
+| `0x2e5790` | `public: class spine::Animation & __thiscall spine::Animation::operator=(class spine::Animation const &)` |
+| `0x8ae60` | `public: struct cocos2d::AnimationFrameData & __thiscall cocos2d::AnimationFrameData::operator=(struct cocos2d::AnimationFrameData &&)` |
+| `0x8ae60` | `public: struct cocos2d::AnimationFrameData & __thiscall cocos2d::AnimationFrameData::operator=(struct cocos2d::AnimationFrameData const &)` |
+| `0x2e57d0` | `public: class spine::AnimationStateData & __thiscall spine::AnimationStateData::operator=(class spine::AnimationStateData &&)` |
+| `0x2e57d0` | `public: class spine::AnimationStateData & __thiscall spine::AnimationStateData::operator=(class spine::AnimationStateData const &)` |
+| `0x8d6a0` | `public: class spine::AnimationStateListenerObject & __thiscall spine::AnimationStateListenerObject::operator=(class spine::AnimationStateListenerObject const &)` |
+| `0xfeb00` | `public: class Rainbow::CloudAssetNS::AssetUploadManager & __thiscall Rainbow::CloudAssetNS::AssetUploadManager::operator=(class Rainbow::CloudAssetNS::AssetUploadManager const &)` |
+| `0x227940` | `public: class Rainbow::AsyncSubCombineTask & __thiscall Rainbow::AsyncSubCombineTask::operator=(class Rainbow::AsyncSubCombineTask const &)` |
+| `0x2e5800` | `public: class spine::Atlas & __thiscall spine::Atlas::operator=(class spine::Atlas const &)` |
+| `0x24c140` | `public: class spine::AtlasAttachmentLoader & __thiscall spine::AtlasAttachmentLoader::operator=(class spine::AtlasAttachmentLoader &&)` |
+| `0x24c140` | `public: class spine::AtlasAttachmentLoader & __thiscall spine::AtlasAttachmentLoader::operator=(class spine::AtlasAttachmentLoader const &)` |
+| `0x2e5840` | `public: class spine::AtlasPage & __thiscall spine::AtlasPage::operator=(class spine::AtlasPage &&)` |
+| `0x2e5840` | `public: class spine::AtlasPage & __thiscall spine::AtlasPage::operator=(class spine::AtlasPage const &)` |
+| `0x2e58a0` | `public: class spine::AtlasRegion & __thiscall spine::AtlasRegion::operator=(class spine::AtlasRegion &&)` |
+| `0x2e58a0` | `public: class spine::AtlasRegion & __thiscall spine::AtlasRegion::operator=(class spine::AtlasRegion const &)` |
+| `0x8aea0` | `public: struct Rainbow::BINDOBJ_T & __thiscall Rainbow::BINDOBJ_T::operator=(struct Rainbow::BINDOBJ_T const &)` |
+| `0x8af40` | `public: class Rainbow::BindOjbect2Motion & __thiscall Rainbow::BindOjbect2Motion::operator=(class Rainbow::BindOjbect2Motion const &)` |
+| `0x8af90` | `public: struct cocos2d::BlendFunc & __thiscall cocos2d::BlendFunc::operator=(struct cocos2d::BlendFunc &&)` |
+| `0x8afb0` | `public: struct cocos2d::BlendFunc & __thiscall cocos2d::BlendFunc::operator=(struct cocos2d::BlendFunc const &)` |
+| `0x68c60` | `public: class Rainbow::BoxBound & __thiscall Rainbow::BoxBound::operator=(class Rainbow::BoxBound const &)` |
+| `0x68cf0` | `public: class Rainbow::BoxSphereBound & __thiscall Rainbow::BoxSphereBound::operator=(class Rainbow::BoxSphereBound &&)` |
+| `0x68cf0` | `public: class Rainbow::BoxSphereBound & __thiscall Rainbow::BoxSphereBound::operator=(class Rainbow::BoxSphereBound const &)` |
+| `0x293cb0` | `public: class MINIW::CSVParser & __thiscall MINIW::CSVParser::operator=(class MINIW::CSVParser const &)` |
+| `0x29ca60` | `public: class MINIW::Cef3Manager & __thiscall MINIW::Cef3Manager::operator=(class MINIW::Cef3Manager const &)` |
+| `0x3c64c0` | `public: class ChannelList & __thiscall ChannelList::operator=(class ChannelList const &)` |
+| `0x8d6a0` | `public: class Rainbow::CloudAssetNS::CloudAssetHelper & __thiscall Rainbow::CloudAssetNS::CloudAssetHelper::operator=(class Rainbow::CloudAssetNS::CloudAssetHelper &&)` |
+| `0x8d6a0` | `public: class Rainbow::CloudAssetNS::CloudAssetHelper & __thiscall Rainbow::CloudAssetNS::CloudAssetHelper::operator=(class Rainbow::CloudAssetNS::CloudAssetHelper const &)` |
+| `0x1012a0` | `public: class Rainbow::CloudAssetLoader & __thiscall Rainbow::CloudAssetLoader::operator=(class Rainbow::CloudAssetLoader &&)` |
+| `0x101330` | `public: class Rainbow::CloudAssetLoader & __thiscall Rainbow::CloudAssetLoader::operator=(class Rainbow::CloudAssetLoader const &)` |
+| `0xf35f0` | `public: class Rainbow::CloudAssetUser & __thiscall Rainbow::CloudAssetUser::operator=(class Rainbow::CloudAssetUser &&)` |
+| `0xf3660` | `public: class Rainbow::CloudAssetUser & __thiscall Rainbow::CloudAssetUser::operator=(class Rainbow::CloudAssetUser const &)` |
+| `0x24c140` | `public: class spine::Cocos2dAtlasAttachmentLoader & __thiscall spine::Cocos2dAtlasAttachmentLoader::operator=(class spine::Cocos2dAtlasAttachmentLoader const &)` |
+| `0x8d6a0` | `public: class spine::Cocos2dTextureLoader & __thiscall spine::Cocos2dTextureLoader::operator=(class spine::Cocos2dTextureLoader const &)` |
+| `0x8afd0` | `public: struct cocos2d::Color4B & __thiscall cocos2d::Color4B::operator=(struct cocos2d::Color4B &&)` |
+| `0x8b000` | `public: struct cocos2d::Color4B & __thiscall cocos2d::Color4B::operator=(struct cocos2d::Color4B const &)` |
+| `0x8b010` | `public: struct cocos2d::Color4F & __thiscall cocos2d::Color4F::operator=(struct cocos2d::Color4F &&)` |
+| `0x8b040` | `public: struct cocos2d::Color4F & __thiscall cocos2d::Color4F::operator=(struct cocos2d::Color4F const &)` |
+| `0x8b060` | `public: class Rainbow::ColorQuad & __thiscall Rainbow::ColorQuad::operator=(class Rainbow::ColorQuad &&)` |
+| `0x8b000` | `public: class Rainbow::ColorQuad & __thiscall Rainbow::ColorQuad::operator=(class Rainbow::ColorQuad const &)` |
+| `0x8b010` | `public: class Rainbow::ColourValue & __thiscall Rainbow::ColourValue::operator=(class Rainbow::ColourValue &&)` |
+| `0x8b040` | `public: class Rainbow::ColourValue & __thiscall Rainbow::ColourValue::operator=(class Rainbow::ColourValue const &)` |
+| `0x227a50` | `public: struct Rainbow::CombineInstance & __thiscall Rainbow::CombineInstance::operator=(struct Rainbow::CombineInstance &&)` |
+| `0x227aa0` | `public: struct Rainbow::CombineInstance & __thiscall Rainbow::CombineInstance::operator=(struct Rainbow::CombineInstance const &)` |
+| `0x8b090` | `public: class cocos2d::Component & __thiscall cocos2d::Component::operator=(class cocos2d::Component const &)` |
+| `0x8b000` | `public: class Rainbow::CompressTool & __thiscall Rainbow::CompressTool::operator=(class Rainbow::CompressTool &&)` |
+| `0x8b000` | `public: class Rainbow::CompressTool & __thiscall Rainbow::CompressTool::operator=(class Rainbow::CompressTool const &)` |
+| `0x115d90` | `public: class Rainbow::UILib::CoordInteract & __thiscall Rainbow::UILib::CoordInteract::operator=(class Rainbow::UILib::CoordInteract const &)` |
+| `0x293d90` | `public: class CsvManager & __thiscall CsvManager::operator=(class CsvManager const &)` |
+| `0x293e90` | `public: class CsvTable & __thiscall CsvTable::operator=(class CsvTable &&)` |
+| `0x293fd0` | `public: class CsvTable & __thiscall CsvTable::operator=(class CsvTable const &)` |
+| `0x9e390` | `public: class Rainbow::UILib::CustomView & __thiscall Rainbow::UILib::CustomView::operator=(class Rainbow::UILib::CustomView const &)` |
+| `0x38b380` | `public: class cocos2d::Data & __thiscall cocos2d::Data::operator=(class cocos2d::Data &&)` |
+| `0x38b3a0` | `public: class cocos2d::Data & __thiscall cocos2d::Data::operator=(class cocos2d::Data const &)` |
+| `0x8d6a0` | `public: class cocos2d::DataVisitor & __thiscall cocos2d::DataVisitor::operator=(class cocos2d::DataVisitor const &)` |
+| `0x8b0f0` | `public: class Rainbow::DebugMgr & __thiscall Rainbow::DebugMgr::operator=(class Rainbow::DebugMgr const &)` |
+| `0x9e3d0` | `public: struct Rainbow::Setting::DeviceModel & __thiscall Rainbow::Setting::DeviceModel::operator=(struct Rainbow::Setting::DeviceModel &&)` |
+| `0x9e3d0` | `public: struct Rainbow::Setting::DeviceModel & __thiscall Rainbow::Setting::DeviceModel::operator=(struct Rainbow::Setting::DeviceModel const &)` |
+| `0x9e420` | `public: class Rainbow::Setting::DeviceModelData & __thiscall Rainbow::Setting::DeviceModelData::operator=(class Rainbow::Setting::DeviceModelData const &)` |
+| `0x405e20` | `public: class cocos2d::DictElement & __thiscall cocos2d::DictElement::operator=(class cocos2d::DictElement const &)` |
+| `0x8b190` | `public: class cocos2d::Director & __thiscall cocos2d::Director::operator=(class cocos2d::Director const &)` |
+| `0x8b6a0` | `public: class fairygui::DragDropManager & __thiscall fairygui::DragDropManager::operator=(class fairygui::DragDropManager const &)` |
+| `0xc0710` | `public: class Rainbow::DummyMaterialTemplate & __thiscall Rainbow::DummyMaterialTemplate::operator=(class Rainbow::DummyMaterialTemplate &&)` |
+| `0xc0710` | `public: class Rainbow::DummyMaterialTemplate & __thiscall Rainbow::DummyMaterialTemplate::operator=(class Rainbow::DummyMaterialTemplate const &)` |
+| `0x8d6a0` | `public: class fairygui::EaseManager & __thiscall fairygui::EaseManager::operator=(class fairygui::EaseManager &&)` |
+| `0x8d6a0` | `public: class fairygui::EaseManager & __thiscall fairygui::EaseManager::operator=(class fairygui::EaseManager const &)` |
+| `0x9e450` | `public: class Rainbow::UILib::EditBox & __thiscall Rainbow::UILib::EditBox::operator=(class Rainbow::UILib::EditBox const &)` |
+| `0x8d6a0` | `public: class EntityHelper & __thiscall EntityHelper::operator=(class EntityHelper &&)` |
+| `0x8d6a0` | `public: class EntityHelper & __thiscall EntityHelper::operator=(class EntityHelper const &)` |
+| `0x8b6d0` | `public: class cocos2d::EventDispatcher & __thiscall cocos2d::EventDispatcher::operator=(class cocos2d::EventDispatcher const &)` |
+| `0x8ba20` | `public: class cocos2d::EventListenerCustom & __thiscall cocos2d::EventListenerCustom::operator=(class cocos2d::EventListenerCustom &&)` |
+| `0x8bab0` | `public: class cocos2d::EventListenerCustom & __thiscall cocos2d::EventListenerCustom::operator=(class cocos2d::EventListenerCustom const &)` |
+| `0x8bae0` | `public: class cocos2d::EventListenerMouse & __thiscall cocos2d::EventListenerMouse::operator=(class cocos2d::EventListenerMouse &&)` |
+| `0x8bb40` | `public: class cocos2d::EventListenerMouse & __thiscall cocos2d::EventListenerMouse::operator=(class cocos2d::EventListenerMouse const &)` |
+| `0x8bba0` | `public: class cocos2d::EventListenerTouchOneByOne & __thiscall cocos2d::EventListenerTouchOneByOne::operator=(class cocos2d::EventListenerTouchOneByOne const &)` |
+| `0x8bc60` | `public: class cocos2d::EventMouse & __thiscall cocos2d::EventMouse::operator=(class cocos2d::EventMouse &&)` |
+| `0x8bc60` | `public: class cocos2d::EventMouse & __thiscall cocos2d::EventMouse::operator=(class cocos2d::EventMouse const &)` |
+| `0x329d50` | `public: class fairygui::EventTag & __thiscall fairygui::EventTag::operator=(class fairygui::EventTag &&)` |
+| `0x329d70` | `public: class fairygui::EventTag & __thiscall fairygui::EventTag::operator=(class fairygui::EventTag const &)` |
+| `0x83830` | `public: class fairygui::EventTag & __thiscall fairygui::EventTag::operator=(int)` |
+| `0x83830` | `public: class fairygui::EventTag & __thiscall fairygui::EventTag::operator=(void *)` |
+| `0x1b5290` | `public: class Rainbow::EventTriggerObjectMotion & __thiscall Rainbow::EventTriggerObjectMotion::operator=(class Rainbow::EventTriggerObjectMotion const &)` |
+| `0x21d130` | `public: void __thiscall Rainbow::Exception::operator=(class Rainbow::Exception const &)` |
+| `0x8b000` | `public: class FileAutoClose & __thiscall FileAutoClose::operator=(class FileAutoClose const &)` |
+| `0x21d180` | `public: class Rainbow::FileNotFoundException & __thiscall Rainbow::FileNotFoundException::operator=(class Rainbow::FileNotFoundException &&)` |
+| `0x21d180` | `public: class Rainbow::FileNotFoundException & __thiscall Rainbow::FileNotFoundException::operator=(class Rainbow::FileNotFoundException const &)` |
+| `0x214270` | `public: class Rainbow::FmodSound & __thiscall Rainbow::FmodSound::operator=(class Rainbow::FmodSound const &)` |
+| `0x8bd00` | `public: struct cocos2d::FontDefinition & __thiscall cocos2d::FontDefinition::operator=(struct cocos2d::FontDefinition &&)` |
+| `0x8bd90` | `public: struct cocos2d::FontDefinition & __thiscall cocos2d::FontDefinition::operator=(struct cocos2d::FontDefinition const &)` |
+| `0x9e610` | `public: class Rainbow::UILib::FontInstance & __thiscall Rainbow::UILib::FontInstance::operator=(class Rainbow::UILib::FontInstance const &)` |
+| `0x8be30` | `public: struct cocos2d::FontShadow & __thiscall cocos2d::FontShadow::operator=(struct cocos2d::FontShadow &&)` |
+| `0x8be30` | `public: struct cocos2d::FontShadow & __thiscall cocos2d::FontShadow::operator=(struct cocos2d::FontShadow const &)` |
+| `0x9e6e0` | `public: class Rainbow::UILib::FontString & __thiscall Rainbow::UILib::FontString::operator=(class Rainbow::UILib::FontString const &)` |
+| `0x8be60` | `public: struct cocos2d::FontStroke & __thiscall cocos2d::FontStroke::operator=(struct cocos2d::FontStroke &&)` |
+| `0x694e0` | `public: struct cocos2d::FontStroke & __thiscall cocos2d::FontStroke::operator=(struct cocos2d::FontStroke const &)` |
+| `0x8be90` | `public: class Rainbow::UILib::Frame & __thiscall Rainbow::UILib::Frame::operator=(class Rainbow::UILib::Frame const &)` |
+| `0x8c2e0` | `public: class fairygui::GBasicTextField & __thiscall fairygui::GBasicTextField::operator=(class fairygui::GBasicTextField const &)` |
+| `0x8c310` | `public: class fairygui::GButton & __thiscall fairygui::GButton::operator=(class fairygui::GButton const &)` |
+| `0x8c4b0` | `public: class fairygui::GColorTextureLoader & __thiscall fairygui::GColorTextureLoader::operator=(class fairygui::GColorTextureLoader const &)` |
+| `0x8c550` | `public: class fairygui::GComboBox & __thiscall fairygui::GComboBox::operator=(class fairygui::GComboBox const &)` |
+| `0x8c660` | `public: class fairygui::GComponent & __thiscall fairygui::GComponent::operator=(class fairygui::GComponent const &)` |
+| `0x8c8e0` | `public: class fairygui::GController & __thiscall fairygui::GController::operator=(class fairygui::GController const &)` |
+| `0x8c9c0` | `public: class fairygui::GGraph & __thiscall fairygui::GGraph::operator=(class fairygui::GGraph const &)` |
+| `0x8ca70` | `public: class fairygui::GImage & __thiscall fairygui::GImage::operator=(class fairygui::GImage const &)` |
+| `0x8caa0` | `public: class cocos2d::GLView & __thiscall cocos2d::GLView::operator=(class cocos2d::GLView const &)` |
+| `0x8cb40` | `public: class cocos2d::GLViewImpl & __thiscall cocos2d::GLViewImpl::operator=(class cocos2d::GLViewImpl const &)` |
+| `0x8cb90` | `public: class fairygui::GList & __thiscall fairygui::GList::operator=(class fairygui::GList const &)` |
+| `0x8cd60` | `public: class fairygui::GLoader3D & __thiscall fairygui::GLoader3D::operator=(class fairygui::GLoader3D const &)` |
+| `0x8cea0` | `public: class fairygui::GLoader & __thiscall fairygui::GLoader::operator=(class fairygui::GLoader const &)` |
+| `0x8cfd0` | `public: class fairygui::GModelView & __thiscall fairygui::GModelView::operator=(class fairygui::GModelView const &)` |
+| `0x8d000` | `public: class fairygui::GObject & __thiscall fairygui::GObject::operator=(class fairygui::GObject const &)` |
+| `0x8d390` | `public: class fairygui::GProgressBar & __thiscall fairygui::GProgressBar::operator=(class fairygui::GProgressBar const &)` |
+| `0x8c2e0` | `public: class fairygui::GRichTextField & __thiscall fairygui::GRichTextField::operator=(class fairygui::GRichTextField const &)` |
+| `0x8d460` | `public: class fairygui::GRoot & __thiscall fairygui::GRoot::operator=(class fairygui::GRoot const &)` |
+| `0x8d560` | `public: class fairygui::GTextInput & __thiscall fairygui::GTextInput::operator=(class fairygui::GTextInput const &)` |
+| `0x8d590` | `public: class fairygui::GTreeNode & __thiscall fairygui::GTreeNode::operator=(class fairygui::GTreeNode const &)` |
+| `0x8d6a0` | `public: class fairygui::GTween & __thiscall fairygui::GTween::operator=(class fairygui::GTween &&)` |
+| `0x8d6a0` | `public: class fairygui::GTween & __thiscall fairygui::GTween::operator=(class fairygui::GTween const &)` |
+| `0x8d6b0` | `public: class fairygui::GTweener & __thiscall fairygui::GTweener::operator=(class fairygui::GTweener const &)` |
+| `0x8d880` | `public: class fairygui::GUIGenIcon & __thiscall fairygui::GUIGenIcon::operator=(class fairygui::GUIGenIcon const &)` |
+| `0x8d880` | `public: class fairygui::GUIRenderTexture & __thiscall fairygui::GUIRenderTexture::operator=(class fairygui::GUIRenderTexture const &)` |
+| `0x8d8a0` | `public: class fairygui::GWebView & __thiscall fairygui::GWebView::operator=(class fairygui::GWebView const &)` |
+| `0x8ae20` | `public: class Rainbow::Setting::GameConfigMgr & __thiscall Rainbow::Setting::GameConfigMgr::operator=(class Rainbow::Setting::GameConfigMgr const &)` |
+| `0x9e8f0` | `public: class Rainbow::Setting::GameConfiguration & __thiscall Rainbow::Setting::GameConfiguration::operator=(class Rainbow::Setting::GameConfiguration const &)` |
+| `0x8d6a0` | `public: class GameEventQueInterface & __thiscall GameEventQueInterface::operator=(class GameEventQueInterface &&)` |
+| `0x8d6a0` | `public: class GameEventQueInterface & __thiscall GameEventQueInterface::operator=(class GameEventQueInterface const &)` |
+| `0x8d6a0` | `public: class MINIW::GameRuntimeInitializeAndCleanup & __thiscall MINIW::GameRuntimeInitializeAndCleanup::operator=(class MINIW::GameRuntimeInitializeAndCleanup &&)` |
+| `0x8d6a0` | `public: class MINIW::GameRuntimeInitializeAndCleanup & __thiscall MINIW::GameRuntimeInitializeAndCleanup::operator=(class MINIW::GameRuntimeInitializeAndCleanup const &)` |
+| `0xbce10` | `public: class Rainbow::GameSetting & __thiscall Rainbow::GameSetting::operator=(class Rainbow::GameSetting &&)` |
+| `0xbd020` | `public: class Rainbow::GameSetting & __thiscall Rainbow::GameSetting::operator=(class Rainbow::GameSetting const &)` |
+| `0x8d900` | `public: class GameUI & __thiscall GameUI::operator=(class GameUI const &)` |
+| `0xcc150` | `public: class Rainbow::GameUserSetting & __thiscall Rainbow::GameUserSetting::operator=(class Rainbow::GameUserSetting &&)` |
+| `0xcc180` | `public: class Rainbow::GameUserSetting & __thiscall Rainbow::GameUserSetting::operator=(class Rainbow::GameUserSetting const &)` |
+| `0x8d9f0` | `public: class Rainbow::GaussBlurRenderer & __thiscall Rainbow::GaussBlurRenderer::operator=(class Rainbow::GaussBlurRenderer const &)` |
+| `0x1b5300` | `public: class Rainbow::GaussGenerator & __thiscall Rainbow::GaussGenerator::operator=(class Rainbow::GaussGenerator const &)` |
+| `0x32c630` | `public: class fairygui::GearColor & __thiscall fairygui::GearColor::operator=(class fairygui::GearColor const &)` |
+| `0x2eb170` | `public: class fairygui::GearDisplay & __thiscall fairygui::GearDisplay::operator=(class fairygui::GearDisplay const &)` |
+| `0x32c6d0` | `public: class fairygui::GearFontSize & __thiscall fairygui::GearFontSize::operator=(class fairygui::GearFontSize const &)` |
+| `0x32c760` | `public: class fairygui::GearIcon & __thiscall fairygui::GearIcon::operator=(class fairygui::GearIcon const &)` |
+| `0x32c820` | `public: class fairygui::GearLook & __thiscall fairygui::GearLook::operator=(class fairygui::GearLook const &)` |
+| `0x32c760` | `public: class fairygui::GearText & __thiscall fairygui::GearText::operator=(class fairygui::GearText const &)` |
+| `0x235c80` | `public: class Rainbow::GifSequenceTexture & __thiscall Rainbow::GifSequenceTexture::operator=(class Rainbow::GifSequenceTexture const &)` |
+| `0xc2d30` | `public: class Guid & __thiscall Guid::operator=(class Guid const &)` |
+| `0x8d6a0` | `public: class GuidGenerator & __thiscall GuidGenerator::operator=(class GuidGenerator &&)` |
+| `0x8d6a0` | `public: class GuidGenerator & __thiscall GuidGenerator::operator=(class GuidGenerator const &)` |
+| `0x2b56b0` | `public: class Rainbow::HUDBloodBar & __thiscall Rainbow::HUDBloodBar::operator=(class Rainbow::HUDBloodBar const &)` |
+| `0x2b5770` | `public: class Rainbow::HUDChatBubble & __thiscall Rainbow::HUDChatBubble::operator=(class Rainbow::HUDChatBubble const &)` |
+| `0x2b57c0` | `public: class Rainbow::HUDLevitationFont & __thiscall Rainbow::HUDLevitationFont::operator=(class Rainbow::HUDLevitationFont const &)` |
+| `0x2b5860` | `public: class Rainbow::HUDLevitationFontRenderer & __thiscall Rainbow::HUDLevitationFontRenderer::operator=(class Rainbow::HUDLevitationFontRenderer const &)` |
+| `0x8d880` | `public: class fairygui::HUDRoot & __thiscall fairygui::HUDRoot::operator=(class fairygui::HUDRoot const &)` |
+| `0x2b5990` | `public: class Rainbow::HUDTitleBase & __thiscall Rainbow::HUDTitleBase::operator=(class Rainbow::HUDTitleBase const &)` |
+| `0x2b5aa0` | `public: class Rainbow::HUDTitleInfo & __thiscall Rainbow::HUDTitleInfo::operator=(class Rainbow::HUDTitleInfo const &)` |
+| `0x2b5bd0` | `public: class Rainbow::HUDTitleLine & __thiscall Rainbow::HUDTitleLine::operator=(class Rainbow::HUDTitleLine const &)` |
+| `0x2b5c20` | `public: class Rainbow::HUDTitleRender & __thiscall Rainbow::HUDTitleRender::operator=(class Rainbow::HUDTitleRender const &)` |
+| `0x8d6a0` | `public: class Rainbow::Http::HttpManager & __thiscall Rainbow::Http::HttpManager::operator=(class Rainbow::Http::HttpManager &&)` |
+| `0x8d6a0` | `public: class Rainbow::Http::HttpManager & __thiscall Rainbow::Http::HttpManager::operator=(class Rainbow::Http::HttpManager const &)` |
+| `0x2b5d80` | `public: class Rainbow::HudBitMapFontAttribute & __thiscall Rainbow::HudBitMapFontAttribute::operator=(class Rainbow::HudBitMapFontAttribute const &)` |
+| `0x2b5db0` | `public: class Rainbow::HudConfigSetting & __thiscall Rainbow::HudConfigSetting::operator=(class Rainbow::HudConfigSetting const &)` |
+| `0x2b6430` | `public: class Rainbow::HudFontBaseAttribute & __thiscall Rainbow::HudFontBaseAttribute::operator=(class Rainbow::HudFontBaseAttribute const &)` |
+| `0x2b64d0` | `public: class Rainbow::HudImageAttribute & __thiscall Rainbow::HudImageAttribute::operator=(class Rainbow::HudImageAttribute const &)` |
+| `0x2b6560` | `public: class Rainbow::HudLayoutAttribute & __thiscall Rainbow::HudLayoutAttribute::operator=(class Rainbow::HudLayoutAttribute const &)` |
+| `0x2b65c0` | `public: class Rainbow::HudLevBitMapFontAttribute & __thiscall Rainbow::HudLevBitMapFontAttribute::operator=(class Rainbow::HudLevBitMapFontAttribute const &)` |
+| `0x2b6600` | `public: class Rainbow::HudLevNormalFontAttribute & __thiscall Rainbow::HudLevNormalFontAttribute::operator=(class Rainbow::HudLevNormalFontAttribute const &)` |
+| `0x2b6630` | `public: class Rainbow::HudLevSpriteAndFontAttribute & __thiscall Rainbow::HudLevSpriteAndFontAttribute::operator=(class Rainbow::HudLevSpriteAndFontAttribute const &)` |
+| `0x2b66b0` | `public: class Rainbow::HudLevSpriteAttribute & __thiscall Rainbow::HudLevSpriteAttribute::operator=(class Rainbow::HudLevSpriteAttribute const &)` |
+| `0x2b6730` | `public: class Rainbow::HudLevitationBaseAttribute & __thiscall Rainbow::HudLevitationBaseAttribute::operator=(class Rainbow::HudLevitationBaseAttribute const &)` |
+| `0x2b67c0` | `public: class Rainbow::HudMovieClipAttribute & __thiscall Rainbow::HudMovieClipAttribute::operator=(class Rainbow::HudMovieClipAttribute const &)` |
+| `0x2b67f0` | `public: class Rainbow::HudNormalFontAttribute & __thiscall Rainbow::HudNormalFontAttribute::operator=(class Rainbow::HudNormalFontAttribute const &)` |
+| `0x2b6860` | `public: class Rainbow::HudSetting & __thiscall Rainbow::HudSetting::operator=(class Rainbow::HudSetting const &)` |
+| `0x2b6ab0` | `public: class Rainbow::HudSpineAttribute & __thiscall Rainbow::HudSpineAttribute::operator=(class Rainbow::HudSpineAttribute const &)` |
+| `0x2b6560` | `public: class Rainbow::HudTitleAttribute & __thiscall Rainbow::HudTitleAttribute::operator=(class Rainbow::HudTitleAttribute const &)` |
+| `0x69440` | `public: class Rainbow::HudTitleLabelSet & __thiscall Rainbow::HudTitleLabelSet::operator=(class Rainbow::HudTitleLabelSet const &)` |
+| `0x2b6b10` | `public: class Rainbow::HudTitleNormalFontAttribute & __thiscall Rainbow::HudTitleNormalFontAttribute::operator=(class Rainbow::HudTitleNormalFontAttribute const &)` |
+| `0x2b6b80` | `public: class Rainbow::HudTitleSpriteAttribute & __thiscall Rainbow::HudTitleSpriteAttribute::operator=(class Rainbow::HudTitleSpriteAttribute const &)` |
+| `0x2b6c40` | `public: class Rainbow::HudTitleSpriteFontAttribute & __thiscall Rainbow::HudTitleSpriteFontAttribute::operator=(class Rainbow::HudTitleSpriteFontAttribute const &)` |
+| `0x8d6a0` | `public: class Rainbow::ICef3Manager & __thiscall Rainbow::ICef3Manager::operator=(class Rainbow::ICef3Manager const &)` |
+| `0x8d6a0` | `public: class Rainbow::IClientDnsCache & __thiscall Rainbow::IClientDnsCache::operator=(class Rainbow::IClientDnsCache const &)` |
+| `0x8d6a0` | `public: class Rainbow::IClientInfo & __thiscall Rainbow::IClientInfo::operator=(class Rainbow::IClientInfo const &)` |
+| `0x8d6a0` | `public: class Rainbow::ICloudProxy & __thiscall Rainbow::ICloudProxy::operator=(class Rainbow::ICloudProxy const &)` |
+| `0x8db40` | `public: class Rainbow::IModelAnimationPlayer & __thiscall Rainbow::IModelAnimationPlayer::operator=(class Rainbow::IModelAnimationPlayer const &)` |
+| `0x21d180` | `public: class Rainbow::IOException & __thiscall Rainbow::IOException::operator=(class Rainbow::IOException &&)` |
+| `0x21d180` | `public: class Rainbow::IOException & __thiscall Rainbow::IOException::operator=(class Rainbow::IOException const &)` |
+| `0x8d6a0` | `public: class MINIW::IStatisticsToolsInterface & __thiscall MINIW::IStatisticsToolsInterface::operator=(class MINIW::IStatisticsToolsInterface const &)` |
+| `0x8db70` | `public: class fairygui::InputProcessor & __thiscall fairygui::InputProcessor::operator=(class fairygui::InputProcessor const &)` |
+| `0x21d180` | `public: class Rainbow::InternalErrorException & __thiscall Rainbow::InternalErrorException::operator=(class Rainbow::InternalErrorException &&)` |
+| `0x21d180` | `public: class Rainbow::InternalErrorException & __thiscall Rainbow::InternalErrorException::operator=(class Rainbow::InternalErrorException const &)` |
+| `0x21d180` | `public: class Rainbow::InvalidParametersException & __thiscall Rainbow::InvalidParametersException::operator=(class Rainbow::InvalidParametersException &&)` |
+| `0x21d180` | `public: class Rainbow::InvalidParametersException & __thiscall Rainbow::InvalidParametersException::operator=(class Rainbow::InvalidParametersException const &)` |
+| `0x21d180` | `public: class Rainbow::InvalidStateException & __thiscall Rainbow::InvalidStateException::operator=(class Rainbow::InvalidStateException &&)` |
+| `0x21d180` | `public: class Rainbow::InvalidStateException & __thiscall Rainbow::InvalidStateException::operator=(class Rainbow::InvalidStateException const &)` |
+| `0x9e9f0` | `public: class Rainbow::UILib::Invocation & __thiscall Rainbow::UILib::Invocation::operator=(class Rainbow::UILib::Invocation &&)` |
+| `0x9eb30` | `public: class Rainbow::UILib::Invocation & __thiscall Rainbow::UILib::Invocation::operator=(class Rainbow::UILib::Invocation const &)` |
+| `0x9ec20` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::operator=(class Rainbow::UILib::InvocationBuilder const &)` |
+| `0x21d180` | `public: class Rainbow::ItemIdentityException & __thiscall Rainbow::ItemIdentityException::operator=(class Rainbow::ItemIdentityException &&)` |
+| `0x21d180` | `public: class Rainbow::ItemIdentityException & __thiscall Rainbow::ItemIdentityException::operator=(class Rainbow::ItemIdentityException const &)` |
+| `0x8dc70` | `public: class Rainbow::UILib::LayoutFrame & __thiscall Rainbow::UILib::LayoutFrame::operator=(class Rainbow::UILib::LayoutFrame const &)` |
+| `0xd0320` | `public: class czy::LeastSquaresFit & __thiscall czy::LeastSquaresFit::operator=(class czy::LeastSquaresFit const &)` |
+| `0x8d6a0` | `public: class Rainbow::LegacyFileUtil & __thiscall Rainbow::LegacyFileUtil::operator=(class Rainbow::LegacyFileUtil &&)` |
+| `0x8d6a0` | `public: class Rainbow::LegacyFileUtil & __thiscall Rainbow::LegacyFileUtil::operator=(class Rainbow::LegacyFileUtil const &)` |
+| `0xbeae0` | `public: class Rainbow::LegacyGlobalShaderParamManager & __thiscall Rainbow::LegacyGlobalShaderParamManager::operator=(class Rainbow::LegacyGlobalShaderParamManager &&)` |
+| `0xbed90` | `public: class Rainbow::LegacyGlobalShaderParamManager & __thiscall Rainbow::LegacyGlobalShaderParamManager::operator=(class Rainbow::LegacyGlobalShaderParamManager const &)` |
+| `0x253530` | `public: class MINIW::LuaCallHelper & __thiscall MINIW::LuaCallHelper::operator=(class MINIW::LuaCallHelper const &)` |
+| `0x24c140` | `public: class cocos2d::LuaEngine & __thiscall cocos2d::LuaEngine::operator=(class cocos2d::LuaEngine const &)` |
+| `0x9ed10` | `public: class Rainbow::MiniLua::LuaFunctionLinker & __thiscall Rainbow::MiniLua::LuaFunctionLinker::operator=(class Rainbow::MiniLua::LuaFunctionLinker &&)` |
+| `0x9ed10` | `public: class Rainbow::MiniLua::LuaFunctionLinker & __thiscall Rainbow::MiniLua::LuaFunctionLinker::operator=(class Rainbow::MiniLua::LuaFunctionLinker const &)` |
+| `0x248a00` | `public: void __thiscall Rainbow::MiniLua::LuaLinker::operator=(class Rainbow::MiniLua::LuaLinker const &)` |
+| `0xbd2f0` | `public: class Rainbow::MiniLua::LuaReturnValues & __thiscall Rainbow::MiniLua::LuaReturnValues::operator=(class Rainbow::MiniLua::LuaReturnValues &&)` |
+| `0xbd310` | `public: class Rainbow::MiniLua::LuaReturnValues & __thiscall Rainbow::MiniLua::LuaReturnValues::operator=(class Rainbow::MiniLua::LuaReturnValues const &)` |
+| `0x9ed10` | `public: class Rainbow::MiniLua::LuaTableLinker & __thiscall Rainbow::MiniLua::LuaTableLinker::operator=(class Rainbow::MiniLua::LuaTableLinker &&)` |
+| `0x9ed10` | `public: class Rainbow::MiniLua::LuaTableLinker & __thiscall Rainbow::MiniLua::LuaTableLinker::operator=(class Rainbow::MiniLua::LuaTableLinker const &)` |
+| `0x2497d0` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(struct Rainbow::MiniLua::LuaUserType const &)` |
+| `0x2497f0` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(class Rainbow::MiniLua::LuaValue const &)` |
+| `0x249860` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> const &)` |
+| `0x249910` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> const &)` |
+| `0x2499c0` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(int)` |
+| `0x2499e0` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(float)` |
+| `0x249a00` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(double)` |
+| `0x249a20` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(void *)` |
+| `0x249a40` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(char const *)` |
+| `0x249a60` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(__int64)` |
+| `0x249a80` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(unsigned __int64)` |
+| `0x249aa0` | `public: void __thiscall Rainbow::MiniLua::LuaValue::operator=(bool)` |
+| `0x69440` | `public: class LuaWebSocketMgr & __thiscall LuaWebSocketMgr::operator=(class LuaWebSocketMgr const &)` |
+| `0x2fb9f0` | `public: class fairygui::Margin & __thiscall fairygui::Margin::operator=(class fairygui::Margin const &)` |
+| `0x227ae0` | `public: class Rainbow::MaterialInstanceCombineArgs & __thiscall Rainbow::MaterialInstanceCombineArgs::operator=(class Rainbow::MaterialInstanceCombineArgs &&)` |
+| `0x227b50` | `public: class Rainbow::MaterialInstanceCombineArgs & __thiscall Rainbow::MaterialInstanceCombineArgs::operator=(class Rainbow::MaterialInstanceCombineArgs const &)` |
+| `0xc0730` | `public: class Rainbow::MaterialTemplate & __thiscall Rainbow::MaterialTemplate::operator=(class Rainbow::MaterialTemplate const &)` |
+| `0x8d6a0` | `public: class spine::MathUtil & __thiscall spine::MathUtil::operator=(class spine::MathUtil &&)` |
+| `0x8d6a0` | `public: class spine::MathUtil & __thiscall spine::MathUtil::operator=(class spine::MathUtil const &)` |
+| `0x1013c0` | `public: class MINIW::Md5Context & __thiscall MINIW::Md5Context::operator=(class MINIW::Md5Context &&)` |
+| `0x101410` | `public: class MINIW::Md5Context & __thiscall MINIW::Md5Context::operator=(class MINIW::Md5Context const &)` |
+| `0x8df10` | `public: class Rainbow::MeshInstance & __thiscall Rainbow::MeshInstance::operator=(class Rainbow::MeshInstance const &)` |
+| `0x8d6a0` | `public: class Rainbow::MeshInstanceContainer & __thiscall Rainbow::MeshInstanceContainer::operator=(class Rainbow::MeshInstanceContainer &&)` |
+| `0x8d6a0` | `public: class Rainbow::MeshInstanceContainer & __thiscall Rainbow::MeshInstanceContainer::operator=(class Rainbow::MeshInstanceContainer const &)` |
+| `0xf36f0` | `public: class Rainbow::Http::MiniBreakResumeUpload & __thiscall Rainbow::Http::MiniBreakResumeUpload::operator=(class Rainbow::Http::MiniBreakResumeUpload const &)` |
+| `0xf3890` | `public: class Rainbow::Http::MiniCustomUpload & __thiscall Rainbow::Http::MiniCustomUpload::operator=(class Rainbow::Http::MiniCustomUpload const &)` |
+| `0x9ed30` | `public: class Rainbow::MiniEventDispatcher & __thiscall Rainbow::MiniEventDispatcher::operator=(class Rainbow::MiniEventDispatcher const &)` |
+| `0x9ed50` | `public: class Rainbow::MiniGlobalEvent & __thiscall Rainbow::MiniGlobalEvent::operator=(class Rainbow::MiniGlobalEvent const &)` |
+| `0xf39f0` | `public: class Rainbow::Http::MiniHttpRequest & __thiscall Rainbow::Http::MiniHttpRequest::operator=(class Rainbow::Http::MiniHttpRequest const &)` |
+| `0x24c160` | `public: class fairygui::MiniUIGameEventMgr & __thiscall fairygui::MiniUIGameEventMgr::operator=(class fairygui::MiniUIGameEventMgr const &)` |
+| `0xf3a90` | `public: class Rainbow::Http::MiniUpload & __thiscall Rainbow::Http::MiniUpload::operator=(class Rainbow::Http::MiniUpload const &)` |
+| `0x210330` | `public: class Rainbow::MobileCameraRenderer & __thiscall Rainbow::MobileCameraRenderer::operator=(class Rainbow::MobileCameraRenderer const &)` |
+| `0x8b000` | `public: class Rainbow::ModelDataRetainSettingLoader & __thiscall Rainbow::ModelDataRetainSettingLoader::operator=(class Rainbow::ModelDataRetainSettingLoader const &)` |
+| `0x1acd40` | `public: class Rainbow::ModelMeshRenderers & __thiscall Rainbow::ModelMeshRenderers::operator=(class Rainbow::ModelMeshRenderers const &)` |
+| `0x9ee40` | `public: class Rainbow::UILib::ModelView & __thiscall Rainbow::UILib::ModelView::operator=(class Rainbow::UILib::ModelView const &)` |
+| `0x8dfa0` | `public: class cocos2d::ModelViewCommand & __thiscall cocos2d::ModelViewCommand::operator=(class cocos2d::ModelViewCommand const &)` |
+| `0x8e010` | `public: class Rainbow::MotionObjLife & __thiscall Rainbow::MotionObjLife::operator=(class Rainbow::MotionObjLife const &)` |
+| `0x25d840` | `public: class Rainbow::MoveByTextMgr & __thiscall Rainbow::MoveByTextMgr::operator=(class Rainbow::MoveByTextMgr const &)` |
+| `0x9f510` | `public: class Rainbow::UILib::MultiEditBox & __thiscall Rainbow::UILib::MultiEditBox::operator=(class Rainbow::UILib::MultiEditBox const &)` |
+| `0x8d6a0` | `public: class MultiResPath & __thiscall MultiResPath::operator=(class MultiResPath &&)` |
+| `0x8d6a0` | `public: class MultiResPath & __thiscall MultiResPath::operator=(class MultiResPath const &)` |
+| `0x9f750` | `public: class Rainbow::MusicManager & __thiscall Rainbow::MusicManager::operator=(class Rainbow::MusicManager const &)` |
+| `0x24c1b0` | `public: class cocos2d::NotificationObserver & __thiscall cocos2d::NotificationObserver::operator=(class cocos2d::NotificationObserver const &)` |
+| `0x8d6a0` | `public: class Rainbow::UILib::ObjectFactory & __thiscall Rainbow::UILib::ObjectFactory::operator=(class Rainbow::UILib::ObjectFactory &&)` |
+| `0x8d6a0` | `public: class Rainbow::UILib::ObjectFactory & __thiscall Rainbow::UILib::ObjectFactory::operator=(class Rainbow::UILib::ObjectFactory const &)` |
+| `0x8e040` | `public: class Rainbow::ObjectMotion & __thiscall Rainbow::ObjectMotion::operator=(class Rainbow::ObjectMotion const &)` |
+| `0x2781b0` | `public: class Rainbow::Algorithm::OctreeNodeContext & __thiscall Rainbow::Algorithm::OctreeNodeContext::operator=(class Rainbow::Algorithm::OctreeNodeContext &&)` |
+| `0x2781e0` | `public: class Rainbow::Algorithm::OctreeNodeContext & __thiscall Rainbow::Algorithm::OctreeNodeContext::operator=(class Rainbow::Algorithm::OctreeNodeContext const &)` |
+| `0x8e0e0` | `public: class cocos2d::OldUIRenderCommand & __thiscall cocos2d::OldUIRenderCommand::operator=(class cocos2d::OldUIRenderCommand const &)` |
+| `0x1dedc0` | `public: class Rainbow::ParticleManager & __thiscall Rainbow::ParticleManager::operator=(class Rainbow::ParticleManager const &)` |
+| `0x9f750` | `public: class Rainbow::PerlinNoise2D & __thiscall Rainbow::PerlinNoise2D::operator=(class Rainbow::PerlinNoise2D const &)` |
+| `0x8b010` | `public: struct cocos2d::PointSprite & __thiscall cocos2d::PointSprite::operator=(struct cocos2d::PointSprite &&)` |
+| `0x8b010` | `public: struct cocos2d::PointSprite & __thiscall cocos2d::PointSprite::operator=(struct cocos2d::PointSprite const &)` |
+| `0x8e100` | `public: class fairygui::PopupMenu & __thiscall fairygui::PopupMenu::operator=(class fairygui::PopupMenu const &)` |
+| `0x8e140` | `public: class Rainbow::PostObjMotion & __thiscall Rainbow::PostObjMotion::operator=(class Rainbow::PostObjMotion const &)` |
+| `0x24c220` | `public: class cocos2d::PrettyPrinter & __thiscall cocos2d::PrettyPrinter::operator=(class cocos2d::PrettyPrinter &&)` |
+| `0x24c250` | `public: class cocos2d::PrettyPrinter & __thiscall cocos2d::PrettyPrinter::operator=(class cocos2d::PrettyPrinter const &)` |
+| `0x8e170` | `public: struct cocos2d::Quad2 & __thiscall cocos2d::Quad2::operator=(struct cocos2d::Quad2 &&)` |
+| `0x8e170` | `public: struct cocos2d::Quad2 & __thiscall cocos2d::Quad2::operator=(struct cocos2d::Quad2 const &)` |
+| `0x87540` | `public: struct cocos2d::Quad3 & __thiscall cocos2d::Quad3::operator=(struct cocos2d::Quad3 &&)` |
+| `0x87540` | `public: struct cocos2d::Quad3 & __thiscall cocos2d::Quad3::operator=(struct cocos2d::Quad3 const &)` |
+| `0x110380` | `public: class Rainbow::RFontBase & __thiscall Rainbow::RFontBase::operator=(class Rainbow::RFontBase const &)` |
+| `0x1a6cf0` | `public: class Rainbow::RainbowEffectProxyHolder & __thiscall Rainbow::RainbowEffectProxyHolder::operator=(class Rainbow::RainbowEffectProxyHolder const &)` |
+| `0x8b000` | `public: class Rainbow::RandomGenerator & __thiscall Rainbow::RandomGenerator::operator=(class Rainbow::RandomGenerator &&)` |
+| `0x8b000` | `public: class Rainbow::RandomGenerator & __thiscall Rainbow::RandomGenerator::operator=(class Rainbow::RandomGenerator const &)` |
+| `0x8d6a0` | `public: class cocos2d::RandomHelper & __thiscall cocos2d::RandomHelper::operator=(class cocos2d::RandomHelper &&)` |
+| `0x8d6a0` | `public: class cocos2d::RandomHelper & __thiscall cocos2d::RandomHelper::operator=(class cocos2d::RandomHelper const &)` |
+| `0x1b5320` | `public: class Rainbow::RandomPool & __thiscall Rainbow::RandomPool::operator=(class Rainbow::RandomPool const &)` |
+| `0x68cf0` | `public: class MINIW::Ray & __thiscall MINIW::Ray::operator=(class MINIW::Ray &&)` |
+| `0x68cf0` | `public: class MINIW::Ray & __thiscall MINIW::Ray::operator=(class MINIW::Ray const &)` |
+| `0x8d6a0` | `public: class MINIW::RecordInterface & __thiscall MINIW::RecordInterface::operator=(class MINIW::RecordInterface const &)` |
+| `0x2fb9f0` | `public: class cocos2d::Rect & __thiscall cocos2d::Rect::operator=(class cocos2d::Rect const &)` |
+| `0x8e1b0` | `public: class cocos2d::Ref & __thiscall cocos2d::Ref::operator=(class cocos2d::Ref const &)` |
+| `0x8e1e0` | `public: class fairygui::Relations & __thiscall fairygui::Relations::operator=(class fairygui::Relations const &)` |
+| `0x8d6a0` | `public: class Rainbow::RemoteAssetsHelper & __thiscall Rainbow::RemoteAssetsHelper::operator=(class Rainbow::RemoteAssetsHelper &&)` |
+| `0x8d6a0` | `public: class Rainbow::RemoteAssetsHelper & __thiscall Rainbow::RemoteAssetsHelper::operator=(class Rainbow::RemoteAssetsHelper const &)` |
+| `0xed7b0` | `public: class Rainbow::RemoteAssetsManager & __thiscall Rainbow::RemoteAssetsManager::operator=(class Rainbow::RemoteAssetsManager &&)` |
+| `0xed8c0` | `public: class Rainbow::RemoteAssetsManager & __thiscall Rainbow::RemoteAssetsManager::operator=(class Rainbow::RemoteAssetsManager const &)` |
+| `0x8e2f0` | `public: class cocos2d::Renderer & __thiscall cocos2d::Renderer::operator=(class cocos2d::Renderer const &)` |
+| `0x21d180` | `public: class Rainbow::RenderingAPIException & __thiscall Rainbow::RenderingAPIException::operator=(class Rainbow::RenderingAPIException &&)` |
+| `0x21d180` | `public: class Rainbow::RenderingAPIException & __thiscall Rainbow::RenderingAPIException::operator=(class Rainbow::RenderingAPIException const &)` |
+| `0x21d180` | `public: class Rainbow::RuntimeAssertionException & __thiscall Rainbow::RuntimeAssertionException::operator=(class Rainbow::RuntimeAssertionException &&)` |
+| `0x21d180` | `public: class Rainbow::RuntimeAssertionException & __thiscall Rainbow::RuntimeAssertionException::operator=(class Rainbow::RuntimeAssertionException const &)` |
+| `0x8b000` | `public: class cocos2d::SAXParser & __thiscall cocos2d::SAXParser::operator=(class cocos2d::SAXParser const &)` |
+| `0x8b010` | `public: struct cocos2d::ScissorRect & __thiscall cocos2d::ScissorRect::operator=(struct cocos2d::ScissorRect &&)` |
+| `0x8b040` | `public: struct cocos2d::ScissorRect & __thiscall cocos2d::ScissorRect::operator=(struct cocos2d::ScissorRect const &)` |
+| `0x694a0` | `public: class MINIW::ScriptVM & __thiscall MINIW::ScriptVM::operator=(class MINIW::ScriptVM const &)` |
+| `0x8e530` | `public: class fairygui::ScrollPane & __thiscall fairygui::ScrollPane::operator=(class fairygui::ScrollPane const &)` |
+| `0xdfbe0` | `public: class Rainbow::SequenceMap & __thiscall Rainbow::SequenceMap::operator=(class Rainbow::SequenceMap const &)` |
+| `0x8d6a0` | `public: class Rainbow::SequenceTexture & __thiscall Rainbow::SequenceTexture::operator=(class Rainbow::SequenceTexture const &)` |
+| `0x68f80` | `public: struct Rainbow::Setting::ShadowSettingCfg & __thiscall Rainbow::Setting::ShadowSettingCfg::operator=(struct Rainbow::Setting::ShadowSettingCfg &&)` |
+| `0x694e0` | `public: struct Rainbow::Setting::ShadowSettingCfg & __thiscall Rainbow::Setting::ShadowSettingCfg::operator=(struct Rainbow::Setting::ShadowSettingCfg const &)` |
+| `0x3a8e00` | `public: class cocos2d::Size & __thiscall cocos2d::Size::operator=(class cocos2d::Size const &)` |
+| `0x3a8e00` | `public: class cocos2d::Size & __thiscall cocos2d::Size::operator=(class Rainbow::Vector2f const &)` |
+| `0x2e5950` | `public: class spine::Skeleton & __thiscall spine::Skeleton::operator=(class spine::Skeleton const &)` |
+| `0x2e5a80` | `public: class spine::SkeletonData & __thiscall spine::SkeletonData::operator=(class spine::SkeletonData const &)` |
+| `0x11d9a0` | `public: class Rainbow::SkinTextColorLoaderBase & __thiscall Rainbow::SkinTextColorLoaderBase::operator=(class Rainbow::SkinTextColorLoaderBase const &)` |
+| `0x8d6a0` | `public: class Rainbow::SkinnedSkeletonUtils & __thiscall Rainbow::SkinnedSkeletonUtils::operator=(class Rainbow::SkinnedSkeletonUtils &&)` |
+| `0x8d6a0` | `public: class Rainbow::SkinnedSkeletonUtils & __thiscall Rainbow::SkinnedSkeletonUtils::operator=(class Rainbow::SkinnedSkeletonUtils const &)` |
+| `0xc21a0` | `public: class Rainbow::SnapshotHelper & __thiscall Rainbow::SnapshotHelper::operator=(class Rainbow::SnapshotHelper const &)` |
+| `0x8d6a0` | `public: class MINIW::SnapshotInterface & __thiscall MINIW::SnapshotInterface::operator=(class MINIW::SnapshotInterface const &)` |
+| `0x8d6a0` | `public: class Rainbow::SnapshotUtils & __thiscall Rainbow::SnapshotUtils::operator=(class Rainbow::SnapshotUtils &&)` |
+| `0x8d6a0` | `public: class Rainbow::SnapshotUtils & __thiscall Rainbow::SnapshotUtils::operator=(class Rainbow::SnapshotUtils const &)` |
+| `0x9f770` | `public: class Rainbow::SoundSystem & __thiscall Rainbow::SoundSystem::operator=(class Rainbow::SoundSystem const &)` |
+| `0x8d6a0` | `public: class spine::SpineExtension & __thiscall spine::SpineExtension::operator=(class spine::SpineExtension const &)` |
+| `0x8d6a0` | `public: class spine::SpineObject & __thiscall spine::SpineObject::operator=(class spine::SpineObject const &)` |
+| `0x8d6a0` | `public: class MINIW::StatisticRainforestInterface & __thiscall MINIW::StatisticRainforestInterface::operator=(class MINIW::StatisticRainforestInterface const &)` |
+| `0x8d6a0` | `public: class MINIW::StatisticTerrgenInterface & __thiscall MINIW::StatisticTerrgenInterface::operator=(class MINIW::StatisticTerrgenInterface const &)` |
+| `0x8d6a0` | `public: class Rainbow::StringUtil & __thiscall Rainbow::StringUtil::operator=(class Rainbow::StringUtil &&)` |
+| `0x8d6a0` | `public: class Rainbow::StringUtil & __thiscall Rainbow::StringUtil::operator=(class Rainbow::StringUtil const &)` |
+| `0x8e7f0` | `public: class Rainbow::SubMeshInstance & __thiscall Rainbow::SubMeshInstance::operator=(class Rainbow::SubMeshInstance const &)` |
+| `0x8e8d0` | `public: struct cocos2d::T2F_Quad & __thiscall cocos2d::T2F_Quad::operator=(struct cocos2d::T2F_Quad &&)` |
+| `0x8e910` | `public: struct cocos2d::T2F_Quad & __thiscall cocos2d::T2F_Quad::operator=(struct cocos2d::T2F_Quad const &)` |
+| `0x3a4dd0` | `public: struct cocos2d::ObjectFactory::TInfo & __thiscall cocos2d::ObjectFactory::TInfo::operator=(struct cocos2d::ObjectFactory::TInfo const &)` |
+| `0x8b000` | `public: class MINIW::CSVParser::TableItem & __thiscall MINIW::CSVParser::TableItem::operator=(class MINIW::CSVParser::TableItem &&)` |
+| `0x8b000` | `public: class MINIW::CSVParser::TableItem & __thiscall MINIW::CSVParser::TableItem::operator=(class MINIW::CSVParser::TableItem const &)` |
+| `0x276610` | `public: class Rainbow::TerrainDecalSubMesh & __thiscall Rainbow::TerrainDecalSubMesh::operator=(class Rainbow::TerrainDecalSubMesh const &)` |
+| `0x8af90` | `public: struct cocos2d::Tex2F & __thiscall cocos2d::Tex2F::operator=(struct cocos2d::Tex2F &&)` |
+| `0x8afb0` | `public: struct cocos2d::Tex2F & __thiscall cocos2d::Tex2F::operator=(struct cocos2d::Tex2F const &)` |
+| `0x3261a0` | `public: class fairygui::TextFormat & __thiscall fairygui::TextFormat::operator=(class fairygui::TextFormat const &)` |
+| `0x23b610` | `public: class Rainbow::TextureRenderGen & __thiscall Rainbow::TextureRenderGen::operator=(class Rainbow::TextureRenderGen const &)` |
+| `0x8e930` | `public: class Rainbow::Timer & __thiscall Rainbow::Timer::operator=(class Rainbow::Timer const &)` |
+| `0x8d6a0` | `public: class fairygui::ToolSet & __thiscall fairygui::ToolSet::operator=(class fairygui::ToolSet &&)` |
+| `0x8d6a0` | `public: class fairygui::ToolSet & __thiscall fairygui::ToolSet::operator=(class fairygui::ToolSet const &)` |
+| `0x2e5c90` | `public: class spine::TrackEntry & __thiscall spine::TrackEntry::operator=(class spine::TrackEntry const &)` |
+| `0x10f020` | `public: class MINIW::Transform_ & __thiscall MINIW::Transform_::operator=(class MINIW::Transform_ const &)` |
+| `0x8e960` | `public: class fairygui::Transition & __thiscall fairygui::Transition::operator=(class fairygui::Transition const &)` |
+| `0x8d6a0` | `public: class cocos2d::TransitionEaseScene & __thiscall cocos2d::TransitionEaseScene::operator=(class cocos2d::TransitionEaseScene const &)` |
+| `0x2b6d00` | `public: class Rainbow::TweenParam & __thiscall Rainbow::TweenParam::operator=(class Rainbow::TweenParam const &)` |
+| `0x2f00d0` | `public: class fairygui::UBBParser & __thiscall fairygui::UBBParser::operator=(class fairygui::UBBParser const &)` |
+| `0x8eab0` | `public: class fairygui::UI3DRenderer & __thiscall fairygui::UI3DRenderer::operator=(class fairygui::UI3DRenderer const &)` |
+| `0x8eae0` | `public: class fairygui::UI3DRoot & __thiscall fairygui::UI3DRoot::operator=(class fairygui::UI3DRoot const &)` |
+| `0x8d6a0` | `public: class fairygui::UIConfig & __thiscall fairygui::UIConfig::operator=(class fairygui::UIConfig &&)` |
+| `0x8d6a0` | `public: class fairygui::UIConfig & __thiscall fairygui::UIConfig::operator=(class fairygui::UIConfig const &)` |
+| `0x8eb70` | `public: class fairygui::UIEventDispatcher & __thiscall fairygui::UIEventDispatcher::operator=(class fairygui::UIEventDispatcher const &)` |
+| `0x8d6a0` | `public: class fairygui::UIObjectFactory & __thiscall fairygui::UIObjectFactory::operator=(class fairygui::UIObjectFactory &&)` |
+| `0x8d6a0` | `public: class fairygui::UIObjectFactory & __thiscall fairygui::UIObjectFactory::operator=(class fairygui::UIObjectFactory const &)` |
+| `0x2e0a70` | `public: class fairygui::UISkinColorManager & __thiscall fairygui::UISkinColorManager::operator=(class fairygui::UISkinColorManager const &)` |
+| `0x8ec40` | `public: class Rainbow::UILib::UITexture & __thiscall Rainbow::UILib::UITexture::operator=(class Rainbow::UILib::UITexture const &)` |
+| `0x21d180` | `public: class Rainbow::UnimplementedException & __thiscall Rainbow::UnimplementedException::operator=(class Rainbow::UnimplementedException &&)` |
+| `0x21d180` | `public: class Rainbow::UnimplementedException & __thiscall Rainbow::UnimplementedException::operator=(class Rainbow::UnimplementedException const &)` |
+| `0x88c60` | `public: struct cocos2d::V2F_C4B_T2F_Quad & __thiscall cocos2d::V2F_C4B_T2F_Quad::operator=(struct cocos2d::V2F_C4B_T2F_Quad &&)` |
+| `0x88c60` | `public: struct cocos2d::V2F_C4B_T2F_Quad & __thiscall cocos2d::V2F_C4B_T2F_Quad::operator=(struct cocos2d::V2F_C4B_T2F_Quad const &)` |
+| `0x8ef70` | `public: struct cocos2d::V2F_C4B_T2F_Triangle & __thiscall cocos2d::V2F_C4B_T2F_Triangle::operator=(struct cocos2d::V2F_C4B_T2F_Triangle &&)` |
+| `0x8ef70` | `public: struct cocos2d::V2F_C4B_T2F_Triangle & __thiscall cocos2d::V2F_C4B_T2F_Triangle::operator=(struct cocos2d::V2F_C4B_T2F_Triangle const &)` |
+| `0x8efe0` | `public: struct cocos2d::V2F_C4F_T2F & __thiscall cocos2d::V2F_C4F_T2F::operator=(struct cocos2d::V2F_C4F_T2F &&)` |
+| `0x8efe0` | `public: struct cocos2d::V2F_C4F_T2F & __thiscall cocos2d::V2F_C4F_T2F::operator=(struct cocos2d::V2F_C4F_T2F const &)` |
+| `0x8f010` | `public: struct cocos2d::V2F_C4F_T2F_Quad & __thiscall cocos2d::V2F_C4F_T2F_Quad::operator=(struct cocos2d::V2F_C4F_T2F_Quad &&)` |
+| `0x8f010` | `public: struct cocos2d::V2F_C4F_T2F_Quad & __thiscall cocos2d::V2F_C4F_T2F_Quad::operator=(struct cocos2d::V2F_C4F_T2F_Quad const &)` |
+| `0x889d0` | `public: struct cocos2d::V3F_C4B_T2F & __thiscall cocos2d::V3F_C4B_T2F::operator=(struct cocos2d::V3F_C4B_T2F &&)` |
+| `0x889d0` | `public: struct cocos2d::V3F_C4B_T2F & __thiscall cocos2d::V3F_C4B_T2F::operator=(struct cocos2d::V3F_C4B_T2F const &)` |
+| `0x88a40` | `public: struct cocos2d::V3F_C4B_T2F_Quad & __thiscall cocos2d::V3F_C4B_T2F_Quad::operator=(struct cocos2d::V3F_C4B_T2F_Quad &&)` |
+| `0x88a40` | `public: struct cocos2d::V3F_C4B_T2F_Quad & __thiscall cocos2d::V3F_C4B_T2F_Quad::operator=(struct cocos2d::V3F_C4B_T2F_Quad const &)` |
+| `0x88ba0` | `public: struct cocos2d::V3F_C4F & __thiscall cocos2d::V3F_C4F::operator=(struct cocos2d::V3F_C4F &&)` |
+| `0x88ba0` | `public: struct cocos2d::V3F_C4F & __thiscall cocos2d::V3F_C4F::operator=(struct cocos2d::V3F_C4F const &)` |
+| `0x88c00` | `public: struct cocos2d::V3F_T2F & __thiscall cocos2d::V3F_T2F::operator=(struct cocos2d::V3F_T2F &&)` |
+| `0x88c00` | `public: struct cocos2d::V3F_T2F & __thiscall cocos2d::V3F_T2F::operator=(struct cocos2d::V3F_T2F const &)` |
+| `0x88c60` | `public: struct cocos2d::V3F_T2F_Quad & __thiscall cocos2d::V3F_T2F_Quad::operator=(struct cocos2d::V3F_T2F_Quad &&)` |
+| `0x88c60` | `public: struct cocos2d::V3F_T2F_Quad & __thiscall cocos2d::V3F_T2F_Quad::operator=(struct cocos2d::V3F_T2F_Quad const &)` |
+| `0x29ac60` | `public: class Value & __thiscall Value::operator=(class Value &&)` |
+| `0x29acd0` | `public: class Value & __thiscall Value::operator=(class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > &&)` |
+| `0x29ad60` | `public: class Value & __thiscall Value::operator=(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > &&)` |
+| `0x29adf0` | `public: class Value & __thiscall Value::operator=(class std::vector<class Value,class std::allocator<class Value> > &&)` |
+| `0x29aec0` | `public: class Value & __thiscall Value::operator=(class Value const &)` |
+| `0x29b090` | `public: class Value & __thiscall Value::operator=(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x29b140` | `public: class Value & __thiscall Value::operator=(class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > const &)` |
+| `0x29b1d0` | `public: class Value & __thiscall Value::operator=(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > const &)` |
+| `0x29b260` | `public: class Value & __thiscall Value::operator=(class std::vector<class Value,class std::allocator<class Value> > const &)` |
+| `0x29b300` | `public: class Value & __thiscall Value::operator=(int)` |
+| `0x29b360` | `public: class Value & __thiscall Value::operator=(double)` |
+| `0x29b3c0` | `public: class Value & __thiscall Value::operator=(char const *)` |
+| `0x29b480` | `public: class Value & __thiscall Value::operator=(bool)` |
+| `0x3a2960` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class cocos2d::Value &&)` |
+| `0x3a29e0` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > &&)` |
+| `0x3a2a90` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > &&)` |
+| `0x3a2b40` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > &&)` |
+| `0x3a2c10` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class cocos2d::Value const &)` |
+| `0x3a2e30` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3a2ef0` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > const &)` |
+| `0x3a2fa0` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > const &)` |
+| `0x3a3050` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > const &)` |
+| `0x3a3100` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(unsigned char)` |
+| `0x3a3160` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(int)` |
+| `0x3a31c0` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(unsigned int)` |
+| `0x3a3220` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(float)` |
+| `0x3a3280` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(double)` |
+| `0x3a32e0` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(char const *)` |
+| `0x3a33b0` | `public: class cocos2d::Value & __thiscall cocos2d::Value::operator=(bool)` |
+| `0xe63e0` | `public: class Rainbow::VertexFormat & __thiscall Rainbow::VertexFormat::operator=(class Rainbow::VertexFormat const &)` |
+| `0x8b010` | `public: struct cocos2d::Viewport & __thiscall cocos2d::Viewport::operator=(struct cocos2d::Viewport &&)` |
+| `0x8b040` | `public: struct cocos2d::Viewport & __thiscall cocos2d::Viewport::operator=(struct cocos2d::Viewport const &)` |
+| `0x68cf0` | `public: struct Rainbow::Setting::VisionConfig & __thiscall Rainbow::Setting::VisionConfig::operator=(struct Rainbow::Setting::VisionConfig &&)` |
+| `0x9f7a0` | `public: struct Rainbow::Setting::VisionConfig & __thiscall Rainbow::Setting::VisionConfig::operator=(struct Rainbow::Setting::VisionConfig const &)` |
+| `0x68f80` | `public: class WCoord & __thiscall WCoord::operator=(class WCoord &&)` |
+| `0x694e0` | `public: class WCoord & __thiscall WCoord::operator=(class WCoord const &)` |
+| `0x9f7d0` | `public: class Rainbow::UILib::WebFrame & __thiscall Rainbow::UILib::WebFrame::operator=(class Rainbow::UILib::WebFrame const &)` |
+| `0x69500` | `public: class MINIW::WebSocket & __thiscall MINIW::WebSocket::operator=(class MINIW::WebSocket const &)` |
+| `0x28f5e0` | `public: class WebSocketCallbackWrapper & __thiscall WebSocketCallbackWrapper::operator=(class WebSocketCallbackWrapper const &)` |
+| `0x28f600` | `public: class WebSocketEventHandler & __thiscall WebSocketEventHandler::operator=(class WebSocketEventHandler const &)` |
+| `0x8f0a0` | `public: class fairygui::Window & __thiscall fairygui::Window::operator=(class fairygui::Window const &)` |
+| `0x68f80` | `public: class Rainbow::WorldPos & __thiscall Rainbow::WorldPos::operator=(class Rainbow::WorldPos &&)` |
+| `0x694e0` | `public: class Rainbow::WorldPos & __thiscall Rainbow::WorldPos::operator=(class Rainbow::WorldPos const &)` |
+| `0x115b30` | `public: class MINIW::WorldRay & __thiscall MINIW::WorldRay::operator=(class MINIW::WorldRay &&)` |
+| `0x115b30` | `public: class MINIW::WorldRay & __thiscall MINIW::WorldRay::operator=(class MINIW::WorldRay const &)` |
+| `0x8d6a0` | `public: struct Rainbow::ZipAssetReadFunc & __thiscall Rainbow::ZipAssetReadFunc::operator=(struct Rainbow::ZipAssetReadFunc &&)` |
+| `0x8d6a0` | `public: struct Rainbow::ZipAssetReadFunc & __thiscall Rainbow::ZipAssetReadFunc::operator=(struct Rainbow::ZipAssetReadFunc const &)` |
+| `0x24c2b0` | `public: class cocos2d::__Array & __thiscall cocos2d::__Array::operator=(class cocos2d::__Array const &)` |
+| `0x405e40` | `public: class cocos2d::__Bool & __thiscall cocos2d::__Bool::operator=(class cocos2d::__Bool &&)` |
+| `0x405e40` | `public: class cocos2d::__Bool & __thiscall cocos2d::__Bool::operator=(class cocos2d::__Bool const &)` |
+| `0x405e80` | `public: class cocos2d::__Dictionary & __thiscall cocos2d::__Dictionary::operator=(class cocos2d::__Dictionary const &)` |
+| `0x405ec0` | `public: class cocos2d::__Double & __thiscall cocos2d::__Double::operator=(class cocos2d::__Double &&)` |
+| `0x405ec0` | `public: class cocos2d::__Double & __thiscall cocos2d::__Double::operator=(class cocos2d::__Double const &)` |
+| `0x24c2b0` | `public: class cocos2d::__Float & __thiscall cocos2d::__Float::operator=(class cocos2d::__Float &&)` |
+| `0x24c2b0` | `public: class cocos2d::__Float & __thiscall cocos2d::__Float::operator=(class cocos2d::__Float const &)` |
+| `0x24c2b0` | `public: class cocos2d::__Integer & __thiscall cocos2d::__Integer::operator=(class cocos2d::__Integer const &)` |
+| `0x8e100` | `public: class cocos2d::__NotificationCenter & __thiscall cocos2d::__NotificationCenter::operator=(class cocos2d::__NotificationCenter const &)` |
+| `0x405f00` | `public: class cocos2d::__Set & __thiscall cocos2d::__Set::operator=(class cocos2d::__Set const &)` |
+| `0x40ad30` | `public: class cocos2d::__String & __thiscall cocos2d::__String::operator=(class cocos2d::__String const &)` |
+| `0x3c7660` | `public: class winSystemInfo & __thiscall winSystemInfo::operator=(class winSystemInfo const &)` |
+| `0xc2d80` | `class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class Guid const &)` |
+| `0x8f200` | `public: bool __thiscall cocos2d::BlendFunc::operator==(struct cocos2d::BlendFunc const &)const ` |
+| `0x3a6020` | `public: bool __thiscall cocos2d::Color4B::operator==(struct cocos2d::Color4B const &)const ` |
+| `0x3a6050` | `public: bool __thiscall cocos2d::Color4B::operator==(struct cocos2d::Color3B const &)const ` |
+| `0x3a6080` | `public: bool __thiscall cocos2d::Color4B::operator==(struct cocos2d::Color4F const &)const ` |
+| `0x21b0c0` | `public: bool __thiscall cocos2d::Color4F::operator==(struct cocos2d::Color4F const &)const ` |
+| `0x3a60f0` | `public: bool __thiscall cocos2d::Color4F::operator==(struct cocos2d::Color3B const &)const ` |
+| `0x3a6160` | `public: bool __thiscall cocos2d::Color4F::operator==(struct cocos2d::Color4B const &)const ` |
+| `0x21b0c0` | `public: bool __thiscall Rainbow::ColourValue::operator==(class Rainbow::ColourValue const &)const ` |
+| `0x329f20` | `public: bool __thiscall fairygui::EventTag::operator==(class fairygui::EventTag const &)` |
+| `0x329f20` | `public: bool __thiscall fairygui::EventTag::operator==(class fairygui::EventTag const &)const ` |
+| `0xc3130` | `public: bool __thiscall Guid::operator==(class Guid const &)const ` |
+| `0x227c50` | `public: bool __thiscall Rainbow::MaterialInstanceCombineArgs::operator==(class Rainbow::MaterialInstanceCombineArgs const &)const ` |
+| `0x278210` | `public: bool __thiscall Rainbow::Algorithm::OctreeNodeContext::operator==(class Rainbow::Algorithm::OctreeNodeContext const &)const ` |
+| `0x29b4e0` | `public: bool __thiscall Value::operator==(class Value const &)` |
+| `0x29b4f0` | `public: bool __thiscall Value::operator==(class Value const &)const ` |
+| `0x3a3410` | `public: bool __thiscall cocos2d::Value::operator==(class cocos2d::Value const &)` |
+| `0x3a3420` | `public: bool __thiscall cocos2d::Value::operator==(class cocos2d::Value const &)const ` |
+| `0xe6440` | `public: bool __thiscall Rainbow::VertexFormat::operator==(class Rainbow::VertexFormat const &)const ` |
+| `0x695f0` | `public: bool __thiscall Rainbow::WorldPos::operator==(class Rainbow::WorldPos const &)const ` |
+| `0x8f220` | `public: bool __thiscall cocos2d::BlendFunc::operator!=(struct cocos2d::BlendFunc const &)const ` |
+| `0x3a6220` | `public: bool __thiscall cocos2d::Color4B::operator!=(struct cocos2d::Color4B const &)const ` |
+| `0x3a6250` | `public: bool __thiscall cocos2d::Color4B::operator!=(struct cocos2d::Color3B const &)const ` |
+| `0x3a6280` | `public: bool __thiscall cocos2d::Color4B::operator!=(struct cocos2d::Color4F const &)const ` |
+| `0x21b110` | `public: bool __thiscall cocos2d::Color4F::operator!=(struct cocos2d::Color4F const &)const ` |
+| `0x3a62f0` | `public: bool __thiscall cocos2d::Color4F::operator!=(struct cocos2d::Color3B const &)const ` |
+| `0x3a6360` | `public: bool __thiscall cocos2d::Color4F::operator!=(struct cocos2d::Color4B const &)const ` |
+| `0x21b110` | `public: bool __thiscall Rainbow::ColourValue::operator!=(class Rainbow::ColourValue const &)const ` |
+| `0x329f40` | `public: bool __thiscall fairygui::EventTag::operator!=(class fairygui::EventTag const &)` |
+| `0x329f40` | `public: bool __thiscall fairygui::EventTag::operator!=(class fairygui::EventTag const &)const ` |
+| `0xc31a0` | `public: bool __thiscall Guid::operator!=(class Guid const &)const ` |
+| `0x29b7b0` | `public: bool __thiscall Value::operator!=(class Value const &)` |
+| `0x29b7d0` | `public: bool __thiscall Value::operator!=(class Value const &)const ` |
+| `0x3a3730` | `public: bool __thiscall cocos2d::Value::operator!=(class cocos2d::Value const &)` |
+| `0x3a3750` | `public: bool __thiscall cocos2d::Value::operator!=(class cocos2d::Value const &)const ` |
+| `0x69620` | `public: bool __thiscall Rainbow::WorldPos::operator!=(class Rainbow::WorldPos const &)const ` |
+| `0x294050` | `public: class MINIW::CSVParser::TableLine const & __thiscall MINIW::CSVParser::operator[](int)const ` |
+| `0x297ce0` | `public: class MINIW::CSVParser::TableLine const & __thiscall MINIW::CSVParser::operator[](char const *)const ` |
+| `0x69650` | `public: float & __thiscall Rainbow::ColourValue::operator[](unsigned int)` |
+| `0x8f4c0` | `public: float __thiscall Rainbow::ColourValue::operator[](unsigned int)const ` |
+| `0x69650` | `public: int & __thiscall WCoord::operator[](int)` |
+| `0x69660` | `public: int __thiscall WCoord::operator[](int)const ` |
+| `0x93ae0` | `public: __thiscall MINIW::CSVParser::TableItem::operator char const *(void)const ` |
+| `0x8f4d0` | `public: class Rainbow::ColourValue __thiscall Rainbow::ColourValue::operator*(class Rainbow::ColourValue const &)const ` |
+| `0x8f4f0` | `public: class Rainbow::ColourValue __thiscall Rainbow::ColourValue::operator*(float)const ` |
+| `0x69670` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator*(int)const ` |
+| `0x696a0` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator*(float)const ` |
+| `0x8f570` | `public: class Rainbow::ColourValue __thiscall Rainbow::ColourValue::operator-(class Rainbow::ColourValue const &)const ` |
+| `0x696f0` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator-(class Rainbow::WorldPos const &)const ` |
+| `0x69720` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator-(class Rainbow::Vector3f const &)const ` |
+| `0x8f590` | `public: class Rainbow::ColourValue __thiscall Rainbow::ColourValue::operator+(class Rainbow::ColourValue const &)const ` |
+| `0x69780` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator+(class Rainbow::WorldPos const &)const ` |
+| `0x697b0` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator+(class Rainbow::Vector3f const &)const ` |
+| `0x8f5b0` | `public: class Rainbow::ColourValue __thiscall Rainbow::ColourValue::operator/(class Rainbow::ColourValue const &)const ` |
+| `0x8f5d0` | `public: class Rainbow::ColourValue __thiscall Rainbow::ColourValue::operator/(float)const ` |
+| `0x69810` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator/(int)const ` |
+| `0x69810` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::operator/(unsigned int)const ` |
+| `0x8f600` | `public: bool __thiscall cocos2d::BlendFunc::operator<(struct cocos2d::BlendFunc const &)const ` |
+| `0x227fa0` | `public: bool __thiscall Rainbow::MaterialInstanceCombineArgs::operator<(class Rainbow::MaterialInstanceCombineArgs const &)const ` |
+| `0x8f630` | `public: class Rainbow::ColourValue & __thiscall Rainbow::ColourValue::operator*=(float)` |
+| `0x69840` | `public: class Rainbow::BoxBound & __thiscall Rainbow::BoxBound::operator+=(class Rainbow::BoxBound const &)` |
+| `0x698f0` | `public: class Rainbow::BoxBound & __thiscall Rainbow::BoxBound::operator+=(class Rainbow::Vector3f const &)` |
+| `0x8f650` | `public: class Rainbow::ColourValue & __thiscall Rainbow::ColourValue::operator+=(class Rainbow::ColourValue const &)` |
+| `0x69990` | `public: void __thiscall WCoord::operator+=(class WCoord const &)` |
+| `0x699b0` | `public: class Rainbow::WorldPos const & __thiscall Rainbow::WorldPos::operator+=(class Rainbow::WorldPos const &)` |
+| `0x699d0` | `public: class Rainbow::WorldPos const & __thiscall Rainbow::WorldPos::operator+=(class Rainbow::Vector3f const &)` |
+| `0x8f6a0` | `public: class Rainbow::ColourValue & __thiscall Rainbow::ColourValue::operator-=(class Rainbow::ColourValue const &)` |
+| `0x69a20` | `public: void __thiscall WCoord::operator-=(class WCoord const &)` |
+| `0x69a40` | `public: class Rainbow::WorldPos const & __thiscall Rainbow::WorldPos::operator-=(class Rainbow::WorldPos const &)` |
+| `0x69a60` | `public: class Rainbow::WorldPos const & __thiscall Rainbow::WorldPos::operator-=(class Rainbow::Vector3f const &)` |
+| `0x8f6f0` | `public: class Rainbow::ColourValue & __thiscall Rainbow::ColourValue::operator/=(float)` |
+| `0x701138` | `const Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::`vftable'` |
+| `0x701000` | `const Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::`vftable'` |
+| `0x70109c` | `const Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::`vftable'` |
+| `0x72fc48` | `const cocos2d::Action::`vftable'{for `cocos2d::Clonable'}` |
+| `0x72fc24` | `const cocos2d::Action::`vftable'{for `cocos2d::Ref'}` |
+| `0x6f6ee4` | `const cocos2d::ActionInterval::`vftable'{for `cocos2d::Clonable'}` |
+| `0x6f6ec0` | `const cocos2d::ActionInterval::`vftable'{for `cocos2d::Ref'}` |
+| `0x725760` | `const fairygui::ActionMovieClip::`vftable'{for `cocos2d::Clonable'}` |
+| `0x72573c` | `const fairygui::ActionMovieClip::`vftable'{for `cocos2d::Ref'}` |
+| `0x6f7954` | `const Rainbow::AnimOjbectMotion::`vftable'` |
+| `0x732644` | `const cocos2d::Animation::`vftable'{for `cocos2d::Clonable'}` |
+| `0x73263c` | `const cocos2d::Animation::`vftable'{for `cocos2d::Ref'}` |
+| `0x725118` | `const spine::Animation::`vftable'` |
+| `0x6fefc4` | `const Rainbow::AnimationData::`vftable'` |
+| `0x6ff2f4` | `const Rainbow::AnimationPlayer::`vftable'{for `Rainbow::Component'}` |
+| `0x6ff378` | `const Rainbow::AnimationPlayer::`vftable'{for `Rainbow::IModelAnimationPlayer'}` |
+| `0x725164` | `const spine::AnimationStateData::`vftable'` |
+| `0x725128` | `const spine::AnimationStateListenerObject::`vftable'` |
+| `0x716508` | `const Rainbow::AsyncCombineTask::`vftable'` |
+| `0x716500` | `const Rainbow::AsyncSubCombineTask::`vftable'` |
+| `0x725194` | `const spine::Atlas::`vftable'` |
+| `0x7251c4` | `const spine::AtlasAttachmentLoader::`vftable'` |
+| `0x725174` | `const spine::AtlasPage::`vftable'{for `spine::HasRendererObject'}` |
+| `0x72516c` | `const spine::AtlasPage::`vftable'{for `spine::SpineObject'}` |
+| `0x72517c` | `const spine::AtlasRegion::`vftable'` |
+| `0x6f77f0` | `const Rainbow::BSPData::`vftable'` |
+| `0x6f7744` | `const Rainbow::BaseAnimationData::`vftable'` |
+| `0x713624` | `const Rainbow::BillboardMeshBatch::`vftable'` |
+| `0x6f7904` | `const Rainbow::BindOjbect2Motion::`vftable'` |
+| `0x72520c` | `const spine::Bone::`vftable'` |
+| `0x6feef4` | `const Rainbow::BoneTrack::`vftable'` |
+| `0x705c74` | `const Rainbow::UILib::CCoord::`vftable'` |
+| `0x71e7f8` | `const MINIW::CSVParser::`vftable'` |
+| `0x71eb10` | `const MINIW::Cef3Manager::`vftable'` |
+| `0x7429d0` | `const ChannelList::`vftable'` |
+| `0x701d3c` | `const Rainbow::CloudAssetLoader::`vftable'` |
+| `0x725330` | `const spine::Cocos2dAtlasAttachmentLoader::`vftable'` |
+| `0x725358` | `const spine::Cocos2dTextureLoader::`vftable'` |
+| `0x6f6d64` | `const cocos2d::Component::`vftable'` |
+| `0x7040b0` | `const CoordAxis::`vftable'` |
+| `0x704078` | `const Rainbow::UILib::CoordInteract::`vftable'` |
+| `0x717450` | `const Rainbow::CubeBorder::`vftable'` |
+| `0x6f8f08` | `const Rainbow::UILib::CustomView::`vftable'` |
+| `0x7185a0` | `const cocos2d::DataVisitor::`vftable'` |
+| `0x71d2f8` | `const Rainbow::DecalRenderer::`vftable'` |
+| `0x6f91f8` | `const Rainbow::Setting::DeviceModelData::`vftable'` |
+| `0x6f6e24` | `const cocos2d::Director::`vftable'` |
+| `0x7130c4` | `const Rainbow::Downloader::`vftable'` |
+| `0x733b04` | `const cocos2d::DrawNode::`vftable'` |
+| `0x6fd3dc` | `const Rainbow::DummyMaterialTemplate::`vftable'` |
+| `0x710460` | `const Rainbow::DummyNode::`vftable'` |
+| `0x7066bc` | `const Rainbow::UILib::EditBox::`vftable'` |
+| `0x71a078` | `const Rainbow::Empty3DUIRenderer::`vftable'` |
+| `0x70e3d4` | `const Rainbow::Entity::`vftable'` |
+| `0x70e780` | `const Rainbow::EntityData::`vftable'` |
+| `0x725234` | `const spine::Event::`vftable'` |
+| `0x72523c` | `const spine::EventData::`vftable'` |
+| `0x6f6e48` | `const cocos2d::EventDispatcher::`vftable'` |
+| `0x6f6e50` | `const cocos2d::EventListenerCustom::`vftable'` |
+| `0x6f6e68` | `const cocos2d::EventListenerMouse::`vftable'` |
+| `0x6f6e78` | `const cocos2d::EventListenerTouchOneByOne::`vftable'` |
+| `0x6f6e60` | `const cocos2d::EventMouse::`vftable'` |
+| `0x70e488` | `const Rainbow::EventTriggerObjectMotion::`vftable'` |
+| `0x715e90` | `const Rainbow::Exception::`vftable'` |
+| `0x72a274` | `const fairygui::FUIContainer::`vftable'` |
+| `0x72af70` | `const fairygui::FUIModelSprite::`vftable'{for `cocos2d::Node'}` |
+| `0x72b258` | `const fairygui::FUIModelSprite::`vftable'{for `cocos2d::TextureProtocol'}` |
+| `0x72b520` | `const fairygui::FUIRenderTexture::`vftable'` |
+| `0x72bccc` | `const fairygui::FUISprite::`vftable'{for `cocos2d::Node'}` |
+| `0x72bfb4` | `const fairygui::FUISprite::`vftable'{for `cocos2d::TextureProtocol'}` |
+| `0x715ef0` | `const Rainbow::FileNotFoundException::`vftable'` |
+| `0x715514` | `const Rainbow::FmodSound::`vftable'` |
+| `0x706c2c` | `const Rainbow::UILib::FontString::`vftable'` |
+| `0x706ec8` | `const Rainbow::UILib::Frame::`vftable'` |
+| `0x6f7244` | `const fairygui::GBasicTextField::`vftable'` |
+| `0x6f8280` | `const fairygui::GButton::`vftable'` |
+| `0x6f8838` | `const fairygui::GColorTextureLoader::`vftable'` |
+| `0x6f83cc` | `const fairygui::GComboBox::`vftable'` |
+| `0x6f81e0` | `const fairygui::GComponent::`vftable'` |
+| `0x6f7024` | `const fairygui::GController::`vftable'` |
+| `0x6f7488` | `const fairygui::GGraph::`vftable'` |
+| `0x6f710c` | `const fairygui::GImage::`vftable'` |
+| `0x6f6d94` | `const cocos2d::GLView::`vftable'` |
+| `0x6f6f64` | `const cocos2d::GLViewImpl::`vftable'` |
+| `0x6f8320` | `const fairygui::GList::`vftable'` |
+| `0x6f8148` | `const fairygui::GLoader3D::`vftable'` |
+| `0x6f7508` | `const fairygui::GLoader::`vftable'` |
+| `0x6f80c8` | `const fairygui::GModelView::`vftable'` |
+| `0x6f702c` | `const fairygui::GObject::`vftable'` |
+| `0x6f846c` | `const fairygui::GProgressBar::`vftable'` |
+| `0x6f72f0` | `const fairygui::GRichTextField::`vftable'` |
+| `0x6f85c8` | `const fairygui::GRoot::`vftable'` |
+| `0x6f7468` | `const fairygui::GTextInput::`vftable'{for `cocos2d::ui::EditBoxDelegate'}` |
+| `0x6f73bc` | `const fairygui::GTextInput::`vftable'{for `fairygui::GTextField'}` |
+| `0x6f850c` | `const fairygui::GTreeNode::`vftable'` |
+| `0x6f8830` | `const fairygui::GTweener::`vftable'` |
+| `0x726b5c` | `const fairygui::GUIGenIcon::`vftable'` |
+| `0x6f8710` | `const fairygui::GUIRenderTexture::`vftable'` |
+| `0x6f87b0` | `const fairygui::GWebView::`vftable'` |
+| `0x6f9210` | `const Rainbow::Setting::GameConfiguration::`vftable'` |
+| `0x7151b0` | `const GameEventQueInterface::`vftable'` |
+| `0x6f6cc0` | `const GameUI::`vftable'` |
+| `0x6f6ff4` | `const Rainbow::GaussBlurRenderer::`vftable'` |
+| `0x72d0ec` | `const fairygui::GearColor::`vftable'` |
+| `0x7258ec` | `const fairygui::GearDisplay::`vftable'` |
+| `0x72d108` | `const fairygui::GearFontSize::`vftable'` |
+| `0x72d124` | `const fairygui::GearIcon::`vftable'` |
+| `0x72d140` | `const fairygui::GearLook::`vftable'` |
+| `0x72d15c` | `const fairygui::GearText::`vftable'` |
+| `0x717860` | `const Rainbow::GifAsset::`vftable'` |
+| `0x7178fc` | `const Rainbow::GifSequenceTexture::`vftable'` |
+| `0x721470` | `const Rainbow::HUDBloodBar::`vftable'` |
+| `0x7213a4` | `const Rainbow::HUDChatBubble::`vftable'` |
+| `0x7212d8` | `const Rainbow::HUDLevitationFont::`vftable'` |
+| `0x6f88cc` | `const fairygui::HUDRoot::`vftable'` |
+| `0x720ca4` | `const fairygui::HUDScene::`vftable'` |
+| `0x721140` | `const Rainbow::HUDTitleBase::`vftable'` |
+| `0x72153c` | `const Rainbow::HUDTitleInfo::`vftable'` |
+| `0x72120c` | `const Rainbow::HUDTitleLine::`vftable'` |
+| `0x720f5c` | `const Rainbow::HudBitMapFontAttribute::`vftable'` |
+| `0x720f3c` | `const Rainbow::HudFontBaseAttribute::`vftable'` |
+| `0x720f9c` | `const Rainbow::HudImageAttribute::`vftable'` |
+| `0x720f20` | `const Rainbow::HudLayoutAttribute::`vftable'` |
+| `0x72109c` | `const Rainbow::HudLevBitMapFontAttribute::`vftable'` |
+| `0x7210c0` | `const Rainbow::HudLevNormalFontAttribute::`vftable'` |
+| `0x721104` | `const Rainbow::HudLevSpriteAndFontAttribute::`vftable'` |
+| `0x7210e4` | `const Rainbow::HudLevSpriteAttribute::`vftable'` |
+| `0x721078` | `const Rainbow::HudLevitationBaseAttribute::`vftable'` |
+| `0x720fb8` | `const Rainbow::HudMovieClipAttribute::`vftable'` |
+| `0x720f7c` | `const Rainbow::HudNormalFontAttribute::`vftable'` |
+| `0x720fd8` | `const Rainbow::HudSpineAttribute::`vftable'` |
+| `0x720ff4` | `const Rainbow::HudTitleAttribute::`vftable'` |
+| `0x721010` | `const Rainbow::HudTitleNormalFontAttribute::`vftable'` |
+| `0x721034` | `const Rainbow::HudTitleSpriteAttribute::`vftable'` |
+| `0x721054` | `const Rainbow::HudTitleSpriteFontAttribute::`vftable'` |
+| `0x70adec` | `const Rainbow::ICef3Manager::`vftable'` |
+| `0x71e1f4` | `const Rainbow::IClientDnsCache::`vftable'` |
+| `0x6f70ac` | `const Rainbow::IClientInfo::`vftable'` |
+| `0x71f80c` | `const Rainbow::ICloudProxy::`vftable'` |
+| `0x6f79f4` | `const Rainbow::IModelAnimationPlayer::`vftable'` |
+| `0x715f2c` | `const Rainbow::IOException::`vftable'` |
+| `0x71f97c` | `const MINIW::IStatisticsToolsInterface::`vftable'` |
+| `0x71a2ac` | `const Rainbow::Image3D::`vftable'` |
+| `0x71a4dc` | `const Rainbow::ImageBoard3D::`vftable'` |
+| `0x6ff968` | `const Rainbow::IndexData::`vftable'` |
+| `0x734330` | `const cocos2d::InputLabel::`vftable'{for `cocos2d::BlendProtocol'}` |
+| `0x734320` | `const cocos2d::InputLabel::`vftable'{for `cocos2d::LabelProtocol'}` |
+| `0x734044` | `const cocos2d::InputLabel::`vftable'{for `cocos2d::Node'}` |
+| `0x716014` | `const Rainbow::InternalErrorException::`vftable'` |
+| `0x715f98` | `const Rainbow::InvalidParametersException::`vftable'` |
+| `0x715f5c` | `const Rainbow::InvalidStateException::`vftable'` |
+| `0x715fd8` | `const Rainbow::ItemIdentityException::`vftable'` |
+| `0x71a700` | `const Rainbow::ItemImage3D::`vftable'` |
+| `0x7348b4` | `const cocos2d::Label::`vftable'{for `cocos2d::BlendProtocol'}` |
+| `0x7348a4` | `const cocos2d::Label::`vftable'{for `cocos2d::LabelProtocol'}` |
+| `0x7345dc` | `const cocos2d::Label::`vftable'{for `cocos2d::Node'}` |
+| `0x708040` | `const Rainbow::UILib::LayoutFrame::`vftable'` |
+| `0x6f769c` | `const Rainbow::LegacyAsset::`vftable'` |
+| `0x719c9c` | `const Rainbow::LegacyCommon3DUI::`vftable'` |
+| `0x713fe0` | `const Rainbow::LegacyDefault3DObject::`vftable'` |
+| `0x6fee58` | `const Rainbow::LegacyMeshRenderObject::`vftable'` |
+| `0x6ffb80` | `const Rainbow::LegacySkinMeshRenderer::`vftable'` |
+| `0x71862c` | `const cocos2d::LuaEngine::`vftable'` |
+| `0x6f919c` | `const Rainbow::MiniLua::LuaFunctionLinker::`vftable'` |
+| `0x6f9184` | `const Rainbow::MiniLua::LuaLinker::`vftable'` |
+| `0x6f9190` | `const Rainbow::MiniLua::LuaTableLinker::`vftable'` |
+| `0x6fd3d4` | `const Rainbow::MaterialTemplate::`vftable'` |
+| `0x725224` | `const spine::MathUtil::`vftable'` |
+| `0x6fec68` | `const Rainbow::MeshData::`vftable'` |
+| `0x6f7a34` | `const Rainbow::MeshInstance::`vftable'` |
+| `0x6f7a64` | `const Rainbow::MeshInstanceContainer::`vftable'` |
+| `0x701184` | `const Rainbow::Http::MiniBreakResumeUpload::`vftable'` |
+| `0x70104c` | `const Rainbow::Http::MiniCustomUpload::`vftable'` |
+| `0x71e178` | `const Rainbow::Http::MiniDownloader::`vftable'` |
+| `0x6f91b8` | `const Rainbow::MiniEventDispatcher::`vftable'` |
+| `0x716c14` | `const Rainbow::MiniGameScene::`vftable'` |
+| `0x6f91c0` | `const Rainbow::MiniGlobalEvent::`vftable'` |
+| `0x700fb4` | `const Rainbow::Http::MiniHttpRequest::`vftable'` |
+| `0x6f75f8` | `const Rainbow::MiniObject::`vftable'` |
+| `0x7186c4` | `const fairygui::MiniUIGameEventMgr::`vftable'` |
+| `0x7010e8` | `const Rainbow::Http::MiniUpload::`vftable'` |
+| `0x7145b0` | `const Rainbow::MobileCameraRenderer::`vftable'` |
+| `0x6f7cc0` | `const Rainbow::Model::`vftable'{for `Rainbow::MeshInstanceContainer'}` |
+| `0x6f7ac8` | `const Rainbow::Model::`vftable'{for `Rainbow::MovableObject'}` |
+| `0x70df40` | `const Rainbow::ModelAnimationPlayer::`vftable'{for `Rainbow::Component'}` |
+| `0x70dfc4` | `const Rainbow::ModelAnimationPlayer::`vftable'{for `Rainbow::IModelAnimationPlayer'}` |
+| `0x710210` | `const Rainbow::ModelData::`vftable'` |
+| `0x6f7ec0` | `const Rainbow::ModelLegacy::`vftable'{for `Rainbow::MeshInstanceContainer'}` |
+| `0x6f7cc8` | `const Rainbow::ModelLegacy::`vftable'{for `Rainbow::MovableObject'}` |
+| `0x70e21c` | `const Rainbow::ModelMeshRenderers::`vftable'` |
+| `0x705d2c` | `const Rainbow::ModelMotion::`vftable'` |
+| `0x6f80c0` | `const Rainbow::ModelNew::`vftable'{for `Rainbow::MeshInstanceContainer'}` |
+| `0x6f7ec8` | `const Rainbow::ModelNew::`vftable'{for `Rainbow::MovableObject'}` |
+| `0x70e198` | `const Rainbow::ModelRenderer::`vftable'` |
+| `0x708c44` | `const Rainbow::UILib::ModelView::`vftable'` |
+| `0x6f6f48` | `const cocos2d::ModelViewCommand::`vftable'` |
+| `0x6f7894` | `const Rainbow::MotionObjLife::`vftable'` |
+| `0x716a0c` | `const Rainbow::MovableObject::`vftable'` |
+| `0x71ae78` | `const Rainbow::MoveByText::`vftable'` |
+| `0x71ae70` | `const Rainbow::MoveByTextMgr::`vftable'` |
+| `0x708fb4` | `const Rainbow::UILib::MultiEditBox::`vftable'` |
+| `0x71b218` | `const Rainbow::MusicClubChatBubble3D::`vftable'` |
+| `0x71b690` | `const Rainbow::NameText3D::`vftable'` |
+| `0x737b70` | `const cocos2d::Node::`vftable'` |
+| `0x71b990` | `const Rainbow::NormalText3D::`vftable'` |
+| `0x718624` | `const cocos2d::NotificationObserver::`vftable'` |
+| `0x6f78b4` | `const Rainbow::ObjectMotion::`vftable'` |
+| `0x6ff904` | `const Rainbow::OgreVertexData::`vftable'` |
+| `0x6f6d18` | `const cocos2d::OldUIRenderCommand::`vftable'` |
+| `0x71bbac` | `const Rainbow::OnlyText3D::`vftable'` |
+| `0x710bdc` | `const Rainbow::ParticleNode::`vftable'` |
+| `0x6f8708` | `const fairygui::PopupMenu::`vftable'` |
+| `0x6f79a4` | `const Rainbow::PostObjMotion::`vftable'` |
+| `0x7185cc` | `const cocos2d::PrettyPrinter::`vftable'` |
+| `0x71bdd4` | `const Rainbow::ProgressBarIn3D::`vftable'` |
+| `0x71c014` | `const Rainbow::ProgressBarWithText3D::`vftable'` |
+| `0x7384c4` | `const cocos2d::ProtectedNode::`vftable'` |
+| `0x70349c` | `const Rainbow::RFontBase::`vftable'` |
+| `0x716df8` | `const Rainbow::RainbowEffectProxy::`vftable'` |
+| `0x70dd5c` | `const Rainbow::RainbowEffectProxyHolder::`vftable'` |
+| `0x71f8fc` | `const MINIW::RecordInterface::`vftable'` |
+| `0x6f6cf4` | `const cocos2d::Ref::`vftable'` |
+| `0x6f759c` | `const Rainbow::RefObjectNoName::`vftable'` |
+| `0x716050` | `const Rainbow::RenderingAPIException::`vftable'` |
+| `0x6f6f20` | `const cocos2d::ResizeTo::`vftable'{for `cocos2d::Clonable'}` |
+| `0x6f6efc` | `const cocos2d::ResizeTo::`vftable'{for `cocos2d::Ref'}` |
+| `0x71608c` | `const Rainbow::RuntimeAssertionException::`vftable'` |
+| `0x7388e8` | `const cocos2d::Scene::`vftable'` |
+| `0x73dec0` | `const cocos2d::Scheduler::`vftable'` |
+| `0x6f81d0` | `const fairygui::ScrollPane::`vftable'` |
+| `0x709fe8` | `const Rainbow::SequenceTexture::`vftable'` |
+| `0x71967c` | `const Rainbow::ShadowFace::`vftable'` |
+| `0x71716c` | `const Rainbow::SimpleGameScene::`vftable'` |
+| `0x725274` | `const spine::Skeleton::`vftable'` |
+| `0x74456c` | `const spine::SkeletonAnimation::`vftable'{for `cocos2d::BlendProtocol'}` |
+| `0x7442fc` | `const spine::SkeletonAnimation::`vftable'{for `cocos2d::Node'}` |
+| `0x6ff4bc` | `const Rainbow::SkeletonComponent::`vftable'` |
+| `0x6ff6d8` | `const Rainbow::SkeletonData::`vftable'` |
+| `0x7252c4` | `const spine::SkeletonData::`vftable'` |
+| `0x7252cc` | `const spine::SkeletonJson::`vftable'` |
+| `0x74514c` | `const spine::SkeletonRenderer::`vftable'{for `cocos2d::BlendProtocol'}` |
+| `0x744ee4` | `const spine::SkeletonRenderer::`vftable'{for `cocos2d::Node'}` |
+| `0x7252ec` | `const spine::Skin::`vftable'` |
+| `0x6f7a6c` | `const Rainbow::SkinAnimContainer::`vftable'` |
+| `0x6ffdbc` | `const Rainbow::SkinPatch::`vftable'` |
+| `0x704a40` | `const Rainbow::UILib::SkinTextColorLoader::`vftable'` |
+| `0x704a38` | `const Rainbow::SkinTextColorLoaderBase::`vftable'` |
+| `0x7252fc` | `const spine::Slot::`vftable'` |
+| `0x725304` | `const spine::SlotData::`vftable'` |
+| `0x71f95c` | `const MINIW::SnapshotInterface::`vftable'` |
+| `0x6f90ec` | `const Rainbow::SoundSystem::`vftable'` |
+| `0x725064` | `const spine::SpineExtension::`vftable'` |
+| `0x725080` | `const spine::SpineObject::`vftable'` |
+| `0x738ccc` | `const cocos2d::Sprite::`vftable'{for `cocos2d::Node'}` |
+| `0x738fb4` | `const cocos2d::Sprite::`vftable'{for `cocos2d::TextureProtocol'}` |
+| `0x7392a8` | `const cocos2d::SpriteBatchNode::`vftable'{for `cocos2d::Node'}` |
+| `0x73950c` | `const cocos2d::SpriteBatchNode::`vftable'{for `cocos2d::TextureProtocol'}` |
+| `0x71f7c4` | `const MINIW::StatisticRainforestInterface::`vftable'` |
+| `0x72095c` | `const MINIW::StatisticTerrgenInterface::`vftable'` |
+| `0x71c238` | `const Rainbow::StoveProgressBar3D::`vftable'` |
+| `0x6ffe1c` | `const Rainbow::SubMeshData::`vftable'` |
+| `0x72531c` | `const spine::SwirlVertexEffect::`vftable'` |
+| `0x71d56c` | `const Rainbow::TerrainDecalEffect::`vftable'` |
+| `0x71c454` | `const Rainbow::Text3D::`vftable'` |
+| `0x71c678` | `const Rainbow::TextBoardIn3D::`vftable'` |
+| `0x725154` | `const spine::TrackEntry::`vftable'{for `spine::HasRendererObject'}` |
+| `0x72514c` | `const spine::TrackEntry::`vftable'{for `spine::SpineObject'}` |
+| `0x6f81d8` | `const fairygui::Transition::`vftable'` |
+| `0x6f6f3c` | `const cocos2d::TransitionEaseScene::`vftable'` |
+| `0x73c898` | `const cocos2d::TransitionFade::`vftable'` |
+| `0x717610` | `const Rainbow::TriangleMeshNormalAndEdge::`vftable'` |
+| `0x720f0c` | `const Rainbow::TweenParam::`vftable'` |
+| `0x725d5c` | `const fairygui::UBBParser::`vftable'` |
+| `0x6f896c` | `const fairygui::UI3DRenderer::`vftable'` |
+| `0x6f8668` | `const fairygui::UI3DRoot::`vftable'` |
+| `0x728d84` | `const fairygui::UI3DScene::`vftable'` |
+| `0x6f701c` | `const fairygui::UIEventDispatcher::`vftable'` |
+| `0x71c8e0` | `const Rainbow::UIIn3DSceneMerger::`vftable'` |
+| `0x709f98` | `const Rainbow::UILib::UITexture::`vftable'` |
+| `0x715eb4` | `const Rainbow::UnimplementedException::`vftable'` |
+| `0x713008` | `const Rainbow::UpDownloadManager::`vftable'` |
+| `0x71caf8` | `const Rainbow::Voice3D::`vftable'` |
+| `0x6f9050` | `const Rainbow::UILib::WebFrame::`vftable'` |
+| `0x6f5ba8` | `const MINIW::WebSocket::`vftable'` |
+| `0x71e6bc` | `const WebSocketCallbackWrapper::`vftable'{for `MINIW::JsonIPCCmd'}` |
+| `0x71e6a0` | `const WebSocketCallbackWrapper::`vftable'{for `MINIW::WebSocketCallback'}` |
+| `0x71e6e0` | `const WebSocketServer::`vftable'{for `MINIW::WebSocketSvr::Delegate'}` |
+| `0x71e6f0` | `const WebSocketServer::`vftable'{for `MINIW::JsonIPCCmd'}` |
+| `0x6f8514` | `const fairygui::Window::`vftable'` |
+| `0x71cc68` | `const Rainbow::ZipFilePkg::`vftable'{for `Rainbow::AutoFreeRefCounter'}` |
+| `0x71cc44` | `const Rainbow::ZipFilePkg::`vftable'{for `Rainbow::FilePkgBase'}` |
+| `0x71860c` | `const cocos2d::__Array::`vftable'{for `cocos2d::Clonable'}` |
+| `0x718600` | `const cocos2d::__Array::`vftable'{for `cocos2d::Ref'}` |
+| `0x7458e4` | `const cocos2d::__Bool::`vftable'{for `cocos2d::Clonable'}` |
+| `0x7458d8` | `const cocos2d::__Bool::`vftable'{for `cocos2d::Ref'}` |
+| `0x745970` | `const cocos2d::__Dictionary::`vftable'{for `cocos2d::Clonable'}` |
+| `0x745964` | `const cocos2d::__Dictionary::`vftable'{for `cocos2d::Ref'}` |
+| `0x745954` | `const cocos2d::__Double::`vftable'{for `cocos2d::Clonable'}` |
+| `0x745948` | `const cocos2d::__Double::`vftable'{for `cocos2d::Ref'}` |
+| `0x745938` | `const cocos2d::__Float::`vftable'{for `cocos2d::Clonable'}` |
+| `0x74592c` | `const cocos2d::__Float::`vftable'{for `cocos2d::Ref'}` |
+| `0x745900` | `const cocos2d::__Integer::`vftable'{for `cocos2d::Clonable'}` |
+| `0x7458f4` | `const cocos2d::__Integer::`vftable'{for `cocos2d::Ref'}` |
+| `0x71861c` | `const cocos2d::__NotificationCenter::`vftable'` |
+| `0x745a34` | `const cocos2d::__Set::`vftable'` |
+| `0x745a5c` | `const cocos2d::__String::`vftable'{for `cocos2d::Clonable'}` |
+| `0x745a4c` | `const cocos2d::__String::`vftable'{for `cocos2d::Ref'}` |
+| `0x7429dc` | `const winSystemInfo::`vftable'` |
+| `0x920f0` | `public: void __thiscall Rainbow::ColourValue::`default constructor closure'(void)` |
+| `0x92110` | `public: void __thiscall Rainbow::CompressTool::`default constructor closure'(void)` |
+| `0x1f9540` | `public: void __thiscall Rainbow::Downloader::`default constructor closure'(void)` |
+| `0x92120` | `public: void __thiscall cocos2d::DrawNode::`default constructor closure'(void)` |
+| `0x1b56d0` | `public: void __thiscall Rainbow::GaussGenerator::`default constructor closure'(void)` |
+| `0x2598c0` | `public: void __thiscall Rainbow::ImageBoard3D::`default constructor closure'(void)` |
+| `0x35d220` | `public: void __thiscall cocos2d::InputLabel::`default constructor closure'(void)` |
+| `0x92130` | `public: void __thiscall cocos2d::Label::`default constructor closure'(void)` |
+| `0x24c7b0` | `public: void __thiscall cocos2d::PrettyPrinter::`default constructor closure'(void)` |
+| `0x1b56e0` | `public: void __thiscall Rainbow::RandomGenerator::`default constructor closure'(void)` |
+| `0x69b50` | `public: void __thiscall MINIW::ScriptVM::`default constructor closure'(void)` |
+| `0x23b680` | `public: void __thiscall Rainbow::TextureRenderGen::`default constructor closure'(void)` |
+| `0x73e410` | `public: static struct cocos2d::BlendFunc const cocos2d::BlendFunc::ADDITIVE` |
+| `0x73e408` | `public: static struct cocos2d::BlendFunc const cocos2d::BlendFunc::ALPHA_NON_PREMULTIPLIED` |
+| `0x73e400` | `public: static struct cocos2d::BlendFunc const cocos2d::BlendFunc::ALPHA_PREMULTIPLIED` |
+| `0x91f3b4` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::AMBLIGHT_MULTIPLY` |
+| `0x6f6c74` | `protected: static float const Rainbow::UILib::LayoutFrame::ANGLE_EPSILON` |
+| `0x237d60` | `bool __cdecl Rainbow::CWebp::ARPictureHasAlpha(char const *,char const *)` |
+| `0x1fb630` | `public: void __thiscall Rainbow::Downloader::AbortDownload(void)` |
+| `0x1599f0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::Active(void)` |
+| `0x143790` | `private: static void __cdecl Rainbow::UILib::Frame::ActiveTexture(class Rainbow::UILib::DrawItem *)` |
+| `0x166780` | `private: static void __cdecl Rainbow::UILib::ModelView::ActiveTexture(class Rainbow::UILib::DrawItem *)` |
+| `0x17ee00` | `private: static void __cdecl Rainbow::UILib::UITexture::ActiveTexture(class Rainbow::UILib::DrawItem *)` |
+| `0x253620` | `public: int __thiscall MINIW::LuaCallHelper::AdaptEmit(class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> &,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> &,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> &)` |
+| `0x159a20` | `public: void __thiscall Rainbow::UILib::LayoutFrame::AddAnchor(class Rainbow::UILib::LayoutAnchor const &)` |
+| `0x1d7790` | `public: void __thiscall Rainbow::ModelData::AddAnimation(class Rainbow::SharePtr<class Rainbow::AnimationData>,bool)` |
+| `0x1d7950` | `public: void __thiscall Rainbow::ModelData::AddAnimationByDiff(class Rainbow::SharePtr<class Rainbow::AnimationData>,class Rainbow::ModelData *)` |
+| `0x1a8710` | `public: void __thiscall Rainbow::ModelAnimationPlayer::AddAnimationClips(class Rainbow::SharePtr<class Rainbow::SkinAnimContainer>)` |
+| `0x1c7870` | `public: void __thiscall Rainbow::ModelNew::AddAnimationClips(class Rainbow::SharePtr<class Rainbow::SkinAnimContainer>)` |
+| `0x1a89e0` | `public: void __thiscall Rainbow::ModelAnimationPlayer::AddAnimationReplaceClips(class Rainbow::SharePtr<class Rainbow::BaseAnimationClip> &,class Rainbow::SharePtr<class Rainbow::BaseAnimationClip> &)` |
+| `0x1c7910` | `public: void __thiscall Rainbow::ModelNew::AddAnimationReplaceClips(class Rainbow::SharePtr<class Rainbow::BaseAnimationClip> &,class Rainbow::SharePtr<class Rainbow::BaseAnimationClip> &)` |
+| `0xe7e00` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::AddAvatar(int,class Rainbow::SharePtr<class Rainbow::ModelData>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1c7930` | `public: virtual void __thiscall Rainbow::ModelLegacy::AddAvatar(int,class Rainbow::SharePtr<class Rainbow::ModelData>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1c7a70` | `public: void __thiscall Rainbow::ModelNew::AddAvatar(int,class Rainbow::SharePtr<class Rainbow::Prefab>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1c7bb0` | `public: virtual void __thiscall Rainbow::ModelNew::AddAvatar(int,class Rainbow::SharePtr<class Rainbow::ModelData>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1ad1f0` | `private: void __thiscall Rainbow::ModelRenderer::AddAvatar(int,class Rainbow::GameObject *,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Prefab>)` |
+| `0x1ad900` | `public: void __thiscall Rainbow::ModelRenderer::AddAvatar(int,class Rainbow::SharePtr<class Rainbow::Prefab>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x20c340` | `public: void __thiscall Rainbow::BillboardMeshBatch::AddBillboardData(class Rainbow::SharePtr<class Rainbow::BillboardData>,class Rainbow::LegacyBillboard *)` |
+| `0x2767f0` | `public: void __thiscall Rainbow::TerrainDecalSubMesh::AddBlockPoint(struct Rainbow::TerrainDecalData const *,unsigned int)` |
+| `0x1fcb70` | `public: void __thiscall Rainbow::FileManagerWeb::AddCannotReadPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x1438f0` | `public: void __thiscall Rainbow::UILib::Frame::AddChildFrame(class Rainbow::UILib::Frame *)` |
+| `0x1c7e60` | `public: virtual int __thiscall Rainbow::ModelLegacy::AddCustomAnchorByBoneName(class Rainbow::FixedString const &)` |
+| `0x1a9010` | `public: virtual int __thiscall Rainbow::ModelNew::AddCustomAnchorByBoneName(class Rainbow::FixedString const &)` |
+| `0x1b56f0` | `public: bool __thiscall Rainbow::Entity::AddCustomBone(class Rainbow::FixedString,class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &,bool)` |
+| `0x1c7fb0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::AddCustomBone(class Rainbow::FixedString,class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &,bool)` |
+| `0x1c8060` | `protected: virtual bool __thiscall Rainbow::ModelNew::AddCustomBone(class Rainbow::FixedString,class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &,bool)` |
+| `0x92380` | `protected: virtual void __thiscall Rainbow::Model::AddCustomMesh(class Rainbow::MeshData *)` |
+| `0x1c8080` | `public: virtual void __thiscall Rainbow::ModelLegacy::AddCustomMesh(class Rainbow::MeshData *)` |
+| `0x143950` | `public: void __thiscall Rainbow::UILib::Frame::AddCustomView(enum Rainbow::UILib::DRAWLAYER_T,class Rainbow::UILib::CustomView *)` |
+| `0x25c870` | `public: struct Rainbow::OgreCommon3DMeshData & __thiscall Rainbow::LegacyCommon3DUI::AddDrawBatch(struct Rainbow::UIVertex const *,unsigned int,unsigned short const *,unsigned int,class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &,enum Rainbow::GfxPrimitiveType)` |
+| `0x2570a0` | `public: struct Rainbow::OgreCommon3DMeshData & __thiscall Rainbow::Empty3DUIRenderer::AddDrawBatchEx(struct Rainbow::UIVertex const *,unsigned int,unsigned short const *,unsigned int,class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &,enum Rainbow::GfxPrimitiveType)` |
+| `0x14d2d0` | `public: void __thiscall Rainbow::UILib::FrameManager::AddDrawItems(class Rainbow::UILib::Frame *)` |
+| `0x26eb50` | `protected: void __thiscall Rainbow::TextBoardIn3D::AddDrawRect(class Rainbow::UILib::UIRenderer *,float,float,float,float,class Rainbow::ColorRGBA32,struct Rainbow::SimpleTextureUV const &,unsigned int)` |
+| `0x17ef60` | `private: void __thiscall Rainbow::UILib::UITexture::AddDrawRect(float,float,float,float,class Rainbow::ColorRGBA32,struct Rainbow::UILib::TextureUV,unsigned int,bool)` |
+| `0x143950` | `public: void __thiscall Rainbow::UILib::Frame::AddFontString(enum Rainbow::UILib::DRAWLAYER_T,class Rainbow::UILib::FontString *)` |
+| `0x14d310` | `public: void __thiscall Rainbow::UILib::FrameManager::AddGameAccels(struct Rainbow::UILib::AccelItem)` |
+| `0x14d370` | `public: int __thiscall Rainbow::UILib::FrameManager::AddGameFont(struct Rainbow::UILib::UIFont)` |
+| `0x285190` | `public: void __thiscall Rainbow::Http::MiniCustomUpload::AddHeader(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x289480` | `public: void __thiscall Rainbow::Http::MiniUpload::AddHeader(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::Frame::AddHitRect(class Rainbow::UILib::LayoutRect const &)` |
+| `0x2bc2a0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::AddHudLevitationFont(class Rainbow::Transform *,float,enum Rainbow::HUDLevitationFontType,class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x1439d0` | `public: void __thiscall Rainbow::UILib::Frame::AddLevelRecursive(int)` |
+| `0x143950` | `public: void __thiscall Rainbow::UILib::Frame::AddLineFrame(enum Rainbow::UILib::DRAWLAYER_T,class Rainbow::UILib::DrawLineFrame *)` |
+| `0x143950` | `public: void __thiscall Rainbow::UILib::Frame::AddLineShape(enum Rainbow::UILib::DRAWLAYER_T,class Rainbow::UILib::LineShape *)` |
+| `0x92390` | `public: void __thiscall Rainbow::ModelData::AddMeshData(class Rainbow::MeshData *)` |
+| `0xe8380` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::AddMeshInstance(class Rainbow::MeshInstance *)` |
+| `0x143950` | `public: void __thiscall Rainbow::UILib::Frame::AddModelView(enum Rainbow::UILib::DRAWLAYER_T,class Rainbow::UILib::ModelView *)` |
+| `0x2894d0` | `public: void __thiscall Rainbow::Http::MiniUpload::AddPostData(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0xfeba0` | `public: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::AddPrefabGUIDMap(struct UGUID const &,__int64)` |
+| `0x8a250` | `void __cdecl MINIW::AddQQFriend(char const *,char const *,char const *)` |
+| `0x14d440` | `public: void __thiscall Rainbow::UILib::FrameManager::AddReCalFrame(class Rainbow::UILib::LayoutFrame *)` |
+| `0x923c0` | `public: void __thiscall Rainbow::RefObjectNoName::AddRef(void)` |
+| `0x159a90` | `public: void __thiscall Rainbow::UILib::LayoutFrame::AddRelFrame(class Rainbow::UILib::LayoutFrame *)` |
+| `0x14d4b0` | `public: void __thiscall Rainbow::UILib::FrameManager::AddRootFrame(class Rainbow::UILib::Frame *)` |
+| `0x254350` | `public: void __thiscall Rainbow::ShadowFace::AddShadowQuad(class WCoord const &,class WCoord const &,float,int)` |
+| `0x1c8120` | `public: void __thiscall Rainbow::SkinAnimContainer::AddSkeletonAnimationClips(class std::vector<struct Rainbow::ModelAnimData,class std::allocator<struct Rainbow::ModelAnimData> > &)` |
+| `0x137b20` | `public: void __thiscall Rainbow::UILib::EditBox::AddStringToHistory(char const *)` |
+| `0x2718c0` | `public: void __thiscall Rainbow::UIIn3DSceneMerger::AddSubObject(class Rainbow::LegacyCommon3DUI *)` |
+| `0x2a3510` | `public: void __thiscall Rainbow::CompressSystem::AddTask(class Rainbow::BGTask *)` |
+| `0x138050` | `public: void __thiscall Rainbow::UILib::EditBox::AddText(char const *)` |
+| `0x138080` | `public: void __thiscall Rainbow::UILib::EditBox::AddText(char const *,unsigned int)` |
+| `0x16c110` | `public: void __thiscall Rainbow::UILib::MultiEditBox::AddText(char const *)` |
+| `0x143950` | `public: void __thiscall Rainbow::UILib::Frame::AddTexture(enum Rainbow::UILib::DRAWLAYER_T,class Rainbow::UILib::UITexture *)` |
+| `0x3a80d0` | `struct cocos2d::AffineTransform __cdecl cocos2d::AffineTransformConcat(struct cocos2d::AffineTransform const &,struct cocos2d::AffineTransform const &)` |
+| `0x3a81a0` | `bool __cdecl cocos2d::AffineTransformEqualToTransform(struct cocos2d::AffineTransform const &,struct cocos2d::AffineTransform const &)` |
+| `0x9330c8` | `struct cocos2d::AffineTransform const cocos2d::AffineTransformIdentity` |
+| `0x3a8210` | `struct cocos2d::AffineTransform __cdecl cocos2d::AffineTransformInvert(struct cocos2d::AffineTransform const &)` |
+| `0x3a82d0` | `struct cocos2d::AffineTransform __cdecl cocos2d::AffineTransformMakeIdentity(void)` |
+| `0x3a82f0` | `struct cocos2d::AffineTransform __cdecl cocos2d::AffineTransformRotate(struct cocos2d::AffineTransform const &,float)` |
+| `0x3a83b0` | `struct cocos2d::AffineTransform __cdecl cocos2d::AffineTransformScale(struct cocos2d::AffineTransform const &,float,float)` |
+| `0x3a8410` | `struct cocos2d::AffineTransform __cdecl cocos2d::AffineTransformTranslate(struct cocos2d::AffineTransform const &,float,float)` |
+| `0x16c170` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::AjustForReason(void)` |
+| `0x2c5c50` | `public: void __thiscall Rainbow::HUDTitleInfo::AlignTitle(void)` |
+| `0x21f3f0` | `public: static int __cdecl Rainbow::StringUtil::AnsiToUnicode(wchar_t *,int,char const *,int)` |
+| `0x21f410` | `public: static wchar_t const * __cdecl Rainbow::StringUtil::AnsiToUnicode(char const *,int)` |
+| `0x923d0` | `public: bool __thiscall GameUI::AppendTOCFile(char const *)` |
+| `0x2c67a0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::ApplyAll(void)` |
+| `0xe1ed0` | `public: void __thiscall Rainbow::SkeletonComponent::ApplyAnimation(class Rainbow::AnimPlayTrack * * const,unsigned int)` |
+| `0x92380` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::ApplyGameConfig(class Rainbow::Setting::GameConfiguration const &)` |
+| `0x2c67a0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::ApplyLOD(void)` |
+| `0xdfd90` | `private: void __thiscall Rainbow::AnimationPlayer::ApplyMaterial(class Rainbow::AnimPlayTrack * * const,unsigned int)` |
+| `0xdfef0` | `private: void __thiscall Rainbow::AnimationPlayer::ApplyMaterialParam(class Rainbow::MaterialInstance *,class Rainbow::MaterialParamTrack *,char *)` |
+| `0x2bc900` | `public: static void __cdecl Rainbow::HUDLevitationFontRenderer::ApplySetting(class Rainbow::HudSetting const &)` |
+| `0x2c2000` | `public: static void __cdecl Rainbow::HudSetting::ApplySetting(class Rainbow::HudConfigSetting *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::UILib::ModelView::AttachCoordAxis(void)` |
+| `0x12f9c0` | `public: void __thiscall Rainbow::UILib::CCoord::AttachGameScene(class Rainbow::GameScene *)` |
+| `0x1c8eb0` | `public: virtual void __thiscall Rainbow::ModelLegacy::AttachNodeToBone(class Rainbow::Transform *,int)` |
+| `0x1c8eb0` | `public: virtual void __thiscall Rainbow::ModelNew::AttachNodeToBone(class Rainbow::Transform *,int)` |
+| `0x230d40` | `public: void __thiscall Rainbow::MovableObject::AttachToScene(class Rainbow::GameScene *)` |
+| `0x272070` | `public: void __thiscall Rainbow::Voice3D::AttachToScene(class Rainbow::GameScene *)` |
+| `0x6f6c4c` | `public: static int const cocos2d::Renderer::BATCH_TRIAGCOMMAND_RESERVED_SIZE` |
+| `0x97e4ac` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::BLACK` |
+| `0x92c1d4` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::BLACK` |
+| `0x92c240` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::BLACK` |
+| `0x925b38` | `public: static class core::basic_string<char,class core::StringStorageDefault<char> > const Rainbow::StringUtil::BLANK` |
+| `0x92c1a4` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::BLUE` |
+| `0x92c1c4` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::BLUE` |
+| `0x92c200` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::BLUE` |
+| `0x1242b0` | `public: void __thiscall Rainbow::UILib::UIRenderer::BeginDraw(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &,class Rainbow::SharePtr<class Rainbow::Texture2D> const &,enum Rainbow::BlendMode,class Rainbow::SharePtr<class Rainbow::Texture2D> const &,float,int,int,bool)` |
+| `0x1243d0` | `public: void __thiscall Rainbow::UILib::UIRenderer::BeginDrawEx(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &,class Rainbow::SharePtr<class Rainbow::Texture2D> const &,float,bool)` |
+| `0x282360` | `protected: virtual void __thiscall Rainbow::Http::MiniBreakResumeUpload::BeginHandle(void)` |
+| `0x285230` | `protected: virtual void __thiscall Rainbow::Http::MiniCustomUpload::BeginHandle(void)` |
+| `0x2894f0` | `protected: virtual void __thiscall Rainbow::Http::MiniUpload::BeginHandle(void)` |
+| `0x2c5e70` | `public: void __thiscall Rainbow::HUDTitleInfo::BeginTitle(void)` |
+| `0x1b5810` | `private: void __thiscall Rainbow::Entity::BindCunstomObject2Anchor(int,class Rainbow::MovableObject *,int,int)` |
+| `0x1b5860` | `public: void __thiscall Rainbow::Entity::BindCunstomObject(class Rainbow::FixedString const &,class Rainbow::MovableObject *,int,int)` |
+| `0x1b5910` | `private: static bool __cdecl Rainbow::Entity::BindObjLessThan(struct Rainbow::Entity::BindObj const *,struct Rainbow::Entity::BindObj const *)` |
+| `0x1b5930` | `public: void __thiscall Rainbow::Entity::BindObject(unsigned int,class Rainbow::MovableObject *,int,int)` |
+| `0x12fa10` | `public: void __thiscall Rainbow::UILib::CCoord::BindToModel(class Rainbow::Entity *,char const *)` |
+| `0x12fb00` | `public: void __thiscall Rainbow::UILib::CoordInteract::BindToModel(class Rainbow::Entity *,char const *)` |
+| `0x12fb70` | `public: void __thiscall Rainbow::UILib::CCoord::BindToModelByAnchorId(class Rainbow::Entity *,int)` |
+| `0x12fc30` | `public: void __thiscall Rainbow::UILib::CoordInteract::BindToModelByAnchorId(class Rainbow::Entity *,int)` |
+| `0x925980` | `public: static class Rainbow::ColourValue const Rainbow::ColourValue::Black` |
+| `0x1fb640` | `public: bool __thiscall Rainbow::Downloader::BlockDownload(char const *,char const *)` |
+| `0x1fb660` | `public: bool __thiscall Rainbow::Downloader::BlockDownload(char const *,char const *,int)` |
+| `0x1fb780` | `public: bool __thiscall Rainbow::Downloader::BlockDownload(char const *,char const *,int,int)` |
+| `0x1fb910` | `public: bool __thiscall Rainbow::Downloader::BlockDownload(char const *,int,int)` |
+| `0x9259c0` | `public: static class Rainbow::ColourValue const Rainbow::ColourValue::Blue` |
+| `0x294100` | `public: bool const __thiscall MINIW::CSVParser::TableItem::Bool(void)const ` |
+| `0x283a20` | `public: virtual void __thiscall Rainbow::Http::MiniBreakResumeUpload::Break(void)` |
+| `0x286ac0` | `public: virtual void __thiscall Rainbow::Http::MiniCustomUpload::Break(void)` |
+| `0x289a30` | `public: virtual void __thiscall Rainbow::Http::MiniUpload::Break(void)` |
+| `0x1f9580` | `public: void __thiscall Rainbow::UpDownloadManager::BreakAllLoad(void)` |
+| `0x1667a0` | `public: void __thiscall Rainbow::UILib::ModelView::BreakAsyncLoad(void)` |
+| `0x27b930` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::BreakResumeUpload(class core::basic_string<char,class core::StringStorageDefault<char> >,struct dynamic_array<struct Rainbow::Http::CurlUpLoadFileInfo,0>,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class std::function<void __cdecl(class Rainbow::Http::MiniBreakResumeUpload *)>,class std::function<void __cdecl(bool,class Rainbow::Http::MiniBreakResumeUpload *)>,int,int)` |
+| `0x149fd0` | `public: bool __thiscall Rainbow::UILib::FrameManager::BringFrameAboveFrame(char const *,char const *)` |
+| `0x290a70` | `public: void __thiscall WebSocketServer::BroadCastMsg(char const *,int)` |
+| `0x3c7800` | `void __cdecl MINIW::BrowserShowWebpage(char const *,int)` |
+| `0x1c8ee0` | `public: virtual void __thiscall Rainbow::ModelLegacy::BuildAllCunsomData(void)` |
+| `0x1c8f30` | `public: virtual void __thiscall Rainbow::ModelNew::BuildAllCunsomData(void)` |
+| `0x297d70` | `public: bool __thiscall MINIW::CSVParser::Byte(unsigned int,unsigned int,unsigned char &)const ` |
+| `0x294120` | `public: unsigned char const __thiscall MINIW::CSVParser::TableItem::Byte(void)const ` |
+| `0x73e428` | `long const cocos2d::CC_INVALID_INDEX` |
+| `0x3a9a60` | `void __cdecl cocos2d::CGAffineToGL(struct cocos2d::AffineTransform const &,float *)` |
+| `0x159ae0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::CalAbsRect(void)` |
+| `0x1439f0` | `public: virtual void __thiscall Rainbow::UILib::Frame::CalAbsRectSelf(unsigned int)` |
+| `0x159af0` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::CalAbsRectSelf(unsigned int)` |
+| `0x1667f0` | `protected: class Rainbow::Vector3f __thiscall Rainbow::UILib::ModelView::CalcActorPosition(int)const ` |
+| `0x16c310` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::CalcCharsLine(void)` |
+| `0x2282f0` | `class Rainbow::SHAHash __cdecl Rainbow::CalcMaterialInstanceHash(class Rainbow::MaterialInstance *)` |
+| `0x1c8f40` | `public: virtual void __thiscall Rainbow::ModelLegacy::CalculateBoundFromSkinMesh(void)` |
+| `0x1c9060` | `public: virtual void __thiscall Rainbow::ModelNew::CalculateBoundFromSkinMesh(void)` |
+| `0x1ada40` | `public: void __thiscall Rainbow::ModelMeshRenderers::CalculateLocalAABB(void)` |
+| `0xd4cd0` | `public: virtual class Rainbow::Matrix4x4f __thiscall Rainbow::LegacyMeshRenderObject::CalculateLocalToWorld(void)const ` |
+| `0x2c4890` | `public: virtual void __thiscall Rainbow::HUDTitleBase::CaleScaleAlphaWithCameraPos(class Rainbow::Vector3f const &)` |
+| `0x2c4a60` | `public: virtual void __thiscall Rainbow::HUDTitleBase::CaleScreenPosToUIPos(void)` |
+| `0x143aa0` | `public: int __cdecl Rainbow::UILib::Frame::CallFunction(int,char const *,...)` |
+| `0x936a0` | `bool __cdecl MINIW::CallNativeFeature(int,char const *)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::CallNativeFeatureQuery(int,char const *)` |
+| `0x936a0` | `bool __cdecl MINIW::CallNativeView(int,char const *)` |
+| `0x143da0` | `public: int __cdecl Rainbow::UILib::Frame::CallScript(int,char const *,...)` |
+| `0x144040` | `public: int __cdecl Rainbow::UILib::Frame::CallScript(char const *,char const *,...)` |
+| `0x24c820` | `public: int __cdecl MINIW::ScriptVM::CallScript(char const *,char const *,...)` |
+| `0x27a030` | `public: void __thiscall Rainbow::MiniGlobalEvent::CallShadowSwitchCallback(bool)` |
+| `0x949d0` | `bool __cdecl MINIW::CanShowARCameraBackground(void)` |
+| `0x926b0` | `public: bool __thiscall Rainbow::AnimationPlayer::CanTick(void)const ` |
+| `0x138180` | `protected: int __thiscall Rainbow::UILib::EditBox::CancelSel(bool,bool)` |
+| `0x16c420` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::CancelSel(bool,bool)` |
+| `0x1381d0` | `protected: void __thiscall Rainbow::UILib::EditBox::CaptionToValue(void)` |
+| `0xbd3a0` | `public: void __thiscall Rainbow::DebugMgr::CaptureFrame(void)` |
+| `0x29cd50` | `public: virtual void __thiscall MINIW::Cef3Manager::CefBrowserReload(void)` |
+| `0x138270` | `public: void __thiscall Rainbow::UILib::EditBox::ChangeCoderEditMethod(void)` |
+| `0x1c9080` | `public: virtual bool __thiscall Rainbow::ModelLegacy::ChangeCustomBoneFather(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x1c9740` | `protected: virtual bool __thiscall Rainbow::ModelNew::ChangeCustomBoneFather(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x1b5c70` | `public: bool __thiscall Rainbow::Entity::ChangeCustomBoneName(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x1c9760` | `public: virtual bool __thiscall Rainbow::ModelLegacy::ChangeCustomBoneName(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x1c9740` | `protected: virtual bool __thiscall Rainbow::ModelNew::ChangeCustomBoneName(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x3c7870` | `bool __cdecl MINIW::ChangeDisplayMode(int,int)` |
+| `0x17fa70` | `public: void __thiscall Rainbow::UILib::UITexture::ChangeTexUVWidth(int)` |
+| `0x17fa80` | `public: void __thiscall Rainbow::UILib::UITexture::ChangeTextureTemplate(char const *)` |
+| `0x297d70` | `public: bool __thiscall MINIW::CSVParser::Char(unsigned int,unsigned int,char &)const ` |
+| `0x294130` | `public: char const __thiscall MINIW::CSVParser::TableItem::Char(void)const ` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ZipFilePkg::CheckAndGetInfo(class Rainbow::FixedString const &,struct Rainbow::FileInfoResult &)` |
+| `0x949d0` | `bool __cdecl MINIW::CheckAppExist(char const *)` |
+| `0x949d0` | `bool __cdecl MINIW::CheckAppInstall(char const *)` |
+| `0x2725d0` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<1,1>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &),enum Rainbow::TextureFormat)` |
+| `0x2725d0` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<1,0>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &),enum Rainbow::TextureFormat)` |
+| `0x2725d0` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<0,1>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &),enum Rainbow::TextureFormat)` |
+| `0x2725d0` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<0,0>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &),enum Rainbow::TextureFormat)` |
+| `0x9fe90` | `public: bool __thiscall Rainbow::ZipAssetLoader<1,1>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,char const *)` |
+| `0x9fe90` | `public: bool __thiscall Rainbow::ZipAssetLoader<1,0>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,char const *)` |
+| `0x9fe90` | `public: bool __thiscall Rainbow::ZipAssetLoader<0,1>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,char const *)` |
+| `0x9fe90` | `public: bool __thiscall Rainbow::ZipAssetLoader<0,0>::CheckAsset(struct Rainbow::FileInfoResult &,char const *,char const *)` |
+| `0x1d8460` | `public: bool __thiscall Rainbow::ModelDataRetainSettingLoader::CheckAsset(struct Rainbow::FileInfoResult &,char const *)` |
+| `0x101500` | `public: virtual bool __thiscall Rainbow::CloudAssetLoader::CheckAssetHashEqual(void)` |
+| `0x949d0` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::CheckCanOperateGameConfig(void)` |
+| `0x2c67d0` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::CheckCustomUserConfigIsExist(char const *)` |
+| `0xe0060` | `private: bool __thiscall Rainbow::AnimationPlayer::CheckEffect(void)` |
+| `0x1fcdd0` | `public: bool __thiscall Rainbow::FileManagerWeb::CheckFileMd5(class core::basic_string<char,class core::StringStorageDefault<char> > const &,struct Rainbow::FileInfo *)` |
+| `0x1382d0` | `protected: void __thiscall Rainbow::UILib::EditBox::CheckForReason(void)` |
+| `0x16c4b0` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::CheckForReason(void)` |
+| `0x949d0` | `bool __cdecl MINIW::CheckHasPermission(enum DevicePermission)` |
+| `0x115fa0` | `public: bool __thiscall CoordAxis::CheckMouseMove(void)` |
+| `0x936a0` | `bool __cdecl MINIW::CheckQQLogin(bool)` |
+| `0x1d84e0` | `public: void __thiscall Rainbow::ModelData::CheckRemoveAnims(__int64)` |
+| `0x8a250` | `void __cdecl MINIW::CheckSupportWXGameLive(int)` |
+| `0x29ce00` | `public: virtual bool __thiscall MINIW::Cef3Manager::CheckSystemInfoForCef3(void)` |
+| `0x1d8640` | `public: void __thiscall Rainbow::ModelData::CheckToDelAddEndKeyFrame(class Rainbow::BoneTrack &,int,int)` |
+| `0x115fe0` | `public: bool __thiscall CoordAxis::CheckTran(void)` |
+| `0x212c20` | `private: void __thiscall Rainbow::MusicManager::CheckTriggerSound2D(float)` |
+| `0x138640` | `protected: bool __thiscall Rainbow::UILib::EditBox::CheckValueRange(void)` |
+| `0xbf020` | `public: static void __cdecl Rainbow::LegacyGlobalShaderParamManager::Cleanup(void *)` |
+| `0xf8ee0` | `private: void __thiscall Rainbow::RemoteAssetsManager::Cleanup(void)` |
+| `0x297db0` | `public: void __thiscall MINIW::CSVParser::Clear(void)` |
+| `0x12ff90` | `public: virtual void __thiscall Rainbow::UILib::CoordInteract::Clear(void)` |
+| `0x138690` | `public: void __thiscall Rainbow::UILib::EditBox::Clear(void)` |
+| `0x1c49d0` | `public: void __thiscall Rainbow::EventTriggerObjectMotion::Clear(void)` |
+| `0x2c5e90` | `public: void __thiscall Rainbow::HUDTitleInfo::Clear(void)` |
+| `0x16c520` | `public: void __thiscall Rainbow::UILib::MultiEditBox::Clear(void)` |
+| `0x276c80` | `public: void __thiscall Rainbow::TerrainDecalSubMesh::Clear(void)` |
+| `0x1a8d70` | `public: void __thiscall Rainbow::ModelAnimationPlayer::ClearAllAnimKeyFrameEvent(void)` |
+| `0x1b5e00` | `public: void __thiscall Rainbow::Entity::ClearBindCustomObjs(void)` |
+| `0x257250` | `public: virtual void __thiscall Rainbow::Empty3DUIRenderer::ClearBuffer(void)` |
+| `0x25c9c0` | `public: virtual void __thiscall Rainbow::LegacyCommon3DUI::ClearBuffer(void)` |
+| `0xf42e0` | `public: virtual void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::ClearCallback(void)` |
+| `0xf42e0` | `public: virtual void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::ClearCallback(void)` |
+| `0xf42e0` | `public: virtual void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::ClearCallback(void)` |
+| `0x1b5f70` | `protected: void __thiscall Rainbow::Entity::ClearDelayDeleteObject(float)` |
+| `0x1fd180` | `public: void __thiscall Rainbow::FileManagerWeb::ClearFileState(void)` |
+| `0x329f60` | `public: void __thiscall fairygui::UIEventDispatcher::ClearGameEvent(void)` |
+| `0x138720` | `protected: int __thiscall Rainbow::UILib::EditBox::ClearSel(void)` |
+| `0x16c590` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::ClearSel(void)` |
+| `0x17fb50` | `public: void __thiscall Rainbow::UILib::UITexture::ClearSequenceTexture(void)` |
+| `0x2919b0` | `void __cdecl MINIW::ClearSharedCountry(void)` |
+| `0x926f0` | `public: void __thiscall ActorBodySafeHandle::ClearUnattachedBody(void)` |
+| `0x235e80` | `public: virtual class Rainbow::SequenceTexture * __thiscall Rainbow::GifSequenceTexture::Clone(void)` |
+| `0x1fba40` | `public: void __thiscall Rainbow::Downloader::Close(void)` |
+| `0x1016a0` | `public: static void * __cdecl Rainbow::CloudAssetLoader::CloudAssetLoaderTest(void)` |
+| `0xf7c80` | `public: static struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> __cdecl Rainbow::RemoteAssetsHelper::CollectAllRelativeFiles(class std::set<class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > const &,class ?? :: ?? &, ?? )` |
+| `0xf91a0` | `private: struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> __thiscall Rainbow::RemoteAssetsManager::CollectAllRelativeFiles(class std::set<class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > const &,class ?? :: ?? &, ?? )` |
+| `0x355bd0` | `public: class Rainbow::ColorRGBA32 __thiscall cocos2d::DrawNode::Color4FToColorRGBA32(struct cocos2d::Color4F const &)` |
+| `0x228700` | `public: void __thiscall Rainbow::CombineManager::CombineGameObjects(struct dynamic_array<class Rainbow::GameObject *,0>,class std::function<void __cdecl(class Rainbow::GameObject *)>,struct UGUID,unsigned int)` |
+| `0x228820` | `class Rainbow::GameObject * __cdecl Rainbow::CombineGameObjects(struct dynamic_array<class Rainbow::GameObject *,0>)` |
+| `0x22fb90` | `void __cdecl Rainbow::CombineMeshes(class std::vector<struct Rainbow::CombineInstance,class std::allocator<struct Rainbow::CombineInstance> > const &,class Rainbow::Mesh &,bool,bool)` |
+| `0x1001a0` | `public: static void __cdecl Rainbow::CloudAssetCompressor::CompressAsset(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x20e600` | `private: void __thiscall Rainbow::GaussBlurRenderer::ComputeEffectiveKernelSize(void)` |
+| `0x20e640` | `private: void __thiscall Rainbow::GaussBlurRenderer::ComputeWeights(void)` |
+| `0x1fbac0` | `public: void __thiscall Rainbow::Downloader::ContinueDownload(void)` |
+| `0x21f8b0` | `public: static void __cdecl Rainbow::StringUtil::ConvertArabicString(wchar_t *)` |
+| `0x1441c0` | `protected: static void __cdecl Rainbow::UILib::Frame::ConvertFlagKeys(char *,int)` |
+| `0xea420` | `protected: void __thiscall Rainbow::SubMeshData::ConvertMaterial(void)` |
+| `0x100870` | `public: static enum Rainbow::CloudAssetNS::CloudAssetKind __cdecl Rainbow::CloudAssetNS::CloudAssetHelper::ConvertTypeIdToCloudAssetKind(unsigned int)` |
+| `0x289a60` | `protected: void __thiscall Rainbow::Http::MiniUpload::CopyDivFile(class std::basic_ifstream<char,struct std::char_traits<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,int,int)` |
+| `0x134c90` | `public: void __thiscall Rainbow::UILib::CustomView::CopyMembers(class Rainbow::UILib::CustomView *)` |
+| `0x138830` | `public: void __thiscall Rainbow::UILib::EditBox::CopyMembers(class Rainbow::UILib::EditBox *)` |
+| `0x13f0c0` | `public: void __thiscall Rainbow::UILib::FontString::CopyMembers(class Rainbow::UILib::FontString *)` |
+| `0x144210` | `public: void __thiscall Rainbow::UILib::Frame::CopyMembers(class Rainbow::UILib::Frame *)` |
+| `0x159f10` | `public: void __thiscall Rainbow::UILib::LayoutFrame::CopyMembers(class Rainbow::UILib::LayoutFrame *)` |
+| `0x1668b0` | `public: void __thiscall Rainbow::UILib::ModelView::CopyMembers(class Rainbow::UILib::ModelView *)` |
+| `0x16c660` | `public: void __thiscall Rainbow::UILib::MultiEditBox::CopyMembers(class Rainbow::UILib::MultiEditBox *)` |
+| `0x17fb80` | `public: void __thiscall Rainbow::UILib::UITexture::CopyMembers(class Rainbow::UILib::UITexture *)` |
+| `0x1943e0` | `public: void __thiscall Rainbow::UILib::WebFrame::CopyMembers(class Rainbow::UILib::WebFrame *)` |
+| `0x17ffd0` | `public: void __thiscall Rainbow::UILib::UITexture::CopyNineSquareUV(class Rainbow::UILib::UITexture *)` |
+| `0x21c8e0` | `unsigned long __cdecl MINIW::Crc32Calc(void const *,unsigned int,unsigned long)` |
+| `0x38bec0` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall cocos2d::Director::Create3DFontMaterialInstance(int,class Rainbow::Texture *,int,class Rainbow::Vector4f const &,class Rainbow::Vector4f const &)` |
+| `0x38c0d0` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall cocos2d::Director::Create3DMainUIMaterialInstance(int,class Rainbow::Texture *)` |
+| `0xd6db0` | `public: static class Rainbow::BoneTrack * __cdecl Rainbow::BoneTrack::Create(struct MemLabelId)` |
+| `0x233460` | `public: static class Rainbow::CubeBorder * __cdecl Rainbow::CubeBorder::Create(void)` |
+| `0x257390` | `public: static class Rainbow::Empty3DUIRenderer * __cdecl Rainbow::Empty3DUIRenderer::Create(void)` |
+| `0x92800` | `public: bool __thiscall GameUI::Create(char const *,int,int,int,int,enum UI_PLATFORM,enum UI_LANG_VER)` |
+| `0x2580f0` | `public: static class Rainbow::Image3D * __cdecl Rainbow::Image3D::Create(float,float,float,float,bool,bool,unsigned long)` |
+| `0x259960` | `public: static class Rainbow::ImageBoard3D * __cdecl Rainbow::ImageBoard3D::Create(float,float,float,float)` |
+| `0x25b350` | `public: static class Rainbow::ItemImage3D * __cdecl Rainbow::ItemImage3D::Create(float,float,float,float,bool,bool,unsigned long)` |
+| `0xd48d0` | `public: static class Rainbow::MeshData * __cdecl Rainbow::MeshData::Create(struct MemLabelId)` |
+| `0xf4340` | `public: static class Rainbow::SharePtr<class Rainbow::Http::MiniBreakResumeUpload> __cdecl Rainbow::Http::MiniBreakResumeUpload::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,struct dynamic_array<struct Rainbow::Http::CurlUpLoadFileInfo,0>,class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0xf4640` | `public: static class Rainbow::SharePtr<class Rainbow::Http::MiniCustomUpload> __cdecl Rainbow::Http::MiniCustomUpload::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int,bool)` |
+| `0xf4780` | `public: static class Rainbow::SharePtr<class Rainbow::Http::MiniDownloader> __cdecl Rainbow::Http::MiniDownloader::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0xf48c0` | `public: static class Rainbow::SharePtr<class Rainbow::Http::MiniHttpRequest> __cdecl Rainbow::Http::MiniHttpRequest::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0xf49c0` | `public: static class Rainbow::SharePtr<class Rainbow::Http::MiniUpload> __cdecl Rainbow::Http::MiniUpload::Create(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x230df0` | `public: static class Rainbow::MovableObject * __cdecl Rainbow::MovableObject::Create(class Rainbow::GameObject *)` |
+| `0x25d9d0` | `public: static class Rainbow::MoveByText * __cdecl Rainbow::MoveByText::Create(char const *,int,class Rainbow::ColorRGBAf const &,class Rainbow::MoveByTextMgr *)` |
+| `0x25da80` | `public: static class Rainbow::MoveByText * __cdecl Rainbow::MoveByText::Create(void)` |
+| `0x255570` | `public: static class Rainbow::MusicClubChatBubble3D * __cdecl Rainbow::MusicClubChatBubble3D::Create(int,float,float,float,float,bool,bool)` |
+| `0x255650` | `public: static class Rainbow::MusicClubChatBubble3D * __cdecl Rainbow::MusicClubChatBubble3D::Create(void)` |
+| `0x263fe0` | `public: static class Rainbow::NameText3D * __cdecl Rainbow::NameText3D::Create(int,float,float,float,float,bool,bool,char const *,int)` |
+| `0x267520` | `public: static class Rainbow::ProgressBarIn3D * __cdecl Rainbow::ProgressBarIn3D::Create(char const *,char const *)` |
+| `0x254430` | `public: static class Rainbow::ShadowFace * __cdecl Rainbow::ShadowFace::Create(void)` |
+| `0xea490` | `public: static class Rainbow::SkinPatch * __cdecl Rainbow::SkinPatch::Create(struct MemLabelId)` |
+| `0x26b690` | `public: static class Rainbow::StoveProgressBar3D * __cdecl Rainbow::StoveProgressBar3D::Create(char const *,char const *)` |
+| `0xea4c0` | `public: static class Rainbow::SubMeshData * __cdecl Rainbow::SubMeshData::Create(struct MemLabelId)` |
+| `0x276dc0` | `public: static class Rainbow::TerrainDecalEffect * __cdecl Rainbow::TerrainDecalEffect::Create(void)` |
+| `0x2556f0` | `public: static class Rainbow::Text3D * __cdecl Rainbow::Text3D::Create(int,float,float,float,float,bool,bool)` |
+| `0x233500` | `public: static class Rainbow::TriangleMeshNormalAndEdge * __cdecl Rainbow::TriangleMeshNormalAndEdge::Create(void)` |
+| `0x272120` | `public: static class Rainbow::Voice3D * __cdecl Rainbow::Voice3D::Create(float,float,float,float,bool,bool)` |
+| `0x272200` | `public: static class Rainbow::Voice3D * __cdecl Rainbow::Voice3D::Create(void)` |
+| `0x124490` | `public: void * __thiscall Rainbow::UILib::UIRenderer::CreateBitmapFont(char const *)` |
+| `0x29ce80` | `public: virtual void __thiscall MINIW::Cef3Manager::CreateCefBrowserIfNecessary(void)` |
+| `0x134cb0` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::CustomView::CreateClone(void)` |
+| `0x1389f0` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::EditBox::CreateClone(void)` |
+| `0x13f290` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::FontString::CreateClone(void)` |
+| `0x1445d0` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::Frame::CreateClone(void)` |
+| `0x15a0a0` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::LayoutFrame::CreateClone(void)` |
+| `0x1668d0` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::ModelView::CreateClone(void)` |
+| `0x16c7a0` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::MultiEditBox::CreateClone(void)` |
+| `0x180120` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::UITexture::CreateClone(void)` |
+| `0x194420` | `public: virtual class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::WebFrame::CreateClone(void)` |
+| `0x38c280` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall cocos2d::Director::CreateFontMaterialInstance(int,class Rainbow::Texture *)` |
+| `0x14d500` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::FrameManager::CreateFrameByTemplate(char const *,char const *,char const *,char const *)` |
+| `0x14d5d0` | `public: bool __thiscall Rainbow::UILib::FrameManager::CreateFrameList(char const *,char const *,char const *,char const *,int)` |
+| `0x14d6f0` | `public: bool __thiscall Rainbow::UILib::FrameManager::CreateFrameListByIndex(char const *,char const *,char const *,char const *,int,int)` |
+| `0x21c0c0` | `class Rainbow::MovableObject * __cdecl Rainbow::CreateFromResource(class Rainbow::SharePtr<class Rainbow::MiniObject>,bool)` |
+| `0x1bf410` | `public: static class Rainbow::SharePtr<class Rainbow::ModelMotion> __cdecl Rainbow::ModelMotion::CreateInstance(class Rainbow::FixedString const &,bool)` |
+| `0x231920` | `public: static class Rainbow::RainbowEffectProxy * __cdecl Rainbow::RainbowEffectProxy::CreateInstance(class Rainbow::SharePtr<class Rainbow::Prefab>)` |
+| `0x1246b0` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall Rainbow::UILib::UIRenderer::CreateInstance(enum Rainbow::UILib::UIDrawFlag,enum Rainbow::BlendMode,bool)` |
+| `0x1c9c00` | `public: static void __cdecl Rainbow::Model::CreateInstanceFromAnimModelData(class std::vector<struct Rainbow::ModelAnimData,class std::allocator<struct Rainbow::ModelAnimData> >,class Rainbow::ModelAnimationPlayer *,class Rainbow::SkinnedSkeleton *)` |
+| `0x1c9d60` | `public: static class Rainbow::Model * __cdecl Rainbow::Model::CreateInstanceFromAsset(class Rainbow::SharePtr<class Rainbow::Asset>,bool)` |
+| `0x1c9e60` | `public: static class Rainbow::Model * __cdecl Rainbow::Model::CreateInstanceFromGameObject(class Rainbow::GameObject *)` |
+| `0x1ca160` | `public: static class Rainbow::Model * __cdecl Rainbow::Model::CreateInstanceFromModelData(class Rainbow::SharePtr<class Rainbow::ModelData>,bool,bool,bool)` |
+| `0x1cab70` | `public: static class Rainbow::Model * __cdecl Rainbow::Model::CreateInstanceFromPrefab(class Rainbow::SharePtr<class Rainbow::Prefab>,bool)` |
+| `0x1caf10` | `public: static class Rainbow::Model * __cdecl Rainbow::Model::CreateInstanceLegacy(class Rainbow::SharePtr<class Rainbow::ModelData>,bool)` |
+| `0x14d830` | `public: bool __thiscall Rainbow::UILib::FrameManager::CreateLuaTable(class Rainbow::UILib::Frame *)` |
+| `0x38c390` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall cocos2d::Director::CreateMainUIMaterialInstance(int,class Rainbow::Texture *,struct cocos2d::BlendFunc)` |
+| `0x276e60` | `private: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall Rainbow::TerrainDecalEffect::CreateMaterial(struct Rainbow::TerrainDecalData *)` |
+| `0x14d8b0` | `public: bool __thiscall Rainbow::UILib::FrameManager::CreateObjLuaTable(class Rainbow::UILib::UIObject *,char const *)` |
+| `0x1bf710` | `public: class Rainbow::ObjectMotion * __thiscall Rainbow::ModelMotion::CreateObjMotionFromSrc(class Rainbow::MotionElementData *)` |
+| `0x14d8f0` | `public: class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::FrameManager::CreateObject(char const *,char const *,char const *)` |
+| `0xf91c0` | `private: class Rainbow::RemoteAssetProcessor * __thiscall Rainbow::RemoteAssetsManager::CreateProcessor(struct Rainbow::RemoteResInfo &)` |
+| `0x30bbe0` | `public: class Rainbow::SharePtr<class Rainbow::Mesh> __thiscall fairygui::UI3DRenderer::CreateQuadMesh(void)` |
+| `0x20c6e0` | `protected: virtual class Rainbow::SceneObject * __thiscall Rainbow::BillboardMeshBatch::CreateSceneObject(void)` |
+| `0x275c50` | `public: virtual class Rainbow::SceneObject * __thiscall Rainbow::DecalRenderer::CreateSceneObject(void)` |
+| `0xe8480` | `protected: virtual class Rainbow::SceneObject * __thiscall Rainbow::LegacySkinMeshRenderer::CreateSceneObject(void)` |
+| `0x23a8e0` | `class Rainbow::SequenceTexture * __cdecl CreateSequenceTexture(char const *,bool,int (__cdecl*)(int,int,int))` |
+| `0x23a900` | `class Rainbow::SequenceTexture * __cdecl CreateSequenceTextureWithDecryptFunc(char const *,class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &),bool,int (__cdecl*)(int,int,int),bool)` |
+| `0x214700` | `class Rainbow::SoundSystem * __cdecl Rainbow::CreateSoundSystem(enum Rainbow::SOUND_SYSTEM_TYPE)` |
+| `0x124b30` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::UIRenderer::CreateTexture(char const *,int *,int *)` |
+| `0x124bd0` | `public: void * __thiscall Rainbow::UILib::UIRenderer::CreateTrueTypeFont(int,int,char const *,unsigned int,int,void *)` |
+| `0x38c760` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall cocos2d::Director::CreateTwoColorMaterialInstance(int,class Rainbow::Texture *,struct cocos2d::BlendFunc)` |
+| `0x12fff0` | `public: void __thiscall Rainbow::UILib::CCoord::CreateVertex(void)` |
+| `0x27bc90` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::CustomUpload(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class std::function<void __cdecl(class Rainbow::Http::MiniCustomUpload *)>,class std::function<void __cdecl(bool,class Rainbow::Http::MiniCustomUpload *)>,int,int,class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x6f6c7c` | `private: static int const cocos2d::SpriteBatchNode::DEFAULT_CAPACITY` |
+| `0x6f6c6c` | `public: static float const Rainbow::UILib::FrameManager::DEFAULT_SCREEN_HEIGHT` |
+| `0x6f6c68` | `public: static float const Rainbow::UILib::FrameManager::DEFAULT_SCREEN_WIDTH` |
+| `0x73e3f8` | `public: static struct cocos2d::BlendFunc const cocos2d::BlendFunc::DISABLE` |
+| `0x928d68` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GButton::DISABLED` |
+| `0x928d20` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GButton::DOWN` |
+| `0x297e10` | `public: bool __thiscall MINIW::CSVParser::DWord(unsigned int,unsigned int,unsigned long &)const ` |
+| `0x294140` | `public: unsigned long const __thiscall MINIW::CSVParser::TableItem::DWord(void)const ` |
+| `0x2298c0` | `public: void __thiscall Rainbow::AsyncCombineTask::DeactiveTask(void)` |
+| `0x26b740` | `private: bool __thiscall Rainbow::StoveProgressBar3D::DealNineSquare(class std::vector<int,class std::allocator<int> >,char const *,char const *,class Rainbow::TRect<short> &,class std::vector<struct Rainbow::SimpleTextureUV,class std::allocator<struct Rainbow::SimpleTextureUV> > &)` |
+| `0xea4f0` | `protected: void __thiscall Rainbow::SubMeshData::DeallocateData(void)` |
+| `0x138a80` | `protected: void __thiscall Rainbow::UILib::EditBox::Decrypt(void)` |
+| `0x928b48` | `public: static int Rainbow::Setting::GameConfigMgr::DefaultFrameSplitRate` |
+| `0x743ca0` | `public: static float const spine::MathUtil::Deg_Rad` |
+| `0x2199d0` | `double __cdecl Rainbow::DegreesToRadians(double)` |
+| `0x1b61a0` | `public: void __thiscall Rainbow::Entity::DelCustomBone(class Rainbow::FixedString)` |
+| `0x1cb3f0` | `public: virtual void __thiscall Rainbow::ModelLegacy::DelCustomBone(class Rainbow::FixedString)` |
+| `0x1cb9d0` | `protected: virtual void __thiscall Rainbow::ModelNew::DelCustomBone(class Rainbow::FixedString)` |
+| `0x1b68e0` | `public: bool __thiscall Rainbow::Entity::DelCustomKeyFrame(int,class Rainbow::FixedString,unsigned int)` |
+| `0x1cb9e0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::DelCustomKeyFrame(int,class Rainbow::FixedString,unsigned int)` |
+| `0x1cbac0` | `protected: virtual bool __thiscall Rainbow::ModelNew::DelCustomKeyFrame(int,class Rainbow::FixedString,unsigned int)` |
+| `0x92960` | `public: void __thiscall Rainbow::Entity::DelayStopMotion(class Rainbow::FixedString const &,float)` |
+| `0x92960` | `public: void __thiscall Rainbow::Entity::DelayStopMotion(int,float)` |
+| `0x92380` | `public: void __thiscall Rainbow::Entity::DelayStopMotion(float)` |
+| `0x1c3690` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::DelayStopObject(class Rainbow::Entity *,float)` |
+| `0x1c36a0` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::DelayStopObject(class Rainbow::Entity *,float)` |
+| `0x1c3780` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::DelayStopObject(class Rainbow::Entity *,float)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ObjectMotion::DelayStopObject(class Rainbow::Entity *,float)` |
+| `0x1c3780` | `public: virtual void __thiscall Rainbow::PostObjMotion::DelayStopObject(class Rainbow::Entity *,float)` |
+| `0x144660` | `public: void __thiscall Rainbow::UILib::Frame::DeleteChildFrame(char const *)` |
+| `0x14db30` | `public: bool __thiscall Rainbow::UILib::FrameManager::DeleteFrameByName(char const *)` |
+| `0x1016b0` | `public: static void __cdecl Rainbow::CloudAssetLoader::DeleteLoader(class Rainbow::ICloudUrlLoader *)` |
+| `0x15a130` | `public: void __thiscall Rainbow::UILib::LayoutFrame::DeleteRelFrame(class Rainbow::UILib::LayoutFrame *)` |
+| `0x9fff0` | `protected: virtual void __thiscall Rainbow::RainbowEffectProxyHolder::DeleteSelf(void)` |
+| `0x272d10` | `protected: virtual void __thiscall Rainbow::ZipFilePkg::DeleteSelf(void)` |
+| `0x14db90` | `public: bool __thiscall Rainbow::UILib::FrameManager::DeleteTemplateByName(char const *)` |
+| `0x1f9660` | `private: bool __thiscall Rainbow::UpDownloadManager::DequeueLoadTask(class Rainbow::LoadHttpFileTask &)` |
+| `0x130950` | `public: static void __cdecl Rainbow::Entity::Destory(class Rainbow::Entity *)` |
+| `0x92970` | `public: void __thiscall GameUI::Destory(void)` |
+| `0x130950` | `public: static void __cdecl Rainbow::Model::Destory(class Rainbow::Model *)` |
+| `0x130950` | `public: static void __cdecl Rainbow::NormalText3D::Destory(class Rainbow::NormalText3D *)` |
+| `0x130950` | `public: static void __cdecl Rainbow::OnlyText3D::Destory(class Rainbow::OnlyText3D *)` |
+| `0x130950` | `public: static void __cdecl Rainbow::ParticleNode::Destory(class Rainbow::ParticleNode *)` |
+| `0x130950` | `public: static void __cdecl Rainbow::ProgressBarIn3D::Destory(class Rainbow::ProgressBarIn3D *)` |
+| `0x130950` | `public: static void __cdecl Rainbow::ProgressBarWithText3D::Destory(class Rainbow::ProgressBarWithText3D *)` |
+| `0x130950` | `public: static void __cdecl Rainbow::StoveProgressBar3D::Destory(class Rainbow::StoveProgressBar3D *)` |
+| `0x20c7a0` | `void __cdecl Rainbow::DestoryBillboardMeshBatchObj(void)` |
+| `0x2c6a50` | `public: static void __cdecl Rainbow::Setting::GameConfigMgr::DestoryInstance(void)` |
+| `0x2bc920` | `public: static void __cdecl Rainbow::HUDLevitationFontRenderer::DestoryInstance(void)` |
+| `0x2bd560` | `public: static void __cdecl Rainbow::HUDTitleRender::DestoryInstance(void)` |
+| `0x2c2020` | `public: static void __cdecl Rainbow::HudSetting::DestoryInstance(void)` |
+| `0x2a9a30` | `public: static void __cdecl Rainbow::Singleton<class MINIW::SnapshotInterface>::Destroy(void)` |
+| `0xa0020` | `public: static void __cdecl Rainbow::Singleton<class Rainbow::SoundSystem>::Destroy(void)` |
+| `0x210560` | `private: void __thiscall Rainbow::MobileCameraRenderer::DestroyCanvas(void)` |
+| `0x230ea0` | `public: void __thiscall Rainbow::MovableObject::DestroyGameObject(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::UILib::ModelView::DetachCoordAxis(void)` |
+| `0x230eb0` | `public: void __thiscall Rainbow::MovableObject::DetachFromScene(void)` |
+| `0x2722a0` | `public: void __thiscall Rainbow::Voice3D::DetachFromScene(void)` |
+| `0x130970` | `public: void __thiscall Rainbow::UILib::CCoord::DetachGameScene(void)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::Frame::DisableDrawLayer(enum Rainbow::UILib::DRAWLAYER_T)` |
+| `0x2298d0` | `public: void __thiscall Rainbow::CombineManager::DiscardCombineTask(struct UGUID const &)` |
+| `0x229960` | `private: void __thiscall Rainbow::AsyncCombineTask::DividedWithMaterial(void)` |
+| `0x22a990` | `private: static void __cdecl Rainbow::AsyncCombineTask::DividedWithMaterialParallel(struct Rainbow::AsyncCombineTask::ParaellDividedTask *)` |
+| `0x22b7e0` | `public: void __thiscall Rainbow::AsyncSubCombineTask::DoInJobThread(void)` |
+| `0x22baa0` | `public: void __thiscall Rainbow::AsyncSubCombineTask::DoInMainThread(void)` |
+| `0x1106e0` | `private: void __thiscall Rainbow::RFontBase::DoRenderOneBorderCharacter(float,float,float,float,class Rainbow::TRect<float> const &,class Rainbow::ColorRGBA32 const &,bool)` |
+| `0x110780` | `private: void __thiscall Rainbow::RFontBase::DoRenderOneEmBoldenCharacter(float,float,float,float,class Rainbow::TRect<float> const &,class Rainbow::ColorRGBA32 const &,bool)` |
+| `0x1106e0` | `private: void __thiscall Rainbow::RFontBase::DoRenderOneShadowCharacter(float,float,float,float,class Rainbow::TRect<float> const &,class Rainbow::ColorRGBA32 const &,bool)` |
+| `0x297e50` | `public: bool __thiscall MINIW::CSVParser::Double(unsigned int,unsigned int,double &)const ` |
+| `0x294150` | `public: double const __thiscall MINIW::CSVParser::TableItem::Double(void)const ` |
+| `0x27bee0` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::Download(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,int,class std::function<void __cdecl(class Rainbow::Http::DownLoadFileTask *)>,class std::function<void __cdecl(bool,class Rainbow::Http::DownLoadFileTask *)>,bool,int)` |
+| `0x27c260` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::DownloadAbsPath(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,int,class std::function<void __cdecl(class Rainbow::Http::DownLoadFileTask *)>,class std::function<void __cdecl(bool,class Rainbow::Http::DownLoadFileTask *)>,int)` |
+| `0x138ac0` | `public: virtual void __thiscall Rainbow::UILib::EditBox::Draw(void)` |
+| `0x13f320` | `public: virtual void __thiscall Rainbow::UILib::FontString::Draw(void)` |
+| `0x1447d0` | `public: virtual void __thiscall Rainbow::UILib::Frame::Draw(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::Draw(void)` |
+| `0x166960` | `public: virtual void __thiscall Rainbow::UILib::ModelView::Draw(void)` |
+| `0x16c830` | `public: virtual void __thiscall Rainbow::UILib::MultiEditBox::Draw(void)` |
+| `0x1801b0` | `public: virtual void __thiscall Rainbow::UILib::UITexture::Draw(void)` |
+| `0x1803f0` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsBackDrop(void)` |
+| `0x180500` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsCenter(void)` |
+| `0x180b00` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsFlat(void)` |
+| `0x180cb0` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsHeight(void)` |
+| `0x1812a0` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsNineSquare(void)` |
+| `0x26f180` | `protected: void __thiscall Rainbow::TextBoardIn3D::DrawAsNineSquareCenter(class Rainbow::UILib::UIRenderer *,int,int,int,int)` |
+| `0x181920` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsNineSquareCenter(void)` |
+| `0x181e50` | `private: void __thiscall Rainbow::UILib::UITexture::DrawAsRotate(enum Rainbow::UILib::TEXTURE_DRAW_TYPE)` |
+| `0x144ab0` | `public: void __thiscall Rainbow::UILib::Frame::DrawBackDrop(void)` |
+| `0x124d40` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawBar(float,float,float,float,class Rainbow::ColorRGBA32)` |
+| `0x182430` | `private: void __thiscall Rainbow::UILib::UITexture::DrawBaseTriangle(class Rainbow::Vector2f *,class Rainbow::Vector2f *,int,float)` |
+| `0x182ca0` | `private: void __thiscall Rainbow::UILib::UITexture::DrawBaseTriangleReverse(class Rainbow::Vector2f *,class Rainbow::Vector2f *,int,float)` |
+| `0x124d90` | `private: void __thiscall Rainbow::UILib::UIRenderer::DrawCursor(void)` |
+| `0x15a2f0` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::DrawDebugBarEdge(void)` |
+| `0x124f20` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawLine(float,float,float,float,class Rainbow::ColorRGBA32,int)` |
+| `0x25b430` | `public: void __thiscall Rainbow::ItemImage3D::DrawNineSquare(class Rainbow::UILib::UIRenderer *,int,int,int,int)` |
+| `0x26ba80` | `private: void __thiscall Rainbow::StoveProgressBar3D::DrawNineSquare(class Rainbow::UILib::UIRenderer *,class Rainbow::SharePtr<class Rainbow::MaterialInstance>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class std::vector<struct Rainbow::SimpleTextureUV,class std::allocator<struct Rainbow::SimpleTextureUV> > const &,int,int,int,int,int)` |
+| `0x166be0` | `public: void __thiscall Rainbow::UILib::ModelView::DrawRect(class Rainbow::TRect<int> const &,class Rainbow::TRect<float> const &)` |
+| `0x124fa0` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawRect(class Rainbow::TRect<int> const &,class Rainbow::ColorRGBA32,int,int,float)` |
+| `0x125010` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawRect(int,int,int,int,class Rainbow::ColorRGBA32,int,int,float)` |
+| `0x125070` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawRectMemoryGuard(void)` |
+| `0x1250b0` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawRectWireframe(class Rainbow::TRect<int> const &,class Rainbow::ColorRGBA32,int)` |
+| `0x125110` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawRectWireframe(class Rainbow::TRect<float> const &,class Rainbow::ColorRGBA32,int)` |
+| `0x1252b0` | `private: void __thiscall Rainbow::UILib::UIRenderer::DrawScreenRects(void)` |
+| `0x125380` | `private: void __thiscall Rainbow::UILib::UIRenderer::DrawScreenRectsRange(unsigned int,unsigned int,class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::MaterialInstance> &)` |
+| `0x125c80` | `private: void __thiscall Rainbow::UILib::UIRenderer::DrawScreenTriangles(void)` |
+| `0x95830` | `public: void __thiscall Rainbow::UILib::LayoutFrame::DrawShow(bool)` |
+| `0x94d80` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawTriangleFan(class Rainbow::Vector2f *,unsigned int,class Rainbow::ColorRGBA32 *)` |
+| `0x94d80` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawTriangleFan(class Rainbow::Vector2f *,unsigned int,class Rainbow::ColorRGBA32)` |
+| `0x94d80` | `public: void __thiscall Rainbow::UILib::UIRenderer::DrawTriangleList(class Rainbow::Vector2f *,unsigned int,class Rainbow::ColorRGBA32)` |
+| `0x92bdc4` | `public: static char const * const cocos2d::Director::EVENT_AFTER_DRAW` |
+| `0x92bdac` | `public: static char const * const cocos2d::Director::EVENT_AFTER_SET_NEXT_SCENE` |
+| `0x92bdb8` | `public: static char const * const cocos2d::Director::EVENT_AFTER_UPDATE` |
+| `0x92bdc0` | `public: static char const * const cocos2d::Director::EVENT_AFTER_VISIT` |
+| `0x92bdc8` | `public: static char const * const cocos2d::Director::EVENT_BEFORE_DRAW` |
+| `0x92bda8` | `public: static char const * const cocos2d::Director::EVENT_BEFORE_SET_NEXT_SCENE` |
+| `0x92bdb4` | `public: static char const * const cocos2d::Director::EVENT_BEFORE_UPDATE` |
+| `0x92bdb0` | `public: static char const * const cocos2d::Director::EVENT_PROJECTION_CHANGED` |
+| `0x92bdbc` | `public: static char const * const cocos2d::Director::EVENT_RESET` |
+| `0x9337e0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const cocos2d::GLViewImpl::EVENT_WINDOW_FOCUSED` |
+| `0x9330fc` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const cocos2d::GLView::EVENT_WINDOW_RESIZED` |
+| `0x9337f8` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const cocos2d::GLViewImpl::EVENT_WINDOW_UNFOCUSED` |
+| `0x14dcb0` | `public: void __thiscall Rainbow::UILib::FrameManager::EnableAccelerator(bool)` |
+| `0x1b69c0` | `public: bool __thiscall Rainbow::Entity::EnableBindCustomObject(class Rainbow::FixedString const &,int,bool)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::Frame::EnableDrawLayer(enum Rainbow::UILib::DRAWLAYER_T)` |
+| `0x1260a0` | `public: void __thiscall Rainbow::UILib::UIRenderer::EnableMaterialColorMaskWriteAll(void)` |
+| `0x139540` | `protected: void __thiscall Rainbow::UILib::EditBox::Encrypt(void)` |
+| `0x235fd0` | `public: void __thiscall Rainbow::GifSequenceTexture::EncryptLoad(char const *,class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &))` |
+| `0x1260b0` | `public: void __thiscall Rainbow::UILib::UIRenderer::EndDraw(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::DebugMgr::EndGame(void)` |
+| `0x283a50` | `protected: virtual void __thiscall Rainbow::Http::MiniBreakResumeUpload::EndHandle(void)` |
+| `0x286af0` | `protected: virtual void __thiscall Rainbow::Http::MiniCustomUpload::EndHandle(void)` |
+| `0x289ec0` | `protected: virtual void __thiscall Rainbow::Http::MiniUpload::EndHandle(void)` |
+| `0x145480` | `public: void __thiscall Rainbow::UILib::Frame::EndMoveFrame(void)` |
+| `0x1c3790` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::EndObject(class Rainbow::Entity *)` |
+| `0x1c37c0` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::EndObject(class Rainbow::Entity *)` |
+| `0x1c4a20` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::EndObject(class Rainbow::Entity *)` |
+| `0x1c3850` | `public: virtual void __thiscall Rainbow::PostObjMotion::EndObject(class Rainbow::Entity *)` |
+| `0x2c5f80` | `public: void __thiscall Rainbow::HUDTitleInfo::EndTitle(void)` |
+| `0x2bd5a0` | `public: void __thiscall Rainbow::HUDTitleRender::EraseChatBubble(class Rainbow::Transform *)` |
+| `0x16d190` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::EraseRichChar(int)` |
+| `0x29d0e0` | `public: virtual void __thiscall MINIW::Cef3Manager::ExecJavaScript(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x22bdf0` | `private: void __thiscall Rainbow::AsyncCombineTask::ExecuteCallback(void)` |
+| `0x218cb0` | `public: static void __cdecl MINIW::GameRuntimeInitializeAndCleanup::ExecuteCleanup(void)` |
+| `0x218ce0` | `public: static void __cdecl MINIW::GameRuntimeInitializeAndCleanup::ExecuteInitializations(void)` |
+| `0x194510` | `public: void __thiscall Rainbow::UILib::WebFrame::ExecuteJS(char const *)` |
+| `0xd4d00` | `private: bool __thiscall Rainbow::LegacyMeshRenderObject::ExtractMeshInstancePerFrame(struct Rainbow::PrimitiveFrameNode const &,class Rainbow::MeshInstance *)` |
+| `0xd4fb0` | `private: void __thiscall Rainbow::LegacyMeshRenderObject::ExtractMeshInstancePerView(class Rainbow::MeshPrimitiveExtractor &,struct Rainbow::PrimitiveViewNode &,class Rainbow::MeshInstance *,struct dynamic_array<struct Rainbow::LegacyMeshCall,0> &,class Rainbow::PerThreadPageAllocator &)` |
+| `0xd54a0` | `public: virtual void __thiscall Rainbow::LegacyMeshRenderObject::ExtractMeshPrimitives(class Rainbow::MeshPrimitiveExtractor &,struct Rainbow::PrimitiveViewNode &,class Rainbow::PerThreadPageAllocator &)` |
+| `0x1df430` | `public: void __thiscall Rainbow::ParticleNode::ExtractRenderData(void * &,int &,int &,void * &,int &,class Rainbow::RenderView const &)` |
+| `0x921478` | `public: static class Rainbow::ColorRGBA32 Rainbow::UILib::FontInstance::FONT_SHADOW_COLOR` |
+| `0x15a390` | `public: static char const * __cdecl Rainbow::UILib::LayoutFrame::FP2Name(enum Rainbow::UILib::FRAMEPOINT_T)` |
+| `0x97c2f1` | `public: static bool cocos2d::Director::FUI_IS_RUN` |
+| `0x929430` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GObject::FULL_SCREEN` |
+| `0x1f9770` | `public: int __thiscall Rainbow::UpDownloadManager::FileLoadedSize(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1cbae0` | `public: virtual void __thiscall Rainbow::Model::FillAvatarColor(enum Rainbow::Model::Avatar_Parts,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::ColourValue *,int)` |
+| `0x1cbb60` | `public: virtual void __thiscall Rainbow::ModelLegacy::FillAvatarColor(enum Rainbow::Model::Avatar_Parts,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,int,class Rainbow::ColourValue)` |
+| `0x1cc440` | `public: virtual void __thiscall Rainbow::ModelNew::FillAvatarColor(enum Rainbow::Model::Avatar_Parts,class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,int,class Rainbow::ColourValue)` |
+| `0x1454a0` | `public: void __thiscall Rainbow::UILib::Frame::FillChildren(int)` |
+| `0x145600` | `public: virtual void __thiscall Rainbow::UILib::Frame::FillDrawItems(int,int)` |
+| `0xf9400` | `private: struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> __thiscall Rainbow::RemoteAssetsManager::FilterAssetsPath(struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &)const ` |
+| `0x14a210` | `public: class std::vector<class Rainbow::UILib::Frame *,class std::allocator<class Rainbow::UILib::Frame *> > __thiscall Rainbow::UILib::FrameManager::FindAllUIObjectOnPoint(int,int)const ` |
+| `0x1b6c20` | `public: class Rainbow::Model * __thiscall Rainbow::Entity::FindAnchorOwnerModel(int,class Rainbow::MovableObject *)` |
+| `0x297e90` | `public: int __thiscall MINIW::CSVParser::FindColByString(char const *)` |
+| `0x1456a0` | `public: virtual void __thiscall Rainbow::UILib::Frame::FindFrameOnPoint(int,int,class std::vector<class Rainbow::UILib::Frame *,class std::allocator<class Rainbow::UILib::Frame *> > &)` |
+| `0x14dcc0` | `public: class Rainbow::UILib::LayoutFrame * __thiscall Rainbow::UILib::FrameManager::FindLayoutFrame(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x14dd10` | `public: class Rainbow::UILib::LayoutFrame * __thiscall Rainbow::UILib::FrameManager::FindLayoutFrame(char const *)const ` |
+| `0x297ec0` | `public: int __thiscall MINIW::CSVParser::FindLineByString(char const *)` |
+| `0xe8510` | `public: class Rainbow::MeshInstance * __thiscall Rainbow::LegacySkinMeshRenderer::FindMesh(class Rainbow::FixedString const &)` |
+| `0x1ccd30` | `protected: virtual class Rainbow::MeshInstance * __thiscall Rainbow::ModelLegacy::FindMesh(class Rainbow::FixedString const &)` |
+| `0x936b0` | `protected: virtual class Rainbow::MeshInstance * __thiscall Rainbow::ModelNew::FindMesh(class Rainbow::FixedString const &)` |
+| `0x1adcd0` | `public: class Rainbow::ModelMeshRenderers * __thiscall Rainbow::ModelRenderer::FindMesh(class Rainbow::FixedString const &)` |
+| `0x1ccd50` | `public: class Rainbow::ModelMeshRenderers * __thiscall Rainbow::ModelNew::FindMeshNew(class Rainbow::FixedString const &)` |
+| `0x14a2c0` | `public: void __thiscall Rainbow::UILib::FrameManager::FindModalFrame(char const *,class std::vector<class Rainbow::UILib::Frame *,class std::allocator<class Rainbow::UILib::Frame *> > &)const ` |
+| `0x1b6e10` | `public: class Rainbow::SharePtr<class Rainbow::ModelMotion> __thiscall Rainbow::Entity::FindMotion(class Rainbow::FixedString const &)` |
+| `0x297ef0` | `public: bool __thiscall MINIW::CSVParser::FindPosByString(char const *,int &,int &)` |
+| `0x15a3a0` | `public: bool __thiscall Rainbow::UILib::LayoutFrame::FindRelFrame(class Rainbow::UILib::LayoutFrame *)` |
+| `0x1260c0` | `private: void * __thiscall Rainbow::UILib::UIRenderer::FindSamenessFont(int,int,char const *,unsigned int)` |
+| `0x14ddf0` | `public: class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::FrameManager::FindTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x14a370` | `public: void __thiscall Rainbow::UILib::FrameManager::FindUIObjectOnPoint(class std::vector<class Rainbow::UILib::Frame *,class std::allocator<class Rainbow::UILib::Frame *> > &,int,int,bool)` |
+| `0x14a410` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::FrameManager::FindUIObjectOnPoint(int,int,bool)const ` |
+| `0x218190` | `int __cdecl Rainbow::PitchDsp::FindorCreateFragmentPitchDsp(class FMOD::ChannelGroup *,float)` |
+| `0xf9700` | `private: void __thiscall Rainbow::RemoteAssetsManager::Finish(void)` |
+| `0x2900b0` | `public: bool __thiscall WebSocketEventHandler::FireEvent(char const *,void *)` |
+| `0x8a250` | `void __cdecl MINIW::FirebaseAnalyticsEvent(char const *,char const *)` |
+| `0x69c30` | `public: static float __cdecl Rainbow::WorldPos::Fix2Flt(int)` |
+| `0x183500` | `private: void __thiscall Rainbow::UILib::UITexture::FixedNineSquareUVOffset(int,int)` |
+| `0x1835e0` | `private: void __thiscall Rainbow::UILib::UITexture::FixedUVOffset(struct Rainbow::UILib::TextureUV &,int,int)` |
+| `0x297fb0` | `public: bool __thiscall MINIW::CSVParser::Float(unsigned int,unsigned int,float &)const ` |
+| `0x294160` | `public: float const __thiscall MINIW::CSVParser::TableItem::Float(void)const ` |
+| `0x12e900` | `int __cdecl Rainbow::UILib::FloatToInt(float)` |
+| `0x12e920` | `int __cdecl Rainbow::UILib::FloatToIntEx(float)` |
+| `0x69c60` | `public: static int __cdecl Rainbow::WorldPos::Flt2Fix(float)` |
+| `0x126150` | `public: void __thiscall Rainbow::UILib::UIRenderer::FlushDraw(void)` |
+| `0x274800` | `void __cdecl ForceReloadCacheAsset(char const *)` |
+| `0xe01a0` | `public: virtual void __thiscall Rainbow::AnimationPlayer::ForceTick(float)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::IModelAnimationPlayer::ForceTick(float)` |
+| `0x93200` | `public: void __thiscall Rainbow::UILib::FrameManager::ForceUpdateFramePos(void)` |
+| `0x93210` | `public: void __thiscall GameUI::ForceUpdateUIEditFramePos(void)` |
+| `0x29d230` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::Cef3Manager::FormatString(char const *,...)` |
+| `0xcd780` | `protected: static void __cdecl Rainbow::LegacyAsset::FrameTickCheckPrefabState(void *)` |
+| `0x27a120` | `private: void __thiscall Rainbow::MiniGlobalEvent::FreeEventByHandleWhenEnd(void)` |
+| `0x93220` | `void __cdecl GCMemory(void)` |
+| `0x6f6c60` | `public: static int const fairygui::TextFormat::GLOW` |
+| `0x3a9ae0` | `void __cdecl cocos2d::GLToCGAffine(float const *,struct cocos2d::AffineTransform *)` |
+| `0x6f6c64` | `public: static int const fairygui::TextFormat::GRADIENT` |
+| `0x73e418` | `public: static struct cocos2d::BlendFunc const cocos2d::BlendFunc::GRAY` |
+| `0x92c1b8` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::GRAY` |
+| `0x92c1dc` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::GRAY` |
+| `0x92c260` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::GRAY` |
+| `0x92c1a8` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::GREEN` |
+| `0x92c1c8` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::GREEN` |
+| `0x92c210` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::GREEN` |
+| `0x8a250` | `void __cdecl MINIW::GameDnsIps(char const *)` |
+| `0x3c7910` | `void __cdecl MINIW::GameExit(bool,char const *)` |
+| `0x934c0` | `int __cdecl MINIW::GameHasTPPay(void)` |
+| `0x8a250` | `void __cdecl MINIW::GameMoreGame(void)` |
+| `0x8a250` | `void __cdecl MINIW::GamePay(char const *,float,char const *,int,int,char const *)` |
+| `0x8a250` | `void __cdecl MINIW::GameSetAccount(int,char const *)` |
+| `0x8a250` | `void __cdecl MINIW::GameStartUpdate(void)` |
+| `0x8a250` | `void __cdecl MINIW::GameVibrate(int)` |
+| `0x8a250` | `void __cdecl MINIW::GameVibrateWithTimeAndAmplitude(int,int)` |
+| `0x933c0` | `public: bool __thiscall Rainbow::MeshInstance::GeIsForCustom(void)` |
+| `0x1fd360` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileManagerWeb::GeneralRealName(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x23b690` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::TextureRenderGen::Generate(class Rainbow::GameObject *,int,int,class Rainbow::Vector3f,class Rainbow::Vector3f,bool)` |
+| `0x23b8f0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::TextureRenderGen::Generate(class Rainbow::GameObject *,int,int,bool)` |
+| `0x2770c0` | `public: struct Rainbow::TerrainDecalData * __thiscall Rainbow::TerrainDecalEffect::GenerateEffectData(char const *,char const *,float,class Rainbow::ColorRGBAf)` |
+| `0x23b940` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::TextureRenderGen::GenerateEx(class Rainbow::GameObject *,int,int,class Rainbow::UIModelView3D * *,bool,class Rainbow::SharePtr<class Rainbow::Texture2D>,class std::function<void __cdecl(class Rainbow::SharePtr<class Rainbow::Texture2D>)>)` |
+| `0x1cd9a0` | `public: static class Rainbow::GameObject * __cdecl Rainbow::Model::GenerateGameFromModelData(class Rainbow::SharePtr<class Rainbow::ModelData>)` |
+| `0xcf250` | `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GenerateHotfixEncryptString(class std::map<class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<struct std::pair<class core::basic_string<char,class core::StringStorageDefault<char> > const ,class core::basic_string<char,class core::StringStorageDefault<char> > > > >,char const *)` |
+| `0x22be20` | `private: class Rainbow::SHAHash __thiscall Rainbow::AsyncCombineTask::GenerateMaterialInstanceHash(class Rainbow::MaterialInstance *)const ` |
+| `0x20cad0` | `public: void __thiscall Rainbow::BillboardMeshBatch::GenerateMesh(class Rainbow::RenderView const *,struct dynamic_array<struct Rainbow::DrawBuffersRange,0> &)` |
+| `0x22bf00` | `private: void __thiscall Rainbow::AsyncCombineTask::GenerateOneCombineSubTask(struct dynamic_array<struct std::pair<struct Rainbow::CombinedGameObjectData *,unsigned int>,0> const &,int,class Rainbow::SHAHash)` |
+| `0x231a80` | `public: class Rainbow::RainbowEffectProxy * __thiscall Rainbow::RainbowEffectProxyHolder::Get(void)` |
+| `0x15a3d0` | `public: class Rainbow::TRect<int> __thiscall Rainbow::UILib::LayoutFrame::GetAbsRect(void)const ` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetAccount(void)` |
+| `0xe01c0` | `public: int __thiscall Rainbow::AnimationPlayer::GetActiveTraceSeqId(int)` |
+| `0x9a380` | `public: int __thiscall Rainbow::AnimationPlayer::GetActiveTracesSeqCount(void)` |
+| `0x933d0` | `class ActorBodySafeHandle * __cdecl GetActorBodySafeHandle(void)` |
+| `0x166c80` | `public: class Rainbow::Vector3f __thiscall Rainbow::UILib::ModelView::GetActorPosition(int)const ` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetAdCampaignInfo(void)` |
+| `0x14df40` | `public: float __thiscall Rainbow::UILib::FrameManager::GetAllSelfScale(void)` |
+| `0x15a690` | `public: float __thiscall Rainbow::UILib::LayoutFrame::GetAnchorOffsetX(void)` |
+| `0x15a6a0` | `public: float __thiscall Rainbow::UILib::LayoutFrame::GetAnchorOffsetY(void)` |
+| `0x1b6e80` | `public: virtual class Rainbow::Matrix4x4f __thiscall Rainbow::Entity::GetAnchorWorldMatrix(int)` |
+| `0x1ced10` | `public: virtual class Rainbow::Matrix4x4f __thiscall Rainbow::ModelLegacy::GetAnchorWorldMatrix(int)` |
+| `0x1cedf0` | `public: virtual class Rainbow::Matrix4x4f __thiscall Rainbow::ModelNew::GetAnchorWorldMatrix(int)` |
+| `0x93440` | `public: virtual class Rainbow::Matrix4x4f __thiscall Rainbow::MovableObject::GetAnchorWorldMatrix(int)` |
+| `0x1b6ec0` | `public: class Rainbow::Vector3f __thiscall Rainbow::Entity::GetAnchorWorldPos(int)` |
+| `0x13fdd0` | `public: float __thiscall Rainbow::UILib::FontString::GetAngle(void)` |
+| `0x183600` | `public: float __thiscall Rainbow::UILib::UITexture::GetAngle(void)` |
+| `0x1a8e30` | `public: float __thiscall Rainbow::ModelAnimationPlayer::GetAnimClipLenth(int)` |
+| `0x1a8f50` | `protected: int __thiscall Rainbow::ModelAnimationPlayer::GetAnimLayer(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x7e970` | `protected: virtual class Rainbow::AnimationPlayer * __thiscall Rainbow::Model::GetAnimPlayer(void)` |
+| `0x93460` | `public: virtual class Rainbow::AnimationPlayer * __thiscall Rainbow::ModelLegacy::GetAnimPlayer(void)` |
+| `0xe01f0` | `public: virtual int __thiscall Rainbow::AnimationPlayer::GetAnimPriority(int)` |
+| `0x1a9010` | `public: virtual int __thiscall Rainbow::ModelAnimationPlayer::GetAnimPriority(int)` |
+| `0x1a9020` | `int __cdecl Rainbow::GetAnimStateId(char const *)` |
+| `0x1a9030` | `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetAnimStateName(int)` |
+| `0xe0230` | `public: virtual float __thiscall Rainbow::AnimationPlayer::GetAnimWeight(int)` |
+| `0x1a91b0` | `public: virtual float __thiscall Rainbow::ModelAnimationPlayer::GetAnimWeight(int)` |
+| `0x93460` | `public: class Rainbow::ModelAnimationPlayer * __thiscall Rainbow::ModelNew::GetAnimationPlayer(void)` |
+| `0xa0060` | `public: enum Rainbow::Setting::AntiAliasingType __thiscall Rainbow::Setting::GameConfigMgr::GetAntiAliasing(void)` |
+| `0xf54e0` | `public: unsigned __int64 __thiscall Rainbow::CloudAssetUser::GetAppID(void)const ` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::IClientInfo::GetAppId(void)` |
+| `0xf54f0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::CloudAssetUser::GetAppKey(void)const ` |
+| `0x93470` | `public: enum Rainbow::LegacyAssetType __thiscall Rainbow::LegacyAsset::GetAssetType(void)const ` |
+| `0xfebc0` | `class Rainbow::CloudAssetNS::AssetUploadManager & __cdecl Rainbow::CloudAssetNS::GetAssetUploadManager(void)` |
+| `0xd5910` | `public: class std::map<int,class std::vector<class Rainbow::MeshInstance *,class std::allocator<class Rainbow::MeshInstance *> >,struct std::less<int>,class std::allocator<struct std::pair<int const ,class std::vector<class Rainbow::MeshInstance *,class std::allocator<class Rainbow::MeshInstance *> > > > > & __thiscall Rainbow::LegacySkinMeshRenderer::GetAvatar(void)` |
+| `0xe85f0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::LegacySkinMeshRenderer::GetAvatarTex(class Rainbow::FixedString const &,int)` |
+| `0x1add60` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::ModelRenderer::GetAvatarTex(class Rainbow::FixedString const &,int)` |
+| `0xd5910` | `private: class std::map<int,class std::vector<class Rainbow::MeshInstance *,class std::allocator<class Rainbow::MeshInstance *> >,struct std::less<int>,class std::allocator<struct std::pair<int const ,class std::vector<class Rainbow::MeshInstance *,class std::allocator<class Rainbow::MeshInstance *> > > > > & __thiscall Rainbow::LegacySkinMeshRenderer::GetAvatarVec(void)` |
+| `0x145730` | `public: float __thiscall Rainbow::UILib::Frame::GetBackDropBlendAlpha(void)` |
+| `0x21d340` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetBigFileMd5(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x20cee0` | `class Rainbow::BillboardMeshBatch * __cdecl Rainbow::GetBillboardMeshBatch(void)` |
+| `0x20cef0` | `class Rainbow::GameObject * __cdecl Rainbow::GetBillboardMeshBatchObj(void)` |
+| `0x1b6f30` | `public: class Rainbow::MovableObject * __thiscall Rainbow::Entity::GetBindCustomObject(class Rainbow::FixedString const &,int)` |
+| `0x1309b0` | `public: class Rainbow::MovableObject * __thiscall Rainbow::Entity::GetBindObject(int)` |
+| `0x9a380` | `public: int __thiscall Rainbow::Entity::GetBindObjectCount(void)` |
+| `0x13fde0` | `public: float __thiscall Rainbow::UILib::FontString::GetBlendAlpha(void)` |
+| `0x183610` | `public: float __thiscall Rainbow::UILib::UITexture::GetBlendAlpha(void)` |
+| `0x2c5f90` | `public: enum Rainbow::HUDBloodType __thiscall Rainbow::HUDTitleInfo::GetBloodType(void)` |
+| `0xa0070` | `public: enum Rainbow::Setting::BloomType __thiscall Rainbow::Setting::GameConfigMgr::GetBloom(void)` |
+| `0x1cee50` | `public: virtual int __thiscall Rainbow::Model::GetBoneByCustomAnchor(int)` |
+| `0x1ceeb0` | `public: virtual void __thiscall Rainbow::ModelLegacy::GetBoneData(class Rainbow::FixedString,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x1cef90` | `public: virtual void __thiscall Rainbow::ModelNew::GetBoneData(class Rainbow::FixedString,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x1cf060` | `public: virtual int __thiscall Rainbow::ModelLegacy::GetBoneId(class Rainbow::FixedString const &)const ` |
+| `0x1cf080` | `public: virtual int __thiscall Rainbow::ModelNew::GetBoneId(class Rainbow::FixedString const &)const ` |
+| `0x1cf0d0` | `public: static class Rainbow::Matrix4x4f __cdecl Rainbow::SkinnedSkeletonUtils::GetBoneLocalTM(class Rainbow::SkinnedSkeleton *,int)` |
+| `0x1cf140` | `public: virtual class Rainbow::BoneNode * __thiscall Rainbow::ModelLegacy::GetBoneNode(int)` |
+| `0x1cf1b0` | `public: virtual class Rainbow::BoneNode * __thiscall Rainbow::ModelNew::GetBoneNode(int)` |
+| `0xe27b0` | `public: class Rainbow::BoneNode * __thiscall Rainbow::SkeletonComponent::GetBoneNode(int)` |
+| `0x1cf310` | `public: static bool __cdecl Rainbow::SkinnedSkeletonUtils::GetBoneSRT(class Rainbow::SkinnedSkeleton *,int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x15a7b0` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetBottom(void)` |
+| `0xa0080` | `public: float __thiscall Rainbow::UILib::FontString::GetBuffStart(void)` |
+| `0xa0090` | `public: float __thiscall Rainbow::UILib::FontString::GetBuffTotal(void)` |
+| `0x93a20` | `public: unsigned short const * __thiscall Rainbow::IndexData::GetBuffer16(void)` |
+| `0x2a9780` | `public: virtual class std::tuple<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool> __thiscall Rainbow::IClientDnsCache::GetCacheDns(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0x937e0` | `public: unsigned int __thiscall Rainbow::UILib::FrameManager::GetCalAbsRectFrame(void)const ` |
+| `0x93480` | `public: unsigned int __thiscall Rainbow::UILib::LayoutFrame::GetCalAbsRectFrame(void)` |
+| `0x1309f0` | `public: virtual float __thiscall Rainbow::UILib::CoordInteract::GetCameraNear(void)` |
+| `0x130a20` | `public: virtual void __thiscall Rainbow::UILib::CoordInteract::GetCameraPos(class Rainbow::Vector3f &)` |
+| `0x130a50` | `public: virtual void __thiscall Rainbow::UILib::CoordInteract::GetCameraWorldMatrix(class Rainbow::Matrix4x4f &)` |
+| `0x29d440` | `public: virtual bool __thiscall MINIW::Cef3Manager::GetCanUseBroswer(void)` |
+| `0x29d4d0` | `public: virtual bool __thiscall MINIW::Cef3Manager::GetCanUseCef3(void)` |
+| `0x29d4e0` | `class MINIW::Cef3Manager & __cdecl MINIW::GetCef3Manager(void)` |
+| `0x29d4e0` | `class MINIW::Cef3Manager * __cdecl MINIW::GetCef3ManagerPtr(void)` |
+| `0x93ab0` | `public: class FMOD::Channel * __thiscall Rainbow::FmodSound::GetChannel(void)const ` |
+| `0xe6860` | `public: enum Rainbow::ShaderChannelMask __thiscall Rainbow::OgreVertexData::GetChannelMask(void)` |
+| `0x110790` | `public: virtual void __thiscall Rainbow::RFontBase::GetCharExtent(unsigned char const *,float &,float &)` |
+| `0x1107d0` | `public: virtual void __thiscall Rainbow::RFontBase::GetCharExtent(wchar_t,float &,float &)` |
+| `0x1261d0` | `public: void __thiscall Rainbow::UILib::UIRenderer::GetCharExtent(void *,char const *,float &,float &)` |
+| `0x16d250` | `protected: class Rainbow::Vector<int,2> __thiscall Rainbow::UILib::MultiEditBox::GetCharPos(int)` |
+| `0x16d350` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::GetCharsInLine(int)` |
+| `0x93490` | `public: bool __thiscall Rainbow::DebugMgr::GetCheckActorRelease(void)` |
+| `0x278260` | `public: class Rainbow::Algorithm::OctreeNodeContext __thiscall Rainbow::Algorithm::OctreeNodeContext::GetChildContext(class Rainbow::Algorithm::OctreeChildNodeRef)const ` |
+| `0x278360` | `public: void __thiscall Rainbow::Algorithm::OctreeNodeContext::GetChildContext(class Rainbow::Algorithm::OctreeChildNodeRef,class Rainbow::Algorithm::OctreeNodeContext *)const ` |
+| `0x145760` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::Frame::GetChildFrame(char const *)` |
+| `0x278450` | `public: struct math::_float3 const __thiscall Rainbow::Algorithm::OctreeNodeContext::GetChildOffsetVec(int)const ` |
+| `0x3c7920` | `int __cdecl MINIW::GetClientEnv(void)` |
+| `0x9a400` | `public: int __thiscall Rainbow::UILib::Frame::GetClientID(void)` |
+| `0x1457f0` | `public: char const * __thiscall Rainbow::UILib::Frame::GetClientString(void)` |
+| `0x145800` | `public: int __thiscall Rainbow::UILib::Frame::GetClientUserData(int)` |
+| `0x145820` | `public: __int64 __thiscall Rainbow::UILib::Frame::GetClientUserDataLL(int)` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::IClientInfo::GetClientVersion(void)` |
+| `0x3c7930` | `char * __cdecl MINIW::GetClientVersion(void)` |
+| `0x1fa770` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::IClientInfo::GetClientVersionStr(void)` |
+| `0x9b130` | `public: class Rainbow::TRect<float> const & __thiscall Rainbow::UILib::UIRenderer::GetClipRect(void)` |
+| `0x15a7c0` | `protected: class Rainbow::TRect<int> __thiscall Rainbow::UILib::LayoutFrame::GetClippedRect(void)const ` |
+| `0x103580` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::CloudAssetUser::GetCloudAssetAuth(void)` |
+| `0x103630` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::CloudAssetUser::GetCloudAssetUinAuth(unsigned int)` |
+| `0x1038e0` | `class Rainbow::CloudAssetUser & __cdecl Rainbow::GetCloudAssetUser(void)` |
+| `0x103970` | `public: char const * __thiscall Rainbow::CloudAssetUser::GetCloudUrl(bool)` |
+| `0x2381d0` | `class Rainbow::ColourValue __cdecl Rainbow::GetColorFromPSHSV(class Rainbow::ColourValue)` |
+| `0x297ff0` | `public: int __thiscall MINIW::CSVParser::GetColumn(char const *)const ` |
+| `0x22c340` | `public: class Rainbow::MaterialInstanceCombineArgs __thiscall Rainbow::CombineManager::GetCombineConfig(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x22c690` | `class Rainbow::CombineManager & __cdecl Rainbow::GetCombineManager(void)` |
+| `0x1fa770` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::IClientInfo::GetCompileVersionStr(void)` |
+| `0x2a3600` | `class Rainbow::CompressSystem & __cdecl Rainbow::GetCompressSystem(void)` |
+| `0x2c6a90` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetConfigVersion(void)` |
+| `0x3c7940` | `struct ContactPerson __cdecl MINIW::GetContactPerson(int)` |
+| `0x2784c0` | `public: class Rainbow::Algorithm::OctreeChildNodeRef __thiscall Rainbow::Algorithm::OctreeNodeContext::GetContainingChild(class Rainbow::AABB const &)const ` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetCountry(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetCountryFromIpAddress(char const *)` |
+| `0x934a0` | `public: unsigned int __thiscall Rainbow::MovableObject::GetCullPolicy(void)` |
+| `0x934b0` | `public: virtual enum Rainbow::IModelAnimationPlayer::CullingMode __thiscall Rainbow::AnimationPlayer::GetCullingMode(void)const ` |
+| `0x934c0` | `public: virtual enum Rainbow::IModelAnimationPlayer::CullingMode __thiscall Rainbow::IModelAnimationPlayer::GetCullingMode(void)const ` |
+| `0x130ac0` | `public: int __thiscall Rainbow::Entity::GetCurAnimID(void)` |
+| `0x130ad0` | `public: int __thiscall Rainbow::Entity::GetCurAnimLoopMode(void)` |
+| `0x130ae0` | `public: char const * __thiscall Rainbow::Entity::GetCurMotionName(void)` |
+| `0x1a91c0` | `public: void __thiscall Rainbow::ModelAnimationPlayer::GetCurPlayingSeqList(class std::vector<int,class std::allocator<int> > &)` |
+| `0x29d500` | `public: virtual char const * __thiscall MINIW::Cef3Manager::GetCurrSSContent(void)` |
+| `0x29d510` | `public: virtual char const * __thiscall MINIW::Cef3Manager::GetCurrSSCursor(void)` |
+| `0x14df80` | `public: int __thiscall Rainbow::UILib::FrameManager::GetCurrentCursorLevel(void)const ` |
+| `0x1fbb30` | `public: int __thiscall Rainbow::Downloader::GetCurrentSize(void)` |
+| `0x1945e0` | `public: char const * __thiscall Rainbow::UILib::WebFrame::GetCursor(void)` |
+| `0x1396d0` | `public: class Rainbow::ColorRGBA32 __thiscall Rainbow::UILib::EditBox::GetCursorColor(void)const ` |
+| `0x10f0e0` | `void __cdecl Rainbow::GetCursorPos(int &,int &)` |
+| `0x1b7010` | `public: bool __thiscall Rainbow::Entity::GetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x1cf3a0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::GetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x1cf430` | `protected: virtual bool __thiscall Rainbow::ModelNew::GetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x92380` | `protected: virtual void __thiscall Rainbow::Model::GetCustomMeshs(class std::vector<class Rainbow::MeshData *,class std::allocator<class Rainbow::MeshData *> > &)` |
+| `0x1cf450` | `public: virtual void __thiscall Rainbow::ModelLegacy::GetCustomMeshs(class std::vector<class Rainbow::MeshData *,class std::allocator<class Rainbow::MeshData *> > &)` |
+| `0x934d0` | `public: class Rainbow::ShaderPropertySheet const & __thiscall Rainbow::SubMeshInstance::GetCustomProperty(void)const ` |
+| `0x1c3860` | `public: bool __thiscall Rainbow::BindOjbect2Motion::GetDataOnTime(float,struct Rainbow::FRAME_DATA &)` |
+| `0x1fe980` | `public: class Rainbow::DataStream * __thiscall Rainbow::FileManagerWeb::GetDataStreamByPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x93500` | `public: bool __thiscall Rainbow::DebugMgr::GetDebugHotfixServer(class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0xbd570` | `class Rainbow::DebugMgr & __cdecl Rainbow::GetDebugMgr(void)` |
+| `0xbd570` | `class Rainbow::DebugMgr * __cdecl Rainbow::GetDebugMgrPtr(void)` |
+| `0x2a9840` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::IClientInfo::GetDefStringById(int)` |
+| `0x1396f0` | `public: char const * __thiscall Rainbow::UILib::EditBox::GetDefaultText(void)` |
+| `0x936e0` | `public: int __thiscall Rainbow::LegacyCommon3DUI::GetDepthBias(void)const ` |
+| `0xa00a0` | `public: enum Rainbow::Setting::DepthOfFieldType __thiscall Rainbow::Setting::GameConfigMgr::GetDepthOfield(void)` |
+| `0xa00b0` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetDesign(void)` |
+| `0x103b70` | `public: char const * __thiscall Rainbow::CloudAssetUser::GetDeveloperStoreUrl(bool)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetDeviceModel(void)` |
+| `0x2cad10` | `public: struct Rainbow::Setting::DeviceModel const * __thiscall Rainbow::Setting::DeviceModelData::GetDeviceQualityByCPUModel(char const *)` |
+| `0x2cb490` | `public: struct Rainbow::Setting::DeviceModel const * __thiscall Rainbow::Setting::DeviceModelData::GetDeviceQualityByGPUModel(char const *)` |
+| `0x2cbba0` | `public: struct Rainbow::Setting::DeviceModel const * __thiscall Rainbow::Setting::DeviceModelData::GetDeviceQualityValue(char const *)` |
+| `0x937e0` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetDeviceQualityValue(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetDeviceRegisterInfo(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetDeviceStorageInfo(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetDeviceToken(void)` |
+| `0x3c7980` | `void __cdecl MINIW::GetDisplayMode(unsigned int,int &,int &)` |
+| `0x1fbb40` | `public: char const * __thiscall Rainbow::Downloader::GetDownloadMemory(void)` |
+| `0x1fbb30` | `public: int __thiscall Rainbow::Downloader::GetDownloadSize(void)` |
+| `0x1016e0` | `public: virtual float __thiscall Rainbow::CloudAssetLoader::GetDownloadSpeed(void)const ` |
+| `0x1fbc50` | `public: double __thiscall Rainbow::Downloader::GetDownloadSpeed(void)` |
+| `0x101700` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::CloudAssetLoader::GetDownloadUrl(void)const ` |
+| `0x9a3d0` | `public: struct Rainbow::BillboardBatchMeshData const & __thiscall Rainbow::BillboardMeshBatch::GetDrawBuffer(void)` |
+| `0x2eb2b0` | `public: enum Rainbow::UILib::FRAMESTRATA_T __thiscall fairygui::GObject::GetDrawFrameStrata(void)const ` |
+| `0x371b00` | `public: enum Rainbow::UILib::FRAMESTRATA_T __thiscall cocos2d::Node::GetDrawFrameStrata(void)const ` |
+| `0x2562b0` | `public: struct Rainbow::UILib::UIDrawIn3DParam * __thiscall Rainbow::Empty3DUIRenderer::GetDrawIn3DParam(void)` |
+| `0x2eb2d0` | `public: __int64 __thiscall fairygui::GObject::GetDrawLevel(void)const ` |
+| `0x371b10` | `public: __int64 __thiscall cocos2d::Node::GetDrawLevel(void)const ` |
+| `0x20cfc0` | `public: class Rainbow::MaterialInstance * __thiscall Rainbow::BillboardMeshBatch::GetDrawMaterialInstance(unsigned int)` |
+| `0x20cff0` | `public: unsigned int __thiscall Rainbow::BillboardMeshBatch::GetDrawMaterialInstanceCount(void)const ` |
+| `0xa00d0` | `public: enum Rainbow::Setting::DynamicSkyLevel __thiscall Rainbow::Setting::GameConfigMgr::GetDynamicSkyLevel(void)` |
+| `0xa00e0` | `public: enum Rainbow::Setting::DynamicVegetationType __thiscall Rainbow::Setting::GameConfigMgr::GetDynamicVegetation(void)` |
+| `0x93530` | `public: bool __thiscall GameUI::GetEditMode(void)const ` |
+| `0xa00f0` | `public: enum Rainbow::Setting::EffectQuality __thiscall Rainbow::Setting::GameConfigMgr::GetEffectQuality(void)` |
+| `0x1fa770` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::IClientInfo::GetEngineVersionStr(void)` |
+| `0x130af0` | `public: class Rainbow::SharePtr<class Rainbow::LegacyAsset> __thiscall Rainbow::Entity::GetEntityData(void)` |
+| `0x286d10` | `public: char const * __thiscall Rainbow::Http::MiniCustomUpload::GetErrorMessage(void)const ` |
+| `0x289f40` | `public: char const * __thiscall Rainbow::Http::MiniUpload::GetErrorMessage(void)const ` |
+| `0xbd600` | `public: float __thiscall Rainbow::DebugMgr::GetFPSCameraOffset(void)` |
+| `0x93540` | `public: class Rainbow::MovableObject * __thiscall Rainbow::MovableObject::GetFather(void)` |
+| `0x1f9a50` | `public: class std::map<class core::basic_string<char,class core::StringStorageDefault<char> >,struct Rainbow::FileInfo,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<struct std::pair<class core::basic_string<char,class core::StringStorageDefault<char> > const ,struct Rainbow::FileInfo> > > __thiscall Rainbow::FileManagerWeb::GetFileHashTable(void)` |
+| `0x1ff410` | `public: struct Rainbow::FileInfo * __thiscall Rainbow::FileManagerWeb::GetFileInfo(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1ff4d0` | `class Rainbow::FileManagerWeb & __cdecl Rainbow::GetFileManagerWeb(void)` |
+| `0x1f9b30` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Downloader::GetFileName(void)` |
+| `0x274890` | `char const * __cdecl Rainbow::PkgUtils::GetFilesDigestMd5(unsigned int,unsigned int)` |
+| `0x1ff4e0` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileManagerWeb::GetFindMd5Path(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetFlyerUID(void)` |
+| `0xa0100` | `public: enum Rainbow::Setting::FogEffectType __thiscall Rainbow::Setting::GameConfigMgr::GetFogEffect(void)` |
+| `0x93480` | `public: class Rainbow::FontAtlas * __thiscall Rainbow::RFontBase::GetFontAtlas(void)` |
+| `0x126200` | `public: int __thiscall Rainbow::UILib::UIRenderer::GetFontHeight(void *)` |
+| `0x93560` | `public: float __thiscall Rainbow::UILib::FrameManager::GetFontScaleY(void)` |
+| `0x110810` | `public: virtual void __thiscall Rainbow::RFontBase::GetFontSize(int &,int &)` |
+| `0x93570` | `public: class Rainbow::Vector3f __thiscall Rainbow::ObjectMotion::GetForcePEPos(void)` |
+| `0x93590` | `public: float __thiscall Rainbow::ObjectMotion::GetForcePERange(void)` |
+| `0x218330` | `struct Rainbow::PitchDsp::FragmentPitchDsp * __cdecl Rainbow::PitchDsp::GetFragmentPitchDsp(int)` |
+| `0x145830` | `public: int __thiscall Rainbow::UILib::Frame::GetFrameBottom(void)` |
+| `0x14dfa0` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::FrameManager::GetFrameByIndex(int)` |
+| `0x14dfd0` | `public: int __thiscall Rainbow::UILib::FrameManager::GetFrameCount(void)` |
+| `0x9a550` | `public: int __thiscall Rainbow::GifAsset::GetFrameCount(void)` |
+| `0x236090` | `public: virtual int __thiscall Rainbow::GifSequenceTexture::GetFrameCount(void)` |
+| `0x935a0` | `public: int __thiscall Rainbow::UILib::Frame::GetFrameLevel(void)const ` |
+| `0x2eb2f0` | `public: int __thiscall fairygui::GObject::GetFrameLevel(void)const ` |
+| `0x371b20` | `public: int __thiscall cocos2d::Node::GetFrameLevel(void)const ` |
+| `0x14dfe0` | `class Rainbow::UILib::FrameManager & __cdecl Rainbow::UILib::GetFrameManager(void)` |
+| `0x935b0` | `public: class Rainbow::UILib::FrameManager * __thiscall GameUI::GetFrameManagerPtr(void)` |
+| `0x14dff0` | `public: void __thiscall Rainbow::UILib::FrameManager::GetFramePoint(enum Rainbow::UILib::FRAMEPOINT_T,int &,int &)const ` |
+| `0x15abc0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::GetFramePoint(enum Rainbow::UILib::FRAMEPOINT_T,int &,int &)` |
+| `0x935c0` | `public: float __thiscall GameUI::GetFrameRate(void)const ` |
+| `0x2c6aa0` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetFrameSplitRate(void)` |
+| `0x2eb310` | `public: enum Rainbow::UILib::FRAMESTRATA_T __thiscall fairygui::GObject::GetFrameStrata(void)const ` |
+| `0x937e0` | `public: enum Rainbow::UILib::FRAMESTRATA_T __thiscall Rainbow::UILib::LayoutFrame::GetFrameStrata(void)const ` |
+| `0x371b30` | `public: enum Rainbow::UILib::FRAMESTRATA_T __thiscall cocos2d::Node::GetFrameStrata(void)const ` |
+| `0x1458e0` | `public: int __thiscall Rainbow::UILib::Frame::GetFrameTop(void)` |
+| `0xc4b20` | `class Rainbow::GameSetting & __cdecl Rainbow::GetGameSetting(void)` |
+| `0x935d0` | `class GameUI * __cdecl GetGameUIPtr(void)` |
+| `0xcc2d0` | `class Rainbow::GameUserSetting & __cdecl Rainbow::GetGameUserSetting(void)` |
+| `0x2360b0` | `public: struct Rainbow::GifAssetData const & __thiscall Rainbow::GifAsset::GetGifData(void)` |
+| `0x2360c0` | `public: virtual bool __thiscall Rainbow::GifSequenceTexture::GetGifImageRef(int,class Rainbow::ImageReference &)` |
+| `0x113ff0` | `public: virtual bool __thiscall Rainbow::SequenceTexture::GetGifImageRef(int,class Rainbow::ImageReference &)` |
+| `0xa0120` | `public: float __thiscall Rainbow::MusicManager::GetGlobalMusicVolume(void)` |
+| `0xa0130` | `public: enum Rainbow::Setting::GraphicsSettingQuality __thiscall Rainbow::Setting::GameConfigMgr::GetGraphicsQuality(void)` |
+| `0xa0140` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::GetHDR(void)` |
+| `0x93660` | `public: class Rainbow::FixedString __thiscall Rainbow::UILib::UITexture::GetHTexPath(void)` |
+| `0x93680` | `public: int __thiscall GameUI::GetHeight(void)const ` |
+| `0x15ace0` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetHeight(void)` |
+| `0x93690` | `public: int __thiscall Rainbow::DebugMgr::GetHotfixMagic(void)` |
+| `0x183640` | `public: class Rainbow::FixedString __thiscall Rainbow::UILib::UITexture::GetHtexRelPath(void)` |
+| `0x936f0` | `public: long __thiscall Rainbow::Downloader::GetHttpCode(void)` |
+| `0x283ad0` | `public: int __thiscall Rainbow::Http::MiniBreakResumeUpload::GetHttpCode(void)const ` |
+| `0x286d40` | `public: int __thiscall Rainbow::Http::MiniCustomUpload::GetHttpCode(void)const ` |
+| `0x289f70` | `public: int __thiscall Rainbow::Http::MiniUpload::GetHttpCode(void)const ` |
+| `0x1f9b50` | `public: char const * __thiscall Rainbow::Downloader::GetHttpErrMsg(void)const ` |
+| `0x27c580` | `class Rainbow::Http::HttpManager & __cdecl Rainbow::Http::GetHttpManager(void)` |
+| `0x1cf4c0` | `protected: int __thiscall Rainbow::ModelNew::GetHumanBoneId(class Rainbow::FixedString const &)const ` |
+| `0x2a9760` | `class Rainbow::ICef3Manager * __cdecl Rainbow::GetICef3Manager(void)` |
+| `0x2a9820` | `class Rainbow::IClientDnsCache & __cdecl Rainbow::GetIClientDnsCache(void)` |
+| `0x2a9820` | `class Rainbow::IClientDnsCache * __cdecl Rainbow::GetIClientDnsCachePtr(void)` |
+| `0x2a9870` | `class Rainbow::IClientInfo & __cdecl Rainbow::GetIClientInfo(void)` |
+| `0x2a9870` | `class Rainbow::IClientInfo * __cdecl Rainbow::GetIClientInfoPtr(void)` |
+| `0x2a98c0` | `class Rainbow::ICloudProxy & __cdecl Rainbow::GetICloudProxy(void)` |
+| `0x2a98c0` | `class Rainbow::ICloudProxy * __cdecl Rainbow::GetICloudProxyPtr(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetIDFA(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetIDFV(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetIDFVInfo(void)` |
+| `0x29d520` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::Cef3Manager::GetIDLibraryData(void)` |
+| `0x22c9c0` | `public: struct UGUID __thiscall Rainbow::AsyncCombineTask::GetIdentifier(void)const ` |
+| `0xc2290` | `public: bool __thiscall Rainbow::SnapshotHelper::GetImageFromRenderTexture(class Rainbow::Image &)` |
+| `0x236110` | `public: int __thiscall Rainbow::GifAsset::GetIndexByTime(int)` |
+| `0x934b0` | `public: class Rainbow::IndexData * __thiscall Rainbow::SubMeshData::GetIndexData(void)` |
+| `0x2a9a70` | `public: static class MINIW::SnapshotInterface & __cdecl Rainbow::Singleton<class MINIW::SnapshotInterface>::GetInstance(void)` |
+| `0xa0150` | `public: static class Rainbow::SoundSystem & __cdecl Rainbow::Singleton<class Rainbow::SoundSystem>::GetInstance(void)` |
+| `0x3c65d0` | `public: static class ChannelList & __cdecl ChannelList::GetInstance(void)` |
+| `0x14e110` | `public: static class Rainbow::UILib::FrameManager & __cdecl Rainbow::UILib::FrameManager::GetInstance(void)` |
+| `0x2c6ac0` | `public: static class Rainbow::Setting::GameConfigMgr * __cdecl Rainbow::Setting::GameConfigMgr::GetInstance(void)` |
+| `0x2bc960` | `public: static class Rainbow::HUDLevitationFontRenderer * __cdecl Rainbow::HUDLevitationFontRenderer::GetInstance(void)` |
+| `0x2bd630` | `public: static class Rainbow::HUDTitleRender * __cdecl Rainbow::HUDTitleRender::GetInstance(void)` |
+| `0x2c2060` | `public: static class Rainbow::HudSetting * __cdecl Rainbow::HudSetting::GetInstance(void)` |
+| `0x253640` | `public: static class MINIW::LuaCallHelper & __cdecl MINIW::LuaCallHelper::GetInstance(void)` |
+| `0x281330` | `public: static class LuaWebSocketMgr & __cdecl LuaWebSocketMgr::GetInstance(void)` |
+| `0x170710` | `private: static class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Rainbow::UILib::LayoutFrame * (__cdecl*)(void),struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Rainbow::UILib::LayoutFrame * (__cdecl*)(void)> > > & __cdecl Rainbow::UILib::ObjectFactory::GetInstance(void)` |
+| `0x11db70` | `public: static class Rainbow::UILib::SkinTextColorLoader & __cdecl Rainbow::UILib::SkinTextColorLoader::GetInstance(void)` |
+| `0x126230` | `public: static class Rainbow::UILib::UIRenderer & __cdecl Rainbow::UILib::UIRenderer::GetInstance(void)` |
+| `0x2a9a70` | `public: static class MINIW::SnapshotInterface * __cdecl Rainbow::Singleton<class MINIW::SnapshotInterface>::GetInstancePtr(void)` |
+| `0xa0150` | `public: static class Rainbow::SoundSystem * __cdecl Rainbow::Singleton<class Rainbow::SoundSystem>::GetInstancePtr(void)` |
+| `0x14e1b0` | `public: static class Rainbow::UILib::FrameManager * __cdecl Rainbow::UILib::FrameManager::GetInstancePtr(void)` |
+| `0x281330` | `public: static class LuaWebSocketMgr * __cdecl LuaWebSocketMgr::GetInstancePtr(void)` |
+| `0x2a9900` | `public: static class MINIW::RecordInterface * __cdecl MINIW::RecordInterface::GetInstancePtr(void)` |
+| `0x2a9a80` | `public: static class MINIW::SnapshotInterface * __cdecl MINIW::SnapshotInterface::GetInstancePtr(void)` |
+| `0x283af0` | `protected: virtual void * __thiscall Rainbow::Http::MiniBreakResumeUpload::GetInternalHandle(void)const ` |
+| `0x286d60` | `protected: virtual void * __thiscall Rainbow::Http::MiniCustomUpload::GetInternalHandle(void)const ` |
+| `0x289f90` | `protected: virtual void * __thiscall Rainbow::Http::MiniUpload::GetInternalHandle(void)const ` |
+| `0x278540` | `public: class Rainbow::Algorithm::OctreeChildNodeSubset __thiscall Rainbow::Algorithm::OctreeNodeContext::GetIntersectingChildren(class Rainbow::AABB const &)const ` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::Model::GetIsPlayer(void)` |
+| `0x1a93b0` | `public: bool __thiscall Rainbow::ModelAnimationPlayer::GetIsPlayer(void)` |
+| `0x1cf550` | `public: virtual bool __thiscall Rainbow::ModelNew::GetIsPlayer(void)` |
+| `0xa0160` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetIsStudioCfg(void)` |
+| `0x1cf560` | `public: virtual class Rainbow::IModelMeshRenderer * __thiscall Rainbow::ModelLegacy::GetIthModelMeshRenderer(unsigned int)` |
+| `0x1cf570` | `public: virtual class Rainbow::IModelMeshRenderer * __thiscall Rainbow::ModelNew::GetIthModelMeshRenderer(unsigned int)` |
+| `0x1b7100` | `public: class Rainbow::SharePtr<class Rainbow::ModelMotion> __thiscall Rainbow::Entity::GetIthMotion(unsigned int)` |
+| `0x936b0` | `public: virtual class Rainbow::MeshInstance * __thiscall Rainbow::Model::GetIthSkin(unsigned int)` |
+| `0x1cf580` | `public: virtual class Rainbow::MeshInstance * __thiscall Rainbow::ModelLegacy::GetIthSkin(unsigned int)` |
+| `0x1adea0` | `public: class Rainbow::ModelMeshRenderers * __thiscall Rainbow::ModelRenderer::GetIthSkin(unsigned int)` |
+| `0x248a20` | `private: void __thiscall Rainbow::MiniLua::LuaTableLinker::GetKeyValue(class Rainbow::MiniLua::LuaValue &)` |
+| `0x93aa0` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetLeft(void)` |
+| `0x936c0` | `public: virtual unsigned short __thiscall Rainbow::BaseAnimationData::GetLegacyArchiveVersion(void)const ` |
+| `0x936d0` | `public: virtual unsigned short __thiscall Rainbow::MiniObject::GetLegacyArchiveVersion(void)const ` |
+| `0xbf130` | `class Rainbow::LegacyGlobalShaderParamManager * __cdecl Rainbow::GetLegacyGlobalShaderParamManager(void)` |
+| `0x7e970` | `protected: virtual class Rainbow::LegacySkinMeshRenderer * __thiscall Rainbow::Model::GetLegacySkinMeshRenderer(void)const ` |
+| `0x936e0` | `public: virtual class Rainbow::LegacySkinMeshRenderer * __thiscall Rainbow::ModelLegacy::GetLegacySkinMeshRenderer(void)const ` |
+| `0x248bc0` | `public: unsigned int __thiscall Rainbow::MiniLua::LuaTableLinker::GetLen(void)` |
+| `0x231aa0` | `public: float __thiscall Rainbow::RainbowEffectProxy::GetLengthInSec(void)const ` |
+| `0x936f0` | `public: virtual class Rainbow::MotionObjLife * __thiscall Rainbow::ObjectMotion::GetLifeCtrl(void)` |
+| `0xa0170` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetLimitFrameRate(void)` |
+| `0x110830` | `public: virtual void __thiscall Rainbow::RFontBase::GetLineInterval(float &)` |
+| `0x126250` | `public: float __thiscall Rainbow::UILib::UIRenderer::GetLineInterval(void *)` |
+| `0x12e950` | `public: char const * __thiscall Rainbow::UILib::UIObject::GetListItemName(void)const ` |
+| `0x212ce0` | `public: class Rainbow::Vector3f __thiscall Rainbow::MusicManager::GetListenerPos(void)` |
+| `0x1adec0` | `public: class Rainbow::AABB __thiscall Rainbow::ModelMeshRenderers::GetLocalAABB(void)const ` |
+| `0x1adee0` | `public: class Rainbow::AABB __thiscall Rainbow::ModelRenderer::GetLocalAABB(void)const ` |
+| `0xe8730` | `public: class Rainbow::BoxBound __thiscall Rainbow::LegacySkinMeshRenderer::GetLocalBounds(void)const ` |
+| `0x231ab0` | `public: bool __thiscall Rainbow::RainbowEffectProxy::GetLoop(void)const ` |
+| `0x249ac0` | `private: class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> __thiscall Rainbow::MiniLua::LuaValue::GetLuaFunction(void)const ` |
+| `0x248c40` | `class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> __cdecl Rainbow::MiniLua::GetLuaGlobalFunction(struct lua_State *,char const *)` |
+| `0x248cd0` | `public: struct lua_State * __thiscall Rainbow::MiniLua::LuaLinker::GetLuaState(void)const ` |
+| `0x249ac0` | `private: class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> __thiscall Rainbow::MiniLua::LuaValue::GetLuaTable(void)const ` |
+| `0xbd610` | `public: enum Rainbow::MiniLua::LuaValue::LuaValueType __thiscall Rainbow::MiniLua::LuaReturnValues::GetLuaType(int)const ` |
+| `0x281330` | `class LuaWebSocketMgr & __cdecl GetLuaWebSocketMgr(void)` |
+| `0x281330` | `class LuaWebSocketMgr * __cdecl GetLuaWebSocketMgrPtr(void)` |
+| `0xa0180` | `public: enum Rainbow::Setting::LutFilterType __thiscall Rainbow::Setting::GameConfigMgr::GetLutFilter(void)` |
+| `0x3c79b0` | `bool __cdecl MINIW::GetMachineLocation(double &,double &)` |
+| `0x130b20` | `public: class Rainbow::Model * __thiscall Rainbow::Entity::GetMainModel(void)const ` |
+| `0x93ae0` | `public: class Rainbow::Setting::GameConfiguration * __thiscall Rainbow::Setting::GameConfigMgr::GetMapCustomGameConfig(void)` |
+| `0x937f0` | `public: int __thiscall Rainbow::CloudAssetUser::GetMapId(void)const ` |
+| `0x103cb0` | `public: char const * __thiscall Rainbow::CloudAssetUser::GetMapUploadUrl(bool)` |
+| `0x110840` | `protected: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall Rainbow::RFontBase::GetMaterial1(int)` |
+| `0x110a00` | `protected: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall Rainbow::RFontBase::GetMaterial3D(int,bool,enum Rainbow::CullMode,unsigned char)` |
+| `0x183680` | `private: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall Rainbow::UILib::UITexture::GetMaterial(void)` |
+| `0x93700` | `public: class Rainbow::FixedString const & __thiscall Rainbow::SubMeshData::GetMaterialName(void)const ` |
+| `0xa0190` | `public: enum Rainbow::Setting::MaterialQuality __thiscall Rainbow::Setting::GameConfigMgr::GetMaterialQuality(void)` |
+| `0x93a10` | `protected: int __thiscall Rainbow::RFontBase::GetMaxCacheSize(void)` |
+| `0x93710` | `public: float __thiscall Rainbow::UILib::FrameManager::GetMaxScaleXY(void)const ` |
+| `0x9a3d0` | `public: struct Rainbow::DecalMeshData & __thiscall Rainbow::DecalRenderer::GetMeshData(void)` |
+| `0x126270` | `public: struct dynamic_array<struct Rainbow::OgreCommon3DMeshData,0> const & __thiscall Rainbow::LegacyCommon3DUI::GetMeshData(void)const ` |
+| `0x9a6d0` | `public: struct dynamic_array<class Rainbow::MeshInstance *,0> & __thiscall Rainbow::LegacySkinMeshRenderer::GetMeshInstances(void)` |
+| `0x101720` | `private: static void __cdecl Rainbow::CloudAssetLoader::GetMetaRequestDone(bool,class Rainbow::Http::WebRequest *)` |
+| `0x27a190` | `class Rainbow::MiniGlobalEvent & __cdecl Rainbow::GetMiniGlobalEvent(void)` |
+| `0x27a190` | `class Rainbow::MiniGlobalEvent * __cdecl Rainbow::GetMiniGlobalEventPtr(void)` |
+| `0x103e40` | `public: int __thiscall Rainbow::CloudAssetUser::GetMiniId(void)` |
+| `0x3295c0` | `class fairygui::MiniUIGameEventMgr & __cdecl fairygui::GetMiniUIGameEventMgr(void)` |
+| `0x2105a0` | `class Rainbow::MobileCameraRenderer & __cdecl Rainbow::GetMobileCameraRenderer(void)` |
+| `0x8a250` | `void __cdecl MINIW::GetMobileCurLocationState(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetMobilePhoneInfo(void)` |
+| `0x1cf5b0` | `public: virtual class Rainbow::IModelAnimationPlayer * __thiscall Rainbow::ModelLegacy::GetModelAnimationPlayer(void)` |
+| `0x1cf5b0` | `public: virtual class Rainbow::IModelAnimationPlayer * __thiscall Rainbow::ModelNew::GetModelAnimationPlayer(void)` |
+| `0xe87d0` | `public: class Rainbow::ModelData * __thiscall Rainbow::LegacySkinMeshRenderer::GetModelData(void)const ` |
+| `0x93720` | `public: virtual class Rainbow::SharePtr<class Rainbow::ModelData> __thiscall Rainbow::Model::GetModelData(void)` |
+| `0x93740` | `public: virtual class Rainbow::SharePtr<class Rainbow::ModelData> __thiscall Rainbow::ModelLegacy::GetModelData(void)` |
+| `0x1cf5c0` | `public: virtual class Rainbow::IModelMeshRenderer * __thiscall Rainbow::ModelLegacy::GetModelMeshRenderer(class Rainbow::FixedString const &)` |
+| `0x1cf5d0` | `public: virtual class Rainbow::IModelMeshRenderer * __thiscall Rainbow::ModelNew::GetModelMeshRenderer(class Rainbow::FixedString const &)` |
+| `0x1cf5e0` | `public: virtual int __thiscall Rainbow::ModelLegacy::GetModelMeshRendererNum(void)` |
+| `0x1cf600` | `public: virtual int __thiscall Rainbow::ModelNew::GetModelMeshRendererNum(void)` |
+| `0xa01a0` | `public: enum Rainbow::Setting::ModelQuality __thiscall Rainbow::Setting::GameConfigMgr::GetModelQuality(void)` |
+| `0x1adf00` | `public: struct dynamic_array<class Rainbow::ModelMeshRenderers *,0> & __thiscall Rainbow::ModelRenderer::GetModelmeshRederers(void)` |
+| `0x1adf10` | `public: struct dynamic_array<class Rainbow::Renderer *,0> __thiscall Rainbow::ModelMeshRenderers::GetModelmeshRenderders(void)` |
+| `0x99870` | `public: int __thiscall Rainbow::RainbowEffectProxy::GetMotionClass(void)` |
+| `0x130b50` | `public: unsigned int __thiscall Rainbow::Entity::GetMotionCount(void)` |
+| `0x1b7130` | `public: char const * __thiscall Rainbow::Entity::GetMotionNameByIndex(int,int)` |
+| `0x1b71b0` | `public: class Rainbow::Vector3f __thiscall Rainbow::Entity::GetMotionScale(char const *)` |
+| `0x93770` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const __thiscall Rainbow::UILib::UIRenderer::GetMultiLocalFontsPath(void)` |
+| `0x212d20` | `class Rainbow::MusicManager & __cdecl Rainbow::GetMusicManager(void)` |
+| `0x93790` | `public: virtual char const * __thiscall Rainbow::Model::GetName(void)const ` |
+| `0x1adf30` | `public: class Rainbow::FixedString const & __thiscall Rainbow::ModelMeshRenderers::GetName(void)` |
+| `0x937a0` | `public: virtual char const * __thiscall Rainbow::SubMeshData::GetName(void)const ` |
+| `0x12e960` | `public: char const * __thiscall Rainbow::UILib::UIObject::GetName(void)const ` |
+| `0x2b7d00` | `public: float __thiscall Rainbow::HudSetting::GetNearFarDistance(void)` |
+| `0x2c6b30` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::GetNeedNotifyMapCustomConfig(void)` |
+| `0x3c79d0` | `int __cdecl MINIW::GetNetworkCardState(void)` |
+| `0x934c0` | `int __cdecl MINIW::GetNetworkState(void)` |
+| `0x1cf6a0` | `public: class Rainbow::ModelMeshRenderers * __thiscall Rainbow::ModelNew::GetNewIthSkin(unsigned int)` |
+| `0x1cf750` | `public: class Rainbow::ModelMeshRenderers * __thiscall Rainbow::ModelNew::GetNewSubmesh(class Rainbow::FixedString const &)` |
+| `0x937b0` | `public: struct Rainbow::UILib::NineSquare * __thiscall Rainbow::UILib::UITexture::GetNineSquare(void)const ` |
+| `0x126270` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> const & __thiscall Rainbow::UILib::UIRenderer::GetNullTexture(void)const ` |
+| `0x937c0` | `public: unsigned int __thiscall Rainbow::ModelData::GetNumAnim(void)` |
+| `0x937f0` | `public: int __thiscall MINIW::CSVParser::GetNumCols(void)` |
+| `0x3c7a70` | `unsigned int __cdecl MINIW::GetNumDisplayMode(void)` |
+| `0x93a10` | `public: int __thiscall MINIW::CSVParser::GetNumLines(void)` |
+| `0x145980` | `public: int __thiscall Rainbow::UILib::Frame::GetNumRegions(void)` |
+| `0x1cf840` | `public: virtual unsigned int __thiscall Rainbow::ModelLegacy::GetNumSkin(void)` |
+| `0x1cf850` | `public: virtual unsigned int __thiscall Rainbow::ModelNew::GetNumSkin(void)` |
+| `0xe68d0` | `public: unsigned int __thiscall Rainbow::ModelRenderer::GetNumSkin(void)` |
+| `0x3c7a90` | `void __cdecl MINIW::GetOpenFile(char const *,char const *,char const *,char *)` |
+| `0x3c7c20` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetOperatorAndNetworkType(void)` |
+| `0x1b7340` | `public: int __thiscall Rainbow::Entity::GetOrAddAnchor(class Rainbow::FixedString const &)` |
+| `0x183770` | `public: struct Rainbow::UILib::NineSquare * __thiscall Rainbow::UILib::UITexture::GetOrCreateNineSquare(void)` |
+| `0x225d70` | `public: static class Rainbow::WorldPos __cdecl Rainbow::WorldPos::GetOriginPos(void)` |
+| `0x1cf870` | `public: virtual bool __thiscall Rainbow::ModelLegacy::GetOutline(void)const ` |
+| `0x1cf880` | `public: virtual bool __thiscall Rainbow::ModelNew::GetOutline(void)const ` |
+| `0x1adf40` | `public: bool __thiscall Rainbow::ModelRenderer::GetOutline(void)const ` |
+| `0x934b0` | `public: virtual class Rainbow::ObjectMotion * __thiscall Rainbow::BindOjbect2Motion::GetParent(void)` |
+| `0x15ad20` | `public: char const * __thiscall Rainbow::UILib::LayoutFrame::GetParent(void)const ` |
+| `0x7e970` | `public: virtual class Rainbow::ObjectMotion * __thiscall Rainbow::ObjectMotion::GetParent(void)` |
+| `0x937d0` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::LayoutFrame::GetParentFrame(void)` |
+| `0x937d0` | `public: class Rainbow::UILib::Frame const * __thiscall Rainbow::UILib::LayoutFrame::GetParentFrame(void)const ` |
+| `0x139700` | `public: char const * __thiscall Rainbow::UILib::EditBox::GetPassWord(void)` |
+| `0x937e0` | `public: class Rainbow::GameObject * __thiscall Rainbow::MovableObject::GetPickOwner(void)` |
+| `0x937f0` | `public: unsigned int __thiscall Rainbow::MovableObject::GetPickType(void)` |
+| `0xc4b40` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::GameSetting::GetPkgsVersionStr(void)` |
+| `0x93800` | `public: class std::vector<class Rainbow::AnimPlayTrack *,class std::allocator<class Rainbow::AnimPlayTrack *> > & __thiscall Rainbow::AnimationPlayer::GetPlayerTracks(void)` |
+| `0x93810` | `public: int __thiscall Rainbow::DebugMgr::GetPocoTestPort(void)` |
+| `0x15ad70` | `public: char const * __thiscall Rainbow::UILib::LayoutFrame::GetPoint(int)` |
+| `0x16d460` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::GetPosChar(int,int)` |
+| `0x93820` | `public: class Rainbow::WorldPos const __thiscall Rainbow::MovableObject::GetPosition(void)const ` |
+| `0x1a6e00` | `public: class Rainbow::SharePtr<class Rainbow::Prefab> __thiscall Rainbow::RainbowEffectProxy::GetPrefab(void)` |
+| `0x99c40` | `public: struct Rainbow::PrimitiveRenderData const & __thiscall Rainbow::ParticleNode::GetPrimitiveRenderData(void)const ` |
+| `0x99a80` | `public: struct Rainbow::PrimitiveRenderData const & __thiscall Rainbow::TerrainDecalEffect::GetPrimitiveRenderData(void)const ` |
+| `0xf5510` | `public: virtual int __thiscall Rainbow::Http::MiniBreakResumeUpload::GetPriority(void)const ` |
+| `0xf5520` | `public: virtual int __thiscall Rainbow::Http::MiniCustomUpload::GetPriority(void)const ` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::Http::MiniUpload::GetPriority(void)const ` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::MobileCameraRenderer::GetPriority(void)const ` |
+| `0x3c7c90` | `int __cdecl MINIW::GetProcessUsedMemory(void)` |
+| `0x286d70` | `public: int __thiscall Rainbow::Http::MiniCustomUpload::GetProgress(void)const ` |
+| `0x289fa0` | `public: int __thiscall Rainbow::Http::MiniUpload::GetProgress(void)const ` |
+| `0x130b60` | `public: virtual void __thiscall Rainbow::UILib::CoordInteract::GetProjectionMatrix(class Rainbow::Matrix4x4f &)` |
+| `0x29d540` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::Cef3Manager::GetQQOrWeChatLoginedReuslt(void)` |
+| `0x9a180` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::Cef3Manager::GetQQOrWechaBindedResult(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetQQUserInfo(void)` |
+| `0x93880` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::AnimationData::GetRTTI(void)const ` |
+| `0x93890` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::AnimationPlayer::GetRTTI(void)const ` |
+| `0x938a0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::BSPData::GetRTTI(void)const ` |
+| `0x938b0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::BaseAnimationData::GetRTTI(void)const ` |
+| `0x20d000` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::BillboardMeshBatch::GetRTTI(void)const ` |
+| `0xd6de0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::BoneTrack::GetRTTI(void)const ` |
+| `0x257430` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Empty3DUIRenderer::GetRTTI(void)const ` |
+| `0x130bd0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Entity::GetRTTI(void)const ` |
+| `0x938c0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::EntityData::GetRTTI(void)const ` |
+| `0x236160` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::GifAsset::GetRTTI(void)const ` |
+| `0x2581d0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Image3D::GetRTTI(void)const ` |
+| `0x259a20` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ImageBoard3D::GetRTTI(void)const ` |
+| `0xd2270` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::IndexData::GetRTTI(void)const ` |
+| `0x25ba90` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ItemImage3D::GetRTTI(void)const ` |
+| `0x938d0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::LegacyAsset::GetRTTI(void)const ` |
+| `0x255f60` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::LegacyCommon3DUI::GetRTTI(void)const ` |
+| `0xd5920` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::LegacySkinMeshRenderer::GetRTTI(void)const ` |
+| `0x938e0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::MeshData::GetRTTI(void)const ` |
+| `0x938f0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::MiniObject::GetRTTI(void)const ` |
+| `0x93900` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Model::GetRTTI(void)const ` |
+| `0x1a93c0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ModelAnimationPlayer::GetRTTI(void)const ` |
+| `0x93910` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ModelData::GetRTTI(void)const ` |
+| `0x93920` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ModelLegacy::GetRTTI(void)const ` |
+| `0x93930` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ModelNew::GetRTTI(void)const ` |
+| `0x1adf50` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ModelRenderer::GetRTTI(void)const ` |
+| `0x93940` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::MovableObject::GetRTTI(void)const ` |
+| `0x255f70` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::MusicClubChatBubble3D::GetRTTI(void)const ` |
+| `0x2640c0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::NameText3D::GetRTTI(void)const ` |
+| `0x265bb0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::NormalText3D::GetRTTI(void)const ` |
+| `0xd2280` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::OgreVertexData::GetRTTI(void)const ` |
+| `0x25db20` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::OnlyText3D::GetRTTI(void)const ` |
+| `0x2675d0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ProgressBarIn3D::GetRTTI(void)const ` |
+| `0x268ed0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ProgressBarWithText3D::GetRTTI(void)const ` |
+| `0x1a6e20` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::RainbowEffectProxy::GetRTTI(void)const ` |
+| `0x93950` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::RefObjectNoName::GetRTTI(void)const ` |
+| `0x2544e0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::ShadowFace::GetRTTI(void)const ` |
+| `0xd5930` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::SkeletonComponent::GetRTTI(void)const ` |
+| `0x93960` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::SkeletonData::GetRTTI(void)const ` |
+| `0x93970` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::SkinAnimContainer::GetRTTI(void)const ` |
+| `0x93980` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::SkinPatch::GetRTTI(void)const ` |
+| `0x26bf90` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::StoveProgressBar3D::GetRTTI(void)const ` |
+| `0x93990` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::SubMeshData::GetRTTI(void)const ` |
+| `0x2773d0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::TerrainDecalEffect::GetRTTI(void)const ` |
+| `0x255f80` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Text3D::GetRTTI(void)const ` |
+| `0x255f90` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::TextBoardIn3D::GetRTTI(void)const ` |
+| `0x2722b0` | `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Voice3D::GetRTTI(void)const ` |
+| `0x16d5c0` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::GetRawString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,int,int)` |
+| `0x15ae20` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealBottom(void)` |
+| `0x15ae60` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealHeight2(void)` |
+| `0x99840` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealHeight(void)` |
+| `0x15aed0` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealLeft(void)` |
+| `0x1ff5f0` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileManagerWeb::GetRealMd5Path(class core::basic_string<char,class core::StringStorageDefault<char> >,int)` |
+| `0x15af10` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealRight(void)` |
+| `0xa01b0` | `public: enum Rainbow::Setting::ShadowType __thiscall Rainbow::Setting::GameConfigMgr::GetRealTimeShadows(void)` |
+| `0x15af50` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealTop(void)` |
+| `0x15af90` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealWidth2(void)` |
+| `0x9a290` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRealWidth(void)` |
+| `0x236170` | `public: virtual class Rainbow::SharePtr<class Rainbow::Asset> __thiscall Rainbow::GifSequenceTexture::GetRefAsset(void)` |
+| `0x937e0` | `public: int __thiscall Rainbow::RefObjectNoName::GetRefCount(void)const ` |
+| `0x15b000` | `public: char const * __thiscall Rainbow::UILib::LayoutFrame::GetRelativePoint(int)` |
+| `0xf99e0` | `class Rainbow::RemoteAssetsManager & __cdecl Rainbow::GetRemoteAssetsManager(void)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::Empty3DUIRenderer::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x2581e0` | `public: virtual void __thiscall Rainbow::Image3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x259a30` | `public: virtual void __thiscall Rainbow::ImageBoard3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x25baa0` | `public: virtual void __thiscall Rainbow::ItemImage3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x25f500` | `public: virtual void __thiscall Rainbow::MusicClubChatBubble3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x2640d0` | `public: virtual void __thiscall Rainbow::NameText3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x265bc0` | `public: virtual void __thiscall Rainbow::NormalText3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x266650` | `public: virtual void __thiscall Rainbow::OnlyText3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x2675e0` | `public: virtual void __thiscall Rainbow::ProgressBarIn3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x268ee0` | `public: virtual void __thiscall Rainbow::ProgressBarWithText3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x26bfa0` | `public: virtual void __thiscall Rainbow::StoveProgressBar3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x26dd80` | `public: virtual void __thiscall Rainbow::Text3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x26f760` | `public: virtual void __thiscall Rainbow::TextBoardIn3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x271910` | `public: virtual void __thiscall Rainbow::UIIn3DSceneMerger::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::Voice3D::GetRenderBuffer(class Rainbow::RenderView const *)` |
+| `0x15b080` | `public: class cocos2d::OldUIRenderCommand * __thiscall Rainbow::UILib::LayoutFrame::GetRenderCommand(void)` |
+| `0xc2370` | `public: class Rainbow::RenderTexture * __thiscall Rainbow::SnapshotHelper::GetRenderTexture(void)` |
+| `0x939a0` | `public: class Rainbow::SharePtr<class Rainbow::RenderTextureHolder> __thiscall Rainbow::GaussBlurRenderer::GetRenderTextureHolder(void)` |
+| `0x1cfb30` | `public: class Rainbow::LegacyCommon3DUIRenderer * __thiscall Rainbow::LegacyCommon3DUI::GetRenderer(void)` |
+| `0xedb90` | `public: class Rainbow::RemoteAssetLocalCache & __thiscall Rainbow::RemoteAssetsManager::GetResCache(void)` |
+| `0xa01c0` | `public: char const * __thiscall Rainbow::ZipAssetLoader<1,1>::GetResFileName(void)` |
+| `0xa01c0` | `public: char const * __thiscall Rainbow::ZipAssetLoader<1,0>::GetResFileName(void)` |
+| `0xa01c0` | `public: char const * __thiscall Rainbow::ZipAssetLoader<0,1>::GetResFileName(void)` |
+| `0xa01c0` | `public: char const * __thiscall Rainbow::ZipAssetLoader<0,0>::GetResFileName(void)` |
+| `0x1b7380` | `public: class Rainbow::FixedString __thiscall Rainbow::Entity::GetResPath(void)` |
+| `0x2361b0` | `public: virtual class Rainbow::FixedString __thiscall Rainbow::GifSequenceTexture::GetResPath(void)` |
+| `0x103e70` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::CloudAssetUser::GetResShopHttpHostUrl(bool,bool)` |
+| `0x934c0` | `public: virtual enum Rainbow::SequenceTexture::ResType __thiscall Rainbow::GifSequenceTexture::GetResType(void)` |
+| `0xa01d0` | `public: enum Rainbow::Setting::ResolutionLevel __thiscall Rainbow::Setting::GameConfigMgr::GetResolutionLevel(void)` |
+| `0x283b00` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::MiniBreakResumeUpload::GetResponse(void)const ` |
+| `0x286dc0` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::MiniCustomUpload::GetResponse(void)const ` |
+| `0x289ff0` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::MiniUpload::GetResponse(void)const ` |
+| `0x936f0` | `public: unsigned int __thiscall Rainbow::MiniLua::LuaReturnValues::GetResultNum(void)const ` |
+| `0x2536d0` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,int &)const ` |
+| `0x253710` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,float &)const ` |
+| `0x253750` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,double &)const ` |
+| `0x2537a0` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,void * &)const ` |
+| `0x2537e0` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)const ` |
+| `0x253830` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,__int64 &)const ` |
+| `0x253880` | `public: void __thiscall MINIW::LuaCallHelper::GetRet(int,bool &)const ` |
+| `0x15b110` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetRight(void)` |
+| `0x14e210` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::FrameManager::GetRootFrame(class Rainbow::UILib::Frame *)const ` |
+| `0x130be0` | `public: float __thiscall Rainbow::UILib::CCoord::GetRotateTrans(float,float,enum Rainbow::UILib::COOR_ARROW,float,float)` |
+| `0x115ff0` | `public: class Rainbow::Quaternionf & __thiscall CoordAxis::GetRotation(void)` |
+| `0x939c0` | `public: class Rainbow::Quaternionf __thiscall Rainbow::MovableObject::GetRotation(void)const ` |
+| `0x3c7cd0` | `void __cdecl MINIW::GetRuntimeSysInfo(struct MINIW::RuntimeSysInfo &)` |
+| `0xf5530` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::CloudAssetUser::GetS2(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSHA512String(char const *)` |
+| `0xa01e0` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::GetSSAO(void)` |
+| `0x939e0` | `public: class Rainbow::TRect<int> const & __thiscall GameUI::GetSafeArea(void)const ` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::IClientInfo::GetSandBoxVersion(void)` |
+| `0x13fe10` | `public: float __thiscall Rainbow::UILib::FontString::GetScale(void)` |
+| `0x939f0` | `public: class Rainbow::Vector3f __thiscall Rainbow::MovableObject::GetScale(void)const ` |
+| `0x93a10` | `public: void * __thiscall Rainbow::MovableObject::GetSceneContainer(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSchemeJson(void)` |
+| `0x3c8200` | `float __cdecl MINIW::GetScreenDpi(void)` |
+| `0x93a20` | `public: int __thiscall Rainbow::UILib::FrameManager::GetScreenEdge(void)const ` |
+| `0x93a30` | `public: int __thiscall Rainbow::UILib::FrameManager::GetScreenHeight(void)const ` |
+| `0x177990` | `int __cdecl Rainbow::UILib::GetScreenHeight(void)` |
+| `0x3c82f0` | `void __cdecl MINIW::GetScreenMode(bool,int &,int &)` |
+| `0x93a40` | `public: float __thiscall Rainbow::UILib::FrameManager::GetScreenScale(void)const ` |
+| `0x93a60` | `public: float __thiscall Rainbow::UILib::FrameManager::GetScreenScaleX(void)const ` |
+| `0x93a70` | `public: float __thiscall Rainbow::UILib::FrameManager::GetScreenScaleY(void)const ` |
+| `0x14e290` | `public: float __thiscall Rainbow::UILib::FrameManager::GetScreenUIScale(void)const ` |
+| `0x1779a0` | `float __cdecl Rainbow::UILib::GetScreenUIScale(void)` |
+| `0x177a20` | `float __cdecl Rainbow::UILib::GetScreenUIScaleX(void)` |
+| `0x177a50` | `float __cdecl Rainbow::UILib::GetScreenUIScaleY(void)` |
+| `0x935a0` | `public: int __thiscall Rainbow::UILib::FrameManager::GetScreenWidth(void)const ` |
+| `0x177a80` | `int __cdecl Rainbow::UILib::GetScreenWidth(void)` |
+| `0x29d560` | `public: virtual char const * __thiscall MINIW::Cef3Manager::GetScriptContent(void)` |
+| `0x29d5a0` | `public: virtual char const * __thiscall MINIW::Cef3Manager::GetScriptCursor(void)` |
+| `0x12e970` | `char const * __cdecl Rainbow::UILib::GetScriptEventName(int)` |
+| `0x145990` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::Frame::GetScrollableParentFrame(void)const ` |
+| `0x139830` | `public: int __thiscall Rainbow::UILib::EditBox::GetSelctTexLen(void)` |
+| `0x93a80` | `public: float __thiscall Rainbow::UILib::LayoutFrame::GetSelfScale(void)` |
+| `0x1a76e0` | `class Rainbow::SequenceMap & __cdecl Rainbow::GetSequenceMap(void)` |
+| `0x2a9880` | `public: virtual __int64 __thiscall Rainbow::IClientInfo::GetServerAppID(void)` |
+| `0x104140` | `public: __int64 __thiscall Rainbow::CloudAssetUser::GetServerToken(void)` |
+| `0x2c6b40` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetSettingQualityValueByDevice(char const *)` |
+| `0xa01f0` | `public: struct Rainbow::Setting::ShadowSettingCfg const & __thiscall Rainbow::Setting::GameConfigMgr::GetShadowCfg(void)` |
+| `0x2919d0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSharedCountry(bool)` |
+| `0x291a60` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSharedCountryIp(void)` |
+| `0x291a80` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSharedCountryOs(void)` |
+| `0x291aa0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSharedLanguage(void)` |
+| `0x291ac0` | `int __cdecl MINIW::GetSharedLanguageID(void)` |
+| `0x291ad0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetSharedLanguageOs(void)` |
+| `0x93a90` | `public: class Rainbow::LegacySharedMeshData * __thiscall Rainbow::SubMeshData::GetSharedMeshData(void)` |
+| `0x274960` | `char const * __cdecl Rainbow::PkgUtils::GetShopDataMd5(unsigned int)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetShouQParams(void)` |
+| `0x1adf60` | `public: bool __thiscall Rainbow::ModelMeshRenderers::GetShow(void)` |
+| `0x15b120` | `public: class Rainbow::UILib::LayoutDim __thiscall Rainbow::UILib::LayoutFrame::GetSize(void)` |
+| `0x1a93d0` | `public: class Rainbow::SkeletonAnimation * __thiscall Rainbow::ModelAnimationPlayer::GetSkeletonAnimation(void)` |
+| `0x126280` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::UIRenderer::GetSkinTexture(char const *)` |
+| `0x93aa0` | `public: class Rainbow::ModelRenderer * __thiscall Rainbow::ModelNew::GetSkinmeshRenderder(void)const ` |
+| `0x1adf70` | `public: class Rainbow::SkinnedSkeleton * __thiscall Rainbow::ModelRenderer::GetSkinnedSkeleton(void)` |
+| `0x256180` | `public: float __thiscall Rainbow::LegacyCommon3DUI::GetSlopeScaled(void)const ` |
+| `0x93ab0` | `public: virtual int __thiscall Rainbow::ObjectMotion::GetState(void)` |
+| `0x1a93f0` | `public: class Rainbow::SharePtr<class Rainbow::Motion> __thiscall Rainbow::ModelAnimationPlayer::GetStateClip(int)` |
+| `0x2a9740` | `class MINIW::StatisticRainforestInterface * __cdecl MINIW::GetStatisticRainforestInterfacePtr(void)` |
+| `0x298150` | `public: char const * __thiscall MINIW::CSVParser::GetString(int,int)const ` |
+| `0x2981a0` | `public: char const * __thiscall MINIW::CSVParser::GetString(int,char const *)const ` |
+| `0x2982f0` | `public: char const * __thiscall MINIW::CSVParser::GetString(char const *,char const *)const ` |
+| `0x93ac0` | `public: class Rainbow::SubMeshData const & __thiscall Rainbow::MeshData::GetSubMesh(unsigned int)const ` |
+| `0x93ad0` | `public: unsigned int __thiscall Rainbow::MeshData::GetSubMeshCount(void)` |
+| `0x93ae0` | `public: class Rainbow::SubMeshData const * __thiscall Rainbow::SubMeshInstance::GetSubMeshData(void)` |
+| `0xd2290` | `public: virtual class Rainbow::MaterialInstance * __thiscall Rainbow::MeshInstance::GetSubMeshInstMaterial(int)` |
+| `0x1adf80` | `public: virtual class Rainbow::MaterialInstance * __thiscall Rainbow::ModelMeshRenderers::GetSubMeshInstMaterial(int)` |
+| `0xd22c0` | `public: virtual class Rainbow::MaterialInstance * __thiscall Rainbow::MeshInstance::GetSubMeshMaterial(int)` |
+| `0x1adf90` | `public: virtual class Rainbow::MaterialInstance * __thiscall Rainbow::ModelMeshRenderers::GetSubMeshMaterial(int)` |
+| `0x93af0` | `public: virtual int __thiscall Rainbow::MeshInstance::GetSubMeshNum(void)` |
+| `0x937f0` | `public: virtual int __thiscall Rainbow::ModelMeshRenderers::GetSubMeshNum(void)` |
+| `0x1cf8a0` | `public: class Rainbow::MeshInstance * __thiscall Rainbow::ModelLegacy::GetSubmesh(class Rainbow::FixedString const &)` |
+| `0x1ae080` | `public: class Rainbow::ModelMeshRenderers * __thiscall Rainbow::ModelRenderer::GetSubmesh(class Rainbow::FixedString const &)` |
+| `0x93b00` | `public: class Rainbow::ShaderPropertySheet const & __thiscall Rainbow::SubMeshInstance::GetSubmeshProperty(unsigned int)const ` |
+| `0x1ae0d0` | `public: struct dynamic_array<class Rainbow::Renderer *,0> __thiscall Rainbow::ModelMeshRenderers::GetSubmeshs(int)` |
+| `0xbd630` | `public: float __thiscall Rainbow::DebugMgr::GetTPSCameraDistanceOffset(void)` |
+| `0xe4070` | `public: void __thiscall Rainbow::SkeletonData::GetTPoseData(struct dynamic_array<class Rainbow::Matrix4x4f,0> * &,struct dynamic_array<unsigned int,0> * &)` |
+| `0x2538c0` | `public: class MINIW::LuaTableBuilder & __thiscall MINIW::LuaCallHelper::GetTableBuilder(enum MINIW::LuaTableBuilder::PushType)` |
+| `0x253a30` | `private: bool __thiscall MINIW::LuaCallHelper::GetTableValue(struct lua_State *,char const *,struct lua_TValue *,bool)` |
+| `0x93b30` | `public: class Rainbow::Vector3f __thiscall Rainbow::ObjectMotion::GetTarget(void)` |
+| `0xc5000` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::GameSetting::GetTargetPkgsVersionStr(void)` |
+| `0x2004b0` | `public: struct Rainbow::TexInfo * __thiscall Rainbow::FileManagerWeb::GetTexInfo(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x93b50` | `public: class Rainbow::TRect<int> const & __thiscall Rainbow::UILib::UITexture::GetTexUV(void)const ` |
+| `0x139850` | `public: char const * __thiscall Rainbow::UILib::EditBox::GetText(void)` |
+| `0x13fe20` | `public: char const * __thiscall Rainbow::UILib::FontString::GetText(void)` |
+| `0x16d6a0` | `public: char const * __thiscall Rainbow::UILib::MultiEditBox::GetText(void)` |
+| `0x194600` | `public: char const * __thiscall Rainbow::UILib::WebFrame::GetText(void)` |
+| `0x13fe40` | `public: unsigned int __thiscall Rainbow::UILib::FontString::GetTextColor(void)` |
+| `0x110bf0` | `public: virtual void __thiscall Rainbow::RFontBase::GetTextExtent(char const *,float &,float &,bool)` |
+| `0x110d70` | `public: virtual void __thiscall Rainbow::RFontBase::GetTextExtent(wchar_t const *,float &,float &,bool)` |
+| `0x1262b0` | `public: void __thiscall Rainbow::UILib::UIRenderer::GetTextExtent(void *,char const *,float &,float &,bool)` |
+| `0x13fe50` | `public: int __thiscall Rainbow::UILib::FontString::GetTextExtentFitInWidth(char const *,int,bool,int)` |
+| `0x110df0` | `public: virtual void __thiscall Rainbow::RFontBase::GetTextExtentFitInWidth(char const *,float,float &,int &,bool,bool,int)` |
+| `0x1262e0` | `public: void __thiscall Rainbow::UILib::UIRenderer::GetTextExtentFitInWidth(void *,char const *,float,float &,int &,bool,int)` |
+| `0x13feb0` | `public: int __thiscall Rainbow::UILib::FontString::GetTextExtentHeight(char const *)` |
+| `0x15b140` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetTextExtentHeight(char const *)` |
+| `0x139970` | `public: int __thiscall Rainbow::UILib::EditBox::GetTextExtentWidth(char const *)` |
+| `0x13ff10` | `public: int __thiscall Rainbow::UILib::FontString::GetTextExtentWidth(char const *)` |
+| `0x15b190` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetTextExtentWidth(char const *)` |
+| `0x110fa0` | `public: virtual void __thiscall Rainbow::RFontBase::GetTextExtentWithoutPound(char const *,float &,float &,bool)` |
+| `0x126320` | `public: void __thiscall Rainbow::UILib::UIRenderer::GetTextExtentWithoutPound(void *,char const *,float &,float &,bool)` |
+| `0xd2300` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::MeshInstance::GetTexture(struct Rainbow::ShaderLab::FastPropertyName const &)` |
+| `0x1ae140` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::ModelMeshRenderers::GetTexture(struct Rainbow::ShaderLab::FastPropertyName const &)` |
+| `0x126350` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::UIRenderer::GetTexture(char const *)` |
+| `0x2361e0` | `public: virtual bool __thiscall Rainbow::GifSequenceTexture::GetTextureByTick(float,class Rainbow::SharePtr<class Rainbow::Texture2D> &)` |
+| `0x113ff0` | `public: virtual bool __thiscall Rainbow::SequenceTexture::GetTextureByTick(float,class Rainbow::SharePtr<class Rainbow::Texture2D> &)` |
+| `0x183870` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::UITexture::GetTextureHuires(void)const ` |
+| `0xa0200` | `public: enum Rainbow::Setting::TextureQuality __thiscall Rainbow::Setting::GameConfigMgr::GetTextureQuality(void)` |
+| `0x126370` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::UIRenderer::GetTextureRes(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x104180` | `public: __int64 __thiscall Rainbow::CloudAssetUser::GetTime(void)` |
+| `0x9a0b0` | `public: int __thiscall MINIW::WebSocketSvr::GetTimeOutSeconds(void)` |
+| `0x3c83c0` | `unsigned int __cdecl MINIW::GetTimeStamp(void)` |
+| `0x3c83e0` | `unsigned __int64 __cdecl MINIW::GetTimeStampMS(void)` |
+| `0x3c8480` | `int __cdecl MINIW::GetTimeZoneStamp(void)` |
+| `0x2bd6d0` | `public: class Rainbow::HUDTitleInfo * __thiscall Rainbow::HUDTitleRender::GetTitle(int)` |
+| `0x2bd1a0` | `public: class Rainbow::HudTitleAttribute const & __thiscall Rainbow::HudTitleLabelSet::GetTitle(int)` |
+| `0xe68d0` | `public: int __thiscall MINIW::CSVParser::GetTitleCol(void)` |
+| `0x294180` | `public: int __thiscall MINIW::CSVParser::GetTitleLine(void)` |
+| `0x15b1e0` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetTop(void)` |
+| `0xe87d0` | `public: int __thiscall Rainbow::GifAsset::GetTotalDuration(void)` |
+| `0x9a330` | `public: int __thiscall Rainbow::Downloader::GetTotalSize(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetTraceRouteInfo(char const *)` |
+| `0x131130` | `public: virtual float __thiscall Rainbow::UILib::CCoord::GetTrans(float,float,enum Rainbow::UILib::COOR_ARROW)` |
+| `0x116000` | `public: float __thiscall CoordAxis::GetTrans(float,float,enum ARROWTYPE)` |
+| `0x93b60` | `public: float __thiscall Rainbow::MovableObject::GetTransparent(void)const ` |
+| `0x936f0` | `public: enum Rainbow::MiniLua::LuaValue::LuaValueType __thiscall Rainbow::MiniLua::LuaValue::GetType(void)const ` |
+| `0x93bb0` | `public: virtual unsigned int __thiscall Rainbow::AnimationData::GetTypeId(void)const ` |
+| `0x93bc0` | `public: virtual unsigned int __thiscall Rainbow::AnimationPlayer::GetTypeId(void)const ` |
+| `0x93bd0` | `public: virtual unsigned int __thiscall Rainbow::BSPData::GetTypeId(void)const ` |
+| `0x93be0` | `public: virtual unsigned int __thiscall Rainbow::BaseAnimationData::GetTypeId(void)const ` |
+| `0x20d010` | `public: virtual unsigned int __thiscall Rainbow::BillboardMeshBatch::GetTypeId(void)const ` |
+| `0xd6df0` | `public: virtual unsigned int __thiscall Rainbow::BoneTrack::GetTypeId(void)const ` |
+| `0x257440` | `public: virtual unsigned int __thiscall Rainbow::Empty3DUIRenderer::GetTypeId(void)const ` |
+| `0x1319d0` | `public: virtual unsigned int __thiscall Rainbow::Entity::GetTypeId(void)const ` |
+| `0x93bf0` | `public: virtual unsigned int __thiscall Rainbow::EntityData::GetTypeId(void)const ` |
+| `0x2362c0` | `public: virtual unsigned int __thiscall Rainbow::GifAsset::GetTypeId(void)const ` |
+| `0x258870` | `public: virtual unsigned int __thiscall Rainbow::Image3D::GetTypeId(void)const ` |
+| `0x25a1d0` | `public: virtual unsigned int __thiscall Rainbow::ImageBoard3D::GetTypeId(void)const ` |
+| `0xd2420` | `public: virtual unsigned int __thiscall Rainbow::IndexData::GetTypeId(void)const ` |
+| `0x25c080` | `public: virtual unsigned int __thiscall Rainbow::ItemImage3D::GetTypeId(void)const ` |
+| `0x93c00` | `public: virtual unsigned int __thiscall Rainbow::LegacyAsset::GetTypeId(void)const ` |
+| `0x2561a0` | `public: virtual unsigned int __thiscall Rainbow::LegacyCommon3DUI::GetTypeId(void)const ` |
+| `0xd5940` | `public: virtual unsigned int __thiscall Rainbow::LegacySkinMeshRenderer::GetTypeId(void)const ` |
+| `0x93c10` | `public: virtual unsigned int __thiscall Rainbow::MeshData::GetTypeId(void)const ` |
+| `0x93c20` | `public: virtual unsigned int __thiscall Rainbow::MiniObject::GetTypeId(void)const ` |
+| `0x93c30` | `public: virtual unsigned int __thiscall Rainbow::Model::GetTypeId(void)const ` |
+| `0x1a9520` | `public: virtual unsigned int __thiscall Rainbow::ModelAnimationPlayer::GetTypeId(void)const ` |
+| `0x93c40` | `public: virtual unsigned int __thiscall Rainbow::ModelData::GetTypeId(void)const ` |
+| `0x93c50` | `public: virtual unsigned int __thiscall Rainbow::ModelLegacy::GetTypeId(void)const ` |
+| `0x93c60` | `public: virtual unsigned int __thiscall Rainbow::ModelNew::GetTypeId(void)const ` |
+| `0x1ae330` | `public: virtual unsigned int __thiscall Rainbow::ModelRenderer::GetTypeId(void)const ` |
+| `0x93c70` | `public: virtual unsigned int __thiscall Rainbow::MovableObject::GetTypeId(void)const ` |
+| `0x2561b0` | `public: virtual unsigned int __thiscall Rainbow::MusicClubChatBubble3D::GetTypeId(void)const ` |
+| `0x2652c0` | `public: virtual unsigned int __thiscall Rainbow::NameText3D::GetTypeId(void)const ` |
+| `0x265f40` | `public: virtual unsigned int __thiscall Rainbow::NormalText3D::GetTypeId(void)const ` |
+| `0xd2430` | `public: virtual unsigned int __thiscall Rainbow::OgreVertexData::GetTypeId(void)const ` |
+| `0x25db30` | `public: virtual unsigned int __thiscall Rainbow::OnlyText3D::GetTypeId(void)const ` |
+| `0x2679a0` | `public: virtual unsigned int __thiscall Rainbow::ProgressBarIn3D::GetTypeId(void)const ` |
+| `0x269aa0` | `public: virtual unsigned int __thiscall Rainbow::ProgressBarWithText3D::GetTypeId(void)const ` |
+| `0x1a6e30` | `public: virtual unsigned int __thiscall Rainbow::RainbowEffectProxy::GetTypeId(void)const ` |
+| `0x93c80` | `public: virtual unsigned int __thiscall Rainbow::RefObjectNoName::GetTypeId(void)const ` |
+| `0x2544f0` | `public: virtual unsigned int __thiscall Rainbow::ShadowFace::GetTypeId(void)const ` |
+| `0xd5950` | `public: virtual unsigned int __thiscall Rainbow::SkeletonComponent::GetTypeId(void)const ` |
+| `0x93c90` | `public: virtual unsigned int __thiscall Rainbow::SkeletonData::GetTypeId(void)const ` |
+| `0x93ca0` | `public: virtual unsigned int __thiscall Rainbow::SkinAnimContainer::GetTypeId(void)const ` |
+| `0x93cb0` | `public: virtual unsigned int __thiscall Rainbow::SkinPatch::GetTypeId(void)const ` |
+| `0x26c980` | `public: virtual unsigned int __thiscall Rainbow::StoveProgressBar3D::GetTypeId(void)const ` |
+| `0x93cc0` | `public: virtual unsigned int __thiscall Rainbow::SubMeshData::GetTypeId(void)const ` |
+| `0x2773e0` | `public: virtual unsigned int __thiscall Rainbow::TerrainDecalEffect::GetTypeId(void)const ` |
+| `0x2561c0` | `public: virtual unsigned int __thiscall Rainbow::Text3D::GetTypeId(void)const ` |
+| `0x2561d0` | `public: virtual unsigned int __thiscall Rainbow::TextBoardIn3D::GetTypeId(void)const ` |
+| `0x2722c0` | `public: virtual unsigned int __thiscall Rainbow::Voice3D::GetTypeId(void)const ` |
+| `0xa0210` | `public: virtual char const * __thiscall Rainbow::UILib::CustomView::GetTypeName(void)const ` |
+| `0xa0220` | `public: virtual char const * __thiscall Rainbow::UILib::EditBox::GetTypeName(void)const ` |
+| `0xa0230` | `public: virtual char const * __thiscall Rainbow::UILib::FontString::GetTypeName(void)const ` |
+| `0x93cd0` | `public: virtual char const * __thiscall Rainbow::UILib::Frame::GetTypeName(void)const ` |
+| `0x93ce0` | `public: virtual char const * __thiscall Rainbow::UILib::LayoutFrame::GetTypeName(void)const ` |
+| `0xa0240` | `public: virtual char const * __thiscall Rainbow::UILib::ModelView::GetTypeName(void)const ` |
+| `0xa0250` | `public: virtual char const * __thiscall Rainbow::UILib::MultiEditBox::GetTypeName(void)const ` |
+| `0x93cf0` | `public: virtual char const * __thiscall Rainbow::UILib::UITexture::GetTypeName(void)const ` |
+| `0xa0260` | `public: virtual char const * __thiscall Rainbow::UILib::WebFrame::GetTypeName(void)const ` |
+| `0xa0270` | `public: static char const * __cdecl Rainbow::Setting::DeviceModel::GetTypeString(void)` |
+| `0xa0280` | `public: static char const * __cdecl Rainbow::Setting::DeviceModelData::GetTypeString(void)` |
+| `0xa0290` | `public: static char const * __cdecl Rainbow::Setting::GameConfiguration::GetTypeString(void)` |
+| `0xbd640` | `public: static char const * __cdecl Rainbow::GameSetting::GetTypeString(void)` |
+| `0xcc2e0` | `public: static char const * __cdecl Rainbow::GameUserSetting::GetTypeString(void)` |
+| `0x2b7d10` | `public: static char const * __cdecl Rainbow::HudBitMapFontAttribute::GetTypeString(void)` |
+| `0x2b7d20` | `public: static char const * __cdecl Rainbow::HudConfigSetting::GetTypeString(void)` |
+| `0x2b7d30` | `public: static char const * __cdecl Rainbow::HudFontBaseAttribute::GetTypeString(void)` |
+| `0x2b7d40` | `public: static char const * __cdecl Rainbow::HudImageAttribute::GetTypeString(void)` |
+| `0x2b7d50` | `public: static char const * __cdecl Rainbow::HudLayoutAttribute::GetTypeString(void)` |
+| `0x2b7d60` | `public: static char const * __cdecl Rainbow::HudLevBitMapFontAttribute::GetTypeString(void)` |
+| `0x2b7d70` | `public: static char const * __cdecl Rainbow::HudLevNormalFontAttribute::GetTypeString(void)` |
+| `0x2b7d80` | `public: static char const * __cdecl Rainbow::HudLevSpriteAndFontAttribute::GetTypeString(void)` |
+| `0x2b7d90` | `public: static char const * __cdecl Rainbow::HudLevSpriteAttribute::GetTypeString(void)` |
+| `0x2b7da0` | `public: static char const * __cdecl Rainbow::HudLevitationBaseAttribute::GetTypeString(void)` |
+| `0x2b7db0` | `public: static char const * __cdecl Rainbow::HudMovieClipAttribute::GetTypeString(void)` |
+| `0x2b7dc0` | `public: static char const * __cdecl Rainbow::HudNormalFontAttribute::GetTypeString(void)` |
+| `0x2b7dd0` | `public: static char const * __cdecl Rainbow::HudSpineAttribute::GetTypeString(void)` |
+| `0x2b7de0` | `public: static char const * __cdecl Rainbow::HudTitleAttribute::GetTypeString(void)` |
+| `0x2b7df0` | `public: static char const * __cdecl Rainbow::HudTitleNormalFontAttribute::GetTypeString(void)` |
+| `0x2b7e00` | `public: static char const * __cdecl Rainbow::HudTitleSpriteAttribute::GetTypeString(void)` |
+| `0x2b7e10` | `public: static char const * __cdecl Rainbow::HudTitleSpriteFontAttribute::GetTypeString(void)` |
+| `0xa02a0` | `public: static char const * __cdecl Rainbow::Setting::ShadowSettingCfg::GetTypeString(void)` |
+| `0x93d00` | `public: static char const * __cdecl Rainbow::SkinAnimContainer::GetTypeString(void)` |
+| `0x2b7e20` | `public: static char const * __cdecl Rainbow::TweenParam::GetTypeString(void)` |
+| `0xa02b0` | `public: static char const * __cdecl Rainbow::Setting::VisionConfig::GetTypeString(void)` |
+| `0x93d10` | `public: virtual float __thiscall Rainbow::Model::GetUIAutoScale(void)` |
+| `0x1cf8f0` | `public: virtual float __thiscall Rainbow::ModelLegacy::GetUIAutoScale(void)` |
+| `0x14e2f0` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::FrameManager::GetUIClientFrame(void)` |
+| `0x1f9b60` | `class Rainbow::UpDownloadManager & __cdecl Rainbow::GetUpDownloadManager(void)` |
+| `0xf5550` | `public: int __thiscall Rainbow::Http::MiniCustomUpload::GetUploadState(void)` |
+| `0xfec50` | `protected: struct Rainbow::CloudAssetNS::UploadTaskData * __thiscall Rainbow::CloudAssetNS::AssetUploadManager::GetUploadTaskData(class Rainbow::FixedString,bool &)` |
+| `0xf5560` | `public: float __thiscall Rainbow::Http::MiniBreakResumeUpload::GetUploadedPercentage(void)const ` |
+| `0x283bb0` | `protected: virtual char const * __thiscall Rainbow::Http::MiniBreakResumeUpload::GetUrl(void)` |
+| `0x286e70` | `protected: virtual char const * __thiscall Rainbow::Http::MiniCustomUpload::GetUrl(void)` |
+| `0x28a0a0` | `protected: virtual char const * __thiscall Rainbow::Http::MiniUpload::GetUrl(void)` |
+| `0x1f9b80` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::UpDownloadManager::GetUrl(void)` |
+| `0x1f9ba0` | `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::UpDownloadManager::GetUrlOptional(void)` |
+| `0xbd650` | `public: class Rainbow::MiniLua::LuaValue const & __thiscall Rainbow::MiniLua::LuaReturnValues::GetValue(int)const ` |
+| `0x248d00` | `private: void __thiscall Rainbow::MiniLua::LuaTableLinker::GetValue(class Rainbow::MiniLua::LuaValue &)const ` |
+| `0x248ea0` | `public: void __thiscall Rainbow::MiniLua::LuaTableLinker::GetValue(int,class Rainbow::MiniLua::LuaValue &)const ` |
+| `0x248f60` | `public: void __thiscall Rainbow::MiniLua::LuaTableLinker::GetValue(char const *,class Rainbow::MiniLua::LuaValue &)const ` |
+| `0x249af0` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(int &)const ` |
+| `0x249b00` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(float &)const ` |
+| `0x249b20` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(double &)const ` |
+| `0x249b40` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(void * &)const ` |
+| `0x249b40` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(char const * &)const ` |
+| `0x249b50` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(struct Rainbow::MiniLua::LuaUserType &)const ` |
+| `0x249b70` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)const ` |
+| `0x249ba0` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(class core::basic_string<char,class core::StringStorageDefault<char> > &)const ` |
+| `0x249b50` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(__int64 &)const ` |
+| `0x249b50` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(unsigned __int64 &)const ` |
+| `0x249bd0` | `private: void __thiscall Rainbow::MiniLua::LuaValue::GetValue(bool &)const ` |
+| `0x1710b0` | `public: float __thiscall Rainbow::UILib::ProgressBar::GetValue(void)` |
+| `0x249020` | `public: void __thiscall Rainbow::MiniLua::LuaTableLinker::GetValueArray(struct dynamic_array<class Rainbow::MiniLua::LuaValue,0> &)const ` |
+| `0xd2440` | `public: unsigned int __thiscall Rainbow::SubMeshInstance::GetVertexByteSize(void)` |
+| `0xe68d0` | `public: unsigned char * __thiscall Rainbow::OgreVertexData::GetVertexData(void)` |
+| `0x93d20` | `public: class Rainbow::OgreVertexData * __thiscall Rainbow::SubMeshData::GetVertexData(void)` |
+| `0xd5960` | `public: virtual float __thiscall Rainbow::LegacyMeshRenderObject::GetViewDistanceSqr(struct Rainbow::PrimitiveFrameNode const &,class Rainbow::RenderView const &)const ` |
+| `0x93d30` | `public: float __thiscall Rainbow::MovableObject::GetVisibleDistanceSqr(void)` |
+| `0xa02c0` | `public: struct Rainbow::Setting::VisionConfig const & __thiscall Rainbow::Setting::GameConfigMgr::GetVisionCfg(void)` |
+| `0x2c7090` | `public: int __thiscall Rainbow::Setting::GameConfigMgr::GetVisionDistance(void)` |
+| `0xa02d0` | `public: enum Rainbow::Setting::VisionLevel __thiscall Rainbow::Setting::GameConfigMgr::GetVisionLevel(void)` |
+| `0xa02e0` | `public: enum Rainbow::Setting::VolumetricLightType __thiscall Rainbow::Setting::GameConfigMgr::GetVolumetricLights(void)` |
+| `0xa02f0` | `public: enum Rainbow::Setting::WaterReflectionType __thiscall Rainbow::Setting::GameConfigMgr::GetWaterReflection(void)` |
+| `0xa0300` | `public: enum Rainbow::Setting::WaterSurfaceCausticsType __thiscall Rainbow::Setting::GameConfigMgr::GetWaterSurfaceCaustics(void)` |
+| `0x20ea80` | `private: float __thiscall Rainbow::GaussBlurRenderer::GetWeight(float,float)` |
+| `0x20eb20` | `private: class Rainbow::Vector2f __thiscall Rainbow::GaussBlurRenderer::GetWeightAndOffset(float,float)` |
+| `0x93d40` | `public: int __thiscall GameUI::GetWidth(void)const ` |
+| `0x15b1f0` | `public: int __thiscall Rainbow::UILib::LayoutFrame::GetWidth(void)` |
+| `0x2773f0` | `public: class Rainbow::AABB const & __thiscall Rainbow::TerrainDecalEffect::GetWorldBound(void)const ` |
+| `0x1b73b0` | `public: virtual class Rainbow::AABB __thiscall Rainbow::Entity::GetWorldBounds(void)const ` |
+| `0x1cf9c0` | `public: virtual class Rainbow::AABB __thiscall Rainbow::ModelLegacy::GetWorldBounds(void)const ` |
+| `0x1cfa30` | `public: virtual class Rainbow::AABB __thiscall Rainbow::ModelNew::GetWorldBounds(void)const ` |
+| `0x230ec0` | `public: virtual class Rainbow::AABB __thiscall Rainbow::MovableObject::GetWorldBounds(void)const ` |
+| `0x1df760` | `public: virtual class Rainbow::AABB __thiscall Rainbow::ParticleNode::GetWorldBounds(void)const ` |
+| `0x231ac0` | `public: virtual class Rainbow::AABB __thiscall Rainbow::RainbowEffectProxy::GetWorldBounds(void)const ` |
+| `0x230f10` | `public: class Rainbow::Matrix4x4f const __thiscall Rainbow::MovableObject::GetWorldMatrix(void)const ` |
+| `0x93d50` | `public: class Rainbow::Vector3f const __thiscall Rainbow::MovableObject::GetWorldPosition(void)const ` |
+| `0x1319e0` | `public: class Rainbow::Quaternionf __thiscall Rainbow::UILib::CCoord::GetWorldRotation(void)` |
+| `0x131a60` | `public: virtual void __thiscall Rainbow::UILib::CoordInteract::GetWorldToCameraMatrix(class Rainbow::Matrix4x4f &)` |
+| `0x93e60` | `public: class Rainbow::ShaderPropertySheet & __thiscall Rainbow::SubMeshInstance::GetWritableCustomProperty(void)` |
+| `0x93e70` | `public: class Rainbow::ShaderPropertySheet & __thiscall Rainbow::SubMeshInstance::GetWritableSubmeshProperty(unsigned int)` |
+| `0x937e0` | `public: class Rainbow::UILib::XMLManager & __thiscall GameUI::GetXMLManager(void)` |
+| `0x131ac0` | `public: float __thiscall Rainbow::UILib::CCoord::GetXTrans(float,float)` |
+| `0x1168b0` | `public: float __thiscall CoordAxis::GetXTrans(float,float)` |
+| `0x131af0` | `public: float __thiscall Rainbow::UILib::CCoord::GetYTrans(float,float)` |
+| `0x1168e0` | `public: float __thiscall CoordAxis::GetYTrans(float,float)` |
+| `0x131b20` | `public: float __thiscall Rainbow::UILib::CCoord::GetZTrans(float,float)` |
+| `0x116910` | `public: float __thiscall CoordAxis::GetZTrans(float,float)` |
+| `0xa0310` | `public: class Rainbow::SharePtr<class Rainbow::ZipFilePkg> __thiscall Rainbow::ZipAssetLoader<1,1>::GetZipFilePkg(void)` |
+| `0xa0310` | `public: class Rainbow::SharePtr<class Rainbow::ZipFilePkg> __thiscall Rainbow::ZipAssetLoader<1,0>::GetZipFilePkg(void)` |
+| `0xa0310` | `public: class Rainbow::SharePtr<class Rainbow::ZipFilePkg> __thiscall Rainbow::ZipAssetLoader<0,1>::GetZipFilePkg(void)` |
+| `0xa0310` | `public: class Rainbow::SharePtr<class Rainbow::ZipFilePkg> __thiscall Rainbow::ZipAssetLoader<0,0>::GetZipFilePkg(void)` |
+| `0x1cfb30` | `public: virtual class Rainbow::SkinnedSkeleton * __thiscall Rainbow::ModelLegacy::GetskinnedSkeleton(void)` |
+| `0x1cfb30` | `public: virtual class Rainbow::SkinnedSkeleton * __thiscall Rainbow::ModelNew::GetskinnedSkeleton(void)` |
+| `0x9259b0` | `public: static class Rainbow::ColourValue const Rainbow::ColourValue::Green` |
+| `0x2a36b0` | `public: void __thiscall Rainbow::CompressSystem::Handle(void)` |
+| `0x28def0` | `private: void __thiscall MINIW::WebSocketSvr::Handle(void)` |
+| `0x283bd0` | `protected: virtual void __thiscall Rainbow::Http::MiniBreakResumeUpload::HandleProcess(void)` |
+| `0x286e90` | `protected: virtual void __thiscall Rainbow::Http::MiniCustomUpload::HandleProcess(void)` |
+| `0x28a0c0` | `protected: virtual void __thiscall Rainbow::Http::MiniUpload::HandleProcess(void)` |
+| `0x101c50` | `protected: static void __cdecl Rainbow::CloudAssetLoader::HandleRequestDone(bool,class Rainbow::Http::WebRequest *)` |
+| `0x1cfb40` | `public: virtual bool __thiscall Rainbow::ModelLegacy::HasAnchor(int)const ` |
+| `0x1cfb90` | `public: virtual bool __thiscall Rainbow::ModelNew::HasAnchor(int)const ` |
+| `0xe0270` | `public: virtual bool __thiscall Rainbow::AnimationPlayer::HasAnim(int)` |
+| `0x93e90` | `public: virtual bool __thiscall Rainbow::IModelAnimationPlayer::HasAnim(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1a9530` | `public: virtual bool __thiscall Rainbow::ModelAnimationPlayer::HasAnim(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1a9650` | `public: virtual bool __thiscall Rainbow::ModelAnimationPlayer::HasAnim(int)` |
+| `0x1cfcb0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::HasAnim(int)` |
+| `0x1cfe00` | `public: virtual bool __thiscall Rainbow::ModelNew::HasAnim(int)` |
+| `0x1b7430` | `public: bool __thiscall Rainbow::Entity::HasAnimPlayEnd(int)` |
+| `0x1a96e0` | `public: bool __thiscall Rainbow::ModelAnimationPlayer::HasAnimPlayEnd(int)` |
+| `0x1cfe20` | `public: virtual bool __thiscall Rainbow::ModelLegacy::HasAnimPlayEnd(int)` |
+| `0x1cfe60` | `public: virtual bool __thiscall Rainbow::ModelNew::HasAnimPlayEnd(int)` |
+| `0xe02c0` | `public: virtual bool __thiscall Rainbow::AnimationPlayer::HasAnimPlaying(int)` |
+| `0x1b7490` | `public: bool __thiscall Rainbow::Entity::HasAnimPlaying(int)` |
+| `0x1a9720` | `public: virtual bool __thiscall Rainbow::ModelAnimationPlayer::HasAnimPlaying(int)` |
+| `0x1cfe80` | `public: virtual bool __thiscall Rainbow::ModelLegacy::HasAnimPlaying(int)` |
+| `0x1cfeb0` | `public: virtual bool __thiscall Rainbow::ModelNew::HasAnimPlaying(int)` |
+| `0x936a0` | `bool __cdecl MINIW::HasBuiltWithARM64(void)` |
+| `0x298310` | `public: bool __thiscall MINIW::CSVParser::HasColumn(char const *)const ` |
+| `0x1cfed0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::HasCustomMesh(void)` |
+| `0x936a0` | `protected: virtual bool __thiscall Rainbow::ModelNew::HasCustomMesh(void)` |
+| `0x1a99a0` | `public: bool __thiscall Rainbow::ModelAnimationPlayer::HasInitiallized(void)` |
+| `0x1cff10` | `public: bool __thiscall Rainbow::ModelNew::HasInitiallized(void)` |
+| `0x93ea0` | `public: bool __thiscall Rainbow::SubMeshInstance::HasMaterial(void)const ` |
+| `0x166d30` | `public: bool __thiscall Rainbow::UILib::ModelView::HasModelNeedRender(void)` |
+| `0x1b74f0` | `public: bool __thiscall Rainbow::Entity::HasMotionIsPlaying(class Rainbow::FixedString const &)` |
+| `0x230f30` | `public: bool __thiscall Rainbow::MovableObject::HasSRTFather(void)` |
+| `0x1459d0` | `public: virtual void __thiscall Rainbow::UILib::Frame::Hide(void)` |
+| `0x15b210` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::Hide(void)` |
+| `0x93eb0` | `public: virtual void __thiscall Rainbow::UILib::UITexture::Hide(void)` |
+| `0x194620` | `public: virtual void __thiscall Rainbow::UILib::WebFrame::Hide(void)` |
+| `0x2bd700` | `public: void __thiscall Rainbow::HUDTitleRender::HideAllChatBubble(void)` |
+| `0x93f50` | `public: void __thiscall GameUI::HideAllRootFrame(void)` |
+| `0x145a50` | `public: void __thiscall Rainbow::UILib::Frame::HideUIPanel(void)` |
+| `0x93f90` | `public: void __thiscall GameUI::HideUIPanel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x93fb0` | `public: void __thiscall GameUI::HideUIPanel(char const *)` |
+| `0x27c590` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::HttpDelete(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class std::function<void __cdecl(class Rainbow::Http::WebRequest *)>,class std::function<void __cdecl(bool,class Rainbow::Http::WebRequest *)>,int,class core::basic_string<char,class core::StringStorageDefault<char> >,int,int)` |
+| `0x27c7e0` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::HttpPost(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class std::function<void __cdecl(class Rainbow::Http::WebRequest *)>,class std::function<void __cdecl(bool,class Rainbow::Http::WebRequest *)>,int,class core::basic_string<char,class core::StringStorageDefault<char> >,int,int)` |
+| `0x27ca30` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::HttpPut(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class std::function<void __cdecl(class Rainbow::Http::WebRequest *)>,class std::function<void __cdecl(bool,class Rainbow::Http::WebRequest *)>,int,class core::basic_string<char,class core::StringStorageDefault<char> >,int,int)` |
+| `0x9330b0` | `public: static struct cocos2d::AffineTransform const cocos2d::AffineTransform::IDENTITY` |
+| `0x6f6c70` | `public: static int const cocos2d::Sprite::INDEX_NOT_INITIALIZED` |
+| `0x6f6c48` | `public: static int const cocos2d::Renderer::INDEX_VBO_SIZE` |
+| `0x6f6c54` | `public: static int const cocos2d::Action::INVALID_TAG` |
+| `0x6f6c78` | `public: static int const cocos2d::Node::INVALID_TAG` |
+| `0x97c2f0` | `public: static bool cocos2d::Director::IS_TEST_FARIGYUI` |
+| `0x16d6e0` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::IniMultiEditSlider(void)` |
+| `0x2a3790` | `public: void __thiscall Rainbow::CompressSystem::Init(void)` |
+| `0x2c70e0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::Init(void)` |
+| `0x2bca30` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::Init(void)` |
+| `0x2bd710` | `public: void __thiscall Rainbow::HUDTitleRender::Init(void)` |
+| `0x2c2100` | `public: void __thiscall Rainbow::HudSetting::Init(void)` |
+| `0x253a90` | `public: void __thiscall MINIW::LuaCallHelper::Init(void)` |
+| `0x283c30` | `public: bool __thiscall Rainbow::Http::MiniBreakResumeUpload::Init(void)` |
+| `0x1110d0` | `public: virtual bool __thiscall Rainbow::RFontBase::Init(int,int,char const *,unsigned int)` |
+| `0x231ba0` | `private: void __thiscall Rainbow::RainbowEffectProxy::Init(void)` |
+| `0x1a7700` | `public: void __thiscall Rainbow::SequenceMap::Init(char const *)` |
+| `0xea660` | `public: void __thiscall Rainbow::SubMeshData::Init(class Rainbow::OgreVertexData *,class Rainbow::IndexData *,struct Rainbow::VertexAttributeFormats const &,class Rainbow::Material *)` |
+| `0xea6a0` | `public: void __thiscall Rainbow::SubMeshData::Init(class Rainbow::OgreVertexData *,class Rainbow::IndexData *,struct Rainbow::VertexAttributeFormats const &,class Rainbow::MaterialInstance *,bool)` |
+| `0xe27c0` | `private: void __thiscall Rainbow::SkeletonComponent::InitBySkeletonData(class Rainbow::SkeletonData *)` |
+| `0x22c9e0` | `private: void __thiscall Rainbow::AsyncCombineTask::InitCombineTask(void)` |
+| `0xc51a0` | `public: void __thiscall Rainbow::GameSetting::InitCurSubprojectInfo(int)` |
+| `0x1fbc80` | `public: void __thiscall Rainbow::Downloader::InitCurl(void)` |
+| `0xea6f0` | `protected: void __thiscall Rainbow::SubMeshData::InitData(class Rainbow::OgreVertexData *,class Rainbow::IndexData *,struct Rainbow::VertexAttributeFormats const &)` |
+| `0x8a250` | `private: void __thiscall Rainbow::HudConfigSetting::InitDefaultAniAttribute(void)` |
+| `0x8a250` | `private: void __thiscall Rainbow::HudConfigSetting::InitDefaultTitleAttribute(void)` |
+| `0x3c84c0` | `void __cdecl MINIW::InitDisplayMode(void)` |
+| `0xea860` | `public: void __thiscall Rainbow::SubMeshData::InitDrawDataInMainThread(bool,int,bool)` |
+| `0x14e870` | `public: void __thiscall Rainbow::UILib::FrameManager::InitFaceTexture(int,int)` |
+| `0x145aa0` | `public: void __thiscall Rainbow::UILib::Frame::InitFrameStrata(void)` |
+| `0x2bcc20` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::InitHUDSetting(class Rainbow::HudSetting const &)` |
+| `0x93fd0` | `public: void __thiscall GameUI::InitNewMiniUI(void)` |
+| `0xea9b0` | `public: void __thiscall Rainbow::SubMeshData::InitObjDrawDataInMainThread(bool,int,bool)` |
+| `0x1c3ac0` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::InitObject(class Rainbow::Entity *)` |
+| `0x1c3ad0` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::InitObject(class Rainbow::Entity *)` |
+| `0x1c4a50` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::InitObject(class Rainbow::Entity *)` |
+| `0x1c3ac0` | `public: virtual void __thiscall Rainbow::ObjectMotion::InitObject(class Rainbow::Entity *)` |
+| `0x1c3ac0` | `public: virtual void __thiscall Rainbow::PostObjMotion::InitObject(class Rainbow::Entity *)` |
+| `0x1838a0` | `private: void __thiscall Rainbow::UILib::UITexture::InitOrCreateMaterial(void)` |
+| `0x14ea50` | `public: void __thiscall Rainbow::UILib::FrameManager::InitPictureTexture(int,int)` |
+| `0x2e0ab0` | `public: void __thiscall fairygui::GLoader::InitPlayAction(class cocos2d::Animation *)` |
+| `0x14eb40` | `public: void __thiscall Rainbow::UILib::FrameManager::InitRootFrames(void)` |
+| `0x14ed40` | `public: void __thiscall Rainbow::UILib::FrameManager::InitRootFramesReload(void)` |
+| `0x1263a0` | `private: void __thiscall Rainbow::UILib::UIRenderer::InitRotatedRect(struct Rainbow::UIVertex * const,unsigned short * const,class Rainbow::Vector3f const (&)[4],class Rainbow::ColorRGBA32 const &,class Rainbow::Vector2f const (&)[4],int)` |
+| `0x2c22f0` | `public: void __thiscall Rainbow::HudSetting::InitSetting(void)` |
+| `0x2105b0` | `private: void __thiscall Rainbow::MobileCameraRenderer::InitSpecialBackground(char const *)` |
+| `0x942f0` | `public: void __thiscall GameUI::InitUIEditRootFrames(void)` |
+| `0x1cff20` | `public: void __thiscall Rainbow::ModelLegacy::InitWaterMaskMaterial(class Rainbow::FixedString const &)` |
+| `0x2008c0` | `public: bool __thiscall Rainbow::FileManagerWeb::Initialize(void)` |
+| `0xbf1d0` | `public: static void __cdecl Rainbow::LegacyGlobalShaderParamManager::Initialize(void *)` |
+| `0x210780` | `public: virtual void __thiscall Rainbow::MobileCameraRenderer::Initialize(void)` |
+| `0xf9a80` | `public: void __thiscall Rainbow::RemoteAssetsManager::Initialize(void)` |
+| `0x1f9c50` | `public: bool __thiscall Rainbow::UpDownloadManager::Initialize(void)` |
+| `0x29d670` | `public: virtual bool __thiscall MINIW::Cef3Manager::InitializeCef(void)` |
+| `0x2201e0` | `public: static int __cdecl Rainbow::StringUtil::InputAnsiToUnicode(wchar_t *,int,char const *,int)` |
+| `0x16d740` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::InputMultiRawChar(char const *,int)` |
+| `0x16d880` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::InputRawChar(char)` |
+| `0x16d8c0` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::InputRawChar(char const *,int)` |
+| `0x22cb70` | `public: void __thiscall Rainbow::CombineManager::InsertCombineConfigs(class Rainbow::MaterialInstanceCombineArgs const &)` |
+| `0x1b7630` | `public: bool __thiscall Rainbow::Entity::InsertCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x1d0030` | `public: virtual bool __thiscall Rainbow::ModelLegacy::InsertCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x1d00c0` | `protected: virtual bool __thiscall Rainbow::ModelNew::InsertCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0x16d9d0` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::InsertRichChar(int,struct Rainbow::UILib::stRichChar)` |
+| `0x298430` | `public: bool __thiscall MINIW::CSVParser::Int(unsigned int,unsigned int,int &)const ` |
+| `0x294120` | `public: int const __thiscall MINIW::CSVParser::TableItem::Int(void)const ` |
+| `0x14ef10` | `public: class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::FrameManager::InternalCreateUIObj(char const *,char const *)` |
+| `0x1d00e0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::IntersectRay(enum Rainbow::IntersectType,class Rainbow::Ray const &,float,float *)const ` |
+| `0x1d0490` | `protected: virtual bool __thiscall Rainbow::ModelNew::IntersectRay(enum Rainbow::IntersectType,class Rainbow::Ray const &,float,float *)const ` |
+| `0xd2450` | `public: bool __thiscall Rainbow::SubMeshInstance::IntersectRay(enum Rainbow::IntersectType,class Rainbow::Ray const &,float,float *)` |
+| `0x1d04a0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::IntersectRayByBoundingBox(enum Rainbow::IntersectType,class Rainbow::Ray const &)const ` |
+| `0x113ff0` | `protected: virtual bool __thiscall Rainbow::ModelNew::IntersectRayByBoundingBox(enum Rainbow::IntersectType,class Rainbow::Ray const &)const ` |
+| `0x1d04e0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::IntersectRayStaticMesh(enum Rainbow::IntersectType,class Rainbow::Ray const &,float,float *)const ` |
+| `0x1d0490` | `protected: virtual bool __thiscall Rainbow::ModelNew::IntersectRayStaticMesh(enum Rainbow::IntersectType,class Rainbow::Ray const &,float,float *)const ` |
+| `0x3c8760` | `void __cdecl MINIW::InvokeCallFunc(char const *,char const *)` |
+| `0xff110` | `public: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::InvokeEvent(int,void *)` |
+| `0xede30` | `public: void __thiscall Rainbow::RemoteAssetsManager::InvokeEvent(int,void *)` |
+| `0xa03e0` | `public: void __thiscall Rainbow::MiniEventDispatcher::InvokeEventWithLuaTable(int,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> const &)` |
+| `0xa04b0` | `public: void __thiscall Rainbow::MiniEventDispatcher::InvokeEventWithUserType(int,char const *,void *)` |
+| `0x27a230` | `public: void __thiscall Rainbow::MiniGlobalEvent::InvokeHttpDownProgress(int,int,void *)` |
+| `0x27a260` | `public: void __thiscall Rainbow::MiniGlobalEvent::InvokeHttpUploadProgress(int,int,void *)` |
+| `0xff120` | `protected: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::InvokeTask(void)` |
+| `0x1b7720` | `public: bool __thiscall Rainbow::Entity::IsAllCustomMode(void)` |
+| `0x1b77a0` | `public: bool __thiscall Rainbow::Entity::IsAllCustomObjs(void)` |
+| `0x94300` | `public: bool __thiscall Rainbow::LegacyAsset::IsAllLoaded(void)` |
+| `0x1399d0` | `public: bool __thiscall Rainbow::UILib::EditBox::IsAnyTextSelect(void)` |
+| `0x3c8780` | `bool __cdecl MINIW::IsAppExist(char const *)` |
+| `0x936a0` | `bool __cdecl MINIW::IsAppInstall(char const *)` |
+| `0x212db0` | `public: bool __thiscall Rainbow::MusicManager::IsBGMSound2D2DControlPlaying(void)` |
+| `0x284060` | `public: virtual bool __thiscall Rainbow::Http::MiniBreakResumeUpload::IsBreak(void)const ` |
+| `0x286ef0` | `public: virtual bool __thiscall Rainbow::Http::MiniCustomUpload::IsBreak(void)const ` |
+| `0x28a120` | `public: virtual bool __thiscall Rainbow::Http::MiniUpload::IsBreak(void)const ` |
+| `0x1399e0` | `public: bool __thiscall Rainbow::UILib::EditBox::IsCoderEditMethod(void)` |
+| `0x2e0ae0` | `public: bool __thiscall fairygui::GLoader::IsContentLoaded(void)` |
+| `0x126930` | `public: bool __thiscall Rainbow::UILib::UIRenderer::IsCreatedUIRenderTarget(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1399f0` | `protected: bool __thiscall Rainbow::UILib::EditBox::IsCursorVisible(void)` |
+| `0x16db20` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::IsCursorVisible(void)` |
+| `0x220240` | `public: static bool __cdecl Rainbow::StringUtil::IsDBCSLeadByte(char)` |
+| `0x94310` | `public: bool __thiscall Rainbow::GaussBlurRenderer::IsDirty(void)` |
+| `0x94320` | `public: bool __thiscall Rainbow::UILib::FrameManager::IsEditModeEnabled(void)const ` |
+| `0x116940` | `public: bool __thiscall Rainbow::UILib::CCoord::IsEnable(void)` |
+| `0x272d40` | `public: virtual bool __thiscall Rainbow::ZipFilePkg::IsFileExist(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x273210` | `public: virtual bool __thiscall Rainbow::ZipFilePkg::IsFileExist(char const *)` |
+| `0x200a10` | `public: bool __thiscall Rainbow::FileManagerWeb::IsFileExistWritePath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x200c80` | `public: bool __thiscall Rainbow::FileManagerWeb::IsFileLoaded(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x200d20` | `public: bool __thiscall Rainbow::FileManagerWeb::IsFileLoaded(int)` |
+| `0x1f9dd0` | `public: bool __thiscall Rainbow::UpDownloadManager::IsFileLoaded(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x200db0` | `public: bool __thiscall Rainbow::FileManagerWeb::IsFileLoading(int)` |
+| `0x936a0` | `public: bool __thiscall Rainbow::FileManagerWeb::IsFileLoading(void)` |
+| `0x9af20` | `public: bool __thiscall Rainbow::SnapshotHelper::IsFinished(void)const ` |
+| `0x94330` | `public: bool __thiscall Rainbow::ObjectMotion::IsFlashChain(void)` |
+| `0x2250a0` | `bool __cdecl IsFlatBufferCompleteZero(void const *,unsigned int)` |
+| `0x94340` | `public: bool __thiscall Rainbow::ObjectMotion::IsForcePE(void)` |
+| `0x183990` | `public: bool __thiscall Rainbow::UILib::UITexture::IsGray(void)const ` |
+| `0x16db60` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::IsHalfDBCSPre(int)` |
+| `0x943d0` | `public: bool __thiscall Rainbow::HUDTitleRender::IsHideAllChatBubble(void)` |
+| `0x1a93b0` | `public: bool __thiscall Rainbow::HUDTitleRender::IsHideAllTitleInfo(void)` |
+| `0x1f9ec0` | `public: bool __thiscall Rainbow::UpDownloadManager::IsIdle(void)` |
+| `0x9ac40` | `public: bool __thiscall Rainbow::Entity::IsInintOK(void)` |
+| `0x16dbd0` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::IsInputEnable(char const *,int)` |
+| `0xd27b0` | `public: bool __thiscall Rainbow::MeshInstance::IsKeywordExist(struct Rainbow::ShaderLab::FastPropertyName const &)` |
+| `0x93ea0` | `public: bool __thiscall MINIW::CSVParser::IsLoaded(void)` |
+| `0x1d8d10` | `public: virtual bool __thiscall Rainbow::ModelData::IsLoaded(void)` |
+| `0x2491e0` | `bool __cdecl Rainbow::MiniLua::IsLuaVmVaild(void)` |
+| `0x94380` | `public: bool __thiscall Rainbow::UILib::UIRenderer::IsMaterialColorMaskWriteAll(void)const ` |
+| `0x2561e0` | `public: bool __thiscall Rainbow::LegacyCommon3DUI::IsMerged(void)const ` |
+| `0x949d0` | `public: virtual bool __thiscall Rainbow::Http::MiniDownloader::IsMulti(void)const ` |
+| `0x949d0` | `public: virtual bool __thiscall Rainbow::Http::MiniHttpRequest::IsMulti(void)const ` |
+| `0x94390` | `public: bool __thiscall Rainbow::UILib::UITexture::IsPlayAlphaAnim(void)` |
+| `0x1b7830` | `public: bool __thiscall Rainbow::Entity::IsPlaying(void)` |
+| `0x131b50` | `public: bool __thiscall Rainbow::ModelMotion::IsPlaying(void)` |
+| `0x231bd0` | `public: bool __thiscall Rainbow::RainbowEffectProxy::IsPlaying(void)` |
+| `0xa0580` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::IsPointInside(class Rainbow::TRect<int>,int,int)const ` |
+| `0x2c84c0` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::IsRawConfig(void)` |
+| `0x943a0` | `public: bool __thiscall Rainbow::UILib::Frame::IsRehide(void)` |
+| `0x943b0` | `public: bool __thiscall Rainbow::UILib::Frame::IsReshow(void)` |
+| `0x943c0` | `public: bool __thiscall Rainbow::ModelData::IsRetainMeshData(void)const ` |
+| `0x943d0` | `public: bool __thiscall Rainbow::CompressSystem::IsRunning(void)` |
+| `0x28e1e0` | `private: bool __thiscall MINIW::WebSocketSvr::IsRunning(void)` |
+| `0x943e0` | `bool __cdecl IsSafeTexVaild(class Rainbow::Texture *)` |
+| `0x94430` | `public: bool __thiscall fairygui::GLoader::IsSafeVaild(void)` |
+| `0x2cbf70` | `public: bool __thiscall Rainbow::Setting::GameConfiguration::IsSameConfiguration(class Rainbow::Setting::GameConfiguration *)` |
+| `0x936a0` | `bool __cdecl MINIW::IsSdkToStartGame(void)` |
+| `0x1b7920` | `public: virtual bool __thiscall Rainbow::Entity::IsShow(void)const ` |
+| `0x1d0880` | `public: virtual bool __thiscall Rainbow::ModelNew::IsShow(void)const ` |
+| `0x9ae60` | `public: bool __thiscall Rainbow::ModelRenderer::IsShow(void)` |
+| `0x230f70` | `public: virtual bool __thiscall Rainbow::MovableObject::IsShow(void)const ` |
+| `0x260e10` | `public: bool __thiscall Rainbow::MusicClubChatBubble3D::IsShow(void)` |
+| `0xe87e0` | `public: bool __thiscall Rainbow::LegacySkinMeshRenderer::IsShowAvatar(int)` |
+| `0x1d08a0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::IsShowAvatar(int)` |
+| `0x1d08c0` | `public: virtual bool __thiscall Rainbow::ModelNew::IsShowAvatar(int)` |
+| `0x1ae340` | `public: bool __thiscall Rainbow::ModelRenderer::IsShowAvatar(int)` |
+| `0x15b220` | `public: bool __thiscall Rainbow::UILib::LayoutFrame::IsShown(void)const ` |
+| `0x29d940` | `public: virtual bool __thiscall MINIW::Cef3Manager::IsShownInFGUI(void)` |
+| `0x94580` | `public: bool __thiscall Rainbow::UILib::LayoutFrame::IsShownSelf(void)` |
+| `0x3c8960` | `bool __cdecl MINIW::IsSolutionSupport(int,int)` |
+| `0x212dd0` | `public: bool __thiscall Rainbow::MusicManager::IsStoreSound2DPlaying(void)` |
+| `0x1d08e0` | `public: virtual bool __thiscall Rainbow::ModelLegacy::IsSubMeshNameExist(class Rainbow::FixedString const &)` |
+| `0x1d0930` | `public: virtual bool __thiscall Rainbow::ModelNew::IsSubMeshNameExist(class Rainbow::FixedString const &)` |
+| `0x1ae390` | `public: bool __thiscall Rainbow::ModelRenderer::IsSubMeshNameExist(class Rainbow::FixedString const &)` |
+| `0x944e0` | `public: bool __thiscall GameUI::IsTexVaild(class Rainbow::Texture *)` |
+| `0x220260` | `public: static bool __cdecl Rainbow::StringUtil::IsUTF8String(char const *,int)` |
+| `0xa05c0` | `protected: bool __thiscall Rainbow::UILib::MultiEditBox::IsUpdateDirty(void)` |
+| `0xf5570` | `public: bool __thiscall Rainbow::Http::MiniCustomUpload::IsUploadSuccess(void)` |
+| `0x2c84d0` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::IsUseMapCustomGameConfig(void)` |
+| `0x94530` | `public: bool __thiscall ActorBodySafeHandle::IsVaild(class Rainbow::IActorBody *)` |
+| `0xdb7d0` | `public: bool __thiscall Rainbow::AnimationData::IsVaild(void)const ` |
+| `0x236440` | `public: bool __thiscall Rainbow::GifAsset::IsVaild(void)` |
+| `0x236450` | `public: virtual bool __thiscall Rainbow::GifSequenceTexture::IsVaild(void)` |
+| `0x249be0` | `public: bool __thiscall Rainbow::MiniLua::LuaValue::IsVaild(void)` |
+| `0x1d8d30` | `public: bool __thiscall Rainbow::ModelData::IsVaild(void)const ` |
+| `0x24ce20` | `public: static bool __cdecl MINIW::ScriptVM::IsVaild(void)` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::SequenceTexture::IsVaild(void)` |
+| `0x1d8d40` | `public: bool __thiscall Rainbow::ModelData::IsVaildCustomKeyFrame(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,unsigned int)` |
+| `0x294190` | `public: bool __thiscall MINIW::CSVParser::TableItem::IsValid(void)const ` |
+| `0x2901d0` | `public: bool __thiscall WebSocketEventHandler::IsValidEvent(char const *)` |
+| `0x94580` | `public: bool __thiscall Rainbow::UILib::LayoutFrame::IsVisible(void)const ` |
+| `0x94590` | `public: bool __thiscall GameUI::IsXMLReload(void)` |
+| `0x8a250` | `void __cdecl MINIW::JumpPolicyPage(char const *)` |
+| `0x91f3ac` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::LIGHTMAP_MATRIX` |
+| `0x91f3b0` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::LIGHT_MULTIPLY` |
+| `0x92bf08` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const cocos2d::EventListenerMouse::LISTENER_ID` |
+| `0x92bf20` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const cocos2d::EventListenerTouchOneByOne::LISTENER_ID` |
+| `0x2199f0` | `class Rainbow::Quaternionf __cdecl Rainbow::LegacySlerp(class Rainbow::Quaternionf const &,class Rainbow::Quaternionf const &,float)` |
+| `0x219b90` | `class Rainbow::Matrix4x4f & __cdecl Rainbow::Legacy_Inverse(class Rainbow::Matrix4x4f &)` |
+| `0x21a340` | `class Rainbow::Matrix4x4f __cdecl Rainbow::Lerp(class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f const &,float)` |
+| `0x2491f0` | `protected: void __thiscall Rainbow::MiniLua::LuaLinker::Link(int)` |
+| `0x298470` | `public: bool __thiscall MINIW::CSVParser::Load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x1b7930` | `public: void __thiscall Rainbow::Entity::Load(class Rainbow::Model *)` |
+| `0x1b7f20` | `public: void __thiscall Rainbow::Entity::Load(class Rainbow::SharePtr<class Rainbow::EntityData>)` |
+| `0x1b89c0` | `public: void __thiscall Rainbow::Entity::Load(class Rainbow::SharePtr<class Rainbow::ModelData>)` |
+| `0x1b90c0` | `public: bool __thiscall Rainbow::Entity::Load(class core::basic_string<char,class core::StringStorageDefault<char> > const &,bool)` |
+| `0xcc3b0` | `public: void __thiscall Rainbow::GameUserSetting::Load(void)` |
+| `0x1d0950` | `public: bool __thiscall Rainbow::ModelLegacy::Load(class Rainbow::SharePtr<class Rainbow::ModelData>,bool)` |
+| `0x1b95c0` | `public: void __thiscall Rainbow::Entity::LoadAsync(class Rainbow::SharePtr<class Rainbow::LegacyAsset>)` |
+| `0x1bfb00` | `public: void __thiscall Rainbow::ModelMotion::LoadAvatarEffect(int,bool)` |
+| `0x298650` | `public: bool __thiscall MINIW::CSVParser::LoadBuffer(char *,int,bool)` |
+| `0xbf2d0` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::LoadCausticTexture(void)` |
+| `0x29d950` | `public: virtual void __thiscall MINIW::Cef3Manager::LoadCefUrl(char const *)` |
+| `0xc53a0` | `public: void __thiscall Rainbow::GameSetting::LoadConfig(void)` |
+| `0x2c1480` | `public: void __thiscall Rainbow::HudConfigSetting::LoadConfig(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x2c28f0` | `public: void __thiscall Rainbow::HudSetting::LoadConfigSetting(char const *)` |
+| `0x2cc0c0` | `public: void __thiscall Rainbow::Setting::GameConfiguration::LoadConfiguration(char const *)` |
+| `0x2cc7d0` | `public: void __thiscall Rainbow::Setting::DeviceModelData::LoadData(void)` |
+| `0x2c84e0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::LoadDeviceModelData(void)` |
+| `0x31b520` | `protected: void __thiscall fairygui::FUIModelSprite::LoadEnvirenment(void)` |
+| `0x166da0` | `protected: void __thiscall Rainbow::UILib::ModelView::LoadEnvirenment(void)` |
+| `0x236470` | `public: bool __thiscall Rainbow::GifAsset::LoadFromBuff(char const *,unsigned int)` |
+| `0x1c4a80` | `public: void __thiscall Rainbow::EventTriggerObjectMotion::LoadFromEventList(class Rainbow::MotionEventElementData *)` |
+| `0x2365d0` | `public: void __thiscall Rainbow::GifSequenceTexture::LoadFromPath(char const *)` |
+| `0x1bfd70` | `public: void __thiscall Rainbow::ModelMotion::LoadFromSource(class Rainbow::SharePtr<class Rainbow::EntityMotionData>)` |
+| `0xbf3d0` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::LoadFrozenEffectTexture(void)` |
+| `0x1a6e40` | `public: static class Rainbow::MovableObject * __cdecl EntityHelper::LoadFxObject(char const *,char const *,bool)` |
+| `0x2c8570` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::LoadGameConfig(char const *)` |
+| `0x2cc9a0` | `public: bool __thiscall Rainbow::Setting::GameConfiguration::LoadMapCustomConfiguration(char const *)` |
+| `0x2c85f0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::LoadMapCustomGameConfig(class Rainbow::Setting::GameConfiguration *)` |
+| `0x2c86b0` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::LoadMapCustomGameConfig(char const *)` |
+| `0x1d0c90` | `public: static class Rainbow::SharePtr<class Rainbow::RefObject> __cdecl Rainbow::Model::LoadModelAnimAssetByPathRule(class Rainbow::FixedString const &,bool)` |
+| `0x1d13e0` | `public: static class Rainbow::SharePtr<class Rainbow::Asset> __cdecl Rainbow::Model::LoadModelAssetByPathRule(class Rainbow::FixedString const &,bool,bool)` |
+| `0xbf580` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::LoadRainRippleTexture(void)` |
+| `0xbf680` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::LoadReflectionCubemap(void)` |
+| `0xbf780` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::LoadSnowTransTexture(void)` |
+| `0x274a50` | `class Rainbow::SharePtr<class Rainbow::Texture2D> __cdecl LoadTexture2DNoCache(char const *)` |
+| `0x31b690` | `protected: void __thiscall fairygui::FUIModelSprite::LoadTimelineRes(void)` |
+| `0x166f10` | `protected: void __thiscall Rainbow::UILib::ModelView::LoadTimelineRes(void)` |
+| `0x945a0` | `public: bool __thiscall GameUI::LoadUIFile(char const *)` |
+| `0x194640` | `public: void __thiscall Rainbow::UILib::WebFrame::LoadUrl(char const *)` |
+| `0x8a250` | `void __cdecl MINIW::LoadWXGameLiveView(void)` |
+| `0x948f0` | `public: bool __thiscall GameUI::LoadXMLFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x94900` | `public: bool __thiscall GameUI::LoadXMLString(char const *)` |
+| `0x94950` | `public: bool __thiscall GameUI::LoadXmlForLua(char const *)` |
+| `0x2a98d0` | `char const * __cdecl LogLevelToFullName(enum ActionLogLevel)` |
+| `0x2a98d0` | `char const * __cdecl LogLevelToName(enum ActionLogLevel)` |
+| `0x8a250` | `void __cdecl MINIW::Logout(void)` |
+| `0x297e10` | `public: bool __thiscall MINIW::CSVParser::Long(unsigned int,unsigned int,long &)const ` |
+| `0x294140` | `public: long const __thiscall MINIW::CSVParser::TableItem::Long(void)const ` |
+| `0x69c80` | `public: void __thiscall MINIW::Transform_::LookAt(class Rainbow::Vector3f const &)` |
+| `0x69cc0` | `public: void __thiscall MINIW::Transform_::LookAt(class Rainbow::Vector3f const &,class Rainbow::Vector3f)` |
+| `0x69ce0` | `public: class Rainbow::Vector3f __thiscall MINIW::Transform_::Lookdir(void)const ` |
+| `0x27cc80` | `public: void __thiscall Rainbow::Http::HttpManager::LuaBreakDownload(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x27cd80` | `public: void __thiscall Rainbow::Http::HttpManager::LuaCustomUpload(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,int,bool,int)` |
+| `0x27cff0` | `public: void __thiscall Rainbow::Http::HttpManager::LuaDownload(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> > &,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,int,bool,int)` |
+| `0x27d2e0` | `public: void __thiscall Rainbow::Http::HttpManager::LuaHttpDelete(class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,int,int,int)` |
+| `0x27d490` | `public: void __thiscall Rainbow::Http::HttpManager::LuaHttpPost(class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,int,int,int)` |
+| `0x3c46d0` | `void __cdecl cocos2d::LuaLog(char const *)` |
+| `0x27d710` | `public: void __thiscall Rainbow::Http::HttpManager::LuaRequest(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> >,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,int,int,int)` |
+| `0xbd7b0` | `public: bool __thiscall Rainbow::DebugMgr::LuaShowError(void)` |
+| `0x24ce30` | `void * __cdecl MINIW::LuaStateAlloc(void *,void *,unsigned int,unsigned int)` |
+| `0x27d930` | `public: void __thiscall Rainbow::Http::HttpManager::LuaUpload(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker>,int,bool,int,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0x281390` | `public: static void __cdecl LuaWebSocketMgr::LuaWebSockettick(void)` |
+| `0x92c1b0` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::MAGENTA` |
+| `0x92c1d0` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::MAGENTA` |
+| `0x92c230` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::MAGENTA` |
+| `0x6f6c50` | `public: static int const cocos2d::Renderer::MATERIAL_ID_DO_NOT_BATCH` |
+| `0x73e420` | `public: static struct cocos2d::BlendFunc const cocos2d::BlendFunc::MULTIPLY` |
+| `0xeb180` | `public: static void __cdecl Rainbow::SubMeshData::MakeSharedMeshData(bool,int,class Rainbow::SubMeshData *,class Rainbow::LegacySharedMeshData *,bool)` |
+| `0x202320` | `public: bool __thiscall Rainbow::FileManagerWeb::MakeSimpleMap(unsigned char *,int)` |
+| `0x8a250` | `public: void __thiscall Rainbow::Empty3DUIRenderer::ManualClearBuffer(void)` |
+| `0x21a4a0` | `class Rainbow::Matrix4x4f __cdecl Rainbow::Matrix4RotateX(float)` |
+| `0x21a4e0` | `class Rainbow::Matrix4x4f __cdecl Rainbow::Matrix4RotateY(float)` |
+| `0x21a520` | `class Rainbow::Matrix4x4f __cdecl Rainbow::Matrix4RotateZ(float)` |
+| `0xd0480` | `public: static float __cdecl czy::LeastSquaresFit::Mean(class std::vector<float,class std::allocator<float> > const &)` |
+| `0xd04a0` | `public: static float __cdecl czy::LeastSquaresFit::Mean(float const *,int)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::Setting::DeviceModel::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::Setting::DeviceModelData::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::Setting::GameConfiguration::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::GameSetting::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::GameUserSetting::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudBitMapFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudConfigSetting::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudFontBaseAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudImageAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudLayoutAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudLevBitMapFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudLevNormalFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudLevSpriteAndFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudLevSpriteAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudLevitationBaseAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudMovieClipAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudNormalFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudSpineAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudTitleAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudTitleNormalFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudTitleSpriteAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::HudTitleSpriteFontAttribute::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::Setting::ShadowSettingCfg::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::SkinAnimContainer::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::TweenParam::MightContainPPtr(void)` |
+| `0x949d0` | `public: static bool __cdecl Rainbow::Setting::VisionConfig::MightContainPPtr(void)` |
+| `0x1113e0` | `protected: float __thiscall Rainbow::RFontBase::MinDisToNewLine(wchar_t const *,wchar_t const * &,bool)` |
+| `0x1839a0` | `public: void __thiscall Rainbow::UILib::UITexture::MirrorHorizontally(void)` |
+| `0x1839c0` | `public: void __thiscall Rainbow::UILib::UITexture::MirrorVertically(void)` |
+| `0x23aec0` | `void __cdecl MixPixelTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1169f0` | `public: void __thiscall CoordAxis::MouseMove(struct Rainbow::InputEvent const &)` |
+| `0x1b9780` | `void __cdecl Rainbow::MovableObjectSetBeamEmitterTarget(class Rainbow::MovableObject *,class Rainbow::Vector3f)` |
+| `0x16de30` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::MoveCursor(int)` |
+| `0x145b20` | `public: void __thiscall Rainbow::UILib::Frame::MoveFrame(char const *,float,int,int)` |
+| `0x15b240` | `public: void __thiscall Rainbow::UILib::LayoutFrame::MoveFrameAbsrect(int,int)` |
+| `0x145bb0` | `public: void __thiscall Rainbow::UILib::Frame::MoveFrameRecursive(int,int)` |
+| `0x16de80` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::MoveSelBegin(int)` |
+| `0x8a250` | `public: void __thiscall Rainbow::UILib::Frame::MoveTo(void)` |
+| `0x15b260` | `public: void __thiscall Rainbow::UILib::LayoutFrame::MoveUp(float)` |
+| `0x2251f0` | `char const * __cdecl MyCopyString(char const *)` |
+| `0x225220` | `void __cdecl MyStringCpy(char *,int,char const *)` |
+| `0x15b2e0` | `public: static enum Rainbow::UILib::FRAMEPOINT_T __cdecl Rainbow::UILib::LayoutFrame::Name2FP(char const *)` |
+| `0x31b880` | `protected: bool __thiscall fairygui::FUIModelSprite::NeedLoadEvirenment(void)` |
+| `0x167100` | `protected: bool __thiscall Rainbow::UILib::ModelView::NeedLoadEvirenment(void)` |
+| `0x272660` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<1,1>::NeedReload(class Rainbow::Asset *)` |
+| `0x272660` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<1,0>::NeedReload(class Rainbow::Asset *)` |
+| `0x93e90` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<0,1>::NeedReload(class Rainbow::Asset *)` |
+| `0x93e90` | `public: bool __thiscall Rainbow::AssetTextureSettingLoader<0,0>::NeedReload(class Rainbow::Asset *)` |
+| `0xa05d0` | `public: bool __thiscall Rainbow::ZipAssetLoader<1,1>::NeedReload(class Rainbow::Asset *)` |
+| `0xa05d0` | `public: bool __thiscall Rainbow::ZipAssetLoader<1,0>::NeedReload(class Rainbow::Asset *)` |
+| `0x93e90` | `public: bool __thiscall Rainbow::ZipAssetLoader<0,1>::NeedReload(class Rainbow::Asset *)` |
+| `0x93e90` | `public: bool __thiscall Rainbow::ZipAssetLoader<0,0>::NeedReload(class Rainbow::Asset *)` |
+| `0x1d8e70` | `public: bool __thiscall Rainbow::ModelDataRetainSettingLoader::NeedReload(class Rainbow::Asset *)` |
+| `0x949d0` | `public: virtual bool __thiscall Rainbow::UILib::CCoord::NeedUpdate(void)` |
+| `0x102870` | `public: static class Rainbow::ICloudUrlLoader * __cdecl Rainbow::CloudAssetLoader::NewLoader(void)` |
+| `0x949e0` | `public: bool __thiscall GameUI::NewXMLFile(char const *)` |
+| `0x977748` | `public: static class fairygui::EventTag const fairygui::EventTag::None` |
+| `0x225250` | `class Rainbow::Vector3f __cdecl MINIW::Normalize(class Rainbow::Vector3f const &)` |
+| `0x97c2e0` | `public: static class cocos2d::Data const cocos2d::Data::Null` |
+| `0x971748` | `public: static class Value const Value::Null` |
+| `0x97ce28` | `public: static class cocos2d::Value const cocos2d::Value::Null` |
+| `0x92c1b4` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::ORANGE` |
+| `0x92c1d8` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::ORANGE` |
+| `0x92c250` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::ORANGE` |
+| `0x6f6c58` | `public: static int const fairygui::TextFormat::OUTLINE` |
+| `0x928d38` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GButton::OVER` |
+| `0x225d00` | `public: class WCoord __thiscall WCoord::Offset(int,int,int)const ` |
+| `0x225d30` | `public: class WCoord __thiscall WCoord::Offset(enum DirectionType)const ` |
+| `0x220320` | `public: static void __cdecl Rainbow::StringUtil::OldRichTextConvertArabicString(wchar_t *)` |
+| `0x936b0` | `protected: int __thiscall Rainbow::UILib::FrameManager::OnAccelerator(struct Rainbow::InputEvent const &)` |
+| `0xe0390` | `protected: virtual void __thiscall Rainbow::AnimationPlayer::OnAddToGameObject(void)` |
+| `0x233b30` | `public: virtual void __thiscall Rainbow::CubeBorder::OnAddToGameObject(void)` |
+| `0x258880` | `public: virtual void __thiscall Rainbow::Image3D::OnAddToGameObject(void)` |
+| `0x25c090` | `public: virtual void __thiscall Rainbow::ItemImage3D::OnAddToGameObject(void)` |
+| `0x25ca00` | `public: virtual void __thiscall Rainbow::LegacyCommon3DUI::OnAddToGameObject(void)` |
+| `0x20f100` | `public: virtual void __thiscall Rainbow::LegacyDefault3DObject::OnAddToGameObject(void)` |
+| `0xe8840` | `protected: virtual void __thiscall Rainbow::LegacySkinMeshRenderer::OnAddToGameObject(void)` |
+| `0x1a9b10` | `protected: virtual void __thiscall Rainbow::ModelAnimationPlayer::OnAddToGameObject(void)` |
+| `0x8a250` | `protected: virtual void __thiscall Rainbow::MovableObject::OnAddToGameObject(void)` |
+| `0x254500` | `public: virtual void __thiscall Rainbow::ShadowFace::OnAddToGameObject(void)` |
+| `0x26e390` | `public: virtual void __thiscall Rainbow::Text3D::OnAddToGameObject(void)` |
+| `0x233bf0` | `public: virtual void __thiscall Rainbow::TriangleMeshNormalAndEdge::OnAddToGameObject(void)` |
+| `0xe0400` | `protected: virtual void __thiscall Rainbow::AnimationPlayer::OnAddToScene(class Rainbow::GameScene *)` |
+| `0x1b97e0` | `protected: virtual void __thiscall Rainbow::Entity::OnAddToScene(class Rainbow::GameScene *)` |
+| `0x1a9b30` | `protected: virtual void __thiscall Rainbow::ModelAnimationPlayer::OnAddToScene(class Rainbow::GameScene *)` |
+| `0x1df780` | `public: virtual void __thiscall Rainbow::ParticleNode::OnAddToScene(class Rainbow::GameScene *)` |
+| `0x277400` | `public: virtual void __thiscall Rainbow::TerrainDecalEffect::OnAddToScene(class Rainbow::GameScene *)` |
+| `0x949d0` | `bool __cdecl MINIW::OnAdvertisementsLoadStatus(int,int)` |
+| `0x1b97f0` | `public: void __thiscall Rainbow::Entity::OnAllResLoaded(class Rainbow::EventContent const *)` |
+| `0x231c00` | `private: void __thiscall Rainbow::RainbowEffectProxy::OnAllResLoaded(class Rainbow::EventContent const *)` |
+| `0x1a9bb0` | `private: void __thiscall Rainbow::ModelAnimationPlayer::OnAnimatorPostEvent(class Rainbow::EventContent const *)` |
+| `0x1a9fd0` | `protected: void __thiscall Rainbow::ModelAnimationPlayer::OnAnimatorStateEvent(class Rainbow::EventContent const *)` |
+| `0x1aa140` | `private: void __thiscall Rainbow::ModelAnimationPlayer::OnAnimtionEvent(class Rainbow::EventContent const *)` |
+| `0x8a250` | `void __cdecl MINIW::OnAppsFlyerStatisticsGameEvent(char const *,char const *,char const *,char const *,char const *,char const *,char const *)` |
+| `0x272680` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<1,1>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0x2726e0` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<1,0>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0x272740` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<0,1>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0x272790` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<0,0>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0xa0620` | `public: void __thiscall Rainbow::ZipAssetLoader<1,1>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0xa0670` | `public: void __thiscall Rainbow::ZipAssetLoader<1,0>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0xa06c0` | `public: void __thiscall Rainbow::ZipAssetLoader<0,1>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0xa0710` | `public: void __thiscall Rainbow::ZipAssetLoader<0,0>::OnAssetBegin(class Rainbow::Asset *)` |
+| `0x1d8e90` | `public: void __thiscall Rainbow::ModelDataRetainSettingLoader::OnAssetBegin(class Rainbow::Asset *)` |
+| `0xcd8d0` | `protected: virtual void __thiscall Rainbow::LegacyAsset::OnAsyncThreadResReaded(void)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::SimpleGameScene::OnAttachObject(class Rainbow::MovableObject *)` |
+| `0xe0430` | `private: void __thiscall Rainbow::AnimationPlayer::OnBecameInvisible(class Rainbow::EventContent const *)` |
+| `0xe0440` | `private: void __thiscall Rainbow::AnimationPlayer::OnBecameVisible(class Rainbow::EventContent const *)` |
+| `0x94d80` | `public: virtual void __thiscall Rainbow::UILib::Frame::OnBeginDrag(unsigned int,int,int)` |
+| `0x2bcc90` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnBeginMovie(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::UILib::WebFrame::OnBrowserCreated(void)` |
+| `0x145c50` | `protected: virtual void __thiscall Rainbow::UILib::Frame::OnCancel(struct Rainbow::InputEvent const &)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::WebFrame::OnCefKeyEvent(int)` |
+| `0x139a30` | `protected: void __thiscall Rainbow::UILib::EditBox::OnChangeText(void)` |
+| `0x139a50` | `protected: int __thiscall Rainbow::UILib::EditBox::OnChar(struct Rainbow::InputEvent const &,bool)` |
+| `0x145cc0` | `public: int __thiscall Rainbow::UILib::Frame::OnChar(struct Rainbow::InputEvent const &)` |
+| `0x16ded0` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::OnChar(struct Rainbow::InputEvent const &,bool)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::OnChildEnd(class Rainbow::ObjectMotion *,class Rainbow::Entity *)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ObjectMotion::OnChildEnd(class Rainbow::ObjectMotion *,class Rainbow::Entity *)` |
+| `0x1c3be0` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::OnChildStart(class Rainbow::ObjectMotion *,class Rainbow::Entity *)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ObjectMotion::OnChildStart(class Rainbow::ObjectMotion *,class Rainbow::Entity *)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::OnChildStop(class Rainbow::ObjectMotion *,class Rainbow::Entity *)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ObjectMotion::OnChildStop(class Rainbow::ObjectMotion *,class Rainbow::Entity *)` |
+| `0x1c3d50` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::OnChildUpdate(class Rainbow::ObjectMotion *,float,class Rainbow::Entity *)` |
+| `0x94d80` | `public: virtual void __thiscall Rainbow::ObjectMotion::OnChildUpdate(class Rainbow::ObjectMotion *,float,class Rainbow::Entity *)` |
+| `0x3c8a00` | `void __cdecl MINIW::OnClickCopy(char const *)` |
+| `0x2bcca0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnCloseUI(void)` |
+| `0x2bd860` | `public: void __thiscall Rainbow::HUDTitleRender::OnCloseUI(void)` |
+| `0x92960` | `private: void __thiscall Rainbow::DebugMgr::OnCmd(char const *,class Rainbow::ConsoleOutputDevice *)` |
+| `0x22cbe0` | `public: void __thiscall Rainbow::CombineManager::OnCombineAsyncTaskFinished(class Rainbow::AsyncCombineTask *)` |
+| `0x3c8b20` | `void __cdecl MINIW::OnContactPersons(int)` |
+| `0x31b930` | `public: bool __thiscall fairygui::FUIModelSprite::OnCoordTouchBegin(class Rainbow::Vector2f const &,bool)` |
+| `0x31b9e0` | `public: void __thiscall fairygui::FUIModelSprite::OnCoordTouchEnd(class Rainbow::Vector2f const &,bool)` |
+| `0x31ba70` | `public: void __thiscall fairygui::FUIModelSprite::OnCoordTouchMove(class Rainbow::Vector2f const &,bool)` |
+| `0x139d10` | `protected: void __thiscall Rainbow::UILib::EditBox::OnCopy(void)` |
+| `0x16e110` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::OnCopy(void)` |
+| `0x1d1cd0` | `public: virtual void __thiscall Rainbow::ModelLegacy::OnCustomBoneModified(bool)` |
+| `0x92380` | `protected: virtual void __thiscall Rainbow::ModelNew::OnCustomBoneModified(bool)` |
+| `0x139ff0` | `protected: void __thiscall Rainbow::UILib::EditBox::OnCut(void)` |
+| `0x16e2b0` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::OnCut(void)` |
+| `0x2366a0` | `public: virtual void __thiscall Rainbow::GifAsset::OnDataStreamReadBack(class Rainbow::SharePtr<class Rainbow::DataStream> &)` |
+| `0xcd900` | `public: virtual void __thiscall Rainbow::LegacyAsset::OnDataStreamReadBack(class Rainbow::SharePtr<class Rainbow::DataStream> &)` |
+| `0x1c3d70` | `public: virtual void __thiscall Rainbow::MotionObjLife::OnDelayStop(class Rainbow::Entity *,float)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::SimpleGameScene::OnDetachObject(class Rainbow::MovableObject *)` |
+| `0x1c3db0` | `public: virtual void __thiscall Rainbow::MotionObjLife::OnEnd(class Rainbow::Entity *)` |
+| `0x2bccb0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnEndMovie(void)` |
+| `0x2bd870` | `public: void __thiscall Rainbow::HUDTitleRender::OnEndMovie(void)` |
+| `0x2bccc0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnEndScreenDark(void)` |
+| `0x2bd890` | `public: void __thiscall Rainbow::HUDTitleRender::OnEndScreenDark(void)` |
+| `0x23bc10` | `public: void __thiscall Rainbow::TextureRenderGen::OnEndTick(void)` |
+| `0x2bd8a0` | `public: void __thiscall Rainbow::HUDTitleRender::OnEnterGame(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnEnterGameCallback(int,bool)` |
+| `0x3296a0` | `public: void __thiscall fairygui::MiniUIGameEventMgr::OnGameEvent(char const *)` |
+| `0x329fa0` | `public: void __thiscall fairygui::UIEventDispatcher::OnGameEvent(char const *)` |
+| `0x3c8b30` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::OnGetClipBoard(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::OnGetSdkAdvertisementsInfo(int,int)` |
+| `0x236760` | `private: void __thiscall Rainbow::GifAsset::OnGifLoadBuffAsyncComplete(class Rainbow::GifLoadBuffAsyncTask *)` |
+| `0x131b70` | `public: int __thiscall Rainbow::UILib::CoordInteract::OnHandleMouseEvent(struct Rainbow::InputEvent const &,class Rainbow::Ray &)` |
+| `0x949d0` | `bool __cdecl MINIW::OnInitAdvertisementsSDK(int)` |
+| `0x94d90` | `public: virtual int __thiscall GameUI::OnInputEvent(struct Rainbow::InputEvent const &)` |
+| `0x131d10` | `public: virtual int __thiscall Rainbow::UILib::CoordInteract::OnInputMessage(struct Rainbow::InputEvent const &)` |
+| `0x13a010` | `public: virtual int __thiscall Rainbow::UILib::EditBox::OnInputMessage(struct Rainbow::InputEvent const &)` |
+| `0x145de0` | `public: virtual int __thiscall Rainbow::UILib::Frame::OnInputMessage(struct Rainbow::InputEvent const &)` |
+| `0x14fae0` | `public: int __thiscall Rainbow::UILib::FrameManager::OnInputMessage(struct Rainbow::InputEvent const &)` |
+| `0x1671b0` | `public: virtual int __thiscall Rainbow::UILib::ModelView::OnInputMessage(struct Rainbow::InputEvent const &)` |
+| `0x16e2d0` | `protected: virtual int __thiscall Rainbow::UILib::MultiEditBox::OnInputMessage(struct Rainbow::InputEvent const &)` |
+| `0x13a360` | `protected: int __thiscall Rainbow::UILib::EditBox::OnKeyDown(struct Rainbow::InputEvent const &,bool)` |
+| `0x1461a0` | `public: int __thiscall Rainbow::UILib::Frame::OnKeyDown(struct Rainbow::InputEvent const &)` |
+| `0x16e4e0` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::OnKeyDown(struct Rainbow::InputEvent const &,bool)` |
+| `0x116b00` | `public: bool __thiscall CoordAxis::OnLBtnDown(float,float,float)` |
+| `0x131e60` | `protected: virtual bool __thiscall Rainbow::UILib::CoordInteract::OnLBtnDown(float,float)` |
+| `0x131ed0` | `protected: bool __thiscall Rainbow::UILib::CoordInteract::OnLBtnDownNew(float,float,class Rainbow::Ray &)` |
+| `0x116b70` | `public: bool __thiscall CoordAxis::OnLBtnUp(float,float)` |
+| `0x131f20` | `protected: virtual bool __thiscall Rainbow::UILib::CoordInteract::OnLBtnUp(float,float)` |
+| `0x1ae3e0` | `private: void __thiscall Rainbow::ModelMeshRenderers::OnLODChanged(class Rainbow::EventContent const *)` |
+| `0x2bccd0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnLeaveGame(void)` |
+| `0x2bd8e0` | `public: void __thiscall Rainbow::HUDTitleRender::OnLeaveGame(void)` |
+| `0x1d8ed0` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<1,1>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x1d8ed0` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<1,0>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x1d8ed0` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<0,1>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x1d8ed0` | `public: void __thiscall Rainbow::AssetTextureSettingLoader<0,0>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x92380` | `public: void __thiscall Rainbow::ZipAssetLoader<1,1>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x92380` | `public: void __thiscall Rainbow::ZipAssetLoader<1,0>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x92380` | `public: void __thiscall Rainbow::ZipAssetLoader<0,1>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x92380` | `public: void __thiscall Rainbow::ZipAssetLoader<0,0>::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x1d8ed0` | `public: void __thiscall Rainbow::ModelDataRetainSettingLoader::OnLoadMeta(class Rainbow::Asset *)` |
+| `0x8a250` | `void __cdecl MINIW::OnLoadSdkAD(int,int)` |
+| `0x14fd00` | `private: void __thiscall Rainbow::UILib::FrameManager::OnLostFocus(struct Rainbow::InputEvent const &)` |
+| `0x28a140` | `public: static void __cdecl Rainbow::Http::MiniUpload::OnLuaEndCall(bool,class Rainbow::Http::MiniUpload *)` |
+| `0x28a300` | `public: static void __cdecl Rainbow::Http::MiniUpload::OnLuaProcessCall(class Rainbow::Http::MiniUpload *)` |
+| `0x22ccb0` | `private: void __thiscall Rainbow::AsyncCombineTask::OnMainThreadCombineFinished(class Rainbow::AsyncSubCombineTask *)` |
+| `0x1be8e0` | `public: virtual void __thiscall Rainbow::EntityData::OnMainThreadResReaded(void)` |
+| `0x2368a0` | `public: virtual void __thiscall Rainbow::GifAsset::OnMainThreadResReaded(void)` |
+| `0xcdb00` | `public: virtual void __thiscall Rainbow::LegacyAsset::OnMainThreadResReaded(void)` |
+| `0x2727e0` | `private: static void __cdecl Rainbow::AssetTextureSettingLoader<1,1>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x272800` | `private: static void __cdecl Rainbow::AssetTextureSettingLoader<1,0>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x272820` | `private: static void __cdecl Rainbow::AssetTextureSettingLoader<0,1>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x272840` | `private: static void __cdecl Rainbow::AssetTextureSettingLoader<0,0>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0xa0760` | `private: static void __cdecl Rainbow::ZipAssetLoader<1,1>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0xa0760` | `private: static void __cdecl Rainbow::ZipAssetLoader<1,0>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x8a250` | `private: static void __cdecl Rainbow::ZipAssetLoader<0,1>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x8a250` | `private: static void __cdecl Rainbow::ZipAssetLoader<0,0>::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x1d8ef0` | `private: static void __cdecl Rainbow::ModelDataRetainSettingLoader::OnModifyAsset(class Rainbow::Asset *)` |
+| `0x14fd30` | `private: int __thiscall Rainbow::UILib::FrameManager::OnMouseDown(struct Rainbow::InputEvent const &)` |
+| `0x14fe00` | `private: int __thiscall Rainbow::UILib::FrameManager::OnMouseDrag(struct Rainbow::InputEvent const &)` |
+| `0x116ba0` | `public: bool __thiscall CoordAxis::OnMouseMove(float,float,float)` |
+| `0x131f60` | `protected: virtual bool __thiscall Rainbow::UILib::CoordInteract::OnMouseMove(float,float)` |
+| `0x14fef0` | `private: int __thiscall Rainbow::UILib::FrameManager::OnMouseMove(struct Rainbow::InputEvent const &)` |
+| `0x14ff70` | `private: int __thiscall Rainbow::UILib::FrameManager::OnMouseScroll(struct Rainbow::InputEvent const &)` |
+| `0x150050` | `private: int __thiscall Rainbow::UILib::FrameManager::OnMouseUp(struct Rainbow::InputEvent const &)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::SimpleGameScene::OnObjectPosChange(class Rainbow::MovableObject *)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::WebFrame::OnOpenIDLibrary(int)` |
+| `0x936a0` | `bool __cdecl MINIW::OnOpenMiniProgram(void)` |
+| `0x936a0` | `bool __cdecl MINIW::OnOpenMiniProgramWithType(int)` |
+| `0x2bcd10` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnOpenUI(void)` |
+| `0x2bdc70` | `public: void __thiscall Rainbow::HUDTitleRender::OnOpneUI(void)` |
+| `0x13a9e0` | `protected: void __thiscall Rainbow::UILib::EditBox::OnPaste(void)` |
+| `0x16e9a0` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::OnPaste(void)` |
+| `0x1c3e00` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::OnPause(bool,float,class Rainbow::Entity *)` |
+| `0x212de0` | `private: void __thiscall Rainbow::MusicManager::OnPause(void)` |
+| `0x94d80` | `public: virtual void __thiscall Rainbow::ObjectMotion::OnPause(bool,float,class Rainbow::Entity *)` |
+| `0x1c3e80` | `public: virtual void __thiscall Rainbow::MotionObjLife::OnPlay(class Rainbow::Entity *)` |
+| `0x8a250` | `void __cdecl MINIW::OnPlayAdSuccessCallback(int)` |
+| `0xd5ac0` | `private: virtual void __thiscall Rainbow::LegacyMeshRenderObject::OnPreRender(struct Rainbow::PrimitiveFrameNode const &)` |
+| `0x950f0` | `private: void __thiscall GameUI::OnPreTick(void)` |
+| `0xff3c0` | `protected: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::OnPrefabMakerDone(bool,class Rainbow::CloudAssetNS::CloudPrefabMaker *)` |
+| `0x1fbda0` | `private: int __thiscall Rainbow::Downloader::OnProgress(double,double,double,double)` |
+| `0x192fe0` | `private: virtual int __thiscall Rainbow::Downloader::OnProgressCallBack(double,double)` |
+| `0x2c5fa0` | `public: void __thiscall Rainbow::HUDTitleInfo::OnRelase(void)` |
+| `0x95100` | `protected: virtual void __thiscall Rainbow::BoneTrack::OnRelease(void)` |
+| `0xcdb80` | `protected: virtual void __thiscall Rainbow::LegacyAsset::OnRelease(void)` |
+| `0x95100` | `protected: virtual void __thiscall Rainbow::MeshData::OnRelease(void)` |
+| `0x9fff0` | `protected: virtual void __thiscall Rainbow::MiniObject::OnRelease(void)` |
+| `0x95100` | `protected: virtual void __thiscall Rainbow::RefObjectNoName::OnRelease(void)` |
+| `0x95100` | `protected: virtual void __thiscall Rainbow::SkinPatch::OnRelease(void)` |
+| `0x95100` | `protected: virtual void __thiscall Rainbow::SubMeshData::OnRelease(void)` |
+| `0xe0450` | `protected: virtual void __thiscall Rainbow::AnimationPlayer::OnRemoveFromGameObject(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::CubeBorder::OnRemoveFromGameObject(void)` |
+| `0xe8990` | `protected: virtual void __thiscall Rainbow::LegacySkinMeshRenderer::OnRemoveFromGameObject(void)` |
+| `0x1aa210` | `protected: virtual void __thiscall Rainbow::ModelAnimationPlayer::OnRemoveFromGameObject(void)` |
+| `0x8a250` | `protected: virtual void __thiscall Rainbow::MovableObject::OnRemoveFromGameObject(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::TriangleMeshNormalAndEdge::OnRemoveFromGameObject(void)` |
+| `0xe04c0` | `protected: virtual void __thiscall Rainbow::AnimationPlayer::OnRemoveFromScene(class Rainbow::GameScene *)` |
+| `0x1b9980` | `protected: virtual void __thiscall Rainbow::Entity::OnRemoveFromScene(class Rainbow::GameScene *)` |
+| `0x1aa230` | `protected: virtual void __thiscall Rainbow::ModelAnimationPlayer::OnRemoveFromScene(class Rainbow::GameScene *)` |
+| `0x1df820` | `public: virtual void __thiscall Rainbow::ParticleNode::OnRemoveFromScene(class Rainbow::GameScene *)` |
+| `0x2774b0` | `public: virtual void __thiscall Rainbow::TerrainDecalEffect::OnRemoveFromScene(class Rainbow::GameScene *)` |
+| `0x1b9980` | `protected: virtual void __thiscall Rainbow::Text3D::OnRemoveFromScene(class Rainbow::GameScene *)` |
+| `0x1171e0` | `public: void __thiscall CoordAxis::OnRender(void)` |
+| `0x95110` | `private: void __thiscall GameUI::OnRender(void)` |
+| `0x7e970` | `int __cdecl MINIW::OnReqSdkAD(char const *,int,void (__cdecl*)(int),int,int)` |
+| `0x8a250` | `void __cdecl MINIW::OnRequestReview(void)` |
+| `0x1bff50` | `protected: void __thiscall Rainbow::ModelMotion::OnResAsyncLoaded(class Rainbow::EventContent const *)` |
+| `0x2107f0` | `public: void __thiscall Rainbow::MobileCameraRenderer::OnResize(int,int)` |
+| `0x8a250` | `void __cdecl MINIW::OnRespWatchAD(int)` |
+| `0x1c3ed0` | `public: virtual void __thiscall Rainbow::MotionObjLife::OnRestart(class Rainbow::Entity *,float)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::OnRestartObject(class Rainbow::Entity *,float)` |
+| `0x1c3f40` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::OnRestartObject(class Rainbow::Entity *,float)` |
+| `0x1c4b60` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::OnRestartObject(class Rainbow::Entity *,float)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ObjectMotion::OnRestartObject(class Rainbow::Entity *,float)` |
+| `0x212e00` | `private: void __thiscall Rainbow::MusicManager::OnResume(void)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::WebFrame::OnSaveScriptContent(char const *)` |
+| `0xc2430` | `protected: void __thiscall Rainbow::SnapshotHelper::OnSceneRenderTexture(class Rainbow::RenderTexture *)` |
+| `0x8a250` | `void __cdecl MINIW::OnScreenCaptureCallback(char const *)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkAccountBinding(int)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkAdvertisementsOnClick(int,int)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkAdvertisementsShow(int,int)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkForum(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkGameCenter(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkLogin(int)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkLogin(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkLogout(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkRealNameAuth(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnSdkSwitch(void)` |
+| `0x3c8c10` | `int __cdecl MINIW::OnSetGameEnv(void)` |
+| `0x8a250` | `void __cdecl MINIW::OnSetSdkFloatMenu(int)` |
+| `0x8a250` | `void __cdecl MINIW::OnSetSdkRoleInfo(char const *,char const *,int,int)` |
+| `0x92380` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::OnShadowSwitch(bool)` |
+| `0x1ae6d0` | `private: void __thiscall Rainbow::ModelMeshRenderers::OnSkeletonBind(class Rainbow::EventContent const *)` |
+| `0x2e0af0` | `private: void __thiscall fairygui::GLoader::OnSpriteSeqLoaded(void)` |
+| `0x2bcd20` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::OnStartScreenDark(float)` |
+| `0x2bdc80` | `public: void __thiscall Rainbow::HUDTitleRender::OnStartScreenDark(float)` |
+| `0x3c8cf0` | `void __cdecl MINIW::OnStatisticsGameChooseRole(char const *,char const *,int)` |
+| `0x3c8d20` | `void __cdecl MINIW::OnStatisticsGameEvent(char const *,char const *,char const *,char const *,char const *,char const *,char const *)` |
+| `0x3c96d0` | `void __cdecl MINIW::OnStatisticsGamePurchaseMiniCoin(char const *,int,float)` |
+| `0x8a250` | `void __cdecl MINIW::OnStatisticsOnChargeRequest(char const *,char const *,char const *,float,int)` |
+| `0x8a250` | `void __cdecl MINIW::OnStatisticsOnChargeSuccess(char const *)` |
+| `0x1c4030` | `public: virtual void __thiscall Rainbow::MotionObjLife::OnStop(class Rainbow::Entity *)` |
+| `0xff3e0` | `protected: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::OnTaskDataDone(bool,struct Rainbow::CloudAssetNS::UploadTaskData *)` |
+| `0x1839e0` | `private: void __thiscall Rainbow::UILib::UITexture::OnTextureChanged(void)` |
+| `0xbd7d0` | `private: void __thiscall Rainbow::DebugMgr::OnTick(float)` |
+| `0x95240` | `private: void __thiscall GameUI::OnTick(float)` |
+| `0x277510` | `public: void __thiscall Rainbow::TerrainDecalEffect::OnTick(float)` |
+| `0x231d20` | `private: void __thiscall Rainbow::RainbowEffectProxy::OnTimelineSignal(class Rainbow::EventContent const *)` |
+| `0xc2470` | `protected: void __thiscall Rainbow::SnapshotHelper::OnUIRenderTexture(class Rainbow::RenderTexture *)` |
+| `0xe04e0` | `private: void __thiscall Rainbow::AnimationPlayer::OnUpdateMeshInstancContainer(class Rainbow::EventContent const *)` |
+| `0x324680` | `public: void __thiscall fairygui::FUISprite::OnUpdateScale9GridRect(void)` |
+| `0xe04f0` | `private: void __thiscall Rainbow::AnimationPlayer::OnUpdateSkeleton(class Rainbow::EventContent const *)` |
+| `0xe8a60` | `private: void __thiscall Rainbow::LegacySkinMeshRenderer::OnUpdateSkeleton(class Rainbow::EventContent const *)` |
+| `0xe0500` | `private: void __thiscall Rainbow::AnimationPlayer::OnViewDistanceSqrChanged(class Rainbow::EventContent const *)` |
+| `0x95280` | `private: void __thiscall GameUI::OnWindowSizeChanged(int,int)` |
+| `0x1fbdf0` | `private: int __thiscall Rainbow::Downloader::OnWrite(void *,unsigned int)` |
+| `0x936b0` | `private: virtual int __thiscall Rainbow::Downloader::OnWriteCallBack(unsigned int)` |
+| `0x8a250` | `void __cdecl MINIW::OpenAdTrackingSetting(void)` |
+| `0x2023c0` | `public: class Rainbow::DataStream * __thiscall Rainbow::FileManagerWeb::OpenFile(char const *,bool)` |
+| `0x2732d0` | `public: virtual class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::ZipFilePkg::OpenFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x273ad0` | `public: virtual class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::ZipFilePkg::OpenFile(char const *)` |
+| `0x202510` | `public: class Rainbow::DataStreamHandle * __thiscall Rainbow::FileManagerWeb::OpenFileStreamHandle(class core::basic_string<char,class core::StringStorageDefault<char> > const &,int,bool)` |
+| `0x29da70` | `public: virtual void __thiscall MINIW::Cef3Manager::OpenIDLibrary(int)` |
+| `0x279c60` | `public: static int __cdecl Rainbow::MiniEventDispatcher::OpenMiniLuaEventDispatcher(struct lua_State *)` |
+| `0x936a0` | `bool __cdecl MINIW::OpenQQBuLuo(void)` |
+| `0x936a0` | `bool __cdecl MINIW::OpenQQVip(int,int)` |
+| `0x8a250` | `void __cdecl MINIW::OpenSchemes(char const *)` |
+| `0x8a250` | `void __cdecl MINIW::OpenSystemSetting(void)` |
+| `0x24cef0` | `public: void __thiscall MINIW::ScriptVM::OpenToluaUI(void)` |
+| `0x8a250` | `void __cdecl MINIW::OpenWebView(char const *,int,char const *)` |
+| `0x73de88` | `public: static int const cocos2d::Scheduler::PRIORITY_NON_SYSTEM_MIN` |
+| `0x73de84` | `public: static int const cocos2d::Scheduler::PRIORITY_SYSTEM` |
+| `0x1b9990` | `public: void __thiscall Rainbow::Entity::PackBindCunstomObjs(bool)` |
+| `0x249240` | `public: void __thiscall Rainbow::MiniLua::LuaTableLinker::PairFor(class std::function<void __cdecl(class Rainbow::MiniLua::LuaValue &,class Rainbow::MiniLua::LuaValue &)>)` |
+| `0x16eb00` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::ParseMaxSize(void)` |
+| `0x2987a0` | `protected: bool __thiscall MINIW::CSVParser::ParseTextTable(void)` |
+| `0x95340` | `public: void __thiscall GameUI::ParseUIInXml(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1028b0` | `private: void __thiscall Rainbow::CloudAssetLoader::ParsingMetaData(class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0x7e970` | `int __cdecl MINIW::PatchVersion(void)` |
+| `0xe0520` | `public: void __thiscall Rainbow::AnimationPlayer::Pause(class Rainbow::AnimPlayTrack *)` |
+| `0x1c0080` | `public: void __thiscall Rainbow::ModelMotion::Pause(bool,class Rainbow::Entity *)` |
+| `0x743c98` | `public: static float const spine::MathUtil::Pi` |
+| `0x743c9c` | `public: static float const spine::MathUtil::Pi_2` |
+| `0xe0540` | `public: class Rainbow::AnimPlayTrack * __thiscall Rainbow::AnimationPlayer::Play(int,class Rainbow::SharePtr<class Rainbow::BaseAnimationData> const &,short const *,float,float,float,int,int)` |
+| `0xe0880` | `public: void __thiscall Rainbow::AnimationPlayer::Play(struct Rainbow::AnimGroupPlayInfo const &)` |
+| `0x1ba810` | `public: bool __thiscall Rainbow::Entity::PlayAnim(int,int,float,int)` |
+| `0x93e90` | `public: virtual bool __thiscall Rainbow::IModelAnimationPlayer::PlayAnim(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1aa2b0` | `public: bool __thiscall Rainbow::ModelAnimationPlayer::PlayAnim(int,float,float,int,int)` |
+| `0x1aa5e0` | `public: virtual bool __thiscall Rainbow::ModelAnimationPlayer::PlayAnim(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1d1e30` | `public: virtual bool __thiscall Rainbow::ModelLegacy::PlayAnim(int,float,float,int,int)` |
+| `0x1d2000` | `public: virtual bool __thiscall Rainbow::ModelNew::PlayAnim(int,float,float,int,int)` |
+| `0x1d2040` | `public: virtual class Rainbow::AnimPlayTrack * __thiscall Rainbow::ModelLegacy::PlayAnimReturnTrack(int,float,float)` |
+| `0x95370` | `protected: virtual class Rainbow::AnimPlayTrack * __thiscall Rainbow::ModelNew::PlayAnimReturnTrack(int,float,float)` |
+| `0x212e20` | `public: void __thiscall Rainbow::MusicManager::PlayBGMSound2D2DControl(char const *,float,bool)` |
+| `0x1ba8a0` | `public: void __thiscall Rainbow::Entity::PlayCurAnim(void)` |
+| `0x1c0140` | `public: void __thiscall Rainbow::ModelMotion::PlayFlashChain(class Rainbow::Entity *,int,class Rainbow::Vector3f)` |
+| `0x1c03e0` | `public: void __thiscall Rainbow::ModelMotion::PlayForcePE(class Rainbow::Entity *,class Rainbow::Vector3f,float)` |
+| `0x1ba8e0` | `public: void __thiscall Rainbow::Entity::PlayMotion(class Rainbow::FixedString const &,float,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,bool,int)` |
+| `0x1baeb0` | `public: void __thiscall Rainbow::Entity::PlayMotion(class Rainbow::FixedString const &,bool,int,float)` |
+| `0x1bb3c0` | `public: void __thiscall Rainbow::Entity::PlayMotion(int,bool,int)` |
+| `0x1c0670` | `public: void __thiscall Rainbow::ModelMotion::PlayMotion(class Rainbow::Entity *)` |
+| `0x231f10` | `public: void __thiscall Rainbow::RainbowEffectProxy::PlayMotion(void)` |
+| `0x212ea0` | `public: void __thiscall Rainbow::MusicManager::PlayMusic(char const *,bool)` |
+| `0x212ed0` | `public: void __thiscall Rainbow::MusicManager::PlaySound2D(char const *,float)` |
+| `0x212f10` | `public: class Rainbow::ISound * __thiscall Rainbow::MusicManager::PlaySound2DControl(char const *,float,bool,int)` |
+| `0x212f50` | `public: class Rainbow::ISound * __thiscall Rainbow::MusicManager::PlaySound2DControlWithPitch(class Rainbow::FixedString,float,bool,float)` |
+| `0x212fe0` | `public: class Rainbow::ISound * __thiscall Rainbow::MusicManager::PlaySound3DControl(class Rainbow::FixedString,struct Rainbow::SoundCreateInfo3D const &)` |
+| `0x213050` | `public: class Rainbow::ISound * __thiscall Rainbow::MusicManager::PlaySound3DControl(class Rainbow::FixedString,struct Rainbow::SoundCreateInfo3D const &,float)` |
+| `0x2130d0` | `public: void __thiscall Rainbow::MusicManager::PlaySound(class Rainbow::FixedString,class Rainbow::Vector3f,float,float,float,float)` |
+| `0x213160` | `public: void __thiscall Rainbow::MusicManager::PlayStoreSound2D(char const *,bool)` |
+| `0x213210` | `public: void __thiscall Rainbow::MusicManager::PlayTriggerSound2D(char const *)` |
+| `0x1bb420` | `public: class Rainbow::AnimPlayTrack * __thiscall Rainbow::Entity::PlayerAnimReturnTrack(int)` |
+| `0x3a8480` | `class Rainbow::Vector2f __cdecl cocos2d::PointApplyTransform(class Rainbow::Vector2f const &,class Rainbow::Matrix4x4f const &)` |
+| `0x39a120` | `class Rainbow::Vector2f __cdecl cocos2d::PointFromString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x15b320` | `public: bool __thiscall Rainbow::UILib::LayoutFrame::PointInLayoutFrame(int,int)const ` |
+| `0x126960` | `public: void __thiscall Rainbow::UILib::UIRenderer::PopClipRect(void)` |
+| `0x3c9750` | `void __cdecl MINIW::PopMessageBox(char const *,char const *)` |
+| `0xe0b20` | `public: bool __thiscall Rainbow::IModelAnimationPlayer::PopPlayMsg(struct Rainbow::AnimPlayMsg &)` |
+| `0x16eb10` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::PosToChar(class Rainbow::Vector<int,2>)` |
+| `0x126970` | `public: void __thiscall Rainbow::UILib::UIRenderer::PostHotfix(void)` |
+| `0x1461b0` | `public: virtual void __thiscall Rainbow::UILib::Frame::PostInit(void)` |
+| `0x15b5c0` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::PostInit(void)` |
+| `0x1d8f00` | `public: virtual void __thiscall Rainbow::ModelData::PostLoad(enum Rainbow::PostLoadMode)` |
+| `0x1bb4c0` | `public: void __thiscall Rainbow::Entity::PreRebuildSkeleton(void)` |
+| `0x210820` | `public: virtual void __thiscall Rainbow::MobileCameraRenderer::PreRender(class Rainbow::SceneRenderer *)` |
+| `0x150140` | `public: void __thiscall Rainbow::UILib::FrameManager::PreTick(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::MiniGameScene::PreloadSound(void)` |
+| `0x111500` | `protected: virtual void __thiscall Rainbow::RFontBase::PrepareLetterDefinitions(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::LegacyDefault3DObject::PrepareRenderDataPerFrame(struct Rainbow::LegacyDefaultRendererData &)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::LegacyDefault3DObject::PrepareRenderDataPerView(struct Rainbow::LegacyDefaultRendererData &,class Rainbow::RenderView const &)` |
+| `0xfa0d0` | `private: void __thiscall Rainbow::RemoteAssetsManager::PrepareUpload(struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &,class ?? :: ?? const &, ?? )` |
+| `0xbd7e0` | `public: void __thiscall Rainbow::DebugMgr::PrintMemoryInfo(void)` |
+| `0x150180` | `protected: int __thiscall Rainbow::UILib::FrameManager::ProcessAccelerator(struct Rainbow::UILib::AccelItem const &,bool)` |
+| `0xe0b80` | `private: static void __cdecl Rainbow::AnimationPlayer::ProcessAnimationsJob(class Rainbow::AnimationPlayer * *,int)` |
+| `0x146240` | `public: virtual bool __thiscall Rainbow::UILib::Frame::ProcessMouseWheel(void)` |
+| `0x39b960` | `void __cdecl cocos2d::ProfilingBeginTimingBlock(char const *)` |
+| `0x39bbf0` | `void __cdecl cocos2d::ProfilingEndTimingBlock(char const *)` |
+| `0x39bd50` | `void __cdecl cocos2d::ProfilingResetTimingBlock(char const *)` |
+| `0x1fbec0` | `private: static int __cdecl Rainbow::Downloader::ProgressFunction(void *,double,double,double,double)` |
+| `0x949d0` | `bool __cdecl MINIW::PullTPApp(char const *,char const *)` |
+| `0x2c5fe0` | `public: void __thiscall Rainbow::HUDTitleInfo::PushBlood(enum Rainbow::HUDBloodType,float)` |
+| `0x126b80` | `public: void __thiscall Rainbow::UILib::UIRenderer::PushClipRect(class Rainbow::TRect<int> const &)` |
+| `0x126c00` | `public: void __thiscall Rainbow::UILib::UIRenderer::PushClipRect(class Rainbow::TRect<float> const &)` |
+| `0x2c6130` | `public: void __thiscall Rainbow::HUDTitleInfo::PushEffectSprite(enum Rainbow::HUDTilteType,enum Rainbow::HUDEffectType,int)` |
+| `0x249380` | `private: void __thiscall Rainbow::MiniLua::LuaFunctionLinker::PushFunction(void)` |
+| `0x249c00` | `public: static void __cdecl Rainbow::MiniLua::LuaValue::PushLuaValue(struct lua_State *,class Rainbow::MiniLua::LuaValue const &)` |
+| `0x253c50` | `protected: void __thiscall MINIW::LuaCallHelper::PushObject(struct lua_TValue *)` |
+| `0xe0bb0` | `public: void __thiscall Rainbow::IModelAnimationPlayer::PushPlayMsg(struct Rainbow::AnimPlayMsg const &)` |
+| `0x2c62b0` | `public: void __thiscall Rainbow::HUDTitleInfo::PushTitle(class core::basic_string<char,class core::StringStorageDefault<char> > const &,enum Rainbow::HUDTilteType,int)` |
+| `0x2bd1e0` | `public: void __thiscall Rainbow::HudTitleLabelSet::PushTitleAttribute(class Rainbow::HudTitleAttribute *)` |
+| `0x253c70` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> &)` |
+| `0x253c70` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> &)` |
+| `0x253c90` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x253cb0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0x253cd0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class Rainbow::MiniLua::LuaValue &)` |
+| `0x253c70` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaFunctionLinker> const &)` |
+| `0x253c70` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class Rainbow::SharePtr<class Rainbow::MiniLua::LuaTableLinker> const &)` |
+| `0x253c90` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x253cb0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x253cd0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,class Rainbow::MiniLua::LuaValue const &)` |
+| `0x253cf0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,char)` |
+| `0x253d20` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,unsigned char)` |
+| `0x253d50` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,short)` |
+| `0x253d80` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,unsigned short)` |
+| `0x253db0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,int)` |
+| `0x253de0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,unsigned int)` |
+| `0x253e20` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,float)` |
+| `0x253e50` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,double)` |
+| `0x253e70` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,char *)` |
+| `0x253ed0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,void *)` |
+| `0x253e70` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,char const *)` |
+| `0x253ef0` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,__int64)` |
+| `0x253f20` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,unsigned __int64)` |
+| `0x253f50` | `protected: void __thiscall MINIW::LuaCallHelper::PushValue(struct lua_State *,bool)` |
+| `0x249390` | `public: void __thiscall Rainbow::MiniLua::LuaTableLinker::PushValue(class Rainbow::MiniLua::LuaValue &)const ` |
+| `0x249460` | `public: void __thiscall Rainbow::MiniLua::LuaLinker::PushValueInStack(void)` |
+| `0x3c97d0` | `void __cdecl MINIW::QueryContactPersons(void (__cdecl*)(int))` |
+| `0x102ca0` | `private: void __thiscall Rainbow::CloudAssetLoader::QueryDownloadUrl(void)` |
+| `0x13aab0` | `protected: bool __thiscall Rainbow::UILib::EditBox::QueryInputFlag(char const *,int)` |
+| `0x102e40` | `private: void __thiscall Rainbow::CloudAssetLoader::QueryMetaData(void)` |
+| `0x284340` | `protected: bool __thiscall Rainbow::Http::MiniBreakResumeUpload::QueryRemoteFileStatus(void)` |
+| `0x2bcd50` | `public: class Rainbow::HUDLevitationFont * __thiscall Rainbow::HUDLevitationFontRenderer::QueryValidDisyplayObjectByFontType(enum Rainbow::HUDLevitationFontType)` |
+| `0x92c1ac` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::RED` |
+| `0x92c1cc` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::RED` |
+| `0x92c220` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::RED` |
+| `0x91f3a0` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::REFLECT_MATRIX` |
+| `0xc24b0` | `public: static bool __cdecl Rainbow::SnapshotUtils::RGBAToPNG(class Rainbow::Image const &,class std::vector<unsigned char,class std::allocator<unsigned char> > &)` |
+| `0x743ca4` | `public: static float const spine::MathUtil::Rad_Deg` |
+| `0x21a560` | `double __cdecl Rainbow::RadiansToDegrees(double)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::SoundSystem::ReInit(void)` |
+| `0x1aade0` | `public: void __thiscall Rainbow::ModelAnimationPlayer::ReInitiallizeAnimator(void)` |
+| `0x1d2220` | `public: void __thiscall Rainbow::ModelNew::ReInitiallizeAnimator(void)` |
+| `0x1462f0` | `public: bool __thiscall Rainbow::UILib::Frame::ReLoadLuaFile(char const *)` |
+| `0x225320` | `void * __cdecl ReadWholeFile(char const *,int &)` |
+| `0x2776c0` | `private: void __thiscall Rainbow::TerrainDecalEffect::RebuildMesh(int)` |
+| `0x3a84f0` | `class cocos2d::Rect __cdecl cocos2d::RectApplyAffineTransform(class cocos2d::Rect const &,struct cocos2d::AffineTransform const &)` |
+| `0x3a8770` | `class cocos2d::Rect __cdecl cocos2d::RectApplyTransform(class cocos2d::Rect const &,class Rainbow::Matrix4x4f const &)` |
+| `0x39a320` | `class cocos2d::Rect __cdecl cocos2d::RectFromString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9259a0` | `public: static class Rainbow::ColourValue const Rainbow::ColourValue::Red` |
+| `0x1bb530` | `public: void __thiscall Rainbow::Entity::RefreshInstanceDatas(void)` |
+| `0x95380` | `public: void __thiscall ActorBodySafeHandle::Regist(class Rainbow::IActorBody *)` |
+| `0x1aaf20` | `public: bool __thiscall Rainbow::ModelAnimationPlayer::RegistAnimKeyFrameEvent(int,float,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x953b0` | `void __cdecl RegistSafeTex(class Rainbow::Texture *)` |
+| `0x953f0` | `public: void __thiscall GameUI::RegistTexSafeHandle(class Rainbow::Texture *)` |
+| `0x218d60` | `public: static void __cdecl MINIW::GameRuntimeInitializeAndCleanup::Register(void (__cdecl*)(void *),void (__cdecl*)(void *),int,void *)` |
+| `0x1465b0` | `public: void __thiscall Rainbow::UILib::Frame::RegisterActiveObject(void)` |
+| `0x1673a0` | `public: void __thiscall Rainbow::UILib::ModelView::RegisterActiveObject(void)` |
+| `0x183b10` | `public: void __thiscall Rainbow::UILib::UITexture::RegisterActiveObject(void)` |
+| `0xfa750` | `private: void __thiscall Rainbow::RemoteAssetsManager::RegisterAssetProcessor(char const *,class Rainbow::RemoteAssetProcessor * (__cdecl*)(struct Rainbow::RemoteResInfo &,class Rainbow::RemoteAssetsManager *))` |
+| `0x1465e0` | `public: void __thiscall Rainbow::UILib::Frame::RegisterEvent(char const *)` |
+| `0x3297b0` | `public: void __thiscall fairygui::MiniUIGameEventMgr::RegisterEvent(char const *,class fairygui::UIEventDispatcher *)` |
+| `0x290230` | `public: bool __thiscall WebSocketEventHandler::RegisterEventCallback(char const *,struct EventCallbackData)` |
+| `0x32a0b0` | `public: void __thiscall fairygui::UIEventDispatcher::RegisterGameEvent(char const *,class std::function<void __cdecl(char const *)> const &)` |
+| `0x8a250` | `void __cdecl Rainbow::RegisterLegacyClass(void)` |
+| `0x92380` | `public: void __thiscall Rainbow::DebugMgr::RegisterLuaProfiler(struct lua_State *)` |
+| `0x150220` | `public: void __thiscall Rainbow::UILib::FrameManager::RegisterObject(class Rainbow::UILib::UIObject *,char const *)` |
+| `0xd28f0` | `public: void __thiscall Rainbow::MeshInstance::RegisterSkeleton(class Rainbow::SkinnedSkeleton *)` |
+| `0x2bdcb0` | `public: int __thiscall Rainbow::HUDTitleRender::RegisterTitle(class Rainbow::Transform *,float,bool)` |
+| `0x146960` | `public: void __thiscall Rainbow::UILib::Frame::RegisterToFrameMgr(class Rainbow::UILib::FrameManager *)` |
+| `0x95430` | `public: void __thiscall Rainbow::RefObjectNoName::Release(void)` |
+| `0x150620` | `public: static void __cdecl Rainbow::UILib::FrameManager::ReleaseInstance(void)` |
+| `0x1be920` | `public: void __thiscall Rainbow::EntityData::ReleaseRes(void)` |
+| `0x2368d0` | `private: void __thiscall Rainbow::GifAsset::ReleaseRes(void)` |
+| `0x213290` | `public: void __thiscall Rainbow::MusicManager::ReleaseRes(void)` |
+| `0x23b1d0` | `void __cdecl ReleaseSequenceTextureImp(class Rainbow::SequenceTexture *)` |
+| `0x1d8f80` | `public: void __thiscall Rainbow::ModelData::ReleaseSkeleton(void)` |
+| `0x183b40` | `public: void __thiscall Rainbow::UILib::UITexture::ReleaseTexture(char const *)` |
+| `0x2132a0` | `public: void __thiscall Rainbow::MusicManager::ReleaseTriggerRes(char const *)` |
+| `0x1946b0` | `public: void __thiscall Rainbow::UILib::WebFrame::Reload(void)` |
+| `0x1673d0` | `public: void __thiscall Rainbow::UILib::ModelView::RemoveActorBodyFromScene(class Rainbow::IActorBody *)` |
+| `0x329b70` | `public: void __thiscall fairygui::MiniUIGameEventMgr::RemoveAllEventOfTarget(class fairygui::UIEventDispatcher *)` |
+| `0x20d020` | `public: void __thiscall Rainbow::BillboardMeshBatch::RemoveBillboardData(class Rainbow::LegacyBillboard *)` |
+| `0x1d2230` | `public: virtual void __thiscall Rainbow::ModelLegacy::RemoveCustomMesh(void)` |
+| `0x8a250` | `protected: virtual void __thiscall Rainbow::ModelNew::RemoveCustomMesh(void)` |
+| `0xff790` | `public: bool __thiscall Rainbow::CloudAssetNS::AssetUploadManager::RemoveEvent(unsigned int,void (__cdecl*)(class Rainbow::EventContent const *))` |
+| `0xede40` | `public: bool __thiscall Rainbow::RemoteAssetsManager::RemoveEvent(unsigned int,void (__cdecl*)(class Rainbow::EventContent const *))` |
+| `0x27a290` | `public: void __thiscall Rainbow::MiniGlobalEvent::RemoveEventHandleWhenEnd(unsigned __int64)` |
+| `0x271aa0` | `public: void __thiscall Rainbow::UIIn3DSceneMerger::RemoveSubObject(class Rainbow::LegacyCommon3DUI *)` |
+| `0x2204a0` | `public: static void __cdecl Rainbow::StringUtil::RemoveUTF8BOM(class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0xff7a0` | `protected: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::RemoveUploadTaskData(class Rainbow::FixedString)` |
+| `0x14a710` | `public: void __thiscall Rainbow::UILib::FrameManager::Render(void)` |
+| `0x95440` | `public: void __thiscall GameUI::Render(void)` |
+| `0x20ec20` | `public: virtual void __thiscall Rainbow::GaussBlurRenderer::RenderBeforeBlitBackBuffer(class Rainbow::SceneRenderer *)` |
+| `0x2108a0` | `public: virtual void __thiscall Rainbow::MobileCameraRenderer::RenderBeforeBlitBackBuffer(class Rainbow::SceneRenderer *)` |
+| `0x1117e0` | `public: void __thiscall Rainbow::RFontBase::RenderText(float)` |
+| `0x92380` | `public: void __thiscall Rainbow::DebugMgr::RentServerSetShowLog(bool)` |
+| `0x13ab60` | `public: void __thiscall Rainbow::UILib::EditBox::ReplaceSelectText(char const *)` |
+| `0x1469e0` | `public: virtual void __thiscall Rainbow::UILib::Frame::ReplaceSpecialName(void)` |
+| `0x15b640` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::ReplaceSpecialName(void)` |
+| `0xf5d00` | `public: void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniBreakResumeUpload>::Request(class std::function<bool __cdecl(class Rainbow::Http::MiniBreakResumeUpload *)>,class std::function<void __cdecl(class Rainbow::Http::MiniBreakResumeUpload *)>,class std::function<void __cdecl(bool,class Rainbow::Http::MiniBreakResumeUpload *)>)` |
+| `0xf5d00` | `public: void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniCustomUpload>::Request(class std::function<bool __cdecl(class Rainbow::Http::MiniCustomUpload *)>,class std::function<void __cdecl(class Rainbow::Http::MiniCustomUpload *)>,class std::function<void __cdecl(bool,class Rainbow::Http::MiniCustomUpload *)>)` |
+| `0xf5d00` | `public: void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::MiniUpload>::Request(class std::function<bool __cdecl(class Rainbow::Http::MiniUpload *)>,class std::function<void __cdecl(class Rainbow::Http::MiniUpload *)>,class std::function<void __cdecl(bool,class Rainbow::Http::MiniUpload *)>)` |
+| `0x27e810` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::Request(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,int,class std::function<void __cdecl(class Rainbow::Http::WebRequest *)>,class std::function<void __cdecl(bool,class Rainbow::Http::WebRequest *)>,int,int)` |
+| `0x1f9f20` | `public: bool __thiscall Rainbow::UpDownloadManager::RequestAsyLoad(class core::basic_string<char,class core::StringStorageDefault<char> > const &,int)` |
+| `0x1fa150` | `public: bool __thiscall Rainbow::UpDownloadManager::RequestAsyLoadByRealPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,int)` |
+| `0x286f10` | `protected: unsigned __int64 __thiscall Rainbow::Http::MiniCustomUpload::RequestFileCurPos(unsigned __int64)` |
+| `0x8a250` | `void __cdecl MINIW::RequestPermission(enum DevicePermission)` |
+| `0x8a250` | `void __cdecl MINIW::RequestPermissionNoUI(enum DevicePermission)` |
+| `0x1674b0` | `public: void __thiscall Rainbow::UILib::ModelView::Reset(void)` |
+| `0x1df880` | `public: void __thiscall Rainbow::ParticleNode::Reset(class Rainbow::Texture *)` |
+| `0x1bb600` | `public: void __thiscall Rainbow::Entity::ResetAnim(int)` |
+| `0x1d22e0` | `public: virtual void __thiscall Rainbow::ModelLegacy::ResetAnimPlayTrack(int)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::ModelNew::ResetAnimPlayTrack(int)` |
+| `0x194700` | `public: void __thiscall Rainbow::UILib::WebFrame::ResetBrowserPosition(void)` |
+| `0x132b80` | `public: void __thiscall Rainbow::UILib::CoordInteract::ResetCoord(void)` |
+| `0x2545c0` | `public: void __thiscall Rainbow::ShadowFace::ResetFaces(void)` |
+| `0x132bf0` | `public: virtual void __thiscall Rainbow::UILib::CCoord::ResetHighLight(void)` |
+| `0x117760` | `public: void __thiscall CoordAxis::ResetHighLight(void)` |
+| `0x1177e0` | `public: void __thiscall CoordAxis::ResetLBtnDownPt(void)` |
+| `0x1ae7b0` | `public: void __thiscall Rainbow::ModelRenderer::ResetLocalAABB(void)` |
+| `0xe0c50` | `protected: void __thiscall Rainbow::IModelAnimationPlayer::ResetMsgBuffertCount(void)` |
+| `0x1bb650` | `public: void __thiscall Rainbow::Entity::ResetPlannarShadowEnable(void)` |
+| `0x132d50` | `public: void __thiscall Rainbow::UILib::CCoord::ResetScale(void)` |
+| `0x31bb00` | `public: void __thiscall fairygui::FUIModelSprite::ResetTimelineActorPosition(class Rainbow::GameObject *,int)` |
+| `0x167710` | `public: void __thiscall Rainbow::UILib::ModelView::ResetTimelineActorPosition(class Rainbow::GameObject *,int)` |
+| `0xe0c60` | `public: void __thiscall Rainbow::AnimationPlayer::ResetUpdate(unsigned int)` |
+| `0x1bb980` | `public: virtual void __thiscall Rainbow::Entity::ResetUpdate(bool,unsigned int)` |
+| `0x1d2320` | `public: virtual void __thiscall Rainbow::ModelLegacy::ResetUpdate(bool,unsigned int)` |
+| `0x1d2360` | `public: virtual void __thiscall Rainbow::ModelNew::ResetUpdate(bool,unsigned int)` |
+| `0x1d2360` | `public: virtual void __thiscall Rainbow::MovableObject::ResetUpdate(bool,unsigned int)` |
+| `0x3c97f0` | `void __cdecl MINIW::RestoreDisplayMode(void)` |
+| `0x2c8780` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::RestoreGameConfig(void)` |
+| `0xe0de0` | `public: void __thiscall Rainbow::AnimationPlayer::Resume(class Rainbow::AnimPlayTrack *)` |
+| `0x8a250` | `protected: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::ResumeAllTask(void)` |
+| `0x28a400` | `public: void __thiscall Rainbow::Http::MiniUpload::ResumeFlag(bool)` |
+| `0x28a410` | `protected: unsigned __int64 __thiscall Rainbow::Http::MiniUpload::ResumeQueryFileCurPos(unsigned __int64)` |
+| `0x28a420` | `public: void __thiscall Rainbow::Http::MiniUpload::ResumeQueryUrl(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x35d230` | `public: virtual void __thiscall cocos2d::InputLabel::RightMoveCursor(void)` |
+| `0x183bd0` | `public: void __thiscall Rainbow::UILib::UITexture::Rotate180(void)` |
+| `0x183bf0` | `public: void __thiscall Rainbow::UILib::UITexture::Rotate270(void)` |
+| `0x183c10` | `public: void __thiscall Rainbow::UILib::UITexture::Rotate90(void)` |
+| `0x28e1f0` | `public: int __thiscall MINIW::WebSocketSvr::Run(void)` |
+| `0x928d80` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GButton::SELECTED_DISABLED` |
+| `0x928d50` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GButton::SELECTED_OVER` |
+| `0x6f6c5c` | `public: static int const fairygui::TextFormat::SHADOW` |
+| `0x92c270` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const cocos2d::STD_STRING_EMPTY` |
+| `0x966418` | `public: static bool Rainbow::ColourValue::SWAP_RED_BLUE` |
+| `0x957e10` | `public: static float Rainbow::RFontBase::S_FONT_OFFSET_Y` |
+| `0x214f50` | `public: static void __cdecl Rainbow::FmodSoundSystem::SafeReleaseSound(class FMOD::Sound *)` |
+| `0x95450` | `void __cdecl SafelyDestroyGameUI(void)` |
+| `0x211d30` | `private: unsigned char __thiscall Rainbow::PerlinNoise2D::SampleNoise(int,int,int,int,int)` |
+| `0x13b070` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::EditBox::Save(class tinyxml2::XMLElement *,bool)` |
+| `0x13ff70` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::FontString::Save(class tinyxml2::XMLElement *,bool)` |
+| `0x146a70` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::Frame::Save(class tinyxml2::XMLElement *,bool)` |
+| `0xcc4e0` | `public: void __thiscall Rainbow::GameUserSetting::Save(void)` |
+| `0x15b830` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::LayoutFrame::Save(class tinyxml2::XMLElement *,bool)` |
+| `0x167780` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::ModelView::Save(class tinyxml2::XMLElement *,bool)` |
+| `0x16ecf0` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::MultiEditBox::Save(class tinyxml2::XMLElement *,bool)` |
+| `0x183c50` | `public: virtual class tinyxml2::XMLElement * __thiscall Rainbow::UILib::UITexture::Save(class tinyxml2::XMLElement *,bool)` |
+| `0x8a250` | `void __cdecl MINIW::SaveAccount(char const *)` |
+| `0x2ccce0` | `public: void __thiscall Rainbow::Setting::GameConfiguration::SaveConfiguration(char const *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::DebugMgr::SaveDebugCfg(void)` |
+| `0xff8a0` | `public: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::SaveFilePrefabGUIDMap(void)` |
+| `0x2c87e0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SaveGameConfig(char const *)` |
+| `0x2ccf50` | `public: bool __thiscall Rainbow::Setting::GameConfiguration::SaveMapCustomConfiguration(char const *)` |
+| `0x2c8830` | `public: bool __thiscall Rainbow::Setting::GameConfigMgr::SaveMapCustomGameConfig(char const *)` |
+| `0x29daf0` | `public: virtual void __thiscall MINIW::Cef3Manager::SaveScriptContent(char const *)` |
+| `0x1d2370` | `public: void __thiscall Rainbow::SkinAnimContainer::SaveSkeletonAnimationClips(char const *,char const *)` |
+| `0x1d2990` | `public: static bool __cdecl Rainbow::Model::SaveToPrefabAndDestroy(class Rainbow::Model *,char const *,char const *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::UILib::FrameManager::SaveXMLFile(void)` |
+| `0x95490` | `public: bool __thiscall GameUI::SaveXMLFile(char const *,bool)` |
+| `0x8a250` | `void __cdecl MINIW::SavevideoWithphoto(char const *)` |
+| `0x8a250` | `void __cdecl MINIW::ScanImage(char const *)` |
+| `0x8a250` | `public: static void __cdecl Rainbow::UILib::Frame::ScriptRelease(class Rainbow::UILib::Frame *)` |
+| `0x13d5b0` | `public: void __thiscall Rainbow::UILib::EditBox::SelectAllText(void)` |
+| `0x16fab0` | `public: void __thiscall Rainbow::UILib::MultiEditBox::SelectAllText(void)` |
+| `0x132de0` | `public: virtual enum Rainbow::UILib::COOR_ARROW __thiscall Rainbow::UILib::CCoord::SelectArrow(float,float)` |
+| `0x117930` | `public: enum ARROWTYPE __thiscall CoordAxis::SelectArrow(float,float,float)` |
+| `0x132f50` | `public: enum Rainbow::UILib::COOR_ARROW __thiscall Rainbow::UILib::CCoord::SelectArrowNew(class Rainbow::Ray &)` |
+| `0x150660` | `public: void __thiscall Rainbow::UILib::FrameManager::SendEvent(char const *)` |
+| `0x954c0` | `public: void __thiscall GameUI::SendEvent(char const *)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::IClientInfo::SendLuaErrMsg(char const *)` |
+| `0x936a0` | `bool __cdecl MINIW::SendTextMessage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2383c0` | `void __cdecl Rainbow::SerializeExternalTexture(class Rainbow::LegacyArchive &,class Rainbow::SharePtr<class Rainbow::Texture2D> &)` |
+| `0x231f60` | `public: void __thiscall Rainbow::RainbowEffectProxyHolder::Set(class Rainbow::RainbowEffectProxy *)` |
+| `0x3c9800` | `void __cdecl MINIW::SetAccount(char const *)` |
+| `0x15e450` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetAnchorOffset(float,float)` |
+| `0x15e4e0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetAnchorOffsetByIndex(float,float,int)` |
+| `0x1415c0` | `public: void __thiscall Rainbow::UILib::FontString::SetAngle(float)` |
+| `0x1886f0` | `public: void __thiscall Rainbow::UILib::UITexture::SetAngle(float,int)` |
+| `0xe0e00` | `public: void __thiscall Rainbow::AnimationPlayer::SetAnimDelayInOut(float,float)` |
+| `0xe0e20` | `public: virtual void __thiscall Rainbow::AnimationPlayer::SetAnimPriority(int,int)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ModelAnimationPlayer::SetAnimPriority(int,int)` |
+| `0xe0e60` | `public: virtual void __thiscall Rainbow::AnimationPlayer::SetAnimWeight(int,float)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ModelAnimationPlayer::SetAnimWeight(int,float)` |
+| `0x2c8850` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetAntiAliasing(enum Rainbow::Setting::AntiAliasingType)` |
+| `0xf5e10` | `public: void __thiscall Rainbow::CloudAssetUser::SetAppID(unsigned __int64)` |
+| `0xf5e30` | `public: void __thiscall Rainbow::CloudAssetUser::SetAppKey(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x188710` | `public: void __thiscall Rainbow::UILib::UITexture::SetAutoAdaptive(int,int,bool,int)` |
+| `0xa07a0` | `public: void __thiscall Rainbow::UILib::FontString::SetAutoWrap(bool)` |
+| `0xe8ab0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetAvatarTexture(class Rainbow::FixedString const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,int)` |
+| `0x1ae970` | `public: void __thiscall Rainbow::ModelRenderer::SetAvatarTexture(class Rainbow::FixedString const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,int)` |
+| `0x2132c0` | `public: void __thiscall Rainbow::MusicManager::SetBGMSoundVolume(float)` |
+| `0x1480e0` | `public: void __thiscall Rainbow::UILib::Frame::SetBackDropAttr(int,int,int,int,int)` |
+| `0x148120` | `public: void __thiscall Rainbow::UILib::Frame::SetBackDropBlendAlpha(float)` |
+| `0x148160` | `public: void __thiscall Rainbow::UILib::Frame::SetBackDropBorderTex(char const *)` |
+| `0x148190` | `public: void __thiscall Rainbow::UILib::Frame::SetBackDropColor(unsigned int,unsigned int,unsigned int,unsigned int)` |
+| `0x1481c0` | `public: void __thiscall Rainbow::UILib::Frame::SetBackDropEdgeTex(char const *)` |
+| `0x26c990` | `public: void __thiscall Rainbow::StoveProgressBar3D::SetBackNinesquareParam(float,float,float,float)` |
+| `0x26ca00` | `public: void __thiscall Rainbow::StoveProgressBar3D::SetBarNinesquareParam(float,float,float,float)` |
+| `0x133060` | `public: void __thiscall Rainbow::Entity::SetBatchBillboardMesh(bool)` |
+| `0x1415e0` | `public: void __thiscall Rainbow::UILib::FontString::SetBlendAlpha(float)` |
+| `0x1481f0` | `public: void __thiscall Rainbow::UILib::Frame::SetBlendAlpha(float)` |
+| `0x141990` | `public: void __thiscall Rainbow::UILib::UITexture::SetBlendAlpha(float)` |
+| `0x188740` | `public: void __thiscall Rainbow::UILib::UITexture::SetBlendMode(enum Rainbow::BlendMode)` |
+| `0x2c6520` | `public: void __thiscall Rainbow::HUDTitleInfo::SetBloodMinMaxVal(float,float)` |
+| `0x2c6570` | `public: void __thiscall Rainbow::HUDTitleInfo::SetBloodVal(float,bool)` |
+| `0x2c8870` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetBloom(enum Rainbow::Setting::BloomType)` |
+| `0x954e0` | `public: void __thiscall Rainbow::GaussBlurRenderer::SetBlurDirty(bool)` |
+| `0x1ab140` | `public: void __thiscall Rainbow::ModelAnimationPlayer::SetBoneRotate(int,class Rainbow::Quaternionf const *,float)` |
+| `0x1d38f0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetBoneRotate(int,class Rainbow::Quaternionf const *,float)` |
+| `0x1d3920` | `public: virtual void __thiscall Rainbow::ModelNew::SetBoneRotate(int,class Rainbow::Quaternionf const *,float)` |
+| `0xe2b80` | `public: void __thiscall Rainbow::SkeletonComponent::SetBoneRotate(int,class Rainbow::Quaternionf const *,float)` |
+| `0x1482a0` | `public: void __thiscall Rainbow::UILib::Frame::SetBorderTex(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x275ce0` | `public: void __thiscall Rainbow::DecalRenderer::SetBoundDim(float,float,float)` |
+| `0x141610` | `public: void __thiscall Rainbow::UILib::FontString::SetBufferTimer(float,float)` |
+| `0x3c9820` | `void __cdecl MINIW::SetCallFunc(void (__cdecl*)(char const *,char const *))` |
+| `0xa07b0` | `public: void __thiscall Rainbow::UILib::CCoord::SetCamera(class Rainbow::Camera *)` |
+| `0x117c00` | `public: void __thiscall CoordAxis::SetCamera(class Rainbow::Camera *)` |
+| `0x133070` | `public: void __thiscall Rainbow::UILib::CoordInteract::SetCamera(class Rainbow::Camera *)` |
+| `0x210970` | `public: void __thiscall Rainbow::MobileCameraRenderer::SetCameraEnable(bool)` |
+| `0x210d50` | `public: void __thiscall Rainbow::MobileCameraRenderer::SetCameraImageData(unsigned char const *,int,int,unsigned char const *,unsigned char const *,int,int)` |
+| `0x2111b0` | `public: void __thiscall Rainbow::MobileCameraRenderer::SetCameraMaskData(unsigned char const *,int,int,bool)` |
+| `0x188750` | `public: void __thiscall Rainbow::UILib::UITexture::SetCentral(void)` |
+| `0x111a20` | `public: virtual void __thiscall Rainbow::RFontBase::SetCharSize(int,int)` |
+| `0x954f0` | `public: void __thiscall Rainbow::DebugMgr::SetCheckActorRelease(bool)` |
+| `0x3c9830` | `void __cdecl MINIW::SetClientEnv(int)` |
+| `0x1483f0` | `public: void __thiscall Rainbow::UILib::Frame::SetClientID(int)` |
+| `0x148400` | `public: void __thiscall Rainbow::UILib::Frame::SetClientString(char const *)` |
+| `0x148410` | `public: void __thiscall Rainbow::UILib::Frame::SetClientUserData(int,int)` |
+| `0x148430` | `public: void __thiscall Rainbow::UILib::Frame::SetClientUserDataLL(int,__int64)` |
+| `0x3c9840` | `void __cdecl MINIW::SetClientVersion(char *)` |
+| `0x148450` | `public: void __thiscall Rainbow::UILib::Frame::SetClipByParentState(bool)` |
+| `0x148480` | `public: void __thiscall Rainbow::UILib::Frame::SetClipState(bool)` |
+| `0x1041c0` | `public: void __thiscall Rainbow::CloudAssetUser::SetCloudAssetAuth(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0xd2a10` | `public: void __thiscall Rainbow::MeshInstance::SetColor(class Rainbow::ColorRGBAf const &)` |
+| `0x188830` | `public: void __thiscall Rainbow::UILib::UITexture::SetColor(int,int,int,int)` |
+| `0x1419f0` | `public: void __thiscall Rainbow::UILib::UITexture::SetColor(class Rainbow::ColorRGBA32)` |
+| `0x9c020` | `public: void __thiscall Rainbow::HudSetting::SetConfigSetting(class Rainbow::HudConfigSetting *)` |
+| `0x2c8890` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetConfigVersion(int)` |
+| `0x2cd1e0` | `public: void __thiscall Rainbow::Setting::GameConfiguration::SetConfiguration(class Rainbow::Setting::GameConfiguration *)` |
+| `0x284840` | `public: void __thiscall Rainbow::Http::MiniBreakResumeUpload::SetConnectTimeOut(int)` |
+| `0x2873c0` | `public: void __thiscall Rainbow::Http::MiniCustomUpload::SetConnectTimeOut(int)` |
+| `0x28a430` | `public: void __thiscall Rainbow::Http::MiniUpload::SetConnectTimeOut(int)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::UILib::CCoord::SetCoordScale(class Rainbow::Vector3f const &)` |
+| `0x133080` | `public: void __thiscall Rainbow::UILib::CoordInteract::SetCoordScale(class Rainbow::Vector3f const &)` |
+| `0x8a250` | `void __cdecl MINIW::SetCrashReportUserId(char const *)` |
+| `0x8a250` | `void __cdecl MINIW::SetCrashUserValue(char const *,char const *)` |
+| `0x230fa0` | `public: void __thiscall Rainbow::MovableObject::SetCullValue(struct Rainbow::PrimitiveRenderData &,unsigned int,float)` |
+| `0x230ff0` | `public: void __thiscall Rainbow::MovableObject::SetCullValue(class Rainbow::Renderer *,unsigned int,float)` |
+| `0x95500` | `public: virtual void __thiscall Rainbow::AnimationPlayer::SetCullingMode(enum Rainbow::IModelAnimationPlayer::CullingMode)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::IModelAnimationPlayer::SetCullingMode(enum Rainbow::IModelAnimationPlayer::CullingMode)` |
+| `0x1330a0` | `public: void __thiscall Rainbow::UILib::CCoord::SetCurrType(enum Rainbow::UILib::COORD_TYPE,bool)` |
+| `0x95510` | `public: void __thiscall GameUI::SetCurrentCursor(char const *)` |
+| `0x194720` | `public: void __thiscall Rainbow::UILib::WebFrame::SetCursor(char const *)` |
+| `0x13d5e0` | `public: void __thiscall Rainbow::UILib::EditBox::SetCursorColor(class Rainbow::ColorRGBA32)` |
+| `0x10f140` | `void __cdecl Rainbow::SetCursorPos(int,int)` |
+| `0x1ab170` | `public: void __thiscall Rainbow::ModelAnimationPlayer::SetCustomAnimMap(class std::map<int,int,struct std::less<int>,class std::allocator<struct std::pair<int const ,int> > > *)` |
+| `0x1d3950` | `public: void __thiscall Rainbow::ModelNew::SetCustomAnimMap(class std::map<int,int,struct std::less<int>,class std::allocator<struct std::pair<int const ,int> > > *)` |
+| `0x1bbf10` | `public: bool __thiscall Rainbow::Entity::SetCustomBone(class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1d3970` | `public: virtual bool __thiscall Rainbow::ModelLegacy::SetCustomBone(class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1d3a40` | `protected: virtual bool __thiscall Rainbow::ModelNew::SetCustomBone(class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1bc030` | `public: bool __thiscall Rainbow::Entity::SetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1d8fb0` | `public: bool __thiscall Rainbow::ModelData::SetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1d3a60` | `public: virtual bool __thiscall Rainbow::ModelLegacy::SetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1d00c0` | `protected: virtual bool __thiscall Rainbow::ModelNew::SetCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x1d3af0` | `public: void __thiscall Rainbow::Model::SetCustomPrepareFinish(bool)` |
+| `0x1bc120` | `public: void __thiscall Rainbow::Entity::SetCustomSequenceEndtime(int,int)` |
+| `0x1d3b00` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetCustomSequenceEndtime(int,int)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::ModelNew::SetCustomSequenceEndtime(int,int)` |
+| `0x23b200` | `void __cdecl SetDataDecryptFunc(class Rainbow::SharePtr<class Rainbow::DataStream> (__cdecl*)(class Rainbow::SharePtr<class Rainbow::DataStream> &))` |
+| `0x275d30` | `public: void __thiscall Rainbow::DecalRenderer::SetDecalUvMatrix(class Rainbow::Matrix4x4f const &)` |
+| `0xbf880` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::SetDefaultParams(void)` |
+| `0x13d5f0` | `public: void __thiscall Rainbow::UILib::EditBox::SetDefaultText(char const *)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::MultiEditBox::SetDefaultText(char const *)` |
+| `0x25cad0` | `public: void __thiscall Rainbow::LegacyCommon3DUI::SetDepthBias(int)` |
+| `0x2c88b0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetDepthOfField(enum Rainbow::Setting::DepthOfFieldType)` |
+| `0x2c88d0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetDesign(int)` |
+| `0x104240` | `public: void __thiscall Rainbow::CloudAssetUser::SetDevStoreUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x95630` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetDeviceQualityValue(int)` |
+| `0x32cc20` | `public: static bool __cdecl fairygui::GearBase::SetDisableAllTweenEffect(bool)` |
+| `0x1fbf10` | `public: void __thiscall Rainbow::Downloader::SetDownloadMaxSpeed(__int64)` |
+| `0x111a50` | `public: virtual void __thiscall Rainbow::RFontBase::SetDrawAngle(float,float,float)` |
+| `0x2722d0` | `public: void __thiscall Rainbow::Voice3D::SetDrawSize(int,int)` |
+| `0x256230` | `public: void __thiscall Rainbow::Text3D::SetDrawStyleAndAlign(unsigned int,unsigned int)` |
+| `0x188860` | `public: void __thiscall Rainbow::UILib::UITexture::SetDrawType(int)` |
+| `0x2c88f0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetDynamicSkyLevel(enum Rainbow::Setting::DynamicSkyLevel)` |
+| `0x2c8910` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetDynamicVegetation(enum Rainbow::Setting::DynamicVegetationType)` |
+| `0x1484b0` | `public: void __thiscall Rainbow::UILib::Frame::SetEdgeTex(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x14a790` | `public: void __thiscall Rainbow::UILib::FrameManager::SetEditFrame(char const *)` |
+| `0xa07b0` | `public: void __thiscall Rainbow::UILib::EditBox::SetEditMethod(int)` |
+| `0x95520` | `public: void __thiscall GameUI::SetEditMode(bool)` |
+| `0x95540` | `public: void __thiscall Rainbow::UILib::FrameManager::SetEditModeEnabled(bool)` |
+| `0x95550` | `public: void __thiscall GameUI::SetEditingFrame(char const *)` |
+| `0x95560` | `public: virtual void __thiscall Rainbow::AnimationPlayer::SetEffectDisEnable(bool)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::ModelAnimationPlayer::SetEffectDisEnable(bool)` |
+| `0x2c8930` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetEffectQuality(enum Rainbow::Setting::EffectQuality)` |
+| `0xe8bc0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetEmissiveTex(class Rainbow::SharePtr<class Rainbow::Texture2D> const &)` |
+| `0xd2a90` | `public: void __thiscall Rainbow::MeshInstance::SetEmissiveTex(class Rainbow::SharePtr<class Rainbow::Texture2D> const &)` |
+| `0x1d3b20` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetEmissiveTex(class Rainbow::SharePtr<class Rainbow::Texture2D> const &)` |
+| `0x1aea70` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetEmissiveTex(class Rainbow::SharePtr<class Rainbow::Texture2D> const &)` |
+| `0x1d3b40` | `public: virtual void __thiscall Rainbow::ModelNew::SetEmissiveTex(class Rainbow::SharePtr<class Rainbow::Texture2D> const &)` |
+| `0x1aed10` | `public: void __thiscall Rainbow::ModelRenderer::SetEmissiveTex(class Rainbow::SharePtr<class Rainbow::Texture2D> const &)` |
+| `0xa07a0` | `public: void __thiscall Rainbow::UILib::CCoord::SetEnable(bool)` |
+| `0x69d70` | `public: void __thiscall MINIW::ScriptVM::SetEnableCall(bool)` |
+| `0x69d80` | `public: static void __cdecl MINIW::ScriptVM::SetEnableTmpCallFunction(bool)` |
+| `0x2879e0` | `public: void __thiscall Rainbow::Http::MiniDownloader::SetEncryptionKey(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x288a70` | `public: void __thiscall Rainbow::Http::MiniHttpRequest::SetEncryptionKey(class core::basic_string<char,class core::StringStorageDefault<char> >)` |
+| `0xbdb30` | `public: void __thiscall Rainbow::DebugMgr::SetFPSCameraOffset(float)` |
+| `0x95570` | `public: void __thiscall Rainbow::MovableObject::SetFather(class Rainbow::MovableObject *)` |
+| `0x1fbf30` | `public: void __thiscall Rainbow::Downloader::SetFileName(char const *)` |
+| `0x955b0` | `public: void __thiscall Rainbow::ObjectMotion::SetFlashChain(bool,class Rainbow::Vector3f)` |
+| `0xd2bc0` | `public: virtual void __thiscall Rainbow::MeshInstance::SetFloat(struct Rainbow::ShaderLab::FastPropertyName const &,float,int)` |
+| `0x1aeff0` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::SetFloat(struct Rainbow::ShaderLab::FastPropertyName const &,float,int)` |
+| `0x2c8950` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetFogEffect(enum Rainbow::Setting::FogEffectType)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::FontInstance::SetFont(void *)` |
+| `0x111a80` | `public: static void __cdecl Rainbow::RFontBase::SetFontRenderOffsetY(float)` |
+| `0x141640` | `public: void __thiscall Rainbow::UILib::FontString::SetFontSize(int)` |
+| `0x1416a0` | `public: void __thiscall Rainbow::UILib::FontString::SetFontStyle(short)` |
+| `0x1416c0` | `public: void __thiscall Rainbow::UILib::FontString::SetFontType(char const *)` |
+| `0x29db50` | `public: virtual void __thiscall MINIW::Cef3Manager::SetForbidInnerLinkFlag(bool)` |
+| `0x194740` | `public: void __thiscall Rainbow::UILib::WebFrame::SetForbidInnerLinkFlag(bool)` |
+| `0x955e0` | `public: void __thiscall Rainbow::ObjectMotion::SetForcePE(bool,class Rainbow::Vector3f,float)` |
+| `0x15e5a0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetFrameDraw(bool)` |
+| `0x318130` | `public: virtual void __thiscall fairygui::FUIContainer::SetFrameLevel(int)` |
+| `0x95620` | `public: void __thiscall Rainbow::UILib::Frame::SetFrameLevel(int)` |
+| `0x2eb330` | `public: virtual void __thiscall fairygui::GObject::SetFrameLevel(int)` |
+| `0x371b40` | `public: virtual void __thiscall cocos2d::Node::SetFrameLevel(int)` |
+| `0x2c8970` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetFrameSplitRate(int)` |
+| `0x318160` | `public: virtual void __thiscall fairygui::FUIContainer::SetFrameStrata(int)` |
+| `0x2eb360` | `public: virtual void __thiscall fairygui::GObject::SetFrameStrata(int)` |
+| `0x95630` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetFrameStrata(enum Rainbow::UILib::FRAMESTRATA_T)` |
+| `0x371b60` | `public: virtual void __thiscall cocos2d::Node::SetFrameStrata(int)` |
+| `0x95630` | `public: void __thiscall Rainbow::UILib::Frame::SetFrameStrataInt(int)` |
+| `0x1bc170` | `public: virtual void __thiscall Rainbow::Entity::SetFrozenEffectEnable(bool,float)` |
+| `0xe8c00` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetFrozenEffectEnable(bool,float)` |
+| `0xd2c80` | `public: void __thiscall Rainbow::MeshInstance::SetFrozenEffectEnable(bool,float,float)` |
+| `0x1d3b60` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetFrozenEffectEnable(bool,float)` |
+| `0x1af2d0` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetFrozenEffectEnable(bool,float,float)` |
+| `0x1d3b90` | `public: virtual void __thiscall Rainbow::ModelNew::SetFrozenEffectEnable(bool,float)` |
+| `0x1af680` | `public: void __thiscall Rainbow::ModelRenderer::SetFrozenEffectEnable(bool,float)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::MovableObject::SetFrozenEffectEnable(bool,float)` |
+| `0x20ed50` | `private: void __thiscall Rainbow::GaussBlurRenderer::SetGaussBlurParam(void)` |
+| `0x2132e0` | `public: void __thiscall Rainbow::MusicManager::SetGlobalMusicVolume(float)` |
+| `0x213310` | `public: void __thiscall Rainbow::MusicManager::SetGlobalSoundVolume(float)` |
+| `0x211390` | `public: void __thiscall Rainbow::MobileCameraRenderer::SetGradientOffset(float)` |
+| `0x2c8990` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetGraphicsQuality(enum Rainbow::Setting::GraphicsSettingQuality)` |
+| `0x1418a0` | `public: void __thiscall Rainbow::UILib::FontString::SetGray(bool)` |
+| `0x188880` | `public: void __thiscall Rainbow::UILib::UITexture::SetGray(bool)` |
+| `0x2c89d0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetHDR(bool)` |
+| `0x15e5b0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetHeight(int)` |
+| `0x15e660` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetHeightEx(float)` |
+| `0x29db70` | `public: virtual void __thiscall MINIW::Cef3Manager::SetIDLibraryData(char const *)` |
+| `0x95640` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetInputTransparent(bool)` |
+| `0x1bc260` | `public: void __thiscall Rainbow::Entity::SetInstanceAmbient(class Rainbow::ColourValue const &)` |
+| `0xe8cf0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetInstanceAmbient(class Rainbow::ColorRGBAf const &)` |
+| `0xd2e80` | `public: void __thiscall Rainbow::MeshInstance::SetInstanceAmbient(class Rainbow::ColorRGBAf const &)` |
+| `0x1d3bc0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetInstanceAmbient(class Rainbow::ColourValue const &)` |
+| `0x1af800` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetInstanceAmbient(class Rainbow::ColorRGBAf const &)` |
+| `0x1d3bf0` | `public: virtual void __thiscall Rainbow::ModelNew::SetInstanceAmbient(class Rainbow::ColourValue const &)` |
+| `0x1af930` | `public: void __thiscall Rainbow::ModelRenderer::SetInstanceAmbient(class Rainbow::ColorRGBAf const &)` |
+| `0x1bc330` | `public: void __thiscall Rainbow::Entity::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0xe8d80` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0xd2ee0` | `public: void __thiscall Rainbow::MeshInstance::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0x1d3c20` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0x1afa70` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0x1d3c40` | `public: virtual void __thiscall Rainbow::ModelNew::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0x1afbe0` | `public: void __thiscall Rainbow::ModelRenderer::SetInstanceData(class Rainbow::Vector4f const &)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::Model::SetIsPlayer(bool)` |
+| `0x1ab180` | `public: void __thiscall Rainbow::ModelAnimationPlayer::SetIsPlayer(bool)` |
+| `0x1d3c60` | `public: virtual void __thiscall Rainbow::ModelNew::SetIsPlayer(bool)` |
+| `0x2c89f0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetIsStudioCfg(int)` |
+| `0x1418e0` | `public: void __thiscall Rainbow::UILib::FontInstance::SetJustifyH(enum Rainbow::UILib::JUSTIFYH_T)` |
+| `0x1418f0` | `public: void __thiscall Rainbow::UILib::FontInstance::SetJustifyV(enum Rainbow::UILib::JUSTIFYV_T)` |
+| `0xd2f40` | `public: virtual void __thiscall Rainbow::MeshInstance::SetKeyword(struct Rainbow::ShaderLab::FastPropertyName const &,bool const &)` |
+| `0x1afd20` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::SetKeyword(struct Rainbow::ShaderLab::FastPropertyName const &,bool const &)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::Model::SetLODForce(int)` |
+| `0x1aff10` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetLODForce(int)` |
+| `0x1d3c80` | `public: virtual void __thiscall Rainbow::ModelNew::SetLODForce(int)` |
+| `0x1aff60` | `public: void __thiscall Rainbow::ModelRenderer::SetLODForce(int)` |
+| `0x15e720` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetLayOutSize(class Rainbow::UILib::LayoutDim)` |
+| `0x231040` | `public: virtual void __thiscall Rainbow::MovableObject::SetLayer(unsigned int)` |
+| `0x1507e0` | `public: bool __thiscall Rainbow::UILib::FrameManager::SetLayoutFrameToGlobal(char const *)` |
+| `0xbfbd0` | `public: static void __cdecl Rainbow::LegacyGlobalShaderParamManager::SetLegacyGlobalProperties(void)` |
+| `0x194760` | `public: void __thiscall Rainbow::UILib::WebFrame::SetLibraryJsonData(char const *)` |
+| `0x2c8a20` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetLimitFrameRate(int)` |
+| `0x957f0` | `public: virtual void __thiscall Rainbow::RFontBase::SetLineInterval(float)` |
+| `0x126c40` | `public: void __thiscall Rainbow::UILib::UIRenderer::SetLineInterval(void *,float)` |
+| `0x213340` | `public: void __thiscall Rainbow::MusicManager::SetListener(class Rainbow::Vector3f const *,class Rainbow::Vector3f const *,class Rainbow::Vector3f const *,class Rainbow::Vector3f const *)` |
+| `0x25cae0` | `public: void __thiscall Rainbow::LegacyCommon3DUI::SetLocalBounds(class Rainbow::AABB const &)` |
+| `0xe8e10` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetLocalCustomBounds(class Rainbow::BoxBound)` |
+| `0x2c8a40` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetLocalLight(bool)` |
+| `0x133480` | `public: void __thiscall Rainbow::ModelMotion::SetLodLevel(enum Rainbow::LOD_LEVEL &)` |
+| `0x1334a0` | `public: void __thiscall Rainbow::ModelMotion::SetLodLevel(int)` |
+| `0x95650` | `public: virtual void __thiscall Rainbow::ObjectMotion::SetLodLevel(int)` |
+| `0x95650` | `public: virtual void __thiscall Rainbow::ObjectMotion::SetLodLevel(enum Rainbow::LOD_LEVEL)` |
+| `0x232000` | `public: void __thiscall Rainbow::RainbowEffectProxy::SetLoop(bool)` |
+| `0x1c0800` | `public: void __thiscall Rainbow::ModelMotion::SetLoopStopTime(float)` |
+| `0x249de0` | `public: static void __cdecl Rainbow::MiniLua::LuaValue::SetLuaValue(struct lua_State *,int,class Rainbow::MiniLua::LuaValue &)` |
+| `0x2c8a60` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetLutFilter(enum Rainbow::Setting::LutFilterType)` |
+| `0x2941a0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::SetMainCamera(class Rainbow::Camera *)` |
+| `0x9bbd0` | `public: void __thiscall Rainbow::HUDTitleRender::SetMainCamera(class Rainbow::Camera *)` |
+| `0x95660` | `public: virtual void __thiscall Rainbow::MovableObject::SetMainObject(void)` |
+| `0x2c8a80` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetMapCustomChange(bool)` |
+| `0x104290` | `public: void __thiscall Rainbow::CloudAssetUser::SetMapUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1888b0` | `public: void __thiscall Rainbow::UILib::UITexture::SetMaskColor(unsigned int)` |
+| `0x2c8a90` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetMaterialQuality(enum Rainbow::Setting::MaterialQuality)` |
+| `0x256250` | `public: void __thiscall Rainbow::LegacyCommon3DUI::SetMerged(bool)` |
+| `0x275d50` | `public: void __thiscall Rainbow::DecalRenderer::SetMeshData(struct Rainbow::DecalRenderer::DecalVertex *,int,unsigned short *,int)` |
+| `0x28a450` | `public: void __thiscall Rainbow::Http::MiniUpload::SetMethon(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0xbfd70` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::SetMiniGameSkyFogColorAmount(float)` |
+| `0x9b7e0` | `public: void __thiscall Rainbow::CloudAssetUser::SetMiniId(int)` |
+| `0x216ae0` | `public: virtual void __thiscall Rainbow::GifSequenceTexture::SetMixTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1888d0` | `public: virtual void __thiscall Rainbow::SequenceTexture::SetMixTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x188930` | `public: void __thiscall Rainbow::UILib::UITexture::SetModAlpha(bool)` |
+| `0x2c8ab0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetModelQuality(enum Rainbow::Setting::ModelQuality)` |
+| `0x1affe0` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetModelmeshRenderers(struct dynamic_array<class Rainbow::Renderer *,0>,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x9bea0` | `public: void __thiscall Rainbow::RainbowEffectProxy::SetMotionClass(int)` |
+| `0x1bc420` | `public: void __thiscall Rainbow::Entity::SetMotionScale(char const *,class Rainbow::Vector3f const &)` |
+| `0x1c4080` | `public: virtual void __thiscall Rainbow::MotionObjLife::SetMotionTime(class Rainbow::Entity *,float)` |
+| `0x95670` | `public: void __thiscall Rainbow::UILib::UIRenderer::SetMultiLocalFontsPath(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &)` |
+| `0x213360` | `public: void __thiscall Rainbow::MusicManager::SetMusicPause(bool)` |
+| `0x213380` | `public: void __thiscall Rainbow::MusicManager::SetMusicVolume(float)` |
+| `0x2133b0` | `public: void __thiscall Rainbow::MusicManager::SetMute(bool)` |
+| `0x956a0` | `public: virtual void __thiscall Rainbow::Model::SetName(char const *)` |
+| `0x956b0` | `public: virtual void __thiscall Rainbow::SubMeshData::SetName(char const *)` |
+| `0x2c8ad0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetNeedNotifyMapCustomConfig(bool)` |
+| `0xe8e50` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetNextPass(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &)` |
+| `0xd3070` | `public: void __thiscall Rainbow::MeshInstance::SetNextPass(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &)` |
+| `0x1d3ca0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetNextPass(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &)` |
+| `0x1b08e0` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetNextPass(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &)` |
+| `0x1d3cc0` | `public: virtual void __thiscall Rainbow::ModelNew::SetNextPass(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &)` |
+| `0x1b0a20` | `public: void __thiscall Rainbow::ModelRenderer::SetNextPass(class Rainbow::SharePtr<class Rainbow::MaterialInstance> const &)` |
+| `0x2562f0` | `public: void __thiscall Rainbow::StoveProgressBar3D::SetNineSquare(bool)` |
+| `0x1c41e0` | `public: void __thiscall Rainbow::BindOjbect2Motion::SetNodePause(class Rainbow::MovableObject *,bool,float)` |
+| `0x2722f0` | `public: void __thiscall Rainbow::Voice3D::SetOffset(float,float)` |
+| `0x231060` | `public: void __thiscall Rainbow::MovableObject::SetOffsetPosition(class Rainbow::Vector3f const &)` |
+| `0x272320` | `public: void __thiscall Rainbow::Voice3D::SetOffsetX(float)` |
+| `0x272350` | `public: void __thiscall Rainbow::Voice3D::SetOffsetY(float)` |
+| `0x956c0` | `public: void __thiscall GameUI::SetOldUIEnable(bool)` |
+| `0x225d90` | `public: static void __cdecl Rainbow::WorldPos::SetOriginPos(class Rainbow::WorldPos)` |
+| `0x141900` | `public: void __thiscall Rainbow::UILib::FontString::SetOutline(bool)` |
+| `0x1d3ce0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetOutline(bool)` |
+| `0x1b0b80` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetOutline(bool)` |
+| `0x1d3d00` | `public: virtual void __thiscall Rainbow::ModelNew::SetOutline(bool)` |
+| `0x1b0bb0` | `public: void __thiscall Rainbow::ModelRenderer::SetOutline(bool)` |
+| `0x188960` | `public: void __thiscall Rainbow::UILib::UITexture::SetOverlay(bool)` |
+| `0x1bc510` | `public: void __thiscall Rainbow::Entity::SetOverlayColor(class Rainbow::ColourValue *)` |
+| `0xe8ee0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetOverlayColor(class Rainbow::ColorRGBAf const &)` |
+| `0xd30e0` | `public: void __thiscall Rainbow::MeshInstance::SetOverlayColor(class Rainbow::ColorRGBAf const &)` |
+| `0x1d3d20` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetOverlayColor(class Rainbow::ColourValue *)` |
+| `0x1b0d40` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetOverlayColor(class Rainbow::ColorRGBAf const &)` |
+| `0x1d3d60` | `public: virtual void __thiscall Rainbow::ModelNew::SetOverlayColor(class Rainbow::ColourValue *)` |
+| `0x1b0f60` | `public: void __thiscall Rainbow::ModelRenderer::SetOverlayColor(class Rainbow::ColorRGBAf const &)` |
+| `0xe8f70` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetOverlayMask(class Rainbow::SharePtr<class Rainbow::Texture2D> const &,class Rainbow::ColorRGBAf const &,class Rainbow::FixedString const &)` |
+| `0xd3190` | `public: void __thiscall Rainbow::MeshInstance::SetOverlayMask(class Rainbow::SharePtr<class Rainbow::Texture2D> const &,class Rainbow::ColorRGBAf const &)` |
+| `0x1d3da0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetOverlayMask(class Rainbow::SharePtr<class Rainbow::Texture2D> const &,class Rainbow::ColourValue *,class Rainbow::FixedString const &)` |
+| `0x1b10a0` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetOverlayMask(class Rainbow::SharePtr<class Rainbow::Texture2D> const &,class Rainbow::ColorRGBAf const &)` |
+| `0x1d3de0` | `public: virtual void __thiscall Rainbow::ModelNew::SetOverlayMask(class Rainbow::SharePtr<class Rainbow::Texture2D> const &,class Rainbow::ColourValue *,class Rainbow::FixedString const &)` |
+| `0x1b1410` | `public: void __thiscall Rainbow::ModelRenderer::SetOverlayMask(class Rainbow::SharePtr<class Rainbow::Texture2D> const &,class Rainbow::ColorRGBAf const &,class Rainbow::FixedString const &)` |
+| `0x956d0` | `public: void __thiscall Rainbow::AnimationPlayer::SetOwnerObjId(__int64)` |
+| `0x1334b0` | `public: void __thiscall Rainbow::UILib::CoordInteract::SetParam(class Rainbow::Camera *,class Rainbow::GameScene *)` |
+| `0x95500` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::SetParent(class Rainbow::ObjectMotion *)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::ObjectMotion::SetParent(class Rainbow::ObjectMotion *)` |
+| `0x117c10` | `public: void __thiscall CoordAxis::SetParentFrame(class Rainbow::UILib::Frame *)` |
+| `0x13d630` | `public: void __thiscall Rainbow::UILib::EditBox::SetPassword(char const *)` |
+| `0x956f0` | `public: void __thiscall Rainbow::AnimationPlayer::SetPause(bool)` |
+| `0x8a250` | `void __cdecl MINIW::SetPayExtendParams(int,char *,int)` |
+| `0x188990` | `public: bool __thiscall Rainbow::UILib::UITexture::SetPicIsErr(void)` |
+| `0x95700` | `public: void __thiscall Rainbow::MovableObject::SetPickParam(unsigned int)` |
+| `0x218580` | `class Rainbow::AudioGroup * __cdecl Rainbow::PitchDsp::SetPitchDsp(int)` |
+| `0xc58a0` | `public: void __thiscall Rainbow::GameSetting::SetPkgVersion(int,unsigned int)` |
+| `0x1bc5e0` | `public: void __thiscall Rainbow::Entity::SetPlannarShadowEnable(bool)` |
+| `0x1bc600` | `public: void __thiscall Rainbow::Entity::SetPlannarShadowParams(class Rainbow::Vector3f,float,class Rainbow::ColorRGBAf,float)` |
+| `0x15e7a0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetPoint(char const *,char const *,char const *,int,int,int)` |
+| `0x15e830` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetPoint(enum Rainbow::UILib::FRAMEPOINT_T,char const *,enum Rainbow::UILib::FRAMEPOINT_T,int,int,int)` |
+| `0x1335d0` | `public: void __thiscall Rainbow::UILib::CCoord::SetPosition(class Rainbow::Vector3f const &)` |
+| `0x117c30` | `public: void __thiscall CoordAxis::SetPosition(class Rainbow::Vector3f)` |
+| `0x133690` | `public: void __thiscall Rainbow::UILib::CoordInteract::SetPosition(class Rainbow::Vector3f const &)` |
+| `0x231060` | `public: void __thiscall Rainbow::MovableObject::SetPosition(class Rainbow::Vector3f const &)` |
+| `0x231080` | `public: void __thiscall Rainbow::MovableObject::SetPosition(class Rainbow::WorldPos const &)` |
+| `0x272380` | `public: void __thiscall Rainbow::Voice3D::SetPosition(class Rainbow::WorldPos const &)` |
+| `0x1889b0` | `public: void __thiscall Rainbow::UILib::UITexture::SetProgressValue(float)` |
+| `0x29dbc0` | `public: virtual void __thiscall MINIW::Cef3Manager::SetQQOrWeChatLoginedResult(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x29dc00` | `public: virtual void __thiscall MINIW::Cef3Manager::SetQQOrWechaBindedResult(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2c8ae0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetRawConfigFlag(bool)` |
+| `0x236c30` | `public: void __thiscall Rainbow::GifAsset::SetReadable(bool)` |
+| `0x2c8b00` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetRealTimeShadows(enum Rainbow::Setting::ShadowType)` |
+| `0x232020` | `public: void __thiscall Rainbow::RainbowEffectProxy::SetRefEntity(class Rainbow::Entity *)` |
+| `0x1b1560` | `public: void __thiscall Rainbow::ModelRenderer::SetRenderers(struct dynamic_array<class Rainbow::Renderer *,0>)` |
+| `0x3c9850` | `void __cdecl MINIW::SetReport(void (__cdecl*)(char const *))` |
+| `0x2c8b20` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetResolutionLevel(enum Rainbow::Setting::ResolutionLevel)` |
+| `0x2133d0` | `public: void __thiscall Rainbow::MusicManager::SetReversePlay(bool)` |
+| `0x1bc670` | `public: void __thiscall Rainbow::Entity::SetRimColor(class Rainbow::ColourValue *,float)` |
+| `0xe9020` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetRimColor(bool,class Rainbow::ColorRGBAf const &,float)` |
+| `0x94d80` | `public: void __thiscall Rainbow::MeshInstance::SetRimColor(bool,class Rainbow::ColorRGBAf const &,float)` |
+| `0x1d3e20` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetRimColor(class Rainbow::ColourValue *,float)` |
+| `0x94d80` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetRimColor(bool,class Rainbow::ColorRGBAf const &,float)` |
+| `0x1d3e70` | `public: virtual void __thiscall Rainbow::ModelNew::SetRimColor(class Rainbow::ColourValue *,float)` |
+| `0x1b1680` | `public: void __thiscall Rainbow::ModelRenderer::SetRimColor(bool,class Rainbow::ColorRGBAf const &,float)` |
+| `0x1336d0` | `public: void __thiscall Rainbow::UILib::CCoord::SetRotation(class Rainbow::Quaternionf const &)` |
+| `0x117ca0` | `public: void __thiscall CoordAxis::SetRotation(class Rainbow::Quaternionf)` |
+| `0x133720` | `public: virtual void __thiscall Rainbow::UILib::CoordInteract::SetRotation(class Rainbow::Quaternionf const &)` |
+| `0x2310f0` | `public: void __thiscall Rainbow::MovableObject::SetRotation(class Rainbow::Quaternionf const &)` |
+| `0x231110` | `public: void __thiscall Rainbow::MovableObject::SetRotation(float,float,float)` |
+| `0x231160` | `public: void __thiscall Rainbow::MovableObject::SetRotation(bool,float,float,float)` |
+| `0x2c8b40` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetSSAO(bool)` |
+| `0x95710` | `private: void __thiscall GameUI::SetSafeArea(class Rainbow::TRect<int> const &)` |
+| `0x1bc730` | `private: void __thiscall Rainbow::Entity::SetSameInstanceDatas(class Rainbow::MovableObject *)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::CCoord::SetScale(class Rainbow::Vector3f const &)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::CCoord::SetScale(float)` |
+| `0x117e10` | `public: void __thiscall CoordAxis::SetScale(class Rainbow::Vector3f)` |
+| `0x133760` | `public: void __thiscall Rainbow::UILib::CoordInteract::SetScale(class Rainbow::Vector3f const &)` |
+| `0x141910` | `public: void __thiscall Rainbow::UILib::FontString::SetScale(float)` |
+| `0x231200` | `public: void __thiscall Rainbow::MovableObject::SetScale(class Rainbow::Vector3f const &)` |
+| `0x232060` | `private: void __thiscall Rainbow::RainbowEffectProxy::SetScale(class Rainbow::ParticleSystem *,class Rainbow::Vector3f const &)` |
+| `0x232130` | `public: void __thiscall Rainbow::RainbowEffectProxy::SetScale(class Rainbow::Vector3f const &)` |
+| `0x232150` | `public: void __thiscall Rainbow::RainbowEffectProxy::SetScale(float)` |
+| `0x133780` | `public: void __thiscall Rainbow::UILib::CoordInteract::SetScene(class Rainbow::GameScene *)` |
+| `0x957a0` | `public: void __thiscall Rainbow::MovableObject::SetSceneContainer(void *)` |
+| `0x8a250` | `void __cdecl MINIW::SetScreenBrightness(float)` |
+| `0x29dc40` | `public: virtual void __thiscall MINIW::Cef3Manager::SetScriptContent(char const *)` |
+| `0x29dda0` | `public: virtual void __thiscall MINIW::Cef3Manager::SetScriptCursor(char const *)` |
+| `0x141930` | `public: void __thiscall Rainbow::UILib::FontString::SetScrollNumber(unsigned int,unsigned int,float)` |
+| `0x141960` | `public: void __thiscall Rainbow::UILib::FontString::SetScrollNumberWithUint(unsigned int,unsigned int,float)` |
+| `0x13d670` | `protected: int __thiscall Rainbow::UILib::EditBox::SetSel(int,int)` |
+| `0x16fae0` | `protected: int __thiscall Rainbow::UILib::MultiEditBox::SetSel(int,int)` |
+| `0xe90e0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetSelfEmissive(class Rainbow::ColorRGBAf const &)` |
+| `0xd3330` | `public: void __thiscall Rainbow::MeshInstance::SetSelfEmissive(class Rainbow::ColorRGBAf const &)` |
+| `0x1d3ec0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetSelfEmissive(class Rainbow::ColourValue const *)` |
+| `0x1b1780` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetSelfEmissive(class Rainbow::ColorRGBAf const &)` |
+| `0x1d3f00` | `public: virtual void __thiscall Rainbow::ModelNew::SetSelfEmissive(class Rainbow::ColourValue const *)` |
+| `0x1b18b0` | `public: void __thiscall Rainbow::ModelRenderer::SetSelfEmissive(class Rainbow::ColorRGBAf const &)` |
+| `0x148610` | `public: virtual void __thiscall Rainbow::UILib::Frame::SetSelfScale(float)` |
+| `0x15e960` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::SetSelfScale(float)` |
+| `0x1889d0` | `public: void __thiscall Rainbow::UILib::UITexture::SetSequenceTexture(class Rainbow::SequenceTexture *)` |
+| `0x188a80` | `public: void __thiscall Rainbow::UILib::UITexture::SetSequenceTextureByPath(char const *)` |
+| `0x1042e0` | `public: void __thiscall Rainbow::CloudAssetUser::SetServerToken(int)` |
+| `0x141990` | `public: void __thiscall Rainbow::UILib::FontString::SetShadowBlendAlpha(float)` |
+| `0x2c8b60` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetShadowCfg(struct Rainbow::Setting::ShadowSettingCfg const &)` |
+| `0x1419c0` | `public: void __thiscall Rainbow::UILib::FontString::SetShadowColor(int,int,int)` |
+| `0x1419f0` | `public: void __thiscall Rainbow::UILib::FontString::SetShadowColor(class Rainbow::ColorRGBA32)` |
+| `0x291af0` | `void __cdecl MINIW::SetSharedCountry(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x291b80` | `void __cdecl MINIW::SetSharedCountryIp(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)` |
+| `0x291c30` | `void __cdecl MINIW::SetSharedCountryOs(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x291cd0` | `void __cdecl MINIW::SetSharedLanguage(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x291d60` | `void __cdecl MINIW::SetSharedLanguageOs(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x1b19f0` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetShow(bool,class Rainbow::SkinnedSkeleton *)` |
+| `0x20edd0` | `public: void __thiscall Rainbow::GaussBlurRenderer::SetSigma(int)` |
+| `0x15e980` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetSize(int,int)` |
+| `0x15ea40` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetSizeNoRecal(int,int)` |
+| `0x133070` | `public: void __thiscall Rainbow::ModelRenderer::SetSkeleton(class Rainbow::SkinnedSkeleton *)` |
+| `0xe9170` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetSkinTexture(class Rainbow::FixedString const &,char const *)` |
+| `0x1d3f40` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetSkinTexture(class Rainbow::FixedString const &,char const *)` |
+| `0x1d3f60` | `public: virtual void __thiscall Rainbow::ModelNew::SetSkinTexture(class Rainbow::FixedString const &,char const *)` |
+| `0xbfdb0` | `public: void __thiscall Rainbow::LegacyGlobalShaderParamManager::SetSkyFogColorAmount(float)` |
+| `0x16fb90` | `public: void __thiscall Rainbow::UILib::MultiEditBox::SetSliderValue(int)` |
+| `0x25cb00` | `public: void __thiscall Rainbow::LegacyCommon3DUI::SetSlopeScaledDepthBias(float)` |
+| `0xc24c0` | `public: void __thiscall Rainbow::SnapshotHelper::SetSnapshotSize(unsigned int,unsigned int)` |
+| `0x957b0` | `public: virtual void __thiscall Rainbow::MovableObject::SetSortIndex(int)` |
+| `0x141a00` | `public: void __thiscall Rainbow::UILib::FontInstance::SetSpacing(float)` |
+| `0x3c9860` | `void __cdecl MINIW::SetStatisticsJson(void (__cdecl*)(char const *))` |
+| `0x188c20` | `public: void __thiscall Rainbow::UILib::UITexture::SetStretchFullscreen(bool)` |
+| `0x94d80` | `public: virtual void __thiscall Rainbow::Model::SetSubMeshMaskColor(class Rainbow::FixedString const &,char const *,class Rainbow::ColourValue *)` |
+| `0xd3390` | `public: virtual void __thiscall Rainbow::MeshInstance::SetSubMeshMaterial(int,class Rainbow::MaterialInstance *)` |
+| `0x1b1a50` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::SetSubMeshMaterial(int,class Rainbow::MaterialInstance *)` |
+| `0xe95d0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetSubMeshOverlayColor(class Rainbow::FixedString const &,class Rainbow::ColorRGBAf const &)` |
+| `0x1d4050` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetSubMeshOverlayColor(class Rainbow::FixedString const &,class Rainbow::ColourValue *)` |
+| `0x1d4090` | `public: virtual void __thiscall Rainbow::ModelNew::SetSubMeshOverlayColor(class Rainbow::FixedString const &,class Rainbow::ColourValue *)` |
+| `0x1b1b70` | `public: void __thiscall Rainbow::ModelRenderer::SetSubMeshOverlayColor(class Rainbow::FixedString const &,class Rainbow::ColorRGBAf const &)` |
+| `0xbdb50` | `public: void __thiscall Rainbow::DebugMgr::SetTPSCameraDistanceOffset(float)` |
+| `0x20ee10` | `public: void __thiscall Rainbow::GaussBlurRenderer::SetTexGenCallBack(class std::function<void __cdecl(void)> &)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexRelUV(class Rainbow::TRect<float> const &)` |
+| `0x92960` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexRelUV(float,float)` |
+| `0x188c40` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexUV(class Rainbow::TRect<int> const &)` |
+| `0x188c60` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexUV(int,int,int,int)` |
+| `0x188c90` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexUV(char const *)` |
+| `0x13d6d0` | `public: void __thiscall Rainbow::UILib::EditBox::SetText(char const *)` |
+| `0x141a20` | `public: void __thiscall Rainbow::UILib::FontString::SetText(char const *)` |
+| `0x16fbb0` | `public: void __thiscall Rainbow::UILib::MultiEditBox::SetText(char const *)` |
+| `0x194770` | `public: void __thiscall Rainbow::UILib::WebFrame::SetText(char const *)` |
+| `0x13d700` | `public: void __thiscall Rainbow::UILib::EditBox::SetTextColor(class Rainbow::ColorRGBA32)` |
+| `0x141b50` | `public: void __thiscall Rainbow::UILib::FontString::SetTextColor(int,int,int)` |
+| `0x141b80` | `public: void __thiscall Rainbow::UILib::FontString::SetTextColor(unsigned int)` |
+| `0x141bb0` | `public: void __thiscall Rainbow::UILib::FontString::SetTextColor(class Rainbow::ColorRGBA32)` |
+| `0x16fc40` | `public: void __thiscall Rainbow::UILib::MultiEditBox::SetTextColor(class Rainbow::ColorRGBA32)` |
+| `0x13d720` | `public: void __thiscall Rainbow::UILib::EditBox::SetTextType(char const *)` |
+| `0x188f00` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexture2D(class Rainbow::Texture2D *)` |
+| `0x275e60` | `public: void __thiscall Rainbow::DecalRenderer::SetTexture(class Rainbow::SharePtr<class Rainbow::Texture2D> &)` |
+| `0xd33d0` | `public: virtual void __thiscall Rainbow::MeshInstance::SetTexture(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1d40d0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetTexture(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,char const *)` |
+| `0x1b1b90` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::SetTexture(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1d4210` | `public: virtual void __thiscall Rainbow::ModelNew::SetTexture(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,char const *)` |
+| `0x1b1d80` | `public: void __thiscall Rainbow::ModelRenderer::SetTexture(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,char const *)` |
+| `0x1dfc60` | `public: void __thiscall Rainbow::ParticleNode::SetTexture(class Rainbow::SharePtr<class Rainbow::Texture> const &,float const *)` |
+| `0x188fb0` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexture(char const *,bool,bool,bool)` |
+| `0x189250` | `public: void __thiscall Rainbow::UILib::UITexture::SetTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1d42b0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetTextureAll(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,char const *)` |
+| `0x1d4370` | `public: virtual void __thiscall Rainbow::ModelNew::SetTextureAll(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,char const *)` |
+| `0x189570` | `public: void __thiscall Rainbow::UILib::UITexture::SetTextureCentrally(char const *,bool)` |
+| `0x189590` | `public: void __thiscall Rainbow::UILib::UITexture::SetTextureHuires(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x1896e0` | `public: void __thiscall Rainbow::UILib::UITexture::SetTextureHuiresXml(char const *)` |
+| `0x189810` | `public: bool __thiscall Rainbow::UILib::UITexture::SetTextureMainlandOrOverseas(char const *,char const *)` |
+| `0x189920` | `public: void __thiscall Rainbow::UILib::UITexture::SetTextureOriginally(char const *)` |
+| `0x2c8b80` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetTextureQuality(enum Rainbow::Setting::TextureQuality)` |
+| `0x189940` | `public: void __thiscall Rainbow::UILib::UITexture::SetTextureTemplate(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xd3800` | `public: virtual void __thiscall Rainbow::MeshInstance::SetTextureWithIndex(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,int)` |
+| `0x1b1e70` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::SetTextureWithIndex(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::SharePtr<class Rainbow::Texture2D>,int)` |
+| `0x267ca0` | `public: void __thiscall MINIW::WebSocketSvr::SetTimeOutSeconds(int)` |
+| `0x957d0` | `public: virtual void __thiscall Rainbow::AnimationPlayer::SetTimeScale(float)` |
+| `0x1bc7b0` | `public: void __thiscall Rainbow::Entity::SetTimeScale(float)` |
+| `0x1ab290` | `public: virtual void __thiscall Rainbow::ModelAnimationPlayer::SetTimeScale(float)` |
+| `0x1d4450` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetTimeScale(float)` |
+| `0x1d4450` | `public: virtual void __thiscall Rainbow::ModelNew::SetTimeScale(float)` |
+| `0x284860` | `public: void __thiscall Rainbow::Http::MiniBreakResumeUpload::SetTimeout(long)` |
+| `0x2873e0` | `public: void __thiscall Rainbow::Http::MiniCustomUpload::SetTimeout(long)` |
+| `0x28a470` | `public: void __thiscall Rainbow::Http::MiniUpload::SetTimeout(long)` |
+| `0x2941a0` | `public: void __thiscall MINIW::CSVParser::SetTitleCol(int)` |
+| `0x2941b0` | `public: void __thiscall MINIW::CSVParser::SetTitleLine(int)` |
+| `0xd38f0` | `public: void __thiscall Rainbow::MeshInstance::SetTransparent(unsigned char,float)` |
+| `0x957f0` | `public: void __thiscall Rainbow::MovableObject::SetTransparent(float)` |
+| `0xe95f0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetTransparentRGB(float)` |
+| `0xd3990` | `public: void __thiscall Rainbow::MeshInstance::SetTransparentRGB(float)` |
+| `0x1d4480` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetTransparentRGB(float)` |
+| `0x1b2140` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetTransparentRGB(float)` |
+| `0x1d44a0` | `public: virtual void __thiscall Rainbow::ModelNew::SetTransparentRGB(float)` |
+| `0x1b2320` | `public: void __thiscall Rainbow::ModelRenderer::SetTransparentRGB(float)` |
+| `0x1bc880` | `public: void __thiscall Rainbow::Entity::SetTransparentRenderGroup(unsigned char)` |
+| `0xe9680` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetTransparentRenderGroup(unsigned char)` |
+| `0xd3a50` | `public: void __thiscall Rainbow::MeshInstance::SetTransparentRenderGroup(unsigned char)` |
+| `0x1d44d0` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetTransparentRenderGroup(unsigned char)` |
+| `0x1b2470` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetTransparentRenderGroup(unsigned char)` |
+| `0x1d44f0` | `public: virtual void __thiscall Rainbow::ModelNew::SetTransparentRenderGroup(unsigned char)` |
+| `0x1b25e0` | `public: void __thiscall Rainbow::ModelRenderer::SetTransparentRenderGroup(unsigned char)` |
+| `0xe95f0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::SetTransparentValue(float)` |
+| `0xd3990` | `public: void __thiscall Rainbow::MeshInstance::SetTransparentValue(float)` |
+| `0x1d4480` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetTransparentValue(float)` |
+| `0x1b2720` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetTransparentValue(float)` |
+| `0x1d4510` | `public: virtual void __thiscall Rainbow::ModelNew::SetTransparentValue(float)` |
+| `0x1b2910` | `public: void __thiscall Rainbow::ModelRenderer::SetTransparentValue(float)` |
+| `0x189c20` | `public: void __thiscall Rainbow::UILib::UITexture::SetUVAnimation(int,bool)` |
+| `0x95810` | `public: void __thiscall Rainbow::UILib::UITexture::SetUVAnimationRowsAndCols(short,short)` |
+| `0x20ee30` | `public: void __thiscall Rainbow::GaussBlurRenderer::SetUp(class Rainbow::SharePtr<class Rainbow::Texture2D>,int,int)` |
+| `0x16fc50` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::SetUpdateDirty(bool)` |
+| `0x92960` | `public: void __thiscall Rainbow::CloudAssetUser::SetUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xa07c0` | `public: void __thiscall Rainbow::UILib::WebFrame::SetUrl(char const *)` |
+| `0x1715e0` | `public: void __thiscall Rainbow::UILib::ProgressBar::SetValue(float)` |
+| `0x13d730` | `protected: void __thiscall Rainbow::UILib::EditBox::SetVar(float,char const *)` |
+| `0xd3ad0` | `public: void __thiscall Rainbow::MeshInstance::SetVector(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::Vector2f const &)` |
+| `0xd3b40` | `public: virtual void __thiscall Rainbow::MeshInstance::SetVector(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::Vector4f const &,int)` |
+| `0x1b2a60` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::SetVector(struct Rainbow::ShaderLab::FastPropertyName const &,class Rainbow::Vector4f const &,int)` |
+| `0x133790` | `public: void __thiscall Rainbow::UILib::CCoord::SetVisible(bool)` |
+| `0x95830` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetVisible(bool)` |
+| `0x257450` | `public: virtual void __thiscall Rainbow::Empty3DUIRenderer::SetVisibleDistance(float,unsigned int)` |
+| `0x1bc8d0` | `public: virtual void __thiscall Rainbow::Entity::SetVisibleDistance(float,unsigned int)` |
+| `0x1d4540` | `public: virtual void __thiscall Rainbow::ModelLegacy::SetVisibleDistance(float,unsigned int)` |
+| `0x1b2d70` | `public: void __thiscall Rainbow::ModelMeshRenderers::SetVisibleDistance(float,unsigned int)` |
+| `0x1d4570` | `public: virtual void __thiscall Rainbow::ModelNew::SetVisibleDistance(float,unsigned int)` |
+| `0x1b2e60` | `public: void __thiscall Rainbow::ModelRenderer::SetVisibleDistance(float,unsigned int)` |
+| `0x231220` | `public: virtual void __thiscall Rainbow::MovableObject::SetVisibleDistance(float,unsigned int)` |
+| `0x1dfcc0` | `public: virtual void __thiscall Rainbow::ParticleNode::SetVisibleDistance(float,unsigned int)` |
+| `0x232250` | `public: virtual void __thiscall Rainbow::RainbowEffectProxy::SetVisibleDistance(float,unsigned int)` |
+| `0x257450` | `public: virtual void __thiscall Rainbow::UIIn3DSceneMerger::SetVisibleDistance(float,unsigned int)` |
+| `0x2c8ba0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetVisionCfg(struct Rainbow::Setting::VisionConfig const &)` |
+| `0x2c8bd0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetVisionLevel(enum Rainbow::Setting::VisionLevel)` |
+| `0x2c8bf0` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetVolumetricLights(enum Rainbow::Setting::VolumetricLightType)` |
+| `0x2c8c10` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetWaterReflection(enum Rainbow::Setting::WaterReflectionType)` |
+| `0x2c8c30` | `public: void __thiscall Rainbow::Setting::GameConfigMgr::SetWaterSurfaceCaustics(enum Rainbow::Setting::WaterSurfaceCausticsType)` |
+| `0x15eb10` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetWidth(int)` |
+| `0x15ebc0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::SetWidthEx(float)` |
+| `0x95840` | `public: void __thiscall GameUI::SetXMLReload(bool)` |
+| `0x25cb20` | `public: void __thiscall Rainbow::LegacyCommon3DUI::SetZOffset(float)` |
+| `0x111aa0` | `private: void __thiscall Rainbow::RFontBase::SetupCharPoly(struct Rainbow::UILib::DrawRect *,float,float,float,float,class Rainbow::TRect<float> const &,class Rainbow::ColorRGBA32 const &)` |
+| `0x8a250` | `void __cdecl MINIW::ShareToQQ(char const *,char const *,char const *,char const *)` |
+| `0x298920` | `public: bool __thiscall MINIW::CSVParser::Short(unsigned int,unsigned int,short &)const ` |
+| `0x294120` | `public: short const __thiscall MINIW::CSVParser::TableItem::Short(void)const ` |
+| `0x1bc9b0` | `public: virtual void __thiscall Rainbow::Entity::Show(bool)` |
+| `0x1486d0` | `public: virtual void __thiscall Rainbow::UILib::Frame::Show(void)` |
+| `0x15ec80` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::Show(void)` |
+| `0x1d45a0` | `public: virtual void __thiscall Rainbow::ModelNew::Show(bool)` |
+| `0x1b2fd0` | `public: void __thiscall Rainbow::ModelRenderer::Show(bool)` |
+| `0x2312a0` | `public: virtual void __thiscall Rainbow::MovableObject::Show(bool)` |
+| `0x194790` | `public: virtual void __thiscall Rainbow::UILib::WebFrame::Show(void)` |
+| `0x2bdea0` | `public: void __thiscall Rainbow::HUDTitleRender::ShowAllChatBubble(void)` |
+| `0x2bdeb0` | `public: void __thiscall Rainbow::HUDTitleRender::ShowAllTitle(bool)` |
+| `0x3c9870` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::ShowAudioPicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)` |
+| `0xe9710` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::ShowAvatar(int,bool)` |
+| `0x1d45c0` | `public: virtual void __thiscall Rainbow::ModelLegacy::ShowAvatar(int,bool)` |
+| `0x1d45e0` | `public: virtual void __thiscall Rainbow::ModelNew::ShowAvatar(int,bool)` |
+| `0x1b31e0` | `public: void __thiscall Rainbow::ModelRenderer::ShowAvatar(int,bool)` |
+| `0x1947d0` | `public: void __thiscall Rainbow::UILib::WebFrame::ShowBrowserPanel(bool)` |
+| `0x936a0` | `bool __cdecl MINIW::ShowCameraQRScanner(void (__cdecl*)(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &))` |
+| `0x936a0` | `bool __cdecl MINIW::ShowCameraQRScannerforARSkin(void)` |
+| `0x29df70` | `public: virtual void __thiscall MINIW::Cef3Manager::ShowCefBrowser(bool)` |
+| `0x2bded0` | `public: void __thiscall Rainbow::HUDTitleRender::ShowChatBubble(class Rainbow::Transform *,class core::basic_string<char,class core::StringStorageDefault<char> > const &,float,float,int)` |
+| `0x133920` | `public: void __thiscall Rainbow::UILib::CCoord::ShowCoord(enum Rainbow::UILib::COOR_ARROW)` |
+| `0x95850` | `public: void __thiscall GameUI::ShowCursor(bool)` |
+| `0x936a0` | `bool __cdecl MINIW::ShowImagePicker(char const *,void (__cdecl*)(bool),int,bool,int,int)` |
+| `0x3c9910` | `int __cdecl MINIW::ShowImagePickerEx(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,bool,int,int)` |
+| `0x8a250` | `void __cdecl MINIW::ShowPrivacyUpdateDialog(char const *)` |
+| `0xe9790` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::ShowSkin(class Rainbow::FixedString const &,bool)` |
+| `0x1d4600` | `public: virtual void __thiscall Rainbow::ModelLegacy::ShowSkin(class Rainbow::FixedString const &,bool)` |
+| `0x1d4620` | `public: virtual void __thiscall Rainbow::ModelNew::ShowSkin(class Rainbow::FixedString const &,bool)` |
+| `0x1b3240` | `public: void __thiscall Rainbow::ModelRenderer::ShowSkin(class Rainbow::FixedString const &,bool)` |
+| `0xe97b0` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::ShowSkins(bool)` |
+| `0x1d4640` | `public: virtual void __thiscall Rainbow::ModelLegacy::ShowSkins(bool)` |
+| `0x1d4660` | `public: virtual void __thiscall Rainbow::ModelNew::ShowSkins(bool)` |
+| `0x1b3260` | `public: void __thiscall Rainbow::ModelRenderer::ShowSkins(bool)` |
+| `0x148750` | `public: void __thiscall Rainbow::UILib::Frame::ShowUIPanel(void)` |
+| `0x95880` | `public: void __thiscall GameUI::ShowUIPanel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x958a0` | `public: void __thiscall GameUI::ShowUIPanel(char const *)` |
+| `0x2113e0` | `public: virtual void __thiscall Rainbow::MobileCameraRenderer::Shutdown(void)` |
+| `0x8a250` | `public: virtual void __cdecl Rainbow::IClientInfo::SimpleSLOG(char const *,...)` |
+| `0x1508d0` | `public: void __thiscall Rainbow::UILib::FrameManager::SimulateInputMessaget(int,int,int,int)` |
+| `0x39add0` | `class cocos2d::Size __cdecl cocos2d::SizeFromString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xd3bf0` | `private: void __thiscall Rainbow::MeshInstance::SkeletonEnable(bool)` |
+| `0xc24e0` | `public: void __thiscall Rainbow::SnapshotHelper::Snapshot(enum Rainbow::SnapshotHelper::SnapShotType)` |
+| `0x1fa260` | `private: void __thiscall Rainbow::UpDownloadManager::SplitFilename(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0x189c60` | `public: void __thiscall Rainbow::UILib::UITexture::StartAlphaAmin(float)` |
+| `0xbdb70` | `public: void __thiscall Rainbow::DebugMgr::StartGame(void)` |
+| `0x1030a0` | `public: virtual void __thiscall Rainbow::CloudAssetLoader::StartLoad(class Rainbow::SharePtr<class Rainbow::Asset> &,int,void (__cdecl*)(class Rainbow::SharePtr<class Rainbow::Asset>,int,class Rainbow::ICloudUrlLoader *))` |
+| `0x8a250` | `void __cdecl MINIW::StartMiniwShare(char const *,char const *,char const *,char const *,char const *)` |
+| `0x1c4210` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::StartObject(class Rainbow::Entity *)` |
+| `0x1c4270` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::StartObject(class Rainbow::Entity *)` |
+| `0x1c4b80` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::StartObject(class Rainbow::Entity *)` |
+| `0x1c4510` | `public: virtual void __thiscall Rainbow::PostObjMotion::StartObject(class Rainbow::Entity *)` |
+| `0x8a250` | `void __cdecl MINIW::StartOnlineShare(char const *,char const *,char const *,char const *,char const *)` |
+| `0xcdba0` | `protected: static void __cdecl Rainbow::LegacyAsset::StaticLoadArchHeader(class Rainbow::LegacyArchive &,unsigned short &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,struct Rainbow::ResourceFileHeader &)` |
+| `0x93880` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::AnimationData::StaticRTTI(void)` |
+| `0x93890` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::AnimationPlayer::StaticRTTI(void)` |
+| `0x938a0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::BSPData::StaticRTTI(void)` |
+| `0x938b0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::BaseAnimationData::StaticRTTI(void)` |
+| `0x20d000` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::BillboardMeshBatch::StaticRTTI(void)` |
+| `0xd6de0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::BoneTrack::StaticRTTI(void)` |
+| `0x257430` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Empty3DUIRenderer::StaticRTTI(void)` |
+| `0x130bd0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Entity::StaticRTTI(void)` |
+| `0x938c0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::EntityData::StaticRTTI(void)` |
+| `0x236160` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::GifAsset::StaticRTTI(void)` |
+| `0x2581d0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Image3D::StaticRTTI(void)` |
+| `0x259a20` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ImageBoard3D::StaticRTTI(void)` |
+| `0xd2270` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::IndexData::StaticRTTI(void)` |
+| `0x25ba90` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ItemImage3D::StaticRTTI(void)` |
+| `0x938d0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::LegacyAsset::StaticRTTI(void)` |
+| `0x255f60` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::LegacyCommon3DUI::StaticRTTI(void)` |
+| `0xd5920` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::LegacySkinMeshRenderer::StaticRTTI(void)` |
+| `0x938e0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::MeshData::StaticRTTI(void)` |
+| `0x938f0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::MiniObject::StaticRTTI(void)` |
+| `0x93900` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Model::StaticRTTI(void)` |
+| `0x1a93c0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ModelAnimationPlayer::StaticRTTI(void)` |
+| `0x93910` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ModelData::StaticRTTI(void)` |
+| `0x93920` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ModelLegacy::StaticRTTI(void)` |
+| `0x93930` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ModelNew::StaticRTTI(void)` |
+| `0x1adf50` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ModelRenderer::StaticRTTI(void)` |
+| `0x93940` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::MovableObject::StaticRTTI(void)` |
+| `0x255f70` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::MusicClubChatBubble3D::StaticRTTI(void)` |
+| `0x2640c0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::NameText3D::StaticRTTI(void)` |
+| `0x265bb0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::NormalText3D::StaticRTTI(void)` |
+| `0xd2280` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::OgreVertexData::StaticRTTI(void)` |
+| `0x25db20` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::OnlyText3D::StaticRTTI(void)` |
+| `0x2675d0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ProgressBarIn3D::StaticRTTI(void)` |
+| `0x268ed0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ProgressBarWithText3D::StaticRTTI(void)` |
+| `0x1a6e20` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::RainbowEffectProxy::StaticRTTI(void)` |
+| `0x93950` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::RefObjectNoName::StaticRTTI(void)` |
+| `0x2544e0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::ShadowFace::StaticRTTI(void)` |
+| `0xd5930` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::SkeletonComponent::StaticRTTI(void)` |
+| `0x93960` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::SkeletonData::StaticRTTI(void)` |
+| `0x93970` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::SkinAnimContainer::StaticRTTI(void)` |
+| `0x93980` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::SkinPatch::StaticRTTI(void)` |
+| `0x26bf90` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::StoveProgressBar3D::StaticRTTI(void)` |
+| `0x93990` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::SubMeshData::StaticRTTI(void)` |
+| `0x2773d0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::TerrainDecalEffect::StaticRTTI(void)` |
+| `0x255f80` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Text3D::StaticRTTI(void)` |
+| `0x255f90` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::TextBoardIn3D::StaticRTTI(void)` |
+| `0x2722b0` | `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Voice3D::StaticRTTI(void)` |
+| `0xe0ec0` | `public: void __thiscall Rainbow::AnimationPlayer::Stop(class Rainbow::AnimPlayTrack *,bool)` |
+| `0x2a37c0` | `private: void __thiscall Rainbow::CompressSystem::Stop(void)` |
+| `0x1ab320` | `public: void __thiscall Rainbow::ModelAnimationPlayer::Stop(int)` |
+| `0x1ab3b0` | `public: void __thiscall Rainbow::ModelAnimationPlayer::Stop(void)` |
+| `0x1c0840` | `public: void __thiscall Rainbow::ModelMotion::Stop(class Rainbow::Entity *)` |
+| `0xe0fb0` | `public: void __thiscall Rainbow::AnimationPlayer::StopAll(bool)` |
+| `0x189ca0` | `public: void __thiscall Rainbow::UILib::UITexture::StopAlphaAmin(void)` |
+| `0x1bca70` | `public: void __thiscall Rainbow::Entity::StopAnim(int,bool)` |
+| `0x1bcac0` | `public: void __thiscall Rainbow::Entity::StopAnim(void)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::IModelAnimationPlayer::StopAnim(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1ab410` | `public: virtual void __thiscall Rainbow::ModelAnimationPlayer::StopAnim(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x1d4680` | `public: virtual void __thiscall Rainbow::ModelLegacy::StopAnim(int,bool)` |
+| `0x1d46b0` | `public: virtual void __thiscall Rainbow::ModelLegacy::StopAnim(bool)` |
+| `0x1d46d0` | `public: virtual void __thiscall Rainbow::ModelNew::StopAnim(int,bool)` |
+| `0x1d46f0` | `public: virtual void __thiscall Rainbow::ModelNew::StopAnim(bool)` |
+| `0x1fbf60` | `public: void __thiscall Rainbow::Downloader::StopDownload(void)` |
+| `0x8a250` | `void __cdecl MINIW::StopGameVibrate(void)` |
+| `0x1bcb20` | `public: void __thiscall Rainbow::Entity::StopMotion(class Rainbow::FixedString const &)` |
+| `0x1bcbd0` | `public: void __thiscall Rainbow::Entity::StopMotion(int)` |
+| `0x1bccb0` | `public: void __thiscall Rainbow::Entity::StopMotion(void)` |
+| `0x2323f0` | `public: void __thiscall Rainbow::RainbowEffectProxy::StopMotion(void)` |
+| `0x213430` | `public: void __thiscall Rainbow::MusicManager::StopMusic(void)` |
+| `0x1c3790` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::StopObject(class Rainbow::Entity *)` |
+| `0x1b3c50` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::StopObject(class Rainbow::Entity *)` |
+| `0x1b3c50` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::StopObject(class Rainbow::Entity *)` |
+| `0x1b3c50` | `public: virtual void __thiscall Rainbow::PostObjMotion::StopObject(class Rainbow::Entity *)` |
+| `0x189cb0` | `public: void __thiscall Rainbow::UILib::UITexture::StopUVAnim(void)` |
+| `0x2254b0` | `float __cdecl Str2Float(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2254e0` | `int __cdecl Str2Int(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x93ae0` | `public: char const * __thiscall MINIW::CSVParser::TableItem::Str(void)const ` |
+| `0x126ca0` | `public: void __thiscall Rainbow::UILib::UIRenderer::StretchRect(float,float,float,float,class Rainbow::ColorRGBA32,int,int,int,int,enum Rainbow::UILib::UiUvType,float)` |
+| `0x25c0a0` | `public: void __thiscall Rainbow::ItemImage3D::StretchRectBound(class Rainbow::UILib::UIRenderer *,float,float,float,float,int,int,int,int)` |
+| `0x26ca70` | `private: void __thiscall Rainbow::StoveProgressBar3D::StretchRectBound(class Rainbow::UILib::UIRenderer *,float,float,float,float,int,int,int,int)` |
+| `0x26fb20` | `protected: void __thiscall Rainbow::TextBoardIn3D::StretchRectBound(class Rainbow::UILib::UIRenderer *,int,int,int,int,class Rainbow::ColorRGBA32,int,int,int,int)` |
+| `0x1270e0` | `public: void __thiscall Rainbow::UILib::UIRenderer::StretchTriangle(class Rainbow::Vector2f &,class Rainbow::Vector2f &,class Rainbow::Vector2f &,class Rainbow::Vector2f &,class Rainbow::Vector2f &,class Rainbow::Vector2f &,class Rainbow::ColorRGBA32)` |
+| `0x294260` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::CSVParser::TableItem::String(void)const ` |
+| `0x3c5ee0` | `class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > __cdecl cocos2d::StringUtf8ToWideChar(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3c6070` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl cocos2d::StringWideCharToUtf8(class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > const &)` |
+| `0x2115e0` | `public: void __thiscall Rainbow::MobileCameraRenderer::SwitchSpecialBackground(bool)` |
+| `0x8a250` | `void __cdecl MINIW::TakeARAvatar(char const *,int,bool)` |
+| `0x1fa5b0` | `private: static void * __cdecl Rainbow::UpDownloadManager::TaskWorker(void *)` |
+| `0x69d90` | `public: int __thiscall WCoord::TaxicabDistance(class WCoord const &)const ` |
+| `0x205570` | `public: bool __thiscall Rainbow::FileManagerWeb::TestSetFileState(int,unsigned char)` |
+| `0x2385b0` | `void __cdecl Rainbow::Tex2DAlphaBlendToData(class Rainbow::SharePtr<class Rainbow::Texture2D>,int,int,int,int,class Rainbow::ColorRGBA32 *,int,int,int,int)` |
+| `0x238800` | `bool __cdecl Rainbow::Tex2DSaveToImage(class Rainbow::SharePtr<class Rainbow::Texture2D>,char const *,enum Rainbow::ImageSaveType,int,int)` |
+| `0x220530` | `public: static void __cdecl Rainbow::StringUtil::TextConvertArabicString3D(wchar_t *)` |
+| `0x111af0` | `public: virtual void __thiscall Rainbow::RFontBase::TextOutRect(char const *,class Rainbow::TRect<float> const &,float,float,bool,class Rainbow::ColorRGBA32 const &,unsigned int,bool,float,class Rainbow::ColorRGBA32 const &,bool,bool,class Rainbow::TBox<float> *,enum Rainbow::CullMode,unsigned int)` |
+| `0x95900` | `public: virtual void __thiscall Rainbow::Model::TextureHSV(class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,float,float,float)` |
+| `0x1d4700` | `public: virtual void __thiscall Rainbow::ModelLegacy::TextureHSV(class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,float,float,float)` |
+| `0x95980` | `public: virtual void __thiscall Rainbow::Model::TextureSharpen(class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,float,float)` |
+| `0x1d4ca0` | `public: virtual void __thiscall Rainbow::ModelLegacy::TextureSharpen(class Rainbow::SharePtr<class Rainbow::Texture2D>,class Rainbow::SharePtr<class Rainbow::Texture2D>,float,float)` |
+| `0x2a37e0` | `public: static void * __cdecl Rainbow::CompressSystem::ThreadFunc(void *)` |
+| `0x28e550` | `private: static void * __cdecl MINIW::WebSocketSvr::ThreadFunc(void *)` |
+| `0x3c9950` | `void __cdecl MINIW::ThreadSleep(unsigned int)` |
+| `0xe1000` | `public: virtual void __thiscall Rainbow::AnimationPlayer::Tick(float)` |
+| `0x20d270` | `public: virtual void __thiscall Rainbow::BillboardMeshBatch::Tick(float)` |
+| `0x1bcdf0` | `public: virtual void __thiscall Rainbow::Entity::Tick(float)` |
+| `0x1487a0` | `public: virtual void __thiscall Rainbow::UILib::Frame::Tick(void)` |
+| `0x150960` | `public: void __thiscall Rainbow::UILib::FrameManager::Tick(float)` |
+| `0x1ab790` | `public: virtual void __thiscall Rainbow::ModelAnimationPlayer::Tick(float)` |
+| `0xfa870` | `public: void __thiscall Rainbow::RemoteAssetsManager::Tick(void)` |
+| `0x1009d0` | `public: static unsigned int __cdecl Rainbow::CloudAssetNS::CloudAssetHelper::ToCloudTypeId(enum Rainbow::CloudAssetNS::CloudAssetKind,unsigned short)` |
+| `0x1b3290` | `private: struct dynamic_array<class Rainbow::ModelMeshRenderers *,0> __thiscall Rainbow::ModelRenderer::ToModelmeshRenderers(struct dynamic_array<class Rainbow::Renderer *,0>)` |
+| `0x2cd2d0` | `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::Setting::GameConfiguration::ToUserConfigFullFile(char const *)` |
+| `0x3a8a90` | `class Rainbow::Matrix4x4f __cdecl cocos2d::TransformConcat(class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f const &)` |
+| `0x4de620` | `void __cdecl TweenValue_to_luaval(struct lua_State *,class fairygui::TweenValue const &)` |
+| `0x294120` | `public: unsigned char const __thiscall MINIW::CSVParser::TableItem::UChar(void)const ` |
+| `0x95a00` | `public: void __thiscall GameUI::UIReceiveMessage(bool)` |
+| `0x298430` | `public: bool __thiscall MINIW::CSVParser::UInt(unsigned int,unsigned int,unsigned int &)const ` |
+| `0x294120` | `public: unsigned int const __thiscall MINIW::CSVParser::TableItem::UInt(void)const ` |
+| `0x294140` | `public: long const __thiscall MINIW::CSVParser::TableItem::ULong(void)const ` |
+| `0x928d08` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const fairygui::GButton::UP` |
+| `0x294120` | `public: unsigned short const __thiscall MINIW::CSVParser::TableItem::UShort(void)const ` |
+| `0x3a6a20` | `bool __cdecl cocos2d::StringUtils::UTF16ToUTF32(class std::basic_string<char16_t,struct std::char_traits<char16_t>,class std::allocator<char16_t> > const &,class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > &)` |
+| `0x3a6ba0` | `bool __cdecl cocos2d::StringUtils::UTF16ToUTF8(class std::basic_string<char16_t,struct std::char_traits<char16_t>,class std::allocator<char16_t> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x3a6ca0` | `bool __cdecl cocos2d::StringUtils::UTF32ToUTF16(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,class std::basic_string<char16_t,struct std::char_traits<char16_t>,class std::allocator<char16_t> > &)` |
+| `0x3a6cc0` | `bool __cdecl cocos2d::StringUtils::UTF32ToUTF8(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x3c61e0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl cocos2d::UTF8StringToMultiByte(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3a6dc0` | `bool __cdecl cocos2d::StringUtils::UTF8ToUTF16(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char16_t,struct std::char_traits<char16_t>,class std::allocator<char16_t> > &)` |
+| `0x3a6de0` | `bool __cdecl cocos2d::StringUtils::UTF8ToUTF32(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > &)` |
+| `0x2219f0` | `public: static int __cdecl Rainbow::StringUtil::UTF8ToUnicode(wchar_t *,int,char const *,int)` |
+| `0x221ac0` | `public: static wchar_t const * __cdecl Rainbow::StringUtil::UTF8ToUnicode(char const *,int)` |
+| `0x1487f0` | `private: static void __cdecl Rainbow::UILib::Frame::UnActiveTexture(class Rainbow::UILib::DrawItem *)` |
+| `0x1678f0` | `private: static void __cdecl Rainbow::UILib::ModelView::UnActiveTexture(class Rainbow::UILib::DrawItem *)` |
+| `0x189d90` | `private: static void __cdecl Rainbow::UILib::UITexture::UnActiveTexture(class Rainbow::UILib::DrawItem *)` |
+| `0x1ab7c0` | `public: bool __thiscall Rainbow::ModelAnimationPlayer::UnRegistAnimKeyFrameEvent(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x95a10` | `public: void __thiscall GameUI::UnRegistTex(class Rainbow::Texture *)` |
+| `0x1489d0` | `public: void __thiscall Rainbow::UILib::Frame::UnRegisterActiveObject(void)` |
+| `0x167950` | `public: void __thiscall Rainbow::UILib::ModelView::UnRegisterActiveObject(void)` |
+| `0x18a050` | `public: void __thiscall Rainbow::UILib::UITexture::UnRegisterActiveObject(void)` |
+| `0x1489f0` | `public: void __thiscall Rainbow::UILib::Frame::UnRegisterEvent(char const *)` |
+| `0x329c20` | `public: void __thiscall fairygui::MiniUIGameEventMgr::UnRegisterEvent(char const *,class fairygui::UIEventDispatcher *)` |
+| `0x32a3e0` | `public: void __thiscall fairygui::UIEventDispatcher::UnRegisterGameEvent(char const *)` |
+| `0x2bdfd0` | `public: void __thiscall Rainbow::HUDTitleRender::UnRegisterTitle(int)` |
+| `0x1bce80` | `public: class Rainbow::MovableObject * __thiscall Rainbow::Entity::UnbindCustomObject(class Rainbow::FixedString const &,int,bool)` |
+| `0x1339c0` | `public: void __thiscall Rainbow::UILib::CCoord::UnbindFromModel(class Rainbow::Entity *)` |
+| `0x133a80` | `public: void __thiscall Rainbow::UILib::CoordInteract::UnbindFromModel(void)` |
+| `0x1bcfd0` | `public: bool __thiscall Rainbow::Entity::UnbindObject(class Rainbow::MovableObject *)` |
+| `0x221af0` | `public: static int __cdecl Rainbow::StringUtil::UnicodeToAnsi(char *,int,wchar_t const *,int)` |
+| `0x221b50` | `public: static char const * __cdecl Rainbow::StringUtil::UnicodeToAnsi(wchar_t const *,int)` |
+| `0x221bb0` | `public: static int __cdecl Rainbow::StringUtil::UnicodeToUTF8(char *,int,wchar_t const *,int)` |
+| `0x221c60` | `public: static char const * __cdecl Rainbow::StringUtil::UnicodeToUTF8(wchar_t const *,int)` |
+| `0x29e0f0` | `public: virtual void __thiscall MINIW::Cef3Manager::UninitializeCef(void)` |
+| `0x1bd0a0` | `public: void __thiscall Rainbow::Entity::UnpackBindCunstomObjs(void)` |
+| `0x95a50` | `public: void __thiscall ActorBodySafeHandle::Unregist(class Rainbow::IActorBody *)` |
+| `0x290550` | `public: bool __thiscall WebSocketEventHandler::UnregisterEventCallback(char const *,void (__cdecl*)(void *,void *))` |
+| `0x92380` | `public: void __thiscall Rainbow::DebugMgr::UnregisterLuaProfiler(struct lua_State *)` |
+| `0xd3d00` | `private: void __thiscall Rainbow::MeshInstance::UnregisterSkeleton(void)` |
+| `0x69dd0` | `public: class Rainbow::Vector3f __thiscall MINIW::Transform_::UpDir(void)const ` |
+| `0x92380` | `public: void __thiscall CoordAxis::Update(float)` |
+| `0x1c0920` | `public: void __thiscall Rainbow::ModelMotion::Update(float,class Rainbow::Entity *)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::SimpleGameScene::Update(unsigned int)` |
+| `0x150cd0` | `public: void __thiscall Rainbow::UILib::FrameManager::UpdateAllSelfScale(float)` |
+| `0xe11a0` | `private: static void __cdecl Rainbow::AnimationPlayer::UpdateAnimations(struct dynamic_array<class Rainbow::AnimationPlayer *,0> &)` |
+| `0x1bd140` | `public: void __thiscall Rainbow::Entity::UpdateBindFather(void)` |
+| `0x258890` | `public: void __thiscall Rainbow::Image3D::UpdateBoundSize(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::ItemImage3D::UpdateBoundSize(void)` |
+| `0x26e3a0` | `public: void __thiscall Rainbow::Text3D::UpdateBoundSize(void)` |
+| `0x29e140` | `public: virtual void __thiscall MINIW::Cef3Manager::UpdateCefBrowserPosition(class Rainbow::UILib::Frame *)` |
+| `0x29e2b0` | `public: virtual void __thiscall MINIW::Cef3Manager::UpdateCefBrowserPositionFUI(class fairygui::GWebView *)` |
+| `0x150cf0` | `public: void __thiscall Rainbow::UILib::FrameManager::UpdateChangedFrames(void)` |
+| `0x2be190` | `public: void __thiscall Rainbow::HUDTitleRender::UpdateChatBubble(float)` |
+| `0x133aa0` | `public: void __thiscall Rainbow::UILib::CCoord::UpdateCoord(float)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::AnimOjbectMotion::UpdateData(float,class Rainbow::Entity *)` |
+| `0x1c4540` | `public: virtual void __thiscall Rainbow::BindOjbect2Motion::UpdateData(float,class Rainbow::Entity *)` |
+| `0x1c4b90` | `public: virtual void __thiscall Rainbow::EventTriggerObjectMotion::UpdateData(float,class Rainbow::Entity *)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::PostObjMotion::UpdateData(float,class Rainbow::Entity *)` |
+| `0x150d90` | `public: void __thiscall Rainbow::UILib::FrameManager::UpdateGameFont(void)` |
+| `0x148b40` | `public: void __thiscall Rainbow::UILib::Frame::UpdateHiddenFrameRecursive(void)` |
+| `0x133bb0` | `public: void __thiscall Rainbow::UILib::CCoord::UpdateHighLight(float,float)` |
+| `0x133bf0` | `public: void __thiscall Rainbow::UILib::CCoord::UpdateHighLight(enum Rainbow::UILib::COOR_ARROW)` |
+| `0x117e60` | `public: void __thiscall CoordAxis::UpdateHighLight(float,float,float)` |
+| `0x117f30` | `public: void __thiscall CoordAxis::UpdateHighLight(enum ARROWTYPE)` |
+| `0x150f30` | `public: void __thiscall Rainbow::UILib::FrameManager::UpdateLayoutFrameName(char const *,char const *)` |
+| `0x2c3300` | `public: void __thiscall Rainbow::HUDChatBubble::UpdateLogic(float,class Rainbow::Vector3f const &)` |
+| `0x2bcdf0` | `public: void __thiscall Rainbow::HUDLevitationFontRenderer::UpdateLogic(float)` |
+| `0x2c65b0` | `public: void __thiscall Rainbow::HUDTitleInfo::UpdateLogic(float,class Rainbow::Vector3f const &)` |
+| `0xd3dd0` | `public: void __thiscall Rainbow::SubMeshInstance::UpdateMaterial(class Rainbow::MaterialInstance *)` |
+| `0x18a070` | `private: void __thiscall Rainbow::UILib::UITexture::UpdateMaterialDrawFlags(void)` |
+| `0x1272d0` | `public: void __thiscall Rainbow::UILib::UIRenderer::UpdateMaterialInstanceWithDrawFlags(class Rainbow::SharePtr<class Rainbow::MaterialInstance> &,enum Rainbow::UILib::UIDrawFlag)` |
+| `0x18a340` | `private: void __thiscall Rainbow::UILib::UITexture::UpdateMaterialMaskStatus(void)` |
+| `0x18a3c0` | `private: void __thiscall Rainbow::UILib::UITexture::UpdateMaterialMaskTexture(void)` |
+| `0x18a410` | `private: void __thiscall Rainbow::UILib::UITexture::UpdateMaterialStatus(void)` |
+| `0x18a470` | `private: void __thiscall Rainbow::UILib::UITexture::UpdateMaterialTexture(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::LegacySkinMeshRenderer::UpdateMeshVertexLayout(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::SubMeshInstance::UpdateMeshVertexLayout(void)` |
+| `0x1bd480` | `public: void __thiscall Rainbow::Entity::UpdateMotionStatus(void)` |
+| `0x1bd4f0` | `protected: void __thiscall Rainbow::Entity::UpdateNoBindFather(void)` |
+| `0x257480` | `public: void __thiscall Rainbow::Empty3DUIRenderer::UpdateRenderParam(struct Rainbow::UILib::UIDrawIn3DParam const &)` |
+| `0x16fc60` | `protected: void __thiscall Rainbow::UILib::MultiEditBox::UpdateScrollBar(void)` |
+| `0x13d7a0` | `public: virtual void __thiscall Rainbow::UILib::EditBox::UpdateSelf(float)` |
+| `0x141cf0` | `public: virtual void __thiscall Rainbow::UILib::FontString::UpdateSelf(float)` |
+| `0x148c70` | `public: virtual void __thiscall Rainbow::UILib::Frame::UpdateSelf(float)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::UpdateSelf(float)` |
+| `0x167970` | `protected: virtual void __thiscall Rainbow::UILib::ModelView::UpdateSelf(float)` |
+| `0x16fcf0` | `protected: virtual void __thiscall Rainbow::UILib::MultiEditBox::UpdateSelf(float)` |
+| `0x18a4c0` | `public: virtual void __thiscall Rainbow::UILib::UITexture::UpdateSelf(float)` |
+| `0x1947f0` | `public: virtual void __thiscall Rainbow::UILib::WebFrame::UpdateSelf(float)` |
+| `0x18a7d0` | `private: void __thiscall Rainbow::UILib::UITexture::UpdateSeqTex(float)` |
+| `0x1b3bb0` | `private: void __thiscall Rainbow::ModelRenderer::UpdateSkinsShow(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::MovableObject::UpdateSortIndex(void)` |
+| `0xd3f10` | `public: virtual void __thiscall Rainbow::MeshInstance::UpdateSubMeshMaterial(int,class Rainbow::MaterialInstance *)` |
+| `0x1b3c50` | `public: virtual void __thiscall Rainbow::ModelMeshRenderers::UpdateSubMeshMaterial(int,class Rainbow::MaterialInstance *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::MeshInstance::UpdateSubMeshVertexLayout(void)` |
+| `0x211640` | `private: void __thiscall Rainbow::MobileCameraRenderer::UpdateTexUVs(int,int)` |
+| `0x236c40` | `public: bool __thiscall Rainbow::GifAsset::UpdateTexture(int,class Rainbow::SharePtr<class Rainbow::Texture2D> &)` |
+| `0x95a90` | `public: void __thiscall Rainbow::MovableObject::UpdateTick(unsigned int)` |
+| `0x1dfd20` | `public: virtual void __thiscall Rainbow::ParticleNode::UpdateTick(unsigned int)` |
+| `0x2be3f0` | `public: void __thiscall Rainbow::HUDTitleRender::UpdateTitleLogic(float)` |
+| `0x92960` | `public: void __thiscall Rainbow::UILib::UIRenderer::UpdateUIResTextureSelf(class Rainbow::SharePtr<class Rainbow::Texture2D> &,float)` |
+| `0x8a250` | `public: void __thiscall Rainbow::SubMeshData::UpdateVertexLayout(void)` |
+| `0x211700` | `private: void __thiscall Rainbow::MobileCameraRenderer::UpdateVertexSize(void)` |
+| `0x92380` | `protected: virtual void __thiscall Rainbow::BillboardMeshBatch::UpdateWorldBounds(class Rainbow::Matrix4x4f const &)` |
+| `0x275e90` | `public: virtual void __thiscall Rainbow::DecalRenderer::UpdateWorldBounds(class Rainbow::Matrix4x4f const &)` |
+| `0xe97f0` | `protected: virtual void __thiscall Rainbow::LegacySkinMeshRenderer::UpdateWorldBounds(class Rainbow::Matrix4x4f const &)` |
+| `0x92380` | `protected: virtual void __thiscall Rainbow::MovableObject::UpdateWorldBounds(class Rainbow::Matrix4x4f const &)` |
+| `0x27e9d0` | `public: class Rainbow::SharePtr<class Rainbow::Http::IHttpTask> __thiscall Rainbow::Http::HttpManager::Upload(class core::basic_string<char,class core::StringStorageDefault<char> >,struct dynamic_array<struct Rainbow::Http::MiniUploadFileInfo,0>,class core::basic_string<char,class core::StringStorageDefault<char> >,void *,class std::function<void __cdecl(class Rainbow::Http::UpLoadFileTask *)>,class std::function<void __cdecl(bool,class Rainbow::Http::UpLoadFileTask *)>,int,int)` |
+| `0xfac00` | `public: bool __thiscall Rainbow::RemoteAssetsManager::UploadAssets(class std::set<class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > const &,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> &)` |
+| `0xfae30` | `public: bool __thiscall Rainbow::RemoteAssetsManager::UploadAssets(class std::set<class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > const &,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> &,class ?? :: ?? const &, ?? )` |
+| `0xff8f0` | `public: bool __thiscall Rainbow::CloudAssetNS::AssetUploadManager::UploadCustomFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> >,enum Rainbow::CloudAssetNS::CloudAssetKind,unsigned int)` |
+| `0xeb340` | `public: void __thiscall Rainbow::SubMeshData::UploadData(void)` |
+| `0xffac0` | `protected: void __thiscall Rainbow::CloudAssetNS::AssetUploadManager::UploadPrefab(class Rainbow::Prefab *)` |
+| `0xffb80` | `public: bool __thiscall Rainbow::CloudAssetNS::AssetUploadManager::UploadPrefab(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x236ed0` | `private: void __thiscall Rainbow::GifAsset::UploadToGfxDevice(void)` |
+| `0x133cc0` | `public: bool const __thiscall Rainbow::Entity::UseBatchBillobardMesh(void)` |
+| `0x95ad0` | `public: bool __thiscall Rainbow::DebugMgr::UseHotfixMagic(void)` |
+| `0x95ae0` | `public: bool __thiscall Rainbow::DebugMgr::UsePocoTest(void)` |
+| `0x6f6c44` | `public: static int const cocos2d::Renderer::VBO_SIZE` |
+| `0x97ce08` | `class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > const cocos2d::ValueMapIntKeyNull` |
+| `0x97cde8` | `class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > const cocos2d::ValueMapNull` |
+| `0x13d850` | `protected: void __thiscall Rainbow::UILib::EditBox::ValueToCaption(void)` |
+| `0x97cf10` | `class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > const cocos2d::ValueVectorNull` |
+| `0x1d5200` | `public: virtual void __thiscall Rainbow::SkinAnimContainer::VirtualRedirectTransfer(class Rainbow::JSONRead &)` |
+| `0x1d5240` | `public: virtual void __thiscall Rainbow::SkinAnimContainer::VirtualRedirectTransfer(class Rainbow::JSONWrite &)` |
+| `0x1d5280` | `public: virtual void __thiscall Rainbow::SkinAnimContainer::VirtualRedirectTransfer(class Rainbow::SerializePtrTransfer &)` |
+| `0x1d52b0` | `public: virtual void __thiscall Rainbow::SkinAnimContainer::VirtualRedirectTransfer(class Rainbow::StreamedBinaryRead &)` |
+| `0x1d5330` | `public: virtual void __thiscall Rainbow::SkinAnimContainer::VirtualRedirectTransfer(class Rainbow::StreamedBinaryWrite &)` |
+| `0x1d53a0` | `public: virtual void __thiscall Rainbow::SkinAnimContainer::VirtualRedirectTransfer(class Rainbow::ValidCheckTransfer &)` |
+| `0x91f3bc` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::WATERCOLOR` |
+| `0x91f3b8` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::WATERPARA` |
+| `0x91f3c0` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::WATERTURB` |
+| `0x92c19c` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::WHITE` |
+| `0x92c1bc` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::WHITE` |
+| `0x92c1e0` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::WHITE` |
+| `0x3ca910` | `protected: int __thiscall winSystemInfo::WMI_DeviceQuery(enum DEVIDE_TYPE,struct DEVICE_PROPERTY *,int)` |
+| `0x3cac80` | `protected: static int __cdecl winSystemInfo::WMI_DoWithHarddiskSerialNumber(char *,int)` |
+| `0x934c0` | `protected: static int __cdecl winSystemInfo::WMI_DoWithPNPDeviceID(char const *,char *,int)` |
+| `0x3cadc0` | `protected: static int __cdecl winSystemInfo::WMI_DoWithProperty(enum DEVIDE_TYPE,char *,int)` |
+| `0xcdc50` | `protected: static void __cdecl Rainbow::LegacyAsset::WhenTaskRunExitGame(void *)` |
+| `0x925990` | `public: static class Rainbow::ColourValue const Rainbow::ColourValue::White` |
+| `0x8a250` | `void __cdecl MINIW::WindowBrowserCloseWebpage(void)` |
+| `0x8a250` | `void __cdecl MINIW::WindowBrowserHideWebpage(void)` |
+| `0x8a250` | `void __cdecl MINIW::WindowBrowserOpenWebpage(char const *,int,int,int,int)` |
+| `0x8a250` | `void __cdecl MINIW::WindowBrowserShowWebpage(void)` |
+| `0x298920` | `public: bool __thiscall MINIW::CSVParser::Word(unsigned int,unsigned int,unsigned short &)const ` |
+| `0x294120` | `public: unsigned short const __thiscall MINIW::CSVParser::TableItem::Word(void)const ` |
+| `0x29e440` | `public: virtual char const * __thiscall MINIW::Cef3Manager::WrapJavaScript(char const *)` |
+| `0x1fbfd0` | `private: static int __cdecl Rainbow::Downloader::WriteFunction(void *,unsigned int,unsigned int,void *)` |
+| `0x21a580` | `class Rainbow::Quaternionf __cdecl Rainbow::XYZAngleToQuat(float,float,float)` |
+| `0x92c1a0` | `public: static struct cocos2d::Color3B const cocos2d::Color3B::YELLOW` |
+| `0x92c1c0` | `public: static struct cocos2d::Color4B const cocos2d::Color4B::YELLOW` |
+| `0x92c1f0` | `public: static struct cocos2d::Color4F const cocos2d::Color4F::YELLOW` |
+| `0x96641c` | `public: static class Rainbow::ColourValue const Rainbow::ColourValue::ZERO` |
+| `0x9750c0` | `public: static class fairygui::Margin const fairygui::Margin::ZERO` |
+| `0x97e610` | `public: static class cocos2d::Rect const cocos2d::Rect::ZERO` |
+| `0x97e608` | `public: static class cocos2d::Size const cocos2d::Size::ZERO` |
+| `0x274dc0` | `public: static void __cdecl Rainbow::ZipAssetReadFunc::ZipAssetRead(struct Rainbow::AsyncReadCommand *)` |
+| `0x274ee0` | `public: static void __cdecl Rainbow::ZipAssetReadFunc::ZipAssetReadAsync(struct Rainbow::AsyncReadCommand *)` |
+| `0x28a490` | `protected: bool __thiscall Rainbow::Http::MiniUpload::ZipFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,bool)` |
+| `0x1fbff0` | `private: bool __thiscall Rainbow::Downloader::_BlockDownload(char const *,int,int)` |
+| `0x91f42c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::_ClipZOffset` |
+| `0x91f428` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::_MainTex` |
+| `0x25cbb0` | `protected: void __thiscall Rainbow::LegacyCommon3DUI::_SetRenderParam(struct Rainbow::UILib::UIDrawIn3DParam &)` |
+| `0x2494a0` | `private: void __thiscall Rainbow::MiniLua::LuaTableLinker::_SetValue(int,class Rainbow::MiniLua::LuaValue const &)` |
+| `0x249560` | `private: void __thiscall Rainbow::MiniLua::LuaTableLinker::_SetValue(char const *,class Rainbow::MiniLua::LuaValue const &)` |
+| `0x3a8bc0` | `struct cocos2d::AffineTransform __cdecl cocos2d::__CCAffineTransformMake(float,float,float,float,float,float)` |
+| `0x3a8c10` | `class Rainbow::Vector2f __cdecl cocos2d::__CCPointApplyAffineTransform(class Rainbow::Vector2f const &,struct cocos2d::AffineTransform const &)` |
+| `0x3a8c90` | `class cocos2d::Size __cdecl cocos2d::__CCSizeApplyAffineTransform(class cocos2d::Size const &,struct cocos2d::AffineTransform const &)` |
+| `0x69780` | `public: class WCoord __thiscall WCoord::__add(class WCoord const &)` |
+| `0x6a310` | `public: class WCoord __thiscall WCoord::__add(double)` |
+| `0x69780` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__add(class Rainbow::WorldPos const &)const ` |
+| `0x697b0` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__add(class Rainbow::Vector3f const &)const ` |
+| `0x97b5e4` | `protected: static int cocos2d::Node::__attachedNodeCount` |
+| `0x6a360` | `public: class WCoord __thiscall WCoord::__div(double)` |
+| `0x69810` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__div(int)const ` |
+| `0x695f0` | `public: bool __thiscall WCoord::__eq(class WCoord const &)` |
+| `0x6a3b0` | `public: class WCoord __thiscall WCoord::__mul(class WCoord const &)` |
+| `0x6a3e0` | `public: class WCoord __thiscall WCoord::__mul(double)` |
+| `0x69670` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__mul(int)const ` |
+| `0x696a0` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__mul(float)const ` |
+| `0x97ce0` | `private: void __thiscall fairygui::GComponent::__selector_buildNativeDisplayList(float)` |
+| `0x97d10` | `private: void __thiscall fairygui::GList::__selector_doRefreshVirtualList(float)` |
+| `0x97d40` | `private: void __thiscall fairygui::GRoot::__selector_doShowTooltipsWin(float)` |
+| `0x97d70` | `private: void __thiscall fairygui::UI3DRoot::__selector_doShowTooltipsWin(float)` |
+| `0x97da0` | `private: void __thiscall fairygui::GComponent::__selector_doUpdateBounds(float)` |
+| `0x97dd0` | `private: void __thiscall fairygui::ScrollPane::__selector_refresh(float)` |
+| `0x696f0` | `public: class WCoord __thiscall WCoord::__sub(class WCoord const &)` |
+| `0x6a430` | `public: class WCoord __thiscall WCoord::__sub(double)` |
+| `0x696f0` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__sub(class Rainbow::WorldPos const &)const ` |
+| `0x69720` | `public: class Rainbow::WorldPos __thiscall Rainbow::WorldPos::__sub(class Rainbow::Vector3f const &)const ` |
+| `0x6a480` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WCoord::__tostring(void)` |
+| `0x6a480` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::WorldPos::__tostring(void)` |
+| `0x9774d8` | `private: static class fairygui::InputProcessor * fairygui::InputProcessor::_activeProcessor` |
+| `0x9814e0` | `private: static class cocos2d::LuaEngine * cocos2d::LuaEngine::_defaultEngine` |
+| `0x973f64` | `private: static class fairygui::GObject * fairygui::GObject::_draggingObject` |
+| `0x975624` | `private: static class fairygui::ScrollPane * fairygui::ScrollPane::_draggingPane` |
+| `0x975e38` | `private: static class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct fairygui::UIConfig::FontNameItem,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct fairygui::UIConfig::FontNameItem> > > fairygui::UIConfig::_fontNames` |
+| `0x975620` | `private: static int fairygui::ScrollPane::_gestureFlag` |
+| `0x360e60` | `protected: struct cocos2d::FontDefinition __thiscall cocos2d::Label::_getFontDefinition(void)const ` |
+| `0x9330e0` | `public: static struct GLContextAttrs cocos2d::GLView::_glContextAttrs` |
+| `0x332d70` | `private: void __thiscall fairygui::GTweener::_init(void)` |
+| `0x3163c0` | `private: void __thiscall fairygui::Window::_initWindow(void)` |
+| `0x972fd0` | `private: static class fairygui::DragDropManager * fairygui::DragDropManager::_inst` |
+| `0x9743d4` | `private: static class fairygui::GRoot * fairygui::GRoot::_inst` |
+| `0x971c60` | `private: static class fairygui::HUDRoot * fairygui::HUDRoot::_inst` |
+| `0x978dc0` | `private: static class fairygui::UBBParser * fairygui::UBBParser::_inst` |
+| `0x975ae0` | `private: static class fairygui::UI3DRoot * fairygui::UI3DRoot::_inst` |
+| `0x980904` | `private: static class spine::SpineExtension * spine::SpineExtension::_instance` |
+| `0x9759a0` | `private: static class fairygui::UI3DRenderer * fairygui::UI3DRenderer::_instance` |
+| `0x975f70` | `private: static class std::function<class fairygui::GLoader * __cdecl(void)> fairygui::UIObjectFactory::_loaderCreator` |
+| `0x28ba50` | `private: void __thiscall MINIW::WebSocket::_onThreadEnd(void)` |
+| `0x28ba70` | `private: void __thiscall MINIW::WebSocket::_onThreadStart(void)` |
+| `0x975fa0` | `private: static class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::function<class fairygui::GComponent * __cdecl(void)>,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::function<class fairygui::GComponent * __cdecl(void)> > > > fairygui::UIObjectFactory::_packageItemExtensions` |
+| `0x332e30` | `private: void __thiscall fairygui::GTweener::_reset(void)` |
+| `0xdbb60` | `public: virtual void __thiscall Rainbow::AnimationData::_serialize2(class Rainbow::LegacyArchive &,int,char const *,struct Rainbow::ResourceFileHeader *)` |
+| `0x97ee0` | `public: virtual void __thiscall Rainbow::LegacyAsset::_serialize2(class Rainbow::LegacyArchive &,int,char const *,struct Rainbow::ResourceFileHeader *)` |
+| `0x1d92b0` | `private: virtual void __thiscall Rainbow::ModelData::_serialize2(class Rainbow::LegacyArchive &,int,char const *,struct Rainbow::ResourceFileHeader *)` |
+| `0xdbf10` | `public: virtual void __thiscall Rainbow::AnimationData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0x1d9410` | `public: virtual void __thiscall Rainbow::BSPData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xdbf60` | `public: virtual void __thiscall Rainbow::BaseAnimationData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xd77a0` | `public: virtual void __thiscall Rainbow::BoneTrack::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0x1beac0` | `protected: virtual void __thiscall Rainbow::EntityData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xe68e0` | `public: virtual void __thiscall Rainbow::IndexData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::LegacyAsset::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xd4900` | `protected: virtual void __thiscall Rainbow::MeshData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0x92960` | `public: virtual void __thiscall Rainbow::MiniObject::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0x1d9750` | `private: virtual void __thiscall Rainbow::ModelData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xe6a70` | `public: virtual void __thiscall Rainbow::OgreVertexData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xe4600` | `private: virtual void __thiscall Rainbow::SkeletonData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xeb350` | `public: virtual void __thiscall Rainbow::SkinPatch::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0xeb5f0` | `protected: virtual void __thiscall Rainbow::SubMeshData::_serialize(class Rainbow::LegacyArchive &,int)` |
+| `0x374ec0` | `public: virtual void __thiscall cocos2d::Node::_setLocalZOrder(int)` |
+| `0x332ed0` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_shake(class Rainbow::Vector2f const &,float,float)` |
+| `0x929528` | `private: static bool fairygui::GRoot::_soundEnabled` |
+| `0x92952c` | `private: static float fairygui::GRoot::_soundVolumeScale` |
+| `0x332f20` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_to(struct cocos2d::Color4B const &,struct cocos2d::Color4B const &,float)` |
+| `0x332f70` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_to(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float)` |
+| `0x332fc0` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_to(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float)` |
+| `0x333010` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_to(class Rainbow::Vector4f const &,class Rainbow::Vector4f const &,float)` |
+| `0x333060` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_to(float,float,float)` |
+| `0x3330a0` | `private: class fairygui::GTweener * __thiscall fairygui::GTweener::_to(double,double,float)` |
+| `0x9774d0` | `private: static bool fairygui::InputProcessor::_touchOnUI` |
+| `0x9774d4` | `private: static unsigned int fairygui::InputProcessor::_touchOnUIFlagFrameId` |
+| `0x3330e0` | `private: void __thiscall fairygui::GTweener::_update(float)` |
+| `0x3d9630` | `public: static float __cdecl spine::MathUtil::abs(float)` |
+| `0x404f70` | `public: virtual void __thiscall cocos2d::__Array::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x406200` | `public: virtual void __thiscall cocos2d::__Bool::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x407310` | `public: virtual void __thiscall cocos2d::__Dictionary::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x406220` | `public: virtual void __thiscall cocos2d::__Double::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x406240` | `public: virtual void __thiscall cocos2d::__Float::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x406260` | `public: virtual void __thiscall cocos2d::__Integer::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x40a600` | `public: virtual void __thiscall cocos2d::__Set::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x40ae20` | `public: virtual void __thiscall cocos2d::__String::acceptVisitor(class cocos2d::DataVisitor &)` |
+| `0x3d9650` | `public: static float __cdecl spine::MathUtil::acos(float)` |
+| `0x1abfe0` | `public: int __thiscall Rainbow::ModelAnimationPlayer::actionIDConversion(int)` |
+| `0x1ac060` | `public: int __thiscall Rainbow::ModelAnimationPlayer::actionIDConversionReverse(int)` |
+| `0x320ab0` | `public: void __thiscall fairygui::FUIRenderTexture::activeCanvasGenTextureDirty(void)` |
+| `0x30cfb0` | `public: class Rainbow::GameObject * __thiscall fairygui::UI3DRoot::add3DUIChild(class fairygui::GObject *)` |
+| `0x298c80` | `public: void __thiscall CsvTable::add(int,class Value &)` |
+| `0x298cb0` | `public: void __thiscall CsvTable::add(char const *,class Value &)` |
+| `0x2ff9f0` | `public: void __thiscall fairygui::Relations::add(class fairygui::GObject *,enum fairygui::RelationType)` |
+| `0x2ffa10` | `public: void __thiscall fairygui::Relations::add(class fairygui::GObject *,enum fairygui::RelationType,bool)` |
+| `0x3e1830` | `public: class spine::TrackEntry * __thiscall spine::SkeletonAnimation::addAnimation(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,float)` |
+| `0x31bc50` | `public: void __thiscall fairygui::FUIModelSprite::addBackgroundEffect(char const *,float,float,float)` |
+| `0x167d10` | `public: void __thiscall Rainbow::UILib::ModelView::addBackgroundEffect(char const *,float,float,float,float)` |
+| `0xe47e0` | `public: void __thiscall Rainbow::SkeletonData::addBone(class Rainbow::BoneData *)` |
+| `0xe4830` | `public: void __thiscall Rainbow::SkeletonData::addBone(class Rainbow::FixedString,int,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0xe4960` | `public: bool __thiscall Rainbow::SkeletonData::addBone(class Rainbow::FixedString,class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0xdc3d0` | `public: void __thiscall Rainbow::AnimationData::addBoneTrack(class Rainbow::BoneTrack *)` |
+| `0xa1110` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addBoolean(bool)` |
+| `0xa1180` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addByte(signed char)` |
+| `0xa11f0` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addChar(unsigned short)` |
+| `0x2d1c60` | `public: class fairygui::GObject * __thiscall fairygui::GComponent::addChild(class fairygui::GObject *)` |
+| `0x2f88e0` | `public: class fairygui::GTreeNode * __thiscall fairygui::GTreeNode::addChild(class fairygui::GTreeNode *)` |
+| `0x374ed0` | `public: virtual void __thiscall cocos2d::Node::addChild(class cocos2d::Node *)` |
+| `0x374f00` | `public: virtual void __thiscall cocos2d::Node::addChild(class cocos2d::Node *,int)` |
+| `0x374f20` | `public: virtual void __thiscall cocos2d::Node::addChild(class cocos2d::Node *,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x374f40` | `public: virtual void __thiscall cocos2d::Node::addChild(class cocos2d::Node *,int,int)` |
+| `0x37c5b0` | `public: virtual void __thiscall cocos2d::Sprite::addChild(class cocos2d::Node *,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x37c620` | `public: virtual void __thiscall cocos2d::Sprite::addChild(class cocos2d::Node *,int,int)` |
+| `0x380fa0` | `public: virtual void __thiscall cocos2d::SpriteBatchNode::addChild(class cocos2d::Node *,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x380fd0` | `public: virtual void __thiscall cocos2d::SpriteBatchNode::addChild(class cocos2d::Node *,int,int)` |
+| `0x2d1cb0` | `public: virtual class fairygui::GObject * __thiscall fairygui::GComponent::addChildAt(class fairygui::GObject *,int)` |
+| `0x2d9280` | `public: virtual class fairygui::GObject * __thiscall fairygui::GList::addChildAt(class fairygui::GObject *,int)` |
+| `0x2f8900` | `public: class fairygui::GTreeNode * __thiscall fairygui::GTreeNode::addChildAt(class fairygui::GTreeNode *,int)` |
+| `0x374ff0` | `private: void __thiscall cocos2d::Node::addChildHelper(class cocos2d::Node *,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x97f00` | `public: void __thiscall fairygui::GObject::addClickListener(class std::function<void __cdecl(class fairygui::FUIEventContext *)> const &)` |
+| `0x97f20` | `public: void __thiscall fairygui::GObject::addClickListener(class std::function<void __cdecl(class fairygui::FUIEventContext *)> const &,class fairygui::EventTag const &)` |
+| `0x3af710` | `public: void __thiscall cocos2d::Renderer::addCommand(class cocos2d::RenderCommand *)` |
+| `0x3af750` | `public: void __thiscall cocos2d::Renderer::addCommand(class cocos2d::RenderCommand *,int)` |
+| `0x3750f0` | `public: virtual bool __thiscall cocos2d::Node::addComponent(class cocos2d::Component *)` |
+| `0x2d1d80` | `public: void __thiscall fairygui::GComponent::addController(class fairygui::GController *)` |
+| `0x1da210` | `public: bool __thiscall Rainbow::ModelData::addCustomBone(class Rainbow::FixedString,class Rainbow::FixedString,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &,bool)` |
+| `0x3944d0` | `public: class cocos2d::EventListenerCustom * __thiscall cocos2d::EventDispatcher::addCustomEventListener(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(class cocos2d::EventCustom *)> const &)` |
+| `0x1da430` | `public: void __thiscall Rainbow::ModelData::addCustomSequenceID(int,enum Rainbow::AnimPlayMode)` |
+| `0x1da550` | `public: void __thiscall Rainbow::ModelData::addCustomSequenceIDWithCopiedBones(int,enum Rainbow::AnimPlayMode,int,int)` |
+| `0x2eb420` | `public: unsigned int __thiscall fairygui::GObject::addDisplayLock(void)` |
+| `0xa1260` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addDouble(double)` |
+| `0x97f40` | `public: void __thiscall cocos2d::Director::addDrawItem(class Rainbow::UILib::DrawItem *)` |
+| `0x97f70` | `public: void __thiscall cocos2d::Renderer::addDrawnBatches(long)` |
+| `0x97f80` | `public: void __thiscall cocos2d::Renderer::addDrawnVertices(long)` |
+| `0xe6cd0` | `public: void __thiscall Rainbow::VertexFormat::addElement(enum Rainbow::VertexElementType,enum Rainbow::VertexElementSemantic,unsigned int,unsigned int,unsigned int)` |
+| `0x3e1960` | `public: class spine::TrackEntry * __thiscall spine::SkeletonAnimation::addEmptyAnimation(int,float,float)` |
+| `0x394520` | `protected: void __thiscall cocos2d::EventDispatcher::addEventListener(class cocos2d::EventListener *)` |
+| `0x97f90` | `public: void __thiscall fairygui::UIEventDispatcher::addEventListener(int,class std::function<void __cdecl(class fairygui::FUIEventContext *)> const &)` |
+| `0x32a4f0` | `public: void __thiscall fairygui::UIEventDispatcher::addEventListener(int,class std::function<void __cdecl(class fairygui::FUIEventContext *)> const &,class fairygui::EventTag const &)` |
+| `0x394580` | `public: void __thiscall cocos2d::EventDispatcher::addEventListenerWithFixedPriority(class cocos2d::EventListener *,int)` |
+| `0x3945c0` | `public: void __thiscall cocos2d::EventDispatcher::addEventListenerWithSceneGraphPriority(class cocos2d::EventListener *,class cocos2d::Node *)` |
+| `0xa12d0` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addFloat(float)` |
+| `0xdc400` | `public: void __thiscall Rainbow::BaseAnimationData::addFrameEvent(int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned int)` |
+| `0xdc4f0` | `public: bool __thiscall Rainbow::BaseAnimationData::addFrameEventByKey(int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,unsigned int,__int64)` |
+| `0xa1340` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addInt(int)` |
+| `0x97fb0` | `public: class fairygui::GButton * __thiscall fairygui::PopupMenu::addItem(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2fcc70` | `public: class fairygui::GButton * __thiscall fairygui::PopupMenu::addItem(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(class fairygui::FUIEventContext *)>)` |
+| `0x2fcde0` | `public: class fairygui::GButton * __thiscall fairygui::PopupMenu::addItemAt(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,class std::function<void __cdecl(class fairygui::FUIEventContext *)>)` |
+| `0x2d9420` | `public: class fairygui::GObject * __thiscall fairygui::GList::addItemFromPool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x97fd0` | `public: class fairygui::GObject * __thiscall fairygui::GList::addItemFromPool(void)` |
+| `0x32dec0` | `public: unsigned int __thiscall fairygui::GearDisplay::addLock(void)` |
+| `0xa13b0` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addLong(__int64)` |
+| `0x97fe0` | `public: void __thiscall GameUI::addLuaTocFileList(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xdc680` | `public: void __thiscall Rainbow::AnimationData::addMtlParamTrack(class Rainbow::MaterialParamTrack *)` |
+| `0x2652d0` | `public: void __thiscall Rainbow::NameText3D::addNameTexId(int)` |
+| `0xa1420` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addObject(void *)` |
+| `0x404f90` | `public: void __thiscall cocos2d::__Array::addObject(class cocos2d::Ref *)` |
+| `0x40a620` | `public: void __thiscall cocos2d::__Set::addObject(class cocos2d::Ref *)` |
+| `0x404fb0` | `public: void __thiscall cocos2d::__Array::addObjectsFromArray(class cocos2d::__Array *)` |
+| `0x409cf0` | `public: void __thiscall cocos2d::__NotificationCenter::addObserver(class cocos2d::Ref *,void (__thiscall cocos2d::Ref::*)(class cocos2d::Ref *),class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Ref *)` |
+| `0x3108b0` | `public: static class fairygui::UIPackage * __cdecl fairygui::UIPackage::addPackage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x151970` | `public: void __thiscall Rainbow::UILib::FrameManager::addPopWindow(char const *,char const *,char const *,int,int,int,char const *,bool,int,int)` |
+| `0x37a7d0` | `public: virtual void __thiscall cocos2d::ProtectedNode::addProtectedChild(class cocos2d::Node *)` |
+| `0x37a800` | `public: virtual void __thiscall cocos2d::ProtectedNode::addProtectedChild(class cocos2d::Node *,int)` |
+| `0x37a830` | `public: virtual void __thiscall cocos2d::ProtectedNode::addProtectedChild(class cocos2d::Node *,int,int)` |
+| `0x98010` | `public: void __thiscall cocos2d::Director::addRect(class cocos2d::Rect &)` |
+| `0x2eb450` | `public: void __thiscall fairygui::GObject::addRelation(class fairygui::GObject *,enum fairygui::RelationType,bool)` |
+| `0x148e70` | `public: bool __thiscall Rainbow::UILib::Frame::addScriptFunc(int,char const *,char const *)` |
+| `0x4d3750` | `public: virtual void __thiscall cocos2d::LuaEngine::addSearchPath(char const *)` |
+| `0x2d9470` | `public: void __thiscall fairygui::GList::addSelection(int,bool)` |
+| `0x2fcf60` | `public: void __thiscall fairygui::PopupMenu::addSeperator(void)` |
+| `0xe13b0` | `private: void __thiscall Rainbow::AnimationPlayer::addSeqId(int)` |
+| `0xdc6b0` | `public: void __thiscall Rainbow::BaseAnimationData::addSequence(struct Rainbow::SequenceDesc &)` |
+| `0xa1490` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addShort(short)` |
+| `0x3fce50` | `public: void __thiscall spine::Skin::addSkin(class spine::Skin *)` |
+| `0x350c20` | `public: void __thiscall cocos2d::Animation::addSpriteFrame(class cocos2d::SpriteFrame *)` |
+| `0x350cd0` | `public: void __thiscall cocos2d::Animation::addSpriteFrameWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x350dd0` | `public: void __thiscall cocos2d::Animation::addSpriteFrameWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,class cocos2d::Rect const &)` |
+| `0x381000` | `public: class cocos2d::SpriteBatchNode * __thiscall cocos2d::SpriteBatchNode::addSpriteWithoutQuad(class cocos2d::Sprite *,int,int)` |
+| `0x32d700` | `protected: virtual void __thiscall fairygui::GearColor::addStatus(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class fairygui::ByteBuffer *)` |
+| `0x92960` | `protected: virtual void __thiscall fairygui::GearDisplay::addStatus(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class fairygui::ByteBuffer *)` |
+| `0x32e4d0` | `protected: virtual void __thiscall fairygui::GearFontSize::addStatus(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class fairygui::ByteBuffer *)` |
+| `0x32e870` | `protected: virtual void __thiscall fairygui::GearIcon::addStatus(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class fairygui::ByteBuffer *)` |
+| `0x32ed70` | `protected: virtual void __thiscall fairygui::GearLook::addStatus(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class fairygui::ByteBuffer *)` |
+| `0x330210` | `protected: virtual void __thiscall fairygui::GearText::addStatus(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class fairygui::ByteBuffer *)` |
+| `0x32d7a0` | `public: void __thiscall fairygui::GearColor::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct cocos2d::Color3B,struct cocos2d::Color3B)` |
+| `0x32ded0` | `public: void __thiscall fairygui::GearDisplay::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)` |
+| `0x32e510` | `public: void __thiscall fairygui::GearFontSize::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)` |
+| `0x32e8e0` | `public: void __thiscall fairygui::GearIcon::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x32edf0` | `public: void __thiscall fairygui::GearLook::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,float)` |
+| `0x32faa0` | `public: void __thiscall fairygui::GearSize::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,float,float)` |
+| `0x330330` | `public: void __thiscall fairygui::GearText::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3307b0` | `public: void __thiscall fairygui::GearXY::addStatusEX(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)` |
+| `0x35d250` | `public: virtual void __thiscall cocos2d::InputLabel::addString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x118e90` | `public: class Rainbow::UILib::InvocationBuilder & __thiscall Rainbow::UILib::InvocationBuilder::addString(char const *)` |
+| `0x980b0` | `public: void __thiscall Rainbow::MeshData::addSubMesh(class Rainbow::SubMeshData *)` |
+| `0x2a38d0` | `void __cdecl Rainbow::UIThreadTask::addTask(class Rainbow::Task *)` |
+| `0x3274b0` | `public: void __thiscall fairygui::InputProcessor::addTouchMonitor(int,class fairygui::GObject *)` |
+| `0x233fe0` | `public: void __thiscall Rainbow::TriangleMeshNormalAndEdge::addTriangle(class Rainbow::Vector3f,class Rainbow::Vector3f,class Rainbow::Vector3f,class Rainbow::Vector3f,class Rainbow::Vector3f,class Rainbow::ColorRGBA32)` |
+| `0xdc6f0` | `public: void __thiscall Rainbow::BaseAnimationData::addTrigger(struct Rainbow::TriggerDesc const &)` |
+| `0x3163f0` | `public: void __thiscall fairygui::Window::addUISource(class fairygui::IUISource *)` |
+| `0xd06a0` | `public: bool __thiscall czy::LeastSquaresFit::addY(float const &)` |
+| `0x3005a0` | `private: void __thiscall fairygui::ScrollPane::adjustMaskContainer(void)` |
+| `0x2f0eb0` | `private: void __thiscall fairygui::GRoot::adjustModalLayer(void)` |
+| `0x2d1dd0` | `public: void __thiscall fairygui::GComponent::adjustRadioGroupDepth(class fairygui::GObject *,class fairygui::GController *)` |
+| `0x2e9c80` | `public: void __thiscall fairygui::ActionMovieClip::advance(float)` |
+| `0x300680` | `private: float __thiscall fairygui::ScrollPane::alignByPage(float,int,bool)` |
+| `0x3009a0` | `private: void __thiscall fairygui::ScrollPane::alignPosition(class Rainbow::Vector2f &,bool)` |
+| `0x3611b0` | `protected: virtual bool __thiscall cocos2d::Label::alignText(void)` |
+| `0x980e0` | `public: bool __thiscall fairygui::GTweener::allCompleted(void)const ` |
+| `0x407330` | `public: class cocos2d::__Array * __thiscall cocos2d::__Dictionary::allKeys(void)` |
+| `0x4074e0` | `public: class cocos2d::__Array * __thiscall cocos2d::__Dictionary::allKeysForObject(class cocos2d::Ref *)` |
+| `0x40a700` | `public: class cocos2d::Ref * __thiscall cocos2d::__Set::anyObject(void)` |
+| `0x21d9d0` | `public: void __thiscall MINIW::Md5Context::append(unsigned char const *,unsigned int)` |
+| `0x40ae40` | `public: void __thiscall cocos2d::__String::append(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3810a0` | `public: void __thiscall cocos2d::SpriteBatchNode::appendChild(class cocos2d::Sprite *)` |
+| `0x39c9b0` | `protected: void __thiscall cocos2d::Scheduler::appendIn(struct cocos2d::_listEntry * *,class std::function<void __cdecl(float)> const &,void *,bool)` |
+| `0x40ae60` | `public: void __cdecl cocos2d::__String::appendWithFormat(char const *,...)` |
+| `0x3cc110` | `public: void __thiscall spine::Animation::apply(class spine::Skeleton &,float,float,bool,class spine::Vector<class spine::Event *> *,float,enum spine::MixBlend,enum spine::MixDirection)` |
+| `0x32d810` | `public: virtual void __thiscall fairygui::GearColor::apply(void)` |
+| `0x32df90` | `public: virtual void __thiscall fairygui::GearDisplay::apply(void)` |
+| `0x32e540` | `public: virtual void __thiscall fairygui::GearFontSize::apply(void)` |
+| `0x32e940` | `public: virtual void __thiscall fairygui::GearIcon::apply(void)` |
+| `0x32ee50` | `public: virtual void __thiscall fairygui::GearLook::apply(void)` |
+| `0x330440` | `public: virtual void __thiscall fairygui::GearText::apply(void)` |
+| `0x2d1f70` | `public: void __thiscall fairygui::GComponent::applyAllControllers(void)` |
+| `0x2d1fa0` | `public: void __thiscall fairygui::GComponent::applyController(class fairygui::GController *)` |
+| `0x3af820` | `public: void __thiscall cocos2d::Renderer::applyMaterialStencil(class Rainbow::MaterialInstance *)` |
+| `0x2f5230` | `public: virtual void __thiscall fairygui::GBasicTextField::applyTextFormat(void)` |
+| `0x2f03f0` | `public: virtual void __thiscall fairygui::GRichTextField::applyTextFormat(void)` |
+| `0x2f6a70` | `public: virtual void __thiscall fairygui::GTextInput::applyTextFormat(void)` |
+| `0x306d00` | `private: void __thiscall fairygui::Transition::applyValue(class fairygui::TransitionItem *)` |
+| `0x29bc80` | `public: bool __thiscall Value::asBool(void)const ` |
+| `0x3a3ae0` | `public: bool __thiscall cocos2d::Value::asBool(void)const ` |
+| `0x3a3b90` | `public: unsigned char __thiscall cocos2d::Value::asByte(void)const ` |
+| `0x29bd10` | `public: double __thiscall Value::asDouble(void)const ` |
+| `0x3a3bf0` | `public: double __thiscall cocos2d::Value::asDouble(void)const ` |
+| `0x3a3cb0` | `public: float __thiscall cocos2d::Value::asFloat(void)const ` |
+| `0x29bd90` | `public: int __thiscall Value::asInt(void)const ` |
+| `0x3a3d70` | `public: int __thiscall cocos2d::Value::asInt(void)const ` |
+| `0x93ae0` | `public: class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > & __thiscall Value::asIntKeyMap(void)` |
+| `0x93ae0` | `public: class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > const & __thiscall Value::asIntKeyMap(void)const ` |
+| `0x93ae0` | `public: class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > & __thiscall cocos2d::Value::asIntKeyMap(void)` |
+| `0x93ae0` | `public: class std::unordered_map<int,class cocos2d::Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class cocos2d::Value> > > const & __thiscall cocos2d::Value::asIntKeyMap(void)const ` |
+| `0x29bdd0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Value::asString(void)const ` |
+| `0x3a3dd0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Value::asString(void)const ` |
+| `0x3a3fb0` | `public: unsigned int __thiscall cocos2d::Value::asUnsignedInt(void)const ` |
+| `0x93ae0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > & __thiscall Value::asValueMap(void)` |
+| `0x93ae0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > const & __thiscall Value::asValueMap(void)const ` |
+| `0x93ae0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > & __thiscall cocos2d::Value::asValueMap(void)` |
+| `0x93ae0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class cocos2d::Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class cocos2d::Value> > > const & __thiscall cocos2d::Value::asValueMap(void)const ` |
+| `0x93ae0` | `public: class std::vector<class Value,class std::allocator<class Value> > & __thiscall Value::asValueVector(void)` |
+| `0x93ae0` | `public: class std::vector<class Value,class std::allocator<class Value> > const & __thiscall Value::asValueVector(void)const ` |
+| `0x93ae0` | `public: class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > & __thiscall cocos2d::Value::asValueVector(void)` |
+| `0x93ae0` | `public: class std::vector<class cocos2d::Value,class std::allocator<class cocos2d::Value> > const & __thiscall cocos2d::Value::asValueVector(void)const ` |
+| `0x394600` | `protected: void __thiscall cocos2d::EventDispatcher::associateNodeAndEventListener(class cocos2d::Node *,class cocos2d::EventListener *)` |
+| `0x3d9670` | `public: static float __cdecl spine::MathUtil::atan2(float,float)` |
+| `0x381180` | `public: long __thiscall cocos2d::SpriteBatchNode::atlasIndexForChild(class cocos2d::Sprite *,int)` |
+| `0x3a7730` | `double __cdecl cocos2d::utils::atof(char const *)` |
+| `0x31be60` | `public: void __thiscall fairygui::FUIModelSprite::attachActorBody(class Rainbow::IActorBody *,int,bool)` |
+| `0x167f80` | `public: void __thiscall Rainbow::UILib::ModelView::attachActorBody(class Rainbow::IActorBody *,int,bool)` |
+| `0x31bf00` | `public: void __thiscall fairygui::FUIModelSprite::attachActorBodyGameObject(class Rainbow::IActorBody *,int,bool)` |
+| `0x1680b0` | `public: void __thiscall Rainbow::UILib::ModelView::attachActorBodyGameObject(class Rainbow::IActorBody *,int,bool)` |
+| `0x1681e0` | `public: void __thiscall Rainbow::UILib::ModelView::attachActorBodyToCurrentScene(class Rainbow::IActorBody *,int,bool)` |
+| `0x168370` | `public: void __thiscall Rainbow::UILib::ModelView::attachActorBodyToCurrentSceneXYZ(class Rainbow::IActorBody *,float,float,float)` |
+| `0x31bf90` | `public: void __thiscall fairygui::FUIModelSprite::attachActorBodyToScene(class Rainbow::IActorBody *,float,float,float)` |
+| `0x168400` | `public: void __thiscall Rainbow::UILib::ModelView::attachActorBodyToScene(class Rainbow::IActorBody *,float,float,float)` |
+| `0x3fd080` | `private: void __thiscall spine::Skin::attachAll(class spine::Skeleton &,class spine::Skin &)` |
+| `0x168540` | `public: void __thiscall Rainbow::UILib::ModelView::attachMovableObject(class Rainbow::MovableObject *,int,bool)` |
+| `0x117fd0` | `public: void __thiscall CoordAxis::attachToScene(class Rainbow::GameScene *)` |
+| `0x39c200` | `public: class cocos2d::Ref * __thiscall cocos2d::Ref::autorelease(void)` |
+| `0x218dc0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl b64_decode_ex_my(char const *,unsigned int,unsigned int *)` |
+| `0x219090` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl b64_decode_my(char const *,unsigned int)` |
+| `0x2190b0` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl b64_encode_my(unsigned char const *,unsigned int)` |
+| `0x388390` | `float __cdecl cocos2d::tweenfunc::backEaseIn(float)` |
+| `0x3883c0` | `float __cdecl cocos2d::tweenfunc::backEaseInOut(float)` |
+| `0x388440` | `float __cdecl cocos2d::tweenfunc::backEaseOut(float)` |
+| `0x3a52e0` | `int __cdecl cocos2d::base64Decode(unsigned char const *,unsigned int,unsigned char * *)` |
+| `0x3a5450` | `int __cdecl cocos2d::base64Encode(unsigned char const *,unsigned int,char * *)` |
+| `0x2257d0` | `unsigned char * __cdecl base64_decode(unsigned char const *,int,unsigned char *,int *)` |
+| `0x320ad0` | `public: virtual void __thiscall fairygui::FUIRenderTexture::begin(void)` |
+| `0x21dab0` | `public: void __thiscall MINIW::Md5Context::begin(void)` |
+| `0x402890` | `public: virtual void __thiscall spine::SwirlVertexEffect::begin(class spine::Skeleton &)` |
+| `0x24cf30` | `public: class cocos2d::Ref * * __thiscall cocos2d::__Array::begin(void)` |
+| `0x40a750` | `public: class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<class cocos2d::Ref *> > > __thiscall cocos2d::__Set::begin(void)` |
+| `0x3af8b0` | `protected: void __thiscall cocos2d::Renderer::beginClipRect(class cocos2d::RenderCommand const *)` |
+| `0x8a250` | `protected: void __thiscall cocos2d::Renderer::beginFrame(void)` |
+| `0x3d0170` | `private: static int __cdecl spine::Atlas::beginPast(class spine::Atlas::Str *,char)` |
+| `0x92380` | `protected: void __thiscall cocos2d::Renderer::beginRenderTexture(class cocos2d::RenderCommand const *)` |
+| `0x388480` | `float __cdecl cocos2d::tweenfunc::bezieratFunction(float,float,float,float,float)` |
+| `0x3cc1d0` | `private: static int __cdecl spine::Animation::binarySearch(class spine::Vector<float> &,float)` |
+| `0x3cc220` | `private: static int __cdecl spine::Animation::binarySearch(class spine::Vector<float> &,float,int)` |
+| `0x31c0d0` | `public: void __thiscall fairygui::FUIModelSprite::bindActorToAnchor(int,int)` |
+| `0x168590` | `public: void __thiscall Rainbow::UILib::ModelView::bindActorToAnchor(int,int)` |
+| `0x31c100` | `public: void __thiscall fairygui::FUIModelSprite::bindCoordInteract2Anchor(int,int)` |
+| `0x1685c0` | `public: void __thiscall Rainbow::UILib::ModelView::bindCoordInteract2Anchor(int,int)` |
+| `0x31c170` | `public: void __thiscall fairygui::FUIModelSprite::bindCoordInteract(int,char const *)` |
+| `0x168630` | `public: void __thiscall Rainbow::UILib::ModelView::bindCoordInteract(int,char *)` |
+| `0x1bd670` | `private: void __thiscall Rainbow::Entity::bindObject(unsigned int,class Rainbow::MovableObject *,int,int)` |
+| `0x238910` | `class Rainbow::Vector3f __cdecl Rainbow::blend2(class Rainbow::Vector3f,class Rainbow::Vector3f,float)` |
+| `0x238980` | `class Rainbow::Vector3f __cdecl Rainbow::blend3(class Rainbow::Vector3f,class Rainbow::Vector3f,class Rainbow::Vector3f,float)` |
+| `0x40aed0` | `public: bool __thiscall cocos2d::__String::boolValue(void)const ` |
+| `0x388570` | `float __cdecl cocos2d::tweenfunc::bounceEaseIn(float)` |
+| `0x3885a0` | `float __cdecl cocos2d::tweenfunc::bounceEaseInOut(float)` |
+| `0x388610` | `float __cdecl cocos2d::tweenfunc::bounceEaseOut(float)` |
+| `0x3246b0` | `protected: class Rainbow::Vector2f __thiscall fairygui::FUISprite::boundaryTexCoord(char)` |
+| `0x2f0f70` | `public: void __thiscall fairygui::GRoot::bringToFront(class fairygui::Window *)` |
+| `0x30cfd0` | `public: void __thiscall fairygui::UI3DRoot::bringToFront(class fairygui::Window *)` |
+| `0x316440` | `public: void __thiscall fairygui::Window::bringToFront(void)` |
+| `0x929cda` | `public: static bool fairygui::UIConfig::bringWindowToFrontOnClick` |
+| `0x32a5c0` | `public: bool __thiscall fairygui::UIEventDispatcher::bubbleEvent(int,void *,class cocos2d::Value const &)` |
+| `0x118ea0` | `public: class Rainbow::UILib::Invocation __thiscall Rainbow::UILib::InvocationBuilder::build(void)` |
+| `0x1da790` | `public: void __thiscall Rainbow::ModelData::buildAllCunsomData(void)` |
+| `0x2d2010` | `private: void __thiscall fairygui::GComponent::buildNativeDisplayList(void)` |
+| `0x929d50` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > fairygui::UIConfig::buttonSound` |
+| `0x929ccc` | `public: static float fairygui::UIConfig::buttonSoundVolumeScale` |
+| `0x31c270` | `protected: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::calActorPos(int)` |
+| `0x168730` | `public: class Rainbow::Vector3f __thiscall Rainbow::UILib::ModelView::calActorPos(int)const ` |
+| `0x35d5f0` | `protected: bool __thiscall cocos2d::InputLabel::calAllStringSizeAndContrastCommentSize(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,class cocos2d::Size const &)` |
+| `0x26fb90` | `public: virtual void __thiscall Rainbow::TextBoardIn3D::calBoardWH(char *,int)` |
+| `0x2703c0` | `public: virtual void __thiscall Rainbow::TextBoardIn3D::calBoardWHByTxt(char *,int)` |
+| `0x92960` | `private: void __thiscall Rainbow::ZipFilePkg::calFileDigest(char const *,char const *)` |
+| `0x211f50` | `public: void __thiscall Rainbow::PerlinNoise2D::calNoiseData(unsigned char *,int)` |
+| `0x212070` | `public: void __thiscall Rainbow::PerlinNoise2D::calNoiseData(float *,int)` |
+| `0x212290` | `public: void __thiscall Rainbow::PerlinNoise2D::calNoiseDataRow(unsigned char *,int,int)` |
+| `0x1dffa0` | `protected: void __thiscall Rainbow::ParticleNode::calWorldBounds(void)` |
+| `0x2cfd70` | `public: class std::vector<class Rainbow::ColorRGBA32,class std::allocator<class Rainbow::ColorRGBA32> > __thiscall fairygui::GColorTextureLoader::calcColorsDatas(struct cocos2d::Color4F const &)` |
+| `0xd0720` | `private: void __thiscall czy::LeastSquaresFit::calcError(class std::vector<float,class std::allocator<float> > const &,class std::vector<float,class std::allocator<float> > const &,int const &,float &,float &,float &,bool)` |
+| `0x38ca50` | `public: void __thiscall cocos2d::Director::calculateDeltaTime(void)` |
+| `0x38cb30` | `public: void __thiscall cocos2d::Director::calculateMPF(void)` |
+| `0x1e0120` | `protected: void __thiscall Rainbow::ParticleNode::calculateUpdate(float)` |
+| `0x333190` | `private: void __thiscall fairygui::GTweener::callCompleteCallback(void)` |
+| `0x24cf40` | `public: bool __thiscall MINIW::ScriptVM::callFile(char const *)` |
+| `0x24d1d0` | `public: bool __cdecl MINIW::ScriptVM::callFunction(char const *,char const *,...)` |
+| `0x24d200` | `public: bool __cdecl MINIW::ScriptVM::callFunctionOnAnyThread(char const *,char const *,...)` |
+| `0x24d220` | `protected: bool __thiscall MINIW::ScriptVM::callFunctionV(char const *,char const *,char *)` |
+| `0x307280` | `private: void __thiscall fairygui::Transition::callHook(class fairygui::TransitionItem *,bool)` |
+| `0x3331d0` | `private: void __thiscall fairygui::GTweener::callStartCallback(void)` |
+| `0x24d7d0` | `public: bool __thiscall MINIW::ScriptVM::callString(char const *,int)` |
+| `0x24dae0` | `public: bool __thiscall MINIW::ScriptVM::callStringForMiniCode_Task(char const *,int &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x24ddb0` | `public: bool __thiscall MINIW::ScriptVM::callStringNoBack(char const *,int)` |
+| `0x24e070` | `public: bool __thiscall MINIW::ScriptVM::callStringWithCallback(char const *,char const *,char const *,int)` |
+| `0x24e640` | `public: bool __thiscall MINIW::ScriptVM::callStringWithLuaThreadPool(char const *,int)` |
+| `0x3331f0` | `private: void __thiscall fairygui::GTweener::callUpdateCallback(void)` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::UILib::Frame::canScroll(void)const ` |
+| `0x2cddd0` | `public: void __thiscall fairygui::DragDropManager::cancel(void)` |
+| `0x327560` | `public: void __thiscall fairygui::InputProcessor::cancelClick(int)` |
+| `0x300a90` | `public: void __thiscall fairygui::ScrollPane::cancelDragging(void)` |
+| `0x24e9d0` | `public: long __thiscall cocos2d::__Array::capacity(void)const ` |
+| `0x92380` | `protected: void __thiscall cocos2d::Renderer::captureScreen(class cocos2d::RenderCommand *)` |
+| `0x8a250` | `void __cdecl cocos2d::utils::captureScreen(class std::function<void __cdecl(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x340970` | `class Rainbow::Vector2f __cdecl cocos2d::ccCardinalSplineAt(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float,float)` |
+| `0x3c48e0` | `void __cdecl cocos2d::ccMessageBox(char const *,char const *)` |
+| `0x3a9310` | `bool __cdecl cocos2d::ccVertexLineIntersect(float,float,float,float,float,float,float,float,float *)` |
+| `0x3a9470` | `void __cdecl cocos2d::ccVertexLineToPolygon(class Rainbow::Vector2f *,float,class Rainbow::Vector2f *,unsigned int,unsigned int)` |
+| `0x3a0880` | `bool __cdecl cc_assert_script_compatible(char const *)` |
+| `0x4daea0` | `int __cdecl cc_lua_module_register(struct lua_State *)` |
+| `0x2eb460` | `public: void __thiscall fairygui::GObject::center(bool)` |
+| `0xe49f0` | `public: bool __thiscall Rainbow::SkeletonData::changeBoneName(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x300ab0` | `private: void __thiscall fairygui::ScrollPane::changeContentSizeOnScrolling(float,float,float,float)` |
+| `0x1da9b0` | `public: bool __thiscall Rainbow::ModelData::changeCustomBoneName(class Rainbow::FixedString,class Rainbow::FixedString)` |
+| `0x2941a0` | `public: void __thiscall fairygui::Transition::changePlayTimes(int)` |
+| `0x3072c0` | `private: void __thiscall fairygui::Transition::checkAllComplete(void)` |
+| `0x398020` | `public: virtual bool __thiscall cocos2d::EventListenerCustom::checkAvailable(void)` |
+| `0x949d0` | `public: virtual bool __thiscall cocos2d::EventListenerMouse::checkAvailable(void)` |
+| `0x3985e0` | `public: virtual bool __thiscall cocos2d::EventListenerTouchOneByOne::checkAvailable(void)` |
+| `0x112d70` | `protected: bool __thiscall MINIW::ScriptVM::checkCallValid(char const *)` |
+| `0x7e970` | `int __cdecl MINIW::checkFirstLaunch(void)` |
+| `0x2eb510` | `public: bool __thiscall fairygui::GObject::checkGearController(int,class fairygui::GController *)` |
+| `0x2eb540` | `protected: void __thiscall fairygui::GObject::checkGearDisplay(void)` |
+| `0x112d70` | `protected: virtual bool __thiscall Rainbow::RFontBase::checkGlyph(char32_t)` |
+| `0x2f0ff0` | `private: void __thiscall fairygui::GRoot::checkPopups(void)` |
+| `0x30d150` | `private: void __thiscall fairygui::UI3DRoot::checkPopups(void)` |
+| `0x2a3990` | `void __cdecl Rainbow::UIThreadTask::checkQueue(void)` |
+| `0x300ea0` | `private: void __thiscall fairygui::ScrollPane::checkRefreshBar(void)` |
+| `0xe4c20` | `public: int __thiscall Rainbow::SkeletonData::checkRelationship(class Rainbow::FixedString const &,class Rainbow::FixedString const &)` |
+| `0x31c3d0` | `protected: void __thiscall fairygui::FUIModelSprite::checkRes(void)` |
+| `0x1687f0` | `protected: void __thiscall Rainbow::UILib::ModelView::checkRes(void)` |
+| `0xd5b90` | `public: bool __thiscall Rainbow::SkeletonComponent::checkSize(void)` |
+| `0x2d95f0` | `private: void __thiscall fairygui::GList::checkVirtualList(void)` |
+| `0x3af8e0` | `public: bool __thiscall cocos2d::Renderer::checkVisibility(class Rainbow::Matrix4x4f const &,class cocos2d::Size const &)` |
+| `0x270d00` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::TextBoardIn3D::checkWordIsLineEnd(class core::basic_string<char,class core::StringStorageDefault<char> > &)` |
+| `0x2d2220` | `public: void __thiscall fairygui::GComponent::childFrameStrataOrFrameLevelChanged(void)` |
+| `0x2d9620` | `public: int __thiscall fairygui::GList::childIndexToItemIndex(int)` |
+| `0x2d2230` | `public: void __thiscall fairygui::GComponent::childSortingOrderChanged(class fairygui::GObject *,int,int)` |
+| `0x2d22c0` | `public: void __thiscall fairygui::GComponent::childStateChanged(class fairygui::GObject *)` |
+| `0x3751f0` | `protected: void __thiscall cocos2d::Node::childrenAlloc(void)` |
+| `0x3886f0` | `float __cdecl cocos2d::tweenfunc::circEaseIn(float)` |
+| `0x388750` | `float __cdecl cocos2d::tweenfunc::circEaseInOut(float)` |
+| `0x388800` | `float __cdecl cocos2d::tweenfunc::circEaseOut(float)` |
+| `0x3d96b0` | `public: static float __cdecl spine::MathUtil::clamp(float,float,float)` |
+| `0x3329b0` | `public: static void __cdecl fairygui::GTween::clean(void)` |
+| `0x3afaa0` | `public: void __thiscall cocos2d::Renderer::clean(void)` |
+| `0x394830` | `protected: void __thiscall cocos2d::EventDispatcher::cleanToRemovedListeners(void)` |
+| `0x375210` | `public: virtual void __thiscall cocos2d::Node::cleanup(void)` |
+| `0x37a930` | `public: virtual void __thiscall cocos2d::ProtectedNode::cleanup(void)` |
+| `0x38b3c0` | `public: void __thiscall cocos2d::Data::clear(void)` |
+| `0x355c40` | `public: void __thiscall cocos2d::DrawNode::clear(void)` |
+| `0x2fb5a0` | `public: void __thiscall fairygui::GWebView::clear(void)` |
+| `0xd08f0` | `public: void __thiscall czy::LeastSquaresFit::clear(void)` |
+| `0x406280` | `public: virtual void __thiscall cocos2d::PrettyPrinter::clear(void)` |
+| `0x17e380` | `public: void __thiscall cocos2d::Renderer::clear(enum cocos2d::ClearFlag,struct cocos2d::Color4F const &,float,unsigned int,float)` |
+| `0x29c140` | `private: void __thiscall Value::clear(void)` |
+| `0x3a4090` | `private: void __thiscall cocos2d::Value::clear(void)` |
+| `0x1522d0` | `protected: void __thiscall Rainbow::UILib::FrameManager::clearAccelKeyState(int)` |
+| `0x2ffb20` | `public: void __thiscall fairygui::Relations::clearAll(void)` |
+| `0x238a70` | `int __cdecl Rainbow::CWebp::clearBuffer(unsigned char *)` |
+| `0x324740` | `public: void __thiscall fairygui::FUISprite::clearContent(void)` |
+| `0x2e8240` | `public: void __thiscall fairygui::GLoader3D::clearContent(void)` |
+| `0x2e0ba0` | `private: void __thiscall fairygui::GLoader::clearContent(void)` |
+| `0x1fc290` | `public: void __thiscall Rainbow::Downloader::clearCurl(void)` |
+| `0x98590` | `public: void __thiscall cocos2d::Director::clearDrawItem(void)` |
+| `0x985a0` | `public: void __thiscall cocos2d::Renderer::clearDrawStats(void)` |
+| `0x8a250` | `private: void __thiscall fairygui::GLoader3D::clearErrorState(void)` |
+| `0x8a250` | `private: void __thiscall fairygui::GLoader::clearErrorState(void)` |
+| `0xd0960` | `public: void __thiscall czy::LeastSquaresFit::clearFittenYs(void)` |
+| `0x2ffb80` | `public: void __thiscall fairygui::Relations::clearFor(class fairygui::GObject *)` |
+| `0x13daf0` | `public: void __thiscall Rainbow::UILib::EditBox::clearHistory(void)` |
+| `0x3073f0` | `public: void __thiscall fairygui::Transition::clearHooks(void)` |
+| `0x2fd080` | `public: void __thiscall fairygui::PopupMenu::clearItems(void)` |
+| `0xdc790` | `public: void __thiscall Rainbow::AnimationData::clearKeyframes(void)` |
+| `0xd7a90` | `public: void __thiscall Rainbow::BoneTrack::clearKeyframes(void)` |
+| `0x1dab20` | `public: void __thiscall Rainbow::ModelData::clearKeyframes(int const &)` |
+| `0x2d96e0` | `public: void __thiscall fairygui::GList::clearSelection(void)` |
+| `0x2d97b0` | `private: void __thiscall fairygui::GList::clearSelectionExcept(class fairygui::GObject *)` |
+| `0x3e19b0` | `public: void __thiscall spine::SkeletonAnimation::clearTrack(int)` |
+| `0x3e19c0` | `public: void __thiscall spine::SkeletonAnimation::clearTracks(void)` |
+| `0x24e9e0` | `public: void __thiscall MINIW::ScriptVM::clearUserTypePointer(char const *)` |
+| `0x929ce0` | `public: static int fairygui::UIConfig::clickDragSensitivity` |
+| `0x327580` | `private: class fairygui::GObject * __thiscall fairygui::InputProcessor::clickTest(class fairygui::TouchInfo *,class fairygui::GObject *)` |
+| `0x290ba0` | `public: virtual void __thiscall WebSocketServer::clientGone(unsigned int)` |
+| `0x28eaf0` | `public: void __thiscall MINIW::WebSocketSvr::clientGone(int)` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::IClientInfo::clientVersion(void)` |
+| `0x2a9890` | `public: virtual char const * __thiscall Rainbow::IClientInfo::clientVersionStr(void)` |
+| `0x7e970` | `public: class cocos2d::Clonable * __thiscall cocos2d::Action::clone(void)const ` |
+| `0x7e970` | `public: virtual class cocos2d::Action * __thiscall cocos2d::Action::clone(void)const ` |
+| `0x7e970` | `public: class cocos2d::Action * __thiscall cocos2d::ActionInterval::clone(void)const ` |
+| `0x7e970` | `public: class cocos2d::Clonable * __thiscall cocos2d::ActionInterval::clone(void)const ` |
+| `0x7e970` | `public: class cocos2d::FiniteTimeAction * __thiscall cocos2d::ActionInterval::clone(void)const ` |
+| `0x7e970` | `public: virtual class cocos2d::ActionInterval * __thiscall cocos2d::ActionInterval::clone(void)const ` |
+| `0x2e9e00` | `public: class cocos2d::Action * __thiscall fairygui::ActionMovieClip::clone(void)const ` |
+| `0x2e9e30` | `public: class cocos2d::Clonable * __thiscall fairygui::ActionMovieClip::clone(void)const ` |
+| `0x2e9e00` | `public: virtual class fairygui::ActionMovieClip * __thiscall fairygui::ActionMovieClip::clone(void)const ` |
+| `0x350e70` | `public: class cocos2d::Clonable * __thiscall cocos2d::Animation::clone(void)const ` |
+| `0x350e80` | `public: virtual class cocos2d::Animation * __thiscall cocos2d::Animation::clone(void)const ` |
+| `0x398050` | `public: virtual class cocos2d::EventListenerCustom * __thiscall cocos2d::EventListenerCustom::clone(void)` |
+| `0x398d40` | `public: virtual class cocos2d::EventListenerMouse * __thiscall cocos2d::EventListenerMouse::clone(void)` |
+| `0x399650` | `public: virtual class cocos2d::EventListenerTouchOneByOne * __thiscall cocos2d::EventListenerTouchOneByOne::clone(void)` |
+| `0x985c0` | `public: class cocos2d::Action * __thiscall cocos2d::ResizeTo::clone(void)const ` |
+| `0x985c0` | `public: class cocos2d::ActionInterval * __thiscall cocos2d::ResizeTo::clone(void)const ` |
+| `0x985d0` | `public: class cocos2d::Clonable * __thiscall cocos2d::ResizeTo::clone(void)const ` |
+| `0x985c0` | `public: class cocos2d::FiniteTimeAction * __thiscall cocos2d::ResizeTo::clone(void)const ` |
+| `0x347f10` | `public: virtual class cocos2d::ResizeTo * __thiscall cocos2d::ResizeTo::clone(void)const ` |
+| `0x24ea40` | `public: class cocos2d::Clonable * __thiscall cocos2d::__Array::clone(void)const ` |
+| `0x404fd0` | `public: virtual class cocos2d::__Array * __thiscall cocos2d::__Array::clone(void)const ` |
+| `0x4062a0` | `public: class cocos2d::Clonable * __thiscall cocos2d::__Bool::clone(void)const ` |
+| `0x4062c0` | `public: virtual class cocos2d::__Bool * __thiscall cocos2d::__Bool::clone(void)const ` |
+| `0x4062d0` | `public: class cocos2d::Clonable * __thiscall cocos2d::__Dictionary::clone(void)const ` |
+| `0x4076b0` | `public: virtual class cocos2d::__Dictionary * __thiscall cocos2d::__Dictionary::clone(void)const ` |
+| `0x4062e0` | `public: class cocos2d::Clonable * __thiscall cocos2d::__Double::clone(void)const ` |
+| `0x406300` | `public: virtual class cocos2d::__Double * __thiscall cocos2d::__Double::clone(void)const ` |
+| `0x406320` | `public: class cocos2d::Clonable * __thiscall cocos2d::__Float::clone(void)const ` |
+| `0x406340` | `public: virtual class cocos2d::__Float * __thiscall cocos2d::__Float::clone(void)const ` |
+| `0x406360` | `public: class cocos2d::Clonable * __thiscall cocos2d::__Integer::clone(void)const ` |
+| `0x406380` | `public: virtual class cocos2d::__Integer * __thiscall cocos2d::__Integer::clone(void)const ` |
+| `0x40af60` | `public: class cocos2d::Clonable * __thiscall cocos2d::__String::clone(void)const ` |
+| `0x40af80` | `public: virtual class cocos2d::__String * __thiscall cocos2d::__String::clone(void)const ` |
+| `0x92960` | `public: void __thiscall Rainbow::MaterialTemplate::cloneMaterial(class Rainbow::Material *,struct Rainbow::MaterialTemplate::TechCache *)` |
+| `0x225080` | `public: void __thiscall FileAutoClose::close(void)` |
+| `0x281450` | `public: void __thiscall LuaWebSocketMgr::close(class LuaWebSocket *)` |
+| `0x28bef0` | `public: void __thiscall MINIW::WebSocket::close(void)` |
+| `0x28f730` | `public: void __thiscall WebSocketCallbackWrapper::close(void)` |
+| `0x273fb0` | `public: void __thiscall Rainbow::ZipFilePkg::close(void)` |
+| `0x2f1250` | `public: void __thiscall fairygui::GRoot::closeAllExceptModals(void)` |
+| `0x30d3d0` | `public: void __thiscall fairygui::UI3DRoot::closeAllExceptModals(void)` |
+| `0x2f1300` | `public: void __thiscall fairygui::GRoot::closeAllWindows(void)` |
+| `0x30d480` | `public: void __thiscall fairygui::UI3DRoot::closeAllWindows(void)` |
+| `0x316470` | `protected: void __thiscall fairygui::Window::closeEventHandler(class fairygui::FUIEventContext *)` |
+| `0x2814d0` | `public: static void __cdecl LuaWebSocketMgr::closeLuaWebSocket(class LuaWebSocket *)` |
+| `0x2f13b0` | `public: void __thiscall fairygui::GRoot::closeModalWait(void)` |
+| `0x316490` | `public: bool __thiscall fairygui::Window::closeModalWait(int)` |
+| `0x985e0` | `public: bool __thiscall fairygui::Window::closeModalWait(void)` |
+| `0x2f13d0` | `private: void __thiscall fairygui::GRoot::closePopup(class fairygui::GObject *)` |
+| `0x30d520` | `private: void __thiscall fairygui::UI3DRoot::closePopup(class fairygui::GObject *)` |
+| `0x21e4a0` | `public: class Rainbow::Vector3f __thiscall MINIW::Ray::closestPoint(class Rainbow::Vector3f const &)const ` |
+| `0x33df80` | `char const * __cdecl cocos2d::cocos2dVersion(void)` |
+| `0x4d8140` | `void __cdecl color3b_to_luaval(struct lua_State *,struct cocos2d::Color3B const &)` |
+| `0x334ea0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fairygui::ToolSet::colorToHexStr(struct cocos2d::Color3B const &)` |
+| `0x334f30` | `public: static unsigned int __cdecl fairygui::ToolSet::colorToInt(struct cocos2d::Color3B const &)` |
+| `0x40af90` | `public: int __thiscall cocos2d::__String::compare(char const *)const ` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::DummyMaterialTemplate::compileAllShaders(void)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::DummyMaterialTemplate::compileShaderOnMap(int)` |
+| `0x40afd0` | `public: class cocos2d::__Array * __thiscall cocos2d::__String::componentsSeparatedByString(char const *)` |
+| `0x2a4660` | `public: bool __thiscall Rainbow::CompressTool::compress(void *,unsigned int &,void const *,unsigned int,int)` |
+| `0x2a4720` | `public: unsigned int __thiscall Rainbow::CompressTool::compressBound(unsigned int)` |
+| `0x2a4780` | `public: static int __cdecl Rainbow::CompressTool::compressFilesToZip(char const *,char const *,int,char const *)` |
+| `0x2a4940` | `public: static int __cdecl Rainbow::CompressTool::compressFolderDirToZipOnlyForDiagnose(char const *,char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,int,char const *,bool,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &)` |
+| `0x2a4e00` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZip(char const *,char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,int,char const *,int)` |
+| `0x2a4e30` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZip(char const *,char const *,int,char const *)` |
+| `0x2a4e50` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipFilter(char const *,char const *,int,char const *,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &)` |
+| `0x2a4e70` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipFilterWithCallback(char const *,char const *,int,char const *,void (__cdecl*)(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &),struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &)` |
+| `0x2a4ea0` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipInPkg(char const *,char const *,int,char const *)` |
+| `0x2a5080` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipInPkgWithIgnore(char const *,char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &,int,char const *,int)` |
+| `0x2a5680` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipOnlyForDiagnose(char const *,char const *,int,char const *,bool,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &)` |
+| `0x2a5720` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipPassWord(char const *,char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,int,char const *,char const *,int)` |
+| `0x2a6160` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipPassWord(char const *,char const *,int,char const *,char const *,int)` |
+| `0x2a6740` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipPassWordFilter(char const *,char const *,int,char const *,char const *,int,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &)` |
+| `0x2a6dd0` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipPassWordFilterWithCallback(char const *,char const *,int,char const *,char const *,int,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &,void (__cdecl*)(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &))` |
+| `0x2a74b0` | `public: static int __cdecl Rainbow::CompressTool::compressFolderToZipPassWordWithCallback(char const *,char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,int,char const *,char const *,int,void (__cdecl*)(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &))` |
+| `0x369700` | `protected: void __thiscall cocos2d::Label::computeAlignmentOffset(void)` |
+| `0x361690` | `protected: bool __thiscall cocos2d::Label::computeHorizontalKernings(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &)` |
+| `0x3616f0` | `protected: void __thiscall cocos2d::Label::computeStringNumLines(void)` |
+| `0x92380` | `public: virtual void __thiscall spine::AtlasAttachmentLoader::configureAttachment(class spine::Attachment *)` |
+| `0x402c50` | `public: virtual void __thiscall spine::Cocos2dAtlasAttachmentLoader::configureAttachment(class spine::Attachment *)` |
+| `0x2ce5e0` | `protected: virtual void __thiscall fairygui::GButton::constructExtension(class fairygui::ByteBuffer *)` |
+| `0x2d0440` | `protected: virtual void __thiscall fairygui::GComboBox::constructExtension(class fairygui::ByteBuffer *)` |
+| `0x92380` | `protected: virtual void __thiscall fairygui::GComponent::constructExtension(class fairygui::ByteBuffer *)` |
+| `0x2eedb0` | `protected: virtual void __thiscall fairygui::GProgressBar::constructExtension(class fairygui::ByteBuffer *)` |
+| `0x2d24e0` | `public: void __thiscall fairygui::GComponent::constructFromResource(class std::vector<class fairygui::GObject *,class std::allocator<class fairygui::GObject *> > *,int)` |
+| `0x2d2d00` | `public: virtual void __thiscall fairygui::GComponent::constructFromResource(void)` |
+| `0x2d7e40` | `public: virtual void __thiscall fairygui::GImage::constructFromResource(void)` |
+| `0x8a250` | `public: virtual void __thiscall fairygui::GObject::constructFromResource(void)` |
+| `0x2ffc10` | `public: bool __thiscall fairygui::Relations::contains(class fairygui::GObject *)` |
+| `0x4051b0` | `public: bool __thiscall cocos2d::__Array::containsObject(class cocos2d::Ref *)const ` |
+| `0x40a770` | `public: bool __thiscall cocos2d::__Set::containsObject(class cocos2d::Ref *)` |
+| `0x3a8ee0` | `public: bool __thiscall cocos2d::Rect::containsPoint(class Rainbow::Vector2f const &)const ` |
+| `0x9743d0` | `public: static int fairygui::GRoot::contentScaleLevel` |
+| `0x2b8330` | `protected: virtual void __thiscall fairygui::HUDScene::continueInit(void)` |
+| `0x2b8330` | `protected: virtual void __thiscall fairygui::UI3DScene::continueInit(void)` |
+| `0x38cb70` | `public: class Rainbow::Vector2f __thiscall cocos2d::Director::convertToGL(class Rainbow::Vector2f const &)` |
+| `0x375290` | `public: class Rainbow::Vector2f __thiscall cocos2d::Node::convertToNodeSpace(class Rainbow::Vector2f const &)const ` |
+| `0x375310` | `public: class Rainbow::Vector2f __thiscall cocos2d::Node::convertToNodeSpaceAR(class Rainbow::Vector2f const &)const ` |
+| `0x38ce30` | `public: class Rainbow::Vector2f __thiscall cocos2d::Director::convertToUI(class Rainbow::Vector2f const &)` |
+| `0x3753a0` | `protected: class Rainbow::Vector2f __thiscall cocos2d::Node::convertToWindowSpace(class Rainbow::Vector2f const &)const ` |
+| `0x375440` | `public: class Rainbow::Vector2f __thiscall cocos2d::Node::convertToWorldSpace(class Rainbow::Vector2f const &)const ` |
+| `0x3754c0` | `public: class Rainbow::Vector2f __thiscall cocos2d::Node::convertToWorldSpaceAR(class Rainbow::Vector2f const &)const ` |
+| `0x375560` | `public: class Rainbow::Vector2f __thiscall cocos2d::Node::convertTouchToNodeSpace(class cocos2d::Touch *)const ` |
+| `0x3755f0` | `public: class Rainbow::Vector2f __thiscall cocos2d::Node::convertTouchToNodeSpaceAR(class cocos2d::Touch *)const ` |
+| `0x38b400` | `public: long __thiscall cocos2d::Data::copy(unsigned char const *,long)` |
+| `0x10f060` | `public: void __thiscall MINIW::Transform_::copy(class MINIW::Transform_ const &)` |
+| `0x40a7b0` | `public: class cocos2d::__Set * __thiscall cocos2d::__Set::copy(void)` |
+| `0x2ffc50` | `public: void __thiscall fairygui::Relations::copyFrom(class fairygui::Relations const &)` |
+| `0xdc7d0` | `public: bool __thiscall Rainbow::AnimationData::copyKeyframes(class Rainbow::AnimationData *)` |
+| `0xd7b80` | `public: void __thiscall Rainbow::BoneTrack::copyKeyframes(class Rainbow::BoneTrack const *)` |
+| `0x1a7bc0` | `public: void __thiscall Rainbow::SequenceMap::copySequenceDesc(int,int)` |
+| `0x3fd140` | `public: void __thiscall spine::Skin::copySkin(class spine::Skin *)` |
+| `0x3d96e0` | `public: static float __cdecl spine::MathUtil::cos(float)` |
+| `0x3d9700` | `public: static float __cdecl spine::MathUtil::cosDeg(float)` |
+| `0x24ea50` | `public: long __thiscall cocos2d::__Array::count(void)const ` |
+| `0x4079b0` | `public: unsigned int __thiscall cocos2d::__Dictionary::count(void)` |
+| `0x40a840` | `public: int __thiscall cocos2d::__Set::count(void)` |
+| `0x8a250` | `void __cdecl MINIW::crashlyticsLog(char const *)` |
+| `0x3cae40` | `public: bool __thiscall winSystemInfo::creatRegKey(struct HKEY__ *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2e9f10` | `public: static class fairygui::ActionMovieClip * __cdecl fairygui::ActionMovieClip::create(class cocos2d::Animation *,float,bool)` |
+| `0x351100` | `public: static class cocos2d::Animation * __cdecl cocos2d::Animation::create(class cocos2d::Vector<class cocos2d::AnimationFrame *> const &,float,unsigned int)` |
+| `0x3511d0` | `public: static class cocos2d::Animation * __cdecl cocos2d::Animation::create(void)` |
+| `0x354cd0` | `public: static class cocos2d::Component * __cdecl cocos2d::Component::create(void)` |
+| `0x355cb0` | `public: static class cocos2d::DrawNode * __cdecl cocos2d::DrawNode::create(float)` |
+| `0x398140` | `public: static class cocos2d::EventListenerCustom * __cdecl cocos2d::EventListenerCustom::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(class cocos2d::EventCustom *)> const &)` |
+| `0x398ef0` | `public: static class cocos2d::EventListenerMouse * __cdecl cocos2d::EventListenerMouse::create(void)` |
+| `0x3997d0` | `public: static class cocos2d::EventListenerTouchOneByOne * __cdecl cocos2d::EventListenerTouchOneByOne::create(void)` |
+| `0x985f0` | `public: static class fairygui::FUIContainer * __cdecl fairygui::FUIContainer::create(void)` |
+| `0x31c9c0` | `public: static class fairygui::FUIModelSprite * __cdecl fairygui::FUIModelSprite::create(void)` |
+| `0x320cf0` | `public: static class fairygui::FUIRenderTexture * __cdecl fairygui::FUIRenderTexture::create(void)` |
+| `0x986c0` | `public: static class fairygui::FUISprite * __cdecl fairygui::FUISprite::create(void)` |
+| `0x98790` | `public: static class fairygui::GBasicTextField * __cdecl fairygui::GBasicTextField::create(void)` |
+| `0x98860` | `public: static class fairygui::GButton * __cdecl fairygui::GButton::create(void)` |
+| `0x98930` | `public: static class fairygui::GColorTextureLoader * __cdecl fairygui::GColorTextureLoader::create(void)` |
+| `0x98a00` | `public: static class fairygui::GComboBox * __cdecl fairygui::GComboBox::create(void)` |
+| `0x98ad0` | `public: static class fairygui::GComponent * __cdecl fairygui::GComponent::create(void)` |
+| `0x98ba0` | `public: static class fairygui::GGraph * __cdecl fairygui::GGraph::create(void)` |
+| `0x98c70` | `public: static class fairygui::GImage * __cdecl fairygui::GImage::create(void)` |
+| `0x3c3450` | `public: static class cocos2d::GLViewImpl * __cdecl cocos2d::GLViewImpl::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3c3470` | `public: static class cocos2d::GLViewImpl * __cdecl cocos2d::GLViewImpl::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)` |
+| `0x98d40` | `public: static class fairygui::GList * __cdecl fairygui::GList::create(void)` |
+| `0x98e10` | `public: static class fairygui::GLoader3D * __cdecl fairygui::GLoader3D::create(void)` |
+| `0x98ee0` | `public: static class fairygui::GLoader * __cdecl fairygui::GLoader::create(void)` |
+| `0x98fb0` | `public: static class fairygui::GModelView * __cdecl fairygui::GModelView::create(void)` |
+| `0x99080` | `public: static class fairygui::GObject * __cdecl fairygui::GObject::create(void)` |
+| `0x99150` | `public: static class fairygui::GProgressBar * __cdecl fairygui::GProgressBar::create(void)` |
+| `0x99220` | `public: static class fairygui::GRichTextField * __cdecl fairygui::GRichTextField::create(void)` |
+| `0x2f1420` | `public: static class fairygui::GRoot * __cdecl fairygui::GRoot::create(class cocos2d::Scene *,int)` |
+| `0x992f0` | `public: static class fairygui::GTextInput * __cdecl fairygui::GTextInput::create(void)` |
+| `0x2f8a10` | `public: static class fairygui::GTreeNode * __cdecl fairygui::GTreeNode::create(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2f9bf0` | `public: static class fairygui::GUIGenIcon * __cdecl fairygui::GUIGenIcon::create(void)` |
+| `0x993c0` | `public: static class fairygui::GUIRenderTexture * __cdecl fairygui::GUIRenderTexture::create(void)` |
+| `0x99490` | `public: static class fairygui::GWebView * __cdecl fairygui::GWebView::create(void)` |
+| `0x2b8340` | `public: static class Rainbow::HUDBloodBar * __cdecl Rainbow::HUDBloodBar::create(void)` |
+| `0x2b8410` | `public: static class Rainbow::HUDChatBubble * __cdecl Rainbow::HUDChatBubble::create(void)` |
+| `0x2b84e0` | `public: static class Rainbow::HUDLevitationFont * __cdecl Rainbow::HUDLevitationFont::create(void)` |
+| `0x2b2f10` | `public: static class fairygui::HUDRoot * __cdecl fairygui::HUDRoot::create(class cocos2d::Scene *,int)` |
+| `0x2b85b0` | `public: static class fairygui::HUDScene * __cdecl fairygui::HUDScene::create(void)` |
+| `0x2b86c0` | `public: static class Rainbow::HUDTitleBase * __cdecl Rainbow::HUDTitleBase::create(void)` |
+| `0x2b8790` | `public: static class Rainbow::HUDTitleInfo * __cdecl Rainbow::HUDTitleInfo::create(void)` |
+| `0x2b8860` | `public: static class Rainbow::HUDTitleLine * __cdecl Rainbow::HUDTitleLine::create(void)` |
+| `0x35dbe0` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::create(void)` |
+| `0x361760` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::create(void)` |
+| `0x375690` | `public: static class cocos2d::Node * __cdecl cocos2d::Node::create(void)` |
+| `0x2fd0c0` | `public: static class fairygui::PopupMenu * __cdecl fairygui::PopupMenu::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x99560` | `public: static class fairygui::PopupMenu * __cdecl fairygui::PopupMenu::create(void)` |
+| `0x37a980` | `public: static class cocos2d::ProtectedNode * __cdecl cocos2d::ProtectedNode::create(void)` |
+| `0x349c70` | `public: static class cocos2d::ResizeTo * __cdecl cocos2d::ResizeTo::create(float,class cocos2d::Size const &)` |
+| `0x37b8f0` | `public: static class cocos2d::Scene * __cdecl cocos2d::Scene::create(void)` |
+| `0x2e8290` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::create(void)` |
+| `0x2e8360` | `public: static class spine::SkeletonRenderer * __cdecl spine::SkeletonRenderer::create(void)` |
+| `0x37c690` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x37c760` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Rect const &)` |
+| `0x37c830` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::create(class cocos2d::PolygonInfo const &)` |
+| `0x37c900` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::create(void)` |
+| `0x381280` | `public: static class cocos2d::SpriteBatchNode * __cdecl cocos2d::SpriteBatchNode::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,long)` |
+| `0x3848d0` | `public: static class cocos2d::TransitionFade * __cdecl cocos2d::TransitionFade::create(float,class cocos2d::Scene *)` |
+| `0x3848f0` | `public: static class cocos2d::TransitionFade * __cdecl cocos2d::TransitionFade::create(float,class cocos2d::Scene *,struct cocos2d::Color3B const &)` |
+| `0x30d590` | `public: static class fairygui::UI3DRoot * __cdecl fairygui::UI3DRoot::create(class cocos2d::Scene *,int)` |
+| `0x99610` | `public: static class fairygui::UI3DScene * __cdecl fairygui::UI3DScene::create(void)` |
+| `0x996e0` | `public: static class fairygui::Window * __cdecl fairygui::Window::create(void)` |
+| `0x4051d0` | `public: static class cocos2d::__Array * __cdecl cocos2d::__Array::create(class cocos2d::Ref *,...)` |
+| `0x405250` | `public: static class cocos2d::__Array * __cdecl cocos2d::__Array::create(void)` |
+| `0x406390` | `public: static class cocos2d::__Bool * __cdecl cocos2d::__Bool::create(bool)` |
+| `0x4079d0` | `public: static class cocos2d::__Dictionary * __cdecl cocos2d::__Dictionary::create(void)` |
+| `0x406420` | `public: static class cocos2d::__Double * __cdecl cocos2d::__Double::create(double)` |
+| `0x4064d0` | `public: static class cocos2d::__Float * __cdecl cocos2d::__Float::create(float)` |
+| `0x406580` | `public: static class cocos2d::__Integer * __cdecl cocos2d::__Integer::create(int)` |
+| `0x40a850` | `public: static class cocos2d::__Set * __cdecl cocos2d::__Set::create(void)` |
+| `0x40b340` | `public: static class cocos2d::__String * __cdecl cocos2d::__String::create(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2f9cd0` | `public: void __thiscall fairygui::GUIGenIcon::createDoubleWeaponEnv(void)` |
+| `0x2f14f0` | `private: void __thiscall fairygui::GRoot::createModalLayer(void)` |
+| `0x25e130` | `public: void __thiscall Rainbow::MoveByTextMgr::createMoveByText(char const *,int,class Rainbow::ColorRGBA32 const &,class Rainbow::WorldPos const &,class Rainbow::Vector3f const &,int,float,bool,int,int)` |
+| `0x3c9a40` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall winSystemInfo::createNewGUIDStr(void)` |
+| `0x170af0` | `public: static void * __cdecl Rainbow::UILib::ObjectFactory::createObject(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x310c10` | `private: class fairygui::GObject * __thiscall fairygui::UIPackage::createObject(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x310d60` | `private: class fairygui::GObject * __thiscall fairygui::UIPackage::createObject(class fairygui::PackageItem *)` |
+| `0x310da0` | `public: static class fairygui::GObject * __cdecl fairygui::UIPackage::createObject(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3afb30` | `public: int __thiscall cocos2d::Renderer::createRenderQueue(void)` |
+| `0x3617f0` | `protected: void __thiscall cocos2d::Label::createShadowSpriteForSystemFont(struct cocos2d::FontDefinition const &)` |
+| `0x361a40` | `protected: void __thiscall cocos2d::Label::createSpriteForSystemFont(struct cocos2d::FontDefinition const &)` |
+| `0x7e970` | `class cocos2d::Sprite * __cdecl cocos2d::utils::createSpriteFromBase64(char const *)` |
+| `0x7e970` | `class cocos2d::Sprite * __cdecl cocos2d::utils::createSpriteFromBase64Cached(char const *,char const *)` |
+| `0x38d100` | `public: void __thiscall cocos2d::Director::createStatsLabel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x38d4f0` | `public: void __thiscall cocos2d::Director::createWaterMarkLabel(void)` |
+| `0x405310` | `public: static class cocos2d::__Array * __cdecl cocos2d::__Array::createWithArray(class cocos2d::__Array *)` |
+| `0x35dc70` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithBMFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment const &,int,class Rainbow::Vector2f const &)` |
+| `0x361c90` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithBMFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment const &,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x361dd0` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithBMFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment const &,int)` |
+| `0x361f00` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithBMFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment const &,int,class cocos2d::Rect const &,bool)` |
+| `0x362040` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithBMFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment const &,int,class Rainbow::Vector2f const &)` |
+| `0x3e19d0` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithBinaryFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x3e1a70` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithBinaryFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x405320` | `public: static class cocos2d::__Array * __cdecl cocos2d::__Array::createWithCapacity(long)` |
+| `0x35dd80` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithCharMap(class Rainbow::SharePtr<class Rainbow::Texture2D> &,int,int,int)` |
+| `0x35de60` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithCharMap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x35df50` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithCharMap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)` |
+| `0x3620a0` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithCharMap(class Rainbow::SharePtr<class Rainbow::Texture2D> &,int,int,int)` |
+| `0x362180` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithCharMap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x362260` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithCharMap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,int)` |
+| `0x3e1b10` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithData(class spine::SkeletonData *,bool)` |
+| `0x3f9050` | `public: static class spine::SkeletonRenderer * __cdecl spine::SkeletonRenderer::createWithData(class spine::SkeletonData *,bool)` |
+| `0x40b3f0` | `public: static class cocos2d::__String * __cdecl cocos2d::__String::createWithData(unsigned char const *,unsigned int)` |
+| `0x405310` | `public: static class cocos2d::__Dictionary * __cdecl cocos2d::__Dictionary::createWithDictionary(class cocos2d::__Dictionary *)` |
+| `0x2e8430` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x2e8450` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x3f90e0` | `public: static class spine::SkeletonRenderer * __cdecl spine::SkeletonRenderer::createWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x3f9180` | `public: static class spine::SkeletonRenderer * __cdecl spine::SkeletonRenderer::createWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x40b500` | `public: static class cocos2d::__String * __cdecl cocos2d::__String::createWithFormat(char const *,...)` |
+| `0x3e1bb0` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithJsonFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x3e1c50` | `public: static class spine::SkeletonAnimation * __cdecl spine::SkeletonAnimation::createWithJsonFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x4053e0` | `public: static class cocos2d::__Array * __cdecl cocos2d::__Array::createWithObject(class cocos2d::Ref *)` |
+| `0x3c35b0` | `public: static class cocos2d::GLViewImpl * __cdecl cocos2d::GLViewImpl::createWithRect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Rect,float,bool)` |
+| `0x37b9c0` | `public: static class cocos2d::Scene * __cdecl cocos2d::Scene::createWithSize(class cocos2d::Size const &)` |
+| `0x3f9220` | `public: static class spine::SkeletonRenderer * __cdecl spine::SkeletonRenderer::createWithSkeleton(class spine::Skeleton *,bool,bool)` |
+| `0x37c9d0` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::createWithSpriteFrame(class cocos2d::SpriteFrame *)` |
+| `0x7e970` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::createWithSpriteFrameName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x351360` | `public: static class cocos2d::Animation * __cdecl cocos2d::Animation::createWithSpriteFrames(class cocos2d::Vector<class cocos2d::SpriteFrame *> const &,float,unsigned int)` |
+| `0x35e030` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithSystemFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,class cocos2d::Size const &,enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x362340` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithSystemFont(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,class cocos2d::Size const &,enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x35e130` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithTTF(struct Rainbow::TTFConfig &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment,int)` |
+| `0x35e210` | `public: static class cocos2d::InputLabel * __cdecl cocos2d::InputLabel::createWithTTF(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,class cocos2d::Size const &,enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x362440` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithTTF(struct Rainbow::TTFConfig &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment,int)` |
+| `0x362520` | `public: static class cocos2d::Label * __cdecl cocos2d::Label::createWithTTF(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,class cocos2d::Size const &,enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x37cab0` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::createWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x37cbb0` | `public: static class cocos2d::Sprite * __cdecl cocos2d::Sprite::createWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,class cocos2d::Rect const &,bool)` |
+| `0x381350` | `public: static class cocos2d::SpriteBatchNode * __cdecl cocos2d::SpriteBatchNode::createWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,long)` |
+| `0x238a90` | `int __cdecl Rainbow::CWebp::cropARRGBA2Webp(char const *,unsigned char const *,int,int,int)` |
+| `0x238fe0` | `int __cdecl Rainbow::CWebp::cropArPng2Wepb(char const *,char const *,int)` |
+| `0x388860` | `float __cdecl cocos2d::tweenfunc::cubicEaseIn(float)` |
+| `0x388870` | `float __cdecl cocos2d::tweenfunc::cubicEaseInOut(float)` |
+| `0x3888e0` | `float __cdecl cocos2d::tweenfunc::cubicEaseOut(float)` |
+| `0x1fc2b0` | `public: int __thiscall Rainbow::Downloader::curlGetHttpsRequest(char const *,char const *,char const *)` |
+| `0x1fc400` | `public: int __thiscall Rainbow::Downloader::curlPostHttpsRequest(char const *,char const *,char const *,char const *)` |
+| `0x35e300` | `protected: bool __thiscall cocos2d::InputLabel::cursorIsShow(void)` |
+| `0x388910` | `float __cdecl cocos2d::tweenfunc::customEase(float,float *)` |
+| `0x25c110` | `public: void __thiscall Rainbow::ItemImage3D::dealNineSquare(void)` |
+| `0x261160` | `public: void __thiscall Rainbow::MusicClubChatBubble3D::dealShortCut(void)` |
+| `0x35e340` | `protected: void __thiscall cocos2d::InputLabel::dealShowText(void)` |
+| `0x2eb5d0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fairygui::GObject::decodeLangString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x307460` | `private: void __thiscall fairygui::Transition::decodeValue(class fairygui::TransitionItem *,class fairygui::ByteBuffer *,void *)` |
+| `0x239180` | `int __cdecl Rainbow::CWebp::decodeWebpBuffer(unsigned char const *,unsigned int,unsigned char * *,unsigned int *,int *,int *)` |
+| `0x2a7e50` | `public: bool __thiscall Rainbow::CompressTool::decompress(void *,unsigned int,void const *,unsigned int)` |
+| `0x929ce8` | `public: static int fairygui::UIConfig::defaultComboBoxVisibleItemCount` |
+| `0x24ea60` | `public: static class cocos2d::LuaEngine * __cdecl cocos2d::LuaEngine::defaultEngine(void)` |
+| `0x929d38` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > fairygui::UIConfig::defaultFont` |
+| `0x975d10` | `public: static enum fairygui::ScrollBarDisplayType fairygui::UIConfig::defaultScrollBarDisplay` |
+| `0x929cd9` | `public: static bool fairygui::UIConfig::defaultScrollBounceEffect` |
+| `0x929cd4` | `public: static float fairygui::UIConfig::defaultScrollDecelerationRate` |
+| `0x929cd0` | `public: static int fairygui::UIConfig::defaultScrollStep` |
+| `0x929cd8` | `public: static bool fairygui::UIConfig::defaultScrollTouchEffect` |
+| `0xdc850` | `public: bool __thiscall Rainbow::AnimationData::delAllKeyFrames(void)` |
+| `0xe4cf0` | `public: void __thiscall Rainbow::SkeletonData::delBone(int)` |
+| `0xe5540` | `public: void __thiscall Rainbow::SkeletonData::delBone(class Rainbow::FixedString)` |
+| `0x1dabc0` | `public: void __thiscall Rainbow::ModelData::delCustomBone(class Rainbow::FixedString)` |
+| `0xdca20` | `public: bool __thiscall Rainbow::AnimationData::delCustomKeyFrame(class Rainbow::FixedString &,unsigned int)` |
+| `0x1dac30` | `public: bool __thiscall Rainbow::ModelData::delCustomKeyFrame(int,class Rainbow::FixedString,unsigned int)` |
+| `0x1dacd0` | `public: bool __thiscall Rainbow::ModelData::delCustomKeyframes(int,unsigned int)` |
+| `0xd80a0` | `public: bool __thiscall Rainbow::BoneTrack::delKeyFrame(unsigned int)` |
+| `0x152340` | `public: void __thiscall Rainbow::UILib::FrameManager::delPopWindow(char const *)` |
+| `0xd80f0` | `public: void __thiscall Rainbow::BoneTrack::delSameKeyFrame(void)` |
+| `0x3329c0` | `public: static class fairygui::GTweener * __cdecl fairygui::GTween::delayedCall(float)` |
+| `0x31ca60` | `public: void __thiscall fairygui::FUIModelSprite::deleteBackgroundEffect(char const *)` |
+| `0x168ca0` | `public: void __thiscall Rainbow::UILib::ModelView::deleteBackgroundEffect(char const *)` |
+| `0x148f90` | `public: bool __thiscall Rainbow::UILib::Frame::deleteScriptFunc(int)` |
+| `0x35e460` | `public: virtual void __thiscall cocos2d::InputLabel::deleteWorld(void)` |
+| `0xd0970` | `public: bool __thiscall czy::LeastSquaresFit::dequeueY(void)` |
+| `0x33e970` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Action::description(void)const ` |
+| `0x314c70` | `public: static void __cdecl fairygui::UISkinColorManager::desotryInstance(void)` |
+| `0x2cde20` | `public: static void __cdecl fairygui::DragDropManager::destoryInstance(void)` |
+| `0x3d70d0` | `public: static void __cdecl spine::SpineExtension::destoryInstance(void)` |
+| `0x335ed0` | `public: static void __cdecl fairygui::UBBParser::destoryInstance(void)` |
+| `0x30bfc0` | `public: static void __cdecl fairygui::UI3DRenderer::destoryInstance(void)` |
+| `0x38d9d0` | `public: void __thiscall cocos2d::Director::destoryWaterMarks(void)` |
+| `0x8a250` | `public: void __thiscall winSystemInfo::destroy(void)` |
+| `0x296d30` | `public: static void __cdecl CsvManager::destroyInstance(void)` |
+| `0x409da0` | `public: static void __cdecl cocos2d::__NotificationCenter::destroyInstance(void)` |
+| `0x92380` | `public: void __thiscall Rainbow::UILib::UIRenderer::destroyUIByPath(char const *)` |
+| `0x31cbe0` | `public: void __thiscall fairygui::FUIModelSprite::detachActorBody(class Rainbow::IActorBody *,int)` |
+| `0x168df0` | `public: void __thiscall Rainbow::UILib::ModelView::detachActorBody(class Rainbow::IActorBody *,int)` |
+| `0x375760` | `protected: void __thiscall cocos2d::Node::detachChild(class cocos2d::Node *,long,bool)` |
+| `0x118270` | `public: void __thiscall CoordAxis::detachFromScene(void)` |
+| `0x31cc90` | `public: void __thiscall fairygui::FUIModelSprite::detachRootNode(int)` |
+| `0x168e90` | `public: void __thiscall Rainbow::UILib::ModelView::detachRootNode(int)` |
+| `0x8a250` | `void __cdecl MINIW::developerCertificationToMinibox(char const *)` |
+| `0x3cafb0` | `protected: static unsigned long __stdcall winSystemInfo::deviceInfoThread(void *)` |
+| `0x1526f0` | `public: void __thiscall Rainbow::UILib::FrameManager::disRegisterFromFrameMgr(class Rainbow::UILib::Frame *,class Rainbow::UILib::Frame *)` |
+| `0x152910` | `public: void __thiscall Rainbow::UILib::FrameManager::disRegisterObject(class Rainbow::UILib::LayoutFrame *,class Rainbow::UILib::Frame *)` |
+| `0x2f6a80` | `public: void __thiscall fairygui::GTextInput::disableAutoAlignment(bool)` |
+| `0x2d7f00` | `public: virtual void __thiscall fairygui::GImage::disableBlurFilter(void)` |
+| `0x2e0c80` | `public: virtual void __thiscall fairygui::GLoader::disableBlurFilter(void)` |
+| `0x37ccc0` | `public: void __thiscall cocos2d::Sprite::disableBlurFilter(void)` |
+| `0x3757e0` | `protected: virtual void __thiscall cocos2d::Node::disableCascadeColor(void)` |
+| `0x37aa90` | `public: virtual void __thiscall cocos2d::ProtectedNode::disableCascadeColor(void)` |
+| `0x375810` | `protected: virtual void __thiscall cocos2d::Node::disableCascadeOpacity(void)` |
+| `0x37aaf0` | `public: virtual void __thiscall cocos2d::ProtectedNode::disableCascadeOpacity(void)` |
+| `0x327650` | `public: void __thiscall fairygui::InputProcessor::disableDefaultTouchEvent(void)` |
+| `0x362610` | `public: virtual void __thiscall cocos2d::Label::disableEffect(enum cocos2d::LabelEffect)` |
+| `0x362810` | `public: virtual void __thiscall cocos2d::Label::disableEffect(void)` |
+| `0x99830` | `public: void __thiscall fairygui::TextFormat::disableEffect(int)` |
+| `0x394a90` | `public: void __thiscall cocos2d::EventDispatcher::dispatchCustomEvent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void *)` |
+| `0x394b50` | `public: bool __thiscall cocos2d::EventDispatcher::dispatchEvent(class cocos2d::Event *)` |
+| `0x32a6a0` | `public: bool __thiscall fairygui::UIEventDispatcher::dispatchEvent(int,void *,class cocos2d::Value const &)` |
+| `0x394c90` | `protected: bool __thiscall cocos2d::EventDispatcher::dispatchEventToListeners(class cocos2d::EventDispatcher::EventListenerVector *,class std::function<bool __cdecl(class cocos2d::EventListener *)> const &)` |
+| `0x2d98e0` | `protected: virtual void __thiscall fairygui::GList::dispatchItemEvent(class fairygui::GObject *,class fairygui::FUIEventContext *)` |
+| `0x394e00` | `protected: void __thiscall cocos2d::EventDispatcher::dispatchTouchEvent(class cocos2d::EventTouch *)` |
+| `0x395090` | `protected: bool __thiscall cocos2d::EventDispatcher::dispatchTouchEventToListeners(class cocos2d::EventDispatcher::EventListenerVector *,class std::function<bool __cdecl(class cocos2d::EventListener *)> const &)` |
+| `0x99840` | `public: class cocos2d::Node * __thiscall fairygui::GObject::displayObject(void)const ` |
+| `0x395440` | `protected: void __thiscall cocos2d::EventDispatcher::dissociateNodeAndEventListener(class cocos2d::Node *,class cocos2d::EventListener *)` |
+| `0x21e540` | `public: float __thiscall MINIW::Ray::distance(class Rainbow::Vector3f const &)` |
+| `0x6a7c0` | `public: float __thiscall WCoord::distanceTo(class WCoord const &)const ` |
+| `0x32a750` | `private: void __thiscall fairygui::UIEventDispatcher::doBubble(int,class fairygui::FUIEventContext *)` |
+| `0x32a7e0` | `private: void __thiscall fairygui::UIEventDispatcher::doDispatch(int,class fairygui::FUIEventContext *)` |
+| `0x375850` | `protected: bool __thiscall cocos2d::Node::doEnumerate(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::function<bool __cdecl(class cocos2d::Node *)>)const ` |
+| `0x375f10` | `protected: bool __thiscall cocos2d::Node::doEnumerateRecursive(class cocos2d::Node const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<bool __cdecl(class cocos2d::Node *)>)const ` |
+| `0x3164e0` | `protected: virtual void __thiscall fairygui::Window::doHideAnimation(void)` |
+| `0x2f6aa0` | `public: static void __cdecl fairygui::GTextInput::doKillFocus(void)` |
+| `0x301190` | `public: void __thiscall fairygui::ScrollPane::doRefresh(void)` |
+| `0x2d9910` | `private: void __thiscall fairygui::GList::doRefreshVirtualList(void)` |
+| `0x127af0` | `public: void __thiscall Rainbow::UILib::UIRenderer::doRender(void)` |
+| `0x316520` | `protected: virtual void __thiscall fairygui::Window::doShowAnimation(void)` |
+| `0x2f1550` | `private: void __thiscall fairygui::GRoot::doShowTooltipsWin(void)` |
+| `0x30d660` | `private: void __thiscall fairygui::UI3DRoot::doShowTooltipsWin(void)` |
+| `0x2f6ad0` | `public: void __thiscall fairygui::GTextInput::doTextFilter(void)` |
+| `0x2c3890` | `public: virtual void __thiscall Rainbow::HUDLevitationFont::doTweenAlpha(float,float,float,enum fairygui::EaseType)` |
+| `0x16ae60` | `public: virtual void __thiscall Rainbow::HUDTitleBase::doTweenAlpha(float,float,float,enum fairygui::EaseType)` |
+| `0x2c3970` | `public: virtual void __thiscall Rainbow::HUDLevitationFont::doTweenAnimation(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::HUDTitleBase::doTweenAnimation(void)` |
+| `0x2c3ac0` | `public: virtual void __thiscall Rainbow::HUDLevitationFont::doTweenPosition(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float,enum fairygui::EaseType)` |
+| `0x16ae60` | `public: virtual void __thiscall Rainbow::HUDTitleBase::doTweenPosition(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float,enum fairygui::EaseType)` |
+| `0x2c3b80` | `public: virtual void __thiscall Rainbow::HUDLevitationFont::doTweenScale(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float,enum fairygui::EaseType)` |
+| `0x16ae60` | `public: virtual void __thiscall Rainbow::HUDTitleBase::doTweenScale(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float,enum fairygui::EaseType)` |
+| `0x2d2d10` | `private: void __thiscall fairygui::GComponent::doUpdateBounds(void)` |
+| `0x3afc10` | `protected: void __thiscall cocos2d::Renderer::doVisitRenderQueue(class std::vector<class cocos2d::RenderCommand *,class std::allocator<class cocos2d::RenderCommand *> > const &)` |
+| `0x40b5c0` | `public: double __thiscall cocos2d::__String::doubleValue(void)const ` |
+| `0x2eb7e0` | `private: void __thiscall fairygui::GObject::dragBegin(int)` |
+| `0x2eba30` | `private: void __thiscall fairygui::GObject::dragEnd(void)` |
+| `0x355d90` | `public: virtual void __thiscall cocos2d::DrawNode::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x31cd20` | `protected: virtual void __thiscall fairygui::FUIModelSprite::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x320d90` | `public: virtual void __thiscall fairygui::FUIRenderTexture::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x324860` | `protected: virtual void __thiscall fairygui::FUISprite::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x35e8d0` | `public: virtual void __thiscall cocos2d::InputLabel::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x362820` | `public: virtual void __thiscall cocos2d::Label::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x94d80` | `public: virtual void __thiscall cocos2d::Node::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x3761b0` | `public: virtual void __thiscall cocos2d::Node::draw(void)` |
+| `0x3e1cf0` | `public: virtual void __thiscall spine::SkeletonAnimation::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x3f92b0` | `public: virtual void __thiscall spine::SkeletonRenderer::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x37cdc0` | `public: virtual void __thiscall cocos2d::Sprite::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x381450` | `public: virtual void __thiscall cocos2d::SpriteBatchNode::draw(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x3afd90` | `protected: void __thiscall cocos2d::Renderer::drawBatchedTriangles(void)` |
+| `0x355ed0` | `public: void __thiscall cocos2d::DrawNode::drawCardinalSpline(class cocos2d::PointArray *,float,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x356130` | `public: void __thiscall cocos2d::DrawNode::drawCatmullRom(class cocos2d::PointArray *,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x356150` | `public: void __thiscall cocos2d::DrawNode::drawCircle(class Rainbow::Vector2f const &,float,float,unsigned int,bool,struct cocos2d::Color4F const &)` |
+| `0x3561a0` | `public: void __thiscall cocos2d::DrawNode::drawCircle(class Rainbow::Vector2f const &,float,float,unsigned int,bool,float,float,struct cocos2d::Color4F const &)` |
+| `0x356360` | `public: void __thiscall cocos2d::DrawNode::drawCubicBezier(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x35e8e0` | `protected: void __thiscall cocos2d::InputLabel::drawCursor(void)` |
+| `0x3b0190` | `protected: void __thiscall cocos2d::Renderer::drawCustomCommand(class cocos2d::RenderCommand *)` |
+| `0x3fa8f0` | `protected: virtual void __thiscall spine::SkeletonRenderer::drawDebug(class cocos2d::Renderer *,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x356590` | `public: void __thiscall cocos2d::DrawNode::drawDot(class Rainbow::Vector2f const &,float,struct cocos2d::Color4F const &)` |
+| `0x3567a0` | `public: void __thiscall cocos2d::DrawNode::drawEllipse(class cocos2d::Rect const &,float,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &,float,float)` |
+| `0x2d5b40` | `public: void __thiscall fairygui::GGraph::drawEllipse(float,float,int,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &)` |
+| `0x2e9fd0` | `private: void __thiscall fairygui::ActionMovieClip::drawFrame(void)` |
+| `0x358330` | `public: void __thiscall cocos2d::DrawNode::drawLine(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,struct cocos2d::Color4F const &)` |
+| `0x3b0510` | `protected: void __thiscall cocos2d::Renderer::drawModelViewCommand(class cocos2d::RenderCommand *)` |
+| `0x3adcc0` | `public: void __thiscall cocos2d::OldUIRenderCommand::drawOldUI(void)` |
+| `0x3b0790` | `protected: void __thiscall cocos2d::Renderer::drawOldUICommand(class cocos2d::RenderCommand *)` |
+| `0x3584a0` | `public: void __thiscall cocos2d::DrawNode::drawPoint(class Rainbow::Vector2f const &,float,struct cocos2d::Color4F const &)` |
+| `0x358590` | `public: void __thiscall cocos2d::DrawNode::drawPoints(class Rainbow::Vector2f const *,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x3585b0` | `public: void __thiscall cocos2d::DrawNode::drawPoints(class Rainbow::Vector2f const *,unsigned int,float,struct cocos2d::Color4F const &)` |
+| `0x3586e0` | `public: void __thiscall cocos2d::DrawNode::drawPoly(class Rainbow::Vector2f const *,unsigned int,bool,struct cocos2d::Color4F const &)` |
+| `0x3589d0` | `public: void __thiscall cocos2d::DrawNode::drawPolygon(class Rainbow::Vector2f const *,int,struct cocos2d::Color4F const &,float,struct cocos2d::Color4F const &)` |
+| `0x2d5bb0` | `public: void __thiscall fairygui::GGraph::drawPolygon(int,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &,class Rainbow::Vector2f const *,int)` |
+| `0x359a40` | `public: void __thiscall cocos2d::DrawNode::drawQuadBezier(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x359c20` | `public: void __thiscall cocos2d::DrawNode::drawRect(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,struct cocos2d::Color4F const &)` |
+| `0x359c70` | `public: void __thiscall cocos2d::DrawNode::drawRect(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,struct cocos2d::Color4F const &)` |
+| `0x2d5ca0` | `public: void __thiscall fairygui::GGraph::drawRect(float,float,int,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &)` |
+| `0x359d20` | `public: void __thiscall cocos2d::DrawNode::drawRegularPolygon(class cocos2d::Rect const &,int,int,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &,float,float *,int)` |
+| `0x2d5d10` | `public: void __thiscall fairygui::GGraph::drawRegularPolygon(int,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &,int,float,float const *,int)` |
+| `0x35a890` | `public: void __thiscall cocos2d::DrawNode::drawRoundRect(class cocos2d::Rect const &,class Rainbow::Vector4f const &,struct cocos2d::Color4F const &,float,struct cocos2d::Color4F const &)` |
+| `0x2d5e10` | `public: void __thiscall fairygui::GGraph::drawRoundRect(class Rainbow::Vector2f const &,class cocos2d::Size const &,float,float,float,float,int,struct cocos2d::Color4F const &,struct cocos2d::Color4F const &)` |
+| `0x38da10` | `public: void __thiscall cocos2d::Director::drawScene(void)` |
+| `0x8a250` | `private: void __thiscall Rainbow::UILib::UIRenderer::drawScreenLines(void)` |
+| `0x35b750` | `public: void __thiscall cocos2d::DrawNode::drawSegment(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,float,struct cocos2d::Color4F const &)` |
+| `0x362d50` | `protected: void __thiscall cocos2d::Label::drawSelf(bool,class cocos2d::Renderer *,unsigned int)` |
+| `0x35c460` | `public: void __thiscall cocos2d::DrawNode::drawSolidCircle(class Rainbow::Vector2f const &,float,float,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x35c4a0` | `public: void __thiscall cocos2d::DrawNode::drawSolidCircle(class Rainbow::Vector2f const &,float,float,unsigned int,float,float,struct cocos2d::Color4F const &)` |
+| `0x35c640` | `public: void __thiscall cocos2d::DrawNode::drawSolidPoly(class Rainbow::Vector2f const *,unsigned int,struct cocos2d::Color4F const &)` |
+| `0x35c670` | `public: void __thiscall cocos2d::DrawNode::drawSolidRect(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,struct cocos2d::Color4F const &)` |
+| `0x35c700` | `public: void __thiscall cocos2d::DrawNode::drawTriangle(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,struct cocos2d::Color4F const &)` |
+| `0x3889a0` | `float __cdecl cocos2d::tweenfunc::easeIn(float,float)` |
+| `0x3889d0` | `float __cdecl cocos2d::tweenfunc::easeInOut(float,float)` |
+| `0x388a50` | `float __cdecl cocos2d::tweenfunc::easeOut(float,float)` |
+| `0x2f6b80` | `protected: virtual void __thiscall fairygui::GTextInput::editBoxActive(class cocos2d::ui::EditBox *)` |
+| `0x2f6bb0` | `protected: virtual void __thiscall fairygui::GTextInput::editBoxEditingDidEndWithAction(class cocos2d::ui::EditBox *,enum cocos2d::ui::EditBoxDelegate::EditBoxEndAction)` |
+| `0x2f6ca0` | `protected: virtual void __thiscall fairygui::GTextInput::editBoxReturn(class cocos2d::ui::EditBox *)` |
+| `0x2f6cf0` | `protected: virtual void __thiscall fairygui::GTextInput::editBoxTextChanged(class cocos2d::ui::EditBox *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x388a80` | `float __cdecl cocos2d::tweenfunc::elasticEaseIn(float,float)` |
+| `0x388b20` | `float __cdecl cocos2d::tweenfunc::elasticEaseInOut(float,float)` |
+| `0x388c40` | `float __cdecl cocos2d::tweenfunc::elasticEaseOut(float,float)` |
+| `0x1e0230` | `protected: unsigned int __thiscall Rainbow::ParticleNode::emitParticles(unsigned int)` |
+| `0x31d010` | `public: void __thiscall fairygui::FUIModelSprite::enableActorBodyPlannarShadow(class Rainbow::IActorBody *,bool)` |
+| `0x168f20` | `public: void __thiscall Rainbow::UILib::ModelView::enableActorBodyPlannarShadow(class Rainbow::IActorBody *,bool)` |
+| `0x2d7f10` | `public: virtual void __thiscall fairygui::GImage::enableBlurFilter(void)` |
+| `0x2e0c90` | `public: virtual void __thiscall fairygui::GLoader::enableBlurFilter(void)` |
+| `0x37cf10` | `public: void __thiscall cocos2d::Sprite::enableBlurFilter(void)` |
+| `0x362ea0` | `public: void __thiscall cocos2d::Label::enableBold(void)` |
+| `0x13db10` | `public: void __thiscall Rainbow::UILib::EditBox::enableEdit(bool)` |
+| `0x13db10` | `public: void __thiscall Rainbow::UILib::MultiEditBox::enableEdit(bool)` |
+| `0x99850` | `public: void __thiscall fairygui::TextFormat::enableEffect(int)` |
+| `0x362f30` | `public: virtual void __thiscall cocos2d::Label::enableGlow(struct cocos2d::Color4B const &)` |
+| `0x3630a0` | `public: void __thiscall cocos2d::Label::enableGradient(struct cocos2d::Color3B const &,struct cocos2d::Color3B const &,enum cocos2d::LabelGradientDirType)` |
+| `0x13db40` | `public: void __thiscall Rainbow::UILib::EditBox::enableIME(bool,int)` |
+| `0x16fe30` | `public: void __thiscall Rainbow::UILib::MultiEditBox::enableIME(bool,int)` |
+| `0x363100` | `public: void __thiscall cocos2d::Label::enableItalics(void)` |
+| `0x363120` | `public: virtual void __thiscall cocos2d::Label::enableOutline(struct cocos2d::Color4B const &,int)` |
+| `0x92380` | `public: void __thiscall cocos2d::GLViewImpl::enableRetina(bool)` |
+| `0x3632a0` | `public: virtual void __thiscall cocos2d::Label::enableShadow(struct cocos2d::Color4B const &,class cocos2d::Size const &,int)` |
+| `0x363450` | `public: void __thiscall cocos2d::Label::enableStrikethrough(void)` |
+| `0x3634a0` | `public: void __thiscall cocos2d::Label::enableUnderline(void)` |
+| `0x3634e0` | `public: void __thiscall cocos2d::Label::enableWrap(bool)` |
+| `0x241070` | `unsigned int __cdecl lodepng::encode(class std::vector<unsigned char,class std::allocator<unsigned char> > &,unsigned char const *,unsigned int,unsigned int,enum LodePNGColorType,unsigned int)` |
+| `0x38dbe0` | `public: void __thiscall cocos2d::Director::end(void)` |
+| `0x320e00` | `public: virtual void __thiscall fairygui::FUIRenderTexture::end(void)` |
+| `0x3c36d0` | `public: virtual void __thiscall cocos2d::GLViewImpl::end(void)` |
+| `0x21dae0` | `public: void __thiscall MINIW::Md5Context::end(unsigned char * const)` |
+| `0x8a250` | `public: virtual void __thiscall spine::SwirlVertexEffect::end(void)` |
+| `0x24ea70` | `public: class cocos2d::Ref * * __thiscall cocos2d::__Array::end(void)` |
+| `0x40a8e0` | `public: class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<class cocos2d::Ref *> > > __thiscall cocos2d::__Set::end(void)` |
+| `0x3b07a0` | `protected: void __thiscall cocos2d::Renderer::endClipRect(class cocos2d::RenderCommand const *)` |
+| `0x3ac690` | `public: static void __cdecl cocos2d::SAXParser::endElement(void *,unsigned char const *)` |
+| `0x38dbe0` | `public: void __thiscall cocos2d::Director::endExecution(void)` |
+| `0x3b07c0` | `protected: void __thiscall cocos2d::Renderer::endFrame(void)` |
+| `0x38dbf0` | `public: void __thiscall cocos2d::Director::endFrameTick(void)` |
+| `0x92380` | `protected: void __thiscall cocos2d::Renderer::endRenderTexture(class cocos2d::RenderCommand const *)` |
+| `0x221fa0` | `public: static bool __cdecl Rainbow::StringUtil::endsWith(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,bool)` |
+| `0x2d2d10` | `public: void __thiscall fairygui::GComponent::ensureBoundsCorrect(void)` |
+| `0x35ca80` | `protected: void __thiscall cocos2d::DrawNode::ensureCapacity(int)` |
+| `0x35cb10` | `protected: void __thiscall cocos2d::DrawNode::ensureCapacityGLLine(int)` |
+| `0x35cbb0` | `protected: void __thiscall cocos2d::DrawNode::ensureCapacityGLPoint(int)` |
+| `0x35cc50` | `protected: void __thiscall cocos2d::DrawNode::ensureIndicesCapacity(int)` |
+| `0x3761d0` | `public: virtual void __thiscall cocos2d::Node::enumerateChildren(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<bool __cdecl(class cocos2d::Node *)>)const ` |
+| `0x3d01b0` | `private: static int __cdecl spine::Atlas::equals(class spine::Atlas::Str *,char const *)` |
+| `0x99860` | `public: bool __thiscall cocos2d::Color4F::equals(struct cocos2d::Color4F const &)const ` |
+| `0x21b0c0` | `public: bool __thiscall fairygui::Margin::equals(class fairygui::Margin const &)const ` |
+| `0x3a8f30` | `public: bool __thiscall cocos2d::Rect::equals(class cocos2d::Rect const &)const ` |
+| `0x3a8fa0` | `public: bool __thiscall cocos2d::Size::equals(class cocos2d::Size const &)const ` |
+| `0x9282f0` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CompressTool::errpath` |
+| `0x330d80` | `public: static float __cdecl fairygui::EaseManager::evaluate(enum fairygui::EaseType,float,float,float,float)` |
+| `0x4054a0` | `public: void __thiscall cocos2d::__Array::exchangeObject(class cocos2d::Ref *,class cocos2d::Ref *)` |
+| `0x4054f0` | `public: void __thiscall cocos2d::__Array::exchangeObjectAtIndex(long,long)` |
+| `0x2c3c40` | `public: virtual void __thiscall Rainbow::HUDLevitationFont::excuteAllTween(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::HUDTitleBase::excuteAllTween(void)` |
+| `0x113f30` | `public: virtual int __thiscall cocos2d::LuaEngine::executeAccelerometerEvent(class cocos2d::Layer *,class cocos2d::Acceleration *)` |
+| `0x113f30` | `public: virtual int __thiscall cocos2d::LuaEngine::executeCallFuncActionEvent(class cocos2d::CallFunc *,class cocos2d::Ref *)` |
+| `0x4d3760` | `public: virtual int __thiscall cocos2d::LuaEngine::executeEvent(int,char const *,class cocos2d::Ref *,char const *)` |
+| `0x4d3810` | `public: virtual int __thiscall cocos2d::LuaEngine::executeGlobalFunction(char const *)` |
+| `0x194510` | `public: void __thiscall fairygui::GWebView::executeJS(char const *)` |
+| `0x113f30` | `public: virtual int __thiscall cocos2d::LuaEngine::executeLayerKeypadEvent(class cocos2d::Layer *,int)` |
+| `0x95370` | `public: virtual int __thiscall cocos2d::LuaEngine::executeLayerTouchEvent(class cocos2d::Layer *,int,class cocos2d::Touch *)` |
+| `0x95370` | `public: virtual int __thiscall cocos2d::LuaEngine::executeLayerTouchesEvent(class cocos2d::Layer *,int,class cocos2d::__Set *)` |
+| `0x936b0` | `public: virtual int __thiscall cocos2d::LuaEngine::executeMenuItemEvent(class cocos2d::MenuItem *)` |
+| `0x113f30` | `public: virtual int __thiscall cocos2d::LuaEngine::executeNodeEvent(class cocos2d::Node *,int)` |
+| `0x4d3890` | `public: virtual int __thiscall cocos2d::LuaEngine::executeNotificationEvent(class cocos2d::__NotificationCenter *,char const *)` |
+| `0x4d39c0` | `public: virtual int __thiscall cocos2d::LuaEngine::executeSchedule(int,float,class cocos2d::Node *)` |
+| `0x4d3a60` | `public: virtual int __thiscall cocos2d::LuaEngine::executeScriptFile(char const *)` |
+| `0x4d3ae0` | `public: virtual int __thiscall cocos2d::LuaEngine::executeString(char const *)` |
+| `0x6a830` | `public: class Rainbow::BoxBound __thiscall Rainbow::BoxBound::expandBy(float)const ` |
+| `0x388ce0` | `float __cdecl cocos2d::tweenfunc::expoEaseIn(float)` |
+| `0x388d40` | `float __cdecl cocos2d::tweenfunc::expoEaseInOut(float)` |
+| `0x388df0` | `float __cdecl cocos2d::tweenfunc::expoEaseOut(float)` |
+| `0x15ecd0` | `public: void __thiscall Rainbow::UILib::LayoutFrame::extendRect(int,int)` |
+| `0x405510` | `public: void __thiscall cocos2d::__Array::fastRemoveObject(class cocos2d::Ref *)` |
+| `0x405530` | `public: void __thiscall cocos2d::__Array::fastRemoveObjectAtIndex(long)` |
+| `0x38b480` | `public: void __thiscall cocos2d::Data::fastSet(unsigned char *,long)` |
+| `0x24ea80` | `public: void __thiscall cocos2d::__Array::fastSetObject(class cocos2d::Ref *,long)` |
+| `0x7e970` | `int __cdecl MINIW::fetchApn(void)` |
+| `0x7e970` | `long __cdecl MINIW::fetchFirstLaunchTimeStamp(void)` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::fetchLaunchIp(void)` |
+| `0x28ee20` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::WebSocketSvr::fetchMessageQueue(unsigned int)` |
+| `0x225920` | `public: int __thiscall FileAutoClose::fileSize(void)` |
+| `0x1e0350` | `protected: void __thiscall Rainbow::ParticleNode::fillParticleVert(struct Rainbow::PParticleVertex *,unsigned short,unsigned short *,struct Rainbow::ParticleUnit &,class Rainbow::Matrix4x4f const &)` |
+| `0x3b07e0` | `protected: void __thiscall cocos2d::Renderer::fillVerticesAndIndices(class cocos2d::RenderCommand const *,unsigned int)` |
+| `0x261490` | `public: void __thiscall Rainbow::MusicClubChatBubble3D::filterAndCalTextLine(void)` |
+| `0x261cb0` | `public: bool __thiscall Rainbow::MusicClubChatBubble3D::filterAvatarNameCode(void)` |
+| `0x261e10` | `public: bool __thiscall Rainbow::MusicClubChatBubble3D::filterInteractiveCode(void)` |
+| `0x2621f0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::MusicClubChatBubble3D::filterUnPlaceChar(void)` |
+| `0x3e1d40` | `public: class spine::Animation * __thiscall spine::SkeletonAnimation::findAnimation(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x3edfb0` | `public: class spine::Animation * __thiscall spine::SkeletonData::findAnimation(class spine::String const &)` |
+| `0x1dad90` | `public: class Rainbow::SharePtr<class Rainbow::AnimationData> const __thiscall Rainbow::ModelData::findAnimationDataBySequenceId(int)` |
+| `0x3fd3c0` | `public: void __thiscall spine::Skin::findAttachmentsForSlot(unsigned int,class spine::Vector<class spine::Attachment *> &)` |
+| `0x3dfe10` | `public: class spine::Bone * __thiscall spine::Skeleton::findBone(class spine::String const &)` |
+| `0x3ee040` | `public: class spine::BoneData * __thiscall spine::SkeletonData::findBone(class spine::String const &)` |
+| `0x3faf00` | `public: class spine::Bone * __thiscall spine::SkeletonRenderer::findBone(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x1daef0` | `public: class Rainbow::BoneData * __thiscall Rainbow::ModelData::findBoneData(int const &)` |
+| `0xe55a0` | `public: class Rainbow::BoneData * __thiscall Rainbow::SkeletonData::findBoneData(class Rainbow::FixedString const &)` |
+| `0xe2bb0` | `public: int __thiscall Rainbow::SkeletonComponent::findBoneID(class Rainbow::FixedString const &)` |
+| `0xe55d0` | `public: int __thiscall Rainbow::SkeletonData::findBoneID(class Rainbow::FixedString const &)` |
+| `0x3dfea0` | `public: int __thiscall spine::Skeleton::findBoneIndex(class spine::String const &)` |
+| `0x3ee0d0` | `public: int __thiscall spine::SkeletonData::findBoneIndex(class spine::String const &)` |
+| `0xdca70` | `public: class Rainbow::BoneTrack * __thiscall Rainbow::AnimationData::findBoneTrackByName(class Rainbow::FixedString const &)` |
+| `0x3a77c0` | `class cocos2d::Node * __cdecl cocos2d::utils::findChild(class cocos2d::Node *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3a7820` | `class cocos2d::Node * __cdecl cocos2d::utils::findChild(class cocos2d::Node *,int)` |
+| `0x3a7880` | `class std::vector<class cocos2d::Node *,class std::allocator<class cocos2d::Node *> > __cdecl cocos2d::utils::findChildren(class cocos2d::Node const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x149030` | `public: class Rainbow::UILib::LayoutFrame * __thiscall Rainbow::UILib::Frame::findDrawRegion(char const *)` |
+| `0x1490c0` | `public: int __thiscall Rainbow::UILib::Frame::findDrawRegionIndex(class Rainbow::UILib::LayoutFrame *)` |
+| `0x3ee160` | `public: class spine::EventData * __thiscall spine::SkeletonData::findEvent(class spine::String const &)` |
+| `0x152db0` | `public: void __thiscall Rainbow::UILib::FrameManager::findFramesByTouchID(class std::vector<class Rainbow::UILib::Frame *,class std::allocator<class Rainbow::UILib::Frame *> > &,int)` |
+| `0x3dff40` | `public: class spine::IkConstraint * __thiscall spine::Skeleton::findIkConstraint(class spine::String const &)` |
+| `0x3ee1f0` | `public: class spine::IkConstraintData * __thiscall spine::SkeletonData::findIkConstraint(class spine::String const &)` |
+| `0x334f50` | `public: static int __cdecl fairygui::ToolSet::findInStringArray(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3fd560` | `public: void __thiscall spine::Skin::findNamesForSlot(unsigned int,class spine::Vector<class spine::String> &)` |
+| `0x127be0` | `public: void * __thiscall Rainbow::UILib::UIRenderer::findNearestFont(int,int,int)` |
+| `0x2eba50` | `public: class fairygui::GObject * __thiscall fairygui::GObject::findParent(void)const ` |
+| `0x3dffe0` | `public: class spine::PathConstraint * __thiscall spine::Skeleton::findPathConstraint(class spine::String const &)` |
+| `0x3ee280` | `public: class spine::PathConstraintData * __thiscall spine::SkeletonData::findPathConstraint(class spine::String const &)` |
+| `0x3ee310` | `public: int __thiscall spine::SkeletonData::findPathConstraintIndex(class spine::String const &)` |
+| `0xe14a0` | `public: class Rainbow::AnimPlayTrack * __thiscall Rainbow::AnimationPlayer::findPlayTrack(int)` |
+| `0x3d01e0` | `public: class spine::AtlasRegion * __thiscall spine::Atlas::findRegion(class spine::String const &)` |
+| `0x3d12f0` | `public: class spine::AtlasRegion * __thiscall spine::AtlasAttachmentLoader::findRegion(class spine::String const &)` |
+| `0x314cc0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall fairygui::UISkinColorManager::findReplaceColor(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x314d60` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall fairygui::UISkinColorManager::findReplacePath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x1daf20` | `public: struct Rainbow::SequenceDesc * __thiscall Rainbow::ModelData::findSequenceDesc(int)` |
+| `0x1a7c90` | `public: struct Rainbow::SequenceMap::SeqDesc * __thiscall Rainbow::SequenceMap::findSequenceDesc(int)` |
+| `0x3ee3b0` | `public: class spine::Skin * __thiscall spine::SkeletonData::findSkin(class spine::String const &)` |
+| `0x3e0080` | `public: class spine::Slot * __thiscall spine::Skeleton::findSlot(class spine::String const &)` |
+| `0x3ee440` | `public: class spine::SlotData * __thiscall spine::SkeletonData::findSlot(class spine::String const &)` |
+| `0x3faff0` | `public: class spine::Slot * __thiscall spine::SkeletonRenderer::findSlot(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x3e0110` | `public: int __thiscall spine::Skeleton::findSlotIndex(class spine::String const &)` |
+| `0x3ee4d0` | `public: int __thiscall spine::SkeletonData::findSlotIndex(class spine::String const &)` |
+| `0xd3f40` | `public: class Rainbow::SubMeshInstance * __thiscall Rainbow::MeshInstance::findSubMeshByMaterial(class Rainbow::FixedString const &)` |
+| `0xc1e00` | `public: struct Rainbow::MaterialTemplate::TechCache * __thiscall Rainbow::MaterialTemplate::findTechCache(class Rainbow::NoFreeFixedString const &)` |
+| `0x3e01b0` | `public: class spine::TransformConstraint * __thiscall spine::Skeleton::findTransformConstraint(class spine::String const &)` |
+| `0x3ee560` | `public: class spine::TransformConstraintData * __thiscall spine::SkeletonData::findTransformConstraint(class spine::String const &)` |
+| `0x3011a0` | `private: void __thiscall fairygui::ScrollPane::fixDuration(int,float)` |
+| `0x3d0270` | `public: void __thiscall spine::Atlas::flipV(void)` |
+| `0x37d050` | `protected: virtual void __thiscall cocos2d::Sprite::flipX(void)` |
+| `0x37d0b0` | `protected: virtual void __thiscall cocos2d::Sprite::flipY(void)` |
+| `0x40b5e0` | `public: float __thiscall cocos2d::__String::floatValue(void)const ` |
+| `0x3b0930` | `protected: void __thiscall cocos2d::Renderer::flush2D(void)` |
+| `0x8a250` | `protected: void __thiscall cocos2d::Renderer::flush3D(void)` |
+| `0x3b0930` | `protected: void __thiscall cocos2d::Renderer::flush(void)` |
+| `0x225940` | `public: int __thiscall FileAutoClose::flushFile(void)` |
+| `0x3b0930` | `protected: void __thiscall cocos2d::Renderer::flushTriangles(void)` |
+| `0x3d9730` | `public: static float __cdecl spine::MathUtil::fmod(float,float)` |
+| `0x395590` | `protected: void __thiscall cocos2d::EventDispatcher::forceAddEventListener(class cocos2d::EventListener *)` |
+| `0x2e0ca0` | `private: void __thiscall fairygui::GLoader::forceLoadContent(void)` |
+| `0x2e0d00` | `protected: void __thiscall fairygui::GLoader::forceLoadExternal(void)` |
+| `0x3a6f60` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl cocos2d::StringUtils::format(char const *,...)` |
+| `0x2223f0` | `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::StringUtil::formatString(char const *,...)` |
+| `0x222410` | `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::StringUtil::formatStringV(char const *,char *)` |
+| `0x152e50` | `public: void __thiscall Rainbow::UILib::FrameManager::frameHide(class Rainbow::UILib::Frame *)` |
+| `0x152e90` | `public: void __thiscall Rainbow::UILib::FrameManager::frameShow(class Rainbow::UILib::Frame *)` |
+| `0xcdcb0` | `public: static bool __cdecl Rainbow::LegacyFileUtil::freadstring(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,struct _iobuf *)` |
+| `0x92380` | `protected: virtual void __thiscall fairygui::GLoader3D::freeExternal(class cocos2d::SpriteFrame *)` |
+| `0x92380` | `protected: virtual void __thiscall fairygui::GLoader::freeExternal(class cocos2d::SpriteFrame *)` |
+| `0x6a8a0` | `public: void __thiscall Rainbow::BoxSphereBound::fromBox(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)` |
+| `0x6a970` | `public: void __thiscall Rainbow::BoxSphereBound::fromBoxBound(class Rainbow::BoxBound const &)` |
+| `0x6aa40` | `public: void __thiscall Rainbow::BoxSphereBound::fromLocalBound(class Rainbow::AABB const &)` |
+| `0x225db0` | `public: static class Rainbow::WorldPos __cdecl Rainbow::WorldPos::fromVector3(class Rainbow::Vector3f const &)` |
+| `0x225e10` | `public: static class Rainbow::WorldPos __cdecl Rainbow::WorldPos::fromVector3(float,float,float)` |
+| `0x225e70` | `public: static class Rainbow::WorldPrecisePos __cdecl Rainbow::WorldPrecisePos::fromVector3(class Rainbow::Vector3f const &)` |
+| `0x225ed0` | `public: static class Rainbow::WorldPrecisePos __cdecl Rainbow::WorldPrecisePos::fromVector3(float,float,float)` |
+| `0x91f3e0` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_AlphaTexDI` |
+| `0x91f404` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_AlphaValue` |
+| `0x91f364` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_AmbientLight` |
+| `0x91f480` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_BlockGrassNoiseTexture` |
+| `0x91f424` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_BlurRange` |
+| `0x91f374` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_BoneTM` |
+| `0x91f478` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_CausticTexture` |
+| `0x91f3d8` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ChunkOrigin` |
+| `0x91f420` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_CloudLightTex` |
+| `0x91f41c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_CloudTex` |
+| `0x91f40c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_DayTime` |
+| `0x91f450` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_DecalUVMatrix` |
+| `0x91f3e4` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_DiffuseTex` |
+| `0x91f448` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_Dir` |
+| `0x91f3f8` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_DirectionLightColor` |
+| `0x91f3fc` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_DirectionLightDir` |
+| `0x91f37c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_DistFogColor` |
+| `0x91f400` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_EmissiveTex` |
+| `0x91f384` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_EyePos` |
+| `0x91f378` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_FogParam` |
+| `0x91f3a4` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_FracMap` |
+| `0x91f46c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_FrozenNormalTexture` |
+| `0x91f468` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_FrozenTexture` |
+| `0x91f380` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_HeightFogColor` |
+| `0x91f3d4` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_InstanceData` |
+| `0x9717b0` | `public: static bool MINIW::Cef3Manager::g_JsReturnFlag` |
+| `0x928058` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MINIW::Cef3Manager::g_JsReturnValue` |
+| `0x91f3a8` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_LightMap` |
+| `0x91f3e8` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_MaskTex` |
+| `0x91f3dc` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_MeshAmbientColor` |
+| `0x91fa88` | `struct Rainbow::VertexAttributeFormats const Rainbow::g_MicroBlockMeshVertexFormat` |
+| `0x91f43c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ModelAlphaTransparent` |
+| `0x91f440` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ModelRGBATransparent` |
+| `0x91f3c4` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ModelTransparent` |
+| `0x91f444` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_Potency` |
+| `0x91f368` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_Proj` |
+| `0x91f470` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_RainRippleTexture` |
+| `0x91f39c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ReflectTex` |
+| `0x91f474` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ReflectionCubemap` |
+| `0x928070` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > MINIW::Cef3Manager::g_SetJsReturnFunc` |
+| `0x91f388` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_ShadowCenter` |
+| `0x91f45c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyBottomColor` |
+| `0x91f464` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyFogAmount` |
+| `0x91f460` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyFogHeight` |
+| `0x91f3ec` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyHeight` |
+| `0x91f3cc` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyLightColor` |
+| `0x91f458` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyMiddleColor` |
+| `0x91f408` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyModColor` |
+| `0x91f410` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyTex` |
+| `0x91f454` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SkyTopColor` |
+| `0x91f47c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SnowTransTexture` |
+| `0x91f36c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SpecularColor` |
+| `0x91f414` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_StarTex` |
+| `0x91f3f0` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SunColor` |
+| `0x91f3f4` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SunDirect` |
+| `0x91f370` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SunLightColor` |
+| `0x91f3c8` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SunLightDir` |
+| `0x91f418` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_SunTex` |
+| `0x91f398` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_Time` |
+| `0x91f3d0` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_TorchLightColor` |
+| `0x91f44c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_UVTile` |
+| `0x91f438` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_UseOverlayColor` |
+| `0x91f434` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_UseSelfillumAlpha` |
+| `0x91f430` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_UseSelfillumColor` |
+| `0x91f358` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_World` |
+| `0x91f35c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_WorldView` |
+| `0x91f360` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_WorldViewProj` |
+| `0x91f38c` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_depthproj` |
+| `0x91f390` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_depthtexture` |
+| `0x91f394` | `struct Rainbow::ShaderLab::FastPropertyName const Rainbow::ShaderParamNames::g_shadowdensity` |
+| `0x262760` | `public: void __thiscall Rainbow::MusicClubChatBubble3D::gainLineStr(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int)` |
+| `0x24eaa0` | `public: static class MINIW::ScriptVM * __cdecl MINIW::ScriptVM::game(void)` |
+| `0xd09b0` | `private: void __thiscall czy::LeastSquaresFit::gauss_solve(int,class std::vector<float,class std::allocator<float> > &,class std::vector<float,class std::allocator<float> > &,class std::vector<float,class std::allocator<float> > &)` |
+| `0xd09d0` | `private: void __thiscall czy::LeastSquaresFit::gauss_solve(int,float *,float *,float *)` |
+| `0x1e19c0` | `protected: void __thiscall Rainbow::ParticleNode::genParticle(struct Rainbow::ParticleUnit &)` |
+| `0x1e1a40` | `protected: void __thiscall Rainbow::ParticleNode::genParticleCircle(struct Rainbow::ParticleUnit &)` |
+| `0x1e1e10` | `protected: void __thiscall Rainbow::ParticleNode::genParticlePlane(struct Rainbow::ParticleUnit &)` |
+| `0x1e21b0` | `protected: void __thiscall Rainbow::ParticleNode::genParticleSphere(struct Rainbow::ParticleUnit &)` |
+| `0x363540` | `protected: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall cocos2d::Label::genTextureWithString(char const *,struct cocos2d::FontDefinition const &)` |
+| `0x1db060` | `public: static float __cdecl Rainbow::ModelData::get2DRealAngle(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &)` |
+| `0x99920` | `public: float __thiscall Rainbow::NormalText3D::get2DX(void)` |
+| `0x93560` | `public: float __thiscall Rainbow::OnlyText3D::get2DX(void)` |
+| `0xf5560` | `public: float __thiscall Rainbow::ProgressBarIn3D::get2DX(void)` |
+| `0x26cb50` | `public: float __thiscall Rainbow::StoveProgressBar3D::get2DX(void)` |
+| `0x256270` | `public: float __thiscall Rainbow::TextBoardIn3D::get2DX(void)` |
+| `0x9a6a0` | `public: float __thiscall Rainbow::NormalText3D::get2DY(void)` |
+| `0x25db40` | `public: float __thiscall Rainbow::OnlyText3D::get2DY(void)` |
+| `0x2679b0` | `public: float __thiscall Rainbow::ProgressBarIn3D::get2DY(void)` |
+| `0x26cb60` | `public: float __thiscall Rainbow::StoveProgressBar3D::get2DY(void)` |
+| `0x256280` | `public: float __thiscall Rainbow::TextBoardIn3D::get2DY(void)` |
+| `0x296d90` | `public: class CsvTable * __thiscall CsvManager::get(char const *)` |
+| `0x1bd8b0` | `public: int __thiscall Rainbow::RandomGenerator::get(int,int)` |
+| `0x1bd8e0` | `public: int __thiscall Rainbow::RandomGenerator::get(void)` |
+| `0x1bd900` | `public: int __thiscall Rainbow::RandomPool::get(bool &)` |
+| `0x377490` | `public: float __thiscall spine::Bone::getA(void)` |
+| `0x99c20` | `public: float __thiscall spine::Bone::getAScaleX(void)` |
+| `0x377410` | `public: float __thiscall spine::Bone::getAScaleY(void)` |
+| `0x9a2d0` | `public: float __thiscall spine::Bone::getAShearX(void)` |
+| `0x93d30` | `public: float __thiscall spine::Bone::getAShearY(void)` |
+| `0x9a420` | `public: float __thiscall spine::Bone::getAX(void)` |
+| `0x9a430` | `public: float __thiscall spine::Bone::getAY(void)` |
+| `0x2fb5c0` | `public: class cocos2d::Rect __thiscall fairygui::GWebView::getAbsRect(void)` |
+| `0x15ecf0` | `public: class Rainbow::UILib::tagRect_ToLua __thiscall Rainbow::UILib::LayoutFrame::getAbsRect(void)` |
+| `0x376590` | `public: class cocos2d::Action * __thiscall cocos2d::Node::getActionByTag(int)` |
+| `0x99870` | `public: class cocos2d::ActionManager * __thiscall cocos2d::Director::getActionManager(void)const ` |
+| `0x99880` | `public: virtual class cocos2d::ActionManager * __thiscall cocos2d::Node::getActionManager(void)` |
+| `0x99880` | `public: virtual class cocos2d::ActionManager const * __thiscall cocos2d::Node::getActionManager(void)const ` |
+| `0x31d270` | `public: class Rainbow::IActorBody * __thiscall fairygui::FUIModelSprite::getActorBody(int)` |
+| `0x169060` | `public: class Rainbow::IActorBody * __thiscall Rainbow::UILib::ModelView::getActorBody(int)` |
+| `0x31d2c0` | `public: void __thiscall fairygui::FUIModelSprite::getActorLocalBounds(int)` |
+| `0x1690b0` | `public: int __thiscall Rainbow::UILib::ModelView::getActorOnScreenPoint(int,int)const ` |
+| `0x31d380` | `public: int __thiscall fairygui::FUIModelSprite::getActorPosX(int)const ` |
+| `0x169240` | `public: int __thiscall Rainbow::UILib::ModelView::getActorPosX(int)const ` |
+| `0x31d3a0` | `public: int __thiscall fairygui::FUIModelSprite::getActorPosY(int)const ` |
+| `0x169260` | `public: int __thiscall Rainbow::UILib::ModelView::getActorPosY(int)const ` |
+| `0x31d3c0` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getActorPostion(int)const ` |
+| `0x31d430` | `public: float __thiscall fairygui::FUIModelSprite::getActorScaleX(int)` |
+| `0x31d4d0` | `public: float __thiscall fairygui::FUIModelSprite::getActorScaleY(int)` |
+| `0x31d570` | `public: float __thiscall fairygui::FUIModelSprite::getActorScaleZ(int)` |
+| `0x31d610` | `public: float __thiscall fairygui::FUIModelSprite::getActroPosX2Screen(int,int)` |
+| `0x31d6c0` | `public: float __thiscall fairygui::FUIModelSprite::getActroPosY2Screen(int,int)` |
+| `0x38dc10` | `public: class Rainbow::Vector3f __thiscall cocos2d::Director::getAdaptivePostion(class Rainbow::Vector3f &,bool)` |
+| `0x38dce0` | `public: float __thiscall cocos2d::Director::getAdaptiveScaleX(void)` |
+| `0x38dcf0` | `public: float __thiscall cocos2d::Director::getAdaptiveScaleY(void)` |
+| `0x363840` | `public: float __thiscall cocos2d::Label::getAdditionalKerning(void)const ` |
+| `0x3a7910` | `class Rainbow::Matrix4x4f const & __cdecl cocos2d::utils::getAdjustMatrix(void)` |
+| `0x93ae0` | `public: class fairygui::GLoader * __thiscall fairygui::DragDropManager::getAgent(void)const ` |
+| `0x99890` | `public: enum cocos2d::TextHAlignment __thiscall fairygui::GList::getAlign(void)const ` |
+| `0x998a0` | `public: enum cocos2d::TextHAlignment __thiscall fairygui::GLoader3D::getAlign(void)const ` |
+| `0x998b0` | `public: enum cocos2d::TextHAlignment __thiscall fairygui::GLoader::getAlign(void)const ` |
+| `0x2fa100` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::GUIGenIcon::getAllBlockTexture(class Rainbow::SharePtr<class Rainbow::Texture2D> &,int)` |
+| `0x1db170` | `public: void __thiscall Rainbow::ModelData::getAllSequence(class std::vector<struct Rainbow::SequenceDesc,class std::allocator<struct Rainbow::SequenceDesc> > &)` |
+| `0x3a9e10` | `public: class std::vector<class cocos2d::Touch *,class std::allocator<class cocos2d::Touch *> > __thiscall cocos2d::GLView::getAllTouches(void)const ` |
+| `0x998c0` | `public: float __thiscall fairygui::GObject::getAlpha(void)const ` |
+| `0xe87d0` | `public: int __thiscall Rainbow::TextBoardIn3D::getAlpha(void)` |
+| `0x377490` | `public: float __thiscall spine::TrackEntry::getAlpha(void)` |
+| `0x25db50` | `public: bool __thiscall Rainbow::MoveByTextMgr::getAlphaChange(void)` |
+| `0x3181f0` | `public: float __thiscall fairygui::FUIContainer::getAlphaThreshold(void)const ` |
+| `0x34b160` | `public: float __thiscall cocos2d::ActionInterval::getAmplitudeRate(void)` |
+| `0x99bb0` | `public: virtual class Rainbow::Vector2f const & __thiscall cocos2d::Node::getAnchorPoint(void)const ` |
+| `0x99cb0` | `public: virtual class Rainbow::Vector2f const & __thiscall cocos2d::Node::getAnchorPointInPoints(void)const ` |
+| `0x998d0` | `public: class std::vector<struct Rainbow::ModelAnchor,class std::allocator<struct Rainbow::ModelAnchor> > & __thiscall Rainbow::ModelData::getAnchors(void)` |
+| `0xa0120` | `public: float __thiscall spine::SwirlVertexEffect::getAngle(void)` |
+| `0x1db270` | `public: static class Rainbow::Vector3f __cdecl Rainbow::ModelData::getAngularBisector(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)` |
+| `0x998e0` | `public: class Rainbow::SharePtr<class Rainbow::AnimationData> __thiscall Rainbow::ModelData::getAnimation(unsigned int)` |
+| `0x937e0` | `public: class spine::Animation * __thiscall spine::TrackEntry::getAnimation(void)` |
+| `0x93590` | `public: float __thiscall spine::TrackEntry::getAnimationEnd(void)` |
+| `0x99920` | `public: float __thiscall cocos2d::Director::getAnimationInterval(void)` |
+| `0x9a420` | `public: float __thiscall spine::TrackEntry::getAnimationLast(void)` |
+| `0x99930` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GLoader3D::getAnimationName(void)const ` |
+| `0x99940` | `public: class Rainbow::SharePtr<class Rainbow::AnimationData> __thiscall Rainbow::ModelData::getAnimationSeq(int)` |
+| `0x99bf0` | `public: float __thiscall spine::TrackEntry::getAnimationStart(void)` |
+| `0x3ce880` | `public: float __thiscall spine::TrackEntry::getAnimationTime(void)` |
+| `0x99a80` | `public: class spine::Vector<class spine::Animation *> & __thiscall spine::SkeletonData::getAnimations(void)` |
+| `0x999f0` | `public: int __thiscall fairygui::GComponent::getApexIndex(void)const ` |
+| `0x99a00` | `public: int __thiscall Rainbow::UILib::FrameManager::getApiId(void)` |
+| `0x9a680` | `public: float __thiscall spine::Bone::getAppliedRotation(void)` |
+| `0x1182a0` | `public: class std::map<enum ARROWTYPE,class Rainbow::Vector3f,struct std::less<enum ARROWTYPE>,class std::allocator<struct std::pair<enum ARROWTYPE const ,class Rainbow::Vector3f> > > & __thiscall CoordAxis::getArrowTo2DPosMap(void)` |
+| `0x21b160` | `public: unsigned int __thiscall Rainbow::ColourValue::getAsABGR(void)const ` |
+| `0x21b1c0` | `public: unsigned int __thiscall Rainbow::ColourValue::getAsARGB(void)const ` |
+| `0x21b220` | `public: unsigned int __thiscall Rainbow::ColourValue::getAsBGRA(void)const ` |
+| `0x21b1c0` | `public: unsigned int __thiscall Rainbow::ColourValue::getAsRGBA(void)const ` |
+| `0x99a10` | `public: int __thiscall fairygui::GLoader::getAsyncSeq(void)` |
+| `0x99a20` | `public: unsigned int __thiscall cocos2d::Sprite::getAtlasIndex(void)const ` |
+| `0x3765b0` | `public: static int __cdecl cocos2d::Node::getAttachedNodeCount(void)` |
+| `0x3e0250` | `public: class spine::Attachment * __thiscall spine::Skeleton::getAttachment(class spine::String const &,class spine::String const &)` |
+| `0x3e02b0` | `public: class spine::Attachment * __thiscall spine::Skeleton::getAttachment(int,class spine::String const &)` |
+| `0x3fb0e0` | `public: class spine::Attachment * __thiscall spine::SkeletonRenderer::getAttachment(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x3fd730` | `public: class spine::Attachment * __thiscall spine::Skin::getAttachment(unsigned int,class spine::String const &)` |
+| `0x294180` | `public: class spine::Attachment * __thiscall spine::Slot::getAttachment(void)` |
+| `0x2946f0` | `public: class spine::String const & __thiscall spine::SlotData::getAttachmentName(void)` |
+| `0x935c0` | `public: float __thiscall spine::TrackEntry::getAttachmentThreshold(void)` |
+| `0x3fdf50` | `public: float __thiscall spine::Slot::getAttachmentTime(void)` |
+| `0x3fd780` | `public: class spine::Skin::AttachmentMap::Entries __thiscall spine::Skin::getAttachments(void)` |
+| `0x3830e0` | `public: class spine::String const & __thiscall spine::EventData::getAudioPath(void)` |
+| `0x3ee5f0` | `public: class spine::String const & __thiscall spine::SkeletonData::getAudioPath(void)` |
+| `0x99a30` | `public: bool __thiscall fairygui::GList::getAutoResizeItem(void)const ` |
+| `0x99a40` | `public: bool __thiscall fairygui::GLoader3D::getAutoSize(void)const ` |
+| `0x99a50` | `public: bool __thiscall fairygui::GLoader::getAutoSize(void)const ` |
+| `0x256290` | `public: bool __thiscall Rainbow::Text3D::getAutoWrap(void)` |
+| `0x3774a0` | `public: float __thiscall spine::Bone::getB(void)` |
+| `0x99cb0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getBIOS(void)` |
+| `0x99a60` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::Label::getBMFontFilePath(void)const ` |
+| `0x363850` | `public: float __thiscall cocos2d::Label::getBMFontSize(void)const ` |
+| `0x38dd00` | `public: class cocos2d::Rect __thiscall cocos2d::Director::getBackRect(void)` |
+| `0xd0fd0` | `public: float __thiscall spine::Event::getBalance(void)` |
+| `0x99bf0` | `public: float __thiscall spine::EventData::getBalance(void)` |
+| `0x269ab0` | `public: void __thiscall Rainbow::ProgressBarWithText3D::getBarRealSize(float &,float &)` |
+| `0x99c30` | `public: virtual class cocos2d::SpriteBatchNode * __thiscall cocos2d::Sprite::getBatchNode(void)const ` |
+| `0x9a320` | `public: int __thiscall Rainbow::MusicClubChatBubble3D::getBgBubbleID(void)` |
+| `0x99f80` | `public: unsigned int __thiscall Rainbow::StoveProgressBar3D::getBgColor(void)` |
+| `0x99a60` | `public: struct cocos2d::BlendFunc const & __thiscall cocos2d::DrawNode::getBlendFunc(void)const ` |
+| `0x99a70` | `public: virtual struct cocos2d::BlendFunc const & __thiscall cocos2d::Label::getBlendFunc(void)const ` |
+| `0x93b50` | `public: virtual struct cocos2d::BlendFunc const & __thiscall spine::SkeletonRenderer::getBlendFunc(void)const ` |
+| `0x99a80` | `public: virtual struct cocos2d::BlendFunc const & __thiscall cocos2d::Sprite::getBlendFunc(void)const ` |
+| `0x2576c0` | `public: virtual struct cocos2d::BlendFunc const & __thiscall cocos2d::SpriteBatchNode::getBlendFunc(void)const ` |
+| `0x9a280` | `public: enum spine::BlendMode __thiscall spine::SlotData::getBlendMode(void)` |
+| `0x269bf0` | `public: void __thiscall Rainbow::ProgressBarWithText3D::getBoardRealSize(float &,float &)` |
+| `0x936f0` | `public: class spine::Bone & __thiscall spine::Slot::getBone(void)` |
+| `0x935a0` | `public: class spine::BoneData & __thiscall spine::SlotData::getBoneData(void)` |
+| `0x99a90` | `public: short const * __thiscall Rainbow::ModelData::getBoneIDs(unsigned int)` |
+| `0xdcab0` | `public: class std::set<unsigned int,struct std::less<unsigned int>,class std::allocator<unsigned int> > __thiscall Rainbow::AnimationData::getBoneIdsByTick(int,int)` |
+| `0xd5ca0` | `public: class Rainbow::Matrix4x4f const __thiscall Rainbow::SkeletonComponent::getBoneLocalTM(int)` |
+| `0xe2bc0` | `public: class Rainbow::FixedString const __thiscall Rainbow::SkeletonComponent::getBoneName(int)` |
+| `0x99ab0` | `public: class core::hash_map<class Rainbow::FixedString,int,struct Rainbow::FixedStringHashFunc,struct std::equal_to<class Rainbow::FixedString> > & __thiscall Rainbow::SkeletonData::getBoneNameTab(void)` |
+| `0xe2be0` | `public: class Rainbow::Quaternionf __thiscall Rainbow::SkeletonComponent::getBoneRotation(int)` |
+| `0xe2c00` | `public: void __thiscall Rainbow::SkeletonComponent::getBoneSRT(int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0xd5d10` | `public: class Rainbow::Matrix4x4f const __thiscall Rainbow::SkeletonComponent::getBoneTM(int)` |
+| `0xdcc70` | `public: class Rainbow::BoneTrack * __thiscall Rainbow::AnimationData::getBoneTrack(unsigned int)` |
+| `0x1db360` | `public: class Rainbow::BoneTrack * __thiscall Rainbow::ModelData::getBoneTrack(int const &,class Rainbow::FixedString const &)` |
+| `0x1db3a0` | `public: class Rainbow::BoneTrack * __thiscall Rainbow::ModelData::getBoneTrack(int const &,int)` |
+| `0x1db440` | `public: class Rainbow::Vector3f __thiscall Rainbow::ModelData::getBoneTranslate(class Rainbow::FixedString const &)` |
+| `0x2576c0` | `public: class spine::Vector<class spine::Bone *> & __thiscall spine::Skeleton::getBones(void)` |
+| `0x299090` | `public: class spine::Vector<class spine::BoneData *> & __thiscall spine::SkeletonData::getBones(void)` |
+| `0x3830e0` | `public: class spine::Vector<class spine::BoneData *> & __thiscall spine::Skin::getBones(void)` |
+| `0x298ed0` | `public: bool __thiscall CsvTable::getBool(int,char const *)` |
+| `0x94330` | `public: bool __thiscall Rainbow::UILib::Invocation::getBoolean(void)const ` |
+| `0x363860` | `public: virtual class cocos2d::Rect __thiscall cocos2d::Label::getBoundingBox(void)const ` |
+| `0x3765c0` | `public: virtual class cocos2d::Rect __thiscall cocos2d::Node::getBoundingBox(void)const ` |
+| `0x3fb260` | `public: virtual class cocos2d::Rect __thiscall spine::SkeletonRenderer::getBoundingBox(void)const ` |
+| `0x3e0310` | `public: void __thiscall spine::Skeleton::getBounds(float &,float &,float &,float &,class spine::Vector<float> &)` |
+| `0x6aad0` | `public: class Rainbow::BoxBound __thiscall Rainbow::BoxSphereBound::getBox(void)const ` |
+| `0x298ef0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > const & __thiscall CsvTable::getById(int)` |
+| `0x298f70` | `private: class Value const & __thiscall CsvTable::getByIdAndKey(int,char const *)` |
+| `0x311290` | `public: static class fairygui::UIPackage * __cdecl fairygui::UIPackage::getByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x94330` | `public: signed char __thiscall Rainbow::UILib::Invocation::getByte(void)const ` |
+| `0x93ae0` | `public: unsigned char * __thiscall cocos2d::Data::getBytes(void)const ` |
+| `0x3b6650` | `public: float __thiscall spine::Bone::getC(void)` |
+| `0x6ab40` | `public: class cocos2d::CCLuaStack * __thiscall MINIW::ScriptVM::getCCluaStack(void)` |
+| `0x93800` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getCPU(void)` |
+| `0x29d510` | `public: char const * __thiscall cocos2d::__String::getCString(void)const ` |
+| `0x99ac0` | `public: unsigned short __thiscall cocos2d::Node::getCameraMask(void)const ` |
+| `0x31d770` | `public: float __thiscall fairygui::FUIModelSprite::getCameraPitch(void)` |
+| `0x9a0d0` | `public: float __thiscall Rainbow::UILib::ModelView::getCameraPitch(void)` |
+| `0x31d780` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getCameraPosition(void)` |
+| `0x169280` | `public: void __thiscall Rainbow::UILib::ModelView::getCameraPosition(int &,int &,int &)` |
+| `0x31d7e0` | `public: float __thiscall fairygui::FUIModelSprite::getCameraYaw(void)` |
+| `0x169310` | `public: float __thiscall Rainbow::UILib::ModelView::getCameraYaw(void)` |
+| `0x37ba70` | `public: class std::vector<class cocos2d::CCCamera *,class std::allocator<class cocos2d::CCCamera *> > const & __thiscall cocos2d::Scene::getCameras(void)` |
+| `0x3a7a20` | `class cocos2d::Rect __cdecl cocos2d::utils::getCascadeBoundingBox(class cocos2d::Node *)` |
+| `0x99ad0` | `public: class fairygui::GComponent * __thiscall fairygui::GTreeNode::getCell(void)const ` |
+| `0x6ab50` | `public: class Rainbow::Vector3f __thiscall Rainbow::BoxBound::getCenter(void)const ` |
+| `0x68e10` | `public: class Rainbow::Vector3f const & __thiscall Rainbow::BoxSphereBound::getCenter(void)const ` |
+| `0x37d110` | `public: virtual class cocos2d::Rect __thiscall cocos2d::Sprite::getCenterRect(void)const ` |
+| `0x37d180` | `public: virtual class cocos2d::Rect __thiscall cocos2d::Sprite::getCenterRectNormalized(void)const ` |
+| `0x158470` | `public: float __thiscall spine::SwirlVertexEffect::getCenterX(void)` |
+| `0x21bbb0` | `public: float __thiscall spine::SwirlVertexEffect::getCenterY(void)` |
+| `0x3a7230` | `class std::vector<char16_t,class std::allocator<char16_t> > __cdecl cocos2d::StringUtils::getChar16VectorFromUTF16String(class std::basic_string<char16_t,struct std::char_traits<char16_t>,class std::allocator<char16_t> > const &)` |
+| `0xa16a0` | `public: unsigned short __thiscall Rainbow::UILib::Invocation::getChar(void)const ` |
+| `0x3a72c0` | `long __cdecl cocos2d::StringUtils::getCharacterCountInUTF8String(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2d2d30` | `public: class fairygui::GObject * __thiscall fairygui::GComponent::getChild(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2d2da0` | `public: class fairygui::GObject * __thiscall fairygui::GComponent::getChildAt(int)const ` |
+| `0x2f8ac0` | `public: class fairygui::GTreeNode * __thiscall fairygui::GTreeNode::getChildAt(int)const ` |
+| `0x2d2de0` | `public: class fairygui::GObject * __thiscall fairygui::GComponent::getChildById(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x376640` | `public: virtual class cocos2d::Node * __thiscall cocos2d::Node::getChildByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2d2e50` | `public: class fairygui::GObject * __thiscall fairygui::GComponent::getChildByPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x376710` | `public: virtual class cocos2d::Node * __thiscall cocos2d::Node::getChildByTag(int)const ` |
+| `0x2d3170` | `public: class fairygui::GObject * __thiscall fairygui::GComponent::getChildInGroup(class fairygui::GGroup const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2d31f0` | `public: int __thiscall fairygui::GComponent::getChildIndex(class fairygui::GObject const *)const ` |
+| `0x2f8ad0` | `public: int __thiscall fairygui::GTreeNode::getChildIndex(class fairygui::GTreeNode const *)const ` |
+| `0x299090` | `public: class spine::Vector<class spine::Bone *> & __thiscall spine::Bone::getChildren(void)` |
+| `0x99ae0` | `public: class cocos2d::Vector<class fairygui::GObject *> const & __thiscall fairygui::GComponent::getChildren(void)const ` |
+| `0x99af0` | `public: virtual class cocos2d::Vector<class cocos2d::Node *> & __thiscall cocos2d::Node::getChildren(void)` |
+| `0x99af0` | `public: virtual class cocos2d::Vector<class cocos2d::Node *> const & __thiscall cocos2d::Node::getChildren(void)const ` |
+| `0x376750` | `public: virtual long __thiscall cocos2d::Node::getChildrenCount(void)const ` |
+| `0x99b00` | `public: enum fairygui::ChildrenRenderOrder __thiscall fairygui::GComponent::getChildrenRenderOrder(void)const ` |
+| `0x3b0940` | `public: struct cocos2d::Color4F const & __thiscall cocos2d::Renderer::getClearColor(void)const ` |
+| `0x34b160` | `public: float __thiscall cocos2d::Renderer::getClearDepth(void)const ` |
+| `0x3b0950` | `public: enum cocos2d::ClearFlag __thiscall cocos2d::Renderer::getClearFlag(void)const ` |
+| `0x7e970` | `public: unsigned int __thiscall cocos2d::Renderer::getClearStencil(void)const ` |
+| `0x327670` | `public: class fairygui::GObject * __thiscall fairygui::InputProcessor::getClickObj(float,float)` |
+| `0x327720` | `public: class fairygui::GObject * __thiscall fairygui::InputProcessor::getClickObjForAll(float,float)` |
+| `0x99b10` | `public: bool __thiscall fairygui::GObject::getClickPass(void)const ` |
+| `0x318210` | `private: class cocos2d::Rect const & __thiscall fairygui::FUIContainer::getClippingRect(void)` |
+| `0x3182d0` | `public: class cocos2d::Rect const & __thiscall fairygui::FUIContainer::getClippingRegion(void)const ` |
+| `0x99b20` | `public: class fairygui::GObject * __thiscall fairygui::Window::getCloseButton(void)const ` |
+| `0x99b30` | `public: class std::thread::id const & __thiscall cocos2d::Director::getCocos2dThreadId(void)const ` |
+| `0x234b10` | `public: class Rainbow::ColorQuad __thiscall Rainbow::CubeBorder::getColor(void)const ` |
+| `0x2d5f30` | `public: struct cocos2d::Color3B __thiscall fairygui::GGraph::getColor(void)const ` |
+| `0x2d7f20` | `public: struct cocos2d::Color3B __thiscall fairygui::GImage::getColor(void)const ` |
+| `0x2e8470` | `public: struct cocos2d::Color3B __thiscall fairygui::GLoader3D::getColor(void)const ` |
+| `0x2e0db0` | `public: struct cocos2d::Color3B __thiscall fairygui::GLoader::getColor(void)const ` |
+| `0x36bfb0` | `public: virtual struct cocos2d::Color3B const & __thiscall cocos2d::Node::getColor(void)const ` |
+| `0xd3f90` | `public: char * __thiscall Rainbow::OgreVertexData::getColor(unsigned int)` |
+| `0xe87d0` | `public: unsigned int __thiscall Rainbow::ProgressBarIn3D::getColor(void)` |
+| `0xedb90` | `public: class spine::Color & __thiscall spine::Skeleton::getColor(void)` |
+| `0x299090` | `public: class spine::Color & __thiscall spine::Slot::getColor(void)` |
+| `0xc0ba0` | `public: class spine::Color & __thiscall spine::SlotData::getColor(void)` |
+| `0x2d0060` | `public: struct cocos2d::Color4F __thiscall fairygui::GColorTextureLoader::getColorByPosition(class Rainbow::Vector2f const &)` |
+| `0x21b280` | `public: unsigned int __thiscall Rainbow::ColourValue::getColorQuad(void)const ` |
+| `0x99b40` | `public: int __thiscall fairygui::GList::getColumnCount(void)` |
+| `0x99b50` | `public: int __thiscall fairygui::GList::getColumnGap(void)const ` |
+| `0x99b60` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::UILib::SkinResource::getCommonSkinPath(void)const ` |
+| `0x99b00` | `public: class fairygui::GComponent * __thiscall fairygui::GLoader::getComponent(void)const ` |
+| `0x376760` | `public: class cocos2d::Component * __thiscall cocos2d::Node::getComponent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x11ef00` | `public: class spine::Vector<class spine::ConstraintData *> & __thiscall spine::Skin::getConstraints(void)` |
+| `0x99b70` | `public: class cocos2d::Node const * __thiscall fairygui::GLoader3D::getContent(void)` |
+| `0x99b80` | `public: class fairygui::FUISprite * __thiscall fairygui::GLoader::getContent(void)` |
+| `0x99890` | `public: class fairygui::GObject * __thiscall fairygui::Window::getContentArea(void)const ` |
+| `0x93a30` | `public: class fairygui::GComponent * __thiscall fairygui::PopupMenu::getContentPane(void)const ` |
+| `0x99b90` | `public: class fairygui::GComponent * __thiscall fairygui::Window::getContentPane(void)const ` |
+| `0x99ba0` | `public: float __thiscall cocos2d::Director::getContentScaleFactor(void)const ` |
+| `0x93d10` | `public: virtual float __thiscall cocos2d::GLView::getContentScaleFactor(void)const ` |
+| `0x2e0de0` | `public: class cocos2d::Size const & __thiscall fairygui::GLoader::getContentSize(void)` |
+| `0x363880` | `public: virtual class cocos2d::Size const & __thiscall cocos2d::Label::getContentSize(void)const ` |
+| `0x9a110` | `public: virtual class cocos2d::Size const & __thiscall cocos2d::Node::getContentSize(void)const ` |
+| `0x99bb0` | `public: class cocos2d::Size const & __thiscall fairygui::ScrollPane::getContentSize(void)const ` |
+| `0x2f0420` | `public: class fairygui::HtmlObject * __thiscall fairygui::GRichTextField::getControl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2d3230` | `public: class fairygui::GController * __thiscall fairygui::GComponent::getController(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2d32a0` | `public: class fairygui::GController * __thiscall fairygui::GComponent::getControllerAt(int)const ` |
+| `0x99bc0` | `public: class cocos2d::Vector<class fairygui::GController *> const & __thiscall fairygui::GComponent::getControllers(void)const ` |
+| `0x31d7f0` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getCoordPosition(void)const ` |
+| `0x31d850` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getCoordRotationEuler(void)const ` |
+| `0x31d960` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getCoordScale(void)const ` |
+| `0x152ea0` | `public: class Rainbow::UILib::Frame * __thiscall Rainbow::UILib::FrameManager::getCurEditBox(void)` |
+| `0x170000` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getCurLineHeight(void)` |
+| `0x3c0850` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getCurMAC(void)` |
+| `0x1d5770` | `public: virtual int __thiscall Rainbow::ModelLegacy::getCurPlayAnimIds(class std::vector<int,class std::allocator<int> > &)` |
+| `0x1d57f0` | `public: virtual int __thiscall Rainbow::ModelNew::getCurPlayAnimIds(class std::vector<int,class std::allocator<int> > &)` |
+| `0xe68d0` | `public: int __thiscall Rainbow::UILib::CoordInteract::getCurTran(void)` |
+| `0x31d9d0` | `public: int __thiscall fairygui::FUIModelSprite::getCurTran(void)` |
+| `0x169320` | `public: int __thiscall Rainbow::UILib::ModelView::getCurTran(void)` |
+| `0x133cd0` | `public: enum Rainbow::UILib::COORD_TYPE __thiscall Rainbow::UILib::CoordInteract::getCurrType(void)` |
+| `0x21b9a0` | `public: float __thiscall Rainbow::GaussGenerator::getCurrent(void)const ` |
+| `0x3e1e30` | `public: class spine::TrackEntry * __thiscall spine::SkeletonAnimation::getCurrent(int)` |
+| `0x99bd0` | `public: char const * __thiscall GameUI::getCurrentCursor(void)` |
+| `0x1945e0` | `public: char const * __thiscall fairygui::GWebView::getCursor(void)` |
+| `0x13e0b0` | `public: int __thiscall Rainbow::UILib::EditBox::getCursorPos(void)` |
+| `0x35ebf0` | `public: int __thiscall cocos2d::InputLabel::getCursorPos(void)` |
+| `0x99b20` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getCursorPos(void)` |
+| `0x99bf0` | `public: float __thiscall cocos2d::EventMouse::getCursorX(void)const ` |
+| `0x35ec00` | `protected: void __thiscall cocos2d::InputLabel::getCursorXPosAndYPos(float &,float &,float &)` |
+| `0x93590` | `public: float __thiscall cocos2d::EventMouse::getCursorY(void)const ` |
+| `0x99c00` | `public: class cocos2d::Value const & __thiscall fairygui::GObject::getCustomData(void)const ` |
+| `0x1db4a0` | `public: bool __thiscall Rainbow::ModelData::getCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x1db660` | `public: bool __thiscall Rainbow::ModelData::getCustomKeyFrameEx(int,int const &,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x1db760` | `public: bool __thiscall Rainbow::ModelData::getCustomKeyFrameEx(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x3d2360` | `public: float __thiscall spine::Bone::getD(void)` |
+| `0x3c4f90` | `public: static int __cdecl cocos2d::Device::getDPI(void)` |
+| `0x3830e0` | `public: class spine::Color & __thiscall spine::Slot::getDarkColor(void)` |
+| `0x3fe230` | `public: class spine::Color & __thiscall spine::SlotData::getDarkColor(void)` |
+| `0x93ab0` | `public: class spine::BoneData & __thiscall spine::Bone::getData(void)` |
+| `0x93ab0` | `public: class spine::EventData const & __thiscall spine::Event::getData(void)` |
+| `0x99c10` | `public: void * __thiscall fairygui::GObject::getData(void)const ` |
+| `0x939e0` | `public: class cocos2d::Value const & __thiscall fairygui::GTreeNode::getData(void)const ` |
+| `0x93ab0` | `public: class spine::SkeletonData * __thiscall spine::Skeleton::getData(void)` |
+| `0x93ab0` | `public: class spine::SlotData & __thiscall spine::Slot::getData(void)` |
+| `0x1fa770` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::FileManagerWeb::getDataPath(void)` |
+| `0x3fb370` | `public: bool __thiscall spine::SkeletonRenderer::getDebugBonesEnabled(void)const ` |
+| `0x3fb380` | `public: bool __thiscall spine::SkeletonRenderer::getDebugBoundingRectEnabled(void)const ` |
+| `0x3fb390` | `public: bool __thiscall spine::SkeletonRenderer::getDebugMeshesEnabled(void)const ` |
+| `0x3fb3a0` | `public: bool __thiscall spine::SkeletonRenderer::getDebugSlotsEnabled(void)const ` |
+| `0x99c20` | `public: float __thiscall fairygui::ScrollPane::getDecelerationRate(void)const ` |
+| `0x99c30` | `public: class cocos2d::CCCamera * __thiscall cocos2d::Scene::getDefaultCamera(void)const ` |
+| `0x99c40` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GList::getDefaultItem(void)const ` |
+| `0x21bbb0` | `public: float __thiscall spine::AnimationStateData::getDefaultMix(void)` |
+| `0x99c50` | `public: static void __cdecl fairygui::UIConfig::getDefaultScrollBounceEffect(bool)` |
+| `0x99c60` | `public: static void __cdecl fairygui::UIConfig::getDefaultScrollTouchEffect(bool)` |
+| `0xe68d0` | `public: class spine::Skin * __thiscall spine::SkeletonData::getDefaultSkin(void)` |
+| `0x2946f0` | `public: class spine::Vector<float> & __thiscall spine::Slot::getDeform(void)` |
+| `0x99c70` | `public: float __thiscall fairygui::GTweener::getDelay(void)const ` |
+| `0x9a680` | `public: float __thiscall spine::TrackEntry::getDelay(void)` |
+| `0x99c80` | `public: float __thiscall cocos2d::Animation::getDelayPerUnit(void)const ` |
+| `0x399a80` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getDelta(void)const ` |
+| `0x99c70` | `public: float __thiscall cocos2d::Director::getDeltaTime(void)const ` |
+| `0x2652e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::NameText3D::getDescExtraOneText(void)` |
+| `0x9a2e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::NameText3D::getDescText(void)` |
+| `0x99c90` | `public: class std::vector<class cocos2d::Sprite *,class std::allocator<class cocos2d::Sprite *> > const & __thiscall cocos2d::SpriteBatchNode::getDescendants(void)const ` |
+| `0x939e0` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > const & __thiscall Rainbow::Exception::getDescription(void)const ` |
+| `0x3638b0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Label::getDescription(void)const ` |
+| `0x376780` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Node::getDescription(void)const ` |
+| `0x37bbd0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Scene::getDescription(void)const ` |
+| `0x37d1e0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Sprite::getDescription(void)const ` |
+| `0x381500` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::SpriteBatchNode::getDescription(void)const ` |
+| `0x3a41a0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::Value::getDescription(void)const ` |
+| `0x2e8490` | `public: virtual class cocos2d::Size const & __thiscall cocos2d::GLView::getDesignResolutionSize(void)const ` |
+| `0xd0dc0` | `public: float __thiscall czy::LeastSquaresFit::getDeviation(float const &)` |
+| `0x99ca0` | `public: class cocos2d::Size const & __thiscall cocos2d::Label::getDimensions(void)const ` |
+| `0x21b9b0` | `public: class Rainbow::Vector3f __thiscall Rainbow::RandomGenerator::getDirection(void)` |
+| `0x3767a0` | `public: virtual struct cocos2d::Color3B const & __thiscall cocos2d::Node::getDisplayedColor(void)const ` |
+| `0x3767b0` | `public: virtual unsigned char __thiscall cocos2d::Node::getDisplayedOpacity(void)const ` |
+| `0x99cb0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> const & __thiscall Rainbow::UILib::UIRenderer::getDottedLineTexture(void)const ` |
+| `0x299070` | `public: double __thiscall CsvTable::getDouble(int,char const *)` |
+| `0xa16b0` | `public: double __thiscall Rainbow::UILib::Invocation::getDouble(void)const ` |
+| `0x2fa400` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::GUIGenIcon::getDoubleWeaponTexture(class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,int)` |
+| `0x99cc0` | `public: int __thiscall fairygui::GButton::getDownEffect(void)` |
+| `0x99cd0` | `public: float __thiscall fairygui::GButton::getDownEffectValue(void)` |
+| `0x99b50` | `public: class fairygui::GObject * __thiscall fairygui::Window::getDragArea(void)const ` |
+| `0x99ce0` | `public: class cocos2d::Rect * __thiscall fairygui::GObject::getDragBounds(void)const ` |
+| `0x99cf0` | `public: static class fairygui::GObject * __cdecl fairygui::GObject::getDraggingObject(void)` |
+| `0x99d00` | `public: static class fairygui::ScrollPane * __cdecl fairygui::ScrollPane::getDraggingPane(void)` |
+| `0x99d10` | `public: class cocos2d::NodeDrawItem * __thiscall cocos2d::Node::getDrawItem(void)const ` |
+| `0x93d20` | `public: class Rainbow::UILib::DrawItem * __thiscall cocos2d::OldUIRenderCommand::getDrawItem(void)` |
+| `0x99d20` | `public: class std::vector<class Rainbow::UILib::DrawItem *,class std::allocator<class Rainbow::UILib::DrawItem *> > & __thiscall cocos2d::Director::getDrawItems(void)` |
+| `0x99b80` | `public: class cocos2d::DrawNode * __thiscall fairygui::GGraph::getDrawNode(void)` |
+| `0x99e90` | `public: class spine::Vector<class spine::Slot *> & __thiscall spine::Skeleton::getDrawOrder(void)` |
+| `0x3c36e0` | `public: float __thiscall spine::TrackEntry::getDrawOrderThreshold(void)` |
+| `0x99d30` | `public: long __thiscall cocos2d::Renderer::getDrawnBatches(void)const ` |
+| `0x99d40` | `public: long __thiscall cocos2d::Renderer::getDrawnVertices(void)const ` |
+| `0x99d50` | `public: class fairygui::GObject * __thiscall fairygui::GComboBox::getDropdown(void)const ` |
+| `0x351400` | `public: float __thiscall cocos2d::Animation::getDuration(void)const ` |
+| `0x99c80` | `public: float __thiscall spine::Animation::getDuration(void)` |
+| `0x99d60` | `public: float __thiscall fairygui::GTweener::getDuration(void)const ` |
+| `0x99d70` | `public: struct cocos2d::Color4F __thiscall cocos2d::Label::getEffectColor(void)const ` |
+| `0x99bf0` | `public: float __thiscall cocos2d::ActionInterval::getElapsed(void)` |
+| `0xd3fd0` | `public: class Rainbow::VertexElement const & __thiscall Rainbow::VertexFormat::getElement(unsigned int)const ` |
+| `0xe6d50` | `public: class Rainbow::VertexElement const * __thiscall Rainbow::VertexFormat::getElementBySemantic(enum Rainbow::VertexElementSemantic,int)const ` |
+| `0x3a5d30` | `private: static class std::mersenne_twister_engine<unsigned int,32,624,397,31,2567483615,11,4294967295,7,2636928640,15,4022730752,18,1812433253> & __cdecl cocos2d::RandomHelper::getEngine(void)` |
+| `0x2a7ed0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl Rainbow::CompressTool::getErrPath(void)` |
+| `0x2e8490` | `public: class spine::String & __thiscall spine::SkeletonJson::getError(void)` |
+| `0x934b0` | `public: class cocos2d::EventDispatcher * __thiscall cocos2d::Director::getEventDispatcher(void)const ` |
+| `0x99a00` | `public: virtual class cocos2d::EventDispatcher * __thiscall cocos2d::Node::getEventDispatcher(void)const ` |
+| `0x1bd960` | `public: class std::vector<class Rainbow::MotionEventHandler *,class std::allocator<class Rainbow::MotionEventHandler *> > * __thiscall Rainbow::Entity::getEventHandler(class Rainbow::FixedString)` |
+| `0x93710` | `public: float __thiscall spine::TrackEntry::getEventThreshold(void)` |
+| `0x2946f0` | `public: class spine::Vector<class spine::EventData *> & __thiscall spine::SkeletonData::getEvents(void)` |
+| `0x6aba0` | `public: class Rainbow::Vector3f __thiscall Rainbow::BoxBound::getExtension(void)const ` |
+| `0x6abf0` | `public: class Rainbow::Vector3f const & __thiscall Rainbow::BoxSphereBound::getExtension(void)const ` |
+| `0x99d90` | `public: class fairygui::FUIModelSprite * __thiscall fairygui::GModelView::getFModelSprite(void)` |
+| `0x38dd40` | `public: void __thiscall cocos2d::Director::getFPSImageData(unsigned char * *,long *)` |
+| `0xd0e20` | `public: float __thiscall czy::LeastSquaresFit::getFactor(int)` |
+| `0xd0e50` | `public: void __thiscall czy::LeastSquaresFit::getFactor(class std::vector<float,class std::allocator<float> > &)` |
+| `0x93ad0` | `public: int __thiscall czy::LeastSquaresFit::getFactorSize(void)` |
+| `0x21d2f0` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > const & __thiscall Rainbow::Exception::getFile(void)const ` |
+| `0x2740a0` | `private: char * __thiscall Rainbow::ZipFilePkg::getFileData(char const *,int &)` |
+| `0x99da0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall GameUI::getFilePathByToc(int)` |
+| `0x205610` | `public: int __thiscall Rainbow::FileManagerWeb::getFileSize(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x99880` | `public: enum fairygui::LoaderFillType __thiscall fairygui::GLoader3D::getFill(void)const ` |
+| `0x99a00` | `public: enum fairygui::LoaderFillType __thiscall fairygui::GLoader::getFill(void)const ` |
+| `0x99e10` | `public: float __thiscall fairygui::FUISprite::getFillAmount(void)const ` |
+| `0x2d7f50` | `public: float __thiscall fairygui::GImage::getFillAmount(void)const ` |
+| `0x2e0df0` | `public: float __thiscall fairygui::GLoader::getFillAmount(void)const ` |
+| `0x2d5f50` | `public: struct cocos2d::Color4F __thiscall fairygui::GGraph::getFillColor(void)const ` |
+| `0x99e20` | `public: enum fairygui::FillMethod __thiscall fairygui::FUISprite::getFillMethod(void)const ` |
+| `0x2d7f60` | `public: enum fairygui::FillMethod __thiscall fairygui::GImage::getFillMethod(void)const ` |
+| `0x2e0e00` | `public: enum fairygui::FillMethod __thiscall fairygui::GLoader::getFillMethod(void)const ` |
+| `0x99e30` | `public: enum fairygui::FillOrigin __thiscall fairygui::FUISprite::getFillOrigin(void)const ` |
+| `0x2d7f70` | `public: enum fairygui::FillOrigin __thiscall fairygui::GImage::getFillOrigin(void)const ` |
+| `0x2e0e10` | `public: enum fairygui::FillOrigin __thiscall fairygui::GLoader::getFillOrigin(void)const ` |
+| `0x1932e0` | `protected: int __thiscall cocos2d::Label::getFirstCharLen(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,int,int)const ` |
+| `0x2d32c0` | `public: virtual int __thiscall fairygui::GComponent::getFirstChildInView(void)` |
+| `0x2d9ec0` | `public: virtual int __thiscall fairygui::GList::getFirstChildInView(void)` |
+| `0x369860` | `protected: int __thiscall cocos2d::Label::getFirstWordLen(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,int,int)const ` |
+| `0xd0eb0` | `public: float __thiscall czy::LeastSquaresFit::getFittenY(float const &)` |
+| `0xd0f30` | `public: void __thiscall czy::LeastSquaresFit::getFittenYs(class std::vector<float,class std::allocator<float> > &)` |
+| `0x11bee0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::UILib::SkinResource::getFixedSkinPath(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x99e40` | `public: unsigned int __thiscall cocos2d::Action::getFlags(void)const ` |
+| `0x99e40` | `public: unsigned int __thiscall cocos2d::EventMouse::getFlags(void)const ` |
+| `0x2d7f80` | `public: enum fairygui::FlipType __thiscall fairygui::GImage::getFlip(void)const ` |
+| `0x9a690` | `public: float __thiscall Rainbow::UILib::Invocation::getFloat(void)const ` |
+| `0x1bda00` | `public: float __thiscall Rainbow::RandomGenerator::getFloat(float,float)` |
+| `0x1bda50` | `public: float __thiscall Rainbow::RandomGenerator::getFloat(void)` |
+| `0xa0120` | `public: float __thiscall spine::Event::getFloatValue(void)` |
+| `0x21b9a0` | `public: float __thiscall spine::EventData::getFloatValue(void)` |
+| `0x99e50` | `public: class Rainbow::FontAtlas * __thiscall cocos2d::Label::getFontAtlas(void)` |
+| `0x152eb0` | `public: void * __thiscall Rainbow::UILib::FrameManager::getFontInfoByFontType(char const *)const ` |
+| `0x3699c0` | `protected: bool __thiscall cocos2d::Label::getFontLetterDef(char32_t,struct Rainbow::FontLetterDefinition &)const ` |
+| `0x9a550` | `public: int __thiscall Rainbow::TextBoardIn3D::getFontSize(void)` |
+| `0x2679c0` | `private: int __thiscall Rainbow::ProgressBarIn3D::getFontSizeByHeight(void)` |
+| `0x99e60` | `public: class fairygui::GComponent * __thiscall fairygui::ScrollPane::getFooter(void)const ` |
+| `0x998c0` | `public: float __thiscall spine::SkeletonData::getFps(void)` |
+| `0x93a10` | `public: int __thiscall fairygui::ActionMovieClip::getFrame(void)` |
+| `0x20df30` | `public: int __thiscall fairygui::GLoader3D::getFrame(void)const ` |
+| `0x2e0e20` | `public: int __thiscall fairygui::GLoader::getFrame(void)const ` |
+| `0x99e70` | `public: class fairygui::GComponent * __thiscall fairygui::Window::getFrame(void)const ` |
+| `0x7e970` | `public: virtual unsigned int __thiscall Rainbow::IClientInfo::getFrameCount(void)` |
+| `0x15ed50` | `public: __int64 __thiscall Rainbow::UILib::LayoutFrame::getFrameDrawLevel(void)` |
+| `0xdcca0` | `public: bool __thiscall Rainbow::BaseAnimationData::getFrameEvent(int,unsigned int,unsigned int,class std::vector<struct Rainbow::LegacyAnimationFrameEventData *,class std::allocator<struct Rainbow::LegacyAnimationFrameEventData *> > *)` |
+| `0x99e80` | `public: float __thiscall cocos2d::Director::getFrameRate(void)const ` |
+| `0x99c10` | `public: struct Rainbow::UILib::FrameScript * __thiscall Rainbow::UILib::Frame::getFrameScript(void)` |
+| `0x3a9ec0` | `public: virtual class cocos2d::Size __thiscall cocos2d::GLView::getFrameSize(void)const ` |
+| `0x15ed60` | `public: float __thiscall Rainbow::UILib::LayoutFrame::getFrameSizeX(void)` |
+| `0x15edb0` | `public: float __thiscall Rainbow::UILib::LayoutFrame::getFrameSizeY(void)` |
+| `0x93d10` | `public: virtual float __thiscall cocos2d::GLView::getFrameZoomFactor(void)const ` |
+| `0x3c36e0` | `public: virtual float __thiscall cocos2d::GLViewImpl::getFrameZoomFactor(void)const ` |
+| `0x99e90` | `public: class cocos2d::Vector<class cocos2d::AnimationFrame *> const & __thiscall cocos2d::Animation::getFrames(void)const ` |
+| `0x2d9ee0` | `public: class fairygui::GObject * __thiscall fairygui::GList::getFromPool(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x99ea0` | `public: class fairygui::GObject * __thiscall fairygui::GList::getFromPool(void)` |
+| `0x99eb0` | `public: class fairygui::FUIInput * __thiscall fairygui::GTextInput::getFuiInput(void)` |
+| `0x21d300` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > const & __thiscall Rainbow::Exception::getFullDescription(void)const ` |
+| `0x99ec0` | `public: bool __thiscall Rainbow::UILib::FrameManager::getFuncF4Enable(void)const ` |
+| `0x3a9ee0` | `public: static struct GLContextAttrs __cdecl cocos2d::GLView::getGLContextAttrs(void)` |
+| `0x99ed0` | `public: class cocos2d::GLView * __thiscall cocos2d::Director::getGLView(void)` |
+| `0x936b0` | `public: virtual int __thiscall Rainbow::IClientInfo::getGameData(char const *)` |
+| `0x21bb60` | `public: float __thiscall Rainbow::GaussGenerator::getGauss(void)` |
+| `0x2ebab0` | `public: class fairygui::GearBase * __thiscall fairygui::GObject::getGear(int)` |
+| `0x99ee0` | `public: virtual float __thiscall cocos2d::Node::getGlobalZOrder(void)const ` |
+| `0x99e60` | `public: class fairygui::GGroup * __thiscall fairygui::GObject::getGroup(void)const ` |
+| `0x99ef0` | `protected: class cocos2d::GroupCommandManager * __thiscall cocos2d::Renderer::getGroupCommandManager(void)const ` |
+| `0x9a170` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getHDD(void)` |
+| `0x21b300` | `public: void __thiscall Rainbow::ColourValue::getHSB(float &,float &,float &)` |
+| `0x294180` | `public: int __thiscall cocos2d::NotificationObserver::getHandler(void)const ` |
+| `0x9a750` | `public: class spine::String const & __thiscall spine::SkeletonData::getHash(void)` |
+| `0x99f00` | `public: class fairygui::GComponent * __thiscall fairygui::ScrollPane::getHeader(void)const ` |
+| `0x99f10` | `public: float __thiscall fairygui::GObject::getHeight(void)const ` |
+| `0x99f20` | `public: float __thiscall cocos2d::Label::getHeight(void)const ` |
+| `0x2679f0` | `public: int __thiscall Rainbow::ProgressBarIn3D::getHeight(void)` |
+| `0x9a7e0` | `public: float __thiscall spine::SkeletonData::getHeight(void)` |
+| `0x26cb70` | `public: int __thiscall Rainbow::StoveProgressBar3D::getHeight(void)` |
+| `0x99d10` | `public: class fairygui::IHitTest * __thiscall fairygui::GComponent::getHitArea(void)const ` |
+| `0x3cea80` | `public: bool __thiscall spine::TrackEntry::getHoldPrevious(void)` |
+| `0x99f30` | `public: enum cocos2d::TextHAlignment __thiscall cocos2d::Label::getHorizontalAlignment(void)const ` |
+| `0x2f0430` | `public: class fairygui::GObject * __thiscall fairygui::GRichTextField::getHtmlUIObject(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x1fa7a0` | `public: bool __thiscall Rainbow::Downloader::getHttpDebugFlag(void)` |
+| `0x99f40` | `public: class fairygui::GScrollBar * __thiscall fairygui::ScrollPane::getHzScrollBar(void)const ` |
+| `0x99f50` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GButton::getIcon(void)const ` |
+| `0x2d08e0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GComboBox::getIcon(void)const ` |
+| `0x99f60` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GLoader3D::getIcon(void)const ` |
+| `0x99ae0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GLoader::getIcon(void)const ` |
+| `0x2ebae0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GObject::getIcon(void)const ` |
+| `0x2f8b00` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GTreeNode::getIcon(void)const ` |
+| `0x99f70` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall fairygui::GComboBox::getIcons(void)` |
+| `0x299090` | `public: class std::vector<class Value,class std::allocator<class Value> > const & __thiscall CsvTable::getIdList(void)` |
+| `0x1adf00` | `public: class spine::Vector<class spine::IkConstraint *> & __thiscall spine::Skeleton::getIkConstraints(void)` |
+| `0x99cb0` | `public: class spine::Vector<class spine::IkConstraintData *> & __thiscall spine::SkeletonData::getIkConstraints(void)` |
+| `0x3ee600` | `public: class spine::String const & __thiscall spine::SkeletonData::getImagesPath(void)` |
+| `0xd3fe0` | `public: unsigned short __thiscall Rainbow::IndexData::getIndex(unsigned int)` |
+| `0x93ab0` | `public: int __thiscall spine::SlotData::getIndex(void)` |
+| `0xd4000` | `public: unsigned short __thiscall Rainbow::SubMeshInstance::getIndex(unsigned int)` |
+| `0x3a72e0` | `unsigned int __cdecl cocos2d::StringUtils::getIndexOfLastNotChar16(class std::vector<char16_t,class std::allocator<char16_t> > const &,char16_t)` |
+| `0x405550` | `public: long __thiscall cocos2d::__Array::getIndexOfObject(class cocos2d::Ref *)const ` |
+| `0x2d9f30` | `private: int __thiscall fairygui::GList::getIndexOnPos1(float &,bool)` |
+| `0x2da110` | `private: int __thiscall fairygui::GList::getIndexOnPos2(float &,bool)` |
+| `0x2da2b0` | `private: int __thiscall fairygui::GList::getIndexOnPos3(float &,bool)` |
+| `0x99bb0` | `public: class cocos2d::Size const & __thiscall fairygui::GObject::getInitSize(void)const ` |
+| `0x3a9f10` | `public: int __thiscall cocos2d::GLView::getInputCursorX(int)` |
+| `0x3a9f30` | `public: int __thiscall cocos2d::GLView::getInputCursorY(int)` |
+| `0x99f80` | `public: int __thiscall cocos2d::Director::getInputEventHandle(void)` |
+| `0x99f90` | `public: void __thiscall cocos2d::Director::getInputEventHandle(int)` |
+| `0x2f6de0` | `public: enum cocos2d::ui::EditBox::InputFlag __thiscall fairygui::GTextInput::getInputFlag(void)const ` |
+| `0x99fa0` | `public: class fairygui::InputProcessor * __thiscall fairygui::GRoot::getInputProcessor(void)const ` |
+| `0x99fa0` | `public: class fairygui::InputProcessor * __thiscall fairygui::UI3DRoot::getInputProcessor(void)const ` |
+| `0x2d3340` | `private: int __thiscall fairygui::GComponent::getInsertPosForSortingChild(class fairygui::GObject *)` |
+| `0x127c60` | `public: static class Rainbow::TRect<int> __cdecl Rainbow::UILib::UIRenderer::getInsetRect(class Rainbow::TRect<int> const &)` |
+| `0x296fe0` | `public: static class CsvManager * __cdecl CsvManager::getInstance(void)` |
+| `0x38dd60` | `public: static class cocos2d::Director * __cdecl cocos2d::Director::getInstance(void)` |
+| `0x2cdeb0` | `public: static class fairygui::DragDropManager * __cdecl fairygui::DragDropManager::getInstance(void)` |
+| `0x99fb0` | `public: static class fairygui::GRoot * __cdecl fairygui::GRoot::getInstance(void)` |
+| `0x99fc0` | `public: static class fairygui::HUDRoot * __cdecl fairygui::HUDRoot::getInstance(void)` |
+| `0x2a9ab0` | `public: static class MINIW::IStatisticsToolsInterface * __cdecl MINIW::IStatisticsToolsInterface::getInstance(void)` |
+| `0x4d3b60` | `public: static class cocos2d::LuaEngine * __cdecl cocos2d::LuaEngine::getInstance(void)` |
+| `0x3d7110` | `public: static class spine::SpineExtension * __cdecl spine::SpineExtension::getInstance(void)` |
+| `0x2a9740` | `public: static class MINIW::StatisticRainforestInterface * __cdecl MINIW::StatisticRainforestInterface::getInstance(void)` |
+| `0x2b2e30` | `public: static class MINIW::StatisticTerrgenInterface * __cdecl MINIW::StatisticTerrgenInterface::getInstance(void)` |
+| `0x335f10` | `public: static class fairygui::UBBParser * __cdecl fairygui::UBBParser::getInstance(void)` |
+| `0x30c000` | `public: static class fairygui::UI3DRenderer * __cdecl fairygui::UI3DRenderer::getInstance(void)` |
+| `0x99fd0` | `public: static class fairygui::UI3DRoot * __cdecl fairygui::UI3DRoot::getInstance(void)` |
+| `0x315150` | `public: static class fairygui::UISkinColorManager * __cdecl fairygui::UISkinColorManager::getInstance(void)` |
+| `0x409dc0` | `public: static class cocos2d::__NotificationCenter * __cdecl cocos2d::__NotificationCenter::getInstance(void)` |
+| `0x2990a0` | `public: int __thiscall CsvTable::getInt(int,char const *)` |
+| `0x93a30` | `public: int __thiscall Rainbow::UILib::Invocation::getInt(void)const ` |
+| `0x9a7c0` | `public: int __thiscall cocos2d::DictElement::getIntKey(void)const ` |
+| `0x21d310` | `public: int __thiscall spine::Event::getIntValue(void)` |
+| `0x937e0` | `public: int __thiscall spine::EventData::getIntValue(void)` |
+| `0xd0f90` | `public: float __thiscall czy::LeastSquaresFit::getIntercept(void)` |
+| `0x99fe0` | `public: bool __thiscall fairygui::GObject::getInternalVisible(void)` |
+| `0x99880` | `public: int __thiscall Rainbow::UILib::FrameManager::getIsInARMode(void)` |
+| `0x2151a0` | `public: virtual bool __thiscall Rainbow::FmodSound::getIsLoop(void)` |
+| `0x99ff0` | `public: bool __thiscall Rainbow::ModelData::getIsNeedRemove(unsigned int)` |
+| `0x2fd1b0` | `public: int __thiscall fairygui::PopupMenu::getItemCount(void)const ` |
+| `0x2fd1c0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::PopupMenu::getItemName(int)const ` |
+| `0x9a010` | `public: class fairygui::GObjectPool * __thiscall fairygui::GList::getItemPool(void)const ` |
+| `0x9a020` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall fairygui::GComboBox::getItems(void)` |
+| `0xe56a0` | `public: class Rainbow::BoneData * __thiscall Rainbow::SkeletonData::getIthBone(unsigned int)` |
+| `0x9a030` | `public: class Rainbow::MeshData * __thiscall Rainbow::ModelData::getIthMesh(unsigned int)` |
+| `0x9a050` | `public: enum cocos2d::LabelEffect __thiscall cocos2d::Label::getLabelEffectType(void)const ` |
+| `0x307670` | `public: float __thiscall fairygui::Transition::getLabelTime(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x99a20` | `public: enum cocos2d::Label::LabelType __thiscall cocos2d::Label::getLabelType(void)const ` |
+| `0x2a3030` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MultiResPath::getLangResPath(void)` |
+| `0x3a7b70` | `enum cocos2d::LanguageType __cdecl cocos2d::utils::getLanguageTypeByISO2(char const *)` |
+| `0x38de00` | `public: __int64 __thiscall cocos2d::Director::getLastDrawLevel(void)` |
+| `0x24eb60` | `public: class cocos2d::Ref * __thiscall cocos2d::__Array::getLastObject(void)` |
+| `0x9a060` | `public: enum fairygui::ListLayoutType __thiscall fairygui::GList::getLayout(void)const ` |
+| `0x363990` | `public: virtual class cocos2d::Sprite * __thiscall cocos2d::Label::getLetter(int)` |
+| `0x9a070` | `public: class std::vector<class cocos2d::BaseLight *,class std::allocator<class cocos2d::BaseLight *> > const & __thiscall cocos2d::Scene::getLights(void)const ` |
+| `0x21d310` | `public: virtual long __thiscall Rainbow::Exception::getLine(void)const ` |
+| `0x2d5f70` | `public: struct cocos2d::Color4F __thiscall fairygui::GGraph::getLineColor(void)const ` |
+| `0x99e70` | `public: int __thiscall fairygui::GList::getLineCount(void)const ` |
+| `0x99b20` | `public: int __thiscall fairygui::GList::getLineGap(void)const ` |
+| `0x363e40` | `public: float __thiscall cocos2d::Label::getLineHeight(void)const ` |
+| `0x99a00` | `public: int __thiscall fairygui::GGraph::getLineSize(void)const ` |
+| `0x363e80` | `public: float __thiscall cocos2d::Label::getLineSpacing(void)const ` |
+| `0x35cce0` | `public: float __thiscall cocos2d::DrawNode::getLineWidth(void)` |
+| `0x2f0460` | `public: class cocos2d::Rect __thiscall fairygui::GRichTextField::getLinkRect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x93a20` | `public: class fairygui::GList * __thiscall fairygui::PopupMenu::getList(void)const ` |
+| `0x3958d0` | `protected: class cocos2d::EventDispatcher::EventListenerVector * __thiscall cocos2d::EventDispatcher::getListeners(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0xd4020` | `public: void __thiscall Rainbow::MeshInstance::getLocalBounds(class Rainbow::BoxBound &)` |
+| `0x1d5820` | `public: virtual void __thiscall Rainbow::ModelLegacy::getLocalBounds(class Rainbow::BoxSphereBound &)` |
+| `0x1d5920` | `public: virtual void __thiscall Rainbow::ModelNew::getLocalBounds(class Rainbow::BoxSphereBound &)` |
+| `0x9a080` | `public: virtual int __thiscall cocos2d::Node::getLocalZOrder(void)const ` |
+| `0x399ae0` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getLocation(void)const ` |
+| `0x399b00` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getLocationInView(void)const ` |
+| `0xa16c0` | `public: __int64 __thiscall Rainbow::UILib::Invocation::getLong(void)const ` |
+| `0x9a090` | `public: bool __thiscall fairygui::GLoader3D::getLoop(void)const ` |
+| `0x933c0` | `public: bool __thiscall spine::TrackEntry::getLoop(void)` |
+| `0x301230` | `private: float __thiscall fairygui::ScrollPane::getLoopPartSize(float,int)` |
+| `0x937f0` | `public: unsigned int __thiscall cocos2d::Animation::getLoops(void)const ` |
+| `0x24eb80` | `public: double __thiscall MINIW::ScriptVM::getLuaMemCount(void)` |
+| `0x93ab0` | `public: class cocos2d::CCLuaStack * __thiscall cocos2d::LuaEngine::getLuaStack(void)` |
+| `0x24ebd0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ScriptVM::getLuaStack(void)` |
+| `0x99ad0` | `public: struct lua_State * __thiscall MINIW::ScriptVM::getLuaState(void)` |
+| `0x21dc40` | `public: void __thiscall MINIW::Md5Context::getMD5Base16Str(char *)` |
+| `0x9a0e0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getMainboardType(void)` |
+| `0x11ef00` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getMainbord(void)` |
+| `0x2990c0` | `public: class std::unordered_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Value,struct std::hash<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,struct std::equal_to<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Value> > > const & __thiscall CsvTable::getMap(int,char const *)` |
+| `0x2991f0` | `public: class std::unordered_map<int,class Value,struct std::hash<int>,struct std::equal_to<int>,class std::allocator<struct std::pair<int const ,class Value> > > const & __thiscall CsvTable::getMapIntKey(int,char const *)` |
+| `0x9a0a0` | `public: class fairygui::Margin const & __thiscall fairygui::GComponent::getMargin(void)` |
+| `0x2d3390` | `public: class cocos2d::Node * __thiscall fairygui::GComponent::getMask(void)const ` |
+| `0x9a0b0` | `public: class fairygui::FUIContainer * __thiscall fairygui::ScrollPane::getMaskContainer(void)` |
+| `0x99870` | `public: class Rainbow::MaterialInstance * __thiscall Rainbow::SubMeshData::getMaterial(void)` |
+| `0x99ad0` | `public: class Rainbow::MaterialInstance * __thiscall Rainbow::SubMeshInstance::getMaterial(void)` |
+| `0x3adb70` | `public: class Rainbow::SharePtr<class Rainbow::MaterialInstance> __thiscall cocos2d::ModelViewCommand::getMaterialInstance(void)` |
+| `0x38de30` | `public: class Rainbow::Matrix4x4f const & __thiscall cocos2d::Director::getMatrix(enum cocos2d::MATRIX_STACK_TYPE)const ` |
+| `0x6ac00` | `public: class Rainbow::Vector3f __thiscall Rainbow::BoxSphereBound::getMax(void)const ` |
+| `0x9a0c0` | `public: double __thiscall fairygui::GProgressBar::getMax(void)const ` |
+| `0xa0120` | `public: float __thiscall Rainbow::GaussGenerator::getMax(void)const ` |
+| `0x99d10` | `public: int __thiscall Rainbow::UILib::EditBox::getMaxChar(void)` |
+| `0x21d310` | `public: int __thiscall Rainbow::MoveByTextMgr::getMaxCount(void)` |
+| `0x2f6df0` | `public: int __thiscall fairygui::GTextInput::getMaxLength(void)` |
+| `0x9a0d0` | `public: float __thiscall cocos2d::Label::getMaxLineWidth(void)` |
+| `0x6abf0` | `public: class Rainbow::Vector3f const & __thiscall Rainbow::BoxBound::getMaxPos(void)const ` |
+| `0x9a0e0` | `public: class cocos2d::Size const & __thiscall fairygui::GObject::getMaxSize(void)const ` |
+| `0x3a8ff0` | `public: float __thiscall cocos2d::Rect::getMaxX(void)const ` |
+| `0x3a9000` | `public: float __thiscall cocos2d::Rect::getMaxY(void)const ` |
+| `0x158470` | `public: float __thiscall Rainbow::GaussGenerator::getMean(void)const ` |
+| `0xe6db0` | `public: unsigned int __thiscall Rainbow::IndexData::getMemSize(void)` |
+| `0xe6dd0` | `public: unsigned int __thiscall Rainbow::OgreVertexData::getMemSize(void)` |
+| `0x1db7e0` | `public: class Rainbow::MeshData const * __thiscall Rainbow::ModelData::getMeshByName(class Rainbow::FixedString const &)const ` |
+| `0x224d30` | `public: unsigned int __thiscall Rainbow::Timer::getMicroseconds(void)` |
+| `0x224d40` | `public: unsigned int __thiscall Rainbow::Timer::getMicrosecondsCPU(void)` |
+| `0x3a9010` | `public: float __thiscall cocos2d::Rect::getMidX(void)const ` |
+| `0x3a9020` | `public: float __thiscall cocos2d::Rect::getMidY(void)const ` |
+| `0x9a0f0` | `public: unsigned __int64 __thiscall cocos2d::Director::getMillSecond(void)` |
+| `0x224d70` | `public: unsigned int __thiscall Rainbow::Timer::getMilliseconds(void)` |
+| `0x224d80` | `public: unsigned int __thiscall Rainbow::Timer::getMillisecondsCPU(void)` |
+| `0x6ac40` | `public: class Rainbow::Vector3f __thiscall Rainbow::BoxSphereBound::getMin(void)const ` |
+| `0x9a100` | `public: double __thiscall fairygui::GProgressBar::getMin(void)const ` |
+| `0x14df40` | `public: float __thiscall Rainbow::GaussGenerator::getMin(void)const ` |
+| `0x68e10` | `public: class Rainbow::Vector3f const & __thiscall Rainbow::BoxBound::getMinPos(void)const ` |
+| `0x9a110` | `public: class cocos2d::Size const & __thiscall fairygui::GObject::getMinSize(void)const ` |
+| `0x158460` | `public: float __thiscall cocos2d::Rect::getMinX(void)const ` |
+| `0x158470` | `public: float __thiscall cocos2d::Rect::getMinY(void)const ` |
+| `0x3cfb10` | `public: float __thiscall spine::AnimationStateData::getMix(class spine::Animation *,class spine::Animation *)` |
+| `0x93810` | `public: enum spine::MixBlend __thiscall spine::TrackEntry::getMixBlend(void)` |
+| `0x3cea90` | `public: float __thiscall spine::TrackEntry::getMixDuration(void)` |
+| `0x3774a0` | `public: float __thiscall spine::TrackEntry::getMixTime(void)` |
+| `0x93a30` | `public: class spine::TrackEntry * __thiscall spine::TrackEntry::getMixingFrom(void)` |
+| `0x93a20` | `public: class spine::TrackEntry * __thiscall spine::TrackEntry::getMixingTo(void)` |
+| `0x2f1660` | `public: class fairygui::GGraph * __thiscall fairygui::GRoot::getModalLayer(void)` |
+| `0x2f1680` | `public: class fairygui::GObject * __thiscall fairygui::GRoot::getModalWaitingPane(void)` |
+| `0x99b40` | `public: class fairygui::GObject * __thiscall fairygui::Window::getModalWaitingPane(void)const ` |
+| `0x2151e0` | `public: virtual void __thiscall Rainbow::FmodSound::getMode(unsigned int *)` |
+| `0x31d9f0` | `public: struct fairygui::ModelAngle __thiscall fairygui::FUIModelSprite::getModelAngle(int)` |
+| `0x169340` | `public: struct Rainbow::UILib::ModelAngle __thiscall Rainbow::UILib::ModelView::getModelAngle(int)` |
+| `0x9a120` | `public: class Rainbow::Vector2f __thiscall cocos2d::ModelViewCommand::getModelPos(void)` |
+| `0x38dea0` | `public: class Rainbow::FMaterial * __thiscall cocos2d::Director::getModelView3DMatIns(void)` |
+| `0x3c36f0` | `public: class cocos2d::Size __thiscall cocos2d::GLViewImpl::getMonitorSize(void)const ` |
+| `0x9a140` | `public: enum cocos2d::EventMouse::MouseButton __thiscall cocos2d::EventMouse::getMouseButton(void)const ` |
+| `0x9a150` | `public: bool __thiscall fairygui::GObject::getMovePass(void)const ` |
+| `0xdcd40` | `public: class Rainbow::MaterialParamTrack * __thiscall Rainbow::AnimationData::getMtlParamTrack(unsigned int)` |
+| `0x9a160` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const & __thiscall cocos2d::Director::getMultiLocalFontsPath(void)` |
+| `0x3830e0` | `public: class spine::String const & __thiscall spine::Animation::getName(void)` |
+| `0x9a170` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::Component::getName(void)const ` |
+| `0x299220` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall CsvTable::getName(void)` |
+| `0xc1350` | `public: class spine::String const & __thiscall spine::EventData::getName(void)const ` |
+| `0x9a180` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall fairygui::GObject::getName(void)` |
+| `0xc1350` | `public: class Rainbow::NoFreeFixedString const & __thiscall Rainbow::MaterialTemplate::getName(void)` |
+| `0xd4140` | `public: class Rainbow::FixedString const & __thiscall Rainbow::MeshInstance::getName(void)` |
+| `0x3767c0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::Node::getName(void)const ` |
+| `0x2e8490` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::NotificationObserver::getName(void)const ` |
+| `0xc1350` | `public: class spine::String const & __thiscall spine::SkeletonData::getName(void)` |
+| `0xc1350` | `public: class spine::String const & __thiscall spine::Skin::getName(void)` |
+| `0x2576c0` | `public: class spine::String const & __thiscall spine::SlotData::getName(void)` |
+| `0x31da60` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getNewPosition(float,float,float,float,float,float)` |
+| `0x1693b0` | `public: void __thiscall Rainbow::UILib::ModelView::getNewPosition(float,float,float,float,float,float,float &,float &,float &)const ` |
+| `0x31dca0` | `public: class Rainbow::Vector3f __thiscall fairygui::FUIModelSprite::getNewRotationEuler(float,float,float)` |
+| `0x1695f0` | `public: void __thiscall Rainbow::UILib::ModelView::getNewRotationEuler(float,float,float,float &,float &,float &)const ` |
+| `0x935a0` | `public: class spine::TrackEntry * __thiscall spine::TrackEntry::getNext(void)` |
+| `0x2f8b20` | `public: class fairygui::GTreeNode * __thiscall fairygui::GTreeNode::getNextSibling(void)const ` |
+| `0x3767d0` | `public: virtual struct cocos2d::AffineTransform __thiscall cocos2d::Node::getNodeToParentAffineTransform(class cocos2d::Node *)const ` |
+| `0x376870` | `public: virtual struct cocos2d::AffineTransform __thiscall cocos2d::Node::getNodeToParentAffineTransform(void)const ` |
+| `0x376890` | `public: virtual class Rainbow::Matrix4x4f __thiscall cocos2d::Node::getNodeToParentTransform(class cocos2d::Node *)const ` |
+| `0x376a30` | `public: virtual class Rainbow::Matrix4x4f const & __thiscall cocos2d::Node::getNodeToParentTransform(void)const ` |
+| `0x3772d0` | `public: virtual struct cocos2d::AffineTransform __thiscall cocos2d::Node::getNodeToWorldAffineTransform(void)const ` |
+| `0x3772f0` | `public: virtual class Rainbow::Matrix4x4f __thiscall cocos2d::Node::getNodeToWorldTransform(void)const ` |
+| `0xd4160` | `public: char * __thiscall Rainbow::OgreVertexData::getNormal(unsigned int)` |
+| `0x3a7db0` | `class std::vector<float,class std::allocator<float> > __cdecl cocos2d::utils::getNormalMat3OfMat4(class Rainbow::Matrix4x4f const &)` |
+| `0x9a1a0` | `public: virtual class Rainbow::Vector2f const & __thiscall cocos2d::Node::getNormalizedPosition(void)const ` |
+| `0x9a1b0` | `public: float __thiscall fairygui::GTweener::getNormalizedTime(void)const ` |
+| `0x99f00` | `public: class cocos2d::Node * __thiscall cocos2d::Director::getNotificationNode(void)const ` |
+| `0x9a290` | `public: int __thiscall Rainbow::ProgressBarIn3D::getNowValue(void)` |
+| `0x9a290` | `public: int __thiscall Rainbow::StoveProgressBar3D::getNowValue(void)` |
+| `0xd5d80` | `public: unsigned int __thiscall Rainbow::SkeletonComponent::getNumBone(void)` |
+| `0x9a1c0` | `public: unsigned int __thiscall Rainbow::SkeletonData::getNumBone(void)` |
+| `0xdcd60` | `public: unsigned int __thiscall Rainbow::AnimationData::getNumBoneTrack(void)` |
+| `0xd41a0` | `public: unsigned int __thiscall Rainbow::VertexFormat::getNumElements(void)const ` |
+| `0x99ad0` | `public: unsigned int __thiscall Rainbow::IndexData::getNumIndex(void)` |
+| `0xd41b0` | `public: unsigned int __thiscall Rainbow::SubMeshInstance::getNumIndex(void)` |
+| `0x2da3c0` | `public: int __thiscall fairygui::GList::getNumItems(void)` |
+| `0x9a1d0` | `public: unsigned int __thiscall Rainbow::ModelData::getNumMesh(void)` |
+| `0xdcd80` | `public: unsigned int __thiscall Rainbow::AnimationData::getNumMtlParamTrack(void)` |
+| `0x93af0` | `public: int __thiscall Rainbow::MeshInstance::getNumSubMesh(void)` |
+| `0xd41c0` | `public: unsigned int __thiscall Rainbow::MeshInstance::getNumVertex(void)` |
+| `0x937f0` | `public: virtual unsigned int __thiscall Rainbow::OgreVertexData::getNumVertex(void)` |
+| `0xd41f0` | `public: unsigned int __thiscall Rainbow::SubMeshInstance::getNumVertex(void)` |
+| `0x937e0` | `public: virtual int __thiscall Rainbow::Exception::getNumber(void)const ` |
+| `0x377310` | `public: long __thiscall cocos2d::Node::getNumberOfRunningActions(void)const ` |
+| `0x377320` | `public: long __thiscall cocos2d::Node::getNumberOfRunningActionsByTag(int)const ` |
+| `0x2f1710` | `public: class fairygui::GObject * __thiscall fairygui::GRoot::getObjByPos(class Rainbow::Vector2f const &)const ` |
+| `0x9a1e0` | `public: __int64 __thiscall Rainbow::AnimationData::getObjId(void)` |
+| `0x99f00` | `public: class cocos2d::Ref * __thiscall cocos2d::DictElement::getObject(void)const ` |
+| `0x93a30` | `public: void * __thiscall Rainbow::UILib::Invocation::getObject(void)const ` |
+| `0x24ed90` | `public: class cocos2d::Ref * __thiscall cocos2d::__Array::getObjectAtIndex(long)` |
+| `0x409e70` | `public: int __thiscall cocos2d::__NotificationCenter::getObserverHandlerByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9a1f0` | `public: class Rainbow::Vector2f const & __thiscall cocos2d::Sprite::getOffsetPosition(void)const ` |
+| `0x9a200` | `public: class std::function<void __cdecl(void)> const & __thiscall cocos2d::Node::getOnEnterCallback(void)const ` |
+| `0x9a210` | `public: class std::function<void __cdecl(void)> const & __thiscall cocos2d::Node::getOnEnterTransitionDidFinishCallback(void)const ` |
+| `0x9a220` | `public: class std::function<void __cdecl(void)> const & __thiscall cocos2d::Node::getOnExitCallback(void)const ` |
+| `0x9a230` | `public: class std::function<void __cdecl(void)> const & __thiscall cocos2d::Node::getOnExitTransitionDidStartCallback(void)const ` |
+| `0x2fa7a0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::GUIGenIcon::getOneDoubleWeaponTexture(class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,class fairygui::GLoader &,int)` |
+| `0x2faaf0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::GUIGenIcon::getOneDoubleWeaponTexture(class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::UILib::UITexture &,int)` |
+| `0x2fae40` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::GUIGenIcon::getOneDoubleWeaponTexture(class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,class Rainbow::SharePtr<class Rainbow::Texture2D> &,int)` |
+| `0x2f5280` | `public: unsigned char __thiscall fairygui::GBasicTextField::getOpacity(void)` |
+| `0x377340` | `public: virtual unsigned char __thiscall cocos2d::Node::getOpacity(void)const ` |
+| `0x9a240` | `public: bool __thiscall fairygui::GComponent::getOpaque(void)const ` |
+| `0x1a7cd0` | `public: struct Rainbow::SequenceMap::SeqDesc * __thiscall Rainbow::SequenceMap::getOrCreateSequenceDesc(int)` |
+| `0x2e84a0` | `public: class fairygui::FUIModelSprite * __thiscall fairygui::GLoader3D::getOrInitModelView(void)` |
+| `0xc1350` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall winSystemInfo::getOriMAC(void)` |
+| `0x93a20` | `public: class cocos2d::Node * __thiscall cocos2d::Action::getOriginalTarget(void)const ` |
+| `0x9a250` | `public: float __thiscall cocos2d::Label::getOutlineSize(void)const ` |
+| `0x363e90` | `public: enum cocos2d::Label::Overflow __thiscall cocos2d::Label::getOverflow(void)const ` |
+| `0x9a110` | `public: class cocos2d::Size & __thiscall fairygui::ScrollPane::getOverlapSize(void)` |
+| `0x93a30` | `public: class cocos2d::Node * __thiscall cocos2d::Component::getOwner(void)const ` |
+| `0x9a260` | `public: class fairygui::GComponent * __thiscall fairygui::ScrollPane::getOwner(void)const ` |
+| `0x9a140` | `public: class fairygui::GComponent * __thiscall fairygui::Transition::getOwner(void)const ` |
+| `0x99ed0` | `public: class fairygui::PackageItem * __thiscall fairygui::GObject::getPackageItem(void)const ` |
+| `0xa16d0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::ZipFilePkg::getPackagePath(void)` |
+| `0x9a270` | `public: class fairygui::GController * __thiscall fairygui::ScrollPane::getPageController(void)const ` |
+| `0x2cd5b0` | `public: int __thiscall fairygui::GController::getPageCount(void)const ` |
+| `0x2cd5d0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GController::getPageId(int)const ` |
+| `0x2cd5f0` | `public: int __thiscall fairygui::GController::getPageIndexById(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2cd610` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GController::getPageNameById(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x301280` | `public: int __thiscall fairygui::ScrollPane::getPageX(void)const ` |
+| `0x301300` | `public: int __thiscall fairygui::ScrollPane::getPageY(void)const ` |
+| `0xc1350` | `public: class spine::Vector<class spine::AtlasPage *> & __thiscall spine::Atlas::getPages(void)` |
+| `0x21d310` | `public: class spine::Bone * __thiscall spine::Bone::getParent(void)` |
+| `0x9a280` | `public: class fairygui::GComponent * __thiscall fairygui::GController::getParent(void)const ` |
+| `0x9a290` | `public: class fairygui::GComponent * __thiscall fairygui::GObject::getParent(void)const ` |
+| `0x93a20` | `public: class fairygui::GTreeNode * __thiscall fairygui::GTreeNode::getParent(void)const ` |
+| `0x9a2a0` | `public: virtual class cocos2d::Node * __thiscall cocos2d::Node::getParent(void)` |
+| `0x9a2a0` | `public: virtual class cocos2d::Node const * __thiscall cocos2d::Node::getParent(void)const ` |
+| `0x1db820` | `public: class Rainbow::BoneData * __thiscall Rainbow::ModelData::getParentBoneData(class Rainbow::FixedString const &)` |
+| `0x377350` | `public: virtual struct cocos2d::AffineTransform __thiscall cocos2d::Node::getParentToNodeAffineTransform(void)const ` |
+| `0x377370` | `public: virtual class Rainbow::Matrix4x4f const & __thiscall cocos2d::Node::getParentToNodeTransform(void)const ` |
+| `0x3e04e0` | `public: class spine::Vector<class spine::PathConstraint *> & __thiscall spine::Skeleton::getPathConstraints(void)` |
+| `0x21d300` | `public: class spine::Vector<class spine::PathConstraintData *> & __thiscall spine::SkeletonData::getPathConstraints(void)` |
+| `0x301380` | `public: float __thiscall fairygui::ScrollPane::getPercX(void)const ` |
+| `0x3013c0` | `public: float __thiscall fairygui::ScrollPane::getPercY(void)const ` |
+| `0x9a2b0` | `public: class Rainbow::UILib::RPictureCodeMap * __thiscall Rainbow::UILib::FrameManager::getPictureCodeMap(void)` |
+| `0x215520` | `public: virtual float __thiscall Rainbow::FmodSound::getPitch(void)` |
+| `0x9a2c0` | `public: class Rainbow::Vector2f const & __thiscall fairygui::GObject::getPivot(void)const ` |
+| `0x999f0` | `public: class fairygui::ActionMovieClip * __thiscall fairygui::GLoader::getPlayAction(void)` |
+| `0x169870` | `public: void __thiscall Rainbow::UILib::ModelView::getPointToScreen(float &,float &,class Rainbow::IActorBody *,int,int)` |
+| `0x37d240` | `public: class cocos2d::PolygonInfo const & __thiscall cocos2d::Sprite::getPolygonInfo(void)const ` |
+| `0x9a2d0` | `public: float __thiscall fairygui::ScrollPane::getPosX(void)const ` |
+| `0x93d30` | `public: float __thiscall fairygui::ScrollPane::getPosY(void)const ` |
+| `0x3773d0` | `public: virtual class Rainbow::Vector3f __thiscall cocos2d::Node::getPosition3D(void)const ` |
+| `0x133cf0` | `public: class Rainbow::Vector3f __thiscall Rainbow::UILib::CoordInteract::getPosition(void)` |
+| `0x215550` | `public: virtual unsigned int __thiscall Rainbow::FmodSound::getPosition(void)` |
+| `0x9a2e0` | `public: class Rainbow::Vector2f const & __thiscall fairygui::GObject::getPosition(void)const ` |
+| `0x1698d0` | `public: void __thiscall Rainbow::UILib::ModelView::getPosition(float &,float &,float &)const ` |
+| `0x2946f0` | `public: virtual class Rainbow::Vector2f const & __thiscall cocos2d::Node::getPosition(void)const ` |
+| `0x3773f0` | `public: virtual void __thiscall cocos2d::Node::getPosition(float *,float *)const ` |
+| `0xd4200` | `public: char * __thiscall Rainbow::OgreVertexData::getPosition(unsigned int)` |
+| `0x93700` | `public: virtual class Rainbow::Vector2f const & __thiscall cocos2d::Node::getPositionNormalized(void)const ` |
+| `0x9a680` | `public: virtual float __thiscall cocos2d::Node::getPositionX(void)const ` |
+| `0x99c20` | `public: virtual float __thiscall cocos2d::Node::getPositionY(void)const ` |
+| `0x377410` | `public: virtual float __thiscall cocos2d::Node::getPositionZ(void)const ` |
+| `0x2f1740` | `public: class Rainbow::Vector2f __thiscall fairygui::GRoot::getPoupPosition(class fairygui::GObject *,class fairygui::GObject *,enum fairygui::PopupDirection)` |
+| `0x30d7b0` | `public: class Rainbow::Vector2f __thiscall fairygui::UI3DRoot::getPoupPosition(class fairygui::GObject *,class fairygui::GObject *,enum fairygui::PopupDirection)` |
+| `0x2f8b60` | `public: class fairygui::GTreeNode * __thiscall fairygui::GTreeNode::getPrevSibling(void)const ` |
+| `0x399b20` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getPreviousLocation(void)const ` |
+| `0x399b40` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getPreviousLocationInView(void)const ` |
+| `0x2cd650` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GController::getPreviousPage(void)const ` |
+| `0x2cd670` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GController::getPreviousPageId(void)const ` |
+| `0x934a0` | `public: int __thiscall fairygui::GController::getPrevisousIndex(void)const ` |
+| `0xdcd90` | `public: int __thiscall Rainbow::BaseAnimationData::getPriority(int)` |
+| `0x9a0b0` | `public: enum cocos2d::Director::Projection __thiscall cocos2d::Director::getProjection(void)` |
+| `0x2cea90` | `public: virtual class cocos2d::Value __thiscall fairygui::GButton::getProp(enum fairygui::ObjectPropID)` |
+| `0x2d0900` | `public: virtual class cocos2d::Value __thiscall fairygui::GComboBox::getProp(enum fairygui::ObjectPropID)` |
+| `0x2d5f90` | `public: virtual class cocos2d::Value __thiscall fairygui::GGraph::getProp(enum fairygui::ObjectPropID)` |
+| `0x2d7fe0` | `public: virtual class cocos2d::Value __thiscall fairygui::GImage::getProp(enum fairygui::ObjectPropID)` |
+| `0x2e85a0` | `public: virtual class cocos2d::Value __thiscall fairygui::GLoader3D::getProp(enum fairygui::ObjectPropID)` |
+| `0x2e0e30` | `public: virtual class cocos2d::Value __thiscall fairygui::GLoader::getProp(enum fairygui::ObjectPropID)` |
+| `0x2ebaf0` | `public: virtual class cocos2d::Value __thiscall fairygui::GObject::getProp(enum fairygui::ObjectPropID)` |
+| `0x37ab60` | `public: virtual class cocos2d::Node * __thiscall cocos2d::ProtectedNode::getProtectedChildByTag(int)` |
+| `0x11ef00` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::SkinTextColorLoaderBase::getQRColor(void)const ` |
+| `0x9a2f0` | `public: struct cocos2d::V3F_C4B_T2F_Quad __thiscall cocos2d::Sprite::getQuad(void)const ` |
+| `0x935c0` | `public: float __thiscall czy::LeastSquaresFit::getRMSE(void)` |
+| `0x3d1300` | `public: virtual class spine::RTTI const & __thiscall spine::AtlasAttachmentLoader::getRTTI(void)const ` |
+| `0x3d2370` | `public: virtual class spine::RTTI const & __thiscall spine::Bone::getRTTI(void)const ` |
+| `0xd0fa0` | `public: float __thiscall czy::LeastSquaresFit::getR_square(void)` |
+| `0x14df40` | `public: float __thiscall spine::SwirlVertexEffect::getRadius(void)` |
+| `0x6ac80` | `public: float __thiscall Rainbow::BoxBound::getRadiusInDirection(class Rainbow::Vector3f const &)const ` |
+| `0x405570` | `public: class cocos2d::Ref * __thiscall cocos2d::__Array::getRandomObject(void)` |
+| `0x99e90` | `public: class cocos2d::Size const & __thiscall cocos2d::GLView::getRawDesignResolutionSize(void)const ` |
+| `0x30c070` | `public: class Rainbow::Vector2f __thiscall fairygui::UI3DRenderer::getRaycastHitPostion(void)` |
+| `0x1adf70` | `public: int __thiscall MINIW::WebSocket::getReadyState(void)` |
+| `0x30e680` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl fairygui::UIConfig::getRealFontName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool *)` |
+| `0x258910` | `public: void __thiscall Rainbow::Image3D::getRealSize(float &,float &)` |
+| `0x25c3e0` | `public: void __thiscall Rainbow::ItemImage3D::getRealSize(float &,float &)` |
+| `0x2723a0` | `public: void __thiscall Rainbow::Voice3D::getRealSize(float &,float &)` |
+| `0x99b60` | `public: class fairygui::InputEvent * __thiscall fairygui::InputProcessor::getRecentInput(void)` |
+| `0x93ab0` | `public: unsigned int __thiscall cocos2d::Ref::getReferenceCount(void)const ` |
+| `0x3cb090` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall winSystemInfo::getRegDeviceStr(void)` |
+| `0x18a830` | `public: int __thiscall Rainbow::UILib::UITexture::getRelHeight(void)` |
+| `0x9a2b0` | `public: int __thiscall Rainbow::UILib::UITexture::getRelWidth(void)` |
+| `0x9a310` | `public: class fairygui::GController * __thiscall fairygui::GButton::getRelatedController(void)const ` |
+| `0x21e620` | `public: void __thiscall MINIW::WorldRay::getRelativeRay(class MINIW::Ray &)const ` |
+| `0x21e670` | `public: void __thiscall MINIW::WorldRay::getRelativeRay(class MINIW::Ray &,class Rainbow::WorldPos const &)const ` |
+| `0x2fb1b0` | `public: class cocos2d::Size __thiscall fairygui::GUIRenderTexture::getRenderNodeSize(void)` |
+| `0x9a320` | `public: enum cocos2d::RenderSpaceMode __thiscall fairygui::GObject::getRenderSpaceMode(void)` |
+| `0x9a330` | `public: enum cocos2d::RenderSpaceMode __thiscall cocos2d::Node::getRenderSpaceMode(void)` |
+| `0x3b0960` | `public: enum cocos2d::RenderTargetFlag __thiscall cocos2d::Renderer::getRenderTargetFlag(void)const ` |
+| `0x30c1c0` | `public: class fairygui::FUIObjectBindGUIRenderTexture * __thiscall fairygui::UI3DRenderer::getRenderTexByInstanceID(int)` |
+| `0x320f20` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::FUIRenderTexture::getRenderTextureAsTexture2D(void)` |
+| `0x2fb2b0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall fairygui::GUIRenderTexture::getRenderTextureAsTexture2D(void)` |
+| `0x9a340` | `public: bool __thiscall cocos2d::Renderer::getRenderTextureFlag(void)` |
+| `0x320f50` | `public: class Rainbow::SharePtr<class Rainbow::RenderTextureHolder> __thiscall fairygui::FUIRenderTexture::getRenderTextureHolder(void)` |
+| `0x2fb2e0` | `public: class Rainbow::SharePtr<class Rainbow::RenderTextureHolder> __thiscall fairygui::GUIRenderTexture::getRenderTextureHolder(void)` |
+| `0x9a270` | `public: class cocos2d::Renderer * __thiscall cocos2d::Director::getRenderer(void)const ` |
+| `0x363ea0` | `public: float __thiscall cocos2d::Label::getRenderingFontSize(void)const ` |
+| `0x93480` | `public: int __thiscall fairygui::GTweener::getRepeat(void)const ` |
+| `0x11ef10` | `public: class Rainbow::ColorRGBA32 __thiscall Rainbow::SkinTextColorLoaderBase::getReplaceColor(class Rainbow::ColorRGBA32)const ` |
+| `0x93d20` | `public: enum ResolutionPolicy __thiscall cocos2d::GLView::getResolutionPolicy(void)const ` |
+| `0x9a350` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::Sprite::getResourceName(void)const ` |
+| `0x9a360` | `public: int __thiscall cocos2d::Sprite::getResourceType(void)const ` |
+| `0x2ebb50` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall fairygui::GObject::getResourceURL(void)const ` |
+| `0x9a370` | `public: bool __thiscall cocos2d::Animation::getRestoreOriginalFrame(void)const ` |
+| `0xf5530` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall cocos2d::PrettyPrinter::getResult(void)` |
+| `0x934c0` | `public: virtual int __thiscall cocos2d::GLView::getRetinaFactor(void)const ` |
+| `0x9a380` | `public: virtual int __thiscall cocos2d::GLViewImpl::getRetinaFactor(void)const ` |
+| `0xa16f0` | `public: enum Rainbow::UILib::DataType const & __thiscall Rainbow::UILib::Invocation::getReturnType(void)const ` |
+| `0x2ebce0` | `public: class fairygui::GComponent * __thiscall fairygui::GObject::getRoot(void)const ` |
+| `0x9a390` | `public: class fairygui::HUDRoot * __thiscall fairygui::HUDScene::getRoot(void)` |
+| `0x9a390` | `public: class fairygui::UI3DRoot * __thiscall fairygui::UI3DScene::getRoot(void)` |
+| `0x3e04f0` | `public: class spine::Bone * __thiscall spine::Skeleton::getRootBone(void)` |
+| `0x15ee10` | `public: class Rainbow::UILib::LayoutFrame * __thiscall Rainbow::UILib::LayoutFrame::getRootFrame(void)` |
+| `0x15ee30` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::UILib::LayoutFrame::getRootFrameName(void)const ` |
+| `0x1db840` | `public: bool __thiscall Rainbow::ModelData::getRootMatrix(class Rainbow::BoneData *,class Rainbow::Matrix4x4f &)` |
+| `0x31df10` | `public: float __thiscall fairygui::FUIModelSprite::getRotateAngle(int)` |
+| `0x169940` | `public: float __thiscall Rainbow::UILib::ModelView::getRotateAngle(int)` |
+| `0x133cf0` | `public: virtual class Rainbow::Vector3f __thiscall cocos2d::Node::getRotation3D(void)const ` |
+| `0x93710` | `public: float __thiscall spine::Bone::getRotation(void)` |
+| `0x133d10` | `public: virtual class Rainbow::Quaternionf __thiscall Rainbow::UILib::CoordInteract::getRotation(void)` |
+| `0x9a3a0` | `public: float __thiscall fairygui::GObject::getRotation(void)const ` |
+| `0x169970` | `public: void __thiscall Rainbow::UILib::ModelView::getRotation(float &,float &,float &,float &)const ` |
+| `0x99c80` | `public: virtual float __thiscall cocos2d::Node::getRotation(void)const ` |
+| `0x1699f0` | `public: void __thiscall Rainbow::UILib::ModelView::getRotationEuler(float &,float &,float &)const ` |
+| `0x377420` | `public: virtual class Rainbow::Quaternionf __thiscall cocos2d::Node::getRotationQuat(void)const ` |
+| `0x99c80` | `public: virtual float __thiscall cocos2d::Node::getRotationSkewX(void)const ` |
+| `0xd0fd0` | `public: virtual float __thiscall cocos2d::Node::getRotationSkewY(void)const ` |
+| `0x9a3b0` | `public: class cocos2d::Scene * __thiscall cocos2d::Director::getRunningScene(void)` |
+| `0x9a3c0` | `public: class cocos2d::Scene * __thiscall cocos2d::Director::getRunningUI3dScene(void)` |
+| `0x93710` | `public: float __thiscall czy::LeastSquaresFit::getSSE(void)` |
+| `0xd0fd0` | `public: float __thiscall czy::LeastSquaresFit::getSSR(void)` |
+| `0x3cb400` | `public: bool __thiscall winSystemInfo::getSZRegValue(struct HKEY__ *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x38df50` | `public: class cocos2d::Rect __thiscall cocos2d::Director::getSafeAreaRect(void)const ` |
+| `0x3a9f60` | `public: virtual class cocos2d::Rect __thiscall cocos2d::GLView::getSafeAreaRect(void)const ` |
+| `0x133d30` | `public: class Rainbow::Vector3f __thiscall Rainbow::UILib::CoordInteract::getScale(void)` |
+| `0x133d90` | `public: void __thiscall Rainbow::UILib::CoordInteract::getScale(class Rainbow::Vector3f &)` |
+| `0x9a3d0` | `public: class Rainbow::Vector2f const & __thiscall fairygui::GObject::getScale(void)const ` |
+| `0x169b10` | `public: void __thiscall Rainbow::UILib::ModelView::getScale(float &,float &,float &)const ` |
+| `0x93590` | `public: virtual float __thiscall cocos2d::Node::getScale(void)const ` |
+| `0x935c0` | `public: float __thiscall spine::Bone::getScaleX(void)` |
+| `0x377490` | `public: float __thiscall cocos2d::GLView::getScaleX(void)const ` |
+| `0x9a3e0` | `public: float __thiscall fairygui::GObject::getScaleX(void)const ` |
+| `0x93590` | `public: virtual float __thiscall cocos2d::Node::getScaleX(void)const ` |
+| `0x99e80` | `public: float __thiscall spine::Skeleton::getScaleX(void)` |
+| `0x3c36e0` | `public: float __thiscall spine::Bone::getScaleY(void)` |
+| `0x3774a0` | `public: float __thiscall cocos2d::GLView::getScaleY(void)const ` |
+| `0x9a3f0` | `public: float __thiscall fairygui::GObject::getScaleY(void)const ` |
+| `0x9a420` | `public: virtual float __thiscall cocos2d::Node::getScaleY(void)const ` |
+| `0x3e0500` | `public: float __thiscall spine::Skeleton::getScaleY(void)` |
+| `0x9a430` | `public: virtual float __thiscall cocos2d::Node::getScaleZ(void)const ` |
+| `0x377440` | `public: virtual class cocos2d::Scene * __thiscall cocos2d::Node::getScene(void)const ` |
+| `0x934a0` | `public: class cocos2d::Scheduler * __thiscall cocos2d::Director::getScheduler(void)const ` |
+| `0x9a400` | `public: virtual class cocos2d::Scheduler * __thiscall cocos2d::Node::getScheduler(void)` |
+| `0x9a400` | `public: virtual class cocos2d::Scheduler const * __thiscall cocos2d::Node::getScheduler(void)const ` |
+| `0x3a9f80` | `public: virtual class cocos2d::Rect __thiscall cocos2d::GLView::getScissorRect(void)const ` |
+| `0x3c3710` | `public: virtual class cocos2d::Rect __thiscall cocos2d::GLViewImpl::getScissorRect(void)const ` |
+| `0x3b0970` | `public: struct cocos2d::ScissorRect const & __thiscall cocos2d::Renderer::getScissorRect(void)const ` |
+| `0x3b0980` | `public: bool __thiscall cocos2d::Renderer::getScissorTest(void)const ` |
+| `0x149100` | `public: char const * __thiscall Rainbow::UILib::Frame::getScriptFunc(int)` |
+| `0x93a20` | `public: int __thiscall cocos2d::__NotificationCenter::getScriptHandler(void)const ` |
+| `0x149130` | `public: char const * __thiscall Rainbow::UILib::Frame::getScriptPlatform(int)` |
+| `0x934c0` | `public: virtual enum cocos2d::ccScriptType __thiscall cocos2d::LuaEngine::getScriptType(void)` |
+| `0x99eb0` | `public: class fairygui::ScrollPane * __thiscall fairygui::GComponent::getScrollPane(void)const ` |
+| `0x9a410` | `public: float __thiscall fairygui::ScrollPane::getScrollStep(void)const ` |
+| `0x93a30` | `public: enum fairygui::ScrollType __thiscall fairygui::ScrollPane::getScrollType(void)const ` |
+| `0x9a420` | `public: float __thiscall cocos2d::EventMouse::getScrollX(void)const ` |
+| `0x9a430` | `public: float __thiscall cocos2d::EventMouse::getScrollY(void)const ` |
+| `0x301480` | `public: float __thiscall fairygui::ScrollPane::getScrollingPosX(void)const ` |
+| `0x3014e0` | `public: float __thiscall fairygui::ScrollPane::getScrollingPosY(void)const ` |
+| `0x93560` | `public: float __thiscall cocos2d::Director::getSecondsPerFrame(void)` |
+| `0x13e0c0` | `public: int __thiscall Rainbow::UILib::EditBox::getSelBegin(void)` |
+| `0x99b40` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getSelBegin(void)` |
+| `0x9a440` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GButton::getSelectedIcon(void)const ` |
+| `0x9a450` | `public: int __thiscall fairygui::GComboBox::getSelectedIndex(void)const ` |
+| `0x93a90` | `public: int __thiscall fairygui::GController::getSelectedIndex(void)const ` |
+| `0x2da3e0` | `public: int __thiscall fairygui::GList::getSelectedIndex(void)const ` |
+| `0x2cd690` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GController::getSelectedPage(void)const ` |
+| `0x2cd6b0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GController::getSelectedPageId(void)const ` |
+| `0x9a460` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GButton::getSelectedTitle(void)const ` |
+| `0x2da4f0` | `public: class std::vector<int,class std::allocator<int> > __thiscall fairygui::GList::getSelection(void)` |
+| `0x2da6a0` | `public: void __thiscall fairygui::GList::getSelection(class std::vector<int,class std::allocator<int> > &)const ` |
+| `0x9a470` | `public: class fairygui::GController * __thiscall fairygui::GComboBox::getSelectionController(void)const ` |
+| `0x9a480` | `public: class fairygui::GController * __thiscall fairygui::GList::getSelectionController(void)const ` |
+| `0x9a490` | `public: enum fairygui::ListSelectionMode __thiscall fairygui::GList::getSelectionMode(void)const ` |
+| `0x93a20` | `public: void (__thiscall cocos2d::Ref::*__thiscall cocos2d::NotificationObserver::getSelector(void)const )(class cocos2d::Ref *)` |
+| `0x937f0` | `public: class cocos2d::Ref * __thiscall cocos2d::NotificationObserver::getSender(void)const ` |
+| `0xdcde0` | `public: struct Rainbow::SequenceDesc * __thiscall Rainbow::BaseAnimationData::getSequence(unsigned int)` |
+| `0xdce00` | `public: struct Rainbow::SequenceDesc * __thiscall Rainbow::BaseAnimationData::getSequenceById(int)` |
+| `0x1dba40` | `public: int __thiscall Rainbow::ModelData::getSequenceIdByIndex(int)` |
+| `0x1dba90` | `public: void __thiscall Rainbow::ModelData::getSequenceIdList(void)` |
+| `0xdce40` | `public: int __thiscall Rainbow::BaseAnimationData::getSequenceIndex(int)` |
+| `0x9a330` | `public: void * __thiscall fairygui::GLoader::getSequenceTexture(void)` |
+| `0xd0fe0` | `public: int __thiscall czy::LeastSquaresFit::getSeriesLength(class std::vector<float,class std::allocator<float> > const &,class std::vector<float,class std::allocator<float> > const &)` |
+| `0x9a4a0` | `public: float __thiscall cocos2d::Label::getShadowBlurRadius(void)const ` |
+| `0x9a4b0` | `public: struct cocos2d::Color4F __thiscall cocos2d::Label::getShadowColor(void)const ` |
+| `0x9a4d0` | `public: class cocos2d::Size __thiscall cocos2d::Label::getShadowOffset(void)const ` |
+| `0x99bf0` | `public: float __thiscall spine::Bone::getShearX(void)` |
+| `0x93590` | `public: float __thiscall spine::Bone::getShearY(void)` |
+| `0xa16a0` | `public: short __thiscall Rainbow::UILib::Invocation::getShort(void)const ` |
+| `0x35f080` | `protected: class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > __thiscall cocos2d::InputLabel::getShowStrSize(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,class cocos2d::Size const &,int)` |
+| `0x290670` | `public: static class WebSocketEventHandler & __cdecl WebSocketEventHandler::getSingleton(void)` |
+| `0x38df90` | `public: static class cocos2d::Director * __cdecl cocos2d::Director::getSingletonPtr(void)` |
+| `0x290680` | `public: static class WebSocketEventHandler * __cdecl WebSocketEventHandler::getSingletonPtr(void)` |
+| `0x93ab0` | `public: long __thiscall cocos2d::Data::getSize(void)const ` |
+| `0x9a4f0` | `public: class cocos2d::Size const & __thiscall fairygui::GObject::getSize(void)const ` |
+| `0x936f0` | `public: class spine::Skeleton & __thiscall spine::Bone::getSkeleton(void)` |
+| `0x3fb3b0` | `public: class spine::Skeleton * __thiscall spine::SkeletonRenderer::getSkeleton(void)const ` |
+| `0x21d310` | `public: class spine::Skeleton & __thiscall spine::Slot::getSkeleton(void)` |
+| `0x93ab0` | `public: class spine::SkeletonData * __thiscall spine::AnimationStateData::getSkeletonData(void)` |
+| `0x9a270` | `public: class Rainbow::SkeletonData * __thiscall Rainbow::ModelData::getSkeletonData(void)` |
+| `0x937d0` | `public: class Rainbow::SkeletonData * __thiscall Rainbow::SkeletonComponent::getSkeletonData(void)` |
+| `0x9a500` | `public: float __thiscall fairygui::GObject::getSkewX(void)const ` |
+| `0x377490` | `public: virtual float __thiscall cocos2d::Node::getSkewX(void)const ` |
+| `0x9a510` | `public: float __thiscall fairygui::GObject::getSkewY(void)const ` |
+| `0x3774a0` | `public: virtual float __thiscall cocos2d::Node::getSkewY(void)const ` |
+| `0x9a290` | `public: class spine::Skin * __thiscall spine::Skeleton::getSkin(void)` |
+| `0x9a520` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::UILib::SkinResource::getSkinCltDataDir(void)const ` |
+| `0x11c050` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::UILib::SkinResource::getSkinFixedResfileName(char const *)const ` |
+| `0x9a540` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GLoader3D::getSkinName(void)const ` |
+| `0x939e0` | `public: class spine::Vector<class spine::Skin *> & __thiscall spine::SkeletonData::getSkins(void)` |
+| `0xd1010` | `public: float __thiscall czy::LeastSquaresFit::getSlope(void)` |
+| `0xc0ba0` | `public: class spine::Vector<class spine::Slot *> & __thiscall spine::Skeleton::getSlots(void)` |
+| `0x2e8490` | `public: class spine::Vector<class spine::SlotData *> & __thiscall spine::SkeletonData::getSlots(void)` |
+| `0x2d33a0` | `public: virtual class Rainbow::Vector2f __thiscall fairygui::GComponent::getSnappingPosition(class Rainbow::Vector2f const &)` |
+| `0x2da800` | `public: virtual class Rainbow::Vector2f __thiscall fairygui::GList::getSnappingPosition(class Rainbow::Vector2f const &)` |
+| `0x9a550` | `public: int __thiscall fairygui::GObject::getSortingOrder(void)const ` |
+| `0x934c0` | `int __cdecl MINIW::getSoundState(void)` |
+| `0x9a560` | `public: float __thiscall fairygui::GRoot::getSoundVolumeScale(void)const ` |
+| `0x93800` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > const & __thiscall Rainbow::Exception::getSource(void)const ` |
+| `0x99cb0` | `public: class cocos2d::Size const & __thiscall fairygui::GObject::getSourceSize(void)const ` |
+| `0x6acf0` | `public: class Rainbow::SphereBound __thiscall Rainbow::BoxSphereBound::getSphere(void)const ` |
+| `0x9a010` | `public: class cocos2d::Sprite * __thiscall fairygui::FUIRenderTexture::getSprite(void)const ` |
+| `0x37d250` | `public: virtual class cocos2d::SpriteFrame * __thiscall cocos2d::Sprite::getSpriteFrame(void)const ` |
+| `0x21bbb0` | `public: float __thiscall Rainbow::GaussGenerator::getStandardDeviation(void)const ` |
+| `0x399b60` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getStartLocation(void)const ` |
+| `0x399b80` | `public: class Rainbow::Vector2f __thiscall cocos2d::EventMouse::getStartLocationInView(void)const ` |
+| `0x3e1ef0` | `public: class spine::AnimationState * __thiscall spine::SkeletonAnimation::getState(void)const ` |
+| `0x28fd30` | `public: int __thiscall WebSocketCallbackWrapper::getState(void)` |
+| `0x3c9b00` | `void (__cdecl*__cdecl MINIW::getStatisticsJson(void))(char const *)` |
+| `0x3182f0` | `public: class cocos2d::Node * __thiscall fairygui::FUIContainer::getStencil(void)const ` |
+| `0x3b0990` | `public: enum Rainbow::CompareFunction __thiscall cocos2d::Renderer::getStencilCompareFunction(void)const ` |
+| `0x3b09a0` | `public: enum Rainbow::StencilOp __thiscall cocos2d::Renderer::getStencilDepthPassOperation(void)const ` |
+| `0x3b09b0` | `public: enum Rainbow::StencilOp __thiscall cocos2d::Renderer::getStencilFailureOperation(void)const ` |
+| `0x3b09c0` | `public: enum Rainbow::StencilOp __thiscall cocos2d::Renderer::getStencilPassDepthFailureOperation(void)const ` |
+| `0x3b09d0` | `public: unsigned char __thiscall cocos2d::Renderer::getStencilReadMask(void)const ` |
+| `0x3b09e0` | `public: unsigned char __thiscall cocos2d::Renderer::getStencilReferenceValue(void)const ` |
+| `0x3b09f0` | `public: bool __thiscall cocos2d::Renderer::getStencilTest(void)const ` |
+| `0x3b0a00` | `public: unsigned char __thiscall cocos2d::Renderer::getStencilWriteMask(void)const ` |
+| `0x297060` | `public: int __thiscall CsvManager::getSteps(void)` |
+| `0x9a570` | `public: bool __thiscall fairygui::GObject::getStopMovePassNoMoveListener(void)` |
+| `0x68e10` | `public: char const * __thiscall cocos2d::DictElement::getStrKey(void)const ` |
+| `0xe6de0` | `public: unsigned int __thiscall Rainbow::OgreVertexData::getStride(void)` |
+| `0xe6df0` | `public: unsigned int __thiscall Rainbow::VertexFormat::getStride(void)const ` |
+| `0x299240` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall CsvTable::getString(int,char const *)` |
+| `0x21bbc0` | `public: void __thiscall Rainbow::GaussGenerator::getString(char *)const ` |
+| `0x35f510` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::InputLabel::getString(void)const ` |
+| `0x119160` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Rainbow::UILib::Invocation::getString(void)const ` |
+| `0x99e90` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::Label::getString(void)const ` |
+| `0x25db60` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > const __thiscall Rainbow::OnlyText3D::getString(void)` |
+| `0x2562a0` | `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > const & __thiscall Rainbow::TextBoardIn3D::getString(void)` |
+| `0x35f520` | `protected: int __thiscall cocos2d::InputLabel::getStringIndexByPos(class Rainbow::Vector2f const &)` |
+| `0x363f30` | `public: int __thiscall cocos2d::Label::getStringLength(void)` |
+| `0x363f40` | `public: int __thiscall cocos2d::Label::getStringNumLines(void)` |
+| `0x3d6840` | `public: class spine::String const & __thiscall spine::Event::getStringValue(void)` |
+| `0xc0ba0` | `public: class spine::String const & __thiscall spine::EventData::getStringValue(void)` |
+| `0x93ac0` | `public: class Rainbow::SubMeshData * __thiscall Rainbow::MeshData::getSubMesh(unsigned int)const ` |
+| `0x9a580` | `public: class Rainbow::SubMeshInstance * __thiscall Rainbow::MeshInstance::getSubMesh(unsigned int)` |
+| `0x9a5b0` | `public: class Rainbow::SubMeshData * __thiscall Rainbow::ModelData::getSubMesh(unsigned int,unsigned int)` |
+| `0x2a3040` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MultiResPath::getSubproject(void)` |
+| `0x1700b0` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getSumHeight(void)` |
+| `0x9a5d0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::Label::getSystemFontName(void)const ` |
+| `0x9a5e0` | `public: virtual float __thiscall cocos2d::Label::getSystemFontSize(void)const ` |
+| `0x224da0` | `public: static unsigned int __cdecl Rainbow::Timer::getSystemTick(void)` |
+| `0x9a5f0` | `public: virtual struct Rainbow::TTFConfig const & __thiscall cocos2d::Label::getTTFConfig(void)const ` |
+| `0x6ab40` | `public: int __thiscall cocos2d::Action::getTag(void)const ` |
+| `0x13fe40` | `public: virtual int __thiscall cocos2d::Node::getTag(void)const ` |
+| `0x335fa0` | `protected: void __thiscall fairygui::UBBParser::getTagText(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,bool)` |
+| `0x99ad0` | `public: class cocos2d::Node * __thiscall cocos2d::Action::getTarget(void)const ` |
+| `0x93460` | `public: void * __thiscall fairygui::GTweener::getTarget(void)const ` |
+| `0x93a30` | `public: class cocos2d::Ref * __thiscall cocos2d::NotificationObserver::getTarget(void)const ` |
+| `0xc1ee0` | `public: struct Rainbow::MaterialTemplate::TechCache * __thiscall Rainbow::MaterialTemplate::getTechByIndex(int)` |
+| `0x936e0` | `public: class cocos2d::Event * __thiscall fairygui::InputProcessor::getTempEvent(void)` |
+| `0x1e2580` | `public: class Rainbow::ParticleTemplate * __thiscall Rainbow::ParticleManager::getTemplate(char const *)` |
+| `0x152f30` | `public: class Rainbow::UILib::UIObject * __thiscall Rainbow::UILib::FrameManager::getTemplateObject(char const *)const ` |
+| `0x9a600` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GButton::getText(void)const ` |
+| `0x9a610` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GComboBox::getText(void)const ` |
+| `0x2ebae0` | `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GObject::getText(void)const ` |
+| `0x2f8ba0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GTreeNode::getText(void)const ` |
+| `0x194600` | `public: char const * __thiscall fairygui::GWebView::getText(void)` |
+| `0x2562b0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::NameText3D::getText(void)` |
+| `0x9a3d0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::NormalText3D::getText(void)` |
+| `0x2562b0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall Rainbow::Text3D::getText(void)` |
+| `0x99f30` | `public: enum cocos2d::TextHAlignment __thiscall cocos2d::Label::getTextAlignment(void)const ` |
+| `0x113f30` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getTextBegin(char const *,int)` |
+| `0x9a620` | `public: struct cocos2d::Color4B const & __thiscall cocos2d::Label::getTextColor(void)const ` |
+| `0x170100` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getTextCount(void)const ` |
+| `0x113f30` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getTextEnd(char const *,int)` |
+| `0x2ceb90` | `public: class fairygui::GTextField * __thiscall fairygui::GButton::getTextField(void)const ` |
+| `0x2d09d0` | `public: class fairygui::GTextField * __thiscall fairygui::GComboBox::getTextField(void)const ` |
+| `0x9a630` | `public: virtual class fairygui::TextFormat * __thiscall fairygui::GBasicTextField::getTextFormat(void)const ` |
+| `0x9a640` | `public: virtual class fairygui::TextFormat * __thiscall fairygui::GRichTextField::getTextFormat(void)const ` |
+| `0x9a650` | `public: virtual class fairygui::TextFormat * __thiscall fairygui::GTextInput::getTextFormat(void)const ` |
+| `0x170130` | `public: int __thiscall Rainbow::UILib::MultiEditBox::getTextIndexFromRichCharIndex(int)` |
+| `0x2652f0` | `public: void __thiscall Rainbow::NameText3D::getTextSize(float &,float &)` |
+| `0x26e420` | `public: void __thiscall Rainbow::Text3D::getTextSize(float &,float &)` |
+| `0x37d3d0` | `public: virtual class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall cocos2d::Sprite::getTexture(void)const ` |
+| `0x381520` | `public: virtual class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall cocos2d::SpriteBatchNode::getTexture(void)const ` |
+| `0x9a010` | `public: class cocos2d::TextureAtlas * __thiscall cocos2d::Sprite::getTextureAtlas(void)const ` |
+| `0x9a010` | `public: class cocos2d::TextureAtlas * __thiscall cocos2d::SpriteBatchNode::getTextureAtlas(void)` |
+| `0x3c5000` | `public: static class cocos2d::Data __cdecl cocos2d::Device::getTextureDataForText(char const *,struct cocos2d::FontDefinition const &,enum cocos2d::Device::TextAlign,int &,int &,bool &)` |
+| `0x11c210` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::SkinResource::getTextureHuiresXml(char const *)const ` |
+| `0x9a670` | `public: class cocos2d::Rect const & __thiscall cocos2d::Sprite::getTextureRect(void)const ` |
+| `0x2a3050` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __cdecl MultiResPath::getTexturesPath(bool)` |
+| `0xdce80` | `public: class std::set<unsigned int,struct std::less<unsigned int>,class std::allocator<unsigned int> > __thiscall Rainbow::AnimationData::getTicks(void)` |
+| `0xd87d0` | `public: void __thiscall Rainbow::BoneTrack::getTicks(class std::set<unsigned int,struct std::less<unsigned int>,class std::allocator<unsigned int> > &)` |
+| `0x21bbb0` | `public: float __thiscall spine::Event::getTime(void)` |
+| `0x9a7e0` | `public: float __thiscall spine::Skeleton::getTime(void)` |
+| `0x9a680` | `public: float __thiscall fairygui::ActionMovieClip::getTimeScale(void)const ` |
+| `0x9a690` | `public: float __thiscall cocos2d::Scheduler::getTimeScale(void)` |
+| `0x9a7d0` | `public: float __thiscall spine::SkeletonRenderer::getTimeScale(void)const ` |
+| `0x3b6670` | `public: float __thiscall spine::TrackEntry::getTimeScale(void)` |
+| `0x9a6a0` | `public: float __thiscall fairygui::Transition::getTimeScale(void)const ` |
+| `0x224e00` | `public: static unsigned __int64 __cdecl Rainbow::Timer::getTimeUS(void)` |
+| `0x31df40` | `public: class Rainbow::GameObject * __thiscall fairygui::FUIModelSprite::getTimelineRootObject(void)const ` |
+| `0x169b80` | `public: class Rainbow::GameObject * __thiscall Rainbow::UILib::ModelView::getTimelineRootObject(void)const ` |
+| `0xc1350` | `public: class spine::Vector<class spine::Timeline *> & __thiscall spine::Animation::getTimelines(void)` |
+| `0x2946f0` | `public: class MINIW::CSVParser::TableTitle const & __thiscall MINIW::CSVParser::getTitle(void)const ` |
+| `0x9a600` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GButton::getTitle(void)const ` |
+| `0x2d0aa0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GComboBox::getTitle(void)const ` |
+| `0x2cec70` | `public: struct cocos2d::Color3B __thiscall fairygui::GButton::getTitleColor(void)const ` |
+| `0x2d0ac0` | `public: struct cocos2d::Color3B const __thiscall fairygui::GComboBox::getTitleColor(void)const ` |
+| `0x2cecc0` | `public: int __thiscall fairygui::GButton::getTitleFontSize(void)const ` |
+| `0x2d0b10` | `public: int __thiscall fairygui::GComboBox::getTitleFontSize(void)const ` |
+| `0x9a470` | `public: enum fairygui::ProgressTitleType __thiscall fairygui::GProgressBar::getTitleType(void)const ` |
+| `0x9a6b0` | `public: int __thiscall GameUI::getTocListSize(void)` |
+| `0x9a6d0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GObject::getTooltips(void)const ` |
+| `0x2f1900` | `public: class fairygui::Window * __thiscall fairygui::GRoot::getTopWindow(void)` |
+| `0x2f1900` | `public: class fairygui::Window * __thiscall fairygui::UI3DRoot::getTopWindow(void)` |
+| `0x9a410` | `public: float __thiscall cocos2d::Animation::getTotalDelayUnits(void)const ` |
+| `0x9a6e0` | `public: unsigned int __thiscall cocos2d::Director::getTotalFrames(void)` |
+| `0x99840` | `public: int __thiscall Rainbow::ProgressBarIn3D::getTotalValue(void)` |
+| `0x99840` | `public: int __thiscall Rainbow::StoveProgressBar3D::getTotalValue(void)` |
+| `0x3277c0` | `private: class fairygui::TouchInfo * __thiscall fairygui::InputProcessor::getTouch(int,bool)` |
+| `0x2f1950` | `public: class Rainbow::Vector2f __thiscall fairygui::GRoot::getTouchPosition(int)` |
+| `0x327930` | `public: class Rainbow::Vector2f __thiscall fairygui::InputProcessor::getTouchPosition(int)` |
+| `0x2f1950` | `public: class Rainbow::Vector2f __thiscall fairygui::UI3DRoot::getTouchPosition(int)` |
+| `0x2f1970` | `public: class fairygui::GObject * __thiscall fairygui::GRoot::getTouchTarget(void)` |
+| `0x2f1970` | `public: class fairygui::GObject * __thiscall fairygui::UI3DRoot::getTouchTarget(void)` |
+| `0x93d30` | `public: float __thiscall spine::TrackEntry::getTrackEnd(void)` |
+| `0x99ad0` | `public: int __thiscall spine::TrackEntry::getTrackIndex(void)` |
+| `0x99c20` | `public: float __thiscall spine::TrackEntry::getTrackTime(void)` |
+| `0x99b60` | `public: class spine::Vector<class spine::TransformConstraint *> & __thiscall spine::Skeleton::getTransformConstraints(void)` |
+| `0x9a110` | `public: class spine::Vector<class spine::TransformConstraintData *> & __thiscall spine::SkeletonData::getTransformConstraints(void)` |
+| `0x2d34f0` | `public: class fairygui::Transition * __thiscall fairygui::GComponent::getTransition(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x2d3560` | `public: class fairygui::Transition * __thiscall fairygui::GComponent::getTransitionAt(int)const ` |
+| `0x9a6f0` | `public: class cocos2d::Vector<class fairygui::Transition *> const & __thiscall fairygui::GComponent::getTransitions(void)const ` |
+| `0x93a30` | `public: class fairygui::GTree * __thiscall fairygui::GTreeNode::getTree(void)const ` |
+| `0x225960` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl getTrimString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x3329e0` | `public: static class fairygui::GTweener * __cdecl fairygui::GTween::getTween(class cocos2d::Ref *)` |
+| `0x332a00` | `public: static class fairygui::GTweener * __cdecl fairygui::GTween::getTween(class cocos2d::Ref *,enum fairygui::TweenPropType)` |
+| `0x32d190` | `public: class fairygui::GearTweenConfig * __thiscall fairygui::GearBase::getTweenConfig(void)` |
+| `0xdd0e0` | `public: virtual enum Rainbow::AnimationType __thiscall Rainbow::AnimationData::getType(void)` |
+| `0x936f0` | `public: enum CSV::Type __thiscall Value::getType(void)const ` |
+| `0x936f0` | `public: enum cocos2d::Value::Type __thiscall cocos2d::Value::getType(void)const ` |
+| `0x30c240` | `public: class fairygui::UI3DRoot * __thiscall fairygui::UI3DRenderer::getUI3DRoot(void)` |
+| `0x936f0` | `public: class fairygui::UI3DScene * __thiscall fairygui::UI3DRenderer::getUI3DScene(void)` |
+| `0x153020` | `public: struct Rainbow::UILib::UIFont const & __thiscall Rainbow::UILib::FrameManager::getUIFontByIndex(int)const ` |
+| `0x153040` | `public: struct Rainbow::UILib::UIFont const * __thiscall Rainbow::UILib::FrameManager::getUIFontByName(char const *)const ` |
+| `0x1530b0` | `public: int __thiscall Rainbow::UILib::FrameManager::getUIFontIndexByName(char const *)const ` |
+| `0x9a700` | `public: class Rainbow::UIModelView3D * __thiscall fairygui::GModelView::getUIModel3D(void)` |
+| `0x9a710` | `public: class Rainbow::UIModelView3D * __thiscall fairygui::FUIModelSprite::getUIModelView3D(void)` |
+| `0x9a720` | `public: class fairygui::FUIRenderTexture * __thiscall fairygui::GUIRenderTexture::getUIRenderTexture(void)` |
+| `0x127cd0` | `public: struct Rainbow::UILib::UITargetEffect * __thiscall Rainbow::UILib::UIRenderer::getUITargetEffect(char const *)` |
+| `0x99f60` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GLoader3D::getURL(void)const ` |
+| `0x99ae0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GLoader::getURL(void)const ` |
+| `0x9a740` | `public: unsigned __int64 __thiscall fairygui::GObject::getUid(void)` |
+| `0x7e970` | `public: virtual int __thiscall Rainbow::IClientInfo::getUin(void)` |
+| `0x21d2f0` | `public: class spine::Vector<class spine::Updatable *> & __thiscall spine::Skeleton::getUpdateCacheList(void)` |
+| `0x9a750` | `public: class cocos2d::Value const & __thiscall fairygui::GTweener::getUserData(void)const ` |
+| `0x998a0` | `public: virtual void * __thiscall cocos2d::Node::getUserData(void)` |
+| `0x998a0` | `public: virtual void const * __thiscall cocos2d::Node::getUserData(void)const ` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::getUserManualData(void)` |
+| `0x998b0` | `public: virtual class cocos2d::Ref * __thiscall cocos2d::Node::getUserObject(void)` |
+| `0x998b0` | `public: virtual class cocos2d::Ref const * __thiscall cocos2d::Node::getUserObject(void)const ` |
+| `0xd9230` | `public: bool __thiscall Rainbow::BoneTrack::getValue(int,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &,bool)` |
+| `0x2d0b30` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall fairygui::GComboBox::getValue(void)const ` |
+| `0x9a760` | `public: double __thiscall fairygui::GProgressBar::getValue(void)const ` |
+| `0x406620` | `public: bool __thiscall cocos2d::__Bool::getValue(void)const ` |
+| `0x406630` | `public: double __thiscall cocos2d::__Double::getValue(void)const ` |
+| `0x9a410` | `public: float __thiscall cocos2d::__Float::getValue(void)const ` |
+| `0x93a20` | `public: int __thiscall cocos2d::__Integer::getValue(void)const ` |
+| `0x3c7840` | `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::getValueForSP(char const *)` |
+| `0x9a770` | `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall fairygui::GComboBox::getValues(void)` |
+| `0x299260` | `public: class std::vector<class Value,class std::allocator<class Value> > const & __thiscall CsvTable::getVector(int,char const *)` |
+| `0x6ad10` | `public: class Rainbow::Vector3f __thiscall WCoord::getVectorTo(class WCoord const &)` |
+| `0x3ee610` | `public: class spine::String const & __thiscall spine::SkeletonData::getVersion(void)` |
+| `0xd4240` | `public: char * __thiscall Rainbow::OgreVertexData::getVertexElement(unsigned int,enum Rainbow::VertexElementSemantic)` |
+| `0xd4280` | `public: class Rainbow::VertexElement const * __thiscall Rainbow::OgreVertexData::getVertexElement(enum Rainbow::VertexElementSemantic)` |
+| `0x9a780` | `public: enum cocos2d::TextVAlignment __thiscall fairygui::GList::getVerticalAlign(void)const ` |
+| `0x998b0` | `public: enum cocos2d::TextVAlignment __thiscall fairygui::GLoader3D::getVerticalAlign(void)const ` |
+| `0x9a400` | `public: enum cocos2d::TextVAlignment __thiscall fairygui::GLoader::getVerticalAlign(void)const ` |
+| `0x9a790` | `public: enum cocos2d::TextVAlignment __thiscall cocos2d::Label::getVerticalAlignment(void)const ` |
+| `0x1182b0` | `public: void __thiscall CoordAxis::getView2DPos(struct Rainbow::InputEvent const &)` |
+| `0x2d3580` | `public: float __thiscall fairygui::GComponent::getViewHeight(void)const ` |
+| `0x2946f0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall cocos2d::GLView::getViewName(void)const ` |
+| `0x11ef00` | `public: class cocos2d::Rect const & __thiscall cocos2d::GLView::getViewPortRect(void)const ` |
+| `0x9a7a0` | `public: class cocos2d::Size __thiscall cocos2d::ModelViewCommand::getViewPortSize(void)` |
+| `0x99cb0` | `public: class cocos2d::Size const & __thiscall fairygui::ScrollPane::getViewSize(void)const ` |
+| `0x2d35b0` | `public: float __thiscall fairygui::GComponent::getViewWidth(void)const ` |
+| `0x126270` | `public: class Rainbow::WorldPos const & __thiscall Rainbow::MiniGameScene::getViewpoint(void)` |
+| `0x68e10` | `public: struct cocos2d::Viewport const & __thiscall cocos2d::Renderer::getViewport(void)const ` |
+| `0x141f80` | `public: class Rainbow::UILib::tagRect_ToLua __thiscall Rainbow::UILib::FontString::getVirtualRenderRect(void)` |
+| `0x9af20` | `public: bool __thiscall Rainbow::MoveByTextMgr::getVisible(void)` |
+| `0x38dfa0` | `public: class Rainbow::Vector2f __thiscall cocos2d::Director::getVisibleOrigin(void)const ` |
+| `0x3aa000` | `public: virtual class Rainbow::Vector2f __thiscall cocos2d::GLView::getVisibleOrigin(void)const ` |
+| `0x3aa070` | `public: virtual class cocos2d::Rect __thiscall cocos2d::GLView::getVisibleRect(void)const ` |
+| `0x38dfe0` | `public: class cocos2d::Size __thiscall cocos2d::Director::getVisibleSize(void)const ` |
+| `0x3aa0c0` | `public: virtual class cocos2d::Size __thiscall cocos2d::GLView::getVisibleSize(void)const ` |
+| `0x9ae70` | `public: bool __thiscall Rainbow::Voice3D::getVoiceIconVisible(void)` |
+| `0x99c80` | `public: float __thiscall spine::Event::getVolume(void)` |
+| `0x3c36e0` | `public: float __thiscall spine::EventData::getVolume(void)` |
+| `0x215940` | `public: virtual float __thiscall Rainbow::FmodSound::getVolume(void)` |
+| `0x9a7c0` | `public: class fairygui::GScrollBar * __thiscall fairygui::ScrollPane::getVtScrollBar(void)const ` |
+| `0x93a80` | `public: float __thiscall fairygui::GObject::getWidth(void)const ` |
+| `0x9a7d0` | `public: float __thiscall cocos2d::Label::getWidth(void)const ` |
+| `0x3ee620` | `public: float __thiscall spine::SkeletonData::getWidth(void)` |
+| `0x38e020` | `public: class cocos2d::Size const & __thiscall cocos2d::Director::getWinSize(void)const ` |
+| `0x38e030` | `public: class cocos2d::Size __thiscall cocos2d::Director::getWinSizeInPixels(void)const ` |
+| `0x99eb0` | `public: void * __thiscall Rainbow::UILib::FrameManager::getWndHandle(void)` |
+| `0x3d2380` | `public: float __thiscall spine::Bone::getWorldRotationX(void)` |
+| `0x3d23b0` | `public: float __thiscall spine::Bone::getWorldRotationY(void)` |
+| `0x3d23e0` | `public: float __thiscall spine::Bone::getWorldScaleX(void)` |
+| `0x3d2410` | `public: float __thiscall spine::Bone::getWorldScaleY(void)` |
+| `0x3d2440` | `public: float __thiscall spine::Bone::getWorldToLocalRotationX(void)` |
+| `0x3d24a0` | `public: float __thiscall spine::Bone::getWorldToLocalRotationY(void)` |
+| `0x3774b0` | `public: virtual struct cocos2d::AffineTransform __thiscall cocos2d::Node::getWorldToNodeAffineTransform(void)const ` |
+| `0x377500` | `public: virtual class Rainbow::Matrix4x4f __thiscall cocos2d::Node::getWorldToNodeTransform(void)const ` |
+| `0x1dbea0` | `public: class Rainbow::Matrix4x4f __thiscall Rainbow::ModelData::getWorldTranslationOfBone(int const &)` |
+| `0xe56d0` | `public: class Rainbow::Matrix4x4f __thiscall Rainbow::SkeletonData::getWorldTranslationOfBone(int const &)` |
+| `0x3cea90` | `public: float __thiscall spine::Bone::getWorldX(void)` |
+| `0x21b9a0` | `public: float __thiscall spine::SwirlVertexEffect::getWorldX(void)` |
+| `0x3b6640` | `public: float __thiscall spine::Bone::getWorldY(void)` |
+| `0x9a690` | `public: float __thiscall spine::SwirlVertexEffect::getWorldY(void)` |
+| `0x99c80` | `public: float __thiscall spine::Bone::getX(void)` |
+| `0x9a7e0` | `public: float __thiscall fairygui::GObject::getX(void)const ` |
+| `0x99f10` | `public: float __thiscall spine::Skeleton::getX(void)` |
+| `0x99920` | `public: float __thiscall spine::SkeletonData::getX(void)` |
+| `0x2ebd50` | `public: float __thiscall fairygui::GObject::getXMin(void)const ` |
+| `0xd0fd0` | `public: float __thiscall spine::Bone::getY(void)` |
+| `0x99e80` | `public: float __thiscall fairygui::GObject::getY(void)const ` |
+| `0x3e0540` | `public: float __thiscall spine::Skeleton::getY(void)` |
+| `0x9a6a0` | `public: float __thiscall spine::SkeletonData::getY(void)` |
+| `0x2ebd90` | `public: float __thiscall fairygui::GObject::getYMin(void)const ` |
+| `0x38e070` | `public: float __thiscall cocos2d::Director::getZEye(void)const ` |
+| `0x274190` | `public: bool __thiscall Rainbow::ZipFilePkg::getZipFilePkg(char *,char const *)` |
+| `0x26cb80` | `public: unsigned int __thiscall Rainbow::StoveProgressBar3D::getbarColor(void)` |
+| `0x3c5e50` | `int __cdecl cocos2d::gettimeofday(struct timeval *,struct cocos2d::timezone *)` |
+| `0x929d98` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > fairygui::UIConfig::globalModalWaiting` |
+| `0x2ebdd0` | `public: class cocos2d::Rect __thiscall fairygui::GObject::globalToLocal(class cocos2d::Rect const &)` |
+| `0x2ebe70` | `public: class Rainbow::Vector2f __thiscall fairygui::GObject::globalToLocal(class Rainbow::Vector2f const &)` |
+| `0x2da9a0` | `private: void __thiscall fairygui::GList::handleAlign(float,float)` |
+| `0x2ebf40` | `protected: virtual void __thiscall fairygui::GObject::handleAlphaChanged(void)` |
+| `0x2dab20` | `private: void __thiscall fairygui::GList::handleArchOrder1(void)` |
+| `0x2dabf0` | `private: void __thiscall fairygui::GList::handleArchOrder2(void)` |
+| `0x2dacc0` | `public: void __thiscall fairygui::GList::handleArrowKey(int)` |
+| `0x4d3bb0` | `public: virtual bool __thiscall cocos2d::LuaEngine::handleAssert(char const *)` |
+| `0x4d3c30` | `private: int __thiscall cocos2d::LuaEngine::handleCallFuncActionEvent(void *)` |
+| `0x4d3cf0` | `private: int __thiscall cocos2d::LuaEngine::handleCommonEvent(void *)` |
+| `0x2cece0` | `protected: virtual void __thiscall fairygui::GButton::handleControllerChanged(class fairygui::GController *)` |
+| `0x2d0b70` | `protected: virtual void __thiscall fairygui::GComboBox::handleControllerChanged(class fairygui::GController *)` |
+| `0x2d35e0` | `protected: virtual void __thiscall fairygui::GComponent::handleControllerChanged(class fairygui::GController *)` |
+| `0x2daff0` | `protected: virtual void __thiscall fairygui::GList::handleControllerChanged(class fairygui::GController *)` |
+| `0x2ebf70` | `protected: virtual void __thiscall fairygui::GObject::handleControllerChanged(class fairygui::GController *)` |
+| `0x301550` | `private: void __thiscall fairygui::ScrollPane::handleControllerChanged(class fairygui::GController *)` |
+| `0x4d3de0` | `private: int __thiscall cocos2d::LuaEngine::handleEvenCustom(void *)` |
+| `0x4d3ec0` | `public: virtual int __thiscall cocos2d::LuaEngine::handleEvent(enum cocos2d::ScriptHandlerMgr::HandlerType,void *)` |
+| `0x192fe0` | `public: virtual int __thiscall cocos2d::LuaEngine::handleEvent(enum cocos2d::ScriptHandlerMgr::HandlerType,void *,int,class std::function<void __cdecl(struct lua_State *,int)> const &)` |
+| `0x2f5330` | `protected: virtual void __thiscall fairygui::GBasicTextField::handleGrayedChanged(void)` |
+| `0x2d0ba0` | `protected: virtual void __thiscall fairygui::GComboBox::handleGrayedChanged(void)` |
+| `0x2d3610` | `protected: virtual void __thiscall fairygui::GComponent::handleGrayedChanged(void)` |
+| `0x2d8040` | `protected: virtual void __thiscall fairygui::GImage::handleGrayedChanged(void)` |
+| `0x2e8650` | `protected: virtual void __thiscall fairygui::GLoader3D::handleGrayedChanged(void)` |
+| `0x2e0f10` | `protected: virtual void __thiscall fairygui::GLoader::handleGrayedChanged(void)` |
+| `0x2ec040` | `protected: virtual void __thiscall fairygui::GObject::handleGrayedChanged(void)` |
+| `0x2f5350` | `protected: virtual void __thiscall fairygui::GBasicTextField::handleInit(void)` |
+| `0x2d36c0` | `protected: virtual void __thiscall fairygui::GComponent::handleInit(void)` |
+| `0x2d5fe0` | `protected: virtual void __thiscall fairygui::GGraph::handleInit(void)` |
+| `0x2d8060` | `protected: virtual void __thiscall fairygui::GImage::handleInit(void)` |
+| `0x2e8660` | `protected: virtual void __thiscall fairygui::GLoader3D::handleInit(void)` |
+| `0x2e0f50` | `protected: virtual void __thiscall fairygui::GLoader::handleInit(void)` |
+| `0x2e9960` | `protected: virtual void __thiscall fairygui::GModelView::handleInit(void)` |
+| `0x2ec070` | `protected: virtual void __thiscall fairygui::GObject::handleInit(void)` |
+| `0x2f0530` | `protected: virtual void __thiscall fairygui::GRichTextField::handleInit(void)` |
+| `0x2f6e00` | `protected: virtual void __thiscall fairygui::GTextInput::handleInit(void)` |
+| `0x2fb310` | `protected: virtual void __thiscall fairygui::GUIRenderTexture::handleInit(void)` |
+| `0x2fb6b0` | `protected: virtual void __thiscall fairygui::GWebView::handleInit(void)` |
+| `0x2c2a60` | `protected: virtual void __thiscall Rainbow::HUDBloodBar::handleInit(void)` |
+| `0x2c3350` | `protected: virtual void __thiscall Rainbow::HUDChatBubble::handleInit(void)` |
+| `0x2c3d50` | `protected: virtual void __thiscall Rainbow::HUDLevitationFont::handleInit(void)` |
+| `0x2c4af0` | `protected: virtual void __thiscall Rainbow::HUDTitleBase::handleInit(void)` |
+| `0x316540` | `protected: virtual void __thiscall fairygui::Window::handleInit(void)` |
+| `0x4d3fc0` | `private: int __thiscall cocos2d::LuaEngine::handleNodeEvent(void *)` |
+| `0x2ec090` | `protected: virtual void __thiscall fairygui::GObject::handlePositionChanged(void)` |
+| `0x2b3000` | `protected: virtual void __thiscall fairygui::GRoot::handlePositionChanged(void)` |
+| `0x2b3000` | `protected: virtual void __thiscall fairygui::HUDRoot::handlePositionChanged(void)` |
+| `0x2b3000` | `protected: virtual void __thiscall fairygui::UI3DRoot::handlePositionChanged(void)` |
+| `0x327980` | `private: void __thiscall fairygui::InputProcessor::handleRollOver(class fairygui::TouchInfo *,class fairygui::GObject *)` |
+| `0x2ec1b0` | `protected: virtual void __thiscall fairygui::GObject::handleScaleChanged(void)` |
+| `0x4d40d0` | `private: int __thiscall cocos2d::LuaEngine::handleScheduler(void *)` |
+| `0x2db020` | `private: bool __thiscall fairygui::GList::handleScroll1(bool)` |
+| `0x2dbd60` | `private: bool __thiscall fairygui::GList::handleScroll2(bool)` |
+| `0x2dc8d0` | `private: void __thiscall fairygui::GList::handleScroll3(bool)` |
+| `0x2dd0b0` | `private: void __thiscall fairygui::GList::handleScroll(bool)` |
+| `0x2f5430` | `protected: virtual void __thiscall fairygui::GBasicTextField::handleSizeChanged(void)` |
+| `0x2d37d0` | `protected: virtual void __thiscall fairygui::GComponent::handleSizeChanged(void)` |
+| `0x2d6010` | `protected: virtual void __thiscall fairygui::GGraph::handleSizeChanged(void)` |
+| `0x2dd280` | `protected: virtual void __thiscall fairygui::GList::handleSizeChanged(void)` |
+| `0x2e8750` | `protected: virtual void __thiscall fairygui::GLoader3D::handleSizeChanged(void)` |
+| `0x2e10c0` | `protected: virtual void __thiscall fairygui::GLoader::handleSizeChanged(void)` |
+| `0x2ec250` | `protected: virtual void __thiscall fairygui::GObject::handleSizeChanged(void)` |
+| `0x2ef000` | `protected: virtual void __thiscall fairygui::GProgressBar::handleSizeChanged(void)` |
+| `0x2f0620` | `protected: virtual void __thiscall fairygui::GRichTextField::handleSizeChanged(void)` |
+| `0x2f6ec0` | `protected: virtual void __thiscall fairygui::GTextInput::handleSizeChanged(void)` |
+| `0x2fb6e0` | `protected: virtual void __thiscall fairygui::GWebView::handleSizeChanged(void)` |
+| `0x3015f0` | `private: void __thiscall fairygui::ScrollPane::handleSizeChanged(void)` |
+| `0x3aa110` | `public: virtual void __thiscall cocos2d::GLView::handleTouchesBegin(int,int * const,float const * const,float const * const,int)` |
+| `0x3aa6c0` | `public: virtual void __thiscall cocos2d::GLView::handleTouchesCancel(int,int * const,float const * const,float const * const)` |
+| `0x3aa6e0` | `public: virtual void __thiscall cocos2d::GLView::handleTouchesEnd(int,int * const,float const * const,float const * const,int)` |
+| `0x3aa700` | `public: virtual void __thiscall cocos2d::GLView::handleTouchesMove(int,int * const,float const * const,float const * const)` |
+| `0x3aa720` | `public: virtual void __thiscall cocos2d::GLView::handleTouchesMove(int,int * const,float const * const,float const * const,float * const,float * const)` |
+| `0x3aaca0` | `protected: void __thiscall cocos2d::GLView::handleTouchesOfEndOrCancel(enum cocos2d::EventTouch::EventCode,int,int * const,float const * const,float const * const,int)` |
+| `0x2ec2e0` | `protected: virtual void __thiscall fairygui::GObject::handleVisibleChanged(void)` |
+| `0x2fb790` | `protected: virtual void __thiscall fairygui::GWebView::handleVisibleChanged(void)` |
+| `0x2f1980` | `public: bool __thiscall fairygui::GRoot::hasAnyPopup(void)` |
+| `0x30d9a0` | `public: bool __thiscall fairygui::UI3DRoot::hasAnyPopup(void)` |
+| `0x3fdf60` | `public: bool __thiscall spine::Slot::hasDarkColor(void)` |
+| `0x3fe240` | `public: bool __thiscall spine::SlotData::hasDarkColor(void)` |
+| `0x9a9f0` | `public: bool __thiscall fairygui::TextFormat::hasEffect(int)const ` |
+| `0xe6e80` | `public: bool __thiscall Rainbow::VertexFormat::hasElement(enum Rainbow::VertexElementSemantic)` |
+| `0x395950` | `public: bool __thiscall cocos2d::EventDispatcher::hasEventListener(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x9aa00` | `public: bool __thiscall fairygui::UIEventDispatcher::hasEventListener(int)const ` |
+| `0x32a990` | `public: bool __thiscall fairygui::UIEventDispatcher::hasEventListener(int,class fairygui::EventTag const &)const ` |
+| `0x32a9f0` | `public: bool __thiscall fairygui::UIEventDispatcher::hasEventListenerTagNotNone(int)const ` |
+| `0x299290` | `public: bool __thiscall CsvTable::hasKey(char const *)` |
+| `0x2f1990` | `public: bool __thiscall fairygui::GRoot::hasModalWindow(void)` |
+| `0x2cd6d0` | `public: bool __thiscall fairygui::GController::hasPage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x30e7e0` | `public: static bool __cdecl fairygui::UIConfig::hasRegisterFonts(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2ffd30` | `public: bool __thiscall fairygui::Relations::hasRelationType(enum fairygui::RelationType,class fairygui::GObject *)` |
+| `0x149160` | `public: bool __thiscall Rainbow::UILib::Frame::hasScriptsEvent(int)` |
+| `0xdd3e0` | `public: bool __thiscall Rainbow::BaseAnimationData::hasSequence(int)` |
+| `0xd9370` | `public: bool __thiscall Rainbow::BoneTrack::hasTick(int,int)` |
+| `0xd9410` | `public: bool __thiscall Rainbow::BoneTrack::hasTicks(int)` |
+| `0x3cc280` | `public: bool __thiscall spine::Animation::hasTimeline(int)` |
+| `0x222620` | `public: static unsigned int __cdecl Rainbow::StringUtil::hash(class core::basic_string<char,class core::StringStorageDefault<char> > const &,unsigned int)` |
+| `0x222680` | `public: static unsigned int __cdecl Rainbow::StringUtil::hash(char const *,unsigned int,int)` |
+| `0x335030` | `public: static struct cocos2d::Color4B __cdecl fairygui::ToolSet::hexToColor(char const *)` |
+| `0x3165e0` | `public: void __thiscall fairygui::Window::hide(void)` |
+| `0x153130` | `public: void __thiscall Rainbow::UILib::FrameManager::hideAllFrame(void)` |
+| `0x153170` | `public: void __thiscall Rainbow::UILib::FrameManager::hideFrame(char const *)` |
+| `0x316600` | `public: void __thiscall fairygui::Window::hideImmediately(void)` |
+| `0x1531a0` | `public: void __thiscall Rainbow::UILib::FrameManager::hidePopWin(char const *)` |
+| `0x2f19b0` | `public: void __thiscall fairygui::GRoot::hidePopup(class fairygui::GObject *)` |
+| `0x2f1b30` | `public: void __thiscall fairygui::GRoot::hidePopup(void)` |
+| `0x30d9b0` | `public: void __thiscall fairygui::UI3DRoot::hidePopup(class fairygui::GObject *)` |
+| `0x2f1b40` | `public: void __thiscall fairygui::GRoot::hideTooltips(void)` |
+| `0x30db50` | `public: void __thiscall fairygui::UI3DRoot::hideTooltips(void)` |
+| `0x2f1b70` | `public: void __thiscall fairygui::GRoot::hideWindow(class fairygui::Window *)` |
+| `0x2f1b70` | `public: void __thiscall fairygui::UI3DRoot::hideWindow(class fairygui::Window *)` |
+| `0x2f1b80` | `public: void __thiscall fairygui::GRoot::hideWindowImmediately(class fairygui::Window *)` |
+| `0x30db90` | `public: void __thiscall fairygui::UI3DRoot::hideWindowImmediately(class fairygui::Window *)` |
+| `0x381540` | `public: long __thiscall cocos2d::SpriteBatchNode::highestAtlasIndexInChild(class cocos2d::Sprite *)` |
+| `0x9aa20` | `public: int __thiscall GameUI::hitPoint(float const &,float const &)const ` |
+| `0x327c70` | `public: class fairygui::GObject * __thiscall fairygui::InputProcessor::hitTest3DUIAnd2DUI(class fairygui::GObject *,class Rainbow::Vector2f const &)` |
+| `0x2d3940` | `public: virtual class fairygui::GObject * __thiscall fairygui::GComponent::hitTest(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x2e87a0` | `protected: virtual class fairygui::GObject * __thiscall fairygui::GLoader3D::hitTest(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x2e10e0` | `protected: virtual class fairygui::GObject * __thiscall fairygui::GLoader::hitTest(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x2ec330` | `public: virtual class fairygui::GObject * __thiscall fairygui::GObject::hitTest(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x2f06b0` | `public: virtual class fairygui::GObject * __thiscall fairygui::GRichTextField::hitTest(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x301c00` | `private: class fairygui::GObject * __thiscall fairygui::ScrollPane::hitTest(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x2d3cf0` | `public: virtual class fairygui::GObject * __thiscall fairygui::GComponent::hitTestForAll(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x2ec3c0` | `public: virtual class fairygui::GObject * __thiscall fairygui::GObject::hitTestForAll(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *)` |
+| `0x929d80` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > fairygui::UIConfig::horizontalScrollBar` |
+| `0xe2c90` | `public: void __thiscall Rainbow::SkeletonComponent::ignoreResetCacheOnce(void)` |
+| `0x381580` | `public: void __thiscall cocos2d::SpriteBatchNode::increaseAtlasCapacity(void)` |
+| `0x3d0350` | `private: static int __cdecl spine::Atlas::indexOf(char const * *,int,class spine::Atlas::Str *)` |
+| `0x24ee00` | `public: long __thiscall cocos2d::__Array::indexOfObject(class cocos2d::Ref *)const ` |
+| `0x96dac0` | `public: static class WCoord const WCoord::infinity` |
+| `0x351410` | `public: bool __thiscall cocos2d::Animation::init(void)` |
+| `0x949d0` | `public: virtual bool __thiscall cocos2d::Component::init(void)` |
+| `0x38e080` | `public: bool __thiscall cocos2d::Director::init(void)` |
+| `0x35ccf0` | `public: virtual bool __thiscall cocos2d::DrawNode::init(void)` |
+| `0x398230` | `public: bool __thiscall cocos2d::EventListenerCustom::init(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(class cocos2d::EventCustom *)> const &)` |
+| `0x399040` | `public: bool __thiscall cocos2d::EventListenerMouse::init(void)` |
+| `0x399970` | `public: bool __thiscall cocos2d::EventListenerTouchOneByOne::init(void)` |
+| `0x2ec440` | `protected: bool __thiscall fairygui::GObject::init(void)` |
+| `0x2f8bc0` | `private: bool __thiscall fairygui::GTreeNode::init(bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x32db90` | `protected: virtual void __thiscall fairygui::GearColor::init(void)` |
+| `0x32e080` | `protected: virtual void __thiscall fairygui::GearDisplay::init(void)` |
+| `0x32e630` | `protected: virtual void __thiscall fairygui::GearFontSize::init(void)` |
+| `0x32e9d0` | `protected: virtual void __thiscall fairygui::GearIcon::init(void)` |
+| `0x32f1c0` | `protected: virtual void __thiscall fairygui::GearLook::init(void)` |
+| `0x3304d0` | `protected: virtual void __thiscall fairygui::GearText::init(void)` |
+| `0x2b8930` | `public: virtual bool __thiscall fairygui::HUDScene::init(void)` |
+| `0x4d4180` | `public: bool __thiscall cocos2d::LuaEngine::init(class cocos2d::CCLuaStack *)` |
+| `0x93e90` | `public: bool __thiscall Rainbow::MaterialTemplate::init(class Rainbow::XMLNode)` |
+| `0x3adb90` | `public: void __thiscall cocos2d::ModelViewCommand::init(class Rainbow::Vector2f,class cocos2d::Size,class Rainbow::SharePtr<class Rainbow::MaterialInstance>,float,class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x949d0` | `public: virtual bool __thiscall cocos2d::Node::init(void)` |
+| `0xe6ec0` | `public: void __thiscall Rainbow::OgreVertexData::init(class Rainbow::VertexFormat const &,unsigned int)` |
+| `0x2fd1f0` | `protected: bool __thiscall fairygui::PopupMenu::init(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x8a250` | `public: void __thiscall cocos2d::Renderer::init(void)` |
+| `0x112d70` | `public: bool __thiscall cocos2d::SAXParser::init(char const *)` |
+| `0x37bbf0` | `public: virtual bool __thiscall cocos2d::Scene::init(void)` |
+| `0x37d3f0` | `public: virtual bool __thiscall cocos2d::Sprite::init(void)` |
+| `0x381790` | `public: virtual bool __thiscall cocos2d::SpriteBatchNode::init(void)` |
+| `0x222710` | `public: static void __cdecl Rainbow::StringUtil::init(void)` |
+| `0x30c250` | `public: void __thiscall fairygui::UI3DRenderer::init(class Rainbow::PPtr<class Rainbow::GameObject>,class fairygui::UI3DScene *)` |
+| `0x30e220` | `public: virtual bool __thiscall fairygui::UI3DScene::init(void)` |
+| `0x28c120` | `public: bool __thiscall MINIW::WebSocket::init(class MINIW::WebSocketCallback *,char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > *)` |
+| `0x28ef10` | `private: bool __thiscall MINIW::WebSocketSvr::init(void)` |
+| `0x4055c0` | `public: bool __thiscall cocos2d::__Array::init(void)` |
+| `0x949d0` | `public: bool __thiscall cocos2d::__Dictionary::init(void)` |
+| `0x3cb660` | `public: void __thiscall winSystemInfo::init(void)` |
+| `0x297080` | `private: void __thiscall CsvManager::initConfig(void)` |
+| `0x1044b0` | `public: void __thiscall Rainbow::CloudAssetUser::initData(void)` |
+| `0x2ec560` | `private: void __thiscall fairygui::GObject::initDrag(void)` |
+| `0x2742e0` | `private: void __thiscall Rainbow::ZipFilePkg::initFileEntries(char const *)` |
+| `0x38eb00` | `public: void __thiscall cocos2d::Director::initMatrixStack(void)` |
+| `0x31dfc0` | `public: bool __thiscall fairygui::FUIModelSprite::initModelView3D(void)` |
+| `0x9ab30` | `public: void __thiscall fairygui::GModelView::initModelView3D(void)` |
+| `0x212470` | `public: void __thiscall Rainbow::PerlinNoise2D::initNoise(int)` |
+| `0x2124b0` | `public: void __thiscall Rainbow::PerlinNoise2D::initNoise(int,int,float)` |
+| `0xe14f0` | `public: void __thiscall Rainbow::AnimationPlayer::initPlayTrackFrameEvent(class Rainbow::AnimPlayTrack *)` |
+| `0x127d90` | `private: void __thiscall Rainbow::UILib::UIRenderer::initUIVert(struct Rainbow::UIVertex &,float,float,float,class Rainbow::ColorRGBA32,float,float)` |
+| `0x6ad60` | `public: static class Rainbow::WorldPos __cdecl Rainbow::WorldPos::initVector3(class Rainbow::Vector3f const &)` |
+| `0x6adb0` | `public: static class Rainbow::WorldPos __cdecl Rainbow::WorldPos::initVector3(float,float,float)` |
+| `0x6adf0` | `public: static class Rainbow::WorldPrecisePos __cdecl Rainbow::WorldPrecisePos::initVector3(class Rainbow::Vector3f const &)` |
+| `0x6ae30` | `public: static class Rainbow::WorldPrecisePos __cdecl Rainbow::WorldPrecisePos::initVector3(float,float,float)` |
+| `0x316630` | `public: void __thiscall fairygui::Window::initWindow(void)` |
+| `0x351430` | `public: bool __thiscall cocos2d::Animation::initWithAnimationFrames(class cocos2d::Vector<class cocos2d::AnimationFrame *> const &,float,unsigned int)` |
+| `0x4055e0` | `public: bool __thiscall cocos2d::__Array::initWithArray(class cocos2d::__Array *)` |
+| `0x3fb3c0` | `public: void __thiscall spine::SkeletonRenderer::initWithBinaryFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x3fb650` | `public: void __thiscall spine::SkeletonRenderer::initWithBinaryFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x405610` | `public: bool __thiscall cocos2d::__Array::initWithCapacity(long)` |
+| `0x3fb7f0` | `public: void __thiscall spine::SkeletonRenderer::initWithData(class spine::SkeletonData *,bool)` |
+| `0x34b730` | `public: bool __thiscall cocos2d::ActionInterval::initWithDuration(float)` |
+| `0x34bc60` | `public: bool __thiscall cocos2d::ResizeTo::initWithDuration(float,class cocos2d::Size const &)` |
+| `0x386650` | `public: bool __thiscall cocos2d::TransitionFade::initWithDuration(float,class cocos2d::Scene *)` |
+| `0x3866a0` | `public: bool __thiscall cocos2d::TransitionFade::initWithDuration(float,class cocos2d::Scene *,struct cocos2d::Color3B const &)` |
+| `0x37d420` | `public: virtual bool __thiscall cocos2d::Sprite::initWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x37d640` | `public: virtual bool __thiscall cocos2d::Sprite::initWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Rect const &)` |
+| `0x381860` | `public: bool __thiscall cocos2d::SpriteBatchNode::initWithFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,long)` |
+| `0x40b610` | `public: bool __cdecl cocos2d::__String::initWithFormat(char const *,...)` |
+| `0x40b640` | `private: bool __thiscall cocos2d::__String::initWithFormatAndValist(char const *,char *)` |
+| `0x3fb890` | `public: void __thiscall spine::SkeletonRenderer::initWithJsonFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x3fbb20` | `public: void __thiscall spine::SkeletonRenderer::initWithJsonFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class spine::Atlas *,float)` |
+| `0x405630` | `public: bool __thiscall cocos2d::__Array::initWithObject(class cocos2d::Ref *)` |
+| `0x405660` | `public: bool __cdecl cocos2d::__Array::initWithObjects(class cocos2d::Ref *,...)` |
+| `0x37d730` | `public: virtual bool __thiscall cocos2d::Sprite::initWithPolygon(class cocos2d::PolygonInfo const &)` |
+| `0x3c37c0` | `public: bool __thiscall cocos2d::GLViewImpl::initWithRect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Rect,float,bool)` |
+| `0x2f1bb0` | `private: bool __thiscall fairygui::GRoot::initWithScene(class cocos2d::Scene *,int)` |
+| `0x2b3030` | `private: bool __thiscall fairygui::HUDRoot::initWithScene(class cocos2d::Scene *,int)` |
+| `0x30dbb0` | `private: bool __thiscall fairygui::UI3DRoot::initWithScene(class cocos2d::Scene *,int)` |
+| `0x37bc50` | `public: bool __thiscall cocos2d::Scene::initWithSize(class cocos2d::Size const &)` |
+| `0x3fbcc0` | `public: void __thiscall spine::SkeletonRenderer::initWithSkeleton(class spine::Skeleton *,bool,bool,bool)` |
+| `0x37d830` | `public: virtual bool __thiscall cocos2d::Sprite::initWithSpriteFrame(class cocos2d::SpriteFrame *)` |
+| `0x112d70` | `public: virtual bool __thiscall cocos2d::Sprite::initWithSpriteFrameName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x351590` | `public: bool __thiscall cocos2d::Animation::initWithSpriteFrames(class cocos2d::Vector<class cocos2d::SpriteFrame *> const &,float,unsigned int)` |
+| `0x363f70` | `public: bool __thiscall cocos2d::Label::initWithTTF(struct Rainbow::TTFConfig &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum cocos2d::TextHAlignment,int)` |
+| `0x364010` | `public: bool __thiscall cocos2d::Label::initWithTTF(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,class cocos2d::Size const &,enum cocos2d::TextHAlignment,enum cocos2d::TextVAlignment)` |
+| `0x37d880` | `public: virtual bool __thiscall cocos2d::Sprite::initWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>)` |
+| `0x37d970` | `public: virtual bool __thiscall cocos2d::Sprite::initWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,class cocos2d::Rect const &)` |
+| `0x37da10` | `public: virtual bool __thiscall cocos2d::Sprite::initWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,class cocos2d::Rect const &,bool)` |
+| `0x381910` | `public: bool __thiscall cocos2d::SpriteBatchNode::initWithTexture(class Rainbow::SharePtr<class Rainbow::Texture2D>,long)` |
+| `0x320f70` | `public: bool __thiscall fairygui::FUIRenderTexture::initWithWidthAndHeight(int,int,bool)` |
+| `0x2fb370` | `public: bool __thiscall fairygui::GUIRenderTexture::initWithWidthAndHeight(int,int,bool)` |
+| `0x3e1f00` | `public: virtual void __thiscall spine::SkeletonAnimation::initialize(void)` |
+| `0x3fbd00` | `public: virtual void __thiscall spine::SkeletonRenderer::initialize(void)` |
+| `0x377530` | `protected: void __thiscall cocos2d::Node::insertChild(class cocos2d::Node *,int)` |
+| `0x1dc070` | `public: bool __thiscall Rainbow::ModelData::insertCustomKeyFrame(int,class Rainbow::FixedString,unsigned int,class Rainbow::Vector3f &,class Rainbow::Quaternionf &,class Rainbow::Vector3f &)` |
+| `0xdd420` | `public: void __thiscall Rainbow::AnimationData::insertCustomKeyFrameArray(class std::vector<class Rainbow::FixedString,class std::allocator<class Rainbow::FixedString> > &,class std::vector<class Rainbow::Vector3f,class std::allocator<class Rainbow::Vector3f> > &,class std::vector<class Rainbow::Quaternionf,class std::allocator<class Rainbow::Quaternionf> > &,class std::vector<class Rainbow::Vector3f,class std::allocator<class Rainbow::Vector3f> > &,unsigned int)` |
+| `0xd94f0` | `public: bool __thiscall Rainbow::BoneTrack::insertKeyFrame(class Rainbow::Vector3f,class Rainbow::Quaternionf,class Rainbow::Vector3f,unsigned int)` |
+| `0x4056b0` | `public: void __thiscall cocos2d::__Array::insertObject(class cocos2d::Ref *,long)` |
+| `0x37abb0` | `protected: void __thiscall cocos2d::ProtectedNode::insertProtectedChild(class cocos2d::Node *,int)` |
+| `0x381a90` | `public: void __thiscall cocos2d::SpriteBatchNode::insertQuadFromSprite(class cocos2d::Sprite *,long)` |
+| `0x127f40` | `public: static void __cdecl Rainbow::UILib::UIRenderer::insetFullScreen(class Rainbow::TRect<int> const &,int * const)` |
+| `0x335150` | `public: static struct cocos2d::Color3B __cdecl fairygui::ToolSet::intToColor(unsigned int)` |
+| `0x40b6c0` | `public: int __thiscall cocos2d::__String::intValue(void)const ` |
+| `0x3077e0` | `private: void __thiscall fairygui::Transition::internalPlay(void)` |
+| `0x2ec750` | `private: bool __thiscall fairygui::GObject::internalVisible2(void)const ` |
+| `0x2ec780` | `private: bool __thiscall fairygui::GObject::internalVisible3(void)const ` |
+| `0x2ec7a0` | `private: bool __thiscall fairygui::GObject::internalVisible(void)const ` |
+| `0x6ae70` | `public: bool __thiscall Rainbow::BoxSphereBound::intersect(class Rainbow::BoxSphereBound const &)const ` |
+| `0x21e6f0` | `public: int __thiscall MINIW::Ray::intersectBox(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float *)const ` |
+| `0x21e9e0` | `public: bool __thiscall MINIW::Ray::intersectBox(class Rainbow::BoxBound const *,float *)const ` |
+| `0x6af60` | `public: bool __thiscall Rainbow::BoxBound::intersectBoxBound(class Rainbow::BoxBound const &)const ` |
+| `0x21ea00` | `public: bool __thiscall MINIW::Ray::intersectBoxSphere(class Rainbow::BoxSphereBound const *,float *)const ` |
+| `0x21ea80` | `public: bool __thiscall MINIW::Ray::intersectCapsule(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float)const ` |
+| `0x21eaa0` | `public: bool __thiscall MINIW::Ray::intersectHorizon(float,float *)const ` |
+| `0x21eaf0` | `public: bool __thiscall MINIW::Ray::intersectPlane(class Rainbow::Planef const *,float *)const ` |
+| `0x21eb00` | `public: bool __thiscall MINIW::Ray::intersectQuad(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float *)const ` |
+| `0x21eaf0` | `public: bool __thiscall MINIW::Ray::intersectSphere(class Rainbow::SphereBound const *,float *)const ` |
+| `0x21ed10` | `public: bool __thiscall MINIW::Ray::intersectTriangle(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float *)const ` |
+| `0x335170` | `public: static class cocos2d::Rect __cdecl fairygui::ToolSet::intersection(class cocos2d::Rect const &,class cocos2d::Rect const &)` |
+| `0x3a9030` | `public: bool __thiscall cocos2d::Rect::intersectsCircle(class Rainbow::Vector2f const &,float)const ` |
+| `0x3a9160` | `public: bool __thiscall cocos2d::Rect::intersectsRect(class cocos2d::Rect const &)const ` |
+| `0x6afc0` | `public: void __thiscall Rainbow::WorldPos::inverse(void)` |
+| `0x8d6a0` | `public: class Rainbow::UILib::Invocation & __thiscall Rainbow::UILib::Invocation::invoke(void *)` |
+| `0x68e10` | `public: class Rainbow::UILib::Invocation & __thiscall Rainbow::UILib::Invocation::invokeStatic(void)` |
+| `0x8d6a0` | `public: class Rainbow::UILib::Invocation & __thiscall Rainbow::UILib::Invocation::invokeVirtual(void *)` |
+| `0x3d2500` | `public: virtual bool __thiscall spine::Bone::isActive(void)` |
+| `0x2d4350` | `public: bool __thiscall fairygui::GComponent::isAncestorOf(class fairygui::GObject const *)const ` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::IClientInfo::isApple(void)` |
+| `0x3d2510` | `public: bool __thiscall spine::Bone::isAppliedValid(void)` |
+| `0x9ab40` | `public: bool __thiscall fairygui::FUIRenderTexture::isAutoDraw(void)const ` |
+| `0x2fb3f0` | `public: bool __thiscall fairygui::GUIRenderTexture::isAutoDraw(void)` |
+| `0x9ab50` | `public: virtual bool __thiscall Rainbow::UILib::LayoutFrame::isAutoTextLangScale(void)` |
+| `0x301cf0` | `public: bool __thiscall fairygui::ScrollPane::isBottomMost(void)const ` |
+| `0x9a370` | `public: bool __thiscall fairygui::ScrollPane::isBouncebackEffect(void)const ` |
+| `0x6afe0` | `public: bool __thiscall Rainbow::BoxBound::isBoxBoundIn(class Rainbow::BoxBound const &)` |
+| `0x6b040` | `public: bool __thiscall Rainbow::BoxBound::isBoxBoundOut(class Rainbow::BoxBound const &)const ` |
+| `0x9ab60` | `public: bool __thiscall fairygui::Window::isBringToFrontOnClick(void)` |
+| `0x3a7310` | `bool __cdecl cocos2d::StringUtils::isCJKUnicode(char32_t)` |
+| `0x6b1b0` | `public: bool __thiscall MINIW::ScriptVM::isCallFunctionEnabled(void)` |
+| `0x377580` | `public: virtual bool __thiscall cocos2d::Node::isCascadeColorEnabled(void)const ` |
+| `0x377590` | `public: virtual bool __thiscall cocos2d::Node::isCascadeOpacityEnabled(void)const ` |
+| `0x9ab70` | `public: bool __thiscall fairygui::GButton::isChangeStateOnClick(void)` |
+| `0x2d4380` | `public: virtual bool __thiscall fairygui::GComponent::isChildInView(class fairygui::GObject *)` |
+| `0x301d20` | `public: bool __thiscall fairygui::ScrollPane::isChildInView(class fairygui::GObject *)const ` |
+| `0x9ab80` | `public: bool __thiscall cocos2d::Label::isClipMarginEnabled(void)const ` |
+| `0x318300` | `public: bool __thiscall fairygui::FUIContainer::isClippingEnabled(void)const ` |
+| `0x23aeb0` | `public: bool __thiscall ChannelList::isCollapsableDevice(void)` |
+| `0x9ab90` | `public: bool __thiscall Rainbow::UILib::SkinResource::isCommonSkinPkgPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x3ceaa0` | `public: bool __thiscall spine::TrackEntry::isComplete(void)` |
+| `0x9abd0` | `public: bool __thiscall fairygui::GTweener::isCompleted(void)const ` |
+| `0x32e0a0` | `public: bool __thiscall fairygui::GearDisplay::isConnected(void)` |
+| `0x9abe0` | `public: bool __thiscall Rainbow::UILib::SkinResource::isCurSkinIsBuiltInSkin(void)const ` |
+| `0x9ac10` | `public: bool __thiscall Rainbow::UILib::SkinResource::isCurSkinPathBeenSet(void)const ` |
+| `0x24ee10` | `public: static bool __cdecl MINIW::ScriptVM::isCurrentThreadIsMainThread(struct lua_State *)` |
+| `0x9ac20` | `public: bool __thiscall GameUI::isCursorDrag(void)` |
+| `0x9ac40` | `public: bool __thiscall Rainbow::UILib::UIRenderer::isCursorShow(void)` |
+| `0x9ac50` | `public: bool __thiscall Rainbow::Model::isCusTomModel(void)` |
+| `0x9ac60` | `public: virtual bool __thiscall cocos2d::Sprite::isDirty(void)const ` |
+| `0x32aa30` | `public: bool __thiscall fairygui::UIEventDispatcher::isDispatchingEvent(int)` |
+| `0x9ac70` | `public: bool __thiscall cocos2d::Director::isDisplayStats(void)` |
+| `0x949d0` | `public: virtual bool __thiscall cocos2d::Action::isDone(void)const ` |
+| `0x9ae10` | `public: virtual bool __thiscall cocos2d::ActionInterval::isDone(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall fairygui::ActionMovieClip::isDone(void)const ` |
+| `0x9ae70` | `public: bool __thiscall winSystemInfo::isDone(void)` |
+| `0x9ac80` | `public: bool __thiscall fairygui::GObject::isDraggable(void)const ` |
+| `0x9ac90` | `public: bool __thiscall fairygui::DragDropManager::isDragging(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::IClientInfo::isEduVersion(void)` |
+| `0x9aca0` | `public: bool __thiscall fairygui::GGraph::isEmpty(void)const ` |
+| `0x2ffd80` | `public: bool __thiscall fairygui::Relations::isEmpty(void)const ` |
+| `0x37db80` | `public: bool __thiscall cocos2d::Sprite::isEnableBlurFilter(void)` |
+| `0x9acb0` | `public: bool __thiscall fairygui::GButton::isEnablePlaySound(void)` |
+| `0x9acc0` | `public: bool __thiscall fairygui::GImage::isEnableSkinChange(void)` |
+| `0x9acd0` | `public: bool __thiscall fairygui::GLoader::isEnableSkinChange(void)` |
+| `0x9a370` | `public: bool __thiscall cocos2d::Component::isEnabled(void)const ` |
+| `0x395970` | `public: bool __thiscall cocos2d::EventDispatcher::isEnabled(void)const ` |
+| `0x40b6e0` | `public: virtual bool __thiscall cocos2d::__String::isEqual(class cocos2d::Ref const *)` |
+| `0x4056d0` | `public: bool __thiscall cocos2d::__Array::isEqualToArray(class cocos2d::__Array *)` |
+| `0x2056b0` | `public: bool __thiscall Rainbow::FileManagerWeb::isExistTexInfo(class core::basic_string<char,class core::StringStorageDefault<char> > const &)` |
+| `0x94340` | `public: bool __thiscall fairygui::GTreeNode::isExpanded(void)const ` |
+| `0x263050` | `public: bool __thiscall Rainbow::MusicClubChatBubble3D::isFaceCode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)` |
+| `0x205740` | `public: bool __thiscall Rainbow::FileManagerWeb::isFileExist(char const *)` |
+| `0x3352d0` | `public: static bool __cdecl fairygui::ToolSet::isFileExist(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x9ace0` | `public: bool __thiscall fairygui::FUISprite::isFillClockwise(void)const ` |
+| `0x2d8090` | `public: bool __thiscall fairygui::GImage::isFillClockwise(void)const ` |
+| `0x2e11c0` | `public: bool __thiscall fairygui::GLoader::isFillClockwise(void)const ` |
+| `0x37db90` | `public: bool __thiscall cocos2d::Sprite::isFlippedX(void)const ` |
+| `0x37dba0` | `public: bool __thiscall cocos2d::Sprite::isFlippedY(void)const ` |
+| `0x9acf0` | `public: bool __thiscall fairygui::GTreeNode::isFolder(void)const ` |
+| `0x1dc150` | `public: bool __thiscall Rainbow::ModelData::isForeFathers(class std::vector<class Rainbow::FixedString,class std::allocator<class Rainbow::FixedString> > &,class Rainbow::BoneData *,class Rainbow::BoneData *)` |
+| `0x949d0` | `public: virtual bool __thiscall Rainbow::UILib::Frame::isFrame(void)` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::UILib::LayoutFrame::isFrame(void)` |
+| `0x37dbb0` | `public: virtual bool __thiscall cocos2d::Sprite::isFrameDisplayed(class cocos2d::SpriteFrame *)const ` |
+| `0x9ad00` | `public: bool __thiscall fairygui::GObject::isFullScreen(void)` |
+| `0x936a0` | `public: bool __thiscall cocos2d::GLViewImpl::isFullscreen(void)const ` |
+| `0x24ef30` | `public: bool __thiscall MINIW::ScriptVM::isFunction(char const *)` |
+| `0x9ad10` | `public: bool __thiscall GameUI::isGameUITouched(float const &,float const &)const ` |
+| `0x9adc0` | `public: bool __thiscall fairygui::GObject::isGrayed(void)const ` |
+| `0x3699f0` | `protected: bool __thiscall cocos2d::Label::isHorizontalClamp(void)` |
+| `0x364170` | `protected: bool __thiscall cocos2d::Label::isHorizontalClamped(float,int)` |
+| `0x2c40a0` | `public: bool __thiscall Rainbow::HUDLevitationFont::isIdle(void)` |
+| `0x94390` | `public: virtual bool __thiscall cocos2d::Node::isIgnoreAnchorPointForPosition(void)const ` |
+| `0x153470` | `protected: bool __thiscall Rainbow::UILib::FrameManager::isInAccelKeyState(int)` |
+| `0x9add0` | `public: bool __thiscall fairygui::ScrollPane::isInertiaDisabled(void)const ` |
+| `0x318320` | `public: bool __thiscall fairygui::FUIContainer::isInverted(void)const ` |
+| `0x9ade0` | `public: bool __thiscall cocos2d::DrawNode::isIsolated(void)const ` |
+| `0x2fd490` | `public: bool __thiscall fairygui::PopupMenu::isItemChecked(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x177ee0` | `bool __cdecl Rainbow::UILib::isKeyPressed(int)` |
+| `0xa1700` | `public: bool __thiscall Rainbow::UILib::Invocation::isMethodInvocation(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::IClientInfo::isMobile(void)const ` |
+| `0x9adf0` | `public: bool __thiscall fairygui::Window::isModal(void)const ` |
+| `0x2f1d30` | `public: bool __thiscall fairygui::GRoot::isModalWaiting(void)` |
+| `0x9ae00` | `public: bool __thiscall fairygui::ScrollPane::isMouseWheelEnabled(void)const ` |
+| `0x3d9770` | `public: static bool __cdecl spine::MathUtil::isNan(float)` |
+| `0x9ae10` | `public: bool __thiscall fairygui::ScrollPane::isNeedRefresh(void)` |
+| `0x9ae20` | `public: bool __thiscall cocos2d::Director::isNextDeltaTimeZero(void)` |
+| `0x9ae30` | `public: bool __thiscall fairygui::EventTag::isNone(void)const ` |
+| `0x38b4a0` | `public: bool __thiscall cocos2d::Data::isNull(void)const ` |
+| `0x225b80` | `public: bool __thiscall FileAutoClose::isNull(void)` |
+| `0x9ae40` | `public: bool __thiscall Value::isNull(void)const ` |
+| `0x9ae40` | `public: bool __thiscall cocos2d::Value::isNull(void)const ` |
+| `0x9ae50` | `public: virtual bool __thiscall cocos2d::Label::isOpacityModifyRGB(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall cocos2d::Node::isOpacityModifyRGB(void)const ` |
+| `0x3fbe80` | `public: virtual bool __thiscall spine::SkeletonRenderer::isOpacityModifyRGB(void)const ` |
+| `0x37dcb0` | `public: virtual bool __thiscall cocos2d::Sprite::isOpacityModifyRGB(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall cocos2d::GLViewImpl::isOpenGLReady(void)` |
+| `0x936a0` | `public: virtual bool __thiscall Rainbow::IClientInfo::isPC(void)` |
+| `0x9ae60` | `public: bool __thiscall fairygui::ScrollPane::isPageMode(void)const ` |
+| `0x9ae70` | `public: bool __thiscall cocos2d::Director::isPaused(void)` |
+| `0x9ae80` | `public: bool __thiscall fairygui::GObject::isPivotAsAnchor(void)const ` |
+| `0x9ac40` | `public: bool __thiscall fairygui::GObject::isPixelSnapping(void)const ` |
+| `0x215960` | `public: virtual bool __thiscall Rainbow::FmodSound::isPlaying(void)` |
+| `0x9ae90` | `public: bool __thiscall fairygui::GLoader3D::isPlaying(void)const ` |
+| `0x9a090` | `public: bool __thiscall fairygui::GLoader::isPlaying(void)const ` |
+| `0x9aea0` | `public: bool __thiscall fairygui::Transition::isPlaying(void)const ` |
+| `0x6b1d0` | `public: bool __thiscall Rainbow::BoxBound::isPointIn(class Rainbow::Vector3f const &)const ` |
+| `0x1534d0` | `public: bool __thiscall Rainbow::UILib::FrameManager::isPointInFrame(int,int,char const *)const ` |
+| `0x153500` | `public: bool __thiscall Rainbow::UILib::FrameManager::isPointInFrame(char const *)const ` |
+| `0x6b220` | `public: bool __thiscall Rainbow::BoxBound::isPointInXZ(class Rainbow::Vector3f const &)const ` |
+| `0x9aeb0` | `public: bool __thiscall cocos2d::Director::isRectEmpty(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall cocos2d::GLView::isRetinaDisplay(void)const ` |
+| `0x9aec0` | `public: bool __thiscall cocos2d::GLViewImpl::isRetinaEnabled(void)const ` |
+| `0x301de0` | `public: bool __thiscall fairygui::ScrollPane::isRightMost(void)const ` |
+| `0x9af50` | `public: virtual bool __thiscall cocos2d::Node::isRunning(void)const ` |
+| `0x9aed0` | `public: bool __thiscall fairygui::FUISprite::isScale9Grid(void)` |
+| `0x9aee0` | `public: bool __thiscall fairygui::FUISprite::isScaleByTile(void)const ` |
+| `0x3775a0` | `public: bool __thiscall cocos2d::Node::isScheduled(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x3775c0` | `public: bool __thiscall cocos2d::Node::isScheduled(void (__thiscall cocos2d::Ref::*)(float))const ` |
+| `0x39cea0` | `public: bool __thiscall cocos2d::Scheduler::isScheduled(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,void const *)const ` |
+| `0x39cff0` | `public: bool __thiscall cocos2d::Scheduler::isScheduled(void (__thiscall cocos2d::Ref::*)(float),class cocos2d::Ref const *)const ` |
+| `0x3ab210` | `public: virtual bool __thiscall cocos2d::GLView::isScissorEnabled(void)` |
+| `0x3775e0` | `bool __cdecl cocos2d::isScreenPointInRect(class Rainbow::Vector2f const &,class cocos2d::CCCamera const *,class Rainbow::Matrix4x4f const &,class cocos2d::Rect const &,class Rainbow::Vector3f *)` |
+| `0x9aef0` | `public: bool __thiscall fairygui::GButton::isSelected(void)const ` |
+| `0x9af00` | `public: bool __thiscall cocos2d::Director::isSendCleanupToScene(void)` |
+| `0x9af10` | `public: bool __thiscall cocos2d::Label::isShadowEnabled(void)const ` |
+| `0x9af20` | `public: bool __thiscall Rainbow::MeshInstance::isShow(void)` |
+| `0x9af30` | `public: bool __thiscall fairygui::Window::isShowing(void)const ` |
+| `0x9af40` | `public: bool __thiscall fairygui::GLoader3D::isShrinkOnly(void)const ` |
+| `0x9af50` | `public: bool __thiscall fairygui::GLoader::isShrinkOnly(void)const ` |
+| `0x9af60` | `public: virtual bool __thiscall fairygui::GBasicTextField::isSingleLine(void)const ` |
+| `0x936a0` | `public: virtual bool __thiscall fairygui::GRichTextField::isSingleLine(void)const ` |
+| `0x2f6ee0` | `public: virtual bool __thiscall fairygui::GTextInput::isSingleLine(void)const ` |
+| `0x9af70` | `public: bool __thiscall Rainbow::UILib::SkinResource::isSkinPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x11c440` | `public: bool __thiscall Rainbow::UILib::SkinResource::isSkinPathShouldFixed(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x9afb0` | `public: bool __thiscall fairygui::ScrollPane::isSnapToItem(void)const ` |
+| `0x9afc0` | `public: bool __thiscall fairygui::GRoot::isSoundEnabled(void)const ` |
+| `0x37dcc0` | `public: bool __thiscall cocos2d::Sprite::isStretchEnabled(void)const ` |
+| `0x399a00` | `public: bool __thiscall cocos2d::EventListenerTouchOneByOne::isSwallowTouches(void)` |
+| `0x39d130` | `public: bool __thiscall cocos2d::Scheduler::isTargetPaused(void *)` |
+| `0x9afd0` | `public: bool __thiscall cocos2d::Sprite::isTextureRectRotated(void)const ` |
+| `0x316700` | `public: bool __thiscall fairygui::Window::isTop(void)const ` |
+| `0x9afe0` | `public: bool __thiscall fairygui::ScrollPane::isTouchEffect(void)const ` |
+| `0x327d00` | `public: static bool __cdecl fairygui::InputProcessor::isTouchOnUI(void)` |
+| `0x9aff0` | `public: bool __thiscall fairygui::GObject::isTouchable(void)const ` |
+| `0x332a10` | `public: static bool __cdecl fairygui::GTween::isTweening(class cocos2d::Ref *)` |
+| `0x332a30` | `public: static bool __cdecl fairygui::GTween::isTweening(class cocos2d::Ref *,enum fairygui::TweenPropType)` |
+| `0x3fbe90` | `public: bool __thiscall spine::SkeletonRenderer::isTwoColorTint(void)` |
+| `0x9b000` | `public: bool __thiscall GameUI::isUIHide(void)const ` |
+| `0x3a73a0` | `bool __cdecl cocos2d::StringUtils::isUnicodeNonBreaking(char32_t)` |
+| `0x3a73d0` | `bool __cdecl cocos2d::StringUtils::isUnicodeSpace(char32_t)` |
+| `0xd42a0` | `public: bool __thiscall Rainbow::IndexData::isUsed(void)` |
+| `0x9b010` | `public: bool __thiscall cocos2d::Director::isValid(void)const ` |
+| `0x369ab0` | `protected: bool __thiscall cocos2d::Label::isVerticalClamp(void)` |
+| `0x9ac60` | `public: bool __thiscall fairygui::GList::isVirtual(void)` |
+| `0x9b020` | `public: bool __thiscall fairygui::GObject::isVisible(void)const ` |
+| `0x258a50` | `public: bool __thiscall Rainbow::Image3D::isVisible(void)` |
+| `0x258a50` | `public: bool __thiscall Rainbow::ItemImage3D::isVisible(void)` |
+| `0x377990` | `public: virtual bool __thiscall cocos2d::Node::isVisible(void)const ` |
+| `0x265f50` | `public: bool __thiscall Rainbow::NormalText3D::isVisible(void)` |
+| `0x3779a0` | `protected: bool __thiscall cocos2d::Node::isVisitableByVisitingCamera(void)const ` |
+| `0x3cb6f0` | `public: bool __thiscall winSystemInfo::isWindowsUnSupport(void)` |
+| `0x9b030` | `public: bool __thiscall fairygui::GObject::isWorldRenderSpaceMode(void)` |
+| `0x9b040` | `public: bool __thiscall cocos2d::Node::isWorldSpaceRenderMode(void)` |
+| `0x3641d0` | `public: bool __thiscall cocos2d::Label::isWrapEnabled(void)const ` |
+| `0x3d2520` | `public: static bool __cdecl spine::Bone::isYDown(void)` |
+| `0x6b260` | `public: bool __thiscall WCoord::isZero(void)const ` |
+| `0x2dd2e0` | `public: int __thiscall fairygui::GList::itemIndexToChildIndex(int)` |
+| `0x332a40` | `public: static void __cdecl fairygui::GTween::kill(class cocos2d::Ref *)` |
+| `0x332a60` | `public: static void __cdecl fairygui::GTween::kill(class cocos2d::Ref *,enum fairygui::TweenPropType,bool)` |
+| `0x332a70` | `public: static void __cdecl fairygui::GTween::kill(class cocos2d::Ref *,bool)` |
+| `0x333210` | `public: void __thiscall fairygui::GTweener::kill(bool)` |
+| `0x2c40b0` | `public: void __thiscall Rainbow::HUDLevitationFont::killAllTweens(void)` |
+| `0x301e10` | `private: void __thiscall fairygui::ScrollPane::killTween(void)` |
+| `0x9665e0` | `public: static unsigned int Rainbow::StringUtil::lang` |
+| `0x975d14` | `public: static int fairygui::UIConfig::lang_ver` |
+| `0x24eb60` | `public: class cocos2d::Ref * __thiscall cocos2d::__Array::lastObject(void)` |
+| `0x316730` | `private: void __thiscall fairygui::Window::layoutModalWaitPane(void)` |
+| `0x35fbc0` | `public: virtual void __thiscall cocos2d::InputLabel::leftMoveCursor(void)` |
+| `0x6b280` | `public: float __thiscall WCoord::length(void)const ` |
+| `0x152ea0` | `public: int __thiscall cocos2d::__String::length(void)const ` |
+| `0x6b2f0` | `public: __int64 __thiscall WCoord::lengthSquared(void)const ` |
+| `0x3d97a0` | `public: static float __cdecl spine::MathUtil::lerp(float,float,float)` |
+| `0x388e50` | `float __cdecl cocos2d::tweenfunc::linear(float)` |
+| `0xd1020` | `public: bool __thiscall czy::LeastSquaresFit::linearFit(bool)` |
+| `0x3cc2b0` | `private: static int __cdecl spine::Animation::linearSearch(class spine::Vector<float> &,float,int)` |
+| `0x3d0390` | `private: void __thiscall spine::Atlas::load(char const *,int,char const *,bool)` |
+| `0x402eb0` | `public: virtual void __thiscall spine::Cocos2dTextureLoader::load(class spine::AtlasPage &,class spine::String const &)` |
+| `0x2992e0` | `public: bool __thiscall CsvTable::load(char const *,bool)` |
+| `0x297100` | `private: void __thiscall CsvManager::loadConfig(void)` |
+| `0x2e8820` | `private: void __thiscall fairygui::GLoader3D::loadContent(void)` |
+| `0x2e11d0` | `private: void __thiscall fairygui::GLoader::loadContent(void)` |
+| `0x297930` | `private: bool __thiscall CsvManager::loadCsv(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0xbe270` | `public: void __thiscall Rainbow::DebugMgr::loadDebugCfg(void)` |
+| `0x8a250` | `protected: virtual void __thiscall fairygui::GLoader3D::loadExternal(void)` |
+| `0x2e1230` | `protected: virtual void __thiscall fairygui::GLoader::loadExternal(void)` |
+| `0x2e1390` | `private: void __thiscall fairygui::GLoader::loadFromHttp(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)` |
+| `0x2e88b0` | `private: void __thiscall fairygui::GLoader3D::loadFromPackage(void)` |
+| `0x2e13d0` | `private: void __thiscall fairygui::GLoader::loadFromPackage(void)` |
+| `0x38eb80` | `public: void __thiscall cocos2d::Director::loadIdentityMatrix(enum cocos2d::MATRIX_STACK_TYPE)` |
+| `0x38ec00` | `public: void __thiscall cocos2d::Director::loadMatrix(enum cocos2d::MATRIX_STACK_TYPE,class Rainbow::Matrix4x4f const &)` |
+| `0x24f000` | `public: bool __thiscall MINIW::ScriptVM::loadPackage(char const *)` |
+| `0x2397c0` | `int __cdecl Rainbow::CWebp::loadPngRawData(char const *,class std::vector<unsigned char,class std::allocator<unsigned char> > &,unsigned int &,unsigned int &)` |
+| `0x24f4e0` | `public: bool __thiscall MINIW::ScriptVM::loadString(char const *)` |
+| `0x1e2680` | `public: void __thiscall Rainbow::ParticleManager::loadTemplateFromXML(char const *)` |
+| `0x11c4c0` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::SkinResource::loadTexFromCommonSkinPkg(char const *)` |
+| `0x11c670` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall Rainbow::UILib::SkinResource::loadTexFromCurSkinPkg(char const *)` |
+| `0x38ec80` | `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall cocos2d::Director::loadTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x205a00` | `private: bool __thiscall Rainbow::FileManagerWeb::loadUpdate(void)` |
+| `0x2fb900` | `public: void __thiscall fairygui::GWebView::loadUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x297a40` | `public: void __thiscall CsvManager::loading(int)` |
+| `0x2ec7d0` | `public: class cocos2d::Rect __thiscall fairygui::GObject::localToGlobal(class cocos2d::Rect const &)` |
+| `0x2ec860` | `public: class Rainbow::Vector2f __thiscall fairygui::GObject::localToGlobal(class Rainbow::Vector2f const &)` |
+| `0x3d2530` | `public: void __thiscall spine::Bone::localToWorld(float,float,float &,float &)` |
+| `0x3d2580` | `public: float __thiscall spine::Bone::localToWorldRotation(float)` |
+| `0x301ee0` | `public: void __thiscall fairygui::ScrollPane::lockFooter(int)` |
+| `0x3020a0` | `public: void __thiscall fairygui::ScrollPane::lockHeader(int)` |
+| `0x153550` | `public: bool __thiscall Rainbow::UILib::FrameManager::lockTouchMsg(int,class Rainbow::UILib::Frame *)` |
+| `0x3021d0` | `private: bool __thiscall fairygui::ScrollPane::loopCheckingCurrent(void)` |
+| `0x302370` | `private: void __thiscall fairygui::ScrollPane::loopCheckingNewPos(float &,int)` |
+| `0x3025e0` | `private: void __thiscall fairygui::ScrollPane::loopCheckingTarget(class Rainbow::Vector2f &)` |
+| `0x302760` | `private: void __thiscall fairygui::ScrollPane::loopCheckingTarget(class Rainbow::Vector2f &,int)` |
+| `0x381d50` | `public: long __thiscall cocos2d::SpriteBatchNode::lowestAtlasIndexInChild(class cocos2d::Sprite *)` |
+| `0x24f770` | `public: void __thiscall MINIW::ScriptVM::luagc(void)` |
+| `0x4de710` | `void __cdecl luaval_to_TweenValue(struct lua_State *,int,class fairygui::TweenValue *,char const *)` |
+| `0x4d88f0` | `bool __cdecl luaval_to_boolean(struct lua_State *,int,bool *,char const *)` |
+| `0x4d9640` | `bool __cdecl luaval_to_color3b(struct lua_State *,int,struct cocos2d::Color3B *,char const *)` |
+| `0x4de8d0` | `bool __cdecl luaval_to_margin(struct lua_State *,int,class fairygui::Margin *,char const *)` |
+| `0x4d9c80` | `bool __cdecl luaval_to_node(struct lua_State *,int,char const *,class cocos2d::Node * *)` |
+| `0x4da1f0` | `bool __cdecl luaval_to_std_string(struct lua_State *,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *,char const *)` |
+| `0x4da2f0` | `bool __cdecl luaval_to_std_vector_int(struct lua_State *,int,class std::vector<int,class std::allocator<int> > *,char const *)` |
+| `0x4da400` | `bool __cdecl luaval_to_std_vector_string(struct lua_State *,int,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > *,char const *)` |
+| `0x957e15` | `public: static bool Rainbow::RFontBase::m_DrawRight2Left` |
+| `0x956f60` | `private: static class Rainbow::RuntimeClass const Rainbow::AnimationData::m_RTTI` |
+| `0x956fa8` | `private: static class Rainbow::RuntimeClass const Rainbow::AnimationPlayer::m_RTTI` |
+| `0x95def8` | `private: static class Rainbow::RuntimeClass const Rainbow::BSPData::m_RTTI` |
+| `0x956f80` | `private: static class Rainbow::RuntimeClass const Rainbow::BaseAnimationData::m_RTTI` |
+| `0x962970` | `private: static class Rainbow::RuntimeClass const Rainbow::BillboardMeshBatch::m_RTTI` |
+| `0x956df4` | `private: static class Rainbow::RuntimeClass const Rainbow::BoneTrack::m_RTTI` |
+| `0x96f578` | `private: static class Rainbow::RuntimeClass const Rainbow::Empty3DUIRenderer::m_RTTI` |
+| `0x95d44c` | `private: static class Rainbow::RuntimeClass const Rainbow::Entity::m_RTTI` |
+| `0x95d660` | `private: static class Rainbow::RuntimeClass const Rainbow::EntityData::m_RTTI` |
+| `0x96e458` | `private: static class Rainbow::RuntimeClass const Rainbow::GifAsset::m_RTTI` |
+| `0x96f698` | `private: static class Rainbow::RuntimeClass const Rainbow::Image3D::m_RTTI` |
+| `0x96f8b0` | `private: static class Rainbow::RuntimeClass const Rainbow::ImageBoard3D::m_RTTI` |
+| `0x957548` | `private: static class Rainbow::RuntimeClass const Rainbow::IndexData::m_RTTI` |
+| `0x96f8f0` | `private: static class Rainbow::RuntimeClass const Rainbow::ItemImage3D::m_RTTI` |
+| `0x9569d4` | `private: static class Rainbow::RuntimeClass const Rainbow::LegacyAsset::m_RTTI` |
+| `0x96fb10` | `private: static class Rainbow::RuntimeClass const Rainbow::LegacyCommon3DUI::m_RTTI` |
+| `0x957718` | `private: static class Rainbow::RuntimeClass const Rainbow::LegacySkinMeshRenderer::m_RTTI` |
+| `0x95ddbc` | `private: static class Rainbow::RuntimeClass const Rainbow::MeshData::m_RTTI` |
+| `0x9569f4` | `private: static class Rainbow::RuntimeClass const Rainbow::MiniObject::m_RTTI` |
+| `0x95dbf0` | `private: static class Rainbow::RuntimeClass const Rainbow::Model::m_RTTI` |
+| `0x95d190` | `private: static class Rainbow::RuntimeClass const Rainbow::ModelAnimationPlayer::m_RTTI` |
+| `0x95dddc` | `private: static class Rainbow::RuntimeClass const Rainbow::ModelData::m_RTTI` |
+| `0x95dd28` | `private: static class Rainbow::RuntimeClass const Rainbow::ModelLegacy::m_RTTI` |
+| `0x95dc10` | `private: static class Rainbow::RuntimeClass const Rainbow::ModelNew::m_RTTI` |
+| `0x95d3e0` | `private: static class Rainbow::RuntimeClass const Rainbow::ModelRenderer::m_RTTI` |
+| `0x96dd00` | `private: static class Rainbow::RuntimeClass const Rainbow::MovableObject::m_RTTI` |
+| `0x96ffd8` | `private: static class Rainbow::RuntimeClass const Rainbow::MusicClubChatBubble3D::m_RTTI` |
+| `0x9700e4` | `private: static class Rainbow::RuntimeClass const Rainbow::NameText3D::m_RTTI` |
+| `0x970238` | `private: static class Rainbow::RuntimeClass const Rainbow::NormalText3D::m_RTTI` |
+| `0x957568` | `private: static class Rainbow::RuntimeClass const Rainbow::OgreVertexData::m_RTTI` |
+| `0x970330` | `private: static class Rainbow::RuntimeClass const Rainbow::OnlyText3D::m_RTTI` |
+| `0x970570` | `private: static class Rainbow::RuntimeClass const Rainbow::ProgressBarIn3D::m_RTTI` |
+| `0x9706a0` | `private: static class Rainbow::RuntimeClass const Rainbow::ProgressBarWithText3D::m_RTTI` |
+| `0x96df9c` | `private: static class Rainbow::RuntimeClass const Rainbow::RainbowEffectProxy::m_RTTI` |
+| `0x9569b4` | `private: static class Rainbow::RuntimeClass const Rainbow::RefObjectNoName::m_RTTI` |
+| `0x96f1f0` | `private: static class Rainbow::RuntimeClass const Rainbow::ShadowFace::m_RTTI` |
+| `0x957230` | `private: static class Rainbow::RuntimeClass const Rainbow::SkeletonComponent::m_RTTI` |
+| `0x957394` | `private: static class Rainbow::RuntimeClass const Rainbow::SkeletonData::m_RTTI` |
+| `0x95dc30` | `private: static class Rainbow::RuntimeClass const Rainbow::SkinAnimContainer::m_RTTI` |
+| `0x95df18` | `private: static class Rainbow::RuntimeClass const Rainbow::SkinPatch::m_RTTI` |
+| `0x9706f8` | `private: static class Rainbow::RuntimeClass const Rainbow::StoveProgressBar3D::m_RTTI` |
+| `0x95ddfc` | `private: static class Rainbow::RuntimeClass const Rainbow::SubMeshData::m_RTTI` |
+| `0x971160` | `private: static class Rainbow::RuntimeClass const Rainbow::TerrainDecalEffect::m_RTTI` |
+| `0x970900` | `private: static class Rainbow::RuntimeClass const Rainbow::Text3D::m_RTTI` |
+| `0x970948` | `private: static class Rainbow::RuntimeClass const Rainbow::TextBoardIn3D::m_RTTI` |
+| `0x970b9c` | `private: static class Rainbow::RuntimeClass const Rainbow::Voice3D::m_RTTI` |
+| `0x957e14` | `public: static bool Rainbow::RFontBase::m_WordBoundWrap` |
+| `0x926980` | `private: static bool MINIW::ScriptVM::m_bEnableTmpCallFunction` |
+| `0x91fd94` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CloudAssetUser::m_devStorePort` |
+| `0x91fd7c` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CloudAssetUser::m_devStoreUrl` |
+| `0x91fd64` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CloudAssetUser::m_mapPort` |
+| `0x91fd4c` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CloudAssetUser::m_mapUrl` |
+| `0x92520c` | `private: static int Rainbow::Downloader::m_need_gzip` |
+| `0x91fd34` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CloudAssetUser::m_port` |
+| `0x91fd1c` | `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Rainbow::CloudAssetUser::m_url` |
+| `0x38ecc0` | `public: void __thiscall cocos2d::Director::mainLoop(float)` |
+| `0x38ed10` | `public: void __thiscall cocos2d::Director::mainLoop(void)` |
+| `0x2ec930` | `public: void __thiscall fairygui::GObject::makeFullScreen(void)` |
+| `0x92380` | `public: void __thiscall Rainbow::MeshInstance::makeInstance(unsigned int)` |
+| `0x92380` | `public: void __thiscall Rainbow::SubMeshInstance::makeInstance(unsigned int)` |
+| `0x212590` | `public: static void __cdecl Rainbow::PerlinNoise2D::makeNoiseSharp(unsigned char *,int,int,int,float)` |
+| `0x212600` | `public: static void __cdecl Rainbow::PerlinNoise2D::makeNoiseSharpRow(unsigned char *,int,int,int,float)` |
+| `0x21a600` | `void __cdecl Rainbow::makeRotateMatrix(class Rainbow::Matrix4x4f &,class Rainbow::Vector3f const &,float)` |
+| `0x21a760` | `void __cdecl Rainbow::makeSRTMatrix(class Rainbow::Matrix4x4f &,class MINIW::Transform_ const &)` |
+| `0x21a780` | `void __cdecl Rainbow::makeSRTMatrix(class Rainbow::Matrix4x4f &,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)` |
+| `0x3d1080` | `private: static char * __cdecl spine::Atlas::mallocString(class spine::Atlas::Str *)` |
+| `0x4dea50` | `void __cdecl margin_to_luaval(struct lua_State *,class fairygui::Margin const &)` |
+| `0x2227f0` | `public: static bool __cdecl Rainbow::StringUtil::match(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,bool)` |
+| `0x112d70` | `public: bool __thiscall ChannelList::matchPackage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)const ` |
+| `0x3a91c0` | `public: void __thiscall cocos2d::Rect::merge(class cocos2d::Rect const &)` |
+| `0x290df0` | `public: virtual void __thiscall WebSocketServer::message(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x28ef20` | `public: void __thiscall MINIW::WebSocketSvr::message(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x975e20` | `public: static struct cocos2d::Color4F fairygui::UIConfig::modalLayerColor` |
+| `0x38b4c0` | `private: void __thiscall cocos2d::Data::move(class cocos2d::Data &)` |
+| `0x31e260` | `public: void __thiscall fairygui::FUIModelSprite::moveCamera(class Rainbow::Vector3f const &)` |
+| `0x31e2d0` | `public: void __thiscall fairygui::FUIModelSprite::moveCamera(float,float,float)` |
+| `0x169c00` | `public: void __thiscall Rainbow::UILib::ModelView::moveCamera(class Rainbow::Vector3f const &)` |
+| `0x169c70` | `public: void __thiscall Rainbow::UILib::ModelView::moveCamera(float,float,float)` |
+| `0x2d4410` | `private: int __thiscall fairygui::GComponent::moveChild(class fairygui::GObject *,int,int)` |
+| `0x2f8bf0` | `private: int __thiscall fairygui::GTreeNode::moveChild(class fairygui::GTreeNode *,int,int)` |
+| `0x31e340` | `public: void __thiscall fairygui::FUIModelSprite::moveForward(float)` |
+| `0x169ce0` | `public: void __thiscall Rainbow::UILib::ModelView::moveForward(float)` |
+| `0x31e4a0` | `public: void __thiscall fairygui::FUIModelSprite::moveSide(float)` |
+| `0x169e40` | `public: void __thiscall Rainbow::UILib::ModelView::moveSide(float)` |
+| `0x31e610` | `public: void __thiscall fairygui::FUIModelSprite::moveUp(float)` |
+| `0x169fb0` | `public: void __thiscall Rainbow::UILib::ModelView::moveUp(float)` |
+| `0x95f7c0` | `private: static int Rainbow::Downloader::msNumInsts` |
+| `0x971c40` | `protected: static class MINIW::SnapshotInterface * Rainbow::Singleton<class MINIW::SnapshotInterface>::ms_Singleton` |
+| `0x9564dc` | `protected: static class Rainbow::SoundSystem * Rainbow::Singleton<class Rainbow::SoundSystem>::ms_Singleton` |
+| `0x923d10` | `public: static bool Rainbow::Entity::ms_bShowBindObject` |
+| `0x369ac0` | `protected: bool __thiscall cocos2d::Label::multilineTextWrap(class std::function<int __cdecl(class std::basic_string<char32_t,struct std::char_traits<char32_t>,class std::allocator<char32_t> > const &,int,int)> const &)` |
+| `0x36a440` | `protected: bool __thiscall cocos2d::Label::multilineTextWrapByChar(void)` |
+| `0x36a4e0` | `protected: bool __thiscall cocos2d::Label::multilineTextWrapByWord(void)` |
+| `0x38ed40` | `public: void __thiscall cocos2d::Director::multiplyMatrix(enum cocos2d::MATRIX_STACK_TYPE,class Rainbow::Matrix4x4f &)` |
+| `0x40a7b0` | `public: class cocos2d::__Set * __thiscall cocos2d::__Set::mutableCopy(void)` |
+| `0xe6f90` | `unsigned int __cdecl Rainbow::nVertex2nPrimitive(enum Rainbow::PrimitiveType,unsigned int)` |
+| `0x30c280` | `public: class Rainbow::GameObject * __thiscall fairygui::UI3DRenderer::new3DUIPlaneObject(class fairygui::GObject *)` |
+| `0x3d1310` | `public: virtual class spine::BoundingBoxAttachment * __thiscall spine::AtlasAttachmentLoader::newBoundingBoxAttachment(class spine::Skin &,class spine::String const &)` |
+| `0x290ef0` | `public: virtual void __thiscall WebSocketServer::newClient(unsigned int)` |
+| `0x28ef30` | `public: void __thiscall MINIW::WebSocketSvr::newClient(int,struct lws *)` |
+| `0x3d1380` | `public: virtual class spine::ClippingAttachment * __thiscall spine::AtlasAttachmentLoader::newClippingAttachment(class spine::Skin &,class spine::String const &)` |
+| `0xc31e0` | `public: class Guid __thiscall GuidGenerator::newGuid(void)` |
+| `0x3d13f0` | `public: virtual class spine::MeshAttachment * __thiscall spine::AtlasAttachmentLoader::newMeshAttachment(class spine::Skin &,class spine::String const &,class spine::String const &)` |
+| `0x30ec90` | `public: static class fairygui::GObject * __cdecl fairygui::UIObjectFactory::newObject(class fairygui::PackageItem *)` |
+| `0x30ecd0` | `public: static class fairygui::GObject * __cdecl fairygui::UIObjectFactory::newObject(enum fairygui::ObjectType)` |
+| `0x3d1520` | `public: virtual class spine::PathAttachment * __thiscall spine::AtlasAttachmentLoader::newPathAttachment(class spine::Skin &,class spine::String const &)` |
+| `0x3d1590` | `public: virtual class spine::PointAttachment * __thiscall spine::AtlasAttachmentLoader::newPointAttachment(class spine::Skin &,class spine::String const &)` |
+| `0x3d1600` | `public: virtual class spine::RegionAttachment * __thiscall spine::AtlasAttachmentLoader::newRegionAttachment(class spine::Skin &,class spine::String const &,class spine::String const &)` |
+| `0x4dabe0` | `void __cdecl node_to_luaval(struct lua_State *,char const *,class cocos2d::Node *)` |
+| `0x6b350` | `public: class Rainbow::Vector3f __thiscall Rainbow::WorldPos::normalize(void)const ` |
+| `0x6b3f0` | `public: class Rainbow::Vector3f __thiscall Rainbow::WorldPrecisePos::normalize(void)const ` |
+| `0x2d4640` | `public: int __thiscall fairygui::GComponent::numChildren(void)const ` |
+| `0x2f8cd0` | `public: int __thiscall fairygui::GTreeNode::numChildren(void)const ` |
+| `0x24ed90` | `public: class cocos2d::Ref * __thiscall cocos2d::__Array::objectAtIndex(long)` |
+| `0x407a80` | `public: class cocos2d::Ref * __thiscall cocos2d::__Dictionary::objectForKey(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x407e40` | `public: class cocos2d::Ref * __thiscall cocos2d::__Dictionary::objectForKey(int)` |
+| `0x409ee0` | `private: bool __thiscall cocos2d::__NotificationCenter::observerExisted(class cocos2d::Ref *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Ref *)` |
+| `0x354da0` | `public: virtual void __thiscall cocos2d::Component::onAdd(void)` |
+| `0x318340` | `private: void __thiscall fairygui::FUIContainer::onAfterVisitScissor(void)` |
+| `0x2c4130` | `public: void __thiscall Rainbow::HUDLevitationFont::onAllTweenComplete(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::HUDLevitationFont::onAlphaTweenComplete(void)` |
+| `0x2c4140` | `public: void __thiscall Rainbow::HUDLevitationFont::onAlphaTweenStart(void)` |
+| `0x15eea0` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::onAnchorChanged(void)` |
+| `0x1701f0` | `protected: virtual void __thiscall Rainbow::UILib::MultiEditBox::onAnchorChanged(void)` |
+| `0x3e2010` | `public: virtual void __thiscall spine::SkeletonAnimation::onAnimationStateEvent(class spine::TrackEntry *,enum spine::EventType,class spine::Event *)` |
+| `0x3028c0` | `private: void __thiscall fairygui::ScrollPane::onBarTweenComplete(class fairygui::GTweener *)` |
+| `0x318390` | `private: void __thiscall fairygui::FUIContainer::onBeforeVisitScissor(void)` |
+| `0x321190` | `protected: void __thiscall fairygui::FUIRenderTexture::onBegin(void)` |
+| `0x8a250` | `void __cdecl MINIW::onCameraQRScanned(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x2e8d50` | `protected: void __thiscall fairygui::GLoader3D::onChange(void)` |
+| `0x2e8d60` | `protected: void __thiscall fairygui::GLoader3D::onChangeSpine(void)` |
+| `0x3c3870` | `public: void __thiscall cocos2d::GLViewImpl::onCharCallback(struct Rainbow::InputEvent const &)` |
+| `0x2ced50` | `private: void __thiscall fairygui::GButton::onClick(class fairygui::FUIEventContext *)` |
+| `0x2d0c00` | `private: void __thiscall fairygui::GComboBox::onClickItem(class fairygui::FUIEventContext *)` |
+| `0x2dd3a0` | `private: void __thiscall fairygui::GList::onClickItem(class fairygui::FUIEventContext *)` |
+| `0x2fd5a0` | `private: void __thiscall fairygui::PopupMenu::onClickItem(class fairygui::FUIEventContext *)` |
+| `0x28ca00` | `private: void __thiscall MINIW::WebSocket::onClientReceivedData(void *,unsigned int)` |
+| `0x28cae0` | `private: void __thiscall MINIW::WebSocket::onClientWritable(void)` |
+| `0x92380` | `public: virtual void __thiscall WebSocketCallbackWrapper::onClose(class MINIW::WebSocket *)` |
+| `0x3332c0` | `public: class fairygui::GTweener * __thiscall fairygui::GTweener::onComplete1(class std::function<void __cdecl(class fairygui::GTweener *)>)` |
+| `0x333330` | `public: class fairygui::GTweener * __thiscall fairygui::GTweener::onComplete(class std::function<void __cdecl(void)>)` |
+| `0x291050` | `public: void __thiscall WebSocketServer::onConnect(unsigned int)` |
+| `0x28cf00` | `private: void __thiscall MINIW::WebSocket::onConnectionClosed(void)` |
+| `0x28d200` | `private: void __thiscall MINIW::WebSocket::onConnectionError(void)` |
+| `0x28d330` | `private: void __thiscall MINIW::WebSocket::onConnectionOpened(void)` |
+| `0x2d4650` | `protected: virtual void __thiscall fairygui::GComponent::onConstruct(void)` |
+| `0x3078b0` | `private: void __thiscall fairygui::Transition::onDelayedPlay(void)` |
+| `0x3079d0` | `private: void __thiscall fairygui::Transition::onDelayedPlayItem(class fairygui::GTweener *)` |
+| `0x291150` | `public: void __thiscall WebSocketServer::onDisconnect(unsigned int)` |
+| `0x2cdf40` | `private: void __thiscall fairygui::DragDropManager::onDragEnd(class fairygui::FUIEventContext *)` |
+| `0x316820` | `private: void __thiscall fairygui::Window::onDragStart(class fairygui::FUIEventContext *)` |
+| `0x321370` | `protected: void __thiscall fairygui::FUIRenderTexture::onEnd(void)` |
+| `0x354e00` | `public: virtual void __thiscall cocos2d::Component::onEnter(void)` |
+| `0x3184e0` | `public: virtual void __thiscall fairygui::FUIContainer::onEnter(void)` |
+| `0x2d4660` | `protected: virtual void __thiscall fairygui::GComponent::onEnter(void)` |
+| `0x2eca20` | `protected: virtual void __thiscall fairygui::GObject::onEnter(void)` |
+| `0x2f1d50` | `protected: virtual void __thiscall fairygui::GRoot::onEnter(void)` |
+| `0x2b3120` | `protected: virtual void __thiscall fairygui::HUDRoot::onEnter(void)` |
+| `0x377b10` | `public: virtual void __thiscall cocos2d::Node::onEnter(void)` |
+| `0x2fd720` | `private: void __thiscall fairygui::PopupMenu::onEnter(class fairygui::FUIEventContext *)` |
+| `0x37ac00` | `public: virtual void __thiscall cocos2d::ProtectedNode::onEnter(void)` |
+| `0x3fbea0` | `public: virtual void __thiscall spine::SkeletonRenderer::onEnter(void)` |
+| `0x3867a0` | `public: virtual void __thiscall cocos2d::TransitionFade::onEnter(void)` |
+| `0x30dd00` | `protected: virtual void __thiscall fairygui::UI3DRoot::onEnter(void)` |
+| `0x316840` | `protected: virtual void __thiscall fairygui::Window::onEnter(void)` |
+| `0x318510` | `public: virtual void __thiscall fairygui::FUIContainer::onEnterTransitionDidFinish(void)` |
+| `0x377bc0` | `public: virtual void __thiscall cocos2d::Node::onEnterTransitionDidFinish(void)` |
+| `0x37ac50` | `public: virtual void __thiscall cocos2d::ProtectedNode::onEnterTransitionDidFinish(void)` |
+| `0x92960` | `public: void __thiscall cocos2d::GLViewImpl::onError(int,char const *)` |
+| `0x28fd40` | `public: virtual void __thiscall WebSocketCallbackWrapper::onError(class MINIW::WebSocket *,int)` |
+| `0x354e60` | `public: virtual void __thiscall cocos2d::Component::onExit(void)` |
+| `0x318540` | `public: virtual void __thiscall fairygui::FUIContainer::onExit(void)` |
+| `0x2cee10` | `private: void __thiscall fairygui::GButton::onExit(class fairygui::FUIEventContext *)` |
+| `0x2d46a0` | `protected: virtual void __thiscall fairygui::GComponent::onExit(void)` |
+| `0x2eca30` | `protected: virtual void __thiscall fairygui::GObject::onExit(void)` |
+| `0x2f1d60` | `protected: virtual void __thiscall fairygui::GRoot::onExit(void)` |
+| `0x2b3130` | `protected: virtual void __thiscall fairygui::HUDRoot::onExit(void)` |
+| `0x377c30` | `public: virtual void __thiscall cocos2d::Node::onExit(void)` |
+| `0x37aca0` | `public: virtual void __thiscall cocos2d::ProtectedNode::onExit(void)` |
+| `0x3fbed0` | `public: virtual void __thiscall spine::SkeletonRenderer::onExit(void)` |
+| `0x388240` | `public: virtual void __thiscall cocos2d::TransitionFade::onExit(void)` |
+| `0x30dd10` | `protected: virtual void __thiscall fairygui::UI3DRoot::onExit(void)` |
+| `0x316870` | `protected: virtual void __thiscall fairygui::Window::onExit(void)` |
+| `0x318570` | `public: virtual void __thiscall fairygui::FUIContainer::onExitTransitionDidStart(void)` |
+| `0x377cd0` | `public: virtual void __thiscall cocos2d::Node::onExitTransitionDidStart(void)` |
+| `0x37acf0` | `public: virtual void __thiscall cocos2d::ProtectedNode::onExitTransitionDidStart(void)` |
+| `0x8a250` | `protected: void __thiscall fairygui::GLoader3D::onExternalLoadFailed(void)` |
+| `0x8a250` | `protected: void __thiscall fairygui::GLoader::onExternalLoadFailed(void)` |
+| `0x92380` | `protected: void __thiscall fairygui::GLoader3D::onExternalLoadSuccess(class cocos2d::SpriteFrame *)` |
+| `0x2e1670` | `protected: void __thiscall fairygui::GLoader::onExternalLoadSuccess(class cocos2d::SpriteFrame *)` |
+| `0x2eca40` | `private: void __thiscall fairygui::GObject::onFullScreen(void)` |
+| `0x13e0d0` | `public: virtual void __thiscall Rainbow::UILib::EditBox::onGainFocus(void)` |
+| `0x1491a0` | `public: virtual void __thiscall Rainbow::UILib::Frame::onGainFocus(void)` |
+| `0x170200` | `public: virtual void __thiscall Rainbow::UILib::MultiEditBox::onGainFocus(void)` |
+| `0x8a250` | `private: void __thiscall fairygui::UI3DRenderer::onGameObjectBecameVisible(void)` |
+| `0x3168b0` | `protected: virtual void __thiscall fairygui::Window::onHide(void)` |
+| `0x1491e0` | `protected: virtual void __thiscall Rainbow::UILib::Frame::onHoverEnter(struct Rainbow::InputEvent const &)` |
+| `0x133dd0` | `public: void __thiscall Rainbow::UILib::CoordInteract::onHoverExit(struct Rainbow::InputEvent const &)` |
+| `0x1492a0` | `protected: virtual void __thiscall Rainbow::UILib::Frame::onHoverExit(struct Rainbow::InputEvent const &)` |
+| `0x92380` | `protected: virtual void __thiscall Rainbow::UILib::ModelView::onHoverExit(struct Rainbow::InputEvent const &)` |
+| `0x8a250` | `void __cdecl MINIW::onImagePicked(int)` |
+| `0x3168c0` | `protected: virtual void __thiscall fairygui::Window::onInit(void)` |
+| `0x1188b0` | `public: int __thiscall CoordAxis::onInputEvent(struct Rainbow::InputEvent const &,float,float,float)` |
+| `0x38f1c0` | `public: virtual int __thiscall cocos2d::Director::onInputEvent(struct Rainbow::InputEvent const &)` |
+| `0x2dd400` | `private: void __thiscall fairygui::GList::onItemTouchBegin(class fairygui::FUIEventContext *)` |
+| `0x3c3c20` | `public: void __thiscall cocos2d::GLViewImpl::onKeyCallback(struct Rainbow::InputEvent const &)` |
+| `0x327d10` | `private: void __thiscall fairygui::InputProcessor::onKeyDown(enum Rainbow::InputKeyCode,class cocos2d::Event *)` |
+| `0x327e00` | `private: void __thiscall fairygui::InputProcessor::onKeyUp(enum Rainbow::InputKeyCode,class cocos2d::Event *)` |
+| `0x1a2fd0` | `public: void __thiscall Rainbow::UILib::XMLManager::onLangRefresh(void)` |
+| `0x8a250` | `public: void __thiscall Rainbow::MaterialTemplate::onLostDevice(void)` |
+| `0x13e0f0` | `public: virtual void __thiscall Rainbow::UILib::EditBox::onLostFocus(void)` |
+| `0x1492f0` | `public: virtual void __thiscall Rainbow::UILib::Frame::onLostFocus(void)` |
+| `0x170220` | `public: virtual void __thiscall Rainbow::UILib::MultiEditBox::onLostFocus(void)` |
+| `0x28fd60` | `public: virtual void __thiscall WebSocketCallbackWrapper::onMessage(class MINIW::WebSocket *,struct MINIW::WsMsgData const &)` |
+| `0x291270` | `public: void __thiscall WebSocketServer::onMessage(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3c3c40` | `public: void __thiscall cocos2d::GLViewImpl::onMouseCallBack(int,int,float,float,int)` |
+| `0x327f00` | `private: void __thiscall fairygui::InputProcessor::onMouseDown(class cocos2d::EventMouse *)` |
+| `0x328070` | `private: void __thiscall fairygui::InputProcessor::onMouseMove(class cocos2d::EventMouse *)` |
+| `0x3c3e90` | `public: void __thiscall cocos2d::GLViewImpl::onMouseMoveCallBack(float,float)` |
+| `0x328290` | `private: void __thiscall fairygui::InputProcessor::onMouseScroll(class cocos2d::EventMouse *)` |
+| `0x3c4030` | `public: void __thiscall cocos2d::GLViewImpl::onMouseScrollCallback(float,float)` |
+| `0x328370` | `private: void __thiscall fairygui::InputProcessor::onMouseUp(class cocos2d::EventMouse *)` |
+| `0x3028f0` | `private: void __thiscall fairygui::ScrollPane::onMouseWheel(class fairygui::FUIEventContext *)` |
+| `0x28fd80` | `public: virtual void __thiscall WebSocketCallbackWrapper::onOpen(class MINIW::WebSocket *)` |
+| `0x307a20` | `public: void __thiscall fairygui::Transition::onOwnerAddedToStage(void)` |
+| `0x307a60` | `public: void __thiscall fairygui::Transition::onOwnerRemovedFromStage(void)` |
+| `0x2ffd90` | `public: void __thiscall fairygui::Relations::onOwnerSizeChanged(float,float,bool)` |
+| `0x3029a0` | `private: void __thiscall fairygui::ScrollPane::onOwnerSizeChanged(void)` |
+| `0x307a80` | `private: void __thiscall fairygui::Transition::onPlayTransCompleted(class fairygui::TransitionItem *)` |
+| `0x2d0c90` | `private: void __thiscall fairygui::GComboBox::onPopupWinClosed(class fairygui::FUIEventContext *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::HUDLevitationFont::onPositionTweenComplete(void)` |
+| `0x2c4140` | `public: void __thiscall Rainbow::HUDLevitationFont::onPositionTweenStart(void)` |
+| `0x37bc70` | `public: void __thiscall cocos2d::Scene::onProjectionChanged(class cocos2d::EventCustom *)` |
+| `0x354ec0` | `public: virtual void __thiscall cocos2d::Component::onRemove(void)` |
+| `0x2cee30` | `private: void __thiscall fairygui::GButton::onRollOut(class fairygui::FUIEventContext *)` |
+| `0x2eca80` | `private: void __thiscall fairygui::GObject::onRollOut(class fairygui::FUIEventContext *)` |
+| `0x302a20` | `private: void __thiscall fairygui::ScrollPane::onRollOut(class fairygui::FUIEventContext *)` |
+| `0x2ceea0` | `private: void __thiscall fairygui::GButton::onRollOver(class fairygui::FUIEventContext *)` |
+| `0x2ecae0` | `private: void __thiscall fairygui::GObject::onRollOver(class fairygui::FUIEventContext *)` |
+| `0x302a30` | `private: void __thiscall fairygui::ScrollPane::onRollOver(class fairygui::FUIEventContext *)` |
+| `0x2d0ca0` | `private: void __thiscall fairygui::GComboBox::onRollout(class fairygui::FUIEventContext *)` |
+| `0x2d0cd0` | `private: void __thiscall fairygui::GComboBox::onRollover(class fairygui::FUIEventContext *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::HUDLevitationFont::onScaleTweenComplete(void)` |
+| `0x2c4140` | `public: void __thiscall Rainbow::HUDLevitationFont::onScaleTweenStart(void)` |
+| `0x2dd460` | `private: void __thiscall fairygui::GList::onScroll(class fairygui::FUIEventContext *)` |
+| `0x134d60` | `public: virtual void __thiscall Rainbow::UILib::CustomView::onShowOrHide(void)` |
+| `0x149330` | `public: virtual void __thiscall Rainbow::UILib::Frame::onShowOrHide(void)` |
+| `0x8a250` | `public: virtual void __thiscall Rainbow::UILib::LayoutFrame::onShowOrHide(void)` |
+| `0x16a030` | `public: virtual void __thiscall Rainbow::UILib::ModelView::onShowOrHide(void)` |
+| `0x3168d0` | `protected: virtual void __thiscall fairygui::Window::onShown(void)` |
+| `0x28d370` | `public: int __thiscall MINIW::WebSocket::onSocketCallback(struct lws *,int,void *,void *,unsigned int)` |
+| `0x2ecb40` | `public: bool __thiscall fairygui::GObject::onStage(void)const ` |
+| `0x3333a0` | `public: class fairygui::GTweener * __thiscall fairygui::GTweener::onStart(class std::function<void __cdecl(class fairygui::GTweener *)>)` |
+| `0x92960` | `public: virtual void __thiscall WebSocketCallbackWrapper::onStateChange(class MINIW::WebSocket *,int)` |
+| `0x3360c0` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_ALIGN(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x3361e0` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_COLOR(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x336340` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_FONT(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x336460` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_IMG(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x336830` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_SIZE(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x336990` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_Simple(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x336bc0` | `protected: virtual void __thiscall fairygui::UBBParser::onTag_URL(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)` |
+| `0x328660` | `private: bool __thiscall fairygui::InputProcessor::onTouchBegan(class cocos2d::Touch *,class cocos2d::Event *)` |
+| `0x2cef10` | `private: void __thiscall fairygui::GButton::onTouchBegin(class fairygui::FUIEventContext *)` |
+| `0x2d0d00` | `private: void __thiscall fairygui::GComboBox::onTouchBegin(class fairygui::FUIEventContext *)` |
+| `0x2ecb60` | `private: void __thiscall fairygui::GObject::onTouchBegin(class fairygui::FUIEventContext *)` |
+| `0x302a40` | `private: void __thiscall fairygui::ScrollPane::onTouchBegin(class fairygui::FUIEventContext *)` |
+| `0x3168e0` | `private: void __thiscall fairygui::Window::onTouchBegin(class fairygui::FUIEventContext *)` |
+| `0x328860` | `private: void __thiscall fairygui::InputProcessor::onTouchCancelled(class cocos2d::Touch *,class cocos2d::Event *)` |
+| `0x2cef80` | `private: void __thiscall fairygui::GButton::onTouchEnd(class fairygui::FUIEventContext *)` |
+| `0x2d0d60` | `private: void __thiscall fairygui::GComboBox::onTouchEnd(class fairygui::FUIEventContext *)` |
+| `0x2ecb90` | `private: void __thiscall fairygui::GObject::onTouchEnd(class fairygui::FUIEventContext *)` |
+| `0x302b50` | `private: void __thiscall fairygui::ScrollPane::onTouchEnd(class fairygui::FUIEventContext *)` |
+| `0x328950` | `private: void __thiscall fairygui::InputProcessor::onTouchEnded(class cocos2d::Touch *,class cocos2d::Event *)` |
+| `0x2f1d80` | `private: void __thiscall fairygui::GRoot::onTouchEvent(int)` |
+| `0x30dd30` | `private: void __thiscall fairygui::UI3DRoot::onTouchEvent(int)` |
+| `0x2ecbc0` | `private: void __thiscall fairygui::GObject::onTouchMove(class fairygui::FUIEventContext *)` |
+| `0x303070` | `private: void __thiscall fairygui::ScrollPane::onTouchMove(class fairygui::FUIEventContext *)` |
+| `0x328e50` | `private: void __thiscall fairygui::InputProcessor::onTouchMoved(class cocos2d::Touch *,class cocos2d::Event *)` |
+| `0x3e20f0` | `public: virtual void __thiscall spine::SkeletonAnimation::onTrackEntryEvent(class spine::TrackEntry *,enum spine::EventType,class spine::Event *)` |
+| `0x32dc80` | `private: void __thiscall fairygui::GearColor::onTweenComplete(void)` |
+| `0x32dc80` | `private: void __thiscall fairygui::GearLook::onTweenComplete(void)` |
+| `0x307a90` | `private: void __thiscall fairygui::Transition::onTweenComplete(class fairygui::GTweener *)` |
+| `0x307ad0` | `private: void __thiscall fairygui::Transition::onTweenStart(class fairygui::GTweener *)` |
+| `0x32dcc0` | `private: void __thiscall fairygui::GearColor::onTweenUpdate(class fairygui::GTweener *)` |
+| `0x32f210` | `private: void __thiscall fairygui::GearLook::onTweenUpdate(class fairygui::GTweener *)` |
+| `0x307c90` | `private: void __thiscall fairygui::Transition::onTweenUpdate(class fairygui::GTweener *)` |
+| `0x316920` | `private: void __thiscall fairygui::Window::onUILoadComplete(void)` |
+| `0x92380` | `public: virtual void __thiscall Rainbow::IClientInfo::onUinLogin(int)` |
+| `0x333410` | `public: class fairygui::GTweener * __thiscall fairygui::GTweener::onUpdate(class std::function<void __cdecl(class fairygui::GTweener *)>)` |
+| `0x3c4110` | `public: void __thiscall cocos2d::GLViewImpl::onWindowFocusCallback(int)` |
+| `0x3c4140` | `public: void __thiscall cocos2d::GLViewImpl::onWindowPosCallback(int,int)` |
+| `0x38f470` | `public: static void __cdecl cocos2d::Director::onWindowSize(int,int)` |
+| `0x2e8ef0` | `public: void __thiscall fairygui::GLoader3D::onWindowSizeChanged(void)` |
+| `0x2f1dc0` | `public: void __thiscall fairygui::GRoot::onWindowSizeChanged(void)` |
+| `0x2b3150` | `public: void __thiscall fairygui::HUDRoot::onWindowSizeChanged(void)` |
+| `0x3ab220` | `public: void __thiscall cocos2d::GLView::onWindowSizeFunCallback(int,int)` |
+| `0x3ab220` | `public: void __thiscall cocos2d::GLViewImpl::onWindowSizeFunCallback(int,int)` |
+| `0x281590` | `public: class LuaWebSocket * __thiscall LuaWebSocketMgr::open(char const *)` |
+| `0x28fda0` | `public: void __thiscall WebSocketCallbackWrapper::open(char const *)` |
+| `0x2745b0` | `public: bool __thiscall Rainbow::ZipFilePkg::open(class core::basic_string<char,class core::StringStorageDefault<char> > const &,bool,char const *,char const *)` |
+| `0x281680` | `public: static class LuaWebSocket * __cdecl LuaWebSocketMgr::openLuaWebSocket(char const *)` |
+| `0x8a250` | `public: void __thiscall Rainbow::BoneTrack::optimize(void)` |
+| `0x1dc240` | `public: void __thiscall Rainbow::ModelData::optimizeKeyFrames(int)` |
+| `0xdd530` | `public: void __thiscall Rainbow::AnimationData::optimizeKeyframes(void)` |
+| `0x3ac6b0` | `public: bool __thiscall cocos2d::SAXParser::parse(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3ac780` | `public: bool __thiscall cocos2d::SAXParser::parse(char const *,unsigned int)` |
+| `0x336dc0` | `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall fairygui::UBBParser::parse(char const *,bool)` |
+| `0x4d41a0` | `public: virtual bool __thiscall cocos2d::LuaEngine::parseConfig(enum cocos2d::ScriptEngineProtocol::ConfigType,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3a7ef0` | `class std::vector<int,class std::allocator<int> > __cdecl cocos2d::utils::parseIntegerList(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x3ac860` | `public: bool __thiscall cocos2d::SAXParser::parseIntrusive(char *,unsigned int)` |
+| `0x28fe40` | `public: virtual bool __thiscall WebSocketCallbackWrapper::parseJsonCmdParam(struct MINIW::CmdData const &)` |
+| `0x2912a0` | `public: virtual bool __thiscall WebSocketServer::parseJsonCmdParam(struct MINIW::CmdData const &)` |
+| `0x9b050` | `public: bool __thiscall GameUI::parseSingleTOCFile(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x315200` | `public: bool __thiscall fairygui::UISkinColorManager::parseSkinColorConfigFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x11efa0` | `public: void __thiscall Rainbow::SkinTextColorLoaderBase::parseSkinInfoCfg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class jsonxx::Object const &)` |
+| `0x38f5c0` | `public: void __thiscall cocos2d::Director::pause(void)` |
+| `0x377d40` | `public: virtual void __thiscall cocos2d::Node::pause(void)` |
+| `0x39d320` | `public: class std::set<void *,struct std::less<void *>,class std::allocator<void *> > __thiscall cocos2d::Scheduler::pauseAllTargets(void)` |
+| `0x39d340` | `public: class std::set<void *,struct std::less<void *>,class std::allocator<void *> > __thiscall cocos2d::Scheduler::pauseAllTargetsWithMinPriority(int)` |
+| `0x395980` | `public: void __thiscall cocos2d::EventDispatcher::pauseEventListenersForTarget(class cocos2d::Node *,bool)` |
+| `0x39d740` | `public: void __thiscall cocos2d::Scheduler::pauseTarget(void *)` |
+| `0x39d920` | `public: void __thiscall cocos2d::Scheduler::performFunctionInCocosThread(class std::function<void __cdecl(void)>)` |
+| `0x409f50` | `public: void __thiscall cocos2d::NotificationObserver::performSelector(class cocos2d::Ref *)` |
+| `0x1bda90` | `public: bool __thiscall Rainbow::MiniGameScene::pickGround(float,float,float *)` |
+| `0x21eaf0` | `public: virtual bool __thiscall Rainbow::SimpleGameScene::pickGround(class Rainbow::Ray const &,float *)` |
+| `0x232580` | `public: virtual bool __thiscall Rainbow::SimpleGameScene::pickGround(int,int,int *,class Rainbow::Vector3f *,float *)` |
+| `0x192fe0` | `public: virtual class Rainbow::MovableObject * __thiscall Rainbow::SimpleGameScene::pickObject(enum Rainbow::IntersectType,class Rainbow::Ray const &,float *,unsigned int)` |
+| `0x30e270` | `public: static class fairygui::GObject * __cdecl fairygui::UI3DScene::pickObject(float,float)` |
+| `0x6b490` | `public: int __thiscall WCoord::planeDistanceTo(class WCoord const &)const ` |
+| `0x307e40` | `private: void __thiscall fairygui::Transition::play(int,float,float,float,class std::function<void __cdecl(void)>,bool)` |
+| `0x308070` | `public: void __thiscall fairygui::Transition::play(int,float,float,float,class std::function<void __cdecl(void)>)` |
+| `0x308120` | `public: void __thiscall fairygui::Transition::play(int,float,class std::function<void __cdecl(void)>)` |
+| `0x3081d0` | `public: void __thiscall fairygui::Transition::play(class std::function<void __cdecl(void)>)` |
+| `0x16a370` | `public: void __thiscall Rainbow::UILib::ModelView::playActorAnim(int,int)` |
+| `0x31e690` | `public: void __thiscall fairygui::FUIModelSprite::playBackgroundAnim(int)` |
+| `0x16a460` | `public: void __thiscall Rainbow::UILib::ModelView::playBackgroundAnim(int)` |
+| `0x31e6e0` | `public: void __thiscall fairygui::FUIModelSprite::playBackgroundEffect(char const *,char const *)` |
+| `0x9b0c0` | `public: class Rainbow::AnimPlayTrack * __thiscall Rainbow::AnimationPlayer::playCrossfade(int,class Rainbow::SharePtr<class Rainbow::BaseAnimationData> const &,short const *,float)` |
+| `0x31e870` | `public: void __thiscall fairygui::FUIModelSprite::playEffect(char const *,int)` |
+| `0x16a4b0` | `public: void __thiscall Rainbow::UILib::ModelView::playEffect(char const *,int)` |
+| `0x308280` | `private: void __thiscall fairygui::Transition::playItem(class fairygui::TransitionItem *)` |
+| `0x3087d0` | `public: void __thiscall fairygui::Transition::playReverse(int,float,class std::function<void __cdecl(void)>)` |
+| `0x308880` | `public: void __thiscall fairygui::Transition::playReverse(class std::function<void __cdecl(void)>)` |
+| `0x2f1f90` | `public: void __thiscall fairygui::GRoot::playSound(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)` |
+| `0x213fb0` | `public: void __thiscall Rainbow::SoundSystem::playSound(class Rainbow::FixedString const &,class Rainbow::Vector3f const &,float,float,float,float)` |
+| `0x239a30` | `int __cdecl Rainbow::CWebp::png2webp(char const *,char const *,int)` |
+| `0x8a250` | `public: virtual void __thiscall cocos2d::GLView::pollEvents(void)` |
+| `0x3c4150` | `public: virtual void __thiscall cocos2d::GLViewImpl::pollEvents(void)` |
+| `0xd1160` | `public: void __thiscall czy::LeastSquaresFit::polyFit(int,bool)` |
+| `0x3b0c60` | `public: void __thiscall cocos2d::Renderer::popGroup(void)` |
+| `0x1fa7b0` | `private: bool __thiscall Rainbow::UpDownloadManager::popLoadRequest(class Rainbow::LoadHttpFileTask *)` |
+| `0x38f5f0` | `public: void __thiscall cocos2d::Director::popMatrix(enum cocos2d::MATRIX_STACK_TYPE)` |
+| `0x38f640` | `public: void __thiscall cocos2d::Director::popScene(bool)` |
+| `0x8a250` | `protected: void __thiscall cocos2d::Renderer::popStateBlock(void)` |
+| `0x38f700` | `public: void __thiscall cocos2d::Director::popToRootScene(void)` |
+| `0x38f710` | `public: void __thiscall cocos2d::Director::popToSceneStackLevel(int)` |
+| `0x37dcd0` | `protected: void __thiscall cocos2d::Sprite::populateTriangle(int,struct cocos2d::V3F_C4B_T2F_Quad const &)` |
+| `0x929de0` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > fairygui::UIConfig::popupMenu` |
+| `0x929df8` | `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > fairygui::UIConfig::popupMenu_seperator` |
+| `0x3037c0` | `private: void __thiscall fairygui::ScrollPane::posChanged(bool)` |
+| `0x409f80` | `public: void __thiscall cocos2d::__NotificationCenter::postNotification(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)` |
+| `0x409fa0` | `public: void __thiscall cocos2d::__NotificationCenter::postNotification(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cocos2d::Ref *)` |
+| `0x3889a0` | `public: static float __cdecl spine::MathUtil::pow(float,float)` |
+| `0x3e0550` | `public: void __thiscall spine::Skeleton::printUpdateCache(void)` |
+| `0x39da10` | `protected: void __thiscall cocos2d::Scheduler::priorityIn(struct cocos2d::_listEntry * *,class std::function<void __cdecl(float)> const &,void *,int,bool)` |
+| `0x21dc80` | `private: void __thiscall MINIW::Md5Context::process(unsigned char const *)` |
+| `0x11df00` | `public: void __thiscall Rainbow::UILib::SkinTextColorLoader::processFontString(class Rainbow::UILib::FontString *)` |
+| `0x3b0c70` | `protected: void __thiscall cocos2d::Renderer::processGroupCommand(class cocos2d::GroupCommand *)` |
+| `0x377d70` | `protected: unsigned int __thiscall cocos2d::Node::processParentFlags(class Rainbow::Matrix4x4f const &,unsigned int)` |
+| `0x3b0ca0` | `protected: void __thiscall cocos2d::Renderer::processRenderCommand(class cocos2d::RenderCommand *)` |
+| `0x68e10` | `public: float * __thiscall Rainbow::ColourValue::ptr(void)` |
+| `0x68e10` | `public: float const * __thiscall Rainbow::ColourValue::ptr(void)const ` |
+| `0x38f7e0` | `public: void __thiscall cocos2d::Director::purgeCachedData(void)` |
+| `0x38f7f0` | `public: void __thiscall cocos2d::Director::purgeDirector(void)` |
+| `0x409da0` | `public: static void __cdecl cocos2d::__NotificationCenter::purgeNotificationCenter(void)` |
+| `0x3b0df0` | `public: void __thiscall cocos2d::Renderer::pushGroup(int)` |
+| `0x1fa840` | `private: void __thiscall Rainbow::UpDownloadManager::pushLoad(class Rainbow::LoadHttpFileTask *)` |
+| `0x1fa900` | `public: void __thiscall Rainbow::UpDownloadManager::pushLoadLast(class Rainbow::LoadHttpFileTask *)` |
+| `0x38f840` | `public: void __thiscall cocos2d::Director::pushMatrix(enum cocos2d::MATRIX_STACK_TYPE)` |
+| `0x28d400` | `private: void __thiscall MINIW::WebSocket::pushMessage(int,struct MINIW::WsMsgData *)` |
+| `0x38f890` | `public: void __thiscall cocos2d::Director::pushScene(class cocos2d::Scene *)` |
+| `0x8a250` | `protected: void __thiscall cocos2d::Renderer::pushStateBlock(void)` |
+| `0x388e60` | `float __cdecl cocos2d::tweenfunc::quadEaseIn(float)` |
+| `0x388e70` | `float __cdecl cocos2d::tweenfunc::quadEaseInOut(float)` |
+| `0x388ed0` | `float __cdecl cocos2d::tweenfunc::quadEaseOut(float)` |
+| `0x388f00` | `float __cdecl cocos2d::tweenfunc::quadraticIn(float)` |
+| `0x388f30` | `float __cdecl cocos2d::tweenfunc::quadraticInOut(float)` |
+| `0x388f90` | `float __cdecl cocos2d::tweenfunc::quadraticOut(float)` |
+| `0x388fc0` | `float __cdecl cocos2d::tweenfunc::quartEaseIn(float)` |
+| `0x388ff0` | `float __cdecl cocos2d::tweenfunc::quartEaseInOut(float)` |
+| `0x389060` | `float __cdecl cocos2d::tweenfunc::quartEaseOut(float)` |
+| `0x3890a0` | `float __cdecl cocos2d::tweenfunc::quintEaseIn(float)` |
+| `0x3890d0` | `float __cdecl cocos2d::tweenfunc::quintEaseInOut(float)` |
+| `0x389150` | `float __cdecl cocos2d::tweenfunc::quintEaseOut(float)` |
+| `0x21bca0` | `public: float __thiscall Rainbow::GaussGenerator::randGauss(void)` |
+| `0x3d97d0` | `public: static float __cdecl spine::MathUtil::random(void)` |
+| `0x24f7d0` | `public: class cocos2d::Ref * __thiscall cocos2d::__Array::randomObject(void)` |
+| `0x407f50` | `public: class cocos2d::Ref * __thiscall cocos2d::__Dictionary::randomObject(void)` |
+| `0x3d9800` | `public: static float __cdecl spine::MathUtil::randomTriangular(float,float)` |
+| `0x3d9900` | `public: static float __cdecl spine::MathUtil::randomTriangular(float,float,float)` |
+| `0x30c7d0` | `public: class fairygui::GObject * __thiscall fairygui::UI3DRenderer::raycast3DUI(class Rainbow::Vector2f)` |
+| `0xdd880` | `public: void __thiscall Rainbow::AnimationData::reCreateByBoneChange(class core::hash_map<class Rainbow::FixedString,int,struct Rainbow::FixedStringHashFunc,struct std::equal_to<class Rainbow::FixedString> > &)` |
+| `0x118a00` | `public: void __thiscall CoordAxis::reSetArrowTo2DPos(void)` |
+| `0x225b90` | `public: bool __thiscall FileAutoClose::read(void *,int)` |
+| `0x3eeb30` | `private: class spine::Animation * __thiscall spine::SkeletonJson::readAnimation(class spine::Json *,class spine::SkeletonData *)` |
+| `0x3f2350` | `private: static void __cdecl spine::SkeletonJson::readCurve(class spine::Json *,class spine::CurveTimeline *,unsigned int)` |
+| `0x2e8f20` | `public: static char * __cdecl spine::SpineExtension::readFile(class spine::String const &,int *)` |
+| `0x2dd470` | `protected: virtual void __thiscall fairygui::GList::readItems(class fairygui::ByteBuffer *)` |
+| `0x3d10d0` | `private: static int __cdecl spine::Atlas::readLine(char const * *,char const *,class spine::Atlas::Str *)` |
+| `0x3f2460` | `public: class spine::SkeletonData * __thiscall spine::SkeletonJson::readSkeletonData(char const *)` |
