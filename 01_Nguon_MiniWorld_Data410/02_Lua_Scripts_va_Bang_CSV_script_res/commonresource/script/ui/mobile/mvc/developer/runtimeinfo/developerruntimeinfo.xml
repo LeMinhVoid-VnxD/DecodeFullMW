@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/runtimeInfo/DeveloperRuntimeInfoModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/runtimeInfo/DeveloperRuntimeInfoView.lua"/>
+	<Script file="ui/mobile/mvc/developer/runtimeInfo/DeveloperRuntimeInfoCtrl.lua"/>
+
+    ##钩子按钮模板
+    <Button name="DeveloperRuntimeInfo_TickBtn" virtual="true" abs_x="35" abs_y="35">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="board_check.png" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTick" file="ui/mobile/texture2/room.xml" uvname="icon_tick" hidden="true" abs_x="28" abs_y="28">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+
+    ##触发器条目模板
+    <Button name="DeveloperRuntimeInfo_GroupChildTemplate" virtual="true" abs_x="235" abs_y="56">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="TemplateBigBkg9"/>
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13"/>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="left" text="触发器1" abs_x="126" abs_y="18" >
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="48" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentTickBtn" inherits="DeveloperRuntimeInfo_TickBtn">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="7" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_ChildTickBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_ChildBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+    ##触发器组模板
+    <Button name="DeveloperRuntimeInfo_GroupTemplate" virtual="true" abs_x="250" abs_y="57">
+		<Frames>
+            ##组按钮
+            <Button name="$parentGroupBtn" abs_x="250" abs_y="57">
+                <Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+				</Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentNormal" inherits="TemplateBkg6"/>
+                        <Texture name="$parentDir" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black" abs_x="8" abs_y="16">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="16" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName"  fonttype="BlackFont20"  text="触发器组1" justifyH="center" abs_x="170" abs_y="20">
+                            <Color r="55" g="54" b="49"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentNormal" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentTickBtn" inherits="DeveloperRuntimeInfo_TickBtn">
+                        <Anchors>
+                            <Anchor point="right" relativeTo="$parent" relativePoint="right">
+                                <Offset>
+                                    <AbsDimension x="-14" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_GroupTickBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_GroupBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+
+            <ListViewFrame name="$parentGroupList" slidingY="true" slideplane="$parentPlane" abs_x = "235" abs_y = "56" prefuncname="DeveloperRuntimeInfoTriggerGroupChild">
+				<Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                        <Offset>
+                            <AbsDimension x="10" y="56"/>
+                        </Offset>
+                    </Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="235" y="56"/>
+						</Size>
+					</Frame>
+						## DeveloperRuntimeInfo_GroupChildTemplate 插件模板
+				</Frames>
+			</ListViewFrame>
+		</Frames>
+	</Button>
+
+    ##触发器组类型说明模板
+    <Frame name="DeveloperRuntimeInfo_GroupTypeTemplate" virtual="true" abs_x="250" abs_y="40">
+        <Anchors>
+            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+		<Layers>
+            <Layer level="BACKGROUND">
+                ##下划线
+                <Texture name="$parentLine1" inherits="TemplateBkg36" abs_x="60" abs_y="2" hidden="false">
+                    <Anchors>
+                        <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent" >
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentLine2" inherits="TemplateBkg36" abs_x="60" abs_y="2" hidden="false">
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" >
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##类型名
+                <FontString name="$parentName"  fonttype="BlackFont18"  text="全局触发器" justifyH="center" abs_x="200" abs_y="18">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" >
+                            <Offset>
+                                <AbsDimension x="0" y="-7"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+
+        <Frames>
+            <ListViewFrame name="$parentTriggerList" slidingY="true" slideplane="$parentPlane" abs_x="250" abs_y="150" prefuncname="DeveloperRuntimeInfoTriggerGroup">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                        <Offset>
+                            <AbsDimension x="0" y="40"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="250" abs_y="150"/>
+                        ##组类型说明条目:动态创建..., 模板'DeveloperRuntimeInfo_GroupTemplate'
+                </Frames>
+            </ListViewFrame>
+        </Frames>
+	</Frame>
+
+    ##调试信息详情子条目:模板
+    <Button name="DeveloperRuntimeInfo_InfoItemChildTemplate" virtual="true" abs_x="537" abs_y="50" input_transparent="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                ##条目名
+                <FontString name="$parentName"  fonttype="BlackFont18"  text="事件-任意玩家使用表情" justifyH="left" abs_x="445" abs_y="18" autowrap="true">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                            <Offset>
+                                <AbsDimension x="34" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##√、×图标
+                <Texture name="$parentErrorIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_yes_w" abs_x="31" abs_y="24" >
+                    <Anchors>
+                        <Anchor point="center" relativePoint="left" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="-20" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##参数1
+                <FontString name="$parentParam1" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+                <FontString name="$parentParam2" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+                <FontString name="$parentParam3" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+                <FontString name="$parentParam4" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+                <FontString name="$parentParam5" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+                <FontString name="$parentParam6" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+                <FontString name="$parentParam7" fonttype="BlackFont18" text="玩家:" justifyH="left" abs_x="425" abs_y="18" hidden="true" textcolor="ff373630"/>
+            </Layer>
+        </Layers>
+    </Button>
+
+    ##调试信息详情组:模板
+    <Button name="DeveloperRuntimeInfo_InfoItemTemplate" virtual="true" abs_x="537" abs_y="51">
+        <Layers>
+            <Layer level="BACKGROUND">
+                ##白色背景
+                <Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="537" abs_y="1">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="40"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+		<Frames>
+            ##按钮
+            <Button name="$parentTriggerBtn" abs_x="537" abs_y="51">
+                <Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+				</Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentNormal" inherits="TemplateBkg34"/>
+                        <Texture name="$parentDir" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black" abs_x="8" abs_y="16">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="16" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName"  fonttype="BlackFont20"  text="触发器组1" justifyH="left" abs_x="350" abs_y="20">
+                            <Color r="55" g="54" b="49"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentNormal" >
+                                    <Offset>
+                                        <AbsDimension x="44" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):InfoList_BtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##一条详情:动态创建...
+            <Button name="$parentChild1" id="1" inherits="DeveloperRuntimeInfo_InfoItemChildTemplate"/>
+		</Frames>
+	</Button>
+
+    ##变量条目模板
+    <Button name="DeveloperRuntimeInfo_VarItemTemplate" virtual="true" abs_x="180" abs_y="18">
+        <Layers>
+            <Layer level="BACKGROUND">
+                ##条目名
+                <FontString name="$parentName"  fonttype="BlackFont18"  text="计时器1值:1" justifyH="left" abs_x="180" abs_y="18" autowrap="true" lineInterval="6">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Button>
+
+    ##tab按钮模板
+    <Button name="DeveloperRuntimeInfoTabBtnTemplate" inherits="TemplateTabBtn2" virtual="true">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):LabelBtnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##脚本日志筛选条目模板
+    ##触发器条目模板
+    <Button name="DeveloperRuntimeInfo_LogTagFilterTemp" virtual="true" abs_x="235" abs_y="56">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentNormal" inherits="TemplateBigBkg9"/>
+                <Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true"/>
+                <FontString name="$parentName" fonttype="BlackFont18" justifyH="left" text="tag1" abs_x="126" abs_y="18" >
+                    <Color r="55" g="54" b="49"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="48" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentTickBtn" inherits="DeveloperRuntimeInfo_TickBtn">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="7" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_LogTagTickBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Button>
+
+    ##主界面
+	<Frame name="DeveloperRuntimeInfo" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="4000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" />
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="575">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+                            <Offset>
+                                <AbsDimension x="50" y="0"/>
+                            </Offset>
+                        </Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1072" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##清理按钮
+			<Button name="$parentClearBtn" inherits="TemplateBtn2" abs_x="120" abs_y="40">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright" >
+						<Offset>
+							<AbsDimension x="-150" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="center" text="$15467" abs_x="90" abs_y="24">
+							<Color r="55" g="52" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                	<Offset>
+							            <AbsDimension x="0" y="3"/>
+						            </Offset>
+                                </Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):ClearBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+
+            ##标签
+            <Frame name="$parentLabel" abs_x="154" abs_y="250" input_transparent="true">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="16" y="65"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <LayoutBox name="$parentList" layoutstyle="vertical_top" spacex="10" spacey="30">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parent" relativePoint="top" />
+                        </Anchors>
+                        <Frames>
+                            <Button name="$parentBtn1" inherits="DeveloperRuntimeInfoTabBtnTemplate" id="1" hidden="false" />
+                            <Button name="$parentBtn2" inherits="DeveloperRuntimeInfoTabBtnTemplate" id="2" hidden="false"/>
+                            <Button name="$parentBtn3" inherits="DeveloperRuntimeInfoTabBtnTemplate" id="3" hidden="false"/>
+                        </Frames>
+                    </LayoutBox>
+                </Frames>
+            </Frame>
+
+            ##左:变量
+            <Frame name="$parentLeft" abs_x="200" abs_y="485">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+                        <Offset>
+                            <AbsDimension x="16" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg11" >
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgTop" inherits="TemplateBkg25" abs_x="198" abs_y="36">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>	
+                        </Texture>
+                        <FontString name="$parentTitle"  fonttype="BlackFont24"  text="$15452" justifyH="center" abs_x="198" abs_y="24">
+                            <Color r="77" g="112" b="117"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkgTop" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SlidingFrame name="$parentVarList" slidingY="true" slideplane="$parentPlane" abs_x="200" abs_y="390">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="0" y="55"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="200" abs_y="390"/>
+                            ##变量条目:动态创建...
+                            <!-- <Button name="$parentItem1" id="1" inherits="DeveloperRuntimeInfo_VarItemTemplate"/> -->
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##中: 调试详情
+            <Frame name="$parentCenter" abs_x="562" abs_y="485">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+                        <Offset>
+                            <AbsDimension x="225" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBkg25" >
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##调试信息列表
+                    <SlidingFrame name="$parentInfoList" slidingY="true" slideplane="$parentPlane" abs_x="562" abs_y="470" slidebar="$parentBar">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="0" y="8"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            ##滑动条
+                            <Frame name="$parentBar" abs_x="30" abs_y="10" inherits="SlidingBoxBarTemplate1">
+                                <Anchors>
+                                    <Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Frame name="$parentPlane" hidden="true" abs_x="562" abs_y="415"/>
+                            ##条目:动态创建...
+                            <!-- <Button name="$parentItem1" id="1" inherits="DeveloperRuntimeInfo_InfoItemTemplate"/> -->
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##中: 脚本日志
+            <Frame name="$parentCenterScriptLog" abs_x="562" abs_y="485" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentCenter" />
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBkg25" />
+                        <Texture name="$parentBkgWhite" inherits="TemplateBkg39" abs_x="552" abs_y="475">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="542" abs_y="470" slidebar="$parentBar">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parentBkgWhite">
+                                <Offset>
+                                    <AbsDimension x="21" y="5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            ##滑动条
+                            <Frame name="$parentBar" abs_x="30" abs_y="10" inherits="SlidingBoxBarTemplate1">
+                                <Anchors>
+                                    <Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+
+                            <Frame name="$parentPlane" hidden="true" abs_x="542" abs_y="470"/>
+                            ##输出信息
+                            <RichText name="$parentContent" lineInterval="4" multiLine="false" fonttype="BlackFont18" autoextend="false" input_transparent="true" abs_x="542" abs_y="1000">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parentPlane" relativePoint="top" />
+                                </Anchors>
+                            </RichText>
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##中:空页面提示
+            <Frame name="$parentCenterEmptyFrame" abs_x="562" abs_y="485">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentCenter" />
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBkg25" />
+                        <Texture name="$parentBkgRabbit" file="ui/mobile/texture2/bigtex/img_noreview.png" abs_x="244" abs_y="255">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentTip"  fonttype="BlackFont24"  text="没有脚本打印信息" justifyH="center" abs_x="350" abs_y="24">
+                            <Color r="77" g="112" b="117"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentBkgRabbit" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="20"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+
+            ##右: 触发器筛选
+            <Frame name="$parentRight" abs_x="262" abs_y="485">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg" >
+                        <Offset>
+                            <AbsDimension x="-13" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg11" >
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgTop" inherits="TemplateBkg25" abs_x="260" abs_y="36">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>	
+                        </Texture>
+                        <FontString name="$parentTitle"  fonttype="BlackFont24"  text="$15453" justifyH="center" abs_x="198" abs_y="24">
+                            <Color r="77" g="112" b="117"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkgTop" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##钩子
+                    <Button name="$parentTickBtn" inherits="TemplateTickBtn0">
+                        <Anchors>
+                            <Anchor point="right" relativeTo="$parentBkgTop" relativePoint="right">
+                                <Offset>
+                                    <AbsDimension x="41" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_TickBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                    ##组列表
+                    <ListViewFrame name="$parentModList" slidingY="true" slideplane="$parentPlane" abs_x="262" abs_y="430" prefuncname="DeveloperRuntimeInfoTriggerFilter">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="5" y="46"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="262" abs_y="430"/>
+                            ##组类型说明条目:动态创建..., 模板'DeveloperRuntimeInfo_GroupTypeTemplate'
+                        </Frames>
+                    </ListViewFrame>
+                </Frames>
+            </Frame>
+
+            ##右: 脚本:日志tag筛选
+            <Frame name="$parentScriptFilter" abs_x="262" abs_y="485" hidden="true">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg" >
+                        <Offset>
+                            <AbsDimension x="-13" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg11" >
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgTop" inherits="TemplateBkg25" abs_x="260" abs_y="36">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>  
+                        </Texture>
+                        <FontString name="$parentTitle"  fonttype="BlackFont24"  text="$15462" justifyH="center" abs_x="198" abs_y="24">
+                            <Color r="77" g="112" b="117"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkgTop" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentTickBtn" inherits="DeveloperRuntimeInfo_TickBtn">
+                        <Anchors>
+                            <Anchor point="right" relativeTo="$parentBkgTop" relativePoint="right">
+                                <Offset>
+                                    <AbsDimension x="-19" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):TriggerFilter_ScriptFilterTickBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                    <SlidingFrame name="$parentTagList" slidingY="true" slideplane="$parentPlane" abs_x="262" abs_y="415">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="0" y="46"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="262" abs_y="415"/>
+                            ##组条目:动态创建...
+                            ##<Button name="$parentItem1" id="1" inherits="DeveloperRuntimeInfo_LogTagFilterTemp"/>
+
+                            ##tag筛选条目:动态创建..., 模板'DeveloperRuntimeInfo_LogTagFilterTemp'
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##触发器/脚本调试开关和打开按钮
+            <Button name="$parentDebugBtn" abs_x="110" abs_y="36" hidden="false">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="281" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBkg69"/>
+                        <Texture name="$parentBkgOff" inherits="TemplateBkg8" hidden="true"/>
+                        <Texture name="$parentPoint" inherits="TemplateBkg9" abs_x="76" abs_y="43">
+                            <Anchors>
+                                <Anchor point="left" relativeTo="$parent" relativePoint="left"/>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentDesc" fonttype="BlackFont" text="$21742" justifyH="center" justifyV="middle" abs_x="76" abs_y="43">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentPoint" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):DebugBtnClick()
+                    </OnClick>
+                </Scripts>
+            </Button>
+		</Frames>
+		<Scripts>
+            <OnUpdate>GetInst("UIManager"):GetCtrl("DeveloperRuntimeInfo"):Update();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

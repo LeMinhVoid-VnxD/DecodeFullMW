@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/cloudserver/blacklist/CloudServerBlackListCtrl.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/blacklist/CloudServerBlackListModel.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/blacklist/CloudServerBlackListView.lua"/>
+
+	##玩家信息模板
+	<Button name= "CloudServerRoomBlacklistTemplate" virtual="true" abs_x="539" abs_y="78">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+				<Texture name="$parentRightBkg" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="84" abs_y="74">
+					<Anchors>
+						<Anchor point="right" relativeTo="$parent" relativePoint="right"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" inherits="TemplateBigBkg13" />
+				<FontString name="$parentName" fonttype="BlackFont19" justifyH="left" justifyV="middle" text="地鼠和三号的生活" abs_x="200" abs_y="30" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="75" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentAccount" fonttype="BlackFont17" justifyH="left" justifyV="middle" text="迷你号" abs_x="200" abs_y="30" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="75" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="63" abs_y="63">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="6" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" />
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="60" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+<!--					<OnClick> GetInst("UIManager"):GetCtrl("CloudServerBlackList"):PlayerHeadBtnClicked()</OnClick>-->
+				</Scripts>
+			</Button>
+			<Button name="$parentOptionBtn" abs_x="34" abs_y="37">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red">
+					<Size>
+						<AbsDimension x="30" y="33"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_no.png">
+							<Size>
+								<AbsDimension x="16" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerBlackList"):RemoveBlacklistBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick> GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PlayerPagePlayerInfoBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	##黑名单面板
+	<Frame name="CloudServerBlackList" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2320"  rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000"/>
+
+				<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="665" abs_y="634">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="645" abs_y="65" >
+					<Anchors>
+						<Anchor point="top" relativeTo="$parentChenDi" relativePoint="top" >
+							<Offset>
+								<AbsDimension x="-3" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleHuaWen" inherits="TemplateBigBkg7_flat" abs_x="645" abs_y="65">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentTitleBkg" relativePoint="center" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" justifyV="middle" text="$9325" abs_x="200" abs_y="40" >
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleHuaWen">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDescribe" fonttype="BlackFont20" justifyV="center" justifyH="left" hidden="true"  text="请从以下云服务器中选择需要复制的数据源" abs_x="562" abs_y="35" >
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="90"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<Texture name="$parentListBkg" inherits="TemplateBigBkg5" abs_x="562" abs_y="426" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-27" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):Close("CloudServerBlackList")</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="$parentList" slideplane="$parentPlane" slidingY="true" abs_x="562" abs_y="416">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentDescribe" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="560" abs_y="400" />
+					<Button name= "$parentBtn1" inherits= "CloudServerRoomBlacklistTemplate" id = "1" />
+					<Button name= "$parentBtn2" inherits= "CloudServerRoomBlacklistTemplate" id = "2"/>
+					<Button name= "$parentBtn3" inherits= "CloudServerRoomBlacklistTemplate"  id = "3"/>
+					<Button name= "$parentBtn4" inherits= "CloudServerRoomBlacklistTemplate"  id = "4"/>
+					<Button name= "$parentBtn5" inherits= "CloudServerRoomBlacklistTemplate"  id = "5"/>
+					<Button name= "$parentBtn6" inherits= "CloudServerRoomBlacklistTemplate"  id = "6"/>
+					<Button name= "$parentBtn7" inherits= "CloudServerRoomBlacklistTemplate"  id = "7"/>
+					<Button name= "$parentBtn8" inherits= "CloudServerRoomBlacklistTemplate"  id = "8"/>
+					<Button name= "$parentBtn9" inherits= "CloudServerRoomBlacklistTemplate"  id = "9"/>
+					<Button name= "$parentBtn10" inherits= "CloudServerRoomBlacklistTemplate" id = "10" />
+					<Button name= "$parentBtn11" inherits= "CloudServerRoomBlacklistTemplate" id = "11" />
+					<Button name= "$parentBtn12" inherits= "CloudServerRoomBlacklistTemplate" id = "12"/>
+					<Button name= "$parentBtn13" inherits= "CloudServerRoomBlacklistTemplate"  id = "13"/>
+					<Button name= "$parentBtn14" inherits= "CloudServerRoomBlacklistTemplate"  id = "14"/>
+					<Button name= "$parentBtn15" inherits= "CloudServerRoomBlacklistTemplate"  id = "15"/>
+					<Button name= "$parentBtn16" inherits= "CloudServerRoomBlacklistTemplate"  id = "16"/>
+					<Button name= "$parentBtn17" inherits= "CloudServerRoomBlacklistTemplate"  id = "17"/>
+					<Button name= "$parentBtn18" inherits= "CloudServerRoomBlacklistTemplate"  id = "18"/>
+					<Button name= "$parentBtn19" inherits= "CloudServerRoomBlacklistTemplate"  id = "19"/>
+					<Button name= "$parentBtn20" inherits= "CloudServerRoomBlacklistTemplate" id = "20" />
+					<Button name= "$parentBtn21" inherits= "CloudServerRoomBlacklistTemplate" id = "21" />
+					<Button name= "$parentBtn22" inherits= "CloudServerRoomBlacklistTemplate" id = "22"/>
+					<Button name= "$parentBtn23" inherits= "CloudServerRoomBlacklistTemplate"  id = "23"/>
+					<Button name= "$parentBtn24" inherits= "CloudServerRoomBlacklistTemplate"  id = "24"/>
+					<Button name= "$parentBtn25" inherits= "CloudServerRoomBlacklistTemplate"  id = "25"/>
+					<Button name= "$parentBtn26" inherits= "CloudServerRoomBlacklistTemplate"  id = "26"/>
+					<Button name= "$parentBtn27" inherits= "CloudServerRoomBlacklistTemplate"  id = "27"/>
+					<Button name= "$parentBtn28" inherits= "CloudServerRoomBlacklistTemplate"  id = "28"/>
+					<Button name= "$parentBtn29" inherits= "CloudServerRoomBlacklistTemplate"  id = "29"/>
+					<Button name= "$parentBtn30" inherits= "CloudServerRoomBlacklistTemplate" id = "30" />
+					<Button name= "$parentBtn31" inherits= "CloudServerRoomBlacklistTemplate" id = "31" />
+					<Button name= "$parentBtn32" inherits= "CloudServerRoomBlacklistTemplate" id = "32"/>
+					<Button name= "$parentBtn33" inherits= "CloudServerRoomBlacklistTemplate"  id = "33"/>
+					<Button name= "$parentBtn34" inherits= "CloudServerRoomBlacklistTemplate"  id = "34"/>
+					<Button name= "$parentBtn35" inherits= "CloudServerRoomBlacklistTemplate"  id = "35"/>
+					<Button name= "$parentBtn36" inherits= "CloudServerRoomBlacklistTemplate"  id = "36"/>
+					<Button name= "$parentBtn37" inherits= "CloudServerRoomBlacklistTemplate"  id = "37"/>
+					<Button name= "$parentBtn38" inherits= "CloudServerRoomBlacklistTemplate"  id = "38"/>
+					<Button name= "$parentBtn39" inherits= "CloudServerRoomBlacklistTemplate"  id = "39"/>
+					<Button name= "$parentBtn40" inherits= "CloudServerRoomBlacklistTemplate" id = "40" />
+					<Button name= "$parentBtn41" inherits= "CloudServerRoomBlacklistTemplate" id = "41" />
+					<Button name= "$parentBtn42" inherits= "CloudServerRoomBlacklistTemplate" id = "42"/>
+					<Button name= "$parentBtn43" inherits= "CloudServerRoomBlacklistTemplate"  id = "43"/>
+					<Button name= "$parentBtn44" inherits= "CloudServerRoomBlacklistTemplate"  id = "44"/>
+					<Button name= "$parentBtn45" inherits= "CloudServerRoomBlacklistTemplate"  id = "45"/>
+					<Button name= "$parentBtn46" inherits= "CloudServerRoomBlacklistTemplate"  id = "46"/>
+					<Button name= "$parentBtn47" inherits= "CloudServerRoomBlacklistTemplate"  id = "47"/>
+					<Button name= "$parentBtn48" inherits= "CloudServerRoomBlacklistTemplate"  id = "48"/>
+					<Button name= "$parentBtn49" inherits= "CloudServerRoomBlacklistTemplate"  id = "49"/>
+					<Button name= "$parentBtn50" inherits= "CloudServerRoomBlacklistTemplate" id = "50" />
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):Close("CloudServerBlackList")</OnClick>
+		</Scripts>
+	</Frame>
+
+</Ui>

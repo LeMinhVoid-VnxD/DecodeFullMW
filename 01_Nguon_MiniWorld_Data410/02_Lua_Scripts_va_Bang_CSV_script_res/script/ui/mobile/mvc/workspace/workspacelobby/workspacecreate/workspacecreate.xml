@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceLobby/WorkSpaceCreate/WorkSpaceCreateModel.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceLobby/WorkSpaceCreate/WorkSpaceCreateView.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceLobby/WorkSpaceCreate/WorkSpaceCreateCtrl.lua"/>
+
+	##勾选同意按钮
+	<Button name="WorkSpaceCreateTickBtnT" virtual="true" abs_x="50" abs_y="24">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="board_check.png" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTick" file="ui/mobile/texture2/room.xml" uvname="icon_tick" hidden="false" abs_x="28" abs_y="28">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentName" lineInterval="8" input_transparent="true" multiLine="false" fonttype="BlackFont20" abs_x="400" abs_y="20">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="38" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):TickBtnOnClick();</OnClick>
+		</Scripts>
+	</Button>
+	<Frame name="WorkSpaceCreate" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3300" rel_x="1.0" rel_y="1.0">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!--半透明遮罩-->
+				<Texture name="$parentBgMask" file="ui/white.png" color="b2000000" stretchedge="true" framelevel="1002">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="996" abs_y="571">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBodyBkg" inherits="TemplateBigBkg2" abs_x="993" abs_y="433">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="53"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="996" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top"  />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle" fonttype="BlackFont38" text="$60086" abs_x="152" abs_y="38">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkgLeft">
+									<Offset>
+										<AbsDimension x="33" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 关闭按钮: -->
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-9" y="-6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 申请页面主体-->
+			<Frame name="$parentBody" abs_x="1150" abs_y="636">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- 工作室头像 -->
+						<FontString name="$parentHeadIconTitle" fonttype="BlackFont24" justifyH="left" text="$60087" abs_x="120" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="92" y="71"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 工作室名称 -->
+						<FontString name="$parentNameTitle" fonttype="BlackFont24" justifyH="left" text="$60088" abs_x="120" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHeadIconTitle">
+									<Offset>
+										<AbsDimension x="0" y="47"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentNameEditBkg" inherits="TemplateBkg8" abs_x="340" abs_y="46">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentNameTitle">
+									<Offset>
+										<AbsDimension x="175" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 工作室描述 -->
+						<FontString name="$parentDescTitle" fonttype="BlackFont24" justifyH="left" text="$60089" abs_x="120" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentNameTitle">
+									<Offset>
+										<AbsDimension x="0" y="49"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentDescEditBkg" inherits="TemplateBkg8" abs_x="620" abs_y="95">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentDescTitle">
+									<Offset>
+										<AbsDimension x="175" y="24"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 联系方式-->
+						<FontString name="$parentContactTitle" fonttype="BlackFont24" justifyH="left" text="$60090" abs_x="120" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDescTitle">
+									<Offset>
+										<AbsDimension x="0" y="97"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentContactEditBkg" inherits="TemplateBkg8" abs_x="340" abs_y="46">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentContactTitle">
+									<Offset>
+										<AbsDimension x="175" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 头像上传-->
+					<Button name="$parentHeadIconBtn" >
+						<Size>
+							<AbsDimension x="50" y="50"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentHeadIconTitle" relativePoint="left">
+								<Offset>
+									<AbsDimension x="175" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentIconFrame" inherits="TemplateBkg18" abs_x="50" abs_y="50">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parentIcon" relativePoint="center" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIconDefault" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add" abs_x="28" abs_y="28">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add" abs_x="48" abs_y="48" hidden="true">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):HeadBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<RichText name="$parentNameDefault" lineInterval="7" multiLine="false" fonttype="BlackFont20" autoextend="true" input_transparent="true">
+						<textcolor r="185" g="185" b="185"/>
+						<Size>
+							<AbsDimension x="320" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentNameEditBkg">
+								<Offset>
+									<AbsDimension x="8" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					##工作室名称输入框
+					<SafeEditBox name="$parentNameEdit" letters="24" multiLine="false" editMethod="527" abs_x="320" abs_y="24">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentNameEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="8" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22" >
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<Scripts>
+							<OnFocusGained>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):NameEdit_OnFocusGained();</OnFocusGained>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):NameEdit_OnFocusLost();</OnFocusLost>
+							<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):NameEdit_OnClick();</OnClick>
+						</Scripts>
+					</SafeEditBox>
+					##工作室介绍显示文本
+					<SlidingFrame name="$parentDescBox" slidingY="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="600" y="80"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentDescEditBkg">
+								<Offset>
+									<AbsDimension x="8" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="600" y="800"/>
+								</Size>
+							</Frame>		
+							<RichText name="$parentDescDefault" lineInterval="7" multiLine="false" fonttype="BlackFont22" autoextend="true" input_transparent="true">
+									<textcolor r="185" g="185" b="185"/>
+								<Size>
+									<AbsDimension x="600" y="800" />
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="4" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>		
+							##地图介绍输入框
+							<SafeMultiEditBox name="$parentDescEdit" letters="450" fonttype="BlackFont22" lineInterval="7" editMethod="580" abs_x="600" abs_y="800">
+								<textcolor r="255" g="255" b="255"/>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane" >
+										<Offset>
+											<AbsDimension x="0" y="4" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnFocusGained>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):DescEdit_OnFocusGained();</OnFocusGained> 
+									<OnFocusLost>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):DescEdit_OnFocusLost();</OnFocusLost> 
+								</Scripts>
+							</SafeMultiEditBox>		
+						</Frames>
+					</SlidingFrame>
+					<RichText name="$parentContactDefault" lineInterval="7" multiLine="false" fonttype="BlackFont18" autoextend="true" input_transparent="true">
+						<textcolor r="185" g="185" b="185"/>
+						<Size>
+							<AbsDimension x="320" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentContactEditBkg">
+								<Offset>
+									<AbsDimension x="8" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					##工作室联系方式输入框
+					<SafeEditBox name="$parentContactEdit" multiLine="false" editMethod="2" abs_x="320" abs_y="24">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentContactEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="8" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22" >
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<Scripts>
+							<OnFocusGained>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):ContactEdit_OnFocusGained();</OnFocusGained>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):ContactEdit_OnFocusLost();</OnFocusLost>
+							<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):ContactEdit_OnClick();</OnClick>
+						</Scripts>
+					</SafeEditBox>
+				</Frames>
+			</Frame>
+			<!-- 底部授权及提交 -->
+			<Frame name="$parentBottom" abs_x="993" abs_y="82">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##勾选1:协议
+					<Button name="$parentAgreement" inherits="WorkSpaceCreateTickBtnT" id="1">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="327" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							##用户协议
+							<Button name="$parentBtn" abs_x="140" abs_y="46" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent" relativePoint="left">
+										<Offset>
+											<AbsDimension x="40" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):ShowAgreement();</OnClick>
+								</Scripts>
+							</Button>
+							##用户协议
+							<Button name="$parentBtn2" abs_x="220" abs_y="46">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent" relativePoint="left">
+										<Offset>
+											<AbsDimension x="80" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):ShowAgreement2();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Button>
+					##确定
+					<Button name="$parentOKBtn" inherits="TemplateBtnBig_OKBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-45" y="-13"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentName" fonttype="BlackFont24" text="$60091" justifyH="center" abs_x="182" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceCreate"):OKBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

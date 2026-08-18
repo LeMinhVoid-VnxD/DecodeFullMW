@@ -1,0 +1,325 @@
+接口ID,繁体,繁体,繁体,中文繁體,中文繁體,中文繁體,中文繁體
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,遊戲管理,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,結束比賽,local result = Game:doGameEnd()
+10002,遊戲管理,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,設置腳本參數，供自定義使用,"local result = Game:setScriptVar(index, val)"
+10003,遊戲管理,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",獲取腳本參數，自定義使用,local result = Game:getScriptVar(index)
+10004,遊戲管理,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,上傳設置好的腳本參數,local result = Game:sendScriptVars2Client()
+10005,遊戲管理,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",新增全局效果,local result = Game:addRenderGlobalEffect(path)
+10006,遊戲管理,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,移除全局效果,local result = Game:removeRenderGlobalEffect(effectid)
+10007,遊戲管理,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,設置全局效果位置,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,遊戲管理,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,設置全局效果縮放,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,遊戲管理,msgBox,Game:msgBox(msg),,,messagebox,local result = Game:msgBox(msg)
+20001,世界管理,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",是否是白天,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,世界管理,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",是否是自定義遊戲,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,世界管理,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",是否是創造模式,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,世界管理,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",多人創造模式 或者 自製玩法的編輯模式,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,世界管理,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",極限模式,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,世界管理,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",冒險模式之自由模式,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,世界管理,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",單人模式 或者 冒險模式之自由模式,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,世界管理,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",由創造模式轉的生存,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,世界管理,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",自製玩法的編輯模式,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,世界管理,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",自製玩法的運行模式,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,世界管理,getHours,World:getHours(),none,"ErrorCode.OK, result:number",獲取遊戲當前時間(h),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,世界管理,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",獲取視角編輯狀態,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,世界管理,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,設置視角編輯狀態,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,世界管理,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",獲取自定義相機配置,local result = World:getCustomCameraConfig()
+20015,世界管理,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",獲取區塊(chunk)範圍,"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,世界管理,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",獲取指定範圍內actor,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,世界管理,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number","獲取全部玩家,可限制存活情況",local result = World:getPlayerTotal(alive)
+20018,世界管理,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array","獲取全部玩家,可限制存活情況","local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,世界管理,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",隨機出一個玩家,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,世界管理,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,移除actor,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,世界管理,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array",生成生物(包括怪物、NPC、動物等),"local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,世界管理,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,移除生物,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,世界管理,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",在指定位置生成道具,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,世界管理,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,移除道具(通過區域),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,世界管理,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,移除道具(通過ID),"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,世界管理,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,生成投擲物,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,方塊管理,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",方塊是否是實體,"local result = Block:isSolidBlock(x, y, z)"
+30002,方塊管理,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",方塊是否是流體,"local result = Block:isLiquidBlock(x, y, z)"
+30003,方塊管理,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",方塊是否是空氣,"local result = Block:isAirBlock(x, y, z)"
+30004,方塊管理,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",獲取block對應id,"local result = Block:getBlockID(x, y, z)"
+30005,方塊管理,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,設置blockalldata 更新+通知,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,方塊管理,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,銷毀方塊,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,方塊管理,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",放置方塊,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,方塊管理,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,設置blockalldata 通知周圍方塊,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,方塊管理,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,設置blockalldata 更新當前位置方塊,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,方塊管理,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,設置方塊設置屬性狀態,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,方塊管理,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",獲取功能方塊的開關狀態,local result = Block:getBlockSwitchStatus(pos)
+30012,方塊管理,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,設置功能方塊的開關狀態,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,遊戲Actor,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,檢測是否是玩家,local result = Actor:isPlayer(objid)
+40002,遊戲Actor,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,檢測是否是怪物,local result = Actor:isMob(objid)
+40003,遊戲Actor,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",獲取actor類型:生物/玩家...,local result = Actor:getObjType(objid)
+40004,遊戲Actor,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,是否在空中,local result = Actor:isInAir(objid)
+40005,遊戲Actor,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",獲取actor位置,local result = Actor:getPosition(objid)
+40006,遊戲Actor,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,設置actor位置,"local result = Actor:setPosition(objid, x, y, z)"
+40007,遊戲Actor,jump,Actor:jump(objid),objid:number,ErrorCode.OK,跳躍,local result = Actor:jump(objid)
+40008,遊戲Actor,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,殺死自己,local result = Actor:killSelf(objid)
+40009,遊戲Actor,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",獲取當前朝向,local result = Actor:getCurPlaceDir(objid)
+40010,遊戲Actor,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,向目標actor移動,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,遊戲Actor,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,向目標位置移動,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,遊戲Actor,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,增加buff,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,遊戲Actor,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",是否具有某個buff,"local result = Actor:hasBuff(objid, buffid)"
+40014,遊戲Actor,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,刪除buff,"local result = Actor:removeBuff(objid, buffid)"
+40015,遊戲Actor,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,清除所有buff,local result = Actor:clearAllBuff(objid)
+40016,遊戲Actor,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,清除所有負面buff,local result = Actor:clearAllBadBuff(objid)
+40017,遊戲Actor,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",獲取buff列表,local result = Actor:getBuffList(objid)
+40018,遊戲Actor,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",獲取當前index對應buff的剩餘itck,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,遊戲Actor,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,增加當前血量,"local result = Actor:addHP(objid, hp)"
+40020,遊戲Actor,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",獲取當前血量,local result = Actor:getHP(objid)
+40021,遊戲Actor,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",獲取當前最大血量,local result = Actor:getMaxHP(objid)
+40022,遊戲Actor,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,增加氧氣值,"local result = Actor:addOxygen(objid, oxygen)"
+40023,遊戲Actor,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",獲取氧氣值,local result = Actor:getOxygen(objid)
+40024,遊戲Actor,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,增加相關裝備的附魔,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,遊戲Actor,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,去掉相關裝備的附魔,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,遊戲Actor,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",尋找距離最近方塊id,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,遊戲Actor,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,設置actor視角橫向偏移角度,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,遊戲Actor,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",獲取actor視角橫向偏移角度,local result = Actor:getFaceYaw(objid)
+40029,遊戲Actor,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,轉動actor橫向偏移角度,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,遊戲Actor,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,設置actor視角仰望角度,"local result = Actor:setFacePitch(objid, pitch)"
+40031,遊戲Actor,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",獲取actor視角仰望角度,local result = Actor:getFacePitch(objid)
+40032,遊戲Actor,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,轉動actor仰望偏移角度,"local result = Actor:turnFacePitch(objid, offset)"
+40033,遊戲Actor,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,播放特效,"local result = Actor:playBodyEffect(objid, type)"
+40034,遊戲Actor,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,停止特效,"local result = Actor:stopBodyEffect(objid, type)"
+40035,遊戲Actor,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,播放文件特效,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,遊戲Actor,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,停止文件特效,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,遊戲Actor,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,播放聲音,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,遊戲Actor,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,播放聲音(特定類型:GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,遊戲Actor,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,清除生物ID為actorid的生物,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,遊戲Actor,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,設置傷害類型,"local result = Actor:setAttackType(objid, attacktype)"
+40041,遊戲Actor,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,設置免疫傷害類型,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,遊戲Actor,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,登上、脫離載具,"local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,遊戲Actor,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,設置生物行為屬性狀態,"local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,遊戲Actor,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,尋路到目標位置,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,遊戲Actor,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,獲取騎乘生物的objid,local result = Actor:getRidingActorObjId(objid)
+50001,遊戲玩家,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",nil,local result = Player:getAttr(attrtype)
+50002,遊戲玩家,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,nil,"local result = Player:setAttr(attrtype, val)"
+50003,遊戲玩家,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",獲取房主,local result = Player:getHostUin()
+50004,遊戲玩家,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,檢測是否是本地玩家,local result = Player:isMainPlayer(objid)
+50005,遊戲玩家,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",獲取本地玩家的uin,local result = Player:getMainPlayerUin()
+50006,遊戲玩家,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",獲取玩家比賽結果,local result = Player:getGameResults(objid)
+50007,遊戲玩家,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,設置玩家比賽結果,"local result = Player:setGameResults(objid, result)"
+50008,遊戲玩家,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",獲取玩家遊戲分數,local result = Player:getGameScore(objid)
+50009,遊戲玩家,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",設置玩家遊戲分數,"local result = Player:setGameScore(objid, score)"
+50010,遊戲玩家,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",獲取玩家的排行,local result = Player:getGameRanking(objid)
+50011,遊戲玩家,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,給玩家設置排行,"local result = Player:setGameRanking(objid, rank)"
+50012,遊戲玩家,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,給玩家增加道具,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,遊戲玩家,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,傳送到出生點,local result = Player:teleportHome(objid)
+50014,遊戲玩家,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",獲取玩家當前手持的物品id,local result = Player:getCurToolID(objid)
+50015,遊戲玩家,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",獲取玩家暱稱,local result = Player:getNickname(objid)
+50016,遊戲玩家,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,移走背包裡的物品,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,遊戲玩家,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",獲取玩家死亡次數,local result = Player:getDieTimes(objid)
+50018,遊戲玩家,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",獲取玩家剩下的生命次數,local result = Player:getLeftLifeNum(objid)
+50019,遊戲玩家,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,設置生物隊伍,"local result = Player:setTeam(objid, team)"
+50020,遊戲玩家,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",獲取生物隊伍,local result = Player:getTeam(objid)
+50021,遊戲玩家,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,獲取當前飽食度,local result = Player:getFoodLevel(objid)
+50022,遊戲玩家,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,設置當前飽食度,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,遊戲玩家,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",獲取當前所用快捷欄鍵,local result = Player:getCurShotcut(objid)
+50024,遊戲玩家,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,設置當前玩家手持的道具消耗,"local result = Player:onCurToolUsed(objid, num)"
+50025,遊戲玩家,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,設置CD,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,遊戲玩家,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,復活玩家到指定點,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,遊戲玩家,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,改變玩家復活點位置,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,遊戲玩家,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,玩家播放動畫,"local result = Player:playAct(objid, actid)"
+50029,遊戲玩家,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,對玩家顯示飄窗文字,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,遊戲玩家,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,使玩家使用當前道具,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,遊戲玩家,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,旋轉玩家鏡頭,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,遊戲玩家,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,改變玩家視角模式,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,遊戲玩家,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,設置生物行為屬性狀態,"local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,遊戲玩家,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,玩家的行為屬性狀態開關,"local result = Player:checkActionAttrState(objid, actionattr)"
+50035,遊戲玩家,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",獲取當前最大血量,local result = Player:getMaxHP(objid)
+50036,遊戲玩家,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",獲取當前生命量,local result = Player:getCurHP(objid)
+50037,遊戲玩家,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP恢復,local result = Player:getHpRecover(objid)
+50038,遊戲玩家,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",當前飢餓值,local result = Player:getCurFood(objid)
+50039,遊戲玩家,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,遊戲玩家,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",當前氧氣值,local result = Player:getCurOxygen(objid)
+50041,遊戲玩家,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",行走速度,local result = Player:getWalkSpeed(objid)
+50042,遊戲玩家,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",游泳速度（水中速度）,local result = Player:getSwimSpeed(objid)
+50043,遊戲玩家,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",跳躍力,local result = Player:getJumpPower(objid)
+50044,遊戲玩家,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",奔跑速度,local result = Player:getRunSpeed(objid)
+50045,遊戲玩家,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",潛行速度,local result = Player:getSneakSpeed(objid)
+50046,遊戲玩家,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",閃避,local result = Player:getDodge(objid)
+50047,遊戲玩家,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近程攻擊,local result = Player:getPunchAttack(objid)
+50048,遊戲玩家,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠程攻擊,local result = Player:getRangeAttack(objid)
+50049,遊戲玩家,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近程防禦,local result = Player:getPunchDefense(objid)
+50050,遊戲玩家,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠程防禦,local result = Player:getRangeDefense(objid)
+50051,遊戲玩家,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",星星數,"local result = Player:getStarNum(objid, val)"
+50052,遊戲玩家,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",模型大小,"local result = Player:getModelScale(objid, val)"
+50053,遊戲玩家,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置最大血量,"local result = Player:setMaxHP(objid, val)"
+50054,遊戲玩家,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置血量,"local result = Player:setHP(objid, val)"
+50055,遊戲玩家,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,設置HP恢復,local result = Player:setHpRecover(objid)
+50056,遊戲玩家,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,設置當前飢餓度,local result = Player:setCurFood(objid)
+50057,遊戲玩家,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置氧氣,"local result = Player:setOxygen(objid, val)"
+50058,遊戲玩家,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置行走速度,"local result = Player:setWalkSpeed(objid, val)"
+50059,遊戲玩家,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置游泳速度（水中速度）,"local result = Player:setSwimSpeed(objid, val)"
+50060,遊戲玩家,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置跳躍力,"local result = Player:setJumpPower(objid, val)"
+50061,遊戲玩家,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置奔跑速度,"local result = Player:setRunSpeed(objid, val)"
+50062,遊戲玩家,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置潛行速度,"local result = Player:setSneakSpeed(objid, val)"
+50063,遊戲玩家,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置閃避,"local result = Player:setDodge(objid, val)"
+50064,遊戲玩家,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置近程攻擊,"local result = Player:setPunchAttack(objid, val)"
+50065,遊戲玩家,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置遠程攻擊,"local result = Player:setRangeAttack(objid, val)"
+50066,遊戲玩家,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置近程防禦,"local result = Player:setPunchDefense(objid, val)"
+50067,遊戲玩家,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置遠程防禦,"local result = Player:setRangeDefense(objid, val)"
+50068,遊戲玩家,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置星星數,"local result = Player:setStarNum(objid, val)"
+50069,遊戲玩家,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置模型大小,"local result = Player:setModelScale(objid, val)"
+50070,遊戲玩家,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,設置actor位置,"local result = Player:setPosition(objid, x, y, z)"
+50071,遊戲玩家,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,獲取player準星位置,local result = Player:getAimPos(objid)
+60001,遊戲生物,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,是否已經成年,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,遊戲生物,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,設置是否依賴氧氣,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,遊戲生物,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",獲取馴服主的ID,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,遊戲生物,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,設置是否恐慌,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,遊戲生物,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,設置AI是否生效,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,遊戲生物,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",獲取怪物資源ID,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,遊戲生物,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",獲取怪物資源ID,local result = Creature:getActorName(objid)
+60008,遊戲生物,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,增加怪物ModAttrib值,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,遊戲生物,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",獲取怪物ModAttrib值,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,遊戲生物,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,設置生物隊伍,"local result = Creature:setTeam(objid, teamid)"
+60011,遊戲生物,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",獲取生物隊伍,local result = Creature:getTeam(objid)
+60012,遊戲生物,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",獲取最大饑餓度,local result = Creature:getMaxFood(objid)
+60013,遊戲生物,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",獲取飢餓度,local result = Creature:getFood(objid)
+60014,遊戲生物,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置飢餓度,"local result = Creature:setFood(objid, val)"
+60015,遊戲生物,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP恢復,local result = Creature:getHpRecover(objid)
+60016,遊戲生物,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",最大氧氣值,local result = Creature:getMaxOxygen(objid)
+60017,遊戲生物,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",行走速度,local result = Creature:getWalkSpeed(objid)
+60018,遊戲生物,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",游泳速度（水中速度）,local result = Creature:getSwimSpeed(objid)
+60019,遊戲生物,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",跳躍力,local result = Creature:getJumpPower(objid)
+60020,遊戲生物,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",重量,local result = Creature:getMass(objid)
+60021,遊戲生物,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",閃避,local result = Creature:getDodge(objid)
+60022,遊戲生物,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近程攻擊,local result = Creature:getPunchAttack(objid)
+60023,遊戲生物,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠程攻擊,local result = Creature:getRangeAttack(objid)
+60024,遊戲生物,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近程防禦,local result = Creature:getPunchDefense(objid)
+60025,遊戲生物,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠程防禦,local result = Creature:getRangeDefense(objid)
+60026,遊戲生物,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置血量,"local result = Creature:setMaxHp(objid, val)"
+60027,遊戲生物,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置血量,"local result = Creature:setHP(objid, val)"
+60028,遊戲生物,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,設置HP恢復,local result = Creature:setHpRecover(objid)
+60029,遊戲生物,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置氧氣,"local result = Creature:setOxygen(objid, val)"
+60030,遊戲生物,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置行走速度,"local result = Creature:setWalkSpeed(objid, val)"
+60031,遊戲生物,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置游泳速度（水中速度）,"local result = Creature:setSwimSpeed(objid, val)"
+60032,遊戲生物,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置跳躍力,"local result = Creature:setJumpPower(objid, val)"
+60033,遊戲生物,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置閃避,"local result = Creature:setDodge(objid, val)"
+60034,遊戲生物,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置近程攻擊,"local result = Creature:setPunchAttack(objid, val)"
+60035,遊戲生物,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置遠程攻擊,"local result = Creature:setRangeAttack(objid, val)"
+60036,遊戲生物,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置近程防禦,"local result = Creature:setPunchDefense(objid, val)"
+60037,遊戲生物,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,設置遠程防禦,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI管理,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,設置戰鬥總結UI,"local result = UI:setGBattleUI(name, value)"
+70002,UI管理,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",世界坐標轉換到小地圖,"local result = UI:world2RadarPos(x, y)"
+70003,UI管理,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",世界長度轉換到小地圖,local result = UI:world2RadarDist(length)
+70004,UI管理,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,設置小地圖模式。 1：45度旋轉視角；2：全圖俯視角,local result = UI:setMinimapRenderMode(mode)
+70005,UI管理,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,地圖標記形狀設置，設置成線條,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI管理,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,地圖標記形狀設置，設置成圓,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI管理,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,顯示屏幕效果,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,聊天系統,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,發送聊天消息,local result = Chat:sendChat(content)
+80002,聊天系統,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,發送系統消息,local result = Chat:sendSystemMsg(content)
+90001,組隊管理,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",獲取隊伍數量,local result = Team:getNumTeam()
+90002,組隊管理,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",獲取指定隊伍玩家,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,組隊管理,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",獲取指定隊伍玩家,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,組隊管理,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",隨機一名玩家,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,組隊管理,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,設置組隊分數,"local result = Team:setTeamScore(teamid, s)"
+90006,組隊管理,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",獲取組隊分數,local result = Team:getTeamScore(teamid)
+90007,組隊管理,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,增加隊伍分數,"local result = Team:addTeamScore(teamid, score)"
+90008,組隊管理,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,設置隊伍勝負,"local result = Team:setTeamResults(teamid, result)"
+90009,組隊管理,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",獲取當前隊伍勝負,local result = Team:getTeamResults(teamid)
+90010,組隊管理,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,設置玩家的隊伍勝負,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,組隊管理,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,設置隊伍總死亡數,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,組隊管理,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",獲取隊伍總死亡數,local result = Team:getTeamDieTimes(teamid)
+90013,組隊管理,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,增加隊伍總死亡數,local result = Team:addTeamDieTimes(teamid)
+90014,組隊管理,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,改變玩家隊伍,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,道具管理,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",獲取道具名稱,local result = Item:getItemName(itemid)
+100002,道具管理,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",獲取物品ID,local result = Item:getItemId(objid)
+100003,道具管理,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",獲取掉落物數量,local result = Item:getDropItemNum(objid)
+110001,背包管理,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",獲取道具背包欄ID範圍(起始ID~結束ID),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,背包管理,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",獲取道具背包欄大小,local result = Backpack:getBackpackBarSize(bartype)
+110003,背包管理,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,設置背包格道具,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,背包管理,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,移除背包格內一定數量道具，通過道具格移除，默認全部移除,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,背包管理,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",移除背包內一定數量道具，通過道具ID移除，默認全部移除,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,背包管理,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,清空指定背包欄,"local result = Backpack:clearPack(playerid, bartype)"
+110007,背包管理,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,清空全部背包(包含背包欄、快捷欄、裝備欄),local result = Backpack:clearAllPack(playerid)
+110008,背包管理,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,移動背包道具，默認全部轉移,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,背包管理,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,交換背包道具,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,背包管理,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 2",ErrorCode.OK,背包(包含背包欄、快捷欄)是否有足夠的空間存放一定數量的道具,"local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,背包管理,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number",計算背包(包含背包欄、快捷欄)能存放的道具剩餘總數量,"local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,背包管理,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",獲取道具背包欄有效格ID列表(道具已存在)，背包格ID數組,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,背包管理,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",獲取道具背包欄已擁有道具，道具ID數組,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,背包管理,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,檢測背包是否持有某個道具,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,背包管理,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",獲取背包持有某個道具總數量，同時返回裝有道具的背包格數組,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,背包管理,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",獲取背包格道具ID和數量,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,背包管理,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",獲取背包格道具名稱,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,背包管理,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",獲取背包格道具數量和最大堆疊數,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,背包管理,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",獲取背包格道具耐久度和最大耐久度,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,背包管理,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",獲取背包格道具附魔，返回附魔id數組,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,背包管理,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",獲取背包道具工具類型(<0表示非工具),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,背包管理,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",添加道具到背包,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,背包管理,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,丟棄背包道具,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,背包管理,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,獲取背包某個格子的道具數量,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,小地圖管理,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number",新增一個形狀(線，矩形，圓形),"local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,小地圖管理,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,刪除一個形狀,local result = MapMark:deleteShape(shapeid)
+120003,小地圖管理,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,設置形狀顏色,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,小地圖管理,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,設置形狀顯示or隱藏,"local result = MapMark:showShape(shapeid, showflag)"
+120005,小地圖管理,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,更新形狀(線形)，傳入起始坐標和末尾坐標,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,小地圖管理,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,更新形狀(矩形)，傳入起始坐標和尺寸,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,小地圖管理,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,更新形狀(圓形)，傳入圓心坐標和半徑,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,出生點管理,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",獲取出生點位置,local result = Spawnport:getSpawnPoint()
+130002,出生點管理,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",獲取區塊可以作為出生點的位置，傳入區塊內任一方塊位置,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

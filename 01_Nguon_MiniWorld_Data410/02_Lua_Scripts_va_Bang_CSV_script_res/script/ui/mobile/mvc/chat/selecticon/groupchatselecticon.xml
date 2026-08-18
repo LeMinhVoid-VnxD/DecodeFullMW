@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/chat/selectIcon/GroupChatSelectIconModel.lua"/>
+	<Script file="ui/mobile/mvc/chat/selectIcon/GroupChatSelectIconView.lua"/>
+	<Script file="ui/mobile/mvc/chat/selectIcon/GroupChatSelectIconCtrl.lua"/>
+
+	##左侧导航按钮 
+    <Button name="GroupChatSelectIcon_TabBtnTemplate" inherits="TemplateTabBtn4" virtual="true">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("GroupChatSelectIcon"):TabBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+ 
+    ##格子模板
+    <Button name="GroupChatSelectIcon_CellTemplate" virtual="true" inherits="TemplateBtn22" abs_x="78" abs_y="78">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("GroupChatSelectIcon"):IconBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##格子选择器
+	<Frame name="GroupChatSelectIcon" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="996" abs_y="571">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+                <Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="993" abs_y="433">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="52"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="772" abs_y="394">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="202" y="79"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentTabsBkg" inherits="TemplateBigBkg29" abs_x="168" abs_y="394">
+                	<Anchors>
+	                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+	                        <Offset>
+	                            <AbsDimension x="19" y="79"/>
+	                        </Offset>
+	                    </Anchor>
+	                </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="992" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GroupChatSelectIcon"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+            ##确认
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn" >
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-20" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("GroupChatSelectIcon"):ConfirmBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##tab按钮
+            <SlidingFrame name="$parentTabs" slidingY="true" slideplane="$parentPlane" abs_x="160" abs_y="385">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentTabsBkg" />
+                </Anchors>
+                <Frames>
+                	<Frame name="$parentPlane" hidden="true" abs_x="160" abs_y="385" />
+                    <Button name="$parent1" inherits="GroupChatSelectIcon_TabBtnTemplate" id="1" />
+                    <Button name="$parent2" inherits="GroupChatSelectIcon_TabBtnTemplate" id="2" />
+                    <Button name="$parent3" inherits="GroupChatSelectIcon_TabBtnTemplate" id="3" />
+                </Frames>
+            </SlidingFrame>
+            ##列表
+			<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="374">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="374" />
+					
+					##格子, 动态创建..."$parentItem1", "$parentItem2" ...
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+		</Scripts>
+	</Frame>
+</Ui>

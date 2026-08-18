@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceLobby/WorkSpaceSearch/WorkSpaceSearchModel.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceLobby/WorkSpaceSearch/WorkSpaceSearchView.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceLobby/WorkSpaceSearch/WorkSpaceSearchCtrl.lua"/>
+
+	<Frame name="WorkSpaceSearch" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3600" rel_x="1.0" rel_y="1.0">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!--半透明遮罩-->
+				<Texture name="$parentBgMask" file="ui/white.png" color="b2000000" stretchedge="true" framelevel="1002">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="338">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleFrame" inherits="TemplateBigBkg31" abs_x="644" abs_y="67">
+					<Anchors>
+						<Anchor point="Top" relativePoint="Top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-3" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPattern" inherits="TemplateBigBkg7_flat">
+					<Size>
+						<AbsDimension x="644" y="65" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleFrame">
+							<Offset>
+								<AbsDimension x="0" y="-2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="$60082" abs_x="578" abs_y="24">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTitleFrame">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentBodyBkg" abs_x="616" abs_y="226">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="84"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- 关闭按钮: -->
+			<Button name="$parentCloseBtn" abs_x="36" abs_y="46" >
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-17" y="13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="36" abs_y="46" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="30" abs_y="40" >
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceSearch"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentBody" abs_x="616" abs_y="226">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="500" y="46" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-35" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--搜索输入框-->
+					<SafeEditBox name="$parentEdit" letters="30" multiLine="false" editMethod="15">
+						<Size>
+							<AbsDimension x="402" y="20" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$60100" textcolor="ffb9b9b9"/>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("WorkSpaceSearch"):OnFocusLost();</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("WorkSpaceSearch"):OnEnterPressed();</OnEnterPressed>
+						</Scripts>
+					</SafeEditBox>
+
+					<!--搜索按钮-->>
+					<Button name="$parentBtn" inherits="TemplateBtn3">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentEditBkg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="100"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$60117">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="180" y="25"/>
+									</Size>
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					<Scripts>
+						<OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceSearch"):SearchInputBtn_OnClick();</OnClick>
+					</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad></OnLoad>
+			<OnShow></OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

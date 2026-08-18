@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/homechest/goldenfruit/goldenfruitModel.lua"/>
+	<Script file="ui/mobile/mvc/homechest/goldenfruit/goldenfruitView.lua"/>
+	<Script file="ui/mobile/mvc/homechest/goldenfruit/goldenfruitCtrl.lua"/>
+	<Script file="ui/mobile/mvc/homechest/goldenfruit/goldenfruitInterface.lua"/>
+
+	##黄色抽奖按钮模板
+	<Button name="GoldenFruitDetail_PrizeBtnTemp" virtual="true" inherits="TemplateBtn34" abs_x="215" abs_y="81">
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont20" justifyV="top" justifyH="center" text="$205" abs_x="150" abs_y="25">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="48"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$205" abs_x="150" abs_y="20">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="48"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentBeanIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="32" abs_y="34">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="34" y="-40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPrice" fonttype="BlackFont28" text="10" abs_x="100" abs_y="20">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBeanIcon">
+							<Offset>
+								<AbsDimension x="42" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):OpenFruitBtnOnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##预览界面奖励物品格子
+	<Button name="GoldenFruitDetail_PrizeGridTemp" virtual="true" abs_x="92" abs_y="92" id="1">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBkg38" />
+				<Texture name="$parentIcon" file="/items/unknown.png" abs_x="81" abs_y="81">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEffect" file="ui/mobile/effect/plant_item_lv11.png" hidden="true" justifyH="center" abs_x="130" abs_y="130">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIcon" />
+					</Anchors>	
+					<UVAnimation texrows="3" texcols="3" />
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" autowrap="true" text="小白象碎片" abs_x="140" abs_y="42">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg" >
+							<Offset>
+								<AbsDimension x="0" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<!-- <OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):OpenFruitBtnOnClick();</OnClick> -->
+		</Scripts>
+	</Button>
+
+	##概率公示条目模板
+	<Button name="GoldenFruitDetail_ProbabilityItemTemp" virtual="true" abs_x="256" abs_y="24" input_transparent="true" id="1">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentChecked" inherits="TemplateBkg80" hidden="true" />
+				<FontString name="$parentName" fonttype="BlackFont" justifyH="left" text="坐骑碎片" abs_x="165" abs_y="16">
+					<Color r="224" g="220" b="202"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+							<Offset>
+	                            <AbsDimension x="11" y="0"/>
+	                        </Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentValue" fonttype="BlackFont" justifyH="left" text="0.001%" abs_x="75" abs_y="16">
+					<Color r="224" g="220" b="202"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+							<Offset>
+	                            <AbsDimension x="187" y="0"/>
+	                        </Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	##奖励展示界面物品格子模板
+	<Button name="GoldenFruitPrizeFrame_ItemTemp" virtual="true" abs_x="200" abs_y="150" id="1">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentItemBkg" file="ui/mobile/texture0/common.xml" uvname="img_icon_lignt_dark">
+					<Size>
+						<AbsDimension x="150" y="150"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="/items/unknown.png" abs_x="87" abs_y="93">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEffect" file="ui/mobile/effect/plant_item_lv11.png" hidden="true" abs_x="130" abs_y="130">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIcon" />
+					</Anchors>	
+					<UVAnimation texrows="3" texcols="3" />
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="right" text="小白象碎片" abs_x="50" abs_y="22">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentItemBkg" >
+							<Offset>
+								<AbsDimension x="-10" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter platform="pc">GoldenFruitPrizeFrame_OnMouseEnter_PCShow()</OnEnter>
+			<OnLeave platform="pc">GoldenFruitPrizeFrame_OnMouseLeave_PCShow()</OnLeave>
+			<OnClick platform="mobile">GoldenFruitPrizeFrame_ItemTempClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##主界面:金果实详情----------------------------------------------------------------------------------------
+	<Frame name="GoldenFruitDetail" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkgMask" file="ui/white.png" color="B1000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="666" abs_y="405">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="630" abs_y="208">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTimeIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h.png" abs_x="28" abs_y="28">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+							<Offset>
+								<AbsDimension x="371" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg3" abs_x="662" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+                <Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIcon" file="items/fruit_activity.png" abs_x="92" abs_y="91">
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="-18" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTimeIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h.png" abs_x="28" abs_y="28">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="371" y="15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##倒计时
+			            <FontString name="$parentTime" fonttype="BlackFont22" justifyH="left" text="剩余1天01:23:31" abs_x="180" abs_y="20">
+							<Color r="204" g="233" b="69"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentTimeIcon" >
+									<Offset>
+										<AbsDimension x="9" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+            </Frame>
+
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##预览
+            <Button name="$parentPreview" abs_x="160" abs_y="170">
+            	<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgBody" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg38" abs_x="92" abs_y="92">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="/items/unknown.png" abs_x="81" abs_y="81">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="$100604" abs_x="180" abs_y="18">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):OpenPreviewFrame();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##模型展示
+            <Button name="$parentModel" abs_x="273" abs_y="350" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentPreviewIcon" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="-20" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19" />
+						<Texture name="$parentBkgBody" inherits="TemplateBigBkg2" abs_x="253" abs_y="303">
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="10" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgPallet" file="ui/mobile/texture0/shop.xml" uvname="img_shadow_role" abs_x="150" abs_y="40">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parentBkgBody" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="-20" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17" >
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="-3" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont20" lang_ver="tha" justifyV="middle" justifyH="center" text="$30056" abs_x="260" abs_y="30">
+							<Color r="224" g="220" b="202"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="0" y="-11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$30056" abs_x="260" abs_y="20">
+							<Color r="224" g="220" b="202"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="0" y="-11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Layers>
+					<Layer level="ARTWORK">
+						<ModelView name="$parentView" abs_x="253" abs_y="303">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentBkgBody" relativePoint="center" />
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateBtn" holddown_threshold="0.1">
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):ModelRotateBtn_OnMouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):ModelRotateBtn_OnMouseMove();</OnMouseMove>
+							<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):ModelRotateBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Button>
+
+            ##描述
+            <Frame name="$parentDesc" abs_x="460" abs_y="208">
+            	<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parentBkgBody" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="2" abs_y="122">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="32"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTxt" fonttype="BlackFont18" autowrap="true" text="奖励描述" abs_x="400" abs_y="90">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTip" fonttype="BlackFont20" autowrap="true" text="小白象碎片概率提升" abs_x="400" abs_y="20">
+							<Color r="1" g="194" b="16"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTxt" >
+									<Offset>
+										<AbsDimension x="0" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+            </Frame>
+
+            ##概率公示
+            <RichText name="$parentProbability" multiLine="false" fonttype="BlackFont18" justifyH="right" justifyV="middle" abs_x="180" abs_y="18">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkgBody">
+						<Offset>
+							<AbsDimension x="-17" y="-10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):ProbabilityOnClick();</OnClick>
+				</Scripts>
+			</RichText>
+
+            ##十连抽按钮
+            <Button name="$parentOpenTen" inherits="GoldenFruitDetail_PrizeBtnTemp" id="10">
+            	<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="53" y="-28"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </Button>
+
+            ##抽一次按钮
+            <Button name="$parentOpenOne" inherits="GoldenFruitDetail_PrizeBtnTemp" id="1">
+            	<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-53" y="-28"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </Button>
+
+            ##概率公示页面
+		    <Frame name="$parentProbabilityFrame" hidden="true" abs_x="273" abs_y="440">
+		    	<Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19" />
+						<Texture name="$parentBkgBody" inherits="TemplateBigBkg20" abs_x="256" abs_y="400">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg" >
+									<Offset>
+			                            <AbsDimension x="0" y="33"/>
+			                        </Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" text="$100603" >
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+									<Offset>
+			                            <AbsDimension x="18" y="8"/>
+			                        </Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+		            ##表头
+		            <Button name="$parentHead" inherits="GoldenFruitDetail_ProbabilityItemTemp" >
+		            	<Anchors>
+		                    <Anchor point="top" relativeTo="$parentBkgBody" relativePoint="top">
+		                        <Offset>
+		                            <AbsDimension x="0" y="3"/>
+		                        </Offset>
+		                    </Anchor>
+		                </Anchors>
+		            </Button>
+		            ##列表
+		            <SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="256" abs_y="370">
+		                <Anchors>
+		                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentHead" />
+		                </Anchors>
+		                <Frames>
+		                    <Frame name="$parentPlane" hidden="true" abs_x="256" abs_y="370" />
+		                    ##动态创建
+		                    <!-- <Button name="$parentItem1" inherits="GoldenFruitDetail_ProbabilityItemTemp" /> -->
+
+		                    ##规则说明
+		                    <RichText name="$parentRule" fonttype="BlackFont" lineInterval="2" autowrap="true" abs_x="230" abs_y="210" text="$100608" >
+								<Color r="224" g="220" b="202"/>
+								<Anchors>
+									<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPlane" >
+										<Offset>
+				                            <AbsDimension x="0" y="-5"/>
+				                        </Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+		                </Frames>
+		            </SlidingFrame>
+		        </Frames>
+		    </Frame>
+		</Frames>
+	</Frame>
+
+	##本期奖励预览--------------------------------------------------------------------------------------------
+	<Frame name="GoldenFruitPrizePreview" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1100">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="806" abs_y="490">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="779" abs_y="325">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="69"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="800" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):ClosePreviewFrame();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##奖励列表
+            <SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="820" abs_y="310">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentBkgBody" />
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="820" abs_y="310" />
+                    ##动态创建
+                    <!-- <Button name="$parentGrid1" inherits="GoldenFruitDetail_PrizeGridTemp" /> -->
+                </Frames>
+            </SlidingFrame>
+
+            ##确定
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn" >
+            	<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-14"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):ClosePreviewFrame();</OnClick>
+				</Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+
+	##特效展示界面--------------------------------------------------------------------------------------------
+	<Frame name="GoldenFruitEffectFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1100">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentTile" file="ui/mobile/texture2/bigtex/lzy_40.png" DrawType="tile" stretchedge="true">
+					<Tile>
+						<TileSize>
+							<AbsValue val="196" />
+						</TileSize>
+					</Tile>
+				</Texture>
+				<ModelView name="$parentView" >
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+					</Anchors>
+				</ModelView>
+			</Layer>
+		</Layers>
+		<Frames>
+			##中间点击
+			<Button name="$parentOpenBtn" abs_x="150" abs_y="150">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                    	<Offset>
+                            <AbsDimension x="0" y="50"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="items/fruit_activity.png" abs_x="150" abs_y="150">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):EffectFrameIconOnClick();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##跳过按钮
+            <Button name="$parentStepBtn" inherits="TemplateBtn3" abs_x="215" abs_y="81">
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-23" y="-17"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont30" justifyH="center" text="$100609" abs_x="215" abs_y="30">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):StepBtnOnClick();</OnClick>
+				</Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+        	<OnUpdate>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):EffectFrameUpdate();</OnUpdate>
+        </Scripts>
+    </Frame>
+
+    ##奖励展示------------------------------------------------------------------------------------------------
+    <Frame name="GoldenFruitPrizeFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1200">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- <Texture name="$parentBkgMask" file="ui/white.png" color="4F000000" hidden="false"/> -->
+				<Texture name="$parentTile" file="ui/mobile/texture2/bigtex/lzy_40.png" DrawType="tile" stretchedge="true" hidden="false">
+					<Tile>
+						<TileSize>
+							<AbsValue val="196" />
+						</TileSize>
+					</Tile>
+				</Texture>
+				<Texture name="$parentTipsBkg" inherits="TemplateBkg50" DrawType="center" abs_x="500" abs_y="73">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+                </Texture>
+				<Texture name="$parentArrowLeft" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow.png" UVType="mirroeu" abs_x="32" abs_y="20">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentTipsBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-4"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentTips" justifyH="center" fonttype="BlackFont30" text="$369" abs_x="500" abs_y="31">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTipsBkg" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##奖励列表
+            <SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="1040" abs_y="470">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentBkgBody" />
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="1040" abs_y="470" />
+                    ##动态创建
+                    <!-- <Button name="$parentGrid1" inherits="GoldenFruitPrizeFrame_ItemTemp" /> -->
+                </Frames>
+            </SlidingFrame>
+
+            ##确定
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn" abs_x="215" abs_y="81">
+                <Anchors>
+                    <Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+                        <Offset>
+                            <AbsDimension x="200" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+				<FontString name="$parentName" fonttype="BlackFont30" text="$969" justifyH="center" abs_x="182" abs_y="24">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):PrizeFrameOkBtnOnClick();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##再开一次
+            <Button name="$parentAgainBtn" inherits="GoldenFruitDetail_PrizeBtnTemp">
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-200" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTip" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="点击跳过" >
+							<Color r="200" g="150" b="150"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("GoldenFruitDetail"):PrizeFrameAgainBtnOnClick();</OnClick>
+				</Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

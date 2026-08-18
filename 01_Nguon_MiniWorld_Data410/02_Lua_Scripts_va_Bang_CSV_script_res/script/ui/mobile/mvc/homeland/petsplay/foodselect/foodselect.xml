@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/FoodSelect/FoodSelectCtrl.lua"/>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/FoodSelect/FoodSelectModel.lua"/>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/FoodSelect/FoodSelectView.lua"/>
+
+	<!-- 食物信息 -->
+	<Button name="FoodSelectBtnTemplate" virtual="true" click_threshold="5" abs_x="527" abs_y="113">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+				<Texture name="$parentSelectBkg" inherits="TemplateBigBkg13" hidden="true" />
+				<!-- 食物 -->
+				<Texture name="$parentIconBkg" inherits="TemplateBigBkg15" abs_x="78" abs_y="78">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="17" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentFoodIcon" file="res/items/icon11063.png" abs_x="64" abs_y="64">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentIconBkg" relativePoint="center" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentFoodCount" fonttype="BlackFont20" justifyH="right" abs_x="70" abs_y="20" text="" fontStyle="shadow" shadowcolor="1E1E1E80">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="-5" y="-1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentFoodName" fonttype="BlackFont22" text="汉堡包" abs_x="200" abs_y="22">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="113" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentEditBkg" inherits="TemplateBkg31" abs_x="90" abs_y="30">
+					<Anchors>
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="-46" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				## 食物重量
+				<FontString name="$parentFoodWeight" fonttype="BlackFont18" text="食物重量:100g/个" justifyH="center" justifyV="middle" abs_x="180" abs_y="22">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentEditBkg">
+							<Offset>
+								<AbsDimension x="0" y="-30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				## 食物能量
+				<FontString name="$parentFoodEnergy" fonttype="BlackFont18" text="食物能量:1000" justifyH="center" justifyV="middle" abs_x="180" abs_y="22">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentEditBkg">
+							<Offset>
+								<AbsDimension x="0" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentSelectTag" file="ui/mobile/texture0/outgame.xml" uvname="bjjm_anniu01" hidden="true" abs_x="31" abs_y="32">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="2" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>						
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- 描述 -->
+			<RichText name="$parentFoodDesc" fonttype="BlackFont18" lineInterval="2" multiLine="false" abs_x="233" abs_y="42" input_transparent="true">
+                <Color r="101" g="116" b="118"/>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="113" y="50"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </RichText>
+			<!-- 数量编辑框 -->
+			<SafeEditBox name="$parentEdit" letters="9" multiLine="false" editMethod="2" abs_x="90" abs_y="24" cursorColor="ff3d4546">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentEditBkg"/>
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont24" justifyH="center" hidden="true">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnFocusLost>GetInst("UIManager"):GetCtrl("FoodSelect"):Edit_OnFocusLost()</OnFocusLost>
+				</Scripts>
+			</SafeEditBox>
+			<!-- 减号按钮 -->
+			<Button name="$parentSubtractBtn" abs_x="25" abs_y="36" hidden="true">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentEditBkg">
+						<Offset>
+							<AbsDimension x="-8" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" UVType="mirroeu" abs_x="15" abs_y="26">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" UVType="mirroeu" abs_x="13" abs_y="24">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("FoodSelect"):SubtractBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 加号按钮 -->
+			<Button name="$parentAddBtn" abs_x="25" abs_y="36" hidden="true">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentEditBkg">
+						<Offset>
+							<AbsDimension x="8" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" abs_x="15" abs_y="26">
+					<Anchors>
+						<Anchor point="left" relativePoint="left"/>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" abs_x="13" abs_y="24">
+					<Anchors>
+						<Anchor point="left" relativePoint="left"/>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("FoodSelect"):AddBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("FoodSelect"):PetItemClick()</OnClick>
+		</Scripts>
+	</Button>
+
+    <!-- 选择探险食物界面 -->
+	<Frame name="FoodSelect" parent="UIClient" frameStrata="MEDIUM" framelevel="2000">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 背景遮罩 -->
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- 背景图 -->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="593" abs_y="616">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg5" abs_x="553" abs_y="434">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="391" abs_y="223" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="0" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentEmptyTip" fonttype="BlackFont24" justifyH="center" text="$41647" abs_x="553" abs_y="24" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+							<Offset>
+								<AbsDimension x="0" y="22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 描述 -->
+				<FontString name="$parentTip" fonttype="BlackFont18" justifyH="center" text="宠物负重：10/100" abs_x="553" abs_y="18">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-135"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- 标题栏 -->
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="587" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- 标题名 -->
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont36" text="$41666" abs_x="300" abs_y="46">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="17" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 食物展示 -->
+			<ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" abs_x="527" abs_y="408">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="88"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="1000" abs_y="408">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parent" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+            <!-- 关闭按钮 -->
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("FoodSelect"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 确定按钮 -->
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$969" abs_x="50" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("FoodSelect"):ConfirmBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

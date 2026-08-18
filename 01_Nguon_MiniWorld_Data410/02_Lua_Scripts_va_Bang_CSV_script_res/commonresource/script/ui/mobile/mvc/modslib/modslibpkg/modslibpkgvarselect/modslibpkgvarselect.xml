@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/modsLib/modsLibPkg/ModsLibPkgManager.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibPkg/modsLibPkgVarSelect/ModsLibPkgVarSelectInterface.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibPkg/modsLibPkgVarSelect/ModsLibPkgVarSelectModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibPkg/modsLibPkgVarSelect/ModsLibPkgVarSelectView.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibPkg/modsLibPkgVarSelect/ModsLibPkgVarSelectCtrl.lua"/>
+
+	<Button name="ModsLibPkgVarSelect_TabBtnTemplate" inherits="t_tab_u" virtual="true" abs_x="160" abs_y="46">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ModsLibPkgVarSelect"):TabBtnOnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##变量类型条目
+	<Button name="ModsLibPkgVarSelect_TypeBtnTemplate" virtual="true"  abs_x="537" abs_y="51" click_threshold="5">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentNormal" inherits="TemplateBkg34"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg34"/>
+				<FontString name="$parentName" fonttype="BlackFont20" text="位置" justifyH="left" abs_x="537" abs_y="20">
+                    <Color r="62" g="70" b="71"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="60" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentDir" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="left" relativeTo="$parent">
+                        	<Offset>
+								<AbsDimension x="30" y="0"/>
+							</Offset>
+						</Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+			<Frame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="537" abs_y="250">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="51"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="537" abs_y="300"/>
+					##子条目模板:DeveloperEditTriggerItemChildBtnTemplate
+				</Frames>
+			</Frame>
+        </Frames>
+        <Scripts>
+        	<OnClick>GetInst("UIManager"):GetCtrl("ModsLibPkgVarSelect"):TypeBtnOnClick();</OnClick>
+		</Scripts>
+    </Button>
+
+	##变量条目
+	<Button name="ModsLibPkgVarSelect_ItemBtnTemplate" virtual="true" abs_x="519" abs_y="56" click_threshold="5">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="TemplateBkg39"/>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" text="" abs_x="625" abs_y="20" >
+					<Color r="55" g="54" b="48"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSwitchBtn" hidden="true" abs_x="30" abs_y="30">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="7" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits = "TemplateBkg8" abs_x="24" abs_y="24">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentCheck" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tick.png" hidden="true" abs_x="24" abs_y="24">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ModsLibPkgVarSelect"):ItemTickBtnOnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<!-- <Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ModsLibPkgVarSelect"):ItemTickBtnOnClick();</OnClick>
+		</Scripts> -->
+	</Button>
+
+	##变量选择界面
+	<Frame name="ModsLibPkgVarSelect" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2300" inherits="t_popup_bt">
+		<Layers>
+			<Layer level= "BACKGROUND">
+				<FontString name="$parentDesc" fonttype="BlackFont22" justifyH="center" text="$33109" autowrap="true" abs_x="559" abs_y="54">
+					<Color r="62" g="70" b="71"/>
+					<Anchors>
+						<Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="75" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentBody" abs_x="554" abs_y="397">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="151"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level= "BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="554" abs_y="348">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentTab1" inherits="ModsLibPkgVarSelect_TabBtnTemplate" id="1">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentTab2" inherits="ModsLibPkgVarSelect_TabBtnTemplate" id="2">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentTab1" relativePoint="right">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="554" abs_y="338">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="554" abs_y="338"/>
+							##子条目模板:ModsLibPkgVarSelect_TypeBtnTemplate
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+
+			<Button name="$parentOkBtn" inherits="t_btn_by" >
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-18"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ModsLibPkgVarSelect"):OKBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+		</Scripts>
+	</Frame>
+</Ui>

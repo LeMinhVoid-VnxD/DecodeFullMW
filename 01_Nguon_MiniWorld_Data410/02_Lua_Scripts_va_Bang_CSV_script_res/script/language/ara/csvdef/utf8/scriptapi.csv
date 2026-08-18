@@ -1,0 +1,325 @@
+接口ID,阿拉伯语,阿拉伯语,阿拉伯语,阿拉伯语,阿拉伯语,阿拉伯语,阿拉伯语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,لعبة,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,نهاية اللعبة,local result = Game:doGameEnd()
+10002,لعبة,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,تحديد صفة المخطوطة للتخصيص,"local result = Game:setScriptVar(index, val)"
+10003,لعبة,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",الحصول على صفة المخطوطة للتخصيص,local result = Game:getScriptVar(index)
+10004,لعبة,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,تحميل صفة المخطوطة,local result = Game:sendScriptVars2Client()
+10005,لعبة,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",تأثير جديد شامل,local result = Game:addRenderGlobalEffect(path)
+10006,لعبة,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,مسح التأثير الشامل,local result = Game:removeRenderGlobalEffect(effectid)
+10007,لعبة,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,تحديد تموضع التأثير الشامل,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,لعبة,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,تحديد تأثير زوم الشامل,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,لعبة,msgBox,Game:msgBox(msg),,,صندوق الرسائل,local result = Game:msgBox(msg)
+20001,عالم,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",إن كان وقت النهار,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,عالم,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",ان كانت اللعبة مخصّصة,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,عالم,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",ان كان وضع الخلق,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,عالم,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",وضع الخلق للاعبين متعددين أو محصّصين في وضع التعديل,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,عالم,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",عزف صاخب,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,عالم,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",وضع النجاة - وضع حرّ,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,عالم,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",وضع مفرد أو وضع النجاة - وضع حرّ,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,عالم,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",وضع النجاة بعد تحويله من وضع الخلق,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,عالم,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",وضع تعديل مخصّص,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,عالم,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",وضع تشغيل مخصّص,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,عالم,getHours,World:getHours(),none,"ErrorCode.OK, result:number",الوقت الحالي (ساعة),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,عالم,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",الحصول على رؤية حالة التعديل,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,عالم,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,تحديد رؤية حالة التعديل,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,عالم,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",الحصول على صورة كاميرا مخصّصة,local result = World:getCustomCameraConfig()
+20015,عالم,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",الحصول على نطاق الكتل (جزء),"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,عالم,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",الحصول على الممثل في المنطقة المعيّنة,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,عالم,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",الحصول على كافّة اللاعبين. يمكن التحكّم بحالة البقاء على قيد الحياة,local result = World:getPlayerTotal(alive)
+20018,عالم,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",الحصول على كافّة اللاعبين. يمكن التحكّم بحالة البقاء على قيد الحياة,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,عالم,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",لاعب عشوائيّ,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,عالم,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,ازالة الممثل,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,عالم,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array",توليد مخلوق (بما في ذلك الوحش، ان بي سي، الحيوانات، إلخ.),"local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,عالم,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,إزالة المخلوق,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,عالم,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",توليد العناصر في الموقع المعيّن,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,عالم,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,إزالة العناصر (بحسب المنطقة),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,عالم,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,إزالة العنصر (بحسب الهويّة),"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,عالم,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,توليد القذيفة,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,عالم,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",في حال كانت الكتلة كيانًا,"local result = Block:isSolidBlock(x, y, z)"
+30002,كتلة,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",في حال كانت الكتلة سائلاً,"local result = Block:isLiquidBlock(x, y, z)"
+30003,كتلة,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",في حال كانت الكتلة هواء,"local result = Block:isAirBlock(x, y, z)"
+30004,كتلة,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",الحصول على هويّة الكتلة الموافقة,"local result = Block:getBlockID(x, y, z)"
+30005,كتلة,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,تحديد ومنح المعلومات عن كافّة البيانات المتعلّقة بالكتلة,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,كتلة,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,هدم الكتلة,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,كتلة,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",وضع الكتلة,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,كتلة,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,تحديد ومنح المعلومات عن كافّة البيانات المتعلّقة بالكتلة للكتل المحيطة,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,كتلة,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,تحديد كافّة البيانات المتعلّقة وتحديث موقع الكتل الحاليّة,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,كتلة,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,تحديد صفة وحالة الكتلة,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,كتلة,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",الحصول على حالة تشغيل وايقاف تشغيل لوظيفة الكتلة,local result = Block:getBlockSwitchStatus(pos)
+30012,كتلة,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,تحديد على حالة تشغيل وايقاف تشغيل لوظيفة الكتلة,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,ممثل اللعبة,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,الكشف عن إمكانيّة أن يكون لاعبًا,local result = Actor:isPlayer(objid)
+40002,ممثل اللعبة,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,الكشف عن إمكانيّة أن يكون وحشًا,local result = Actor:isMob(objid)
+40003,ممثل اللعبة,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",الحصول على نوع الممثّل: مخلوق/لاعب..,local result = Actor:getObjType(objid)
+40004,ممثل اللعبة,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,إن كان في الهواء,local result = Actor:isInAir(objid)
+40005,ممثل اللعبة,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",الحصول على موقع الممثّل,local result = Actor:getPosition(objid)
+40006,ممثل اللعبة,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,تحديد موقع الممثّل,"local result = Actor:setPosition(objid, x, y, z)"
+40007,ممثل اللعبة,jump,Actor:jump(objid),objid:number,ErrorCode.OK,القفز,local result = Actor:jump(objid)
+40008,ممثل اللعبة,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,اقتل نفسك,local result = Actor:killSelf(objid)
+40009,ممثل اللعبة,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",الحصول على الاتجاه المقابل الحالي,local result = Actor:getCurPlaceDir(objid)
+40010,ممثل اللعبة,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,التحرّك نحو الممثل الهدف,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,ممثل اللعبة,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,التحرّك نحو الممثل الهدف,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,ممثل اللعبة,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,الحصول على الباف,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,ممثل اللعبة,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",إن كان يملك أي باف,"local result = Actor:hasBuff(objid, buffid)"
+40014,ممثل اللعبة,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,حذف الباف,"local result = Actor:removeBuff(objid, buffid)"
+40015,ممثل اللعبة,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,مسح كلّ الباف,local result = Actor:clearAllBuff(objid)
+40016,ممثل اللعبة,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,مسح كلّ الباف السلبيّ,local result = Actor:clearAllBadBuff(objid)
+40017,ممثل اللعبة,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",الحصول على لائحة الباف,local result = Actor:getBuffList(objid)
+40018,ممثل اللعبة,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",الحصول على العناصر المتبقيّة للباف الموافق في الفهرس الحاليّ,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,ممثل اللعبة,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,زيادة ايتش بي الحاليّة,"local result = Actor:addHP(objid, hp)"
+40020,ممثل اللعبة,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",الحصول على ايتش بي الحاليّة,local result = Actor:getHP(objid)
+40021,ممثل اللعبة,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",الحصول على ايتش بي القصوى الحاليّة,local result = Actor:getMaxHP(objid)
+40022,ممثل اللعبة,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,زيادة سعة الاوكسيجين,"local result = Actor:addOxygen(objid, oxygen)"
+40023,ممثل اللعبة,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",الحصول على سعة الاوكسيجين,local result = Actor:getOxygen(objid)
+40024,ممثل اللعبة,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,زيادة سحر المعدّات الموافقة,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,ممثل اللعبة,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,مسح سحر المعدات الموافقة,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,ممثل اللعبة,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",ايجاد هويّة أقرب كتلة,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,ممثل اللعبة,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,تحديد زاوية الانحراف عن المسار العكسية لرؤية الممثل,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,ممثل اللعبة,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",الحصول على زاوية الانحراف عن المسار العكسية لرؤية الممثل,local result = Actor:getFaceYaw(objid)
+40029,ممثل اللعبة,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,تغيير زاوية الانحراف عن المسار العكسية لرؤية الممثل,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,ممثل اللعبة,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,تحديد الزاوية الأعلى لرؤية الممثل,"local result = Actor:setFacePitch(objid, pitch)"
+40031,ممثل اللعبة,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",تحديد الزاوية الأعلى لرؤية الممثل,local result = Actor:getFacePitch(objid)
+40032,ممثل اللعبة,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,تغيير الزاوية الأعلى لرؤية الممثل,"local result = Actor:turnFacePitch(objid, offset)"
+40033,ممثل اللعبة,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,تشغيل التأثيرات,"local result = Actor:playBodyEffect(objid, type)"
+40034,ممثل اللعبة,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,ايقاف التأثيرات,"local result = Actor:stopBodyEffect(objid, type)"
+40035,ممثل اللعبة,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,تشغيل ملف التأثيرات,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,ممثل اللعبة,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,ايقاف ملف التأثيرات,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,ممثل اللعبة,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,تشغيل الصوت,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,ممثل اللعبة,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,تشغيل الصوت (نوع محدّد: GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,ممثل اللعبة,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,مسح هويّة المخلوق الذي يملك هويّة ممثل,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,ممثل اللعبة,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,تحديد نوع الضرر,"local result = Actor:setAttackType(objid, attacktype)"
+40041,ممثل اللعبة,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,تحديد نوع المناعة ضدّ الضرر,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,ممثل اللعبة,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,الدخول والخروج من المركبة,"local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,ممثل اللعبة,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,تحديد تصرّف وصفة وحالة المخلوق,"local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,ممثل اللعبة,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,ايجاد طريق موقع الهدف,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,ممثل اللعبة,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,الحصول على فيرد,local result = Actor:getRidingActorObjId(objid)
+50001,لاعب,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",فراغ,local result = Player:getAttr(attrtype)
+50002,لاعب,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,فراغ,"local result = Player:setAttr(attrtype, val)"
+50003,لاعب,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",الحصول على الشبح,local result = Player:getHostUin()
+50004,لاعب,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,الكشف عن اللاعب إن كان محليًا,local result = Player:isMainPlayer(objid)
+50005,لاعب,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",الحصول على يون اللاعب المحلي,local result = Player:getMainPlayerUin()
+50006,لاعب,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",الحصول على نتيجة اللعبة,local result = Player:getGameResults(objid)
+50007,لاعب,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,تحديد على نتيجة اللعبة,"local result = Player:setGameResults(objid, result)"
+50008,لاعب,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",الحصول على مجموع اللعبة,local result = Player:getGameScore(objid)
+50009,لاعب,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",تحديد مجموع اللعبة,"local result = Player:setGameScore(objid, score)"
+50010,لاعب,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",الحصول على مرتبة اللاعب,local result = Player:getGameRanking(objid)
+50011,لاعب,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,تحديد مرتبة اللاعب,"local result = Player:setGameRanking(objid, rank)"
+50012,لاعب,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,إضافة العناصر للاعبين,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,لاعب,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,التحويل لنقطة التوليد,local result = Player:teleportHome(objid)
+50014,لاعب,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",الحصول على هويّة العنصر الذي يحتجزه اللاعب حاليًا,local result = Player:getCurToolID(objid)
+50015,لاعب,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",الحصول على اسم اللاعب,local result = Player:getNickname(objid)
+50016,لاعب,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,إزالة العناصر من حقيبة الظهر,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,لاعب,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",الحصول على عدد الوفيّات,local result = Player:getDieTimes(objid)
+50018,لاعب,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",الحصول على عدد من يزالون على قيد الحياة,local result = Player:getLeftLifeNum(objid)
+50019,لاعب,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,تحديد فريق المخلوقات,"local result = Player:setTeam(objid, team)"
+50020,لاعب,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",الحصول على فريق المخلوقات,local result = Player:getTeam(objid)
+50021,لاعب,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,الحصول على الشبع الحالي,local result = Player:getFoodLevel(objid)
+50022,لاعب,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,تحديد الشبع الحالي,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,لاعب,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",الحصول على شريط الاختصار الحالي,local result = Player:getCurShotcut(objid)
+50024,لاعب,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,تحديد استهلاك العنصر المحتجز من اللاعب,"local result = Player:onCurToolUsed(objid, num)"
+50025,لاعب,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,تحديد السي دي,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,لاعب,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,اعادة إحياء اللاعب في النقطة المعيّنة,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,لاعب,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,تغيير نقطة إعادة الإحياء,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,لاعب,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,يشغّل اللاعب الرسوم المتحرّكة,"local result = Player:playAct(objid, actid)"
+50029,لاعب,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,عرض النصوص في نافذة منبثقة,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,لاعب,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,جعل اللاعب يستخدم العنصر الحالي,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,لاعب,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,تدوير عدسات اللاعب,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,لاعب,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,تغيير وضع زاوية اللاعب,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,لاعب,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,تحديد تصرف وحالة وصفة المخلوق,"local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,لاعب,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,تبديل تصرّف وصفة وحالة اللاعب,"local result = Player:checkActionAttrState(objid, actionattr)"
+50035,لاعب,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",الحصول على أقصى حدّ من الايتش بي,local result = Player:getMaxHP(objid)
+50036,لاعب,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",الحصول على الايتش بي الحالي,local result = Player:getCurHP(objid)
+50037,لاعب,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",استرداد الايتش بي,local result = Player:getHpRecover(objid)
+50038,لاعب,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",الشبع الحالي,local result = Player:getCurFood(objid)
+50039,لاعب,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,لاعب,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سعة الاوكسيجين الحاليّة,local result = Player:getCurOxygen(objid)
+50041,لاعب,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة المشي,local result = Player:getWalkSpeed(objid)
+50042,لاعب,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة السباحة (في الماء),local result = Player:getSwimSpeed(objid)
+50043,لاعب,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",قوّة القفز,local result = Player:getJumpPower(objid)
+50044,لاعب,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة الركض,local result = Player:getRunSpeed(objid)
+50045,لاعب,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة التسلّل,local result = Player:getSneakSpeed(objid)
+50046,لاعب,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة المراوغة,local result = Player:getDodge(objid)
+50047,لاعب,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",هجوم قويّ,local result = Player:getPunchAttack(objid)
+50048,لاعب,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",هجوم متراوح,local result = Player:getRangeAttack(objid)
+50049,لاعب,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",دفاع قويّ,local result = Player:getPunchDefense(objid)
+50050,لاعب,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",دفاع متراوح,local result = Player:getRangeDefense(objid)
+50051,لاعب,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",عدد النجوم,"local result = Player:getStarNum(objid, val)"
+50052,لاعب,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",قياس الموديل,"local result = Player:getModelScale(objid, val)"
+50053,لاعب,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد أقصى حد للايتش بي,"local result = Player:setMaxHP(objid, val)"
+50054,لاعب,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الايتش بي,"local result = Player:setHP(objid, val)"
+50055,لاعب,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,تحديد استعادة الايتش بي,local result = Player:setHpRecover(objid)
+50056,لاعب,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الشبع الحالي,local result = Player:setCurFood(objid)
+50057,لاعب,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الاوكسيجين,"local result = Player:setOxygen(objid, val)"
+50058,لاعب,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة المشي,"local result = Player:setWalkSpeed(objid, val)"
+50059,لاعب,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة السباحة (في الماء),"local result = Player:setSwimSpeed(objid, val)"
+50060,لاعب,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد قوّة القفز,"local result = Player:setJumpPower(objid, val)"
+50061,لاعب,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة الركض,"local result = Player:setRunSpeed(objid, val)"
+50062,لاعب,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة التسلّل,"local result = Player:setSneakSpeed(objid, val)"
+50063,لاعب,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة المراوغة,"local result = Player:setDodge(objid, val)"
+50064,لاعب,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الهجوم القويّ,"local result = Player:setPunchAttack(objid, val)"
+50065,لاعب,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الهجوم المتراوح,"local result = Player:setRangeAttack(objid, val)"
+50066,لاعب,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الدفاع القويّ,"local result = Player:setPunchDefense(objid, val)"
+50067,لاعب,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الدفاع المتراوح,"local result = Player:setRangeDefense(objid, val)"
+50068,لاعب,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد عدد النجوم,"local result = Player:setStarNum(objid, val)"
+50069,لاعب,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد قياس الموديل,"local result = Player:setModelScale(objid, val)"
+50070,لاعب,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,تحديد موقع الممثّل,"local result = Player:setPosition(objid, x, y, z)"
+50071,لاعب,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,الحصول على التموضع العكسيّ للاعب,local result = Player:getAimPos(objid)
+60001,مخلوق,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,هل هو بالغ؟,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,مخلوق,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,تحديد إن كان الاوكسيجين ضروريًأ,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,مخلوق,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",تحديد هويّة اللاعب الذي لديه مخلوف أليف,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,مخلوق,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,تحديد إن كان يسبّب الهلع,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,مخلوق,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,تحديد إن كان يحتاج للتأثير,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,مخلوق,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",الحصول على هويّة مصدر الوحش,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,مخلوق,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",الحصول على هويّة مصدر الوحش,local result = Creature:getActorName(objid)
+60008,مخلوق,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,زيادة وضع صفة الوحش,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,مخلوق,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",زيادة وضع صفة الوحش,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,مخلوق,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,تحديد فريق المخلوقات,"local result = Creature:setTeam(objid, teamid)"
+60011,مخلوق,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",تحديد فريق المخلوقات,local result = Creature:getTeam(objid)
+60012,مخلوق,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",الحصول على أقصى حدّ من الشبع,local result = Creature:getMaxFood(objid)
+60013,مخلوق,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",الحصول على الشبع,local result = Creature:getFood(objid)
+60014,مخلوق,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الشبع,"local result = Creature:setFood(objid, val)"
+60015,مخلوق,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",استعادة الايتش بي,local result = Creature:getHpRecover(objid)
+60016,مخلوق,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سعة الاوكسيجين القصوى,local result = Creature:getMaxOxygen(objid)
+60017,مخلوق,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة المشي,local result = Creature:getWalkSpeed(objid)
+60018,مخلوق,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",سرعة السباحة (في الماء),local result = Creature:getSwimSpeed(objid)
+60019,مخلوق,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",قوّة القفز,local result = Creature:getJumpPower(objid)
+60020,مخلوق,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",الوزن,local result = Creature:getMass(objid)
+60021,مخلوق,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",مراوغة,local result = Creature:getDodge(objid)
+60022,مخلوق,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",هجوم قويّ,local result = Creature:getPunchAttack(objid)
+60023,مخلوق,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",هجوم متراوح,local result = Creature:getRangeAttack(objid)
+60024,مخلوق,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",دفاع قويّ,local result = Creature:getPunchDefense(objid)
+60025,مخلوق,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",دفاع متراوح,local result = Creature:getRangeDefense(objid)
+60026,مخلوق,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الايتش بي,"local result = Creature:setMaxHp(objid, val)"
+60027,مخلوق,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الايتش بي,"local result = Creature:setHP(objid, val)"
+60028,مخلوق,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,تحديد استعادة الايتش بي,local result = Creature:setHpRecover(objid)
+60029,مخلوق,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الاوكسيجين,"local result = Creature:setOxygen(objid, val)"
+60030,مخلوق,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة المشي,"local result = Creature:setWalkSpeed(objid, val)"
+60031,مخلوق,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد سرعة السباحة (في الماء),"local result = Creature:setSwimSpeed(objid, val)"
+60032,مخلوق,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد قوّة القفز,"local result = Creature:setJumpPower(objid, val)"
+60033,مخلوق,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد المراوغة,"local result = Creature:setDodge(objid, val)"
+60034,مخلوق,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الهجوم القويّ,"local result = Creature:setPunchAttack(objid, val)"
+60035,مخلوق,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الهجوم المتراوح,"local result = Creature:setRangeAttack(objid, val)"
+60036,مخلوق,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الدفاع القويّ,"local result = Creature:setPunchDefense(objid, val)"
+60037,مخلوق,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,تحديد الدفاع المتراوح,"local result = Creature:setRangeDefense(objid, val)"
+70001,يو آي,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,تحديد ملخّص يو آي القتال,"local result = UI:setGBattleUI(name, value)"
+70002,يو آي,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",تغيير احداثيات العالم الى الخريطة الصغيرة,"local result = UI:world2RadarPos(x, y)"
+70003,يو آي,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",تغيير طول العالم الى الخريطة الصغيرة,local result = UI:world2RadarDist(length)
+70004,يو آي,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,تحديد وضع الخريطة الصغيرة: 1. زاوية دوران 45 درجة. 2. زاوية إشراف الصورة كاملة,local result = UI:setMinimapRenderMode(mode)
+70005,يو آي,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,اعداد الشكل لعلامات الخريطة. تحديدها كخطوط,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,يو آي,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,اعداد الشكل لعلامات الخريطة. تحديدها كدوائر,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,يو آي,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,عرض تأثير الشاشة,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,دردشة,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,إرسال رسالة دردشة,local result = Chat:sendChat(content)
+80002,دردشة,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,إرسال رسالة الشبكة,local result = Chat:sendSystemMsg(content)
+90001,فريق,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",الحصول على عدد الفرق,local result = Team:getNumTeam()
+90002,فريق,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",الحصول على فريق اللاعب المعيّن,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,فريق,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",الحصول على فريق اللاعب المعيّن,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,فريق,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",لاعب عشوائيّ,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,فريق,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,تحديد مجموع الفريق,"local result = Team:setTeamScore(teamid, s)"
+90006,فريق,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",الحصول على مجموع الفريق,local result = Team:getTeamScore(teamid)
+90007,فريق,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,زيادة مجموع الفريق,"local result = Team:addTeamScore(teamid, score)"
+90008,فريق,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,تحديد فوز وخسارة الفريق,"local result = Team:setTeamResults(teamid, result)"
+90009,فريق,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",الحصول على الفوز والخسارة الحاليّة للفريق,local result = Team:getTeamResults(teamid)
+90010,فريق,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,تحديد فوز وخسارة فريق اللاعبب,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,فريق,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,تحديد مجموع الوفيات في الفريق,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,فريق,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",الحصول على مجموع الوفيات في الفريق,local result = Team:getTeamDieTimes(teamid)
+90013,فريق,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,زيادة مجموع وفيّات الفريق,local result = Team:addTeamDieTimes(teamid)
+90014,فريق,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,تغيير فريق اللاعب,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,دعائم,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",الحصول على اسم العنصر,local result = Item:getItemName(itemid)
+100002,دعائم,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",الحصول على هويّة العنصر,local result = Item:getItemId(objid)
+100003,دعائم,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",الحصول على عدد القطرات,local result = Item:getDropItemNum(objid)
+110001,حقيبة ظهر,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",الحصول على نطاق هوية شريط حقيبة الظهر (هويّة البدء وهويّة الانهاء),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,حقيبة ظهر,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",الحصول على حجم شريط حقيبة الظهر,local result = Backpack:getBackpackBarSize(bartype)
+110003,حقيبة ظهر,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,تحديد حقيبة الظهر,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,حقيبة ظهر,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,إزالة بعض العناصر من شريط حقيبة الظهر. تزال بواسطة الفتحات. تزال كلّها تلقائيًا,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,حقيبة ظهر,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",ازالة بعض العناصر من شريط حقيبة الظهر. ازالتها بواسطة هويّة العناصر. تزال كلها بشكل تلقائيّ,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,حقيبة ظهر,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,مسح شريط حقيبة الظهر المعيّنة,"local result = Backpack:clearPack(playerid, bartype)"
+110007,حقيبة ظهر,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,مسح حقيبة الظهر بالكامل (بما في ذلك شريط حقيبة الظهر، شريط الاختصار، شريط التجهيزات),local result = Backpack:clearAllPack(playerid)
+110008,حقيبة ظهر,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,ازالة العناصر في حقيبة الظهر. يتمّ نقلها كلّها بشكل تلقائيّ,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,حقيبة ظهر,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,تبديل العناصر في حقيبة الظهر,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,حقيبة ظهر,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 7",ErrorCode.OK,ان كان يوجد مساحة في حقيبة الظهر (بما في ذلك شريط حقيبة الظهر، شريط الاختصار) لتخزين العناصر,"local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,حقيبة ظهر,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number",احسب مجموع الرقم العناصر المتبقية التي يمكن تخزينها في حقيبة الظهر (بما في ذلك، شريط حقيبة الظهر، شريط الاختصار),"local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,حقيبة ظهر,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",احصل على لائحة صالحة لهويّة العناصر الموجودة مسبقًا في حقيبة الظهر. هويّة العنصر,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,حقيبة ظهر,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",احصل على عناصر موجودة مسبقًا في شريط حقيبة الظهر. هويّة العنصر,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,حقيبة ظهر,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,ارصد وجود عنصر معيّن في حقيبة الظهر,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,حقيبة ظهر,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",احصل على الرقم مجموع العناصر في حقيبة الظهر. العودة الى حقائب الظهر مع العناصر,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,حقيبة ظهر,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",احصل على هويّة وعدد العنصر في حقيبة الظهر,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,حقيبة ظهر,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",احصل على اسم العنصر في حقيبة الظهر,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,حقيبة ظهر,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",احصل على عدد العناصر في حقيبة الظهر وأقصى عدد من الرزم,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,حقيبة ظهر,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",احصل على ديمومة العنصر في حقيبة الظهر والمتانة القصوى,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,حقيبة ظهر,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",احصل على تعويذة العناصر في حقيبة الظهر. العودة الى هويّة التعويذة,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,حقيبة ظهر,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",احصل على نوع أداة العنصر من حقيبة الظهر (<0 تعني عدم وجود أدوات>),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,حقيبة ظهر,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",إضافة العنصر إلى حقيبة الظهر,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,حقيبة ظهر,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,التخلّص من الغرض الموجود في حقيبة الظهر,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,حقيبة ظهر,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,الحصول على رقم الأغراض الموجودة في مكان واحد في حقيبة الظهر,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,خريطة صغيرة,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number",شكل جديد (خطّ، مستطيل، دائرة),"local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,خريطة صغيرة,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,حذف شكل,local result = MapMark:deleteShape(shapeid)
+120003,خريطة صغيرة,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,تحديد الشكل واللون,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,خريطة صغيرة,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,تحديد الشكل المعروض أو المخفي,"local result = MapMark:showShape(shapeid, showflag)"
+120005,خريطة صغيرة,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,تحديث الشكل (خطّ). أضف احداثيات البدء والانتهاء,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,خريطة صغيرة,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,تحديث الشكل (مستطيل). أضف احداثيات البدء والانتهاء,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,خريطة صغيرة,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,تحديث الشكل (دائرة). أضف احداثيات المركز ونصف القطر,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,نقطة التوليد,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",احصل على موقع نقطة التوليد,local result = Spawnport:getSpawnPoint()
+130002,نقطة التوليد,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",احصل على نقطة التوليد في المنطقة. أضف تموضع كتلة عشوائيّة في المنطقة,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

@@ -1,0 +1,50 @@
+local BaseCamera = require(script.Parent.BaseCamera)
+local WorkSpace = game:GetService("WorkSpace")
+local Players = game:GetService('Players')
+local player = Players.LocalPlayer
+local ClassicCamera = CommonModule.Class("ClassicCamera", BaseCamera)
+local MouseService = game:GetService("MouseService")
+
+function ClassicCamera:OnInit(...)
+	BaseCamera.OnInit(self, ...)
+	self.m_lastEyePos = Vector3.New(0, 0, 0)
+	self.m_lastQuaterion = Quaternion.FromEuler(0, 0, 0)
+end
+
+function ClassicCamera:Update()
+	local currentCamera = WorkSpace.CurrentCamera
+	local camType = currentCamera.CameraType
+
+	if camType == Enum.CameraType.Fixed then
+		self:SetPosition(self.m_lastEyePos)
+		self:SetQuaternion(self.m_lastQuaterion)
+	elseif camType == Enum.CameraType.Attach then
+		local subpos, subeuler = self:GetSubjectPosAndEuler()
+		local rotation = self:GetRotation()
+		local quaternion = Quaternion.FromEuler(rotation.x, subeuler.y+180, 0)
+		local lookdir = quaternion:RotateToDir(Vector3.New(0, 0, 1))
+		local eyepos = player:EyePos(subpos, -lookdir, self:GetEyeDistance())
+		
+		self:SetPosition(eyepos)
+		self:SetQuaternion(quaternion)
+	elseif 	camType == Enum.CameraType.Watch or 
+		  	camType == Enum.CameraType.Track or  
+		  	camType == Enum.CameraType.Follow or 
+		  	camType == Enum.CameraType.Custom 
+	then
+		local subpos = self:GetSubjectPosAndEuler()
+		local quaternion = self:GetQuaternion()
+		local lookdir = quaternion:RotateToDir(Vector3.New(0, 0, 1))
+		local eyepos = player:EyePos(subpos, -lookdir, self:GetEyeDistance())
+		self:SetPosition(eyepos)
+		self:SetQuaternion(quaternion)
+	elseif camType == Enum.CameraType.Scriptable then
+		-- Scriptable 摄像机控制权交给用户自定义脚本控制
+	end
+end
+
+function ClassicCamera:GetCameraType()
+	return Enum.CameraType.Custom.Value;
+end
+
+return ClassicCamera

@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/multilangedit.lua"/>
+
+	<!--语言选择按钮模板-->
+	<Button name="LangEditBtnTemplate" abs_x="202" abs_y="61" virtual="true" hidden="true" >
+		<Layers>
+			<Layer level="overlay">
+				<Texture  name="$parentNormal"  inherits="TemplateBkg2"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg27" hidden="true"/>
+				<FontString name="$parentTitle" fonttype="BlackFont22" justifyH="center" text="$3496"  abs_x="200" abs_y="28" >
+					##overseas
+					<Color r="48" g="69" b="54"/>
+					##overseas
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red.png" abs_x="31" abs_y="34" hidden="true">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension x="-18" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tipoff.png" abs_x="3" abs_y="15" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>LangEditBtnTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="TranslatingTipsFrame" parent="UIClient" frameStrata="HIGH" framelevel="3000" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Layers>
+			<Layer level = "overlay">
+				<Texture name="$parentBkg1" file="ui/white.png" stretchedge="true" color="40000000"/>
+       			<Texture name="$parentTipsBkg" inherits="BkgTemplate67">
+					<Size>
+						<AbsDimension x="400" y="49"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTips" fonttype="BlackFont30" lineInterval="2" fontStyle="border" justifyH="center" text="$21690">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="570" y="35"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTipsBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+	<Frame name="MultiLangEditFrame" parent="UIClient" frameStrata="HIGH" framelevel="3200" rel_x="1.0" rel_y="1.0" hidden="true">
+		<Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+        	<Layer level="BACKGROUND">
+        		<Texture name="$parentBkg" inherits="TemplateBigBkg1_flat"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg2" abs_x="1020" rel_y="0.93">
+					<Anchors>
+						<Anchor point="right" relativeTo="$parentBkg" relativePoint="right">
+							<Offset>
+								<AbsDimension x="4" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTabsChenDi" inherits="TemplateBigBkg2" abs_x="262" rel_y="0.93">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension  y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" rel_x="1.0" rel_y="0.1">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##标题名
+						<FontString name="$parentTitle" fonttype="BlackFont30" text="$21650" >
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="300" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkgLeft">
+									<Offset>
+										<AbsDimension x="25" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="36" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-17" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>MultiLangEditFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentTabs" abs_x="240" abs_y="560">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentTabsChenDi" relativePoint="left">
+						<Offset>
+							<AbsDimension x="11" y="-24"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle" text="$21651" fonttype="BlackFont24" justifyH="center" justifyV="middle" abs_x="220" abs_y="35">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="240" abs_y="520">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSlideBkg" inherits="TemplateBkg8" abs_x="8" abs_y="517" hidden="true">
+            				<Anchors>
+            					<Anchor point="right" relativePoint="right" relativeTo="$parentBox">
+            						<Offset>
+            							<AbsDimension x="-4" y="0"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SlidingFrame name="$parentBox" abs_x="235" abs_y="517" slidingY="true" slideplane="$parentPlane" slidebar="$parentBar">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentBar" abs_x="8" abs_y="10" hidden="true" inherits="SlidingBoxBarTemplate1" framelevel="2650"/>
+							<Frame name="$parentPlane" abs_x="240" abs_y="490" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Button name="$parentLang1" inherits="LangEditBtnTemplate" id="1"/>
+							<Button name="$parentLang2" inherits="LangEditBtnTemplate" id="2"/>
+							<Button name="$parentLang3" inherits="LangEditBtnTemplate" id="3"/>
+							<Button name="$parentLang4" inherits="LangEditBtnTemplate" id="4"/>
+							<Button name="$parentLang5" inherits="LangEditBtnTemplate" id="5"/>
+							<Button name="$parentLang6" inherits="LangEditBtnTemplate" id="6"/>
+							<Button name="$parentLang7" inherits="LangEditBtnTemplate" id="7"/>
+							<Button name="$parentLang8" inherits="LangEditBtnTemplate" id="8"/>
+							<Button name="$parentLang9" inherits="LangEditBtnTemplate" id="9"/>
+							<Button name="$parentLang10" inherits="LangEditBtnTemplate" id="10"/>
+							<Button name="$parentLang11" inherits="LangEditBtnTemplate" id="11"/>
+							<Button name="$parentLang12" inherits="LangEditBtnTemplate" id="12"/>
+							<Button name="$parentLang13" inherits="LangEditBtnTemplate" id="13"/>
+							<Button name="$parentLang14" inherits="LangEditBtnTemplate" id="14"/>
+							<Button name="$parentLang15" inherits="LangEditBtnTemplate" id="15"/>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<Button name="$parentTranslateAllBtn" inherits="TemplateBtn20" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTabs">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$21652" abs_x="160" abs_y="30">
+                            <Color r="55" g="52" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                	<OnClick>MultiLangEditFrameTranslateAllBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentMain" abs_x="970" abs_y="560">
+            	<Anchors>
+            		<Anchor point="center" relativePoint="center" relativeTo="$parentChenDi">
+            			<Offset>
+            				<AbsDimension x="-15" y="-32"/>
+            			</Offset>
+            		</Anchor>
+            	</Anchors>
+            	<Layers>
+            		<Layer level="BACKGROUND">
+            			<FontString name="$parentSrcTitle" text="原文 [简体中文]" justifyV="middle" justifyH="left" fonttype="BlackFont30" abs_x="600" abs_y="40">
+            				<Color r="55" g="54" b="49"/>
+            				<Anchors>
+            					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+            						<Offset>
+            							<AbsDimension x="20" y="10"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</FontString>
+            			<Texture name="$parentSrcBkg" inherits="TemplateBkg8" abs_x="976" abs_y="221">
+            				<Anchors>
+            					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+            						<Offset>
+            							<AbsDimension x="0" y="50"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</Texture>
+            			<FontString name="$parentSrcTip" text="$21655" justifyV="middle" justifyH="right" fonttype="BlackFont30" abs_x="200" abs_y="40" hidden="true">
+            				<Color r="233" g="21" b="21"/>
+            				<Anchors>
+            					<Anchor point="left" relativeTo="$parentSrcTitle" relativePoint="right">
+            						<Offset>
+            							<AbsDimension x="133" y="0"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</FontString> 
+            			<FontString name="$parentDesTitle" text="译文【简体中文】" justifyV="middle" justifyH="left" fonttype="BlackFont30" abs_x="600" abs_y="40">
+            				<Color r="55" g="54" b="49"/>
+            				<Anchors>
+            					<Anchor point="topleft" relativeTo="$parentSrcBkg" relativePoint="bottomleft">
+            						<Offset>
+            							<AbsDimension x="20" y="30"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</FontString>
+            			<Texture name="$parentDesBkg" inherits="TemplateBkg8" abs_x="976" abs_y="221">
+            				<Anchors>
+            					<Anchor point="topleft" relativeTo="$parentSrcBkg" relativePoint="bottomleft">
+            						<Offset>
+            							<AbsDimension x="0" y="70"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</Texture>
+            			<FontString name="$parentDesTip" text="$21655" justifyV="middle" justifyH="right" fonttype="BlackFont30" abs_x="200" abs_y="40" hidden="true">
+            				<Color r="233" g="21" b="21"/>
+            				<Anchors>
+            					<Anchor point="topright" relativeTo="$parentSrcBkg" relativePoint="bottomright">
+            						<Offset>
+            							<AbsDimension x="-20" y="30"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</FontString>  
+            			<Texture name="$parentSlideBkg" inherits="TemplateBkg8" abs_x="8" abs_y="221" hidden="true">
+            				<Anchors>
+            					<Anchor point="right" relativePoint="right" relativeTo="$parentSrcBox">
+            						<Offset>
+            							<AbsDimension x="-4" y="0"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</Texture>
+            			<Texture name="$parentSlideBkg1" inherits="TemplateBkg8" abs_x="8" abs_y="221" hidden="true">
+            				<Anchors>
+            					<Anchor point="right" relativePoint="right" relativeTo="$parentDesBox">
+            						<Offset>
+            							<AbsDimension x="-4" y="0"/>
+            						</Offset>
+            					</Anchor>
+            				</Anchors>
+            			</Texture>
+            		</Layer>
+            	</Layers>
+            	<Frames>
+            		<SlidingFrame name="$parentSrcBox" slidingY="true" abs_x="955" abs_y="200" slideplane="$parentEdit" slidebar="$parentBar">
+            			<Anchors>
+            				<Anchor point="center" relativeTo="$parentSrcBkg" relativePoint="center">
+            					<Offset>
+            						<AbsDimension x="4" y="0"/>
+            					</Offset>
+            				</Anchor>
+            			</Anchors>
+            			<Frames>
+            				<Frame name="$parentBar" abs_x="8" abs_y="10" hidden="true" inherits="SlidingBoxBarTemplate1" framelevel="2650">
+								<Anchors>
+									<Anchor point="center" relativeTo="$parentSlideBkg" relativePoint="center">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							
+							<SafeMultiEditBox name="$parentEdit" slidername="MultiLangEditFrameMainSrcBox" multiLine="true" letters="1000" lineInterval="8" editMethod="527" abs_x="927" abs_y="2000" >
+								<Scripts>
+									<OnFocusLost>MultiLangSrcTextEdit_OnFocusLost()</OnFocusLost>
+								</Scripts>
+								
+							</SafeMultiEditBox>
+						</Frames>
+						<Scripts>
+							<OnUpdate>MultiLangEditFrameMainSrcBoxEdit_OnUpdate();</OnUpdate>
+						</Scripts>
+            		</SlidingFrame>
+            		<SlidingFrame name="$parentDesBox" slidingY="true" abs_x="955" abs_y="200" slideplane="$parentEdit" slidebar="$parentBar">
+            			<Anchors>
+            				<Anchor point="center" relativeTo="$parentDesBkg" relativePoint="center">
+            					<Offset>
+            						<AbsDimension x="4" y="0"/>
+            					</Offset>
+            				</Anchor>
+            			</Anchors>
+            			<Frames>
+            				<Frame name="$parentBar" abs_x="8" abs_y="10" hidden="true" inherits="SlidingBoxBarTemplate1" framelevel="2650">
+								<Anchors>
+									<Anchor point="center" relativeTo="$parentSlideBkg1" relativePoint="center">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<SafeMultiEditBox name="$parentEdit"  slidername="MultiLangEditFrameMainDesBox" multiLine="true" letters="1000" lineInterval="8" editMethod="527" abs_x="927" abs_y="200">
+								<extratextcolor index="162" r="224" g="69" b="31"/>
+								<Scripts>
+									<OnFocusLost>MultiLangDesTextEdit_OnFocusLost()</OnFocusLost>
+								</Scripts>
+							</SafeMultiEditBox>
+						</Frames>
+						<Scripts>
+							<OnUpdate>MultiLangEditFrameMainDesBoxEdit_OnUpdate();</OnUpdate>
+						</Scripts>
+            		</SlidingFrame>
+            	</Frames>
+            </Frame>
+            <Button name="$parentTranslateBtn" inherits="TemplateBtn2">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentTranslateAllBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="430" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$2038" >
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="135" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MultiLangEditFrameTranslateBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentSaveBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentTranslateBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="236" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$9192">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="150" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MultiLangEditFrameSaveBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>MultiLangEditFrame_OnLoad();</OnLoad>
+			<OnShow>MultiLangEditFrame_OnShow();</OnShow>
+			<OnUpdate>MultiLangEditFrame_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+
+	<Frame name="TranslateAllConfirmFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2800" input_transparent="false">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="40000000"/>
+				<Texture name="$parentChenDi" inherits="TemplateBkg1">
+					<Size>
+						<AbsDimension x="589" y="341" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31">
+					<Size>
+						<AbsDimension x="588" y="67" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>	
+				<FontString name="$parentTitle" fonttype="BlackFont34" text="$21652" abs_x="589" abs_y="60" justifyH="center">
+					<color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativeTo="$parentTitleBkg" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>	
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentDesc" lineInterval="6" multiLine="false" fonttype="BlackFont26" autoextend="true" text="$21646" justifyH="center">
+				<Size>
+					<AbsDimension x="190" y="150" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentChenDi" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="36" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-17" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+					<Size>
+						<RelDimension x="0.9" y="0.9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>TranslateAllConfirmFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentLeftBtn" inherits="TemplateBtn2">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentChenDi" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="34" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3018">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="180" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>TranslateAllConfirmFrameLeftBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentRightBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentChenDi" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-34" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3010">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="180" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>TranslateAllConfirmFrameRightBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnShow>TranslateAllConfirmFrame_OnShow();</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>
+
+
+

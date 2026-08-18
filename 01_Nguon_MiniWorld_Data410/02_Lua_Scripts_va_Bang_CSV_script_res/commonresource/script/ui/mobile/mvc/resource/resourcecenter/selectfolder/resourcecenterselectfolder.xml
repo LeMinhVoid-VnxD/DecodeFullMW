@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/selectFolder/ResourceCenterSelectFolderModel.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/selectFolder/ResourceCenterSelectFolderView.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/selectFolder/ResourceCenterSelectFolderCtrl.lua"/>
+
+	##左侧菜单按钮模板
+	<Button name="ResourceCenterSelectFolderMenuTemplate" virtual="true" hidden="true" inherits="TemplateBtn4" abs_x="140" abs_y="61" >
+		<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="tab按钮" rel_x="1" rel_y="1">
+			<Color r="55" g="54" b="49"/>
+		</FontString>
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture name="$parentChecked" inherits="TemplateBkg7" hidden="true" rel_x="1" rel_y="1"/>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):MenuClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##文件夹模板
+	<Frame name="ResourceCenterSelectFolderFolderBtnTemplate" inherits="ResourceFolderBtnTemplate" virtual="true" >
+		<Frames>
+			<Frame name="$parentSelect" abs_x="32" abs_y="32">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-13" y="32"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_white"/>
+						<Texture name="$parentBkgChecked" file="ui/mobile/texture2/common.xml"  uvname="btn_circle_yellow" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="overlap">
+						<Texture name="$parentTick" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" hidden="true" abs_x="20" abs_y="15">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):FolderSelectClicked();</OnClick>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):FolderClicked();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##资源格子模板
+	<Frame name="ResourceCenterSelectFolderGridTemplate" inherits="ResourceGridTemplate" virtual="true" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" inherits="TemplateBigBkg18" hidden="true" abs_x="74" abs_y="74">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentState" file="ui/mobile/texture2/common_icon.xml" uvname="icon_top_b" abs_x="14" abs_y="16" hidden="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="4" y="4" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSelect" abs_x="32" abs_y="32">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="2" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_white"/>
+						<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml"  uvname="btn_circle_yellow" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="overlap">
+						<Texture name="$parentTick" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" hidden="true" abs_x="20" abs_y="15">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):GridSelectClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):GridClicked();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##资源中心移动文件
+	<Frame name="ResourceCenterSelectFolder" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3102">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBgMask" file="ui/white.png" color="80000000" stretchedge="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBg" inherits="TemplateBigBkg8" abs_x="1007" abs_y="571" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMiddleBg" inherits="TemplateBigBkg2" abs_x="1004" abs_y="433" >
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="56"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMiddleLeftBg" inherits="TemplateBigBkg24" abs_x="168" abs_y="394" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMiddleBg">
+							<Offset>
+								<AbsDimension x="18" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMiddleCenterBg" inherits="TemplateBigBkg5" abs_x="338" abs_y="394" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMiddleBg">
+							<Offset>
+								<AbsDimension x="202" y="23"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMiddleRightBg" inherits="TemplateBigBkg5" abs_x="436" abs_y="394" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMiddleBg">
+							<Offset>
+								<AbsDimension x="550" y="23"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="435" abs_y="247" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMiddleRightBg">
+							<Offset>
+								<AbsDimension y="-30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentEmptyTips" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$16145" abs_x="600" abs_y="26">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+							<Offset>
+								<AbsDimension y="37"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="$parentTips" fonttype="BlackFont22" justifyH="left" justifyV="middle" abs_y="24" abs_x="300" text="$16252" textcolor="FF3D4546">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentBg" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="21" y="-40" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="2" y="0" />
+						</Offset>
+					</Anchor>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="-2" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##左侧菜单栏
+			<SlidingFrame name="$parentMenuList" slidingY="true" slideplane="$parentPlane" abs_x="142" abs_y="387">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentMiddleLeftBg" >
+						<Offset>
+							<AbsDimension x="0" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="142" abs_y="387"/>
+					<Button name="$parentMenu1" inherits="ResourceCenterSelectFolderMenuTemplate" id="1" hidden="false" text="$3698">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentPlane" relativePoint="top">
+								<Offset>
+									<AbsDimension y="9" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentMenu2" inherits="ResourceCenterSelectFolderMenuTemplate" id="2" hidden="false" text="$3627">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentPlane" relativePoint="top">
+								<Offset>
+									<AbsDimension y="82" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</SlidingFrame>
+			##文件夹列表
+			<ListViewFrame name="$parentFolderBox" slidingY="true" abs_x="320" abs_y="380" slideplane="$parentPlane" prefuncname="ResourceCenterSelectFolderFolderBox" >
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentMiddleCenterBg">
+						<Offset>
+							<AbsDimension y="7" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="338" abs_y="380" />
+				</Frames>
+			</ListViewFrame>
+			##资源列表
+			<ListViewFrame name="$parentResourceBox" slidingY="true" abs_x="436" abs_y="380" slideplane="$parentPlane" prefuncname="ResourceCenterSelectFolderResourceBox" >
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentMiddleRightBg" >
+						<Offset>
+							<AbsDimension y="7" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="436" abs_y="380" />
+				</Frames>
+			</ListViewFrame>
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn13" text="$969" >
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBg" >
+						<Offset>
+							<AbsDimension x="-20" y="-13" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):ConfirmBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("ResourceCenterSelectFolder"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

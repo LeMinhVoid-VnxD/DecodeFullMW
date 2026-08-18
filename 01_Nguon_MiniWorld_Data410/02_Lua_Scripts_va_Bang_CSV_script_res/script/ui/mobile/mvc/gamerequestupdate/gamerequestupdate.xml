@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/gameRequestUpdate/GameRequestUpdateCtrl.lua"/>
+    <Script file="ui/mobile/mvc/gameRequestUpdate/GameRequestUpdateModel.lua"/>
+	<Script file="ui/mobile/mvc/gameRequestUpdate/GameRequestUpdateView.lua"/>
+
+	##蓝色按钮
+	<Button name="GameRequestUpdateFrameTemplateBtnBlue" virtual="true" abs_x="40" abs_y="43">
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg2"/>
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+	</Button>
+	##黄色按钮
+	<Button name="GameRequestUpdateFrameTemplateBtnYellow" virtual="true" abs_x="40" abs_y="43">
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow" />
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+	</Button>
+     <!--游戏更新下载面板-->
+	<Frame name="GameRequestUpdateFrame" parent="UIClient" frameStrata="HIGH" framelevel="4500" hidden="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/mobile/texture2/common.xml" uvname="img_board_white100_.png" DrawType="ninesquare_center" rel_x="1" rel_y="1">
+					<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!--请求下载面板-->
+			<Frame name="$parentRequest" abs_x="653" abs_y="338">
+				<Anchors>
+					<Anchor point="center" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" inherits="TemplateBkg1">
+						</Texture>
+					</Layer>
+					<Layer>
+						<Texture name="$parentDecorate" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-24" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Richtext name="$parentTitle" abs_x="520" abs_y="120" fonttype="BlackFont26">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="67" y="67" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Richtext>
+					<Button name="$parentOkBtn" inherits="GameRequestUpdateFrameTemplateBtnBlue" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="132" y="-35" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentName" fonttype="BlackFont20" text="$381" justifyH="center" justifyV="MIDDLE" abs_x="130" abs_y="50">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("GameRequestUpdateFrame"):OkOnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCancelBtn" inherits="GameRequestUpdateFrameTemplateBtnYellow" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentOkBtn">
+								<Offset>
+									<AbsDimension x="114" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentName" fonttype="BlackFont20" text="$970" justifyH="center" justifyV="MIDDLE" abs_x="130" abs_y="50">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="55" g="54" b="51"/>
+						</FontString>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("GameRequestUpdateFrame"):CancelOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<!--下载进度面板-->
+			<Frame name="$parentUpdate" abs_x="653" abs_y="338" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" inherits="TemplateBkg1">
+						</Texture>
+					</Layer>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont26" text="$32102" justifyH="center">
+							<Color r="55" g="54" b="47"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="105" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentBottomText" fonttype="BlackFont26"  justifyH="center">
+							<Color r="55" g="54" b="47"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="216" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+					<Layer>
+						<Texture name="$parentDecorate" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-24" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentBar" abs_x="500" abs_y="16" clipped="false">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" >
+								<Offset>
+									<AbsDimension x="75" y="170" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="img_board_bar.png" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMask" inherits="TemplateBkg69" abs_x="498" abs_y="14">
+									<NineSquare ox="0" oy="0" tilew="1" tileh="1"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentClose" inherits="TemplateCloseBtn">
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("GameRequestUpdateFrame"):OnClose();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##失败
+			<Frame name="$parentFailed" abs_x="653" abs_y="338" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" inherits="TemplateBkg1">
+						</Texture>
+					</Layer>
+					<Layer>
+						<Texture name="$parentDecorate" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-24" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Richtext name="$parentTitle" abs_x="461" abs_y="120" fonttype="BlackFont26">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="77" y="67" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Richtext>
+					<Button name="$parentOkBtn" inherits="GameRequestUpdateFrameTemplateBtnBlue" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-35" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentName" fonttype="BlackFont20" text="$381" justifyH="center" justifyV="MIDDLE" abs_x="130" abs_y="50">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Color r="51" g="55" b="55"/>
+						</FontString>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("GameRequestUpdateFrame"):FailedOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("GameRequestUpdateFrame"):OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>
+    

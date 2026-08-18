@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/editScript/DeveloperEditScriptModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/editScript/DeveloperEditScriptView.lua"/>
+	<Script file="ui/mobile/mvc/developer/editScript/DeveloperEditScriptCtrl.lua"/>
+
+	<Script file="ui/mobile/mvc/developer/scriptImport/ScriptImportCtrl.lua"/>
+
+	<Button name="DeveloperEditScriptGroupListBtnTemplate" virtual="true" abs_x="250" abs_y="57">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="TemplateBkg6"/>
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13"/>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" text="" abs_x="160" abs_y="20" >
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="37" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentYellowTag" file="ui/mobile/texture2/common.xml" uvname="icon_tick_multi" hidden="true">
+					<Size>
+						<AbsDimension x="20" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-16" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):GroupBtnClicked();</OnClick>
+		</Scripts>
+		<Frames>
+			<Button name="$parentFucBtn">
+				<Size>
+					<AbsDimension x="40" y="40"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-16" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/friend.xml" uvname="icon_more">
+					<Size>
+						<AbsDimension x="26" y="6"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/friend.xml" uvname="icon_more" >
+					<Size>
+						<AbsDimension x="26" y="6"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):GroupFucBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##子条目上移
+			<Button name="$parentUpBtn" abs_x="22" abs_y="40" hidden="true">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-50" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="18" abs_y="25" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="15" abs_y="22">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):GroupItemUpBtnClicked(true);</OnClick>
+				</Scripts>
+			</Button>
+			##子条目下移
+			<Button name="$parentDownBtn" abs_x="22" abs_y="40" hidden="true">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentUpBtn">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="18" abs_y="25" UVType="mirroev">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="15" abs_y="22" UVType="mirroev">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):GroupItemUpBtnClicked(false);</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Button>
+
+	<Button name="DeveloperEditScriptItemBtnTemplate" virtual="true" abs_x="775" abs_y="50">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentNormal" inherits="TemplateBkg6_1"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg6_1"/>
+				<Texture name="$parentAdd" inherits="TemplateBigBkg30"/>
+                <Texture name="$parentIconAdd" file="ui/mobile/texture2/friend.xml" uvname="icon_add_2.png" abs_x="22" abs_y="22">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-50" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentTextAdd" fonttype="BlackFont20" text="$13206" justifyH="left" abs_x="500" abs_y="20">
+                    <Color r="55" g="54" b="51"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-30" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentName" fonttype="BlackFont20" text="" justifyH="left" abs_x="500" abs_y="20">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="50" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentFucBtn">
+				<Size>
+					<AbsDimension x="40" y="40"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-16" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/friend.xml" uvname="icon_more">
+					<Size>
+						<AbsDimension x="26" y="6"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/friend.xml" uvname="icon_more" >
+					<Size>
+						<AbsDimension x="26" y="6"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):ItemFucBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentSwitchBtn" hidden="false">
+				<Size>
+					<AbsDimension x="30" y="30"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="7" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits = "TemplateBkg8">
+							<Size>
+								<AbsDimension x="24" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentCheck" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tick.png" hidden="true">
+							<Size>
+								<AbsDimension x="24" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):ItemSwitchBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##子条目上移
+			<Button name="$parentUpBtn" abs_x="22" abs_y="40">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-50" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="18" abs_y="25" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="15" abs_y="22">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):GroupItemChildUpBtnClicked(true);</OnClick>
+				</Scripts>
+			</Button>
+			##子条目下移
+			<Button name="$parentDownBtn" abs_x="22" abs_y="40">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentUpBtn">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="18" abs_y="25" UVType="mirroev">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap_upward" abs_x="15" abs_y="22" UVType="mirroev">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):GroupItemChildUpBtnClicked(false);</OnClick>
+				</Scripts>
+			</Button>
+        </Frames>
+        <Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):ItemBtnClicked();</OnClick>
+		</Scripts>
+    </Button>
+
+	<Frame name="DeveloperEditScript" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2301" input_transparent="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBg" inherits="BkgTemplate72" color="01000000"/>
+				<Texture name="$parentGroupListBg" file="ui/mobile/texture2/common.xml" uvname="board_sink_d.png" DrawType="ninesquare">
+					<Size>
+						<AbsDimension x="275" y="578"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativeTo="$parentBg" relativePoint="right">
+							<Offset>
+								<AbsDimension x="0" y="-17"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<NineSquare>
+						<Topleft		offsetX="0"  offsetY="0"	w="10"	h="10"/>
+						<Top			offsetX="13" offsetY="0"	w="10"  h="10"/>
+						<Topright		offsetX="26" offsetY="0"	w="10"	h="10"/>
+						<Left			offsetX="0"  offsetY="13"	w="10"	h="10"/>
+						<Center			offsetX="13" offsetY="13"	w="10"	h="10"/>
+						<Right			offsetX="26" offsetY="13"	w="10"	h="10"/>
+						<Bottomleft		offsetX="0"  offsetY="26"	w="10"	h="10"/>
+						<Bottom			offsetX="13" offsetY="26"	w="10"	h="10"/>
+						<Bottomright	offsetX="26" offsetY="26"	w="10"	h="10"/>
+						<OffSet x="10" y="10" />
+					</NineSquare>
+				</Texture>
+				<Texture name="$parentItemListBg" inherits="TemplateBigBkg5" color="01000000">
+					<Size>
+						<AbsDimension x="800" y="560"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="-49" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEmptyBg" file="ui/mobile/texture2/bigtex/img_noreview.png" abs_x="435" abs_y="247" hidden="true">
+					<Size>
+						<AbsDimension x="244" y="255"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentItemListBg">
+							<Offset>
+								<AbsDimension x="4" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentEmptyTitle"  fonttype="BlackFont24" justifyH = "center" text="$13201" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="300" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentItemListBg">
+							<Offset>
+								<AbsDimension x="4" y="130"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SlidingFrame name="$parentItemList" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="800" y="536"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentItemListBg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">	
+						<Size>
+							<AbsDimension x="800" y="1500"/>
+						</Size>					
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Button name="$parentBtn1" id="1" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn2" id="2" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn3" id="3" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn4" id="4" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn5" id="5" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn6" id="6" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn7" id="7" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn8" id="8" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn9" id="9" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn10" id="10" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn11" id="11" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn12" id="12" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn13" id="13" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn14" id="14" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn15" id="15" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn16" id="16" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn17" id="17" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn18" id="18" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn19" id="19" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtn20" id="20" inherits="DeveloperEditScriptItemBtnTemplate"/>
+					<Button name="$parentBtnNew" id="21" inherits="DeveloperEditScriptItemBtnTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<Button name="$parentCoverBtn" hidden="false">
+				<Size>
+					<AbsDimension x="3000" y="3000"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						
+					</Layer>
+				</Layers>
+			</Button>
+			<SlidingFrame name="$parentGroupList" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="271" y="475"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentGroupListBg">
+						<Offset>
+							<AbsDimension x="1" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">	
+						<Size>
+							<AbsDimension x="271" y="2000"/>
+						</Size>					
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Button name="$parentBtn1" id="1" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn2" id="2" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn3" id="3" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn4" id="4" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn5" id="5" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn6" id="6" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn7" id="7" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn8" id="8" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn9" id="9" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+					<Button name="$parentBtn10" id="10" inherits="DeveloperEditScriptGroupListBtnTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			
+			
+			<Button name="$parentAddGroupBtn"  hidden="false">
+				<Size>
+	                <AbsDimension x="254" y="55"/>
+	            </Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentGroupListBg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits="TemplateBigBkg30" abs_x="254" abs_y="55">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>
+                        <Texture name="$parentIconAdd" file="ui/mobile/texture2/friend.xml" uvname="icon_add_2.png" abs_x="22" abs_y="22">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="45" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>
+						<FontString name="$parentTextAdd" fonttype="BlackFont20" justifyH="left" text="$13203" abs_x="160" abs_y="20" >
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIconAdd">
+									<Offset>
+										<AbsDimension x="16" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):AddGroupBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentExitHandleModeBtn" hidden="true">
+				<Size>
+	                <AbsDimension x="254" y="55"/>
+	            </Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentGroupListBg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits="TemplateBigBkg30" abs_x="254" abs_y="55">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>
+						<FontString name="$parentTextAdd" fonttype="BlackFont20" justifyH="center" text="$13050" abs_x="160" abs_y="20" >
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):ExitHandleModeBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentOkBtn" inherits="TemplateBtnMini_OKBtn" hidden="true" abs_x="254" abs_y="55">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentAddGroupBtn" />
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditScript"):ChildItemOkBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+		</Scripts>
+	</Frame>
+</Ui>

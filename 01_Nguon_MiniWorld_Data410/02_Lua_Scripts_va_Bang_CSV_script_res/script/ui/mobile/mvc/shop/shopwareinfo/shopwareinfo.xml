@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/shop/shopWareInfo/ShopWareInfoModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopWareInfo/ShopWareInfoView.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopWareInfo/ShopWareInfoCtrl.lua"/>
+
+	##功能按钮模板
+	<Button name="ShopWareInfo_FuncBtnTemp" inherits="TemplateBtn3" virtual="true">
+		<Anchors>
+			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+				<Offset>
+					<AbsDimension x="0" y="-5"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont40" justifyV="middle" justifyH="center" text="确认" abs_x="160" abs_y="40">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="确认" abs_x="120" abs_y="24">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopWareInfo"):FuncBtnClick();</OnClick>
+		</Scripts>
+	</Button>
+	
+	##仓库道具详情页
+	<Frame name="ShopWareInfo" parent="UIClient" frameStrata="HIGH" framelevel="2000" hidden="true">
+		<Anchors>
+			<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="80000000"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg19" abs_x="497" abs_y="470">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIconBkg" inherits="TemplateBkg38" abs_x="74" abs_y="74">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="18" y="18" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="items/ruby.png" abs_x="62" abs_y="62">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNum" fonttype="BlackFont24" fontStyle="border" text="10" justifyH="right" abs_x="71" abs_y="19">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="-5" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentChipIcon" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_17" abs_x="25" abs_y="25">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="-5" y="5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" lineInterval="2" fontStyle="border" text="红宝石" abs_x="233" abs_y="20">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="35" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentProTitle" fonttype="BlackFont" lineInterval="2" fontStyle="border" text="$380" abs_x="200" abs_y="17">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="56"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentProBkg" inherits="TemplateBkg41" hidden="false" abs_x="59" abs_y="15">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentProTitle">
+							<Offset>
+								<AbsDimension x="-4" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentPro" inherits="TemplateBkg17"  hidden="false" abs_x="57" abs_y="13">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentProBkg">
+							<Offset>
+								<AbsDimension x="3" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentProCount" fonttype="BlackFont" fontStyle="border" justifyH="center" text="999/999" abs_x="81" abs_y="17">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentProBkg" >
+							<Offset>
+								<AbsDimension y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentDescBkg" inherits="TemplateBigBkg20" abs_x="461" abs_y="280">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="112"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopWareInfo"):CloseBtnClicked(true);</OnClick>
+				</Scripts>
+			</Frame>
+			<RichText name="$parentDesc" fonttype="BlackFont24" autowrap="true" text="描述" abs_x="410" abs_y="270">
+				<Color r="224" g="220" b="202" />
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentDescBkg" />
+				</Anchors>
+			</RichText>
+
+			##功能按钮
+			<Button name="$parentFuncBtn1" inherits="ShopWareInfo_FuncBtnTemp">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-100" y="-4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			<Button name="$parentFuncBtn2" inherits="ShopWareInfo_FuncBtnTemp">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="100" y="-4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##回收道具弹框页面(可以提取为mvc)
+	<Frame name="ShopWareRecycleFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="8000" input_transparent="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000" />
+				<Texture name="$parentChenDi2" inherits="TemplateBigBkg2" abs_x="724" abs_y="391">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi3" inherits="TemplateBigBkg5" abs_x="694" abs_y="217">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentChenDi2">
+							<Offset>
+								<AbsDimension x="0" y="-17"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentGetName" fonttype="BlackFont24" lineInterval="2" text="$887" abs_x="130" abs_y="27">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi2">
+							<Offset>
+								<AbsDimension x="52" y="200"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIcon1" file="ui/items/apple.png" abs_x="28" abs_y="28">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentGetName">
+							<Offset>
+								<AbsDimension x="135" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPrice1" justifyH="left" fonttype="BlackFont24" text="1000" abs_x="70" abs_y="25">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentIcon1">
+							<Offset>
+								<AbsDimension x="25" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIcon2" file="ui/items/apple.png" hidden="false" abs_x="28" abs_y="28">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentIcon1">
+							<Offset>
+								<AbsDimension x="140" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPrice2" justifyH="left" fonttype="BlackFont24" text="1000" hidden="false" abs_x="70" abs_y="25">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentIcon2">
+							<Offset>
+								<AbsDimension x="25" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTips1" fonttype="BlackFont24" text="$3573" hidden="false" autorect="true"  abs_x="130" abs_y="27">  
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi3">
+							<Offset>
+								<AbsDimension x="36" y="47"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentRecycleIcon" file="ui/items/apple.png" hidden="false" abs_x="38" abs_y="38">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTips1">
+							<Offset>
+								<AbsDimension x="30" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTips2" fonttype="BlackFont24" text="$3573" hidden="false" autowrap="true" abs_x="450" abs_y="70">
+					<Color r="247" g="119" b="15"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentRecycleIcon">
+							<Offset>
+								<AbsDimension x="20" y="7"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="721" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi2" />
+				</Anchors>
+				##titlename:387
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentCancelBtn" inherits="TemplateBtnBig_CancelBtn" >
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentChenDi2" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="70" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopWareInfo"):RecycleFrame_CancelBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentOKBtn" inherits="TemplateBtnBig_OKBtn" >
+				##回收:669
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentChenDi2" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-70" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopWareInfo"):RecycleFrame_ConfirmBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

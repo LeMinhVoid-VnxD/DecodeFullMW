@@ -1,0 +1,1473 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/BasicSettingsModel.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/BasicSettingsView.lua"/>
+	<Script file="ui/mobile/mvc/DevTools/BasicSettings/BasicSettingsCtrl.lua"/>
+    ##slider模板
+	<Frame name="BSSliderTemplate" abs_x="914" abs_y="75" virtual="true">
+		<Frames>
+			<Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="338" abs_y="30">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="338" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentLeftTitle" justifyH="right" fonttype="BlackFont20" text="$6148" abs_x="250" abs_y="22">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-88" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentBkg" inherits="TemplateBkg31" abs_x="338" abs_y="6">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg1" inherits="TemplateBkg32" abs_x="338" abs_y="6">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##右侧文字: 第一类滑动条用
+						<FontString name="$parentRightTxt" justifyH="left" fonttype="BlackFont20" text="1" abs_x="200" abs_y="20" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="60" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##底部文字: 第二类滑动条用
+						<FontString name="$parentBottomTxt" justifyH="left" fonttype="BlackFont18" text="1" abs_x="656" abs_y="18" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/modlib.xml" uvname="img_bar_green.png" DrawType="ninesquare_center" abs_x="8" abs_y="30" >
+					<NineSquare ox="0" oy="0" tilew="1" tileh="1"/>
+				</ThumbTexture>
+				<Scripts>
+					<OnValueChanged>GetInst("UIManager"):GetCtrl("BasicSettings"):SliderValueChanged()</OnValueChanged>
+					<OnMouseUp>GetInst("UIManager"):GetCtrl("BasicSettings"):SliderOnMouseUp();</OnMouseUp>
+				</Scripts>
+			</Slider>
+			<Button name="$parentBarLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBar" relativePoint="left">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):SliderLeftRightBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentBarRightBtn" inherits="TemplateSingleBar_RightBtn01" >
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentBar" relativePoint="right">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):SliderLeftRightBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##钩子按钮模板
+	<Button name="BSTickBtnTemplate" inherits="TemplateTickBtn5" virtual="true">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):TickBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+	##钩子条目
+	<Frame name="BSTickItemTemplate" abs_x="914" abs_y="110" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentLeftTitle" justifyH="right" fonttype="BlackFont20" text="XXXX" abs_x="245" abs_y="22">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentBtn1" inherits="BSTickBtnTemplate" id="1" />
+			<Button name="$parentBtn2" inherits="BSTickBtnTemplate" id="2" />
+			<Button name="$parentBtn3" inherits="BSTickBtnTemplate" id="3" />
+			<Button name="$parentBtn4" inherits="BSTickBtnTemplate" id="4" />
+			<Button name="$parentBtn5" inherits="BSTickBtnTemplate" id="5" />
+			<Button name="$parentBtn6" inherits="BSTickBtnTemplate" id="6" />
+		</Frames>
+	</Frame>
+
+	##标题模板(带文字的线条)
+	<Frame name="BSTitleAndLineTemplate" virtual="true" abs_x="920" abs_y="50" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 分割线 -->
+				<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="920" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##文字
+				<FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$6133" abs_x="400" abs_y="24">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	#开关模版
+	<Button name="BSSwitchTemplate" virtual="true" inherits="mini_SwitchBtnTemplateUI4">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##:红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-70" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseDown>GetInst("UIManager"):GetCtrl("BasicSettings"):SwitchBtnOnMouseDown();</OnMouseDown>
+		</Scripts>
+	</Button>
+
+	##开关目模板(带标题开关)
+	<Button name="BSSwitchFrameTemplate" virtual="true" abs_x="902" abs_y="60">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentSwitchTitle" justifyH="right" fonttype="BlackFont20" text="XXXX" abs_x="245" abs_y="22">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSwitch" inherits="BSSwitchTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentSwitchTitle">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Button>
+
+	##右侧按钮tabBtn
+	<Button name="BSRightTabBtnTemplate" abs_x="100" abs_y="50" virtual="true">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_right_n.png" hidden="false">
+					<Size>
+						<AbsDimension x="100" y="50" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="7" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_right_h.png" hidden="false">
+					<Size>
+						<AbsDimension x="100" y="50" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="7" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentJiantou" file="ui/mobile/texture2/common.xml" uvname="img_tab_right_arrow" hidden="true" abs_x="17" abs_y="28">
+					<Anchors>
+						<Anchor point="right" relativePoint="left" relativeTo="$parentNormal" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" hidden="false" justifyH="center" text="" abs_x="90" abs_y="18">
+					<Color r="60" g="73" b="76"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##LLDO:红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="7" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):tabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##页面模板
+	<Frame name="BSPageTemplate" abs_x="965" abs_y="565" virtual="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="188" y="65"/>
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="-127" y="-100"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</Frame>
+
+	<Frame name="BasicSettings" inherits="BSPageTemplate" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="800">
+		<Frames>
+			<!--3.右侧按钮底板-->
+			<Frame name="$parentLeftTabBtnsBG" abs_x="122" abs_y="575">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parentBkgWhite">
+						<Offset>
+							<AbsDimension x="-2" y="-17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_crease.png">
+							<Size>
+								<AbsDimension x="122" y="575"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 2. 右侧按钮-->
+			<SlidingFrame name="$parentLeftTabBtns" abs_x="160" abs_y="568" slidingY="true" slideplane="$parentPlane">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentLeftTabBtnsBG" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="160" abs_y="568" hidden="true" />
+					<Button name="$parentBtn1" id="1" inherits="BSRightTabBtnTemplate"  />
+					<Button name="$parentBtn2" id="2" inherits="BSRightTabBtnTemplate"  />
+					<Button name="$parentBtn3" id="3" inherits="BSRightTabBtnTemplate"  />
+					<Button name="$parentBtn4" id="4" inherits="BSRightTabBtnTemplate"  />
+					<Button name="$parentBtn5" id="5" inherits="BSRightTabBtnTemplate"  />
+					<Button name="$parentBtn6" id="6" inherits="BSRightTabBtnTemplate"  />
+				</Frames>
+			</SlidingFrame>
+			<!-- 1. 世界设定-->
+			<Frame name="$parentWorldSetting">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane">
+
+					   <Frames>
+						   <Frame name="$parentPlane" abs_x="1000" abs_y="1280" hidden="true">
+							   <Anchors>
+								   <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									   <Offset>
+										   <AbsDimension x="0" y="0"/>
+									   </Offset>
+								   </Anchor>
+								   <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									   <Offset>
+										   <AbsDimension x="0" y="0"/>
+									   </Offset>
+								   </Anchor>
+							   </Anchors>
+						   </Frame>
+						   <Frame name="$parentBody" abs_x="1000" abs_y="1300" >
+							   <Anchors>
+								   <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+									   <Offset>
+										   <AbsDimension x="-3" y="0"/>
+									   </Offset>
+								   </Anchor>
+								   <Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+									   <Offset>
+										   <AbsDimension x="-3" y="0"/>
+									   </Offset>
+								   </Anchor>
+							   </Anchors>
+							   <Frames>
+								   ##1. 地图时间
+								   <Frame name="$parentTitle" inherits="BSTitleAndLineTemplate" >
+									   <Anchors>
+										   <Anchor point="top" relativePoint="top" relativeTo="$parent">
+											   <Offset>
+												   <AbsDimension x="0" y="0"/>
+											   </Offset>
+										   </Anchor>
+									   </Anchors>
+								   </Frame>
+
+							  ##当前时间
+							  <Frame name="$parentTime" inherits="BSSliderTemplate" >
+								  <Anchors>
+									  <Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+										  <Offset>
+											  <AbsDimension x="0" y="0"/>
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+							  </Frame>
+							  ##锁定时间
+							  <Button name="$parentLockBtn" inherits="BSSwitchFrameTemplate" >
+								  <Anchors>
+									  <Anchor point="top" relativeTo="$parentTime" relativePoint="bottom">
+										  <Offset>
+											  <AbsDimension x="0" y="0"/>
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+							  </Button>
+
+							  ##2. 方块
+							  <Frame name="$parentBlockTitle" inherits="BSTitleAndLineTemplate" >
+								  <Anchors>
+									  <Anchor point="top" relativePoint="bottom" relativeTo="$parentLockBtn">
+										  <Offset>
+											  <AbsDimension x="0" y="0"/>
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+							  </Frame>
+							  ##允许放置
+							  <Button name="$parentPutBtn" inherits="BSSwitchFrameTemplate" >
+								  <Anchors>
+									  <Anchor point="top" relativeTo="$parentBlockTitle" relativePoint="bottom">
+										  <Offset>
+											  <AbsDimension x="0" y="0"/>
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+							  </Button>
+							  ##允许使用
+							  <Button name="$parentUseBtn" inherits="BSSwitchFrameTemplate" >
+								  <Anchors>
+									  <Anchor point="top" relativeTo="$parentPutBtn" relativePoint="bottom">
+										  <Offset>
+											  <AbsDimension x="0" y="0"/>
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+							  </Button>
+							  ##允许破坏
+							  <Button name="$parentDestroyBtn" inherits="BSSwitchFrameTemplate" >
+								  <Anchors>
+									  <Anchor point="top" relativeTo="$parentUseBtn" relativePoint="bottom">
+										  <Offset>
+											  <AbsDimension x="0" y="0"/>
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+							  </Button>
+
+								##3. 天气
+								<Frame name="$parentWeatherTitle" inherits="BSTitleAndLineTemplate" >
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentDestroyBtn">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Frame>
+								<Frame name="$parentWeather" inherits="BSTickItemTemplate" >
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentWeatherTitle">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Frame>
+
+								 ##4. 怪物生成
+								 <Frame name="$parentMonsterTitle" inherits="BSTitleAndLineTemplate" >
+									 <Anchors>
+										 <Anchor point="top" relativePoint="bottom" relativeTo="$parentWeather">
+											 <Offset>
+												 <AbsDimension x="0" y="0"/>
+											 </Offset>
+										 </Anchor>
+									 </Anchors>
+								 </Frame>
+								 <Button name="$parentMonsterBtn" inherits="BSSwitchFrameTemplate" >
+									 <Anchors>
+										 <Anchor point="top" relativeTo="$parentMonsterTitle" relativePoint="bottom">
+											 <Offset>
+												 <AbsDimension x="0" y="0"/>
+											 </Offset>
+										 </Anchor>
+									 </Anchors>
+								 </Button>
+
+								  ##5. 物理设置
+								  <Frame name="$parentForceTitle" inherits="BSTitleAndLineTemplate" >
+									  <Anchors>
+										  <Anchor point="top" relativePoint="bottom" relativeTo="$parentMonsterBtn">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Frame>
+								  <Frame name="$parentForce" inherits="BSSliderTemplate" >
+									  <Anchors>
+										  <Anchor point="top" relativePoint="bottom" relativeTo="$parentForceTitle">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Frame>
+								  ##7. 毒气设置
+								  <Frame name="$parentPollutionSetTitle" inherits="BSTitleAndLineTemplate" >
+									  <Anchors>
+										  <Anchor point="top" relativePoint="bottom" relativeTo="$parentForce">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+									  <Frames>
+										  <Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="false">
+											  <Anchors>
+												  <Anchor point="left" relativeTo="$parentName" relativePoint="right">
+													  <Offset>
+														  <AbsDimension x="-85" y="0" />
+													  </Offset>
+												  </Anchor>
+											  </Anchors>
+											  <Layers>
+												  <Layer level="overlay">
+													  <Texture name="$parentBkg" file="ui/mobile/texture/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23" abs_y="25">
+														  <Anchors>
+															  <Anchor point="center" relativeTo="$parent" relativePoint="center">
+																  <Offset>
+																	  <AbsDimension x="0" y="0" />
+																  </Offset>
+															  </Anchor>
+														  </Anchors>
+													  </Texture>
+												  </Layer>
+											  </Layers>
+											  <Scripts>
+												  <OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):PollutionTipBtnClicked();</OnClick>
+											  </Scripts>
+										  </Button>
+									  </Frames>
+								  </Frame>
+
+								  ##开启污染区
+								  <Button name="$parentOpenPollutionBtn" inherits="BSSwitchFrameTemplate" >
+									  <Anchors>
+										  <Anchor point="top" relativeTo="$parentPollutionSetTitle" relativePoint="bottom">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Button>
+								  ##第一个安全区半径
+								  <Frame name="$parentPollutionSetBar1" inherits="BSSliderTemplate" >
+									  <Anchors>
+										  <Anchor point="top" relativePoint="bottom" relativeTo="$parentOpenPollutionBtn">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Frame>
+								  <Frame name="$parentPollutionSetBar2" inherits="BSSliderTemplate" >
+									  <Anchors>
+										  <Anchor point="top" relativePoint="bottom" relativeTo="$parentPollutionSetBar1">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Frame>
+
+							  ##提示框
+							  <Frame name="$parentPollutionTipFrame" hidden="true" framelevel="11">
+								  <Size>
+									  <AbsDimension x="550" y="200"/>
+								  </Size>
+								  <Anchors>
+									  <Anchor point="top" relativeTo="$parentPollutionSetTitle" relativePoint="bottom">
+										  <Offset>
+											  <AbsDimension x="0" y="5" />
+										  </Offset>
+									  </Anchor>
+								  </Anchors>
+
+								  <Layers>
+									  <Layer level="BACKGROUND">
+										  <Texture name="$parentBkg" file="ui/mobile/texture/uitex3.xml" uvname="dtxx_touxiangkuang_diban.png" color="80000000" DrawType="ninesquare">
+											  <NineSquare>
+												  <Topleft		offsetX="0"  offsetY="0"	w="30"	h="30"/>
+												  <Top			offsetX="30" offsetY="0"	w="30"  h="30"/>
+												  <Topright		offsetX="60" offsetY="0"	w="30"	h="30"/>
+												  <Left			offsetX="0"  offsetY="30"	w="30"	h="30"/>
+												  <Center			offsetX="30" offsetY="30"	w="30"	h="30"/>
+												  <Right			offsetX="60" offsetY="30"	w="30"	h="30"/>
+												  <Bottomleft		offsetX="0"  offsetY="60"	w="30"	h="30"/>
+												  <Bottom			offsetX="30" offsetY="60"	w="30"	h="30"/>
+												  <Bottomright	offsetX="60" offsetY="60"	w="30"	h="30"/>
+												  <OffSet x="30" y="30" />
+											  </NineSquare>
+										  </Texture>
+										  <FontString name="$parentName" fonttype="BlackFont22" autowrap="true" justifyH="center" text="$8007" >
+											  <Color r="255" g="253" b="233"/>
+											  <Size>
+												  <AbsDimension x="520" y="200"/>
+											  </Size>
+											  <Anchors>
+												  <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+													  <Offset>
+														  <AbsDimension x="20" y="20"/>
+													  </Offset>
+												  </Anchor>
+											  </Anchors>
+										  </FontString>
+									  </Layer>
+								  </Layers>
+								  <Scripts>
+									  <OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):PollutionTipBtnClicked();</OnClick>
+								  </Scripts>
+							  </Frame>
+
+							   ##8. 机械载具伤害设置
+							   <Frame name="$parentVehicleHurtTitle" inherits="BSTitleAndLineTemplate" >
+								   <Anchors>
+									   <Anchor point="top" relativePoint="bottom" relativeTo="BasicSettingsWorldSettingBoxBodyOpenPollutionBtn">
+										   <Offset>
+											   <AbsDimension x="0" y="0"/>
+										   </Offset>
+									   </Anchor>
+								   </Anchors>
+								   <Frames>
+									   <Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="true">
+										   <Anchors>
+											   <Anchor point="left" relativeTo="$parentName" relativePoint="right">
+												   <Offset>
+													   <AbsDimension x="-85" y="0" />
+												   </Offset>
+											   </Anchor>
+										   </Anchors>
+										   <Layers>
+											   <Layer level="overlay">
+												   <Texture name="$parentBkg" file="ui/mobile/texture/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23" abs_y="25">
+													   <Anchors>
+														   <Anchor point="center" relativeTo="$parent" relativePoint="center">
+															   <Offset>
+																   <AbsDimension x="0" y="0" />
+															   </Offset>
+														   </Anchor>
+													   </Anchors>
+												   </Texture>
+											   </Layer>
+										   </Layers>
+										   <Scripts>
+											   <OnClick>VehicleHurtTips_OnClick();</OnClick>
+										   </Scripts>
+									   </Button>
+								   </Frames>
+							   </Frame>
+
+							   ## 开关
+							   <Button name="$parentOpenVehicleHurtBtn" inherits="BSSwitchFrameTemplate" >
+								   <Anchors>
+									   <Anchor point="top" relativeTo="$parentVehicleHurtTitle" relativePoint="bottom">
+										   <Offset>
+											   <AbsDimension x="0" y="0"/>
+										   </Offset>
+									   </Anchor>
+								   </Anchors>
+							   </Button>
+
+						  </Frames>
+
+						   </Frame>
+					   </Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<Frame name="$parentStartSetting">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="600" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="565" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 房间人数限制
+									<Frame name="$parentPlayerLimitTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentPlayerLimit" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPlayerLimitTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##开启需求人数
+									<Frame name="$parentNeedPlayerTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPlayerLimit">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentNeedPlayer" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNeedPlayerTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##开启游戏
+									<Frame name="$parentNeedStartTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNeedPlayer">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentStart" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNeedStartTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##中途加入游戏
+									<Button name="$parentJoinAfterBegin" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentStart" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##倒计时(秒)
+									<Frame name="$parentCountdownTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentJoinAfterBegin">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentCountdown" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentCountdownTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<!-- 3. 游戏目标-->
+			<Frame name="$parentGameGoal">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="1100" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="930" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 游戏时间
+									<Frame name="$parentGameTimeTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##是否限时
+									<Button name="$parentLimitTime" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentGameTimeTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##游戏时间
+									<Frame name="$parentGameTime" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentLimitTime">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##结束胜利判定
+									<Frame name="$parentOver" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentGameTime">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##2. 计分设定
+									<Frame name="$parentPointTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentOver">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##击杀玩家得分
+									<Frame name="$parentPointGet1" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##击杀怪物得分
+									<Frame name="$parentPointGet2" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet1">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##获得星星得分
+									<Frame name="$parentPointGet3" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet2">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##染色得分
+									<Frame name="$parentPointGet4" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet3">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+
+									##3. 目标分数
+									<Frame name="$parentAimPointTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet4">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##是否需要达成
+									<Button name="$parentComplete" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentAimPointTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##达成分数
+									<Frame name="$parentPointNeed" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentComplete">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##4. 玩法模式退出后重置
+									<Frame name="$parentResetTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointNeed">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentReset" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentResetTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentResetRound" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentReset" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##重置分数
+									<Frame name="$parentResetRoundScore" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentResetRound">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			## 4.
+			<Frame name="$parentTeamSetting">
+				<Frames>队伍设定
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="565" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="565" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##队伍数量
+									<Frame name="$parentTeamTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentTeamNum" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentTeamTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##攻击模式
+									<Frame name="$parentModeTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentTeamNum">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMode" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentModeTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<!-- 5. 显示设置-->
+			<Frame name="$parentDisplaySetting">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="850" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="1000" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 视角设定
+									<Frame name="$parentWatchTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentWatch" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="20"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+
+									</Frame>
+									##锁定视角开关
+									<Button name="$parentWatchLockBtn" inherits="BSSwitchFrameTemplate">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentWatch" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##2. 地图显示
+									<Frame name="$parentMapShowTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentWatchLockBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMapShow" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMapShowTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##3. 名称显示
+									<Frame name="$parentNameShowTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMapShow">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentNameShow" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNameShowTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##4. 准心
+									<Frame name="$parentHeartTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNameShow">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentHeart" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentHeartTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##5. 比分和时间
+									<Frame name="$parentPandTTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentHeart">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentPandT" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentPandTTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##6. 开启战斗提示
+									<Frame name="$parentStartTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPandT">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentStart" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentStartTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<!-- 6. 其它设置-->
+			<Frame name="$parentOtherSetting">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="1100" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="1100" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 背景音乐
+									<Frame name="$parentMusicTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMusic" abs_x="1000" abs_y="75" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMusicTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="BACKGROUND">
+												<FontString name="$parentLeftTitle" justifyH="right" fonttype="BlackFont20" text="$6140" abs_x="250" abs_y="20">
+													<Color r="55" g="54" b="49"/>
+													<Anchors>
+														<Anchor point="left" relativePoint="left" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="45" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Frames>
+											<Button name="$parentBtn" abs_x="330" abs_y="37" inherits="TemplateBtn21">
+												<Anchors>
+													<Anchor point="left" relativeTo="$parentLeftTitle" relativePoint="right">
+														<Offset>
+															<AbsDimension x="88" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Layers>
+													<Layer level="overlay">
+														<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont18" text="默认" abs_x="330" abs_y="18">
+															<Color r="55" g="54" b="41"/>
+															<Anchors>
+																<Anchor point="center" relativePoint="center" relativeTo="$parent">
+																	<Offset>
+																		<AbsDimension x="0" y="0"/>
+																	</Offset>
+																</Anchor>
+															</Anchors>
+														</FontString>
+													</Layer>
+												</Layers>
+												<Scripts>
+													<OnClick>GetInst("UIManager"):GetCtrl("BasicSettings"):MusicBtnClicked();</OnClick>
+												</Scripts>
+											</Button>
+										</Frames>
+									</Frame>
+
+									##2. 战败惩罚
+									<Frame name="$parentDieTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMusic">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentDie" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentDieTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##3. 生命数限制
+									<Frame name="$parentLifeTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentDie">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##是否限制
+									<Button name="$parentLifeLimitBtn" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentLifeTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##当前生命数
+									<Frame name="$parentLifeNum" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentLifeLimitBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##队伍公用生命数
+									<Button name="$parentCommonLifeBtn" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentLifeNum" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##观战设置
+									##是否开启
+									<Button name="$parentSpectatorModeBtn" inherits="BSSwitchFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentCommonLifeBtn" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Frame name="$parentSpectatorModeValue" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentSpectatorModeBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##4. 复活设置
+									<Frame name="$parentReliveTitle" inherits="BSTitleAndLineTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentSpectatorModeValue">
+												<Offset>
+													<AbsDimension x="0" y="40"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##重生时间
+									<Frame name="$parentReliveTime" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentReliveTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##复活保护
+									<Frame name="$parentReliveProtect" inherits="BSSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentReliveTime">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##重生点规则
+									<Frame name="$parentRelivePoint" inherits="BSTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentReliveProtect">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+
+</Ui>

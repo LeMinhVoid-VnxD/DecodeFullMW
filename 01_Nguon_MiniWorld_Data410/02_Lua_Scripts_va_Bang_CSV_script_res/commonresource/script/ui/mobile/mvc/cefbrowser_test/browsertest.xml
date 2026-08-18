@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/cefbrowser_test/BrowserTestModel.lua"/>
+	<Script file="ui/mobile/mvc/cefbrowser_test/BrowserTestView.lua"/>
+	<Script file="ui/mobile/mvc/cefbrowser_test/BrowserTestCtrl.lua"/>
+
+	##内置web控件测试
+	<Frame name="BrowserTest" parent="UIClient" frameStrata="HIGH" rel_x="1.0" rel_y="1.0" hidden="true" framelevel="4000" input_transparent="false">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="B0000000"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg2" abs_x="930" abs_y="533">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg0" abs_x="924" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="0" y="-38"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentDesc" fonttype="BlackFont36" fontStyle="shadow" autowrap="true" text="BrowserTest" textcolor="#FFFF871B" shadowcolor="#FF352C28" justifyH="left" abs_x="300" abs_y="36">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="33" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("BrowserTest"):CloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			#浏览器窗口跟随 WebFrame 位置，显示/隐藏需要主动设置
+			<WebFrame name="$parentWebComponent" abs_x="924" abs_y="500" url="http://www.mini1.cn?portrait=2" >
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</WebFrame>
+		</Frames>
+		<Scripts>
+			<OnShow>GetInst("UIManager"):GetCtrl("BrowserTest"):OnShow()</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("BrowserTest"):OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

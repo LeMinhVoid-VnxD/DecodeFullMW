@@ -1,0 +1,1574 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##商城主页
+	<Script file="ui/mobile/mvc/mapEdit/MapEditModel.lua"/>
+	<Script file="ui/mobile/mvc/mapEdit/MapEditView.lua"/>
+	<Script file="ui/mobile/mvc/mapEdit/MapEditCtrl.lua"/>
+	<Script file="ui/mobile/mvc/mapEdit/MapEditInterface.lua"/>
+
+	##功能按钮模板
+	<Button name="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88" virtual="true">
+		<Layers>
+			<Layer level="overlay" >
+				<Texture name="$parentChecked" inherits="TemplateBkg71" rel_x="0.85" rel_y="0.85" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_square.png" hidden="true"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_board_square.png" hidden="true" rel_x="0.95" rel_y="0.95">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+		</Scripts>
+	</Button>
+	##选择形状格子模板
+	<Button name="MapEditSelectBtnTemplate" inherits="TemplateBtn22" abs_x="54" abs_y="54" virtual="true">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):TemplateSelectBtnClick();</OnClick>
+		</Scripts>
+	</Button>
+	##设置参数开关模板
+	<Button name="MapEditParamSwitchBtn" abs_x="84" abs_y="25" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg69"/>
+				<Texture name="$parentPoint" inherits="TemplateBkg9" rel_x="0.7" rel_y="1.36">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDesc" fonttype="BlackFont" text="$21743" justifyH="center" justifyV="middle">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentPoint" />
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentPoint" />
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont14" justifyV="middle" justifyH="center" text="$25009">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="75" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+	##参数设置滑动条模板
+	<Frame name="MapEditParamBarTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="300" y="30"/>
+		</Size>
+		<Frames>	
+		     <Button name="$parentLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+                <Anchors>
+                    <Anchor point="right" relativePoint="left" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="-14" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):TemplateParamBarLeftBtnClicked();</OnClick>
+                </Scripts>
+            </Button>	
+			<Slider name="$parentBar" inherits="TemplateSingleBar2" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="194" abs_y="30">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentName" fonttype="BlackFont14" justifyV="middle" justifyH="right" text="长">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="50" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-39" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentNum" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="100">
+							<Color r="255" g="227" b="38"/>
+							<Size>
+								<AbsDimension x="50" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="39" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnValueChanged>GetInst("UIManager"):GetCtrl("MapEdit"):TemplateParamBarValueChanged();</OnValueChanged>
+				</Scripts>
+			</Slider>
+			<Button name="$parentRightBtn" inherits="TemplateSingleBar_RightBtn01">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="14" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):TemplateParamBarRightBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+		</Frames>
+	</Frame>
+	##地图编辑主界面
+	<Frame name="MapEdit" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2400" input_transparent="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentModeText" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="$25014">
+					<Color r="254" g="248" b="220"/>
+					<Size>
+						<AbsDimension x="232" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topright" relativeTo="MapEditSwitchModeBtn">
+							<Offset>
+								<AbsDimension x="0" y="-8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##笔刷模式主体界面
+			<Frame name="$parentBrushMode" input_transparent="true">
+				<Frames>
+					##左上角选择区
+					<Frame name="$parentLeft" abs_x="494" abs_y="359">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="9" y="6" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							##选择模式区
+							<Frame name="$parentMode" abs_x="130" rel_y="1.0">
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentBkg" inherits="TemplateBkg49">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="$25006">
+											<Color r="255" g="255" b="255"/>
+											<Size>
+												<AbsDimension x="70" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+													<Offset>
+														<AbsDimension x="0" y="23"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Button name="$parentSwitchBtn" abs_x="46" abs_y="56">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBkg">
+												<Offset>
+													<AbsDimension x="8" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<NormalTexture name="$parentNormal" inherits="TemplateBkg49">
+											<Anchors>
+												<Anchor point="center" relativePoint="center"/>
+											</Anchors>
+										</NormalTexture>
+										<PushedTexture name="$parentPushedBG" inherits="TemplateBkg49">
+											<Anchors>
+												<Anchor point="center" relativePoint="center"/>
+											</Anchors>
+										</PushedTexture>
+										<Layers>
+											<Layer level="highlight">
+												<texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="icon_dropdown.png" UVType="turn270" abs_x="10" abs_y="20">
+													<Anchors>
+														<Anchor point="center" relativeTo="$parent" relativePoint="center">
+															<Offset>
+																<AbsDimension x="0" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</texture>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):LeftModeSwitchBtnClicked();</OnClick>
+										</Scripts>
+									</Button>
+									<SlidingFrame name="$parentSelectBox" slidingY="true" slideplane="$parentPlane" abs_x="117" abs_y="200">
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="57" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<Frame name="$parentPlane" hidden="false" rel_x="1.0" abs_y="300">
+												<Anchors>
+													<Anchor point="top" relativePoint="top" relativeTo="$parent">
+														<Offset>
+															<AbsDimension x="0" y="0" />
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Frame>
+											<Button name="$parentBtn1" inherits="MapEditSelectBtnTemplate" id="1" />
+											<Button name="$parentBtn2" inherits="MapEditSelectBtnTemplate" id="2" />
+											<Button name="$parentBtn3" inherits="MapEditSelectBtnTemplate" id="3" />
+											<Button name="$parentBtn4" inherits="MapEditSelectBtnTemplate" id="4" />
+											<Button name="$parentBtn5" inherits="MapEditSelectBtnTemplate" id="5" />
+											<Button name="$parentBtn6" inherits="MapEditSelectBtnTemplate" id="6" />
+											<Button name="$parentBtn7" inherits="MapEditSelectBtnTemplate" id="7" />
+										</Frames>
+									</SlidingFrame>
+									<Button name="$parentBlockBtn" abs_x="55" abs_y="55">
+										<Anchors>
+											<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="-16" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="overlay">
+												<Texture name="$parentBkg" inherits="TemplateBkg38" rel_x="1.0" rel_y="1.0">
+													<Anchors>
+														<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+													</Anchors>
+												</Texture>
+												<Texture name="$parentIcon" file="items/icon10005.png" abs_x="36" abs_y="36">
+													<Anchors>
+														<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+													</Anchors>
+												</Texture>
+												<FontString name="$parentName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="$25007">
+													<Color r="255" g="255" b="255"/>
+													<Size>
+														<AbsDimension x="130" y="16"/>
+													</Size>
+													<Anchors>
+														<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="0" y="-4"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+												<FontString name="$parentKeyName" fonttype="BlackFont14" justifyV="middle" justifyH="center" text="R" platform='pc'>
+													<Color r="254" g="248" b="240"/>
+													<Size>
+														<AbsDimension x="75" y="16"/>
+													</Size>
+													<Anchors>
+														<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="0" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):LeftModeBlockBtnClicked();</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							##设置参数区
+							<Frame name="$parentParam" abs_x="356" rel_y="1.0" hidden="true">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentTopBkg" inherits="TemplateBkg49" abs_x="356" abs_y="208">
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentBottomBkg" inherits="TemplateBkg49" abs_x="356" abs_y="132">
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parentTopBkg">
+													<Offset>
+														<AbsDimension x="0" y="2" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="$25006">
+											<Color r="255" g="255" b="255"/>
+											<Size>
+												<AbsDimension x="130" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="20"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Button name="$parentCancelBtn" abs_x="40" abs_y="40">
+										<Anchors>
+											<Anchor point="topright" relativePoint="topright" relativeTo="$parentTopBkg">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<NormalTexture name="$parentNormal" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="19" abs_y="19">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</NormalTexture>
+										<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="13" abs_y="13">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</PushedTexture>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeParamCancelBtnClick();</OnClick>
+										</Scripts>
+									</Button>
+									<Frame name="$parent1" inherits="MapEditParamBarTemplate" id="1">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parent" relativePoint="top">
+												<Offset>
+													<AbsDimension x="0" y="46"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parent2" inherits="MapEditParamBarTemplate" id="2">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parent1" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="22"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parent3" inherits="MapEditParamBarTemplate" id="3">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parent2" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="24"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parent4" inherits="MapEditParamBarTemplate" id="4">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentBottomBkg" relativePoint="top">
+												<Offset>
+													<AbsDimension x="0" y="21"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentSwitchBtn" inherits="MapEditParamSwitchBtn">
+										<Anchors>
+											<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBottomBkg">
+												<Offset>
+													<AbsDimension x="80" y="-31" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeParamSwitchBtnClick();</OnClick>
+										</Scripts>
+									</Button>
+									<Button name="$parentSwitchBtn1" inherits="MapEditParamSwitchBtn" id="1">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTopBkg">
+												<Offset>
+													<AbsDimension x="110" y="60" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeParamTwoPointSwitchBtnClick();</OnClick>
+										</Scripts>
+									</Button>
+									<Button name="$parentSwitchBtn2" inherits="MapEditParamSwitchBtn" id="2">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentSwitchBtn1">
+												<Offset>
+													<AbsDimension x="0" y="51" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeParamTwoPointSwitchBtnClick();</OnClick>
+										</Scripts>
+									</Button>
+									<Button name="$parentSwitchBtn3" inherits="MapEditParamSwitchBtn" id="3">
+										<Anchors>
+											<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentSwitchBtn2">
+												<Offset>
+													<AbsDimension x="0" y="51" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeParamTwoPointSwitchBtnClick();</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+						</Frames>
+					</Frame>
+					<Frame name="$parentFunctionBtns" abs_x="543" abs_y="88">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-13" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Button name="$parentFillBtn" inherits="MapEditFunctionBtnTemplate" abs_x="147" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_coloring.png" abs_x="42" abs_y="44">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="1" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeFillBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCleanBtn" inherits="MapEditFunctionBtnTemplate" abs_x="147" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentFillBtn">
+										<Offset>
+											<AbsDimension x="-15" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_delete_edit.png" abs_x="42" abs_y="42">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="2" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeCleanBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentReplaceBtn" inherits="MapEditFunctionBtnTemplate" abs_x="147" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCleanBtn">
+										<Offset>
+											<AbsDimension x="-15" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_swap_edit.png" abs_x="39" abs_y="34">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="3" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeReplaceBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentSmoothBtn" inherits="MapEditFunctionBtnTemplate" abs_x="147" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentReplaceBtn">
+										<Offset>
+											<AbsDimension x="-15" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_smooth.png" abs_x="38" abs_y="38">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="4" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):BrushModeSmoothBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+			##选区模式主体界面
+			<Frame name="$parentConstituencyMode" hidden="true" input_transparent="true">
+				<Frames>
+					<Frame name="$parentFunctionBtns" abs_x="616" abs_y="88">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-13" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Button name="$parentFillBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_coloring.png" abs_x="42" abs_y="48">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="1" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModeFillBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCleanBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentFillBtn">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_delete_edit.png" abs_x="42" abs_y="42">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="2" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModeCleanBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCopyBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCleanBtn">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_copy_edit.png" abs_x="38" abs_y="42">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="3" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModeCopyBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentPasteBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCopyBtn">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_paste.png" abs_x="38" abs_y="38">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="4" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModePasteBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentMoveBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentPasteBtn">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_move_edit.png" abs_x="48" abs_y="46">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="5" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModeMoveBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentSwapBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentMoveBtn">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_swap_edit.png" abs_x="39" abs_y="34">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="6" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModeReplaceBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentPileBtn" inherits="MapEditFunctionBtnTemplate" abs_x="88" abs_y="88">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentSwapBtn">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay" >
+										<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_pile.png" abs_x="45" abs_y="45">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentForbidden" inherits="TemplateBkg49" rel_x="0.85" rel_y="0.85" hidden="true">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="7" platform='pc'>
+											<Color r="254" g="248" b="240"/>
+											<Size>
+												<AbsDimension x="75" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AreaModePileBtnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					<Frame name="$parentAreaInfo" abs_x="160" abs_y="118">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="9" y="9" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBkg49">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="$25000">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="130" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentLong" fonttype="BlackFont14" justifyV="middle" justifyH="left" text="$25001">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="38" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-15" y="35"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentLongNum" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="0">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="38" y="13"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentLong">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentWidth" fonttype="BlackFont14" justifyV="middle" justifyH="left" text="$25002">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="38" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLong">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentWidthNum" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="0">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="38" y="13"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentWidth">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentHeight" fonttype="BlackFont14" justifyV="middle" justifyH="left" text="$25003">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="38" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentWidth">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentHeightNum" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="0">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="38" y="13"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentHeight">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentCancelAreaBtn" abs_x="164" abs_y="38">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentAreaInfo">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_area_tool.png" abs_x="20" abs_y="20">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="18" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="$25004">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="110" y="28"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg62" rel_x="1.0" rel_y="1.0"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg62" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):CancelAreaBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCancelEndpointBtn" abs_x="164" abs_y="38">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentCancelAreaBtn">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_dot_tool.png" abs_x="20" abs_y="20">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="18" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="$25005">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="110" y="28"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg62" rel_x="1.0" rel_y="1.0"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg62" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):CancelEndpointBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+                    <Frame name="$parentMoveFrame" abs_x="616" abs_y="200" hidden="true">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="top" relativeTo="$parentFunctionBtns">
+                                <Offset>
+                                    <AbsDimension x="0" y="0" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <Texture name="$parentCenterBkg" inherits="TemplateBkg49" abs_x="357" abs_y="191">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentLeftBkg" inherits="TemplateBkg49" abs_x="70" abs_y="147">
+                                    <Anchors>
+                                        <Anchor point="topright" relativePoint="topleft" relativeTo="$parentCenterBkg">
+                                            <Offset>
+                                                <AbsDimension x="-6" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentRightBkg" inherits="TemplateBkg49" abs_x="70" abs_y="147">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topright" relativeTo="$parentCenterBkg">
+                                            <Offset>
+                                                <AbsDimension x="6" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentClockwiseRotateBtn" abs_x="60" abs_y="38">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentLeftBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="26" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="ico_bind_rotate_white" abs_x="33" abs_y="28" UVType="mirroeu">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <NormalTexture name="$parentNormal" inherits="TemplateBkg6_1" color ="99ffffff"/>
+                                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg6_1" color ="99ffffff" rel_x="0.95" rel_y="0.95">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </PushedTexture>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):ClockwiseRotateBtnClicked();</OnClick>
+                                </Scripts>
+                            </Button>
+                            <Button name="$parentCounterClockwiseRotateBtn" abs_x="60" abs_y="38">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentClockwiseRotateBtn">
+                                        <Offset>
+                                            <AbsDimension x="0" y="19" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="ico_bind_rotate_white" abs_x="33" abs_y="28">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <NormalTexture name="$parentNormal" inherits="TemplateBkg6_1" color ="99ffffff"/>
+                                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg6_1" color ="99ffffff" rel_x="0.95" rel_y="0.95">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </PushedTexture>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):CounterClockwiseRotateBtnClicked();</OnClick>
+                                </Scripts>
+                            </Button>
+                            <Button name="$parentConfirmBtn" abs_x="60" abs_y="38">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentRightBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="26" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_tick" abs_x="28" abs_y="28">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <NormalTexture name="$parentNormal" inherits="TemplateBkg6_1" color ="99ffffff"/>
+                                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg6_1" color ="99ffffff" rel_x="0.95" rel_y="0.95">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </PushedTexture>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):ConfirmBtnClicked();</OnClick>
+                                </Scripts>
+                            </Button>
+                            <Button name="$parentCancelBtn" abs_x="60" abs_y="38">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentConfirmBtn">
+                                        <Offset>
+                                            <AbsDimension x="0" y="19" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="btn_quit" abs_x="23" abs_y="27">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <NormalTexture name="$parentNormal" inherits="TemplateBkg6_1" color ="99ffffff"/>
+                                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg6_1" color ="99ffffff" rel_x="0.95" rel_y="0.95">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </PushedTexture>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):CancelBtnClicked();</OnClick>
+                                </Scripts>
+                            </Button>
+                            <Frame name="$parent1" inherits="MapEditParamBarTemplate" id="1">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parentCenterBkg" relativePoint="top">
+                                        <Offset>
+                                            <AbsDimension x="0" y="28"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Frame name="$parent2" inherits="MapEditParamBarTemplate" id="2">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parent1" relativePoint="bottom">
+                                        <Offset>
+                                            <AbsDimension x="0" y="24"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Frame name="$parent3" inherits="MapEditParamBarTemplate" id="3">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parent2" relativePoint="bottom">
+                                        <Offset>
+                                            <AbsDimension x="0" y="24"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+				</Frames>
+			</Frame>
+			##右侧功能按钮
+			<Frame name="$parentRightFunctionFrame" abs_x="77" abs_y="190" input_transparent="true">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset platform='pc'>
+							<AbsDimension x="-20" y="0" />
+						</Offset>
+						<Offset platform='mobile'>
+							<AbsDimension x="-20" y="-80" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##调节远近滑块
+					<Slider name="$parentAdjustmentBar" orientation="VERTICAL" startPosition="bottom" ignoreLeftDown="false" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="42" abs_y="245" >
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="-10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg68" abs_x="42" abs_y="293">
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="10" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentProBkg" inherits="TemplateBkg16" abs_x="12" abs_y="240">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentPro" inherits="TemplateBkg17" abs_x="12" abs_y="240">
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom"/>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNum" fonttype="BlackFont24" justifyV="middle" justifyH="center" text="100">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="32" y="19"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="8"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="-213" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ThumbTexture>
+
+						<Scripts>
+							<OnValueChanged>GetInst("UIManager"):GetCtrl("MapEdit"):AdjustmentBarValueChanged();</OnValueChanged>
+						</Scripts>
+					</Slider>
+					##调节远近
+					<Button name="$parentAdjustmentBtn" abs_x="54" abs_y="54">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_brush.png" abs_x="26" abs_y="37">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_special_effects" rel_x="1.3" rel_y="1.3">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):AdjustmentBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##撤销
+					<Button name="$parentRevoke" abs_x="54" abs_y="54">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentAdjustmentBtn">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_return.png" abs_x="33" abs_y="33">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_special_effects.png" rel_x="1.3" rel_y="1.3">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):RevokeClick();</OnClick>
+						</Scripts>
+					</Button>
+					##反撤销
+					<Button name="$parentRevocation" abs_x="54" abs_y="54">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentRevoke">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_return.png" abs_x="33" abs_y="33" UVType="mirroeu">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_special_effects.png" rel_x="1.3" rel_y="1.3">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):RevocationClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##模式切换按钮
+			<Button name="$parentSwitchModeBtn" abs_x="89" abs_y="91">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="MapEditBrushModeFunctionBtns">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_brush.png" abs_x="35" abs_y="50">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSmallIconBkg" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" abs_x="40" abs_y="41">
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="-4" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSmallIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_area_edit.png" abs_x="20" abs_y="22">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentSmallIconBkg" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentKeyName" fonttype="BlackFont14" justifyV="middle" justifyH="center" text="Tab" platform='pc'>
+							<Color r="254" g="248" b="240"/>
+							<Size>
+								<AbsDimension x="75" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s" rel_x="0.95" rel_y="0.95">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):SwitchModeBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##退出编辑
+			<Button name="$parentExitBtn" abs_x="89" abs_y="91">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="MapEditBrushModeFunctionBtns">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_track_edit.png" abs_x="33" abs_y="34">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentKeyName" fonttype="BlackFont14" justifyV="middle" justifyH="center" text="ESC" platform='pc'>
+							<Color r="254" g="248" b="240"/>
+							<Size>
+								<AbsDimension x="75" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s" rel_x="0.95" rel_y="0.95">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MapEdit"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+		</Scripts>
+	</Frame>
+</Ui>

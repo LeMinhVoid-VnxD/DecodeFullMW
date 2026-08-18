@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibCreate/ModsLibCreateCtrl.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibCreate/ModsLibCreateModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibCreate/ModsLibCreateView.lua"/>
+
+    ##创建/修改按钮模板
+    <Button name="ModsLibCreate_CreateBtnTemp" abs_x="336" abs_y="250" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkgNormal" inherits="TemplateBkg12" />
+            </Layer>
+        </Layers>
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentName" fonttype="BlackFont34" justifyH="center" text="$3955" hidden="true" abs_x="210" abs_y="70">
+                    <Color r="104" g="73" b="55"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentText1" fonttype="BlackFont46" justifyV="middle" justifyH="center" text="$3955" abs_x="336" abs_y="46">
+                    <Color r="57" g="56" b="51"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="-35"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentText2" fonttype="BlackFont" justifyH="center" text="$3953" abs_x="336" abs_y="16">
+                    <Color r="57" g="56" b="51"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="-14"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Button>
+
+    ##主界面:创建/修改插件
+    <Frame name="ModsLibCreate" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2300">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="821" abs_y="433">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentPattern" inherits="TemplateBigBkg7_flat">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg"/>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="817" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibCreate"):OnCloseBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##左:修改
+            <Button name="$parentModifyBtn" inherits="ModsLibCreate_CreateBtnTemp" id="1">
+                <Anchors>
+                    <Anchor point="right" relativePoint="center" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-25" y="25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg16" abs_x="326" abs_y="240">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors> 
+                        </Texture>
+                        <Texture name="$parentNameBkg" inherits="TemplateBigBkg14" color="80ffffff" abs_x="326" abs_y="86" hidden="false">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors> 
+                        </Texture>
+                        <Texture name="$parentNameIcon" file="ui/mobile/texture2/modlib.xml" uvname="icon_revise.png" abs_x="153" abs_y="123">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="23"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors> 
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibCreate"):OnCreateBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##右:新建
+            <Button name="$parentNewBtn" inherits="ModsLibCreate_CreateBtnTemp" id="2">
+                <Anchors>
+                    <Anchor point="left" relativePoint="center" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="25" y="25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg17" abs_x="326" abs_y="240">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors> 
+                        </Texture>
+                        <Texture name="$parentNameBkg" inherits="TemplateBigBkg14" color="80ffffff" abs_x="326" abs_y="86" hidden="false">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors> 
+                        </Texture>
+                        <Texture name="$parentNameIcon" file="ui/mobile/texture2/modlib.xml" uvname="icon_setup.png" abs_x="153" abs_y="123">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="8" y="23"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors> 
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibCreate"):OnCreateBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

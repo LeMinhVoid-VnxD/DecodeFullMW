@@ -1,0 +1,2642 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/gameruleset.lua"/>
+	<!-- slider模板 -->
+	<Frame name="RuleSliderTemplate" abs_x="914" abs_y="75" virtual="true">
+		<Frames>
+			<Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="338" abs_y="30">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="338" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentLeftTitle" justifyH="right" fonttype="BlackFont20" text="$6148" abs_x="250" abs_y="22">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-88" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentBkg" inherits="TemplateBkg31" abs_x="338" abs_y="6">													
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentBkg1" inherits="TemplateBkg32" abs_x="338" abs_y="6">													
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						##右侧文字: 第一类滑动条用
+						<FontString name="$parentRightTxt" justifyH="left" fonttype="BlackFont20" text="1" abs_x="200" abs_y="20" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="60" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##底部文字: 第二类滑动条用
+						<FontString name="$parentBottomTxt" justifyH="left" fonttype="BlackFont18" text="1" abs_x="656" abs_y="18" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/modlib.xml" uvname="img_bar_green.png" DrawType="ninesquare_center" abs_x="8" abs_y="30" >
+					<NineSquare ox="0" oy="0" tilew="1" tileh="1"/>
+				</ThumbTexture>
+				<Scripts>
+					<OnValueChanged>RulesSetCommomSlider_OnValueChanged()</OnValueChanged>
+					<OnMouseUp>RulesSetCommomSlider_OnMouseUp();</OnMouseUp>
+				</Scripts>
+			</Slider>
+			<Button name="$parentBarLeftBtn" inherits="TemplateSingleBar_LeftBtn01">								               
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBar" relativePoint="left">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>RulesSetSliderLeftRightBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentBarRightBtn" inherits="TemplateSingleBar_RightBtn01" >
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentBar" relativePoint="right">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>RulesSetSliderLeftRightBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>								           
+		</Frames>
+	</Frame>
+
+	##原来的第二类滑动条, 改为勾选
+	##钩子按钮模板
+	<Button name="RuleTickBtnTemplate" inherits="TemplateTickBtn5" virtual="true">
+		<Scripts>
+			<OnClick>RuleTickBtnTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	##钩子条目
+	<Frame name="RuleTickItemTemplate" abs_x="914" abs_y="110" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentLeftTitle" justifyH="right" fonttype="BlackFont20" text="XXXX" abs_x="245" abs_y="22">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>	
+		<Frames>
+			<Button name="$parentBtn1" inherits="RuleTickBtnTemplate" id="1" />
+			<Button name="$parentBtn2" inherits="RuleTickBtnTemplate" id="2" />
+			<Button name="$parentBtn3" inherits="RuleTickBtnTemplate" id="3" />
+			<Button name="$parentBtn4" inherits="RuleTickBtnTemplate" id="4" />
+			<Button name="$parentBtn5" inherits="RuleTickBtnTemplate" id="5" />
+			<Button name="$parentBtn6" inherits="RuleTickBtnTemplate" id="6" />
+		</Frames>
+	</Frame>
+
+	<Button name="RuleItemTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="523" y="50" />
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" inherits="BkgTemplate57"/>
+				<Texture name="$parentCheck" file="ui/mobile/texture/uitex3.xml" uvname="wfsd_xuanzhong.png" DrawType="center" hidden="true">
+					<Center>
+						<Left			offsetX="0"  offsetY="0" w="86"		h="42"/>
+						<Center			offsetX="86" offsetY="0" w="86"		h="42"/>
+						<Right			offsetX="172" offsetY="0" w="86"	h="42"/>
+					</Center>
+					<Size>
+						<AbsDimension x="523" y="50" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDesc" fonttype="BlackFont24" lineInterval="2" fontStyle="border" text="$708">
+					<Color r="254" g="249" b="209"/>
+					<Size>
+						<AbsDimension x="500" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="13" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentChooseBtn">
+				<Size>
+					<AbsDimension x="254" y="39"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-4" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$524">
+							<Color r="171" g="84" b="13"/>
+							<Size>
+								<AbsDimension x="230" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="BkgTemplate61" />
+				<PushedTexture name="$parentPushedBG" inherits="BkgTemplate61" >
+					<Size>
+						<AbsDimension x="251" y="37"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>RuleItemTemplateChooseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>RuleItemTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	<Frame name="RuleTypeTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="523" y="125" />
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentTitle" fonttype="BlackFont30" text="$708">
+					<Color r="98" g="65" b="48"/>
+					<Size>
+						<AbsDimension x="350" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="30" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentItem1" inherits="RuleItemTemplate">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="52"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem2" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem1">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem3" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem2">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem4" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem3">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem5" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem4">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem6" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem5">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem7" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem6">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem8" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem7">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem9" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem8">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem10" inherits="RuleItemTemplate" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentItem9">
+						<Offset>
+							<AbsDimension x="0" y="53"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+	<Frame name="RuleSetFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentMask" file="ui/white.png" color="40000000" stretchedge="true"/>
+				<Texture name="$parentBkg" inherits="BkgTemplate18">
+					<Size>
+						<AbsDimension x="612" y="662"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi" inherits="BkgTemplate3" >
+					<Size>
+						<AbsDimension x="562" y="498"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="83"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" file="ui/mobile/texture/uitcomm1.xml" uvname="juese_diban01.png">
+					<Size>
+						<AbsDimension x="355" y="60"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="2" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont46" fontStyle="border" text="$705" shadowcolor="ff6A3A0C">
+					<Color r="255" g="253" b="233"/>
+					<Size>
+						<AbsDimension x="300" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="81" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="53" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-17" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+					<Size>
+						<AbsDimension x="42" y="42"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>RuleFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentRuleModeBtn" inherits="BtnTemplate1" hidden="false">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="25" y="-19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$750" fontStyle="border">
+							<Color r="255" g="253" b="233"/>
+							<Size>
+								<AbsDimension x="170" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>RuleFrameRuleModeBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentConverBtn" inherits="BtnTemplate1" hidden="false">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-25" y="-19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$719" fontStyle="border">
+							<Color r="255" g="253" b="233"/>
+							<Size>
+								<AbsDimension x="170" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>RuleFrameConverBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="GameRuleBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="523" y="480"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="523" y="900"/>
+						</Size>
+					</Frame>
+					<Frame name="$parentType1" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType2" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType3" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType4" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType5" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType6" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType7" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType8" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType9" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType10" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType11" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType12" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType13" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType14" inherits="RuleTypeTemplate"/>
+					<Frame name="$parentType15" inherits="RuleTypeTemplate"/>
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnLoad>RuleFrame_OnLoad();</OnLoad>
+			<OnShow>RuleFrame_OnShow();</OnShow>
+			<OnHide>RuleFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	<!--规则选项-->
+	<Button name="RuleOptionTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="385" y="41"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" inherits="BkgTemplate63" />
+				<Texture name="$parentCheck" file="ui/mobile/texture/uitex3.xml" uvname="wfsd_xuanzhong.png" DrawType="center" hidden="true">
+					<Center>
+						<Left			offsetX="0"  offsetY="0" w="86"		h="42"/>
+						<Center			offsetX="86" offsetY="0" w="86"		h="42"/>
+						<Right			offsetX="172" offsetY="0" w="86"	h="42"/>
+					</Center>
+					<Size>
+						<AbsDimension x="385" y="41" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDesc" justifyH="center" fonttype="BlackFont24" text="$707">
+					<Color r="171" g="84" b="13"/>
+					<Size>
+						<AbsDimension x="240" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SafeEditBox name="$parentEdit" letters="20" multiLine="false" editMethod="527" editimetype="3">
+				<Size>
+					<AbsDimension x="240" y="29" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont24"  justifyH="center">
+					<Color r="171" g="84" b="13"/>
+				</FontString>
+				<Scripts>
+					<OnFocusGained>RuleOptionTemplateEdit_OnFocusGained();</OnFocusGained>
+					<OnFocusLost>RuleOptionTemplateEdit_OnFocusLost();</OnFocusLost>
+					<OnEnterPressed platform="pc">RuleOptionTemplateEdit_OnEnterPressed();</OnEnterPressed>
+				</Scripts>
+			</SafeEditBox>
+		</Frames>
+		<Scripts>
+			<OnClick>RuleOptionTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	<Frame name="RuleOptionFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="B1000000" />
+				<Texture name="$parentChenDi1" inherits="BkgTemplate62">
+					<Size>
+						<AbsDimension x="457" y="484"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi2" inherits="BkgTemplate3" >
+					<Size>
+						<AbsDimension x="442" y="359"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi1">
+							<Offset>
+								<AbsDimension x="0" y="57"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="时间" >
+					<Color r="98" g="65" b="48"/>
+					<Size>
+						<AbsDimension x="285" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi1">
+							<Offset>
+								<AbsDimension x="0" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="31" y="32" />
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentChenDi1" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-8" y="8" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close">
+					<Size>
+						<AbsDimension x="25" y="26"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>RuleOptionFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="RuleOptionBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="385" y="330"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi2">
+						<Offset>
+							<AbsDimension x="0" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="385" y="600"/>
+						</Size>
+					</Frame>
+					<Frame name="$parent1" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent2" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent3" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent4" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent5" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent6" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent7" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent8" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent9" inherits="RuleOptionTemplate"/>
+					<Frame name="$parent10" inherits="RuleOptionTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont21">
+				<Size>
+					<AbsDimension x="415" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi1">
+						<Offset>
+							<AbsDimension x="0" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnLoad>RuleOptionFrame_OnLoad();</OnLoad>
+			<OnShow>RuleOptionFrame_OnShow();</OnShow>
+			<OnHide>RuleOptionFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	##左侧按钮
+	<Button name="NewRuleSetFrameLeftBtnTemplate" virtual="true" inherits="TemplateTabBtn0">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="20"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##LLDO:红点
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+                  <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                      <Offset>
+                        <AbsDimension x="-5" y="5"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>NewRuleSetFrameLeftBtn_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##右侧按钮
+	<Button name="NewRuleSetFrameRightBtnTemplate" abs_x="100" abs_y="50" virtual="true">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_right_n.png" hidden="false">
+					<Size>
+						<AbsDimension x="100" y="50" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="7" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_right_h.png" hidden="false">
+					<Size>
+						<AbsDimension x="100" y="50" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="7" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentJiantou" file="ui/mobile/texture2/common.xml" uvname="img_tab_right_arrow" hidden="true" abs_x="17" abs_y="28">
+                    <Anchors>
+                        <Anchor point="right" relativePoint="left" relativeTo="$parentNormal" />
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" hidden="false" justifyH="center" text="" abs_x="90" abs_y="18">
+					<Color r="60" g="73" b="76"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##LLDO:红点
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+                  <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                      <Offset>
+                        <AbsDimension x="7" y="-3"/>
+                      </Offset>
+                    </Anchor>
+                  </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>NewRuleSetFrameLeftBtn_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##子页面模板
+	<Frame name="NewRuleSetFrameChildPageTemplate" abs_x="965" abs_y="565" virtual="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="188" y="65"/>
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="-127" y="-100"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+	</Frame>
+
+	##子页面标题模板(带文字的线条)
+	<Frame name="NewRuleSetFrameChildPageTitleTemplate" virtual="true" abs_x="920" abs_y="50" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 分割线 -->
+				<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="920" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##文字
+				<FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$6133" abs_x="400" abs_y="24">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	#开关模版
+	<Button name="RuleSetFrameSwitchBtnTemplate" virtual="true" inherits="mini_SwitchBtnTemplateUI4">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##:红点
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-70" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+                </Texture>
+			</Layer>
+		</Layers>	
+		<Scripts>
+			<OnMouseUp>RuleSetFrameSwitchBtn_OnMouseUp();</OnMouseUp>
+		</Scripts>
+	</Button>
+
+	#开关条目模板
+	<Button name="RuleSetFrameSwitchBtnFrameTemplate" virtual="true" abs_x="902" abs_y="60">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentSwitchTitle" justifyH="right" fonttype="BlackFont20" text="XXXX" abs_x="245" abs_y="22">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>	
+		<Frames>
+			<Button name="$parentSwitch" inherits="RuleSetFrameSwitchBtnTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentSwitchTitle">
+						<Offset>
+							<AbsDimension x="90" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Button>
+
+	
+
+	<!-- LLDO: 新的基础设置页面 -->
+	<Frame name="NewRuleSetFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10" inherits="TemplateMainFrame">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="1097" abs_y="577">
+            		<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="183" y="56"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="-85"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+            	</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##触发器/脚本调试开关和打开按钮
+			##调试开关
+			<Button name="DeveloperEditTriggerDebugBtn" abs_x="106" abs_y="32" hidden="false">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-138" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg69"/>
+						<Texture name="$parentBkgOff" inherits="TemplateBkg8" hidden="true"/>
+						<Texture name="$parentPoint" inherits="TemplateBkg9" abs_x="76" abs_y="43">
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left"/>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" fonttype="BlackFont" text="$21742" justifyH="center" justifyV="middle" abs_x="76" abs_y="43">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentPoint" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditTrigger"):DebugBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##调试信息详情按钮
+			<Button name="DeveloperEditTriggerDebugInfoBtn" inherits="TemplateBtn26" hidden="false">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="DeveloperEditTriggerDebugBtn">
+						<Offset>
+							<AbsDimension x="-52" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditTrigger"):DebugInfoBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!--1.左侧设置底板-->
+			<Frame name="$parentSettingTypeDiban" abs_x="175" abs_y="664">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="56"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			<!-- 2. 左侧按钮 -->
+			<Frame name="$parentSettingTypeBox" abs_x="183" abs_y="664">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentSettingTypeDiban">
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="183" abs_y="664" hidden="true" />
+					<Button name="$parentBtn1" id="11" inherits="NewRuleSetFrameLeftBtnTemplate"  />
+					<Button name="$parentBtn2" id="12" inherits="NewRuleSetFrameLeftBtnTemplate"  />
+					<Button name="$parentBtn3" id="13" inherits="NewRuleSetFrameLeftBtnTemplate"  />
+				</Frames>
+			</Frame>
+
+			<!--3.右侧按钮底板-->
+			<Frame name="$parentLeftBtnDiban" abs_x="122" abs_y="575">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parentBkgWhite">
+						<Offset>
+							<AbsDimension x="-2" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_crease.png">
+							<Size>
+								<AbsDimension x="122" y="575"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<!-- 2. 右侧按钮 -->
+			<SlidingFrame name="$parentLeftBox" abs_x="160" abs_y="568" slidingY="true" slideplane="$parentPlane">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentLeftBtnDiban" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="160" abs_y="568" hidden="true" />
+					<Button name="$parentBtn1" id="1" inherits="NewRuleSetFrameRightBtnTemplate"  />
+					<Button name="$parentBtn2" id="2" inherits="NewRuleSetFrameRightBtnTemplate"  />
+					<Button name="$parentBtn3" id="3" inherits="NewRuleSetFrameRightBtnTemplate"  />
+					<Button name="$parentBtn4" id="4" inherits="NewRuleSetFrameRightBtnTemplate"  />
+					<Button name="$parentBtn5" id="5" inherits="NewRuleSetFrameRightBtnTemplate"  />
+					<Button name="$parentBtn6" id="6" inherits="NewRuleSetFrameRightBtnTemplate"  />
+				</Frames>
+			</SlidingFrame>
+
+			<!-- 3. 恢复默认 -->
+			<Button name="$parentReSetBtn" inherits="TemplateBtn3" hidden="false">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="255" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$754" abs_x="170" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>NewRuleSetFrameReSetBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!-- 4. 推荐设置 -->
+			<Button name="$parentRuleModeBtn" inherits="TemplateBtn3" hidden="false">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentReSetBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$750" abs_x="170" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>NewRuleSetFrameRuleModeBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##变量库
+			<Button name="$parentVarLibBtn" inherits="TemplateBtn20">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" >
+						<Offset>
+							<AbsDimension x="-300" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$13007" abs_x="182" abs_y="24">
+							<Color r="55" g="52" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditTrigger"):VarLibBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 4. 转换玩法地图 -->
+			<Button name="$parentRuleConverBtn" inherits="TemplateBtn2" hidden="false">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-80" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$719" abs_x="170" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>NewRuleSetFrameRuleConverBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+
+		<!-- 子页面 -->
+		<Frames>
+			<!-- 1. 世界设定-->
+			<Frame name="$parentPage1" inherits="NewRuleSetFrameChildPageTemplate">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="1280" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="1300" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 地图时间
+									<Frame name="$parentTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##当前时间
+									<Frame name="$parentTime" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+						            ##锁定时间
+									<Button name="$parentLockBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentTime" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##2. 方块
+									<Frame name="$parentBlockTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentLockBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##允许放置
+									<Button name="$parentPutBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentBlockTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##允许使用
+									<Button name="$parentUseBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentPutBtn" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##允许破坏
+									<Button name="$parentDestroyBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentUseBtn" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##3. 天气
+									<Frame name="$parentWeatherTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentDestroyBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentWeather" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentWeatherTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##4. 怪物生成
+									<Frame name="$parentMonsterTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentWeather">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentMonsterBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentMonsterTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##5. 物理设置
+									<Frame name="$parentForceTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMonsterBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentForce" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentForceTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##6.高级物理
+									<Button name="$parentAdvancedPhysics" inherits="RuleSetFrameSwitchBtnFrameTemplate" hidden="true">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentForce" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="false">
+												<Anchors>
+													<Anchor point="left" relativeTo="$parentSwitch" relativePoint="right">
+														<Offset>
+															<AbsDimension x="42" y="0" />
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Layers>
+													<Layer level="overlay">
+														<Texture name="$parentBkg" file="ui/mobile/texture/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23"		 abs_y="25">
+															<Anchors>
+																<Anchor point="center" relativeTo="$parent" relativePoint="center">
+																	<Offset>
+																		<AbsDimension x="0" y="0" />
+																	</Offset>
+																</Anchor>
+															</Anchors>
+														</Texture>
+													</Layer>
+												</Layers>
+												<Scripts>
+													<OnClick>AdvancedPhysicsFrameTipBtn_OnClick();</OnClick>
+												</Scripts>
+											</Button>
+										</Frames>
+									</Button>
+									
+                  
+									##7. 毒气设置
+									<Frame name="$parentChiJiSetTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentAdvancedPhysics">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="false">
+												<Anchors>
+													<Anchor point="left" relativeTo="$parentName" relativePoint="right">
+														<Offset>
+															<AbsDimension x="-85" y="0" />
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Layers>
+													<Layer level="overlay">
+														<Texture name="$parentBkg" file="ui/mobile/texture/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23" abs_y="25">
+															<Anchors>
+																<Anchor point="center" relativeTo="$parent" relativePoint="center">
+																	<Offset>
+																		<AbsDimension x="0" y="0" />
+																	</Offset>
+																</Anchor>
+															</Anchors>
+														</Texture>
+													</Layer>
+												</Layers>
+												<Scripts>
+													<OnClick>ChiJiTips_OnClick();</OnClick>
+												</Scripts>
+											</Button>
+										</Frames>
+									</Frame>
+									##开启污染区
+									<Button name="$parentOpenChiJiBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentChiJiSetTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##第一个安全区半径
+									<Frame name="$parentChiJiSetBar1" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentOpenChiJiBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentChiJiSetBar2" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentChiJiSetBar1">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##提示框
+									<Frame name="ChiJiTipFrame" hidden="true" framelevel="11">
+										<Size>
+											<AbsDimension x="550" y="200"/>
+										</Size>
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentChiJiSetTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="5" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="BACKGROUND">
+												<Texture name="$parentBkg" file="ui/mobile/texture/uitex3.xml" uvname="dtxx_touxiangkuang_diban.png" color="80000000" DrawType="ninesquare">
+													<NineSquare>
+														<Topleft		offsetX="0"  offsetY="0"	w="30"	h="30"/>
+														<Top			offsetX="30" offsetY="0"	w="30"  h="30"/>
+														<Topright		offsetX="60" offsetY="0"	w="30"	h="30"/>
+														<Left			offsetX="0"  offsetY="30"	w="30"	h="30"/>
+														<Center			offsetX="30" offsetY="30"	w="30"	h="30"/>
+														<Right			offsetX="60" offsetY="30"	w="30"	h="30"/>
+														<Bottomleft		offsetX="0"  offsetY="60"	w="30"	h="30"/>
+														<Bottom			offsetX="30" offsetY="60"	w="30"	h="30"/>
+														<Bottomright	offsetX="60" offsetY="60"	w="30"	h="30"/>
+														<OffSet x="30" y="30" />
+													</NineSquare>
+												</Texture>
+												<FontString name="$parentName" fonttype="BlackFont22" autowrap="true" justifyH="center" text="$8007" >
+												<Color r="255" g="253" b="233"/>
+												<Size>
+													<AbsDimension x="520" y="200"/>
+												</Size>
+												<Anchors>
+													<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+														<Offset>
+															<AbsDimension x="20" y="20"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>ChiJiTips_OnClick();</OnClick>
+										</Scripts>
+									</Frame>
+
+									##8. 机械载具伤害设置
+									<Frame name="$parentVehicleHurtTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="NewRuleSetFramePage1BoxBodyOpenChiJiBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="true">
+												<Anchors>
+													<Anchor point="left" relativeTo="$parentName" relativePoint="right">
+														<Offset>
+															<AbsDimension x="-85" y="0" />
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Layers>
+													<Layer level="overlay">
+														<Texture name="$parentBkg" file="ui/mobile/texture/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23" abs_y="25">
+															<Anchors>
+																<Anchor point="center" relativeTo="$parent" relativePoint="center">
+																	<Offset>
+																		<AbsDimension x="0" y="0" />
+																	</Offset>
+																</Anchor>
+															</Anchors>
+														</Texture>
+													</Layer>
+												</Layers>
+												<Scripts>
+													<OnClick>VehicleHurtTips_OnClick();</OnClick>
+												</Scripts>
+											</Button>
+										</Frames>
+									</Frame>
+									## 开关
+									<Button name="$parentOpenVehicleHurtBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentVehicleHurtTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<!-- 2. 开局设定-->
+			<Frame name="$parentPage2" inherits="NewRuleSetFrameChildPageTemplate">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="600" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="565" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 房间人数限制
+									<Frame name="$parentPlayerLimitTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentPlayerLimit" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPlayerLimitTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##开启需求人数
+									<Frame name="$parentNeedPlayerTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPlayerLimit">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentNeedPlayer" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNeedPlayerTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##开启游戏
+									<Frame name="$parentNeedStartTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNeedPlayer">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentStart" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNeedStartTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##中途加入游戏
+									<Button name="$parentJoinAfterBegin" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentStart" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##倒计时(秒)
+									<Frame name="$parentCountdownTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentJoinAfterBegin">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentCountdown" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentCountdownTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+
+			<!-- 3. 游戏目标-->
+			<Frame name="$parentPage3" inherits="NewRuleSetFrameChildPageTemplate">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="1050" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="930" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 游戏时间
+									<Frame name="$parentGameTimeTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##是否限时
+									<Button name="$parentLimitTime" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentGameTimeTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##游戏时间
+									<Frame name="$parentGameTime" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentLimitTime">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##结束胜利判定
+									<Frame name="$parentOver" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentGameTime">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##2. 计分设定
+									<Frame name="$parentPointTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentOver">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##击杀玩家得分
+									<Frame name="$parentPointGet1" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##击杀怪物得分
+									<Frame name="$parentPointGet2" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet1">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##获得星星得分
+									<Frame name="$parentPointGet3" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet2">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##染色得分
+									<Frame name="$parentPointGet4" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet3">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+
+									##3. 目标分数
+									<Frame name="$parentAimPointTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointGet4">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##是否需要达成
+									<Button name="$parentComplete" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentAimPointTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##达成分数
+									<Frame name="$parentPointNeed" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentComplete">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##4. 玩法模式退出后重置
+									<Frame name="$parentResetTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPointNeed">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentReset" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentResetTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentResetRound" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentReset" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##重置分数
+									<Frame name="$parentResetRoundScore" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentResetRound">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+
+			## 4. 队伍设定
+			<Frame name="$parentPage4" inherits="NewRuleSetFrameChildPageTemplate">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="565" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="565" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>									
+									##队伍数量
+									<Frame name="$parentTeamTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentTeamNum" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentTeamTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##攻击模式
+									<Frame name="$parentModeTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentTeamNum">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMode" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentModeTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<!-- 5. 显示设置-->
+			<Frame name="$parentPage5" inherits="NewRuleSetFrameChildPageTemplate">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="850" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="1000" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 视角设定
+									<Frame name="$parentWatchTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>	
+									<Frame name="$parentWatch" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="20"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										
+									</Frame>
+									##锁定视角开关
+						            <Button name="$parentWatchLockBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentWatch" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##2. 地图显示
+									<Frame name="$parentMapShowTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentWatchLockBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMapShow" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMapShowTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##3. 名称显示
+									<Frame name="$parentNameShowTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMapShow">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentNameShow" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNameShowTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##4. 准心
+									<Frame name="$parentHeartTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentNameShow">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentHeart" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentHeartTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##5. 比分和时间
+									<Frame name="$parentPandTTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentHeart">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentPandT" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentPandTTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##6. 开启战斗提示
+									<Frame name="$parentStartTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPandT">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentStart" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentStartTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+
+			<!-- 6. 其它设置-->
+			<Frame name="$parentPage6" inherits="NewRuleSetFrameChildPageTemplate">
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" >
+						<Frames>
+							<Frame name="$parentPlane" abs_x="1000" abs_y="1100" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentBody" abs_x="1000" abs_y="1100" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									##1. 背景音乐
+									<Frame name="$parentMusicTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMusic" abs_x="1000" abs_y="75" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMusicTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="BACKGROUND">
+												<FontString name="$parentLeftTitle" justifyH="right" fonttype="BlackFont20" text="$6140" abs_x="250" abs_y="20">
+													<Color r="55" g="54" b="49"/>
+													<Anchors>
+														<Anchor point="left" relativePoint="left" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="45" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Frames>
+											<Button name="$parentBtn" abs_x="330" abs_y="37" inherits="TemplateBtn21">
+												<Anchors>
+													<Anchor point="left" relativeTo="$parentLeftTitle" relativePoint="right">
+														<Offset>
+															<AbsDimension x="88" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Layers>
+													<Layer level="overlay">
+														<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont18" text="默认" abs_x="330" abs_y="18">
+															<Color r="55" g="54" b="41"/>
+															<Anchors>
+																<Anchor point="center" relativePoint="center" relativeTo="$parent">
+																	<Offset>
+																		<AbsDimension x="0" y="0"/>
+																	</Offset>
+																</Anchor>
+															</Anchors>
+														</FontString>
+													</Layer>
+												</Layers>
+												<Scripts>
+													<OnClick>RulePage6MusicBtn_OnClick();</OnClick>
+												</Scripts>
+											</Button>
+										</Frames>
+									</Frame>
+
+									##2. 战败惩罚
+									<Frame name="$parentDieTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentMusic">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentDie" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentDieTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+
+									##3. 生命数限制
+									<Frame name="$parentLifeTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentDie">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##是否限制
+									<Button name="$parentLifeLimitBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentLifeTitle" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									##当前生命数
+									<Frame name="$parentLifeNum" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentLifeLimitBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##队伍公用生命数
+						            <Button name="$parentCommonLifeBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentLifeNum" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+
+									##观战设置
+									##是否开启
+									<Button name="$parentSpectatorModeBtn" inherits="RuleSetFrameSwitchBtnFrameTemplate" >
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentCommonLifeBtn" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Frame name="$parentSpectatorModeValue" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentSpectatorModeBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##4. 复活设置
+									<Frame name="$parentReliveTitle" inherits="NewRuleSetFrameChildPageTitleTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentSpectatorModeValue">
+												<Offset>
+													<AbsDimension x="0" y="40"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##重生时间
+									<Frame name="$parentReliveTime" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentReliveTitle">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##复活保护
+									<Frame name="$parentReliveProtect" inherits="RuleSliderTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentReliveTime">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##重生点规则
+									<Frame name="$parentRelivePoint" inherits="RuleTickItemTemplate" >
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentReliveProtect">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+
+		<Scripts>
+			<OnLoad>NewRuleSetFrame_OnLoad();</OnLoad>
+			<OnShow>NewRuleSetFrame_OnShow();</OnShow>
+			<OnHide>NewRuleSetFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	<!-- 背景音乐选项 -->
+	<Button name="RuleOptionMusicTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="533" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" inherits="TemplateBkg33" />
+				<Texture name="$parentCheck" inherits="TemplateBkg33" />
+				<FontString name="$parentDesc" justifyH="center" fonttype="BlackFont18" text="$707">
+					<Color r="55" g="54" b="41"/>
+					<Size>
+						<AbsDimension x="240" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>RuleOptionMusicTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 背景音乐选择 -->
+	<Frame name="RuleOptionMusicFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="B1000000" />
+				<Texture name="$parentChenDi1" inherits="TemplateBkg1">
+					<Size>
+						<AbsDimension x="653" y="484"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi2" inherits="TemplateBigBkg5" >
+					<Size>
+						<AbsDimension x="562" y="359"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi1">
+							<Offset>
+								<AbsDimension x="0" y="80"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkgWithHuaWen01" abs_x="638" abs_y="65">
+				<Anchors>
+                    <Anchor point="top" relativeTo="$parentChenDi1" relativePoint="top" >
+						<Offset>
+								<AbsDimension x="-2.5" y="6"/>
+							</Offset>
+					</Anchor>
+                </Anchors>
+			</Frame>
+			##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentChenDi1" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>RuleOptionMusicFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+            </Button>
+			<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="562" y="349"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi2">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="562" y="600"/>
+						</Size>
+					</Frame>
+					<Frame name="$parent1" id="1" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent2" id="2" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent3" id="3" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent4" id="4" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent5" id="5" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent6" id="6" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent7" id="7" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent8" id="8" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent9" id="9" inherits="RuleOptionMusicTemplate"/>
+					<Frame name="$parent10" id="10" inherits="RuleOptionMusicTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont18">
+				<Size>
+					<AbsDimension x="415" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi1">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnLoad>RuleOptionMusicFrame_OnLoad();</OnLoad>
+			<OnShow>RuleOptionMusicFrame_OnShow();</OnShow>
+			<OnHide>RuleOptionMusicFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	#高级物理提示框
+	<Frame name="AdvancedPhysicsTipFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="2700" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="40000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg1" inherits="BkgTemplate1">
+					<Size>
+						<AbsDimension x="961" y="548"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentChenDi" inherits="BkgTemplate21">
+					<Size>
+						<AbsDimension x="953" y="485"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="0" y="-1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentTitleBkg" file="ui/mobile/texture/uitcomm1.xml" uvname="hdfl_diban01.png" >
+					<Size>
+						<AbsDimension x="354" y="60"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="5" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+												
+				<FontString name="$parentTitle" fonttype="BlackFont34"  lineInterval="2" fontStyle="border" text="$6581">
+					<Color r="254" g="232" b="153"/>
+					<Size>
+						<AbsDimension x="260" y="36"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="36" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="53" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg1" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-17" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+					<Size>
+						<AbsDimension x="41" y="41"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>AdvancedPhysicsFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+								
+								
+			<SlidingFrame name="AdvancedPhysicsTipBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="890" y="370"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg1">
+						<Offset>
+							<AbsDimension x="0" y="80"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="890" y="800"/>
+						</Size>
+					</Frame>		
+					<RichText name="$parentContent" lineInterval="5" multiLine="false" fonttype="BlackFont21" autoextend="false" 								input_transparent="true">
+						<Size>
+							<AbsDimension x="870" y="3000" />
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentPlane" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>				
+				</Frames>
+			</SlidingFrame>
+								
+			<Button name="$parentOkBtn" hidden="true">
+				<Size>
+					<AbsDimension x="169" y="55" />
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg1" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont28" justifyH="center" lineInterval="2" fontStyle="border" text="								$157">
+							<Color r="254" g="249" b="224"/>
+							<Size>
+								<AbsDimension x="150" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture/uitcomm1.xml" uvname="juese_anniu_huang.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture/uitcomm1.xml" uvname="juese_anniu_huang.png" >
+					<Size>
+						<AbsDimension x="136" y="44"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+			</Button>
+		</Frames>
+	
+		<Scripts>
+			
+			<OnLoad>AdvancedPhysicsTipFrame_OnLoad();</OnLoad>
+	
+	
+		</Scripts>
+			
+	</Frame>
+</Ui>

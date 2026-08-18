@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/modsLib/modsLibEditor/modsLibEditorItem/modsLibEditorItemPart/ModsLibEditorItemPartView.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibEditor/modsLibEditorItem/modsLibEditorItemPart/ModsLibEditorItemPartModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibEditor/modsLibEditorItem/modsLibEditorItemPart/ModsLibEditorItemPartCtrl.lua"/>
+    <Script file="ui/mobile/mvc/modsLib/modsLibEditor/modsLibEditorItem/modsLibEditorItemPart/CustomEquipTemplateMgr.lua"/>
+
+    ##部件tab标签按钮
+    <Button name="ModsLibEditorItemPart_PartTabTemp" inherits="TextBtnTemp_Tab1" virtual="true" abs_x="140" abs_y="46">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):PartTabBtnOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##位置、角度、大小切换按钮模板
+    <Button name="ModsLibEditorItemPart_FuncBtnTemp" virtual="true" abs_x="141" abs_y="61">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentNormal" inherits="TemplateBigBkg21" />
+                <Texture name="$parentChecked" inherits="TemplateBigBkg36" />
+                <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="ico_bind_move_white" abs_x="30" abs_y="31">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):FuncBtnOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##滑动条模板
+    <Frame name="ModsLibEditorItemPart_SliderBtnTemp" virtual="true" abs_x="410" abs_y="52">
+        <Layers>
+            <Layer level="background">
+                <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="X" abs_x="75" abs_y="26">
+                    <Color r="54" g="103" b="193"/>
+                    <Anchors>
+                        <Anchor point="right" relativePoint="left" relativeTo="$parentLeftBtn"/>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentVal" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="0" abs_x="78" abs_y="26">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentRightBtn"/>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Slider name="$parentBar" orientation="HORIZONTAL" minValue="-100" maxValue="100" valueStep="1" defaultValue="0" abs_x="204" abs_y="30" inherits="TemplateSingleBar2">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center"/>
+                </Anchors>
+                <Scripts>
+                    <OnValueChanged>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):SliderOnValueChanged();</OnValueChanged>
+                    <OnMouseDown>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):SliderOnBtnDown();</OnMouseDown>
+                </Scripts>
+            </Slider>
+            <Button name="$parentLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+                <Anchors>
+                    <Anchor point="right" relativePoint="left" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):SliderLeftRightBtnOnClick(1);</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentRightBtn" inherits="TemplateSingleBar_RightBtn01">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):SliderLeftRightBtnOnClick(2);</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+
+    ##动作条目模板
+    <Button name="ModsLibEditorItemPart_ActionItemTemp" inherits="TemplateWhiteGrayTabCheckBtn" virtual="true" abs_x="180" abs_y="61">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ActionItemOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+	##主界面
+    <Frame name="ModsLibEditorItemPart" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2400" >
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1142" abs_y="580">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1136" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):CloseBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##模型展示
+            <Frame name="$parentModel" abs_x="708" abs_y="510">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="0" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentPallet" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role" abs_x="156" abs_y="34">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-85"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <ModelView name="$parentView" abs_x="708" abs_y="510">
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                        </Anchors>
+                        <Scripts>
+                            <OnMouseDown>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ModelRotateBtn_OnMouseDown();</OnMouseDown>
+                            <OnMouseMove>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ModelRotateBtn_OnMouseMove();</OnMouseMove>
+                        </Scripts>
+                    </ModelView>
+                    <Button name="$parentRotateBtn" holddown_threshold="0.1" hidden="true">
+                        <!-- <Scripts>
+                            <OnMouseDown>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ModelRotateBtn_OnMouseDown();</OnMouseDown>
+                            <OnMouseMove>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ModelRotateBtn_OnMouseMove();</OnMouseMove>
+                        </Scripts> -->
+                    </Button>
+                    <Button name="$parentReset" inherits="TemplateBtn31" abs_x="47" abs_y="50">
+                        <Anchors>
+                            <Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+                                <Offset>
+                                    <AbsDimension x="0" y="-10"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay" >
+                                <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_return_white" abs_x="30" abs_y="30" color="ff373631">
+                                    <Anchors>
+                                        <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ResetBtnOnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            ##工具栏
+            <Frame name="$parentTool" abs_x="426" abs_y="510">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-10" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    ##1. 部件tab
+                    <LayoutBox name="$parentTop" layoutstyle="grid" spacex="3" spacey="0" abs_x="426" abs_y="49">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent" />
+                        </Anchors>
+                        <Frames>
+                            <Button name="$parentPart1" inherits="ModsLibEditorItemPart_PartTabTemp" id="1"/>
+                            <Button name="$parentPart2" inherits="ModsLibEditorItemPart_PartTabTemp" id="2"/>
+                            <Button name="$parentPart3" inherits="ModsLibEditorItemPart_PartTabTemp" id="3"/>
+                        </Frames>
+                    </LayoutBox>
+
+                    ##2. 设置
+                    <Frame name="$parentCenter" abs_x="426" abs_y="200">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent" >
+                                <Offset>
+                                    <AbsDimension x="0" y="50"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="background">
+                                <Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+                                <FontString name="$parentModeTitle" fonttype="BlackFont20"  justifyH="right" text="$33026" abs_x="110" abs_y="20">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                                            <Offset>
+                                                <AbsDimension x="0" y="62"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentAnchorTitle" fonttype="BlackFont20"  justifyH="right" text="$33027" abs_x="110" abs_y="20">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentModeTitle" >
+                                            <Offset>
+                                                <AbsDimension x="0" y="59"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##模型选择
+                            <Button name="$parentModeSelect" inherits="TemplateCellAddBtn" abs_x="78" abs_y="78">
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentDownloadIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_top_b" abs_x="14" abs_y="16" hidden="true" UVType="turn180">
+                                            <Anchors>
+                                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <Texture name="$parentSighTag" file="ui/mobile/texture2/common.xml" uvname="icon_tipoff_o" hidden="true">
+                                            <Angle value="37" />
+                                            <Size>
+                                                <AbsDimension x="10" y="25"/>
+                                            </Size>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="top" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="-3"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>	
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentModeTitle" >
+                                        <Offset>
+                                            <AbsDimension x="29" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <Button name="$parentDel" inherits="TemplateBtn23" >
+                                        <Anchors>
+                                            <Anchor point="center" relativePoint="topright" relativeTo="$parent">
+                                                <Offset>
+                                                    <AbsDimension x="-9" y="8"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ModelDelBtnOnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ModelSelectBtnOnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##挂载选择
+                            <Button name="$parentAnchorSelect" inherits="t_btn_18e" abs_x="260" abs_y="37" text="$33021">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentAnchorTitle" >
+                                        <Offset>
+                                            <AbsDimension x="29" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):AnchorSelectBtnOnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+
+                    ##3. 滑动条面板
+                    <Frame name="$parentBotton" abs_x="423" abs_y="238">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentCenter" >
+                                <Offset>
+                                    <AbsDimension x="0" y="13"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="background">
+                                <Texture name="$parentBkg" inherits="TemplateBigBkg29" />
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##依次为:1位置、2角度、3大小
+                            <LayoutBox name="$parentFunc" layoutstyle="horizontal_left" spacex="0" spacey="0" abs_x="423" abs_y="61">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parent" />
+                                </Anchors>
+                                <Frames>
+                                    <Button name="$parent1" inherits="ModsLibEditorItemPart_FuncBtnTemp" id="1" />
+                                    <Button name="$parent2" inherits="ModsLibEditorItemPart_FuncBtnTemp" id="2" />
+                                    <Button name="$parent3" inherits="ModsLibEditorItemPart_FuncBtnTemp" id="3" />
+                                </Frames>
+                            </LayoutBox>
+                            
+
+                            ##滑动条
+                            <LayoutBox name="$parentSlider" layoutstyle="center" spacex="0" spacey="1" abs_x="426" abs_y="175">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentFunc" />
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parent1" inherits="ModsLibEditorItemPart_SliderBtnTemp" id="1" />
+                                    <Frame name="$parent2" inherits="ModsLibEditorItemPart_SliderBtnTemp" id="2" />
+                                    <Frame name="$parent3" inherits="ModsLibEditorItemPart_SliderBtnTemp" id="3" />
+                                </Frames>
+                            </LayoutBox>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            ##动作栏
+            <Frame name="$parentAction" abs_x="200" abs_y="500" hidden="true">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="5" y="72"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <ModelView name="$parentBkg" inherits="TemplateBigBkg1" />
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="230" abs_y="466">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="230" abs_y="466"/>
+                            ##'ModsLibEditorItemPart_ActionItemTemp'
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##动作栏打开、关闭按钮
+            <Frame name="$parentActionEntry" abs_x="9" abs_y="500">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parentAction" relativePoint="left" />
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkgBlue" inherits="TemplateBigBkg1" abs_x="5" abs_y="500">
+                            <Anchors>
+                                <Anchor point="left" relativeTo="$parent" relativePoint="left" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgBlack" file="ui/mobile/texture2/friend.xml" uvname="board_frame_blue.png" abs_x="4" abs_y="500" DrawType="height">
+                            <Height>
+                                <top            offsetX="0" offsetY="0" w="4" h="3"/>
+                                <Center         offsetX="0" offsetY="3" w="4" h="3"/>
+                                <Bottom         offsetX="0" offsetY="6" w="4" h="3"/>
+                            </Height>
+                            <Anchors>
+                                <Anchor point="left" relativeTo="$parentBkgBlue" relativePoint="right" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentBtn" inherits="TextBtnTemp_Ladder1" text="$33039" >
+                        <Anchors>
+                            <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                <Offset>
+                                    <AbsDimension x="5" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers level="overlay" >
+                            <Layer>
+                                <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_action.png" abs_x="32" abs_y="32">
+                                    <Anchors>
+                                        <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibEditorItemPart"):ActionEntryOnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+
+        </Scripts>
+    </Frame>
+</Ui>

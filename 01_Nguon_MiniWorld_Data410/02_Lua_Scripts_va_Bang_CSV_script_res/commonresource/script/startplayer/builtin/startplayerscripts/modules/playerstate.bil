@@ -1,0 +1,172 @@
+local StateControl = require(script.StateControl)
+local StateModule = require(script.StateModule)
+local RunService = game:GetService("RunService")
+local PlayersService = game:GetService('Players')
+local UserInputService = game:GetService("UserInputService")
+local ContextActionService = game:GetService("ContextActionService")
+local WorldService = game:GetService("WorldService")
+local MouseService = game:GetService("MouseService")
+local WorkSpace = game:GetService("WorkSpace")
+
+local RegisterState = {
+	"IdleState",
+	"DigState",
+	"SitState",
+	"AttackState",
+}
+
+local PlayerState = CommonModule.Class("PlayerState")
+
+function PlayerState:OnInit()
+	self.m_inputInfo = {
+		leftClick = false;
+		mousePos = { x = 0.5; y = 0.5; }
+	}
+	
+	self.m_player = PlayersService.LocalPlayer
+	self.m_charater = self.m_player.Character
+	self.m_enable = self.m_player.PlayerStateEnable
+	self.m_PickRange = 1300
+
+
+	self.m_stateControl = StateControl.New()
+	self:initStates()
+	self:InitEvents()
+	RunService:BindToRenderStep("PlayerStateUpdate", Enum.RenderPriority.Camera.Value+1, function( dt ) 
+		if self.m_enable then
+			self:OnUpdate(dt)
+		end
+	end)
+end
+
+function PlayerState:initStates()
+	for _, statename in ipairs(RegisterState) do
+		local StateCls = require(script.StateModule[statename])
+		local newstate = StateCls.New()
+		newstate:SetStateId(statename)
+		newstate:SetHost(self)
+		self:RegisterState(newstate)
+	end
+	self.m_stateControl:SetDefaultState("IdleState")
+end
+
+function PlayerState:PlayAnim( seqid, speed, loop)
+	self.m_charater:PlayAnimal(seqid, speed or 1, loop and 1 or 0)
+end
+
+function PlayerState:StopAnim( seqid )
+	self.m_charater:StopAnimal(seqid)
+end
+
+function PlayerState:OnUpdate( dt )
+	if self.m_stateControl then
+		self.m_stateControl:OnUpdate(dt)
+	end
+end
+
+function PlayerState:ToState( stateId )
+	if self.m_stateControl then
+		self.m_stateControl:ToState(stateId)
+	end
+end
+
+function PlayerState:RegisterState( state )
+	if self.m_stateControl then
+		self.m_stateControl:RegisterState(state)
+	end
+end
+
+function PlayerState:SetDefaultState( stateid )
+	if self.m_stateControl then
+		self.m_stateControl:SetDefaultState( stateid )
+	end
+end
+
+function PlayerState:GetCurState()
+	if self.m_stateControl then
+		return self.m_stateControl:GetCurState()
+	end
+end
+
+function PlayerState:InitEvents()
+	local function keyboardInputBegagn(inputObj, bGameProcessed)
+		if not self.m_enable then return false end
+		if inputObj.UserInputType == Enum.UserInputType.Keyboard.Value then
+			return self:KeyboardEvent(inputObj.KeyCode, 1)
+		elseif inputObj.UserInputType == Enum.UserInputType.MouseButton1.Value then
+			self.m_inputInfo.leftClick = true
+			return true
+		end
+
+		return false
+	end
+	
+	local function keyboardInputEnded(inputObj, bGameProcessed)
+		if not self.m_enable then return false end
+
+		if inputObj.UserInputType == Enum.UserInputType.Keyboard.Value then
+			return self:KeyboardEvent(inputObj.KeyCode, 0)
+		elseif inputObj.UserInputType == Enum.UserInputType.MouseButton1.Value then
+			self.m_inputInfo.leftClick = false
+			return true
+		end
+
+		return false
+	end
+	
+	UserInputService.InputBegan:Connect( keyboardInputBegagn )
+	UserInputService.InputEnded:Connect( keyboardInputEnded )
+
+	self.m_player.NotifyAttributeChanged:Connect(function( attrname ) 
+		if attrname == "PlayerStateEnable" then
+			self.m_enable = self.m_player.PlayerStateEnable
+		end
+	end)
+end
+
+function PlayerState:IsIdle()
+	return self:GetCurState():GetStateId() == "IdleState"
+end
+
+function PlayerState:isLeftClickDown()
+	return self.m_inputInfo.leftClick
+end
+
+function PlayerState:IsCanDig()
+	if not MouseService:IsSight() then
+		return false
+	end
+
+	if self.m_inputInfo.leftClick then
+		return true
+	end
+
+	return false
+end
+
+function PlayerState:KeyboardEvent(nKey, bDown)	
+	return false
+end
+
+function PlayerState:GetPickRange()
+	return self.m_PickRange
+end
+
+function PlayerState:doPick()
+	local curCamera = WorkSpace.CurrentCamera
+	local result = MouseService:GetCursorPick(0.5, 0.5, self:GetPickRange())
+	-- print("result", result)
+
+	if result.actor and result.actor == self.character then
+		result.actor = nil
+	end
+
+	return result
+end
+
+function PlayerState:Disable()
+	self.m_enable = false
+	RunService:UnbindFromRenderStep("PlayerStateUpdate")
+end
+
+return PlayerState.New()

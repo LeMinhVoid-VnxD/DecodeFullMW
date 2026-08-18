@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/DevTools/BasicSettings/BasicSettingInterface.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/ItemSetting/BasicSettingItemSettingModel.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/ItemSetting/BasicSettingItemSettingView.lua"/>
+	<Script file="ui/mobile/mvc/DevTools/BasicSettings/ItemSetting/BasicSettingItemSettingCtrl.lua"/>
+
+	##道具标签按钮模板
+	<Button name="SettingItemTabsTemplate" virtual="true" inherits="TemplateTabBtn4">
+		<Size>
+			<AbsDimension x="142" y="61"/>
+		</Size>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):TabsBtnOnClick();</OnClick>
+		</Scripts>
+	</Button>
+	##玩家道具格子模板
+	<Frame name="GirdBoxTemplate" virtual="true" abs_x="78" abs_y="100">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Fontstring name="$parentNum" fonttype="BlackFont20" justifyH="CENTER" justifyV="MIDDLE" text="1" abs_x="78" abs_y="20" hidden="true">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom"/>
+					</Anchors>
+				</Fontstring>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentItem" abs_x="78" abs_y="78">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parent" relativePoint="top" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg15" abs_x="78" abs_y="78"/>
+						<Texture name="$parentIcon" alphamode="alphablend" rel_x="0.9" rel_y="0.9" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="overlay">
+						<Fontstring name = "$parentCount" fonttype="BlackFont20" abs_x="40" abs_y="20" justifyH="right" text="1" hidden="true">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-5" y="57"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Fontstring>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):PutItem();</OnClick>
+				</Scripts>
+			</Button>
+
+			##取消按钮模板
+			<Button name="$parentCancel" abs_x="30" abs_y="30" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="4" y="-4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentNo" abs_x="13" abs_y="13" file="ui/mobile/texture0/friend.xml" uvname="icon_no.png">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="-1" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):CancelBtnOnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	##道具设置模板
+	<Button name="GirdBoxBtnTemplate" virtual="true" inherits="GridButtonTemplate2">
+		<Scripts>
+			<OnEnterUpdate platform="pc">GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):OnEnterUpdateItem()</OnEnterUpdate>
+		</Scripts>
+	</Button>
+	##初始道具设置
+	<Frame name="BasicSettingItemSetting" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1400">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="B1000000" />
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentItemSetting" abs_x="1034" abs_y="515">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg8" rel_x="1" rel_y="1"/>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentTitle" abs_x="1025" abs_y="61">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg4" rel_x="1" abs_y="61">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="453" abs_y="56">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkgClose" inherits="TemplateCloseDd" abs_x="84" abs_y="56">
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Fontstring name="$parentName" fonttype="BlackFont36" abs_x="322" abs_y="36" justifyH="CENTER" justifyV="MIDDLE" text="设置快捷栏初始道具">
+									<Color r="255" g="135" b="27"/>
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parentBkgLeft" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="23" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Fontstring>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name = "$parentBody" abs_x="1031" abs_y="433">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentTitle" relativePoint="bottom" >
+								<Offset>
+									<AbsDimension x="0" y="-8" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg2" rel_x="1" rel_y="1"/>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentTabs" abs_x="168" abs_y="366">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="18" y="51"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBigBkg24" rel_x="1" rel_y="1"/>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Button name="$parentTab1" inherits="SettingItemTabsTemplate" id="1">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parent" relativePoint="top">
+												<Offset>
+													<AbsDimension x="0" y="11"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentTab2" inherits="SettingItemTabsTemplate" id="2">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentTab1" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentTab3" inherits="SettingItemTabsTemplate" id="3">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentTab2" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentTab4" inherits="SettingItemTabsTemplate" id="4">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentTab3" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentTab5" inherits="SettingItemTabsTemplate" id="5">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentTab4" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentSelectItem" abs_x="455" abs_y="366" >
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentTabs" relativePoint="right" >
+										<Offset>
+											<AbsDimension x="16" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBigBkg5" rel_x="1" rel_y="1" />
+										<Fontstring name="$parentName" fonttype="BlackFont22" abs_x="90" abs_y="22" justifyV="MIDDLE" text="$34219">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-12"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Fontstring>
+									</Layer>
+								</Layers>
+								<Frames>
+									<ListViewFrame name="$parentList" abs_x="427" abs_y="348" slideplane="$parentPlane" slidingY="true" slidebar="$parentBar">
+										<Anchors>
+											<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+												<Offset>
+													<AbsDimension x="9" y="9"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level = "BACKGROUND">
+												<Texture name="$parentBkg1" inherits="TemplateBkg31" abs_x="6" abs_y="348">
+													<Anchors>
+														<Anchor point="topright" relativeTo="$parent" relativePoint="topright" >
+															<Offset>
+																<AbsDimension x="0" y="0" />
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</Texture>
+											</Layer>
+										</Layers>
+										<Frames>
+											<Frame name="$parentPlane" abs_x="427" abs_y="270">
+												<Anchors>
+													<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor> 
+												</Anchors>
+											</Frame>
+											<Frame name = "$parentBar" hidden="true" >
+												<Size>
+													<AbsDimension x="15" y="40"/>
+												</Size>
+												<Anchors>
+													<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+													</Anchor>
+												</Anchors>
+												<Layers>
+													<Layer level="overlay">
+														<Texture name="$parentBkg" inherits="TemplateBkg32" abs_x="6" rel_y="1" DrawType="ninesquare_center">
+															<Anchors>
+																<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+																</Anchor>
+															</Anchors>
+															<NineSquare ox="0" oy="0" tilew="1" tileh="1"/>
+														</Texture>
+													</Layer>
+												</Layers>
+											</Frame>
+										</Frames>
+									</ListViewFrame>
+								</Frames>
+							</Frame>
+							<Frame name="$parentPlayerItem" abs_x="333" abs_y="348" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentSelectItem" >
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Fontstring name="$parentName" fonttype="BlackFont22" abs_x="160" abs_y="22" justifyV="MIDDLE" justifyH="center" text="$34215">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-21"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Fontstring>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Frame name="$parentItem1" inherits="GirdBoxTemplate" id="1">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem2" inherits="GirdBoxTemplate" id="2">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentItem1">
+												<Offset>
+													<AbsDimension x="7"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem3" inherits="GirdBoxTemplate" id="3">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentItem2">
+												<Offset>
+													<AbsDimension x="7"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem4" inherits="GirdBoxTemplate" id="4">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentItem3">
+												<Offset>
+													<AbsDimension x="7"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem5" inherits="GirdBoxTemplate" id="5">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentItem1">
+												
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem6" inherits="GirdBoxTemplate" id="6">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentItem2">
+												
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem7" inherits="GirdBoxTemplate" id="7">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentItem3">
+												
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem8" inherits="GirdBoxTemplate" id="8">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentItem4">
+												
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+							<Frame name="$parentBackItems" abs_x="333" abs_y="348" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentSelectItem" >
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Fontstring name="$parentName" fonttype="BlackFont22" abs_x="160" abs_y="22" justifyV="MIDDLE" justifyH="center" text="$34216">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-21"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Fontstring>
+									</Layer>
+								</Layers>
+								<Frames>
+									<ListViewFrame name="$parentList" abs_x="333" abs_y="348" slideplane="$parentPlane" slidingY="true">
+										<Anchors>
+											<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<Frame name="$parentPlane" abs_x="418" abs_y="270">
+												<Anchors>
+													<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor> 
+												</Anchors>
+											</Frame>
+										</Frames>
+									</ListViewFrame>
+								</Frames>
+							</Frame>
+						</Frames>
+					</Frame>
+					<Button name="$parentDetermineBtn" inherits="TemplateBtn3" >
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-21" y="-13"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Fontstring name="$parentName" fonttype="BlackFont24" abs_x="50" abs_y="24" justifyH="CENTER" justifyV="MIDDLE" text="$969">
+									<Color r="55" g="54" b="51" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+									</Anchors>
+								</Fontstring>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):DetermineBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCloseBtn">
+						<Size>
+							<AbsDimension x="46" y="60"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+								<Offset>
+									<AbsDimension x="-4" y="-9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close" rel_x="0.8" rel_y="0.8">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):CloseBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentCount" abs_x="636" abs_y="120" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" rel_x="1" rel_y="1" inherits="TemplateBigBkg19"/>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentClose" abs_x="1280" abs_y="720">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):SliderCloseOnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="64" valueStep="1" defaultValue="1" abs_x="338" abs_y="30">
+						<Anchors>
+							<Anchor point="Center" relativeTo="$parent" relativePoint="center"/>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg16" rel_x="1" abs_y="12">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkg1" inherits="TemplateBkg17" rel_x="1" abs_y="12">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Fontstring name="$parentName" fonttype="BlackFont18" justifyH="center" abs_x="36" abs_y="18" text="$34221">
+									<Anchors>
+										<Anchor point="right" relativeTo="$parentBkg" relativePoint="left">
+											<Offset>
+												<AbsDimension x="-61"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Fontstring>
+								<Fontstring name="$parentNum" fonttype="BlackFont18" justifyH="center" abs_x="25" abs_y="14">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parentBkg" relativePoint="right">
+											<Offset>
+												<AbsDimension x="68"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Fontstring>
+							</Layer>
+						</Layers>
+						<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30" >
+						</ThumbTexture>
+						<Scripts>
+							<OnValueChanged>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):SliderValueChanged()</OnValueChanged>
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):SliderOnMouseUp();</OnMouseUp>
+						</Scripts>
+					</Slider>
+					<Button name="$parentBarLeftBtn" inherits="TemplateLeftArrowBtn1">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentBar" relativePoint="left">
+								<Offset>
+									<AbsDimension x="-18" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):SliderLeftRightBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentBarRightBtn" inherits="TemplateRightArrowBtn1" >
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBar" relativePoint="right">
+								<Offset>
+									<AbsDimension x="18" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("BasicSettingItemSetting"):SliderLeftRightBtnClicked(true);</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

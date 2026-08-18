@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    ##官版特权中心
+	<Script file="ui/mobile/mvc/OfficialRewardCenter/OfficialRewardCenterModel.lua"/>
+	<Script file="ui/mobile/mvc/OfficialRewardCenter/OfficialRewardCenterView.lua"/>
+	<Script file="ui/mobile/mvc/OfficialRewardCenter/OfficialRewardCenterCtrl.lua"/>
+    #奖品物品
+	<Button name="ORCCRewardBtnTemplate" virtual="true" abs_x="94" abs_y="94" >
+		<Anchors>
+			<Anchor point="left" relativePoint="left">
+				<Offset>
+					<AbsDimension x="100" y="-20" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				
+				#物品框
+				<Texture name="$parentIconBkg" inherits="TemplateBigBkg10"/>
+
+				#物品
+				<Texture name="$parentIcon" file="items/hand.png" abs_x="74" abs_y="74" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentIconChip" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_17" hidden="true">
+					<Size>
+						<AbsDimension x="20" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				#名字
+				<FontString name="$parentName" hidden="true" justifyH="center" fonttype="BlackFont17"  fontStyle="normal" text="name" abs_x="120" abs_y="100" >
+					<Color r="49" g="32" b="24"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="86" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				#数量
+				<FontString name="$parentNum" justifyH="right" fonttype="BlackFont18" lineInterval="2" fontStyle="border" text="x999" abs_x="100" abs_y="100" shadowcolor="000000" >
+
+					<Anchors>
+						<Anchor point="right" relativePoint="right">
+							<Offset>
+								<AbsDimension x="-8" y="74" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCRewardBtnTemplate_OnClick();</OnClick>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCRewardBtnTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCRewardBtnTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+    #可下拉框中的cell
+	<Frame name="ORCCCellTemplate" virtual="true" hidden="false" abs_x="752" abs_y="173">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" >
+				<Offset>
+					<AbsDimension x="10" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+
+		<Layers>
+			<Layer level="overlay">
+				#背景（取消）
+				<Texture name="$parentBkg" inherits="TemplateBkg22"/>
+				<Texture name="$parentBanner" inherits="TemplateBkg25" abs_x="748" abs_y="40" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="1" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentBannerRay" file="ui/mobile/texture2/minilobby.xml"  uvname="img_borad_benefit_ray.png"  abs_x="92" abs_y="40" >
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBanner">
+							<Offset>
+								<AbsDimension x="-94" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				#title文字
+				<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont22" fontStyle="normal" lineInterval="2" text="活动期间累计登录99天可获得：" abs_x="550" abs_y="21" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<Offset>
+							<AbsDimension x="19" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				#没有奖励物品的情况下，可以显示的字
+				<FontString name="$parentGiftTxt" justifyH="left" justifyV="middle" fonttype="BlackFont21" fontStyle="normal" lineInterval="2" text="活动期间累\n计登录99天可获得：" abs_x="590" abs_y="128" hidden="true">
+					<Color r="98" g="65" b="48"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<Offset>
+							<AbsDimension x="40" y="45"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				#有效期
+				<FontString name="$parentDate" justifyH="right" justifyV="middle" fonttype="BlackFont18" fontStyle="normal" lineInterval="2" text="10月10日~10月20日" abs_x="300" abs_y="16" >
+					<Color r="67" g="80" b="82"/>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright">
+							<Offset>
+							<AbsDimension x="-30" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			#单个奖励物品
+			<Button name="$parentReward1" hidden="true" inherits="ORCCRewardBtnTemplate" id="1" />
+			<Button name="$parentReward2" hidden="true" inherits="ORCCRewardBtnTemplate" id="2" />
+			<Button name="$parentReward3" hidden="true" inherits="ORCCRewardBtnTemplate" id="3" />
+			<Button name="$parentReward4" hidden="true" inherits="ORCCRewardBtnTemplate" id="4" />
+			<Button name="$parentReward5" hidden="true" inherits="ORCCRewardBtnTemplate" id="5" />
+
+			#vivo15广告按钮
+			<Button name="$parentPressAD" abs_x="550" abs_y="100" framelevel="2" >
+				<Anchors>
+					<Anchor point="left" relativePoint="left">
+						<Offset>
+							<AbsDimension x="20" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/bigtex/empty.png"   color="11111111" />
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCBtnPressAD_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			#领取按钮
+			<Button name="$parentGet" inherits="TemplateBtn11">
+
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-26" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				#文字
+				<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont20" lineInterval="2" fontStyle="normal" text="领  取" >
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCBtnGet_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			#跳转按钮
+			<Button name="$parentGoto" inherits="TemplateBtn12">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-26" y="49"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				#文字
+				<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont20" lineInterval="2" fontStyle="normal" text="$5241" >
+					<Color r="51" g="55" b="55"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCBtnGoto_OnClick();</OnClick>
+				</Scripts>		
+			</Button>
+		</Frames>
+	</Frame>
+
+	#左侧分类按钮
+	<Button name="ORCCFuliTemplate" inherits="TemplateBtn15" virtual="true" checked="true" abs_x="224" abs_y="85" hidden="true">
+		<FontString name="$parentTitle" justifyH="center" justifyV="middle" fonttype="BlackFont24" lineInterval="2" fontStyle="normal" text="国庆活动">
+			<Color r="55" g="54" b="49"/>
+			<Anchors>
+				<Anchor point="center" relativePoint="center">
+				</Anchor>
+			</Anchors>
+		</FontString>
+		
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+					<Size>
+						<AbsDimension x="22" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="5" y="-9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCFFuli_OnClick();</OnClick>
+		</Scripts>						
+	</Button>
+
+    ##4. 中型界面模板(1075*600)，带蒙版，底色board_blue_r，带标题栏TemplateTopTitleBkg3，关闭按钮
+	<Frame name="TemplateMainFrameForThis3" virtual="true" rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##阴影遮罩
+				<Texture name="$parentMask" file="ui/white.png" color="B1000000" stretchedge="true"/>
+
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1075" abs_y="600">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="56" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg3">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="4" y="4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="icon_official_pre.png" abs_x="110" abs_y="103">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-15" y="-46"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon1" file="ui/mobile/texture0/common.xml" uvname="icon_star_white.png" abs_x="13" abs_y="16">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon2" file="ui/mobile/texture0/common.xml" uvname="icon_star_white.png" abs_x="26" abs_y="26">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="44" y="19"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon3" file="ui/mobile/texture0/common.xml" uvname="icon_star_white.png" abs_x="13" abs_y="16">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="101" y="29"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon4" file="ui/mobile/texture0/common.xml" uvname="icon_star_white.png" abs_x="20" abs_y="20">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="27" y="33"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon5" file="ui/mobile/texture0/common.xml" uvname="icon_star_yellow.png" abs_x="26" abs_y="26">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="294" y="36"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon6" file="ui/mobile/texture0/common.xml" uvname="icon_star_yellow.png" abs_x="13" abs_y="16">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="271" y="79"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon7" file="ui/mobile/texture0/common.xml" uvname="icon_star_yellow.png" abs_x="13" abs_y="16">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="271" y="79"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon8" file="ui/mobile/texture0/common.xml" uvname="icon_star_yellow.png" abs_x="16" abs_y="16">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="408" y="38"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon9" file="ui/mobile/texture0/common.xml" uvname="icon_star_yellow.png" abs_x="26" abs_y="26">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="825" y="76"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			##关闭按钮
+			<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <Scripts>
+			        <OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCCloseBtn_OnClick();</OnClick>
+		        </Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+
+    #main
+	<Frame name="OfficialRewardCenter" parent="UIClient" inherits="TemplateMainFrameForThis3" frameStrata="HIGH" hidden="true" framelevel="2" input_transparent="false">
+        <Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+        <Anchors>
+			<Anchor point="center" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>	
+			</Anchor>
+		</Anchors>
+        <Layers>
+			<Layer level="ARTWORK">
+                <Texture name="$parentPatternBkg" inherits="TemplateBigBkg2" abs_x="830" abs_y="542" >
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-2" y="-2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<Texture name="$parentPattern" inherits="TemplateBigBkg7_flat" abs_x="824" abs_y="536" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPatternBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#大背景
+				<Texture name="$parentBigBkg" file="ui/white.png" color="01000000" abs_x="1075" abs_y="600">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="56" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+        <Frames>
+			#左侧条目列表
+			<SlidingFrame name="$parentFuliSliderBox" slidingY="true" slideplane="$parentPlaneFuli" abs_x="246" abs_y="491">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="5" y="89"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlaneFuli" hidden="false" abs_x="246" abs_y="491" />
+					<Button name="OfficialRewardCenterFrameFuli1"  inherits="ORCCFuliTemplate" id="1" />
+					<Button name="OfficialRewardCenterFrameFuli2"  inherits="ORCCFuliTemplate" id="2" />
+					<Button name="OfficialRewardCenterFrameFuli3"  inherits="ORCCFuliTemplate" id="3" />
+					<Button name="OfficialRewardCenterFrameFuli4"  inherits="ORCCFuliTemplate" id="4" />
+					<Button name="OfficialRewardCenterFrameFuli5"  inherits="ORCCFuliTemplate" id="5" />
+					<Button name="OfficialRewardCenterFrameFuli6"  inherits="ORCCFuliTemplate" id="6" />
+					<Button name="OfficialRewardCenterFrameFuli7"  inherits="ORCCFuliTemplate" id="7" />
+					<Button name="OfficialRewardCenterFrameFuli8"  inherits="ORCCFuliTemplate" id="8" />
+					<Button name="OfficialRewardCenterFrameFuli9"  inherits="ORCCFuliTemplate" id="9" />
+					<Button name="OfficialRewardCenterFrameFuli10" inherits="ORCCFuliTemplate" id="10" />
+					<Frame name="$parentUpdownMask" framelevel="3" input_transparent="true" >
+						<Layers>
+							<Layer level="overlay">
+								#上下遮盖
+								<Texture name="$parentSliderBkgup1" file="ui/mobile/texture2/common.xml" uvname="tab_up_n.png" abs_x="302" abs_y="30" hidden="true" >
+									<Anchors>
+										<Anchor point="top" relativePoint="top" >
+											<Offset>
+												<AbsDimension x="2" y="-11"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+								<Texture name="$parentSliderBkgup2" file="ui/mobile/texture2/common.xml" uvname="tab_up_n.png" abs_x="302" abs_y="30" hidden="true" >
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" >
+											<Offset>
+												<AbsDimension x="2" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>		
+							</Layer>
+						</Layers>
+					</Frame>					
+				</Frames>
+			</SlidingFrame>
+            #滑动背景
+			<SlidingFrame name="$parentContentSliderBox" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="482">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-41" y="-27"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="1800" />
+					<Frame name="ORCCSlideCell1" hidden="true" inherits="ORCCCellTemplate" id="1" />
+					<Frame name="ORCCSlideCell2" hidden="true" inherits="ORCCCellTemplate" id="2" />
+					<Frame name="ORCCSlideCell3" hidden="true" inherits="ORCCCellTemplate" id="3" />
+					<Frame name="ORCCSlideCell4" hidden="true" inherits="ORCCCellTemplate" id="4" />
+					<Frame name="ORCCSlideCell5" hidden="true" inherits="ORCCCellTemplate" id="5" />
+					<Frame name="ORCCSlideCell6" hidden="true" inherits="ORCCCellTemplate" id="6" />
+					<Frame name="ORCCSlideCell7" hidden="true" inherits="ORCCCellTemplate" id="7" />
+					<Frame name="ORCCSlideCell8" hidden="true" inherits="ORCCCellTemplate" id="8" />
+					<Frame name="ORCCSlideCell9" hidden="true" inherits="ORCCCellTemplate" id="9" />
+					<Frame name="ORCCSlideCell10" hidden="true" inherits="ORCCCellTemplate" id="10" />
+					<Frame name="ORCCSlideCell11" hidden="true" inherits="ORCCCellTemplate" id="11" />
+					<Frame name="ORCCSlideCell12" hidden="true" inherits="ORCCCellTemplate" id="12" />
+					<Frame name="ORCCSlideCell13" hidden="true" inherits="ORCCCellTemplate" id="13" />
+					<Frame name="ORCCSlideCell14" hidden="true" inherits="ORCCCellTemplate" id="14" />
+					<Frame name="ORCCSlideCell15" hidden="true" inherits="ORCCCellTemplate" id="15" />
+					<Frame name="ORCCSlideCell16" hidden="true" inherits="ORCCCellTemplate" id="16" />
+					<Frame name="ORCCSlideCell17" hidden="true" inherits="ORCCCellTemplate" id="17" />
+					<Frame name="ORCCSlideCell18" hidden="true" inherits="ORCCCellTemplate" id="18" />
+					<Frame name="ORCCSlideCell19" hidden="true" inherits="ORCCCellTemplate" id="19" />
+					<Frame name="ORCCSlideCell20" hidden="true" inherits="ORCCCellTemplate" id="20" />
+				</Frames>
+				<!-- <Scripts>
+					<OnMouseMove>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCFFuliContentSliderBox_OnMouseMove();</OnMouseMove>
+					<OnMouseScrollPosition>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCFFuliContentSliderBox_OnMouseMove();</OnMouseScrollPosition>
+				</Scripts> -->
+			</SlidingFrame>
+			<Frame name = "$parentContentBox" hidden="true" abs_x="824" abs_y="536">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-5" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBackGroundPic" file="ui/mobile/texture2/common.xml" uvname="img_frame_activity.png" DrawType="ninesquare_center" >
+							<NineSquare ox="0" oy="0" tilew="16" tileh="16"/>
+							<Size>
+								<AbsDimension x="814" y="524"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="5" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBackGroundPicLt" file="ui/mobile/texture2/common.xml" uvname="img_frame_activity_lt.png">
+							<Size>
+								<AbsDimension x="17" y="52"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBackGroundPic">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBackGroundPicRb" file="ui/mobile/texture2/common.xml" uvname="img_frame_activity_rb.png">
+							<Size>
+								<AbsDimension x="39" y="130"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBackGroundPic">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDescTitle" fonttype="BlackFont30" lineInterval="2" fontStyle="normal" text="$732">
+							<Color r="77" g="112" b="117"/>
+							<Size>
+								<AbsDimension x="777" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="47" y="29"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDesc" fonttype="BlackFont22" lineInterval="23" text="$733" autowrap="true">
+							<Color r="67" g="80" b="82"/>
+							<Size>
+								<AbsDimension x="777" y="180"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDescTitle">
+									<Offset>
+										<AbsDimension x="0" y="35"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentNote" fonttype="BlackFont18" text="$733" autowrap="true">
+							<Color r="111" g="145" b="150"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDesc">
+									<Offset>
+										<AbsDimension x="0" y="106"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentGetBtn" inherits="TemplateBtn3">
+						<Size>
+							<AbsDimension x="215" y="81" />
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentDescTitle" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="230" y="413" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont30" justifyH="center" lineInterval="2" fontStyle="normal" text="$3028">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="215" y="26"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="25"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("OfficialRewardCenter"):ORCCFFuliApplyAccount_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+        </Frames>
+    </Frame>
+</Ui>

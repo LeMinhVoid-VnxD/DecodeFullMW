@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/newAccountSystem/ActivateAccount/ActivateAccountCtrl.lua" />
+    <Script file="ui/mobile/mvc/newAccountSystem/ActivateAccount/ActivateAccountModel.lua" />
+    <Script file="ui/mobile/mvc/newAccountSystem/ActivateAccount/ActivateAccountView.lua" />
+
+	##模板
+	<Frame name="SettingTemplate" abs_x="770" abs_y="70" virtual="true">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg1" inherits="TemplateBkg8">
+					<Size>
+						<AbsDimension x="320" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="154" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTip1" lang_ver="en" fonttype="BlackFont22" text="" textcolor="fffa7a10" justifyH="right">
+					<Size>
+						<AbsDimension x="600" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="200" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTip1" fonttype="BlackFont20" text="" textcolor="fffa7a10" justifyH="right">
+					<Size>
+						<AbsDimension x="450" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentBkg2" inherits="TemplateBkg8">
+					<Size>
+						<AbsDimension x="240" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-36" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTip2" fonttype="BlackFont20" text="" textcolor="fffa7a10" justifyH="right">
+					<Size>
+						<AbsDimension x="240" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentBkg2">
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##小标题
+			<RichText name="$parentTitle" lineInterval="2" multiLine="false" justifyH="right" fonttype="BlackFont24" autoextend="true">
+				<Size>
+					<AbsDimension x="147" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentBkg1">
+						<Offset>
+							<AbsDimension x="-9" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnMouseDown>GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordTips_OnShow()</OnMouseDown>
+					<OnMouseUp>GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordTips_OnHide()</OnMouseUp>
+					<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordTips_OnShow()</OnEnter>
+					<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordTips_OnHide()</OnLeave>
+				</Scripts>
+			</RichText>
+		</Frames>
+	</Frame>
+
+	##Title提示
+	<Frame name="TitleTipsTemplate" parent="UIClient" frameStrata="HIGH" abs_x="240" abs_y="150" hidden="true" framelevel="6010">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg19"/>
+				<FontString name="$parentText" justifyH="left" fonttype="BlackFont18" autowrap="true" lineInterval="2" text="">
+					<Color r="224" g="220" b="202"/>
+					<Size>
+						<AbsDimension x="234" y="144"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+    ##文字问题列表模板
+	<Button name="QuestionTemplate" virtual="true" rel_x="1" abs_y="50">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="20" y="38"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentContent" lineInterval="2" fonttype="BlackFont24"  justifyV="middle" text="" >
+					<Color r="185" g="185" b="185"/>
+					<Size>
+						<Dimension rel_x="0.8" abs_y="49"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="16" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg36" abs_x="320" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parent" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionTemplate_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+    ##设置密码
+	<Frame name="ActivateAccount" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="6005">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="816" y="593"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi2" inherits="TemplateBigBkg29">
+					<Size>
+						<AbsDimension x="770" y="396"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="-96"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentAccount" fonttype="BlackFont24" text="$100229" textcolor="ff3e4647" autowrap="true" justifyH="center" justifyV="middle">
+					<Size>
+						<AbsDimension x="770" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="28"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont20" text="$100229" textcolor="ff657476" autowrap="true" justifyH="center" justifyV="middle">
+					<Size>
+						<AbsDimension x="770" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="65"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="770" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi2">
+							<Offset>
+								<AbsDimension x="0" y="-128"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg2" abs_x="810" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##请记住密码
+						<FontString name="$parentTips1" fonttype="BlackFont20" justifyH="right" lineInterval="2" text="$3101">
+							<Color r="247" g="119" b="15"/>
+							<Size>
+								<AbsDimension x="400" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-83" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##返回按钮
+			<Button name="$parentReturnBtn" abs_x="48" abs_y="44">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentTitleFrame" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="5" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_return.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):ReturnBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##确定按钮
+			<Button name="$parentOkBtn" inherits="TemplateBtn3">
+				<Size>
+					<AbsDimension x="182" y="61" />
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont28" justifyH="center" lineInterval="2" text="$3694">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="160" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):OKBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##底部提示文字
+			<RichText name="$parentTips" lineInterval="6" lang_ver="jpn" multiLine="false" fonttype="BlackFont19" text="$3078">
+				<Size>
+					<AbsDimension x="710" y="130"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentChenDi2">
+						<Offset>
+							<AbsDimension x="30" y="-17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<RichText name="$parentTips" lineInterval="6" multiLine="false" fonttype="BlackFont20" text="$3078">
+				<Size>
+					<AbsDimension x="710" y="130"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentChenDi2">
+						<Offset>
+							<AbsDimension x="30" y="-17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##文字密码
+			<Frame name="$parentPassWord" inherits="SettingTemplate">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChenDi2" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="38"/>
+						</Offset>
+					</Anchor>
+				</Anchors>		
+				<Frames>
+					<EditBox name="$parentPasswordEdit" lang_ver="ptb" letters="12" id="1" multiLine="false" editMethod="7" >
+						<Size>
+							<AbsDimension x="290" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg1" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont23" justifyV="middle">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<OffSet>
+										<AbsDimension x="16" y="0"/>
+									</OffSet>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont23" text="$9013" justifyV="middle" autoextend="false">
+							<Color r="185" g="185" b="185"/>
+							<Size>
+								<AbsDimension x="290" y="24" />
+							</Size>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnFocusLost()</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnTabPressed()</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<EditBox name="$parentPasswordEdit" lang_ver="jpn" letters="12" id="1" multiLine="false" editMethod="7" >
+						<Size>
+							<AbsDimension x="290" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg1" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont15" justifyV="middle">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<OffSet>
+										<AbsDimension x="16" y="0"/>
+									</OffSet>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont15" text="$9013" justifyV="middle" autoextend="false">
+							<Color r="185" g="185" b="185"/>
+							<Size>
+								<AbsDimension x="290" y="24" />
+							</Size>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnFocusLost()</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnTabPressed()</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<EditBox name="$parentPasswordEdit" letters="12" id="1" multiLine="false" editMethod="7" >
+						<Size>
+							<AbsDimension x="290" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg1" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont24" justifyV="middle">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<OffSet>
+										<AbsDimension x="16" y="0"/>
+									</OffSet>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont24" text="$9013" justifyV="middle" autoextend="false">
+							<Color r="185" g="185" b="185"/>
+							<Size>
+								<AbsDimension x="290" y="24" />
+							</Size>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnFocusLost()</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnTabPressed()</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<EditBox name="$parentRepeatPWEdit" letters="12" id="2" multiLine="false" editMethod="7">
+						<Size>
+							<AbsDimension x="210" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg2" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont24" justifyV="middle">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<OffSet>
+										<AbsDimension x="16" y="0"/>
+									</OffSet>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont24" text="$9014" justifyV="middle">
+							<Color r="185" g="185" b="185"/>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnFocusLost()</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):PasswordEdit_OnTabPressed()</OnTabPressed>
+						</Scripts>
+					</EditBox>
+				</Frames>
+			</Frame>
+			##问题2
+			<Frame name="$parentQuestion2" inherits="SettingTemplate">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChenDi2" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="190"/>
+						</Offset>
+					</Anchor>
+				</Anchors>		
+				<Frames>
+					##文字问题2			
+					<Frame name="$parentList" id="2" abs_x="320" abs_y="350">
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="320" abs_y="350">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<offset>
+												<AbsDimension x="0" y="0"/>
+											</offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentBkg1">
+								<offset>
+									<AbsDimension x="0" y="0"/>
+								</offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Button name="$parentQuestion1" inherits="QuestionTemplate" id="1"/>						
+							<Button name="$parentQuestion2" inherits="QuestionTemplate" id="2"/>
+							<Button name="$parentQuestion3" inherits="QuestionTemplate" id="3"/>
+							<Button name="$parentQuestion4" inherits="QuestionTemplate" id="4"/>
+							<Button name="$parentQuestion5" inherits="QuestionTemplate" id="5"/>
+							<Button name="$parentQuestion6" inherits="QuestionTemplate" id="6"/>
+						</Frames>
+					</Frame>				
+					<Frame name="$parentStrA1">
+						<Size>
+							<AbsDimension x="290" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg1" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDefault" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="$9016" >
+									<Color r="185" g="185" b="185"/>
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>					
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<EditBox name="$parentStrA2" id="2" letters="15" multiLine="false">
+						<Size>
+							<AbsDimension x="220" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg2" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont24" justifyV="middle"  >
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<OffSet>
+										<AbsDimension x="20" y="0"/>
+									</OffSet>
+								</Anchor>
+							</Anchors>
+						</FontString>						
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont18" justifyV="middle" text="$9017" autoextend="true" >
+							<Color r="185" g="185" b="185"/>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionEdit_OnFocusLost()</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionEdit_OnTabPressed()</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					##下拉按钮
+					<Button name="$parentDropDown" lang_ver="jpn" abs_x="46" abs_y="46" id="2">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="20" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown">
+							<Size>
+								<AbsDimension x="20" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+							<Size>
+								<AbsDimension x="15" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBackGround" inherits="TemplateBkg28"/>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionDropDownBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDropDown" abs_x="46" abs_y="46" id="2">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown">
+							<Size>
+								<AbsDimension x="20" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+							<Size>
+								<AbsDimension x="15" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBackGround" inherits="TemplateBkg28"/>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionDropDownBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##问题1
+			<Frame name="$parentQuestion1" inherits="SettingTemplate">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChenDi2" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="114"/>
+						</Offset>
+					</Anchor>
+				</Anchors>		
+				<Frames>
+					##文字问题1	
+					<Frame name="$parentList" id="1" abs_x="320" abs_y="350">
+						<Layers>
+							<Layer level="overlay">								
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="320" abs_y="350">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<offset>
+												<AbsDimension x="0" y="0"/>
+											</offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentBkg1">
+								<offset>
+									<AbsDimension x="0" y="0"/>
+								</offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Button name="$parentQuestion1" inherits="QuestionTemplate" id="1"/>						
+							<Button name="$parentQuestion2" inherits="QuestionTemplate" id="2"/>
+							<Button name="$parentQuestion3" inherits="QuestionTemplate" id="3"/>
+							<Button name="$parentQuestion4" inherits="QuestionTemplate" id="4"/>
+							<Button name="$parentQuestion5" inherits="QuestionTemplate" id="5"/>
+							<Button name="$parentQuestion6" inherits="QuestionTemplate" id="6"/>
+						</Frames>
+					</Frame>			
+					<Frame name="$parentStrA1" multiLine="false">
+						<Size>
+							<AbsDimension x="290" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg1" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDefault" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="$9016" >
+									<Color r="185" g="185" b="185"/>
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>			
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<EditBox name="$parentStrA2" id="1" letters="15" multiLine="false">
+						<Size>
+							<AbsDimension x="220" y="24" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentBkg2" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont24" justifyV="middle"  >
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<OffSet>
+										<AbsDimension x="20" y="0"/>
+									</OffSet>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont18" justifyV="middle" text="$9017" autoextend="true">
+							<Color r="185" g="185" b="185"/>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionEdit_OnFocusLost()</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionEdit_OnTabPressed()</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					##下拉按钮
+					<Button name="$parentDropDown" lang_ver="jpn" abs_x="46" abs_y="46" id="1">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="20" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown">
+							<Size>
+								<AbsDimension x="20" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+							<Size>
+								<AbsDimension x="15" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBackGround" inherits="TemplateBkg28"/>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionDropDownBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDropDown" abs_x="46" abs_y="46" id="1">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="-2" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown">
+							<Size>
+								<AbsDimension x="20" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+							<Size>
+								<AbsDimension x="15" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBackGround" inherits="TemplateBkg28"/>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ActivateAccount"):QuestionDropDownBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

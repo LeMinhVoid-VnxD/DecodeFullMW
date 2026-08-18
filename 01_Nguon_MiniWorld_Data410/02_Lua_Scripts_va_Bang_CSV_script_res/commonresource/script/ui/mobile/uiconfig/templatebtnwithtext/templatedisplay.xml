@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/uiconfig/templateBtnWithText/templatedisplay.lua"/>
+
+    <Button name="TemplateDisplayItemTemp" virtual="true" abs_x="160" abs_y="80">
+        <Scripts>
+            <OnClick>GetInst("TemplateDisplayMgr"):OnItemBoxClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##分割线模板
+    <Button name="TemplateDisplayLineTemp" virtual="true" abs_x="1280" abs_y="50" text="黄色按钮">
+        <FontString name="$parentName" fonttype="BlackFont22" justifyV="middle" justifyH="center" text="XXX" abs_x="150" abs_y="22">
+            <Color r="55" g="54" b="41"/>
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </FontString>
+        <Layers level="BACKGROUND">
+            <Layer>
+                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="1280" abs_y="2">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMask" inherits="TemplateBigBkg2" abs_x="150" abs_y="50">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+    </Button>
+
+	<Frame name="TemplateDisplay" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2900" >
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" rel_x="1.0" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("TemplateDisplayMgr"):OnCloseBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            <SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="1280" abs_y="660">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="0" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="1280" abs_y="660"/>
+                    <Button name="$parentOptionFrameBtn" inherits="TemplateBtn11" text="公共选项弹窗" >
+                        <Anchors>
+                            <Anchor point="topleft" relativeTo="$parentPlane" relativePoint="topleft">
+                                <Offset>
+                                    <AbsDimension x="10" y="10"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="公共选项弹窗" abs_x="100" abs_y="20">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                        <Scripts>
+                            <OnClick>GetInst("TemplateDisplayMgr"):OptionCommonOptionFrame();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </SlidingFrame>
+        </Frames>
+    </Frame>
+
+    ##弹框信息展示
+    <Frame name="TemplateDisplayItemInfo" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="5000" abs_x="400" abs_y="140">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="90000000" stretchedge="true"/>
+            </Layer>
+        </Layers>
+        <Frames>
+            <RichText name="$parentName" lineInterval="5" multiLine="true" justifyH="left" fonttype="BlackFont20" autoextend="false" input_transparent="true" abs_x="380" abs_y="120">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="10" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    
+                </Scripts>
+            </RichText>
+        </Frames>
+
+        <Scripts>
+            <OnClick>GetInst("TemplateDisplayMgr"):TemplateDisplayItemInfo_OnClick();</OnClick>
+        </Scripts>
+    </Frame>
+</Ui>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/PetSynthesis/PetSynthesisCtrl.lua"/>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/PetSynthesis/PetSynthesisModel.lua"/>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/PetSynthesis/PetSynthesisView.lua"/>
+
+	<!-- 宠物信息 -->
+	<Frame name="PetSynthesisInfoTemplate" virtual="true" click_threshold="5" abs_x="172" abs_y="243">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="172" abs_y="200"/>
+				<Texture name="$parentPetBkg" file="ui/mobile/texture2/common.xml" uvname ="img_board_resource" DrawType="ninesquare_center" abs_x="164" abs_y="164">
+					<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 宠物icon -->
+				<Texture name="$parentPetIcon" file="ui/roleicons/1.png" abs_x="100" abs_y="102">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPetBkg" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="26" y="16"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 品质 -->
+				<Texture name="$parentQualityIcon" file="ui/mobile/texture2/room.xml" uvname="label_map_purple" abs_x="72" abs_y="26">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPetBkg" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-6" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentQuality" fonttype="BlackFont18" justifyH="center"  text="" abs_x="36" abs_y="18">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentQualityIcon">
+							<Offset>
+								<AbsDimension x="0" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 宠物名 -->
+				<Texture name="$parentPetNameBg" inherits="TemplateBigBkg18" abs_x="164" abs_y="28">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentPetBkg" relativePoint="bottom" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPetName" justifyH="center" fonttype="BlackFont18" text="" abs_x="130" abs_y="18">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPetNameBg">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 成长阶段 -->
+				<FontString name="$parentGroom" justifyH="right" fonttype="BlackFont14" text="" abs_x="42" abs_y="14">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentPetNameBg">
+							<Offset>
+								<AbsDimension x="-5" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 碎片 -->
+				<Texture name="$parentFragmentIcon" file="ui/roleicons/1.png" abs_x="27" abs_y="27">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPetNameBg" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="44" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentFragmentCount" justifyH="left" fonttype="BlackFont14" text="" abs_x="100" abs_y="14">
+					<Color r="239" g="45" b="45"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentFragmentIcon">
+							<Offset>
+								<AbsDimension x="4" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSynthesisBtn" abs_x="168" abs_y="43">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+								<AbsDimension x="0" y="-3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="$41355" abs_x="40" abs_y="18">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg9"/>
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg9" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PetSynthesis"):PetItemClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+    <!-- 宠物合成界面 -->
+	<Frame name="PetSynthesis" parent="UIClient" frameStrata="MEDIUM" framelevel="2000">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 背景遮罩 -->
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- 背景图 -->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="927" abs_y="616">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- 标题栏 -->
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="923" abs_y="55">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- 标题名 -->
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont36" text="" abs_x="300" abs_y="36">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="17" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 宠物展示 -->
+			<ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="907" y="525"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleFrame">
+						<Offset>
+							<AbsDimension x="0" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+            <!-- 关闭按钮 -->
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PetSynthesis"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

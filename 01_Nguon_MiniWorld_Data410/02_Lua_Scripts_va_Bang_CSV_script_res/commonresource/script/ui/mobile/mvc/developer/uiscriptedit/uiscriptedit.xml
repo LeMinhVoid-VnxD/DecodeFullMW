@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/uiScriptEdit/uiScriptEditModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/uiScriptEdit/uiScriptEditView.lua"/>
+	<Script file="ui/mobile/mvc/developer/uiScriptEdit/uiScriptEditCtrl.lua"/>
+	##左侧按钮
+	<Button name="uiScriptEditLeftTabBtnTemplate" virtual="true" inherits="TemplateTabBtn0">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="20"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##LLDO:红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("uiScriptEdit"):leftTabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+	##UI元件选择界面
+	<Frame name="uiScriptEditTriggerDebugFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000" rel_x="1.0"  abs_y = "56">
+		<Anchors>
+			<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="$parentChangeItem" inherits="TemplateBtn20">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft" >
+						<Offset>
+							<AbsDimension x="200" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$4012" abs_x="182" abs_y="24">
+							<Color r="55" g="52" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("uiScriptEdit"):ChangeUIItem();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+
+	<!-- LLDO: 开发者工具 -->
+	<Frame name="uiScriptEdit" parent="UIClient" frameStrata="MEDIUM" hidden="false" framelevel="2300" inherits="TemplateMainFrame">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="1097" abs_y="577">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="175" y="56"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="-85"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!--1.左侧设置底板-->
+			<Frame name="$parentSettingTypeDiban" abs_x="175" abs_y="664">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="56"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<!-- 2. 左侧按钮 -->
+			<Frame name="$parentTabTypeBox" abs_x="183" abs_y="664">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentSettingTypeDiban">
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="183" abs_y="664" hidden="true" />
+					<Button name="$parentDevEditTrigger" id="1" inherits="uiScriptEditLeftTabBtnTemplate"  />
+					<Button name="$parentScript" id="2" inherits="uiScriptEditLeftTabBtnTemplate"  />
+				</Frames>
+			</Frame>
+			##变量库
+			<Button name="$parentVarLibBtn" inherits="TemplateBtn20">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" >
+						<Offset>
+							<AbsDimension x="-300" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$13007" abs_x="182" abs_y="24">
+							<Color r="55" g="52" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditTrigger"):VarLibBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!-- 4. 转换玩法地图 -->
+			<Button name="$parentRuleConverBtn" inherits="TemplateBtn2" hidden="false">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-80" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$719" abs_x="170" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("uiScriptEdit"):TransformGameplayMode();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

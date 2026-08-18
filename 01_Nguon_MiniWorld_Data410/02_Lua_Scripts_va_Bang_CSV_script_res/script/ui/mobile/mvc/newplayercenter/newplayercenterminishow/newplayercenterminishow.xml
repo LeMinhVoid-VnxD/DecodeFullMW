@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterMiniShow/NewPlayerCenterMiniShowModel.lua"/>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterMiniShow/NewPlayerCenterMiniShowView.lua"/>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterMiniShow/NewPlayerCenterMiniShowCtrl.lua"/>
+
+	<Button name="NewPlayerCenterMiniShowCustomTemplate" virtual="true" click_threshold="5" abs_x="138" abs_y="138">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				##图标
+				<Texture name="$parentIcon" file="ui/roleicons/sdjm_bd07_no.png">
+					<Size>
+						<AbsDimension x="128" y="128"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentBuyLimit" fonttype="BlackFont19" justifyH="center" text="" abs_x="100" abs_y="19">
+					<Color r="141" g="90" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	##定制组展示框(每组3个)
+	<Frame name="NewPlayerCenterMiniShowCustomGroupTemplate"  virtual="true" click_threshold="5" abs_x="432" abs_y="138">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="$parentBtn1" inherits="NewPlayerCenterMiniShowCustomTemplate" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits="NewPlayerCenterMiniShowCustomTemplate" id="2" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="16" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits="NewPlayerCenterMiniShowCustomTemplate" id="3" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="16" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<Button name="NewPlayerCenterMiniShowMountsTemplate" virtual="true" abs_x="90" abs_y="90">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentDesc" fonttype="BlackFont19" justifyH="left" justifyV="mobile" text="" autowrap="true" abs_x="360" abs_y="85">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="6" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/rideskillicons/jineng.png"/>
+	</Button>
+	
+	## 前往购买
+	<Button name="NewPlayerCenterMiniShowBuyTemplate" inherits="BtnTemplate12" virtual="true" abs_x="130" abs_y="50">
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$435">
+					<Color r="55" g="54" b="49"/>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):MiniShowBuy_Clicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="NewPlayerCenterMiniShowSkinDisplayFeatureTemplate" virtual="true" abs_x="510" abs_y="30">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentIcon" file="ui/skineffecticons/dragonbrick.png" abs_x="21" abs_y="21">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDesc" fonttype="BlackFont20" justifyH="left" text="" abs_x="500" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="35" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+		</Frames>
+	</Frame>
+
+	##:列表元素(小格子: 坐骑)
+	<Button name="NewPlayerCenterMiniShowMountItemTemplate" virtual="true" abs_x="132" abs_y="132" click_threshold="5">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				<Texture name="$parentIcon" file="ui/roleicons/1.png" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentNameZheZhao" inherits="TemplateBigBkg18" abs_x="130" abs_y="28" >
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="酋长" abs_x="132" abs_y="18">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameZheZhao">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentTag" abs_x="70" abs_y="24" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-4" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentTagBg" file="ui/mobile/texture2/shop.xml" uvname="label_shop_time.png">
+							<Size>
+								<AbsDimension x="70" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont" justifyH="center" text="">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="70" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTagBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Frame name="$parentQua" abs_x="26" abs_y="52" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-1" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentQuaBg" file="ui/mobile/texture0/common.xml" uvname="label_quality_blue.png">
+							<Size>
+								<AbsDimension x="26" y="52"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont16" justifyH="center" text="稀有" autowrap="true" abs_x="16" abs_y="31">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentQuaBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):HorsesBtn_Clicked();</OnClick>
+		</Scripts>
+	</Button>
+	
+	##坐骑展示框(每组7个)
+	<Frame name="NewPlayerCenterMiniShowMountGroupItemTemplate"  virtual="true" click_threshold="5" abs_x="1044" abs_y="132">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="$parentBtn1" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="2" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="3" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn4" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="4" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn5" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="5" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn4">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn6" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="6" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn5">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn7" inherits="NewPlayerCenterMiniShowMountItemTemplate" id="7" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn6">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##武器皮肤展示框	
+	<Button name="NewPlayerCenterMiniShowWeaponItemTemplate" virtual="true" click_threshold="5" abs_x="132" abs_y="132">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景图
+				<Texture name="$parentBg" file="ui/mobile/texture0/shop.xml" uvname="img_icon_custom_gold" abs_x="132" abs_y="132">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##武器Icon
+				<Texture name="$parentIcon" file="ui/gunicons/weapon_default.png" abs_x="132" abs_y="132">
+					<Size>
+						<AbsDimension x="132" y="132"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##限时体验
+				<Texture name="$parentExperienceLimit" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h" hidden="true">
+					<Size>
+						<AbsDimension x="28" y="28"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="6" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+
+				<Texture name="$parentNameZheZhao" inherits="TemplateBigBkg18" abs_x="132" abs_y="28" >
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont16" justifyH="center" text="武器" abs_x="128" abs_y="18">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameZheZhao">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):OwnerWeaponBtn_Clicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	##武器展示框(每组7个)
+	<Frame name="NewPlayerCenterMiniShowWeaponGroupItemTemplate"  virtual="true" click_threshold="5" abs_x="1044" abs_y="132">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="$parentBtn1" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="2" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="3" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn4" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="4" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn5" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="5" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn4">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn6" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="6" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn5">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn7" inherits="NewPlayerCenterMiniShowWeaponItemTemplate" id="7" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn6">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##皮肤组标题
+	<Frame name="NewPlayerCenterMiniShowSkinGroupTitleTemplate" virtual="true" click_threshold="5" abs_x="1044" abs_y="36">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentTitleBg" inherits = "TemplateBkg26" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="left" text="" abs_x="600" abs_y="20">
+					<Color r="73" g="70" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBg">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTips" fonttype="BlackFont18" hidden = "true" justifyH="left" text="$20488" abs_x="950" abs_y="18">
+					<Color r="73" g="70" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentNum" fonttype="BlackFont20" justifyH="right"  text="" abs_x="150" abs_y="20" hidden="true">
+					<Color r="101" g="116" b="108"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentTitleBg">
+							<Offset>
+								<AbsDimension x="-70" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	##皮肤展示框
+	<Button name="NewPlayerCenterMiniShowSkinItemTemplate" virtual="true" click_threshold="5" abs_x="200" abs_y="235">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+			</Anchor>
+		</Anchors>
+		<Frames>
+			##所有皮肤公用部分
+			<Frame name = "$parentCommon" input_transparent = "true">
+				<Layers>
+					<Layer level="BACKGROUND">
+						##背景图
+						<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_icon_man.png" />
+						##角色阴影
+						<Texture name="$parentActorShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="114" abs_y="25" hidden = "true">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-13"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##角色视图
+						<ModelView name="$parentActorView" abs_x="196" abs_y="231" hidden = "true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+						##名字背景
+						<Texture name="$parentNameBg" inherits="TemplateBigBkg18" abs_x="198" abs_y="36" hidden="true">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##名字
+						<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" text="" abs_x="150" abs_y="18" hidden="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNameBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##普通皮肤部分
+			<Frame name = "$parentNormal" hidden = "true" input_transparent = "true">
+				<Layers>
+					<Layer level="BACKGROUND">
+						##限时购买
+						<FontString name="$parentBuyLimit" fonttype="BlackFont20" justifyH="center" text="$21227" abs_x="200" abs_y="30" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="28" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##活动赠送
+						<FontString name="$parentActivityLimit" fonttype="BlackFont20" justifyH="center" text="$21729" abs_x="200" abs_y="30" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="28" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentChangeLogo" abs_x="45" abs_y="45" file="ui/mobile/texture2/common.xml" uvname="icon_52" hidden="true">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##皮肤标签
+					<Frame name="$parentTag" inherits="ShopSkinItemFlagTemplate" hidden="true" />
+					<Frame name="$parentLimitTag" abs_x="102" abs_y="35" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-4" y="-2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentTagBg" file="ui/mobile/texture2/shop.xml" uvname="label_shop_time.png">
+									<Size>
+										<AbsDimension x="102" y="35"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="102" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentTagBg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+			##定制皮肤部分
+			<Frame name = "$parentCustom" hidden = "true" input_transparent = "true">
+				<Layers>
+					<Layer level="BACKGROUND">
+						##空位锁
+						<Texture name="$parentLockIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_lock_add_y.png" hidden="true" abs_x="73" abs_y="92">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##新增空位
+						<Texture name="$parentAddSeatIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_upload_y.png" hidden="true" abs_x="90" abs_y="90">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##空位数量
+						<FontString name="$parentEmptySeatNum" fonttype="BlackFont22" justifyH="center" text="$20239" abs_x="150" abs_y="18" hidden="true">
+							<Color r="73" g="70" b="63"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-55"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##AR上传中
+						<FontString name="$parentARTag" fonttype="BlackFont20" justifyH="left" text="$20309" abs_x="130" abs_y="24" hidden="true">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="5" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##半透明蒙版
+						<Texture name="$parentMaskImage" inherits="TemplateBigBkg18" rel_x="1" rel_y="1" hidden="true"/>
+						##违规提示
+						<Texture name="$parentBreakLawIcon" file="ui/mobile/texture2/shop.xml" uvname="pic_warning" hidden="true" abs_x="114" abs_y="96">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##违规提示字符
+						<FontString name="$parentBreakLawTag" fonttype="BlackFont20" justifyH="center" text="$20310" rel_x="1" abs_y="24" hidden="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="45"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##删除皮肤按钮
+					<Button name="$parentDeleteBtn" abs_x="40" abs_y="40" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="5" y="-14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_no.png" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+											<Offset>
+												<AbsDimension x="0" y="-3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinDeleteBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##AR皮肤上传按钮
+					<Button name="$parentARUploadBtn" abs_x="40" abs_y="40" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="4" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_long_yellow.png"/>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown.png" abs_x="23" abs_y="23">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinARUploadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):SkinBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##皮肤组展示框(每组5个)
+	<Frame name="NewPlayerCenterMiniShowSkinGroupItemTemplate"  virtual="true" click_threshold="5" abs_x="1044" abs_y="235">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="$parentBtn1" inherits="NewPlayerCenterMiniShowSkinItemTemplate" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits="NewPlayerCenterMiniShowSkinItemTemplate" id="2" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits="NewPlayerCenterMiniShowSkinItemTemplate" id="3" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn4" inherits="NewPlayerCenterMiniShowSkinItemTemplate" id="4" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn5" inherits="NewPlayerCenterMiniShowSkinItemTemplate" id="5" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn4">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##迷你show tab模板
+    <Button name="NewPlayerCenterMiniShowTabBtnTemplate" virtual="true" abs_x="160" abs_y="46" inherits="TemplateTabBtn3">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):MiniShowTabBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+	## 迷你show listview模板
+	<ListViewFrame name="NewPlayerCenterMiniShowListView" virtual="true" slidingY="true" slideplane="$parentPlane" abs_x="1044" abs_y="582" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyBkg">
+				<Offset>
+					<AbsDimension x="10" y="12"/>
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBodyBkg">
+				<Offset>
+					<AbsDimension x="-10" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Frame name="$parentPlane" hidden="true" abs_x="1044" abs_y="582" />
+		</Frames>
+	</ListViewFrame>
+
+	##迷你show主界面
+	<Frame name="NewPlayerCenterMiniShow" parent="UIClient" frameStrata="MEDIUM" hidden = "true" abs_x="1104" abs_y="669" framelevel="2505">
+		<Anchors>
+			<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="173" y="54" />
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+				<Offset>
+					<AbsDimension x="2" y="3" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+		   <Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			   <Texture name="$parentPatternBkg" inherits="TemplateBigBkg7_flat" rel_x="1" rel_y="1" hidden="true"/>
+				<Texture name="$parentBodyBkg" inherits="TemplateBigBkg5" abs_x="1072" abs_y="588" hidden="true">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="60" />
+							</Offset>
+						</Anchor>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-26" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##无迷你show时提示页面
+			<Frame name="$parentEmptyFrame">
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="435" abs_y="247">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTip" fonttype="BlackFont40" lineInterval="2" justifyH="center" text="$576" abs_x="700" abs_y="45">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="14"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			</Frame>
+
+			##导航面板
+			<Frame name="$parentTab" abs_x="775" abs_y="46">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBodyBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="-3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					## 装扮按钮
+					<Button name="$parentBtn1" inherits="NewPlayerCenterMiniShowTabBtnTemplate" id="1" >
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+						</Anchors>
+					</Button>
+					## 定制按钮
+					<Button name="$parentBtn2" inherits="NewPlayerCenterMiniShowTabBtnTemplate" id="2" >
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBtn1">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					## 坐骑按钮
+					<Button name="$parentBtn3" inherits="NewPlayerCenterMiniShowTabBtnTemplate" id="3" >
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					## 武器按钮
+					<Button name="$parentBtn4" inherits="NewPlayerCenterMiniShowTabBtnTemplate" id="4" >
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBtn3">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
+
+			## 装扮listview
+			<ListViewFrame name="$parentListView1" inherits="NewPlayerCenterMiniShowListView"/>
+			## 定制listview
+			<ListViewFrame name="$parentListView2" inherits="NewPlayerCenterMiniShowListView"/>
+			## 坐骑listview
+			<ListViewFrame name="$parentListView3" inherits="NewPlayerCenterMiniShowListView"/>
+			## 武器listview
+			<ListViewFrame name="$parentListView4" inherits="NewPlayerCenterMiniShowListView"/>
+		</Frames>
+		<Scripts>
+			<OnHide>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+
+
+	## 坐骑提示框
+	<Frame name="NewPlayerCenterMiniShowHorseTipFrame" inherits="TemplateMainFrame3" frameStrata="MEDIUM" framelevel="2506" hidden="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentWhiteBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="598">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##花纹背景
+				<Texture name="$parentBkgHuaWen" inherits="TemplateBigBkg7_flat" abs_x="1072" abs_y="598">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentWhiteBkg" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentWhiteBkg" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentBkgRight" inherits="TemplateBigBkg23" abs_x="587" abs_y="590">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentWhiteBkg">
+							<Offset>
+								<AbsDimension x="-6" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentLeft" abs_x="482" abs_y="540">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentWhiteBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role" abs_x="208" abs_y="45">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-100"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<ModelView name="$parentRoleView" abs_x="460" abs_y="446">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="-50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateView" abs_x="460" abs_y="446">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentRoleView" relativePoint="center">
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):RotateBtn_MouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):RotateBtn_MouseMove();</OnMouseMove>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentRight" abs_x="569" abs_y="494">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkgRight">
+						<Offset>
+							<AbsDimension x="-3" y="-23"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" inherits="TemplateBigBkg2"/>	
+						<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="568" abs_y="67" >
+							<Anchors>
+								<Anchor point="top" relativeTo="$parent" relativePoint="top" >
+									<Offset>
+										<AbsDimension x="0" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTitleBkg2"  file="ui/mobile/texture3/bigtex/img_texture_board.png"  DrawType="flat" abs_x="483" abs_y="63">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentTitleBkg" relativePoint="center" />
+							</Anchors>
+							<Center>
+								<Left			offsetX="0"  offsetY="0" w="0"	h="0"/>
+								<Center			offsetX="0" offsetY="0" w="511"	h="86"	/>
+								<Right			offsetX="0" offsetY="0" w="0" h="0" />
+							</Center>
+							<Height>
+								<top			offsetX="0"  offsetY="0" w="0"	h="0"/>
+								<Center			offsetX="0" offsetY="0" w="511"	h="86"	/>
+								<Bottom			offsetX="0" offsetY="0" w="0"  h="0" />
+							</Height>
+						</Texture>
+						<Texture name="$parentHpIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="sdjm_icon_shuxing03" abs_x="40" abs_y="40">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBkg">
+									<Offset>
+										<AbsDimension x="32" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentHp" fonttype="BlackFont21" text="250" abs_x="45" abs_y="21">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentHpIcon">
+									<Offset>
+										<AbsDimension x="3" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentSpeedIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="sdjm_icon_shuxing02" abs_x="40" abs_y="40">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentHpIcon">
+									<Offset>
+										<AbsDimension x="135" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentSpeed" fonttype="BlackFont21" text="118" abs_x="45" abs_y="21">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentSpeedIcon">
+									<Offset>
+										<AbsDimension x="3" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentJumpIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="sdjm_icon_shuxing01" abs_x="40" abs_y="40">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentSpeedIcon">
+									<Offset>
+										<AbsDimension x="135" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentJump" fonttype="BlackFont21" text="525" abs_x="45" abs_y="21">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentJumpIcon">
+									<Offset>
+										<AbsDimension x="3" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SlidingFrame name="$parentSkillList" slidingY="true" slideplane="$parentPlane" abs_x="500" abs_y="370">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleBkg">
+								<Offset>
+									<AbsDimension x="0" y="5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="500" y="370"/>
+								</Size>
+							</Frame>
+							<Button name="$parentSkill1" inherits="NewPlayerCenterMiniShowMountsTemplate" id="1"/>
+							<Button name="$parentSkill2" inherits="NewPlayerCenterMiniShowMountsTemplate" id="2">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentSkill1">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentSkill3" inherits="NewPlayerCenterMiniShowMountsTemplate" id="3">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentSkill2">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentSkill4" inherits="NewPlayerCenterMiniShowMountsTemplate" id="4">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentSkill3">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+						</Frames>
+					</SlidingFrame>
+
+					-- 前往购买
+					<Button name="$parentShopBuy" inherits="NewPlayerCenterMiniShowBuyTemplate" hidden="true" id="3">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-23"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		 <Scripts>
+            <OnHide>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):HorseTipFrame_OnHide();</OnHide>
+        </Scripts>
+	</Frame>
+
+	## 装扮提示框
+	<Frame name="NewPlayerCenterMiniShowDressTipFrame" inherits="TemplateMainFrame3" frameStrata="MEDIUM" framelevel="2506" hidden="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentWhiteBkg" file="ui/mobile/texture2/bigtex/dtxx_beijingtu.png" stretchedge="false" abs_x="1067" abs_y="588">
+                    <Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentLeft" abs_x="482" abs_y="540">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentWhiteBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<ModelView name="$parentRoleView" abs_x="460" abs_y="490">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="-50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateView" abs_x="460" abs_y="490">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentRoleView" relativePoint="center">
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):RotateBtn_MouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):RotateBtn_MouseMove();</OnMouseMove>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentRight" abs_x="572" abs_y="494">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentWhiteBkg">
+						<Offset>
+							<AbsDimension x="-13" y="-23"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" inherits="TemplateBigBkg2" />	
+						<Texture name="$parentNameBg" inherits="TemplateBigBkg31" rel_x="1.0" abs_y="67">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-1" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNameBg1" inherits="TemplateBigBkg7_flat" rel_x="1.0" abs_y="67">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-1" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont30" text="">
+							<Color r="77" g="112" b="116"/>
+							<Size>
+								<AbsDimension x="400" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+									<Offset>
+										<AbsDimension x="30" y="25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont24" text="" abs_x="400" abs_y="24" hidden="false">
+							<Color r="211" g="65" b="1"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentIP1" abs_x="238" abs_y="55" hidden="true">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentDesc">
+									<Offset>
+										<AbsDimension x="0" y="80"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##皮肤特性描述
+					<Button name="$parentFeatureTips" abs_x="510" abs_y="200">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+								<Offset>
+									<AbsDimension x="35" y="230"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="550" abs_y="2">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-3" y="-16"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBg" inherits="TemplateBkg26" abs_x="550" abs_y="36">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-3" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" fonttype="BlackFont20" lineInterval="1" text="$9056" abs_x="300" abs_y="22">
+									<Color r="214" g="91" b="0"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parent1" id = "1" inherits="NewPlayerCenterMiniShowSkinDisplayFeatureTemplate" hidden="true" />
+							<Frame name="$parent2" id = "2" inherits="NewPlayerCenterMiniShowSkinDisplayFeatureTemplate" hidden="true" />
+							<Frame name="$parent3" id = "3" inherits="NewPlayerCenterMiniShowSkinDisplayFeatureTemplate" hidden="true" />
+							<Frame name="$parent4" id = "4" inherits="NewPlayerCenterMiniShowSkinDisplayFeatureTemplate" hidden="true" />
+							<Frame name="$parent5" id = "5" inherits="NewPlayerCenterMiniShowSkinDisplayFeatureTemplate" hidden="true" />
+						</Frames>
+					</Button>
+					<RichText name="$parentDesc" lineInterval="5" multiLine="false" fonttype="BlackFont21" input_transparent="true" abs_x="550" abs_y="150">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentBg">
+								<Offset>
+									<AbsDimension x="0" y="78"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+
+					-- 前往购买
+					<Button name="$parentShopBuy" inherits="NewPlayerCenterMiniShowBuyTemplate" hidden="true" id="1">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-23"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	## 定制提示框
+	<Frame name="NewPlayerCenterMiniShowCustomTipFrame" inherits="TemplateMainFrame3" frameStrata="MEDIUM" framelevel="2506" hidden="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentWhiteBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="598">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##花纹背景
+				<Texture name="$parentBkgHuaWen" inherits="TemplateBigBkg7_flat" abs_x="1072" abs_y="598">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentWhiteBkg" />
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentWhiteBkg" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentBkgRight" inherits="TemplateBigBkg23" abs_x="522" abs_y="590">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentWhiteBkg">
+							<Offset>
+								<AbsDimension x="-4" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentLeft" abs_x="500" abs_y="540">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentWhiteBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role" abs_x="208" abs_y="45">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-100"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<ModelView name="$parentRoleView" abs_x="460" abs_y="446">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="-50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateView" abs_x="460" abs_y="446">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentRoleView" relativePoint="center">
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):RotateBtn_MouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("NewPlayerCenterMiniShow"):RotateBtn_MouseMove();</OnMouseMove>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			<ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" abs_x="450" abs_y="520">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgRight">
+						<Offset>
+							<AbsDimension x="0" y="61"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="450" abs_y="520" />
+				</Frames>
+			</ListViewFrame>
+		</Frames>
+	</Frame>
+</Ui>

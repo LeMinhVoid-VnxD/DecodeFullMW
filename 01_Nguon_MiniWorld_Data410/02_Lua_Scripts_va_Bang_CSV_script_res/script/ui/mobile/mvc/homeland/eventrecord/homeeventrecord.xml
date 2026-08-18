@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##家园记录事件主界面
+	<Script file="ui/mobile/mvc/homeland/eventrecord/HomeEventRecordCtrl.lua" />
+	<Script file="ui/mobile/mvc/homeland/eventrecord/HomeEventRecordModel.lua" />
+	<Script file="ui/mobile/mvc/homeland/eventrecord/HomeEventRecordView.lua" />
+	
+	##记录事件模板
+   	<Frame name="RecordList_cellTemplate" virtual="true" abs_x="688" abs_y="100">	    
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>				
+				<Texture name="$parentHeadIcon" file="ui/roleicons/1.png" abs_x="58" abs_y="58">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="22" y="0" />
+							</Offset>
+						</Anchor>						
+					</Anchors>
+				</Texture>
+				<Texture name="$parentHeadFrame" file="ui/headframes/1.png" abs_x="82" abs_y="82">					
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentHeadIcon">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentSexIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_male" abs_x="21" abs_y="21">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="303" y="23" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont24" abs_x="250" abs_y="24">
+					<Color r="61" g="69" b="70" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="107" y="23"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentEvent" fonttype="BlackFont20" abs_x="400" abs_y="20" autowrap="true">
+					<Color r="77" g="132" b = "131" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="107" y="57"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTime" fonttype="BlackFont20" abs_x="100" abs_y="20">
+					<Color r="0" g="151" b = "137" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="100" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentEnterFriendHomeBtn" abs_x="50" abs_y="53">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-27" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/operate.xml" uvname="icon_track" abs_x="29" abs_y="30">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomeEventRecord"):EnterFriendHomeBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>	
+	</Frame>
+
+	##家园提醒事件模板
+   	<Frame name="RemindList_cellTemplate" virtual="true" abs_x="170" abs_y="40">
+		<Frames>
+			<RichText name="$parentEvent" lineInterval="12" fonttype="BlackFont18" abs_x="170" abs_y="20" autoextend="true">
+				<Color r="101" g="116" b = "118" />
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentTime" fonttype="BlackFont" justifyH="right" justifyV="middle" abs_x="170" abs_y="16">
+					<Color r="142" g="153" b = "155" />
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-13"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg20_H1" abs_x="170" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<!--新家园记录事件-->
+	<Frame name="HomeEventRecord" parent="UIClient" frameStrata="MEDIUM" framelevel="2000">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="987" abs_y="507">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="987" abs_y="507">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<offset>
+								<AbsDimension x="0" y="52" />
+							</offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTabsBkg" inherits="TemplateBigBkg11" abs_x="200" abs_y="475">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="-16" y="20" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentContent" inherits="TemplateBigBkg5" abs_x="714" abs_y="414">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="16" y="80" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				## 内容为空对应的提示 overSea
+				<Texture name="$parentNoPlayer"  hidden="false" file="ui/mobile/texture2/bigtex/img_noroom.png">
+					<Size>
+						<AbsDimension x="435" y="247"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentContent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentEmptyTxt" hidden="false" fonttype="BlackFont38" justifyH="center" text="$50192">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="930" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentNoPlayer">
+							<Offset>
+								<AbsDimension x="0" y="35"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<Texture name="$parentLine" inherits="TemplateBkg14" abs_x="11" abs_y="500">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="-232" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>				
+				<Texture name="$parentTipsBkg" inherits="TemplateBkg25" abs_x="198" abs_y="36">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTabsBkg" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTips" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$35213" abs_x="200" abs_y="24" >
+					<Color r="77" g="112" b="117" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTipsBkg">
+							<Offset>
+								<AbsDimension x="0" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTodayVisterText" lang_ver="ptb" justifyV="middle" fonttype="BlackFont20" text="$41174" autowrap="true" abs_x="150" abs_y="20">
+					<Color r="61" g="69" b="70" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="28" y="31"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTodayVisterText" justifyV="middle" fonttype="BlackFont20" text="$41174" autowrap="true" abs_x="100" abs_y="20">
+					<Color r="61" g="69" b="70" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="28" y="31"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTotalVisterText" lang_ver="ptb" justifyV="middle" fonttype="BlackFont20" text="$41175" autowrap="true" abs_x="180" abs_y="20">
+					<Color r="61" g="69" b="70" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="278" y="31"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTotalVisterText" justifyV="middle" fonttype="BlackFont20" text="$41175" autowrap="true" abs_x="120" abs_y="20">					
+					<Color r="61" g="69" b="70" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="278" y="31"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTodayVister" justifyV="middle" fonttype="BlackFont30" autowrap="true" abs_x="150" abs_y="30">
+					<Color r="250" g="122" b="15" />
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTodayVisterText">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTotalVister" justifyV="middle" fonttype="BlackFont30" autowrap="true" abs_x="150" abs_y="30">					
+					<Color r="250" g="122" b="15" />
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTotalVisterText">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="984" abs_y="61">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="2" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-10" y="-4" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomeEventRecord"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##事件记录列表
+			<ListViewFrame name="$parentRecordList" slidingY="true" slideplane="$parentPlane" abs_x="714" abs_y="394" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="-3" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="714" abs_y="394" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			##事件提醒列表
+			<ListViewFrame name="$parentRemindList" slidingY="true" slideplane="$parentPlane" abs_x="200" abs_y="430" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentTabsBkg">
+						<Offset>
+							<AbsDimension x="15" y="40" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="200" abs_y="430" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			<RichText name="$parentHomeEvent" lineInterval="12" fonttype="BlackFont18" hidden="true" abs_x="170" abs_y="20" autoextend="true">
+				<Color r="101" g="116" b = "118" />
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentTabsBkg">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+	</Frame>
+</Ui>

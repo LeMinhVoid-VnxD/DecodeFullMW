@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##迷你工坊首页
+	<Script file="ui/mobile/mvc/miniworks/search/MiniWorksFrameSearchModel.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/search/MiniWorksFrameSearchView.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/search/MiniWorksFrameSearchCtrl.lua"/>
+
+	<!-- 工坊搜索热词条目模板 -->
+	<Button name="MiniWorksFrameSearchHotWordTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="100" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/common.xml" uvname="btn_trending_yellow" hidden="false" DrawType="ninesquare">
+					<NineSquare>
+						<Topleft offsetX="0" offsetY="0" w="15" h="15"/>
+						<Top offsetX="15" offsetY="0" w="20" h="15"/>
+						<Topright offsetX="35" offsetY="0" w="15" h="15"/>
+						<Left offsetX="0" offsetY="15" w="15" h="15"/>
+						<Center offsetX="15" offsetY="15" w="20" h="15"/>
+						<Right offsetX="35" offsetY="15" w="15" h="15"/>
+						<Bottomleft offsetX="0" offsetY="35" w="15" h="15"/>
+						<Bottom offsetX="15" offsetY="35" w="20" h="15"/>
+						<Bottomright offsetX="35" offsetY="35" w="15" h="15"/>
+						<OffSet x="15" y="15" />
+					</NineSquare>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="地图">
+					<Color r="0" g="0" b="0"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentFireMark" file="ui/mobile/texture0/common_icon.xml" hidden="true" uvname="icon_trending_red">
+					<Size>
+						<AbsDimension x="25" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="6" y="-16.4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>WorkSelectHotWordTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	
+	<!-- 工坊搜索记录条目模板 -->
+	<Button name="MiniWorksFrameSearchRecordTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="100" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty" hidden="false" DrawType="ninesquare">
+					<NineSquare>
+						<Topleft		offsetX="0"  offsetY="0"	w="44"	h="17"/>
+						<Top			offsetX="44" offsetY="0"	w="44"  h="17"/>
+						<Topright		offsetX="88" offsetY="0"	w="44"	h="17"/>
+						<Left			offsetX="0"  offsetY="17"	w="44"	h="17"/>
+						<Center			offsetX="44" offsetY="17"	w="44"	h="17"/>
+						<Right			offsetX="88" offsetY="17"	w="44"	h="17"/>
+						<Bottomleft		offsetX="0"  offsetY="34"	w="44"	h="17"/>
+						<Bottom			offsetX="44" offsetY="34"	w="44"	h="17"/>
+						<Bottomright	offsetX="88" offsetY="34"	w="44"	h="17"/>
+						<OffSet x="44" y="17" />
+					</NineSquare>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="地图">
+					<Color r="54" g="53" b="53"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>WorkSelectTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	<Button name="MiniSearchNewSwitchBtnFilterTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="180" y="46"/>
+		</Size>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentType" fonttype="BlackFont20" justifyH="center" fontStyle="border" shadowcolor="ff4e2b09" text="$3864">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="120" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg8" />
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg8" />
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):NewSwitchBtnFilter_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="MiniWorksFrameSearch" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1501" input_transparent="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="60"/>
+				</Offset>
+			</Anchor>
+			<!-- <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+
+			</Anchor> -->
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentChenDi" file="ui/white.png" hidden =  "true" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-60"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg5"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<ListViewFrame name="MiniWorksFrameSearchRoomList" abs_x='1080' abs_y="580" slidingY="true" slideplane="$parentPlane">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x='1080' abs_y="580" />					
+				</Frames>
+			</ListViewFrame>			
+			<ListViewFrame name="$parentArchiveBox" slidingY="true" slideplane="$parentPlane">
+				<Layers>
+            		<Layer level="BACKGROUND">
+            			<FontString name="$parentHistoryRecord" fonttype="BlackFont24" justifyH="center"  text="$21821">
+            				<Color r="77" g="112" b="117" />
+							<Size>
+								<AbsDimension x="120" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="19" y="20"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="1032" abs_y="2">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHistoryRecord">
+									<Offset>
+										<AbsDimension x="13" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentHotRecommend" fonttype="BlackFont24" justifyH="center"  text="$21853">
+							<Color r="77" g="112" b="117" />
+							<Size>
+								<AbsDimension x="120" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="19" y="270"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentLine1" inherits="TemplateBkg20" abs_x="1032" abs_y="2">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHotRecommend">
+									<Offset>
+										<AbsDimension x="13" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNull" file="ui/mobile/texture2/bigtex/img_noroom.png" hidden="true">
+							<Size>
+								<AbsDimension x="435" y="247" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNullTitle" fonttype="BlackFont36" lineInterval="1" text="$21824" justifyH="center" hidden="true" >
+							<Color r="77" g="112" b="117"/>
+							<Size>
+								<AbsDimension x="500" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Bottom" relativePoint="Bottom" relativeTo="$parentNull">
+									<Offset>
+										<AbsDimension x="0" y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentNullTitleS" fonttype="BlackFont24" lineInterval="1" text="$21824" justifyH="center" hidden="true" >
+							<Color r="77" g="112" b="117"/>
+							<Size>
+								<AbsDimension x="500" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="Bottom" relativeTo="$parentNullTitle">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+            		</Layer>
+            	</Layers>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-10" y="10"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" >
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+						</Anchors>
+					</Frame>					
+					<Button name="$parentDelBtn" abs_x="91" abs_y="43">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="-2" y="-7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont18" justifyH="center" text="$21852">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="53" y="17"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg15" />
+						<PushedTexture name="$parentPushed" inherits="TemplateBkg15" abs_x="87" abs_y="40" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):ArchiveBoxDelBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentHotWordSwitchBtn" abs_x="91" abs_y="43">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentLine1">
+								<Offset>
+									<AbsDimension x="-2" y="-7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont18" justifyH="center" text="$3849">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="53" y="17"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg15" />
+						<PushedTexture name="$parentPushed" inherits="TemplateBkg15" abs_x="87" abs_y="40" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):HotWordSwitchBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name="$parentRoleInfo" rel_x="1.0" abs_y="100" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="6" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentName" fonttype="BlackFont24" abs_x="190" abs_y="22" text="迷你队长">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="120" y="20"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentUin" fonttype="BlackFont20" text="123456" abs_x="190" abs_y="22">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="1052" abs_y="2">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							
+							<Button name="$parentHead" abs_x="84" abs_y="84">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+										<Offset>
+											<AbsDimension x="16" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentHeadBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" />
+										<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="81" abs_y="81">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentIconBox" file="ui/headframes/1.png" abs_x="105" abs_y="105">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							
+												
+							</Button>
+
+							<Button name="$parentFocus" abs_x="50" abs_y="53" hidden="false" inherits="TemplateBtn17">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+										<Offset>
+												<AbsDimension x="-171" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_n.png" abs_x="29" abs_y="24">
+											<Anchors>
+												<Anchor point="center" relativePoint="center"/>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):RoleInfoAttention_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+
+							<Button name="$parentBack" abs_x="200" abs_y="70">
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parent" >
+										<Offset>
+											<AbsDimension x="-15" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont18" abs_x="190" abs_y="22" text="$177">
+											<Color r="55" g="54" b="51"/>
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" >
+													<Offset>
+														<AbsDimension x="80" y="2"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							
+								<NormalTexture name="$parentNormal"   inherits="TemplateBkg9" abs_x="111" abs_y="42" >
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+									</Anchors>
+								</NormalTexture>
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBkg9" abs_x="111" abs_y="42" >
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+									</Anchors>
+								</PushedTexture>		
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):RoleInfoBack_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+
+						</Frames>
+					</Frame>
+
+					<Button name="$parentRecord1" inherits="MiniWorksFrameSearchRecordTemplate" id="1"/>
+					<Button name="$parentRecord2" inherits="MiniWorksFrameSearchRecordTemplate" id="2"/>
+					<Button name="$parentRecord3" inherits="MiniWorksFrameSearchRecordTemplate" id="3"/>
+					<Button name="$parentRecord4" inherits="MiniWorksFrameSearchRecordTemplate" id="4"/>
+					<Button name="$parentRecord5" inherits="MiniWorksFrameSearchRecordTemplate" id="5"/>
+					<Button name="$parentRecord6" inherits="MiniWorksFrameSearchRecordTemplate" id="6"/>
+					<Button name="$parentRecord7" inherits="MiniWorksFrameSearchRecordTemplate" id="7"/>
+					<Button name="$parentRecord8" inherits="MiniWorksFrameSearchRecordTemplate" id="8"/>
+					<Button name="$parentRecord9" inherits="MiniWorksFrameSearchRecordTemplate" id="9"/>
+					<Button name="$parentRecord10" inherits="MiniWorksFrameSearchRecordTemplate" id="10"/>
+
+					<Button name="$parentHotWord1" inherits="MiniWorksFrameSearchHotWordTemplate" id="1"/>
+					<Button name="$parentHotWord2" inherits="MiniWorksFrameSearchHotWordTemplate" id="2"/>
+					<Button name="$parentHotWord3" inherits="MiniWorksFrameSearchHotWordTemplate" id="3"/>
+					<Button name="$parentHotWord4" inherits="MiniWorksFrameSearchHotWordTemplate" id="4"/>
+					<Button name="$parentHotWord5" inherits="MiniWorksFrameSearchHotWordTemplate" id="5"/>
+					<Button name="$parentHotWord6" inherits="MiniWorksFrameSearchHotWordTemplate" id="6"/>
+					<Button name="$parentHotWord7" inherits="MiniWorksFrameSearchHotWordTemplate" id="7"/>
+					<Button name="$parentHotWord8" inherits="MiniWorksFrameSearchHotWordTemplate" id="8"/>
+					<Button name="$parentHotWord9" inherits="MiniWorksFrameSearchHotWordTemplate" id="9"/>
+					<Button name="$parentHotWord10" inherits="MiniWorksFrameSearchHotWordTemplate" id="10"/>
+					<Button name="$parentHotWord11" inherits="MiniWorksFrameSearchHotWordTemplate" id="11"/>
+					<Button name="$parentHotWord12" inherits="MiniWorksFrameSearchHotWordTemplate" id="12"/>
+					<Button name="$parentHotWord13" inherits="MiniWorksFrameSearchHotWordTemplate" id="13"/>
+					<Button name="$parentHotWord14" inherits="MiniWorksFrameSearchHotWordTemplate" id="14"/>
+					<Button name="$parentHotWord15" inherits="MiniWorksFrameSearchHotWordTemplate" id="15"/>
+					<Button name="$parentHotWord16" inherits="MiniWorksFrameSearchHotWordTemplate" id="16"/>
+					<Button name="$parentHotWord17" inherits="MiniWorksFrameSearchHotWordTemplate" id="17"/>
+					<Button name="$parentHotWord18" inherits="MiniWorksFrameSearchHotWordTemplate" id="18"/>
+					<Button name="$parentHotWord19" inherits="MiniWorksFrameSearchHotWordTemplate" id="19"/>
+					<Button name="$parentHotWord20" inherits="MiniWorksFrameSearchHotWordTemplate" id="20"/>
+					<Button name="$parentHotWord21" inherits="MiniWorksFrameSearchHotWordTemplate" id="21"/>
+					<Button name="$parentHotWord22" inherits="MiniWorksFrameSearchHotWordTemplate" id="22"/>
+					<Button name="$parentHotWord23" inherits="MiniWorksFrameSearchHotWordTemplate" id="23"/>
+					<Button name="$parentHotWord24" inherits="MiniWorksFrameSearchHotWordTemplate" id="24"/>
+					<Button name="$parentHotWord25" inherits="MiniWorksFrameSearchHotWordTemplate" id="25"/>
+
+				</Frames>
+			</ListViewFrame>
+			<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x='1080' abs_y="580" />					
+				</Frames>
+			</ListViewFrame>
+			
+			<!--搜索框-->
+			<Frame name="$parentInput">
+				<Size>
+					<AbsDimension x="387" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomLeft" relativePoint="topLeft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="185" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentEditBkg" inherits="TemplateBkg8" />
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--搜索输入框-->
+					<SafeEditBox name="$parentEdit" letters="30" multiLine="false"  >
+						<Size>
+							<AbsDimension x="340" y="20" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentEditBkg" relativePoint="left">
+								<Offset>
+									<AbsDimension x="1" y="1" />
+								</Offset>
+							</Anchor>
+							<Anchor point="right" relativeTo="$parentEditBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-81" y="1" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$21820" textcolor="ffb9b9b9"/>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):OnFocusLost();</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):OnEnterPressed();</OnEnterPressed>
+						</Scripts>
+					</SafeEditBox>
+					<!--搜索按钮-->
+					<Button name="$parentBtn">
+						<Size>
+							<AbsDimension x="47" y="50" />
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentEditBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_search" abs_x="25" abs_y="25" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_square_yellow.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_square_yellow.png" >
+							<Size>
+								<AbsDimension x="44" y="47"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):SearchInputBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Button name="$parentFilter">
+				<Size>
+					<AbsDimension x="164" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentInput">
+						<Offset>
+							<AbsDimension x="5" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentType" fonttype="BlackFont20" justifyH="center" fontStyle="border" shadowcolor="ff4e2b09" text="$3864">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="120" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentArrowIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+							<Size>
+								<AbsDimension x="20" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg8" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg8" >
+					<Size>
+						<AbsDimension x="164" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):CollectFilter_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentNewSwitchBtn">
+				<Size>
+					<AbsDimension x="180" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentInput">
+						<Offset>
+							<AbsDimension x="-5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentType" fonttype="BlackFont20" justifyH="center" fontStyle="border" shadowcolor="ff4e2b09" text="$3864">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="120" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentArrowIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+							<Size>
+								<AbsDimension x="20" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-13" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg8" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg8" >
+					<Size>
+						<AbsDimension x="180" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Frames>
+					<Button name="$parentCloseBtn">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="MiniWorksFrameSearch" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="-192" y="-116"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativeTo="MiniWorksFrameSearch" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="16" y="-7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):NewSwitchBtnCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentFilter1" inherits="MiniSearchNewSwitchBtnFilterTemplate" id="1">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-1"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentFilter2" inherits="MiniSearchNewSwitchBtnFilterTemplate" id="2">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentFilter1">
+								<Offset>
+									<AbsDimension x="0" y="-1"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):NewSwitchBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentSwitchBtn" hidden="true">
+				<Size>
+					<AbsDimension x="123" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentInput">
+						<Offset>
+							<AbsDimension x="0" y="-1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_long_yellow.png"  DrawType="ninesquare"> 
+							<NineSquare>
+								<Topleft		offsetX="0"  offsetY="0"	w="10"	h="17"/>
+								<Top			offsetX="10" offsetY="0"	w="10"  h="17"/>
+								<Topright		offsetX="20" offsetY="0"	w="10"	h="17"/>
+								<Left			offsetX="0"  offsetY="17"	w="10"	h="17"/>
+								<Center			offsetX="10" offsetY="17"	w="10"	h="17"/>
+								<Right			offsetX="20" offsetY="17"	w="10"	h="17"/>
+								<Bottomleft		offsetX="0"  offsetY="34"	w="10"	h="17"/>
+								<Bottom			offsetX="10" offsetY="34"	w="10"	h="17"/>
+								<Bottomright	offsetX="20" offsetY="34"	w="10"	h="17"/>
+								<OffSet x="10" y="17" />
+							</NineSquare>
+							<Size>
+								<AbsDimension x="123" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap">
+							<Size>
+								<AbsDimension x="30" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="13" y="-1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentType" fonttype="BlackFont20" justifyH="center"  text="$21818">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="80" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):SwitchBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentDelBtn">
+				<Size>
+					<AbsDimension x="49" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parentInput">
+						<Offset>
+							<AbsDimension x="-48" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="19" abs_y="19">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="13" abs_y="13">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):DelBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentTickBtn" abs_x="175" abs_y="24">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-60" y="-42"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="board_check.png" abs_x="24" abs_y="24">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTick" file="ui/mobile/texture2/room.xml" uvname="icon_tick" hidden="true" abs_x="28" abs_y="28">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" text="$34417">
+							<Color r="55" g="54" b="47"/>
+							<Size>
+								<AbsDimension x="140" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="10" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):TickBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn" abs_x="36" abs_y="46" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentTickBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="55" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):CloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

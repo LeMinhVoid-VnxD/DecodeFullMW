@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ui>
+    <Script file="ui/mobile/mvc/BirthdayParty/BirthdayPartyLetter/BirthdayPartyLetterCtrl.lua" />
+    <Script file="ui/mobile/mvc/BirthdayParty/BirthdayPartyLetter/BirthdayPartyLetterView.lua" />
+    <Script file="ui/mobile/mvc/BirthdayParty/BirthdayPartyLetter/BirthdayPartyLetterModel.lua" />
+
+    ## 装扮模板
+	<Frame name="BirthdayLetterPlayerTemplate" abs_x ="177" abs_y ="250" virtual="true">
+		<Layers>
+            <Layer level="BACKGROUND">
+                ## 底台 
+                <Texture name="$parentStageBkg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_Platform_pos" abs_x ="254" abs_y ="191">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 3D人物
+				<ModelView name="$parentModelView" abs_x="370" abs_y ="380">
+					<Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-25"/>
+                            </Offset>
+                        </Anchor>
+					</Anchors>
+				</ModelView>
+                
+                ## 选中态
+                <Texture name="$parentSelLight" file="ui/mobile/texture0/birthdaysystem.xml" uvname="sel_Lights" abs_x ="206" abs_y ="236" hidden="true" >
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-48"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 装扮名称背景
+                <Texture name="$parentNameBkg" file="ui/white.png" color="FFF7D79D" stretchedge="true" abs_x="90" abs_y ="24">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-36"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                
+                ## 装扮名称
+                <FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="" abs_x="71" abs_y ="17">
+                    <Color r="174" g="82" b="11"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+
+        <Frames>
+            ## 旋转按钮
+            <!-- <Button name="$parentRotateView" abs_x="160" abs_y ="185" >
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentModelView" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseDown>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):DressUp_OnMouseDown();</OnMouseDown>
+                    <OnMouseMove>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):DressUp_OnMouseMove();</OnMouseMove>
+                </Scripts>
+            </Button> -->
+
+            ## 选中按钮
+            <Button name="$parentSelView" rel_x="1.0" rel_y="1.0" >
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):DressSelect_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+	</Frame>
+
+    ## 列表选择Item模板
+	<Button name="BirthdayLetterListViewItemTemplate" virtual="true" abs_x="153" abs_y="56">
+        <NormalTexture name="$parentNormal" file="ui/white.png" color="FFA24800" stretchedge="true"/>
+        <PushedTexture name="$parentPushedBG" file="ui/white.png" color="FFA24800" stretchedge="true"/>
+        <Layers>
+			<Layer level="overlay">
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" text="" abs_x="60" abs_y ="20">
+                    <Color r="219" g="216" b="216"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+        <Scripts>
+            <OnMouseDown>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):BirthdaySelect_OnMouseDown();</OnMouseDown>
+            <OnMouseUp>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):BirthdaySelect_OnMouseUp();</OnMouseUp>
+            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):BirthdaySelect_OnClick();</OnClick>
+        </Scripts>
+	</Button>
+
+    ## 关闭按钮模板
+	<Button name="BirthdayLetterCloseTemplate" virtual="true" abs_x="51" abs_y="57">
+        <NormalTexture name="$parentNormal" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_close_yellow"/>
+        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_close_yellow" rel_x="0.9" rel_y="0.9">
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </PushedTexture>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):CloseView_OnClick();</OnClick>
+        </Scripts>
+	</Button>
+
+    ## 列表选择框模板
+    <Frame name="BirthdayLetterListViewContainerTemplate" virtual="true" abs_x="215" abs_y="387" input_transparent="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+                ## 列表选择背景
+                <Texture name="$parentSelBg" file="ui/white.png" color="FFA24800" stretchedge="true" abs_x="153" abs_y="50"/>
+                
+                ## 列表选择值
+                <FontString name="$parentSelTxt" fonttype="BlackFont26" justifyH="center" justifyV="center" text="" abs_x="130" abs_y="24">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentSelBg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                ## 列表选择下拉背景
+                <Texture name="$parentPullBg" file="ui/white.png" color="FFA24800" stretchedge="true" hidden="true" abs_x="153" abs_y="326">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentSelBg">
+                            <Offset>v
+                                <AbsDimension x="0" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 下拉按钮
+            <Button name="$parentPullBtn" abs_x="61" abs_y="60">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentSelBg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_sm_ye2">
+                    <Angle value="180"/>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_sm_ye2" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                    <Angle value="180"/>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):BirthdaySelectPull_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##  下拉列表
+            <ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" abs_x="153" abs_y="306" hidden="true">
+				<Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentPullBg">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="153" abs_y="306" />
+				</Frames>
+			</ListViewFrame>
+        </Frames> 
+    </Frame>
+
+    ## 选择按钮模板
+    <Button name="BirthdayLetterBtTemplate" abs_x="160" abs_y="59" virtual="true">
+        <NormalTexture name="$parentNormal" file="ui/mobile/texture0/battlepass.xml" uvname="btn_med_yellow"/>
+        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/battlepass.xml" uvname="btn_med_yellow" rel_x="0.9" rel_y="0.9">
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </PushedTexture>
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="$110052" abs_x="120" abs_y="29">
+                    <Color r="174" g="90" b="1"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Button>
+
+
+    ## 生日派对邀请函
+    <Frame name="BirthdayPartyLetter" parent="UIClient" frameStrata="HIGH" framelevel="100" input_transparent="false" hidden="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/bg_bats.png" stretchedge="true" />
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 邀请填写弹框
+            <Frame name="$parentContainer">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentTitle" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_title_incard" abs_x="830" abs_y="194">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+        
+                        ## 生日选择背景
+                        <Texture name="$parentSelBirBg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_jiantou" abs_x="304" abs_y="42">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="170" y="205"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        
+                        <FontString name="$parentSelBirTxt" fonttype="BlackFont26" justifyH="center" text="$4840" abs_x="231" abs_y="25">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentSelBirBg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+        
+                        ## 生日选择提示
+                        <FontString name="$parentSelBirHint" fonttype="BlackFont18" justifyH="center" text="$4845" abs_x="273" abs_y="18">
+                            <Color r="206" g="86" b="66"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentSelBirBg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="4"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+        
+                        ## 生日额外奖励
+                        <Texture name="$parentExtraAward" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_reward" abs_x="176" abs_y="138">
+                            <Anchors>
+                                <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-39" y="264"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+        
+                        ## 星座背景
+                        <Texture name="$parentConstellationBg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="board_conan" abs_x="174" abs_y="54">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topright" relativeTo="$parentDayContainer">
+                                    <Offset>
+                                        <AbsDimension x="36" y="-6"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+        
+                        ## 星座文本
+                        <FontString name="$parentConstellationTxt" fonttype="BlackFont24" justifyH="center" text="" abs_x="70" abs_y="23">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentConstellationBg">
+                                    <Offset>
+                                        <AbsDimension x="65" y="6"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+        
+                        ## 政策提示背景
+                        <Texture name="$parentPolicyHintBg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_hint" hidden="true" abs_x="829" abs_y="96">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+                                    <Offset>
+                                        <AbsDimension x="-84" y="60"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+
+                        ## 政策提示文本
+                        <FontString name="$parentPolicyHint" fonttype="BlackFont22" justifyH="left" justifyV="middle" text="" hidden="true" abs_x="735" abs_y="22">
+                        <Color r="75" g="33" b="16"/>
+                            <Anchors>
+                                <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentPolicyHintBg">
+                                    <Offset>
+                                        <AbsDimension x="80" y="-30"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Frames>
+                    ##  选择装扮1
+                    <Frame name="$parentDress1" inherits="BirthdayLetterPlayerTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-339" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    
+                    ##  选择装扮2
+                    <Frame name="$parentDress2" inherits="BirthdayLetterPlayerTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+        
+                    ##  选择装扮3
+                    <Frame name="$parentDress3" inherits="BirthdayLetterPlayerTemplate" id="3">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="339" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+        
+                    ##  选择装扮3
+                    <Frame name="$parentDress4" inherits="BirthdayLetterPlayerTemplate" id="4">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="339" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame> 
+                    
+                    ## 选择月份列表
+                    <Frame name="$parentMonthContainer" inherits="BirthdayLetterListViewContainerTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topright" relativeTo="$parentSelBirBg">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+        
+                    ## 选择日份列表
+                    <Frame name="$parentDayContainer" inherits="BirthdayLetterListViewContainerTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topright" relativeTo="$parentMonthContainer">
+                                <Offset>
+                                    <AbsDimension x="31" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+
+                    ## 提示按钮
+                    <Button name="$parentTipsBtn" abs_x="50" abs_y="50">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+                                <Offset>
+                                    <AbsDimension x="-38" y="77"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <NormalTexture name="$parentNormal" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_yuan_wh"/>
+                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_yuan_wh" rel_x="0.9" rel_y="0.9">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </PushedTexture>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):HelpTips_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+
+                    ## 帮助提示框
+                    <Frame name="$parentHelpTipDlg" abs_x="343" abs_y="241" hidden="true">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentTipsBtn">
+                                <Offset>
+                                    <AbsDimension x="58" y="-7"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBkg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="board_qipao" abs_x="343" abs_y ="242">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                
+                                <FontString name="$parentName" fonttype="BlackFont18" justifyH="left" text="$110053" abs_x="309" abs_y ="200" autowrap="true" lineInterval="14">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                            <Offset>
+                                                <AbsDimension x="2" y="5"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+
+                    ## 关闭按钮
+                    <Button name="$parentCloseBtn" inherits="BirthdayLetterCloseTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-36" y="20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+
+                    ## 领取按钮
+                    <Button name="$parentAwardBtn" inherits="BirthdayLetterBtTemplate" abs_x="160" abs_y="59">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="-43"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):GetAwards_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            ## 确认弹框
+            <Frame name="$parentSureContainer" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent" rel_x="1.0" rel_y="1.0">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="B1000000" />
+
+                        ## 3D人物
+                        <ModelView name="$parentModelView" abs_x="370" abs_y ="380">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="60"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </ModelView>
+
+                        ## 装扮名称背景
+                        <Texture name="$parentNameBg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_zbmc" abs_x="258" abs_y ="103">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-249"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+
+                        ## 装扮名称
+                        <FontString name="$parentName" fonttype="BlackFont30" justifyH="center" text="" abs_x="150" abs_y ="29">
+                            <Color r="249" g="216" b="129"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentNameBg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+
+                        ## 描述 
+                        <FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="" abs_x="520" abs_y ="24">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+                                    <Offset>
+                                        <AbsDimension x="0" y="16"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Frames>
+                    ## 返回
+                    <Button name="$parentBackBtn" inherits="BirthdayLetterBtTemplate" abs_x="158" abs_y="59">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentDesc">
+                                <Offset>
+                                    <AbsDimension x="-120" y="67"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):AwardBack_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+
+                    ## 确定
+                    <Button name="$parentSureBtn" inherits="BirthdayLetterBtTemplate" abs_x="158" abs_y="59">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentDesc">
+                                <Offset>
+                                    <AbsDimension x="120" y="67"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):AwardSure_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            ## 邀请弹框
+            <Frame name="$parentInviteContainer" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent" rel_x="1.0" rel_y="1.0">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="B1000000" />
+                        <Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/board_envelope.png" abs_x="624" abs_y ="452">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+
+                        ## 标题
+                        <FontString name="$parentTitle" fonttype="BlackFont32" justifyH="center" text="$110070" abs_x="285" abs_y ="31">
+                            <Color r="207" g="110" b="75"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="87"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+
+                        ## 描述 
+                        <FontString name="$parentDesc" fonttype="BlackFont20" justifyH="center" text="$110071" abs_x="347" abs_y ="55" lineInterval="15">
+                            <Color r="218" g="132" b="100"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="65"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Frames>
+                    ## 确定
+                    <Button name="$parentSureBtn" inherits="BirthdayLetterBtTemplate" abs_x="161" abs_y="59">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="0" y="35"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyLetter"):InviteSure_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+
+                    ## 关闭按钮
+                    <Button name="$parentCloseBtn" inherits="BirthdayLetterCloseTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="41" y="12"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames> 
+    </Frame>
+    
+</Ui>

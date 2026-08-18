@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/PetSelect/PetSelectCtrl.lua"/>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/PetSelect/PetSelectModel.lua"/>
+    <Script file="ui/mobile/mvc/homeland/PetsPlay/PetSelect/PetSelectView.lua"/>
+
+	<!-- 特性按钮 -->
+	<Button name="PetSelectCharacteristicBtnTemplate" virtual="true" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="78" abs_y="78"/>
+				<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="74" abs_y="74">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMask" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50.png" abs_x="74" abs_y="74" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLock" file="ui/mobile/texture2/common.xml" uvname="icon_lock_green.png" abs_x="23" abs_y="29" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentMaskText" fonttype="BlackFont" justifyH="center" abs_x="48" abs_y="36" text="" autoextend="true" force_input_transparent="true" >
+				<Color r="254" g="254" b="254"/>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentIcon">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>	
+		</Frames>
+		<Scripts>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseEnter_PCShowCharacteristic()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseLeave_PCShowCharacteristic()</OnLeave>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("PetSelect"):ShowCharacteristicMobile_OnClick()</OnClick>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):ShowCharacteristicMobile_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 宠物信息 -->
+	<Button name="PetSelectBtnTemplate" virtual="true" click_threshold="5" abs_x="172" abs_y="200">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="172" abs_y="200"/>
+				<Texture name="$parentPetBkg" file="ui/mobile/texture2/common.xml" uvname ="img_board_resource" DrawType="ninesquare_center" abs_x="164" abs_y="164">
+					<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 宠物icon -->
+				<Texture name="$parentPetIcon" file="ui/roleicons/1.png" abs_x="100" abs_y="102">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPetBkg" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="26" y="16"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 品质 -->
+				<Texture name="$parentQualityIcon" file="ui/mobile/texture2/room.xml" uvname="label_map_purple" abs_x="72" abs_y="26">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPetBkg" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-6" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentQuality" fonttype="BlackFont18" justifyH="center"  text="" abs_x="36" abs_y="18">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentQualityIcon">
+							<Offset>
+								<AbsDimension x="0" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 选中状态 -->
+				<Texture name="$parentSelected" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow" abs_x="31" abs_y="34" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativeTo="$parentPetBkg" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="8" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentSelected1" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" abs_x="20" abs_y="15" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentSelected" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="-2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentNoSelected" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_white" abs_x="32" abs_y="32">
+					<Anchors>
+						<Anchor point="topright" relativeTo="$parentPetBkg" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="8" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 评分 -->
+				<Texture name="$parentPetSorceBg" inherits="TemplateBigBkg18" abs_x="164" abs_y="28">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentPetBkg" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPetSorce" justifyH="center" fonttype="BlackFont18" text="" abs_x="130" abs_y="18">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPetSorceBg">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 成长阶段 -->
+				<FontString name="$parentGroom" justifyH="right" fonttype="BlackFont14" text="" abs_x="42" abs_y="14">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentPetNameBg">
+							<Offset>
+								<AbsDimension x="-5" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 名字 -->
+				<FontString name="$parentPetName" justifyH="center" fonttype="BlackFont20" text="" abs_x="140" abs_y="18">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentPetSorceBg">
+							<Offset>
+								<AbsDimension x="0" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("PetSelect"):PetItemClick()</OnClick>
+		</Scripts>
+	</Button>
+
+    <!-- 选择探险宠物界面 -->
+	<Frame name="PetSelect" parent="UIClient" frameStrata="MEDIUM" framelevel="2000">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 背景遮罩 -->
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- 背景图 -->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="991" abs_y="570">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="114"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg2" abs_x="989" abs_y="487">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##分割线
+				<Texture name="$parentLine" inherits="TemplateBkg20_V" abs_x="2" abs_y="451">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="571" y="22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##没有宠物
+				<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="391" abs_y="223" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="0" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- 标题栏 -->
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="983" abs_y="60">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parent" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="65"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- 标题名 -->
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont36" text="" abs_x="300" abs_y="46">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="17" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 宠物展示 -->
+			<ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="534" y="419"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="20" y="19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+            <!-- 关闭按钮 -->
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PetSelect"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 确定按钮 -->
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+								<AbsDimension x="0" y="-14"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$969" abs_x="50" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PetSelect"):ConfirmBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##没有宠物
+			<RichText name="$parentEmptyTip" lineInterval="2" fonttype="BlackFont24" justifyH="center" text="$41642" abs_x="400" abs_y="80" hidden="true" autoextend="true">
+				<Color r="77" g="112" b="117"/>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+						<Offset>
+							<AbsDimension x="0" y="22"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<!-- 宠物信息 -->
+			<Frame name="$parentPetInfo" hidden="false" abs_x="410" abs_y="497">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="571" y="22"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="100" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="22" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##宠物介绍 icon
+						<Texture name="$parentIcon" file="ui/roleicons/2.png" abs_x="100" abs_y="100" >
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+							</Anchor>
+						</Texture>
+						##名字
+						<FontString name="$parentName" fonttype="BlackFont22" justifyH="center"  text="" abs_x="200" abs_y="21">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="22" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##品质
+						<FontString name="$parentQuality1" fonttype="BlackFont18" justifyH="left"  text="$41083" abs_x="100" abs_y="21">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##品质
+						<FontString name="$parentQuality" fonttype="BlackFont18" justifyH="left"  text="" abs_x="100" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentQuality1">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##食物偏好
+						<FontString name="$parentFoodLike1" fonttype="BlackFont18" justifyH="left"  text="$41627" abs_x="120" abs_y="20">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentQuality1">
+									<Offset>
+										<AbsDimension x="0" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##食物偏好
+						<FontString name="$parentFoodLike" fonttype="BlackFont18" justifyH="left"  text="" abs_x="100" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentFoodLike1">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>	
+						##能力值
+						<FontString name="$parentAbility1" fonttype="BlackFont18" justifyH="left"  text="$41650" abs_x="120" abs_y="20">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentFoodLike1">
+									<Offset>
+										<AbsDimension x="0" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##能力值
+						<FontString name="$parentAbility" fonttype="BlackFont18" justifyH="left"  text="" abs_x="100" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentAbility1">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>					
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 属性 -->
+					<Frame name="$parentAttributes" abs_x="373" abs_y="200">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="-3" y="21"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<!-- 属性Title框 -->
+								<Texture name="$parentAttributesBkg" inherits="TemplateBkg26" abs_x="373" abs_y="27">
+									<Anchors>
+										<Anchor point="top" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- 属性Title -->
+								<FontString name="$parentAttributesTitle" fonttype="BlackFont18" justifyH="center"  text="$41263" abs_x="36" abs_y="18">
+									<Color r="77" g="132" b="131"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentAttributesBkg">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!-- 负重Icon -->
+								<Texture name="$parentBearloadIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_weight.png" abs_x="28" abs_y="28">
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parentAttributesBkg" relativePoint="bottomleft">
+											<Offset>
+												<AbsDimension x="13" y="19" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- 速度Icon -->
+								<Texture name="$parentSpeedIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_speed.png" abs_x="32" abs_y="28">
+									<Anchors>
+										<Anchor point="top" relativeTo="$parentBearloadIcon" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="8" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- 耐力Icon -->
+								<Texture name="$parentStaminaIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_health.png" abs_x="32" abs_y="28">
+									<Anchors>
+										<Anchor point="top" relativeTo="$parentSpeedIcon" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="10" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<!-- 负重Text -->
+							<RichText name="$parentBearloadText" justifyH="left" fonttype="BlackFont20" abs_x="40" abs_y="20">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentBearloadIcon">
+										<Offset>
+											<AbsDimension x="6" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+							<!-- 速度Text -->
+							<RichText name="$parentSpeedText" justifyH="left" fonttype="BlackFont20" abs_x="40" abs_y="20">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentSpeedIcon">
+										<Offset>
+											<AbsDimension x="6" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+							<!-- 耐力Text -->
+							<RichText name="$parentStaminaText" justifyH="left" fonttype="BlackFont20" abs_x="55" abs_y="20">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentStaminaIcon">
+										<Offset>
+											<AbsDimension x="6" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>								
+					</Frame>							
+					<ProgressBar name="$parentBearloadMask" barname="BearloadBg2" orientation="HORIZONTAL">
+						<Size>
+							<AbsDimension x="234" y="18"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentAttributes">
+								<Offset>
+									<AbsDimension x="123" y="48" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="BearloadBg2" inherits="TemplateBkg13">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBg" inherits="TemplateBkg13">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddMask" file="ui/mobile/texture0/common.xml" uvname="img_board_load_top_g" abs_x="0" abs_y="16" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="5" h="15"/>
+										<Center offsetX="5" offsetY="0" w="5" h="15" />
+										<Right offsetX="10" offsetY="0" w="5" h="15" />
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMask" file="ui/mobile/texture0/common.xml" uvname="img_board_load_top" abs_x="0" abs_y="16" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="5" h="15"/>
+										<Center offsetX="5" offsetY="0" w="5" h="15" />
+										<Right offsetX="10" offsetY="0" w="5" h="15" />
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentBearload" fonttype="BlackFont18" justifyH="center" text="" abs_x="200" abs_y="18">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</ProgressBar>
+					<Button name="$parentBearloadTips" abs_x="400" abs_y="30" id="1">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBearloadMask">
+								<Offset>
+									<AbsDimension x="-54" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseEnter_PCShowAttribute()</OnEnter>
+							<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseLeave_PCShowAttribute()</OnLeave>
+							<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("PetSelect"):ShowAttributeMobile_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<ProgressBar name="$parentSpeedMask" barname="SpeedBg2" orientation="HORIZONTAL">
+						<Size>
+							<AbsDimension x="234" y="18"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentBearloadMask">
+								<Offset>
+									<AbsDimension x="0" y="22" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="SpeedBg2" inherits="TemplateBkg13">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBg" inherits="TemplateBkg13">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddMask" file="ui/mobile/texture0/common.xml" uvname="img_board_load_top_g" abs_x="0" abs_y="16" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="5" h="15"/>
+										<Center offsetX="5" offsetY="0" w="5" h="15" />
+										<Right offsetX="10" offsetY="0" w="5" h="15" />
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMask" file="ui/mobile/texture0/common.xml" uvname="img_board_load_top" abs_x="0" abs_y="16" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="5" h="15"/>
+										<Center offsetX="5" offsetY="0" w="5" h="15" />
+										<Right offsetX="10" offsetY="0" w="5" h="15" />
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentSpeed" fonttype="BlackFont18" justifyH="center" text="" abs_x="200" abs_y="18">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</ProgressBar>
+					<Button name="$parentSpeedMaskTips" abs_x="400" abs_y="30" id="2">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentSpeedMask">
+								<Offset>
+									<AbsDimension x="-54" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseEnter_PCShowAttribute()</OnEnter>
+							<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseLeave_PCShowAttribute()</OnLeave>
+							<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("PetSelect"):ShowAttributeMobile_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<ProgressBar name="$parentStaminaMask" barname="StaminaBg2" orientation="HORIZONTAL">
+						<Size>
+							<AbsDimension x="234" y="18"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentSpeedMask">
+								<Offset>
+									<AbsDimension x="0" y="22" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="StaminaBg2" inherits="TemplateBkg13">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBg" inherits="TemplateBkg13">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddMask" file="ui/mobile/texture0/common.xml" uvname="img_board_load_top_g" abs_x="0" abs_y="16" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="5" h="15"/>
+										<Center offsetX="5" offsetY="0" w="5" h="15" />
+										<Right offsetX="10" offsetY="0" w="5" h="15" />
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMask" file="ui/mobile/texture0/common.xml" uvname="img_board_load_top" abs_x="0" abs_y="16" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="5" h="15"/>
+										<Center offsetX="5" offsetY="0" w="5" h="15" />
+										<Right offsetX="10" offsetY="0" w="5" h="15" />
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="1" y="1" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentStamina" fonttype="BlackFont18" justifyH="center" text="" abs_x="200" abs_y="18">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</ProgressBar>
+					<Button name="$parentStaminaMaskTips" abs_x="400" abs_y="30" id="3">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentStaminaMask">
+								<Offset>
+									<AbsDimension x="-54" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseEnter_PCShowAttribute()</OnEnter>
+							<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("PetSelect"):OnMouseLeave_PCShowAttribute()</OnLeave>
+							<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("PetSelect"):ShowAttributeMobile_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<!-- 特性 -->
+					<Frame name="$parentCharacteristic" abs_x="373" abs_y="125">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentAttributes" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="159"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<!-- 特性Title框 -->
+								<Texture name="$parentCharacteristicBkg" inherits="TemplateBkg26" abs_x="373" abs_y="27">
+									<Anchors>
+										<Anchor point="top" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- 特性Title -->
+								<FontString name="$parentCharacteristicTitle" fonttype="BlackFont18" justifyH="center"  text="$41278" abs_x="36" abs_y="18">
+									<Color r="77" g="132" b="131"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentCharacteristicBkg">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentCharacteristicBtn1" inherits="PetSelectCharacteristicBtnTemplate" id="1">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentCharacteristicBkg">
+										<Offset>
+											<AbsDimension x="20" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentCharacteristicBtn2" inherits="PetSelectCharacteristicBtnTemplate" id="2">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCharacteristicBtn1">
+										<Offset>
+											<AbsDimension x="10" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentCharacteristicBtn3" inherits="PetSelectCharacteristicBtnTemplate" id="3">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCharacteristicBtn2">
+										<Offset>
+											<AbsDimension x="10" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentCharacteristicBtn4" inherits="PetSelectCharacteristicBtnTemplate" id="4">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCharacteristicBtn3">
+										<Offset>
+											<AbsDimension x="10" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+						</Frames>
+					</Frame>				
+				</Frames>
+			</Frame>	
+			<Frame name="$parentCommonTips" abs_x="460" abs_y="100" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19" abs_x="460" abs_y="100">
+							<Anchors>
+								<Anchor point="top" relativeTo="$parent" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="left" abs_x="120" abs_y="24" text="$41265">
+							<Color r="255" g="218" b="10"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+											<AbsDimension x="20" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- TipsContent -->
+					<RichText name="$parentContent" lineInterval="5" justifyH="left" fonttype="BlackFont20" abs_x="420" abs_y="60" autoextend="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>	
+				</Frames>
+			</Frame>			
+		</Frames>
+	</Frame>
+</Ui>

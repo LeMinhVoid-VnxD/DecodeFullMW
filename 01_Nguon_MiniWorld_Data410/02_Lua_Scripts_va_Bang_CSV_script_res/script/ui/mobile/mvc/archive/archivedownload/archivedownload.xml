@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/archive/ArchiveDownload/ArchiveDownloadModel.lua"/>
+	<Script file="ui/mobile/mvc/archive/ArchiveDownload/ArchiveDownloadView.lua"/>
+	<Script file="ui/mobile/mvc/archive/ArchiveDownload/ArchiveDownloadCtrl.lua"/>
+
+	<Button name="ArchiveDownloadFuncBtnTemplete" abs_x="182" abs_y="61" virtual="true">
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName1" fonttype="BlackFont24" justifyH="center" justifyV="center" text="$4039" hidden="true">
+					<Color r="55" g="54" b="51"/>
+					<Size>
+						<AbsDimension x="95" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--地图大小-->
+				<FontString name="$parentSize" fonttype="BlackFont26" justifyH="center" text="6.66M" hidden="true">
+					<Color r="55" g="54" b="51"/>
+					<Size>
+						<AbsDimension x="120" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentPicDown">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--进入-->
+				<FontString name="$parentName2" fonttype="BlackFont24" justifyH="center" text="$520" hidden="true">
+					<Color r="51" g="55" b="55"/>
+					<Size>
+						<AbsDimension x="95" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--暂停-->
+				<FontString name="$parentName3" fonttype="BlackFont24" justifyH="center" text="$4769" hidden="true" >
+					<Color r="55" g="51" b="51"/>
+					<Size>
+						<AbsDimension x="95" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentProgressBarBkg" inherits="TemplateBkg16" hidden="true">
+					<Size>
+						<AbsDimension x="182" y="7" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativeTo="$parent" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentProgressTex" inherits="TemplateBkg17" hidden="true">
+					<Size>
+						<AbsDimension x="50" y="7" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentProgressBarBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--LLTODO:下载箭头图片-->
+				<Texture name="$parentPicDown" file="ui/mobile/texture2/common_icon.xml" uvname="icon_download_black.png" hidden="true">
+					<Size>
+						<AbsDimension x="33" y="30" />
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="15" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" abs_x="178" abs_y="58">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ArchiveDownload"):FuncBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="ArchiveDownload" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="5001">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 背景遮罩 -->
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- 背景图 -->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="584" abs_y="430">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+
+			<Layer level="overlay">
+				<Texture name="$parentPicBkg" file="ui/mobile/texture2/common.xml" uvname="board_map_pic.png" DrawType="ninesquare_center" >
+					<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+					<Size>
+						<AbsDimension x="484" y="274" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--地图缩略图-->
+				<Texture name="$parentPic" file="ui/mobile/texture2/bigtex/img_noroom.png">
+					<Size>
+						<AbsDimension x="480" y="270"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<!--文本提示标识-->
+				<FontString name="$parentPicExplain" fonttype="BlackFont21" justifyH="center" text="$20309" hidden="true">
+					<Color r="255" g="253" b="233"/>
+					<Size>
+						<AbsDimension x="430" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentTip" fonttype="BlackFont21" justifyH="center">
+					<Color r="51" g="55" b="55"/>
+					<Size>
+						<AbsDimension x="430" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>        
+			<!-- 关闭按钮 -->
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-5" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveDownload"):CloseBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+
+			<!-- 下载按钮-->
+			<Button name="$parentFuncBtn" inherits="ArchiveDownloadFuncBtnTemplete">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			退出游戏二次确认
+			<Frame name="$parentConfirmFrame" hidden="true">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentChenDi" inherits="TemplateBkg1">
+							<Size>
+								<AbsDimension x="653" y="338" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-19" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<FontString name="$parentDesc" justifyH="center" justifyV="middle" fonttype="BlackFont24" lineInterval="2" fontStyle="normal" text="">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentChenDi" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 下载按钮-->
+					<Button name="$parentLeftBtn" inherits="ArchiveDownloadFuncBtnTemplete">
+						<Anchors>
+							<Anchor point="bottomleft" relativeTo="$parentChenDi" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="66" y="-26"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+
+					<Button name="$parentRightBtn" inherits="TemplateBtn3">
+						<Anchors>
+							<Anchor point="bottomright" relativeTo="$parentChenDi" relativePoint="bottomright">
+								<Offset>
+									<AbsDimension x="-72" y="-26"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$4883">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="180" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ArchiveDownload"):ConfirmRightBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##关闭按钮
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentChenDi" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-23" y="16"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ArchiveDownload"):ConfirmCloseBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnLoad>OutGameConfirmFrame_OnLoad();</OnLoad>
+					<OnShow>OutGameConfirmFrame_OnShow();</OnShow>
+					<OnHide>OutGameConfirmFrame_OnHide();</OnHide>
+					<OnUpdate>OutGameConfirmFrame_OnUpdate();</OnUpdate>
+				</Scripts>
+			</Frame>
+		</Frames>
+
+		<Scripts>
+			<OnLoad>ArchiveDownloadFrame_OnLoad();</OnLoad>
+			<OnEvent>ArchiveDownloadFrame_OnEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

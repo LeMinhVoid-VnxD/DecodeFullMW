@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/modsLib/modsLibActor/ModsLibActorShopItemDetailModel.lua"/>
+    <Script file="ui/mobile/mvc/modsLib/modsLibActor/ModsLibActorShopItemDetailView.lua"/>
+    <Script file="ui/mobile/mvc/modsLib/modsLibActor/ModsLibActorShopItemDetailCtrl.lua"/>
+
+    <Frame name="ModsLibActorShopItemDetailSwitchTemplate" abs_x="988" abs_y="50" virtual="true">
+        <Frames>
+            <Button name="$parentName" inherits="EditorAttrWithTipsBtn"/>
+            <Button name="$parentBtn" inherits="mini_SwitchBtnTemplateUI4">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="320" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseUp>SwitchBtn_OnMouseUp();</OnMouseUp>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>	
+    
+    #开关模版(Ui)
+	<Button name="ModsLibActorShopItemDetailSwitchTemplate2" virtual="true" abs_x="110" abs_y="36">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBBkg" inherits="TemplateBkg8" abs_x="110" abs_y="36">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBkg69" abs_x="106" abs_y="32">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="1" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- ##左:关
+				<FontString name="$parentDesc1" fonttype="BlackFont" text="$21743" justifyH="center" justifyV="middle" abs_x="16" abs_y="15">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</FontString> -->
+				<!-- ##右:开
+				<FontString name="$parentDesc2" fonttype="BlackFont" text="$21742" justifyH="center" justifyV="middle" abs_x="16" abs_y="15">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+					</Anchors>
+				</FontString> -->
+				##point
+				<Texture name="$parentPoint" inherits="TemplateBkg9" abs_x="76" abs_y="43">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		##point上的文字
+		<FontString name="$parentName" fonttype="BlackFont" text="$21743" justifyH="center" justifyV="middle" abs_x="16" abs_y="15">
+			<Color r="55" g="54" b="51"/>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parentPoint" />
+			</Anchors>
+		</FontString>
+	</Button>
+
+    <Frame name="ModsLibActorShopItemDetailSliderTemplate" abs_x="700" abs_y="46" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" text="星星购买">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="200" y="20"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="4" y="10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="1">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="100" y="20"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentRightBtn">
+                            <Offset>
+                                <AbsDimension x="5" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="260" y="5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SliderLeftBtnClicked()</OnClick>
+                </Scripts>
+            </Button>
+            <Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" inherits="TemplateSingleBar2">
+                <Size>
+                    <AbsDimension x="328" y="30"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parentLeftBtn" relativePoint="right">
+                        <Offset>
+                            <AbsDimension x="15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnValueChanged>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SliderValueChanged()</OnValueChanged>
+                </Scripts>
+            </Slider>
+            <Button name="$parentRightBtn" inherits="TemplateSingleBar_RightBtn01">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SliderRightBtnClicked()</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame> 
+
+    <Button name="ModsLibActorShopItemDetailSelBtnTemplate" abs_x="77" abs_y="76" virtual="true">
+        <Layers>
+            <Layer level="overlay">
+                ##加号图标
+                <Texture name="$parentAddIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="48" abs_y="48" hidden="true">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIcon" alphamode="alphablend">
+                    <Size>
+                        <AbsDimension x="60" y="60"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <NormalTexture name="$parentNormal" inherits="TemplateBigBkg15" />
+        <PushedTexture name="$parentPushedBG" inherits="TemplateBigBkg15" rel_x="0.9" rel_y="0.9">
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </PushedTexture>
+        <Frames>
+            <Frame name="$parentNum" abs_x="78" abs_y="26">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="78" abs_y="26">
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentVal" fonttype="BlackFont18" text="1" justifyH="center" abs_x="60" abs_y="18">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+                        <Anchors>
+                            <Anchor point="right" relativePoint="left" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-7" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SelBtnNumLeftBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="$parentRightBtn" inherits="TemplateSingleBar_RightBtn01">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="7" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SelBtnNumRightBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+             <Button name="$parentDel" inherits="TemplateBtn23" abs_x="32" abs_y="33">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="14" y="-13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SelBtnDelBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):SelBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    <Frame name="ModsLibActorShopItemDetail" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2900">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true">
+                    <Size>
+                        <RelDimension x="1.0" y="1.0"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1089" abs_y="614">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentMiddleBkg" inherits="TemplateBigBkg2" abs_x="1087" abs_y="468">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-18"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##标题栏背景
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1083" abs_y="56">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="0" y="2"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                                <AbsDimension x="-17" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):CloseBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##广告开关提示
+            <Frame name="$parentADSwitchTips" hidden="true" rel_x="1.0" rel_y="1.0" framelevel="3012">
+				<Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parent">
+			        	<Offset>
+			        		<AbsDimension x="0" y="0"/>
+			        	</Offset>
+			        </Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19">
+							<Size>
+								<AbsDimension x="323" y="99"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="75" y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17" >
+							<Angle value="-90" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="52" y="-14"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont20" justifyH="left" lineInterval="2" autowrap="true" text="$21642">
+							<Color r="224" g="220" b="202"/>
+							<Size>
+								<AbsDimension x="300" y="80"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):OnADSwitchTipsClick();</OnClick>
+				</Scripts>
+			</Frame>
+            <Frame name="$parentLeftPanel">
+                <Size>
+                    <AbsDimension x="278" y="405"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="30" y="90"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentLine" inherits="TemplateBkg14" abs_x="2" abs_y="405">
+                            <Angle value="90" />
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png">
+                            <Size>
+                                <AbsDimension x="90" y="90"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="90" y="40"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" >
+                            <Size>
+                                <AbsDimension x="76" y="75"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg" />
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentFeatureTitle" fonttype="BlackFont26" justifyH="center" text="$3650">
+                            <Color r="77" g="112" b="117"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="0" y="15"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentFeatureDesc" fonttype="BlackFont24" autowrap="true" justifyH="center" text="$21724">
+                            <Color r="61" g="69" b="70"/>
+                            <Size>
+                                <AbsDimension x="150" y="50"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentFeatureTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="30"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentStarIcon" file="items/icon14001.png" alphamode="alphablend">
+                            <Size>
+                                <AbsDimension x="32" y="32"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentFeatureDesc">
+                                    <Offset>
+                                        <AbsDimension x="-55" y="-22"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentStarDesc" fonttype="BlackFont22"  text="$3650">
+                            <Color r="21" g="168" b="21"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentStarIcon">
+                                    <Offset>
+                                        <AbsDimension x="6" y="4"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentItemIcon1" >
+                            <Size>
+                                <AbsDimension x="32" y="32"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentStarIcon">
+                                    <Offset>
+                                        <AbsDimension x="0" y="3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentItemDesc1" fonttype="BlackFont22"  text="$3650">
+                            <Color r="1" g="194" b="16"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentItemIcon1">
+                                    <Offset>
+                                        <AbsDimension x="6" y="4"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentItemIcon2" >
+                            <Size>
+                                <AbsDimension x="32" y="32"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentItemIcon1">
+                                    <Offset>
+                                        <AbsDimension x="0" y="3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentItemDesc2" fonttype="BlackFont22"  text="$3650">
+                            <Color r="1" g="194" b="16"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentItemIcon2">
+                                    <Offset>
+                                        <AbsDimension x="6" y="4"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <SlidingFrame name="$parentSlidingFrame" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <AbsDimension x="730" y="400"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="320" y="87"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="false" abs_x="730" abs_y="740" />
+                    <Frame name="$parentBuyLine" abs_x="700" abs_y="31" >
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane">
+                                <Offset>
+                                        <AbsDimension x="0" y="20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="650" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent"/>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$21712"  hidden="false">
+                                    <Color r="77" g="112" b="117"/>
+                                    <Size>
+                                        <AbsDimension x="300" y="24"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="-10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" text="$21714"  hidden="false">
+                                    <Color r="77" g="112" b="117"/>
+                                    <Size>
+                                        <AbsDimension x="200" y="20"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="135"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        
+                    </Frame>
+                    ##星星购买
+                    <Frame name="$parentSlider1" inherits="ModsLibActorShopItemDetailSliderTemplate" >
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentBuyLine">
+                                <Offset>
+                                    <AbsDimension x="0" y="20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    ##货币购买1
+                    <Frame name="$parentBuyItemSet1" inherits="ModsLibActorShopItemDetailSelBtnTemplate" >
+                         <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentSlider1">
+                                <Offset>
+                                    <AbsDimension x="15" y="28"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                         <Layers>
+                            <Layer level="BACKGROUND">               
+                               <!--  <FontString name="$parentName" fonttype="BlackFont26" justifyH="center" text="货币购买"  hidden="false">
+                                    <Color r="98" g="65" b="48"/>
+                                    <Size>
+                                        <AbsDimension x="300" y="30"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="-237" y="8"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString> -->
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                    <Frame name="$parentBuyItemSet2" inherits="ModsLibActorShopItemDetailSelBtnTemplate" >
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentSlider1">
+                                <Offset>
+                                    <AbsDimension x="158" y="28"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    ##广告开关
+                    <Frame name="$parentADSwitch" abs_x="700" abs_y="36" hidden="false">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentSlider1">
+                                <Offset>
+                                    <AbsDimension x="0" y="165"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+						    <Button name="$parentBtn" inherits="ModsLibActorShopItemDetailSwitchTemplate2">
+						    	<Anchors>
+						    		<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						    			<Offset>
+						    				<AbsDimension x="225" y="0"/>
+						    			</Offset>
+						    		</Anchor>
+						    	</Anchors>
+						    	<Layers>
+						    		<Layer level="overlay">
+						    		</Layer>
+						    	</Layers>
+						    	<Scripts>
+						    		<OnMouseDown>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):OnADSwitchMouseDown();</OnMouseDown>
+						    	</Scripts>
+						    </Button>
+					        <RichText name="$parentName" fonttype="BlackFont20" multiLine="false" autoextend="false" input_transparent="false" justifyH="right" >
+					        	<ShadowColor r="77" g="112" b="117"/>
+					        	<LinkColor r="77" g="112" b="117"/>
+					        	<Size>
+					        		<AbsDimension x="130" y="24"/>
+					        	</Size>
+					        	<Anchors>
+					                <Anchor point="right" relativePoint="left" relativeTo="$parent">
+					                    <Offset>
+					                       	<AbsDimension x="200" y="0"/>
+					                    </Offset>
+					                </Anchor>
+					            </Anchors>
+					            <Scripts>
+					        		<OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):OnADSwitchNameClick();</OnClick>
+					        	</Scripts>
+					        </RichText>
+                        </Frames>
+                    </Frame>
+                    ## 单次购买数量
+                    <Frame name="$parentSlider2" abs_x="700" abs_y="46" inherits="ModsLibActorShopItemDetailSliderTemplate">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentADSwitch">
+                                <Offset>
+                                    <AbsDimension x="0" y="42"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    ##可购买次数
+                    <Frame name="$parentSlider3" abs_x="700" abs_y="46" inherits="ModsLibActorShopItemDetailSliderTemplate">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentSlider2">
+                                <Offset>
+                                    <AbsDimension x="0" y="32"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    ##商品补充
+                     <Frame name="$parentAddItemLine" abs_x="700" abs_y="31" >
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentSlider3">
+                                <Offset>
+                                        <AbsDimension x="0" y="52"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="650" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent"/>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$21717"  hidden="false">
+                                    <Color r="77" g="112" b="117"/>
+                                    <Size>
+                                        <AbsDimension x="300" y="24"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="-10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                    ##商品补充开关
+                    <Frame name="$parentAddItemSwitch" inherits="ModsLibActorShopItemDetailSwitchTemplate">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentAddItemLine">
+                                <Offset>
+                                    <AbsDimension x="50" y="20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                 <FontString name="$parentTitle" fonttype="BlackFont20" justifyH="center" text="$21717"  hidden="false">
+                                    <Color r="77" g="112" b="117"/>
+                                    <Size>
+                                        <AbsDimension x="300" y="20"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="-239" y="2"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                    ##补充时间
+                    <Frame name="$parentSlider4" abs_x="700" abs_y="46" inherits="ModsLibActorShopItemDetailSliderTemplate">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentAddItemLine">
+                                <Offset>
+                                    <AbsDimension x="0" y="88"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+
+                </Frames>
+            </SlidingFrame>
+            <Button name="$parentDelBtn" inherits="TemplateBtnBig_DeleteBtn">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="60" y="-18"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):DelBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-60" y="-18"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibActorShopItemDetail"):OkBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

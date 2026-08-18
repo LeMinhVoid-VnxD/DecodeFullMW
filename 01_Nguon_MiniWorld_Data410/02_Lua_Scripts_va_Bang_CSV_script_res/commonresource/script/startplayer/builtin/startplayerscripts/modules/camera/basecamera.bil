@@ -1,0 +1,225 @@
+
+local BaseCamera = CommonModule.Class("BaseCamera")
+local Players = game:GetService('Players')
+local WorkSpace = game:GetService("WorkSpace")
+local ConfigService = game:GetService("ConfigService")
+local GameSetting = game:GetService("GameSetting")
+local WorldService = game:GetService("WorldService")
+local DEFAULT_DISTANCE = 700
+local scaleWinWidth = 720
+local scaleWinHeight = 180
+
+function BaseCamera:OnInit( cameraobj )
+	self.m_rotation = { x = 0; y = 0; z = 0;}
+	self.m_camera = cameraobj or WorkSpace.CurrentCamera
+	self.m_player = Players.LocalPlayer
+	self.m_actor = self.m_player.Character
+    self.m_quaFreeView = self.m_camera.Rotation
+    self.m_keyCode = nil
+    self.m_deltaFreeView = nil
+	
+	if nil == GameSetting.Sensitivity then
+		GameSetting.Sensitivity = 1		
+	end
+	
+	self.m_defaultDistance = math.clamp(DEFAULT_DISTANCE, self.m_player.CameraMinZoomDistance, self.m_player.CameraMaxZoomDistance)
+	self.m_currentDistance = math.clamp(DEFAULT_DISTANCE, self.m_player.CameraMinZoomDistance, self.m_player.CameraMaxZoomDistance)
+
+	self.m_player.NotifyAttributeChanged:Connect(function( attname ) 
+		if attname == "CameraMinZoomDistance" then
+			if self.m_currentDistance < self.m_player.CameraMinZoomDistance then
+				self.m_currentDistance = self.m_player.CameraMinZoomDistance
+			end
+		elseif attname == "CameraMaxZoomDistance" then
+			if self.m_currentDistance > self.m_player.CameraMaxZoomDistance then
+				self.m_currentDistance = self.m_player.CameraMaxZoomDistance
+			end
+		end
+	end)
+end
+
+function BaseCamera:GetRotation()
+	return self.m_rotation
+end
+
+function BaseCamera:SetQuaternion( quaternion )
+	self.m_camera.Rotation = quaternion
+	self.m_lastQuaterion = quaternion
+end
+
+function BaseCamera:SetPosition( pos )
+	self.m_camera.Position = pos
+	self.m_lastEyePos = pos
+end
+
+function BaseCamera:GetSubjectPosAndEuler()
+	local camera = WorkSpace.CurrentCamera
+	local cameraSubject = camera and camera.CameraSubject
+
+	if cameraSubject == nil then
+		cameraSubject = Players.LocalPlayer.Character
+	end
+
+	local pos = cameraSubject:GetRenderPosition();
+	local euler = cameraSubject:GetRenderEuler();
+
+	if cameraSubject:IsA("Actor") then
+		local offset = 60
+		if self:isFirstPerson() then
+			offset = 0
+		end
+		pos = cameraSubject:AnchorWorldPos(0, Vector3.new(0, 142 + offset, 0))
+	end
+
+	return pos, euler
+end
+
+function BaseCamera:GetSubjectPosAndRotaion()
+	local pos, euler = self:GetSubjectPosAndEuler()
+	local rotation = Quaternion.FromEuler(euler.x, euler.y, euler.z)
+	return pos, rotation
+end
+
+function BaseCamera:isFirstPerson()
+	return  self.m_player.CameraMode == Enum.CameraModel.LockFirstPerson
+end
+
+function BaseCamera:isScriptModel()
+	return WorkSpace.CurrentCamera.CameraType == Enum.CameraType.Scriptable
+end
+
+function BaseCamera:GetEyeDistance()
+	if self:isFirstPerson() then
+		return 0.5
+	end
+
+	return self.m_currentDistance
+end
+
+function BaseCamera:GetQuaternion()
+    if ConfigService.LCSMode then
+        return self.m_quaFreeView
+    end
+
+	return Quaternion.FromEuler(self.m_rotation.x, self.m_rotation.y, self.m_rotation.z)
+end
+
+function BaseCamera:GetPos(dt)
+    if ConfigService.LCSMode then
+        if self.m_keyCode and self.m_keyCode ~= Enum.UserInputKeyCode.KeyCodeUnknown.Value then
+            local moveDir = nil
+            if self.m_keyCode == Enum.UserInputKeyCode.KeyCodeW.Value then
+                moveDir = Vector3.New(0, 0, 1)
+            elseif self.m_keyCode == Enum.UserInputKeyCode.KeyCodeA.Value then
+                moveDir = Vector3.New(-1, 0, 0)
+            elseif self.m_keyCode == Enum.UserInputKeyCode.KeyCodeS.Value then
+                moveDir = Vector3.New(0, 0, -1)
+            elseif self.m_keyCode == Enum.UserInputKeyCode.KeyCodeD.Value then
+                moveDir = Vector3.New(1, 0, 0)
+            else
+                return self.m_camera.Position
+            end
+
+            return self.m_camera.Position + self.m_camera.Rotation * moveDir * dt * 36.0 * self.m_camera.MoveSpeed
+        elseif self.m_deltaFreeView then
+            local dist = self.m_deltaFreeView.y
+            self.m_deltaFreeView = nil
+
+            return self.m_camera.Position - (self.m_camera.Dir * 100 * dist)
+        else
+            return self.m_camera.Position
+        end
+    end
+
+    local subpos = self:GetSubjectPosAndEuler()
+    local quaterion = self:GetQuaternion()
+    local lookdir = quaterion:RotateToDir(Vector3.New(0, 0, 1))
+	return self.m_player:EyePos(subpos, -lookdir, self:GetEyeDistance())
+end
+
+function BaseCamera:SetKeyCode(keyCode)
+    self.m_keyCode = keyCode
+end
+
+function BaseCamera:RotationByMouseMove( dx, dy)
+    local viewSize = WorldService:GetUISize()
+	dx = dx / viewSize.x * scaleWinWidth
+	dy = dy  / viewSize.y * scaleWinHeight
+    if ConfigService.LCSMode then
+        local xdist = dx * GameSetting.Sensitivity * 2.5 / self.m_camera.WindowSize.x 
+        local ydist = dy * GameSetting.Sensitivity * 2.5 / self.m_camera.WindowSize.y
+        local prevEuler = Vector3.FromQuaternion(self.m_camera.Rotation)
+        local yaw = prevEuler.y
+        local pitch = prevEuler.x
+        yaw = yaw + xdist * 180
+
+        while yaw >= 180 do
+            yaw = yaw - 360
+        end
+
+        while yaw <= -180 do
+            yaw = yaw + 360
+        end
+
+        pitch = pitch + ydist * 90
+        if pitch < -89.995 then
+            pitch = -89.995
+        end
+
+        if pitch > 89.995 then
+            pitch = 89.995
+        end
+
+        self.m_quaFreeView = Quaternion.FromEuler(pitch, yaw, 0)
+    else
+        local x = self.m_rotation.x + dy * GameSetting.Sensitivity
+        local y = self.m_rotation.y + dx * GameSetting.Sensitivity
+
+        if x > 60 then
+            x = 60
+        end
+
+        if x < -60 then
+            x = -60
+        end
+
+        self.m_rotation.x = x
+        self.m_rotation.y = y
+    end
+end
+
+
+function BaseCamera:ChangeEyeDistanceByWheel( wheel )
+    self.m_currentDistance = self.m_currentDistance + 50*wheel
+	self.m_currentDistance =  math.clamp(self.m_currentDistance, self.m_player.CameraMinZoomDistance, self.m_player.CameraMaxZoomDistance)
+end
+
+function BaseCamera:SetDelta(delta)
+    self.m_deltaFreeView = delta
+end
+
+function BaseCamera:Update()
+
+end
+
+function BaseCamera:getCameraObject()
+	return self.m_camera
+end
+
+function BaseCamera:GetCameraType()
+	assert("need to over write")
+end
+
+function BaseCamera:isCameraChange()
+	if self.m_camera ~= WorkSpace.CurrentCamera then
+		return true
+	end
+
+	if self.m_camera.CameraType ~= self:GetCameraType() then
+		return true
+	end
+
+	return false
+end
+
+return BaseCamera

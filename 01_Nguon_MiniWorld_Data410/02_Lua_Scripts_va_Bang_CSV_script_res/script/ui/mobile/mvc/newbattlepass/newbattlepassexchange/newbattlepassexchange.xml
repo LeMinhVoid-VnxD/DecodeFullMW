@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Ui>
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassExchange/NewBattlePassExchangeModel.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassExchange/NewBattlePassExchangeView.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassExchange/NewBattlePassExchangeCtrl.lua" />
+
+	<!--兑换按钮模板-->
+	<Frame name="NewBattlePass_ExChangeBtnTemplate" abs_x="140" abs_y="190" virtual="true">
+		<Layers>
+			<Layer level="overlay">	
+				<Texture name="$parentBg" file="ui/mobile/texture0/newbattlepass.xml" uvname="frame_exchange" abs_x="130" abs_y="130">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture0/battlepass.xml" uvname="icon_lv_bp1" abs_x="64" abs_y="64">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLight" file="ui/mobile/texture0/battlepass.xml" uvname="sel_Light_zheng" abs_x="160" abs_y="151" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="-2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentLimitTip" fonttype="BlackFont18" justifyH="center" justifyV="middle" abs_x="120" abs_y="18">
+					<Color r="81" g="78" b="69" />
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="10" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>				
+				<FontString name="$parentNum" fonttype="BlackFont18" text="x500" justifyH="right" justifyV="middle" abs_x="100" abs_y="18">
+					<Color r="81" g="78" b="69" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-22" y="-76" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentOwnedTip" fonttype="BlackFont28" justifyH="center" justifyV="middle" abs_x="120" abs_y="18">
+					<Color r="195" g="31" b="71" />
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="154" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentExchangeBtn" abs_x="134" abs_y="50">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Medium_yellow" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Medium_yellow" rel_x="0.95" rel_y="0.95">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">		
+					<Texture name="$parentIcon" file="items/icon10026.png" abs_x="36" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="20" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Texture>					
+					<FontString name="$parentNum" fonttype="BlackFont22" text="x100" justifyH="left" justifyV="middle" abs_x="120" abs_y="30">
+						<Color r="174" g="90" b="1" />
+						<Anchors>
+							<Anchor point="left" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePassExchange"):ExchangeBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePassExchange"):SelectBtn_OnClick()</OnClick>
+		</Scripts>
+	</Frame>
+
+	<!--NewBattlePass通行证兑换界面-->
+	<Frame name="NewBattlePassExchange" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="800" input_transparent="true" >
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/newbattlepass.xml" uvname="board_bule1" abs_x="672" abs_y="559" DrawType="ninesquare">
+				<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="44" 	h="44"/>
+						<Top 			offsetX="44" 	offsetY="0" 	w="10"  h="44"/>
+						<Topright 		offsetX="54" 	offsetY="0" 	w="44" 	h="44"/>
+						<Left 			offsetX="0" 	offsetY="44" 	w="44" 	h="10"/>
+						<Center 		offsetX="44" 	offsetY="44" 	w="10"  h="10"/>
+						<Right 			offsetX="54" 	offsetY="44" 	w="44" 	h="10"/>
+						<Bottomleft 	offsetX="0" 	offsetY="54" 	w="44" 	h="44"/>
+						<Bottom 		offsetX="44" 	offsetY="54" 	w="10"  h="44"/>
+						<Bottomright 	offsetX="54" 	offsetY="54" 	w="44" 	h="44"/>
+						<OffSet x="44" y="44" />
+					</NineSquare>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-90" y="112" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			## 任务滚动列表
+			<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="647" abs_y="474">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="8" y="40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="647" abs_y="474">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>	
+		</Frames>
+	</Frame>
+</Ui>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/account/Safety/PhtoneBinding/PhtoneBindingAwardClass.lua"/>
+	<Script file="ui/mobile/mvc/account/Safety/PhtoneBinding/PhtoneBindingAwardModel.lua"/>
+	<Script file="ui/mobile/mvc/account/Safety/PhtoneBinding/PhtoneBindingAwardView.lua"/>
+	<Script file="ui/mobile/mvc/account/Safety/PhtoneBinding/PhtoneBindingAwardCtrl.lua"/>
+
+	#奖品物品
+	<Button name="PhtoneBindingPrizeTemplate" virtual="true" abs_x="94" abs_y="94" >
+		<Anchors>
+			<Anchor point="left" relativePoint="left">
+				<Offset>
+					<AbsDimension x="100" y="-20" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				#物品框
+				<Texture name="$parentIconBkg" inherits="TemplateBigBkg10"/>
+				#物品
+				<Texture name="$parentIcon" file="items/hand.png" abs_x="74" abs_y="74" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentIconChip" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_17" hidden="true">
+					<Size>
+						<AbsDimension x="20" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#名字
+				<FontString name="$parentName" hidden="true" justifyH="center" fonttype="BlackFont17"  fontStyle="normal" text="name" abs_x="120" abs_y="100" >
+					<Color r="49" g="32" b="24"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="86" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#数量
+				<FontString name="$parentNum" justifyH="right" fonttype="BlackFont18" lineInterval="2" fontStyle="border" text="x999" abs_x="100" abs_y="100" shadowcolor="000000" >
+					<Anchors>
+						<Anchor point="right" relativePoint="right">
+							<Offset>
+								<AbsDimension x="-11" y="64" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>PhtoneBindingAwardPrizeTemplate_OnClick()</OnClick>
+			<OnEnter platform="pc">PhtoneBindingAwardPrizeTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">PhtoneBindingAwardPrizeTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+
+	##新手机绑定界面带奖励
+	<Frame name="PhtoneBindingAward" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3" rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentBkgFrame" abs_x="1008" abs_y="594">
+				<Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg1" inherits="TemplateBigBkg8">
+							<Size>
+								<AbsDimension x="1008" y="545"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="24"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg2" inherits="TemplateBigBkg2">
+							<Size>
+								<AbsDimension x="1006" y="452"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="49"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1000" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkgFrame" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-10" y="-8"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>HidePhtoneBindingAwardFrame();</OnClick>
+				</Scripts>
+            </Button>
+			<Button name="$parentCheckBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkgFrame" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$22014">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="160" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PhtoneBindingAward"):CheckBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<RichText name="$parentToEmailBinding" fonttype="BlackFont20" multiLine="false" autoextend="false" text="" input_transparent="false" justifyH="left" >
+					<ShadowColor r="55" g="54" b="48"/>
+					<LinkColor r="55" g="54" b="48"/>
+					<Size>
+						<AbsDimension x="240" y="30"/>
+					</Size>
+					<Anchors>
+	                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkgFrame">
+	                        <Offset>
+	                            <AbsDimension x="43" y="-25"/>
+	                        </Offset>
+	                    </Anchor>
+	                </Anchors>
+	                <Scripts>
+						<OnClick>GetInst("UIManager"):GetCtrl("PhtoneBindingAward"):ToEmailBindingBtnClicked();</OnClick>
+					</Scripts>
+			</RichText>
+			<Frame name="PhtoneBindingAwardExplain" abs_x="960" abs_y="162">
+				<Anchors>
+					<Anchor point="top" relativeTo="PhtoneBindingAwardTitleFrame" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="9" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg11" />
+						<FontString name="$parentText" fonttype="BlackFont20" justifyH="left" text="" abs_x="923" abs_y="139" autowrap="true">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Frame name="PhtoneBindingAwardPrize" abs_x="470" abs_y="240">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="PhtoneBindingAwardExplain" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="0" y="15" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg11" />
+						<Texture name="$parentTitleBkg" inherits="TemplateBkg25" abs_x="467" abs_y="40">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitleName" fonttype="BlackFont22" justifyH="center" text="$22012" abs_x="467" abs_y="22">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg" />
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTag" fonttype="BlackFont18" justifyH="center" text="" abs_x="467" abs_y="22">
+							<Color r="111" g="145" b="150"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleBkg" >
+									<Offset>
+										<AbsDimension x="0" y="17" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentIteme1" inherits="PhtoneBindingPrizeTemplate" id="1">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="PhtoneBindingAwardPrize" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="63" y="110" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentIteme2" inherits="PhtoneBindingPrizeTemplate" id="2">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentIteme1" relativePoint="right">
+								<Offset>
+									<AbsDimension x="27" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentIteme3" inherits="PhtoneBindingPrizeTemplate" id="3">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentIteme2" relativePoint="right">
+								<Offset>
+									<AbsDimension x="27" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="PhtoneBindingAwardFun" abs_x="470" abs_y="240">
+				<Anchors>
+					<Anchor point="topright" relativeTo="PhtoneBindingAwardExplain" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="0" y="15" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg11" />
+						<FontString name="$parentPhoneTag" fonttype="BlackFont22" justifyH="right" text="$3413" abs_x="85" abs_y="22">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="0" y="69" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentPhoneNumEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="230" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPhoneTag">
+									<Offset>
+										<AbsDimension x="19" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentCodeTag" fonttype="BlackFont22" justifyH="right" text="$3418" abs_x="85" abs_y="22">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentPhoneTag" >
+									<Offset>
+										<AbsDimension x="0" y="61" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentCodeEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="230" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentCodeTag">
+									<Offset>
+										<AbsDimension x="19" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<EditBox name="$parentPhoneNumEdit" letters="30" multiLine="false" editMethod="527" cursorColor="ff000000">
+						<Size>
+							<AbsDimension x="230" y="22" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentPhoneNumEditBkg" relativePoint="left">
+								<Offset>
+									<AbsDimension x="17" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20" >
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="" textcolor="ffb9b9b9"/>
+						<Scripts>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("PhtoneBindingAward"):PhtoneBindingAwardPhtoneEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<EditBox name="$parentCodeEdit" letters="30" multiLine="false" editMethod="527" cursorColor="ff000000">
+						<Size>
+							<AbsDimension x="230" y="22" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentCodeEditBkg" relativePoint="left">
+								<Offset>
+									<AbsDimension x="17" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont21" >
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="" textcolor="ffb9b9b9"/>
+						<Scripts>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("PhtoneBindingAward"):PhtoneBindingAwardCertificateEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<Button name="$parentSendCode" inherits="TemplateBtn8" abs_x="97" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentPhoneNumEditBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="19" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3430" abs_x="85" abs_y="24">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("PhtoneBindingAward"):SendCodeBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

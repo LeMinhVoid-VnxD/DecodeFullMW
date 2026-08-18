@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/createWorldTempDetail/createWorldTempDetailModel.lua"/>
+	<Script file="ui/mobile/mvc/createWorldTempDetail/createWorldTempDetailView.lua"/>
+	<Script file="ui/mobile/mvc/createWorldTempDetail/createWorldTempDetailCtrl.lua"/>
+
+	##勾选按钮.
+    <Button name="TempDetailCheckBtnTemplate" virtual="true" inherits="TemplateTickBtn2" abs_x="150" abs_y="24">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("createWorldTempDetail"):CheckBtnTemplateOnClick();</OnClick>
+        </Scripts>
+    </Button>
+    
+	##高级创造模式，地形设置界面
+    <Frame name="createWorldTempDetail" parent="UIClient" abs_x="1040" abs_y="456" frameStrata="MEDIUM" hidden="true" framelevel="2253" input_transparent="true">
+        <Anchors>
+            <Anchor point="top" relativePoint="top" relativeTo="CreateWorldRuleFrameBkgBlue" >
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Frames>
+            ##名字编辑框
+            <Frame name="$parentMapName" abs_x="964" abs_y="62">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="32"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentName" fonttype="BlackFont20" text="$328" abs_x="120" abs_y="20">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="14"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentNameEditBkg" inherits="TemplateBkg8" abs_x="293" abs_y="46">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="125" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##分割线
+                        <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SafeEditBox name="$parentEdit" letters="32" multiLine="false" abs_x="258" abs_y="20">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parentNameEditBkg" />
+                        </Anchors>
+                        <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+                            <Color r="255" g="255" b="255"/>
+                        </FontString>
+                        <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="" textcolor="ffb9b9b9"/>
+                        <Scripts>
+                            <OnFocusLost>GetInst("UIManager"):GetCtrl("createWorldTempDetail"):MapNameOnFocusLost();</OnFocusLost>
+                            <OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("createWorldTempDetail"):MapNameOnEnterPressed();</OnEnterPressed>
+                            <OnClick>GetInst("UIManager"):GetCtrl("createWorldTempDetail"):MapNameOnEnterPressed();</OnClick>
+                        </Scripts>
+                    </SafeEditBox>
+                </Frames>
+            </Frame>
+            ##地图大小.
+            <Frame name="$parentMapSize" abs_x="964" abs_y="76">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentMapName">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$9188">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDesc" fonttype="BlackFont" abs_x="250" abs_y="16" text="$678">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentWidthBkg" >
+                                    <Offset>
+                                        <AbsDimension x="17" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentLongBkg" inherits="TemplateBkg8" abs_x="140" abs_y="46">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="125" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##乘号
+                        <FontString name="$parentXX" fonttype="BlackFont20" abs_x="14" abs_y="20" text="X" justifyH="center">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentLongBkg">
+                                    <Offset>
+                                        <AbsDimension x="21" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentWidthBkg" inherits="TemplateBkg8" abs_x="140" abs_y="46">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentLongBkg">
+                                    <Offset>
+                                        <AbsDimension x="58" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##分割线
+                        <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SafeEditBox name="$parentLongEdit" letters="10" editMethod="527" editimetype="1" abs_x="110" abs_y="20">
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parentLongBkg" relativePoint="center" />
+                        </Anchors>
+                        <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center" justifyV="middle">
+                            <Color r="255" g="255" b="255"/>
+                        </FontString>
+                        <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$680" textcolor="ffb9b9b9"/>
+                        <Scripts>
+                            <OnFocusLost>GetInst("UIManager"):GetCtrl("createWorldTempDetail"):MapSizeLongEditOnFocusLost();</OnFocusLost>
+                        </Scripts>
+                    </SafeEditBox>
+                    <SafeEditBox name="$parentWidthEdit" letters="10"  editMethod="527" editimetype="1" abs_x="110" abs_y="20">
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parentWidthBkg" relativePoint="center" />
+                        </Anchors>
+                        <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center" justifyV="middle">
+                            <Color r="255" g="255" b="255"/>
+                        </FontString>
+                        <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$680" textcolor="ffb9b9b9"/>
+                        <Scripts>
+                            <OnFocusLost>GetInst("UIManager"):GetCtrl("createWorldTempDetail"):MapSizeWidthEditOnFocusLost();</OnFocusLost>
+                        </Scripts>
+                    </SafeEditBox>
+                </Frames>
+            </Frame>
+
+            ##怪物
+            <Frame name="$parentMonster" abs_x="964" abs_y="60">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentMapSize" />
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$695">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="16"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <!-- ##分割线
+                        <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture> -->
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parent1" inherits="TempDetailCheckBtnTemplate" id="1" />
+                    <Button name="$parent2" inherits="TempDetailCheckBtnTemplate" id="2"/>
+                </Frames>
+            </Frame>
+            ##开始创作
+            <Button name="$parentCreateBtn2" inherits="TemplateBtn3" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="88"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" justifyH="center" fonttype="BlackFont24" abs_x="182" abs_y="24" text="$1000708" >
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("createWorldTemplete"):CreateMap2();</OnClick>
+                </Scripts>
+            </Button>            
+        </Frames>
+    </Frame>
+</Ui>

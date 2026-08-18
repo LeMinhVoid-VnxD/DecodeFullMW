@@ -1,0 +1,3172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/MaterialLib/itemDetail/MaterialLibItemDetailModel.lua"/>
+	<Script file="ui/mobile/mvc/MaterialLib/itemDetail/MaterialLibItemDetailView.lua"/>
+	<Script file="ui/mobile/mvc/MaterialLib/itemDetail/MaterialLibItemDetailCtrl.lua"/>
+
+	##上架协议模板
+	<Frame name="MaterialLibItemDetail_agreement" virtual = "true" abs_x="100" abs_y="80" framelevel = "7001" parent="UIClient" frameStrata="HIGH">
+		<Anchors>
+			<Anchor point="left" relativeTo="$parent" relativePoint="left"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="board_check_circle" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="5" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentFg" file="ui/mobile/texture2/common.xml" uvname="icon_tick_multi" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBg" relativePoint="center"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentTips" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="" abs_x="400" abs_y="22" textcolor="FF3d4546" input_transparent="true">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="56" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):AgreementContentBtnClicked()</OnClick>
+				</Scripts>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):AgreementCheckBtnClicked()</OnClick>
+		</Scripts>
+	</Frame>
+
+	##货币类型模板
+	<Frame name="MaterialLibItemDetail_costType" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="55"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="$16248">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentInputBg" inherits = "TemplateBkg8">
+                    <Size>
+                        <AbsDimension x="213" y="35"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="12"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentBtn" inherits = "TemplateBtn21">
+				<Size>
+					<AbsDimension x="256" y="37"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="2" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin">
+		                    <Size>
+		                        <AbsDimension x="22" y="22"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                            <Offset>
+		                                <AbsDimension x="-50" y="0"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </Texture>
+		                <FontString name="$parentName" fonttype="BlackFont18" text="迷你币" justifyH = "center">
+		                    <Color r="55" g="54" b="41"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                            <Offset>
+		                                <AbsDimension x="0" y="0"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+		                <FontString name="$parentFree" fonttype="BlackFont18" text="$362" justifyH = "center">
+		                    <Color r="55" g="54" b="41"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                            <Offset>
+		                                <AbsDimension x="0" y="0"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CostTypeBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<SafeEditBox name="$parentEditBox" letters="30" multiLine="false" editMethod="2">
+				<Size>
+					<AbsDimension x="200" y="35" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentInputBg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentFont" justifyH="center" fonttype="BlackFont18">
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont18" text="$699">
+					<Color r="185" g="185" b="185"/>
+				</FontString>
+				<Scripts>
+					<OnFocusLost>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CostEditBoxFocusLost();</OnFocusLost>
+				</Scripts>
+			</SafeEditBox>
+		</Frames>
+	</Frame>
+
+	##开关
+	<Frame name="MaterialLibItemDetail_adSwitch" virtual = "true">
+		<Size>
+			<AbsDimension x="481" y="82"/>
+		</Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="$16374">
+				<Color r="101" g="116" b="118"/>
+				<Size>
+					<AbsDimension x="384" y="17"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSwitchBtn" inherits="mini_SwitchBtnTemplateUI4">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnMouseDown>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):AdSwitchBtnClick();</OnMouseDown>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##点赞模板
+	<Frame name="MaterialLibItemDetail_likes" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="58"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="img_bar_white.png" DrawType="ninesquare_center">
+                    <Size>
+                        <AbsDimension x="481" y="33"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <NineSquare>
+			            <Topleft        offsetX="0"     offsetY="0"     w="4"  h="4"/>
+			            <Top            offsetX="4"     offsetY="0"     w="4"  h="4"/>
+			            <Topright       offsetX="8"     offsetY="0"     w="4"  h="4"/>
+			            <Left           offsetX="0"     offsetY="4"     w="4"  h="4"/>
+			            <Center         offsetX="4"     offsetY="4"     w="4"  h="4"/>
+			            <Right          offsetX="8"     offsetY="4"     w="4"  h="4"/>
+			            <Bottomleft     offsetX="0"     offsetY="8"     w="4"  h="4"/>
+			            <Bottom         offsetX="4"     offsetY="8"     w="4"  h="4"/>
+			            <Bottomright    offsetX="8"     offsetY="8"     w="4"  h="4"/>
+			            <OffSet x="1" y="1" />
+			        </NineSquare>
+                </Texture>
+                <Texture name="$parentFg" file="ui/mobile/texture2/common.xml" uvname="img_bar_orange.png" DrawType="ninesquare_center">
+                    <Size>
+                        <AbsDimension x="481" y="33"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <NineSquare>
+			            <Topleft        offsetX="0"     offsetY="0"     w="4"  h="4"/>
+			            <Top            offsetX="4"     offsetY="0"     w="4"  h="4"/>
+			            <Topright       offsetX="8"     offsetY="0"     w="4"  h="4"/>
+			            <Left           offsetX="0"     offsetY="4"     w="4"  h="4"/>
+			            <Center         offsetX="4"     offsetY="4"     w="4"  h="4"/>
+			            <Right          offsetX="8"     offsetY="4"     w="4"  h="4"/>
+			            <Bottomleft     offsetX="0"     offsetY="8"     w="4"  h="4"/>
+			            <Bottom         offsetX="4"     offsetY="8"     w="4"  h="4"/>
+			            <Bottomright    offsetX="8"     offsetY="8"     w="4"  h="4"/>
+			            <OffSet x="1" y="1" />
+			        </NineSquare>
+                </Texture>
+                <FontString name="$parentLikeNum" fonttype="BlackFont18" justifyH="left" text="0">
+					<Color r="55" g="54" b="49"/>
+					<Size>
+						<AbsDimension x="384" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="50" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentUnLikeNum" fonttype="BlackFont18" justifyH="right" text="0">
+					<Color r="55" g="54" b="49"/>
+					<Size>
+						<AbsDimension x="384" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="-50" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits = "TemplateBkg20">
+                    <Size>
+                        <AbsDimension x="481" y="2"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentLikeBtn">
+				<Size>
+					<AbsDimension x="35" y="37" />
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentBg" relativePoint="left">
+						<Offset>
+							<AbsDimension x="5" y="-7" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_praise_h.png">
+
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):LikeBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentUnLikeBtn">
+				<Size>
+					<AbsDimension x="35" y="37" />
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBg" relativePoint="right">
+						<Offset>
+							<AbsDimension x="-5" y="6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_praise_b.png">
+							<Angle value="180" />
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):UnLikeBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##作者名模板
+	<Frame name="MaterialLibItemDetail_authorName" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="68"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="left" text="">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="384" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="67" y="-9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentId" fonttype="BlackFont17" justifyH="left" text="">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits = "TemplateBkg20">
+                    <Size>
+                        <AbsDimension x="481" y="2"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSearchBtn" inherits="TemplateYellowSearchBtn" >
+				<Size>
+                    <AbsDimension x="50" y="50"/>
+                </Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left" />
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):AuthorSearchBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCopyIdBtn"  abs_x="26" abs_y="30">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentSearchBtn" >
+						<Offset>
+							<AbsDimension x="170" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal"   file="ui/mobile/texture2/playercenter.xml"  uvname="btn_copy" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/playercenter.xml"  uvname="btn_copy" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CopyIdBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentConcernBtn" inherits ="TemplateBtn7" abs_x="91" abs_y="43">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentDsec" fonttype="BlackFont18" justifyH="center" text="$4738">
+							<Color r="55" g="54" b="50"/>
+							<Size>
+								<AbsDimension x="384" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ConcernBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##资源模板
+	<Button name="MaterialLibItemDetail_resource" virtual = "true">
+		<Size>
+            <AbsDimension x="75" y="75"/>
+        </Size>
+		<Anchors>
+			<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture name="$parentCheck" inherits="TemplateBkg11"  abs_x="75" abs_y="75" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentIconBg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="75" abs_y="75" >
+		            <Anchors>
+		                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                    <Offset>
+		                        <AbsDimension x="0" y="0"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentIcon" alphamode="alphablend" abs_x="57" abs_y="57" >
+		            <Anchors>
+		                <Anchor point="center" relativePoint="center" relativeTo="$parentIconBg">
+		                    <Offset>
+		                        <AbsDimension x="0" y="0"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentAddIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="38" abs_y="38" >
+		            <Anchors>
+		                <Anchor point="center" relativePoint="center" relativeTo="$parentIconBg">
+		                    <Offset>
+		                        <AbsDimension x="0" y="0"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentDownloadIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download_state.png" abs_x="22" abs_y="21" >
+		            <Anchors>
+		                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentIconBg">
+		                    <Offset>
+		                        <AbsDimension x="-5" y="-5"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentDownloadedIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_yes_state.png" abs_x="25" abs_y="20" >
+		            <Anchors>
+		                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentIconBg">
+		                    <Offset>
+		                        <AbsDimension x="-5" y="-5"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentDownloadingIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_refresh_state.png" abs_x="21" abs_y="21" >
+		            <Anchors>
+		                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentIconBg">
+		                    <Offset>
+		                        <AbsDimension x="-5" y="-5"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+				<Texture name="$parentTexWait" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_03">
+					<Size>
+						<AbsDimension x="50" y="50"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentOwnedFrame" rel_x="1.0" rel_y="1.0" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/white.png" color="4c000000"/>
+						<Texture name="$parentTextBkg" file="ui/mobile/texture2/common.xml" uvname="img_board_receive" DrawType = "ninesquare_center">
+							<Size>
+								<AbsDimension x="70.4" y="25.6"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont17" text="$8008" justifyH="center" rel_x="1.0" abs_y="13">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTextBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ResourceBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##资源列表模板
+	<Frame name="MaterialLibItemDetail_resourceList" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="120"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="">
+					<Color r="101" g="116" b="118"/>
+					<!-- <Color r="153" g="196" b="167"/> -->
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentBtn1" inherits = "MaterialLibItemDetail_resource" id ="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="2" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits = "MaterialLibItemDetail_resource" id ="2">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits = "MaterialLibItemDetail_resource" id ="3">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn4" inherits = "MaterialLibItemDetail_resource" id ="4">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn5" inherits = "MaterialLibItemDetail_resource" id ="5">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn4">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn6" inherits = "MaterialLibItemDetail_resource" id ="6">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn5">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn7" inherits = "MaterialLibItemDetail_resource" id ="7">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn8" inherits = "MaterialLibItemDetail_resource" id ="8">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn7">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn9" inherits = "MaterialLibItemDetail_resource" id ="9">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn8">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn10" inherits = "MaterialLibItemDetail_resource" id ="10">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn9">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##描述模板
+	<Frame name="MaterialLibItemDetail_desc" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="48"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="$16221">
+					<Color r="101" g="116" b="118"/>
+					<!-- <Color r="153" g="196" b="167"/> -->
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentContent" lineInterval="5" multiLine="false" fonttype="BlackFont18" input_transparent="true" abs_x="480" abs_y="660">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="2" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+	</Frame>
+
+	##填写描述模板
+	<Frame name="MaterialLibItemDetail_fillDesc" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="120"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="$16221">
+					<Color r="101" g="116" b="118"/>
+					<!-- <Color r="153" g="196" b="167"/> -->
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentFillBg" inherits = "TemplateBkg8" abs_x="481" abs_y="239">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SafeMultiEditBox name="$parentEditBox" fonttype="BlackFont20" letters="660" multiLine="true" editMethod="527">
+                <Anchors>
+                  <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentFillBg">
+                    <Offset>
+                      <AbsDimension x="11" y="15"/>
+                    </Offset>
+                  </Anchor>
+                </Anchors>
+                <Size>
+                  <AbsDimension x="449" y="220"/>
+                </Size>
+				<textcolor r="255" g="255" b="255"/>
+				<cursorcolor r="255" g="255" b="255" />
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentDefault" fonttype="BlackFont18" justifyH="left" text="">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="240" y="100"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+                <Scripts>
+                  <OnFocusLost>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):FillDescEditBoxFocusLost();</OnFocusLost>
+                </Scripts>
+          </SafeMultiEditBox>
+		</Frames>
+	</Frame>
+
+	##标签模板
+	<Button name="MaterialLibItemDetail_tag" virtual = "true">
+		<Size>
+            <AbsDimension x="79" y="43"/>
+        </Size>
+		<Anchors>
+			<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentBg" inherits = "TemplateBkg18">
+		            <Anchors>
+		                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                    <Offset>
+		                        <AbsDimension x="0" y="0"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentAddIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add.png" abs_x="22" abs_y="22" >
+		            <Anchors>
+		                <Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+		                    <Offset>
+		                        <AbsDimension x="0" y="0"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentSelectIcon" inherits= "TemplateBigBkg13">
+		            <Anchors>
+		                <Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+		                    <Offset>
+		                        <AbsDimension x="0" y="0"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		        <Texture name="$parentSelectIconCorner" file="ui/mobile/texture2/common.xml" uvname="sel_delete.png" abs_x="21" abs_y="21">
+		            <Anchors>
+		                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentSelectIcon">
+		                    <Offset>
+		                        <AbsDimension x="-5" y="-5"/>
+		                    </Offset>
+		                </Anchor>
+		            </Anchors>
+		        </Texture>
+		       	<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="">
+					<Color r="54" g="53" b="53"/>
+					<Size>
+						<AbsDimension x="71" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):TagBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##标签标题模板
+	<Frame name="MaterialLibItemDetail_tagTitle" virtual = "true">
+		<Size>
+            <AbsDimension x="70" y="18"/>
+        </Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentText" fonttype="BlackFont18" justifyH="left" text="">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="70" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	##标签列表模板
+	<Frame name="MaterialLibItemDetail_tagList" virtual = "true">
+		<Size>
+            <AbsDimension x="481" y="70"/>
+        </Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="$16216">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentBtn1" inherits = "MaterialLibItemDetail_tag" id = "1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="2" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits = "MaterialLibItemDetail_tag" id = "2">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits = "MaterialLibItemDetail_tag" id = "3">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##选择标签界面
+	<Frame name="MaterialLibItemDetailSelectTag" parent="UIClient" frameStrata="MEDIUM" framelevel="3101" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBg" inherits="TemplateBigBkg8" abs_x="808" abs_y="506">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+                <Texture name="$parentBgCenter1" inherits="TemplateBigBkg2" abs_x="806" abs_y="362">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBg">
+                            <Offset>
+                                <AbsDimension x="0" y="52"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBgCenter2" inherits="TemplateBigBkg5" abs_x="772" abs_y="294">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBgCenter1">
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentTips" fonttype="BlackFont20" justifyH="left" text="">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="600" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBgCenter2">
+							<Offset>
+								<AbsDimension x="0" y="-33"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="800" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):SelectTagCloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+            ##确定按钮
+            <Button name="$parentConfirmBtn" inherits ="TemplateBtn7" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBg" >
+						<Offset>
+							<AbsDimension x="0" y="-18"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentDsec" fonttype="BlackFont24" justifyH="center" text="$11051">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="384" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):SelectTagConfirmBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##滑动列表
+			<SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="768" y="288"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBgCenter2" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="768" y="288"/>
+						</Size>
+					</Frame>			
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+	</Frame>
+
+	##选项按钮模板
+	<Button name="MaterialLibItemDetailSelectCostTypeOptionBtnTemplate" abs_x="533" abs_y="50" virtual="true" inherits="TemplateBtn21" hidden="true">
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3656" abs_x="533" abs_y="25">
+					<Color r="55" g="54" b="41"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin">
+					<Size>
+						<AbsDimension x="27" y="28"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="177" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):OptionBtnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##选择货币类型界面
+	<Frame name="MaterialLibItemDetailSelectCostType" parent="UIClient" frameStrata="MEDIUM" framelevel="3101" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="415">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="640" abs_y="65">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg" >
+							<Offset>
+								<AbsDimension x="-3" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitlePattern" inherits="TemplateBigBkg7_flat" abs_x="640" abs_y="60">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentTitleBkg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30" text="$21668" justifyH="center" abs_x="653" abs_y="30">
+					<Color r="77" g="112" b="116"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="25"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont20" text="$21614" justifyH="center" justifyV="middle" autowrap="true" abs_x="300" abs_y="20">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg5" abs_x="562" abs_y="237">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="116"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-23" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CloseCostTypeView();</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="$parentOptionBox" slidingY="true" slideplane="$parentPlane" abs_x="562" abs_y="227">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentChenDi" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="false" abs_x="562" abs_y="237" />
+					<Button name="$parent1" inherits="MaterialLibItemDetailSelectCostTypeOptionBtnTemplate" id="1"/>
+					<Button name="$parent2" inherits="MaterialLibItemDetailSelectCostTypeOptionBtnTemplate" id="2"/>
+					<Button name="$parent3" inherits="MaterialLibItemDetailSelectCostTypeOptionBtnTemplate" id="3"/>
+					<Button name="$parent4" inherits="MaterialLibItemDetailSelectCostTypeOptionBtnTemplate" id="4"/>
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+	</Frame>
+
+	##资源工坊的插件包格子模板
+	<Button name="MaterialLibPluginGridTemplate" virtual="true" abs_x="78" abs_y="78" click_threshold="5">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="78" abs_y="78" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="65" abs_y="65" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTexWait" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_03" hidden="true">
+					<Size>
+						<AbsDimension x="50" y="50"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" abs_x="78" abs_y="78">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MaterialLibPluginGridTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+
+	#类型筛选按钮
+	<Button name="DownTypeFilterBtnTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="256" y="42"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true"/>
+				<FontString name="$parentFont" fonttype="BlackFont18" justifyH="center" text="$33164">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="110" y="19"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DownTypeBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##内置插件模板
+	<Frame name="MaterialLibItemDetail_inPlugin" virtual = "true">
+		<Size>
+			<AbsDimension x="481" y="65"/>
+		</Size>
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<FontString name="$parentTitle" fonttype="BlackFont17" justifyH="left" text="$33164">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="384" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentDownBtn" abs_x="256" abs_y="37">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBkg" inherits="TemplateBkg34"/>
+						<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="$16294" abs_x="60" abs_y="18">
+							<Color r="62" g="70" b="71"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentArrow" abs_x="37" abs_y="37">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentUp" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" UVType="turn270" abs_x="17" abs_y="10" hidden="true">
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-12" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Texture>
+								<Texture name="$parentDown" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" UVType="turn90" abs_x="17" abs_y="10">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DownBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+
+			<Frame name="$parentPlane" abs_x="481" abs_y="1300">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDownBtn">
+						<Offset>
+							<AbsDimension x="0" y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnMouseDown platform="pc">CreateBackpackFrame_OnMouseDown()</OnMouseDown>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	##资源商城商品详情界面
+	<Frame name="MaterialLibItemDetail" parent="UIClient" frameStrata="MEDIUM" framelevel="3100" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentCoverBg" file="ui/white.png" stretchedge="true" color="40000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBg" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="557" y="662"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##上部分
+			<Frame name="$parentTop" abs_x="511" abs_y="180">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIconBg" file="ui/mobile/texture2/common.xml" uvname ="img_board_resource" abs_x="166" abs_y="166" DrawType="ninesquare">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<NineSquare>
+					            <Topleft        offsetX="0"     offsetY="0"     w="5"  h="5"/>
+					            <Top            offsetX="5"     offsetY="0"     w="5"  h="5"/>
+					            <Topright       offsetX="10"     offsetY="0"     w="5"  h="5"/>
+					            <Left           offsetX="0"     offsetY="5"     w="5"  h="5"/>
+					            <Center         offsetX="5"     offsetY="5"     w="5"  h="5"/>
+					            <Right          offsetX="10"     offsetY="5"     w="5"  h="5"/>
+					            <Bottomleft     offsetX="0"     offsetY="10"     w="5"  h="5"/>
+					            <Bottom         offsetX="5"     offsetY="10"     w="5"  h="5"/>
+					            <Bottomright    offsetX="10"     offsetY="10"     w="5"  h="5"/>
+					            <OffSet x="5" y="5" />
+					        </NineSquare>
+						</Texture>
+						<Texture name="$parentIconShadow" file="ui/mobile/texture2/modlib.xml" uvname="guide_img_horizon1.png" abs_x="144" abs_y="84">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" abs_x="109" abs_y="118">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentIconBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentAddTips" fonttype="BlackFont20" justifyH="center" text="$16245">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="150" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parentIconShadow">
+									<Offset>
+										<AbsDimension x="0" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentCover" file="ui/snap_empty.png" abs_x="166" abs_y="166" hidden="true">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont26" justifyH="left" text="">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="260" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIconBg">
+									<Offset>
+										<AbsDimension x="10" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentFillNameBg" inherits = "TemplateBkg8" abs_x="243" abs_y="38">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentFillNameIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_input_white" abs_x="25" abs_y="26">
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parentFillNameBg">
+                                    <Offset>
+                                        <AbsDimension x="-10" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+						<FontString name="$parentTime" fonttype="BlackFont14" justifyH="top" text="">
+							<Color r="101" g="116" b="118"/>
+							<Size>
+								<AbsDimension x="384" y="14"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentKindIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_resource">
+		                    <Size>
+		                        <AbsDimension x="18" y="21"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="left" relativePoint="left" relativeTo="$parentTime">
+		                            <Offset>
+		                                <AbsDimension x="0" y="45"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </Texture>
+		                <FontString name="$parentKindDesc" fonttype="BlackFont18" text="">
+		                    <Color r="101" g="116" b="118"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="left" relativePoint="left" relativeTo="$parentKindIcon">
+		                            <Offset>
+		                                <AbsDimension x="32" y="3"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+		                <Texture name="$parentSizeIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_file">
+		                    <Size>
+		                        <AbsDimension x="21" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="left" relativePoint="left" relativeTo="$parentKindIcon">
+		                            <Offset>
+		                                <AbsDimension x="0" y="30"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </Texture>
+		                <FontString name="$parentSizeDesc" fonttype="BlackFont18" text="">
+		                    <Color r="101" g="116" b="118"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="left" relativePoint="left" relativeTo="$parentSizeIcon">
+		                            <Offset>
+		                                <AbsDimension x="32" y="3"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+		                <Texture name="$parentDownloadIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download">
+		                    <Size>
+		                        <AbsDimension x="21" y="20"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="left" relativePoint="left" relativeTo="$parentSizeIcon">
+		                            <Offset>
+		                                <AbsDimension x="-2" y="30"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </Texture>
+		                <FontString name="$parentDownloadDesc" fonttype="BlackFont18" text="">
+		                    <Color r="101" g="116" b="118"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="left" relativePoint="left" relativeTo="$parentDownloadIcon">
+		                            <Offset>
+		                                <AbsDimension x="32" y="3"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+		                <FontString name="$parentCollectNum" fonttype="BlackFont18" text="" justifyH = "center">
+		                    <Color r="61" g="69" b="70"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="18"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="top" relativePoint="topright" relativeTo="$parent">
+		                            <Offset>
+		                                <AbsDimension x="-28" y="50"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+		                <Texture name="$parentPriceBg" file="ui/mobile/texture2/common.xml" uvname="btn_price">
+		                    <Size>
+		                        <AbsDimension x="128" y="58"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="right" relativePoint="center" relativeTo="$parentCollectNum">
+		                            <Offset>
+		                                <AbsDimension x="26" y="60"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </Texture>
+		                <Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin">
+		                    <Size>
+		                        <AbsDimension x="37" y="38"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="right" relativePoint="center" relativeTo="$parentPriceBg">
+		                            <Offset>
+		                                <AbsDimension x="-10" y="0"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </Texture>
+		                <FontString name="$parentPriceNum" fonttype="BlackFont24" text="999" justifyH = "center">
+		                    <Color r="61" g="69" b="70"/>
+		                    <Size>
+		                        <AbsDimension x="69" y="24"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parentPriceBg">
+		                            <Offset>
+		                                <AbsDimension x="25" y="0"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+		                <FontString name="$parentPriceFree" fonttype="BlackFont24" text="$362" justifyH = "center">
+		                    <Color r="55" g="54" b="48"/>
+		                    <Size>
+		                        <AbsDimension x="230" y="24"/>
+		                    </Size>
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parentPriceBg">
+		                            <Offset>
+		                                <AbsDimension x="0" y="0"/>
+		                            </Offset>
+		                        </Anchor>
+		                    </Anchors>
+		                </FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentItemIDBtn">
+						<Size>
+							<AbsDimension x="270" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="top">
+								<Offset>
+									<AbsDimension x="-80" y="70"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont14" justifyH="top" text="">
+									<Color r="10" g="132" b="226"/>
+									<Size>
+										<AbsDimension x="270" y="14"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ItemIDBtnCopyIdBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+
+					<SafeEditBox name="$parentNameEditBox" letters="21" multiLine="false" editMethod="527">
+						<Size>
+							<AbsDimension x="160" y="38" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentFillNameBg" relativePoint="left">
+								<Offset>
+									<AbsDimension x="28" y="2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" justifyV="middle" fonttype="BlackFont22" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$16246" >
+							<Color r="185" g="185" b="185"/>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):NameEditBoxFocusLost();</OnFocusLost>
+						</Scripts>
+					</SafeEditBox>
+					<Frame name = "$parentTag" input_transparent = "true">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentIconBg" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="-5" y="-1" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								##标签背景
+								<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="label_information_purple.png" abs_x="71" abs_y="33" UVType="mirroev">
+									<Angle value="180"/>
+								</Texture>
+								##标签
+								<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="" abs_x="50" abs_y="18">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+											<Offset>
+												<AbsDimension x="2" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentChangeIconBtn" inherits = "TemplateBtn8">
+						<Size>
+							<AbsDimension x="37" y="40"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentIconBg" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="2" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_refresh" abs_x="29" abs_y="29">
+									<Anchors>
+										<Anchor point="center" relativePoint="center">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ChangeIconBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCollectBtn">
+						<Size>
+							<AbsDimension x="35" y="32"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-10" y="5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_n.png" abs_x="35" abs_y="32">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CollectBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCloseBtn">
+						<Size>
+							<AbsDimension x="36" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="70" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+							<Size>
+								<AbsDimension x="41" y="41"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CloseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##中间部分
+			<Frame name="$parentCenter" abs_x="511" abs_y="374">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTop" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits="TemplateBigBkg5">
+							<Size>
+								<AbsDimension x="511" y="374"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="511" y="366"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="0" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="511" y="366"/>
+								</Size>
+							</Frame>
+							#下拉的类型筛选框
+							<Button name="$parentDownPanel" abs_x="557" abs_y="662" hidden="true" framelevel="3101">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentMask" file="ui/white.png"  color="00000000" >
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentBg" inherits="TemplateBigBkg19" abs_x="256" abs_y="290"/>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Button name="$parentFilter1" inherits="DownTypeFilterBtnTemplate" id="1">
+										<Anchors>
+											<Anchor point="topleft" relativeTo="$parentBg" relativePoint="topleft">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentFilter2" inherits="DownTypeFilterBtnTemplate" id="2">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentFilter1" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentFilter3" inherits="DownTypeFilterBtnTemplate" id="3">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentFilter2" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentFilter4" inherits="DownTypeFilterBtnTemplate" id="4">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentFilter3" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentFilter5" inherits="DownTypeFilterBtnTemplate" id="5">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentFilter4" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentFilter6" inherits="DownTypeFilterBtnTemplate" id="6">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentFilter5" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentFilter7" inherits="DownTypeFilterBtnTemplate" id="7">
+										<Anchors>
+											<Anchor point="top" relativeTo="$parentFilter6" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+								</Frames>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DownPanelClicked()</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CenterSliding_OnMouseMove();</OnMouseMove>
+							<OnMouseWheel>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CenterSliding_OnMouseMove();</OnMouseWheel>
+						</Scripts>
+					</SlidingFrame>
+				</Frames>	
+			</Frame>
+			##下面部分
+			<Frame name="$parentBottom" abs_x="511" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentCenter" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBottomArrowIcon" file="ui/mobile/texture2/common.xml" uvname="img_arrow_arrowhead_h.png" UVType="turn270">
+							<Size>
+								<AbsDimension x="34" y="27"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="-18"/>
+										</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##更多操作面板
+					<Frame name="$parentMoreHandlePanel">
+						<Size>
+							<AbsDimension x="226" y="130"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomright">
+								<Offset>
+									<AbsDimension x="23" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+ 						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBg" inherits="TemplateBigBkg19">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17" >
+									<Angle value="180" />
+									<Anchors>
+										<Anchor point="right" relativePoint="bottomleft" relativeTo="$parentBg">
+											<Offset>
+												<AbsDimension x="1" y="-48"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentReportBtn" inherits = "TemplateBtn27">
+								<Size>
+									<AbsDimension x="210" y="50"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativeTo="$parent" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_report.png" abs_x="25" abs_y="25">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>									
+										</Texture>		
+										<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$1305">
+											<Color r="55" g="51" b="51"/>
+											<Size>
+												<AbsDimension x="160" y="27"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ReportBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentShareBtn" inherits = "TemplateBtn12">
+								<Size>
+									<AbsDimension x="210" y="50"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativeTo="$parent" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="70"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_share.png" abs_x="25" abs_y="25">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>									
+										</Texture>		
+										<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$1070">
+											<Color r="55" g="54" b="51"/>
+											<Size>
+												<AbsDimension x="160" y="27"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ShareBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							##编辑按钮
+							<Button name="$parentEditBtn" inherits = "TemplateBtn11">
+								<Size>
+									<AbsDimension x="210" y="50"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativeTo="$parent" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="70"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_input.png" abs_x="25" abs_y="25">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$33196">
+											<Color r="55" g="54" b="51"/>
+											<Size>
+												<AbsDimension x="160" y="27"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):EditBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCopyIdBtn" inherits = "TemplateBtn12">
+								<Size>
+									<AbsDimension x="210" y="50"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativeTo="$parent" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="130"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_copy.png" abs_x="25" abs_y="25">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>									
+										</Texture>		
+										<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16230">
+											<Color r="51" g="55" b="55"/>
+											<Size>
+												<AbsDimension x="160" y="27"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CopyItemIdBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							##删除按钮
+							<Button name="$parentDeleteBtn" inherits = "TemplateBtn27">
+								<Size>
+									<AbsDimension x="210" y="50"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativeTo="$parent" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png" abs_x="25" abs_y="25">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$3017">
+											<Color r="55" g="51" b="51"/>
+											<Size>
+												<AbsDimension x="160" y="27"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DeleteBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames> 
+					</Frame>
+					##删除按钮
+					<Button name="$parentDeleteBtn" inherits = "TemplateBtn35">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$3017">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DeleteBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##移除按钮
+					<Button name="$parentRemoveBtn" inherits = "TemplateBtn35">
+						<Size>
+							<AbsDimension x="511" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16274">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):RemoveBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##上架按钮
+					<Button name="$parentEnableSaleBtn" inherits = "TemplateBtn3">
+						<Size>
+							<AbsDimension x="511" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16258">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):EnableSaleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##重新上架按钮
+					<Button name="$parentReEnableSaleBtn" abs_x="168" abs_y="43" inherits = "TemplateBtn8">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16270">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ReEnableSaleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##重试按钮
+					<Button name="$parentReTryBtn" abs_x="168" abs_y="43" inherits = "TemplateBtn7">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16318">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ReTryBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##重试上架按钮
+					<Button name="$parentReTryUploadBtn" abs_x="168" abs_y="43" inherits = "TemplateBtn7">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16318">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ReTryUploadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##更新上架按钮(小)
+					<Button name="$parentSmallUpdateSaleBtn" inherits="TemplateBtn3">
+						<Size>
+							<AbsDimension x="200" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$33191">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="182" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):UpdateSaleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##重新上架按钮(小)
+					<Button name="$parentSmallReEnableSaleBtn" inherits="TemplateBtn2">
+						<Size>
+							<AbsDimension x="200" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentSmallUnlockBtn" relativePoint="right">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16270">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="182" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ReEnableSaleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##删除按钮(小)
+					<Button name="$parentSmallDeleteBtn" inherits="TemplateBtn27">
+						<Size>
+							<AbsDimension x="200" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentSmallUnlockBtn" relativePoint="right">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16309">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="182" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DisableSaleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##更新按钮
+					<Button name="$parentUpdateBtn" abs_x="168" abs_y="43" inherits="TemplateBtn8">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$30054">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):UpdateBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##废弃按钮
+					<Button name="$parentDiscardBtn" inherits = "TemplateBtn35">
+						<Size>
+							<AbsDimension x="91" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png">
+		                            <Size>
+		                                <AbsDimension x="31" y="31"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                                    <Offset>
+		                                        <AbsDimension x="0" y="0"/>
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                        </Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DiscardBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##解锁按钮
+					<Button name="$parentUnlockBtn" inherits = "TemplateBtn3">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin.png">
+		                            <Size>
+		                                <AbsDimension x="37" y="38"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+		                                    <Offset>
+		                                        <AbsDimension x="25" y="0"/>
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                        </Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$3033">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="121" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):UnlockBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##解锁按钮
+					<Button name="$parentSmallUnlockBtn" inherits = "TemplateBtn3">
+						<Size>
+							<AbsDimension x="200" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin">
+									<Size>
+										<AbsDimension x="37" y="38"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="25" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="left" text="0">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="120" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):UnlockBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##广告按钮
+					<Button name="$parentShowADBtn" inherits = "TemplateBtn2">
+						<Size>
+							<AbsDimension x="200" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentSmallUnlockBtn" relativePoint="right">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tv">
+									<Size>
+										<AbsDimension x="30" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="30" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="left" text="$4933">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="127" y="19"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ShowADBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##保存编辑按钮
+					<Button name="$parentConserveEditBtn" abs_x="168" abs_y="43" inherits="TemplateBtn7">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$33197">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ConserveEditBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##更多操作按钮
+					<Button name="$parentMoreHandleBtn" inherits = "TemplateBtn2">
+						<Size>
+							<AbsDimension x="91" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_more.png">
+		                            <Size>
+		                                <AbsDimension x="34" y="8"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                                    <Offset>
+		                                        <AbsDimension x="0" y="0"/>
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                        </Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):MoreHandleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##下架按钮
+					<Button name="$parentDisableSaleBtn" inherits = "TemplateBtn35">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16309">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DisableSaleBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##取消更新按钮
+					<Button name="$parentCancelUpdateBtn" inherits="TemplateBtn35">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$33204">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):CancelUpdateBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##下载按钮
+					<Button name="$parentDownloadBtn" inherits = "TemplateBtn2">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16223">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):DownloadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##下载中按钮
+					<Button name="$parentDownloadingBtn">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBg" inherits = "TemplateBkg75">
+		                            <Size>
+		                                <AbsDimension x="409" y="61"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                                    <Offset>
+		                                        <AbsDimension x="0" y="0"/>
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                        </Texture>
+		                        <Texture name="$parentFg" inherits = "TemplateBkg2">
+		                            <Size>
+		                                <AbsDimension x="409" y="61"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="left" relativePoint="left" relativeTo="$parentBg">
+		                                    <Offset>
+		                                        <AbsDimension x="0" y="0"/>
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                        </Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16224">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+						</Scripts>
+					</Button>
+					##已下载按钮
+					<Button name="$parentDownloadedBtn" inherits = "TemplateBtn2">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+		                        <Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_mini_empty" DrawType="center">
+		                            <Size>
+		                                <AbsDimension x="409" y="61"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                                    <Offset>
+		                                        <AbsDimension x="0" y="0"/>
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                            <Center>
+										<Left offsetX="0" offsetY="0" w="15" h="43"/>
+										<Center offsetX="15" offsetY="0" w="10" h="43" />
+										<Right offsetX="25" offsetY="0" w="15" h="43" />
+									</Center>
+		                        </Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$16225">
+									<Color r="54" g="53" b="53"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+						</Scripts>
+					</Button>
+					##导入按钮
+					<Button name="$parentImportBtn" inherits = "TemplateBtn2">
+						<Size>
+							<AbsDimension x="409" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$33143">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="384" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ImportBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##返回按钮
+					<Button name="$parentBackBtn" inherits = "TemplateBtn35">
+						<Size>
+							<AbsDimension x="91" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_intomap.png" UVType="turn180">
+									<Size>
+										<AbsDimension x="24" y="22"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):BackBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("MaterialLibItemDetail"):ResourceBtn_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

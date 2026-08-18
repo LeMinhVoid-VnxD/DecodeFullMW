@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/rune/inlay/InlayModel.lua"/>
+	<Script file="ui/mobile/mvc/rune/inlay/InlayView.lua"/>
+	<Script file="ui/mobile/mvc/rune/inlay/InlayCtrl.lua"/>
+	<Script file="ui/mobile/mvc/rune/RuneManager.lua"/>
+	##原料格子模板
+	<Button name="InlayItemGridTemplate" inherits="GridButtonTemplate2" virtual="true" abs_x="94" abs_y="94">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentDesc" fonttype="BlackFont16" justifyH="center" text="攻击+10" autowrap="true" abs_x="170" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentForbid" file="ui/mobile/texture2/common.xml" uvname="icon_add_no_green">
+					<Size>
+						<AbsDimension x="53" y="53"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+	##
+	<Button name="InlayBtnGridTemplate2" inherits="CraftingTableGridBtnTemplate2" virtual="true">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("Inlay"):InlayStuffItemOnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="Inlay" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="993" abs_y="550">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBlueLine" inherits="TemplateBkg14" abs_x="11" abs_y="544">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="392" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg1" inherits="TemplateBkg25" abs_x="349" abs_y="36">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="24" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLeftBkg1" inherits="TemplateBigBkg11" abs_x="351" abs_y="298">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTitleBkg1">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentLeftBkg2" inherits="TemplateBigBkg11" abs_x="351" abs_y="215">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentLeftBkg1">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg2" inherits="TemplateBkg25" abs_x="349" abs_y="36">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentLeftBkg2">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName1" fonttype="BlackFont24" justifyH="left" text="$3128" abs_x="170" abs_y="26">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTitleBkg1">
+							<Offset>
+								<AbsDimension x="10" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName2" fonttype="BlackFont24" justifyH="left" text="$2096" abs_x="170" abs_y="26">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTitleBkg2">
+							<Offset>
+								<AbsDimension x="10" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##背景
+				<Texture name="$parentRightBkg" inherits="TemplateBigBkg11" abs_x="549" abs_y="512">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBlueLine">
+							<Offset>
+								<AbsDimension x="30" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBoard" inherits="TemplateBkg25" abs_x="547" abs_y="36">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="0" y="36"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentMakeResultName" fonttype="BlackFont24" justifyH="center" text="" abs_x="71" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="813" y="-361"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentMaterialName" fonttype="BlackFont24" justifyH="left" text="$2091" abs_x="170" abs_y="24">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="15" y="8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentland" file="ui/mobile/texture0/ingame.xml" uvname="img_land_2">
+					<Size>
+						<AbsDimension x="203" y="143"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEquipIcon" file="ui/mobile/texture0/ingame.xml" uvname="img_land_2">
+					<Size>
+						<AbsDimension x="108" y="108"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="center" relativeTo="$parentland">
+							<Offset>
+								<AbsDimension x="0" y="-60"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+		##模型模板
+			<ModelView name="$parentActorPanelView" abs_x="300" abs_y="300">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentland" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="-70" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<Scripts>
+					<OnMouseDown>GetInst("UIManager"):GetCtrl("Inlay"):RotateBtnMouseDown();</OnMouseDown>
+					<OnMouseMove>GetInst("UIManager"):GetCtrl("Inlay"):RotateBtnMouseMove();</OnMouseMove>
+				</Scripts>
+			</ModelView>
+				##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="987" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+	 		##燃料
+			<Button name="$parentItemGrid1" inherits="InlayItemGridTemplate" id="45001">
+
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentRightBkg">
+						<Offset>
+							<AbsDimension x="0" y="45" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+			</Button>
+			<Button name="$parentItemGrid2" inherits="InlayItemGridTemplate" id="45002">
+
+				<Anchors>
+					<Anchor point="topleft" relativePoint="left" relativeTo="$parentRightBkg">
+						<Offset>
+							<AbsDimension x="25" y="-115" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+			</Button>
+			<Button name="$parentItemGrid3" inherits="InlayItemGridTemplate" id="45003">
+
+				<Anchors>
+					<Anchor point="topright" relativePoint="right" relativeTo="$parentRightBkg">
+						<Offset>
+							<AbsDimension x="-25" y="-115" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+			</Button>
+			<Button name="$parentItemGrid4" inherits="InlayItemGridTemplate" id="45004">
+
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentItemGrid2">
+						<Offset>
+							<AbsDimension x="0" y="60" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+			</Button>
+			<Button name="$parentItemGrid5" inherits="InlayItemGridTemplate" id="45005">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentItemGrid3">
+						<Offset>
+							<AbsDimension x="0" y="60" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+			</Button>
+			<SlidingFrame name="$parentStuffListBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="328" y="242"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentTitleBkg1">
+						<Offset>
+							<AbsDimension x="0" y="46"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="328" y="570"/>
+						</Size>
+					</Frame>
+					<Button name="$parentItem1" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem2" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem3" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem4" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem5" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem6" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem7" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem8" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem9" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem10" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem11" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem12" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem13" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem14" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem15" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem16" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem17" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem18" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem19" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem20" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem21" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem22" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem23" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem24" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem25" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem26" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem27" inherits="InlayBtnGridTemplate2"/>
+					<Button name="$parentItem28" inherits="InlayBtnGridTemplate2"/>
+				</Frames>
+			</SlidingFrame>
+			<SlidingFrame name="$parentFuelListBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="328" y="160"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentTitleBkg2">
+						<Offset>
+							<AbsDimension x="0" y="46"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="328" y="570"/>
+						</Size>
+					</Frame>
+					<Button name="$parentItem1" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem2" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem3" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem4" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem5" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem6" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem7" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem8" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem9" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem10" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem11" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem12" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem13" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem14" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem15" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem16" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem17" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem18" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem19" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem20" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem21" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem22" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem23" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem24" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem25" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem26" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem27" inherits="GridButtonTemplate2"/>
+					<Button name="$parentItem28" inherits="GridButtonTemplate2"/>
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("Inlay"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

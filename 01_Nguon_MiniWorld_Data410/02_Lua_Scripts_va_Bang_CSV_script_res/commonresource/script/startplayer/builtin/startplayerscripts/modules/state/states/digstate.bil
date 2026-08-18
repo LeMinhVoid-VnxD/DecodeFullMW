@@ -1,0 +1,133 @@
+local RunService = game:GetService("RunService")
+local WorldService = game:GetService("WorldService")
+local BlockService = game:GetService("BlockService")
+
+local State = CommonModule.GetRegisterClass("State")
+local DigState = CommonModule.Class("DigState", State)
+
+DigState.FROM_STATE = { "IdleState" }
+
+local BLOCK_SIZE = 100
+local DIG_NEED_TIME = 1000
+
+function DigState:EnterState()
+	self.m_enterStateTime = RunService:CurrentMilliSecondTimeStamp()
+	self:checkDoDig()
+end
+
+function DigState:checkDoDig()
+	local result = self.m_host:doPick()
+	print("checkDoDig pickType", result.pickType, result.block)
+	local pickType = result.pickType
+	
+	self.m_curPickType = pickType
+	self.m_isDigging = false
+	self.m_isAttack = false
+	self.m_needQuit  = false
+
+
+	if pickType == 1 then
+		self:DigBlock(result.block, result.face)
+	else
+		self.m_needQuit =  true
+		self.m_isDigging = false
+		self.m_isAttack = false
+	end
+end
+
+local function handleDigDone( self )
+	--print("handleDigDone")
+	BlockService:DropBlockAsItem(game.WorkSpace, self.m_curDigBlock, 1, 1, 0)
+
+	local blockpos = Vector3.New(self.m_curDigBlock.x*100, self.m_curDigBlock.y*100, self.m_curDigBlock.z*100)
+	BlockService:DestroyBlock(game.WorkSpace,blockpos, true)
+	--BlockService:SetBlock(game.WorkSpace,self.m_curDigBlock, 0, 0, 3, true)
+end
+
+local function _GetBlockCenterPos( block )
+	return block*BLOCK_SIZE + Vector3.New(BLOCK_SIZE/2, BLOCK_SIZE/2, BLOCK_SIZE/2)
+end
+
+function DigState:playEffectSound( soundpath )
+	if self.m_soundNode == nil then
+		self.m_soundNode = SandboxNode.new("SandboxSound", self.m_host.m_charater)
+	end
+	self.m_soundNode.FixPos = _GetBlockCenterPos(self.m_curDigBlock)
+	self.m_soundNode.SoundPath = soundpath
+	self.m_soundNode.IsLoop = false;
+	self.m_soundNode:PlaySound()
+end
+
+local function handlePlayDigSound( self )
+	self:playEffectSound("sandboxSysId://sounds/blocks/grass1.ogg")
+end
+
+local function handleUpdateCrackEffect( self )
+
+end
+
+function DigState:updateDigState()
+	if not self.m_isDigging then return end
+
+	local curtime = RunService:CurrentMilliSecondTimeStamp()
+	if self.m_digDoneTime > 0 and curtime >= self.m_digDoneTime then
+		handleDigDone(self)
+		self:checkDoDig()
+	else
+		handlePlayDigSound(self)
+		handleUpdateCrackEffect(self)
+	end
+end
+
+function DigState:DigBlock(block, face)
+	--assert("wait do")
+	
+	self:PerformDigAnim()
+	self.m_isDigging = true
+	self.m_curDigBlock = block
+	self.m_face = face
+	self.m_digDoneTime = RunService:CurrentMilliSecondTimeStamp() + DIG_NEED_TIME
+end
+
+
+function DigState:PerformDigAnim()
+	self.m_playAnimBeginTime = RunService:CurrentMilliSecondTimeStamp()
+	self.m_host:PlayAnim("100105")
+end
+
+function DigState:LeaveState()
+	self.m_digDoneTime = -1
+	self.m_isDigging = false
+	self.m_isAttack = false
+	self.m_playAnimBeginTime = -1
+	self.m_host:StopAnim("100105")
+end
+
+function DigState:IsChangeDigBlock()
+	if not self.m_isDigging then return false end
+
+	local result = self.m_host:doPick()
+	if result.pickType ~= 1 or result.block ~= self.m_curDigBlock then
+		return true
+	end
+
+	return false
+end
+
+function DigState:OnUpdate(dt)
+	if self.m_needQuit then
+		return "IdleState"
+	end
+
+	if not self.m_host:IsCanDig() then
+		return "IdleState"
+	end
+
+	if not self:IsChangeDigBlock() then --如果挖的方块变化了，则重新走开始挖的逻辑
+		self:checkDoDig()
+	else
+		self:updateDigState()
+	end
+end
+
+return DigState

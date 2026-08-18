@@ -1,0 +1,2517 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/blocktransfer.lua"/>
+
+	<!--传送目标点选择按钮模板-->
+ 	<Button name="DestinationSelectBtnTemplate" abs_x="418" abs_y="61" virtual="true" hidden="true">
+ 		<Layers>
+ 			<Layer level="BACKGROUND">
+ 				<Texture name="$parentBkg" inherits="TemplateBigBkg6"/>
+ 				<FontString name="$parentTitle" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="一二三四五六" abs_x="400" abs_y="50">
+ 					<color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+ 				</FontString>
+ 				<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="icon_activation_n.png" abs_x="17" abs_y="17">
+					<Anchors>
+						<Anchor point="Right" relativeTo="$parent" relativePoint="Right">
+							<OffSet>
+								<AbsDimension x="-22" y="0"/>
+							</OffSet>
+						</Anchor>
+					</Anchors>
+				</Texture>
+ 			</Layer>
+ 			<Layer level="overlay">
+ 				<Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true"/>
+ 			</Layer>
+ 		</Layers>
+ 		<Scripts>
+ 			<OnClick>DestinationSelectBtnTemplate_OnClick();</OnClick>
+ 		</Scripts>
+ 	</Button>
+ 	<!--选择按钮模板-->
+ 	<Button name="ItemSelectBtnTemplate" abs_x="70" abs_y="70" virtual="true">
+        <Layers>
+            <Layer level="overlay">
+				<Texture name="$parentAddIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="48" abs_y="48">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+					</Anchors>
+				</Texture>
+                <Texture name="$parentIcon" alphamode="alphablend">
+                    <Size>
+                        <AbsDimension x="70" y="70"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <NormalTexture name="$parentNormal" inherits="TemplateBigBkg15"/>
+        <PushedTexture name="$parentPushedBG" inherits="TemplateBigBkg15">
+            <Size>
+                <RelDimension x="0.9" y="0.9"/>
+            </Size>
+            <Anchors>
+                <Anchor point="center" relativePoint="center"/>
+            </Anchors>
+        </PushedTexture>
+        <Frames>
+            <Button name="$parentDel" abs_x="31" abs_y="32" hidden="true" inherits="TemplateBtn23">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="10" y="-12"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>ItemSelectBtnTemplateDel_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnClick>ItemSelectBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+ 	<!--选择通行队伍模板-->
+ 	<Frame name="ChooseTeamBtnTemplate" virtual="true" abs_x="40" abs_y="40">
+ 		<Layers>
+ 			<Layer level="BACKGROUND">
+ 				<Texture name="$parentFlag" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_red" abs_x="18" abs_y="18">
+ 					<Anchors>
+ 						<Anchor point="TopLeft" relativeTo="$parent" relativePoint="topleft">
+ 							<Offset>
+ 								<AbsDimension x="0" y="0"/>
+ 							</Offset>
+ 						</Anchor>
+ 					</Anchors>
+ 				</Texture>
+ 				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_orange" abs_x="20" abs_y="20">
+ 					<Anchors>
+ 						<Anchor point="topleft" relativeTo="$parentFlag" relativePoint="topleft">
+ 							<Offset>
+ 								<AbsDimension x="15" y="12"/>
+ 							</Offset>
+ 						</Anchor>
+ 					</Anchors>
+ 				</Texture>
+ 			</Layer>
+ 		</Layers>
+ 		<Frames>
+ 			<Button name="$parentBtn" abs_x="20" abs_y="20">
+ 				<Anchors>
+ 					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+ 						<Offset>
+ 							<AbsDimension x="0" y="0"/>
+ 						</Offset>
+ 					</Anchor>
+ 				</Anchors>
+ 				<Layers>
+ 					<Layer level="overlay">
+						<Texture name="$parentClick" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" abs_x="12" abs_y="10" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+ 					</Layer>
+ 				</Layers>
+ 				<Scripts>
+ 					<OnClick>ChooseTeamBtnTemplate_OnClick();</OnClick>
+ 				</Scripts>
+ 			</Button>
+ 		</Frames>
+ 	</Frame>
+ 	#通用带提示按钮(richtext自定义,触发事件ButtonWithTips_OnMouseEnter等挂靠在具体的richtext上,具体实现在uitemplate.lua中)
+ 	<Button name="TipsButtonTemplate1" abs_x="120" abs_y="50" virtual="true">
+ 		<Anchors>
+            <Anchor relativePoint="Left" relativeTo="$parent" point="Left">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+ 		<Frames>
+ 			<RichText name="$parentName" fonttype="BlackFont20" lineInterval="2" input_transparent="true" justifyH="center" justifyV="middle" text="$9024" rel_x="1" rel_y="0.85">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <MouseDownUpdate platform="mobile">ButtonWithTips_MouseDownUpdate();</MouseDownUpdate>
+                    <OnMouseUp platform="mobile">ButtonWithTips_OnMouseUp();</OnMouseUp>
+                    <OnEnter platform="pc">ButtonWithTips_OnMouseEnter()</OnEnter>
+                    <OnLeave platform="pc">ButtonWithTips_OnMouseLeave()</OnLeave>
+                </Scripts>
+            </RichText>
+        </Frames>
+    </Button>
+ 	<!--传送方块设置界面：左侧起点按钮模板-->
+ 	<Button name="TransferBtnTemplate" virtual="true" hidden="true" abs_x="232" abs_y="61">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="TemplateBkg6"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg7" hidden="true"/>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="icon_activation_n" abs_x="14" abs_y="14">
+					<Anchors>
+						<Anchor point="right" relativeTo="$parentNormal" relativePoint="right">
+							<OffSet>
+								<AbsDimension x="-10" y="0"/>
+							</OffSet>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="一二三四五六">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<RelDimension x="0.85" y="0.9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>TransferBtnTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	<!--传送方块设置界面：右侧目的地标签（详细）-->
+	<Frame name="TransferLabelTemplateDetailed" virtual="true" hidden="true" abs_x="734" abs_y="95">
+		<Anchors>
+			<Anchor point="top" relativeTo="$parent" relativePoint="top">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentContent">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parent" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="一二三四五六" abs_x="153" abs_y="21">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors> 
+						</FontString>
+						<Texture name="$parentLine" inherits="TemplateBkg20_H1" abs_x="2" abs_y="70" UVType="turn90">
+                			<Anchors>
+								<Anchor point="center" relativePoint="Right" relativeTo="$parentTitle">
+									<Offset>
+										<AbsDimension x="8" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+                		</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--通行道具-->
+					<Frame name="$parentTicket" abs_x="129" abs_y="40">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="right" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="6" y="3"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont18" fontStyle="normal" justifyH="right" justifyV="middle" text="$21503">
+									<Size platform="pc">
+										<AbsDimension x="100" y="17"/>
+									</Size>
+									<Size platform="mobile">
+										<AbsDimension x="90" y="17"/>
+									</Size>
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>								
+								<Texture name="$parentBkg" inherits="TemplateBigBkg15" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="btn_help" abs_x="39" abs_y="39">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentDefault" fonttype="BlackFont18" fontStyle="normal" justifyH="left" justifyV="middle" text="$21513" hidden="true" abs_x="100" abs_y="18">
+									<color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="left" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<!--通行物品消耗-->
+					<Frame name="$parentPrice" abs_x="118" abs_y="40">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentTicketBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="17" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="x">
+									<Size>
+										<AbsDimension x="12" y="40"/>
+									</Size>
+									<Color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentCount" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="99" abs_x="36" abs_y="40">
+									<Color r="239" g="128" b="18"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<!--禁止通行物品-->
+					<Frame name="$parentBan" abs_x="210" abs_y="40">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-60" y="11"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont18" justifyV="middle" justifyH="left" text="$21505">
+									<Size platform="pc">
+										<AbsDimension x="130" y="20"/>
+									</Size>
+									<Size platform="mobile">
+										<AbsDimension x="118" y="20"/>
+									</Size>
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="Left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDefault" fonttype="BlackFont18" fontStyle="normal" justifyH="left" justifyV="middle" text="$21514" hidden="true" abs_x="90" abs_y="18">
+									<color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="left" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="-5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentBkg" inherits="TemplateBigBkg15" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_gou" abs_x="39" abs_y="39">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<!--通行队伍-->
+					<Frame name="$parentTeam" abs_x="253" abs_y="40">
+						<Anchors>
+							<Anchor point="TopLeft" relativePoint="bottomleft" relativeTo="$parentTicket">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" text="$21506" fonttype="BlackFont18" fontStyle="normal" justifyH="right" justifyV="middle">
+									<Size platform="pc">
+										<AbsDimension x="100" y="18"/>
+									</Size>
+									<Size platform="mobile">
+										<AbsDimension x="90" y="18"/>
+									</Size>
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="Left" relativeTo="$parent" relativePoint="Left">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDefault" fonttype="BlackFont18" fontStyle="normal" justifyH="left" justifyV="middle" text="$21498" hidden="true" abs_x="150" abs_y="20">
+									<color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="left" relativeTo="$parentIcon1">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>								
+								<Texture name="$parentIcon1" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_red" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon2" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_blue" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon1">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon3" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_green" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon2">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon4" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_yellow" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon3">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon5" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_orange" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon4">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon6" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_purple" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon5">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<!--当前状态-->
+					<Frame name="$parentState" abs_x="210" abs_y="40">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentBan" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="$21507">
+									<Size platform="pc">
+										<AbsDimension x="56" y="20"/>
+									</Size>
+									<Size platform="mobile">
+										<AbsDimension x="46" y="20"/>
+									</Size>
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentStatus" abs_x="100" abs_y="40" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="$637">
+									<Color r="1" g="194" b="6"/>
+									<Anchors>
+										<Anchor point="Left" relativeTo="$parentTitle" relativePoint="Right">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+			<Button name="$parentEditBtn">
+				<Size>
+					<AbsDimension x="55" y="90" />
+				</Size>
+				<Anchors>
+					<Anchor point="Right" relativeTo="$parentBkg" relativePoint="Right">
+						<Offset>
+							<AbsDimension x="-4" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg54" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg54">
+					<Size>
+						<AbsDimension x="53" y="86"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_set.png" abs_x="33" abs_y="31">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+									<Offset>
+										<AbsDimension x="2" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>TransferLabelTemplateEditBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	<!--传送方块设置界面：右侧目的地标签（简略）-->
+	<Frame name="TransferLabelTemplateBrief" virtual="true" hidden="true" abs_x="730" abs_y="60">
+		<Anchors>
+			<Anchor point="top" relativeTo="$parent" relativePoint="top">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6"/>
+				<FontString name="$parentTitle" abs_x="153" abs_y="56" justifyV="middle" justifyH="center" text="一二三四五六" fonttype="BlackFont22">
+					<color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="Left">
+							<OffSet>
+								<AbsDimension x="18" y="0"/>
+							</OffSet>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentEditBtn" abs_x="55" abs_y="53">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<OffSet>
+							<AbsDimension x="-4" y="0"/>
+						</OffSet>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_set.png" abs_x="31" abs_y="33">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg54"/>
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg54">
+					<Size>
+						<AbsDimension x="53" y="49"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>TransferLabelTemplateEditBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	<!--傳送規則設置頁面子標題模板-->
+	<Frame name="TransferRuleSetTitleTemplate" abs_x="496" abs_y="35" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentLine" inherits="TemplateBkg20_H1" abs_x="656" abs_y="2">
+                	<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+                </Texture>
+                <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="left" text="一二三四" abs_x="256" abs_y="23" justifyV="middle">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+            </Layer>
+        </Layers>
+    </Frame>
+    <!--传送规则设置页面开关模板-->
+    <Frame name="TransferRuleSetSwitchTemplate" abs_x="496" abs_y="46" virtual="true">
+        <Frames>
+            <Button name="$parentBtn" inherits="mini_SwitchBtnTemplateUI4">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseUp>SwitchBtn_OnMouseUp();</OnMouseUp>
+                </Scripts>
+            </Button>
+            <Button name="$parentName" inherits="TitleTipsBtnTemplate" abs_x="150" abs_y="19">
+            	<Anchors>
+            		<Anchor point="left" relativePoint="left" relativeTo="$parent">
+            			<Offset>
+            				<AbsDimension x="0" y="0"/>
+            			</Offset>
+            		</Anchor>
+            	</Anchors>
+            </Button>
+        </Frames>
+    </Frame>
+
+    <!--传送方块总界面-->
+	<Frame name="TransferFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="12" hidden="true" abs_x="1048" abs_y="636">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg2" inherits="TemplateBigBkg2" abs_x="1048" abs_y="556">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="1048" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" shadowcolor="4D352C28" text="$21509">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="400" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>TransferFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			 ## wiki按钮
+			<Button name="$parentOpenWikiBtn" abs_x="35" abs_y="35" hidden="true">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentCloseBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="-80" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/common_icon.xml" uvname="icon_wiki_big.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/common_icon.xml" uvname="icon_wiki_big.png">
+					<Size>
+						<RelDimension x="0.9" y="0.9" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>TransferFrameOpenWikiBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--确认按钮-->
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-27" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$11051" abs_x="170" abs_y="40">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>TransferFrameConfirmBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--左侧列表底板-->
+			<Frame name="$parentTabs" abs_x="254" abs_y="532">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentBkg2">
+						<Offset>
+							<AbsDimension x="13" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg24"/>
+						<FontString name="$parentTitle" fonttype="BlackFont22" text="$21500" justifyH="center" justifyV="middle">
+							<Color r="77" g="112" b="117"/>
+							<Size>
+								<AbsDimension x="225" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SlidingFrame name="$parentBox" abs_x="232" abs_y="464" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentTitle" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="232" abs_y="464" hidden="true">
+								<Anchors>
+									<Anchor point="TopLeft" relativePoint="TopLeft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Button name="$parentBtn1" inherits="TransferBtnTemplate" id="1"/>
+							<Button name="$parentBtn2" inherits="TransferBtnTemplate" id="2"/>
+							<Button name="$parentBtn3" inherits="TransferBtnTemplate" id="3"/>
+							<Button name="$parentBtn4" inherits="TransferBtnTemplate" id="4"/>
+							<Button name="$parentBtn5" inherits="TransferBtnTemplate" id="5"/>
+							<Button name="$parentBtn6" inherits="TransferBtnTemplate" id="6"/>
+							<Button name="$parentBtn7" inherits="TransferBtnTemplate" id="7"/>
+							<Button name="$parentBtn8" inherits="TransferBtnTemplate" id="8"/>
+							<Button name="$parentBtn9" inherits="TransferBtnTemplate" id="9"/>
+							<Button name="$parentBtn10" inherits="TransferBtnTemplate" id="10"/>
+							<Button name="$parentBtn11" inherits="TransferBtnTemplate" id="11"/>
+							<Button name="$parentBtn12" inherits="TransferBtnTemplate" id="12"/>
+							<Button name="$parentBtn13" inherits="TransferBtnTemplate" id="13"/>
+							<Button name="$parentBtn14" inherits="TransferBtnTemplate" id="14"/>
+							<Button name="$parentBtn15" inherits="TransferBtnTemplate" id="15"/>
+							<Button name="$parentBtn16" inherits="TransferBtnTemplate" id="16"/>
+							<Button name="$parentBtn17" inherits="TransferBtnTemplate" id="17"/>
+							<Button name="$parentBtn18" inherits="TransferBtnTemplate" id="18"/>
+							<Button name="$parentBtn19" inherits="TransferBtnTemplate" id="19"/>
+							<Button name="$parentBtn20" inherits="TransferBtnTemplate" id="20"/>
+							<Button name="$parentBtn21" inherits="TransferBtnTemplate" id="21"/>
+							<Button name="$parentBtn22" inherits="TransferBtnTemplate" id="22"/>
+							<Button name="$parentBtn23" inherits="TransferBtnTemplate" id="23"/>
+							<Button name="$parentBtn24" inherits="TransferBtnTemplate" id="24"/>
+							<Button name="$parentBtn25" inherits="TransferBtnTemplate" id="25"/>
+							<Button name="$parentBtn26" inherits="TransferBtnTemplate" id="26"/>
+							<Button name="$parentBtn27" inherits="TransferBtnTemplate" id="27"/>
+							<Button name="$parentBtn28" inherits="TransferBtnTemplate" id="28"/>
+							<Button name="$parentBtn29" inherits="TransferBtnTemplate" id="29"/>
+							<Button name="$parentBtn30" inherits="TransferBtnTemplate" id="30"/>
+							<Button name="$parentBtn31" inherits="TransferBtnTemplate" id="31"/>
+							<Button name="$parentBtn32" inherits="TransferBtnTemplate" id="32"/>
+							<Button name="$parentBtn33" inherits="TransferBtnTemplate" id="33"/>
+							<Button name="$parentBtn34" inherits="TransferBtnTemplate" id="34"/>
+							<Button name="$parentBtn35" inherits="TransferBtnTemplate" id="35"/>
+							<Button name="$parentBtn36" inherits="TransferBtnTemplate" id="36"/>
+							<Button name="$parentBtn37" inherits="TransferBtnTemplate" id="37"/>
+							<Button name="$parentBtn38" inherits="TransferBtnTemplate" id="38"/>
+							<Button name="$parentBtn39" inherits="TransferBtnTemplate" id="39"/>
+							<Button name="$parentBtn40" inherits="TransferBtnTemplate" id="40"/>
+							<Button name="$parentBtn41" inherits="TransferBtnTemplate" id="41"/>
+							<Button name="$parentBtn42" inherits="TransferBtnTemplate" id="42"/>
+							<Button name="$parentBtn43" inherits="TransferBtnTemplate" id="43"/>
+							<Button name="$parentBtn44" inherits="TransferBtnTemplate" id="44"/>
+							<Button name="$parentBtn45" inherits="TransferBtnTemplate" id="45"/>
+							<Button name="$parentBtn46" inherits="TransferBtnTemplate" id="46"/>
+							<Button name="$parentBtn47" inherits="TransferBtnTemplate" id="47"/>
+							<Button name="$parentBtn48" inherits="TransferBtnTemplate" id="48"/>
+							<Button name="$parentBtn49" inherits="TransferBtnTemplate" id="49"/>
+							<Button name="$parentBtn50" inherits="TransferBtnTemplate" id="50"/>
+
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<Frame name="$parentMain" abs_x="762" abs_y="536">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentTabs">
+						<Offset>
+							<AbsDimension x="8" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg9" />
+						<Texture name="$parentBkgBottom" inherits="TemplateBigBkg5" abs_x="756" abs_y="310">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgMiddle" inherits="TemplateBkg26" abs_x="756" abs_y="55">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkgBottom"/>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDetailSwitchTitle" abs_x="512" abs_y="50" justifyV="middle" fonttype="BlackFont22" text="$21512">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentBkgMiddle" relativePoint="left">
+									<Offset>
+										<AbsDimension x="18" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--详细/简略切换按钮-->
+					<Button name="$parentTransferDetailChangeBtn" inherits="mini_SwitchBtnTemplateUI4">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentBkgMiddle" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>TransferFrameDetailChangeBtn_OnClick();</OnMouseDown>
+						</Scripts>
+					</Button>
+					<!--当前传送点相关信息-->
+					<Frame name="$parentInfo" rel_x="1" abs_y="168">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<!--名称编辑-->
+							<Frame name="$parentName" abs_x="375" abs_y="50">
+								<Anchors>
+									<Anchor point="topright" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-3" y="28"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<FontString name="$parentTitle" fonttype="BlackFont22" justifyV="middle" justifyH="center" abs_x="100" abs_y="50" text="$21523">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="265" abs_y="46">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+													<Offset>
+														<AbsDimension x="10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Frames>
+									<SafeEditBox name="$parentEdit" letters="18" multiLine="false" editMethod="527" abs_x="250" abs_y="42">
+										<Anchors>
+											<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" justifyV="middle" >
+											<!--<Color r="172" g="150" b="123"/>-->
+										</FontString>
+										<Scripts>
+											<OnEnterPressed platform="pc">TransferFrameMainNameEdit_OnEnterPressed();</OnEnterPressed>
+											<OnFocusLost>TransferFrameMainNameEdit_OnFocusLost();</OnFocusLost>
+										</Scripts>
+									</SafeEditBox>
+									<Button name="$parentDisplay" abs_x="44" abs_y="47" hidden="true">
+                            		    <Anchors>
+                            		        <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                            		            <Offset>
+                            		                <AbsDimension x="0" y="0"/>
+                            		            </Offset>
+                            		        </Anchor>
+                            		    </Anchors>
+                            		    <Layers>
+                            		        <Layer level="overlay">
+                            		            <Texture name="$parentShowIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="icon_xianshi" abs_x="28" abs_y="21" hidden="false">
+                                		            <Anchors>
+                                		                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                		                    <Offset>
+                                		                        <AbsDimension x="0" y="0"/>
+                                		                    </Offset>
+                                		                </Anchor>
+                                		            </Anchors>
+                                		        </Texture>
+                                		        <Texture name="$parentHideIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="icon_yincang" abs_x="29" abs_y="17" hidden="true">
+                                		            <Anchors>
+                                		                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                		                    <Offset>
+                                		                        <AbsDimension x="0" y="0"/>
+                                		                    </Offset>
+                                		                </Anchor>
+                                		            </Anchors>
+                                		        </Texture>
+                                		    </Layer>
+                                		</Layers>
+                                		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame.xml" uvname="btn_xianshi.png"/>
+                                		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame.xml" uvname="btn_xianshi.png">
+                            		        <Size>
+                            		            <AbsDimension x="42" y="44"/>
+                            		        </Size>
+                            		        <Anchors>
+                            		            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            		                <Offset>
+                            		                    <AbsDimension x="0" y="0"/>
+                            		                </Offset>
+                            		            </Anchor>
+                            		        </Anchors>
+                            		    </PushedTexture>
+                            		    <Scripts>
+                            		        <OnClick>TransferFrameMainNameDisplay_OnClick();</OnClick>
+                            		    </Scripts>
+                            		</Button>
+                           		</Frames>
+                           	</Frame>
+                            <!--到达提示-->
+                            <Frame name="$parentTips" rel_x="0.95" abs_y="46">
+                            	<Anchors>
+									<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="-30"/>
+										</Offset>
+									</Anchor>
+                            	</Anchors>
+                            	<Layers>
+                            		<Layer level="BACKGROUND">
+                            			<Texture name="$parentEditBkg" inherits="TemplateBkg8">
+											<Size platform="pc">
+												<AbsDimension x="632" y="46"/>
+											</Size>
+											<Size platform="mobile">
+												<AbsDimension x="632" y="46"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="50"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+                            	<Frames>
+									<SafeEditBox name="$parentEdit" letters="150" multiLine="false" editMethod="527">
+										<Size platform="pc">
+											<AbsDimension x="624" y="42"/>
+										</Size>
+										<Size platform="mobile">
+											<AbsDimension x="624" y="42"/>
+										</Size>
+										<Anchors>
+											<Anchor point="center" relativePoint="center" relativeTo="$parentEditBkg">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<FontString name="$parentFont" justifyV="middle" fonttype="BlackFont20" rel_x="0.9" rel_y="0.9">
+											<Anchors>
+												<Anchor point="center" relativePoint="center"/>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentDefault" default="true" justifyV="middle" fonttype="BlackFont20" text="$10646" rel_x="0.9" rel_y="0.9">
+											<Color r="185" g="185" b="185"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center"/>
+											</Anchors>
+										</FontString>
+										<Scripts>
+											<OnEnterPressed platform="pc">TransferFrameMainTipsEdit_OnEnterPressed();</OnEnterPressed>
+											<OnFocusLost>TransferFrameMainTipsEdit_OnFocusLost();</OnFocusLost>
+										</Scripts>
+									</SafeEditBox>
+									<Button name="$parentTitle" inherits="TipsButtonTemplate1">
+										<Size platform="pc">
+											<AbsDimension x="100" y="46"/>
+										</Size>
+										<Size platform="mobile">
+											<AbsDimension x="100" y="46"/>
+										</Size>
+										<Anchors>
+											<Anchor point="right" relativeTo="$parentEditBkg" relativePoint="left">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+								</Frames>
+							</Frame>
+							<!--显示未激活传送点-->
+							<Frame name="$parentVisualSwitch" abs_x="375" abs_y="50">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="top">
+										<Offset>
+											<AbsDimension x="21" y="28"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Button name="$parentTitle" inherits="TipsButtonTemplate1">
+										<Size platform="pc">
+											<AbsDimension x="180" y="40"/>
+										</Size>
+										<Size platform="mobile">
+											<AbsDimension x="180" y="40"/>
+										</Size>
+									</Button>
+									<Button name="$parentBtn" inherits="mini_SwitchBtnTemplateUI4">
+            						    <Anchors>
+            						        <Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+            						            <Offset>
+            						                <AbsDimension x="6" y="0"/>
+            						            </Offset>
+            						        </Anchor>
+            						    </Anchors>
+            						    <Scripts>
+            						        <OnMouseUp>SwitchBtn_OnMouseUp();</OnMouseUp>
+            						    </Scripts>
+            						</Button>
+            					</Frames>
+							</Frame>
+						</Frames>
+					</Frame>
+					<!--传送目标点列表 详细-->
+					<SlidingFrame name="$parentDetailBox" abs_x="734" abs_y="290" slidingY="true" slideplane="$parentPlane" hidden="false">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkgBottom"/>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="734" abs_y="290" hidden="true"/>
+							<Frame name="$parentD1" inherits="TransferLabelTemplateDetailed" id="1"/>
+							<Frame name="$parentD2" inherits="TransferLabelTemplateDetailed" id="2"/>
+							<Frame name="$parentD3" inherits="TransferLabelTemplateDetailed" id="3"/>
+							<Frame name="$parentD4" inherits="TransferLabelTemplateDetailed" id="4"/>
+							<Frame name="$parentD5" inherits="TransferLabelTemplateDetailed" id="5"/>
+							<Frame name="$parentD6" inherits="TransferLabelTemplateDetailed" id="6"/>
+							<Frame name="$parentD7" inherits="TransferLabelTemplateDetailed" id="7"/>
+							<Frame name="$parentD8" inherits="TransferLabelTemplateDetailed" id="8"/>
+							<Frame name="$parentD9" inherits="TransferLabelTemplateDetailed" id="9"/>
+							<Frame name="$parentD10" inherits="TransferLabelTemplateDetailed" id="10"/>
+							<Frame name="$parentD11" inherits="TransferLabelTemplateDetailed" id="11"/>
+							<Frame name="$parentD12" inherits="TransferLabelTemplateDetailed" id="12"/>
+							<Frame name="$parentD13" inherits="TransferLabelTemplateDetailed" id="13"/>
+							<Frame name="$parentD14" inherits="TransferLabelTemplateDetailed" id="14"/>
+							<Frame name="$parentD15" inherits="TransferLabelTemplateDetailed" id="15"/>
+							<Frame name="$parentD16" inherits="TransferLabelTemplateDetailed" id="16"/>
+							<Frame name="$parentD17" inherits="TransferLabelTemplateDetailed" id="17"/>
+							<Frame name="$parentD18" inherits="TransferLabelTemplateDetailed" id="18"/>
+							<Frame name="$parentD19" inherits="TransferLabelTemplateDetailed" id="19"/>
+							<Frame name="$parentD20" inherits="TransferLabelTemplateDetailed" id="20"/>
+							<Frame name="$parentD21" inherits="TransferLabelTemplateDetailed" id="21"/>
+							<Frame name="$parentD22" inherits="TransferLabelTemplateDetailed" id="22"/>
+							<Frame name="$parentD23" inherits="TransferLabelTemplateDetailed" id="23"/>
+							<Frame name="$parentD24" inherits="TransferLabelTemplateDetailed" id="24"/>
+							<Frame name="$parentD25" inherits="TransferLabelTemplateDetailed" id="25"/>
+							<Frame name="$parentD26" inherits="TransferLabelTemplateDetailed" id="26"/>
+							<Frame name="$parentD27" inherits="TransferLabelTemplateDetailed" id="27"/>
+							<Frame name="$parentD28" inherits="TransferLabelTemplateDetailed" id="28"/>
+							<Frame name="$parentD29" inherits="TransferLabelTemplateDetailed" id="29"/>
+							<Frame name="$parentD30" inherits="TransferLabelTemplateDetailed" id="30"/>
+							<Frame name="$parentD31" inherits="TransferLabelTemplateDetailed" id="31"/>
+							<Frame name="$parentD32" inherits="TransferLabelTemplateDetailed" id="32"/>
+							<Frame name="$parentD33" inherits="TransferLabelTemplateDetailed" id="33"/>
+							<Frame name="$parentD34" inherits="TransferLabelTemplateDetailed" id="34"/>
+							<Frame name="$parentD35" inherits="TransferLabelTemplateDetailed" id="35"/>
+							<Frame name="$parentD36" inherits="TransferLabelTemplateDetailed" id="36"/>
+							<Frame name="$parentD37" inherits="TransferLabelTemplateDetailed" id="37"/>
+							<Frame name="$parentD38" inherits="TransferLabelTemplateDetailed" id="38"/>
+							<Frame name="$parentD39" inherits="TransferLabelTemplateDetailed" id="39"/>
+							<Frame name="$parentD40" inherits="TransferLabelTemplateDetailed" id="40"/>
+							<Frame name="$parentD41" inherits="TransferLabelTemplateDetailed" id="41"/>
+							<Frame name="$parentD42" inherits="TransferLabelTemplateDetailed" id="42"/>
+							<Frame name="$parentD43" inherits="TransferLabelTemplateDetailed" id="43"/>
+							<Frame name="$parentD44" inherits="TransferLabelTemplateDetailed" id="44"/>
+							<Frame name="$parentD45" inherits="TransferLabelTemplateDetailed" id="45"/>
+							<Frame name="$parentD46" inherits="TransferLabelTemplateDetailed" id="46"/>
+							<Frame name="$parentD47" inherits="TransferLabelTemplateDetailed" id="47"/>
+							<Frame name="$parentD48" inherits="TransferLabelTemplateDetailed" id="48"/>
+							<Frame name="$parentD49" inherits="TransferLabelTemplateDetailed" id="49"/>
+							<!--新增传送目标点-->
+							<Button name="$parentAddBtn" hidden="false" abs_x="734" abs_y="95">
+								<Anchors>
+									<Anchor point="top" relativeTo="$parentTest" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="5"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<NormalTexture name="$parentNormal" inherits="TemplateBigBkg6"/>
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBigBkg6" >
+									<Anchors>
+										<Anchor point="center" relativeTo="$parentNormal" relativePoint="center">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIconBkg" file="ui/mobile/texture2/outgame.xml" uvname="frame_round_gray" abs_x="50" abs_y="50">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-150" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="icon_add_upload_white">
+											<Size>
+												<AbsDimension x="36" y="36"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentTitle" fonttype="BlackFont22" justifyV="middle" justifyH="Left" text="$21508" abs_x="250" abs_y="50">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="Left" relativePoint="Right" relativeTo="$parentIconBkg">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>TransferFrameMainAddBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</SlidingFrame>
+					<!--传送目标点列表 简略-->
+					<SlidingFrame name="$parentBriefBox" abs_x="734" abs_y="290" slidingY="true" slideplane="$parentPlane" hidden="true">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkgBottom"/>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="734" abs_y="290" hidden="true"/>
+							<Frame name="$parentB1" inherits="TransferLabelTemplateBrief" id="1"/>
+							<Frame name="$parentB2" inherits="TransferLabelTemplateBrief" id="2"/>
+							<Frame name="$parentB3" inherits="TransferLabelTemplateBrief" id="3"/>
+							<Frame name="$parentB4" inherits="TransferLabelTemplateBrief" id="4"/>
+							<Frame name="$parentB5" inherits="TransferLabelTemplateBrief" id="5"/>
+							<Frame name="$parentB6" inherits="TransferLabelTemplateBrief" id="6"/>
+							<Frame name="$parentB7" inherits="TransferLabelTemplateBrief" id="7"/>
+							<Frame name="$parentB8" inherits="TransferLabelTemplateBrief" id="8"/>
+							<Frame name="$parentB9" inherits="TransferLabelTemplateBrief" id="9"/>
+							<Frame name="$parentB10" inherits="TransferLabelTemplateBrief" id="10"/>
+							<Frame name="$parentB11" inherits="TransferLabelTemplateBrief" id="11"/>
+							<Frame name="$parentB12" inherits="TransferLabelTemplateBrief" id="12"/>
+							<Frame name="$parentB13" inherits="TransferLabelTemplateBrief" id="13"/>
+							<Frame name="$parentB14" inherits="TransferLabelTemplateBrief" id="14"/>
+							<Frame name="$parentB15" inherits="TransferLabelTemplateBrief" id="15"/>
+							<Frame name="$parentB16" inherits="TransferLabelTemplateBrief" id="16"/>
+							<Frame name="$parentB17" inherits="TransferLabelTemplateBrief" id="17"/>
+							<Frame name="$parentB18" inherits="TransferLabelTemplateBrief" id="18"/>
+							<Frame name="$parentB19" inherits="TransferLabelTemplateBrief" id="19"/>
+							<Frame name="$parentB20" inherits="TransferLabelTemplateBrief" id="20"/>
+							<Frame name="$parentB21" inherits="TransferLabelTemplateBrief" id="21"/>
+							<Frame name="$parentB22" inherits="TransferLabelTemplateBrief" id="22"/>
+							<Frame name="$parentB23" inherits="TransferLabelTemplateBrief" id="23"/>
+							<Frame name="$parentB24" inherits="TransferLabelTemplateBrief" id="24"/>
+							<Frame name="$parentB25" inherits="TransferLabelTemplateBrief" id="25"/>
+							<Frame name="$parentB26" inherits="TransferLabelTemplateBrief" id="26"/>
+							<Frame name="$parentB27" inherits="TransferLabelTemplateBrief" id="27"/>
+							<Frame name="$parentB28" inherits="TransferLabelTemplateBrief" id="28"/>
+							<Frame name="$parentB29" inherits="TransferLabelTemplateBrief" id="29"/>
+							<Frame name="$parentB30" inherits="TransferLabelTemplateBrief" id="30"/>
+							<Frame name="$parentB31" inherits="TransferLabelTemplateBrief" id="31"/>
+							<Frame name="$parentB32" inherits="TransferLabelTemplateBrief" id="32"/>
+							<Frame name="$parentB33" inherits="TransferLabelTemplateBrief" id="33"/>
+							<Frame name="$parentB34" inherits="TransferLabelTemplateBrief" id="34"/>
+							<Frame name="$parentB35" inherits="TransferLabelTemplateBrief" id="35"/>
+							<Frame name="$parentB36" inherits="TransferLabelTemplateBrief" id="36"/>
+							<Frame name="$parentB37" inherits="TransferLabelTemplateBrief" id="37"/>
+							<Frame name="$parentB38" inherits="TransferLabelTemplateBrief" id="38"/>
+							<Frame name="$parentB39" inherits="TransferLabelTemplateBrief" id="39"/>
+							<Frame name="$parentB40" inherits="TransferLabelTemplateBrief" id="40"/>
+							<Frame name="$parentB41" inherits="TransferLabelTemplateBrief" id="41"/>
+							<Frame name="$parentB42" inherits="TransferLabelTemplateBrief" id="42"/>
+							<Frame name="$parentB43" inherits="TransferLabelTemplateBrief" id="43"/>
+							<Frame name="$parentB44" inherits="TransferLabelTemplateBrief" id="44"/>
+							<Frame name="$parentB45" inherits="TransferLabelTemplateBrief" id="45"/>
+							<Frame name="$parentB46" inherits="TransferLabelTemplateBrief" id="46"/>
+							<Frame name="$parentB47" inherits="TransferLabelTemplateBrief" id="47"/>
+							<Frame name="$parentB48" inherits="TransferLabelTemplateBrief" id="48"/>
+							<Frame name="$parentB49" inherits="TransferLabelTemplateBrief" id="49"/>
+							<!--新增传送目标点-->
+							<Button name="$parentAddBtn" abs_x="734" abs_y="60">
+								<Anchors>
+									<Anchor point="top" relativeTo="$parentTest" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="5"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<NormalTexture name="$parentNormal" inherits="TemplateBigBkg6"/>
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBigBkg6" rel_x="0.9" rel_y="0.98">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parentNormal" relativePoint="center">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIconBkg" file="ui/mobile/texture2/outgame.xml" uvname="frame_round_gray" abs_x="50" abs_y="50">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-150" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="icon_add_upload_white">
+											<Size>
+												<AbsDimension x="36" y="36"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentTitle" fonttype="BlackFont22" justifyV="middle" justifyH="Left" text="$21508" abs_x="250" abs_y="50">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="Left" relativePoint="Right" relativeTo="$parentIconBkg">
+													<Offset>
+														<AbsDimension x="20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>TransferFrameMainAddBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>	
+		</Frames>
+		<Scripts>
+			<OnLoad>TransferFrame_OnLoad();</OnLoad>
+			<OnShow>TransferFrame_OnShow();</OnShow>
+			<OnHide>TransferFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	<!--新增传送目标点选择界面-->
+	<Frame name="AddTransferDestinationFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="3000" hidden="true" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+        	<Layer level="BACKGROUND">
+        		<Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="480" abs_y="586">
+                	<Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="30"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<Texture name="$parentChendi" inherits="TemplateBigBkg5" abs_x="434" abs_y="480">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="-30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="280" abs_y="160" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parenteChendi">
+							<Offset>
+								<AbsDimension x="0" y="-32"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNoTitle" fonttype="BlackFont24" text="$21497" justifyH="center" justifyV="middle" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="400" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentAllTick" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="33" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$3798" abs_x="170" abs_y="28">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AddAllDestination_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="434" abs_y="444">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentChendi">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="434" abs_y="1000">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    <Button name="$parentD1" inherits="DestinationSelectBtnTemplate" id="1"/>
+                    <Button name="$parentD2" inherits="DestinationSelectBtnTemplate" id="2"/>
+                    <Button name="$parentD3" inherits="DestinationSelectBtnTemplate" id="3"/>
+                    <Button name="$parentD4" inherits="DestinationSelectBtnTemplate" id="4"/>
+                    <Button name="$parentD5" inherits="DestinationSelectBtnTemplate" id="5"/>
+                    <Button name="$parentD6" inherits="DestinationSelectBtnTemplate" id="6"/>
+                    <Button name="$parentD7" inherits="DestinationSelectBtnTemplate" id="7"/>
+                    <Button name="$parentD8" inherits="DestinationSelectBtnTemplate" id="8"/>
+                    <Button name="$parentD9" inherits="DestinationSelectBtnTemplate" id="9"/>
+                    <Button name="$parentD10" inherits="DestinationSelectBtnTemplate" id="10"/>
+                    <Button name="$parentD11" inherits="DestinationSelectBtnTemplate" id="11"/>
+                    <Button name="$parentD12" inherits="DestinationSelectBtnTemplate" id="12"/>
+                    <Button name="$parentD13" inherits="DestinationSelectBtnTemplate" id="13"/>
+                    <Button name="$parentD14" inherits="DestinationSelectBtnTemplate" id="14"/>
+                    <Button name="$parentD15" inherits="DestinationSelectBtnTemplate" id="15"/>
+                    <Button name="$parentD16" inherits="DestinationSelectBtnTemplate" id="16"/>
+                    <Button name="$parentD17" inherits="DestinationSelectBtnTemplate" id="17"/>
+                    <Button name="$parentD18" inherits="DestinationSelectBtnTemplate" id="18"/>
+                    <Button name="$parentD19" inherits="DestinationSelectBtnTemplate" id="19"/>
+                    <Button name="$parentD20" inherits="DestinationSelectBtnTemplate" id="20"/>
+                    <Button name="$parentD21" inherits="DestinationSelectBtnTemplate" id="21"/>
+                    <Button name="$parentD22" inherits="DestinationSelectBtnTemplate" id="22"/>
+                    <Button name="$parentD23" inherits="DestinationSelectBtnTemplate" id="23"/>
+                    <Button name="$parentD24" inherits="DestinationSelectBtnTemplate" id="24"/>
+                    <Button name="$parentD25" inherits="DestinationSelectBtnTemplate" id="25"/>
+                    <Button name="$parentD26" inherits="DestinationSelectBtnTemplate" id="26"/>
+                    <Button name="$parentD27" inherits="DestinationSelectBtnTemplate" id="27"/>
+                    <Button name="$parentD28" inherits="DestinationSelectBtnTemplate" id="28"/>
+                    <Button name="$parentD29" inherits="DestinationSelectBtnTemplate" id="29"/>
+                    <Button name="$parentD30" inherits="DestinationSelectBtnTemplate" id="30"/>
+                    <Button name="$parentD31" inherits="DestinationSelectBtnTemplate" id="31"/>
+                    <Button name="$parentD32" inherits="DestinationSelectBtnTemplate" id="32"/>
+                    <Button name="$parentD33" inherits="DestinationSelectBtnTemplate" id="33"/>
+                    <Button name="$parentD34" inherits="DestinationSelectBtnTemplate" id="34"/>
+                    <Button name="$parentD35" inherits="DestinationSelectBtnTemplate" id="35"/>
+                    <Button name="$parentD36" inherits="DestinationSelectBtnTemplate" id="36"/>
+                    <Button name="$parentD37" inherits="DestinationSelectBtnTemplate" id="37"/>
+                    <Button name="$parentD38" inherits="DestinationSelectBtnTemplate" id="38"/>
+                    <Button name="$parentD39" inherits="DestinationSelectBtnTemplate" id="39"/>
+                    <Button name="$parentD40" inherits="DestinationSelectBtnTemplate" id="40"/>
+                    <Button name="$parentD41" inherits="DestinationSelectBtnTemplate" id="41"/>
+                    <Button name="$parentD42" inherits="DestinationSelectBtnTemplate" id="42"/>
+                    <Button name="$parentD43" inherits="DestinationSelectBtnTemplate" id="43"/>
+                    <Button name="$parentD44" inherits="DestinationSelectBtnTemplate" id="44"/>
+                    <Button name="$parentD45" inherits="DestinationSelectBtnTemplate" id="45"/>
+                    <Button name="$parentD46" inherits="DestinationSelectBtnTemplate" id="46"/>
+                    <Button name="$parentD47" inherits="DestinationSelectBtnTemplate" id="47"/>
+                    <Button name="$parentD48" inherits="DestinationSelectBtnTemplate" id="48"/>
+                    <Button name="$parentD49" inherits="DestinationSelectBtnTemplate" id="49"/>
+                </Frames>
+            </SlidingFrame>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="480" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" shadowcolor="4D352C28" text="$21512">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="384" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>AddTransferDestinationFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--确认按钮-->
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-33" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$969" abs_x="170" abs_y="28">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AddTransferDestinationFrameConfirmBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>AddTransferDestinationFrame_OnLoad();</OnLoad>
+			<OnShow>AddTransferDestinationFrame_OnShow();</OnShow>
+			<OnHide>AddTransferDestinationFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	<!--传送规则设置界面-->
+	<Frame name="TransferRuleSetFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="13" hidden="true" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+        	<Layer level="BACKGROUND">
+        		<Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="580" abs_y="594">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg2" inherits="TemplateBigBkg2" abs_x="576" abs_y="514">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg3" inherits="TemplateBigBkg9" abs_x="556" abs_y="492">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg2"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentInfo" abs_x="546" abs_y="55">
+               	<Anchors>
+               		<Anchor point="top" relativePoint="top" relativeTo="$parentBkg3">
+               			<Offset>
+               				<AbsDimension x="0" y="5"/>
+               			</Offset>
+               		</Anchor>
+               </Anchors>
+               <Layers>
+               		<Layer level="BACKGROUND">
+               			<Texture name="$parentBkg" inherits="TemplateBkg26"/>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/common_icon.xml" uvname="icon_intomap" abs_x="24" abs_y="22">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+               			<FontString name="$parentStart" fonttype="BlackFont24" text="一二三四五六" justifyH="right" justifyV="middle" abs_x="200" abs_y="30">
+               				<Color r="61" g="69" b="70"/>
+               				<Anchors>
+               					<Anchor point="right" relativeTo="$parentArrow" relativePoint="left">
+               						<Offset>
+               							<AbsDimension x="-40" y="0"/>
+               						</Offset>
+               					</Anchor>
+               				</Anchors>
+               			</FontString>
+               			<FontString name="$parentEnd" fonttype="BlackFont24" text="一二三四五六" justifyH="left" justifyV="middle" abs_x="200" abs_y="30">
+               				<Color r="61" g="69" b="70"/>
+               				<Anchors>
+               					<Anchor point="left" relativeTo="$parentArrow" relativePoint="right">
+               						<Offset>
+               							<AbsDimension x="40" y="0"/>
+               						</Offset>
+               					</Anchor>
+               				</Anchors>
+               			</FontString>
+               		</Layer>
+               	</Layers>
+            </Frame>
+            <SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="496" abs_y="400">
+            	<Anchors>
+            		<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg3">
+            			<Offset>
+            				<AbsDimension x="0" y="-12"/>
+            			</Offset>
+            		</Anchor>
+            	</Anchors>
+            	<Frames>
+            		<Frame name="$parentPlane" abs_x="496" abs_y="887">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="30"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    <Frame name="$parentTitle1" inherits="TransferRuleSetTitleTemplate">
+                    	<Anchors>
+                    		<Anchor point="top" relativeTo="$parentPlane" relativePoint="top">
+                    			<Offset>
+                    				<AbsDimension x="0" y="0"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    </Frame>
+                    <Frame name="$parentSwitch1" inherits="TransferRuleSetSwitchTemplate" hidden="false">
+                    	<Anchors>
+                    		<Anchor point="top" relativeTo="$parentTitle1" relativePoint="bottom">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    </Frame>
+                    <Frame name="$parentTeamAccess" abs_x="496" abs_y="56" hidden="true">
+                    	<Anchors>
+                    		<Anchor point="top" relativeTo="$parentSwitch1" relativePoint="bottom">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString  name="$parentName" abs_x="132" abs_y="40" fonttype="BlackFont18" text="$21518" justifyV="middle">
+                    				<Anchors>
+                    					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+                    						<Offset>
+                    							<AbsDimension x="0" y="0"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    				<Color r="101" g="116" b="118"/>
+                    			</FontString>
+                    		</Layer>
+                    	</Layers>
+                    	<Frames>
+                    		<Frame name="$parentT1" inherits="ChooseTeamBtnTemplate" id="1"/>
+                    		<Frame name="$parentT2" inherits="ChooseTeamBtnTemplate" id="2"/>
+                    		<Frame name="$parentT3" inherits="ChooseTeamBtnTemplate" id="3"/>
+                    		<Frame name="$parentT4" inherits="ChooseTeamBtnTemplate" id="4"/>
+                    		<Frame name="$parentT5" inherits="ChooseTeamBtnTemplate" id="5"/>
+                    		<Frame name="$parentT6" inherits="ChooseTeamBtnTemplate" id="6"/>
+                    	</Frames>
+                    </Frame>
+
+                    <Frame name="$parentTitle2" inherits="TransferRuleSetTitleTemplate">
+                    	<Anchors>
+                    		<Anchor point="top" relativeTo="$parentTeamAccess" relativePoint="bottom">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    </Frame>
+                    <Frame name="$parentSwitch2" inherits="TransferRuleSetSwitchTemplate" hidden="false">
+                    	<Anchors>
+                    		<Anchor point="top" relativeTo="$parentTitle2" relativePoint="bottom">
+                    			<Offset>
+                    				<AbsDimension x="0" y="31"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    </Frame>
+                    <Frame name="$parentTicket" abs_x="496" abs_y="100" hidden="true">
+                    	<Anchors>
+                    		<Anchor point="top" relativePoint="bottom" relativeTo="$parentSwitch2">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString name="$parentName" text="$21525" fonttype="BlackFont24" justifyV="middle" justifyH="left" abs_x="150" abs_y="40">
+                    				<Color r="101" g="116" b="118"/>
+                    				<Anchors>
+                    					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+                    						<Offset>
+                    							<AbsDimension x="0" y="0"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+                    		</Layer>
+                    	</Layers>
+                    	<Frames>
+                    		<Button name="$parentSelect" inherits="ItemSelectBtnTemplate">
+                    			<Anchors>
+                    				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+                    					<Offset>
+                    						<AbsDimension x="0" y="0"/>
+                    					</Offset>
+                    				</Anchor>
+                    			</Anchors>
+                    		</Button>
+                    	</Frames>
+                    </Frame>
+                    <Frame name="$parentSwitch3" abs_x="496" abs_y="46" hidden="true">
+                    	<Anchors>
+                    		<Anchor point="top" relativePoint="bottom" relativeTo="$parentTicket">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString name="$parentName" text="$21526" fonttype="BlackFont20" justifyV="middle" abs_x="150" abs_y="20">
+                    				<Color r="61" g="69" b="70"/>
+                    				<Anchors>
+                    					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+                    						<Offset>
+                    							<AbsDimension x="0" y="0"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+                    		</Layer>
+                    	</Layers>
+						<Frames>
+							<Button name="$parentBtn" inherits="mini_SwitchBtnTemplateUI4">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnMouseUp>SwitchBtn_OnMouseUp();</OnMouseUp>
+								</Scripts>
+							</Button>
+						</Frames>
+                    </Frame>
+                    <Frame name="$parentSliderPrice" abs_x="496" abs_y="46" hidden="true">
+                    	<Anchors>
+                    		<Anchor point="top" relativePoint="bottom" relativeTo="$parentSwitch3">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString name="$parentName" text="$4456" fonttype="BlackFont18" justifyV="middle" justifyH="left" abs_x="100" abs_y="18">
+                    				<Color r="101" g="116" b="118"/>
+                    				<Anchors>
+                    					<Anchor point="left" relativePoint="left">
+                    						<Offset>
+                    							<AbsDimension x="0" y="0"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+                    			 <FontString name="$parentVal" fonttype="BlackFont18" text="20">
+									 <Color r="101" g="116" b="118"/>
+                				    <Size>
+                				        <AbsDimension x="50" y="18"/>
+                				    </Size>
+                				    <Anchors>
+                				        <Anchor point="left" relativePoint="right" relativeTo="$parentRightBtn">
+                				            <Offset>
+                				                <AbsDimension x="12" y="0"/>
+                				            </Offset>
+                				        </Anchor>
+                				    </Anchors>
+                				</FontString>
+                    		</Layer>
+                    	</Layers>
+                    	<Frames>
+            				<Slider name="$parentBar" orientation="HORIZONTAL" minValue="1" maxValue="64" valueStep="1" defaultValue="1">
+            				    <Size>
+            				        <AbsDimension x="276" y="52"/>
+            				    </Size>
+            				    <Anchors>
+            				        <Anchor point="center" relativeTo="$parent" relativePoint="center">
+            				            <Offset>
+            				                <AbsDimension x="24" y="0"/>
+            				            </Offset>
+            				        </Anchor>
+            				    </Anchors>
+            				    <Layers>
+            				        <Layer level="BACKGROUND">
+            				            <Texture name="$parentBkg" inherits="TemplateBkg16">
+            				                <Size>
+            				                    <AbsDimension x="276" y="12"/>
+            				                </Size>
+            				                <Anchors>
+            				                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+            				                        <Offset>
+            				                            <AbsDimension x="0" y="0"/>
+            				                        </Offset>
+            				                    </Anchor>
+            				                </Anchors>
+            				            </Texture>
+            				            <Texture name="$parentPro" inherits="TemplateBkg17">
+            				                <Size>
+												<AbsDimension x="276" y="12"/>
+            				                </Size>
+            				                <Anchors>
+            				                    <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+            				                        <Offset>
+            				                            <AbsDimension x="0" y="0"/>
+            				                        </Offset>
+            				                    </Anchor>
+            				                </Anchors>
+            				            </Texture>
+            				        </Layer>
+            				    </Layers>
+								<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png">
+									<Size>
+										<AbsDimension x="28" y="31"/>
+									</Size>
+								</ThumbTexture>
+            				    <Scripts>
+            				        <OnValueChanged>TransferFrameSliderBar_OnValueChanged()</OnValueChanged>
+            				    </Scripts>
+            				</Slider>
+							<Button name="$parentLeftBtn" abs_x="16" abs_y="30" inherits="TemplateLeftArrowBtn1">
+								<Anchors>
+									<Anchor point="right" relativePoint="Left" relativeTo="$parentBar">
+										<Offset>
+											<AbsDimension x="-6" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>TransferFrameSliderLeftBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+            				<Button name="$parentRightBtn" abs_x="16" abs_y="30" inherits="TemplateRightArrowBtn1">
+            				    <Anchors>
+            				        <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+            				            <Offset>
+            				                <AbsDimension x="6" y="0"/>
+            				            </Offset>
+            				        </Anchor>
+            				    </Anchors>
+            				    <Scripts>
+            				        <OnClick>TransferFrameSliderRightBtn_OnClick();</OnClick>
+            				    </Scripts>
+            				</Button>
+            			</Frames>
+            		</Frame>
+                    <Frame name="$parentSwitch4" inherits="TransferRuleSetSwitchTemplate" hidden="false">
+                    	<Anchors>
+                    		<Anchor point="top" relativeTo="$parentSliderPrice" relativePoint="bottom">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    </Frame>
+                    <Frame name="$parentBanItem" abs_x="496" abs_y="100" hidden="true">
+                    	<Anchors>
+                    		<Anchor point="top" relativePoint="bottom" relativeTo="$parentSwitch4">
+                    			<Offset>
+                    				<AbsDimension x="0" y="30"/>
+                    			</Offset>
+                    		</Anchor>
+                    	</Anchors>
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString name="$parentName" text="$21525" fonttype="BlackFont24" justifyV="middle" abs_x="220" abs_y="40">
+                    				<Color r="101" g="116" b="118"/>
+                    				<Anchors>
+                    					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+                    						<Offset>
+                    							<AbsDimension x="0" y="0"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+                    		</Layer>
+                    	</Layers>
+                    	<Frames>
+                    		<Button name="$parentSelect" inherits="ItemSelectBtnTemplate">
+                    			<Anchors>
+                    				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+                    					<Offset>
+                    						<AbsDimension x="0" y="0"/>
+                    					</Offset>
+                    				</Anchor>
+                    			</Anchors>
+                    		</Button>
+                    	</Frames>
+                    </Frame>
+                </Frames>
+            </SlidingFrame>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="576" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" shadowcolor="4D352C28" text="$21515">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="400" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>TransferRuleSetFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--删除按钮-->
+			<Button name="$parentDelBtn" inherits="TemplateBtn20">
+                <Size>
+                    <AbsDimension x="182" y="60"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="44" y="-12"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3017" >
+                    <Color r="55" g="52" b="51"/>
+                    <Size>
+                        <AbsDimension x="175" y="27"/>
+                     </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                    </Anchors>
+                </FontString>
+                <Scripts>
+                    <OnClick>TransferRuleSetFrameDelBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <!--确认按钮-->
+            <Button name="$parentConfirmBtn" inherits="TemplateBtn3">
+                <Size>
+                    <AbsDimension x="182" y="60"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-44" y="-12"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3010" >
+                    <Color r="55" g="54" b="51"/>
+                    <Size>
+                        <AbsDimension x="175" y="27"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                    </Anchors>
+                </FontString>
+                <Scripts>
+                    <OnClick>TransferRuleSetFrameConfirmBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>TransferRuleSetFrame_OnLoad();</OnLoad>
+			<OnShow>TransferRuleSetFrame_OnShow();</OnShow>
+			<OnHide>TransferRuleSetFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	<!--传送目标点选择界面-->
+	<Frame name="ChooseTransferDestinationFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="3000" hidden="true" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+        	<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true">
+					<Size>
+						<RelDimension x="1" y="1"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="480" abs_y="586">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTip" fonttype="BlackFont24" text="$21512" justifyV="middle" justifyH="center" abs_x="434" abs_y="23">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentChendi" inherits="TemplateBigBkg5" abs_x="434" abs_y="438">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom_gray.png" abs_x="280" abs_y="160" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parenteChendi">
+							<Offset>
+								<AbsDimension x="0" y="-32"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNoTitle" fonttype="BlackFont24" text="$21497" justifyH="center" justifyV="middle" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="400" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="434" abs_y="398">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentChendi">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="434" abs_y="1000">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    <Frame name="$parentInfo" abs_x="434" abs_y="150" hidden="true">
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString name="$parentTeam" fonttype="BlackFont20" abs_x="88" abs_y="19" text="$21518">
+                    				<Color r="61" g="69" b="70"/>
+                    				<Anchors>
+                    					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                    						<Offset>
+                    							<AbsDimension x="26" y="10"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+                    			<FontString name="$parentNoTeam" fonttype="BlackFont20" fontStyle="normal" justifyH="left" justifyV="middle" text="$21498" hidden="true" abs_x="200" abs_y="40">
+									<color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="left" relativeTo="$parentIcon1">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+                    			<Texture name="$parentIcon1" abs_x="24"  abs_y="24" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_red"/>
+                    			<Texture name="$parentIcon2" abs_x="24"  abs_y="24" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_blue"/>
+                    			<Texture name="$parentIcon3" abs_x="24"  abs_y="24" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_green"/>
+                    			<Texture name="$parentIcon4" abs_x="24"  abs_y="24" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_yellow"/>
+                    			<Texture name="$parentIcon5" abs_x="24"  abs_y="24" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_orange"/>
+                    			<Texture name="$parentIcon6" abs_x="24"  abs_y="24" file="ui/mobile/texture2/outgame.xml" uvname="icon_team_purple"/>
+                    			<FontString name="$parentTicket" fonttype="BlackFont20" abs_x="88" abs_y="19" text="$21503">
+                    				<Color r="61" g="69" b="70"/>
+                    				<Anchors>
+                    					<Anchor point="topLeft" relativeTo="$parentTeam" relativePoint="bottomleft">
+                    						<Offset>
+                    							<AbsDimension x="0" y="41"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+                    			<Texture name="$parentItemBkg1" file="ui/mobile/texture2/outgame2/uitex.xml" uvname="juese_gezi03" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentTicket">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentItem1" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_gou" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentItemBkg1">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentOwned" abs_x="24" abs_y="18" fonttype="BlackFont18" justifyV="middle" justifyH="right">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentItemBkg1">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentPrice" abs_x="36" abs_y="18" fonttype="BlackFont18" justifyV="middle" justifyH="left">
+									<Color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentOwned">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentNoTicket" fonttype="BlackFont18" fontStyle="normal" justifyH="left" justifyV="middle" text="$21513" hidden="true" abs_x="100" abs_y="40">
+									<color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="Right" relativeTo="$parentTicket">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentBan" abs_x="127" abs_y="19" fonttype="BlackFont20" text="$21505">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topLeft" relativePoint="bottomleft" relativeTo="$parentTicket">
+											<Offset>
+												<AbsDimension x="0" y="41"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentItemBkg2" file="ui/mobile/texture2/outgame2/uitex.xml" uvname="juese_gezi03" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentBan">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentItem2" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_gou" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentItemBkg2">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNoBan" fonttype="BlackFont18" fontStyle="normal" justifyH="left" justifyV="middle" text="$21514" hidden="true" abs_x="100" abs_y="40">
+									<color r="101" g="116" b="118"/>
+									<Anchors>
+										<Anchor point="Left" relativePoint="Right" relativeTo="$parentBan">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+                    <Button name="$parentD1" inherits="DestinationSelectBtnTemplate" id="1"/>
+                    <Button name="$parentD2" inherits="DestinationSelectBtnTemplate" id="2"/>
+                    <Button name="$parentD3" inherits="DestinationSelectBtnTemplate" id="3"/>
+                    <Button name="$parentD4" inherits="DestinationSelectBtnTemplate" id="4"/>
+                    <Button name="$parentD5" inherits="DestinationSelectBtnTemplate" id="5"/>
+                    <Button name="$parentD6" inherits="DestinationSelectBtnTemplate" id="6"/>
+                    <Button name="$parentD7" inherits="DestinationSelectBtnTemplate" id="7"/>
+                    <Button name="$parentD8" inherits="DestinationSelectBtnTemplate" id="8"/>
+                    <Button name="$parentD9" inherits="DestinationSelectBtnTemplate" id="9"/>
+                    <Button name="$parentD10" inherits="DestinationSelectBtnTemplate" id="10"/>
+                    <Button name="$parentD11" inherits="DestinationSelectBtnTemplate" id="11"/>
+                    <Button name="$parentD12" inherits="DestinationSelectBtnTemplate" id="12"/>
+                    <Button name="$parentD13" inherits="DestinationSelectBtnTemplate" id="13"/>
+                    <Button name="$parentD14" inherits="DestinationSelectBtnTemplate" id="14"/>
+                    <Button name="$parentD15" inherits="DestinationSelectBtnTemplate" id="15"/>
+                    <Button name="$parentD16" inherits="DestinationSelectBtnTemplate" id="16"/>
+                    <Button name="$parentD17" inherits="DestinationSelectBtnTemplate" id="17"/>
+                    <Button name="$parentD18" inherits="DestinationSelectBtnTemplate" id="18"/>
+                    <Button name="$parentD19" inherits="DestinationSelectBtnTemplate" id="19"/>
+                    <Button name="$parentD20" inherits="DestinationSelectBtnTemplate" id="20"/>
+                    <Button name="$parentD21" inherits="DestinationSelectBtnTemplate" id="21"/>
+                    <Button name="$parentD22" inherits="DestinationSelectBtnTemplate" id="22"/>
+                    <Button name="$parentD23" inherits="DestinationSelectBtnTemplate" id="23"/>
+                    <Button name="$parentD24" inherits="DestinationSelectBtnTemplate" id="24"/>
+                    <Button name="$parentD25" inherits="DestinationSelectBtnTemplate" id="25"/>
+                    <Button name="$parentD26" inherits="DestinationSelectBtnTemplate" id="26"/>
+                    <Button name="$parentD27" inherits="DestinationSelectBtnTemplate" id="27"/>
+                    <Button name="$parentD28" inherits="DestinationSelectBtnTemplate" id="28"/>
+                    <Button name="$parentD29" inherits="DestinationSelectBtnTemplate" id="29"/>
+                    <Button name="$parentD30" inherits="DestinationSelectBtnTemplate" id="30"/>
+                    <Button name="$parentD31" inherits="DestinationSelectBtnTemplate" id="31"/>
+                    <Button name="$parentD32" inherits="DestinationSelectBtnTemplate" id="32"/>
+                    <Button name="$parentD33" inherits="DestinationSelectBtnTemplate" id="33"/>
+                    <Button name="$parentD34" inherits="DestinationSelectBtnTemplate" id="34"/>
+                    <Button name="$parentD35" inherits="DestinationSelectBtnTemplate" id="35"/>
+                    <Button name="$parentD36" inherits="DestinationSelectBtnTemplate" id="36"/>
+                    <Button name="$parentD37" inherits="DestinationSelectBtnTemplate" id="37"/>
+                    <Button name="$parentD38" inherits="DestinationSelectBtnTemplate" id="38"/>
+                    <Button name="$parentD39" inherits="DestinationSelectBtnTemplate" id="39"/>
+                    <Button name="$parentD40" inherits="DestinationSelectBtnTemplate" id="40"/>
+                    <Button name="$parentD41" inherits="DestinationSelectBtnTemplate" id="41"/>
+                    <Button name="$parentD42" inherits="DestinationSelectBtnTemplate" id="42"/>
+                    <Button name="$parentD43" inherits="DestinationSelectBtnTemplate" id="43"/>
+                    <Button name="$parentD44" inherits="DestinationSelectBtnTemplate" id="44"/>
+                    <Button name="$parentD45" inherits="DestinationSelectBtnTemplate" id="45"/>
+                    <Button name="$parentD46" inherits="DestinationSelectBtnTemplate" id="46"/>
+                    <Button name="$parentD47" inherits="DestinationSelectBtnTemplate" id="47"/>
+                    <Button name="$parentD48" inherits="DestinationSelectBtnTemplate" id="48"/>
+                    <Button name="$parentD49" inherits="DestinationSelectBtnTemplate" id="49"/>
+                </Frames>
+            </SlidingFrame>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="480" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" shadowcolor="4D352C28" text="$21512">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="384" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>ChooseTransferDestinationFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--确认按钮-->
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3" hidden="false">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$11051" abs_x="170" abs_y="28">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ChooseTransferDestinationFrameConfirmBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>ChooseTransferDestinationFrame_OnLoad();</OnLoad>
+			<OnShow>ChooseTransferDestinationFrame_OnShow();</OnShow>
+			<OnHide>ChooseTransferDestinationFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

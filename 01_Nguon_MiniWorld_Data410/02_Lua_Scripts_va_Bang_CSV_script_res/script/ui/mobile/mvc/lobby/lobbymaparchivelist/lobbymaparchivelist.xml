@@ -1,0 +1,1937 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/lobby/lobbyHelper/lobbyConfig.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyHelper/lobbyDataManager.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyHelper/lobbyInterface.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyHelper/lobbyService.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyMapArchiveList/lobbyMapArchiveListModel.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyMapArchiveList/lobbyMapArchiveListView.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyMapArchiveList/lobbyMapArchiveListCtrl.lua"/>
+	<Script file="ui/mobile/mvc/lobby/lobbyMapArchiveList/lobbyMapArchiveListCtrlExt.lua"/>
+	<!-- 存档条目模板 -->
+	<Frame name = "NewArchiveTemplate" virtual = "true">
+		<Size>
+			<AbsDimension x="358" y="141"/>
+		</Size>
+		<Layers>
+			<Layer level = "BACKGROUND">
+				<Texture name = "$parentSelectedBkg" inherits = "TemplateBkg73" abs_x = "358" abs_y = "141">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				<Texture name = "$parentBkg" inherits = "TemplateBigBkg6" abs_x = "346" abs_y = "130">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="6" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name = "$parentMapThumbnail" file="ui/snap_empty.png" abs_x = "230" abs_y = "121">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x = "10" y = "10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name = "$parentTag" file="ui/mobile/texture2/common.xml" uvname="label_information_share.png" hidden = "true" DrawType="Center" UVType="mirroeu">
+                    <Center>
+						<Left			offsetX="40"  offsetY="0" w="31" h="33" />
+						<Center			offsetX="10" offsetY="0" w="30"	h="33" />
+						<Right			offsetX="0" offsetY="0" w="10"	h="33" />
+					</Center>
+					<Size>
+						<AbsDimension x="71" y="33"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentSelectedBkg">
+							<Offset>
+								<AbsDimension x="2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentTagName" fonttype = "BlackFont18" justifyH="left" justifV="middle" hidden = "true" abs_x = "200" abs_y = "28" autorect = "true" autowrap="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTag">
+							<Offset>
+								<AbsDimension x="7" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name = "$parentNotDownloadBg" file="ui/mobile/texture0/common.xml" uvname="label_map_white.png" abs_x = "30" abs_y = "30" hidden = "true" >
+					<Angle value="180"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMapThumbnail">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name = "$parentNotDownloadIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_notdownload.png" abs_x = "24" abs_y = "24" hidden = "true" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNotDownloadBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50" abs_x="230" abs_y="35"  DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="10" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentMapName" fonttype = "BlackFont22" justifyH="center" justifyV='middle' abs_x = "228" abs_y = "25" >
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="10" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name = "$parentMapKindIcon" file="ui/mobile/texture2/room.xml" uvname="icon_adv_mini.png" abs_x="21" abs_y="21">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentSelectedBkg">
+							<Offset>
+								<AbsDimension x="-89" y="82"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentMapSize" fonttype = "BlackFont20" justifyH="left" abs_x = "100" abs_y = "22">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="247" y="45"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name = "$parentMapKindName" fonttype = "BlackFont20" justifyH="left" justifyV="middle" abs_x = "80" abs_y = "22">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentMapKindIcon">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<Texture name = "$parentPlayerIcon" file="ui/mobile/texture0/miniwork.xml" uvname="icon_player.png" abs_x="21" abs_y="20" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentSelectedBkg">
+							<Offset>
+								<AbsDimension x="-89" y="22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentPlayerNum" fonttype = "BlackFont20" justifyH="left" abs_x = "100" abs_y = "22" hidden="true">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentPlayerIcon">
+							<Offset>
+								<AbsDimension x="5" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name = "$parentLikeIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_like_g.png" abs_x="21" abs_y="20" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentSelectedBkg">
+							<Offset>
+								<AbsDimension x="-89" y="61"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentLikeNum" fonttype = "BlackFont20" justifyH="left" abs_x = "100" abs_y = "22" hidden="true">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentLikeIcon">
+							<Offset>
+								<AbsDimension x="5" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name = "$parentDownloadIcon" file="ui/mobile/texture0/miniwork.xml" uvname="icon_download.png" abs_x="21" abs_y="20" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentSelectedBkg">
+							<Offset>
+								<AbsDimension x="-89" y="94"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentDownloadNum" fonttype = "BlackFont20" justifyH="left" abs_x = "100" abs_y = "22" hidden="true">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentDownloadIcon">
+							<Offset>
+								<AbsDimension x="5" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<Texture name = "$parentLabelIcon1" file="ui/mobile/texture2/miniwork.xml" uvname="ico_plugin_stroke.png" abs_x="21" abs_y="21" hidden = "true">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="248" y="-22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name = "$parentLabelIcon2" file="ui/mobile/texture0/common_icon.xml" uvname="icon_material_black50.png" abs_x="21" abs_y="21" hidden = "true">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentLabelIcon1">
+							<Offset>
+								<AbsDimension x="3" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name = "$parentLabelIcon3" file="ui/mobile/texture0/common_icon.xml" uvname="icon_program.png" abs_x="21" abs_y="21" hidden = "true">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentLabelIcon2">
+							<Offset>
+								<AbsDimension x="3" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentTutorialTitle" fonttype = "BlackFont20" justifyH="left" autowrap = "true" text = "点击设置可以删除存档" abs_x = "89" abs_y = "90">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentMapThumbnail">
+							<Offset>
+								<AbsDimension x="14" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ArchiveItemSelect_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+
+	<Frame name="lobbyMapArchiveList" parent="UIClient" frameStrata="BACKGROUND" hidden="true" framelevel="97">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/dtxx_beijingtu.png" stretchedge="true"/>
+				##植物背景
+				<Texture name="$parentPlantBkg1" file="ui/mobile/texture2/bigtex/img_flowers.png" hidden="true" abs_x="365" abs_y="442">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="0" y="150"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPlantBkg2" file="ui/mobile/texture2/bigtex/img_flowers.png" hidden="true" abs_x="365" abs_y="442" UVType="mirroeu">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentPlantBkg1" relativePoint="right" >
+							<Offset>
+								<AbsDimension x="-1" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<ModelView name="$parentRoleView">
+					<Size>
+						<RelDimension x="0.5" y="1.0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+				<ModelView name="$parentBkgEffect" abs_x="100" abs_y="100">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRoleView" >
+							<Offset>
+								<AbsDimension x="-60" y="150"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+				<Texture name="$parentPaoPaoIcon" file="ui/mobile/texture0/common.xml" uvname="bg_paopao01.png" DrawType="center" hidden="true">
+					<Center>
+						<Left offsetX="0" offsetY="0" w="32" h="56"/>
+						<Center offsetX="32" offsetY="0" w="10" h="56" />
+						<Right offsetX="42" offsetY="0" w="32" h="56" />
+					</Center>
+					<Size>
+						<AbsDimension x="320" y="56"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRoleView" >
+							<Offset>
+								<AbsDimension x="-60" y="-80"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPaoPaoJiaoIcon" file="ui/mobile/texture0/common.xml" uvname="bg_paopao02.png" hidden="true">
+					<Size>
+						<AbsDimension x="21" y="13"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRoleView" >
+							<Offset>
+								<AbsDimension x="-60" y="-80"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name = "$parentPaoPaoText" fonttype = "BlackFont23" text = "$10729" justifyH="center" justifyV="middle" hidden="true">
+					<Color r="55" g="54" b="50"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPaoPaoIcon">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>		
+		</Layers>
+		<Frames>
+            <!--人物旋转 -->
+            <Button name="$parentRoleRotateView" framelevel="98">
+                <Size>
+                    <AbsDimension x="300" y="350"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentRoleView" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="-64" y="-52" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseDown>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):RoleRotateView_OnMouseDown()</OnMouseDown>
+                    <OnMouseMove>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):RoleRotateView_OnMouseMove()</OnMouseMove>
+                    <OnMouseUp>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):RoleRotateView_OnMouseUp()</OnMouseUp>
+                    <OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ChangeView_OnClick()</OnClick>
+                </Scripts>
+            </Button>
+            <!-- 点击模型中间小块地方, 变换动作 -->			
+			<Button name="$parentAccountBtn" inherits="TemplateBtn17" hidden="false" framelevel="100">
+				<Size>
+					<AbsDimension x="50" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="16" y="13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_user_loading.png">
+							<Size>
+								<AbsDimension x="26" y="33"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name = "$parentText" lang_ver="tw"  fonttype = "BlackFont16" text = "$4484" justifyH="center" justifyV="middle" rel_x = "1" abs_y = "20">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="vie"  fonttype = "BlackFont16" text = "$4484" justifyH="center" justifyV="middle" rel_x = "1" abs_y = "20">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="tha"   fonttype = "BlackFont16" text = "$4484" justifyH="center" justifyV="middle" rel_x = "1" abs_y = "20">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="rus"  fonttype = "BlackFont16" text = "$4484" justifyH="center" justifyV="middle" rel_x = "1" abs_y = "20">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" text = "" justifyH="center" justifyV="middle" rel_x = "1" abs_y = "20">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):AccountBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentArchiveSlotBtn" inherits="TemplateBtn17" hidden="false" framelevel="100">
+				<Size>
+					<AbsDimension x="50" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentAccountBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="30" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon"  file="ui/mobile/texture0/common_icon.xml" uvname="icon_schedule">
+							<Size>
+								<AbsDimension x="32" y="32"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name = "$parentText" lang_ver="tw" fonttype = "BlackFont16" text = "$50155" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText"  lang_ver="vie" fonttype = "BlackFont16" text = "$50155" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText2" lang_ver="tha" fonttype = "BlackFont16" text = "$50155" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="250" g="250" b="250"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="tha" fonttype = "BlackFont16" text = "$50155" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText"  lang_ver="rus" fonttype = "BlackFont16" text = "$50155" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" text = "" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ArchiveOnCLick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentARFactoryBtn" inherits="TemplateBtn17" hidden="false" framelevel="100">
+				<Size>
+					<AbsDimension x="50" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentArchiveSlotBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="30" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_workshop_b.png">
+							<Size>
+								<AbsDimension x="30" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name = "$parentText" lang_ver="tw" fonttype = "BlackFont16" text = "$32254" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="vie" fonttype = "BlackFont16" text = "$32254" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="tha" fonttype = "BlackFont16" text = "$32254" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" lang_ver="rus" fonttype = "BlackFont16" text = "$32254" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" text = "" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ARFactory_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentModLibBtn" inherits="TemplateBtn17" hidden="false" framelevel="100">
+				<Size>
+					<AbsDimension x="50" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentARFactoryBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="30" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_pluginbox_grey.png">
+							<Size>
+								<AbsDimension x="30" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name = "$parentText" fonttype = "BlackFont16" lang_ver="tw" text = "$3917" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" lang_ver="vie" text = "$3917" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" lang_ver="tha" text = "$3917" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" lang_ver="rus" text = "$3917" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name = "$parentText" fonttype = "BlackFont16" text = "" justifyH="center" autowrap="true" abs_x = "70" abs_y = "40">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="1" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):MobLibEnterBtnClicked();</OnClick>
+				</Scripts>
+			</Button>			
+			<Button name="$parentUseActionBtn" inherits="TemplateBtn18" hidden="false" framelevel="98">
+				<Size>
+					<AbsDimension x="50" y="53"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentRoleView" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="20" y="-16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_action.png">
+							<Size>
+								<AbsDimension x="31" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPermitPoint" file="ui/mobile/texture0/common.xml" uvname="img_dot_change" hidden="true">
+							<Size>
+								<AbsDimension x="16" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x= "0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ActionBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>			
+			<Frame name="$parentArchiveFrame" framelevel="100">
+				<Size>
+					<Dimension abs_x="755" abs_y="686"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-15" y="13"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-15" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentArchiveBkg" inherits="TemplateBigBkg19" />
+						<Texture name="$parentArchiveChenDi" inherits="TemplateBigBkg2">
+							<Size>
+								<Dimension abs_x="720" abs_y="462"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="3" y="117"/>
+									</Offset>
+								</Anchor>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="3" y="-96"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name = "$parentExpansionText" fonttype = "BlackFont18" text = "12/50" justifyH="right" abs_x = "60" abs_y = "22">
+							<Color r="224" g="220" b="202"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentExpansionBtn">
+									<Offset>
+										<AbsDimension x="-12" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name = "$parentMyDownLoadMapList" abs_x = "156" abs_y = "50">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="4" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentNormal" inherits="TemplateBigBkg21" />
+								<Texture name="$parentChecked" inherits="TemplateBigBkg36" />
+								<Texture name="$parentTagIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_download_b" abs_x="26" abs_y="24">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="27" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$3123" abs_x="90" abs_y="24">
+									<Color r="255" g="153" b="63"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentUnCheckTitle" justifyH="center" fonttype="BlackFont22" text="$3123" abs_x="90" abs_y="24">
+									<Color r="104" g="98" b="85"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):DownLoadMapList_Btn();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentMyMapList" abs_x = "156" abs_y = "50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyDownLoadMapList" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentNormal" inherits="TemplateBigBkg21" />
+								<Texture name="$parentChecked" inherits="TemplateBigBkg36" />
+								<Texture name="$parentTagIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_create_b" abs_x="26" abs_y="24">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="27" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$16206" abs_x="90" abs_y="24">
+									<Color r="255" g="153" b="63"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentUnCheckTitle" justifyH="center" fonttype="BlackFont22" text="$16206" abs_x="90" abs_y="24">
+									<Color r="104" g="98" b="85"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):MyMapList_Btn(); </OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentMyHistoryMapList" abs_x = "156" abs_y = "50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMapList" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentNormal" inherits="TemplateBigBkg21" />
+								<Texture name="$parentChecked" inherits="TemplateBigBkg36" />
+								<Texture name="$parentTagIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_record_b" abs_x="26" abs_y="24">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="27" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$33011" abs_x="90" abs_y="24">
+									<Color r="255" g="153" b="63"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentUnCheckTitle" justifyH="center" fonttype="BlackFont22" text="$33011" abs_x="90" abs_y="24">
+									<Color r="104" g="98" b="85"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):MyHistoryMapList_Btn();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentMyFavoritesMapList" abs_x = "156" abs_y = "50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyHistoryMapList" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentNormal" inherits="TemplateBigBkg21" />
+								<Texture name="$parentChecked" inherits="TemplateBigBkg36" />
+								<Texture name="$parentTagIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_b" abs_x="26" abs_y="24">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="27" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$897" abs_x="90" abs_y="24">
+									<Color r="255" g="153" b="63"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentUnCheckTitle" justifyH="center" fonttype="BlackFont22" text="$897" abs_x="90" abs_y="24">
+									<Color r="104" g="98" b="85"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-14" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):MyFavoritesMapList_Btn();</OnClick>
+						</Scripts>
+					</Button>
+					<!-- Tap all -->
+					<Button name = "$parentTapAll" abs_x = "110" abs_y = "37">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentMyDownLoadMapList">
+								<Offset>
+									<AbsDimension x="0" y="24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_line_up_h.png" abs_x="110" abs_y="2" DrawType="flat">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentRedTag" file="ui/mobile/texture0/common.xml" uvname="img_num_tips" hidden="true" DrawType="Center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="10" h="24" />
+										<Center offsetX="10" offsetY="0" w="26" h="24" />
+										<Right offsetX="36" offsetY="0" w="10" h="24" />
+									</Center>
+									<Size>
+										<AbsDimension x="40" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="-16"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentRedTagTip" fonttype="BlackFont18" text="$3702" justifyH="center" justifyV="middle" hidden="true">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="100" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentRedTag">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$3820" abs_x="110" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):TapAllSelected_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!-- Popular -->>
+					<Button name = "$parentTapPopular" abs_x = "110" abs_y = "37" hidden="true">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentTapAll">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_line_up_h.png" abs_x="110" abs_y="2" DrawType="flat">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentRedTag" file="ui/mobile/texture0/common.xml" uvname="img_num_tips" hidden="true" DrawType="Center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="10" h="24" />
+										<Center offsetX="10" offsetY="0" w="26" h="24" />
+										<Right offsetX="36" offsetY="0" w="10" h="24" />
+									</Center>
+									<Size>
+										<AbsDimension x="40" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="-16"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentRedTagTip" fonttype="BlackFont18" text="$3702" justifyH="center" justifyV="middle" hidden="true">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="100" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentRedTag">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$50360" abs_x="120" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):TapPopularSelected_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentTapNotUpload" abs_x = "110" abs_y = "37">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentTapAll">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_line_up_h.png" abs_x="110" abs_y="2" DrawType="flat">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" lang_ver="jpn" justifyH="center" fonttype="BlackFont22" text="$32026" abs_x="100" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$32026" abs_x="120" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):TapNotUploadSelected_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentTapUploaded" abs_x = "110" abs_y = "37">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentTapNotUpload">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_line_up_h.png" abs_x="110" abs_y="2" DrawType="flat">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" lang_ver="jpn" justifyH="center" fonttype="BlackFont22" text="$32027" abs_x="100" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" lang_ver="en" justifyH="center" fonttype="BlackFont21" text="$32027" abs_x="120" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$32027" abs_x="120" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):TapUploadedSelected_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentTapAbnormal" abs_x = "110" abs_y = "37">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentTapUploaded">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_line_up_h.png" abs_x="110" abs_y="2" DrawType="flat">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$50156" abs_x="120" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):TapAbnormalSelected_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name = "$parentTapHistory" abs_x = "110" abs_y = "37">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentMyDownLoadMapList">
+								<Offset>
+									<AbsDimension x="0" y="24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_line_up_h.png" abs_x="110" abs_y="2" DrawType="flat">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont22" text="$32029" abs_x="120" abs_y="24">
+									<Color r="142" g="135" b="121"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):TapHistorySelected_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name = "$parentTiro" abs_x = "698" abs_y = "462">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="125"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-99"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name = "$parentLogo" file="ui/mobile/texture2/bigtex/img_noreview.png" abs_x = "244" abs_y = "255">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="242" y="54"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentLogoTitle" justifyH="center" autowrap = "true" fonttype="BlackFont24" text="$32068" abs_x="370" abs_y="70">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLogo">
+											<Offset>
+												<AbsDimension x="-63" y="29"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name = "$parentNewPlayerTutorial" file="ui/mobile/texture0/noviceguide.xml" uvname = "img_arrow_green2_teach.png" abs_x = "46" abs_y = "37">
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="55" y="-15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name = "$parentEmptyArchiveList" abs_x = "698" abs_y = "462">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="125"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-99"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name = "$parentLogo" file="ui/mobile/texture2/bigtex/img_noreview.png" abs_x = "244" abs_y = "255">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="219" y="54"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentLogoTitle" justifyH="center" autowrap = "false" fonttype="BlackFont24" text="$32069" abs_x="370" abs_y="25">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLogo">
+											<Offset>
+												<AbsDimension x="-63" y="29"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentLogoTitle2" justifyH="center" autowrap = "false" fonttype="BlackFont24" text="" abs_x="370" abs_y="70" hidden="true">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentLogoTitle">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name = "$parentPlayerTutorial" hidden="true" file="ui/mobile/texture0/noviceguide.xml" uvname = "img_arrow_green2_teach.png" abs_x = "46" abs_y = "37" UVType="turn270">
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="55" y="-15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<ListViewFrame name="$parentArchiveBox" slidingY="true" slideplane="$parentPlane" slidebar = "$parentSlideBar" abs_x="745" abs_y="462">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="10" y="117"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="3" y="-96"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentSliderBkg" inherits="TemplateBkg16" hidden="false" abs_x="12" rel_y="1">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-25" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="745" abs_y="462"/>
+							<Frame name = "$parentSlideBar" abs_x = "12" abs_y = "462">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-25" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentBkg1" inherits="TemplateBkg17" hidden="false" abs_x="12" res_y="1" />
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnShow>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):SliderShow();</OnShow>
+									<OnHide>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):SliderHide();</OnHide>
+								</Scripts>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+					<Button name="$parentMoreChoiceBtn" abs_x = "283" abs_y = "85">
+						<Anchors>
+							<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="10" y="-6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormalBkg" inherits="TemplateBigBkg16" />
+						<PushedTexture name="$parentPushedBkg" inherits="TemplateBigBkg16" rel_x = "0.98" rel_y = "0.98">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentNormalBkg" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<!-- <Texture name="$parentBkg" inherits = "TemplateBigBkg16"/> -->
+								<Texture name="$parentBkgRight" inherits = "TemplateBkg72" alphamode="alphablend" color="33ffffff" abs_x="213" abs_y="85">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="70" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentLeftIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_download_blue.png">
+									<Size>
+										<AbsDimension x="38" y="36"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="16" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" lang_ver="tha" justifyH="center" fonttype="BlackFont30" justifyV="middle"	 text="$3513" abs_x="210" abs_y="85">
+									<Color r="55" g="54" b="50"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont24" justifyV="middle"	 text="$3513" abs_x="213" abs_y="85">
+									<Color r="55" g="54" b="50"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):MoreChoiceBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMobLibEnterBtn" abs_x = "186" abs_y = "85" hidden="true">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMoreChoiceBtn" relativePoint="right">
+								<Offset>
+									<AbsDimension x="8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormalBkg" inherits="TemplateBigBkg39" />
+						<PushedTexture name="$parentPushedBkg" inherits="TemplateBigBkg39" rel_x = "0.98" rel_y = "0.98">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentNormalBkg" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<!-- <Texture name="$parentBkg" inherits = "TemplateBigBkg39"/> -->
+								<Texture name="$parentBkgRight" inherits = "TemplateBkg72" alphamode="alphablend" color="33ffffff" abs_x="134" abs_y="85">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="52" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentLeftIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_pluginbox.png">
+									<Size>
+										<AbsDimension x="38" y="38"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" justifyH="right" fonttype="BlackFont24" text="$3917" abs_x="120" abs_y="24">
+									<Color r="55" g="54" b="50"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-32" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):MobLibEnterBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCreateMapEnterBtn" abs_x = "440" abs_y = "85">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMoreChoiceBtn" relativePoint="right">
+								<Offset>
+									<AbsDimension x="8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormalBkg" inherits="TemplateBigBkg17" />
+						<PushedTexture name="$parentPushedBkg" inherits="TemplateBigBkg17" rel_x = "0.98" rel_y = "0.98">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentNormalBkg" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<!-- <Texture name="$parentBkg" inherits = "TemplateBigBkg17"/> -->
+								<Texture name="$parentBkgRight" inherits = "TemplateBkg72" alphamode="alphablend" color="33ffffff" abs_x="357" abs_y="85">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="80" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentLeftIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_create.png">
+									<Size>
+										<AbsDimension x="43" y="43"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="20" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" lang_ver="tha" justifyH="right" justifyV="middle" fonttype="BlackFont30" text="$891" abs_x="180" abs_y="85">
+									<Color r="55" g="54" b="50"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-134" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" justifyH="right" justifyV="middle" fonttype="BlackFont24" text="$891" abs_x="180" abs_y="85">
+									<Color r="55" g="54" b="50"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-134" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):CreateWorldBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentExpansionBtn" abs_x = "91" abs_y = "43">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-37" y="71"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormalBkg" inherits= "TemplateBkg15" rel_x = "1.0" rel_y = "1.0">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBkg" inherits= "TemplateBkg15" rel_x = "0.95" rel_y = "0.95">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentTitle" lang_ver="vie" justifyH="center" justifyV="middle" fonttype="BlackFont14" text="$9709" abs_x="90" abs_y="22">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" justifyH="center" justifyV="middle" fonttype="BlackFont18" text="$9709" abs_x="90" abs_y="22">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ExpansionBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentClearAllBtn" inherits="TemplateBtn11" abs_x="91" abs_y="43">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-116" y="9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" justifyH="center" fonttype="BlackFont18" text="$4731">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="91" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):ClearAllBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentUpdateBtn" inherits="TemplateBtn11" abs_x="116" abs_y="43" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-20" y="71"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" lang_ver="vie" justifyH="center" justifyV="middle" fonttype="BlackFont16" text="$55146">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="91" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" justifyH="center" fonttype="BlackFont18" text="$55146">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="91" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):UpdateBtn_Onclick();</OnClick>
+						</Scripts>
+					</Button>
+					<!-- 一键清理地图 addBy:xch -->
+					<Button name="$parentCleanBtn" inherits="TemplateBtn11" abs_x="91" abs_y="43" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-37" y="71"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" justifyH="center" fonttype="BlackFont18" text="$50233">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="91" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):CleanBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="36" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-10" y="6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):CloseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			## 新手引导 
+			<Frame name="$parentGuide" frameStrata="BACKGROUND" hidden="true" framelevel="2000">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size>				
+				<Frames>
+					<Frame name="$parentMask">
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="78000000" />
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentContent" frameStrata="BACKGROUND" framelevel="2200">
+						<Size>
+							<AbsDimension x="582" y="329"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="220" y="-100"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">								
+								<Texture name="$parentDecorate" file="ui/mobile/texture0/bigtex/edu_tumeimei.png">
+									<Size>
+										<AbsDimension x="161" y="209"/>
+									</Size>	
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-20"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentText" fonttype="BlackFont24" justifyV="middle" lineInterval="13" autowrap="true" text="$3773">
+									<Size>
+										<AbsDimension x="410" y="220"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="165" y="-8"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentContinueIcon" inherits="TemplateBkg47" hidden="false">
+									<Size>
+										<AbsDimension x="151" y="39"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-20"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<FontString name="$parentContinueText" fonttype="BlackFont18" justifyH="center" text="$4961" abs_x="151" abs_y="18" hidden="false">
+									<Color r="10" g="170" b="26"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentContinueIcon" />
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLineH" file="ui/mobile/texture0/shop.xml" uvname="img_line_white.png" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="2" h="2"/>
+										<Center offsetX="2" offsetY="0" w="2" h="2" />
+										<Right offsetX="2" offsetY="0" w="2" h="2" />
+									</Center>
+									<Size>
+										<AbsDimension x="331" y="2"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="167" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentLine" file="ui/mobile/texture0/noviceguide/img_line_white_novice1.png">
+									<Size>
+										<AbsDimension x="158" y="2"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="165" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentSquare" file="ui/mobile/texture0/common.xml" uvname="img_dot_diamond_white.png">
+									<Size>
+										<AbsDimension x="20" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+	
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):GuideContentNextBtn_OnClick();</OnClick>
+						</Scripts>				
+					</Frame>
+					<Frame name="$parentFinger">
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentFinger" file="ui/mobile/texture2/noviceguide.xml" uvname="img_hand_1.png" hidden="false">
+									<Size>
+										<AbsDimension x="121" y="121"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):GuideContentNextBtn_OnClick();</OnClick>
+						</Scripts>
+					</Frame>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):GuideContentNextBtn_OnClick();</OnClick>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):HandleEvent();</OnEvent>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):Update()</OnUpdate>
+			<OnShow>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):OnShow()</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("lobbyMapArchiveList"):OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

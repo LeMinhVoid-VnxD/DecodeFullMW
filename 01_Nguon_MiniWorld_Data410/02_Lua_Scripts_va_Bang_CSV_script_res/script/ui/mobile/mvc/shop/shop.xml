@@ -1,0 +1,2992 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##商城辅助类
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopInterface.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopDataManager.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopService.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopConfig.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopConfigExt.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopServiceExt.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopDataManagerExt.lua"/>
+	##商城主页
+	<Script file="ui/mobile/mvc/shop/ShopModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/ShopView.lua"/>
+	<Script file="ui/mobile/mvc/shop/ShopCtrl.lua"/>
+	<Script file="ui/mobile/mvc/shop/ShopCtrlExt.lua"/>
+
+	##皮肤组标题
+	<Frame name="ShopSkinGroupTitleTemplate" virtual="true" click_threshold="5" abs_x="1100" abs_y="36">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="10" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentTitleBg" inherits = "TemplateBkg26" abs_x="1100" abs_y="36">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="" abs_x="600" abs_y="36">
+					<Color r="73" g="70" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBg">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTips" fonttype="BlackFont18" hidden = "true" justifyH="left" text="$20488" abs_x="950" abs_y="18">
+					<Color r="73" g="70" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentNum" fonttype="BlackFont20" justifyH="right"  text="" abs_x="150" abs_y="20" hidden="true">
+					<Color r="101" g="116" b="108"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentTitleBg">
+							<Offset>
+								<AbsDimension x="-70" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSwitchBtn" hidden="true">
+				<Size>
+					<AbsDimension x="80" y="36"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parentTitleBg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentOpen" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black.png">
+							<Angle value="90"/>
+							<Size>
+								<AbsDimension x="10" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentClose" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black.png" hidden="true" >
+							<Angle value="270"/>
+							<Size>
+								<AbsDimension x="10" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>	
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinGroupSwitchBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##皮肤展示框
+	<Button name="ShopSkinItemTemplate" virtual="true" click_threshold="5" abs_x="200" abs_y="235">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+			</Anchor>
+		</Anchors>
+		<NormalTexture name="$parentBg" file="ui/mobile/texture2/bigtex/img_icon_man.png">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</NormalTexture>
+		<PushedTexture name="$parentPushedBg" file="ui/mobile/texture2/bigtex/img_icon_man.png" rel_y="0.95" rel_x="0.95">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</PushedTexture>
+		<Frames>
+			##所有皮肤公用部分
+			<Frame name = "$parentCommon" input_transparent = "true">
+				<Layers>
+					<Layer level="BACKGROUND">
+						##背景图
+						<!-- <Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_icon_man.png" /> -->
+						##角色阴影
+						<Texture name="$parentActorShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="114" abs_y="25" hidden = "true">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-13"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##角色视图
+						<ModelView name="$parentActorView" abs_x="196" abs_y="231" hidden = "true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+						##名字背景
+						<Texture name="$parentNameBg" inherits="TemplateBigBkg18" abs_x="198" abs_y="36" hidden="true">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##名字
+						<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="" abs_x="150" abs_y="36" hidden="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNameBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##使用皮肤按钮
+					<Button name="$parentUseBtn" abs_x="150" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_blue">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_blue" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="highlight">
+								<!-- <Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_blue.png"/> -->
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$186" abs_x="100" abs_y="20">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinUseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##普通皮肤部分
+			<Frame name = "$parentNormal" hidden = "true" input_transparent = "true">
+				<Layers>
+					<Layer level="BACKGROUND">
+						##限时购买
+						<FontString name="$parentBuyLimit" fonttype="BlackFont20" justifyH="center" text="$21227" abs_x="200" abs_y="30" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="28" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##活动赠送
+						<FontString name="$parentActivityLimit" fonttype="BlackFont20" justifyH="center" text="$21729" abs_x="200" abs_y="30" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="28" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentChangeLogo" abs_x="45" abs_y="45" file="ui/mobile/texture2/common.xml" uvname="icon_52" hidden="true">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##皮肤详情按钮
+					<Button name="$parentDetailBtn" abs_x="150" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentBkg" inherits="TemplateBkg23">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBkg" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="highlight">
+								
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$20298" abs_x="100" abs_y="19">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinDetailBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##前往某个页面的按钮
+					<Button name="$parentJumpPageBtn" abs_x="150" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentBkg" inherits="TemplateBkg23">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBkg" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="highlight">
+								
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$20298" abs_x="100" abs_y="19">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinJumpPageBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##皮肤购买按钮
+					<Button name="$parentBuyBtn" abs_x="152" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentBg" inherits="TemplateBkg23">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBg" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+
+						<Layers>
+							<Layer level="overlay">
+								<!-- <Texture name="$parentBg" inherits="TemplateBkg23"/> -->
+								<Texture name="$parentIcon" abs_x="23" abs_y="23">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="28" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentCost" fonttype="BlackFont22"  justifyH="center" text="" abs_x="150" abs_y="22" lang_ver="tha">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentCost" fonttype="BlackFont22"  justifyH="center" text="" abs_x="150" abs_y="22">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentOriginalPrice" fonttype="BlackFont"  justifyH="center" text="9999" abs_x="100" abs_y="16">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="top" relativeTo="$parentCost">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLine" file="ui/mobile/texture0/common.xml" uvname="line_sale.png" abs_x="50" abs_y="2">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentOriginalPrice">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinBuyBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##皮肤跳转url按钮
+					<Button name="$parentJumpUrlBtn" abs_x="38" abs_y="33" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="btn_playanime.png"/>
+						<PushedTexture name="$parentPushedBg" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="btn_playanime.png">
+							<Size>
+								<AbsDimension x="35" y="33"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinJumpUrlClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##皮肤迷你点购买按钮
+					<Button name="$parentPointBuyBtn" abs_x="98" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="51" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentBg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="98" y="50"/>
+							</Size>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="85" y="45"/>
+							</Size>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<!-- <Texture name="$parentBg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png">
+									<Size>
+										<AbsDimension x="98" y="50"/>
+									</Size>
+								</Texture> -->
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon10009" abs_x="23" abs_y="23">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="9" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentCost" fonttype="BlackFont20"  justifyH="left" text="" abs_x="45" abs_y="21">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinBuyBtnClicked(true);</OnClick>
+						</Scripts>
+					</Button>
+					##皮肤购买按钮(缩小版)
+					<Button name="$parentBuyBtn2" abs_x="98" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-51" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentBg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="98" y="50"/>
+							</Size>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+							<Size>
+								<AbsDimension x="85" y="45"/>
+							</Size>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<!-- <Texture name="$parentBg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png">
+									<Size>
+										<AbsDimension x="98" y="50"/>
+									</Size>
+								</Texture> -->
+								<Texture name="$parentIcon" abs_x="23" abs_y="23">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="9" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentCost" fonttype="BlackFont20"  justifyH="left" text="" abs_x="45" abs_y="21">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinBuyBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##皮肤标签
+					<Frame name="$parentTag" inherits="ShopSkinItemFlagTemplate" hidden="true" />
+					<Frame name="$parentLimitTag" abs_x="102" abs_y="35" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-4" y="-2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentTagBg" file="ui/mobile/texture2/shop.xml" uvname="label_shop_time.png">
+									<Size>
+										<AbsDimension x="102" y="35"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="102" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentTagBg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+			##定制皮肤部分
+			<Frame name = "$parentCustom" hidden = "true" input_transparent = "true">
+				<Layers>
+					<Layer level="BACKGROUND">
+						##空位锁
+						<Texture name="$parentLockIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_lock_add_y.png" hidden="true" abs_x="73" abs_y="92">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##新增空位
+						<Texture name="$parentAddSeatIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_upload_y.png" hidden="true" abs_x="90" abs_y="90">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##空位数量
+						<FontString name="$parentEmptySeatNum" fonttype="BlackFont22" justifyH="center" text="$20239" abs_x="150" abs_y="18" hidden="true">
+							<Color r="73" g="70" b="63"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-55"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##AR上传中
+						<FontString name="$parentARTag" fonttype="BlackFont20" justifyH="left" text="$20309" abs_x="130" abs_y="24" hidden="true">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="5" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##半透明蒙版
+						<Texture name="$parentMaskImage" inherits="TemplateBigBkg18" rel_x="1" rel_y="1" hidden="true"/>
+						##违规提示
+						<Texture name="$parentBreakLawIcon" file="ui/mobile/texture2/shop.xml" uvname="pic_warning" hidden="true" abs_x="114" abs_y="96">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##违规提示字符
+						<FontString name="$parentBreakLawTag" fonttype="BlackFont20" justifyH="center" text="$20310" rel_x="1" abs_y="24" hidden="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="45"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##删除皮肤按钮
+					<Button name="$parentDeleteBtn" abs_x="40" abs_y="40" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="5" y="-14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture level="background" name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture level="background" name="$parentPushedBg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="highlight">
+								<!-- <Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture> -->
+								<Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_no.png" abs_x="18" abs_y="18">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinDeleteBtnClicked();</OnClick>
+							<!-- <OnMouseDown>OnClickAnimation("OnMouseDown",{"ShopCustomSkinLibPage2SkinListViewItem2Btn%dCustomDeleteBtnIcon","ShopCustomSkinLibPage2SkinListViewItem2Btn%dCustomDeleteBtnBg"},{idType=3,isTemplate=true});</OnMouseDown>
+							<OnMouseUp>OnClickAnimation("OnMouseUp",{"ShopCustomSkinLibPage2SkinListViewItem2Btn%dCustomDeleteBtnIcon","ShopCustomSkinLibPage2SkinListViewItem2Btn%dCustomDeleteBtnBg"},{idType=3,isTemplate=true});</OnMouseUp>
+							<OnMouseOut>OnClickAnimation("OnMouseOut",{"ShopCustomSkinLibPage2SkinListViewItem2Btn%dCustomDeleteBtnIcon","ShopCustomSkinLibPage2SkinListViewItem2Btn%dCustomDeleteBtnBg"},{idType=3,isTemplate=true});</OnMouseOut> -->
+						</Scripts>
+					</Button>
+					##AR皮肤上传按钮
+					<Button name="$parentARUploadBtn" abs_x="40" abs_y="40" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="4" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_long_yellow.png"/>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown.png" abs_x="23" abs_y="23">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinARUploadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##皮肤组展示框(每组5个)
+	<Frame name="ShopSkinGroupItemTemplate"  virtual="true" click_threshold="5" abs_x="1100" abs_y="235">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="10" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Button name="$parentBtn1" inherits="ShopSkinItemTemplate" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn2" inherits="ShopSkinItemTemplate" id="2" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="215" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn3" inherits="ShopSkinItemTemplate" id="3" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="215" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn4" inherits="ShopSkinItemTemplate" id="4" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="215" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentBtn5" inherits="ShopSkinItemTemplate" id="5" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBtn4">
+						<Offset>
+							<AbsDimension x="215" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+##武器皮肤
+	<Button name="ShopWeaponSkinItemTemplate" virtual="true" click_threshold="5" abs_x="132" abs_y="132" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				##图标
+				<Texture name="$parentIcon" file="ui/gunicons/weapon_default.png">
+					<Size>
+						<AbsDimension x="128" y="128"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##选中框
+				<Texture name="$parentCheck" file="ui/mobile/texture2/common.xml" uvname="sel_icon_custom" DrawType="ninesquare" hidden="true">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="6" 	h="6"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="6"  h="6"/>
+						<Topright 		offsetX="24" 	offsetY="0" 	w="6" 	h="6"/>
+						<Left 			offsetX="0" 	offsetY="12" 	w="6" 	h="6"/>
+						<Center 		offsetX="12" 	offsetY="12" 	w="6"  h="6"/>
+						<Right 			offsetX="24" 	offsetY="12" 	w="6" 	h="6"/>
+						<Bottomleft 	offsetX="0" 	offsetY="24" 	w="6" 	h="6"/>
+						<Bottom 		offsetX="12" 	offsetY="24" 	w="6"  h="6"/>
+						<Bottomright 	offsetX="24" 	offsetY="24" 	w="6" 	h="6"/>
+						<OffSet x="6" y="6" />
+					</NineSquare>
+					<Size>
+						<AbsDimension x="132" y="132"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##限时销售
+				<FontString name="$parentBuyLimit" fonttype="BlackFont20" justifyH="center" text="$21227" abs_x="200" abs_y="30" hidden="true">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="16" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##限时体验
+				<Texture name="$parentExperienceLimit" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h" hidden="true">
+					<Size>
+						<AbsDimension x="24" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="8" y="-8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##使用按钮
+			<Button name="$parentUseBtn" abs_x="130" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$186" abs_x="100" abs_y="20">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_middle_blue.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_middle_blue.png" rel_x ="1.0" rel_y="0.95"/>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):WeaponUseBtnClicked(1)</OnClick>
+				</Scripts>
+			</Button>
+			##取消按钮
+			<Button name="$parentCancelBtn" abs_x="130" abs_y="50" hidden = "true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont20"  justifyH="center"  text="$970" abs_x="100" abs_y="20">
+							<Color r="54" g="53" b="53"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty" rel_x ="1.0" rel_y="0.95"/>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):WeaponUseBtnClicked(2)</OnClick>
+				</Scripts>
+			</Button>
+			##详情按钮
+			<Button name="$parentDetailBtn" abs_x="130" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$20298" abs_x="100" abs_y="19">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg23" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23" rel_x ="1.0" rel_y="0.95"/>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):WeaponDetailBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+			##购买按钮
+			<Button name="$parentBuyBtn" abs_x="130" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" abs_x="34" abs_y="34">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="12" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCost" fonttype="BlackFont20"  justifyH="left" text="" abs_x="75" abs_y="21">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="10" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>					
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg23" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23" rel_x ="1.0" rel_y="0.95"/>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):WeaponBuyBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+			##标签
+			<Frame name="$parentTag" abs_x="120" abs_y="35" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-4" y="-2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="label_shop_hot.png" />
+						<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="" abs_x="120" abs_y="18">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("Shop"):WeaponBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+	##定制皮肤展示框
+	<Button name="ShopCustomSkinItemTemplate" virtual="true" click_threshold="5" abs_x="132" abs_y="132" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				##图标
+				<Texture name="$parentIcon" file="ui/roleicons/sdjm_bd07_no.png">
+					<Size>
+						<AbsDimension x="128" y="128"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##选中框
+				<Texture name="$parentCheck" file="ui/mobile/texture2/common.xml" uvname="sel_icon_custom" DrawType="ninesquare" hidden="true">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="6" 	h="6"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="6"  h="6"/>
+						<Topright 		offsetX="24" 	offsetY="0" 	w="6" 	h="6"/>
+						<Left 			offsetX="0" 	offsetY="12" 	w="6" 	h="6"/>
+						<Center 		offsetX="12" 	offsetY="12" 	w="6"  h="6"/>
+						<Right 			offsetX="24" 	offsetY="12" 	w="6" 	h="6"/>
+						<Bottomleft 	offsetX="0" 	offsetY="24" 	w="6" 	h="6"/>
+						<Bottom 		offsetX="12" 	offsetY="24" 	w="6"  h="6"/>
+						<Bottomright 	offsetX="24" 	offsetY="24" 	w="6" 	h="6"/>
+						<OffSet x="6" y="6" />
+					</NineSquare>
+					<Size>
+						<AbsDimension x="132" y="132"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##限时购买
+				<FontString name="$parentBuyLimit" fonttype="BlackFont19" justifyH="center" text="" abs_x="100" abs_y="19" hidden="true">
+					<Color r="141" g="90" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##限时体验
+				<Texture name="$parentExperienceLimit" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h" hidden="true">
+					<Size>
+						<AbsDimension x="28" y="28"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="10" y="-8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+
+				<FontString name="$parentAdvert" fonttype="BlackFont19" justifyH="center" justifyV="middle"  text="$55557" abs_x="130" abs_y="50" hidden="true">
+					<Color r="141" g="90" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##使用按钮
+			<Button name="$parentUseBtn" abs_x="130" abs_y="50" hidden = "true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentBg" hidden="false" inherits="TemplateBkg23">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBg" hidden="false" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="highlight">
+						<!-- <Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty" hidden="false" /> -->
+						<FontString name="$parentName" fonttype="BlackFont20"  justifyH="center"  text="$186" abs_x="100" abs_y="20">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartUseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##购买按钮
+			<Button name="$parentBuyBtn" abs_x="130" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg23">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<!-- <Texture name="$parentBg" inherits="TemplateBkg23"/> -->
+						<Texture name="$parentIcon" abs_x="23" abs_y="23">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="37" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCost" lang_ver="tha" fonttype="BlackFont20"  justifyH="left" text="" abs_x="75" abs_y="21">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="5" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentCost" fonttype="BlackFont20"  justifyH="left" text="" abs_x="75" abs_y="21">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="5" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartBuyBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##删除按钮
+			<Button name="$parentDeleteBtn" inherits="TemplateBtnCross" abs_x="34" abs_y="35" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="5" y="-5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartDeleteBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+            ##Avatar特权卡下购买按钮
+            <Button name="$parentVIPBuyBtn" abs_x="65" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+                        <Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png" abs_x="65" abs_y="50"/>
+                        <FontString name="$parentText" fonttype="BlackFont"  justifyH="center" text="$3059" abs_x="60" abs_y="16">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentIcon" abs_x="15" abs_y="16">
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="8" y="-8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCost" fonttype="BlackFont"  justifyH="center" text="" abs_x="75" abs_y="16">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="25" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartBuyBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##跳转按钮
+            <Button name="$parentJumpBtn" abs_x="130" abs_y="50" hidden="true">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentBg" inherits="TemplateBkg23"/>
+                        <FontString name="$parentName" fonttype="BlackFont20"  justifyH="center"  text="$41216" abs_x="100" abs_y="20">
+                            <Color r="51" g="55" b="55"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartJumpBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##Avatar特权卡下试穿按钮
+            <Button name="$parentVIPUseBtn" abs_x="65" abs_y="50" hidden = "true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty" hidden="false" />
+						<FontString name="$parentName" fonttype="BlackFont"  justifyH="center"  text="$186" abs_x="50" abs_y="16">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartUseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##标签
+			<Frame name="$parentTag" inherits="ShopSkinItemFlagTemplate" hidden="true" />
+		</Frames>
+		<Scripts>
+			<OnMouseDown>GetInst("UIManager"):GetCtrl("Shop"):SkinPartBtnMouseDown();</OnMouseDown>
+			<MouseDownUpdate>GetInst("UIManager"):GetCtrl("Shop"):SkinPartBtnMouseDownUpdate();</MouseDownUpdate>
+			<OnMouseUp>GetInst("UIManager"):GetCtrl("Shop"):SkinPartBtnMouseUp();</OnMouseUp>
+			<OnClick>GetInst("UIManager"):GetCtrl("Shop"):SkinPartBtnClicked();</OnClick>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("Shop"):SkinPartBtnMouseEnter()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("Shop"):SkinPartBtnMouseLeave()</OnLeave>
+		</Scripts>
+	</Button>
+
+    ##:列表元素(小格子: 坐骑)
+	<Button name="ShopMountsListItemTemplate" virtual="true" abs_x="132" abs_y="132" click_threshold="5" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				<Texture name="$parentIcon" file="ui/roleicons/1.png" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentNameZheZhao" inherits="TemplateBigBkg18" abs_x="130" abs_y="28" >
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" lang_ver="en" fonttype="BlackFont16" justifyH="center" justifyV="middle" text="酋长" abs_x="130" abs_y="28">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameZheZhao">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="酋长" abs_x="132" abs_y="28">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameZheZhao">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="overlay">
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" />			
+			</Layer>
+		</Layers>
+		<Frames>
+			##使用
+			<Button name="$parentUseBtn" abs_x="130" abs_y="47" hidden="false">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/room.xml" uvname="img_board_load.png" hidden="false">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg1" inherits="TemplateBkg41" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont20"  justifyH="center" text="$6285" abs_x="100" abs_y="19">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentCost" fonttype="BlackFont16"  justifyH="center" text="$6285" abs_x="100" abs_y="19" hidden="true">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin" abs_x="17" abs_y="18" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="left" relativeTo="$parentCost">
+									<Offset>
+										<AbsDimension x="5" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Button>
+			<Frame name="$parentTag" abs_x="70" abs_y="24" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-4" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentTagBg" file="ui/mobile/texture2/shop.xml" uvname="label_shop_time.png">
+							<Size>
+								<AbsDimension x="70" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont" justifyH="center" text="">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="70" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTagBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Frame name="$parentQua" abs_x="26" abs_y="52" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-1" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentQuaBg" file="ui/mobile/texture0/common.xml" uvname="label_quality_blue.png">
+							<Size>
+								<AbsDimension x="26" y="52"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont16" justifyH="center" text="稀有" autowrap="true" abs_x="16" abs_y="31">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentQuaBg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopMounts"):ShopMountsListItemBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+    ##:列表元素(小格子: 角色)
+	<Button name="ShopRoleListItemTemplate" virtual="true" abs_x="132" abs_y="132" click_threshold="5" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				<Texture name="$parentIcon" file="ui/roleicons/1.png" />	
+				<Texture name="$parentNameZheZhao" inherits="TemplateBigBkg18" abs_x="128" abs_y="28" >
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="酋长" abs_x="132" abs_y="25" justifyV="middle">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameZheZhao">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="overlay">
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" />
+			</Layer>
+		</Layers>
+		<Frames>
+			##使用
+			<Button name="$parentUseBtn" abs_x="130" abs_y="47" hidden="false">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/room.xml" uvname="img_board_load.png" hidden="false">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg1" inherits="TemplateBkg41" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont26"  justifyH="center" justifyV="middle" text="$6285" abs_x="130" abs_y="47">
+							<Color r="0" g="151" b="37"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentName" fonttype="BlackFont20"  justifyH="center" justifyV="middle" text="$6285" abs_x="100" abs_y="25">
+							<Color r="0" g="151" b="37"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleItemUseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleItemBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##点击页签
+	<Button name="ShopTabBtn" virtual="true" inherits="TemplateTabBtn1">
+		<Layers>
+			<Layer level="BACKGROUND">
+			</Layer>
+			<Layer level="overlay">
+				##红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" abs_x="16" abs_y="16" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##红点气泡
+				<Texture name="$parentRedTagBubble" file="ui/mobile/texture2/common.xml" uvname="img_newreddotbubble" abs_x="35" abs_y="23" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="17" y="-9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##红点气泡文字
+				<FontString name="$parentRedTagBubbleTitle" fonttype="BlackFont12"  justifyH="center" justifyV="middle" text="NEW" hidden="true">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRedTagBubble">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##箭头
+				<Texture name="$parentArrow" file="ui/mobile/texture0/shop.xml" uvname="icon_dressup_dropdown.png" abs_x="20" abs_y="10"  hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-11" y="23"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("Shop"):TabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##形象页签
+	<Button name="ShopNewTabBtn" virtual="true" abs_x="161" abs_y="52">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentChecked" file="ui/mobile/texture0/shop.xml" uvname="tab_fullpage_left_Orange.png" abs_x="161" abs_y="52" hidden="true" DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont16" lang_ver="en" justifyV="middle" justifyH="center" text="tab按钮" abs_x="100" abs_y="26">
+					<Color r="255" g="135" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont16" lang_ver="jpn" justifyV="middle" justifyH="center" text="tab按钮" abs_x="100" abs_y="26">
+					<Color r="255" g="135" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont20" lang_ver="vie" justifyV="middle" justifyH="center" text="tab按钮" abs_x="100" abs_y="26">
+					<Color r="255" g="135" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont24" justifyV="middle" justifyH="center" text="tab按钮" abs_x="100" abs_y="26">
+					<Color r="255" g="135" b="63"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_adv_n" abs_x="52" abs_y="52">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="3" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" abs_x="16" abs_y="16" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##红点气泡
+				<Texture name="$parentRedTagBubble" file="ui/mobile/texture2/common.xml" uvname="img_newreddotbubble" abs_x="35" abs_y="23" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="17" y="-9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##红点气泡文字
+				<FontString name="$parentRedTagBubbleTitle" fonttype="BlackFont12"  justifyH="center" justifyV="middle" text="NEW" hidden="true">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRedTagBubble">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture0/shop.xml" uvname="tab_fullpage_left_blue.png" DrawType="ninesquare_center">
+			<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+		</NormalTexture>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/shop.xml" uvname="tab_fullpage_left_blue.png" rel_x="0.9" rel_y="0.9" DrawType="ninesquare_center">
+			<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+			<Anchors>
+				<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("Shop"):ExclusiveTabBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+
+	##:分享按钮
+	<Button name="ShopShareBtnTemplate" inherits="TemplateBtn17" virtual="true" abs_x="50" abs_y="53">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common_icon.xml" uvname="icon_share.png" abs_x="30" abs_y="29">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+	##:提示按钮
+	<Button name="ShopTipBtnTemplate" inherits="TemplateBtn17" virtual="true" abs_x="50" abs_y="53">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_details.png" abs_x="28" abs_y="23">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Frame name="Shop" parent="UIClient" inherits="TemplateMainFrame6" frameStrata="MEDIUM" hidden="true" framelevel="1010">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				## 左右两侧的 shadow, 用于异形屏缩进后的过渡效果
+				<Texture name="$parentFrameShadow" file="ui/mobile/texture0/frame_shadow_left.png">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentFrameShadow2" file="ui/mobile/texture0/frame_shadow_right.png">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parent" />
+						<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+
+				<Texture name="$parentTabTopLine" file="ui/mobile/texture2/common.xml" uvname="img_line_tab.png" abs_x="169" abs_y="3">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="0" y="48"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTabBottomLine" file="ui/mobile/texture2/common.xml" uvname="img_line_tab.png" abs_x="169" abs_y="3">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="0" y="540"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<!-- <Layers>
+			<Layer>
+				<Texture name="$parentCoverBg" inherits="TemplateBigBkg1_ninecenter" />
+			</Layer>
+		</Layers> -->
+		<Frames>
+			##顶部面板
+			<Frame name="$parentTopPanel" abs_x="1000" abs_y="60">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parent" relativePoint="top">
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##迷你抽盒机
+					<Frame name="$parentMiniLottery" abs_x="150" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="30"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_chouheji" abs_x="35" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="left" justifyV="middle" text="$32530" abs_x="300" abs_y="25">
+									<Color r="177" g="254" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="22" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):OnlineMiniLotteryBtnClicked();</OnClick>
+						</Scripts>
+					</Frame>
+					##周边商城
+					<Frame name="$parentOnlineShop" abs_x="150" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="196" y="30"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_handbag" abs_x="35" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont18" lineInterval="1" justifyH="center" text="周边商城>>" abs_x="170" abs_y="25">
+									<Color r="177" g="254" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="4"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):OnlineShopBtnClicked();</OnClick>
+						</Scripts>
+					</Frame>
+
+					##迷你豆
+					<Frame name="$parentMyMiniBean" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="414" y="30"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_bean" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money.png" abs_x="40" abs_y="43">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- <FontString name="$parentFont" fonttype="BlackFont24" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30" lang_ver="tha">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString> -->
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):MiniBeanBtnClicked();</OnClick>
+						</Scripts>
+					</Frame>
+					##迷你币
+					<Button name="$parentMyMiniCoin" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniBean" relativePoint="right">
+								<Offset>
+									<AbsDimension x="80" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin" abs_x="37" abs_y="38">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money.png" abs_x="40" abs_y="43">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- <FontString name="$parentFont" fonttype="BlackFont24" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30" lang_ver="tha">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString> -->
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):MiniCoinBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##迷你点
+					<Button name="$parentMyMiniPoint" abs_x="160" abs_y="32" hidden = "true">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniCoin" relativePoint="right">
+								<Offset>
+									<AbsDimension x="32" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon10009" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/minilobby.xml" uvname="icon_add_btn_money_s.png" abs_x="38" abs_y="39">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- <FontString name="$parentFont" fonttype="BlackFont24" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30" lang_ver="tha">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString> -->
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="228" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):MiniPointBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##高级坐骑碎片
+					<Button name="$parentHighHorsePoint" abs_x="160" abs_y="32" hidden = "true">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniCoin" relativePoint="right">
+								<Offset>
+									<AbsDimension x="35" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="res/items/icon10032.png" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/minilobby.xml" uvname="icon_add_btn_money_s.png" abs_x="38" abs_y="39">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="228" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" hidden="false">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):FragmentBtnClicked(2);</OnClick>
+						</Scripts>
+					</Button>
+					##普通通用坐骑碎片
+					<Button name="$parentMiddleHorsePoint" abs_x="160" abs_y="32" hidden = "true">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentHighHorsePoint" relativePoint="right">
+								<Offset>
+									<AbsDimension x="35" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="res/items/icon10031.png" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/minilobby.xml" uvname="icon_add_btn_money_s.png" abs_x="38" abs_y="39">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center" justifyV="middle" text="1234567" fontStyle="border" abs_x="170" abs_y="30">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="228" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" hidden="false">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):FragmentBtnClicked(1);</OnClick>
+						</Scripts>
+					</Button>
+					##扭蛋券购买
+					<Button name="$parentLotteryPoint" abs_x="203" abs_y="36" hidden = "true">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniCoin" relativePoint="right">
+								<Offset>
+									<AbsDimension x="45" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="res/items/icon10010.png" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/minilobby.xml" uvname="icon_add_btn_money_s.png" abs_x="38" abs_y="39">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center" justifyV="middle" text="0" fontStyle="border" abs_x="170" abs_y="30">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="228" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Shop"):LotteryBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##左侧面板
+			<SlidingFrame name="$parentLeftPanel" slidingY="true" slideplane="$parentPlane" abs_x = "227" abs_y = "488" framelevel = "2000" frameStrata="MEDIUM">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="106" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="227" y="476"/>
+						</Size>
+					</Frame>		
+					<Button name="$parentBtn1" inherits="ShopTabBtn" id="1" hidden="true" />
+					<Button name="$parentBtn2" inherits="ShopTabBtn" id="2" hidden="true" />
+					<Button name="$parentBtn3" inherits="ShopTabBtn" id="3"  hidden="true"/>
+					<Button name="$parentBtn4" inherits="ShopTabBtn" id="4"  hidden="true"/>
+					<Button name="$parentBtn5" inherits="ShopTabBtn" id="5"  hidden="true"/>
+					<Button name="$parentBtn6" inherits="ShopTabBtn" id="6"  hidden="true"/>
+					<Button name="$parentBtn7" inherits="ShopTabBtn" id="7"  hidden="true"/>
+					<Button name="$parentBtn8" inherits="ShopTabBtn" id="8"  hidden="true"/>
+					<Button name="$parentBtn9" inherits="ShopTabBtn" id="9"  hidden="true"/>
+					<Button name="$parentBtn10" inherits="ShopTabBtn" id="10"  hidden="true"/>
+					<Button name="$parentBtn11" inherits="ShopTabBtn" id="11"  hidden="true"/>
+
+					##扭蛋二级页面
+					<Frame name="$parentSubTabGashapon" abs_x="175" abs_y="372" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="306"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##背景
+								<Texture name="$parentBg" file="ui/mobile/texture0/shop.xml" uvname="img_board_andz_blue.png" abs_x="175" abs_y="186" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentBtn1" inherits="ShopNewTabBtn" id="1" hidden="true"/>
+							<Button name="$parentBtn2" inherits="ShopNewTabBtn" id="2" hidden="true"/>
+							<Button name="$parentBtn3" inherits="ShopNewTabBtn" id="3" hidden="true" />
+						</Frames>
+					</Frame>
+					##特惠礼包二级页面
+					<Frame name="$parentSubTabGift" abs_x="175" abs_y="372" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="306"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##背景
+								<Texture name="$parentBg" file="ui/mobile/texture0/shop.xml" uvname="img_board_andz_blue.png" abs_x="175" abs_y="186" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentBtn1" inherits="ShopNewTabBtn" id="1" hidden="true"/>
+							<Button name="$parentBtn2" inherits="ShopNewTabBtn" id="2" hidden="true"/>
+							<Button name="$parentBtn3" inherits="ShopNewTabBtn" id="3" hidden="true"/>
+						</Frames>
+					</Frame>
+
+					##碎片二级页面
+					<Frame name="$parentSubTabMounts" abs_x="175" abs_y="372" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="306"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##背景
+								<Texture name="$parentBg" file="ui/mobile/texture0/shop.xml" uvname="img_board_andz_blue.png" abs_x="175" abs_y="186" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentBtn1" inherits="ShopNewTabBtn" id="1" hidden="true" />
+							<Button name="$parentBtn2" inherits="ShopNewTabBtn" id="2" hidden="true" />
+							<Button name="$parentBtn3" inherits="ShopNewTabBtn" id="3" hidden="true" />
+						</Frames>
+					</Frame>
+
+					##定制二级页面
+					<Frame name="$parentSubTabCustom" abs_x="175" abs_y="372" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="306"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##背景
+								<Texture name="$parentBg" file="ui/mobile/texture0/shop.xml" uvname="img_board_andz_blue.png" abs_x="175" abs_y="186" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentBtn1" inherits="ShopNewTabBtn" id="1" hidden="true" />
+							<Button name="$parentBtn2" inherits="ShopNewTabBtn" id="2" hidden="true"/>
+							<Button name="$parentBtn3" inherits="ShopNewTabBtn" id="3" hidden="true" />
+							<Button name="$parentBtn3" inherits="ShopNewTabBtn" id="4" hidden="true" />
+						</Frames>
+					</Frame>
+
+					##广告二级页面
+					<Frame name="$parentSubTabAdvert" abs_x="175" abs_y="372" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="306"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##背景
+								<Texture name="$parentBg" file="ui/mobile/texture0/shop.xml" uvname="img_board_andz_blue.png" abs_x="175" abs_y="186" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentBtn1" inherits="ShopNewTabBtn" id="1" hidden="true"/>
+							<Button name="$parentBtn2" inherits="ShopNewTabBtn" id="2" hidden="true"/>
+							<Button name="$parentBtn3" inherits="ShopNewTabBtn" id="3" hidden="true" />
+						</Frames>
+					</Frame>
+
+				</Frames>
+			</SlidingFrame>	
+			<Frame name ="$parentTopShadeBg" abs_x="175" abs_y="27" framelevel = "1012">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="105" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentTopShade" file="ui/mobile/texture2/common.xml" uvname="img_shade_tab.png" abs_x="175" abs_y="27">
+							<Angle value="180"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Frame name ="$parentBottomShadeBg" abs_x="175" abs_y="4" framelevel = "1012" UVType ="turn180">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="594" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBottomShade" file="ui/mobile/texture2/common.xml" uvname="img_shade_tab.png" abs_x="175" abs_y="27">
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			##仓库按钮
+			<Button name="$parentWarehouseBtn" abs_x="158" abs_y="61" inherits="TemplateBtn16" framelevel = "1011">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft" >
+						<Offset>
+							<AbsDimension x="9" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):WarehouseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##4. 信息
+			<Frame name="$parentInfo" abs_x="380" abs_y="15" framelevel="1020">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="BkgTemplate70" hidden="true"/>
+						<FontString name="$parentUin" fonttype="BlackFont" lineInterval="2" text="$359" abs_x="100" abs_y="16">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont" lineInterval="2" text="$360" abs_x="120" abs_y="16">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentUin">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentVer" fonttype="BlackFont" lineInterval="2" text="$361" abs_x="160" abs_y="16">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentTime">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##5. wifi图标
+			<Frame name="$parentwork" abs_x="18" abs_y="18">
+			<Anchors>
+				<Anchor point="right" relativeTo="$parent" relativePoint="topright">
+					<Offset>
+						<AbsDimension x="-100" y="30"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<Layers>
+				<Layer level="BACKGROUND">
+					<Texture name="$parentNetworkWifi" file="ui/mobile/texture2/room.xml" uvname="icon_wifi_green.png" >
+						<Size>
+							<AbsDimension x="18" y="18"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+					</Texture>
+				</Layer>
+			</Layers>
+		</Frame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("Shop"):HandleEvent();</OnEvent>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("Shop"):Update();</OnUpdate>
+			<OnHide>GetInst("UIManager"):GetCtrl("Shop"):OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	##定制库鼠标悬浮弹框
+	<Frame name="AvatarTipsFrame" parent="UIClient" frameStrata="TOOLTIP" hidden="true" framelevel="1000" abs_x="364" abs_y="176">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg19" />
+				<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="35"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentRightArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" hidden="true"  abs_x="10" abs_y="17">
+					<Angle value="-180"/>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="35"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" text="$669" abs_x="350" abs_y="20">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="18" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCostIcon" abs_x="27" abs_y="28" file="ui/mobile/texture2/common_icon.xml" uvname="icon_bean">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="0" y="25"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentCost" fonttype="BlackFont20" text="$669" abs_x="350" abs_y="20" lang_ver="tha">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentCostIcon">
+							<Offset>
+								<AbsDimension x="35" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+                <FontString name="$parentCost" fonttype="BlackFont20" text="$669" abs_x="350" abs_y="20">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentCostIcon">
+							<Offset>
+								<AbsDimension x="35" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentDescBkg" inherits="TemplateBigBkg20" abs_x="350" abs_y="82">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="70"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentDesc" fonttype="BlackFont18" lineInterval="2" text="$669" autowrap="true" abs_x="350" abs_y="60">
+					<Color r="224" g="220" b="202"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentDescBkg">
+							<Offset>
+								<AbsDimension x="2" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentExperience" fonttype="BlackFont18" text="体验还剩1天" abs_x="350" abs_y="18" hidden="false">
+					<Color r="224" g="220" b="202"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDesc">
+							<Offset>
+								<AbsDimension x="0" y="21"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentLimit" fonttype="BlackFont18" text="限时购买剩:1天" abs_x="350" abs_y="18" hidden="false">
+					<Color r="224" g="220" b="202"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentExperience">
+							<Offset>
+								<AbsDimension x="0" y="-42"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	##抽奖礼包选择打开界面
+	<Frame name="DealLotteryGiftFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="2000" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="80000000"/>
+				<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="653" abs_y="371">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-19" y="-22" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>	
+				<Texture name="$parentIconBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" abs_x="132" abs_y="132">
+					<Anchors>
+						<Anchor point="top" relativeTo="$parentChenDi" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="113" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>	
+				<Texture name="$parentIcon" abs_x="109" abs_y="116">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentIconBkg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentText" fonttype="BlackFont30" justifyH="center" justifyV="top" abs_x="400" abs_y="58" text="$71042">
+					<Color r="55" g="54" b="47"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="228"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentNum" fonttype="BlackFont18" justifyH="right" abs_x="58" abs_y="18" text="100">
+					<Color r="55" g="54" b="47"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="33" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-27" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):OnOpenLotteryGiftFrameCloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentLeftBtn" inherits="TemplateBtn2">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentChenDi" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="71" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" abs_x="180" abs_y="26" text="$71049">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentUvA" file="ui/mobile/effect/ui_button_3.png" hidden="true">
+							<Size>
+								<AbsDimension x="200" y="107"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+							<UVAnimation texrows="4" texcols="4" />
+						</Texture>
+						<Texture name="$parentIcon" file="ui/mobile/effect/ui_button_3.png" hidden="true">
+							<Size>
+								<AbsDimension x="200" y="107"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+							<UVAnimation texrows="4" texcols="4" />
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):OnOpenLotteryGiftFrameOpenBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentRightBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentChenDi" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-76" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" abs_x="180" abs_y="26" text="$71050">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentUvA" file="ui/mobile/effect/ui_button_3.png" hidden="true">
+							<Size>
+								<AbsDimension x="200" y="107"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+							<UVAnimation texrows="4" texcols="4" />
+						</Texture>
+						<Texture name="$parentIcon" file="ui/mobile/effect/ui_button_3.png" hidden="true">
+							<Size>
+								<AbsDimension x="200" y="107"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+							<UVAnimation texrows="4" texcols="4" />
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Shop"):OnOpenLotteryGiftFrameWaitBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

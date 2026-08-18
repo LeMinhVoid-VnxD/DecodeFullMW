@@ -1,0 +1,325 @@
+接口ID,日语,日语,日语,日语,日语,日语,日语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,ゲーム管理,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,ゲームを終了,local result = Game:doGameEnd()
+10002,ゲーム管理,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,スクリプトの属性をカスタムに設定します,"local result = Game:setScriptVar(index, val)"
+10003,ゲーム管理,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",スクリプトの属性をカスタムに受け取ります。,local result = Game:getScriptVar(index)
+10004,ゲーム管理,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,スクリプトの属性をアップロードします,local result = Game:sendScriptVars2Client()
+10005,ゲーム管理,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",新グローバルな効果,local result = Game:addRenderGlobalEffect(path)
+10006,ゲーム管理,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,グローバルな効果をクリア,local result = Game:removeRenderGlobalEffect(effectid)
+10007,ゲーム管理,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,グローバル効果の位置を設定,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,ゲーム管理,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,グローバルな効果を縮んで設定する,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,ゲーム管理,msgBox,Game:msgBox(msg),,,メッセージボックス,local result = Game:msgBox(msg)
+20001,ワールド管理,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",昼間かどうか,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,ワールド管理,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",カスタマイズゲームかどうか,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,ワールド管理,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",創造モードかどうか,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,ワールド管理,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",マルチプレイヤー創造モード　または　DIY編集モード,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,ワールド管理,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",ハードモード,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,ワールド管理,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",サバイバルモード - フリーモード,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,ワールド管理,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",シングルモードまたはサバイバルモード - フリーモード,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,ワールド管理,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",創造モードから生存モードに変わりました,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,ワールド管理,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",DIY編集モード,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,ワールド管理,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",DIY操作モード,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,ワールド管理,getHours,World:getHours(),none,"ErrorCode.OK, result:number",現在時刻(h),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,ワールド管理,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",視角編集状態を取得,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,ワールド管理,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,視角編集状態を設定する,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,ワールド管理,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",DIYカメラ配置を受け取る,local result = World:getCustomCameraConfig()
+20015,ワールド管理,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",ブロック(chunk)の範囲を取得する,"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,ワールド管理,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",指定された地域でのactorを獲得する,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,ワールド管理,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",すべてのプレイヤーを獲得する。生存状況をコントロールできます,local result = World:getPlayerTotal(alive)
+20018,ワールド管理,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",すべてのプレイヤーを獲得する。生存状況をコントロールできます,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,ワールド管理,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",ランダムのプレイヤー,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,ワールド管理,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,actorを削除,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,ワールド管理,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array",生き物を生成する（モンスター、NPC、動物などを含む）,"local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,ワールド管理,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,生き物を取り除く,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,ワールド管理,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",指定の場所にアイテムを生成する,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,ワールド管理,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,アイテムを削除する（地域別）,"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,ワールド管理,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,アイテムを削除する（ID順）,"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,ワールド管理,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,投げ物を生成,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,ブロック管理,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",ブロックが実体かどうか,"local result = Block:isSolidBlock(x, y, z)"
+30002,ブロック管理,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",ブロックが流動的かどうか,"local result = Block:isLiquidBlock(x, y, z)"
+30003,ブロック管理,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",ブロックが空気かどうか,"local result = Block:isAirBlock(x, y, z)"
+30004,ブロック管理,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",ブロックに対応するidを取得,"local result = Block:getBlockID(x, y, z)"
+30005,ブロック管理,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,blockalldataの更新＋お知らせを設定する,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,ブロック管理,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,ブロックを破壊する,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,ブロック管理,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",ブロックを置く,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,ブロック管理,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,blockalldataを設定して周囲のブロックにお知らせをする,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,ブロック管理,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,blockalldataを設定し、現在位置のブロックを更新します,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,ブロック管理,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,ブロックの属性と状態を設定する,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,ブロック管理,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",機能ブロックのオンオフ状態を取得,local result = Block:getBlockSwitchStatus(pos)
+30012,ブロック管理,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,機能ブロックのオンオフ状態を設定する,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,ゲームActor,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,プレイヤーかどうかを検出,local result = Actor:isPlayer(objid)
+40002,ゲームActor,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,それがモンスターかどうかを検出,local result = Actor:isMob(objid)
+40003,ゲームActor,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",actorのタイプを取得：生き物/プレイヤー...,local result = Actor:getObjType(objid)
+40004,ゲームActor,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,空にいるかどうか,local result = Actor:isInAir(objid)
+40005,ゲームActor,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",actorの位置を取得,local result = Actor:getPosition(objid)
+40006,ゲームActor,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,actorの位置を設定,"local result = Actor:setPosition(objid, x, y, z)"
+40007,ゲームActor,jump,Actor:jump(objid),objid:number,ErrorCode.OK,ジャンプ,local result = Actor:jump(objid)
+40008,ゲームActor,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,自殺,local result = Actor:killSelf(objid)
+40009,ゲームActor,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",現在の向きを取得,local result = Actor:getCurPlaceDir(objid)
+40010,ゲームActor,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,ターゲットのactorに向かって移す,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,ゲームActor,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,ターゲット場所に向かって移動,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,ゲームActor,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,buffを追加する,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,ゲームActor,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",それに何かbuffがあるかどうか,"local result = Actor:hasBuff(objid, buffid)"
+40014,ゲームActor,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,buffを削除,"local result = Actor:removeBuff(objid, buffid)"
+40015,ゲームActor,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,すべてのバフをクリア,local result = Actor:clearAllBuff(objid)
+40016,ゲームActor,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,ネガティブbuffをすべてクリアする,local result = Actor:clearAllBadBuff(objid)
+40017,ゲームActor,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",buffリストを入手する,local result = Actor:getBuffList(objid)
+40018,ゲームActor,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",現在のindexの対応するbuffの残りのitckを取得します,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,ゲームActor,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,現在のHPを増やす,"local result = Actor:addHP(objid, hp)"
+40020,ゲームActor,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",現在のHPを入手する,local result = Actor:getHP(objid)
+40021,ゲームActor,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",現在の最大HPを取得,local result = Actor:getMaxHP(objid)
+40022,ゲームActor,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,酸素量を増やす,"local result = Actor:addOxygen(objid, oxygen)"
+40023,ゲームActor,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",酸素量を取得する,local result = Actor:getOxygen(objid)
+40024,ゲームActor,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,対応する装備品の強化を追加する,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,ゲームActor,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,対応する装備品のenchantmentをクリアする。,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,ゲームActor,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",最も近いブロックのIDを探す,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,ゲームActor,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,actorの視角の横方向の偏移を設定する,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,ゲームActor,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",actorの視角の横方向の偏移を受け取る。,local result = Actor:getFaceYaw(objid)
+40029,ゲームActor,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,actorの視角の横方向の偏移を回転させる。,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,ゲームActor,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,actorの視角の上向き角度を設定する。,"local result = Actor:setFacePitch(objid, pitch)"
+40031,ゲームActor,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",actorの視角の上向き角度を獲得する。,local result = Actor:getFacePitch(objid)
+40032,ゲームActor,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,actorの視角の上向き角度を回転させる。,"local result = Actor:turnFacePitch(objid, offset)"
+40033,ゲームActor,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,エフェクトを再生する,"local result = Actor:playBodyEffect(objid, type)"
+40034,ゲームActor,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,エフェクトを止める,"local result = Actor:stopBodyEffect(objid, type)"
+40035,ゲームActor,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,ファイル効果を再生する,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,ゲームActor,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,ファイル効果を停止する,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,ゲームActor,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,音を出す,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,ゲームActor,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,音を鳴らす（特定タイプ：GSOUND_TYPE）,"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,ゲームActor,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,IDがactoridの生き物のIDをクリアする,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,ゲームActor,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,ダメージタイプを設定,"local result = Actor:setAttackType(objid, attacktype)"
+40041,ゲームActor,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,ダメージ耐性タイプを設定,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,ゲームActor,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,乗り降りする,"local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,ゲームActor,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,生き物の振る舞い、属性、状態を設定する,"local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,ゲームActor,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,ターゲット場所への道を見つける,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,ゲームActor,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,乗る生き物のobjidを受取る,local result = Actor:getRidingActorObjId(objid)
+50001,プレイヤー,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",nil,local result = Player:getAttr(attrtype)
+50002,プレイヤー,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,nil,"local result = Player:setAttr(attrtype, val)"
+50003,プレイヤー,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",ホストを取得,local result = Player:getHostUin()
+50004,プレイヤー,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,地元のプレイヤーかどうかを検出する,local result = Player:isMainPlayer(objid)
+50005,プレイヤー,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",地元のプレイヤーのuinを受取る,local result = Player:getMainPlayerUin()
+50006,プレイヤー,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",ゲームの結果を入手,local result = Player:getGameResults(objid)
+50007,プレイヤー,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,ゲームの設定結果,"local result = Player:setGameResults(objid, result)"
+50008,プレイヤー,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",ゲームの得点を取得する,local result = Player:getGameScore(objid)
+50009,プレイヤー,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",ゲームのスコアを設定する,"local result = Player:setGameScore(objid, score)"
+50010,プレイヤー,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",プレイヤーのランクを取得,local result = Player:getGameRanking(objid)
+50011,プレイヤー,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,プレイヤーのランクを設定,"local result = Player:setGameRanking(objid, rank)"
+50012,プレイヤー,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,プレーヤー用のアイテムを追加する,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,プレイヤー,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,出生地に移動する,local result = Player:teleportHome(objid)
+50014,プレイヤー,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",現在プレーヤーが持っているアイテムIDを取得します,local result = Player:getCurToolID(objid)
+50015,プレイヤー,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",プレイヤーの名前を取得,local result = Player:getNickname(objid)
+50016,プレイヤー,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,バックパックの中身を取り除く,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,プレイヤー,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",死亡数を取得する,local result = Player:getDieTimes(objid)
+50018,プレイヤー,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",残りの生命回数を取得します,local result = Player:getLeftLifeNum(objid)
+50019,プレイヤー,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,生き物のチームを設定する,"local result = Player:setTeam(objid, team)"
+50020,プレイヤー,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",生き物のチームを設定する,local result = Player:getTeam(objid)
+50021,プレイヤー,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,現在の満腹感を受取る,local result = Player:getFoodLevel(objid)
+50022,プレイヤー,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,現在の満腹感を設定する,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,プレイヤー,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",現在のショートカットバーを取得する,local result = Player:getCurShotcut(objid)
+50024,プレイヤー,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,プレイヤーが持っているアイテムの消耗を設定します,"local result = Player:onCurToolUsed(objid, num)"
+50025,プレイヤー,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,CD設定,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,プレイヤー,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,指定された時点でプレイヤーを再出現させる,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,プレイヤー,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,出生地を変更する,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,プレイヤー,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,プレイヤーは漫画を再生する,"local result = Player:playAct(objid, actid)"
+50029,プレイヤー,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,ポップアップウィンドウにあるテキストを表示する,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,プレイヤー,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,プレイヤーに現在のアイテムを使用させる,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,プレイヤー,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,プレイヤーのレンズを回転させる,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,プレイヤー,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,プレーヤーの視角モードを変更する,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,プレイヤー,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,生き物の振る舞い、属性、状態を設定する,"local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,プレイヤー,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,プレイヤーの行動、属性、状態の切り替え,"local result = Player:checkActionAttrState(objid, actionattr)"
+50035,プレイヤー,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",現在の最大HPを取得,local result = Player:getMaxHP(objid)
+50036,プレイヤー,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",現在のHPを入手する,local result = Player:getCurHP(objid)
+50037,プレイヤー,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP回復,local result = Player:getHpRecover(objid)
+50038,プレイヤー,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",現在の満腹度,local result = Player:getCurFood(objid)
+50039,プレイヤー,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,プレイヤー,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",現在の酸素量,local result = Player:getCurOxygen(objid)
+50041,プレイヤー,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",歩くスピード,local result = Player:getWalkSpeed(objid)
+50042,プレイヤー,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",水泳スピード（水中）,local result = Player:getSwimSpeed(objid)
+50043,プレイヤー,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",ジャンプ力,local result = Player:getJumpPower(objid)
+50044,プレイヤー,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",走る速度,local result = Player:getRunSpeed(objid)
+50045,プレイヤー,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",潜水スピード,local result = Player:getSneakSpeed(objid)
+50046,プレイヤー,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",避難,local result = Player:getDodge(objid)
+50047,プレイヤー,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近接攻撃,local result = Player:getPunchAttack(objid)
+50048,プレイヤー,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠距離攻撃,local result = Player:getRangeAttack(objid)
+50049,プレイヤー,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近接防御,local result = Player:getPunchDefense(objid)
+50050,プレイヤー,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠距離防衛,local result = Player:getRangeDefense(objid)
+50051,プレイヤー,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",星の数,"local result = Player:getStarNum(objid, val)"
+50052,プレイヤー,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",モデルの大きさ,"local result = Player:getModelScale(objid, val)"
+50053,プレイヤー,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,最大HPを設定,"local result = Player:setMaxHP(objid, val)"
+50054,プレイヤー,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HPを設定,"local result = Player:setHP(objid, val)"
+50055,プレイヤー,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,HP回復を設定する,local result = Player:setHpRecover(objid)
+50056,プレイヤー,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,現在の満腹度を設定する,local result = Player:setCurFood(objid)
+50057,プレイヤー,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,酸素を設定する,"local result = Player:setOxygen(objid, val)"
+50058,プレイヤー,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,歩く速度を設定する,"local result = Player:setWalkSpeed(objid, val)"
+50059,プレイヤー,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,水泳速度を設定する（水中）,"local result = Player:setSwimSpeed(objid, val)"
+50060,プレイヤー,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,ジャンプ力を設定,"local result = Player:setJumpPower(objid, val)"
+50061,プレイヤー,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,走るスピードを設定する,"local result = Player:setRunSpeed(objid, val)"
+50062,プレイヤー,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,潜水スピードを設定,"local result = Player:setSneakSpeed(objid, val)"
+50063,プレイヤー,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,回避を設定する,"local result = Player:setDodge(objid, val)"
+50064,プレイヤー,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,近接攻撃を設定する,"local result = Player:setPunchAttack(objid, val)"
+50065,プレイヤー,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,遠隔攻撃を設定する,"local result = Player:setRangeAttack(objid, val)"
+50066,プレイヤー,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,近接防御を設定する,"local result = Player:setPunchDefense(objid, val)"
+50067,プレイヤー,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,遠距離防御を設定する,"local result = Player:setRangeDefense(objid, val)"
+50068,プレイヤー,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,星の数を設定する,"local result = Player:setStarNum(objid, val)"
+50069,プレイヤー,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,モデルのサイズを設定する,"local result = Player:setModelScale(objid, val)"
+50070,プレイヤー,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,actorの位置を設定する,"local result = Player:setPosition(objid, x, y, z)"
+50071,プレイヤー,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,プレイヤーの十字線の位置を取得する,local result = Player:getAimPos(objid)
+60001,生き物,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,大人ですか？,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,生き物,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,酸素が必要どうかを設定する,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,生き物,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",生き物を飼っていたプレイヤーのIDを取得する,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,生き物,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,パニックを引き起こすことを設定する,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,生き物,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,AIが有効になったことを設定する,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,生き物,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",モンスターのIDを取得する,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,生き物,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",モンスターのIDを取得する,local result = Creature:getActorName(objid)
+60008,生き物,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,モンスターのModAttribを増やす,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,生き物,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",モンスターのModAttribを獲得する。,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,生き物,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,生き物のチームを設定する,"local result = Creature:setTeam(objid, teamid)"
+60011,生き物,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",生き物のチームを受取る,local result = Creature:getTeam(objid)
+60012,生き物,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",最大の満腹感を得る,local result = Creature:getMaxFood(objid)
+60013,生き物,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",満腹度を受取る,local result = Creature:getFood(objid)
+60014,生き物,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,満腹感を設定する,"local result = Creature:setFood(objid, val)"
+60015,生き物,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP回復,local result = Creature:getHpRecover(objid)
+60016,生き物,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",最大酸素量,local result = Creature:getMaxOxygen(objid)
+60017,生き物,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",歩くスピード,local result = Creature:getWalkSpeed(objid)
+60018,生き物,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",水泳スピード（水中）,local result = Creature:getSwimSpeed(objid)
+60019,生き物,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",ジャンプ力,local result = Creature:getJumpPower(objid)
+60020,生き物,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",重さ,local result = Creature:getMass(objid)
+60021,生き物,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",回避,local result = Creature:getDodge(objid)
+60022,生き物,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近接攻撃,local result = Creature:getPunchAttack(objid)
+60023,生き物,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠隔攻撃,local result = Creature:getRangeAttack(objid)
+60024,生き物,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",近接防御,local result = Creature:getPunchDefense(objid)
+60025,生き物,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",遠隔防衛,local result = Creature:getRangeDefense(objid)
+60026,生き物,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HPを設定,"local result = Creature:setMaxHp(objid, val)"
+60027,生き物,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HPを設定,"local result = Creature:setHP(objid, val)"
+60028,生き物,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,HPの回復を設定する,local result = Creature:setHpRecover(objid)
+60029,生き物,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,最大HPを設定,"local result = Creature:setOxygen(objid, val)"
+60030,生き物,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,走るスピードを設定する,"local result = Creature:setWalkSpeed(objid, val)"
+60031,生き物,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,水泳スピードを設定する,"local result = Creature:setSwimSpeed(objid, val)"
+60032,生き物,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,ジャンプ力を設定する,"local result = Creature:setJumpPower(objid, val)"
+60033,生き物,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,回避設定,"local result = Creature:setDodge(objid, val)"
+60034,生き物,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,近接攻撃を設定する,"local result = Creature:setPunchAttack(objid, val)"
+60035,生き物,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,遠隔攻撃を設定する,"local result = Creature:setRangeAttack(objid, val)"
+60036,生き物,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,近接防御を設定する,"local result = Creature:setPunchDefense(objid, val)"
+60037,生き物,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,遠距離防御を設定する,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI管理,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,戦いの概要UIを設定する,"local result = UI:setGBattleUI(name, value)"
+70002,UI管理,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",ワールドの座標がミニマップに変更される,"local result = UI:world2RadarPos(x, y)"
+70003,UI管理,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",ワールドの長さがミニマップに変更される,local result = UI:world2RadarDist(length)
+70004,UI管理,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,ミニマップモードを設定します。1. 45°の回転角度。 2.全面写真のトップビュー,local result = UI:setMinimapRenderMode(mode)
+70005,UI管理,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,マップのマークの形の設定。線に設定させる,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI管理,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,マップのマークの形の設定。丸に設定させる,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI管理,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,表示画面効果,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,チャット,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,チャットメッセージを送信する,local result = Chat:sendChat(content)
+80002,チャット,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,システムメッセージを送信する,local result = Chat:sendSystemMsg(content)
+90001,チーム,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",チーム数を取得する,local result = Team:getNumTeam()
+90002,チーム,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",指定選手チームを獲得する,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,チーム,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",指定選手チームを獲得する,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,チーム,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",ランダムのプレイヤー一人様,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,チーム,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,チームの得点を設定する,"local result = Team:setTeamScore(teamid, s)"
+90006,チーム,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",チームの得点を取得する,local result = Team:getTeamScore(teamid)
+90007,チーム,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,チームの得点を増やす,"local result = Team:addTeamScore(teamid, score)"
+90008,チーム,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,チームの勝敗を設定する,"local result = Team:setTeamResults(teamid, result)"
+90009,チーム,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",チームの今の勝利を取る,local result = Team:getTeamResults(teamid)
+90010,チーム,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,選手チームの勝敗を設定する,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,チーム,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,チームの総計死亡人数を設定する,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,チーム,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",チームの総計死亡人数を獲得する。,local result = Team:getTeamDieTimes(teamid)
+90013,チーム,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,チームの総計死亡人数を増やす。,local result = Team:addTeamDieTimes(teamid)
+90014,チーム,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,プレイヤーのチームを変える,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,道具管理,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",アイテム名を取得する,local result = Item:getItemName(itemid)
+100002,道具管理,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",アイテムのIDを取得,local result = Item:getItemId(objid)
+100003,道具管理,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",落とし物の数量を取得する,local result = Item:getDropItemNum(objid)
+110001,鞄管理,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",バックパックバーのIDの範囲を取得します（開始ID〜終了ID）,local result = Backpack:getBackpackBarIDRange(bartype)
+110002,鞄管理,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",バックパックバーのサイズを取得する,local result = Backpack:getBackpackBarSize(bartype)
+110003,鞄管理,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,バックパックをセットする,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,鞄管理,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,バックパックバーの中のいくつかのアイテムを取り除き、アイテムスロットによって取り除くことで、デフォルトですべて削除する。,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,鞄管理,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",バックパックバーの中のいくつかのアイテムを取り除き、アイテムスロットによって取り除くことで、デフォルトですべて削除する。,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,鞄管理,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,指定バックパックバーをクリアする,"local result = Backpack:clearPack(playerid, bartype)"
+110007,鞄管理,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,すべてのバックパックをクリアする（バックパックバー、ショートカットバー、装備バーを含む）,local result = Backpack:clearAllPack(playerid)
+110008,鞄管理,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,バックパックの中身を取り除きます。デフォルトですべて転送する。,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,鞄管理,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,アイテムのバックパックを交換する,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,鞄管理,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 8",ErrorCode.OK,アイテムを保管するためにバックパック（バックパックバー、ショートカットバーを含む）に十分なスペースがありますか。,"local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,鞄管理,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number",バックパック（バックパックバー、ショートカットバーを含む）に保存できる残りのアイテムの総数を計算する,"local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,鞄管理,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",すでにバックパックバーに入っているアイテムIDの有効リストを取得します。バックパックバーのアイテムID。,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,鞄管理,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",バックパックバーに既にアイテムが入っています。アイテムID。,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,鞄管理,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,バックパックに指定アイテムがあるかどうかをチェックする。,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,鞄管理,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",バックパック内のアイテムの合計数を取得します。アイテムのバックパックを返す。,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,鞄管理,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",バックパックでアイテムIDと数量を取得する,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,鞄管理,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",バックパックのアイテム名を取得する,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,鞄管理,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",バックパックのアイテム数と最大数を取得します。,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,鞄管理,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",バックパックにあるアイテムの耐久性と最大の耐久性を獲得する。,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,鞄管理,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",バックパックの中のアイテムenchantmentを獲得する。enchantmentのIDを返す。,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,鞄管理,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",バックパックのアイテムツールタイプを取得します（<0はツールではないことを意味します）,"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,鞄管理,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",アイテムをバックパックに入れる,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,鞄管理,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,バックパックのアイテムを捨てる,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,鞄管理,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,バックパックにあるスロットのアイテム数を取得する,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,ミニマップ,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number",形（線、長方形、円形）を一つ追加する。,"local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,ミニマップ,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,形を一つ削除する,local result = MapMark:deleteShape(shapeid)
+120003,ミニマップ,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,形と色を設定する,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,ミニマップ,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,形状を表示或いは非表示を設定する。,"local result = MapMark:showShape(shapeid, showflag)"
+120005,ミニマップ,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,形を更新する（線）。開始座標と終了座標を追加する。,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,ミニマップ,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,形を更新する（長方形）。開始座標と大きさを追加する。,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,ミニマップ,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,形を更新する（円）。中心座標と半径を追加する。,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,出生地管理,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",出生地の位置を取得,local result = Spawnport:getSpawnPoint()
+130002,出生地管理,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",領域内に出生地としての場所を取得します。領域内のランダムのブロックの位置へ追加する。,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

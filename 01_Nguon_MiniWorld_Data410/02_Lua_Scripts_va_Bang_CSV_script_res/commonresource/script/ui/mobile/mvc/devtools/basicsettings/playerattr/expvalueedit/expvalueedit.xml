@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/PlayerAttr/ExpValueEdit/ExpValueEditModel.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/PlayerAttr/ExpValueEdit/ExpValueEditView.lua"/>
+	<Script file="ui/mobile/mvc/DevTools/BasicSettings/PlayerAttr/ExpValueEdit/ExpValueEditCtrl.lua"/>
+
+	##数字编辑框模板
+	<Frame name="ExpValueFastSetEditTemplate" abs_x="100" abs_y="30" virtual="true">
+		<Anchors>
+			<Anchor point="left" relativePoint="left" relativeTo="$parentRegionTitle">
+				<Offset>
+					<AbsDimension x="47" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentBkg" inherits="TemplateBkg8" />
+			</Layer>
+		</Layers>
+		<Frames>
+			<EditBox name="$parentEdit" letters="10" multiLine="false" editMethod="2" abs_x="80" abs_y="20">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont20" text="1" justifyH="center" justifyV="middle">
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<Scripts>
+					<OnFinishChar>GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderRightEdit_OnInputFinish();</OnFinishChar>
+				</Scripts>
+			</EditBox>
+		</Frames>
+	</Frame>
+
+	##滑动条模板
+	<Frame name="ExpValueEditSliderTemplate" abs_x="520" abs_y="35" virtual="true">
+		<Frames>
+			<Slider name="$parentBar" inherits="TemplateSingleBar2" abs_x="271" abs_y="30">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="-20" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentLeftTxt" justifyH="right" fonttype="BlackFont20" text="LV1" abs_x="65" abs_y="20">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-50" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentRightTxt" justifyH="left" fonttype="BlackFont20" text="1" abs_x="80" abs_y="20" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="50" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<Texture name="$parentEditBkg" inherits="TemplateBkg16" abs_x="110" abs_y="34">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentRightTxt" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnValueChanged>GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderValueChanged()</OnValueChanged>
+				</Scripts>
+			</Slider>
+			<Button name="$parentBarLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBar" relativePoint="left">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderLeftRightBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentBarRightBtn" inherits="TemplateSingleBar_RightBtn01" >
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentBar" relativePoint="right">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderLeftRightBtnClicked(true);</OnClick>
+				</Scripts>
+			</Button>
+
+			<EditBox name="$parentEdit" letters="10" multiLine="false" editMethod="2" abs_x="80" abs_y="20">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBarEditBkg" relativePoint="center" />
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont20" text="10000" justifyH="center" justifyV="middle">
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<Scripts>
+					<!-- <OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderRightEdit_OnEnterPressed();</OnEnterPressed> -->
+					<OnFocusLost>GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderRightEdit_OnFocusLost();</OnFocusLost>
+					<OnFinishChar>GetInst("UIManager"):GetCtrl("ExpValueEdit"):SliderRightEdit_OnInputFinish();</OnFinishChar>
+				</Scripts>
+			</EditBox>
+		</Frames>
+	</Frame>
+
+	##经验值编辑
+	<Frame name="ExpValueEdit" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000" inherits="t_popup_bt_b">
+		<Layers>
+			<Layer>
+				<Texture name="$parentBodyBkg" inherits="TemplateBigBkg5" abs_x="572" abs_y="435">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="116"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentSumValue" justifyH="center" fonttype="BlackFont22" text="当前总经验: 10000" abs_x="500" abs_y="22">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):CloseBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+
+			##滑动条列表
+			<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" slidebar="$parentBar" abs_x="572" abs_y="425">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBodyBkg" />
+				</Anchors>
+				<Frames>
+					##滑动条
+					<Frame name="$parentBar" abs_x="15" abs_y="10" hidden="true" inherits="SlidingBoxBarTemplate1" />
+
+					<Frame name="$parentPlane" hidden="true" abs_x="572" abs_y="550" />
+				</Frames>
+			</SlidingFrame>
+
+			##快速设定
+			<Button name="$parentFastSet" inherits="t_btn_by" text="$34201">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="25" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):FastSetBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+
+			##确定
+			<Button name="$parentConfirm" inherits="t_btn_by" text="$969">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-25" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):ConfirmBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##曲线选择按钮模板
+	<Button name="ExpValueFastSetCurveBtnTemplate" virtual="true" inherits="t_btn_20" abs_x="132" abs_y="38">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):FastSetFrameCurveBtnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##快速设定界面
+	<Frame name="ExpValueFastSet" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1100" inherits="t_popup_bt_b">
+		<Layers>
+			<Layer>
+				<Texture name="$parentBodyBkg" inherits="TemplateBigBkg5" abs_x="788" abs_y="328">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##等级区间
+				<FontString name="$parentRegionTitle" justifyH="left" fonttype="BlackFont20" text="$34202" abs_x="105" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyBkg">
+							<Offset>
+								<AbsDimension x="38" y="41"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine1" inherits="TemplateBkg20" abs_x="712" abs_y="2">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBodyBkg">
+							<Offset>
+								<AbsDimension x="0" y="88"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##经验区间
+				<FontString name="$parentExpTitle" justifyH="left" fonttype="BlackFont20" text="$34203" abs_x="105" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyBkg">
+							<Offset>
+								<AbsDimension x="38" y="120"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- <FontString name="$parentExpTip" justifyH="left" fonttype="BlackFont" text="(最大可填100000)" abs_x="200" abs_y="16">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentExpTitle">
+							<Offset>
+								<AbsDimension x="270" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<Texture name="$parentLine2" inherits="TemplateBkg20" abs_x="712" abs_y="2">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBodyBkg">
+							<Offset>
+								<AbsDimension x="0" y="167"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##成长曲线
+				<FontString name="$parentCurveTitle" justifyH="left" fonttype="BlackFont20" text="$34204" abs_x="105" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyBkg">
+							<Offset>
+								<AbsDimension x="38" y="199"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				##提示描述
+				<FontString name="$parentDesc" justifyH="left" fonttype="BlackFont" text="$34208" abs_x="432" abs_y="60">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomright" relativeTo="$parentCurveTitle">
+							<Offset>
+								<AbsDimension x="47" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):FastSetFrameCloseBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##确定
+			<Button name="$parentConfirm" inherits="t_btn_by" text="$969">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-25" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ExpValueEdit"):FastSetFrameConfirmBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+
+			##1. 等级区间
+			<Frame name="$parentMinLevel" inherits="ExpValueFastSetEditTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentRegionTitle">
+						<Offset>
+							<AbsDimension x="47" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentMaxLevel" abs_x="100" abs_y="30" inherits="ExpValueFastSetEditTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentMinLevel">
+						<Offset>
+							<AbsDimension x="51" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			##2. 经验区间
+			<Frame name="$parentMinExp" abs_x="100" abs_y="30" inherits="ExpValueFastSetEditTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentExpTitle">
+						<Offset>
+							<AbsDimension x="47" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			<Frame name="$parentMaxExp" abs_x="100" abs_y="30" inherits="ExpValueFastSetEditTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentMinExp">
+						<Offset>
+							<AbsDimension x="51" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			##3. 成长曲线
+			<LayoutBox name="$parentCurveBtnList" layoutstyle="horizontal_left" spacex="14" spacey="0" abs_x="390" abs_y="38">
+            	<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentCurveTitle">
+						<Offset>
+							<AbsDimension x="47" y="0"/>
+						</Offset>						
+					</Anchor>
+				</Anchors>
+            	<Frames>
+            		<Button name="$parent1" inherits="ExpValueFastSetCurveBtnTemplate" id="1"/>
+	            	<Button name="$parent2" inherits="ExpValueFastSetCurveBtnTemplate" id="2"/>
+	            	<Button name="$parent3" inherits="ExpValueFastSetCurveBtnTemplate" id="3"/>
+            	</Frames>
+            </LayoutBox>
+		</Frames>
+	</Frame>
+</Ui>

@@ -1,0 +1,85 @@
+local StateControl = CommonModule.Class("StateControl")
+
+function StateControl:OnInit( name )
+	self.m_name = name or "";
+	self.m_states = {}
+	self.m_stateids = {}
+
+	self.m_curState = nil
+	self.m_lastState = nil
+	self.m_defaultState = nil
+end
+
+function StateControl:RegisterState ( state )
+	local stateid = state:GetStateId() 
+	if stateid == nil then
+		print("error can't get stateid by state");
+		return
+	end
+
+	if self.m_states[stateid] then
+		print("Error register state repeat by stateid:", stateid)
+		return
+	end
+	
+	self.m_states[stateid] = state
+	table.insert(self.m_stateids, stateid)
+end
+
+local function _switchState( self, state )
+	if self.m_curState == state then return false end
+
+	if self.m_curState then
+		self.m_curState:LeaveState()
+	end
+
+	state:EnterState()
+	self.m_lastState = self.m_curState
+	self.m_curState = state
+
+	--print(string.format("_switchState from [%s] to [%s]", self.m_lastState and self.m_lastState:GetStateId() or "nullstate", self.m_curState:GetStateId()))
+	return true
+end
+
+function StateControl:SetDefaultState( stateid )
+	if self.m_states[stateid] == nil then
+		print("Error set default state can't find stateid:", stateid)
+		return
+	end
+
+	self.m_defaultState = self.m_states[stateid]
+	
+	if self.m_curState == nil then
+		_switchState(self, self.m_defaultState)
+	end
+end
+
+function StateControl:GetCurState()
+	return self.m_curState
+end
+
+function StateControl:ToState( stateid )
+	local state = self.m_states[stateid]
+	if state == nil then
+		print("can't find stateid:", stateid, "to Transition")
+		return false
+	end
+
+	if state:CheckTransformState(self.m_curState) then
+		return _switchState( self, state )
+	end
+
+	print(string.format("can't transition state from [%s] to [%s]", self.m_curState and self.m_curState:GetStateId() or "nullstate", state:GetStateId()))
+	return false
+end 
+
+function StateControl:OnUpdate( dt )
+	if self.m_curState then
+		local newStateId = self.m_curState:OnUpdate(dt)
+		if type(newStateId) == "string" then
+			self:ToState( newStateId )
+		end
+	end
+end
+
+return StateControl

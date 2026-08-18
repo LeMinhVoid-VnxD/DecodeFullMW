@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/account/Safety/VerifyCode/VerifyCodeClass.lua"/>
+	<Script file="ui/mobile/mvc/account/Safety/VerifyCode/VerifyCodeCtrl.lua"/>
+	<Script file="ui/mobile/mvc/account/Safety/VerifyCode/VerifyCodeModel.lua"/>
+	<Script file="ui/mobile/mvc/account/Safety/VerifyCode/VerifyCodeView.lua"/>
+
+	##验证码功能
+	<Frame name="VerifyCode" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3" rel_x="1.0" rel_y="1.0">
+		<Frames>
+			<Frame name="$parentSendAndCheck" rel_x="1.0" rel_y="1.0" hidden="true">
+				<Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/white.png" color="cd000000" stretchedge="true"/>
+						<Texture name="$parentChenDi" inherits="TemplateBigBkg2">
+							<Size>
+								<AbsDimension x="706" y="406"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="30" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentChenDi2" inherits="TemplateBkg51">
+							<Size>
+								<AbsDimension x="660" y="290"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+									<Offset>
+										<AbsDimension x="0" y="-23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTips" fonttype="BlackFont24" text="$3566" autowrap="true">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="575" y="55"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentChenDi2">
+									<Offset>
+										<AbsDimension x="20" y="-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentEdit1Title" justifyH="right" fonttype="BlackFont24"  text="$3563">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="115" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topleft" relativeTo="$parentChenDi2">
+									<Offset>
+										<AbsDimension x="166" y="55"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentEdit1Bkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentEdit1Title">
+									<Offset>
+										<AbsDimension x="7" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentEdit2Title" justifyH="right" fonttype="BlackFont24"  text="$3564">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="195" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parentEdit1Title">
+									<Offset>
+										<AbsDimension x="0" y="52"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentEdit2Bkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentEdit2Title">
+									<Offset>
+										<AbsDimension x="7" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##标题栏
+					<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="700" abs_y="61">
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="top" >
+								<Offset>
+									<AbsDimension x="0" y="7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##标题名
+								<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont38" lineInterval="2" fontStyle="border" text="$3562" >
+									<Color r="255" g="135" b="27"/>
+									<Size>
+										<AbsDimension x="300" y="46"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentBkgLeft">
+											<Offset>
+												<AbsDimension x="-40" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="46" y="60"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-10" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VerifyCode"):CloseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<EditBox name="$parentEdit1" letters="11" multiLine="false" editMethod="2">
+						<Size>
+							<AbsDimension x="200" y="29" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentEdit1Bkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-13" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont28"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("VerifyCode"):PS_Edit1OnEnterPressed();</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("VerifyCode"):PS_Edit1OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<EditBox name="$parentEdit2" letters="6" multiLine="false" editMethod="3">
+						<Size>
+							<AbsDimension x="200" y="46" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentEdit2Bkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-13" y="11" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont28"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("VerifyCode"):PS_Edit2OnEnterPressed();</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("VerifyCode"):PS_Edit2OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					##切换显示/隐藏按钮
+					<Button name="$parentEdit1CoderBtn" inherits="TemplateEditBoxCoderBtn" abs_x="46" abs_y="46">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentEdit1Bkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VerifyCode"):PS_Edit1CoderBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentEdit2CoderBtn" inherits="TemplateEditBoxCoderBtn" abs_x="46" abs_y="46">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentEdit2Bkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VerifyCode"):PS_Edit2CoderBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRequestVCBtn" inherits="TemplateBtn12">
+						<Size>
+							<AbsDimension x="170" y="50" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentEdit1Bkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="28" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" lineInterval="2" text="$3430">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VerifyCode"):PS_RequestVCBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentConfirmBtn" inherits="TemplateBtn7">
+						<Size>
+							<AbsDimension x="182" y="81" />
+						</Size>
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="-50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont28" justifyH="center" text="$3565">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="160" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VerifyCode"):PS_ConfirmBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

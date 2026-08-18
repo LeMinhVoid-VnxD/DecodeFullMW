@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/MaterialLib/mine/MaterialLibMineModel.lua"/>
+	<Script file="ui/mobile/mvc/MaterialLib/mine/MaterialLibMineView.lua"/>
+	<Script file="ui/mobile/mvc/MaterialLib/mine/MaterialLibMineCtrl.lua"/>
+
+	##下拉列表条目模板
+	<Button name="TemplateMaterialLibMineDownListItem" inherits="TemplateDownListItem" virtual="true" abs_x="180" abs_y="50">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibMine"):DownListItemOnClick();</OnClick>
+		</Scripts>
+	</Button>
+	##tab按钮
+	<Button name="MaterialLibMineTab" virtual="true" abs_x="115" abs_y="49">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="tab_up_rounded_h.png"/>
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$538" rel_x="1.0" abs_y="24">
+					<Color r="133" g="133" b="133"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture0/common.xml" uvname="tab_up_rounded_n.png" rel_x="1.0" abs_y="40"/>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibMine"):ChangeTab();</OnClick>
+		</Scripts>
+	</Button>
+
+	##资源商店
+	<Frame name="MaterialLibMine" parent="UIClient" frameStrata="MEDIUM" hidden = "true" framelevel="1011">
+		<Anchors>
+			<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="205" y="145" />
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+				<Offset>
+					<AbsDimension x="0" y="-5" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentBg" inherits="TemplateBigBkg2">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="2" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-4" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPattern" inherits="TemplateBigBkg7_flat">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPageBkg" inherits="TemplateBigBkg5">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="60"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentGoodsCountDesc" fonttype="BlackFont18"  justifyH="right" text="$16302" abs_x="650" abs_y="14">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="left" relativeTo="$parentReflash">
+							<Offset>
+								<AbsDimension x="-21" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##刷新按钮
+			<Button name="$parentReflash" inherits="TemplateYellowRefreshBtn" abs_x="47" abs_y="50">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-17" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibMine"):RefreshBtnClick("",true);</OnClick>
+				</Scripts>
+			</Button>
+			##筛选下拉
+			<Button name="$parentDownListBtn"  abs_x="180" abs_y="46" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="13" y="7" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="180" abs_y="46">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrowIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" abs_x="20" abs_y="10">
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="-10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont20"  justifyH="center" text="$16301" abs_x="160" abs_y="20">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="-15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibMine"):DownListBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentTypeSelect" abs_x="1280" abs_y="720" framelevel="2000" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="MaterialLib">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="180" abs_y="200">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="MaterialLibMineDownListBtn">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="180" abs_y="200">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibMine"):TypeSelectClick();</OnClick>
+				</Scripts>
+			</Frame>
+			##没有商品缺省背景
+			<Frame name="$parentNone" rel_x="1.0" rel_y="1.0" hidden="false">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPageBkg" />
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentPageBkg" />
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/img_noreview.png" abs_x="244" abs_y="255" >
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="138"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont36" lineInterval="2" justifyH="center" text="$16308" abs_x="800" abs_y="40" >
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="35"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##我的出售
+			<ListViewFrame name="$parentSellList" slidingY="true" slideplane="$parentPlane" hidden = "true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="70"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="1099" abs_y = "1280">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+			#我的购买
+			<ListViewFrame name="$parentBuyList" slidingY="true" slideplane="$parentPlane" hidden = "true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="70"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="1099" abs_y = "1280">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parent" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+			##我的收藏
+			<ListViewFrame name="$parentCollectList" slidingY="true" slideplane="$parentPlane" hidden = "true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="70"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="1099" abs_y = "1280">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parent" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+
+			<Button name="$parentTabBtn1" inherits="MaterialLibMineTab" id="1" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="5" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTabBtn2" inherits="MaterialLibMineTab" id="2" >
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentTabBtn1">
+						<Offset>
+							<AbsDimension x="10" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTabBtn3" inherits="MaterialLibMineTab" id="3" >
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentTabBtn2">
+						<Offset>
+							<AbsDimension x="10" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

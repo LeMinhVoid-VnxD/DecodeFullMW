@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/MapRule/teamEdit/MapRuleTeamEditModel.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/MapRule/teamEdit/MapRuleTeamEditView.lua"/>
+	<Script file="ui/mobile/mvc/DevTools/BasicSettings/MapRule/teamEdit/MapRuleTeamEditCtrl.lua"/>
+
+    <Frame name="TeamListItemTemp" abs_x="854" abs_y="88" virtual="true">
+        <Layers>
+            <Layer>
+                <Texture inherits="TemplateBigBkg6" name="$parentBg">
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##勾选按钮
+            <Button inherits="TemplateTickBtn0" name="$parentCheck" abs_x="28" abs_y="28">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):CheckClick();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentTeamTag" abs_x="60" abs_y="21">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="58" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentText" fonttype="BlackFont20" text="">
+                            <Color r="61" g="69" b="70"/>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentTeamColor" abs_x="30" abs_y="30"> 
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="208" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentBg" file="ui/white.png">
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentTeamName" abs_x="100" abs_y="60">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="349" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentText" fonttype="BlackFont20" text="" autowrap="true" justifyV="MIDDLE" justifyH="CENTER">
+                            <Color r="61" g="69" b="70"/>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentMaxNum" abs_x="20" abs_y="20">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="531" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentText" fonttype="BlackFont20" text="">
+                            <Color r="61" g="69" b="70"/>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Button inherits="TemplateBtn2" name= "$parentEditBt" abs_x="130" abs_y="50">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="706" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentText" justifyH="Center" justifyV="Middle" fonttype="BlackFont20" text="$3529">
+                    <Color r="61" g="69" b="70"/>
+                </FontString>
+                <Scripts>
+                    <OnClick>
+                        GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):EditBtClick()
+                    </OnClick>
+                </Scripts>
+            </Button> 
+        </Frames>
+    </Frame>
+    <Frame name="MapRuleTeamEdit" parent="UIClient"  frameStrata="MEDIUM"  framelevel="1000" abs_x="921" abs_y="568">
+        <Anchors>
+            <Anchor point="top" relativeTo="MapRule" relativePoint="top">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Frames>
+            <SlidingFrame name="$parentSlider"  slidingY="true" slideplane="MapRuleTeamEditSliderPlane" rel_x="1" rel_y="1" hidden="true" framelevel="1000">
+                <Frames>
+                    <Frame name="MapRuleTeamEditSliderPlane" rel_x="1" abs_y="1300">
+                    </Frame>
+                    
+                    <Frame name="MapRuleTeamEditNumSet" rel_x="1" abs_y="300">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parentPlane" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame inherits="BasicSettingTitleTemplate" name="$parentTitle">
+                                <Layers>
+                                    <Layer>
+                                        <!-- <FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$6133" abs_x="400" abs_y="24">
+                                            <Color r="77" g="112" b="117"/>
+                                                <Anchors>
+                                                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                                        <Offset>
+                                                            <AbsDimension x="0" y="0"/>
+                                                        </Offset>
+                                                    </Anchor>
+                                                </Anchors>
+                                        </FontString> -->
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button name= "$parentHelpBtn" abs_x="50" abs_y="50">
+                                        <NormalTexture name="$parentNormal" file="ui/mobile/texture0/common.xml" uvname="icon_help_grey" abs_x="24" abs_y="24">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </NormalTexture>
+                                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/common.xml" uvname="icon_help_grey" abs_x="20" abs_y="20">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </PushedTexture>
+                                        <Anchors>
+                                            <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                <Offset>
+                                                    <AbsDimension x="550" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):HelpBtnClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button> 
+                                </Frames>
+                            </Frame>
+                            <Button inherits="TemplateTickBtn0" name="$parentCheck1" abs_x="50" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="topleft" relativeTo="$parentTitle" relativePoint="topleft">
+                                        <Offset>
+                                            <AbsDimension x="32" y="87"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                        GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):CheckSetClick(1);
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                            <Button inherits="TemplateTickBtn0" name="$parentCheck2" abs_x="50" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="topleft" relativeTo="$parentTitle" relativePoint="topleft">
+                                        <Offset>
+                                            <AbsDimension x="32" y="157"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                         GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):CheckSetClick(2);
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                            <Button inherits="TemplateTickBtn0" name="$parentCheck3" abs_x="50" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="topleft" relativeTo="$parentTitle" relativePoint="topleft">
+                                        <Offset>
+                                            <AbsDimension x="32" y="227"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>
+                                        GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):CheckSetClick(3);
+                                    </OnClick>
+                                </Scripts>
+                            </Button>
+                            <!-- <Frame name="$parentSlider1" inherits="BasicSettingSliderTemplate">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle3">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame> -->
+
+                            ### 进度条滑动球
+					        <!-- <Slider name="$parentProgressBall" orientation="HORIZONTAL" minValue="5" maxValue="100" valueStep="1" defaultValue="15" abs_x="570" abs_y="6">
+						        <Anchors>
+							        <Anchor point="left" relativeTo="$parentProgressBarBkg" relativePoint="left" />
+						        </Anchors>
+						        <ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/modlib.xml" uvname="img_bar_green.png" DrawType="ninesquare_center" abs_x="8" abs_y="30" />
+						        <Scripts>
+                                    <OnValueChanged>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):BarBallMovePos()</OnValueChanged>
+                                    <OnMouseUp>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):BarBallMouseUp()</OnMouseUp>
+                                    <OnMouseDown>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):BarBallMouseDown()</OnMouseDown>
+                                </Scripts>
+                            </Slider> -->
+                            <Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="40" valueStep="1" defaultValue="1" abs_x="338" abs_y="30">
+				                <Anchors>
+					                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+			                			<Offset>
+			                				<AbsDimension x="215" y="106" />
+			                			</Offset>
+			                		</Anchor>
+			                	</Anchors>
+			                	<Layers>
+			                		<Layer level="BACKGROUND">
+			                			<Texture name="$parentBkg" inherits="TemplateBkg31" abs_x="338" abs_y="6">
+			                				<Anchors>
+			                					<Anchor point="left" relativePoint="left" relativeTo="$parent">
+			                						<Offset>
+			                							<AbsDimension x="0" y="0"/>
+			                						</Offset>
+			                					</Anchor>
+			                				</Anchors>
+			                			</Texture>
+			                			<Texture name="$parentBkg1" inherits="TemplateBkg32" abs_x="338" abs_y="6">
+			                				<Anchors>
+			                					<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+			                						<Offset>
+			                							<AbsDimension x="0" y="0"/>
+			                						</Offset>
+			                					</Anchor>
+			                				</Anchors>
+			                			</Texture>
+			                			<FontString name="$parentRightTxt" justifyH="left" fonttype="BlackFont20" text="1" abs_x="200" abs_y="20">
+			                				<Color r="55" g="54" b="49"/>
+			                				<Anchors>
+			                					<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+			                						<Offset>
+			                							<AbsDimension x="60" y="2"/>
+			                						</Offset>
+			                					</Anchor>
+			                				</Anchors>
+			                			</FontString>
+			                		</Layer>
+			                	</Layers>
+			                	<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/modlib.xml" uvname="img_bar_green.png" DrawType="ninesquare_center" abs_x="8" abs_y="30" >
+			                		<NineSquare ox="0" oy="0" tilew="1" tileh="1"/>
+			                	</ThumbTexture>
+			                	<Scripts>
+			                		<OnValueChanged>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):SliderValueChanged()</OnValueChanged>
+			                		<OnMouseUp>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):SliderOnMouseUp();</OnMouseUp>
+			                	</Scripts>
+			                </Slider>
+                            <Button name="$parentBarLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+                                <Anchors>
+                                    <Anchor point="right" relativeTo="$parentBar" relativePoint="left">
+                                        <Offset>
+                                            <AbsDimension x="-10" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):SliderLeftRightBtnClicked();</OnClick>
+                                </Scripts>
+			                </Button>
+                            <Button name="$parentBarRightBtn" inherits="TemplateSingleBar_RightBtn01" >
+                                <Anchors>
+                                    <Anchor point="left" relativeTo="$parentBar" relativePoint="right">
+                                        <Offset>
+                                            <AbsDimension x="10" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):SliderLeftRightBtnClicked(true);</OnClick>
+                                </Scripts>
+			                </Button>
+                        </Frames>
+                        <Layers>
+                            <Layer>
+                                <FontString name="$parentRecommend" fonttype="BlackFont20" text="系统推荐">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativeTo="$parentCheck1" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="40" y="10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentRecommendExplain" fonttype="BlackFont18" text="系统根据地图玩法类别推荐人数">
+                                     <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativeTo="$parentCheck1" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="40" y="40"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentTeamSet" fonttype="BlackFont20" text="队伍人数">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativeTo="$parentCheck2" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="40" y="10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentTeamSetExplain" fonttype="BlackFont18" text="根据队伍设置的总人数填充">
+                                    <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativeTo="$parentCheck2" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="40" y="40"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                 <FontString name="$parentCustom" fonttype="BlackFont20" text="自定义">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativeTo="$parentCheck3" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="40" y="20"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <!-- <FontString name="$parentCustomExplain" fonttype="BlackFont20" text="()">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativeTo="$parentCheck3" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="694" y="20"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString> -->
+<!-- 
+                                ### 进度条-底图
+						        <Texture name="$parentProgressBarBkg" file="ui/mobile/texture2/modlib.xml" uvname="img_board_bar_green.png" hidden="false" DrawType="ninesquare_center">
+							        <Center>
+                                        <Left offsetX="0" offsetY="0" w="7" h="8"/>
+                                        <Center offsetX="7" offsetY="0" w="10" h="8"/>
+                                        <Right offsetX="17" offsetY="0" w="7" h="8"/>
+							        </Center>
+                                    <Size>
+                                        <AbsDimension x="570" y="8" />
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                            <Offset>
+                                                <AbsDimension x="144" y="107" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+						        </Texture>
+                                ### 进度条-前图
+                                <Texture name="$parentProgressTex" file="ui/mobile/texture2/modlib.xml" uvname="img_bar_green.png" hidden="false" DrawType="ninesquare_center">
+                                
+                                    <Center>
+                                        <Left offsetX="0" offsetY="0" w="7" h="8"/>
+                                        <Center offsetX="7" offsetY="0" w="10" h="8"/>
+                                        <Right offsetX="17" offsetY="0" w="7" h="8"/>
+                                    </Center>
+							        <Size>
+								        <AbsDimension x="570" y="8" />
+							        </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parentProgressBarBkg">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>	
+						        </Texture> -->
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                    <Frame name="MapRuleTeamEditContainer" rel_x="1" abs_y="1000">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parentPlane" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="300"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame inherits="BasicSettingTitleTemplate" name="MapRuleTeamEditSetingTitle">
+                            </Frame>
+                            <Frame name="MapRuleTeamEditListTitle" abs_x="851" abs_y="55">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                                        <Offset>
+                                            <AbsDimension x="0" y="60"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBg" inherits="TemplateBkg26">
+                                        </Texture>
+                                    </Layer>
+                                    <Layer>
+                                        <FontString name="$parentText1" abs_x="81" abs_y="21" fonttype="BlackFont20" text="">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                    <Offset>
+                                                        <AbsDimension x="16" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="$parentText2" abs_x="81" abs_y="21" fonttype="BlackFont20" text="">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                    <Offset>
+                                                        <AbsDimension x="183" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="$parentText3" abs_x="81" abs_y="21" fonttype="BlackFont20" text="">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                    <Offset>
+                                                        <AbsDimension x="350" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="$parentText4" abs_x="81" abs_y="21" fonttype="BlackFont20" text="">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                    <Offset>
+                                                        <AbsDimension x="495" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="$parentLimit" abs_x="175" abs_y="21" fonttype="BlackFont20" text="">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                    <Offset>
+                                                        <AbsDimension x="662" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem1" id="1">
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem2" id="2">
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem3" id="3">
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem4" id="4">
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem5" id="5">
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem6" id="6">
+                            </Frame>
+                            <Frame inherits="TeamListItemTemp" name="MapRuleTeamEditTeamListItem7" id="7">
+                            </Frame>
+                            <Frame inherits="BasicSettingTitleTemplate" name="MapRuleTeamEditDistributeTitle">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="MapRuleTeamEditTeamListItem7" relativePoint="bottom">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Frame name="MapRuleTeamEditSelectTeamDistribute" abs_x="927" abs_y="110">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="MapRuleTeamEditDistributeTitle" relativePoint="bottom">
+                                        <Offset>
+                                            <AbsDimension x="0" y="5"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentText" abs_x="80" abs_y="21" text="" fonttype="BlackFont20"> 
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                                                    <Offset>
+                                                        <AbsDimension x="126" y="45"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button inherits="TemplateBtn21" abs_x="394" abs_y="37" name="$parentEditBt">
+                                        <Anchors>
+                                            <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="38"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" fonttype="BlackFont17" justifyH="center" justifyV="middle" text="">          
+                                            <Color r="61" g="69" b="70"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):TeamDistributeBtnClick()</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </SlidingFrame>
+             <!--Tab按钮模板-->
+            <Button name="BasicSettingTeamSettingTabTemplate" virtual="true" abs_x="142" abs_y="61" click_threshold="5" inherits="TemplateBtn19">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentName" multiLine="false" fonttype="BlackFont22" abs_x="120" abs_y="30" input_transparent="true" justifyV="middle" justifyH="center">
+                    <Color r="56" g="54" b="50"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-0.5" y="16.5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):TabBtnClick()</OnClick>
+                </Scripts>
+            </Button>
+            <!--弹窗页面-->
+            <Frame name="MapRuleTeamEditSetting" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1300">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="DevTools"/>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="DevTools"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="B1000000" rel_x="1.0" rel_y="1.0"/>
+                    </Layer>
+                </Layers>
+                <!--页面框架-->
+                <Frames>
+                    <Frame name="$parentBody" abs_x="996" abs_y="571">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBkg2" inherits="TemplateBigBkg8" abs_x="996" abs_y="571">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="996" abs_y="433">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="1" y="56"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentBkg3" inherits="TemplateBigBkg5" abs_x="772" abs_y="394">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="203" y="79"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <!--标题栏:height:56-->
+                            <Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" rel_x="1" abs_y="56"/>
+
+                            <!--关闭按钮-->
+                            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+                                <Anchors>
+                                    <Anchor point="right" relativePoint="right" relativeTo="$parentTitle">
+                                        <Offset>
+                                            <AbsDimension x="-11" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):CloseBtnClicked()</OnClick>
+                                </Scripts>
+                            </Button>
+                            <!--确认按钮-->
+                            <Button name="$parentConfirmBtn" inherits="TemplateBtn13" text="$969" >
+                                <Anchors>
+                                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="-21" y="-13"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):ConfirmBtnClicked()</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                </Frames>
+                <!--左侧选项栏-->
+                <Frames>
+                    <Frame name="$parentLeftTabs" abs_x="168" abs_y="394" >
+                        <Anchors>
+                            <Anchor point="topleft" relativeTo="$parentBody" relativePoint="topleft">
+                                <Offset>
+                                    <AbsDimension x="19" y="79"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <Texture name="$parentBkg" inherits="TemplateBigBkg24" rel_x="1.0" rel_y="1.0">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>								
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentTab1" inherits="BasicSettingTeamSettingTabTemplate" id="1">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                                        <Offset>
+                                            <AbsDimension x="13" y="11"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTab2" inherits="BasicSettingTeamSettingTabTemplate" id="2">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentTab1" >
+                                        <Offset>
+                                            <AbsDimension x="0" y="11"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTab3" inherits="BasicSettingTeamSettingTabTemplate" id="3">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentTab2" >
+                                        <Offset>
+                                            <AbsDimension x="0" y="11"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTab4" inherits="BasicSettingTeamSettingTabTemplate" id="4">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentTab3" >
+                                        <Offset>
+                                            <AbsDimension x="0" y="11"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTab5" inherits="BasicSettingTeamSettingTabTemplate" id="5">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentTab4" >
+                                        <Offset>
+                                            <AbsDimension x="0" y="11"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                </Frames>
+                <!--编辑内容-->
+                <Frames>
+                    <Frame name="$parentPage1" abs_x="772" abs_y="394">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBody">
+                                <Offset>
+                                    <AbsDimension x="203" y="79"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parentPlane" hidden="true" abs_x="772" abs_y="500"/>
+                                    <Frame name="$parentTeamName" abs_x="400" abs_y="46">
+                                        <Layers>
+                                            <Layer level="BACKGROUND">
+                                                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" text="$34148" abs_x="79" abs_y="20">
+                                                    <Color r="61" g="69" b="70"/>
+                                                    <Anchors>
+                                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                            <Offset>
+                                                                <AbsDimension x="50" y="0"/>
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </FontString>
+                                                <Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="355" abs_y="46">
+                                                    <Anchors>
+                                                        <Anchor point="left" relativePoint="right" relativeTo="$parentName">
+                                                            <Offset>
+                                                                <AbsDimension x="23" y="0"/>
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </Texture>
+                                            </Layer>
+                                        </Layers>
+                                        <Frames>
+                                            <SafeEditBox name="$parentEditbox" letters="32" multiLine="false" abs_x="317" abs_y="20">
+                                                <Anchors>
+                                                    <Anchor point="center" relativePoint="center" relativeTo="$parentEditBkg" />
+                                                </Anchors>
+                                                <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+                                                    <Color r="255" g="255" b="255"/>
+                                                </FontString>
+                                                <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="">
+                                                    <Color r="255" g="255" b="255"/>
+                                                </FontString>
+                                            </SafeEditBox>
+                                        </Frames>
+                                    </Frame>
+                                    <Frame name="$parentTeamColor" abs_x="772" abs_y="30">
+                                        <Layers>
+                                            <Layer level="overlay">
+                                                <FontString name="$parentName" fonttype="BlackFont20" text="$34147" justifyH="right" abs_x="120" abs_y="20">
+                                                    <Color r="61" g="69" b="70"/>
+                                                    <Anchors>
+                                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                            <Offset>
+                                                                <AbsDimension x="10" y="0"/>
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </FontString>
+                                                <Texture name="$parentPic" file="ui/white.png" abs_x="30" abs_y="30">
+                                                    <Anchors>
+                                                        <Anchor point="left" relativePoint="right" relativeTo="$parentName">
+                                                            <Offset>
+                                                                <AbsDimension x="23" y="0"/>
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </Texture>
+                                            </Layer>
+                                        </Layers>
+                                    </Frame>
+                                </Frames>
+                            </SlidingFrame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentPage2" abs_x="772" abs_y="394" hidden="true">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBody">
+                                <Offset>
+                                    <AbsDimension x="203" y="79"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parentPlane" hidden="true" abs_x="772" abs_y="600"/>
+                                </Frames>
+                            </SlidingFrame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentPage3" abs_x="772" abs_y="394" hidden="true">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBody">
+                                <Offset>
+                                    <AbsDimension x="203" y="79"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parentPlane" hidden="true" abs_x="772" abs_y="1000"/>
+                                </Frames>
+                            </SlidingFrame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentPage4" abs_x="772" abs_y="394" hidden="true">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBody">
+                                <Offset>
+                                    <AbsDimension x="203" y="79"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parentPlane" hidden="true" abs_x="772" abs_y="500"/>
+                                </Frames>
+                            </SlidingFrame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentPage5" abs_x="772" abs_y="394" hidden="true">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBody">
+                                <Offset>
+                                    <AbsDimension x="203" y="79"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parentPlane" hidden="true" abs_x="772" abs_y="500"/>
+                                    <Frame name="$parentModelAddBtn" abs_x="200" abs_y="100">
+                                        <Anchors>
+                                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane"/>
+                                        </Anchors>
+                                        <Frames>
+                                            <Button name="$parentAddBtn" inherits="TemplateCellAddBtn">
+                                                <Anchors>
+                                                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                        <Offset>
+                                                            <AbsDimension x="171" y="0"/>
+                                                        </Offset>
+                                                    </Anchor>
+                                                </Anchors>
+                                                <Scripts>
+                                                    <OnClick>GetInst("UIManager"):GetCtrl("MapRuleTeamEdit"):modelAddBtnClick();</OnClick>
+                                                </Scripts>
+                                            </Button>
+                                        </Frames>
+                                        <Layers>
+                                            <Layer level="overlay">
+                                                <FontString name="$parentBtnTitle" fonttype="BlackFont20"  justifyH="center" text="$4709" abs_x="40" abs_y="20">
+                                                    <Color r="62" g="70" b="71"/>
+                                                    <Anchors>
+                                                        <Anchor point="right" relativePoint="left" relativeTo="$parentAddBtn">
+                                                            <Offset>
+                                                                <AbsDimension x="-22" y="0"/>
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </FontString>
+                                            </Layer>
+                                        </Layers>
+                                    </Frame>
+                                </Frames>
+                            </SlidingFrame>
+                        </Frames>
+                    </Frame>
+                      ##翻译描述
+                    <Button name="$parentTranslateDesc" inherits="TranslateBtnTemplate" hidden="false" abs_x="36" abs_y="28">
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                <Offset>
+                                    <AbsDimension x="259" y="-162"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames>
+    </Frame>
+</Ui>

@@ -1,0 +1,325 @@
+接口ID,韩语,韩语,韩语,韩语,韩语,韩语,韩语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,경기,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,게임을 종료,local result = Game:doGameEnd()
+10002,경기,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,사용자 정의를위한 스크립트의 속성을 설정합니다,"local result = Game:setScriptVar(index, val)"
+10003,경기,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",사용자 정의를위한 스크립트 속성을 수신,local result = Game:getScriptVar(index)
+10004,경기,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,스크립트의 속성을 업로드,local result = Game:sendScriptVars2Client()
+10005,경기,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",새로운 글로벌 효과,local result = Game:addRenderGlobalEffect(path)
+10006,경기,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,클리어 글로벌 효과,local result = Game:removeRenderGlobalEffect(effectid)
+10007,경기,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,글로벌 효과의 위치를 ​​설정합니다,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,경기,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,설정 글로벌 줌 효과,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,경기,msgBox,Game:msgBox(msg),,,메세지 박스,local result = Game:msgBox(msg)
+20001,세계,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",이 낮 여부,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,세계,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",이 게임을 사용자 정의 여부,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,세계,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",여부는 생성 모드,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,세계,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",멀티 플레이어 생성 모드 또는 사용자 정의 편집 모드,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,세계,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",하드 코어,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,세계,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",서바이벌 모드 - 무료 모드,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,세계,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",싱글 모드 나 서바이벌 모드 - 무료 모드,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,세계,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",서바이벌 모드는 생성 모드에서 설정,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,세계,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",사용자 정의 편집 모드,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,세계,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",사용자 지정 모드를 작동,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,세계,getHours,World:getHours(),none,"ErrorCode.OK, result:number",현재 시간 (h),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,세계,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",보기 편집 상태를 구합니다,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,세계,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,설정보기 편집 상태,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,세계,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",맞춤형 카메라 구성을 얻습니다,local result = World:getCustomCameraConfig()
+20015,세계,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",블록의 범위를 구하는 (청크),"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,세계,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",지정된 장소에서 배우를 구합니다,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,세계,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",모든 선수를 얻습니다. 생존 상황을 제어 할 수,local result = World:getPlayerTotal(alive)
+20018,세계,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",모든 선수를 얻습니다. 생존 상황을 제어 할 수,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,세계,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",랜덤 플레이어,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,세계,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,배우 제거,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,세계,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array","(등 몬스터, NPC, 동물 포함) 생물을 생성","local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,세계,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,생물을 제거,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,세계,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",지정 위치에서 항목을 생성,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,세계,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,(지역) 항목 제거,"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,세계,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,(ID 별) 항목을 제거,"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,세계,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,발사체를 생성,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,블록,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",블록이 실체 여부,"local result = Block:isSolidBlock(x, y, z)"
+30002,블록,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",블록이 유체 여부,"local result = Block:isLiquidBlock(x, y, z)"
+30003,블록,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",블록 공기 여부,"local result = Block:isAirBlock(x, y, z)"
+30004,블록,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",해당 블록 ID를 구하는,"local result = Block:getBlockID(x, y, z)"
+30005,블록,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,blockalldata 업데이 트를 설정하고 통보,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,블록,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,블록 승,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,블록,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",블록 배치,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,블록,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,blockalldata 설정하고 주변의 블록을 통지,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,블록,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,현재 위치 블록을 blockalldata 설정 및 업데이트,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,블록,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,설정 블록의 속성과 상태,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,블록,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",기능 블록의 유무를 구하는,local result = Block:getBlockSwitchStatus(pos)
+30012,블록,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,기능 블록의 설정 유무,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,게임 배우,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,이 플레이어의 경우 감지,local result = Actor:isPlayer(objid)
+40002,게임 배우,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,이 괴물 경우 감지,local result = Actor:isMob(objid)
+40003,게임 배우,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",배우의 유형 가져 오기 : 생물 / 플레이어를 ...,local result = Actor:getObjType(objid)
+40004,게임 배우,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,그것은 공중에 있다면,local result = Actor:isInAir(objid)
+40005,게임 배우,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",배우의 위치를 ​​가져옵니다,local result = Actor:getPosition(objid)
+40006,게임 배우,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,배우의 위치를 ​​설정합니다,"local result = Actor:setPosition(objid, x, y, z)"
+40007,게임 배우,jump,Actor:jump(objid),objid:number,ErrorCode.OK,도약,local result = Actor:jump(objid)
+40008,게임 배우,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,자신을 죽여,local result = Actor:killSelf(objid)
+40009,게임 배우,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",현재 직면하고 방향을 받기,local result = Actor:getCurPlaceDir(objid)
+40010,게임 배우,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,목표 배우를 향해 이동,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,게임 배우,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,목표 배우를 향해 이동,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,게임 배우,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,버프를 얻,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,게임 배우,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",그것은 어떤 버프가있는 경우,"local result = Actor:hasBuff(objid, buffid)"
+40014,게임 배우,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,버프 삭제,"local result = Actor:removeBuff(objid, buffid)"
+40015,게임 배우,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,모두 지우기 버프,local result = Actor:clearAllBuff(objid)
+40016,게임 배우,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,모두 지우기 부정적인 버프,local result = Actor:clearAllBadBuff(objid)
+40017,게임 배우,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",버프의 목록을 가져옵니다,local result = Actor:getBuffList(objid)
+40018,게임 배우,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",현재 인덱스의 해당 버프의 남은 itck를 가져옵니다,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,게임 배우,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,현재 HP를 증가,"local result = Actor:addHP(objid, hp)"
+40020,게임 배우,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",현재 HP 받기,local result = Actor:getHP(objid)
+40021,게임 배우,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",현재 최대 HP를 가져옵니다,local result = Actor:getMaxHP(objid)
+40022,게임 배우,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,산소의 양을 증가,"local result = Actor:addOxygen(objid, oxygen)"
+40023,게임 배우,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",산소 볼륨을 얻기,local result = Actor:getOxygen(objid)
+40024,게임 배우,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,해당 장치의 마법을 Incease,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,게임 배우,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,해당 장비의 클리어 마법,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,게임 배우,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",가장 가까운 블록의 ID 찾기,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,게임 배우,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,배우의보기의 횡 방향 편차 각도를 설정,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,게임 배우,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",배우의보기의 횡 방향 편차 각도를 얻기,local result = Actor:getFaceYaw(objid)
+40029,게임 배우,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,배우의 횡 방향 편차 각도 변경,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,게임 배우,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,배우의 뷰의 상승 각도를 설정,"local result = Actor:setFacePitch(objid, pitch)"
+40031,게임 배우,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",배우의 뷰의 상승 각도를 얻기,local result = Actor:getFacePitch(objid)
+40032,게임 배우,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,배우의 상향 편향 각을 변경,"local result = Actor:turnFacePitch(objid, offset)"
+40033,게임 배우,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,효과를 재생,"local result = Actor:playBodyEffect(objid, type)"
+40034,게임 배우,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,효과를 중지,"local result = Actor:stopBodyEffect(objid, type)"
+40035,게임 배우,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,파일 효과를 재생,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,게임 배우,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,파일 효과를 중지,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,게임 배우,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,소리 재생,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,게임 배우,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,사운드 재생 (특정 유형 : GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,게임 배우,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,그 ID가 actorid있는 생물의 ID를 취소합니다,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,게임 배우,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,피해 유형을 설정,"local result = Actor:setAttackType(objid, attacktype)"
+40041,게임 배우,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,설정 손상 내성 유형,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,게임 배우,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,차량 떨어져에 얻기,"local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,게임 배우,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,생물의 행동 특성 및 상태를 설정,"local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,게임 배우,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,위치를 대상으로 방법을 찾아,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,게임 배우,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,Pferd는의 objid를 받기,local result = Actor:getRidingActorObjId(objid)
+50001,플레이어,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",무,local result = Player:getAttr(attrtype)
+50002,플레이어,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,무,"local result = Player:setAttr(attrtype, val)"
+50003,플레이어,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",호스트를 가져옵니다,local result = Player:getHostUin()
+50004,플레이어,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,이 지역의 플레이어가 있는지 감지,local result = Player:isMainPlayer(objid)
+50005,플레이어,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",로컬 플레이어의 UIN 받기,local result = Player:getMainPlayerUin()
+50006,플레이어,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",게임의 결과를 얻을 수,local result = Player:getGameResults(objid)
+50007,플레이어,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,게임의 설정 결과,"local result = Player:setGameResults(objid, result)"
+50008,플레이어,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",게임의 점수를 얻을,local result = Player:getGameScore(objid)
+50009,플레이어,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",게임의 설정 점수,"local result = Player:setGameScore(objid, score)"
+50010,플레이어,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",플레이어의 순위를 가져 오기,local result = Player:getGameRanking(objid)
+50011,플레이어,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,플레이어의 순위를 설정,"local result = Player:setGameRanking(objid, rank)"
+50012,플레이어,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,선수에 대한 항목 추가,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,플레이어,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,포인트를 생성하기 위해 이동,local result = Player:teleportHome(objid)
+50014,플레이어,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",항목 ID는 현재 플레이어가 보유한하기,local result = Player:getCurToolID(objid)
+50015,플레이어,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",플레이어의 이름을 가져옵니다,local result = Player:getNickname(objid)
+50016,플레이어,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,배낭에서 항목을 삭제,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,플레이어,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",사망자 수를 가져옵니다,local result = Player:getDieTimes(objid)
+50018,플레이어,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",삶 왼쪽 남아의 수를 가져옵니다,local result = Player:getLeftLifeNum(objid)
+50019,플레이어,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,생물 팀을 설정,"local result = Player:setTeam(objid, team)"
+50020,플레이어,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",생물 팀을 얻으십시오,local result = Player:getTeam(objid)
+50021,플레이어,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,현재 포만감을 얻을,local result = Player:getFoodLevel(objid)
+50022,플레이어,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,현재 포만감을 설정,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,플레이어,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",현재 바로 가기 표시 줄을 받기,local result = Player:getCurShotcut(objid)
+50024,플레이어,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,플레이어가 보유 항목의 소비를 설정,"local result = Player:onCurToolUsed(objid, num)"
+50025,플레이어,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,설정 CD,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,플레이어,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,지정된 지점에서 리스폰 플레이어,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,플레이어,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,다시 생성 지점 변경,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,플레이어,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,플레이어는 만화를 재생,"local result = Player:playAct(objid, actid)"
+50029,플레이어,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,팝업 창에 표시 텍스트,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,플레이어,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,플레이어가 현재 항목을 사용해야합니다,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,플레이어,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,플레이어의 렌즈를 회전,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,플레이어,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,플레이어의 각 모드를 변경,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,플레이어,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,생물의 행동 특성 및 상태를 설정,"local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,플레이어,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,"동작, 속성의 전환과 플레이어의 상태","local result = Player:checkActionAttrState(objid, actionattr)"
+50035,플레이어,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",현재 최대 HP를 가져옵니다,local result = Player:getMaxHP(objid)
+50036,플레이어,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",현재 HP를 가져옵니다,local result = Player:getCurHP(objid)
+50037,플레이어,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP 회복,local result = Player:getHpRecover(objid)
+50038,플레이어,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",현재 물림,local result = Player:getCurFood(objid)
+50039,플레이어,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,플레이어,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",현재 산소 볼륨,local result = Player:getCurOxygen(objid)
+50041,플레이어,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",걷는 속도,local result = Player:getWalkSpeed(objid)
+50042,플레이어,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",수영 속도 (물에),local result = Player:getSwimSpeed(objid)
+50043,플레이어,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",점프의 힘,local result = Player:getJumpPower(objid)
+50044,플레이어,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",실행 속도,local result = Player:getRunSpeed(objid)
+50045,플레이어,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",몰래 속도,local result = Player:getSneakSpeed(objid)
+50046,플레이어,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",피하고 속도,local result = Player:getDodge(objid)
+50047,플레이어,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",근접 공격,local result = Player:getPunchAttack(objid)
+50048,플레이어,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",원거리 공격,local result = Player:getRangeAttack(objid)
+50049,플레이어,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",근접 방어,local result = Player:getPunchDefense(objid)
+50050,플레이어,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",원거리 방어,local result = Player:getRangeDefense(objid)
+50051,플레이어,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",별의 수,"local result = Player:getStarNum(objid, val)"
+50052,플레이어,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",모델의 크기,"local result = Player:getModelScale(objid, val)"
+50053,플레이어,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,최대 HP를 설정,"local result = Player:setMaxHP(objid, val)"
+50054,플레이어,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HP 설정,"local result = Player:setHP(objid, val)"
+50055,플레이어,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,HP 복구 설정,local result = Player:setHpRecover(objid)
+50056,플레이어,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,설정 현재 물림,local result = Player:setCurFood(objid)
+50057,플레이어,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,산소를 설정,"local result = Player:setOxygen(objid, val)"
+50058,플레이어,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 보행 속도,"local result = Player:setWalkSpeed(objid, val)"
+50059,플레이어,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 수영 속도 (물에),"local result = Player:setSwimSpeed(objid, val)"
+50060,플레이어,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 점프의 힘,"local result = Player:setJumpPower(objid, val)"
+50061,플레이어,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 실행 속도,"local result = Player:setRunSpeed(objid, val)"
+50062,플레이어,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 몰래 속도,"local result = Player:setSneakSpeed(objid, val)"
+50063,플레이어,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 닷징 속도,"local result = Player:setDodge(objid, val)"
+50064,플레이어,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 근접 공격,"local result = Player:setPunchAttack(objid, val)"
+50065,플레이어,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 원거리 공격을,"local result = Player:setRangeAttack(objid, val)"
+50066,플레이어,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 근접 방어,"local result = Player:setPunchDefense(objid, val)"
+50067,플레이어,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정은 방어 원거리,"local result = Player:setRangeDefense(objid, val)"
+50068,플레이어,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,별의 수를 설정,"local result = Player:setStarNum(objid, val)"
+50069,플레이어,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,모델의 크기를 설정,"local result = Player:setModelScale(objid, val)"
+50070,플레이어,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,배우의 위치를 ​​설정합니다,"local result = Player:setPosition(objid, x, y, z)"
+50071,플레이어,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,플레이어의 십자선 위치를 가져옵니다,local result = Player:getAimPos(objid)
+60001,생물,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,그것은 성인가요?,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,생물,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,산소가 필요한 경우 설정,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,생물,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",생물을 지배 한 플레이어의 ID를 가져옵니다,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,생물,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,이 공황 발생하는 경우 설정,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,생물,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,AI가 적용됩니다 경우 설정,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,생물,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",괴물 리소스의 ID를 가져옵니다,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,생물,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",괴물 리소스의 ID를 가져옵니다,local result = Creature:getActorName(objid)
+60008,생물,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,괴물의 ModAttrib을 증가,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,생물,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",괴물의 ModAttrib을 증가,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,생물,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,생물 팀을 설정,"local result = Creature:setTeam(objid, teamid)"
+60011,생물,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",생물 팀을 설정,local result = Creature:getTeam(objid)
+60012,생물,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",최대 포만감을 얻을,local result = Creature:getMaxFood(objid)
+60013,생물,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",포만감을 얻을,local result = Creature:getFood(objid)
+60014,생물,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 물림,"local result = Creature:setFood(objid, val)"
+60015,생물,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP 회복,local result = Creature:getHpRecover(objid)
+60016,생물,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",최대 산소 볼륨,local result = Creature:getMaxOxygen(objid)
+60017,생물,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",걷는 속도,local result = Creature:getWalkSpeed(objid)
+60018,생물,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",수영 속도 (물에),local result = Creature:getSwimSpeed(objid)
+60019,생물,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",점프의 힘,local result = Creature:getJumpPower(objid)
+60020,생물,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",무게,local result = Creature:getMass(objid)
+60021,생물,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",다지,local result = Creature:getDodge(objid)
+60022,생물,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",근접 공격,local result = Creature:getPunchAttack(objid)
+60023,생물,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",원거리 공격,local result = Creature:getRangeAttack(objid)
+60024,생물,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",근접 방어,local result = Creature:getPunchDefense(objid)
+60025,생물,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",원거리 방어,local result = Creature:getRangeDefense(objid)
+60026,생물,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HP 설정,"local result = Creature:setMaxHp(objid, val)"
+60027,생물,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HP 설정,"local result = Creature:setHP(objid, val)"
+60028,생물,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,HP 복구 설정,local result = Creature:setHpRecover(objid)
+60029,생물,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 산소,"local result = Creature:setOxygen(objid, val)"
+60030,생물,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 보행 속도,"local result = Creature:setWalkSpeed(objid, val)"
+60031,생물,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 수영 속도 (물에),"local result = Creature:setSwimSpeed(objid, val)"
+60032,생물,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,점프의 힘을 설정,"local result = Creature:setJumpPower(objid, val)"
+60033,생물,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 닷징,"local result = Creature:setDodge(objid, val)"
+60034,생물,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 근접 공격,"local result = Creature:setPunchAttack(objid, val)"
+60035,생물,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 원거리 공격을,"local result = Creature:setRangeAttack(objid, val)"
+60036,생물,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정 근접 방어,"local result = Creature:setPunchDefense(objid, val)"
+60037,생물,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,설정은 방어 원거리,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,싸움의 설정 요약 UI,"local result = UI:setGBattleUI(name, value)"
+70002,UI,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",세계는 미니 맵으로 변경 좌표,"local result = UI:world2RadarPos(x, y)"
+70003,UI,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",WOLRD 길이는 미니 맵으로 변경,local result = UI:world2RadarDist(length)
+70004,UI,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,설정 미니 맵 모드 : 1. 45 ° 회전 각도. 2. 전체 그림 간과 각도,local result = UI:setMinimapRenderMode(mode)
+70005,UI,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,지도 마크의 설정을 모양. 라인으로 설정,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,지도 마크의 설정을 모양. 원으로 설정,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,디스플레이 화면 효과,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,잡담,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,채팅 메시지 보내기,local result = Chat:sendChat(content)
+80002,잡담,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,시스템 메시지 보내기,local result = Chat:sendSystemMsg(content)
+90001,팀,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",팀의 수를 가져옵니다,local result = Team:getNumTeam()
+90002,팀,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",지정 선수 팀을 얻기,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,팀,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",지정 선수 팀을 얻기,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,팀,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",랜덤 플레이어,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,팀,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,팀 점수를 설정,"local result = Team:setTeamScore(teamid, s)"
+90006,팀,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",팀 점수를 얻을,local result = Team:getTeamScore(teamid)
+90007,팀,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,팀 점수를 증가,"local result = Team:addTeamScore(teamid, score)"
+90008,팀,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,팀의 승리 - 로스 설정,"local result = Team:setTeamResults(teamid, result)"
+90009,팀,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",팀의 현재 윈 - 로스 받기,local result = Team:getTeamResults(teamid)
+90010,팀,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,플레이어 팀의 승리 - 로스 설정,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,팀,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,팀의 총 사망자 설정,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,팀,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",팀의 총 사망자를 가져옵니다,local result = Team:getTeamDieTimes(teamid)
+90013,팀,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,팀의 총 사망을 증가,local result = Team:addTeamDieTimes(teamid)
+90014,팀,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,변경 플레이어의 팀,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,소품,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",항목의 이름을 가져옵니다,local result = Item:getItemName(itemid)
+100002,소품,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",항목의 ID를 가져옵니다,local result = Item:getItemId(objid)
+100003,소품,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",dorps의 수를 가져옵니다,local result = Item:getDropItemNum(objid)
+110001,배낭,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",배낭 바의 ID의 범위를 가져옵니다 (시작 ID ~ 종료 ID),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,배낭,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",배낭 바의 크기를 가져옵니다,local result = Backpack:getBackpackBarSize(bartype)
+110003,배낭,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,배낭을 설정,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,배낭,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,배낭 표시 줄에 일부 항목을 제거합니다. 아이템 슬롯에 의해 제거되었습니다. 모든 기본적으로 제거,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,배낭,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",배낭 표시 줄에 일부 항목을 제거합니다. 항목 ID에 의해 제거되었습니다. 모든 기본적으로 제거,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,배낭,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,클리어 지정 배낭 바,"local result = Backpack:clearPack(playerid, bartype)"
+110007,배낭,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,"(배낭 줄을 포함, 도구 모음, 바 장비) 모두 삭제 배낭",local result = Backpack:clearAllPack(playerid)
+110008,배낭,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,배낭에서 항목을 제거합니다. 모든 기본적으로 전송,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,배낭,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,교환 항목 배낭,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,배낭,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 9",ErrorCode.OK,"배낭에 충분한 공간이있는 경우 항목을 저장하기 (배낭 바, 도구 모음을 포함)","local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,배낭,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number",배낭 (배낭 바를 포함한 단축 bar)의 나머지 항목의 총 수를 계산 저장할 수,"local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,배낭,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",배낭 표시 줄에 이미 항목 'ID의 유효 목록을 가져옵니다. 항목 ID,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,배낭,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",배낭 표시 줄에 이미 항목을 가져옵니다. 항목 ID,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,배낭,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,배낭에있는 지정된 항목이있는 경우에 감지,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,배낭,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",배낭에있는 항목의 총 수를 가져옵니다. 항목 배낭로 돌아 가기,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,배낭,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",배낭에서 아이템 ID 및 번호를 가져옵니다,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,배낭,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",배낭에서 아이템 이름을 가져옵니다,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,배낭,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",배낭과 최대 어떤 항목 수를 가져옵니다. 스택의,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,배낭,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",배낭 및 최대 내구성 항목의 내구성을 얻기,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,배낭,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",배낭에있는 항목의 마법을 가져옵니다. 마법의 ID로 돌아갑니다.,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,배낭,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",배낭에서 항목 도구의 형태를 취득 (<0이 아닌 도구를 의미합니다),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,배낭,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",배낭에 상품을 추가,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,배낭,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,배낭에서 항목을 폐기,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,배낭,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,배낭 하나 개의 슬롯의 항목 수를 가져옵니다,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,미니 맵,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number","새로운 모양 (선, 사각형, 원)","local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,미니 맵,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,모양 삭제,local result = MapMark:deleteShape(shapeid)
+120003,미니 맵,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,모양과 색상을 설정합니다,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,미니 맵,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,세트 모양 표시 또는 숨김,"local result = MapMark:showShape(shapeid, showflag)"
+120005,미니 맵,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,업데이트 모양 (선). 좌표와 끝 좌표 시작 추가,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,미니 맵,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,업데이트 모양 (사각형). 좌표와 끝 좌표 시작 추가,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,미니 맵,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,모양 (원)을 업데이트합니다. 중심 좌표와 반경을 추가,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,스폰 포인트,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",산란 점의 위치를 ​​가져옵니다,local result = Spawnport:getSpawnPoint()
+130002,스폰 포인트,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",지역의 스폰 포인트를 가져옵니다. 지역에서 무작위 블록의 위치를 ​​추가,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

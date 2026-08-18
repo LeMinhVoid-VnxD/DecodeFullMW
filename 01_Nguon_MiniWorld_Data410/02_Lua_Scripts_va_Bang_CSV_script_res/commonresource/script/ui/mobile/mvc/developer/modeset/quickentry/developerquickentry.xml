@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/modeSet/quickEntry/DeveloperQuickEntryModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/modeSet/quickEntry/DeveloperQuickEntryView.lua"/>
+	<Script file="ui/mobile/mvc/developer/modeSet/quickEntry/DeveloperQuickEntryCtrl.lua"/>
+
+	##快捷入口模板
+	<Frame name="QuickEntryTemplate" virtual ="true" abs_x="100" abs_y="130">
+		<Layers>
+           <Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/common.xml" uvname="btn_entry_develop" abs_x="90" abs_y ="93">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="btn_entry_develop" abs_x="90" abs_y ="93">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="XXX" abs_x="100" abs_y="22">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+		   </Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperQuickEntry"):QuickEntryBtnOnClick();</OnClick>
+		</Scripts>		 
+	</Frame>
+
+	##快捷栏
+	<Frame name="ShortCutTemplate" virtual ="true" abs_x="100" abs_y="130">
+		<Layers>
+           <Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg64" abs_x="90" abs_y ="93">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentBkg2" file="ui/mobile/texture0/common.xml" uvname="lable_pack" abs_x="26" abs_y ="26">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="btn_entry_develop" abs_x="73" abs_y ="73">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="XXX" abs_x="100" abs_y="22">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+		   </Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperQuickEntry"):ChangeShortCutBtnClick();</OnClick>
+		</Scripts>	
+	</Frame>
+
+
+	<Frame name="DeveloperQuickEntry" parent="UIClient" frameStrata="MEDIUM" hidden="false" framelevel="2405" input_transparent="true">
+		<Anchors>
+			<Anchor point="topright" relativePoint="topright">
+				<Offset>
+					<AbsDimension x="2" y="61"/>
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomleft" relativePoint="bottomleft">
+				<Offset>
+					<AbsDimension x="175" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+		 	<Frame name = "$parentPlayer" abs_x ="600" abs_y = "100">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="41" y="27" />
+						</Offset>
+					</Anchor>
+				</Anchors>			
+				<Layers>
+					<Layer level = "overlay">
+						##头像
+						<Texture name="$parentHeadBkg1"  file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" abs_x="88" abs_y="88">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+							</Anchors>
+						</Texture>	
+						<Texture name="$parentHead" file="ui/mobile/texture0/common.xml" uvname="btn_entry_develop" abs_x="84" abs_y="84">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentHeadBkg1" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>	
+						<Texture name="$parentHeadBkg"  file="ui/mobile/texture0/common/img_icon_head.png" abs_x="120" abs_y="120">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentHead" relativePoint="center" />
+							</Anchors>
+						</Texture>									
+				
+						##昵称
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="XXX" abs_x="200" abs_y="23">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentHead">
+									<Offset>
+										<AbsDimension x="34" y="19"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##人气值进度条
+						<Texture name="$parentProgressBarBkg" inherits="TemplateBkg16" abs_x ="190" abs_y="16" hidden="true">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentName" relativePoint="bottomleft">
+									<Offset>
+										<AbsDimension x="0" y="12" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentProgressTex" inherits="TemplateBkg17" abs_x ="0" abs_y ="14" hidden="true">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					
+						##人气值等级
+						<FontString name="$parentExp" fonttype="BlackFont14" justifyH="left" justifyV="middle" text="0/60" abs_x="150" abs_y="15" hidden="true">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+					</Layer>
+				</Layers>
+				<Frames>
+					##等级标识
+					<Frame name="$parentCreator" abs_x="120" abs_y ="50" hidden="true">
+					 	<Anchors>
+							<Anchor point="left" relativeTo="$parentProgressBarBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="24" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors> 
+						<Layers>
+							<Layer level = "overlay">						
+								<Texture name="$parentLvBkg" file="ui/mobile/texture0/common.xml" uvname="img_develop_level" abs_x="102" abs_y="26">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentLv" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="Lv.12" abs_x="80" abs_y="18">
+									<Color r="250" g="122" b="15"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentLvBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>	
+								<Texture name="$parentIconMini" file="ui/mobile/texture0/ingame.xml" uvname="icon_develop_tool_mini" abs_x ="36" abs_y ="39">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parentLvBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>	
+							</Layer>
+						</Layers> 
+					</Frame>
+					<Button name="$parentBecomeCreatorBtn" inherits="TemplateBtn11" abs_x="150" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentProgressBarBkg">
+								<Offset>
+									<AbsDimension x="16" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level ="overlay">
+								<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$20114" abs_x="150" abs_y="15">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>						
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperQuickEntry"):BecomeCreatorBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame> 
+
+			##工作室标识
+			<Frame name="$parentWorkSapce" abs_x ="200" abs_y = "100">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentPlayer" relativePoint="right">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##存在工作室则可点击查看详情
+					<Button name="$parentExist" abs_x="150" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="200" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level ="overlay">
+								<Texture name="$parentBg" file="ui/mobile/texture0/common_icon.xml" uvname="board_Studio_Name.png" abs_x="100" abs_y="31">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left" >
+											<Offset>
+												<AbsDimension x="36" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_studio.png" abs_x="45" abs_y="52">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont16" justifyH="left" justifyV="middle" text="工作室" abs_x="300" abs_y="16">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="50" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTip" fonttype="BlackFont16" justifyH="left" justifyV="middle" text="已经加入xx天" abs_x="150" abs_y="16">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="42" y="40"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperQuickEntry"):ShowWorkSpaceDetail();</OnClick>
+						</Scripts>
+					</Button>
+					##不存在工作室则了解工作室
+					<Button name="$parentNotExist" inherits="TemplateBtn3" abs_x="150" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="200" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level ="overlay">
+								<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="了解工作室" abs_x="150" abs_y="15">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTip" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="暂未加入工作室" abs_x="150" abs_y="15">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-50"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperQuickEntry"):KnowAboutWorkSpace();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##入口
+			<Frame name="$parentEntry" abs_x ="600" abs_y = "230">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentPlayer" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="0" y="29" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level = "overlay">
+				 		##标题
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="$20113" abs_x="100" abs_y="25">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>	
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="1030" abs_y="2">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentTitle" relativePoint="bottomleft">
+									<Offset>
+										<AbsDimension x="0" y="9" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>				
+					</Layer>
+				</Layers> 
+				<Frames>
+					<Frame name ="$parentBtns" abs_x="1000" abs_y="150">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentLine" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="0" y="18" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						##模板实例化					
+					</Frame>
+				</Frames>
+			</Frame>
+			##新星计划入口
+			<Frame name="$parentNewStar" abs_x ="133" abs_y = "47" hidden="true" >
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentEntry" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="105" y="-18" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentEntry" abs_x="133" abs_y="47">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/outgame.xml" uvname="icon_newstarproject_entrance" >
+							<Size>
+								<AbsDimension x="133" y="47"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentNormal" file="ui/mobile/texture0/outgame.xml" uvname="icon_newstarproject_entrance" >
+							<Size>
+								<AbsDimension x="130" y="45"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperQuickEntry"):NewStarEntry();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##快捷栏
+			<Frame name="$parentCutShort" abs_x ="600" abs_y = "230">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentEntry" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level = "overlay">
+						##标题
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="$20121" abs_x="120" abs_y="25">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>	
+						<FontString name="$parentTitle2" fonttype="BlackFont18" justifyH="left" justifyV="bottom" text="$20122" abs_x="300" abs_y="25">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+									<Offset>
+										<AbsDimension x="14" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>	
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="1030" abs_y="2">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentTitle" relativePoint="bottomleft">
+									<Offset>
+										<AbsDimension x="0" y="9" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>				
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name ="$parentBtns" abs_x="1000" abs_y="150">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentLine" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="0" y="18" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						##模板实例化					
+					</Frame>
+				</Frames>
+			</Frame>  
+		</Frames>
+	</Frame> 
+
+	<Frame name="DeveloperQuickEntryShareMapProgressFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3200">
+		<Layers>
+           <Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="B1000000" stretchedge="true"/>
+				<Texture name="$parentBarBkg" inherits="TemplateBkg16" abs_x="400" abs_y="30">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBarProgress" inherits="TemplateBkg17" abs_x="396" abs_y="26">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBarBkg">
+							<Offset>
+								<AbsDimension x="2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$33199" abs_x="100" abs_y="24">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentBarBkg">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentRatio" fonttype="BlackFont20" justifyH="center" text="1%" abs_x="100" abs_y="20">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBarBkg" >
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+		   </Layer>
+		</Layers>
+		<Frames>
+			##取消按钮
+			<Button name="$parentCancelBtn" inherits="TemplateBtn11" abs_x="150" abs_y="50">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentBarBkg">
+						<Offset>
+							<AbsDimension x="0" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level ="overlay">
+						<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$25806" abs_x="150" abs_y="15">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>						
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MapShareCancelBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>DeveloperQuickEntryShareMapProgressFrame_OnLoad();</OnLoad>
+			<OnEvent>DeveloperQuickEntryShareMapProgressFrame_OnEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

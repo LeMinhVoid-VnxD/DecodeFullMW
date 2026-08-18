@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/homeland/sell/HomelandSellModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/sell/HomelandSellView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/sell/HomelandSellCtrl.lua"/>
+
+	##出售商品模板
+	<Button name="HomelandSellGripTemplate" virtual="true" click_threshold="10" abs_x="146" abs_y="220">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="146" abs_y="174">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIconBkg" inherits="TemplateBigBkg15" abs_x="140" abs_y="139">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-1" y="3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentIcon" alphamode="alphablend" abs_x="86" abs_y="86">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="小庭院" abs_x="126" abs_y="17">
+					<Color r="101" g="116" b="118" />
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-9" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentCount" fonttype="BlackFont20" abs_x="100" abs_y="26" justifyH="right" text="99" hidden="false" fontStyle="shadow" shadowcolor="ff1e1e1e">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="13" y="1" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##数量背景
+				<Texture name="$parentNumEditBkg" inherits="TemplateBkg31" abs_x="111" abs_y="26">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##选中按钮
+			<Button name="$parentSelect" abs_x="41" abs_y="41">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="5" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_white"/>
+						<Texture name="$parentBkgChecked" file="ui/mobile/texture2/common.xml"  uvname="btn_circle_yellow" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="overlay">
+						<Texture name="$parentTick" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" hidden="false" abs_x="20" abs_y="15">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):SellItemSelectClicked()</OnClick>
+				</Scripts>
+			</Button>
+			<SafeEditBox name="$parentNumEdit" letters="15" multiLine="false" editMethod="2" editimetype="0" abs_x="111" abs_y="26">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentNumEditBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" justifyV="middle" textcolor="FF3D4546"/>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont20" justifyV="middle" text="1" textcolor="FF3D4546"/>
+				<Scripts>
+					<OnFocusLost>GetInst("UIManager"):GetCtrl("HomelandSell"):SellItemNumEdit_OnFocusLost()</OnFocusLost>
+				</Scripts>
+			</SafeEditBox>
+			##减号
+			<Button name="$parentDelBtn" abs_x="15" abs_y="26" hidden="false">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentNumEditBkg" >
+						<Offset>
+							<AbsDimension x="-8" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<NormalTexture name="$parentNormal"  file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" abs_x="15" abs_y="26">
+					<Angle value = "0" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" rel_x="0.9" rel_y="0.9" >
+					<Angle value = "0" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):DelBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##加号
+			<Button name="$parentAddBtn" abs_x="15" abs_y="26" hidden="false">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentNumEditBkg" >
+						<Offset>
+							<AbsDimension x="8" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<NormalTexture name="$parentNormal"  file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" abs_x="15" abs_y="26">
+					<Angle value = "180" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" rel_x="0.9" rel_y="0.9" >
+					<Angle value = "180" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):AddBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):SellItemBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	##家园商店出售
+	<Frame name="HomelandSell" parent="UIClient" frameStrata="HIGH" rel_x="1.0" rel_y="1.0" framelevel="1901" hidden="true">
+		<Anchors>
+			<Anchor point="center" relativeTo="$parent" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000" />
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentInfo" abs_x="972" abs_y="555">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg1" inherits="TemplateBigBkg8" abs_x="980" abs_y="504">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="53"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg2" inherits="TemplateBigBkg2" abs_x="978" abs_y="420">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="53"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<Texture name="$parentBoxBkg" inherits="TemplateBigBkg5" abs_x="954" abs_y="390">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="67"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentSellTips" fonttype="BlackFont24" abs_x="100" abs_y="26" justifyH="right" text="$41494" >
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-32" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentPriceIcon" file="items/minihomecoin.png" abs_x="40" abs_y="40" hidden="false">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentSellTips">
+									<Offset>
+										<AbsDimension x="5" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentPriceNum" fonttype="BlackFont24" abs_x="100" abs_y="26" justifyH="left" text="99999" >
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+									<Offset>
+										<AbsDimension x="5" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="974" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentInfo" relativePoint="top" />
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentInfo" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-11" y="-6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):CloseBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentEmpty" abs_x="500" abs_y="340">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentInfo" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="53" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentEmptyBkg" file="ui/mobile/texture2/bigtex/img_noreview.png">
+							<Size>
+								<AbsDimension x="220" y="229"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-25" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentEmptyTips" fonttype="BlackFont24" text="" justifyH="center" abs_x="500" abs_y="25">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyBkg">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##出售列表
+			<ListViewFrame name="$parentBox" abs_x="947" abs_y="370" slidingY="true" slideplane="$parentPlane">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentInfo" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="77" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="947" abs_y="370" hidden="true">
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+			##出售
+			<Button name="$parentSellBtn" inherits="TemplateBtn2">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentInfo" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-15" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="出售" abs_x="150" abs_y="25">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):SellBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			#全部选择
+			<Button name="$parentAllBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentInfo" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="15" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="全部选择" abs_x="150" abs_y="25">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):AllBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##全部取消
+			<Button name="$parentAllCancelBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentAllBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="全部取消" abs_x="150" abs_y="25">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandSell"):AllCancelBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

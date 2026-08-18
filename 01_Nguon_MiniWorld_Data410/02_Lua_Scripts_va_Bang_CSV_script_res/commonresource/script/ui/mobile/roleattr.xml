@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/roleattr.lua"/>
+	<Button name="CategoryBtnTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="212" y="50"/>
+		</Size>
+		<FontString name="$parentName" justifyH="center" justifyV="middle" fonttype="BlackFont20" text="全部" rel_x="0.9" rel_y="0.85">
+			<Color r="195" g="195" b="195"/>
+			<Anchors>
+				<Anchor point="center" relativePoint="center"/>
+			</Anchors>
+		</FontString>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBkg80" abs_x="212" abs_y="50" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon1" file="ui/mobile/texture2/backpack.xml" uvname="icon_sort_all" abs_x="22" abs_y="22">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="11" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon2" file="ui/mobile/texture2/backpack.xml" uvname="icon_sort_all" abs_x="22" abs_y="22" hidden="true">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-11" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLine" inherits="TemplateBkg36" abs_x="212" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>CategoryBtnTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	
+	##tab按钮模板
+	<Button name="RoleattrTabBtnTemplate" inherits="TemplateTabBtn2" virtual="true" framelevel="1000">
+		<Scripts>
+			<OnClick>RoleattrTabBtnTemplate_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##玩家基础属性: 条目模板
+	<Button name="PlayerAttrItemTemplate" abs_x="251" abs_y="40" virtual="true">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentChecked" inherits="TemplateBkg80" abs_x="236" abs_y="40" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" />
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_atk" abs_x="17" abs_y="17">
+					<Anchors>
+						<Anchor point="center" relativePoint="left">
+							<Offset>
+								<AbsDimension x="21" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont18" abs_x="150" abs_y="18">
+					<Color r="223" g="219" b="201"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="36" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentValue" justifyH="left" fonttype="BlackFont18" abs_x="80" abs_y="18">
+					<Color r="223" g="219" b="201"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="120" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentArrayIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_more_tips" abs_x="8" abs_y="10" hidden="true">
+					<Anchors>
+						<Anchor point="right" relativePoint="right">
+							<Offset>
+								<AbsDimension x="-10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>PlayerBaseAttrSetter:OnItemClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##玩家基础属性: 组模板
+	<Frame name="PlayerAttrGroupTemplate" abs_x="251" abs_y="110" virtual="true">
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont" lineInterval="2" abs_x="150" abs_y="16">
+					<Color r="185" g="185" b="185"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="7" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentItem1" inherits="PlayerAttrItemTemplate" id="1"/>
+			<Button name="$parentItem2" inherits="PlayerAttrItemTemplate" id="2"/>
+			<Button name="$parentItem3" inherits="PlayerAttrItemTemplate" id="3"/>
+			<Button name="$parentItem4" inherits="PlayerAttrItemTemplate" id="4"/>
+		</Frames>
+	</Frame>
+
+	#主大UI框
+	<Frame name="RoleAttrFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="500">
+		<Layers>
+			<Layer level="background">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1077" abs_y="626">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="56" y="25"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##角色
+			<Frame name="RoleFrame" hidden="true" abs_x="1075" abs_y="626">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkgWhite" abs_x="1075" abs_y="498" inherits="TemplateBigBkg2">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentVipIcon1" file="ui/mobile/texture2/vipicon.xml" uvname="vip_qq_blue_1" abs_x="22" abs_y="21">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="36" y="14"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentVipIcon2" file="ui/mobile/texture2/vipicon.xml" uvname="vip_qq_blue_1" abs_x="22" abs_y="21">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="58" y="14"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont24" lineInterval="2" text="名字最多七个字" abs_x="188" abs_y="25">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="200" y="23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##星星
+						<Texture name="$parentStarNumBkg" inherits="TemplateLevelBarBkg1" abs_x="120" abs_y="26">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="32" y="22"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentStarNumPro" inherits="TemplateLevelBarProOrange" abs_x="120" abs_y="26">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentStarNumBkg" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentStarBkg" file="ui/mobile/texture2/operate.xml" uvname="juese_xingxing05" abs_x="40" abs_y="42">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentStarNumBkg">
+									<Offset>
+										<AbsDimension x="-28" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentStarNum" fonttype="BlackFont22" justifyH="center" text="1000" abs_x="100" abs_y="22">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentStarNumBkg" />
+							</Anchors>
+						</FontString>
+						##模型
+						<Texture name="$parentShadow" file="ui/mobile/texture2/outgame2/uitex.xml" uvname="juese_yinying.png" abs_x="216" abs_y="57">
+							<Anchors>
+								<Anchor point="center" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="270" y="405"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<ModelView name="$parentEquipActorView" abs_x="340" abs_y="490">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parentShadow" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="65" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+							<ModelView name="$parentBkgEffect" abs_x="100" abs_y="100">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentShadow" >
+									<Offset>
+										<AbsDimension x="0" y="-120"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+						<Size>
+							<AbsDimension x="1072" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlap">
+								<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" text="$16289" shadowcolor="4D352C28">
+									<Color r="255" g="135" b="27"/>
+									<Size>
+										<AbsDimension x="300" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="33" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="59" abs_y="59">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-499" y="-4"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					##关闭按钮
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="46" y="60"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentHead">
+								<Offset>
+									<AbsDimension x="-10" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>RoleAttrFrameCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##装备				
+					<Frame name="$parentEquip" abs_x="540" abs_y="503">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+						</Anchors>
+						<Frames>
+							<Button name="$parentGrid1" inherits="GridButtonTemplate1" id="8001">
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentBkgIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_hat.png" abs_x="68" abs_y="66">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentGrid2" inherits="GridButtonTemplate1" id="8002">
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentBkgIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_cloth.png" abs_x="59" abs_y="58">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentGrid3" inherits="GridButtonTemplate1" id="8003">
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentBkgIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_hands.png" abs_x="66" abs_y="65">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentGrid4" inherits="GridButtonTemplate1" id="8004">
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentBkgIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_shoes.png" abs_x="58" abs_y="50">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentGrid5" inherits="GridButtonTemplate1" id="8005">
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentBkgIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_cloak.png" abs_x="56" abs_y="57">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentGrid6" inherits="GridButtonTemplate1" id="8006">
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentBkgIcon" file="ui/mobile/texture2/backpack.xml" uvname="icon_pets.png" abs_x="58" abs_y="71">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Button>
+						</Frames>
+					</Frame>
+					##防御
+					<Frame name="$parentArmor" abs_x="50" abs_y="53">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentEquip">
+								<Offset>
+									<AbsDimension x="43" y="-16" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" abs_x="50" abs_y="53" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mine.png" abs_x="30" abs_y="30">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentVal" fonttype="BlackFont22" justifyH="center" text="×300" abs_x="100" abs_y="22" hidden="true">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parent" />
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<!-- <IconBar name="$parentBar" iconnum="10" direction="0" spacing="5" icontexture="ui/mobile/texture2/outgame2/uitex.png" file="ui/mobile/texture2/outgame2/uitex.xml" bgicon="0" quantityicon1="1" quantityicon2="1" quantityicon3="1" quantityicon4="2" input_transparent="true" hidden="true">
+								<Size>
+									<AbsDimension x="300" y="42"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parentTitle">
+										<Offset>
+											<AbsDimension x="81" y="5" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Icon id="0" uvname="juese_dunpai03.png"/>
+								<Icon id="1" uvname="juese_dunpai02.png"/>
+								<Icon id="2" uvname="juese_dunpai.png"/>
+							</IconBar> -->
+						</Frames>
+						<Scripts>
+							<OnClick>RoleFrameArmor_OnClick();</OnClick>
+						</Scripts>
+					</Frame>
+
+					##自定义装备:使用、禁用avator按钮
+					<Button name="$parentAvatorBtn" hidden="true" abs_x="52" abs_y="54">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentEquip">
+								<Offset>
+									<AbsDimension x="-46" y="16" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers level="BACKGROUND">
+							<Layer>
+								<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray" />
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/common_icon.xml" uvname="icon_dress_open.png" abs_x="40" abs_y="40">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/common_icon.xml" uvname="icon_dress_open.png" abs_x="36" abs_y="36">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("ModsLibEditorItemPartMgr"):AvatorBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##特长按钮
+					<Button name="$parentGeniusBtn" abs_x="50" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentArmor">
+								<Offset>
+									<AbsDimension x="350" y="-6" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormalBkg" file="items/Genius_icon00.png" rel_x = "1.0" rel_y = "1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBkg" file="items/Genius_icon00.png" rel_x = "0.9" rel_y = "0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>RoleFrame_GeniusBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##提示
+					<Button name="$parentArmorTips" hidden="true" abs_x="375" abs_y="160">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentArmor">
+								<Offset>
+									<AbsDimension x="5" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentTipsBkg" inherits="TemplateBigBkg19"/>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont" input_transparent="true" abs_x="360" abs_y="136">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="12" y="17"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+						<Scripts>
+							<OnClick>RoleFrameArmorTips_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##模型
+					<Button name="$parentRotateView" abs_x="288" abs_y="330">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentEquip" relativePoint="center" />
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>RoleFrameRotateView_OnMouseDown();</OnMouseDown>
+							<OnMouseMove>RoleFrameRotateView_OnMouseMove();</OnMouseMove>
+							<OnMouseUp>RoleFrameRotateView_OnMouseUp();</OnMouseUp>
+						</Scripts>
+					</Button>
+					##背包格子
+					<Frame name="$parentBackpack" abs_x="512" abs_y="490">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-19" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="512" abs_y="425">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentGrid1" inherits="GridButtonTemplate2" id="1"/>
+							<Button name="$parentGrid2" inherits="GridButtonTemplate2" id="2"/>
+							<Button name="$parentGrid3" inherits="GridButtonTemplate2" id="3"/>
+							<Button name="$parentGrid4" inherits="GridButtonTemplate2" id="4"/>
+							<Button name="$parentGrid5" inherits="GridButtonTemplate2" id="5"/>
+							<Button name="$parentGrid6" inherits="GridButtonTemplate2" id="6"/>
+							<Button name="$parentGrid7" inherits="GridButtonTemplate2" id="7"/>
+							<Button name="$parentGrid8" inherits="GridButtonTemplate2" id="8"/>
+							<Button name="$parentGrid9" inherits="GridButtonTemplate2" id="9"/>
+							<Button name="$parentGrid10" inherits="GridButtonTemplate2" id="10"/>
+							<Button name="$parentGrid11" inherits="GridButtonTemplate2" id="11"/>
+							<Button name="$parentGrid12" inherits="GridButtonTemplate2" id="12"/>
+							<Button name="$parentGrid13" inherits="GridButtonTemplate2" id="13"/>
+							<Button name="$parentGrid14" inherits="GridButtonTemplate2" id="14"/>
+							<Button name="$parentGrid15" inherits="GridButtonTemplate2" id="15"/>
+							<Button name="$parentGrid16" inherits="GridButtonTemplate2" id="16"/>
+							<Button name="$parentGrid17" inherits="GridButtonTemplate2" id="17"/>
+							<Button name="$parentGrid18" inherits="GridButtonTemplate2" id="18"/>
+							<Button name="$parentGrid19" inherits="GridButtonTemplate2" id="19"/>
+							<Button name="$parentGrid20" inherits="GridButtonTemplate2" id="20"/>
+							<Button name="$parentGrid21" inherits="GridButtonTemplate2" id="21"/>
+							<Button name="$parentGrid22" inherits="GridButtonTemplate2" id="22"/>
+							<Button name="$parentGrid23" inherits="GridButtonTemplate2" id="23"/>
+							<Button name="$parentGrid24" inherits="GridButtonTemplate2" id="24"/>
+							<Button name="$parentGrid25" inherits="GridButtonTemplate2" id="25"/>
+							<Button name="$parentGrid26" inherits="GridButtonTemplate2" id="26"/>
+							<Button name="$parentGrid27" inherits="GridButtonTemplate2" id="27"/>
+							<Button name="$parentGrid28" inherits="GridButtonTemplate2" id="28"/>
+							<Button name="$parentGrid29" inherits="GridButtonTemplate2" id="29"/>
+							<Button name="$parentGrid30" inherits="GridButtonTemplate2" id="30"/>
+							##分类
+							<Button name="$parentCategoryBtn" abs_x="216" abs_y="46">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="8" y="8"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$812" abs_x="216" abs_y="46">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentSelect" inherits="TemplateBkg28" abs_x="46" abs_y="46" hidden="true">
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+											</Anchors>
+										</Texture>
+										<Texture name="$parentArrow" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" abs_x="20" abs_y="10">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentSelect" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" inherits="TemplateBkg8" />
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBkg8">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>RoleFrameBackpackCategoryBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							##整理
+							<Button name="$parentSortBtn" abs_x="130" abs_y="50" inherits="TemplateBtn12">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentCategoryBtn" relativePoint="right">
+										<Offset>
+											<AbsDimension x="92" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" justifyH="center" fonttype="BlackFont20" abs_x="130" abs_y="20" text="$811">
+											<Color r="51" g="55" b="55"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>RoleFrameBackpackSortBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnMouseDown platform="pc">RoleFrameBackpack_OnMouseDown()</OnMouseDown>
+						</Scripts>
+					</Frame>
+					##快捷栏
+					<Frame name="$parentShortcut" abs_x="1075" abs_y="123">
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom" />
+						</Anchors>
+						<Frames>
+							<Button name="$parentGrid1" inherits="CreateBackpack_GridButtomTemplate" id="1001" />
+							<Button name="$parentGrid2" inherits="CreateBackpack_GridButtomTemplate" id="1002" />
+							<Button name="$parentGrid3" inherits="CreateBackpack_GridButtomTemplate" id="1003" />
+							<Button name="$parentGrid4" inherits="CreateBackpack_GridButtomTemplate" id="1004" />
+							<Button name="$parentGrid5" inherits="CreateBackpack_GridButtomTemplate" id="1005" />
+							<Button name="$parentGrid6" inherits="CreateBackpack_GridButtomTemplate" id="1006" />
+							<Button name="$parentGrid7" inherits="CreateBackpack_GridButtomTemplate" id="1007" />
+							<Button name="$parentGrid8" inherits="CreateBackpack_GridButtomTemplate" id="1008" />
+						</Frames>
+					</Frame>
+					##分类菜单
+					<Frame name="$parentCategoryFrame" hidden="true">
+						<Size>
+							<AbsDimension x="1090" y="597"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativeTo="$parent" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="63"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="216" abs_y="236">
+									<Anchors>
+										<Anchor point="top" relativeTo="RoleFrameBackpackCategoryBtn" relativePoint="bottom">
+											<Offset>
+												<AbsDimension y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentType1" inherits="CategoryBtnTemplate" id="1"/>
+							<Button name="$parentType2" inherits="CategoryBtnTemplate" id="2"/>
+							<Button name="$parentType3" inherits="CategoryBtnTemplate" id="3"/>
+							<Button name="$parentType4" inherits="CategoryBtnTemplate" id="4"/>
+							<Button name="$parentType5" inherits="CategoryBtnTemplate" id="5"/>
+						</Frames>
+						<Scripts>
+							<OnShow>RoleFrameCategoryFrame_OnShow();</OnShow>
+							<OnClick>RoleFrameCategoryFrame_OnClick();</OnClick>
+						</Scripts>
+					</Frame>
+					##喷漆道具
+					<Button name="$parentPaintGrid" abs_x="105" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="7" y="-70"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="parentBg" virtual="true" file="ui/mobile/texture0/operate.xml" uvname="img_icon_fixed.png" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+									<Size>
+										<AbsDimension x="58" y="56"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="items/apple.png" alphamode="alphablend">
+									<Size>
+										<AbsDimension x="56" y="56"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentCheck" inherits="TemplateBkg71" hidden="true" abs_x="58" abs_y="56">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden ="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-20" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick platform="mobile">BackPackPaint_OnMouseDown_Mobile();</OnClick>
+							<OnMouseDown platform="mobile">GridButtonTemplate2_OnMouseDown();</OnMouseDown>
+							<OnMouseUp platform="mobile">GridButtonTemplate2_OnMouseUp();</OnMouseUp>
+							<MouseDownUpdate platform="mobile">GridButtonTemplate2_OnMouseDownUpdate();</MouseDownUpdate>
+							<OnMouseDown platform="pc">BackPackPaint_OnMouseDown_PC()</OnMouseDown>
+							<OnMouseUp platform="pc">GridButtonTemplate2_OnMouseUp_PC()</OnMouseUp>
+							<OnEnter platform="pc">GridButtonTemplate2_OnMouseEnter_PC()</OnEnter>
+							<OnEnterUpdate platform="pc">GridButtonTemplate2_OnEnterUpdate_PC()</OnEnterUpdate>
+							<OnLeave platform="pc">GridButtonTemplate2_OnMouseLeave_PC()</OnLeave>
+						</Scripts>
+					</Button>
+					<Button name="$parentCreateBackPackBtn" abs_x="81" abs_y="81">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentShortcut" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-27" y="-9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap" abs_x="39" abs_y="34">
+									<Anchors>
+										<Anchor point="top" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="11"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" justifyH="center" fonttype="BlackFont18" text="$419">
+									<Color r="55" g="54" b="49"/>
+									<Size>
+										<AbsDimension x="81" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg56" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg56">
+							<Size>
+								<AbsDimension x="78" y="78"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>RoleFrameCreateBackPackBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+
+					##等级经验条
+					<Frame name="$parentLevelBar" hidden="true" abs_x="322" abs_y="16">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentEquip">
+								<Offset>
+									<AbsDimension x="0" y="-30" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateLevelBarBkg1" color="80FFFFFF" abs_x="322" abs_y="16" />
+								<Texture name="$parentPro" inherits="TemplateLevelBarProGreen" abs_x="322" abs_y="14">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentBkg" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentFlag" file="ui/mobile/texture2/operate.xml" uvname="img_progress_bar_yellow.png" abs_x="4" abs_y="14">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parentPro">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentRate" fonttype="BlackFont" fontStyle="border" justifyH="center" abs_x="150" abs_y="16">
+									<Color r="254" g="248" b="220"/>
+									<Anchors>
+										<Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+									</Anchors>
+								</FontString>
+								<FontString name="$parentLevel" fonttype="BlackFont20" fontStyle="border" justifyH="center" abs_x="100" abs_y="20">
+									<Color r="254" g="248" b="220"/>
+									<Anchors>
+										<Anchor point="top" relativeTo="$parentBkg" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+
+					##基础属性: 攻击、防御、速度
+					<Frame name="$parentBaseAttr" hidden="true" abs_x="251" abs_y="304">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentArmor">
+								<Offset>
+									<AbsDimension x="5" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentTipsBkg" inherits="TemplateBigBkg19"/>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentGroup1" inherits="PlayerAttrGroupTemplate" id="1"/>
+							<Frame name="$parentGroup2" inherits="PlayerAttrGroupTemplate" id="2"/>
+							<Frame name="$parentGroup3" inherits="PlayerAttrGroupTemplate" id="3"/>
+
+							#详情页
+							<Frame name="$parentDetailFrame" abs_x="224" abs_y="173" inherits="PlayerAttrGroupTemplate" hidden="true">
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentTipsBkg" inherits="TemplateBigBkg19"/>
+									</Layer>
+								</Layers>
+							</Frame>
+						</Frames>
+					</Frame>
+				</Frames>
+				<Scripts>
+					<OnLoad>RoleFrame_OnLoad();</OnLoad>
+					<OnEvent>RoleFrame_OnEvent();</OnEvent>
+					<OnUpdate>RoleFrame_OnUpdate();</OnUpdate>
+					<OnShow>RoleFrame_OnShow();</OnShow>
+					<OnHide>RoleFrame_OnHide();</OnHide>
+				</Scripts>
+			</Frame>
+						
+			#合成
+			<Frame name="BackpackFrameMakeFrame" hidden="true" abs_x="1079" abs_y="626">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg2">
+							<Size>
+								<RelDimension x="1.0" y="1.0"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg1" inherits="TemplateBigBkg5">
+							<Size>
+								<AbsDimension x="523" y="518"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="29" y="15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPartitionLine" inherits="TemplateBkg14">
+							<Size>
+								<AbsDimension x="11" y="618"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentBkg1">
+									<Offset>
+										<AbsDimension x="20" y="-15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<Texture name="$parentBkg2" inherits="TemplateBigBkg5">
+							<Size>
+								<AbsDimension x="399" y="291"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-60" y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<Texture name="$parentBkg3" inherits="TemplateBigBkg5">
+							<Size>
+								<AbsDimension x="399" y="108"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg2">
+									<Offset>
+										<AbsDimension x="0" y="37"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<Texture name="$parentBkg4" inherits="TemplateBigBkg15" hidden="true">
+							<Size>
+								<AbsDimension x="390" y="78"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg2">
+									<Offset>
+										<AbsDimension x="0" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						#当前材料可制作
+						<FontString name="$parentLeftTips" justifyH="center" fonttype="BlackFont28" lineInterval="2">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="460" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg1">
+									<Offset>
+										<AbsDimension x="0" y="-19"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						#需要 种材料
+						<FontString name="$parentRightTips1" justifyH="center" fonttype="BlackFont21" lineInterval="2">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="160" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg2">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						#箭头
+						<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml" uvname="img_frame_arrow" UVType="turn90">
+							<Size>
+								<AbsDimension x="36" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg2">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						
+						#名字
+						<FontString name="$parentName" fonttype="BlackFont24" lineInterval="2" justifyH="left" text="" fontStyle="border">
+							<Color r="217" g="108" b="0"/>
+							<Size>
+								<AbsDimension x="150" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="910" y="458"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<Texture name="$parentEffect" file="ui/mobile/effect/achievement_award_3.png" hidden="true">
+							<Angle value="-20" />
+							<Size>
+								<AbsDimension x="150" y="270"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="740" y="448"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<UVAnimation texrows="2" texcols="4" />
+						</Texture>
+						<Texture name="$parentNumBg" inherits="TemplateBkg8" abs_x="117" abs_y="36">
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentBkg3" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+						<Size>
+							<AbsDimension x="1075" y="61"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								<FontString name="$parentTitle" fonttype="BlackFont36" text="$808" shadowcolor="4D352C28">
+									<Color r="255" g="135" b="27"/>
+									<Size>
+										<AbsDimension x="300" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left">
+											<Offset>
+												<AbsDimension x="33" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					##关闭按钮
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="46" y="60"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentHead">
+								<Offset>
+									<AbsDimension x="-10" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>RoleAttrFrameCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					## wiki按钮
+					<Button name="$parentOpenWikiBtn" abs_x="35" abs_y="35" hidden="true">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentHead" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-95"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/common_icon.xml" uvname="icon_wiki_big.png"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/common_icon.xml" uvname="icon_wiki_big.png">
+							<Size>
+								<RelDimension x="0.9" y="0.9" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>BackpackFrameMakeFrameOpenWikiBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<RichText name="$parentRightTips" lineInterval="1" multiLine="false" fonttype="BlackFont21" autoextend="true" hidden="false">
+						<Size>
+							<AbsDimension x="132" y="22" />
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkg2" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="8" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					<RichText name="$parentItemDesc" lineInterval="2" multiLine="false" fonttype="BlackFont24" fontStyle="border" autoextend="true" hidden="true">
+						<Size>
+							<AbsDimension x="210" y="88" />
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentName" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+
+					<Button name="$parentStuffGrid1" inherits="PackGridBtnTemplate2" id="2001" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+								<Offset>
+									<AbsDimension x="11" y="35"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont21" justifyH="left" text="苹果">
+									<Color r="61" g="69" b="70"/>
+									<Size>
+										<AbsDimension x="105" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="" autowrap="true">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="110" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="23"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<Button name="$parentStuffGrid2" inherits="PackGridBtnTemplate2" id="2002" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentStuffGrid1">
+								<Offset>
+									<AbsDimension x="190" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont21" justifyH="left" text="苹果">
+									<Color r="98" g="65" b="48"/>
+									<Size>
+										<AbsDimension x="105" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="" autowrap="true">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="110" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="23"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<Button name="$parentStuffGrid3" inherits="PackGridBtnTemplate2" id="2003" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentStuffGrid1">
+								<Offset>
+									<AbsDimension x="0" y="85"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont21" justifyH="left" text="苹果">
+									<Color r="98" g="65" b="48"/>
+									<Size>
+										<AbsDimension x="105" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="" autowrap="true">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="110" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="23"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<Button name="$parentStuffGrid4" inherits="PackGridBtnTemplate2" id="2004" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentStuffGrid3">
+								<Offset>
+									<AbsDimension x="190" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont21" justifyH="left" text="苹果">
+									<Color r="98" g="65" b="48"/>
+									<Size>
+										<AbsDimension x="105" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="" autowrap="true">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="110" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="23"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<Button name="$parentStuffGrid5" inherits="PackGridBtnTemplate2" id="2005" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentStuffGrid3">
+								<Offset>
+									<AbsDimension x="0" y="85"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont21" justifyH="left" text="苹果">
+									<Color r="98" g="65" b="48"/>
+									<Size>
+										<AbsDimension x="105" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="" autowrap="true">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="110" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="23"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<Button name="$parentStuffGrid6" inherits="PackGridBtnTemplate2" id="2006" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentStuffGrid5">
+								<Offset>
+									<AbsDimension x="190" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont21" justifyH="left" text="苹果">
+									<Color r="98" g="65" b="48"/>
+									<Size>
+										<AbsDimension x="105" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" text="" autowrap="true">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="110" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="0" y="23"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<SlidingFrame name="$parentResultDesc" slidingY="true" slideplane="$parentResultPlane" abs_x="300" abs_y="75">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="714" y="406" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentResultPlane" hidden="true" abs_x="300" abs_y="200"/>
+							<RichText name="$parentText" lineInterval="2" multiLine="true" fonttype="BlackFont20">
+								<Size>
+									<AbsDimension x="300" y="200" />
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentResultPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+					</SlidingFrame>
+					<Button name="$parentMakeResult" inherits="PackGridBtnTemplate2" id="2007" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentBkg3">
+								<Offset>
+									<AbsDimension x="12" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="苹果">
+									<Color r="61" g="69" b="70"/>
+									<Size>
+										<AbsDimension x="200" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="152" y="-14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+
+						</Layers>
+
+					</Button>
+					#可合成物品的100个小格子
+					<SlidingFrame name="MiniProductBox" slidingY="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="488" y="490"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="488" y="1500"/>
+								</Size>
+							</Frame>
+							<Button name="$parentItem1" inherits="PackGridBtnTemplate2" id="10001"/>
+							<Button name="$parentItem2" inherits="PackGridBtnTemplate2" id="10002"/>
+							<Button name="$parentItem3" inherits="PackGridBtnTemplate2" id="10003"/>
+							<Button name="$parentItem4" inherits="PackGridBtnTemplate2" id="10004"/>
+							<Button name="$parentItem5" inherits="PackGridBtnTemplate2" id="10005"/>
+							<Button name="$parentItem6" inherits="PackGridBtnTemplate2" id="10006"/>
+							<Button name="$parentItem7" inherits="PackGridBtnTemplate2" id="10007"/>
+							<Button name="$parentItem8" inherits="PackGridBtnTemplate2" id="10008"/>
+							<Button name="$parentItem9" inherits="PackGridBtnTemplate2" id="10009"/>
+							<Button name="$parentItem10" inherits="PackGridBtnTemplate2" id="10010"/>
+							<Button name="$parentItem11" inherits="PackGridBtnTemplate2" id="10011"/>
+							<Button name="$parentItem12" inherits="PackGridBtnTemplate2" id="10012"/>
+							<Button name="$parentItem13" inherits="PackGridBtnTemplate2" id="10013"/>
+							<Button name="$parentItem14" inherits="PackGridBtnTemplate2" id="10014"/>
+							<Button name="$parentItem15" inherits="PackGridBtnTemplate2" id="10015"/>
+							<Button name="$parentItem16" inherits="PackGridBtnTemplate2" id="10016"/>
+							<Button name="$parentItem17" inherits="PackGridBtnTemplate2" id="10017"/>
+							<Button name="$parentItem18" inherits="PackGridBtnTemplate2" id="10018"/>
+							<Button name="$parentItem19" inherits="PackGridBtnTemplate2" id="10019"/>
+							<Button name="$parentItem20" inherits="PackGridBtnTemplate2" id="10020"/>
+							<Button name="$parentItem21" inherits="PackGridBtnTemplate2" id="10021"/>
+							<Button name="$parentItem22" inherits="PackGridBtnTemplate2" id="10022"/>
+							<Button name="$parentItem23" inherits="PackGridBtnTemplate2" id="10023"/>
+							<Button name="$parentItem24" inherits="PackGridBtnTemplate2" id="10024"/>
+							<Button name="$parentItem25" inherits="PackGridBtnTemplate2" id="10025"/>
+							<Button name="$parentItem26" inherits="PackGridBtnTemplate2" id="10026"/>
+							<Button name="$parentItem27" inherits="PackGridBtnTemplate2" id="10027"/>
+							<Button name="$parentItem28" inherits="PackGridBtnTemplate2" id="10028"/>
+							<Button name="$parentItem29" inherits="PackGridBtnTemplate2" id="10029"/>
+							<Button name="$parentItem30" inherits="PackGridBtnTemplate2" id="10030"/>
+							<Button name="$parentItem31" inherits="PackGridBtnTemplate2" id="10031"/>
+							<Button name="$parentItem32" inherits="PackGridBtnTemplate2" id="10032"/>
+							<Button name="$parentItem33" inherits="PackGridBtnTemplate2" id="10033"/>
+							<Button name="$parentItem34" inherits="PackGridBtnTemplate2" id="10034"/>
+							<Button name="$parentItem35" inherits="PackGridBtnTemplate2" id="10035"/>
+							<Button name="$parentItem36" inherits="PackGridBtnTemplate2" id="10036"/>
+							<Button name="$parentItem37" inherits="PackGridBtnTemplate2" id="10037"/>
+							<Button name="$parentItem38" inherits="PackGridBtnTemplate2" id="10038"/>
+							<Button name="$parentItem39" inherits="PackGridBtnTemplate2" id="10039"/>
+							<Button name="$parentItem40" inherits="PackGridBtnTemplate2" id="10040"/>
+							<Button name="$parentItem41" inherits="PackGridBtnTemplate2" id="10041"/>
+							<Button name="$parentItem42" inherits="PackGridBtnTemplate2" id="10042"/>
+							<Button name="$parentItem43" inherits="PackGridBtnTemplate2" id="10043"/>
+							<Button name="$parentItem44" inherits="PackGridBtnTemplate2" id="10044"/>
+							<Button name="$parentItem45" inherits="PackGridBtnTemplate2" id="10045"/>
+							<Button name="$parentItem46" inherits="PackGridBtnTemplate2" id="10046"/>
+							<Button name="$parentItem47" inherits="PackGridBtnTemplate2" id="10047"/>
+							<Button name="$parentItem48" inherits="PackGridBtnTemplate2" id="10048"/>
+							<Button name="$parentItem49" inherits="PackGridBtnTemplate2" id="10049"/>
+							<Button name="$parentItem50" inherits="PackGridBtnTemplate2" id="10050"/>
+							<Button name="$parentItem51" inherits="PackGridBtnTemplate2" id="10051"/>
+							<Button name="$parentItem52" inherits="PackGridBtnTemplate2" id="10052"/>
+							<Button name="$parentItem53" inherits="PackGridBtnTemplate2" id="10053"/>
+							<Button name="$parentItem54" inherits="PackGridBtnTemplate2" id="10054"/>
+							<Button name="$parentItem55" inherits="PackGridBtnTemplate2" id="10055"/>
+							<Button name="$parentItem56" inherits="PackGridBtnTemplate2" id="10056"/>
+							<Button name="$parentItem57" inherits="PackGridBtnTemplate2" id="10057"/>
+							<Button name="$parentItem58" inherits="PackGridBtnTemplate2" id="10058"/>
+							<Button name="$parentItem59" inherits="PackGridBtnTemplate2" id="10059"/>
+							<Button name="$parentItem60" inherits="PackGridBtnTemplate2" id="10060"/>
+							<Button name="$parentItem61" inherits="PackGridBtnTemplate2" id="10061"/>
+							<Button name="$parentItem62" inherits="PackGridBtnTemplate2" id="10062"/>
+							<Button name="$parentItem63" inherits="PackGridBtnTemplate2" id="10063"/>
+							<Button name="$parentItem64" inherits="PackGridBtnTemplate2" id="10064"/>
+							<Button name="$parentItem65" inherits="PackGridBtnTemplate2" id="10065"/>
+							<Button name="$parentItem66" inherits="PackGridBtnTemplate2" id="10066"/>
+							<Button name="$parentItem67" inherits="PackGridBtnTemplate2" id="10067"/>
+							<Button name="$parentItem68" inherits="PackGridBtnTemplate2" id="10068"/>
+							<Button name="$parentItem69" inherits="PackGridBtnTemplate2" id="10069"/>
+							<Button name="$parentItem70" inherits="PackGridBtnTemplate2" id="10070"/>
+							<Button name="$parentItem71" inherits="PackGridBtnTemplate2" id="10071"/>
+							<Button name="$parentItem72" inherits="PackGridBtnTemplate2" id="10072"/>
+							<Button name="$parentItem73" inherits="PackGridBtnTemplate2" id="10073"/>
+							<Button name="$parentItem74" inherits="PackGridBtnTemplate2" id="10074"/>
+							<Button name="$parentItem75" inherits="PackGridBtnTemplate2" id="10075"/>
+							<Button name="$parentItem76" inherits="PackGridBtnTemplate2" id="10076"/>
+							<Button name="$parentItem77" inherits="PackGridBtnTemplate2" id="10077"/>
+							<Button name="$parentItem78" inherits="PackGridBtnTemplate2" id="10078"/>
+							<Button name="$parentItem79" inherits="PackGridBtnTemplate2" id="10079"/>
+							<Button name="$parentItem80" inherits="PackGridBtnTemplate2" id="10080"/>
+							<Button name="$parentItem81" inherits="PackGridBtnTemplate2" id="10081"/>
+							<Button name="$parentItem82" inherits="PackGridBtnTemplate2" id="10082"/>
+							<Button name="$parentItem83" inherits="PackGridBtnTemplate2" id="10083"/>
+							<Button name="$parentItem84" inherits="PackGridBtnTemplate2" id="10084"/>
+							<Button name="$parentItem85" inherits="PackGridBtnTemplate2" id="10085"/>
+							<Button name="$parentItem86" inherits="PackGridBtnTemplate2" id="10086"/>
+							<Button name="$parentItem87" inherits="PackGridBtnTemplate2" id="10087"/>
+							<Button name="$parentItem88" inherits="PackGridBtnTemplate2" id="10088"/>
+							<Button name="$parentItem89" inherits="PackGridBtnTemplate2" id="10089"/>
+							<Button name="$parentItem90" inherits="PackGridBtnTemplate2" id="10090"/>
+							<Button name="$parentItem91" inherits="PackGridBtnTemplate2" id="10091"/>
+							<Button name="$parentItem92" inherits="PackGridBtnTemplate2" id="10092"/>
+							<Button name="$parentItem93" inherits="PackGridBtnTemplate2" id="10093"/>
+							<Button name="$parentItem94" inherits="PackGridBtnTemplate2" id="10094"/>
+							<Button name="$parentItem95" inherits="PackGridBtnTemplate2" id="10095"/>
+							<Button name="$parentItem96" inherits="PackGridBtnTemplate2" id="10096"/>
+							<Button name="$parentItem97" inherits="PackGridBtnTemplate2" id="10097"/>
+							<Button name="$parentItem98" inherits="PackGridBtnTemplate2" id="10098"/>
+							<Button name="$parentItem99" inherits="PackGridBtnTemplate2" id="10099"/>
+							<Button name="$parentItem100" inherits="PackGridBtnTemplate2" id="10100"/>
+						</Frames>
+					</SlidingFrame>
+					<!-- 数量编辑框 -->
+					<SafeEditBox name="$parentEdit" letters="9" multiLine="false" editimetype="0"  editMethod = "2" abs_x="150" abs_y="25" cursorColor="ff3d4546">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkg3" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" justifyV = "middle" text = "1">
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentBkg3" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>PackFrameMake_MakeNumLostFocus()</OnFocusLost>
+						</Scripts>
+					</SafeEditBox>
+					<Button name="$parentnDecreaseBtn" inherits="TemplateLeftArrowBtn1" abs_x="21" abs_y="37">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkg3" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="-103" y="3"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>PackFrameMake_DecreaseOnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentIncreaseBtn" inherits="TemplateRightArrowBtn1" abs_x="21" abs_y="37">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkg3" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="90" y="3"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>PackFrameMake_IncreaseOnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##最大制作数量按钮
+					<Button name="$parentMaxBtn" abs_x="40" abs_y="40">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="965" y="-100"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_maximum_orange" abs_x="29.6" abs_y="36.8">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<AbsDimension x="0" y="0"/>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_maximum_orange" abs_x="23.68" abs_y="29.44">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<AbsDimension x="0" y="0"/>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>PackFrameMake_MaxMakeNumClick()</OnClick>
+						</Scripts>
+					</Button>
+					#制作按钮
+					<Button name="$parentMakeBtn" click_threshold="5" inherits="TemplateBtn3">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkg3" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="45"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" lineInterval="2" text="$3084">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="145" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>PackFrameMakeBtn_OnClick();</OnClick>
+							<MouseDownUpdate>PackFrameMakeBtn_OnMouseDownUpdate();</MouseDownUpdate>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnLoad>MakeFrame_OnLoad();</OnLoad>
+					<OnShow>MakeFrame_OnShow();</OnShow>
+					<OnHide>MakeFrame_OnHide();</OnHide>
+					<OnEvent>MakeFrame_OnEvent();</OnEvent>
+				</Scripts>
+			</Frame>
+
+			<Button name="$parentStashBtn">
+				<Size>
+					<AbsDimension x="76" y="79"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="-20" y="-25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_box" abs_x="40" abs_y="35">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3056" abs_x="100" abs_y="26">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray">
+					<Size>
+						<RelDimension x="0.9" y="0.9" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>RoleAttrFrameStashBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="TaskSystemFrame" hidden="true" abs_x="1" abs_y="1">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					
+				</Layers>
+				<Frames>
+					
+				</Frames>
+			</Frame>
+
+			##tab按钮
+			<Button name="$parentLabelBtn1" inherits="RoleattrTabBtnTemplate" id="1">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="5" y="87"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentLabelBtn2" inherits="RoleattrTabBtnTemplate" id="2">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentLabelBtn1">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentLabelBtn3" inherits="RoleattrTabBtnTemplate" id="3">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentLabelBtn2">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnShow>RoleAttrFrame_OnShow();</OnShow>
+			<OnHide>RoleAttrFrame_OnHide();</OnHide>
+			<OnMouseDown platform="pc">RoleAttrFrame_OnMouseDown()</OnMouseDown>
+		</Scripts>
+	</Frame>
+</Ui>

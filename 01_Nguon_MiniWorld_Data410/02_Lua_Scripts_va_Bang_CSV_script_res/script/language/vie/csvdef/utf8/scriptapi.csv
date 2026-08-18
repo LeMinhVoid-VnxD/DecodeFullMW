@@ -1,0 +1,326 @@
+接口ID,越南语,越南语,越南语,越南语,越南语,越南语,越南语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,Game,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,Kết Thúc game,local result = Game:doGameEnd()
+10002,Game,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,Cài đặt đặc tính của script để tùy chỉnh,"local result = Game:setScriptVar(index, val)"
+10003,Game,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",Nhận đặc tính của script để tùy chỉnh,local result = Game:getScriptVar(index)
+10004,Game,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,Tải lên đặc tính của script,local result = Game:sendScriptVars2Client()
+10005,Game,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",Hiệu ứng toàn map mới,local result = Game:addRenderGlobalEffect(path)
+10006,Game,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,Xóa hiệu ứng toàn map,local result = Game:removeRenderGlobalEffect(effectid)
+10007,Game,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,Cài đặt vị trí của hiệu ứng toàn map,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,Game ,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,Cài đặt hiệu ứng phóng to toàn map,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,Game ,msgBox,Game:msgBox(msg),,,Hộp thư,local result = Game:msgBox(msg)
+20001,Thế giới,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",Thời tiết vào ban ngày,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,Thế giới,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",Nếu là game tùy chỉnh,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,Thế giới,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",Đây có phải là một game sáng tạo,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,Thế giới,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",Chế độ nhiều người chơi hoặc chế độ tùy chỉnh,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,Thế giới,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",Cực hạn,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,Thế giới,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",Chế độ mạo hiểm - Chế độ tự do,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,Thế giới,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",Chế độ chơi đơn - Chế độ mạo hiểm - Chế độ tự do,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,Thế giới,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",Chuyển từ chế độ sáng tạo sang sinh tồn,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,Thế giới,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",Chế độ tự chỉnh sửa,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,Thế giới,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",Chế độ vận hành tùy chỉnh,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,Thế giới,getHours,World:getHours(),none,"ErrorCode.OK, result:number",Thời gian hiện tại(h),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,Thế giới,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",Chỉnh sửa góc nhìn,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,Thế giới,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,Cài đặt chỉnh sửa góc nhìn,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,Thế giới,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",Nhận cấu hình máy ảnh tùy chỉnh,local result = World:getCustomCameraConfig()
+20015,Thế giới,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",Nhận được phạm vi của khối (chunk),"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,Thế giới,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",Có được actor trong phạm vi chỉ định ,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,Thế giới,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",Có được tất cả người chơi. Có thể kiểm soát tình hình sinh tồn của họ,local result = World:getPlayerTotal(alive)
+20018,Thế giới,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",Có được tất cả người chơi. Có thể kiểm soát tình hình sinh tồn của họ,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,Thế giới,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",Người chơi ngẫu nhiên,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,Thế giới,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,Di chuyển actor,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,Thế giới,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array","Tạo sinh vật ( bao gồm quái thú, NPC, động vật..v..v)","local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,Thế giới,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,Di chuyển sinh vật,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,Thế giới,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",Tạo công cụ ở vị trí chỉ định,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,Thế giới,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,Di chuyển công cụ (Thông qua khu vực),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,Thế giới,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,Di chuyển công cụ ( Thông qua ID),"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,Thế giới,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,Tạo vật ném,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,Khối vuông,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Khối vuông có phải là thực thể,"local result = Block:isSolidBlock(x, y, z)"
+30002,Khối vuông,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Khối vuông có phải là chất lỏng,"local result = Block:isLiquidBlock(x, y, z)"
+30003,Khối vuông,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Khối vuông có phải là không khí,"local result = Block:isAirBlock(x, y, z)"
+30004,Khối vuông,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",Nhận khối vuông với ID tương ứng,"local result = Block:getBlockID(x, y, z)"
+30005,Khối vuông,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Cài đặt blockalldata Cập nhật+ Thông báo,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,Khối vuông,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,Phá khối ,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,Khối vuông,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",Cài đặt khối,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,Khối vuông,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Cài đặt blockalldata Thông báo các khối xung quanh,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,Khối vuông,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Cài đặt blockalldata Cập nhật vị trí khối vuông hiện tại,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,Khối vuông,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,Cài đặt trạng thái thuộc tính khối vuông,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,Khối vuông,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",Có được trạng thái bật- tắt của khối chức năng,local result = Block:getBlockSwitchStatus(pos)
+30012,Khối vuông,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,Cài đặt trạng thái bật - tắt khối chức năng,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,Game Actor,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,Kiểm tra xem có phải là người chơi,local result = Actor:isPlayer(objid)
+40002,Game Actor,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,Kiểm tra xem có phải là quái vật,local result = Actor:isMob(objid)
+40003,Game Actor,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",Nhận được loại actor: sinh vật/ người chơi,local result = Actor:getObjType(objid)
+40004,Game Actor,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,Có phải đang trên không trung,local result = Actor:isInAir(objid)
+40005,Game Actor,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",Nhận vị trí actor,local result = Actor:getPosition(objid)
+40006,Game Actor,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Cài đặt vị trí actor,"local result = Actor:setPosition(objid, x, y, z)"
+40007,Game Actor,jump,Actor:jump(objid),objid:number,ErrorCode.OK,Nhảy,local result = Actor:jump(objid)
+40008,Game Actor,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,Tự sát,local result = Actor:killSelf(objid)
+40009,Game Actor,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",Nhận hướng hiện tại,local result = Actor:getCurPlaceDir(objid)
+40010,Game Actor,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,Di chuyển về phía actor mục tiêu,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,Game Actor,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,Di chuyển về phía vị trí mục tiêu,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,Game Actor,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,Thêm buff,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,Game Actor,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",Có phải có buff không,"local result = Actor:hasBuff(objid, buffid)"
+40014,Game Actor,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,Xóa buff,"local result = Actor:removeBuff(objid, buffid)"
+40015,Game Actor,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,Xóa tất cả buff,local result = Actor:clearAllBuff(objid)
+40016,Game Actor,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,Xóa các buff xấu,local result = Actor:clearAllBadBuff(objid)
+40017,Game Actor,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",Nhận danh sách buff,local result = Actor:getBuffList(objid)
+40018,Game Actor,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",Nhận phần còn lại của buff tương ứng index hiện tại,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,Game Actor,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,Thêm máu,"local result = Actor:addHP(objid, hp)"
+40020,Game Actor,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",Nhận máu,local result = Actor:getHP(objid)
+40021,Game Actor,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Nhận lượng máu nhiều nhất,local result = Actor:getMaxHP(objid)
+40022,Game Actor,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,Thêm oxy,"local result = Actor:addOxygen(objid, oxygen)"
+40023,Game Actor,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",Nhận oxy,local result = Actor:getOxygen(objid)
+40024,Game Actor,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,Thêm phụ ma liên quan,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,Game Actor,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,Hủy các phụ ma liên quan,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,Game Actor,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",Tìm id khối vuông gần nhất,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,Game Actor,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,Cài đặt góc lệch ngang actor theo hướng di chuyển ,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,Game Actor,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",Nhận góc ngang actor theo hướng di chuyển,local result = Actor:getFaceYaw(objid)
+40029,Game Actor,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Đổi góc ngang actor theo hướng góc bù,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,Game Actor,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,Cài đặt góc nhìn lên của actor,"local result = Actor:setFacePitch(objid, pitch)"
+40031,Game Actor,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",Nhận góc nhìn lên của actor,local result = Actor:getFacePitch(objid)
+40032,Game Actor,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Đổi góc nhìn lên của actor,"local result = Actor:turnFacePitch(objid, offset)"
+40033,Game Actor,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Phát các hiệu ứng,"local result = Actor:playBodyEffect(objid, type)"
+40034,Game Actor,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Dừng các hiệu ứng,"local result = Actor:stopBodyEffect(objid, type)"
+40035,Game Actor,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,Phát file hiệu ứng,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,Game Actor,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,Dừng file hiệu ứng,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,Game Actor,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,Phát âm thanh,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,Game Actor,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,Phát âm thanh (Loại:GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,Game Actor,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,Xóa id sinh vật với actorid của sinh vật,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,Game Actor,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,Cài đặt các loại sát thương,"local result = Actor:setAttackType(objid, attacktype)"
+40041,Game Actor,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,Cài đặt miễn nhiễm sát thương,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,Game Actor,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,"Lên xe, xuống xe","local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,Game Actor,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Cài đặt hành vi, thuộc tính và trạng thái của sinh vật","local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,Game Actor,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,Tìm đường tới vị trí mục tiêu,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,Game Actor,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,Nhận objib của sinh vật thú cưỡi,local result = Actor:getRidingActorObjId(objid)
+50001,Người chơi,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",nil,local result = Player:getAttr(attrtype)
+50002,Người chơi,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,nil,"local result = Player:setAttr(attrtype, val)"
+50003,Người chơi,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",Xem chủ phòng,local result = Player:getHostUin()
+50004,Người chơi,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,Kiểm tra xem liệu có phải là người chơi bản địa,local result = Player:isMainPlayer(objid)
+50005,Người chơi,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",Xem uin của người chơi bản địa,local result = Player:getMainPlayerUin()
+50006,Người chơi,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",Xem kết quả thi đấu của người chơi,local result = Player:getGameResults(objid)
+50007,Người chơi,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,Cài đặt kết quả thi đấu của người chơi,"local result = Player:setGameResults(objid, result)"
+50008,Người chơi,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",Xem điểm của người chơi,local result = Player:getGameScore(objid)
+50009,Người chơi,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",Cài đặt điểm của người chơi,"local result = Player:setGameScore(objid, score)"
+50010,Người chơi,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",Xem xếp hạng của người chơi,local result = Player:getGameRanking(objid)
+50011,Người chơi,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,Cài đặt xếp hạng của người chơi,"local result = Player:setGameRanking(objid, rank)"
+50012,Người chơi,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,Thêm công cụ cho người chơi,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,Người chơi,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,Chuyển đến điểm bắt đầu,local result = Player:teleportHome(objid)
+50014,Người chơi,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",Nhận id vật phẩm hiện tại của người chơi,local result = Player:getCurToolID(objid)
+50015,Người chơi,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",Xem tên của người chơi,local result = Player:getNickname(objid)
+50016,Người chơi,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,Di chuyển vật phẩm trong túi,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,Người chơi,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",Xem số lần chết của người chơi,local result = Player:getDieTimes(objid)
+50018,Người chơi,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",Xem số mạng còn lại của người chơi,local result = Player:getLeftLifeNum(objid)
+50019,Người chơi,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,Cài đặt nhóm sinh vật,"local result = Player:setTeam(objid, team)"
+50020,Người chơi,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Xem nhóm sinh vật,local result = Player:getTeam(objid)
+50021,Người chơi,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,Xem độ đói hiện tại,local result = Player:getFoodLevel(objid)
+50022,Người chơi,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,Cài đặt độ đói hiện tại,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,Người chơi,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",Xem thanh phím tắt hiện tại,local result = Player:getCurShotcut(objid)
+50024,Người chơi,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,Đặt mức tiêu thụ vật phẩm đang cầm trên tay của người chơi ,"local result = Player:onCurToolUsed(objid, num)"
+50025,Người chơi,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,Cài đặt CD,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,Người chơi,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Hồi sinh về vị trí mặc định,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,Người chơi,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Chỉnh sửa vị trí hồi sinh của người chơi,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,Người chơi,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,Người chơi phát hoạt hình,"local result = Player:playAct(objid, actid)"
+50029,Người chơi,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,Hiển thị văn bản của người chơi trong cửa sổ,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,Người chơi,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,Cho phép người chơi sử dụng công cụ hiện tại,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,Người chơi,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,Cuộn ống kính của người chơi,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,Người chơi,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,Đổi chế độ góc nhìn của người chơi,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,Người chơi,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Cài đặt hành vi, thuộc tính và trạng thái của sinh vật","local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,Người chơi,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,"Bật - Tắt trạng thái thuộc tính, hành vi của người chơi","local result = Player:checkActionAttrState(objid, actionattr)"
+50035,Người chơi,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Xem lượng HP tối đa,local result = Player:getMaxHP(objid)
+50036,Người chơi,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Xem mức HP hiện tại,local result = Player:getCurHP(objid)
+50037,Người chơi,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Hp hồi phục,local result = Player:getHpRecover(objid)
+50038,Người chơi,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Độ đói hiện tại,local result = Player:getCurFood(objid)
+50039,Người chơi,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,Người chơi,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Mức oxy hiện tại,local result = Player:getCurOxygen(objid)
+50041,Người chơi,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ đi bộ,local result = Player:getWalkSpeed(objid)
+50042,Người chơi,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ bơi ( trong nước),local result = Player:getSwimSpeed(objid)
+50043,Người chơi,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Lực nhảy,local result = Player:getJumpPower(objid)
+50044,Người chơi,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ chạy,local result = Player:getRunSpeed(objid)
+50045,Người chơi,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ trườn,local result = Player:getSneakSpeed(objid)
+50046,Người chơi,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ tránh,local result = Player:getDodge(objid)
+50047,Người chơi,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tấn công cận chiến,local result = Player:getPunchAttack(objid)
+50048,Người chơi,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tấn công viễn chiến,local result = Player:getRangeAttack(objid)
+50049,Người chơi,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Phòng thủ cận chiến,local result = Player:getPunchDefense(objid)
+50050,Người chơi,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Phòng thủ viễn chiến,local result = Player:getRangeDefense(objid)
+50051,Người chơi,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Số sao,"local result = Player:getStarNum(objid, val)"
+50052,Người chơi,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Kích thước to nhỏ,"local result = Player:getModelScale(objid, val)"
+50053,Người chơi,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài lượng HP tối đa,"local result = Player:setMaxHP(objid, val)"
+50054,Người chơi,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài HP,"local result = Player:setHP(objid, val)"
+50055,Người chơi,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt khôi phục HP,local result = Player:setHpRecover(objid)
+50056,Người chơi,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt độ đói hiện tại,local result = Player:setCurFood(objid)
+50057,Người chơi,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt oxy,"local result = Player:setOxygen(objid, val)"
+50058,Người chơi,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ đi bộ,"local result = Player:setWalkSpeed(objid, val)"
+50059,Người chơi,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ bơi ( trong nước),"local result = Player:setSwimSpeed(objid, val)"
+50060,Người chơi,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt lực nhảy,"local result = Player:setJumpPower(objid, val)"
+50061,Người chơi,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ chạy,"local result = Player:setRunSpeed(objid, val)"
+50062,Người chơi,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ trườn,"local result = Player:setSneakSpeed(objid, val)"
+50063,Người chơi,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ tránh,"local result = Player:setDodge(objid, val)"
+50064,Người chơi,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tấn công cận chiến,"local result = Player:setPunchAttack(objid, val)"
+50065,Người chơi,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tấn công viễn chiến,"local result = Player:setRangeAttack(objid, val)"
+50066,Người chơi,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt phòng vệ cận chiến,"local result = Player:setPunchDefense(objid, val)"
+50067,Người chơi,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt phòng vệ viễn chiến,"local result = Player:setRangeDefense(objid, val)"
+50068,Người chơi,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt số sao,"local result = Player:setStarNum(objid, val)"
+50069,Người chơi,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt kích thước mô hình,"local result = Player:setModelScale(objid, val)"
+50070,Người chơi,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Cài đặt vị trí actor,"local result = Player:setPosition(objid, x, y, z)"
+50071,Người chơi,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,Nhận vị trí của người chơi,local result = Player:getAimPos(objid)
+60001,Sinh Vật,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,Đã đủ tuổi vị thành niên chưa?,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,Sinh Vật,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,Cài đặt xem liệu có cần oxy,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,Sinh Vật,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",Nhận ID của người thuần phục,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,Sinh Vật,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,Cài đặt xem liệu có phải là bạo lực,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,Sinh Vật,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,Cài đặt AI liệu có hiệu quả không,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,Sinh Vật,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",Nhận nguồn ID sinh vật,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,Sinh Vật,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",Nhận nguồn ID sinh vật,local result = Creature:getActorName(objid)
+60008,Sinh Vật,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,Thêm lượng ModAttrib của quái vật,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,Sinh Vật,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",Nhận lượng ModAttrib của quái vật,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,Sinh Vật,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,Cài đặt nhóm sinh vật,"local result = Creature:setTeam(objid, teamid)"
+60011,Sinh Vật,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Cài đặt nhóm sinh vật,local result = Creature:getTeam(objid)
+60012,Sinh Vật,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Xem độ đói tối đa,local result = Creature:getMaxFood(objid)
+60013,Sinh Vật,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Xem độ đói,local result = Creature:getFood(objid)
+60014,Sinh Vật,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt độ đói  ,"local result = Creature:setFood(objid, val)"
+60015,Sinh Vật,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Hp hồi phục,local result = Creature:getHpRecover(objid)
+60016,Sinh Vật,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Lượng oxy tối đa,local result = Creature:getMaxOxygen(objid)
+60017,Sinh Vật,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ đi bộ,local result = Creature:getWalkSpeed(objid)
+60018,Sinh Vật,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tốc độ bơi ( trong nước),local result = Creature:getSwimSpeed(objid)
+60019,Sinh Vật,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Lực nhảy,local result = Creature:getJumpPower(objid)
+60020,Sinh Vật,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Trọng lượng,local result = Creature:getMass(objid)
+60021,Sinh Vật,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tránh,local result = Creature:getDodge(objid)
+60022,Sinh Vật,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tấn công cận chiến,local result = Creature:getPunchAttack(objid)
+60023,Sinh Vật,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tấn công viễn chiến,local result = Creature:getRangeAttack(objid)
+60024,Sinh Vật,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Phòng vệ cận chiến,local result = Creature:getPunchDefense(objid)
+60025,Sinh Vật,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Phòng vệ viễn chiến,local result = Creature:getRangeDefense(objid)
+60026,Sinh Vật,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt HP,"local result = Creature:setMaxHp(objid, val)"
+60027,Sinh Vật,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt HP,"local result = Creature:setHP(objid, val)"
+60028,Sinh Vật,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt hồi phục HP,local result = Creature:setHpRecover(objid)
+60029,Sinh Vật,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt oxy,"local result = Creature:setOxygen(objid, val)"
+60030,Sinh Vật,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ đi bộ,"local result = Creature:setWalkSpeed(objid, val)"
+60031,Sinh Vật,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tốc độ bơi ( trong nước),"local result = Creature:setSwimSpeed(objid, val)"
+60032,Sinh Vật,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt lực nhảy,"local result = Creature:setJumpPower(objid, val)"
+60033,Sinh Vật,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tránh,"local result = Creature:setDodge(objid, val)"
+60034,Sinh Vật,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tấn công cận chiến,"local result = Creature:setPunchAttack(objid, val)"
+60035,Sinh Vật,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt tấn công viễn chiến,"local result = Creature:setRangeAttack(objid, val)"
+60036,Sinh Vật,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt phòng thủ cận chiến ,"local result = Creature:setPunchDefense(objid, val)"
+60037,Sinh Vật,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Cài đặt phòng thủ viễn chiến,"local result = Creature:setRangeDefense(objid, val)"
+70001,Giao Diện,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,Cài đặt UI cơ bản của cuộc chiến,"local result = UI:setGBattleUI(name, value)"
+70002,Giao Diện,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number","
+Thế giới tọa độ thay đổi thành mini map","local result = UI:world2RadarPos(x, y)"
+70003,Giao Diện,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",Chiều dài thế giới thay đổi thành mini map,local result = UI:world2RadarDist(length)
+70004,Giao Diện,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,Cài đặt mô hình mini map. 1: Góc nhìn 45 độ; 2: góc trên cùng toàn cảnh,local result = UI:setMinimapRenderMode(mode)
+70005,Giao Diện,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,"Cài đặt hình dạng đánh dấu Map, được đặt thành các dòng","local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,Giao Diện,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,"Cài đặt hình dạng đánh dấu Map, đặt thành vòng tròn","local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,Giao Diện,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,Xem hiệu ứng màn hình,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,Giao Diện,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Gửi văn bản chat,local result = Chat:sendChat(content)
+80002,Chat,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Gửi văn bản chat,local result = Chat:sendSystemMsg(content)
+90001,Nhóm,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",Nhận số nhóm,local result = Team:getNumTeam()
+90002,Nhóm,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",Nhận nhóm người chơi chỉ định,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,Nhóm,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",Nhận nhóm người chơi chỉ định,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,Nhóm,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",Người chơi ngẫu nhiên,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,Nhóm,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,Cài đặt điểm số nhóm,"local result = Team:setTeamScore(teamid, s)"
+90006,Nhóm,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",Nhận điểm số nhóm,local result = Team:getTeamScore(teamid)
+90007,Nhóm,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,Thêm điểm số nhóm,"local result = Team:addTeamScore(teamid, score)"
+90008,Nhóm,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,Cài đặt thắng- thua của nhóm,"local result = Team:setTeamResults(teamid, result)"
+90009,Nhóm,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",Xem thắng- thua của nhóm,local result = Team:getTeamResults(teamid)
+90010,Nhóm,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,Cài đặt thắng- thua của người chơi,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,Nhóm,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,Cài đặt số lượng người chết trong nhóm,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,Nhóm,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",Xem số người chết trong nhóm,local result = Team:getTeamDieTimes(teamid)
+90013,Nhóm,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,Thêm số người chết trong nhóm,local result = Team:addTeamDieTimes(teamid)
+90014,Nhóm,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,Thay đổi nhóm của người chơi,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,Công Cụ,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",Xem tên công cụ,local result = Item:getItemName(itemid)
+100002,Công Cụ,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",Nhận ID của vật phẩm,local result = Item:getItemId(objid)
+100003,Công Cụ,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",Nhận số vật phẩm rơi,local result = Item:getDropItemNum(objid)
+110001,Túi,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",Nhận ID của túi công cụ trong phạm vi ( ID bắt đầu - ID kết thúc),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,Túi,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",Nhận kích thước của túi,local result = Backpack:getBackpackBarSize(bartype)
+110003,Túi,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,Cài đặt ô công cụ trong túi,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,Túi,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,"Xóa số lượng công cụ nhất định, thông qua xóa các công cụ, mặc định xóa toàn bộ","local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,Túi,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully","Xóa một số mục trong ngăn của túi, thông qua việc xóa ID công cụ. Tất cả bị xóa theo mặc định","local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,Túi,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,Xóa ngăn chỉ định trong túi,"local result = Backpack:clearPack(playerid, bartype)"
+110007,Túi,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,"Xóa toàn bộ túi (bao gồm ngăn, thanh phím tắt, thanh trang bị)",local result = Backpack:clearAllPack(playerid)
+110008,Túi,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,"Xóa công cụ trong túi, tất cả bị xóa theo mặc định","local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,Túi,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,Trao đổi các vật phẩm trong Túi,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,Túi,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 10",ErrorCode.OK,"Nếu có đủ không gian trong Túi (bao gồm các ngăn Túi, thanh công cụ) để lưu trữ vật phẩm","local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,Túi,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number","Tính tổng số vật phẩm còn lại mà Túi (bao gồm ngăn Túi, thanh công cụ) có thể lưu trữ","local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,Túi,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",Nhận danh sách ID hợp lệ của các vật phẩm đã có trong ngăn Túi. ID vật phẩm,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,Túi,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",Nhận các vật phẩm đã có trong ngăn Túi. ID vật phẩm,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,Túi,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,Phát hiện nếu có bất kỳ vật phẩm chỉ định trong Túi,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,Túi,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",Lấy tổng số vật phẩm trong Túi. Quay trở lại Túi với các vật phẩm,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,Túi,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",Lấy ID vật phẩm và số trong Túi,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,Túi,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",Lấy tên vật phẩm trong Túi,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,Túi,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",Lấy số lượng vật phẩm trong Túi và tối đa số lượng của ngăn Túi,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,Túi,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",Nhận độ bền vật phẩm trong túi và độ bền tối đa,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,Túi,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",Nhận phụ ma của các vật phẩm trong Túi. Quay trở lại ID phụ ma.,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,Túi,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",Lấy loại công cụ vật phẩm trong Túi (<0 có nghĩa là không phải công cụ),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,Túi,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",Thêm vật phẩm vào Túi,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,Túi,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,Bỏ vật phẩm ra khỏi Túi,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,Túi,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,Lấy số lượng vật phẩm trong một ô của ba lô,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,Minimap,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number","Hình dạng mới (đường thẳng, hình chữ nhật, hình tròn)","local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,Minimap,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,Xóa hình dạng,local result = MapMark:deleteShape(shapeid)
+120003,Minimap,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,Đặt hình dạng và màu sắc,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,Minimap,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,Đặt hình dạng hiển thị hoặc ẩn,"local result = MapMark:showShape(shapeid, showflag)"
+120005,Minimap,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,Cập nhật hình dạng (dòng). Thêm tọa độ bắt đầu và tọa độ kết thúc,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,Minimap,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,Cập nhật hình dạng (hình chữ nhật). Thêm tọa độ bắt đầu và tọa độ kết thúc,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,Minimap,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,Cập nhật hình dạng (hình tròn). Thêm tọa độ trung tâm và bán kính,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,Điểm Hồi Sinh,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",Lấy vị trí của điểm hổi sinh,local result = Spawnport:getSpawnPoint()
+130002,Điểm Hồi Sinh,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",Lấy điểm hồi sinh trong khu vực. Thêm vị trí của khối vuông ngẫu nhiên trong khu vực,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

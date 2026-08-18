@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mail.lua" />
+
+	<Button name="MailTemplate" virtual="true" click_threshold="5">
+		<Size>
+			<AbsDimension x="284" y="85"/>
+		</Size>
+		<Frames>
+			<Button name="$parentCont" click_threshold="5">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg6" />
+						<Texture name="$parentSelected" inherits="TemplateBkg7"/>
+						<Texture name="$parentIconBkg" inherits="TemplateBigBkg10">
+							<Size>
+								<AbsDimension x="70" y="70"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="6" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- TODO if has been open change uv to "yj_icon_open" -->
+						<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="yj_icon_open" >
+							<Size>
+								<AbsDimension x="60" y="60"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+									<Offset>
+										<AbsDimension x="-1" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- TODO icon_time -->
+						<Texture name="$parentTimeTipsIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h">
+							<Size>
+								<AbsDimension x="24" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-8" y="-8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- TODO icon_accessory -->
+						<Texture name="$parentAttachmentTipsIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_accessory.png">
+							<Size>
+								<AbsDimension x="24" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentTimeTipsIcon">
+									<Offset>
+										<AbsDimension x="-6" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<FontString name="$parentName" fonttype="BlackFont20" text="系统邮件" autowrap="true">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="170" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIconBkg">
+									<Offset>
+										<AbsDimension x="7" y="4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont14" text="2017-12-41">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="170" y="13"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIconBkg">
+									<Offset>
+										<AbsDimension x="7" y="-5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MailTemplateCont_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+		</Frames>
+	</Button>
+
+	<Frame name="MailItemTemplate" virtual="true" click_threshold="5" abs_x="90" abs_y="90">
+		<Size>
+			<AbsDimension x="90" y="90"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentItemIconBkg" inherits="TemplateBigBkg10"/>
+				<Texture name="$parentItemSelected" hidden="true" rel_x="1.0" rel_y="1.0"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentItemIcon">
+				<Size>
+					<AbsDimension x="85" y="85"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentItemIconBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>MailItem_OnClick();</OnClick>
+					<OnEnter platform="pc">MailItem_OnMouseEnter_PC()</OnEnter>
+					<OnLeave platform="pc">MailItem_OnMouseLeave_PC()</OnLeave>
+				</Scripts>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentNormal" file="ui/mobile/texture2/bigtex/empty.png" >
+							<Size>
+								<AbsDimension x="81" y="81"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentItemNum" fonttype="BlackFont18" justifyH="right" text="x10" fontStyle="border" shadowcolor="ff451300">
+							<Color r="252" g="252" b="221"/>
+							<Size>
+								<AbsDimension x="64" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-8" y="-3" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentItemChip" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_17">
+							<Size>
+								<AbsDimension x="20" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentItemMask" file="ui/white.png" color="B1000000" hidden="true">
+							<Size>
+								<AbsDimension x="88" y="88"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<Texture name="$parentTextBkg" file="ui/mobile/texture2/common.xml" uvname="img_board_receive" DrawType = "ninesquare_center" hidden="true">
+							<Size>
+								<AbsDimension x="88" y="32"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont20" text="$3029" justifyH="center" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="88" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTextBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<!--展示界面地图缩略图模板-->
+    <Button name="MailItemThumbnailBtnTemplate" virtual="true" abs_x="117" abs_y="69" >
+        <Layers>
+            <Layer level="background">
+                <Texture name="$parentNormal"  hidden="false" />
+				<!--文本提示标识-->
+				<FontString name="$parentNormalExplain" fonttype="BlackFont18" justifyH="center" text="$20309" hidden="true">
+					<Color r="255" g="253" b="233"/>
+					<Size>
+						<AbsDimension x="100" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13"  hidden="true" DrawType="ninesquare" />
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>MailItemThumbMapBtn_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+	<!--邮件界面-->
+	<Frame name="MailFrame" parent="UIClient" inherits="TemplateMainFrame3" frameStrata="HIGH" hidden="true" framelevel="1">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentWhiteBkg" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="769" y="542"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-2" y="-2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<!-- TODO -->
+				<Texture name="$parentPattern" inherits="TemplateBigBkg7_flat"> 
+					<Size>
+						<AbsDimension x="763" y="536"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentWhiteBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<!--邮件列表 背景-->
+				<Texture name="$parentMailListBkg" inherits="TemplateBigBkg24">
+					<Size>
+						<AbsDimension x="300" y="448"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="5" y="68"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<!--无邮件时显示背景-->
+				<Texture name="$parentNoMailBkg" file="ui/mobile/texture2/bigtex/img_noreview.png">
+					<Size>
+						<AbsDimension x="244" y="255"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="144" y="-38"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNoMailText" fonttype="BlackFont24" text="$4081" justifyH="center">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="400" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentNoMailBkg">
+							<Offset>
+								<AbsDimension x="3" y="21"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!--官方邮件-->
+			<Button name="$parentTypeBtn1" inherits="TemplateTabBtn2" id = "1">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="6" y="90"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="false">
+							<Size>
+								<AbsDimension x="25" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="6" y="-23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MailFrame:TypeBtnOnClick();</OnClick>
+				</Scripts>
+			</Button>	
+			<!--好友邮件-->
+			<Button name="$parentTypeBtn2" inherits="TemplateTabBtn2" id = "2">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="6" y="174"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+				<Layers>
+					<Layer level="overlay">
+						
+						<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="false">
+							<Size>
+								<AbsDimension x="25" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="6" y="-23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MailFrame:TypeBtnOnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!--说明按钮-->
+			<Button name="$parentTipsBtn" inherits="TemplateBtn18" abs_x="40" abs_y="43">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-110" y="10"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay" >
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tipoff" abs_x="6" abs_y="26">
+                                <Anchors>
+                                    <Anchor relativePoint="center" point="center" relativeTo="$parent"/>
+                                </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+					<OnClick>MailFrame:TipsBtnOnClick();</OnClick>
+				</Scripts>
+            </Button>
+
+			<!--一键领取按钮-->
+			<Button name="$parentOneKeyTakeBtn" inherits="TemplateBtn13" abs_x="120" abs_y="60">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="15" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>MailFrameMailOneKeyTakeBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!--删除已读-->
+			<Button name="$parentOneKeyDeleteBtn" inherits="TemplateBtn3" abs_x="120" abs_y="60">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="170" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" abs_x="110" abs_y="60" fonttype="BlackFont24" lineInterval="1" text="TODO" fontStyle="normal">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MailFrameMailOneKeyDeleteBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!--邮件列表-->
+			<ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" abs_x="284" abs_y="436">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentMailListBkg">
+						<Offset>
+							<AbsDimension x="1" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="284" abs_y="436" />
+				</Frames>
+			</ListViewFrame>
+
+			<!-- <SlidingFrame name="$parentMailList" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="292" y="436"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentMailListBkg">
+						<Offset>
+							<AbsDimension x="1" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="292" y="436"/>
+						</Size>
+					</Frame>
+					<Button name="Mail1" inherits="MailTemplate" id="1"/>
+					<Button name="Mail2" inherits="MailTemplate" id="2"/>
+					<Button name="Mail3" inherits="MailTemplate" id="3"/>
+					<Button name="Mail4" inherits="MailTemplate" id="4"/>
+					<Button name="Mail5" inherits="MailTemplate" id="5"/>
+					<Button name="Mail6" inherits="MailTemplate" id="6"/>
+					<Button name="Mail7" inherits="MailTemplate" id="7"/>
+					<Button name="Mail8" inherits="MailTemplate" id="8"/>
+					<Button name="Mail9" inherits="MailTemplate" id="9"/>
+					<Button name="Mail10" inherits="MailTemplate" id="10"/>
+					<Button name="Mail11" inherits="MailTemplate" id="11"/>
+					<Button name="Mail12" inherits="MailTemplate" id="12"/>
+					<Button name="Mail13" inherits="MailTemplate" id="13"/>
+					<Button name="Mail14" inherits="MailTemplate" id="14"/>
+					<Button name="Mail15" inherits="MailTemplate" id="15"/>
+					<Button name="Mail16" inherits="MailTemplate" id="16"/>
+					<Button name="Mail17" inherits="MailTemplate" id="17"/>
+					<Button name="Mail18" inherits="MailTemplate" id="18"/>
+					<Button name="Mail19" inherits="MailTemplate" id="19"/>
+					<Button name="Mail20" inherits="MailTemplate" id="20"/>
+				</Frames>
+			</SlidingFrame> -->
+
+			<!--邮件正文-->
+			<Frame name="$parentMailCont">
+				<Size>
+					<AbsDimension x="769" y="542"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentWhiteBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentContentShadow" hidden="true" file="ui/mobile/texture2/bigtex/empty.png"  >
+							<Size>
+								<AbsDimension x="38" y="478"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentContentBg" inherits="TemplateBigBkg9">
+							<Size>
+								<AbsDimension x="738" y="451"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--来自迷你官方-->
+						<FontString name="$parentMailSource" fonttype="BlackFont20" text="$4082" justifyH="right" >
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="200" y="38"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="MailFrameMailContContentBg">
+									<Offset>
+										<AbsDimension x="-18" y="-14"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentTitleBkg" inherits="TemplateBkg26">
+							<Size>
+								<AbsDimension x="723" y="55"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentContentBg">
+									<Offset>
+										<AbsDimension x="0" y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont24" lineInterval="2" text="系统补偿">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="400" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTitleBkg">
+									<Offset>
+										<AbsDimension x="27" y="18"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont20" justifyH="right" text="有效期：12天11小时">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="200" y="38	"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitleBkg">
+									<Offset>
+										<AbsDimension x="-19" y="20"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentLimit" fonttype="BlackFont20" justifyH="left" text="$30294" hidden="true">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="250" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentSwitch">
+									<Offset>
+										<AbsDimension x="12" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##  内容滑动栏
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="681" abs_y="340">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleBkg">
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" rel_x="1.0" abs_y="340"/>
+							<Frame name="$parentItem1" rel_x="1.0" abs_y="340">
+								<Layers>
+									<Layer level="BACKGROUND">
+										## 大图
+										<Texture name="$parentBigPic" file="ui/mobile/texture2/bigtex/empty.png" abs_x="680" abs_y="98" hidden="true">
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parentText">
+													<Offset>
+														<AbsDimension x="0" y="10"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Frames>
+									## 文本
+									<RichText name="$parentText" lineInterval="4" multiLine="true" fonttype="BlackFont20" rel_x="1.0" abs_y="137">
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>MailContText_OnClick();</OnClick>
+										</Scripts>
+									</RichText>
+
+									## 问题图片展示文本
+									<RichText name="$parentPicTitle" justifyH="left" lineInterval="2" fonttype="BlackFont20" text="问题图片展示：" hidden="true">
+										<Size>
+											<AbsDimension x="400" y="25"/>
+										</Size>
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="27" y="18"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</RichText>
+						
+									<Button name="$parentTextrueBtn" rel_x="1.0" abs_y="98">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="0" y="10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>MailFrameContentTextureBtn_OnClick()</OnClick>
+										</Scripts>
+									</Button>
+									
+									## 图片
+									<Frame name="$parentItem1" inherits="MailItemTemplate" id="1">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTextrueBtn">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem2" inherits="MailItemTemplate" id="2">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topright" relativeTo="$parentItem1">
+												<Offset>
+													<AbsDimension x="13" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem3" inherits="MailItemTemplate" id="3">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topright" relativeTo="$parentItem2">
+												<Offset>
+													<AbsDimension x="13" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem4" inherits="MailItemTemplate" id="4">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topright" relativeTo="$parentItem3">
+												<Offset>
+													<AbsDimension x="13" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem5" inherits="MailItemTemplate" id="5">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topright" relativeTo="$parentItem4">
+												<Offset>
+													<AbsDimension x="13" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem6" inherits="MailItemTemplate" id="6">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topright" relativeTo="$parentItem5">
+												<Offset>
+													<AbsDimension x="13" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentItem7" inherits="MailItemTemplate" id="7"/>
+									<Frame name="$parentItem8" inherits="MailItemTemplate" id="8"/>
+									<Frame name="$parentItem9" inherits="MailItemTemplate" id="9"/>
+									<Frame name="$parentItem10" inherits="MailItemTemplate" id="10"/>
+									<Frame name="$parentItem11" inherits="MailItemTemplate" id="11"/>
+									<Frame name="$parentItem12" inherits="MailItemTemplate" id="12"/>
+									<Frame name="$parentItem13" inherits="MailItemTemplate" id="13"/>
+									<Frame name="$parentItem14" inherits="MailItemTemplate" id="14"/>
+
+									# 举报缩略图
+									<Button name="$parentCell1" inherits="MailItemThumbnailBtnTemplate" id="1" >
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentCell2" inherits="MailItemThumbnailBtnTemplate" id="2" >
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="120" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentCell3" inherits="MailItemThumbnailBtnTemplate" id="3" >
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="240" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentCell4" inherits="MailItemThumbnailBtnTemplate" id="4" >
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="360" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentCell5" inherits="MailItemThumbnailBtnTemplate" id="5" >
+										<Anchors>
+											<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentText">
+												<Offset>
+													<AbsDimension x="480" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Button>
+									<Button name="$parentCell6" inherits="MailItemThumbnailBtnTemplate" id="6" />
+									<Button name="$parentCell7" inherits="MailItemThumbnailBtnTemplate" id="7" />
+									<Button name="$parentCell8" inherits="MailItemThumbnailBtnTemplate" id="8" />
+									<Button name="$parentCell9" inherits="MailItemThumbnailBtnTemplate" id="9" />
+									<Button name="$parentCell10" inherits="MailItemThumbnailBtnTemplate" id="10" />
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+
+					<!--展示界面地图显示-->
+				    <Button name="$parentMapBtn" abs_x="600" abs_y="430" hidden="true">
+				        <Layers>
+				            <Layer>
+				                <Texture name="$parentNormal" file="ui/mobile/texture2/bigtex/gallery_button.png"/>
+				            </Layer>
+				        </Layers>
+				        <Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="20" y="20"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+				        <Scripts>
+				            <OnClick>MailMapBtn_OnClick();</OnClick>
+				        </Scripts>
+				    </Button>
+								
+					<!--领取按钮-->
+					<Button name="$parentTakeBtn" inherits="TemplateBtn13">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-19" y="-11"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>MailFrameMailContTakeBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--跳转按钮-->
+					<Button name="$parentGotoBtn" inherits="TemplateBtn14">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentTakeBtn">
+								<Offset>
+									<AbsDimension x="-71" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>MailFrameMailContGotoBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--跳转按钮2-->
+					<Button name="$parentGotoBtn2" inherits="TemplateBtn14">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentGotoBtn">
+								<Offset>
+									<AbsDimension x="-71" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>MailFrameMailContGotoBtn2_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentSwitch" inherits="TemplateTickBtn4" hidden="true">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="21" y="-29"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>MailFrameReceiveLimit_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>MailFrame_OnLoad();</OnLoad>
+			<OnShow>MailFrame_OnShow();</OnShow>
+			<OnHide>MailFrame_OnHide();</OnHide>
+			<OnUpdate>MailFrame_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+
+	<!--说明界面-->
+	<Frame name="MailTipsFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2">
+                    <Size>
+                        <AbsDimension x="806" y="448"/>
+                    </Size>
+                    <Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<FontString name="$parentTipsTitle" fonttype="BlackFont20" justifyV="top" text="$181015">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="33" y="38"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				<FontString name="$parentTipsTitle1" fonttype="BlackFont24" justifyV="top" text="$181004">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTipsTitle">
+							<Offset>
+								<AbsDimension x="0" y="50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentTipsTitle2" fonttype="BlackFont24" justifyV="top" text="$181005">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTipsTitle1">
+							<Offset>
+								<AbsDimension x="0" y="100"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentTipsTitle3" fonttype="BlackFont24" justifyV="top" text="$181007">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTipsTitle2">
+							<Offset>
+								<AbsDimension x="0" y="100"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentTipsDesc1" fonttype="BlackFont20" lineInterval="2" justifyV="top" autowrap="true" text="$181008">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="left" relativeTo="$parentTipsTitle1">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentTipsDesc2" fonttype="BlackFont20" lineInterval="2" justifyV="top" autowrap="true" text="$181009">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="left" relativeTo="$parentTipsTitle2">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentTipsDesc3" fonttype="BlackFont20" lineInterval="2" justifyV="top" autowrap="true" text="$181011">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="750" y="38"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="left" relativeTo="$parentTipsTitle3">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="804" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="MIDDLE" text="$181003">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="750" y="38"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>MailFrame:CloseTipsBtnOnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>	
+	</Frame>
+</Ui>

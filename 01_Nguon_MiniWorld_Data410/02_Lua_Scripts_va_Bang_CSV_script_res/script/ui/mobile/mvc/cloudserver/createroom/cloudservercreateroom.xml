@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/cloudserver/createroom/CloudServerCreateRoomModel.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/createroom/CloudServerCreateRoomView.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/createroom/CloudServerCreateRoomCtrl.lua"/>
+	##类型模版
+	<Button name="CloudServerCreateRoomMainTabTemplate" virtual="true" abs_x="142" abs_y="61">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormal" inherits="TemplateBkg6"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg75" hidden="true"/>
+				<FontString name="$parentFont" fonttype="BlackFont21" justifyH="right" text="$418" abs_x="120" abs_y="21" >
+					<Color r="55" g="54" b="48"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_adv_n" abs_x="44" abs_y="44">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):MainTabTemplateBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+	##地图模版
+	<Button name="CloudServerCreateRoomMapTemplate" virtual="true" abs_x="460" abs_y="106">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormal" inherits="TemplateBigBkg6"/>
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="false"/>
+				<Texture name="$parentPic" file="ui/white.png" abs_x="190" abs_y="94">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="6" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##地图名称
+				<FontString name="$parentNameFont" fonttype="BlackFont24" text="地图名称地图名称地图名称" abs_x="220" abs_y="24" >
+					<Color r="61" g="68" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="201" y="16"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##上次登录
+				<FontString name="$parentLoginFont" fonttype="BlackFont17" text="上次登录上次登录上次登录" abs_x="220" abs_y="17" >
+					<Color r="61" g="68" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="201" y="60"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):RoomMapTemplateBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+	##租赁服创建房间
+	<Frame name="CloudServerCreateRoom" parent="UIClient" frameStrata="MEDIUM" rel_x="1.0" rel_y="1.0" framelevel="1010" hidden="true">
+		<Anchors>
+			<Anchor point="center" relativeTo="$parent" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000" />
+			</Layer>
+		</Layers>
+		<Frames>
+			##详细的信息显示
+			<Frame name="CloudServerCreateRoomInfo" abs_x="1186" abs_y="645">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg1_ninecenter"/>
+						##标题栏背景:height:61
+						<Texture name="$parentTitleBkg" inherits="TemplateBigBkg4">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="61"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTitleBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="333" abs_y="56" >
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+									<Offset>
+											<AbsDimension x="-2" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="80" abs_y="56">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent" >
+									<Offset>
+											<AbsDimension x="2" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##标题名
+						<FontString name="$parentTitleName" fonttype="BlackFont36" justifyH="left" text="$9537" fontStyle="border" abs_x="200" abs_y="36" >
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBkg">
+									<Offset>
+										<AbsDimension x="23" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##关闭按钮
+					<Frame name="CloudServerCreateRoomCloseBtn" inherits="TemplateCloseBtn" abs_x="46" abs_y="60">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkgClose">
+								<Offset>
+									<AbsDimension x="-11" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):Close("CloudServerCreateRoom")</OnClick>
+						</Scripts>
+					</Frame>
+					## 类型 分类按钮
+					<Frame name="CloudServerCreateRoomMainTab" abs_x="172" abs_y="592">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-3" y="55"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg2" />
+								##类型
+								<FontString name="$parentTitleName" fonttype="BlackFont24" justifyH="center" text="$15212" abs_x="100" abs_y="24" >
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentBtn1" id="1" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="41"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentBtn2" id="2" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn1">
+										<Offset>
+											<AbsDimension x="0" y="11"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentBtn3" id="3" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn2">
+										<Offset>
+											<AbsDimension x="0" y="11"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentBtn4" id="4" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn3">
+										<Offset>
+											<AbsDimension x="0" y="11"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentBtn5" id="5" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn4">
+										<Offset>
+											<AbsDimension x="0" y="11"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentBtn6" id="6" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn5">
+										<Offset>
+											<AbsDimension x="0" y="11"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentBtn7" id="7" inherits="CloudServerCreateRoomMainTabTemplate">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn6">
+										<Offset>
+											<AbsDimension x="0" y="11"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+						</Frames>
+					</Frame>
+					## 地图 分类按钮
+					<Frame name="CloudServerCreateRoomMap" abs_x="517" abs_y="592">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="175" y="55"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg2" />
+								##地图
+								<FontString name="$parentTitleName" fonttype="BlackFont24" justifyH="center" text="$6030" abs_x="100" abs_y="24" >
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentBoxBkg" inherits="TemplateBigBkg5" abs_x="488" abs_y="535">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="40"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							##导航按钮
+							<ListViewFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="460" abs_y="521">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+										<Offset>
+											<AbsDimension x="0" y="40"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" abs_x="460" abs_y="530">
+									</Frame>
+								</Frames>
+							</ListViewFrame>
+						</Frames>
+					</Frame>
+					## 设置 部分
+					<Frame name="CloudServerCreateRoomSet" abs_x="490" abs_y="592">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="55"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="492" abs_y="592" />
+								##设置
+								<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$9008" abs_x="100" abs_y="24" >
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentNamePrefix" fonttype="BlackFont20" justifyH="left" text="$13047" abs_x="100" abs_y="21" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="32" y="56"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentNameBkg" inherits="TemplateBkg8" abs_x="355" abs_y="46">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="90" y="42"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentDescPrefix" fonttype="BlackFont20" justifyH="left" text="$169" abs_x="100" abs_y="21" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="32" y="121"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentDescBkg" inherits="TemplateBkg8" abs_x="355" abs_y="94">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="90" y="107"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentAuthorityPrefix" fonttype="BlackFont20" justifyH="left" text="$412" abs_x="100" abs_y="21" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="32" y="230"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentPasswordPrefix" fonttype="BlackFont20" justifyH="left" text="$3073" abs_x="100" abs_y="21" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="32" y="322"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentPasswordBkg" inherits="TemplateBkg8" abs_x="259" abs_y="36">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="90" y="316"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<SafeEditBox name="$parentNameEdit" letters="30" multiLine="false" editMethod="527" abs_x="305" abs_y="21">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentNameBkg" relativePoint="left">
+										<Offset>
+											<AbsDimension x="19" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="left">
+									<Color r="255" g="255" b="255"/>
+								</FontString>
+							</SafeEditBox>
+							<SafeMultiEditBox name="$parentDescEdit" fonttype="BlackFont20" letters="200" multiLine="true" editMethod="527" abs_x="305" abs_y="70">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentDescBkg" relativePoint="left">
+										<Offset>
+											<AbsDimension x="19" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</SafeMultiEditBox>
+							<Button name="CreateRoomSetFriendAllow" inherits="TemplateTickBtn1" abs_x="220" abs_y="40">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="90" y="217"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):CreateRoomSetFriendAllowOnClick()</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="CreateRoomSetWhiteListAllow" inherits="TemplateTickBtn1" abs_x="320" abs_y="40">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="90" y="263"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):CreateRoomSetWhiteListAllowOnClick()</OnClick>
+								</Scripts>
+							</Button>
+							<EditBox name="CloudServerCreateRoomSetPasswordEdit" letters="4" multiLine="false" editMethod="2" password="true" abs_x="200" abs_y="20">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentPasswordBkg" relativePoint="left">
+										<Offset>
+											<AbsDimension x="19" y="2" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<FontString name="$parentFont" fonttype="BlackFont18"  justifyH="left">
+									<Color r="255" g="255" b="255"/>
+								</FontString>
+							</EditBox>
+							<Button name="CloudServerCreateRoomSetPasswordCoderBtn" inherits="TemplateEditBoxCoderBtn" abs_x="36" abs_y="36">
+								<Anchors>
+									<Anchor point="right" relativeTo="$parentPasswordBkg" relativePoint="right">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):CloudServerCreateRoomSetPasswordCoderBtn_OnClick();</OnClick>
+									<OnShow>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):CloudServerCreateRoomSetPasswordCoderBtn_OnShow();</OnShow>
+								</Scripts>
+							</Button>
+							<Button name="CloudServerCreateRoomInfoSetStartBtn" inherits="TemplateBtn3">
+								<Anchors>
+									<Anchor point="bottom" relativeTo="CloudServerCreateRoomSet" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="-15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$1062" abs_x="130" abs_y="24">
+											<Color r="55" g="54" b="51"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerCreateRoom"):CloudServerCreateRoomInfoSetStartBtn_OnClick()</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick></OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

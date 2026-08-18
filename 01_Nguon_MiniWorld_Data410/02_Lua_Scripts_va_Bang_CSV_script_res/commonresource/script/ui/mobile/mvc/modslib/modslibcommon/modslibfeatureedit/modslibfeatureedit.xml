@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibFeatureEdit/ModsLibFeatureEditModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibFeatureEdit/ModsLibFeatureEditView.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibFeatureEdit/ModsLibFeatureEditCtrl.lua"/>
+
+	<Button name="ModsLibFeatureEditSelBtnTemplate" abs_x="94" abs_y="94" virtual="true">
+        <Layers>
+            <Layer level="overlay">
+                <Texture name="$parentAddIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="48" abs_y="48" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+					</Anchors>
+				</Texture>
+                <Texture name="$parentIcon" alphamode="alphablend" abs_x="71" abs_y="71">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <NormalTexture name="$parentNormal" inherits="TemplateBigBkg15" />
+        <PushedTexture name="$parentPushedBG" inherits="TemplateBigBkg15">
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </PushedTexture>
+        <Frames>
+            <Button name="$parentDel" inherits="TemplateBtn23">
+				<Anchors>
+					<Anchor point="center" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-9" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):delBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+        </Frames>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):SelBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+    <Button name="ModsLibFeatureEditOptionBtnTemplate" virtual="true" inherits="TemplateBtn21" abs_x="520" abs_y="50">
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3656">
+                    <Color r="55" g="54" b="41"/>
+                        <Size>
+                            <AbsDimension x="420" y="24"/>
+                        </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):OptionBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+    <Frame name="ModsLibFeatureEditSliderTemplate" abs_x="750" abs_y="46" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$3648" abs_x="177" abs_y="21">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentDesc" fonttype="BlackFont22" justifyH="left" justifyV="middle" text="$3852" abs_x="170" abs_y="30">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentRightBtn">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentLeftBtn" abs_x="25" abs_y="35" inherits="TemplateSingleBar_LeftBtn01">
+                <Anchors>
+                    <Anchor point="right" relativePoint="left" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="-18" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):SliderLeftBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            <Slider name="$parentBar" inherits="TemplateSingleBar2" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="305" abs_y="30">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parentName" relativePoint="right">
+                        <Offset>
+                            <AbsDimension x="54" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnValueChanged>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):SliderValueChanged()</OnValueChanged>
+                </Scripts>
+            </Slider>
+            <Button name="$parentRightBtn" abs_x="25" abs_y="35" inherits="TemplateSingleBar_RightBtn01">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="18" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):SliderRightBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+    <Frame name="ModsLibFeatureEditLineTemplate" abs_x="750" abs_y="31" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="672" abs_y="2">
+                	<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+					</Anchors>
+                </Texture>
+                <!-- 遮罩 -->
+				<Texture name="$parentLineZheZhao" inherits="NewRuleSetFrameFenGeXianZhezhaoDiban" abs_x="360" abs_y="30" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="标题" hidden="false">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="300" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+            </Layer>
+        </Layers>
+    </Frame>
+    <!--开关模板-->
+    <Frame name="ModsLibFeatureEditSwitchTemplate" abs_x="750" abs_y="50" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$3650" abs_x="177" abs_y="21">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentBtn" inherits="mini_SwitchBtnTemplateUI3">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentName">
+                        <Offset>
+                            <AbsDimension x="21" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+        </Frames>
+    </Frame>
+    <Frame name="ModsLibFeatureEditOptionTemplate" abs_x="750" abs_y="55" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$3656" abs_x="177" abs_y="21">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+             <Button name="$parentBtn" abs_x="371" abs_y="37" inherits="TemplateBtn21">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentName">
+                        <Offset>
+                            <AbsDimension x="21" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="$3656">
+                            <Color r="55" g="54" b="41"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="-9" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):OptionClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+    <Frame name="ModsLibFeatureEditSelectionTemplate" abs_x="750" abs_y="98" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$3651" abs_x="177" abs_y="21">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentBtn" inherits="ModsLibFeatureEditSelBtnTemplate">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentName">
+                        <Offset>
+                            <AbsDimension x="21" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+        </Frames>
+    </Frame>
+    <Frame name="ModsLibFeatureEditOptionView" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2550">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true">
+                    <Size>
+                        <RelDimension x="1" y="1"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="462">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="640" abs_y="67">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="-3" y="5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentPattern" inherits="TemplateBigBkg7_flat" abs_x="640" abs_y="67">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentTitle" fonttype="BlackFont30" text="$3656" justifyH="center" abs_x="653" abs_y="30">
+                    <Color r="77" g="112" b="116"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="25"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentChenDi" inherits="TemplateBigBkg5" abs_x="562" abs_y="320">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="120"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-17" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):OptionViewCloseBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            <RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont18" hidden="true">
+                <Size>
+                    <AbsDimension x="550" y="80"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="90"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </RichText>
+            <SlidingFrame name="$parentOptionBox" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <AbsDimension x="552" y="300"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="false">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                             </Anchor>
+                        </Anchors>
+                        <Size>
+                            <AbsDimension x="552" y="1000"/>
+                        </Size>
+                    </Frame>
+                    <Button name="$parentBtn1" inherits="ModsLibFeatureEditOptionBtnTemplate" id="1"/>
+                    <Button name="$parentBtn2" inherits="ModsLibFeatureEditOptionBtnTemplate" id="2"/>
+                    <Button name="$parentBtn3" inherits="ModsLibFeatureEditOptionBtnTemplate" id="3"/>
+                    <Button name="$parentBtn4" inherits="ModsLibFeatureEditOptionBtnTemplate" id="4"/>
+                    <Button name="$parentBtn5" inherits="ModsLibFeatureEditOptionBtnTemplate" id="5"/>
+                    <Button name="$parentBtn6" inherits="ModsLibFeatureEditOptionBtnTemplate" id="6"/>
+                    <Button name="$parentBtn7" inherits="ModsLibFeatureEditOptionBtnTemplate" id="7"/>
+                    <Button name="$parentBtn8" inherits="ModsLibFeatureEditOptionBtnTemplate" id="8"/>
+                    <Button name="$parentBtn9" inherits="ModsLibFeatureEditOptionBtnTemplate" id="9"/>
+                    <Button name="$parentBtn10" inherits="ModsLibFeatureEditOptionBtnTemplate" id="10"/>
+                    <Button name="$parentBtn11" inherits="ModsLibFeatureEditOptionBtnTemplate" id="11"/>
+                    <Button name="$parentBtn12" inherits="ModsLibFeatureEditOptionBtnTemplate" id="12"/>
+                    <Button name="$parentBtn13" inherits="ModsLibFeatureEditOptionBtnTemplate" id="13"/>
+                    <Button name="$parentBtn14" inherits="ModsLibFeatureEditOptionBtnTemplate" id="14"/>
+                    <Button name="$parentBtn15" inherits="ModsLibFeatureEditOptionBtnTemplate" id="15"/>
+                    <Button name="$parentBtn16" inherits="ModsLibFeatureEditOptionBtnTemplate" id="16"/>
+                    <Button name="$parentBtn17" inherits="ModsLibFeatureEditOptionBtnTemplate" id="17"/>
+                    <Button name="$parentBtn18" inherits="ModsLibFeatureEditOptionBtnTemplate" id="18"/>
+                    <Button name="$parentBtn19" inherits="ModsLibFeatureEditOptionBtnTemplate" id="19"/>
+                    <Button name="$parentBtn20" inherits="ModsLibFeatureEditOptionBtnTemplate" id="20"/>
+                </Frames>
+            </SlidingFrame>
+        </Frames>
+    </Frame>
+    
+	##特性编辑界面
+	<Frame name="ModsLibFeatureEdit" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2500">
+        <Layers>
+			<Layer level="BACKGROUND">
+            	<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1075" abs_y="600">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+                <Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="1072" abs_y="470">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="52"/>
+                            </Offset>
+                        </Anchor>
+					</Anchors>	
+				</Texture>
+                ##分割线1
+                <Texture name="$parentLine1" inherits="TemplateBkg20" abs_x="2" abs_y="418">
+                    <Angle value="90" />
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parentBkgWhite" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="320" y="35"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+ 		<Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1071" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):CloseBtnClicked(true);</OnClick>
+				</Scripts>
+            </Button>
+            ##左侧
+            <Frame name="$parentLeftPanel" abs_x="318" abs_y="470">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="52"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml"  uvname="juese_gezi01.png" abs_x="90" abs_y="90">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="117" y="70"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentFeatureTitle" fonttype="BlackFont24" justifyH="center" text="$3650" abs_x="304" abs_y="24">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="0" y="7"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentFeatureDesc" fonttype="BlackFont24" autowrap="true" text="$3650" abs_x="240" abs_y="155">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentFeatureTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="30"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+					</Layer>
+				</Layers>
+            </Frame>
+            ##右边属性
+            <SlidingFrame name="$parentRightPanel" slidingY="true" slideplane="$parentPlane" abs_x="750" abs_y="430">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentLeftPanel">
+                        <Offset>
+                            <AbsDimension x="1" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="false" abs_x="750" abs_y="470"/>
+                    <Frame name="$parentEmptyFrame" inherits="EmptyFrameTemplate" abs_x="750" abs_y="430" hidden="true">
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Frame>
+                    <Frame name="$parentLine1" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine2" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine3" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine4" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine5" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine6" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine7" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine8" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine9" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+                    <Frame name="$parentLine10" inherits="ModsLibFeatureEditLineTemplate" hidden="true"/>
+
+                    <Frame name="$parentSlider1" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider2" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider3" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider4" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider5" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider6" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider7" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider8" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider9" inherits="ModsLibFeatureEditSliderTemplate"/>
+                    <Frame name="$parentSlider10" inherits="ModsLibFeatureEditSliderTemplate"/>
+  
+                    <Frame name="$parentOption1" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption2" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption3" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption4" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption5" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption6" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption7" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption8" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption9" inherits="ModsLibFeatureEditOptionTemplate"/>
+                    <Frame name="$parentOption10" inherits="ModsLibFeatureEditOptionTemplate"/>
+  
+                    <Frame name="$parentSelection1" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection2" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection3" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection4" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection5" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection6" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection7" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection8" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection9" inherits="ModsLibFeatureEditSelectionTemplate"/>
+                    <Frame name="$parentSelection10" inherits="ModsLibFeatureEditSelectionTemplate"/>
+
+                    <Frame name="$parentSwitch1" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch2" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch3" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch4" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch5" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch6" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch7" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch8" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch9" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                    <Frame name="$parentSwitch10" inherits="ModsLibFeatureEditSwitchTemplate"/>
+                </Frames>
+            </SlidingFrame>
+            <Button name="$parentDelBtn" inherits="TemplateBtnBig_DeleteBtn">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="60" y="-13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):DeleteBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-60" y="-13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibFeatureEdit"):ConfirmBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

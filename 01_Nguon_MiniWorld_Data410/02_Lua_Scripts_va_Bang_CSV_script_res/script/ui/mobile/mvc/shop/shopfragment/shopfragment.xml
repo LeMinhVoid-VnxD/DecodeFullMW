@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/shop/shopFragment/ShopFragMentCtrl.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopFragment/ShopFragMentModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopFragment/ShopFragMentView.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopFragment/ShopFragMentViewExt.lua"/>
+	<Button name="FragMentPrizeBt" inherits="TemplateBtn3" virtual="true" abs_x="215" abs_y="83">
+        <FontString name="$parentName" abs_x="215" abs_y="27" text="" fonttype="BlackFont28" justifyH="center" >
+            <Color r="55" g="54" b="51"/>
+            <Anchors>
+                <Anchor point="top" relativePoint="top">
+                    <Offset>
+                        <AbsDimension x="0" y="13" />
+                    </Offset>
+                </Anchor>
+            </Anchors>
+        </FontString>
+        <Frames>
+            <Frame name="$parentBottom" abs_x="140" abs_y="24"  input_transparent="true">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="50" y="-16" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentIcon" abs_x="30" abs_y="30" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="30" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentGoldNeed" abs_x="70" abs_y="15" text="" fonttype="BlackFont20"  justifyH="left" lang_ver="vie">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="1" y="-4" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentGoldNeed" abs_x="70" abs_y="15" text="" fonttype="BlackFont20"  justifyH="left">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="1" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):CapsuleToysBtClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    #兑换成功界面
+    <Frame name="ShopFragMentMessageboxFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2900" input_transparent="false">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg14" stretchedge="true" color="40000000"/>
+				<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="662" abs_y="338">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-19" y="-22" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>		
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-27" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):CloseMessageBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont24" autoextend="true" abs_x="507" abs_y="165">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="72" y="80" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<RichText name="$parentDesc1" hidden="true" lineInterval="6" multiLine="false" fonttype="BlackFont24" autoextend="true" abs_x="507" abs_y="24">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChenDi" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="200" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<Button name="$parentCenterBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" abs_x="180" abs_y="26">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):CloseMessageBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+    </Frame>
+    ##兑换确认界面
+    <Frame name="ShopFragMentMsgboxFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2900" input_transparent="false">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000" />
+				<Texture name="$parentChenDi1" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="653" y="358" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkgWithHuaWen0" abs_x="645" abs_y="65">
+				<Anchors>
+				    <Anchor point="top" relativeTo="$parentChenDi1" relativePoint="top">
+				        <Offset>
+				            <AbsDimension x="0" y="5"/>
+				        </Offset>
+				    </Anchor>
+				</Anchors>
+				<Layers>
+				    <Layer level="overlap">
+						<FontString name="$parentTitle2" fonttype="BlackFont30" justifyH="center" justifyV="middle" text="$609">
+							<Color r="77" g="112" b="116"/>
+							<Size>
+								<AbsDimension x="300" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</FontString>
+				    </Layer>
+				</Layers>
+			</Frame>
+			<RichText name="$parentText" lineInterval="12" multiLine="false" fonttype="BlackFont30" autoextend="true">
+				<Color r="55" g="54" b="47"/>
+                <Size>
+					<AbsDimension x="524" y="70" />
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentHead" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="40" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+            <RichText name="$parentText2" lineInterval="12" multiLine="false" fonttype="BlackFont24" autoextend="true">
+				<Color r="55" g="54" b="47"/>
+                <Size>
+					<AbsDimension x="524" y="50" />
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentText" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<RichText name="$parentText3" lineInterval="12" multiLine="true" fonttype="BlackFont24" autoextend="true">
+				<Color r="55" g="54" b="47"/>
+                <Size>
+					<AbsDimension x="524" y="71" />
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentHead" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="-3" y="58" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+            ##关闭按钮
+			<Button name="$parentCloseBtn"  abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parentHead">
+						<Offset>
+							<AbsDimension x="-11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png">
+					<Size>
+						<RelDimension x="0.9" y="0.9" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):ExchangeCloseBtn();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCenterBtn" inherits="TemplateBtn3" hidden="true" >
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi1" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-23"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName1" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3010">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="160" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):ExchangeFinishBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentButtonArea1" abs_x="215" abs_y="83" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentChenDi1">
+                        <Offset>
+                            <AbsDimension x="54" y="-23"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentBt" inherits="FragMentPrizeBt" id="1">
+                    </Button>
+                </Frames>
+            </Frame>
+           <Frame name="$parentButtonArea2" abs_x="215" abs_y="83" hidden="true">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentButtonArea1">
+                        <Offset>
+                            <AbsDimension x="115" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentBt" inherits="FragMentPrizeBt" id="2">
+                    </Button>
+                </Frames>
+            </Frame>
+		</Frames>
+    </Frame>
+    ##碎片商店控件模板
+    <Button name="ShopFragMent_CellTemplate" virtual="true"  abs_x="182" abs_y="243" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				##图标
+				<Texture name="$parentIconBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom">
+					<Size>
+						<AbsDimension x="182" y="182"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentIcon">
+					<Size>
+						<AbsDimension x="128" y="128"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentNameBg" inherits="TemplateBigBkg18" abs_x="178" abs_y="28">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text=""  abs_x="182" abs_y="18" autoextend="true">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameBg">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+        <Frames>
+            <Button name="$parentExchangeBtn" abs_x="182" abs_y="61" hidden="true">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" inherits="TemplateBkg3"/>
+		        <PushedTexture name="$parentPushedBG" inherits="TemplateBkg3">
+                    <Size>
+                        <AbsDimension x="120" y="40"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="overlay">
+                        <!-- <FontString name="$parentName" abs_x="95" abs_y="23" text="$30076" fonttype="BlackFont24">
+                        	<Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top">
+                                    <Offset>
+                                        <AbsDimension x="0" y="6" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString> -->
+                         <!-- <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_chip" abs_x="24" abs_y="24">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                                    <Offset>
+                                        <AbsDimension x="-2" y="1"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentHave" fonttype="BlackFont18" justifyH="right" text="0/" abs_x="25" abs_y="14">
+                        	 <Color r="55" g="54" b="51"/>
+                        	 <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="2" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentCost" fonttype="BlackFont18"  justifyH="left" text="" abs_x="30" abs_y="14">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentHave">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString> -->
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_chip" abs_x="24" abs_y="24">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-24" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentHave" fonttype="BlackFont18" justifyH="right" text="0/" abs_x="25" abs_y="14">
+                        	 <Color r="55" g="54" b="51"/>
+                        	 <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="2" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentCost" fonttype="BlackFont18"  justifyH="left" text="" abs_x="30" abs_y="14">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentHave">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):ExchangeBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentExchangeBtn2" abs_x="130" abs_y="50" hidden="true" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentBkg" inherits="TemplateBkg3" />
+                        <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_chip" abs_x="30" abs_y="30">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="5" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentCost" fonttype="BlackFont20"  justifyH="left" text="" abs_x="75" abs_y="21">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="62" y="15"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Button>
+            <Button name="$parentExchangeBtn3" abs_x="182" abs_y="61" hidden="true" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_big_empty.png" DrawType="center">
+							<Center>
+								<Left offsetX="0" offsetY="0" w="32" h="61"/>
+								<Center offsetX="32" offsetY="0" w="32" h="61" />
+								<Right offsetX="64" offsetY="0" w="32" h="61" />
+							</Center>
+						</Texture>
+                        <FontString name="$parentName" fonttype="BlackFont24"  justifyH="center" text="$9206" abs_x="182" abs_y="24">
+                            <Color r="54" g="53" b="53"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Button>
+        </Frames>
+    </Button>
+    ##碎片商店
+	<Frame name="ShopFragMent" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2800">
+		<Layers>
+			<Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="80000000" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="932" abs_y="638">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="900" abs_y="545">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="69"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="926" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg2" inherits="TemplateBkg10">
+                            <Size>
+                                <AbsDimension x="161" y="36"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="525" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <!-- <Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+                            <Size>
+                                <AbsDimension x="250" y="110"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>	
+                            <UVAnimation texrows="4" texcols="4" />
+                        </Texture> -->
+                        <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_chip" abs_x="36" abs_y="36">
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parentBkg2">
+                                    <Offset>
+                                        <AbsDimension x="-140" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentNum" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="" >
+                            <Color r="255" g="255" b="255"/>
+                            <Size>
+                                <AbsDimension x="160" y="36"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkg2">
+                                    <Offset>
+                                        <AbsDimension x="0" y="1"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopFragMent"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##兑换列表
+            <ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" abs_x="818" abs_y="525">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="818" abs_y="525" />
+                    ##动态创建
+                    <!-- <Button name="$parentGrid1" inherits="GoldenFruitDetail_PrizeGridTemp" /> -->
+                </Frames>
+            </ListViewFrame>
+        </Frames>
+    </Frame>
+</Ui>

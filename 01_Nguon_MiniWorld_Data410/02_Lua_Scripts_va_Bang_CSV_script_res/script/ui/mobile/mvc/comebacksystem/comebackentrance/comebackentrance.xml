@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/comeBackSystem/ComeBackEntrance/ComeBackEntranceCtrl.lua" />
+	<Script file="ui/mobile/mvc/comeBackSystem/ComeBackEntrance/ComeBackEntranceModel.lua" />
+	<Script file="ui/mobile/mvc/comeBackSystem/ComeBackEntrance/ComeBackEntranceView.lua" />
+	
+	##左侧分类按钮模板
+	<Button name="ComeBackEntrance_TabBtnTemplate" inherits="TemplateTabBtn4" virtual="true" abs_x="224" abs_y="85">
+		<Scripts>
+			<onClick>GetInst("UIManager"):GetCtrl("ComeBackEntrance"):TabBtn_OnClick()</onClick>
+		</Scripts>
+	</Button>
+	##回归提示
+	<Frame name="ComeBackHelpFrame" parent="UIClient" frameStrata="HIGH" framelevel="6008" hidden="true" inherits="TemplateHelpFrame1">
+	</Frame>
+	
+	##回流系统主界面
+	<Frame name="ComeBackEntrance" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="800">
+		##背景层
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1075" abs_y="600">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="824" abs_y="545">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<offset>
+								<AbsDimension x="0" y="52" />
+							</offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBodyPattern" inherits="TemplateBigBkg7_flat">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg"/>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTabsBkg" inherits="TemplateBigBkg29" abs_x="230" abs_y="520">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="15" y="70" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+			</Layer>
+		</Layers>
+		##UI层
+		<Frames>
+			##标题
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1073" abs_y="61">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="4" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBkgHelp" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" UVType="turn180" abs_x="84" abs_y="56">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTime" fonttype="BlackFont24" justifyH="left" justifyV="middle" abs_x="400" abs_y="24">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<Button name="$parentHelpBtn" inherits="TemplateHelpBtn0">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentTitleFrame">
+						<Offset>v
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ComeBackEntrance"):HelpBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright"relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-10" y="-4" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					##点击关闭按钮关闭ComeBackEntrance界面
+					<OnClick>GetInst("UIManager"):GetCtrl("ComeBackEntrance"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>			
+			##左侧滑动列表tab按钮组
+			<SlidingFrame name="$parentTabs" slidingY="true" slideplane="$parentPlane" abs_x="230" abs_y="520">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentTabsBkg" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="230" abs_y="520" />
+					<Button name="$parenttab1" inherits="ComeBackEntrance_TabBtnTemplate" id="1" />
+					<Button name="$parenttab2" inherits="ComeBackEntrance_TabBtnTemplate" id="2" />
+					<Button name="$parenttab3" inherits="ComeBackEntrance_TabBtnTemplate" id="3" />
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+	</Frame>
+</Ui>

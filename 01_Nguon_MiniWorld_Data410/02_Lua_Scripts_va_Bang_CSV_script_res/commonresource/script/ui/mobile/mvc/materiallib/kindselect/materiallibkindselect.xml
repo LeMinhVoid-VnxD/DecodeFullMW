@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/MaterialLib/kindSelect/MaterialLibKindSelectModel.lua"/>
+	<Script file="ui/mobile/mvc/MaterialLib/kindSelect/MaterialLibKindSelectView.lua"/>
+	<Script file="ui/mobile/mvc/MaterialLib/kindSelect/MaterialLibKindSelectCtrl.lua"/>
+
+	##选择图标按钮
+	<Button name="MaterialLibKindBtnTemplate" virtual="true" abs_x="100" abs_y="100">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBg" file="ui/mobile/texture2/modlib.xml" uvname="img_icon_select.png"/>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/modlib.xml" uvname="icon_form_resource.png" abs_x="67" abs_y="67">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" text="$4709">
+					<Color r="55" g="54" b="47"/>
+					<Size>
+						<AbsDimension x="60" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentSelect" inherits="TemplateBigBkg13" abs_x="106" abs_y="106" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBigBkg13" abs_x="106" abs_y="106">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				</Anchor>
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibKindSelect"):KindBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	##创建商品选择界面
+	<Frame name="MaterialLibKindSelect" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="40000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="1004" y="571"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentSelectTips" fonttype="BlackFont26" justifyH="center" text="$33162">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="300" y="26"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="175"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="952" abs_y="2">
+					<Anchors>
+						<Anchor point="center" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="195"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgBottom" inherits="TemplateBigBkg1" abs_x="998" abs_y="80">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg1" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="998" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg1" relativePoint="top" />
+				</Anchors>
+			</Frame>
+
+			##种类列表
+			<Frame name="$parentKindPlane" abs_x="800" abs_y="300">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+				</Anchors>
+			</Frame>
+
+			##关闭按钮
+			<Button name="$parentCloseBtn" abs_x="46" abs_y="60" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg1" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-16" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibKindSelect"):ClosedClicked()</OnClick>
+				</Scripts>
+			</Button>
+
+			##确定按钮
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3">
+				<Size>
+					<AbsDimension x="182" y="61" />
+				</Size>
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg1" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-20" y="-10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$100605">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="150" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MaterialLibKindSelect"):ConfirmClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

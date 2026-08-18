@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/comeBackSystem/AdventurePanel/AdventurePanelCtrl.lua" />
+	<Script file="ui/mobile/mvc/comeBackSystem/AdventurePanel/AdventurePanelModel.lua" />
+	<Script file="ui/mobile/mvc/comeBackSystem/AdventurePanel/AdventurePanelView.lua" />
+	
+	##进度条奖励格子模板
+	<Button name="ProgressRewardItemTemplate" virtual="true" abs_x="80" abs_y="80">
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/shop.xml" uvname="img_icon_custom_g.png" />
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/rideicons/3434.png" rel_x="0.65" rel_y="0.65">				
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentScore" justifyH="right" justifyV="middle" fonttype="BlackFont18" abs_x="100" abs_y="20">
+					<Color r="55" g="54" b="49" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseEnter_PCShowReward()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseLeave_PCShowReward()</OnLeave>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):ShowRewardPC_OnClick()</OnClick>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("AdventurePanel"):ShowRewardMobile_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##进度条奖励格子模板-奖励预览
+	<Button name="ProgressReward_cellTemplate1" virtual="true" abs_x="68" abs_y="68">
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg38" rel_x="1.0" rel_y="1.0" />
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="items/12858.png" rel_x="0.85" rel_y="0.85">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCount" justifyH="right" justifyV="middle" hidden="true" fonttype="BlackFont18" rel_x="0.9" abs_y="20">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-6" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseEnter_PCCheckReward()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseLeave_HideTipsInfo()</OnLeave>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseEnter_PCCheckReward()</OnClick>
+		</Scripts>
+	</Button>
+
+	##进度条奖励格子模板-领取奖励
+	<Button name="ProgressReward_cellTemplate2" virtual="true" abs_x="96" abs_y="96">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormal" inherits="TemplateBkg38" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPushedBG" inherits="TemplateBigBkg13" hidden="true" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="items/12858.png" rel_x="0.85" rel_y="0.85">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCount" justifyH="right" justifyV="middle" fonttype="BlackFont18" fontStyle="border" rel_x="0.9" abs_y="20">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-8" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):GetRewardBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##奖励兑换界面item格子模板
+	<Frame name="RewardPanel_cellTemplate" virtual="true" abs_x="94" abs_y="155">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg10" abs_x="94" abs_y="94">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+					</Anchors>
+                </Texture>
+				<Texture name="$parentIcon" file="items/12858.png" alphamode="alphablend" abs_x="70" abs_y="80">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+                <FontString name="$parentRewardCount" fonttype="BlackFont14" justifyH="center" justifyV="middle" autowrap="true" abs_x="140" abs_y="22">
+					<Color r="67" g="80" b="82"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="42"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##仅用于展示道具详情
+			<Button name="$parentShowDetail" abs_x="94" abs_y="94">
+            	<Anchors>
+                	<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+            	</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBkg" file="ui/mobile/texture0/common.xml" uvname="btn_blank">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+                <Scripts>
+					<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseEnter_PCShowExchangeItem()</OnEnter>
+					<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseLeave_HideTipsInfo()</OnLeave>
+					<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseEnter_PCShowExchangeItem()</OnClick>
+				</Scripts>
+          	</Button>
+			<Button name="$parentExchangeBtn" abs_x="90" abs_y="43">
+            	<Anchors>
+                	<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg" />
+            	</Anchors>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg9" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentPriceIcon" file="ui/mobile/texture0/minilobby.xml" uvname="icon_return_home" abs_x="24" abs_y="24">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="8" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentPrice" fonttype="BlackFont18" justifyH="left" justifyV="middle" autowrap="true" abs_x="50" abs_y="20">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+									<Offset>
+										<AbsDimension x="12" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+                <Scripts>
+                  <OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):ExchangeBtn_OnClick()</OnClick>
+                </Scripts>
+          	</Button>
+		</Frames>		
+	</Frame>
+
+    ##任务奖励界面item格子模板
+	<Frame name="TaskPanel_cellTemplate" virtual="true" abs_x="720" abs_y="88">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBkg22">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>				
+				<FontString name="$parentRewardValue" fonttype="BlackFont18" justifyH="left" justifyV="middle" abs_x="200" abs_y="18">
+					<Color r="67" g="80" b="82"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-170" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentTaskBtn" abs_x="130" abs_y="50">
+            	<Anchors>
+                	<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+                		<Offset>
+                  			<AbsDimension x="-13" y="0"/>
+               			</Offset>
+              		</Anchor>
+            	</Anchors>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg23">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont20" text="$492" justifyH="center" autowrap="true" abs_x="100" abs_y="20">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+                <Scripts>
+                  <OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):RewardBtn_OnClick()</OnClick>
+                </Scripts>
+          	</Button>
+			<RichText name="$parentTaskName" fonttype="BlackFont22" lineInterval="2" abs_x="300" abs_y="60" >
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="27" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+	</Frame>
+
+	##兑换记录界面item格子模板
+	<Frame name="RecordPanel_cellTemplate" virtual="true" abs_x="752" abs_y="70">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg10" abs_x="66" abs_y="66">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="25" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+                </Texture>
+				<Texture name="$parentIcon" file="items/fruit_small.png" alphamode="alphablend" abs_x="57" abs_y="57">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-3" y="-2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentUsedScore" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="50" abs_x="100" abs_y="24">
+					<Color r="76" g="76" b="76"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="186" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentExchangeCount" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="20" abs_x="100" abs_y="24">
+					<Color r="76" g="76" b="76"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-215" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentExchangeTime" fonttype="BlackFont18" justifyH="right" justifyV="middle" text="2020-08-09 23:23:23" abs_x="200" abs_y="20">
+					<Color r="76" g="76" b="76"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>	
+			</Layer>
+		</Layers>		
+	</Frame>
+
+	##回流系统之冒险回归
+	<Frame name="AdventurePanel" parent="UIClient" frameStrata="MEDIUM" hidden="true" abs_x="824" abs_y="536" framelevel="3000">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="125" y="20" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		##背景层
+		<Layers>
+			<Layer level="BACKGROUND">							
+				<Texture name="$parentContent" inherits="TemplateBigBkg5" abs_x="758" abs_y="400">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="33" y="117" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLine" file="ui/mobile/texture2/common.xml" uvname="img_line_sink" abs_x="758" abs_y="2" DrawType="center">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentContent">
+							<Offset>
+								<AbsDimension x="0" y="56" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Center>
+						<Left offsetX="0" offsetY="0" w="2" h="3" />
+						<Center offsetX="2" offsetY="0" w="2" h="3" />
+						<Right offsetX="4" offsetY="0" w="6" h="3" />
+					</Center>
+				</Texture>
+				<FontString name="$parentTips" justifyH="right" justifyV="middle" fonttype="BlackFont18" text="$35863" abs_x="300" abs_y="20">
+					<Color r="76" g="76" b="76" />
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentContent">
+							<Offset>
+								<AbsDimension x="0" y="23"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentMissionTime" justifyH="right" justifyV="middle" fonttype="BlackFont18" text="$35865" abs_x="300" abs_y="20" hidden="true">
+					<Color r="76" g="76" b="76" />
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentContent">
+							<Offset>
+								<AbsDimension x="-10" y="23"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##当前积分
+				<FontString name="$parentScoreInfo" fonttype="BlackFont20" fontStyle="normal" text="$35857" justifyV="middle" abs_x="160" abs_y="20">					
+					<Color r="76" g="76" b="76" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="58" y="32"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentScoreIcon" file="ui/mobile/texture0/minilobby.xml" uvname="icon_return_home" abs_x="35" abs_y="35">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="48" y="66"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentScore" justifyH="left" justifyV="middle" fonttype="BlackFont24" abs_x="100" abs_y="24">
+					<Color r="76" g="76" b="76" />
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="90" y="76"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		##UI层
+		<Frames>
+			##积分详情按钮
+			<Button name="$parentScoreInfoBtn" abs_x="40" abs_y="40">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="20" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/common.xml" uvname="btn_circle_grey" abs_x="25" abs_y="25">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/common.xml" uvname="btn_circle_grey" abs_x="22" abs_y="22">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_help_white" abs_x="14" abs_y="18">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+                                    <Offset>
+							            <AbsDimension x="1" y="1"/>
+						            </Offset>
+					            </Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):ScoreInfoBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##积分详情面板
+			<Frame name="$parentScoreInfoFrame" framelevel="9999" abs_x="280" abs_y="80" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentScoreInfoBtn">
+						<Offset>
+							<AbsDimension x="-5" y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">						
+						<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="280" abs_y="80" DrawType="ninesquare">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg2" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" abs_x="266" abs_y="66" DrawType="ninesquare">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+							<Angle value="-90" />
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="20" y="3" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCurScore" fonttype="BlackFont18" abs_x="260" abs_y="20" autowrap="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg2">
+									<Offset>
+										<AbsDimension x="0" y="-12" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTotalScore" fonttype="BlackFont18" abs_x="260" abs_y="20" autowrap="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg2">
+									<Offset>
+										<AbsDimension x="0" y="16" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>						
+					</Layer>
+				</Layers>
+			</Frame>
+			##积分奖励进度条
+			<Slider name="$parentProcessBar" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="636" abs_y="16">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="155" y="56" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentProcessBkg" inherits="TemplateBkg16" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentProcess" inherits="TemplateBkg17" abs_x="1" abs_y="12">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="4" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Slider>
+			##积分进度奖励按钮
+			<Button name="$parentProgressReward1" inherits="ProgressRewardItemTemplate" id="1"/>
+			<Button name="$parentProgressReward2" inherits="ProgressRewardItemTemplate" id="2"/>
+			<Button name="$parentProgressReward3" inherits="ProgressRewardItemTemplate" id="3"/>
+			<Button name="$parentProgressReward4" inherits="ProgressRewardItemTemplate" id="4"/>
+			<Button name="$parentProgressReward5" inherits="ProgressRewardItemTemplate" id="5"/>
+			##格子内容详情面板
+			<Frame name="$parentSelectRewardFrame" framelevel="9999" rel_x="1.0" rel_y="1.0" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="102" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" DrawType="ninesquare" abs_x="335" abs_y="376">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg2" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" abs_x="322" abs_y="318" DrawType="ninesquare">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="10" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+							<Angle value="-90" />
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="3" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" fonttype="BlackFont18" text="$35873" justifyH="center" abs_x="300" abs_y="20" autowrap="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="13" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>						
+					</Layer>
+				</Layers>
+				<Frames>
+					<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="304" abs_y="310" slidebar="$parentBar">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentBkg2">
+								<Offset>
+									<AbsDimension x="0" y="5" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="300" abs_y="310" />
+							##item通过代码动态创建
+						</Frames>
+					</ListViewFrame>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):OnMouseClick_PCShowReward()</OnClick>
+				</Scripts>
+			</Frame>
+			##兑换奖励按钮
+			<Button name="$parentRewardPanelBtn" inherits="TemplateTabBtn4" abs_x="130" abs_y="41" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="19" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<onClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):TabBtn_OnClick()</onClick>
+				</Scripts>
+			</Button>
+			##任务奖励按钮
+			<Button name="$parentTaskPanelBtn" inherits="TemplateTabBtn4" abs_x="130" abs_y="41" id="2">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="155" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<onClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):TabBtn_OnClick()</onClick>
+				</Scripts>
+			</Button>
+			##奖励记录按钮
+			<Button name="$parentRecordPanelBtn" inherits="TemplateTabBtn4" abs_x="130" abs_y="41" id="3">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="290" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<onClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):TabBtn_OnClick()</onClick>
+				</Scripts>
+			</Button>
+			##奖励兑换列表
+			<ListViewFrame name="$parentRewardList" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="340" hidden="true" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="0" y="58" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="340" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			##任务奖励列表
+			<ListViewFrame name="$parentTaskList" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="340" hidden="true" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="0" y="58" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="340" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			##奖励兑换记录列表
+			<ListViewFrame name="$parentRecordList" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="290" hidden="true" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="0" y="108" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="340" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			##奖励兑换记录列表标题
+			<Frame name="$parentRecordTitle" abs_x="752" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="0" y="58" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">					
+						<Texture name="$parentLine" file="ui/mobile/texture2/common.xml" uvname="img_line_sink" abs_x="758" abs_y="2" DrawType="center">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+							</Anchors>
+							<Center>
+								<Left offsetX="0" offsetY="0" w="2" h="3" />
+								<Center offsetX="2" offsetY="0" w="2" h="3" />
+								<Right offsetX="4" offsetY="0" w="6" h="3" />
+							</Center>
+						</Texture>
+						<FontString name="$parentTitle1" justifyH="left" justifyV="middle" fonttype="BlackFont20" text="$35869" abs_x="200" abs_y="20">
+							<Color r="77" g="112" b="117" />
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTitle2" justifyH="center" justifyV="middle" fonttype="BlackFont20" text="$35870"  abs_x="250" abs_y="20">
+							<Color r="77" g="112" b="117" />
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="144" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTitle3" justifyH="center" justifyV="middle" fonttype="BlackFont20" text="$35871" abs_x="200" abs_y="20">
+							<Color r="77" g="112" b="117" />
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-160" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTitle4" justifyH="right" justifyV="middle" fonttype="BlackFont20" text="$35872" abs_x="200" abs_y="20">
+							<Color r="77" g="112" b="117" />
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+			        <OnShow>GetInst("UIManager"):GetCtrl("AdventurePanel"):RecordPanel_OnShow()</OnShow>
+		        </Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnShow>GetInst("UIManager"):GetCtrl("AdventurePanel"):AdventurePanel_OnShow()</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("AdventurePanel"):AdventurePanel_OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+
+	##选择奖励界面
+	<Frame name="GetRewardPanel" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3010">
+		##背景层
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="402">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>				
+				<Texture name="$parentTitleFrame" inherits="TemplateBigBkg40" abs_x="640" abs_y="67">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-3" y="4" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitlePattern" inherits="TemplateBigBkg41" abs_x="640" abs_y="67">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-3" y="4" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleIcon1" file="ui/mobile/texture0/bigtex/lqjl_bg1.png" abs_x="103" abs_y="80">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="101" y="-19" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleIcon2" file="ui/mobile/texture0/bigtex/lqjl_bg2.png" abs_x="104" abs_y="78">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-100" y="3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" justifyH="center" justifyV="middle" text="$35873" fonttype="BlackFont30" abs_x="400" abs_y="30">
+					<Color r="54" g="53" b="53" />
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>		
+				<FontString name="$parentTips" fonttype="BlackFont26" lineInterval="2" justifyH="center" abs_x="600" abs_y="80" autowrap="true">
+					<Color r="55" g="54" b="51" />
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="106"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>		
+			</Layer>
+		</Layers>
+		##UI层
+		<Frames>	
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-17" y="6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="540" abs_y="222" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="85" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="540" abs_y="222" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			<Button name="$parentOKBtn" inherits="BtnTemplate12" abs_x="130" abs_y="50">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-26" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" text="$4878" fonttype="BlackFont20" abs_x="100" abs_y="20">
+							<Color r="55" g="54" b="51" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):OKBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##二次确认框内容
+			<Button name="$parentCellRewardBtn" inherits="ProgressReward_cellTemplate1" abs_x="92" abs_y="92" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-130" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentReSetBtn" inherits="TemplateBtn12" abs_x="130" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-163" y="-26" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" text="$35883" fonttype="BlackFont20" abs_x="100" abs_y="20">
+							<Color r="51" g="55" b="55" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):ReSetBtn_OnClick()</OnClick>
+				</Scripts> 
+			</Button>
+			<Button name="$parentSureBtn" inherits="BtnTemplate12" abs_x="130" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="163" y="-26" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" text="$35874" fonttype="BlackFont20" abs_x="100" abs_y="20">
+							<Color r="55" g="54" b="51" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AdventurePanel"):SureBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

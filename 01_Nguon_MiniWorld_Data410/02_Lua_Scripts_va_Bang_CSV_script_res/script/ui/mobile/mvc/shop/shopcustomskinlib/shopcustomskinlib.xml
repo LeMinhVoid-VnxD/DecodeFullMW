@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/shop/shopCustomSkinLib/ShopCustomSkinLibModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopCustomSkinLib/ShopCustomSkinLibView.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopCustomSkinLib/ShopCustomSkinLibCtrl.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopCustomSkinLib/ShopCustomSkinLibModelExt.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopCustomSkinLib/ShopCustomSkinLibCtrlExt.lua"/>
+
+	##部件排序类型
+	<Button name="ShopCustomSkinLibPartSortTypeBtn" virtual="true" abs_x="280" abs_y="46">
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentText" justifyV="middle" justifyH="center" fonttype="BlackFont20" text="">
+					<Color r="185" g="185" b="185"/>
+					<Size>
+						<AbsDimension x="280" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg36" abs_x="280" abs_y="1">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom"/>
+					</Anchors>
+				</Texture>
+            </Layer>
+            <Layer level="BACKGROUND">
+            	<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_board_select.png" abs_x="280" abs_y="46"/>
+            </Layer>
+        </Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSortTypeBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##部件类型标签
+	<Button name="ShopCustomSkinLibPartTypeBtn" virtual="true" abs_x="92" abs_y="50" hidden="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_right_n.png" hidden="false"/>
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_right_h.png" hidden="false">
+					<Size>
+						<AbsDimension x="115" y="69" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_custom_head.png" hidden="false">
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheckedIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_custom_head.png" hidden="true">
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChecked">
+							<Offset>
+								<AbsDimension x="0" y="3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" hidden="true" justifyH="center" text="$140" abs_x="90" abs_y="20">
+					<Color r="60" g="73" b="76"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentCheckedIcon">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartTypeBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+    ##商店定制界面
+	<Frame name="ShopCustomSkinLib" parent="UIClient" frameStrata="MEDIUM" hidden = "true" abs_x = "1100" abs_y = "600" framelevel="1011">
+		<Anchors>
+			<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="173" y="54" />
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+				<Offset>
+					<AbsDimension x="2" y="3" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentBg" inherits="TemplateBigBkg2" framelevel = "1013">
+				    <Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="54"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##定制库按钮
+			<Button name="$parentBtn1" abs_x="160" abs_y="46" inherits="TemplateTabBtn3" id = "1" framelevel = "1112" hidden="true">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="10" y="4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):TabBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##已拥有按钮
+			<Button name="$parentBtn2" abs_x="160" abs_y="46" inherits="TemplateTabBtn3" id = "2" framelevel = "1112" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="3" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):TabBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##已拥有按钮
+			<Button name="$parentBtn3" abs_x="160" abs_y="46" inherits="TemplateTabBtn3" id = "3" framelevel = "1112" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="3" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):TabBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##定制库按钮2
+			<Button name="$parentBtn4" abs_x="160" abs_y="46" inherits="TemplateTabBtn3" id = "4" framelevel = "1112" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="3" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):TabBtnClicked();</OnClick>
+				</Scripts>
+			</Button>			
+			<!--内部用的测试工具-->
+			<Button name="$parentTestTool" platform="pc" abs_x="47" abs_y="50" inherits="TemplateYellowRefreshBtn" framelevel = "1012" hidden="true">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):TestTool();</OnClick>
+				</Scripts>
+			</Button>
+
+			##迷你星工场按钮
+			<Button name="$parentBtnARFactory" abs_x="234" abs_y="56">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-140" y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+                     <Layer level="BACKGROUND">
+						<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="tab_workshop_n.png" />
+						<Texture name="$parentLogo" file="ui/mobile/texture2/shop.xml" uvname="icon_workshop.png" hidden="true">
+							<Size>
+								<AbsDimension x="27" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="8" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTagName" fonttype="BlackFont22" justifyH="center" text="$20234">
+                            <Color r="255" g="255" b="255"/>
+                            <Size>
+                                <AbsDimension x="200" y="22"/>
+                            </Size>
+                            <Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="23" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+                        </FontString>
+                        <ModelView name="$parentParticle" />
+                     </Layer>
+                </Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ARFactoryBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##定制库页面
+			<Frame name="$parentPage1" id = "1" hidden = "true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="54"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+                    ##Avatar特权卡剩余时间
+                    <Frame name = "$parentAvatarVIPTime" hidden = "true">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentVIPIcon" file="items/icon24601.png" abs_x="57" abs_y="52">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="top" relativeTo="$parent" >
+                                            <Offset>
+                                                <AbsDimension x="-112" y="36"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentBoard" file="ui/mobile/texture0/common.xml" uvname="img_bd_black50" abs_x="64" abs_y="21">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentVIPIcon" >
+                                            <Offset>
+                                                <AbsDimension x="2" y="25"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentTimeIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_time_h.png" abs_x="22" abs_y="22">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentBoard" >
+                                            <Offset>
+                                                <AbsDimension x="-28" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                ##时间（剩余天数）
+                                <FontString name="$parentText" fonttype="BlackFont17" justifyH="center" justifyV = "middle" text="100天" abs_x="60" abs_y="20">
+                                    <Color r="255" g="255" b="255"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentBoard" >
+                                            <Offset>
+                                                <AbsDimension x="5" y="2"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+					##类型标签部分
+					<Frame name="$parentType" abs_x="122" rel_y="1.0">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								##部件类型背景图
+								<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_crease.png" abs_x="122" rel_y="1.0">
+									<Anchors>
+										<Anchor point="right" relativeTo="$parent" relativePoint="right">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							##部件类型滑动列表
+							<SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane" hidden="false">
+								<Size>
+									<AbsDimension x="154" y="565"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parentPage1">
+										<Offset>
+											<AbsDimension x="0" y="122"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true">
+										<Size>
+											<AbsDimension x="142" y="750"/>
+										</Size>
+										<Anchors>
+											<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentBtn1" inherits="ShopCustomSkinLibPartTypeBtn" id="1" />
+									<Button name="$parentBtn2" inherits="ShopCustomSkinLibPartTypeBtn" id="2" />
+									<Button name="$parentBtn3" inherits="ShopCustomSkinLibPartTypeBtn" id="3" />
+									<Button name="$parentBtn4" inherits="ShopCustomSkinLibPartTypeBtn" id="4" />
+									<Button name="$parentBtn5" inherits="ShopCustomSkinLibPartTypeBtn" id="5" />
+									<Button name="$parentBtn6" inherits="ShopCustomSkinLibPartTypeBtn" id="6" />
+									<Button name="$parentBtn7" inherits="ShopCustomSkinLibPartTypeBtn" id="7" />
+									<Button name="$parentBtn8" inherits="ShopCustomSkinLibPartTypeBtn" id="8" />
+									<Button name="$parentBtn9" inherits="ShopCustomSkinLibPartTypeBtn" id="9" />
+									<Button name="$parentBtn10" inherits="ShopCustomSkinLibPartTypeBtn" id="10" />
+									<Button name="$parentBtn11" inherits="ShopCustomSkinLibPartTypeBtn" id="11" />
+								</Frames>
+							</SlidingFrame>
+						</Frames>
+					</Frame>
+					##角色部分
+					<Frame name="$parentActor">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="14" y="-17"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="topright" relativePoint="topleft" relativeTo="$parentPart">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								<Texture name="$parentTex" file="ui/mobile/texture2/bigtex/minilobby.png" rel_x="1.0" rel_y="1.0" hidden="true">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentPanel" rel_x="1.0" rel_y="1.0">
+								<Anchors>
+		                            <Anchor point="center" relativeTo="$parentTex" relativePoint="center">
+		                                <Offset>
+		                                    <AbsDimension x="0" y="0" />
+		                                </Offset>
+		                            </Anchor>
+		                        </Anchors>
+								<Layers>
+		                         	<Layer level="BACKGROUND">
+										<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="208" abs_y="45" >
+											 <Anchors>
+												 <Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+													 <Offset>
+														 <AbsDimension x="0" y="-100" />
+													 </Offset>
+												 </Anchor>
+											 </Anchors>
+										 </Texture>
+										<ModelView name="$parentView" rel_x="1.0" rel_y="1.0">
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="0" y="0" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</ModelView>
+		                        	</Layer>
+		                        </Layers>
+							</Frame>
+							<Button name="$parentRoleRotateBtn" abs_x="510" abs_y="598">
+								<Anchors>
+									<Anchor point="center" relativeTo="$parentTex" relativePoint="center">
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnMouseDown>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):RotateBtnMouseDown();</OnMouseDown>
+									<OnMouseMove>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):RotateBtnMouseMove();</OnMouseMove>
+								</Scripts>
+							</Button>
+							<Button name="$parentSaveBtn" abs_x="182" abs_y="61">
+								<Anchors>
+									<Anchor point="bottom" relativeTo="$parentPanel" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="-20" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont24"  justifyV="middle" justifyH="center" text="$9192">
+											<Color r="55" g="54" b="51" />
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):SaveBtnClicked(true);</OnClick>
+								</Scripts>
+							</Button>	
+							<Button name="$parentClaerBtn" abs_x="50" abs_y="53">
+								<Anchors>
+									<Anchor point="right" relativeTo="$parentSaveBtn" relativePoint="left">
+										<Offset>
+											<AbsDimension x="-54" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png">
+											<Size>
+												<AbsDimension x="31" y="31"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_blue.png" />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_blue.png" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ClearBtnClicked(true);</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentWishListBtn" abs_x="50" abs_y="53">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentSaveBtn" relativePoint="right">
+										<Offset>
+											<AbsDimension x="50" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like.png">
+											<Size>
+												<AbsDimension x="31" y="31"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):WishListBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentRandomBtn" abs_x="50" abs_y="53">
+								<Anchors>
+									<Anchor point="bottom" relativeTo="$parentWishListBtn" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="-25" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/noviceguide.xml" uvname="icon_dice.png">
+											<Size>
+												<AbsDimension x="31" y="31"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):RandomBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentFriendGiftBtn" abs_x="50" abs_y="53">
+								<Anchors>
+									<Anchor point="bottom" relativeTo="$parentRandomBtn" relativePoint="top">
+										<Offset>
+											<AbsDimension x="0" y="-25" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_give_.png">
+											<Size>
+												<AbsDimension x="43" y="41"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="1" y="-2" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):FriendGiftBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##部件部分
+					<Frame name="$parentPart">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parentType">
+								<Offset>
+									<AbsDimension x="-20" y="-30"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<RelDimension x="0.48" y="0.02"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								<FontString name="$parentPageText" justifyH="center" fonttype="BlackFont17" text="11/21">
+									<Color r="76" g="76" b="76"/>
+									<Size>
+										<AbsDimension x="80" y="17"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="right" relativeTo="$parentSort">
+											<Offset>
+												<AbsDimension x="57" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentNullTip" fonttype="BlackFont30" lineInterval="2" justifyH="center" justifyV="middle" text="$30051" abs_x="435" abs_y="40" hidden="true">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="126"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentSort" framelevel = "1014">
+								<Size>
+									<AbsDimension x="280" y="46"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="4" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer>
+										<Texture name="$parentBg" inherits="TemplateBkg8"/>
+										<FontString name="$parentText" justifyH="center" fonttype="BlackFont20" text="">
+											<Color r="255" g="255" b="255"/>
+											<Size>
+												<AbsDimension x="220" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" abs_x="20" abs_y="10">
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parentBg">
+													<Offset>
+														<AbsDimension x="-12" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Frame name="$parentSelectPanel" hidden = "true" framelevel = "1013">
+										<Size>
+											<AbsDimension x="280" y="506"/>
+										</Size>
+										<Layers>
+											<Layer level="overlay">
+												<Texture name="$parentBg" inherits="TemplateBkg8"/>
+											</Layer>
+										</Layers>
+										<Frames>
+											<Button name="$parentBtn1" inherits="ShopCustomSkinLibPartSortTypeBtn" id="1">
+												<Anchors>
+													<Anchor point="top" relativePoint="top" relativeTo="$parentBg">
+														<Offset>
+															<AbsDimension x="0" y="46"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn2" inherits="ShopCustomSkinLibPartSortTypeBtn" id="2">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn1">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn3" inherits="ShopCustomSkinLibPartSortTypeBtn" id="3">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn2">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn4" inherits="ShopCustomSkinLibPartSortTypeBtn" id="4">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn3">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn5" inherits="ShopCustomSkinLibPartSortTypeBtn" id="5">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn4">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn6" inherits="ShopCustomSkinLibPartSortTypeBtn" id="6">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn5">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn7" inherits="ShopCustomSkinLibPartSortTypeBtn" id="7">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn6">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn8" inherits="ShopCustomSkinLibPartSortTypeBtn" id="8">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn7">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn9" inherits="ShopCustomSkinLibPartSortTypeBtn" id="9">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn8">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+											<Button name="$parentBtn10" inherits="ShopCustomSkinLibPartSortTypeBtn" id="10">
+												<Anchors>
+													<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn9">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+											</Button>
+										</Frames>
+									</Frame>
+								</Frames>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSortBtnClicked();</OnClick>
+								</Scripts>
+							</Frame>
+							<Frame name="$parentSearch" framelevel = "1014" hidden = "true">
+								<Size>
+									<AbsDimension x="385" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentEditBkg" inherits="TemplateBkg8" />
+									</Layer>
+								</Layers>
+								<Frames>
+									<SafeEditBox name="$parentEdit" letters="30" multiLine="false"  >
+										<Size>
+											<AbsDimension x="385" y="20" />
+										</Size>
+										<Anchors>
+											<Anchor point="center" relativeTo="$parentEditBkg" relativePoint="center">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+											<Color r="255" g="255" b="255"/>
+										</FontString>
+										<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$3642" textcolor="ffb9b9b9"/>
+										<Scripts>
+											<OnFocusLost>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSearchFocusLost();</OnFocusLost>
+											<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSearchEnterPressed();</OnEnterPressed>
+											<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSearchEditBtnClicked();</OnClick>
+										</Scripts>
+									</SafeEditBox>
+									<Button name="$parentCancelBtn">
+										<Size>
+											<AbsDimension x="49" y="46"/>
+										</Size>
+										<Anchors>
+											<Anchor point="right" relativePoint="right" relativeTo="$parentEditBkg">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="BACKGROUND">
+											</Layer>
+										</Layers>
+										<NormalTexture name="$parentNormal" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="19" abs_y="19">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</NormalTexture>
+										<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="13" abs_y="13">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</PushedTexture>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSearchCancelBtnClicked();</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Button name="$parentSearchBtn">
+								<Size>
+									<AbsDimension x="47" y="50"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-9" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_search">
+                                            <Size>
+                                                <AbsDimension x="25" y="25"/>
+                                            </Size>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="-3" />
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+								<NormalTexture name="$parentNormal"   file="ui/mobile/texture2/common.xml"  uvname="btn_square_yellow"  />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml"  uvname="btn_square_yellow" abs_x="44" abs_y="47" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):PartSearchBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Frame name="$parentLoading" framelevel = "1014" hidden = "true">
+								<Size>
+									<AbsDimension x="433" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center" text= "$9263">
+											<Color r="55" g="54" b="45"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="15"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" framelevel = "1012">
+								<Size>
+									<AbsDimension x="450" y="510"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentSort">
+										<Offset>
+											<AbsDimension x="-8" y="10"/>
+										</Offset>
+									</Anchor>
+									<!-- <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="-30"/>
+										</Offset>
+									</Anchor> -->
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true">
+										<Size>
+											<AbsDimension x="450" y="543"/>
+										</Size>
+										<Anchors>
+											<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</ListViewFrame>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+			##已拥有页面
+			<Frame name="$parentPage2" id = "2" hidden = "true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="54"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##滑动列表
+					<ListViewFrame name="$parentSkinListView" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="15"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-20"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+
+    ##Avatar特权续费界面
+    <Frame name = "ShopCustomSkinLibAvatarRenew" parent = "UIClient" frameStrata = "MEDIUM" hidden = "true" rel_x = "1" rel_y = "1" framelevel = "1200">
+         <Layers level="BACKGROUND">
+            <Layer>
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="653" abs_y="407">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentDesc" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$30257" autowrap="true" lineInterval="5" abs_x="559" abs_y="50">
+                    <Color r="111" g="145" b="150"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentChenDi" >
+                            <Offset>
+                                <AbsDimension x="0" y="92" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentIcon" file="items/icon24601.png" abs_x="72" abs_y="65">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentChenDi" >
+                            <Offset>
+                                <AbsDimension x="0" y="-4"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$30252" abs_x="250" abs_y="20">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentIcon" >
+                            <Offset>
+                                <AbsDimension x="0" y="7" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            ## 标题栏
+            <Frame name="$parentTitle" abs_x="640" abs_y="67">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+                        <Offset>
+                            <AbsDimension x="-2" y="5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers level="BACKGROUND">
+                    <Layer>
+                        <Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="638" abs_y="67">
+                        </Texture>
+                        <Texture name="$parentTitleHuaWen" inherits="TemplateBigBkg7_flat">
+                            <Anchors>
+                                <Anchor point="topleft" relativeTo="$parentTitleBkg" relativePoint="topleft">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0" />
+                                    </Offset>
+                                </Anchor>
+                                <Anchor point="bottomright" relativeTo="$parentTitleBkg" relativePoint="bottomright">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentTitleName" fonttype="BlackFont30" justifyH="center" text="$4022" rel_x="0.8" abs_y="30">
+                            <Color r="77" g="112" b="116"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentTitleHuaWen" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            ## 关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+                        <Offset>
+                            <AbsDimension x="-10" y="13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):CloseAvatarRenewFrame();</OnClick>
+                </Scripts>
+            </Button>
+            ## 续费按钮
+            <Button name="$parentRenewBtn" abs_x="182" abs_y="81">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+                        <Offset>
+                            <AbsDimension x="" y="36"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentDesc" fonttype="BlackFont24" justifyH="center" text="$30258" abs_x="95" abs_y="24">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="10" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="icon_coin" abs_x="27" abs_y="28">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-30" y="-12" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentPrice" fonttype="BlackFont20" justifyH="center" text="" abs_x="50" abs_y="20">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="10" y="-15" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):RenewAvatarVIP();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+
+	<!--内部用的测试工具-->
+	<Frame name="TemplateCustomSkinToolEdit" virtual="true" abs_x="120" abs_y="40">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg8" />
+				<FontString name="$parentText" fonttype="BlackFont20" abs_x="100" abs_y="20" justifyH="right" text="头：">
+					<Color r="96" g="96" b="96"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SafeEditBox name="$parentEdit" letters="10" multiLine="false" editMethod="2" editimetype="1" abs_x="100" abs_y="20">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="10" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$21820" textcolor="ffb9b9b9"/>
+				
+				<!--
+				<Scripts>
+					<OnFocusLost>GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):OnFocusLost();</OnFocusLost>
+					<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("MiniWorksFrameSearch"):OnEnterPressed();</OnEnterPressed>
+				</Scripts>
+				-->
+			</SafeEditBox>
+		</Frames>
+	</Frame>
+
+	<Frame name="ShopCustomSkinTool" parent="UIClient" frameStrata="MEDIUM" hidden = "true" abs_x = "1100" abs_y = "600" framelevel="2011">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentBg" inherits="TemplateBigBkg2"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ToolCloseBtnOnClick	();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentEdit1" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-35" y="130" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit2" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit1" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit3" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit2" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit4" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit3" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit5" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit4" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit6" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit5" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit7" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit6" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit8" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit7" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentEdit9" inherits="TemplateCustomSkinToolEdit">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEdit8" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Button name="$parentOkBtn" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentPanel" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24"  justifyV="middle" justifyH="center" text="确定">
+							<Color r="55" g="54" b="51" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ToolOKBtnClicked();</OnClick>
+				</Scripts>
+			</Button>	
+			<Button name="$parentClaerBtn" abs_x="50" abs_y="53">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentOkBtn" relativePoint="left">
+						<Offset>
+							<AbsDimension x="-54" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png">
+							<Size>
+								<AbsDimension x="31" y="31"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_blue.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_blue.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ToolClearBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentActor" abs_x="510" abs_y="590">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="10" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentTex" file="ui/mobile/texture2/bigtex/minilobby.png" rel_x="1.0" rel_y="1.0" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentPanel" rel_x="1.0" rel_y="1.0">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentTex" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="208" abs_y="45" >
+										<Anchors>
+											<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+												<Offset>
+													<AbsDimension x="0" y="-100" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Texture>
+								<ModelView name="$parentView" rel_x="1.0" rel_y="1.0">
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</ModelView>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentRoleRotateBtn" abs_x="510" abs_y="598">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentTex" relativePoint="center">
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ToolRotateBtnMouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ToolRotateBtnMouseMove();</OnMouseMove>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnShow>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ShopCustomSkinToolOnShow();</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("ShopCustomSkinLib"):ShopCustomSkinToolOnHide();</OnHide>
+		</Scripts>
+	</Frame>
+	<!--内部用的测试工具end-->
+</Ui>

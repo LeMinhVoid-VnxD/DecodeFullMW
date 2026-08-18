@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##地图房间列表页
+	<Script file="ui/mobile/mvc/newOnlineHall/MapRoom/MapRoomModel.lua"/>
+	<Script file="ui/mobile/mvc/newOnlineHall/MapRoom/MapRoomView.lua"/>
+	<Script file="ui/mobile/mvc/newOnlineHall/MapRoom/MapRoomCtrl.lua"/>
+	<Script file="ui/mobile/mvc/newOnlineHall/MapRoom/MapRoomService.lua"/>
+	<Script file="ui/mobile/mvc/newOnlineHall/MapRoom/MapRoomCtrlExt.lua"/>
+	
+
+	<Button name="MapRoomPlayerTemplate" virtual="true" click_threshold="10">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_head.png" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/roleicons/32.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIconFrame" file="ui/headframes/1.png" rel_x="1.3" rel_y="1.3">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+		</Frames>
+	</Button>
+
+	<!--房间条目模板, 重构外观-->
+	<Button name="MapRoomItemTemplate" virtual="true" click_threshold="10" hidden="false" abs_x="272" abs_y="193">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##迷你队长遮罩
+				<Texture name="$parentGfBkg" file="ui/mobile/texture2/room.xml" uvname="board_map_info_official" hidden="true" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentContent" parent="$parent">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="1" y="1" />
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-1" y="-2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##迷你队长Tag
+						<Texture name="$parentGfTagBg" file="ui/mobile/texture2/room.xml" uvname="label_online_official" hidden="true" abs_x="64" abs_y="28">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="1" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentGfTag" justifyH="center" justifyV="middle" fonttype="BlackFont18" hidden="true" lineInterval="1" text="$6032" abs_x="64" abs_y="17">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentGfTagBg">
+									<Offset>
+										<AbsDimension x="0" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##网络
+						<Texture name="$parentNetIcon" file="ui/mobile/texture2/room.xml" uvname="icon_wifi_green" abs_x="18" abs_y="18">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="16" y="10" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##人数图标
+						<Texture name="$parentNumIcon" file="ui/mobile/texture0/room.xml" uvname="icon_user_grey" abs_x="22" abs_y="22">
+							<Anchors>
+								<Anchor point="right" relativeTo="$parentNetIcon" relativePoint="right">
+									<Offset>
+										<AbsDimension x="30" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##人数
+						<FontString name="$parentNum" fonttype="BlackFont20" lineInterval="1" text="5/40" abs_x="70" abs_y="18">
+							<Color r="1" g="194" b="16"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentNumIcon" relativePoint="right">
+									<Offset>
+										<AbsDimension x="10" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<Texture name="$parentPlayedIcon" file="ui/mobile/texture2/room.xml" uvname="icon_played" abs_x="70" abs_y="30">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="138" y="10" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentPlayedTxt" fonttype="BlackFont20" justifyH="center" justifyV="middle" lineInterval="1" text="$55773" abs_x="70" abs_y="18">
+							<Color r="0" g="0" b="0"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentPlayedIcon" relativePoint="left">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##名字						
+						<FontString name="$parentHostName" fonttype="BlackFont20" text="$1335" justifyH="left" justifyV="middle" abs_x="145" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="121" y="52"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##性别
+						<Texture name="$parentHostGender" file="ui/mobile/texture2/common_icon.xml" uvname="icon_male">
+							<Size>
+								<AbsDimension x="21" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<Offset>
+										<AbsDimension x="123" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##国家
+						<Texture name="$parentCountryFlag" file="ui/mobile/texture0/countryflag.xml" uvname="img_Taiwan" hidden="true">
+							<Size>
+								<AbsDimension x="33" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentHostGender" relativePoint="right">
+									<Offset>
+										<AbsDimension x="10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##密码
+						<Texture name="$parentPassWord" file="ui/mobile/texture0/common_icon.xml" uvname="icon_lock" hidden="false">
+							<Size>
+								<AbsDimension x="19" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+									<Offset>
+										<AbsDimension x="-12" y="-8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##维护状态
+						<Texture name="$parentMaintenanceIcon" file="ui/mobile/texture2/room.xml" uvname="icon_repair_server_green" abs_x="18" abs_y="18" hidden="false">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentPassWord" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##权限
+						<FontString name="$parentAccess" justifyH="left" fonttype="BlackFont16" lineInterval="1" text="$413" abs_x="80" abs_y="15">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="42" y="-8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##版本号
+						<FontString name="$parentVersion" justifyH="left" fonttype="BlackFont16" lineInterval="1" text="0.1.5" abs_x="68" abs_y="14">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="118" y="-9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>		
+						<FontString name="$parentVersionNotMate" justifyH="left" fonttype="BlackFont16" lineInterval="1" text="$26002" abs_x="180" abs_y="15">
+							<Color r="239" g="45" b="45"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="118" y="-8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>	
+						<Texture name="$parentCollectTag" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_h.png" abs_x="24" abs_y="21">
+							<Anchors>
+								<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+									<Offset>
+										<AbsDimension x="-58" y="7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentRoomStyleBg" file="ui/mobile/texture0/common.xml" uvname="board_createroom_back" abs_x="52" abs_y="22">
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="9" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<!-- <Center>
+								<Left			offsetX="0"  offsetY="0" w="10"	h="14"/>
+								<Center			offsetX="10" offsetY="0" w="10"	h="14"	/>
+								<Right			offsetX="20" offsetY="0" w="10" h="14" />
+							</Center> -->
+						</Texture>	
+						<FontString name="$parentRoomStyle" justifyH="center" justifyV="middle" fonttype="BlackFont16" lineInterval="1" text="$26002" abs_x="52" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentRoomStyleBg">
+									<Offset>
+										<AbsDimension x="0" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>				
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--游戏状态-->
+					<Frame name="$parentGameStage" abs_x="68" abs_y="25">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="116" y="110"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBkg13" rel_x="1.0" rel_y="1.0" />
+								<FontString name="$parentTxt" fonttype="BlackFont16" text="$1343" justifyH="center" justifyV="middle" rel_x="1.0" abs_y="15">
+									<Color r="0" g="151" b="137"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<!--平台标识-->
+					<Frame name="$parentPlatform" abs_x="28" abs_y="21">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="8" y="-6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##平台标识
+								<Texture name="$parentCloud" file="ui/mobile/texture0/room.xml" uvname="icon_pcserver2" hidden="false" abs_x="28" abs_y="19" >
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentPC" file="ui/mobile/texture0/room.xml" uvname="icon_pc" hidden="true" abs_x="21" abs_y="19">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMoble" file="ui/mobile/texture0/room.xml" uvname="icon_moble" hidden="true" abs_x="14" abs_y="21">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentHostHead" inherits="MapRoomPlayerTemplate">
+						<Size>
+							<AbsDimension x="100" y="100"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="9" y="46"/>
+								</Offset>
+							</Anchor>
+						</Anchors>								
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):ItemHostHeadClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##加入
+					<Button name="$parentEnterBtn" abs_x="50" abs_y="53">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="212" y="96" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_intomap.png" abs_x="24" abs_y="22">
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="14" y="14" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png"  abs_x="50" abs_y="53"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):ItemEnterRoomBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					#更多
+					<Button name="$parentMoreBtn" abs_x="54" abs_y="38">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								<Texture name="$parentBkg" inherits="TemplateBigBkg34" abs_x="34" abs_y="8" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):MoreBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMoreFrame" parent="$parent" rel_x="1.0" rel_y="1.0">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<!--背景-->
+								<Texture name="$parentVein" inherits="TemplateBigBkg18">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center">
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							##举报
+							<Button name="$parentReportBtn" abs_x="50" abs_y="53">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="55" y="56"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_report.png" abs_x="28" abs_y="24">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center">
+													<Offset>
+														<AbsDimension y="-4"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentName" justifyH="center" fonttype="BlackFont20" lineInterval="1" text="$1305" abs_x="60" abs_y="44" autowrap="true">
+											<Color r="243" g="243" b="242"/>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="6"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red" />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):ReportBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							##收藏
+							<Button name="$parentCollectBtn" abs_x="50" abs_y="53">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentReportBtn">
+										<Offset>
+											<AbsDimension x="60" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_h.png" abs_x="32" abs_y="28">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center">
+													<Offset>
+														<AbsDimension y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<!-- 25228 -->
+										<FontString name="$parentName" justifyH="center" fonttype="BlackFont20" lineInterval="1" text="$25230" abs_x="80" abs_y="44" autowrap="true">
+											<Color r="243" g="243" b="242"/>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="6"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow" />
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):CollectBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):MoreFrameClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>			
+		</Frames>
+		<Scripts>
+			<OnClick></OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="MapRoom" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3100" rel_x="1.0" rel_y="1.0">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!--半透明遮罩-->
+				<Texture name="$parentBgMask" file="ui/white.png" color="b2000000" stretchedge="true" framelevel="1002">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentBkg" parent="$parent" abs_x="1220" abs_y="660">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!--背景-->
+						<Texture name="$parentVein" inherits="TemplateBigBkg2">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-2" y="-2" />
+									</Offset>
+								</Anchor>
+								<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+									<Offset>
+										<AbsDimension x="2" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--竖分割线-->
+						<Texture name="$parentBodyCertreBkg1" inherits="TemplateBkg20_V" abs_x="2" abs_y="626" >
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="344" y="19" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 左上精选标签背景-->
+						<Texture name="$parentTagBkg" file="ui/mobile/texture2/miniwork.xml" hidden="true" uvname="label_map_selection">
+							<Size>
+								<AbsDimension x="105" y="50" />
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-3" y="-2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--左上精选标签-->
+						<FontString name="$parentTagName" fonttype="BlackFont20" justifyH="center" hidden="true" text="$3843">
+							<Color r="55" g="54" b="50"/>
+							<Size>
+								<AbsDimension x="75" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentTagBkg">
+									<Offset>
+										<AbsDimension x="-5" y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 左半边frame -->
+			<Frame name="$parentBodyLeft" parent="$parent" abs_x="344" abs_y="660">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 啦啦啦德玛西亚 -->
+					<Frame name="$parentMap"  parent="$parent" >
+						<Size>
+							<AbsDimension x="310" y="643"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="17" y="17" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<!--地图名-->
+								<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont24" text="$1335" justifyH="left" justifyV="middle">
+									<Color r="76" g="76" b="76"/>
+									<Size>
+										<AbsDimension x="300" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" fonttype="BlackFont24" text="$1335" justifyH="left" justifyV="bottom">
+									<Color r="76" g="76" b="76"/>
+									<Size>
+										<AbsDimension x="300" y="23"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<!--地图成绩，玩家评星-->
+							<Frame name="$parentGrade">
+								<Size>
+									<AbsDimension x="180" y="25"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parentName" relativePoint="bottomleft">
+										<Offset>
+											<AbsDimension x="0" y="13"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentScore" justifyH="left" fonttype="BlackFont24" text="3.7" >
+											<Color r="61" g="69" b="70"/>
+											<Size>
+												<AbsDimension x="38" y="22"/>
+											</Size>
+											<Anchors>
+												<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<!-- 一堆静态星星-->
+										<Texture name="$parentBgStar1" file="ui/mobile/texture0/shop.xml" uvname="icon_star_act.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="39" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentBgStar2" file="ui/mobile/texture0/shop.xml" uvname="icon_star_act.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentBgStar1">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentBgStar3" file="ui/mobile/texture0/shop.xml" uvname="icon_star_act.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentBgStar2">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentBgStar4" file="ui/mobile/texture0/shop.xml" uvname="icon_star_act.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentBgStar3">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentBgStar5" file="ui/mobile/texture0/shop.xml" uvname="icon_star_act.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentBgStar4">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentStar1" file="ui/mobile/texture0/common.xml" uvname="icon_score.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentBgStar1">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentStar2" file="ui/mobile/texture0/common.xml" uvname="icon_score.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentBgStar2">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentStar3" file="ui/mobile/texture0/common.xml" uvname="icon_score.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentBgStar3">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentStar4" file="ui/mobile/texture0/common.xml" uvname="icon_score.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentBgStar4">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentStar5" file="ui/mobile/texture0/common.xml" uvname="icon_score.png">
+											<Size>
+												<AbsDimension x="25" y="25"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentBgStar5">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Frame>
+							<!--地图缩略图-->
+							<Frame name="$parentThumbnail">
+								<Size>
+									<AbsDimension x="310" y="176"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentGrade">
+										<Offset>
+											<AbsDimension x="0" y="19"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentBkg" inherits="TemplateBkg12" >
+											<Size>
+												<RelDimension x="1.0" y="1.0"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<!--地图缩略图-->
+										<Texture name="$parentPic" file="ui/mobile/texture2/bigtex/img_noroom.png">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="2" y="2"/>
+													</Offset>
+												</Anchor>
+												<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-2" y="-2"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<!--地图类型-->										
+										<Texture name="$parentTypeBkg" file="ui/white.png" color="b2000000" framelevel="1002">
+											<Size>
+												<AbsDimension x="52" y="22"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentType" fonttype="BlackFont18" text="$1335" justifyH="center" justifyV="bottom">
+											<Color r="255" g="255" b="255"/>
+											<Size>
+												<AbsDimension x="52" y="17"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentTypeBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<!--文本提示标识-->
+										<FontString name="$parentPicExplain" fonttype="BlackFont16" justifyH="center" text="$20309" hidden="true">
+											<Color r="255" g="253" b="233"/>
+											<Size>
+												<AbsDimension x="200" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-6"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<!--作者信息-->
+							<Button name="$parentAuthorHead" inherits="MapRoomPlayerTemplate">
+								<Size>
+									<AbsDimension x="40" y="40"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parentThumbnail" relativePoint="bottomleft">
+										<Offset>
+											<AbsDimension x="0" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>								
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):AuthorHeadClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<!--作者名字-->
+							<Frame name="$parentAuthorName" abs_x="160" abs_y="18">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentAuthorHead">
+										<Offset>
+											<AbsDimension x="10" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentTxt" fonttype="BlackFont20" text="$1335" justifyH="left" justifyV="middle" rel_x="1.0" rel_y="1.0">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+
+							<!-- 国家-->
+							<Frame name="$parentCountry" abs_x="33" abs_y="21">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentAuthorName">
+										<Offset>
+											<AbsDimension x="6" y="-2"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<!--国旗图标-->
+										<Texture name="$parentFlag" file="ui/mobile/texture0/countryflag.xml" uvname="img_Taiwan" abs_x="33" abs_y="21" hidden="true" >
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="0" y="0" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Frame>
+
+							<!-- 下载量 -->
+							<Frame name="$parentDown" rel_x="1.0" abs_y="20">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentAuthorHead">
+										<Offset>
+			
+											<AbsDimension x="0" y="17"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<!--下载图标-->
+										<Texture name="$parentIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download" abs_x="16" abs_y="15" >
+											<Color r="101" g="116" b="118"/>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="3" y="3" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentTip" justifyH="left" justifyV="middle" fonttype="BlackFont20" lineInterval="1" text="$25225">
+											<Color r="101" g="116" b="118"/>
+											<Size>
+												<AbsDimension x="130" y="24"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="37" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentMsg" justifyH="right" fonttype="BlackFont20" lineInterval="1" text="9999.9万">
+											<Color r="61" g="69" b="70"/>
+											<Size>
+												<AbsDimension x="140" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<!-- 热度 -->
+							<Frame name="$parentCount" rel_x="1.0" abs_y="20">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDown">
+										<Offset>
+											<AbsDimension x="0" y="17"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<!--下载图标-->
+										<Texture name="$parentIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_player" abs_x="20" abs_y="14" >
+											<Color r="101" g="116" b="118"/>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="1" y="3" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentTip" justifyH="left" fonttype="BlackFont20" lineInterval="1" text="$25226">
+											<Color r="101" g="116" b="118"/>
+											<Size>
+												<AbsDimension x="118" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="37" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentMsg" justifyH="right" fonttype="BlackFont20" lineInterval="1" text="9999.9万">
+											<Color r="61" g="69" b="70"/>
+											<Size>
+												<AbsDimension x="140" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<!-- -->
+							<!--详情标题-->
+							<Frame name="$parentLine1" rel_x="1.0" abs_y="40">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parentCount" relativePoint="bottomleft">
+										<Offset>
+											<AbsDimension x="0" y="25"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentTaskNameBkg" inherits="TemplateBkg26" rel_x="1.0" rel_y="1.0">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentTitle" fonttype="BlackFont22" justifyH="left" justifyV="middle" text="$6058" abs_x="130" abs_y="22">
+										<Color r="11" g="112" b="117"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="2" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<!-- 详情内容-->
+							<SlidingFrame name="$parentContent" slidingY="true" slideplane="$parentPlane" rel_x="1.0" abs_y="90" >
+								<Anchors>
+									<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLine1">
+										<Offset>
+											<AbsDimension x="0" y="12" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" rel_x="1.0" rel_y="1.0">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<!-- 没有详情的页面 -->
+									<Frame name="$parentNoDetails" hidden="false" rel_x="1.0" rel_y="1.0">
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="BACKGROUND">
+												<!-- 没有内容-->
+												<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_noroom.png">
+													<Size>
+														<RelDimension x="0.5" y="0.8" />
+													</Size>
+													<Anchors>
+														<Anchor point="top" relativePoint="top" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="0" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</Texture>
+												<!-- 暂无 -->
+												<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont18" lineInterval="2" text="$25223" rel_x="1.0" abs_y="18">
+													<Color r="77" g="112" b="117"/>
+													<Anchors>
+														<Anchor point="top" relativePoint="bottom" relativeTo="$parentBg">
+															<Offset>
+																<AbsDimension x="0" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+									</Frame>
+									<!-- 有详情的页面 -->
+									<Frame name="$parentIsDetails" hidden="false" rel_x="1.0" rel_y="1.0" >
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<!-- 介绍内容 -->
+											<RichText name="$parentInfo" lineInterval="4" multiLine="false" justifyH="left" justifyV="top" rel_x="1.0" rel_y="1.0" fonttype="BlackFont20" text="" >
+												<Anchors>
+													<Anchor point="top" relativePoint="top" relativeTo="$parent">
+														<Offset>
+															<AbsDimension x="0" y="0"/>
+														</Offset>
+													</Anchor>
+												</Anchors>
+												<Scripts>
+													<OnClick></OnClick>
+												</Scripts>
+											</RichText>
+										</Frames>
+									</Frame>
+								</Frames>
+								<Scripts>											
+									<OnMovieFinished></OnMovieFinished>
+								</Scripts>
+							</SlidingFrame>
+							<!--查看地图详情按钮-->
+							<Button name="$parentDetailBtn" abs_x="182" abs_y="61">
+								<Anchors>
+									<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="-13"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont24" justifyV="middle" lineInterval="1" justifyH="center" text="$4756" rel_x="1.0" abs_y="61" >
+											<Color r="55" g="54" b="51" />
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):MapDetailBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+
+			<!-- 右半边frame -->
+			<Frame name="$parentBodyRight" parent="$parent" abs_x="874" abs_y="660">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentRoomTitle" fonttype="BlackFont24" justifyH="left" text="$10596">
+							<Color r="76" g="76" b="76"/>
+							<Size>
+								<AbsDimension x="260" y="23"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="16" y="16"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="850" abs_y="524" >
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="16" y="47" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>				
+					##4. 无房间提示框
+					<Frame name="$parentNoRoom">
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="392" abs_y="223" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-75"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" fonttype="BlackFont24" lineInterval="2" justifyH="center" text="$26000" abs_x="680" abs_y="25" >
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="26"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<!-- 房间区域-->
+					<Frame name="$parentRoomBox" parent="$parent" abs_x="838" abs_y="508">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="8" />
+								</Offset>
+							</Anchor>
+						</Anchors>						
+						<Layers>
+						</Layers>
+						<Frames>
+							<!-- 房间列表-->
+							<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="838" abs_y="508" >
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>						
+									<Layer level="BACKGROUND">
+									</Layer>
+								</Layers>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" abs_x="837" abs_y="1024"/>
+								</Frames>
+							</ListViewFrame>
+						</Frames>
+					</Frame>
+
+
+					<!-- 刷新按钮-->
+					<Button name="$parentRefreshBtn" inherits="TemplateBtn7" hidden="false" abs_x="62" abs_y="61">
+						<Anchors>
+							<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="26" y="-13"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_refresh.png" abs_x="28" abs_y="28">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="18" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):RefreshBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentQuickJoin" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+								<Offset>
+									<AbsDimension x="-18" y="-13"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" text="$3768" lineInterval="1" justifyH="center" rel_x="1.0" abs_y="23" >
+									<Color r="55" g="54" b="51" />
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="18"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):QuickJoinBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+
+					<!-- 下载按钮-->
+					<Button name="$parentDownloadBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentQuickJoin" relativePoint="left">
+								<Offset>
+									<AbsDimension x="-29" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName1" fonttype="BlackFont24" text="$4039" lineInterval="1" justifyH="center" rel_x="1.0" abs_y="23" >
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--地图大小-->
+								<FontString name="$parentSize" fonttype="BlackFont26" text="6.66M"  lineInterval="1" justifyH="center" rel_x="0.7" abs_y="24">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentPicDown">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--进入-->
+								<FontString name="$parentName2" fonttype="BlackFont24" text="$9065" hidden="true"  lineInterval="1" justifyH="center" rel_x="1.0" abs_y="23">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--暂停-->
+								<FontString name="$parentName3" fonttype="BlackFont24" text="$4769" hidden="true" lineInterval="1" justifyH="center" rel_x="1.0" abs_y="23" >
+									<Color r="55" g="51" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentProgressBarBkg" inherits="TemplateBkg16" hidden="false">
+									<Size>
+										<AbsDimension x="182" y="7" />
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativeTo="$parent" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentProgressTex" inherits="TemplateBkg17" hidden="false">
+									<Size>
+										<AbsDimension x="50" y="7" />
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentProgressBarBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!--LLTODO:下载箭头图片-->
+								<Texture name="$parentPicDown" file="ui/mobile/texture2/common_icon.xml" uvname="icon_download_black.png" hidden="true">
+									<Size>
+										<AbsDimension x="33" y="30" />
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="15" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" abs_x="178" abs_y="58">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):DownloadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCreateRoomBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentQuickJoin" relativePoint="left">
+								<Offset>
+									<AbsDimension x="-29" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<!--进入-->
+								<FontString name="$parentTxt" fonttype="BlackFont24" lineInterval="1" justifyH="center" rel_x="1.0" abs_y="23" text="$9065">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg2" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2" abs_x="178" abs_y="58">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):CreateRoomBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<!-- 关闭按钮: -->
+			<Button name="$parentCloseBtn" abs_x="51" abs_y="48" >
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="36" abs_y="46">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="32" abs_y="41" >
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentNormal" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>			
+		</Frames>
+		<Scripts>
+			<OnLoad></OnLoad>
+			<OnShow></OnShow>
+			<OnEvent>GetInst("UIManager"):GetCtrl("MapRoom"):HandleEvent();</OnEvent>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("MapRoom"):OnUpdate()</OnUpdate>
+			<!-- 关闭按钮:> 
+			<OnHide>GetInst("UIManager"):GetCtrl("MapRoom"):OnHide();</OnHide>
+			<OnClick>GetInst("UIManager"):GetCtrl("MapRoom"):MainFrameMaskClicked();</OnClick>
+			<OnMouseUp>GetInst("UIManager"):GetCtrl("MapRoom"):OnMouseUp()</OnMouseUp>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("MapRoom"):OnUpdate();</OnUpdate>
+			<-->
+		</Scripts>
+	</Frame>
+	
+
+</Ui>

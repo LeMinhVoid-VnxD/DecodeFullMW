@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/lobby/mapdetailinfodata/MapDetailInfoDataModel.lua"/>
+	<Script file="ui/mobile/mvc/lobby/mapdetailinfodata/MapDetailInfoDataView.lua"/>
+	<Script file="ui/mobile/mvc/lobby/mapdetailinfodata/MapDetailInfoDataCtrl.lua"/>			
+	<!-- 数据详情 -->
+
+	<Frame name="MapDetailInfoData" parent="UIClient" frameStrata="BACKGROUND" hidden="true" framelevel="99">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Frame name = "$parentMask" hidden = "true" framelevel="102">
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/white.png" color="00000000" stretchedge="true"/>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MapDetailInfo"):MaskBkg_OnClick();</OnClick>
+				</Scripts>
+			</Frame>
+			<Frame name = "$parentContentPanel" framelevel="9999">
+				<Size>
+					<AbsDimension x="487" y="632"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="lobbyMapArchiveListArchiveFrame">
+						<Offset>
+							<AbsDimension x="396" y="23" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19" />
+					</Layer>
+				</Layers>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentDataLable" fonttype="BlackFont24" lineInterval="2" justifyH="left" text="$32049">
+							<Color r="255" g="153" b="63"/>
+							<Size>
+								<AbsDimension x="150" y="23"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="14" y="20"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="28" y="36"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-14" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MapDetailInfoData"):CloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name="$parentData" input_transparent="true" hidden="false" framelevel="9999">
+						<Size>
+							<AbsDimension x="470" y="586"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="61" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<!-- <Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg20">
+									<Size>
+										<AbsDimension x="440" y="520"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers> -->
+						<Frames>
+							<Frame name="$parentInfo" hidden="false">
+								<Size>
+									<AbsDimension x="439" y="121"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="4" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" abs_x="439" abs_y="119" DrawType="ninesquare">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentNewDownloadTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32047">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="20"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentNewDownloadNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="100000">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="20"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentSplitLine" file="ui/mobile/texture2/common.xml" uvname="img_bar_tips" abs_x="439" abs_y="2">
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="58"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentScoreTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32048">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="80"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentScoreNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="4.2">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="80"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<Frame name="$parentTotalTitle" hidden="false">
+								<Size>
+									<AbsDimension x="439" y="60"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="4" y="128"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<FontString name="$parentData" fonttype="BlackFont22" lineInterval="2" justifyH="left" text="$32049">
+											<Color r="142" g="135" b="121"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentCount" fonttype="BlackFont22" lineInterval="2" justifyH="right" text="$32050">
+											<Color r="142" g="135" b="121"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<Frame name="$parentTotalInfo" hidden="false">
+								<Size>
+									<AbsDimension x="439" y="167"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="4" y="187"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" abs_x="439" abs_y="167" DrawType="ninesquare">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentDownloadTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32051">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="10"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentDownloadNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="100000">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="10"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentSplitLine1" file="ui/mobile/texture2/common.xml" uvname="img_bar_tips" abs_x="439" abs_y="2">
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="40"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentCommentNumTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32053">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="52"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentCommentNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="30000">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="52"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentSplitLine2" file="ui/mobile/texture2/common.xml" uvname="img_bar_tips" abs_x="439" abs_y="2">
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="82"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentConnoisseurRecommendTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32052">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="94"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentConnoisseurRecommendNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="13人">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="94"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentSplitLine3" file="ui/mobile/texture2/common.xml" uvname="img_bar_tips" abs_x="439" abs_y="2">
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="124"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentCommonRecommendTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32071">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="136"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentCommonRecommendNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="13人">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="136"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentSplitLine4" file="ui/mobile/texture2/common.xml" uvname="img_bar_tips" abs_x="439" abs_y="2" hidden="true">
+											<Anchors>
+												<Anchor point="top" relativePoint="top" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="166"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentThrowBlockTitle" fonttype="BlackFont20" lineInterval="2" justifyH="left" text="$32054" hidden="true">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="14" y="178"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentThrowBlockNum" fonttype="BlackFont20" lineInterval="2" justifyH="right" text="96586" hidden="true">
+											<Color r="224" g="220" b="202"/>
+											<Size>
+												<AbsDimension x="280" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-14" y="178"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+							<Frame name="$parentStatisticInfo" hidden="false">
+								<Size>
+									<AbsDimension x="439" y="100"/>
+								</Size>
+								<Anchors>
+									<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="-30"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<FontString name="$parentDesc" fonttype="BlackFont18" lineInterval="2" justifyH="center" justifyV="moddle" text="$32056">
+											<Color r="142" g="135" b="121"/>
+											<Size>
+												<AbsDimension x="280" y="17"/>
+											</Size>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-21"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+						</Frames>
+						<Scripts>
+							<OnEvent>GetInst("UIManager"):GetCtrl("MapDetailInfo"):HandleEvent();</OnEvent>
+						</Scripts>
+					</Frame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("MapDetailInfo"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

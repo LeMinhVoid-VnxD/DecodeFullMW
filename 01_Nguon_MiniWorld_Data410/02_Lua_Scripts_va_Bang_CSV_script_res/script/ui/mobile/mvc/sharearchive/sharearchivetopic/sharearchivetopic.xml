@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/ShareArchive/ShareArchiveTopic/ShareArchiveTopicModel.lua"/>
+	<Script file="ui/mobile/mvc/ShareArchive/ShareArchiveTopic/ShareArchiveTopicView.lua"/>
+	<Script file="ui/mobile/mvc/ShareArchive/ShareArchiveTopic/ShareArchiveTopicCtrl.lua"/>
+	<Script file="ui/mobile/mvc/ShareArchive/ShareArchiveInterface.lua"/>
+
+	##热门话题按钮模板
+	<Button name="ShareArchiveTopicHotBtnT" abs_x="142" abs_y="42" virtual="true">
+		<Layers>
+			<Layer level="overlay">
+        		<Texture name="$parentBkg" file="ui/mobile/texture0/team.xml" uvname="btn_team_establish_back" abs_x="142" abs_y="42" DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" justifyH="center" justifyV="middle" fonttype="BlackFont22" text="#话题名称" >
+					<Color r="54" g="55" b="49"/>
+					<Size>
+						<AbsDimension x="100" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShareArchiveTopic"):OnTopicHotBtnDown();</OnClick>
+		</Scripts>
+	</Button>
+
+	##UI主体
+	<Frame name="ShareArchiveTopic" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3200">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="8c000000" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="926" abs_y="496">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentFrame" abs_x="926" abs_y="496">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##标题栏
+						<FontString name="$parentTitle" fonttype="BlackFont32" text="$25772" abs_x="152" abs_y="38">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="61" y="41"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##自定义话题
+						<FontString name="$parentNameTitle" fonttype="BlackFont24" justifyH="left" text="$25773" abs_x="120" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="61" y="129"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentTopicEditBkg" inherits="TemplateBkg8" abs_x="340" abs_y="46">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentNameTitle">
+									<Offset>
+										<AbsDimension x="147" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTopicDefault" fonttype="BlackFont20" justifyH="left" text="$25775" abs_x="300" abs_y="24">
+							<Color r="185" g="185" b="185"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTopicEditBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##线
+						<Texture name="$parentLine1" file="ui/mobile/texture0/team.xml" uvname="img_team_partingline.png" abs_x="804" abs_y="1" DrawType="center">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="203" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Center>
+								<Left offsetX="0" offsetY="0" w="4" h="1"/>
+								<Center offsetX="4" offsetY="0" w="4" h="1"/>
+								<Right offsetX="8" offsetY="0" w="4" h="1"/>
+							</Center>
+						</Texture>
+						##热门话题
+						<FontString name="$parentSelectTitle" fonttype="BlackFont24" justifyH="left" text="$25774" abs_x="144" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="61" y="226"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##关闭按钮
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-36" y="33"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShareArchiveTopic"):CloseBtnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					##自定义话题输入框
+					<SafeEditBox name="$parentTopicEdit" letters="33" multiLine="false" editMethod="527" abs_x="300" abs_y="24">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentTopicEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20" >
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("ShareArchiveTopic"):TopicEdit_OnFocusLost();</OnFocusLost>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShareArchiveTopic"):TopicEdit_OnClick();</OnClick>
+						</Scripts>
+					</SafeEditBox>
+					##确定按钮
+					<Button name="$parentAddTopicBtn" inherits="TemplateBtn2" abs_x="152" abs_y="48">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentTopicEditBkg">
+								<Offset>
+									<AbsDimension x="369" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" justifyH="center" justifyV="middle" fonttype="BlackFont18" text="$969" >
+									<Color r="77" g="112" b="117"/>
+									<Size>
+										<AbsDimension x="100" y="22"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShareArchiveTopic"):OnTopicBtnDown();</OnClick>
+						</Scripts>
+					</Button>
+					##热门话题列表
+					<SlidingFrame name="$parentTopicList" slidingY="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="804" y="180"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="268"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane"  abs_x="804" abs_y="166"/>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

@@ -1,0 +1,3638 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/friendservice.lua"/>
+    <Script file="ui/mobile/friend.lua"/>
+    <Script file="ui/mobile/friendchat.lua"/>
+    <Script file="ui/mobile/friendTraceMgr.lua"/>
+    <!--迷你队长聊天-问题按钮模板-->
+    <Button name="MiniCaptionQuestionBtnTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="276" y="49"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBkg19"/>
+                <FontString name="$parentName" justifyH="center" justifyV="middle" fonttype="BlackFont21" text="$3092">
+                    <Color r="44" g="29" b="19"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="2" y="0"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-2" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>MiniCaptionQuestionBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##通用好友基本信息模板
+    <Frame name="FriendChat_BasicInfoTemplate" virtual="true">
+        <Anchors>
+            <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg6">
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-1" y="-1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-1" y="-1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentName" fonttype="BlackFont20" text="名字最多七个字" abs_x="160" abs_y="20">
+                    <Color r="73" g="70" b="63"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="90" y="17"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentUin" fonttype="BlackFont20" text="迷你号：123456789" abs_x="243" abs_y="20">
+                    <Color r="73" g="70" b="63"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="0" y="5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentGenderIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_sex" abs_x="20" abs_y="20">
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="160" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentStatus" justifyH="left" fonttype="BlackFont20" text="$4715" abs_x="150" abs_y="20">
+                    <Color r="18" g="162" b="76"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentUin">
+                            <Offset>
+                                <AbsDimension x="0" y="5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" hidden="true" abs_x="16" abs_y="16">
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-6" y="-1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentHead" abs_x="85" abs_y="85">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                 <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_head.png" abs_x="66" abs_y="66">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="64" abs_y="60">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <NormalTexture name="$parentFrameNormal"   file="ui/headframes/1.png" />
+                <PushedTexture name="$parentFramePushedBG" file="ui/headframes/1.png" abs_x="80" abs_y="80">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>FriendChat_BasicInfoTemplateeHead_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnClick>FriendChat_BasicInfoTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Frame>
+
+    ##通用群聊条目基本信息模板
+    <Frame name="FriendChat_GroupItemBasicInfoTemplate" virtual="true">
+        <Anchors>
+            <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" >
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-1" y="-1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true" rel_x="1.0" rel_y="1.0">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentName" fonttype="BlackFont20" text="$20611" abs_x="209" abs_y="20">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="90" y="23"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentNumber" fonttype="BlackFont20" text="16/40" abs_x="243" abs_y="20">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="0" y="10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" hidden="true" abs_x="16" abs_y="16">
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-6" y="-1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                 ##屏蔽tag
+                <Texture name="$parentScreenTag" file="ui/mobile/texture2/friend.xml" uvname="icon_mute" hidden="true">
+                    <Size>
+                        <AbsDimension x="17" y="17"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##admitag
+                <Texture name="$parentAdmiTag" file="ui/mobile/texture2/friend.xml" uvname="icon_group_owner" hidden="true">
+                    <Size>
+                        <AbsDimension x="18" y="17"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentHead" abs_x="85" abs_y="85" input_transparent="true">>
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentFrameNormal"   file="ui/headframes/1.png" abs_x="85" abs_y="85"/>
+                <PushedTexture name="$parentFramePushedBG" file="ui/headframes/1.png" abs_x="85" abs_y="85">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="70" abs_y="70">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="60" abs_y="60">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+						##话筒的图标
+                        <Texture name="$parentIcon2" file="ui/mobile/texture2/common_icon.xml" uvname="icon_voice.png" abs_x="18" abs_y="18">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="20" y="20"/>
+									</Offset>									
+								</Anchor>
+                            </Anchors>
+                        </Texture>					
+                    </Layer>
+                </Layers>
+            </Button>
+            <Frame name="$parentCreateNewGroup" abs_x="64" abs_y="64" hidden="false" input_transparent="true">>
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="14" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentFrame" inherits="TemplateBkg30" />
+	                    <Texture name="$parentIcon" file="ui/mobile/texture2/playercenter.xml" uvname="icon_add_upload.png" abs_x="40" abs_y="40">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								    <Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+                            </Anchors>
+                        </Texture>				
+						<FontString name="$parentName" fonttype="BlackFont20" text="$20640" abs_x="196" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="90" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+                    </Layer>
+                </Layers>			
+            </Frame>
+            <Frame name="$parentTopTag" abs_x="36" abs_y="28" input_transparent="true">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        ##群聊置顶标签
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/playercenter.xml" uvname="label_map_top" hidden="true">
+                            <Size>
+                                <AbsDimension x="36" y="28"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/playercenter.xml" uvname="icon_top" hidden="true">
+                            <Size>
+                                <AbsDimension x="16" y="10"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="4" y="4"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnClick>GroupChat_BasicInfoTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Frame>
+
+    ##好友条目模板
+    <Button name="FriendChat_FriendItemTemplate" virtual="true" abs_x="302" abs_y="92">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <!-- <Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="C0000000" /> -->
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentBasicInfo" inherits="FriendChat_BasicInfoTemplate"/>
+        </Frames>
+    </Button>
+	
+	##群聊条目模板
+    <Button name="FriendChat_GroupItemTemplate" virtual="true" abs_x="302" abs_y="92">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentBasicInfo" inherits="FriendChat_GroupItemBasicInfoTemplate"/>
+        </Frames>
+    </Button>
+
+    ##tab按钮模板
+    <Button name="FriendChat_FriendTabBtnTemplate" virtual="true" abs_x="154" abs_y="66">
+        <Layers>
+            <Layer level="background">
+                <Texture name="$parentNormal" file="ui/mobile/texture2/friend.xml" uvname="tab_sink_up_n" />
+                <Texture name="$parentSelected" file="ui/mobile/texture2/friend.xml" uvname="tab_sink_up_h"/>
+                <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$4719" abs_x="155" abs_y="35">
+                    <Color r="255" g="135" b="26"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="-5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentNum" fonttype="BlackFont18" justifyH="center" text="12/100" abs_x="155" abs_y="18">
+                    <Color r="255" g="135" b="26"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" >
+                            <Offset>
+                                <AbsDimension x="0" y="-5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentLock" hidden="true" file="ui/mobile/texture2/common_icon.xml" uvname="icon_lock.png" abs_x="31" abs_y="37">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>FriendChat_FriendTabBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##迷你队长聊天-问题类型模板
+    <Button name="MiniCaptionTypeBtnTemplate" inherits="TemplateBtn20" abs_x="182" abs_y="61" virtual="true">
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentName" lang_ver="ptb" justifyH="center" justifyV = "middle" fonttype="BlackFont20" text="$3092">
+                    <Color r="55" g="52" b="51"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentName" justifyH="center" justifyV = "middle" fonttype="BlackFont30" text="$3092">
+                    <Color r="55" g="52" b="51"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>MiniCaptionTypeBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##迷你队长聊天-问题类型模板2 抢先试玩
+    <Button name="MiniCaptionTypeBtnTemplate2" inherits="TemplateBtn11" abs_x="182" abs_y="61" virtual="true">
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentName" justifyH="center" justifyV = "middle" fonttype="BlackFont30" text="$3092">
+                    <Color r="55" g="52" b="51"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>MiniCaptionTypeBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+    
+    ##群聊成员条目模板
+    <Button name="GroupChatMemberTemplate" virtual="true" abs_x="404" abs_y="89">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <!-- 背景 -->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+                <FontString name="$parentName" fonttype="BlackFont20" text="名字最多七个字" abs_x="196" abs_y="23">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="100" y="18"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentCountryFlag" file="ui/mobile/texture0/countryflag.xml" uvname="img_Taiwan" hidden="true">
+					<Size>
+						<AbsDimension x="33" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentName" relativePoint="right">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentGraedIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_group_owner.png" abs_x="18" abs_y="17">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName" >
+                            <Offset>
+                                <AbsDimension x="0" y="14"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentGraedName" lang_ver="tha" justifyV="middle" fonttype="BlackFont24" text="主持人" abs_x="196" abs_y="25">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentGraedIcon">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentGraedName" fonttype="BlackFont18" text="主持人" abs_x="196" abs_y="18">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentGraedIcon">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentRightBkg" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray">
+                    <Size>
+                        <AbsDimension x="101" y="84" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-2" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentHead" abs_x="65" abs_y="66">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="19" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal"  file="ui/headframes/1.png" abs_x="85" abs_y="85">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" abs_x="100" abs_y="100">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="64" abs_y="64">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="60" abs_y="60">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+						##话筒的图标
+                        <Texture name="$parentIcon2" file="ui/mobile/texture2/common_icon.xml" uvname="icon_voice.png" abs_x="18" abs_y="18">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="20" y="20"/>
+									</Offset>									
+								</Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                 <Scripts>
+                    <OnClick>GroupChatMemberHeadBtn_OnClick();</OnClick>
+                </Scripts> 
+            </Button>
+            <Button name="$parentOperateBtn" abs_x="50" abs_y="53">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-27" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <!-- <NormalTexture name="$parentNormal" file="ui/mobile/texture2/friend.xml" uvname="icon_more.png">
+                    <Size>
+                        <AbsDimension x="34" y="7"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture> -->
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_blue.png" >
+                    <Size>
+                        <AbsDimension x="50" y="53"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/friend.xml" uvname="icon_more.png">
+                            <Size>
+                                <AbsDimension x="34" y="7"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_blue.png" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+				<Scripts>
+                    <OnClick>GroupChatMemberTemplateBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentDeleteBtn" inherits="TemplateBtn18" abs_x="50" abs_y="53">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-17" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete" abs_x="31" abs_y="31">
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GroupChatMemberDeleteTemplateBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Button>
+	
+	##群聊邀请好友条目模板
+	<Button name="GroupChat_InviteFriendTemplate" virtual="true" abs_x="904" abs_y="109">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6"/>
+                <Texture name="$parentRightMask" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="218" abs_y="104">
+                    <Anchors>
+                        <Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentName" justifyH="left" fonttype="BlackFont24" text="名字最多七个字" abs_x="400" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="128" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentUin" justifyH="left" fonttype="BlackFont20" text="迷你号：9958746147" abs_x="300" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="105" abs_y="105">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="12" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentFrameNormal"   file="ui/headframes/1.png" />
+                <PushedTexture name="$parentFramePushedBG" file="ui/headframes/1.png" abs_x="95" abs_y="95">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="77" abs_y="77">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="75" abs_y="75">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Button>
+            <Button name="$parentInviteBtn" inherits="TemplateBtn17" abs_x="50" abs_y="53">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-30" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                 <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_invited" abs_x="29" abs_y="24">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GroupChat_InviteFriendTemplateBtn_OnClick();</OnClick>
+                </Scripts>
+             </Button>
+		</Frames>
+	</Button>
+
+    ##主界面
+    <Frame name="FriendChatFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1100" rel_x="1.0" rel_y="1.0">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000">
+                    <Size>
+                        <RelDimension x="1.0" y="1.0" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentMain" abs_x="1037" rel_y="1.0">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="FriendFrame" />
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="FriendFrame" />
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND" >
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg1_ninecenter" abs_x="1137" rel_y="1.0"/>
+                        <Texture name="$parentBkgLine" file="ui/mobile/texture2/friend.xml" uvname="board_frame_blue.png" abs_x="4" rel_y="1.0" DrawType="ninesquare_center">
+                            <NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="4" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentLeftBkg" file="ui/mobile/texture2/common.xml" uvname="board_bottom_friend.png" abs_x="328" rel_y="1.0" DrawType="ninesquare_center">
+                            <NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+                        </Texture>
+                        <Texture name="$parentGroupBkg" inherits="TemplateBkg12" abs_x="308" abs_y="552">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentLeftBkg">
+                                    <Offset>
+                                        <AbsDimension x="10" y="78"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+						##群聊列表为空时显示，icon
+                        <Texture name="$parentIcon_NoneGroup" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mine.png" hidden="true">
+                            <Size>
+                                <AbsDimension x="96" y="110"/>
+                            </Size>
+                            <Anchors>
+								<Anchor point="center" relativeTo="FriendChatFrameMain" relativePoint="topleft" >
+									 <Offset>
+										<AbsDimension x="680" y="300"/>
+									</Offset>
+								</Anchor>
+                            </Anchors>
+                        </Texture>
+						
+						##群聊列表为空时显示，文字1
+                        <FontString name="$parentEmptyTxt_NoneGroup1" fonttype="BlackFont30" justifyH="left" text="$20640" hidden="true">
+                            <Color r="191" g="228" b="227" a="127"/>
+                            <Size>
+                                <AbsDimension x="200" y="30"/>
+                            </Size>
+                            <Anchors>
+								<Anchor point="left" relativeTo="$parentCreateGroupChatBtn_NoneGroup" relativePoint="right" >
+									 <Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+                            </Anchors>
+                        </FontString>						
+						##群聊列表为空时显示，文字2
+                        <FontString name="$parentEmptyTxt_NoneGroup2" fonttype="BlackFont30" justifyH="center" autowrap = "true" text="$20639" hidden="true">
+                            <Color r="168" g="149" b="121"/>
+                            <Size>
+                                <AbsDimension x="448" y="69"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="center" relativeTo="$parentIcon_NoneGroup">
+                                    <Offset>
+                                        <AbsDimension x="0" y="75"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##好友/群聊
+                    <Button name="$parentTab1" inherits="FriendChat_FriendTabBtnTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="10" y="11"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentTab2" inherits="FriendChat_FriendTabBtnTemplate" id="2" hidden="false">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentTab1">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+
+                    ##好友列表
+                    <SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="307" abs_y="531">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="10" y="88"/>
+                                </Offset>
+                            </Anchor>
+                            <!-- <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="3" y="-80"/>
+                                </Offset>
+                            </Anchor> -->
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="310" abs_y="580">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Button name="$parentItem1" inherits="FriendChat_FriendItemTemplate" id="1"/>
+                            <Button name="$parentItem2" inherits="FriendChat_FriendItemTemplate" id="2"/>
+                            <Button name="$parentItem3" inherits="FriendChat_FriendItemTemplate" id="3"/>
+                            <Button name="$parentItem4" inherits="FriendChat_FriendItemTemplate" id="4"/>
+                            <Button name="$parentItem5" inherits="FriendChat_FriendItemTemplate" id="5"/>
+                            <Button name="$parentItem6" inherits="FriendChat_FriendItemTemplate" id="6"/>
+                            <Button name="$parentItem7" inherits="FriendChat_FriendItemTemplate" id="7"/>
+                            <Button name="$parentItem8" inherits="FriendChat_FriendItemTemplate" id="8"/>
+                            <Button name="$parentItem9" inherits="FriendChat_FriendItemTemplate" id="9"/>
+                            <Button name="$parentItem10" inherits="FriendChat_FriendItemTemplate" id="10"/>
+                            <Button name="$parentItem11" inherits="FriendChat_FriendItemTemplate" id="11"/>
+                            <Button name="$parentItem12" inherits="FriendChat_FriendItemTemplate" id="12"/>
+                            <Button name="$parentItem13" inherits="FriendChat_FriendItemTemplate" id="13"/>
+                            <Button name="$parentItem14" inherits="FriendChat_FriendItemTemplate" id="14"/>
+                            <Button name="$parentItem15" inherits="FriendChat_FriendItemTemplate" id="15"/>
+                            <Button name="$parentItem16" inherits="FriendChat_FriendItemTemplate" id="16"/>
+                            <Button name="$parentItem17" inherits="FriendChat_FriendItemTemplate" id="17"/>
+                            <Button name="$parentItem18" inherits="FriendChat_FriendItemTemplate" id="18"/>
+                            <Button name="$parentItem19" inherits="FriendChat_FriendItemTemplate" id="19"/>
+                            <Button name="$parentItem20" inherits="FriendChat_FriendItemTemplate" id="20"/>
+                            <Button name="$parentItem21" inherits="FriendChat_FriendItemTemplate" id="21"/>
+                            <Button name="$parentItem22" inherits="FriendChat_FriendItemTemplate" id="22"/>
+                            <Button name="$parentItem23" inherits="FriendChat_FriendItemTemplate" id="23"/>
+                            <Button name="$parentItem24" inherits="FriendChat_FriendItemTemplate" id="24"/>
+                            <Button name="$parentItem25" inherits="FriendChat_FriendItemTemplate" id="25"/>
+                            <Button name="$parentItem26" inherits="FriendChat_FriendItemTemplate" id="26"/>
+                            <Button name="$parentItem27" inherits="FriendChat_FriendItemTemplate" id="27"/>
+                            <Button name="$parentItem28" inherits="FriendChat_FriendItemTemplate" id="28"/>
+                            <Button name="$parentItem29" inherits="FriendChat_FriendItemTemplate" id="29"/>
+                            <Button name="$parentItem30" inherits="FriendChat_FriendItemTemplate" id="30"/>
+                            <Button name="$parentItem31" inherits="FriendChat_FriendItemTemplate" id="31"/>
+                            <Button name="$parentItem32" inherits="FriendChat_FriendItemTemplate" id="32"/>
+                            <Button name="$parentItem33" inherits="FriendChat_FriendItemTemplate" id="33"/>
+                            <Button name="$parentItem34" inherits="FriendChat_FriendItemTemplate" id="34"/>
+                            <Button name="$parentItem35" inherits="FriendChat_FriendItemTemplate" id="35"/>
+                            <Button name="$parentItem36" inherits="FriendChat_FriendItemTemplate" id="36"/>
+                            <Button name="$parentItem37" inherits="FriendChat_FriendItemTemplate" id="37"/>
+                            <Button name="$parentItem38" inherits="FriendChat_FriendItemTemplate" id="38"/>
+                            <Button name="$parentItem39" inherits="FriendChat_FriendItemTemplate" id="39"/>
+                            <Button name="$parentItem40" inherits="FriendChat_FriendItemTemplate" id="40"/>
+                            <Button name="$parentItem41" inherits="FriendChat_FriendItemTemplate" id="41"/>
+                            <Button name="$parentItem42" inherits="FriendChat_FriendItemTemplate" id="42"/>
+                            <Button name="$parentItem43" inherits="FriendChat_FriendItemTemplate" id="43"/>
+                            <Button name="$parentItem44" inherits="FriendChat_FriendItemTemplate" id="44"/>
+                            <Button name="$parentItem45" inherits="FriendChat_FriendItemTemplate" id="45"/>
+                            <Button name="$parentItem46" inherits="FriendChat_FriendItemTemplate" id="46"/>
+                            <Button name="$parentItem47" inherits="FriendChat_FriendItemTemplate" id="47"/>
+                            <Button name="$parentItem48" inherits="FriendChat_FriendItemTemplate" id="48"/>
+                            <Button name="$parentItem49" inherits="FriendChat_FriendItemTemplate" id="49"/>
+                            <Button name="$parentItem50" inherits="FriendChat_FriendItemTemplate" id="50"/>
+                            <Button name="$parentItem51" inherits="FriendChat_FriendItemTemplate" id="51"/>
+                            <Button name="$parentItem52" inherits="FriendChat_FriendItemTemplate" id="52"/>
+                            <Button name="$parentItem53" inherits="FriendChat_FriendItemTemplate" id="53"/>
+                            <Button name="$parentItem54" inherits="FriendChat_FriendItemTemplate" id="54"/>
+                            <Button name="$parentItem55" inherits="FriendChat_FriendItemTemplate" id="55"/>
+                            <Button name="$parentItem56" inherits="FriendChat_FriendItemTemplate" id="56"/>
+                            <Button name="$parentItem57" inherits="FriendChat_FriendItemTemplate" id="57"/>
+                            <Button name="$parentItem58" inherits="FriendChat_FriendItemTemplate" id="58"/>
+                            <Button name="$parentItem59" inherits="FriendChat_FriendItemTemplate" id="59"/>
+                            <Button name="$parentItem60" inherits="FriendChat_FriendItemTemplate" id="60"/>
+                            <Button name="$parentItem61" inherits="FriendChat_FriendItemTemplate" id="61"/>
+                            <Button name="$parentItem62" inherits="FriendChat_FriendItemTemplate" id="62"/>
+                            <Button name="$parentItem63" inherits="FriendChat_FriendItemTemplate" id="63"/>
+                            <Button name="$parentItem64" inherits="FriendChat_FriendItemTemplate" id="64"/>
+                            <Button name="$parentItem65" inherits="FriendChat_FriendItemTemplate" id="65"/>
+                            <Button name="$parentItem66" inherits="FriendChat_FriendItemTemplate" id="66"/>
+                            <Button name="$parentItem67" inherits="FriendChat_FriendItemTemplate" id="67"/>
+                            <Button name="$parentItem68" inherits="FriendChat_FriendItemTemplate" id="68"/>
+                            <Button name="$parentItem69" inherits="FriendChat_FriendItemTemplate" id="69"/>
+                            <Button name="$parentItem70" inherits="FriendChat_FriendItemTemplate" id="70"/>
+                            <Button name="$parentItem71" inherits="FriendChat_FriendItemTemplate" id="71"/>
+                            <Button name="$parentItem72" inherits="FriendChat_FriendItemTemplate" id="72"/>
+                            <Button name="$parentItem73" inherits="FriendChat_FriendItemTemplate" id="73"/>
+                            <Button name="$parentItem74" inherits="FriendChat_FriendItemTemplate" id="74"/>
+                            <Button name="$parentItem75" inherits="FriendChat_FriendItemTemplate" id="75"/>
+                            <Button name="$parentItem76" inherits="FriendChat_FriendItemTemplate" id="76"/>
+                            <Button name="$parentItem77" inherits="FriendChat_FriendItemTemplate" id="77"/>
+                            <Button name="$parentItem78" inherits="FriendChat_FriendItemTemplate" id="78"/>
+                            <Button name="$parentItem79" inherits="FriendChat_FriendItemTemplate" id="79"/>
+                            <Button name="$parentItem80" inherits="FriendChat_FriendItemTemplate" id="80"/>
+                            <Button name="$parentItem81" inherits="FriendChat_FriendItemTemplate" id="81"/>
+                            <Button name="$parentItem82" inherits="FriendChat_FriendItemTemplate" id="82"/>
+                            <Button name="$parentItem83" inherits="FriendChat_FriendItemTemplate" id="83"/>
+                            <Button name="$parentItem84" inherits="FriendChat_FriendItemTemplate" id="84"/>
+                            <Button name="$parentItem85" inherits="FriendChat_FriendItemTemplate" id="85"/>
+                            <Button name="$parentItem86" inherits="FriendChat_FriendItemTemplate" id="86"/>
+                            <Button name="$parentItem87" inherits="FriendChat_FriendItemTemplate" id="87"/>
+                            <Button name="$parentItem88" inherits="FriendChat_FriendItemTemplate" id="88"/>
+                            <Button name="$parentItem89" inherits="FriendChat_FriendItemTemplate" id="89"/>
+                            <Button name="$parentItem90" inherits="FriendChat_FriendItemTemplate" id="90"/>
+                            <Button name="$parentItem91" inherits="FriendChat_FriendItemTemplate" id="91"/>
+                            <Button name="$parentItem92" inherits="FriendChat_FriendItemTemplate" id="92"/>
+                            <Button name="$parentItem93" inherits="FriendChat_FriendItemTemplate" id="93"/>
+                            <Button name="$parentItem94" inherits="FriendChat_FriendItemTemplate" id="94"/>
+                            <Button name="$parentItem95" inherits="FriendChat_FriendItemTemplate" id="95"/>
+                            <Button name="$parentItem96" inherits="FriendChat_FriendItemTemplate" id="96"/>
+                            <Button name="$parentItem97" inherits="FriendChat_FriendItemTemplate" id="97"/>
+                            <Button name="$parentItem98" inherits="FriendChat_FriendItemTemplate" id="98"/>
+                            <Button name="$parentItem99" inherits="FriendChat_FriendItemTemplate" id="99"/>
+                            <Button name="$parentItem100" inherits="FriendChat_FriendItemTemplate" id="100"/>
+                            <Button name="$parentItem101" inherits="FriendChat_FriendItemTemplate" id="101"/>
+                            <Button name="$parentItem102" inherits="FriendChat_FriendItemTemplate" id="102"/>
+                            <Button name="$parentItem103" inherits="FriendChat_FriendItemTemplate" id="103"/>
+                            <Button name="$parentItem104" inherits="FriendChat_FriendItemTemplate" id="104"/>
+                            <Button name="$parentItem105" inherits="FriendChat_FriendItemTemplate" id="105"/>
+                            <Button name="$parentItem106" inherits="FriendChat_FriendItemTemplate" id="106"/>
+                            <Button name="$parentItem107" inherits="FriendChat_FriendItemTemplate" id="107"/>
+                            <Button name="$parentItem108" inherits="FriendChat_FriendItemTemplate" id="108"/>
+                            <Button name="$parentItem109" inherits="FriendChat_FriendItemTemplate" id="109"/>
+                            <Button name="$parentItem110" inherits="FriendChat_FriendItemTemplate" id="110"/>
+                            <Button name="$parentItem111" inherits="FriendChat_FriendItemTemplate" id="111"/>
+                            <Button name="$parentItem112" inherits="FriendChat_FriendItemTemplate" id="112"/>
+                            <Button name="$parentItem113" inherits="FriendChat_FriendItemTemplate" id="113"/>
+                            <Button name="$parentItem114" inherits="FriendChat_FriendItemTemplate" id="114"/>
+                            <Button name="$parentItem115" inherits="FriendChat_FriendItemTemplate" id="115"/>
+                            <Button name="$parentItem116" inherits="FriendChat_FriendItemTemplate" id="116"/>
+                            <Button name="$parentItem117" inherits="FriendChat_FriendItemTemplate" id="117"/>
+                            <Button name="$parentItem118" inherits="FriendChat_FriendItemTemplate" id="118"/>
+                            <Button name="$parentItem119" inherits="FriendChat_FriendItemTemplate" id="119"/>
+                            <Button name="$parentItem120" inherits="FriendChat_FriendItemTemplate" id="120"/>
+                        </Frames>
+                    </SlidingFrame>
+		            ##群聊列表
+                    <SlidingFrame name="$parentGroupChatList" slidingY="true" slideplane="$parentPlane" abs_x="307" abs_y="531" hidden="true">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="7" y="88"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="308" abs_y="552">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Button name="$parentItem1" inherits="FriendChat_GroupItemTemplate" id="1"/>
+                            <Button name="$parentItem2" inherits="FriendChat_GroupItemTemplate" id="2"/>
+                            <Button name="$parentItem3" inherits="FriendChat_GroupItemTemplate" id="3"/>
+                            <Button name="$parentItem4" inherits="FriendChat_GroupItemTemplate" id="4"/>
+                            <Button name="$parentItem5" inherits="FriendChat_GroupItemTemplate" id="5"/>
+                            <Button name="$parentItem6" inherits="FriendChat_GroupItemTemplate" id="6"/>
+                            <Button name="$parentItem7" inherits="FriendChat_GroupItemTemplate" id="7"/>
+                            <Button name="$parentItem8" inherits="FriendChat_GroupItemTemplate" id="8"/>
+                            <Button name="$parentItem9" inherits="FriendChat_GroupItemTemplate" id="9"/>
+                            <Button name="$parentItem10" inherits="FriendChat_GroupItemTemplate" id="10"/>
+                            <Button name="$parentItem11" inherits="FriendChat_GroupItemTemplate" id="11"/>
+                            <Button name="$parentItem12" inherits="FriendChat_GroupItemTemplate" id="12"/>
+                            <Button name="$parentItem13" inherits="FriendChat_GroupItemTemplate" id="13"/>
+                            <Button name="$parentItem14" inherits="FriendChat_GroupItemTemplate" id="14"/>
+                            <Button name="$parentItem15" inherits="FriendChat_GroupItemTemplate" id="15"/>
+                        </Frames>
+						<Scripts>
+							<OnShow>FriendChatFrameMainGroupChatList_OnShow();</OnShow>
+						</Scripts>
+                    </SlidingFrame>
+                    ##群聊列表为空时显示，加号
+                    <Button name="$parentCreateGroupChatBtn_NoneGroup"  abs_x="64" abs_y="64" hidden = "true">
+                        <Anchors>
+                            <Anchor point="left" relativeTo="$parent" relativePoint="left" >
+                                 <Offset>
+                                    <AbsDimension x="30" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="background">
+                                <Texture name="$parentAddFrame" inherits="TemplateBkg30" hidden="true">
+                                     <Size>
+                                        <AbsDimension x="64" y="64" />
+                                    </Size>
+                                </Texture>
+                                <Texture name="$parentAdd" file="ui/mobile/texture2/common.xml" uvname="icon_add_light.png"  >
+                                    <Size>
+                                        <AbsDimension x="64" y="64" />
+                                    </Size>
+                                     <Anchors>
+                                        <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                                             <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>CreateGroupChatBtn_NoneGroup_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+		    
+                    ##聊天消息界面
+                    <Frame name="$parentChat" hidden="true" abs_x="807" abs_y="630">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="top" relativeTo="FriendChatFrameMainBottomRightBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                            </Anchor>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBkg" inherits="TemplateBigBkg2"/>
+                                <Texture name="$parentPatternBkg" inherits="TemplateBigBkg7_flat" >
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg"/>
+                                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg"/>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentTipsBkg" inherits="TemplateWarnTipsBkg"  abs_x="790" abs_y="70" >
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="8" y="8"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Layers>
+							<Layer level="overlay">
+								<Texture name="$parentNoGroupIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" 
+									abs_x="435" abs_y="247" hidden="false" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNoGourpText" fonttype="BlackFont46" lineInterval="2" justifyH="center" text="$50106" 
+									abs_x="400" abs_y="44" hidden="false">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentNoGroupIcon">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+                        <Layers>
+							<Layer level="overlay">
+                                <FontString name="$parentQuestionTip" fonttype="BlackFont46" lineInterval="2" justifyH="center" text="$50107" 
+                                    abs_x="500" abs_y="22" hidden="true">
+                                    <Color r="77" g="112" b="117"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="-180"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        
+                        <Frames>
+                            <SlidingFrame name="ChatMessages" slidingY="true" slideplane="$parentPlane" >
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="20" y="89"/>
+                                        </Offset>
+                                    </Anchor>
+                                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="-20" y="-15"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <Frame name="$parentPlane" hidden="true" abs_x="762" abs_y="501" />
+                                    <Frame name="$parentMsg1" inherits="MessageTemplate" id="1"/>
+                                    <Frame name="$parentMsg2" inherits="MessageTemplate" id="2"/>
+                                    <Frame name="$parentMsg3" inherits="MessageTemplate" id="3"/>
+                                    <Frame name="$parentMsg4" inherits="MessageTemplate" id="4"/>
+                                    <Frame name="$parentMsg5" inherits="MessageTemplate" id="5"/>
+                                    <Frame name="$parentMsg6" inherits="MessageTemplate" id="6"/>
+                                    <Frame name="$parentMsg7" inherits="MessageTemplate" id="7"/>
+                                    <Frame name="$parentMsg8" inherits="MessageTemplate" id="8"/>
+                                    <Frame name="$parentMsg9" inherits="MessageTemplate" id="9"/>
+                                    <Frame name="$parentMsg10" inherits="MessageTemplate" id="10"/>
+                                    <Frame name="$parentMsg11" inherits="MessageTemplate" id="11"/>
+                                    <Frame name="$parentMsg12" inherits="MessageTemplate" id="12"/>
+                                    <Frame name="$parentMsg13" inherits="MessageTemplate" id="13"/>
+                                    <Frame name="$parentMsg14" inherits="MessageTemplate" id="14"/>
+                                    <Frame name="$parentMsg15" inherits="MessageTemplate" id="15"/>
+                                    <Frame name="$parentMsg16" inherits="MessageTemplate" id="16"/>
+                                    <Frame name="$parentMsg17" inherits="MessageTemplate" id="17"/>
+                                    <Frame name="$parentMsg18" inherits="MessageTemplate" id="18"/>
+                                    <Frame name="$parentMsg19" inherits="MessageTemplate" id="19"/>
+                                    <Frame name="$parentMsg20" inherits="MessageTemplate" id="20"/>
+                                    <Frame name="$parentMsg21" inherits="MessageTemplate" id="21"/>
+                                    <Frame name="$parentMsg22" inherits="MessageTemplate" id="22"/>
+                                    <Frame name="$parentMsg23" inherits="MessageTemplate" id="23"/>
+                                    <Frame name="$parentMsg24" inherits="MessageTemplate" id="24"/>
+                                    <Frame name="$parentMsg25" inherits="MessageTemplate" id="25"/>
+                                    <Frame name="$parentMsg26" inherits="MessageTemplate" id="26"/>
+                                    <Frame name="$parentMsg27" inherits="MessageTemplate" id="27"/>
+                                    <Frame name="$parentMsg28" inherits="MessageTemplate" id="28"/>
+                                    <Frame name="$parentMsg29" inherits="MessageTemplate" id="29"/>
+                                    <Frame name="$parentMsg30" inherits="MessageTemplate" id="30"/>
+                                    <Frame name="$parentMsg31" inherits="MessageTemplate" id="31"/>
+                                    <Frame name="$parentMsg32" inherits="MessageTemplate" id="32"/>
+                                    <Frame name="$parentMsg33" inherits="MessageTemplate" id="33"/>
+                                    <Frame name="$parentMsg34" inherits="MessageTemplate" id="34"/>
+                                    <Frame name="$parentMsg35" inherits="MessageTemplate" id="35"/>
+                                    <Frame name="$parentMsg36" inherits="MessageTemplate" id="36"/>
+                                    <Frame name="$parentMsg37" inherits="MessageTemplate" id="37"/>
+                                    <Frame name="$parentMsg38" inherits="MessageTemplate" id="38"/>
+                                    <Frame name="$parentMsg39" inherits="MessageTemplate" id="39"/>
+                                    <Frame name="$parentMsg40" inherits="MessageTemplate" id="40"/>
+                                    <Frame name="$parentMsg41" inherits="MessageTemplate" id="41"/>
+                                    <Frame name="$parentMsg42" inherits="MessageTemplate" id="42"/>
+                                    <Frame name="$parentMsg43" inherits="MessageTemplate" id="43"/>
+                                    <Frame name="$parentMsg44" inherits="MessageTemplate" id="44"/>
+                                    <Frame name="$parentMsg45" inherits="MessageTemplate" id="45"/>
+                                    <Frame name="$parentMsg46" inherits="MessageTemplate" id="46"/>
+                                    <Frame name="$parentMsg47" inherits="MessageTemplate" id="47"/>
+                                    <Frame name="$parentMsg48" inherits="MessageTemplate" id="48"/>
+                                    <Frame name="$parentMsg49" inherits="MessageTemplate" id="49"/>
+                                    <Frame name="$parentMsg50" inherits="MessageTemplate" id="50"/>
+                                </Frames>
+                                <Scripts>
+                                    <OnLoad>ChatMessagesLoadFlag_OnLoad();</OnLoad>
+                                    <OnUpdate>ChatMessagesLoadFlag_OnUpdate();</OnUpdate>
+                                </Scripts>
+                            </SlidingFrame>
+                            <Button name="$parentTipsBtn" inherits="TemplateBtn17" abs_x="28" abs_y="30">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentTipsBkg">
+                                            <Offset>
+                                                <AbsDimension x="12" y="0"/>
+                                            </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentBkg" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tipoff" abs_x="3" abs_y="13">
+                                                <Anchors>
+                                                    <Anchor relativePoint="center" point="center" relativeTo="$parent"/>
+                                                </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                            </Button>
+                            <RichText name="$parentTipsTxt" fonttype="BlackFont20" lineInterval="2" multiLine="true" abs_x="720" abs_y="70" justifyV="middle" input_transparent = "true">
+                                <Color r="73" g="70" b="63"/>
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentTipsBtn">
+                                        <Offset>
+                                            <AbsDimension x="45" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    ##点击防诈骗提示
+                                    <OnClick>FriendChatFrameMainChatTipsTxt_OnClick();</OnClick>
+                                </Scripts>
+                            </RichText>
+                        </Frames>
+                    </Frame>
+
+                    ##底部面板
+                    <Frame name="$parentBottom" abs_x="1037" abs_y="75">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="-5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentRightBkg" inherits="TemplateBigBkg2" abs_x="807" abs_y="87">
+                                    <Anchors>
+                                        <Anchor point="bottomleft" relativePoint="bottomright" relativeTo="FriendChatFrameMainLeftBkg">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentChatEditBkg" inherits="TemplateBkg8" abs_x="699" abs_y="46">
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="420" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                    <Center>
+                                        <Left offsetX="0" offsetY="0" w="30" h="52"/>
+                                        <Center offsetX="30" offsetY="0" w="30" h="52"/>
+                                        <Right offsetX="60" offsetY="0" w="30" h="52"/>
+                                    </Center>
+                                </Texture>
+                                <!--<Texture name="$parentPenIcon" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="hyxt_icon_pen" abs_x="26" abs_y="27">-->
+                                    <!--<Anchors>-->
+                                        <!--<Anchor point="left" relativePoint="left" relativeTo="$parentChatEditBkg">-->
+                                            <!--<Offset>-->
+                                                <!--<AbsDimension x="10" y="0"/>-->
+                                            <!--</Offset>-->
+                                        <!--</Anchor>-->
+                                    <!--</Anchors>-->
+                                <!--</Texture>-->
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##更多功能按钮
+                            <Button name="$parentFuncBtn" abs_x="50" abs_y="53" inherits="TemplateBtn18">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="30" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentBkg" file="ui/mobile/texture2/friend.xml" uvname="icon_more" abs_x="34" abs_y="7" >
+                                                <Anchors>
+                                                    <Anchor relativeTo="$parent" relativePoint="center" point="center"/>
+                                                </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatFrameMainBottomFuncBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##一键查看按钮
+                            <Button name="$parentSeeBtn" abs_x="50" abs_y="53" inherits="TemplateBtn18">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentFuncBtn">
+                                        <Offset>
+                                            <AbsDimension x="50" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentBkg" file="ui/mobile/texture2/friend.xml" uvname="icon_read" abs_x="36" abs_y="24">
+                                            <Anchors>
+                                                <Anchor relativePoint="center" point="center" relativeTo="$parent"/>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatFrameMainBottomSeeBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##表情按钮
+                            <Button name="$parentEmojiBtn" abs_x="50" abs_y="53" inherits="TemplateBtn18">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentSeeBtn">
+                                        <Offset>
+                                            <AbsDimension x="164" y="2"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentBkg" file="ui/mobile/texture2/friend.xml" uvname="icon_express" abs_x="30" abs_y="30">
+                                            <Anchors>
+                                                <Anchor relativePoint="center" point="center" relativeTo="$parent"/>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatFrameMainBottomEmojiBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##输入框
+                            <SafeEditBox name="$parentChatEdit" letters="120" historyLines="1" multiLine="false" abs_x="450" abs_y="25">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentChatEditBkg">
+                                            <Offset>
+                                                <AbsDimension x="10" y="0"/>
+                                            </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <FontString name="$parentFont" fonttype="BlackFont24">
+                                    <Color r="255" g="255" b="255"/>
+                                </FontString>
+                                <FontString name="$parentDefault" default="true" fonttype="BlackFont24" text="$3094" textcolor="ffb9b9b9"/>
+                                <Scripts>
+                                    <OnFocusLost>FriendChatFrameMainBottomChatEdit_OnFocusLost();</OnFocusLost>
+                                    <OnEnterPressed platform="pc">FriendChatFrameMainBottomChatEdit_OnEnterPressed();</OnEnterPressed>
+                                </Scripts>
+                            </SafeEditBox>
+                            ##发送按钮
+                            <Button name="$parentSendBtn" abs_x="130" abs_y="50" inherits="TemplateBtn11">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentChatEditBkg">
+                                        <Offset>
+                                            <AbsDimension x="-130" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <FontString name="$parentTxt" fonttype="BlackFont24" lineInterval="1" justifyH="center" text="$4717" abs_x="114" abs_y="34">
+                                            <Color r="55" g="54" b="51"/>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" >
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="5"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatSendBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+
+                    ##功能按钮面板
+                    <Frame name="$parentFuncFrame" hidden="true" abs_x="1280" abs_y="720">
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBkg"  inherits="TemplateBkg22" abs_x="190" abs_y="250">
+                                    <Anchors>
+                                        <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="FriendChatFrameMainBottom" >
+                                            <Offset>
+                                                <AbsDimension x="20" y="-80"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentDownArrow" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow.png" abs_x="37" abs_y="20">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+                                            <Offset>
+                                                <AbsDimension x="20" y="-8"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##删除
+                            <Button name="$parentDelBtn" abs_x="170" abs_y="50" inherits="TemplateBtn10">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                                        <Offset>
+                                            <AbsDimension x="10" y="5"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png" abs_x="26" abs_y="26">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="10" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$9310" abs_x="100" abs_y="18">
+                                            <Color r="55" g="51" b="51"/>
+                                            <Anchors>
+                                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="21" y="-18"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatFrameMainFuncFrameDelBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##屏蔽
+                            <Button name="$parentIgnoreBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentDelBtn">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_shield" abs_x="22" abs_y="22">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="10" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$9311" abs_x="100" abs_y="18" lineInterval="1">
+                                            <Color r="55" g="54" b="49"/>
+                                            <Anchors>
+                                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="21" y="-18"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatFrameMainFuncFrameIgnoreBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##追踪
+                            <Button name="$parentFollowBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentIgnoreBtn">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_track" abs_x="23" abs_y="24">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="10" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$9312" abs_x="100" abs_y="18" lineInterval="1">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="21" y="-18"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendChatFrameMainFuncFrameFollowBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##创建群组
+                            <Button name="$parentCreateGroupChatBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentFollowBtn">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add.png" abs_x="26" abs_y="26">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="10" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" lineInterval="1" text="$20610" abs_x="100" abs_y="18">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="21" y="-18"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>FriendCreateGroupChatBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##群组加成员
+                            <Button name="MainFuncFrameAddToGroupChatBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12" hidden="true">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_add.png" abs_x="18" abs_y="18">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="28" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$1174" abs_x="100" abs_y="20" autowrap="true">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>MainFuncFrameAddToGroupChatBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##群组屏蔽
+                            <Button name="MainFuncFrameGroupIgnoreBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_shield.png" abs_x="22" abs_y="22">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="28" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$9311" abs_x="100" abs_y="20">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>MainFuncFrameGroupIgnoreBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##群组详情
+                            <Button name="MainFuncFrameGroupDetailBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12" hidden="true">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_details.png" abs_x="23" abs_y="19">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="28" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$20298" abs_x="100" abs_y="20">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>MainFuncFrameGroupDetailBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##群组置顶
+                            <Button name="MainFuncFrameGroupGotoTopBtn" abs_x="170" abs_y="50" inherits="TemplateBtn12" hidden="true">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_top_b.png" abs_x="21" abs_y="24">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="28" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$31026" abs_x="100" abs_y="20">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>MainFuncFrameGroupGotoTopBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##群组解散
+                            <Button name="MainFuncFrameGroupDeleteBtn" abs_x="170" abs_y="50" inherits="TemplateBtn10" hidden="true">
+                                <Anchors>
+                                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay" >
+                                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png" abs_x="26" abs_y="25">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="28" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" justifyH="center" fonttype="BlackFont20" text="$9310" abs_x="100" abs_y="20">
+                                            <Color r="55" g="51" b="51"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>MainFuncFrameGroupDeleteBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                        <Scripts>
+                            <OnClick>FriendChatFrameMainFuncFrame_OnClick();</OnClick>
+                        </Scripts>
+                    </Frame>
+
+                    ##迷你队长问题选项
+                    <Frame name="$parentMiniCaption" hidden="true" abs_x="770" abs_y="63">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="215" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Button name="$parentTypeBtn1" inherits="MiniCaptionTypeBtnTemplate2" id="1">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTypeBtn2" inherits="MiniCaptionTypeBtnTemplate" id="2">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topright" relativeTo="$parentTypeBtn1">
+                                        <Offset>
+                                            <AbsDimension x="16" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTypeBtn3" inherits="MiniCaptionTypeBtnTemplate" id="3">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topright" relativeTo="$parentTypeBtn2">
+                                        <Offset>
+                                            <AbsDimension x="16" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentTypeBtn4" inherits="MiniCaptionTypeBtnTemplate" id="4" hidden="true">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topright" relativeTo="$parentTypeBtn3">
+                                        <Offset>
+                                            <AbsDimension x="16" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Frame name="$parentQuestion" hidden="true" abs_x="603" abs_y="314">
+                                <Anchors>
+                                    <Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-30"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBkg" inherits="TemplateBkg8"/>
+                                        <Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow.png" UVType="turn90" abs_x="43" abs_y="28">
+                                            <Anchors>
+                                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="74" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button name="$parentBtn1" inherits="MiniCaptionQuestionBtnTemplate" id="1"/>
+                                    <Button name="$parentBtn2" inherits="MiniCaptionQuestionBtnTemplate" id="2"/>
+                                    <Button name="$parentBtn3" inherits="MiniCaptionQuestionBtnTemplate" id="3"/>
+                                    <Button name="$parentBtn4" inherits="MiniCaptionQuestionBtnTemplate" id="4"/>
+                                    <Button name="$parentBtn5" inherits="MiniCaptionQuestionBtnTemplate" id="5"/>
+                                    <Button name="$parentBtn6" inherits="MiniCaptionQuestionBtnTemplate" id="6"/>
+                                    <Button name="$parentBtn7" inherits="MiniCaptionQuestionBtnTemplate" id="7"/>
+                                    <Button name="$parentBtn8" inherits="MiniCaptionQuestionBtnTemplate" id="8"/>
+                                    <Button name="$parentBtn9" inherits="MiniCaptionQuestionBtnTemplate" id="9"/>
+                                    <Button name="$parentBtn10" inherits="MiniCaptionQuestionBtnTemplate" id="10"/>
+                                </Frames>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </Frame>
+            ##关闭
+            <Frame name="$parentClose" abs_x="230" abs_y="720">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentMain">
+                            <Offset>
+                                <AbsDimension x="100" y="0"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/friend.xml" uvname="img_board_pull" abs_x="42" abs_y="86" >
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentJianTou" file="ui/mobile/texture2/common.xml" uvname="icon_pull" abs_x="26" abs_y="44" >
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>FriendChatFrameClose_OnClick();</OnClick>
+                    <OnMouseDown>OnClickAnimation("OnMouseDown",{"FriendChatFrameCloseBkg","FriendChatFrameCloseJianTou"});</OnMouseDown>
+                    <OnMouseUp>OnClickAnimation("OnMouseUp",{"FriendChatFrameCloseBkg","FriendChatFrameCloseJianTou"});</OnMouseUp>
+                    <OnMouseOut>OnClickAnimation("OnMouseOut",{"FriendChatFrameCloseBkg","FriendChatFrameCloseJianTou"});</OnMouseOut>
+
+                </Scripts>
+            </Frame>
+            ##水印功能
+            <Frame name="$parentWaterMarkFrame" abs_x="380" abs_y="16">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentMain">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentFont" fonttype="BlackFont" text="" abs_x="380" abs_y="16" justifyH="right">
+                            <Color r="142" g="153" b="155"/>
+                            <Anchors>
+                                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="95" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>FriendChatFrame_OnLoad();</OnLoad>
+            <OnEvent>FriendChatFrame_OnEvent();</OnEvent>
+            <OnShow>FriendChatFrame_OnShow();</OnShow>
+            <OnHide>FriendChatFrame_OnHide();</OnHide>
+            <OnUpdate>FriendChatFrame_OnUpdate();</OnUpdate>
+        </Scripts>
+    </Frame>
+
+    <!--表情按钮-->
+    <Button name="EmojiBtnTemplate" virtual="true" inherits="EmojiBtnTemplate_Base">
+        <Scripts>
+            <OnClick>EmojiBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    <!--表情面板-->
+    <Frame name="ChatEmojiFrameMask" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2000">
+        <Size>
+            <RelDimension x="1" y="1"/>
+        </Size>
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Frames>
+            <Frame name="ChatEmojiFrame" parent="UIClient" frameStrata="MEDIUM" framelevel="3000">
+                <Size>
+                    <AbsDimension x="430" y="219"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="top" relativeTo="FriendChatFrameMainBottomEmojiBtn">
+                        <Offset>
+                            <AbsDimension x="-29" y="-1"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg2">
+                            <Size>
+                                <RelDimension x="1" y="1"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-18"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentArrowDown" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow.png" abs_x="32" abs_y="20">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="-147" y="-5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentEmojiBtn1" inherits="EmojiBtnTemplate" id="1"/>
+                    <Button name="$parentEmojiBtn2" inherits="EmojiBtnTemplate" id="2"/>
+                    <Button name="$parentEmojiBtn3" inherits="EmojiBtnTemplate" id="3"/>
+                    <Button name="$parentEmojiBtn4" inherits="EmojiBtnTemplate" id="4"/>
+                    <Button name="$parentEmojiBtn5" inherits="EmojiBtnTemplate" id="5"/>
+                    <Button name="$parentEmojiBtn6" inherits="EmojiBtnTemplate" id="6"/>
+                    <Button name="$parentEmojiBtn7" inherits="EmojiBtnTemplate" id="7"/>
+                    <Button name="$parentEmojiBtn8" inherits="EmojiBtnTemplate" id="8"/>
+                    <Button name="$parentEmojiBtn9" inherits="EmojiBtnTemplate" id="9"/>
+                    <Button name="$parentEmojiBtn10" inherits="EmojiBtnTemplate" id="10"/>
+                    <Button name="$parentEmojiBtn11" inherits="EmojiBtnTemplate" id="11"/>
+                    <Button name="$parentEmojiBtn12" inherits="EmojiBtnTemplate" id="12"/>
+                    <Button name="$parentEmojiBtn13" inherits="EmojiBtnTemplate" id="13"/>
+                    <Button name="$parentEmojiBtn14" inherits="EmojiBtnTemplate" id="14"/>
+                    <Button name="$parentEmojiBtn15" inherits="EmojiBtnTemplate" id="15"/>
+                    <Button name="$parentEmojiBtn16" inherits="EmojiBtnTemplate" id="16"/>
+                    <Button name="$parentEmojiBtn17" inherits="EmojiBtnTemplate" id="17"/>
+                    <Button name="$parentEmojiBtn18" inherits="EmojiBtnTemplate" id="18"/>
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnClick>ChatEmojiFrameMask_OnClick();</OnClick>
+        </Scripts>
+    </Frame>
+	
+    <!--群组详情面板-->
+    <Frame name="GroupFriendFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2000">
+        <Layers>		
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="cd000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="918" abs_y="638">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg1" inherits="TemplateBigBkg2" abs_x="916" abs_y="492">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle" >
+                            <Offset>
+                                <AbsDimension x="0" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg01" inherits="TemplateBigBkg5" >
+                    <Size>
+                        <AbsDimension x="830" y="106"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                            <Offset>
+                                <AbsDimension x="0" y="88"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <!--群组名称背景-->
+                <Texture name="$parentNameBkg" inherits="TemplateBkg8" abs_x="360" abs_y="46">
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentHead">
+                            <Offset>
+                                <AbsDimension x="15" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <!--群组名字-->
+                <FontString name="$parentName" lang_ver="tha" fonttype="BlackFont24" justifyV="middle" justifyH="center" abs_x="360" abs_y="46" text="1">
+                    <Color r="255" g="255" b="255"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentName"  fonttype="BlackFont20" justifyV="middle" justifyH="center" abs_x="360" abs_y="46" text="1">
+                    <Color r="255" g="255" b="255"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <!--数量图标-->
+                <Texture name="$parentNumIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_group.png" abs_x="26" abs_y="23">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentNameBkg">
+							<Offset>
+								<AbsDimension x="56" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <!--群组人数-->
+				<FontString name="$parentNum" fonttype="BlackFont20" text="21/40" abs_x="80" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentNumIcon">
+							<Offset>
+								<AbsDimension x="38" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+                <Texture name="$parentLine1" inherits="TemplateBkg26" abs_x="830" abs_y="36">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="214"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentLine2" inherits="TemplateBkg20" abs_x="810" abs_y="2">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="245"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentMemFont" fonttype="BlackFont26" justifyH="center" text="$6151" abs_x="100" abs_y="26">
+					<Color r="77" g="132" b="131"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentLine1">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+        <Frames>
+            <Frame name="$parentTitle" inherits="TemplateTopTitleBkg0" abs_x="910" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont40" fontStyle="border" justifyV="middle" text="$20640" shadowcolor="ff6A3A0C">
+                            <Color r="255" g="135" b="27"/>
+                            <Size>
+                                <AbsDimension x="200" y="40"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="40" y="-2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Button name="$parentAddHead" abs_x="64" abs_y="64" >
+               <Anchors>
+                    <Anchor point="left" relativeTo="$parentBkg01" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="15" y="0" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentIconBkg" inherits="TemplateBkg30" abs_x="64" abs_y="64" hidden="true">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_sink.png" abs_x="64" abs_y="64">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GroupFriendFrameHead_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentHead" abs_x="64" abs_y="64" hidden="true">
+               <Anchors>
+                    <Anchor point="left" relativeTo="$parentBkg01" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="15" y="0" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                 <NormalTexture name="$parentFrameNormal" file="ui/headframes/1.png" abs_x="85" abs_y="85">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentFramePushedBG" file="ui/headframes/1.png" abs_x="90" abs_y="90">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentIconBkg" inherits="TemplateBkg8" abs_x="64" abs_y="64">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="55" abs_y="55">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GroupFriendFrameHead_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##安全提示
+            <Frame name="$parentSaveTips" abs_x="700" abs_y="22">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft"/>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentBkg" inherits="TemplateWarnTipsBkg" abs_x = "910" abs_y="33">
+                            <Anchors>
+                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                    <Offset>
+                                        <AbsDimension x="4" y="55" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parentBtn" inherits="TemplateBtn17" abs_x="22" abs_y="24">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="43" y="55"/>
+                                    </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay" >
+                                <Texture name="$parentBkg" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tipoff" abs_x="3" abs_y="13">
+                                        <Anchors>
+                                            <Anchor relativePoint="center" point="center" relativeTo="$parent"/>
+                                        </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                    </Button>
+                    <RichText name="$parentText" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="" abs_x="800" abs_y="22" input_transparent="true" textcolor="000000ff">
+                        <Anchors>
+                            <Anchor point="left" relativeTo="$parentBtn" relativePoint="left">
+                                <Offset>
+                                    <AbsDimension x="32" y="2"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>OpenSafeTipsView()</OnClick>
+                        </Scripts>
+                    </RichText>
+                </Frames>
+            </Frame>
+            <Button name="$parentTabBtn1" inherits="TemplateTabBtn2" id="1">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg1">
+                        <Offset>
+                            <AbsDimension x="6" y="27"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GroupFriendTabTemplate_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentTabBtn2" inherits="TemplateTabBtn2"  id="2">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg1">
+                        <Offset>
+                            <AbsDimension x="6" y="114"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GroupFriendTabTemplate_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentCloseBtn">
+                <Size>
+                    <AbsDimension x="46" y="60 "/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-8" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" rel_x="0.8" rel_y="0.8">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GroupFriendFrameClose_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+			##修改群名称
+            <Button name="$parentEditEntryBtn" abs_x="364" abs_y="36">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <Scripts>
+                    <OnClick>GroupFriendFrameEditEntryBtn_OnClick();</OnClick>
+                </Scripts>				
+            </Button>			
+			
+            <!--邀请好友-->
+            <Button name="$parentInviteBtn" >
+				<Size>
+					<AbsDimension x="182" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBkg01" relativePoint="right">
+						<Offset>
+							<AbsDimension x="-15" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" text="$1174" justifyH="center">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="180" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg2"/>
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GroupFriendFrameInviteBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+            ##组成员界面
+            <SlidingFrame name="GroupFriendFrameMemberList" slidingY="true" slideplane="$parentPlane" abs_x="830" abs_y="275">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="260"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="830" abs_y="400" />
+                    <Button name="$parentMember1" inherits="GroupChatMemberTemplate" id="1"/>
+                    <Button name="$parentMember2" inherits="GroupChatMemberTemplate" id="2"/>
+                    <Button name="$parentMember3" inherits="GroupChatMemberTemplate" id="3"/>
+                    <Button name="$parentMember4" inherits="GroupChatMemberTemplate" id="4"/>
+                    <Button name="$parentMember5" inherits="GroupChatMemberTemplate" id="5"/>
+                    <Button name="$parentMember6" inherits="GroupChatMemberTemplate" id="6"/>
+                    <Button name="$parentMember7" inherits="GroupChatMemberTemplate" id="7"/>
+                    <Button name="$parentMember8" inherits="GroupChatMemberTemplate" id="8"/>
+                    <Button name="$parentMember9" inherits="GroupChatMemberTemplate" id="9"/>
+                    <Button name="$parentMember10" inherits="GroupChatMemberTemplate" id="10"/>
+                    <Button name="$parentMember11" inherits="GroupChatMemberTemplate" id="11"/>
+                    <Button name="$parentMember12" inherits="GroupChatMemberTemplate" id="12"/>
+                    <Button name="$parentMember13" inherits="GroupChatMemberTemplate" id="13"/>
+                    <Button name="$parentMember14" inherits="GroupChatMemberTemplate" id="14"/>
+                    <Button name="$parentMember15" inherits="GroupChatMemberTemplate" id="15"/>
+                    <Button name="$parentMember16" inherits="GroupChatMemberTemplate" id="16"/>
+                    <Button name="$parentMember17" inherits="GroupChatMemberTemplate" id="17"/>
+                    <Button name="$parentMember18" inherits="GroupChatMemberTemplate" id="18"/>
+                    <Button name="$parentMember19" inherits="GroupChatMemberTemplate" id="19"/>
+                    <Button name="$parentMember20" inherits="GroupChatMemberTemplate" id="20"/>
+                    <Button name="$parentMember21" inherits="GroupChatMemberTemplate" id="21"/>
+                    <Button name="$parentMember22" inherits="GroupChatMemberTemplate" id="22"/>
+                    <Button name="$parentMember23" inherits="GroupChatMemberTemplate" id="23"/>
+                    <Button name="$parentMember24" inherits="GroupChatMemberTemplate" id="24"/>
+                    <Button name="$parentMember25" inherits="GroupChatMemberTemplate" id="25"/>
+                    <Button name="$parentMember26" inherits="GroupChatMemberTemplate" id="26"/>
+                    <Button name="$parentMember27" inherits="GroupChatMemberTemplate" id="27"/>
+                    <Button name="$parentMember28" inherits="GroupChatMemberTemplate" id="28"/>
+                    <Button name="$parentMember29" inherits="GroupChatMemberTemplate" id="29"/>
+                    <Button name="$parentMember30" inherits="GroupChatMemberTemplate" id="30"/>
+                    <Button name="$parentMember31" inherits="GroupChatMemberTemplate" id="31"/>
+                    <Button name="$parentMember32" inherits="GroupChatMemberTemplate" id="32"/>		
+                    <Button name="$parentMember33" inherits="GroupChatMemberTemplate" id="33"/>
+                    <Button name="$parentMember34" inherits="GroupChatMemberTemplate" id="34"/>
+                    <Button name="$parentMember35" inherits="GroupChatMemberTemplate" id="35"/>
+                    <Button name="$parentMember36" inherits="GroupChatMemberTemplate" id="36"/>
+                    <Button name="$parentMember37" inherits="GroupChatMemberTemplate" id="37"/>
+                    <Button name="$parentMember38" inherits="GroupChatMemberTemplate" id="38"/>
+                    <Button name="$parentMember39" inherits="GroupChatMemberTemplate" id="39"/>
+                    <Button name="$parentMember40" inherits="GroupChatMemberTemplate" id="40"/>					
+                </Frames>
+            </SlidingFrame>
+
+			##权限界面
+			<Frame name="GroupFriendFrame_Authority" frameStrata="MEDIUM" hidden="true" framelevel="2000">
+				<Size>
+					<AbsDimension x="896" y="551"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+				<Layers>		
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle" fonttype="BlackFont24" text="$20617">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="300" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="topleft" relativeTo="GroupFriendFrame_Authority">
+									<Offset>
+										<AbsDimension x="40" y="110"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>						
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentAuthoritySwitch" inherits="mini_SwitchBtnTemplateUI3">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+								<Offset>
+									<AbsDimension x="360" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>		
+					</Button>				
+				</Frames>
+			</Frame>
+            <!--确定新建群-->
+            <Button name="$parentConfirmNewBtn" inherits="TemplateBtn3">
+                <Size>
+                    <AbsDimension x="182" y="61"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="0" y="-18"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" lang_ver="tha" justifyV="middle" fonttype="BlackFont30" text="$20640" justifyH="center">
+                            <Color r="55" g="54" b="51"/>
+                            <Size>
+                                <AbsDimension x="180" y="61"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentName" fonttype="BlackFont24" text="$20640" justifyH="center">
+                            <Color r="55" g="54" b="51"/>
+                            <Size>
+                                <AbsDimension x="180" y="24"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GroupFriendFrameConfirmNewBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##协议
+            <Frame name="$parentAgreement" abs_x="100" abs_y="80" hidden = "true" framelevel = "7001" frameStrata="HIGH">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentConfirmNewBtn" relativePoint="top"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="board_check_circle" abs_x="24" abs_y="24">
+                            <Anchors>
+                                <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                    <Offset>
+                                        <AbsDimension x="1" y="-4"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentFg" file="ui/mobile/texture2/common.xml" uvname="icon_tick_multi" abs_x="20" abs_y="20">
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parentBg" relativePoint="center"/>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <RichText name="$parentTips" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="" abs_x="400" abs_y="22" textcolor="000000" input_transparent="true">
+                        <Anchors>
+                            <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                <Offset>
+                                    <AbsDimension x="42" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>OpenSafeTipsView()</OnClick>
+                        </Scripts>
+                    </RichText>
+                </Frames>
+                <Scripts>
+                    <OnClick>GroupFriendFrame_AgreementCheckBtnClicked()</OnClick>
+                </Scripts>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>GroupFriendFrame_OnLoad();</OnLoad>
+            <OnShow>GroupFriendFrame_OnShow();</OnShow>
+			<OnHide>GroupFriendFrame_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+	
+	##群组邀请好友的弹窗	
+	<Frame name="GroupChatInviteFriendFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2001">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="cd000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="967" abs_y="580" >
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentBkg1" inherits="TemplateBigBkg5" abs_x="924" abs_y="451" >
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                            <Offset>
+                                <AbsDimension x="0" y="96"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31">
+					<Size>
+						<AbsDimension x="952" y="67"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-2" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentBkgHuaWen" inherits="TemplateBigBkg7_flat" abs_x="956" abs_y="67">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg" />
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont30" fontStyle="normal" text="$20618" shadowcolor="ff6A3A0C">
+					<Color r="77" g="112" b="116"/>
+					<Size>
+						<AbsDimension x="300" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentNoPlayer" file="ui/mobile/texture2/bigtex/img_noroom.png" hidden="true">
+					<Size>
+						<AbsDimension x="227" y="175"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SlidingFrame name="GroupChatInviteFriendScrollView" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="924" y="441"/>
+				</Size>
+				<Anchors>
+				<Anchor point="top" relativePoint="top" relativeTo="$parentBkg1">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="924" y="600"/>
+						</Size>
+					</Frame>
+					<Frame name="GroupChatInviteFriendItem1" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem2" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem3" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem4" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem5" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem6" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem7" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem8" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem9" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem10" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem11" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem12" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem13" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem14" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem15" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem16" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem17" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem18" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem19" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem20" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem21" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem22" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem23" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem24" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem25" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem26" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem27" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem28" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem29" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem30" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem31" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem32" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem33" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem34" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem35" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem36" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem37" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem38" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem39" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem40" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem41" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem42" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem43" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem44" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem45" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem46" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem47" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem48" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem49" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem50" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem51" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem52" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem53" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem54" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem55" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem56" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem57" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem58" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem59" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem60" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem61" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem62" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem63" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem64" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem65" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem66" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem67" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem68" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem69" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem70" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem71" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem72" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem73" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem74" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem75" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem76" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem77" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem78" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem79" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem80" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem81" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem82" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem83" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem84" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem85" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem86" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem87" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem88" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem89" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem90" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem91" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem92" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem93" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem94" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem95" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem96" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem97" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem98" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem99" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem100" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem101" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem102" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem103" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem104" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem105" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem106" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem107" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem108" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem109" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem110" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem111" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem112" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem113" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem114" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem115" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem116" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem117" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem118" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem119" inherits="GroupChat_InviteFriendTemplate"/>
+					<Frame name="GroupChatInviteFriendItem120" inherits="GroupChat_InviteFriendTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<Button name="$parentAllInviteBtn"  abs_x="275" abs_y="60" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentMask" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-90"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" text="$1196">
+							<Color r="255" g="249" b="226"/>
+							<Size>
+								<AbsDimension x="260" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal"  />
+				<PushedTexture name="$parentPushedBG"  abs_x="272" abs_y="57">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GroupChatInviteFriendFrameAllInviteBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="36" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-24" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GroupChatInviteFriendFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>GroupChatInviteFriendFrame_OnLoad();</OnLoad>
+			<OnShow>GroupChatInviteFriendFrame_OnShow();</OnShow>
+            <OnHide>GroupChatInviteFriendFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	##对群组成员操作的弹窗
+	<Frame name="GroupFriendFrameOperateBox" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2002">
+		<Size>
+			<AbsDimension x="1280" y="720"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">			
+				<Texture name="$parentTalkBkg" inherits="TemplateBigBkg19">
+					<Size>
+						<AbsDimension x="187" y="519"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##三条分割线
+				<Texture name="GroupFriendFrameOperateBoxLine1" inherits="TexTemplate_brown_fengexian">
+					<Size>
+						<AbsDimension x="167" y="3" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentTalkBkg" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="130"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="GroupFriendFrameOperateBoxLine2" inherits="TexTemplate_brown_fengexian">
+					<Size>
+						<AbsDimension x="167" y="3" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentTalkBkg" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="260"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="GroupFriendFrameOperateBoxLine3" inherits="TexTemplate_brown_fengexian">
+					<Size>
+						<AbsDimension x="167" y="3" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentTalkBkg" relativePoint="top">
+							<Offset>
+								<AbsDimension x="0" y="390"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>				
+			</Layer>
+		</Layers>
+		<Frames>		
+			##查看信息
+			<Button name="$parentCheckBtn" inherits="TemplateBtn12">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$1175" justifyH="center" fontStyle="normal">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="125" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mine.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_CheckBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##屏蔽消息
+			<Button name="$parentIgnoreBtn" inherits="TemplateBtn27">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="70"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$20613" justifyH="center" fontStyle="normal">
+							<Color r="55" g="51" b="51"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/friend.xml" uvname="icon_shield.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_IgnoreBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##追踪游戏
+			<Button name="$parentChaseBtn" inherits="TemplateBtn12">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="140"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$9312" justifyH="center" fontStyle="normal">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_plugin.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_ChaseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##禁言
+			<Button name="$parentForbiddenBtn"  inherits="TemplateBtn27">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="200"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$20614" justifyH="center" fontStyle="normal">
+							<Color r="55" g="51" b="51"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_sound_close" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_ForbiddenBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##添加好友 好友聊天
+			<Button name="$parentAddFriendBtn" inherits="TemplateBtn12">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="270"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$3035" justifyH="center" fontStyle="normal">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_chat.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_AddFriendBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##举报
+			<Button name="$parentReportBtn"  inherits="TemplateBtn27">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="330"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$1305" justifyH="center" fontStyle="normal">
+							<Color r="55" g="51" b="51"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_report.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_ReportBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##群转让
+			<Button name="$parentTransferBtn" inherits="TemplateBtn12">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="400"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$20616" justifyH="center" fontStyle="normal">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_swap.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_TransferBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##踢出群组
+			<Button name="$parentKickBtn" inherits="TemplateBtn27">
+				<Size>
+					<AbsDimension x="169" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTalkBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="460"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont22" text="$20615" justifyH="center" fontStyle="normal">
+							<Color r="55" g="51" b="51"/>
+							<Size>
+                                <AbsDimension x="125" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+						</FontString>
+						<Texture name="$parentPic" file="ui/mobile/texture2/friend.xml" uvname="icon_expel.png" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>									
+						</Texture>								
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GroupFriendFrameOperateBox_KickBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>					
+		</Frames>
+		<Scripts>
+			<OnLoad>GroupFriendFrameOperateBox_OnLoad();</OnLoad>
+			<OnClick>GroupFriendFrameOperateBox_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+	
+	##修改群名称的弹窗
+	<Frame name="ChangGroupNameFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3000">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="8c000000" />
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentContent">
+				<Size>
+					<AbsDimension x="653" y="358" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg1" />
+                         <Texture name="$parentTitle" inherits="TemplateBigBkg31">
+                            <Size>
+                                <AbsDimension x="640" y="67"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-2" y="5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+						<Texture name="$parentChenDi" inherits="BkgTemplate3">
+							<Size>
+								<AbsDimension x="461" y="130"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNameEditBkg" inherits="BkgTemplate57">
+							<Size>
+								<AbsDimension x="336" y="49"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+                        <FontString name="$parentName" fonttype="BlackFont30" text="$31029" justifyH="center" >
+                            <Color r="77" g="112" b="116"/>
+                            <Size>
+                                <AbsDimension x="169" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentTitle">
+                                    <Offset>
+                                        <AbsDimension x="10" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+                     <Button name="$parentCloseBtn">
+                        <Size>
+                            <AbsDimension x="36" y="46"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="-24" y="16"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close"/>
+                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close">
+                            <Size>
+                                <AbsDimension x="33" y="43"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </PushedTexture>
+                        <Scripts>
+                            <OnClick>ChangGroupNameFrameCancelBtn_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+					<SafeEditBox name="$parentNameEdit" letters="20" multiLine="false" editMethod="527" >
+						<Size>
+							<AbsDimension x="300" y="20" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentNameEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="3" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center"></FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$123" textcolor="FFB9B9B9" justifyH="center" >
+                        </FontString>
+						<Scripts>
+							<OnEnterPressed platform="pc">ChangGroupNameFrame_OnEnterPressed();</OnEnterPressed>
+						</Scripts>
+					</SafeEditBox>
+					<Button name="$parentModifyBtn" inherits="TemplateBtn2" abs_x="169" abs_y="55">
+                        <Anchors>
+                            <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                                <Offset>
+                                    <AbsDimension x="-72" y="-23"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3010">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="120" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>1
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>ChangGroupNameFrameModifyBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCancelBtn" inherits="BtnTemplate1" abs_x="169" abs_y="55">
+						<Anchors>
+                            <Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+                                <Offset>
+                                    <AbsDimension x="72" y="-23"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3018">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="120" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>ChangGroupNameFrameCancelBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>	
+
+      <!--搜狗检测面板-->
+    <Frame name="CheckChatSouGouFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000">
+        <Size>
+            <RelDimension x="1" y="1"/>
+        </Size>
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="338">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="-23" y="-23" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentHeadIcon" file="ui/mobile/texture0/miniwork.xml" uvname="img_icon_minicaptain.png" abs_x="120" abs_y="120">
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                            <Offset>
+                                <AbsDimension x="0" y="-55" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+        	<!-- 关闭按钮 -->
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="36" y="46"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-16" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close" >
+					<Size>
+						<AbsDimension x="42" y="42"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>SouGouFrameCloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+            <Button name="$parentConfirmBtn" abs_x="182" abs_y="61">
+                <Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="70" y="-35"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <NormalTexture name="$parentNormal"  inherits="TemplateBkg2" />
+				<PushedTexture name="$parentPushedBG"  inherits="TemplateBkg2" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" abs_x="150" abs_y="29" text="$31101">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>SouGouFrameConfirmBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+            <Button name="$parentStrategyBtn" abs_x="182" abs_y="61">
+                <Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-100" y="-35" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" abs_x="150" abs_y="29" text="$31102">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>SouGouFrameStrategyBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+             <RichText name="$parentTipsTxt" fonttype="BlackFont26" lineInterval="6" multiLine="false" abs_x="480" abs_y="110" justifyH="left" justifyV="middle" >
+                <Color r="73" g="70" b="63"/>
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </RichText>
+        </Frames>
+        <Scripts>
+            <OnShow>SouGouFrame_OnShow()</OnShow>
+        </Scripts>
+    </Frame>
+</Ui>

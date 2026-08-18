@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/newAccountSystem/PhoneBind/PhoneBindCtrl.lua" />
+    <Script file="ui/mobile/mvc/newAccountSystem/PhoneBind/PhoneBindModel.lua" />
+    <Script file="ui/mobile/mvc/newAccountSystem/PhoneBind/PhoneBindView.lua" />
+
+    ##手机/邮箱绑定、解绑面板
+	<Frame name="PhoneBind" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="6007">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="590" y="334"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi2" inherits="TemplateBigBkg29">
+					<Size>
+						<AbsDimension x="550" y="253"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="-20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDesc" fonttype="BlackFont20" text="" textcolor="ff657476" autowrap="true" justifyH="center" justifyV="middle">
+					<Size>
+						<AbsDimension x="550" y="50"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentChenDi2">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentPhoneEditBkg" inherits="TemplateBkg8">
+					<Size>
+						<AbsDimension x="266" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi2">
+							<Offset>
+								<AbsDimension x="0" y="33"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>			
+				<Texture name="$parentVCEditBkg" inherits="TemplateBkg8">
+					<Size>
+						<AbsDimension x="266" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentPhoneEditBkg">
+							<Offset>
+								<AbsDimension x="0" y="14"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTips" fonttype="BlackFont18" text="$35572" textcolor="fffa7a10" autowrap="true" justifyH="left">
+					<Size>
+						<AbsDimension x="252" y="40"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi2">
+							<Offset>
+								<AbsDimension x="0" y="-70"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="584" abs_y="61">
+				<Layers>
+					<Layer>
+						##帮助按钮背景
+						<Texture name="$parentBkgHelp" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" UVType="turn180" abs_x="68" abs_y="56"/>
+						##标题名
+						<FontString name="$parentName" fonttype="BlackFont36" justifyH="left" justifyV="middle" text="$4765" fontStyle="border" abs_x="200" abs_y="61">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="77" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PhoneBind"):CloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##返回按钮
+			<Button name="$parentReturnBtn" abs_x="48" abs_y="44">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentTitleFrame" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="5" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_return.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PhoneBind"):ReturnBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##手机编辑框
+			<EditBox name="$parentPhoneEdit" letters="11" multiLine="false" editMethod="2">
+				<Size>
+					<AbsDimension x="240" y="30" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentPhoneEditBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="10" y="2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$3563" textcolor="ffb9b9b9" justifyV="middle" />
+				<FontString name="$parentFont" fonttype="BlackFont22" textcolor="ffffffff" justifyV="middle" />
+				<!-- <Scripts>
+					<OnEnterPressed platform="pc">PhoneBindFramePhoneEdit_OnEnterPressed();</OnEnterPressed>
+					<OnTabPressed platform="pc">PhoneBindFramePhoneEdit_OnTabPressed();</OnTabPressed>
+				</Scripts> -->
+			</EditBox>
+			##邮箱编辑框
+			<EditBox name="$parentEmailEdit" letters="60" multiLine="false" editMethod="527" hidden="true">
+				<Size>
+					<AbsDimension x="240" y="30" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentPhoneEditBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="10" y="2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$6086" textcolor="ffb9b9b9" justifyV="middle" />
+				<FontString name="$parentFont" fonttype="BlackFont22" textcolor="ffffffff" justifyV="middle" />
+				<!-- <Scripts>
+					<OnEnterPressed platform="pc">EmailValidateFrameEmailEdit_OnEnterPressed();</OnEnterPressed>
+					<OnTabPressed platform="pc">EmailValidateFrameEmailEdit_OnTabPressed();</OnTabPressed>
+				</Scripts> -->
+			</EditBox>
+			##验证码编辑框
+			<EditBox name="$parentVCEdit" letters="6" multiLine="false" editMethod="3">
+				<Size>
+					<AbsDimension x="240" y="30" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentVCEditBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="10" y="2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$3564" textcolor="ffb9b9b9" justifyV="middle"/>
+				<FontString name="$parentFont" fonttype="BlackFont22" textcolor="ffffffff" justifyV="middle" />
+				<!-- <Scripts>
+					<OnEnterPressed platform="pc">PhoneBindFrameVCEdit_OnEnterPressed();</OnEnterPressed>
+					<OnTabPressed platform="pc">PhoneBindFrameVCEdit_OnTabPressed();</OnTabPressed>
+				</Scripts> -->
+			</EditBox>		
+            ##发送验证码
+			<Button name="$parentRequestVCBtn" inherits="TemplateBtn4">
+				<Size>
+					<AbsDimension x="112" y="41" />
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentPhoneEditBkg" relativePoint="right">
+						<Offset>
+							<AbsDimension x="11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" lineInterval="2" text="$3418" autoextend="true">
+							<Color r="55" g="54" b="48"/>
+							<Size>
+								<AbsDimension x="108" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-2" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PhoneBind"):RequestVCBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+            ##绑定/解绑按钮
+			<Button name="$parentOkBtn" inherits="TemplateBtn34">
+				<Size>
+					<AbsDimension x="266" y="50" />
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi2" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$16605" textcolor="ff373633" fontStyle="embolden">
+							<Size>
+								<AbsDimension x="160" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PhoneBind"):OKBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

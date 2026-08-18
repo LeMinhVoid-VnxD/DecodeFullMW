@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/resourceLib/DeveloperResourceLibModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/resourceLib/DeveloperResourceLibView.lua"/>
+	<Script file="ui/mobile/mvc/developer/resourceLib/DeveloperResourceLibCtrl.lua"/>
+
+	##左侧导航按钮
+    <Button name="DeveloperResourceLib_TabBtnTemplate" inherits="TemplateTabBtn4" virtual="true">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):TabBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##格子模板
+    <Button name="DeveloperResourceLib_CellTemplate" virtual="true" inherits="TemplateBtn22" abs_x="78" abs_y="78">
+        <!--<Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):CellBtnClicked();</OnClick>
+        </Scripts>
+        -->
+    </Button>
+
+    ##格子选择器
+	<Frame name="DeveloperResourceLib" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="996" abs_y="571">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+                <Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="993" abs_y="433">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="52"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="772" abs_y="394">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="202" y="79"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentTabsBkg" inherits="TemplateBigBkg29" abs_x="168" abs_y="394">
+                	<Anchors>
+	                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+	                        <Offset>
+	                            <AbsDimension x="19" y="79"/>
+	                        </Offset>
+	                    </Anchor>
+	                </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			## 事件吞没区域
+			<Frame name="$parentEventPanel" abs_x="993" abs_y="571">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+                </Anchors>
+            </Frame>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="992" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##搜索框
+			<Frame name="$parentSearch" abs_x="300" abs_y="45">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentCloseBtn" relativePoint="left">
+						<Offset>
+							<AbsDimension x="-100"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="294" abs_y="45" >
+							<Anchors>
+								<Anchor point="left" relativePoint="left"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SafeEditBox name="$parentEdit" letters="81" multiLine="false" editMethod="527" abs_x="230" abs_y="35">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="16" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont24"  justifyH="left" justifyV="middle"/>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont24" text="$16212" textcolor="ffb9b9b9" justifyH="left" justifyV="middle"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):SearchBtnClicked();</OnEnterPressed>
+						</Scripts>
+					</SafeEditBox>
+					<Button name="$parentBtn" inherits="TemplateBtn7" abs_x="45" abs_y="45">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentEditBkg"/>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_search" abs_x="25" abs_y="25">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):SearchBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+            ##确认
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn" >
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-20" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):OKBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##tab按钮
+            <SlidingFrame name="$parentTabs" slidingY="true" slideplane="$parentPlane" abs_x="160" abs_y="385">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentTabsBkg" />
+                </Anchors>
+                <Frames>
+                	<Frame name="$parentPlane" hidden="true" abs_x="160" abs_y="385" />
+                    <Button name="$parent1" inherits="DeveloperResourceLib_TabBtnTemplate" id="1" />
+                    <Button name="$parent2" inherits="DeveloperResourceLib_TabBtnTemplate" id="2" />
+                    <Button name="$parent3" inherits="DeveloperResourceLib_TabBtnTemplate" id="3" />
+                    <Button name="$parent4" inherits="DeveloperResourceLib_TabBtnTemplate" id="4" />
+                    <Button name="$parent5" inherits="DeveloperResourceLib_TabBtnTemplate" id="5" />
+                    <Button name="$parent6" inherits="DeveloperResourceLib_TabBtnTemplate" id="6" />
+                    <Button name="$parent7" inherits="DeveloperResourceLib_TabBtnTemplate" id="7" />
+                    <Button name="$parent8" inherits="DeveloperResourceLib_TabBtnTemplate" id="8" />
+                    <Button name="$parent9" inherits="DeveloperResourceLib_TabBtnTemplate" id="9" />
+                    <Button name="$parent10" inherits="DeveloperResourceLib_TabBtnTemplate" id="10" />
+                    <Button name="$parent11" inherits="DeveloperResourceLib_TabBtnTemplate" id="11" />
+                    <Button name="$parent12" inherits="DeveloperResourceLib_TabBtnTemplate" id="12" />
+                    <Button name="$parent13" inherits="DeveloperResourceLib_TabBtnTemplate" id="13" />
+                    <Button name="$parent14" inherits="DeveloperResourceLib_TabBtnTemplate" id="14" />
+                    <Button name="$parent15" inherits="DeveloperResourceLib_TabBtnTemplate" id="15" />
+                </Frames>
+            </SlidingFrame>
+            ##列表
+			<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="374">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="374" />
+					
+					##格子, 动态创建..."$parentItem1", "$parentItem2" ...
+				</Frames>
+			</ListViewFrame>
+
+            ##搜索内容
+			<Frame name="$parentSearchContent" hidden="true">
+				<Size>
+					<AbsDimension x="752" y="374"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg2" hidden="true"/>
+						<FontString name="$parentTitle" fonttype="BlackFont26" lineInterval="1" text="搜索的结果" justifyV="bottom" justifyH="left"  >
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="500" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="20" y="20"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##分割线
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="752" abs_y="2">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="55"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNull" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="349" abs_y="197" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentBkg" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNullTitle" fonttype="BlackFont26" lineInterval="1" text="$21738" justifyH="center" hidden="true" >
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="500" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Bottom" relativePoint="Bottom" relativeTo="$parentNull">
+									<Offset>
+										<AbsDimension y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##返回按钮
+					<Button name="$parentBackBtn" inherits="TemplateBtn11" abs_x="130" abs_y="45">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-20" y="5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName"  fonttype="BlackFont22" text="$16128" justifyH="center" justifyV="middle">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="70" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):SearchBackBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+
+					<ListViewFrame name="$parentOptionList" slidingY="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="752" y="320"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="60"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="752" abs_y="320" hidden="true"/>
+						</Frames>
+						
+					</ListViewFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperResourceLib"):OnFrameBgMaskClicked();</OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/more_reward_show/MoreRewardExhibitionCtrl.lua"/>
+	<Script file="ui/mobile/mvc/more_reward_show/MoreRewardExhibitionModel.lua"/>
+	<Script file="ui/mobile/mvc/more_reward_show/MoreRewardExhibitionView.lua"/>
+
+	#奖品物品
+	<Button name="MoreRewardBtnTemplate" virtual="true" abs_x="92" abs_y="92" >
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				#物品框
+				<Texture name="$parentIconBkg" inherits="TemplateBkg38"/>
+				#物品
+				<Texture name="$parentIcon" file="items/hand.png" abs_x="74" abs_y="74" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#数量
+				<FontString name="$parentNum" justifyH="right" fonttype="BlackFont18" lineInterval="2" fontStyle="border" text="999" abs_x="80" abs_y="17" shadowcolor="000000" >
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="-8" y="-7" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MoreRewardExhibition"):MoreRewardBtnOnClicked();</OnClick>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("MoreRewardExhibition"):MoreRewardBtnOnMouseEnterPC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("MoreRewardExhibition"):MoreRewardBtnOnMouseLeavePC()</OnLeave>
+		</Scripts>
+	</Button>
+
+	<!--多个奖励物品展示框-->
+	<Frame name="MoreRewardExhibition" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="5000" rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="80000000" />
+				<Texture name="$parentEffect" file="ui/mobile/effect/novice_award_1.png">
+					<Size>
+						<AbsDimension x="700" y="700" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="402">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg40">
+					<Size>
+						<AbsDimension x="640" y="67" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="5" y="6" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkgPattern" inherits="TemplateBigBkg41">
+					<Size>
+						<AbsDimension x="640" y="67" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkgIcon1" file="ui/mobile/texture0/bigtex/lqjl_bg1.png" >
+					<Size>
+						<AbsDimension x="103" y="81" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="99" y="-9" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkgIcon2" file="ui/mobile/texture0/bigtex/lqjl_bg2.png" >
+					<Size>
+						<AbsDimension x="104" y="78" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="-100" y="-12" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitleName" lang_ver="tha" justifyH="center" justifyV="middle" fonttype="BlackFont40" text="$3160">
+					<Color r="54" g="53" b="53"/>
+					<Size>
+						<AbsDimension x="370" y="67"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTitleName" justifyH="center" justifyV="middle" fonttype="BlackFont30" text="$3160">
+					<Color r="54" g="53" b="53"/>
+					<Size>
+						<AbsDimension x="370" y="67"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentCount" justifyH="center" fonttype="BlackFont20" >
+					<Color r="10" g="170" b="26"/>
+					<Size>
+						<AbsDimension x="440" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-106"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<ListViewFrame name="$parentItemList" slidingY="true" slideplane="$parentPlane" >
+				<Size>
+					<AbsDimension x="531" y="224"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleBkg">
+						<Offset>
+							<AbsDimension x="0" y="14"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane">
+						<Size>
+							<AbsDimension x="531" y="92"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn11" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentText" lang_ver="tha" fonttype="BlackFont35" justifyV="middle" justifyH="center" text="$3010" abs_x="182" abs_y="61">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$3010" abs_x="182" abs_y="19">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MoreRewardExhibition"):ConfirmOnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentAgainBtn" inherits="TemplateBtn12" abs_x="182" abs_y="61" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="106" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$32528">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="182" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentText2" fonttype="BlackFont" justifyH="center" text="$32529">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="182" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MoreRewardExhibition"):AgainBtnOnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-23" y="17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MoreRewardExhibition"):Close();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>MoreRewardExhibition_OnLoad();</OnLoad>
+			<OnUpdate>MoreRewardExhibition_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

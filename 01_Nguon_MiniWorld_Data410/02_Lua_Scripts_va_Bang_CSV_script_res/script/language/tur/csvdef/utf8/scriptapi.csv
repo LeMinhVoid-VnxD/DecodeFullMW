@@ -1,0 +1,325 @@
+接口ID,土耳其语,土耳其语,土耳其语,土耳其语,土耳其语,土耳其语,土耳其语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,Oyun yönetimi,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,"Komut dosyası parametreleri ayarla, özel olarak kullan",local result = Game:doGameEnd()
+10002,Oyun yönetimi,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,"Komut dosyası parametreleri elde et, özel olarak kullan","local result = Game:setScriptVar(index, val)"
+10003,Oyun yönetimi,getScriptVar,Game:getScriptVar(index),index:number index from 1,"ErrorCode.OK, val:number User Value",Ayarlanmış komut dosyası parametreleri yükle,local result = Game:getScriptVar(index)
+10004,Oyun yönetimi,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,Yeni global efekti,local result = Game:sendScriptVars2Client()
+10005,Oyun yönetimi,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",Global efektiyi temizle,local result = Game:addRenderGlobalEffect(path)
+10006,Oyun yönetimi,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,Global efektinin konumunu ayarla,local result = Game:removeRenderGlobalEffect(effectid)
+10007,Oyun yönetimi,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,Global efektini yakınlaştırma ayarla,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,Oyun yönetimi,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,Mesaj Kutusu,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,Oyun yönetimi,msgBox,Game:msgBox(msg),,,Gündüz olup olmadığı,local result = Game:msgBox(msg)
+20001,Dünya yönetimi,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",Özelleştirilmiş oyun olup olmadığını,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,Dünya yönetimi,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",Yaratma modu olup olmadığı,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,Dünya yönetimi,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",Çoklu oyuncu oluşturma modu veya özelleştirilmiş düzenleme modu,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,Dünya yönetimi,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",Limit modu,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,Dünya yönetimi,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",Macera modu - Serbest mod,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,Dünya yönetimi,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",Tek mod veya Macera modu - Serbest mod,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,Dünya yönetimi,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",Oluşturma modundan hayata dönüş,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,Dünya yönetimi,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",Özel oyunun düzenleme modu,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,Dünya yönetimi,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",Özel oyunun operasyon modu,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,Dünya yönetimi,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",Oyunun mevcut saatini elde et (s),"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,Dünya yönetimi,getHours,World:getHours(),none,"ErrorCode.OK, result:number",Perspektif düzenleme durumunu al,"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,Dünya yönetimi,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",Perspeftif düzenleme durumunu ayarla,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,Dünya yönetimi,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,Özel kamera yapılandırması alın,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,Dünya yönetimi,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",Blok aralığını (chunk) elde etme,local result = World:getCustomCameraConfig()
+20015,Dünya yönetimi,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",Belirlenen alandaki oyuncu edinme,"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,Dünya yönetimi,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",Tüm oyuncuları al. Hayatta kalma durumlarını kontrol edebilir,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,Dünya yönetimi,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",Tüm oyuncuları al. Hayatta kalma durumlarını kontrol edebilir,local result = World:getPlayerTotal(alive)
+20018,Dünya yönetimi,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",Rastgele Oyuncu,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,Dünya yönetimi,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",Aktör kaldır,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,Dünya yönetimi,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,"Yaratık üret (canavar, NPC, hayvanlar vb. dahil)","local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,Dünya yönetimi,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array",Yaratığı kaldır,"local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,Dünya yönetimi,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,Belirtilen konumda eşyaları üret,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,Dünya yönetimi,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",Eşyaları kaldır (Bölge ile),"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,Dünya yönetimi,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,Eşyaları kaldır (ID ile),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,Dünya yönetimi,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,Mermi Üret,"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,Dünya yönetimi,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,Bloğun dolu olup olmadığı,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,Blok yönetimi,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Bloğun sıvı olup olmadığı,"local result = Block:isSolidBlock(x, y, z)"
+30002,Blok yönetimi,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Bloğun hava olup olmadığı,"local result = Block:isLiquidBlock(x, y, z)"
+30003,Blok yönetimi,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Bloğun ilgili ID alın,"local result = Block:isAirBlock(x, y, z)"
+30004,Blok yönetimi,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",blockalldata güncelleme+bildirim ayarla,"local result = Block:getBlockID(x, y, z)"
+30005,Blok yönetimi,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Bloğu yok et,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,Blok yönetimi,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,Bloğu yerleştirin,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,Blok yönetimi,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",blockalldata ayarla ve etraftaki boklara bildirim,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,Blok yönetimi,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,blockalldata ayarla ve mevcut konumdaki bloğu güncelle,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,Blok yönetimi,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Blok ayarı ve özellik durumunu ayarla,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,Blok yönetimi,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,Fonksiyon bloğunun şalter durumunu elde edin,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,Blok yönetimi,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",Fonksiyon bloğunun şalter durumunu ayarlayın,local result = Block:getBlockSwitchStatus(pos)
+30012,Blok yönetimi,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,Oyuncu olup olmadığını kontrol edin,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,Oyun Aktörü,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,Bir canavar olup olmadığını kontrol edin,local result = Actor:isPlayer(objid)
+40002,Oyun Aktörü,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,Aktörün tipini al: yaratık/oyuncu ...,local result = Actor:isMob(objid)
+40003,Oyun Aktörü,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",Havada olup olmadığı,local result = Actor:getObjType(objid)
+40004,Oyun Aktörü,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,Aktörün yerini elde et,local result = Actor:isInAir(objid)
+40005,Oyun Aktörü,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",Aktörün konumunu ayarla,local result = Actor:getPosition(objid)
+40006,Oyun Aktörü,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Atlama,"local result = Actor:setPosition(objid, x, y, z)"
+40007,Oyun Aktörü,jump,Actor:jump(objid),objid:number,ErrorCode.OK,Kendini öldür,local result = Actor:jump(objid)
+40008,Oyun Aktörü,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,Şu anki bakış yönünü elde et,local result = Actor:killSelf(objid)
+40009,Oyun Aktörü,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",Hedef aktöre doğru hareket et,local result = Actor:getCurPlaceDir(objid)
+40010,Oyun Aktörü,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,Hedef konuma doğru hareket et,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,Oyun Aktörü,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,Buff ekle,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,Oyun Aktörü,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,Herhangi bit buff olup olmadığı,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,Oyun Aktörü,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",Buff'ı sil,"local result = Actor:hasBuff(objid, buffid)"
+40014,Oyun Aktörü,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,Tüm buff'ı temizle,"local result = Actor:removeBuff(objid, buffid)"
+40015,Oyun Aktörü,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,Tüm negatif buff'ı temizle,local result = Actor:clearAllBuff(objid)
+40016,Oyun Aktörü,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,Buff listesini al,local result = Actor:clearAllBadBuff(objid)
+40017,Oyun Aktörü,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",Mevcut index'e karşı buff'ın kalan itck' elde edin,local result = Actor:getBuffList(objid)
+40018,Oyun Aktörü,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",Mevcut kan miktarı ekle,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,Oyun Aktörü,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,Mevcut kan miktarı elde et,"local result = Actor:addHP(objid, hp)"
+40020,Oyun Aktörü,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",Mevcut maksimum kan miktarı elde et,local result = Actor:getHP(objid)
+40021,Oyun Aktörü,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Oksijen hacmini arttır,local result = Actor:getMaxHP(objid)
+40022,Oyun Aktörü,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,Oksijen hacmini elde et,"local result = Actor:addOxygen(objid, oxygen)"
+40023,Oyun Aktörü,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",İlgili ekipmanın büyüsünü arttır,local result = Actor:getOxygen(objid)
+40024,Oyun Aktörü,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,İlgili ekipmanın büyüsünü temizle,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,Oyun Aktörü,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,En yakın bloğun ID'sini ara,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,Oyun Aktörü,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",Aktörün perspektifinin yanal ofset açısını ayarla,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,Oyun Aktörü,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,Aktörün perspektifinin yanal ofset açısını elde et,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,Oyun Aktörü,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",Aktörün yanal ofset açısını döndür,local result = Actor:getFaceYaw(objid)
+40029,Oyun Aktörü,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Aktörün yukarıya bakış açısını ayarla,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,Oyun Aktörü,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,Aktörün yukarıya bakış açısını elde et,"local result = Actor:setFacePitch(objid, pitch)"
+40031,Oyun Aktörü,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",Aktörün yukarıya bakış açısını döndür,local result = Actor:getFacePitch(objid)
+40032,Oyun Aktörü,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Efekt oynat,"local result = Actor:turnFacePitch(objid, offset)"
+40033,Oyun Aktörü,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Efekti durdur,"local result = Actor:playBodyEffect(objid, type)"
+40034,Oyun Aktörü,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Dosya efektlerini oynat,"local result = Actor:stopBodyEffect(objid, type)"
+40035,Oyun Aktörü,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,Dosya efektlerini durdur,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,Oyun Aktörü,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,Sesi Oynat,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,Oyun Aktörü,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,Sesi oynat (belirli tür:GSOUND_TYPE),"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,Oyun Aktörü,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,actid olan yaratık IDli yaratığı sil,"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,Oyun Aktörü,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,Hasar türünü ayarla,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,Oyun Aktörü,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,Bağışıklık hasarı türünü ayarla,"local result = Actor:setAttackType(objid, attacktype)"
+40041,Oyun Aktörü,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,Araca binin ve inin,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,Oyun Aktörü,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,Yaratık davranış özelliklerinin durumunu ayarlayın,"local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,Oyun Aktörü,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,Hedef konuma yol bulma,"local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,Oyun Aktörü,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,Binek yaratığın objid alın,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,Oyun Aktörü,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,nil,local result = Actor:getRidingActorObjId(objid)
+50001,Oyuncu,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",nil,local result = Player:getAttr(attrtype)
+50002,Oyuncu,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Oda sahibi alın,"local result = Player:setAttr(attrtype, val)"
+50003,Oyuncu,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",Yerel oyuncu olup olmadığını tespit et,local result = Player:getHostUin()
+50004,Oyuncu,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,Yerel oyuncunun uin'ini elde edin,local result = Player:isMainPlayer(objid)
+50005,Oyuncu,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",Oyuncunun yarışma sonucunu elde edin,local result = Player:getMainPlayerUin()
+50006,Oyuncu,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",Oyuncunun yarışma sonucunu ayarlayın,local result = Player:getGameResults(objid)
+50007,Oyuncu,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,Oyunun puanını elde edin,"local result = Player:setGameResults(objid, result)"
+50008,Oyuncu,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",Oyunun puanını ayarla,local result = Player:getGameScore(objid)
+50009,Oyuncu,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",Oyuncunun sıralamasını elde edin,"local result = Player:setGameScore(objid, score)"
+50010,Oyuncu,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",Oyunculara sıralamayı ayarlayın,local result = Player:getGameRanking(objid)
+50011,Oyuncu,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,Oyuncuya eşya ekleyin,"local result = Player:setGameRanking(objid, rank)"
+50012,Oyuncu,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,Doğum noktasına transfer edin,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,Oyuncu,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,Oyuncu tarafından şu anda tutulan eşya ID'sini alın,local result = Player:teleportHome(objid)
+50014,Oyuncu,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",Oyuncunun takma adını al,local result = Player:getCurToolID(objid)
+50015,Oyuncu,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",Sırt çantasının içeriğini çıkarın,local result = Player:getNickname(objid)
+50016,Oyuncu,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,Oyuncunun ölüm sayısını alın,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,Oyuncu,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",Oyuncunun bıraktığı can sayısını alın,local result = Player:getDieTimes(objid)
+50018,Oyuncu,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",Yaratık takımını ayarlayın,local result = Player:getLeftLifeNum(objid)
+50019,Oyuncu,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,Yratık takımını elde edin,"local result = Player:setTeam(objid, team)"
+50020,Oyuncu,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Mevcut tokluk aderecesini elde edin,local result = Player:getTeam(objid)
+50021,Oyuncu,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,Mevcut doygunluğu ayarla,local result = Player:getFoodLevel(objid)
+50022,Oyuncu,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,Şu anda kullanılan kısayol çubuğu tuşunu alın,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,Oyuncu,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",Mevcut oyuncu tarafından tutulan öğelerin tüketimini ayarlayın,local result = Player:getCurShotcut(objid)
+50024,Oyuncu,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,CD'yi kur,"local result = Player:onCurToolUsed(objid, num)"
+50025,Oyuncu,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,Oyuncuyu belirtilen noktaya dirilt,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,Oyuncu,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Oyuncunun diriliş noktasının konumunu değiştirin,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,Oyuncu,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Oyuncu animasyonu oynatır,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,Oyuncu,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,Oynatıcıya pencere metnini göster,"local result = Player:playAct(objid, actid)"
+50029,Oyuncu,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,Oyuncunun mevcut öğeyi kullanmasını sağlayın,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,Oyuncu,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,Oyuncu kamerasını döndür,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,Oyuncu,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,Oyuncunun perspektif modunu değiştir,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,Oyuncu,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,Yaratık davranış özelliklerinin durumunu ayarlayın,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,Oyuncu,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,Oyuncunun davranış özelliği durum şalteri,"local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,Oyuncu,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,Mevcut maksimum HP'yi alın,"local result = Player:checkActionAttrState(objid, actionattr)"
+50035,Oyuncu,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Mevcut HP'yi alın,local result = Player:getMaxHP(objid)
+50036,Oyuncu,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP kurtarma,local result = Player:getCurHP(objid)
+50037,Oyuncu,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Mevcut açlık değeri,local result = Player:getHpRecover(objid)
+50038,Oyuncu,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getCurFood(objid)
+50039,Oyuncu,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Mevcut oksijen değeri,local result = Player:getMaxOxygen(objid)
+50040,Oyuncu,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yürüme hızı,local result = Player:getCurOxygen(objid)
+50041,Oyuncu,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yüzme hızı (sudaki hız),local result = Player:getWalkSpeed(objid)
+50042,Oyuncu,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Atlama gücü,local result = Player:getSwimSpeed(objid)
+50043,Oyuncu,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Koşu hızı,local result = Player:getJumpPower(objid)
+50044,Oyuncu,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Gizli yürüme hızı,local result = Player:getRunSpeed(objid)
+50045,Oyuncu,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Atlatma,local result = Player:getSneakSpeed(objid)
+50046,Oyuncu,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yakın saldırı,local result = Player:getDodge(objid)
+50047,Oyuncu,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Uzun menzilli saldırı,local result = Player:getPunchAttack(objid)
+50048,Oyuncu,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kısa menzilli savunma,local result = Player:getRangeAttack(objid)
+50049,Oyuncu,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Uzun menzilli savunma,local result = Player:getPunchDefense(objid)
+50050,Oyuncu,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yıldız sayısı,local result = Player:getRangeDefense(objid)
+50051,Oyuncu,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Model boyutu,"local result = Player:getStarNum(objid, val)"
+50052,Oyuncu,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Maksimum kan miktarını ayarlayın,"local result = Player:getModelScale(objid, val)"
+50053,Oyuncu,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Kan miktarınıayarla,"local result = Player:setMaxHP(objid, val)"
+50054,Oyuncu,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HP kurtarmayı ayarlayın,"local result = Player:setHP(objid, val)"
+50055,Oyuncu,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Mevcut açlık seviyesini ayarla,local result = Player:setHpRecover(objid)
+50056,Oyuncu,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Oksijeni ayarla,local result = Player:setCurFood(objid)
+50057,Oyuncu,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Yürüyüş hızını ayarla,"local result = Player:setOxygen(objid, val)"
+50058,Oyuncu,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Yüzme hızını ayarlayın (sudaki hız),"local result = Player:setWalkSpeed(objid, val)"
+50059,Oyuncu,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Zıplama gücünü ayarla,"local result = Player:setSwimSpeed(objid, val)"
+50060,Oyuncu,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Koşu hızını ayarla,"local result = Player:setJumpPower(objid, val)"
+50061,Oyuncu,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Gizlice hızını ayarla,"local result = Player:setRunSpeed(objid, val)"
+50062,Oyuncu,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,atlatmayı ayarla,"local result = Player:setSneakSpeed(objid, val)"
+50063,Oyuncu,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Kısa menzilli bir saldırı ayarlayın,"local result = Player:setDodge(objid, val)"
+50064,Oyuncu,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Uzaktan saldırı ayarla,"local result = Player:setPunchAttack(objid, val)"
+50065,Oyuncu,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Kısa menzilli savunma ayarla,"local result = Player:setRangeAttack(objid, val)"
+50066,Oyuncu,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Uzun menzilli savunma ayarlayın,"local result = Player:setPunchDefense(objid, val)"
+50067,Oyuncu,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Yıldız sayısını ayarla,"local result = Player:setRangeDefense(objid, val)"
+50068,Oyuncu,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Model boyutunu ayarla,"local result = Player:setStarNum(objid, val)"
+50069,Oyuncu,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Oyuncu pozisyonunu ayarla,"local result = Player:setModelScale(objid, val)"
+50070,Oyuncu,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Oyuncunun ön görüş pozisyonunu alın,"local result = Player:setPosition(objid, x, y, z)"
+50071,Oyuncu,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,Yetişkin misin,local result = Player:getAimPos(objid)
+60001,Oyun yaratığı,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,Oksijene bağlı olup olmadığı ayarlayın,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,Oyun yaratığı,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,Evcilleştirme ustasının IDsini alın,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,Oyun yaratığı,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",Panik olup olmayacağını ayarlayın,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,Oyun yaratığı,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,AI'nın etkili olup olmayacağını ayarlayın,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,Oyun yaratığı,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,Canavar kaynak IDsini alın,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,Oyun yaratığı,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",Canavar kaynak IDsini alın,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,Oyun yaratığı,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",Canavar ModAttrib değerini artırın,local result = Creature:getActorName(objid)
+60008,Oyun yaratığı,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,Canavar ModAttrib değerini alın,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,Oyun yaratığı,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",Biyolojik bir ekip kurun,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,Oyun yaratığı,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,Biyolojik bir ekip edinin,"local result = Creature:setTeam(objid, teamid)"
+60011,Oyun yaratığı,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Maksimum açlık elde edin,local result = Creature:getTeam(objid)
+60012,Oyun yaratığı,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Açlık çekmek,local result = Creature:getMaxFood(objid)
+60013,Oyun yaratığı,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Açlığı ayarla,local result = Creature:getFood(objid)
+60014,Oyun yaratığı,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HP kurtarma,"local result = Creature:setFood(objid, val)"
+60015,Oyun yaratığı,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Maksimum oksijen seviyesi,local result = Creature:getHpRecover(objid)
+60016,Oyun yaratığı,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yürüme hızı,local result = Creature:getMaxOxygen(objid)
+60017,Oyun yaratığı,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yüzme hızı (sudaki hız),local result = Creature:getWalkSpeed(objid)
+60018,Oyun yaratığı,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Atlama gücü,local result = Creature:getSwimSpeed(objid)
+60019,Oyun yaratığı,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Ağırlık,local result = Creature:getJumpPower(objid)
+60020,Oyun yaratığı,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",kaçamak yapmak,local result = Creature:getMass(objid)
+60021,Oyun yaratığı,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Yakın saldırı,local result = Creature:getDodge(objid)
+60022,Oyun yaratığı,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Uzun menzilli saldırı,local result = Creature:getPunchAttack(objid)
+60023,Oyun yaratığı,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kısa menzilli savunma,local result = Creature:getRangeAttack(objid)
+60024,Oyun yaratığı,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Uzun menzilli savunma,local result = Creature:getPunchDefense(objid)
+60025,Oyun yaratığı,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kan miktarı ayarla,local result = Creature:getRangeDefense(objid)
+60026,Oyun yaratığı,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Kan miktarı ayarla,"local result = Creature:setMaxHp(objid, val)"
+60027,Oyun yaratığı,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,HP kurtarmayı ayarla,"local result = Creature:setHP(objid, val)"
+60028,Oyun yaratığı,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Oksijen ayarla,local result = Creature:setHpRecover(objid)
+60029,Oyun yaratığı,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Yürüme hızını ayarla,"local result = Creature:setOxygen(objid, val)"
+60030,Oyun yaratığı,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Yüzme hızı ayarla (suda hız),"local result = Creature:setWalkSpeed(objid, val)"
+60031,Oyun yaratığı,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atlama gücünü ayala,"local result = Creature:setSwimSpeed(objid, val)"
+60032,Oyun yaratığı,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atlatma ayarla,"local result = Creature:setJumpPower(objid, val)"
+60033,Oyun yaratığı,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Yakın saldırı ayarla,"local result = Creature:setDodge(objid, val)"
+60034,Oyun yaratığı,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Uzun menzilli saldırı ayarla,"local result = Creature:setPunchAttack(objid, val)"
+60035,Oyun yaratığı,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Kısa menzilli savunma ayarla,"local result = Creature:setRangeAttack(objid, val)"
+60036,Oyun yaratığı,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Uzun menzilli savunma ayarla,"local result = Creature:setPunchDefense(objid, val)"
+60037,Oyun yaratığı,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Savaş özeti UI ayarla,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI yönetimi,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,Dünya koordinatından küçük haritaya dönüştürülmesi,"local result = UI:setGBattleUI(name, value)"
+70002,UI yönetimi,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",Dünya uzunluğundan küçük haritaya dönüştürülmesi,"local result = UI:world2RadarPos(x, y)"
+70003,UI yönetimi,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",Mini harita modunu ayarlayın. 1: 45 derecelik dönüş açısı; 2: tam görünüm üstten görünüm açısı,local result = UI:world2RadarDist(length)
+70004,UI yönetimi,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,"Harita işaretçisi şekil ayarı, çizgi olarak ayarlandı",local result = UI:setMinimapRenderMode(mode)
+70005,UI yönetimi,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,"Harita işaretçisi şekil ayarı, daireye ayarlı","local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI yönetimi,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,Ekran efekti gösterme,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI yönetimi,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,sohbet mesajı gönder,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,Sohbet sistemi,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Sistem mesajı gönder,local result = Chat:sendChat(content)
+80002,Sohbet sistemi,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Takım sayısını al,local result = Chat:sendSystemMsg(content)
+90001,Takım yönetimi,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",Belirtilen takımdan oyuncu alın,local result = Team:getNumTeam()
+90002,Takım yönetimi,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",Belirtilen takımdan oyuncu alın,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,Takım yönetimi,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",Rastgele Oyuncu,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,Takım yönetimi,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",Takım puanını ayarla,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,Takım yönetimi,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,Takım puanını al,"local result = Team:setTeamScore(teamid, s)"
+90006,Takım yönetimi,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",Takım puanını arttır,local result = Team:getTeamScore(teamid)
+90007,Takım yönetimi,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,Takım kazançlarını ve kayıplarını ayarlayın,"local result = Team:addTeamScore(teamid, score)"
+90008,Takım yönetimi,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,Mevcut takım kazançları ve kayıplarını elde edin,"local result = Team:setTeamResults(teamid, result)"
+90009,Takım yönetimi,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",Oyuncunun takım kazançlarını ve kayıplarını ayarlayın,local result = Team:getTeamResults(teamid)
+90010,Takım yönetimi,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,Takımdaki toplam ölüm sayısını ayarlayın,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,Takım yönetimi,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,Takım ölümlerinin toplam sayısını elde edin,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,Takım yönetimi,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",Takımdaki toplam ölüm sayısını artırın,local result = Team:getTeamDieTimes(teamid)
+90013,Takım yönetimi,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,Oyuncu takımını değiştir,local result = Team:addTeamDieTimes(teamid)
+90014,Takım yönetimi,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,Eşya adını al,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,Takım yönetimi,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",Eşya ID'sini al,local result = Item:getItemName(itemid)
+100002,Takım yönetimi,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",Düşen eşya sayısını al,local result = Item:getItemId(objid)
+100003,Takım yönetimi,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",Eşya sırt çantası çubuğunun IDsinin kapsamı (başlangıç ​​ID ~ bitiş ID),local result = Item:getDropItemNum(objid)
+110001,Sırt çantası yönetimi,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",Eşya sırt çantası çubuğunun boyutunu alın,local result = Backpack:getBackpackBarIDRange(bartype)
+110002,Sırt çantası yönetimi,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",Sırt çantası karesini ayarlayın,local result = Backpack:getBackpackBarSize(bartype)
+110003,Sırt çantası yönetimi,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,"Sırt çantası karesindeki belirli sayıda eşyaları, eşya karesi aracılığıyla kaldırın, varsayılan olarak tümünü kaldırın","local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,Sırt çantası yönetimi,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,"Sırt çantasındaki belirli sayıda eşyaları çıkarın, eşya IDsi ile kaldırın,varsayılan olarak tümü kaldırın","local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,Sırt çantası yönetimi,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",Belirlenen sırt çantası çubuğunu temizle,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,Sırt çantası yönetimi,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,"Tüm sırt çantalarını temizle (sırt çantası çubuğu, kısayol çubuğu, ekipman çubuğu dahil)","local result = Backpack:clearPack(playerid, bartype)"
+110007,Sırt çantası yönetimi,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,"Sırt çantası aksesuarlarını taşıyın, varsayılan olarak tümü aktarılır",local result = Backpack:clearAllPack(playerid)
+110008,Sırt çantası yönetimi,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all",ErrorCode.OK,Sırt çantası eşyasını takas edin,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,Sırt çantası yönetimi,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,Sırt çantasında (sırt çantası çubuğu ve kısayol çubuğu dahil) belirli sayıda eşya depolamak için yeterli alana sahip olup olmadığı,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,Sırt çantası yönetimi,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 12",ErrorCode.OK,Sırt çantasında saklanabilecek kalan toplam eşya sayısını hesaplayın (sırt çantası çubuğu ve kısayol çubuğu dahil),"local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,Sırt çantası yönetimi,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number",Eşya sırt çantası çubuğundaki geçerli kare ID listesini(öğe zaten var) ve sırt çantası kare IDsini alın,"local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,Sırt çantası yönetimi,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",Sırt çantası çubuğunun sahip olduğu aksesuarları ve props ID dizisini alın,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,Sırt çantası yönetimi,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",Sırt çantasında herhangi bir eşya olup olmadığını tespit edin,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,Sırt çantası yönetimi,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,Sırt çantasındaki toplam eşya sayısını al. Eşyalarla sırt çantalarına dönün,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,Sırt çantası yönetimi,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",Sırt çantası karesi eşyanın IDsi ve miktarını alın,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,Sırt çantası yönetimi,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",Sırt çantası kare eşyasının adını elde edin,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,Sırt çantası yönetimi,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",Sırt çantası karesi eşya sayısını ve maksimum yığın sayısını alın,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,Sırt çantası yönetimi,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",Sırt çantasında eşya dayanıklılığı ve maksimum dayanıklılık elde edin,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,Sırt çantası yönetimi,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",Sırt çantası kare eşyasının büyüsünü alın ve büyü id dizisin dönün,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,Sırt çantası yönetimi,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",Alet tipi sırt çantası aksesuarlarını alın (<0 aletsiz anlamına gelir),"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,Sırt çantası yönetimi,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",Eşyayı sırt çantasına ekle,"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,Sırt çantası yönetimi,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",Sırt çantası eşyayı atın,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,Sırt çantası yönetimi,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,Sırt çantasının rastgele bir karenin eşya sayısını elde et,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,Sırt çantası yönetimi,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,"Yeni şekil (çizgi, dikdörtgen, daire) ekle","local result = Backpack:getGridNum(playerid, gridid)"
+120001,Küçük harita yönetimi,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number",Bir şekli sil,"local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,Küçük harita yönetimi,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,Şekli ve rengi ayarla,local result = MapMark:deleteShape(shapeid)
+120003,Küçük harita yönetimi,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,Gösterilecek veya gizlenecek şekli ayarla,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,Küçük harita yönetimi,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,Şekli güncelleme(çizgi şekili). Başlangıç koordinatı ve bitiş koordinatı ekle,"local result = MapMark:showShape(shapeid, showflag)"
+120005,Küçük harita yönetimi,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,Şekli güncelleme (dikdörtgen). Başlangıç koordinatı ve bitiş boyutu ekle,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,Küçük harita yönetimi,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,Şekli güncelleme (daire). Merkez koordinatlarını ve yarıçapı ekle,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,Küçük harita yönetimi,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,Doğum noktasının konumunu alın,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,Doğum noktası yönetimi,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number","Doğum noktası olarak kullanılan bölgeyi elde et, bölgedeki herhangi bir bloğa transfer et.",local result = Spawnport:getSpawnPoint()
+130002,Doğum noktası yönetimi,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number","Doğum noktasının konumu olarak kullanılabilir bölge bloğu al, ve bölge içindeki herhangi bir bloğun yerine transfer et","local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

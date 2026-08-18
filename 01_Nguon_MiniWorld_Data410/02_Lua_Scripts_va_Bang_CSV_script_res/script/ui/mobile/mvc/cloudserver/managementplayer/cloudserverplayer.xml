@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/cloudserver/managementPlayer/CloudServerPlayerView.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/managementPlayer/CloudServerPlayerModel.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/managementPlayer/CloudServerPlayerCtrl.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/managementPlayer/PlayerProfile.lua"/>
+
+	##玩家信息模板
+	<Button name= "CloudServerRoomPlayerTemplate" virtual="true" abs_x="407" abs_y="78">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" abs_x="407" abs_y="78"/>
+				<Texture name="$parentRightBkg" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="84" abs_y="73">
+					<Anchors>
+						<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="-1" y="2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" inherits="TemplateBigBkg13" abs_x="407" abs_y="78"/>
+				<FontString name="$parentName" fonttype="BlackFont19" justifyH="left" justifyV="middle" text="" abs_x="200" abs_y="30" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="75" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTime" fonttype="BlackFont17" justifyH="right" hidden = "true" justifyV="middle" text="" abs_x="200" abs_y="30" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="145" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="63" abs_y="63">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="6" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" />
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="60" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick> GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PlayerHeadBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentOptionBtn" abs_x="34" abs_y="37">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-13" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray">
+					<Size>
+						<AbsDimension x="30" y="33"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black">
+							<Size>
+								<AbsDimension x="8" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PlayerPagePlayerInfoOptionBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick> GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PlayerPagePlayerInfoBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	##玩家界面Tab模板
+	<Button name= "CloudServerPlayerPageTabBtnTemplate" virtual="true" inherits="TemplateTabBtn3" >
+		<Scripts>
+			<OnClick> GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PlayerPageTabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	
+	##玩家界面
+	<Frame name="CloudServerPlayer" parent="UIClient" frameStrata="MEDIUM" framelevel="2310" input_transparent="true"  hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Layers>
+			<Layer>
+				<Texture name="$parentBg" inherits="BkgTemplate72" color="01000000"/>
+				<Texture name="$parentRightBkg" inherits="TemplateBigBkg5" abs_x="851" abs_y="399">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg" >
+							<Offset>
+								<AbsDimension x="90" y="17"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentTabs" abs_x="855" abs_y="41" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentRightBkg" >
+						<Offset>
+							<AbsDimension x="0" y="-40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name = "$parentTab1" inherits="CloudServerPlayerPageTabBtnTemplate" abs_x = "115" abs_y = "41" id ="1" />
+					<Button name = "$parentTab2" inherits="CloudServerPlayerPageTabBtnTemplate" abs_x = "115" abs_y = "41" id ="2" />
+					<Button name = "$parentTab3" inherits="CloudServerPlayerPageTabBtnTemplate" abs_x = "115" abs_y = "41" id ="3" />
+					<Button name = "$parentTab4" inherits="CloudServerPlayerPageTabBtnTemplate" abs_x = "115" abs_y = "41" id ="4 "/>
+					## 搜索框
+					<Button name="$parentSearch" abs_x="234" abs_y="36">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-50" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="234" abs_y="36" >
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<SafeEditBox name="$parentEdit" letters="81" multiLine="false" editMethod="2" editimetype="1" abs_x="200" abs_y="20">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent" relativePoint="left">
+										<Offset>
+											<AbsDimension x="16" y="3" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<FontString name="$parentFont" fonttype="BlackFont17"  justifyH="left">
+									<Color r="185" g="185" b="185"/>
+								</FontString>
+								<FontString name="$parentDefault" default="true" fonttype="BlackFont17" text="$145" textcolor="FFB9B9B9" justifyH="left"/>
+								<Scripts>
+
+								</Scripts>
+							</SafeEditBox>
+							<Button name="$parentBtn" abs_x="38" abs_y="39">
+								<Anchors>
+									<Anchor point="right" relativeTo="$parent" relativePoint="right">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_search" abs_x="20" abs_y="20">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" inherits="TemplateBkg9" />
+								<PushedTexture name="$parentPushedBG" inherits="TemplateBkg9" abs_x="36" abs_y="37">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):CloudServerPlayerSearchClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Button>
+				</Frames>
+			</Frame>
+			<SlidingFrame name="$parentList" slideplane="$parentPlane" slidingY="true" abs_x="831" abs_y="379">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentRightBkg" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="828" abs_y="800" >
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent"/>
+						</Anchors>
+					</Frame>
+					<Frame name= "$parentTilePanel"  abs_x="823" abs_y="35">
+						<Layers>
+							<Layer level="BACKGROUND">
+<!--								<FontString name="$parentName" fonttype="BlackFont19" justifyH="left" justifyV="middle" text="超级管理员" abs_x="200" abs_y="30" >-->
+<!--									<Color r="77" g="112" b="117"/>-->
+<!--									<Anchors>-->
+<!--										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">-->
+<!--											<Offset>-->
+<!--												<AbsDimension x="0" y="0"/>-->
+<!--											</Offset>-->
+<!--										</Anchor>-->
+<!--									</Anchors>-->
+<!--								</FontString>-->
+								<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="823" abs_y="2">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentName" fonttype="BlackFont18" lineInterval="2" input_transparent="true" justifyH="left" text="$9523" abs_x="200" abs_y="50">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ShowTips(1)</MouseDownUpdate>
+									<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):HideTips()</OnMouseUp>
+									<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ShowTips(1)</OnEnter>
+									<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):HideTips()</OnLeave>
+								</Scripts>
+							</RichText>
+						</Frames>
+					</Frame>
+					<Frame name= "$parentTile1Panel"  abs_x="823" abs_y="35">
+						<Layers>
+							<Layer level="BACKGROUND">
+<!--								<FontString name="$parentName" fonttype="BlackFont19" justifyH="left" justifyV="middle" text="管理员" abs_x="200" abs_y="30" >-->
+<!--									<Color r="77" g="112" b="117"/>-->
+<!--									<Anchors>-->
+<!--										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">-->
+<!--											<Offset>-->
+<!--												<AbsDimension x="0" y="0"/>-->
+<!--											</Offset>-->
+<!--										</Anchor>-->
+<!--									</Anchors>-->
+<!--								</FontString>-->
+								<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="823" abs_y="2">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentName" fonttype="BlackFont18" lineInterval="2" input_transparent="true" justifyH="left" text="$9524" abs_x="200" abs_y="50">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ShowTips(2)</MouseDownUpdate>
+									<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):HideTips()</OnMouseUp>
+									<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ShowTips(2)</OnEnter>
+									<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("CloudServerPlayer"):HideTips()</OnLeave>
+								</Scripts>
+							</RichText>
+						</Frames>
+					</Frame>
+					<Button name="$parentPlayer1" inherits="CloudServerRoomPlayerTemplate" 	id="1" />
+					<Button name="$parentPlayer2" inherits="CloudServerRoomPlayerTemplate"	id="2" />
+					<Button name="$parentPlayer3" inherits="CloudServerRoomPlayerTemplate"	id="3" />
+					<Button name="$parentPlayer4" inherits="CloudServerRoomPlayerTemplate"	id="4" />
+					<Button name="$parentPlayer5" inherits="CloudServerRoomPlayerTemplate"	id="5" />
+					<Button name="$parentPlayer6" inherits="CloudServerRoomPlayerTemplate"	id="6" />
+					<Button name="$parentPlayer7" inherits="CloudServerRoomPlayerTemplate"	id="7" />
+					<Button name="$parentPlayer8" inherits="CloudServerRoomPlayerTemplate"	id="8" />
+					<Button name="$parentPlayer9" inherits="CloudServerRoomPlayerTemplate"	id="9" />
+					<Button name="$parentPlayer10" inherits="CloudServerRoomPlayerTemplate"		id="10"	/>
+					<Button name="$parentPlayer11" inherits="CloudServerRoomPlayerTemplate"		id="11"	/>
+					<Button name="$parentPlayer12" inherits="CloudServerRoomPlayerTemplate"		id="12"	/>
+					<Button name="$parentPlayer13" inherits="CloudServerRoomPlayerTemplate"		id="13"	/>
+					<Button name="$parentPlayer14" inherits="CloudServerRoomPlayerTemplate"		id="14"	/>
+					<Button name="$parentPlayer15" inherits="CloudServerRoomPlayerTemplate"		id="15"	/>
+					<Button name="$parentPlayer16" inherits="CloudServerRoomPlayerTemplate"		id="16"	/>
+					<Button name="$parentPlayer17" inherits="CloudServerRoomPlayerTemplate"		id="17"	/>
+					<Button name="$parentPlayer18" inherits="CloudServerRoomPlayerTemplate"		id="18"	/>
+					<Button name="$parentPlayer19" inherits="CloudServerRoomPlayerTemplate"		id="19"	/>
+					<Button name="$parentPlayer20" inherits="CloudServerRoomPlayerTemplate"		id="20"	/>
+					<Button name="$parentPlayer21" inherits="CloudServerRoomPlayerTemplate"		id="21"	/>
+					<Button name="$parentPlayer22" inherits="CloudServerRoomPlayerTemplate"		id="22"	/>
+					<Button name="$parentPlayer23" inherits="CloudServerRoomPlayerTemplate"		id="23"	/>
+					<Button name="$parentPlayer24" inherits="CloudServerRoomPlayerTemplate"		id="24"	/>
+					<Button name="$parentPlayer25" inherits="CloudServerRoomPlayerTemplate"		id="25"	/>
+					<Button name="$parentPlayer26" inherits="CloudServerRoomPlayerTemplate"		id="26"	/>
+					<Button name="$parentPlayer27" inherits="CloudServerRoomPlayerTemplate"		id="27"	/>
+					<Button name="$parentPlayer28" inherits="CloudServerRoomPlayerTemplate"		id="28"	/>
+					<Button name="$parentPlayer29" inherits="CloudServerRoomPlayerTemplate"		id="29"	/>
+					<Button name="$parentPlayer30" inherits="CloudServerRoomPlayerTemplate"		id="30"	/>
+					<Button name="$parentPlayer31" inherits="CloudServerRoomPlayerTemplate"		id="31"	/>
+					<Button name="$parentPlayer32" inherits="CloudServerRoomPlayerTemplate"		id="32"	/>
+					<Button name="$parentPlayer33" inherits="CloudServerRoomPlayerTemplate"		id="33"	/>
+					<Button name="$parentPlayer34" inherits="CloudServerRoomPlayerTemplate"		id="34"	/>
+					<Button name="$parentPlayer35" inherits="CloudServerRoomPlayerTemplate"		id="35"	/>
+					<Button name="$parentPlayer36" inherits="CloudServerRoomPlayerTemplate"		id="36"	/>
+					<Button name="$parentPlayer37" inherits="CloudServerRoomPlayerTemplate"		id="37"	/>
+					<Button name="$parentPlayer38" inherits="CloudServerRoomPlayerTemplate"		id="38"	/>
+					<Button name="$parentPlayer39" inherits="CloudServerRoomPlayerTemplate"		id="39"	/>
+					<Button name="$parentPlayer40" inherits="CloudServerRoomPlayerTemplate"		id="40"	/>
+					<Button name="$parentPlayer41" inherits="CloudServerRoomPlayerTemplate"		id="41"	/>
+					<Button name="$parentPlayer42" inherits="CloudServerRoomPlayerTemplate"		id="42"	/>
+					<Button name="$parentPlayer43" inherits="CloudServerRoomPlayerTemplate"		id="43"	/>
+					<Button name="$parentPlayer44" inherits="CloudServerRoomPlayerTemplate"		id="44"	/>
+					<Button name="$parentPlayer45" inherits="CloudServerRoomPlayerTemplate"		id="45"	/>
+					<Button name="$parentPlayer46" inherits="CloudServerRoomPlayerTemplate"		id="46"	/>
+					<Button name="$parentPlayer47" inherits="CloudServerRoomPlayerTemplate"		id="47"	/>
+					<Button name="$parentPlayer48" inherits="CloudServerRoomPlayerTemplate"		id="48"	/>
+					<Button name="$parentPlayer49" inherits="CloudServerRoomPlayerTemplate"		id="49"	/>
+					<Button name="$parentPlayer50" inherits="CloudServerRoomPlayerTemplate"		id="50"	/>
+					<Button name="$parentPlayer51" inherits="CloudServerRoomPlayerTemplate"		id="51"	/>
+					<Button name="$parentPlayer52" inherits="CloudServerRoomPlayerTemplate"		id="52"	/>
+					<Button name="$parentPlayer53" inherits="CloudServerRoomPlayerTemplate"		id="53"	/>
+					<Button name="$parentPlayer54" inherits="CloudServerRoomPlayerTemplate"		id="54"	/>
+					<Button name="$parentPlayer55" inherits="CloudServerRoomPlayerTemplate"		id="55"	/>
+					<Button name="$parentPlayer56" inherits="CloudServerRoomPlayerTemplate"		id="56"	/>
+					<Button name="$parentPlayer57" inherits="CloudServerRoomPlayerTemplate"		id="57"	/>
+					<Button name="$parentPlayer58" inherits="CloudServerRoomPlayerTemplate"		id="58"	/>
+					<Button name="$parentPlayer59" inherits="CloudServerRoomPlayerTemplate"		id="59"	/>
+					<Button name="$parentPlayer60" inherits="CloudServerRoomPlayerTemplate"		id="60"	/>
+					<Button name="$parentPlayer61" inherits="CloudServerRoomPlayerTemplate"		id="61"	/>
+					<Button name="$parentPlayer62" inherits="CloudServerRoomPlayerTemplate"		id="62"	/>
+					<Button name="$parentPlayer63" inherits="CloudServerRoomPlayerTemplate"		id="63"	/>
+					<Button name="$parentPlayer64" inherits="CloudServerRoomPlayerTemplate"		id="64"	/>
+					<Button name="$parentPlayer65" inherits="CloudServerRoomPlayerTemplate"		id="65"	/>
+					<Button name="$parentPlayer66" inherits="CloudServerRoomPlayerTemplate"		id="66"	/>
+					<Button name="$parentPlayer67" inherits="CloudServerRoomPlayerTemplate"		id="67"	/>
+					<Button name="$parentPlayer68" inherits="CloudServerRoomPlayerTemplate"		id="68"	/>
+					<Button name="$parentPlayer69" inherits="CloudServerRoomPlayerTemplate"		id="69"	/>
+					<Button name="$parentPlayer70" inherits="CloudServerRoomPlayerTemplate"		id="70"	/>
+					<Button name="$parentPlayer71" inherits="CloudServerRoomPlayerTemplate"		id="71"	/>
+					<Button name="$parentPlayer72" inherits="CloudServerRoomPlayerTemplate"		id="72"	/>
+					<Button name="$parentPlayer73" inherits="CloudServerRoomPlayerTemplate"		id="73"	/>
+					<Button name="$parentPlayer74" inherits="CloudServerRoomPlayerTemplate"		id="74"	/>
+					<Button name="$parentPlayer75" inherits="CloudServerRoomPlayerTemplate"		id="75"	/>
+					<Button name="$parentPlayer76" inherits="CloudServerRoomPlayerTemplate"		id="76"	/>
+					<Button name="$parentPlayer77" inherits="CloudServerRoomPlayerTemplate"		id="77"	/>
+					<Button name="$parentPlayer78" inherits="CloudServerRoomPlayerTemplate"		id="78"	/>
+					<Button name="$parentPlayer79" inherits="CloudServerRoomPlayerTemplate"		id="79"	/>
+					<Button name="$parentPlayer80" inherits="CloudServerRoomPlayerTemplate"		id="80"	/>
+					<Button name="$parentPlayer81" inherits="CloudServerRoomPlayerTemplate"		id="81"	/>
+					<Button name="$parentPlayer82" inherits="CloudServerRoomPlayerTemplate"		id="82"	/>
+					<Button name="$parentPlayer83" inherits="CloudServerRoomPlayerTemplate"		id="83"	/>
+					<Button name="$parentPlayer84" inherits="CloudServerRoomPlayerTemplate"		id="84"	/>
+					<Button name="$parentPlayer85" inherits="CloudServerRoomPlayerTemplate"		id="85"	/>
+					<Button name="$parentPlayer86" inherits="CloudServerRoomPlayerTemplate"		id="86"	/>
+					<Button name="$parentPlayer87" inherits="CloudServerRoomPlayerTemplate"		id="87"	/>
+					<Button name="$parentPlayer88" inherits="CloudServerRoomPlayerTemplate"		id="88"	/>
+					<Button name="$parentPlayer89" inherits="CloudServerRoomPlayerTemplate"		id="89"	/>
+					<Button name="$parentPlayer90" inherits="CloudServerRoomPlayerTemplate"		id="90"	/>
+					<Button name="$parentPlayer91" inherits="CloudServerRoomPlayerTemplate"		id="91"	/>
+					<Button name="$parentPlayer92" inherits="CloudServerRoomPlayerTemplate"		id="92"	/>
+					<Button name="$parentPlayer93" inherits="CloudServerRoomPlayerTemplate"		id="93"	/>
+					<Button name="$parentPlayer94" inherits="CloudServerRoomPlayerTemplate"		id="94"	/>
+					<Button name="$parentPlayer95" inherits="CloudServerRoomPlayerTemplate"		id="95"	/>
+					<Button name="$parentPlayer96" inherits="CloudServerRoomPlayerTemplate"		id="96"	/>
+					<Button name="$parentPlayer97" inherits="CloudServerRoomPlayerTemplate"		id="97"	/>
+					<Button name="$parentPlayer98" inherits="CloudServerRoomPlayerTemplate"		id="98"	/>
+					<Button name="$parentPlayer99" inherits="CloudServerRoomPlayerTemplate"		id="99"	/>
+					<Button name="$parentPlayer100" inherits="CloudServerRoomPlayerTemplate" 	id="100" />
+
+				</Frames>
+			</SlidingFrame>
+			<Frame name="$parentOperate" abs_x="855" abs_y="51">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentRightBkg" >
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentClearBtn" inherits="TemplateBtn27" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_delete.png" abs_x="24" abs_y="25">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="right" text="$4731">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ClearData()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentClearManagementBtn" inherits="TemplateBtn27" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_delete.png" abs_x="24" abs_y="25">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle"  text="$9565">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="90" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ClearPermitData(5)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentClearSuperManagementBtn" inherits="TemplateBtn27" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_delete.png" abs_x="24" abs_y="25">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$9566">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="90" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):ClearPermitData(4)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCopyBtn" inherits="TemplateBtn12" abs_x="130" abs_y="50" hidden="true">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_copy.png" abs_x="22" abs_y="24">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$9560">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="90" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):OpenCopyPanel();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentInvitationBtn" hidden="true" inherits="TemplateBtn11" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$1195">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):AddFriendToWhiteListClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentAddBlacklistBtn" hidden="true" inherits="TemplateBtn11" abs_x="130" abs_y="50">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$9559">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):AddFriendToBlackListClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRefreshBtn" abs_x="47" abs_y="50" inherits="TemplateBtn31">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlap">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_refresh.png" abs_x="26" abs_y="26">
+									<Anchors>
+										<Anchor point="center" relativePoint="center">
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):RefreshPlayerListDataClicked()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##玩家操作界面
+			<Button name="$parentOperatePanel" abs_x="1076" abs_y="600" hidden="true" >
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentMask" file="ui/white.png"  color="00000000" >
+							<Anchors>
+								<Anchor point="center" relativeTo="CloudServerPlayer" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBg" abs_x="186" abs_y="260" inherits="TemplateBigBkg19" />
+						<Texture name="$parentLine" abs_x="170" abs_y="2" inherits="TexTemplate_brown_fengexian" >
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="129"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentMoveWhiteBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="11"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_whitelist.png" abs_x="26" abs_y="20">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$9554">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):OperatePlayerToOther(3)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMoveBlackBtn" inherits="TemplateBtn27" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentMoveWhiteBtn" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_blacklist.png" abs_x="28" abs_y="27">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$9555">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):OperatePlayerToOther(2)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMoveElevationBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentMoveBlackBtn" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="23"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_admin_super.png" abs_x="30" abs_y="22">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$9556">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):OperatePlayerToOther(4)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMoveDemotionBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentMoveElevationBtn" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_admin_super" abs_x="30" abs_y="22" >
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$9557">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):OperatePlayerToOther(5)</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):CloseOperatePanel()</OnClick>
+				</Scripts>
+			</Button>
+
+			##黑名单操作界面
+			<Button name="$parentBlacklistOperatePanel" abs_x="1076" abs_y="600" hidden="true" >
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentMask" file="ui/white.png"  color="00000000" >
+							<Anchors>
+								<Anchor point="center" relativeTo="CloudServerPlayer" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBg" abs_x="186" abs_y="74" inherits="TemplateBigBkg19" />
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentMoveToWhiteListBtn" inherits="TemplateBtn12" hidden="true" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_whitelist.png" abs_x="28" abs_y="27">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="15" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$9554">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):BlackListOperateBtnClick(1)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDeleteBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add.png" abs_x="28" abs_y="27">
+									<Angle value="45" />
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="15" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$9558">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):BlackListOperateBtnClick(2)</OnClick>
+						</Scripts>
+					</Button>
+
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):CloseOperatePanel()</OnClick>
+				</Scripts>
+			</Button>
+			##白名单操作界面
+			<Button name="$parentWhitelistOperatePanel" abs_x="1076" abs_y="600" hidden="true" >
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentMask" file="ui/white.png"  color="00000000" >
+							<Anchors>
+								<Anchor point="center" relativeTo="CloudServerPlayer" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBg" abs_x="186" abs_y="74" inherits="TemplateBigBkg19" />
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentMoveToBlacklistBtn" inherits="TemplateBtn12" hidden="true" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_blacklist.png" abs_x="28" abs_y="27">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$9555">
+									<Color r="55" g="51" b="51"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):WhiteListOperateBtnClick(1)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentClearBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add.png" abs_x="28" abs_y="27">
+									<Angle value="45" />
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="15" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$9561">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):WhiteListOperateBtnClick(2)</OnClick>
+						</Scripts>
+					</Button>
+
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):CloseOperatePanel()</OnClick>
+				</Scripts>
+			</Button>
+			##权限操作界面
+			<Button name="$parentPermissionOperatePanel" abs_x="1076" abs_y="600" hidden="true" >
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentMask" file="ui/white.png"  color="00000000" >
+							<Anchors>
+								<Anchor point="center" relativeTo="CloudServerPlayer" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBg" abs_x="186" abs_y="129" inherits="TemplateBigBkg19" />
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentMoveToBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_admin_super.png" abs_x="28" abs_y="27">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="移到黑名单">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PermissionOperateBtnClick(1)</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentClearBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentMoveToBtn" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add.png" abs_x="20" abs_y="20">
+									<Anchors>
+										<Anchor point="left" relativeTo="$parent" relativePoint="left">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="移除白名单">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="125" y="21"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-7" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):PermissionOperateBtnClick(0)</OnClick>
+						</Scripts>
+					</Button>
+
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerPlayer"):CloseOperatePanel()</OnClick>
+				</Scripts>
+			</Button>
+			##添加黑名单窗口
+			<Frame name="$parentAddBlackPanel" hidden="true"  rel_x="1.0" rel_y="1.0">
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000"/>
+
+						<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="662" abs_y="338">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="648" abs_y="65" >
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentChenDi" relativePoint="top" >
+									<Offset>
+										<AbsDimension x="-3" y="6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTitleHuaWen" inherits="TemplateBigBkg7_flat" abs_x="658" abs_y="65">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentTitleBkg" relativePoint="center" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" justifyV="middle" text="$9559" abs_x="200" abs_y="40" >
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTitleHuaWen">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+								<Offset>
+									<AbsDimension x="-27" y="16"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Frame name="$parentInput" abs_x="380" abs_y="46">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentChenDi">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentEditBkg" inherits="TemplateBkg8" />
+
+							</Layer>
+						</Layers>
+						<Frames>
+							<SafeEditBox name="$parentEdit" letters="21" abs_x="360" abs_y="30">
+								<Color r="254" g="249" b="209"/>
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parentEditBkg">
+										<Offset>
+											<AbsDimension x="5" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<FontString name="$parentDefault" default="true" fonttype="BlackFont24" text="" textcolor="ffb9b9b9"/>
+								<FontString name="$parentFont" fonttype="BlackFont24" justifyH="center" justifyV="middle"/>
+								<Scripts>
+									<OnFinishChar platform="pc"> </OnFinishChar>
+									<OnFocusGained> </OnFocusGained>
+									<OnFocusLost> </OnFocusLost>
+								</Scripts>
+							</SafeEditBox>
+						</Frames>
+					</Frame>
+					<Button name="$parentSureBtn" inherits="TemplateBtn3">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentChenDi">
+								<Offset>
+									<AbsDimension x="0" y="110" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$520" abs_x="200" abs_y="40" >
+									<Color r="55" g="54" b="49"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentTips" abs_x="268" abs_y="300"  hidden="true">
+				<Anchors>
+					<Anchor point="center" relativeTo="RoomUIFrame" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19"/>
+						<FontString name="$parentBkgText" justifyH="left" abs_x="238" abs_y="17" fonttype="BlackFont17">
+							<Color r="224" g="220" b="202"/>
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="15" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentBkg2" inherits="TemplateBigBkg20" abs_x="255" abs_y="250">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentBkgText" relativePoint="bottomleft">
+									<Offset>
+										<AbsDimension x="-9" y="9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" hidden="true" uvname="board_tips_arrow" abs_x="10" abs_y="17" UVType="mirroeu">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="-2" y="21"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<FontString name="$parentText" fonttype="BlackFont14" abs_x="255" abs_y="250" autowrap="true" lineInterval="8">
+							<Color r="224" g="220" b="202"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentBkg2" relativePoint="center">
+									<Offset>
+										<AbsDimension x="9" y="9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Frame>
+
+		</Frames>
+	</Frame>
+
+</Ui>

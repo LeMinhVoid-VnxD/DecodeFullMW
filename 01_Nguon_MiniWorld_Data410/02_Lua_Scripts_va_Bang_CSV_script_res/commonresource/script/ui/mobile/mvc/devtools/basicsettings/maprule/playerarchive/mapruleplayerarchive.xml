@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/MapRule/PlayerArchive/MapRulePlayerArchiveModel.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/MapRule/PlayerArchive/MapRulePlayerArchiveView.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/MapRule/PlayerArchive/MapRulePlayerArchiveCtrl.lua"/>
+    
+    ##分类格子勾选模板
+    <Button name="MapRulePlayerArchiveChooseBtnTemplate" virtual="true" abs_x="200" abs_y="20" click_threshold="5">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="" abs_x="150" abs_y="20" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="50" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+			<Button name="$parentSwitchBtn" hidden="false">
+				<Size>
+					<AbsDimension x="28" y="28"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="7" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits = "TemplateBkg8">
+							<Size>
+								<AbsDimension x="24" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentCheck" file="ui/mobile/texture2/common_icon.xml" uvname="icon_tick.png" hidden="true">
+							<Size>
+								<AbsDimension x="28" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MapRulePlayerArchive"):SwitchBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+        </Frames>
+    </Button>
+
+    ##分类标题模板，带下划线
+    <Frame name = "MapRulePlayerArchiveTitleTemplate" virtual ="true" abs_x="500" abs_y="35">
+         <Layers>
+           <Layer level="BACKGROUND">
+				<FontString name="$parentTypeName" fonttype="BlackFont22" justifyH="center" text="XXX" abs_x="442" abs_y="20" >
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>  
+                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="485" abs_y="2">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeName">
+							<Offset>
+								<AbsDimension x="0" y="11"/>
+							</Offset>
+						</Anchor>
+					</Anchors>               
+                </Texture>
+            </Layer> 
+        </Layers>
+    </Frame>  
+
+    ##滑动条									
+	<Slider name="PlayerArchiveTemplateSliderBar" virtual="true" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="91" abs_y="8">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg31" rel_x="1.0" rel_y="1">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPro" inherits="TemplateBkg32" rel_x="1.0" rel_y="1">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Slider>
+
+    <Frame name="MapRulePlayerArchive" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1001">
+    	<Layers>
+			<Layer level="BACKGROUND">
+                ##背景
+                <Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="40000000"/>    
+			</Layer>
+		</Layers>
+        <Frames>
+            <Frame name="$parentBody" frameStrata="HIGH" abs_x="594" abs_y="632">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+				</Anchors>
+                <Layers>
+                    <Layer level= "BACKGROUND">
+                    	<Texture name="$parentBkgBottom" inherits="TemplateBigBkg8" abs_x="602" abs_y="632">
+                            <Anchors>
+                                <Anchor point="bottom" relativeTo="$parent" relativePoint="bottom" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="600" abs_y="515">
+                            <Anchors>
+                                <Anchor point="bottom" relativeTo="$parentBkgBottom" relativePoint="bottom">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-74" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgBlue" inherits="TemplateBigBkg5" abs_x="572" abs_y="435">
+                            <Anchors>
+                                <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-8" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName" fonttype="BlackFont22" abs_x="536" abs_y="22" justifyH="center" justifyV="bottom" text="$34603">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="top" relativeTo="$parentBkgBlue">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-14"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+						<Texture name="$parentBarBkg" inherits="TemplateBkg31" abs_x="6" abs_y="435">
+							<Anchors>
+								 <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkgBlue">
+                                    <Offset>
+                                        <AbsDimension x="-2" y="0"/>
+                                    </Offset>
+                                </Anchor>
+							</Anchors>
+						</Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##标题栏
+					<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="594" abs_y="61">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkgBottom" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					##关闭按钮
+					<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn" abs_x="46" abs_y="60">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+                    ##全选按钮
+                    <Button name = "$parentAllChooseBtn" inherits ="TemplateBtn7" abs_x="182" abs_y="61">
+                    	<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkgBottom">
+								<Offset>
+									<AbsDimension x="31" y="-7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+                        <Layers>
+                            <Layer level = "overlay">
+                                <FontString name="$parentName" fonttype="BlackFont20" abs_x="46" abs_y="20" justifyH="center"  text="$3798">
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("MapRulePlayerArchive"):AllChooseBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                    ##确认按钮
+                    <Button name = "$parentConfirmBtn" inherits ="TemplateBtn7" abs_x="182" abs_y="61">
+                    	<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkgBottom">
+								<Offset>
+									<AbsDimension x="-31" y="-7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+                        <Layers>
+                            <Layer level = "overlay">
+                                <FontString name="$parentName" fonttype="BlackFont20" abs_x="46" abs_y="20" justifyH="center"  text="$381">
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("MapRulePlayerArchive"):ConfirmBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                    <SlidingFrame  name="$parentTarget" abs_x="572" abs_y="430" slideplane="MapRulePlayerArchivePlane" slidingY="true" slidebar="$parentBar">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parentBkgBlue">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>						
+                            </Anchor>
+                        </Anchors>
+                                        
+                        <Frames>
+							<Frame name="$parentBar" abs_x="6" rel_y="1" hidden="false" inherits="PlayerArchiveTemplateSliderBar" framelevel="1150">
+								<Anchors>
+									<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+										<Offset>
+											<AbsDimension x="-2" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+                            <Frame name="MapRulePlayerArchivePlane" abs_x="494" abs_y="700">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+                            ##使用模板
+                            </Frame>
+                        </Frames>
+                    </SlidingFrame>
+				</Frames>
+            </Frame>
+        </Frames>
+    </Frame>
+
+</Ui>

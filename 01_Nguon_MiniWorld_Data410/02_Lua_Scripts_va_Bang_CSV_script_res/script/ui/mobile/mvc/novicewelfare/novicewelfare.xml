@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##商城主页
+	<Script file="ui/mobile/mvc/noviceWelfare/noviceWelfareModel.lua"/>
+	<Script file="ui/mobile/mvc/noviceWelfare/noviceWelfareView.lua"/>
+	<Script file="ui/mobile/mvc/noviceWelfare/noviceWelfareCtrl.lua"/>
+
+	##左侧分类按钮模板
+	<Button name="noviceWelfare_TabBtnTemplate" virtual="true" abs_x="224" abs_y="85">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg6">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheckBkg" inherits="TemplateBkg7" hidden="true">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTag" file="ui/mobile/texture0/common.xml" uvname="label_notice_darkorange.png" abs_x="53" abs_y="30" hidden="true">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="16" y="-12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTagName" fonttype="BlackFont18" justifyH="center" abs_x="20" abs_y="18" text="">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTag">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" abs_x="160" abs_y="22" text="Tab123">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("noviceWelfare"):TabBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##皮肤,坐骑展示框
+	<Button name="noviceWelfareSkinItem" virtual="true" click_threshold="5" abs_x="182" abs_y="285">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				##背景图
+				<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_icon_man.png" abs_x="182" abs_y="235">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##角色阴影
+				<Texture name="$parentActorShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="104" abs_y="22" hidden = "false">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="200"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDiscountIcon" file="ui/mobile/texture0/homechest.xml" uvname="label_shop_discount.png" abs_x="75" abs_y="31">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-2" y="-2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentDiscount" fonttype="BlackFont18" justifyH="center" text="" abs_x="182" abs_y="18" hidden="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentDiscountIcon">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##角色视图
+				<ModelView name="$parentActorView" abs_x="162" abs_y="227" hidden = "false">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+				##名字背景
+				<Texture name="$parentNameBg" inherits="TemplateBigBkg18" abs_x="182" abs_y="36" hidden="false">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##名字
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" text="" abs_x="182" abs_y="18" hidden="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNameBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##购买皮肤按钮
+			<Button name="$parentBuyBtn" abs_x="182" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentNameBg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits="TemplateBkg23"/>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin.png" abs_x="25" abs_y="26">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentOriginalCost" fonttype="BlackFont" justifyH="center" text="999" abs_x="100" abs_y="16">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="8" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDiscountCost" fonttype="BlackFont22" justifyH="center" text="9999" abs_x="100" abs_y="22">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentOriginalCost">
+									<Offset>
+										<AbsDimension x="0" y="-3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentLine" file="ui/mobile/texture0/common.xml" uvname="line_sale.png" abs_x="50" abs_y="2">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentOriginalCost">
+									<Offset>
+										<AbsDimension x="0" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("noviceWelfare"):BuyBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##已拥有
+			<Frame name="$parentOwnerBtn" abs_x="182" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBg" inherits="TemplateBkg13"/>
+						<FontString name="$parentName" fonttype="BlackFont20"  justifyH="center" text="$8008" abs_x="75" abs_y="20">
+							<Color r="0" g="151" b="137"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("noviceWelfare"):SkinItemBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##帮助提示
+	<Frame name="noviceWelfareHelpFrame" parent="UIClient" frameStrata="HIGH" framelevel="6008" hidden="true" inherits="TemplateHelpFrame1">
+	</Frame>
+	
+	<Frame name="noviceWelfare" parent="UIClient" frameStrata="MEDIUM" framelevel="600" hidden="true">
+		##背景层
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1104" abs_y="700">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentRightBkg" inherits="TemplateBigBkg2" abs_x="861" abs_y="644">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<offset>
+								<AbsDimension x="-2" y="55" />
+							</offset>
+						</Anchor>		
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBodyPattern" inherits="TemplateBigBkg5" abs_x="807" abs_y="608">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRightBkg"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		##UI层
+		<Frames>
+			##标题
+			<Frame name="$parentTitleFrame" abs_x="1097" abs_y="61">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="4" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg4">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="61"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgLeft" inherits="TemplateTitleLeftBkg" abs_x="303" abs_y="56" />					
+						<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="56">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgHelp" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" UVType="turn180" abs_x="84" abs_y="56">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont36" justifyH="left" justifyV="middle" text="新手福利" abs_x="150" abs_y="36">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="94" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont26" justifyH="left" text="" abs_x="400" abs_y="28">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="45" y="4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentHelpBtn" inherits="TemplateHelpBtn0">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentTitleFrame">
+						<Offset>v
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("noviceWelfare"):HelpBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-10" y="-4" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("noviceWelfare"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>			
+			##左侧tab按钮组
+			<Frame name="$parentTabs" abs_x="230" abs_y="520">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="8" y="70" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parenttab1" inherits="noviceWelfare_TabBtnTemplate" id="1" hidden="false">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="5" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>	
+				</Frames>
+			</Frame>
+			##限时折扣
+			<Frame name="$parentLimitDiscount" abs_x="807" abs_y="608">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBodyPattern">
+						<offset>
+							<AbsDimension x="0" y="0" />
+						</offset>
+					</Anchor>	
+				</Anchors>
+				<Frames>
+					<Frame name="$parentSkin" abs_x="807" abs_y="350">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont26" justifyH="left" abs_x="240" abs_y="26" text="经典皮肤,限时优惠">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="18" y="16"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentline" inherits="TemplateBkg20" abs_x="768" abs_y="2">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="19" y="56" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentItem1" inherits="noviceWelfareSkinItem" id="1" hidden="false">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="19" y="65"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentItem2" inherits="noviceWelfareSkinItem" id="2" hidden="false">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentItem1">
+										<Offset>
+											<AbsDimension x="13" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentItem3" inherits="noviceWelfareSkinItem" id="3" hidden="false">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentItem2">
+										<Offset>
+											<AbsDimension x="13" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentItem4" inherits="noviceWelfareSkinItem" id="4" hidden="false">
+								<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentItem3">
+										<Offset>
+											<AbsDimension x="13" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>	
+							<Button  name="$parentMoreBtn" inherits="TemplateBtn4" abs_x="90" abs_y="47">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="697" y="5"/>
+										</Offset>
+									</Anchor>
+								</Anchors> 
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$30073" abs_x="52" abs_y="20">
+									<Color r="51" g="54" b="49"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("noviceWelfare"):SkinMoreBtnBtn_OnClick()</OnClick>
+								</Scripts>
+							</Button>		
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("noviceWelfare"):OnUpdate()</OnUpdate>
+		</Scripts>
+	</Frame>
+	
+
+</Ui>

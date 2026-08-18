@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/packingcm/packingCMAjust/PackingCMAjustModel.lua"/>
+	<Script file="ui/mobile/mvc/packingcm/packingCMAjust/PackingCMAjustView.lua"/>
+	<Script file="ui/mobile/mvc/packingcm/packingCMAjust/PackingCMAjustCtrl.lua"/>
+
+    ##操作功能模板
+    <Frame name="PackingCMOperateFrameTemplate" abs_x="192" abs_y="62" virtual="true">
+		<Layers>
+			<Layer level="background" >
+				<Texture name="$parentBkg" inherits="TemplateBkg41" />
+			</Layer>
+		</Layers>
+		<Frames>
+            <Button name="$parentLeftBtn" abs_x="50" abs_y="50">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="60" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay" >
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black.png" abs_x="10" abs_y="20">
+							<Angle value="180"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="-4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+                    </Layer>
+                </Layers>
+                <NormalTexture name="$parentNormal" inherits="TemplateBkg7" />
+                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg7"  hidden="true" rel_x="0.95" rel_y="0.95">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <DisabledTexture name="$parentDisabled" inherits="TemplateMiniGray_DBkg" hidden="true"/>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):PackingCMOperateFrameTemplate_LeftBtnClick();</OnClick>
+				</Scripts>
+            </Button>
+            <Button name="$parentRightBtn" abs_x="50" abs_y="50">
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parentLeftBtn" relativePoint="right">
+                        <Offset>
+                            <AbsDimension x="20" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay" >
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black.png" abs_x="10" abs_y="20" UVType="mirroev">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-3" y="-4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+                    </Layer>
+                </Layers>
+                <NormalTexture name="$parentNormal" inherits="TemplateBkg7" />
+                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg7"  hidden="true" rel_x="0.95" rel_y="0.95">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <DisabledTexture name="$parentDisabled" inherits="TemplateMiniGray_DBkg" hidden="true"/>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):PackingCMOperateFrameTemplate_RightBtnClick();</OnClick>
+				</Scripts>
+            </Button>
+        </Frames>
+		<Scripts>
+		</Scripts>
+	</Frame>
+
+    ##微缩打包调整界面
+	<Frame name="PackingCMAjust" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="5000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1047" abs_y="648">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+                
+                <Texture name="$parentTitleBkg" inherits="TemplateTopTitleBkg0" abs_x="1038" abs_y="61">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <!--
+                <Texture name="$parentChenDi" inherits="TemplateBigBkg4" abs_x="1038" abs_y="61">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentTitleBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                -->
+                <FontString name="$parentTitle" fonttype="BlackFont36"  text="$16005"  abs_x="300" abs_y="36">
+                    <Color r="255" g="135" b="27"/>
+                    <Anchors>
+                            <Anchor point="left" relativeTo="$parentTitleBkg" relativePoint="left" >
+                                <Offset>
+                                    <AbsDimension x="15" y="0"/>
+                                </Offset>
+                            </Anchor>
+                    </Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" abs_x="46" abs_y="60">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-10" y="-8"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png"/>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png">
+                    <Size>
+                        <RelDimension x="0.9" y="0.9" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+            ##确认
+            <Button name="$parentCreateBtn" abs_x="180" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="0" y="-18"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                 <Layers>
+			        <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24"  text="$16006" justifyH="center" abs_x="180" abs_y="24">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <NormalTexture name="$parentNormal" inherits="TemplateBkg3"/>
+                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg3">
+                    <Size>
+                        <RelDimension x="0.9" y="0.9" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):CreateBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentOperate" abs_x="1013" abs_y="480" input_transparent="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="74" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <Layers>
+			        <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" file="ui/white.png" color="ff373631" />
+                    </Layer>
+                </Layers>
+				<Frames>
+                    <ModelView name="$parentModelView" >#background="particles/movedir.omod"
+                        <Scripts>
+                            <OnMouseDown>GetInst("UIManager"):GetCtrl("PackingCMAjust"):RotateBtnClicked();</OnMouseDown>
+                            <OnMouseMove>GetInst("UIManager"):GetCtrl("PackingCMAjust"):RotateViewMoved();</OnMouseMove>
+                        </Scripts>
+                    </ModelView>
+                    <ModelView name="$parentCubeView" abs_x="80" abs_y="80" background="entity/custommodel/viewcube.omod">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="-30" y="60" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):CubeViewClicked();</OnClick>
+                        </Scripts>
+                    </ModelView>
+					<Frame name="$parentX" inherits="PackingCMOperateFrameTemplate">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="8" y="8" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background" >
+								<FontString name="$parentName" fonttype="BlackFont24"  justifyH="center" text="X" abs_x="60" abs_y="20">
+									<Color r="54" g="103" b="193"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+                    <Frame name="$parentY" inherits="PackingCMOperateFrameTemplate">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentX">
+								<Offset>
+									<AbsDimension x="0" y="5" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background" >
+								<FontString name="$parentName" fonttype="BlackFont24"  justifyH="center" text="Y" abs_x="60" abs_y="20">
+									<Color r="237" g="27" b="36"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+                    <Frame name="$parentZ" inherits="PackingCMOperateFrameTemplate">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentY">
+								<Offset>
+									<AbsDimension x="0" y="5" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background" >
+								<FontString name="$parentName" fonttype="BlackFont24"  justifyH="center" text="Z" abs_x="60" abs_y="20">
+									<Color r="35" g="177" b="77"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentRotate" inherits="PackingCMOperateFrameTemplate">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentZ">
+								<Offset>
+									<AbsDimension x="0" y="5" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_orientation_white.png" color="A0FFFFFF" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+                                            <Offset>
+                                                <AbsDimension x="13" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+                    <Button name="$parentZoomInBtn" inherits="TemplateBtn28" id="1">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-71" y="8" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="ico_zoomin" abs_x="29" abs_y="30">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="10" y="10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+							</Layer>
+						</Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):ZoomBtnClicked();</OnClick>
+                        </Scripts>
+					</Button>
+                    <Button name="$parentZoomOutBtn" inherits="TemplateBtn28" id="2">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentZoomInBtn">
+								<Offset>
+									<AbsDimension x="13" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="ico_zoomout" abs_x="29" abs_y="30">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="10" y="10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+							</Layer>
+						</Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):ZoomBtnClicked();</OnClick>
+                        </Scripts>
+					</Button>
+                    <Button name="$parentLineFrameCtrlBtn" inherits="TemplateBtn28" >
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentZoomInBtn">
+								<Offset>
+									<AbsDimension x="-13" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon"  file="ui/mobile/texture2/common_icon.xml" uvname="ico_model_yincang" abs_x="34" abs_y="18">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+							</Layer>
+						</Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PackingCMAjust"):LineFrameCtrlBtnClicked();</OnClick>
+                        </Scripts>
+					</Button>
+				</Frames> 
+			</Frame>
+        </Frames>
+        <Scripts>   
+        </Scripts>
+	</Frame>
+</Ui>

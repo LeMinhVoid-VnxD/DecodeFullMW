@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/homeland/homelandfarm/FarmlandUnlock/FarmlandUnlockModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/homelandfarm/FarmlandUnlock/FarmlandUnlockView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/homelandfarm/FarmlandUnlock/FarmlandUnlockCtrl.lua"/>
+
+    <!-- 农场解锁主页面 -->
+	<Frame name="FarmlandUnlock" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1010">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000">
+                    <Size>
+                        <RelDimension x="1.0" y="1.0" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+			<Layer level="overlay">
+                <Texture name="$parentBoard" inherits="TemplateBigBkg2">
+                    <Size>
+                        <AbsDimension x="810" y="533"/>
+                    </Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTopPanel">
+							<Offset>
+								<AbsDimension x="0" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentBoard2" inherits="TemplateBigBkg5">
+                    <Size>
+                        <AbsDimension x="764" y="363"/>
+                    </Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTopPanel">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                ##耕地标题
+                <FontString name="$parentCurLandTitle" fonttype="BlackFont24" justifyH="right" text="$41565">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="300" y="23"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parentBoard2">
+                            <Offset>
+                                <AbsDimension x="-419" y="31"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##当前耕地
+                <FontString name="$parentCurLand" fonttype="BlackFont24" justifyH="right" text="">
+                    <Color r="61" g="69" b="70"/>
+                    <Size>
+                        <AbsDimension x="100" y="23"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="right" relativePoint="right" relativeTo="$parentCurLandTitle">
+                            <Offset>
+                                <AbsDimension x="92" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##间隔箭头1
+                <Texture name="$parentArrow1" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" abs_x="15" abs_y="26">
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parentCurLand" relativePoint="right" >
+                            <Offset>
+                                <AbsDimension x="29" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##下一等级耕地
+                <FontString name="$parentNextLand" fonttype="BlackFont24" justifyH="left" text="">
+                    <Color r="10" g="170" b="26"/>
+                    <Size>
+                        <AbsDimension x="100" y="23"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentArrow1">
+                            <Offset>
+                                <AbsDimension x="29" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##分割线
+                <Texture name="$parentCutLine" inherits="TemplateBkg20" abs_x="570" abs_y="3">
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parentBoard2" relativePoint="top" >
+                            <Offset>
+                                <AbsDimension x="0" y="86"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##家园等级标题
+                <FontString name="$parentLevelTitle" fonttype="BlackFont24" justifyH="right" text="$41566">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="200" y="38"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parentBoard2">
+                            <Offset>
+                                <AbsDimension x="-419" y="118"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##等级信息
+                <FontString name="$parentLevel" fonttype="BlackFont24" justifyH="center" text="">
+                    <Color r="61" g="69" b="70"/>
+                    <Size>
+                        <AbsDimension x="200" y="23"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentArrow1">
+                            <Offset>
+                                <AbsDimension x="0" y="64"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##消耗材料标题
+                <FontString name="$parentMaterialTitle" fonttype="BlackFont24" justifyH="right" text="$41564">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="200" y="23"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parentBoard2">
+                            <Offset>
+                                <AbsDimension x="-419" y="188"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                ##消耗材料背景
+                <Texture name="$parentMaterialBkg" inherits="TemplateBigBkg15" abs_x="78" abs_y="78">
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parentMaterialTitle" relativePoint="right" >
+                            <Offset>
+                                <AbsDimension x="84" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##消耗材料Icon
+                <Texture name="$parentMaterialIcon" abs_x="70" abs_y="70">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parentMaterialBkg" relativePoint="center" >
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##消耗材料数量
+                <FontString name="$parentMaterialNum" fonttype="BlackFont24" justifyH="center" text="">
+                    <Color r="61" g="69" b="70"/>
+                    <Size>
+                        <AbsDimension x="100" y="23"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentMaterialBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentMaxTexture" file="ui/mobile/texture2/bigtex/img_home_confetti.png" hidden="true" abs_x="400" abs_y="236">
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parentBoard2" relativePoint="top">
+                            <Offset>
+                                <AbsDimension x="0" y="96" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                 <FontString name="$parentMaxTextureTip" fonttype="BlackFont30" justifyH="center" text="$41519">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="209" y="29"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentMaxTexture">
+                            <Offset>
+                                <AbsDimension x="0" y="-31"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentIconBg" file="ui/headframes/1.png" abs_x="110" abs_y="110">
+                    <Anchors>
+                        <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBoard">
+                            <Offset>
+                                <AbsDimension x="7" y="-16"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_head.png">
+                    <Size>
+                        <AbsDimension x="76" y="76"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentIconBg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIcon" file="ui/roleicons/39206.png" abs_x="76" abs_y="76">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentIconBg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBubble" file="ui/mobile/texture2/common.xml" uvname="board_more.png" DrawType="ninesquare_center">
+                    <NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+                    <Size>
+                        <AbsDimension x="653" y="104"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentIconBg">
+                            <Offset>
+                                <AbsDimension x="15" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <!-- <FontString name="$parentBubbleText" fonttype="BlackFont24" text="" abs_x="620" abs_y="80" autowrap = "true" justifyH = "left" justifyV = "top">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBubble">
+                            <Offset>
+                                <AbsDimension x="19" y="16"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString> -->
+                <Texture name="$parentBubbleArrow" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow.png" UVType="mirroeu">
+                    <Angle value="90"/>
+                    <Size>
+                        <AbsDimension x="32" y="20"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topleft" relativeTo="$parentBubble">
+                            <Offset>
+                                <AbsDimension x="10" y="23"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- 顶部面板 -->
+			<Frame name="$parentTopPanel" inherits="TemplateTopTitleBkg1" abs_x="810" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="0" y="70"/>
+                        </Offset>
+					</Anchor>
+				</Anchors>
+                <Frames>
+                    <!-- 关闭按钮 -->
+                    <Button name="$parentCloseBtn" hidden="false" abs_x="46" abs_y="60" inherits="TemplateCloseBtn0">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("FarmlandUnlock"):CloseBtnClicked()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+            <!-- 提示 -->
+            <RichText name="$parentTip" fonttype="BlackFont24" text="" abs_x="620" abs_y="80" autowrap = "true" justifyH = "left" justifyV = "top">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBubble">
+                            <Offset>
+                                <AbsDimension x="19" y="16"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+            </RichText>
+            <!-- <RichText name="$parentTip" fonttype="BlackFont26" justifyH="left" abs_x="600" abs_y="26">
+                <textcolor r="61" g="69" b="70"/>
+                <Anchors>
+                        <Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBoard2">
+                        <Offset>
+                            <AbsDimension x="14" y="-30"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </RichText> -->
+            <!-- 确定按钮 -->
+            <Button name="$parentOkBtn" inherits="TemplateBtn3" abs_x="215" abs_y="81">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBoard2">
+                        <Offset>
+                            <AbsDimension x="0" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <!-- <FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$41255" >
+                            <Color r="55" g="54" b="51"/>
+                            <Size>
+                                <AbsDimension x="160" y="24"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="1.5" y="-1.5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString> -->
+                        <FontString name="$parentUp" fonttype="BlackFont24" justifyH="center" text="$41255" abs_x="150" abs_y="25">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="12"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentCostIcon" file="ui/mobile/texture2/common/icon_coin.png" abs_x="24" abs_y="24">
+                            <Anchors>
+                                <Anchor point="topright" relativePoint="bottom" relativeTo="$parentUp">
+                                    <Offset>
+                                        <AbsDimension x="-10" y="6" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentCostText" fonttype="BlackFont24" justifyH="left" text="0" abs_x="150" abs_y="25" lang_ver="tha">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottom" relativeTo="$parentUp">
+                                    <Offset>
+                                        <AbsDimension x="2" y="1"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentCostText" fonttype="BlackFont24" justifyH="left" text="0" abs_x="150" abs_y="25">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottom" relativeTo="$parentUp">
+                                    <Offset>
+                                        <AbsDimension x="2" y="6"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("FarmlandUnlock"):OkBtnClicked()</OnClick>
+                </Scripts>
+            </Button>
+            ##触发材料详情
+            <Button name="$parentMaterialBtn" abs_x="78" abs_y="78">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentMaterialBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("FarmlandUnlock"):FarmlandUnlockMaterial_OnMouseDown();</OnMouseDown>
+                    <OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("FarmlandUnlock"):FarmlandUnlockMaterial_OnMouseUp();</OnMouseUp>
+                    <OnEnter platform="pc">GetInst("UIManager"):GetCtrl("FarmlandUnlock"):FarmlandUnlockMaterial_OnMouseEnter_PC()</OnEnter>
+                    <OnLeave platform="pc">GetInst("UIManager"):GetCtrl("FarmlandUnlock"):FarmlandUnlockMaterial_OnMouseLeave_PC()</OnLeave>
+                </Scripts>
+            </Button>
+            <!-- <Frame name="$parentMaterialDetails" hidden="true" abs_x="497" abs_y="223">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="top" relativeTo="$parentMaterialBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg19" abs_x="497" abs_y="223">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png" abs_x="74" abs_y="74">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="18" y="18"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" abs_x="66" abs_y="66">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle">
+                            <Color r="255" g="255" b="255"/>
+                            <Size>
+                                <AbsDimension x="100" y="30"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="topright" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="13" y="7"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentDescBkg" inherits="TemplateBigBkg20" abs_x="461" abs_y="101">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-14"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left" autowrap="true">
+                            <Color r="224" g="220" b="202"/>
+                            <Size>
+                                <AbsDimension x="430" y="65"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentDescBkg">
+                                    <Offset>
+                                        <AbsDimension x="13" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame> -->
+		</Frames>
+        <Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("FarmlandUnlock"):Update()</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

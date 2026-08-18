@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Ui>
+	<Script file="ui/mobile/mvc/creatorFestival/creatorFestivalHelper/CreatorFestivalService.lua" />
+	<Script file="ui/mobile/mvc/creatorFestival/CreatorFestivalModel.lua" />
+	<Script file="ui/mobile/mvc/creatorFestival/CreatorFestivalView.lua" />
+	<Script file="ui/mobile/mvc/creatorFestival/CreatorFestivalCtrl.lua" />
+	<!--左侧页签按钮模板-->
+	<Button name="CreatorFestivalTabBtn" virtual="true" abs_x="154" abs_y="67">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_clip_left_n.png" abs_x="135" abs_y="60">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-6" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="tab按钮" abs_x="100" abs_y="24">
+					<Color r="142" g="135" b="119" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentCheckedName">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCheckedBG" file="ui/mobile/texture2/common.xml" uvname="tab_clip_left_h.png" />
+				<FontString name="$parentCheckedName" fonttype="BlackFont28" justifyH="center" justifyV="middle" text="tab按钮" abs_x="120" abs_y="28">
+					<Color r="255" g="135" b="28" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" abs_x="21" abs_y="21" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestival"):SwitchTabBtn_OnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!--CreatorFestival-->
+	<Frame name="CreatorFestival" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2400">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="80000000" />
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="1072" y="541" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="56" y="30" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!--CreatorFestival主界面标题栏-->
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg0" abs_x="1066" abs_y="61">
+				<Layers>
+					<Layer level="artwork">
+						<FontString name="$parentName" fonttype="BlackFont36" justifyH="left" justifyV="middle" text="$110002" abs_x="300" abs_y="36">
+							<Color r="255" g="135" b="27" />
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="32" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- <FontString name="$parentDesc" fonttype="BlackFont24" text="$70001" abs_x="300" abs_y="24" autowrap="true">
+							<Color r="255" g="135" b="27" />
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="240" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString> -->
+					</Layer>
+				</Layers>
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+						<Offset>
+							<AbsDimension x="3" y="6" />
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentBkgWhite">
+						<Offset>
+							<AbsDimension x="-4" y="6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-10" y="-2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestival"):OnClickCloseBtn()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			<!--CreatorFestival左侧页面切换页签-->
+			<Frame name="$parentTabPanel" abs_x="154" abs_y="394" framelevel="2410">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkgWhite" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="11" y="30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentBtn1" inherits="CreatorFestivalTabBtn" id="1">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parent" relativePoint="top" />
+						</Anchors>
+					</Button>
+					<Button name="$parentBtn2" inherits="CreatorFestivalTabBtn" id="2">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBtn1" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="21" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
+
+			<Frame name="$parentHelpFrame" abs_x="1072" abs_y="541" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="56" y="30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- <Texture name="$parentMsl" file="ui/mobile/texture0/create.xml" uvname="img_create_misila.png" abs_x="70" abs_y="130">
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture> -->
+						<Texture name="$parentTmm" file="ui/mobile/texture0/bigtex/img_create_tumeimei.png" abs_x="1056" abs_y="252">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-7" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer>
+						<!-- 时间说明-->
+						<!-- 图标-->
+						<Texture name="$parentTime" file="ui/mobile/texture0/create.xml" uvname="icon_create_tumeimei.png" abs_x="32" abs_y="32">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="80" y="28" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 标题-->
+						<FontString name="$parentTimeAsk" fonttype="BlackFont30" justifyH="left" text="$110013" hidden="false">
+							<Color r="255" g="137" b="32"/>
+							<Size>
+								<AbsDimension x="260" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="32"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 内容-->
+						<FontString name="$parentInfoAnswer" fonttype="BlackFont26"  justifyH="left" text="$110013">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="800" y="36"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="80"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<!-- 抽奖说明-->
+						<!-- 图标-->
+						<Texture name="$parentIntro" file="ui/mobile/texture0/create.xml" uvname="icon_create_turntable.png" abs_x="32" abs_y="32">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="80" y="145" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 标题-->
+						<FontString name="$parentIntroAsk" fonttype="BlackFont30" justifyH="left" text="$110014" hidden="false">
+							<Color r="255" g="137" b="32"/>
+							<Size>
+								<AbsDimension x="260" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="148"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 内容-->
+						<FontString name="$parentIntroAnswer" fonttype="BlackFont26"  justifyH="left" text="$110015">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="800" y="36"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="196"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<!-- 奖励说明-->
+						<!-- 图标-->
+						<Texture name="$parentPrize" file="ui/mobile/texture0/create.xml" uvname="icon_create_reward.png" abs_x="32" abs_y="32">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="80" y="256" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 标题-->
+						<FontString name="$parentPrizeAsk" fonttype="BlackFont30" justifyH="left" text="$110016" hidden="false">
+							<Color r="255" g="137" b="32"/>
+							<Size>
+								<AbsDimension x="260" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="260"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 内容-->
+						<FontString name="$parentPrizeAnswer" fonttype="BlackFont26"  justifyH="left" text="$110017">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="800" y="36"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="308"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<!-- 投稿说明-->
+						<!-- 图标-->
+						<Texture name="$parentCreate" file="ui/mobile/texture0/create.xml" uvname="icon_create_contribution.png" abs_x="32" abs_y="32">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="80" y="371" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 标题-->
+						<FontString name="$parentCreateAsk" fonttype="BlackFont30" justifyH="left" text="$110016" hidden="false">
+							<Color r="255" g="137" b="32"/>
+							<Size>
+								<AbsDimension x="260" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="375"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 内容-->
+						<FontString name="$parentCreateAnswer" fonttype="BlackFont26"  justifyH="left" text="$110019">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="300" y="36"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="423"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCreateBtn" abs_x="170" abs_y="56">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="406" y="410" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont23" justifyH="center" justifyV="middle" text="$110020" hidden="false">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="100" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="27" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentArrow" file="ui/mobile/texture0/create.xml" uvname="icon_create_goto.png" abs_x="28" abs_y="28">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-22" y="-2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/create.xml" uvname="icon_create_bth.png" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/create.xml" uvname="icon_create_bth.png" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestival"):JumpCreate_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+
+</Ui>

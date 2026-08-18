@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/holographic/fullscreen/HolographicFullScreenModel.lua"/>
+	<Script file="ui/mobile/mvc/holographic/fullscreen/HolographicFullScreenView.lua"/>
+	<Script file="ui/mobile/mvc/holographic/fullscreen/HolographicFullScreenCtrl.lua"/>
+	
+	##卡通主窗口
+	<Frame name="HolographicFullScreen" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2001">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkgMask" file="ui/white.png" color="ff000000" stretchedge="true" framelevel="2002">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" file="ui/white.png" abs_x="1280" abs_y="720" framelevel="2003">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTipMask" file="ui/white.png" color="80000000" abs_x="1280" abs_y="50" framelevel="2004">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTip" justifyH="center" justifyV="middle" fonttype="BlackFont26" abs_x="1280" abs_y="28" text="起源立方孕育了迷你宇宙">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-11"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentLeft" inherits="TemplateLeftArrowBtn1" abs_x="34" abs_y="62">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentBkg" relativePoint="left">
+						<Offset>
+							<AbsDimension x="18" y="-17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HolographicFullScreen"):LeftBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentRight" inherits="TemplateRightArrowBtn1" abs_x="34" abs_y="62">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBkg" relativePoint="right">
+						<Offset>
+							<AbsDimension x="-18" y="-17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HolographicFullScreen"):RightBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentCloseBtn" abs_x="50" abs_y="50">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<RelDimension x="-0.013" y="0.024"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentNormal" file="ui/mobile/texture0/shop.xml" uvname="btn_square_blue.png" abs_x="50" abs_y="50">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentFlag" file="ui/mobile/texture0/shop.xml" uvname="icon_close_ar.png" abs_x="32" abs_y="32">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HolographicFullScreen"):CloseBtnClicked();</OnClick>
+					<OnMouseDown>OnClickAnimation("OnMouseDown",{"HolographicFullScreenCloseBtnNormal","HolographicFullScreenCloseBtnFlag"});</OnMouseDown>
+					<OnMouseUp>OnClickAnimation("OnMouseUp",{"HolographicFullScreenCloseBtnNormal","HolographicFullScreenCloseBtnFlag"});</OnMouseUp>
+					<OnMouseOut>OnClickAnimation("OnMouseOut",{"HolographicFullScreenCloseBtnNormal","HolographicFullScreenCloseBtnFlag"});</OnMouseOut>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

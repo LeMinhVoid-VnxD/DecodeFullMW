@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ui>
+    <Script file="ui/mobile/lobbyMusicPlayer/lobbyMusicPlayer.lua" />
+    <Script file="ui/mobile/mvc/ActivityConcert/ActivityConcertMgr.lua" />
+    <Script file="ui/mobile/mvc/ActivityConcert/ActivityConcertPaper/ActivityConcertPaperCtrl.lua" />
+    <Script file="ui/mobile/mvc/ActivityConcert/ActivityConcertPaper/ActivityConcertPaperView.lua" />
+    <Script file="ui/mobile/mvc/ActivityConcert/ActivityConcertPaper/ActivityConcertPaperModel.lua" />
+
+    ## 音乐会活动主页
+    <Frame name="ActivityConcertPaper" parent="UIClient" frameStrata="HIGH" framelevel="100" rel_x="1.0" rel_y="1.0" autoTextLangScale="true" input_transparent="false">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/img_concert_back.jpg" stretchedge="true" />
+			</Layer>
+            <Layer level="overlayer">
+                <Texture name="$parentStageBkg" file="ui/mobile/texture0/bigtex/img_concert_lightstick.png" abs_x ="623" abs_y ="172">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-350" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+		</Layers>
+        <Frames>
+			<Frame name="$parentContentFrame" abs_x="1220" abs_y="644">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlayer">
+					</Layer>
+				</Layers>
+				<Frames>
+                    ## 玩家模型
+                    <Frame name="$parentPlayer3D" abs_x ="550" rel_y ="1.0">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                ## 3D人物
+                                <ModelView name="$parentModelView" abs_x="600" abs_y ="640">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="-18"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </ModelView>
+                                
+                                ## 选中态
+                                <Texture name="$parentLight" file="ui/mobile/texture0/bigtex/img_concert_atmosphere.png" abs_x ="620" abs_y ="572" >
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentModelView">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ## 旋转
+                            <Button name="$parentRotateView" abs_x="600" abs_y="640">
+                                <Anchors>
+                                    <Anchor point="bottom" relativeTo="$parentModelView" relativePoint="bottom" >
+                                        <Offset>
+                                            <AbsDimension x="0" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnMouseDown>GetInst("UIManager"):GetCtrl("ActivityConcertPaper"):DModelRotate_OnMouseDown();</OnMouseDown>
+                                    <OnMouseMove>GetInst("UIManager"):GetCtrl("ActivityConcertPaper"):DModelRotate_OnMouseMove();</OnMouseMove>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>                    
+                    ## 温馨提示
+					<Frame name="$parentHintFrame" abs_x="412" abs_y="66">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPlayer3D">
+								<Offset>
+									<AbsDimension x="0" y="-75"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+                        <Layers>
+                            <Layer level="background">
+                                <Texture name="$parentBg" file="ui/mobile/texture0/concert.xml" uvname="img_concert_hint_back"/>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <RichText name="$parentRich" lineInterval="16" multiLine="false" abs_x="412" abs_y="20" fonttype="BlackFont20">
+                                <Anchors>
+                                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="1"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </RichText>
+                        </Frames>
+                    </Frame>
+                    ## 右边背景
+					<Frame name="$parentRtBg" abs_x="670" rel_y="1.0">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg2" rel_x="1.0" rel_y="1.0" >
+                                    <Anchors>
+                                        <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                                            <Offset>
+                                                <AbsDimension x="0" y="78" />
+                                            </Offset>
+                                        </Anchor>
+                                        <Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+								<Texture name="$parentPic" abs_x="666" abs_y="272" file="ui/snap_empty.png">
+                                    <Anchors>
+                                        <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+								</Texture>
+								<Texture name="$parentTimeHintBg" abs_x="338" abs_y="76" file="ui/mobile/texture2/concert.xml" uvname="img_concert_time_back">
+                                    <Anchors>
+                                        <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+								</Texture>
+							</Layer>
+                            <Layer level="overlay">
+                            </Layer>
+						</Layers>
+                        <Frames>
+                            <!-- 倒计时 -->
+                            <RichText name="$parentTimeHint" lineInterval="0" multiLine="false" abs_x="400" abs_y="28" fonttype="BlackFont28" >
+                                <Anchors>
+                                    <Anchor point="center" relativePoint="center" relativeTo="$parentTimeHintBg">
+                                        <Offset>
+                                            <AbsDimension x="0" y="2"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </RichText>
+                            ## 音乐播放
+					        <Frame name="$parentMusicPlayer" abs_x="215" abs_y="34">
+                                <Anchors>
+                                    <Anchor point="bottomright" relativeTo="$parentPic" relativePoint="bottomright">
+                                        <Offset>
+                                            <AbsDimension x="-26" y="-6" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <Button name="$parentBtn" rel_x="1" rel_y="1">
+                                        <Anchors>
+                                            <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="0" />
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Layers>
+                                            <Layer level="overlay">
+                                                <Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="board_music_volume.png" rel_x="1" rel_y="1">
+                                                </Texture>
+                                                <Texture name="$parentCheckedBG" file="ui/mobile/texture2/common.xml" uvname="board_music_volume_closed.png" rel_x="1" rel_y="1">
+                                                </Texture>
+                                            </Layer>
+                                        </Layers>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("ActivityConcertPaper"):MusicPlayer_OnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>                     
+					                <Frame name="$parentShowTitle" abs_x="140" abs_y="25" clipped="true" input_transparent="true">
+                                        <Anchors>
+                                            <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                <Offset>
+                                                    <AbsDimension x="50" y="0" />
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Layers>
+                                            <Layer level="overlay">
+                                                <FontString name="$parent1" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$110052" abs_x="140" abs_y="20">
+                                                    <Color r="31" g="31" b="31"/>
+                                                    <Anchors>
+                                                        <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                            <Offset>
+                                                                <AbsDimension x="0" y="1" />
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </FontString>
+                                                <FontString name="$parent2" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$110052" abs_x="140" abs_y="20">
+                                                    <Color r="31" g="31" b="31"/>
+                                                    <Anchors>
+                                                        <Anchor point="left" relativeTo="$parent" relativePoint="left">
+                                                            <Offset>
+                                                                <AbsDimension x="0" y="1" />
+                                                            </Offset>
+                                                        </Anchor>
+                                                    </Anchors>
+                                                </FontString>
+                                            </Layer>
+                                        </Layers>
+                                    </Frame>
+                                </Frames>
+                            </Frame>
+
+                            ## 介绍内容
+							<SlidingFrame name="$parentDescSlide" slidingY="true" slideplane="$parentPlane" abs_x="624" abs_y="172" >
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentPic">
+										<Offset>
+											<AbsDimension x="0" y="14" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" rel_x="1.0" rel_y="1.0">
+										<Anchors>
+											<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+                                    <!-- 介绍内容 -->
+                                    <RichText name="$parentInfo" lineInterval="10" multiLine="false" rel_x="1.0" rel_y="1.0" fonttype="BlackFont22">
+                                        <Anchors>
+                                            <Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </RichText>
+								</Frames>
+							</SlidingFrame>
+
+                            ## 加入按钮
+                            <Button name="$parentJoinBtn" abs_x="182" abs_y="58">
+                                <Anchors>
+                                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="-23" y="-24"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                    <NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+                                    <PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </PushedTexture>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$4887" abs_x="120" abs_y="29">
+                                            <Color r="55" g="54" b="51"/>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("ActivityConcertPaper"):Join_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                    ## 关闭按钮
+                    <Button name="$parentCloseBtn" abs_x="51" abs_y="57">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parentRtBg">
+                                <Offset>
+                                    <AbsDimension x="0" y="9"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+				            <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="36" abs_y="46">
+                                <Anchors>
+                                    <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                </Anchors>
+                            </NormalTexture>
+				            <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="32" abs_y="41">
+                                <Anchors>
+                                    <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                </Anchors>
+                            </PushedTexture>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("ActivityConcertPaper"):CloseView_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+				</Frames>
+			</Frame>
+        </Frames> 
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("ActivityConcertPaper"):OnUpdate()</OnUpdate>
+		</Scripts>
+    </Frame>    
+</Ui>

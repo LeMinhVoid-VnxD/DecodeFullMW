@@ -1,0 +1,57 @@
+
+
+local function cameraTrackUpdate()
+	CameraLineTrack:Update()
+end
+
+
+CameraLineTrack = 
+{
+	controlCamera = 0,
+	startPt = Vector3.New(0, 0, 0),
+	endPt = Vector3.New(0, 0, 0),
+	startTimer = 0,
+	endTimer = 0,
+	over = false,
+	direction = Vector3.New(0, 0, 0),
+	executeCount = 0,
+}
+CameraLineTrack.__index = CameraLineTrack
+
+function CameraLineTrack.new()
+	local Track = setmetatable({}, CameraLineTrack)
+	Track.controlCamera = 0
+	Track.startPt = Vector3.New(0, 0, 0)
+	Track.endPt = Vector3.New(0, 0, 0)
+	Track.startTimer = 0
+	Track.endTimer = 0
+	Track.distance = 0
+	Track.direction = Vector3.New(0, 0, 0)
+	Track.executeCount = 0,
+end
+
+function CameraLineTrack:Set(camera, startPt, endPt, timer)
+	self.controlCamera = camera
+	self.startPt = startPt
+	self.endPt = endPt
+	self.startTimer = 0
+	self.endTimer = self.startTimer + timer
+	local distance = endPt - startPt
+	self.distance = distance.Length
+	self.over = false
+	local direction = startPt - endPt
+	self.direction = endPt - startPt
+	self.executeCount = 100
+	local runService = game:GetService("RunService")
+	runService:BindToRenderStep("cameraTrackTestUpdate", Enum.RenderPriority.Camera.Value,cameraTrackUpdate)
+end
+
+function CameraLineTrack:Update()
+	if self.executeCount > 0 then
+		local pos = self.controlCamera:GetPosition() + self.direction
+		self.controlCamera:SetPosition(pos)
+		self.executeCount = self.executeCount - 1
+	else
+		runService:UnbindFromRenderStep("cameraTrackTestUpdate")
+	end
+end

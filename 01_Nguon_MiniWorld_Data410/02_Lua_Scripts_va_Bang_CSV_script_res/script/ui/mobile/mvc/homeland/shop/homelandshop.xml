@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##商城主页
+	<Script file="ui/mobile/mvc/homeland/shop/HomelandShopModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/shop/HomelandShopView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/shop/HomelandShopCtrl.lua"/>
+
+	##点击页签
+	<Button name="HomelandShopTabBtn" virtual="true" abs_x="175" abs_y="60">
+		<Layers>
+			<Layer level="overlay">
+				##红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="21" abs_y="21">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_h.png" abs_x="183" abs_y="60" hidden="true" DrawType="center">
+					<Center>
+						<Left offsetX="0" offsetY="0" w="51" h="60"/>
+						<Center offsetX="51" offsetY="0" w="22" h="60" />
+						<Right offsetX="73" offsetY="0" w="111" h="60" />
+					</Center>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont26" justifyH="center" text="tab按钮" abs_x="140" abs_y="27">
+					<Color r="255" g="135" b="63"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_n.png"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_n.png" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandShop"):TabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+
+	<Frame name="HomelandShop" parent="UIClient" inherits="TemplateMainFrame6" frameStrata="MEDIUM" hidden="true" framelevel="1010">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			##顶部面板
+			<Frame name="$parentTopPanel" abs_x="1000" abs_y="60">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parent" relativePoint="top">
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<!-- 迷你豆栏 -->
+					<Button name="$parentMyMiniBean" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="300" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_bean" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money.png" abs_x="40" abs_y="43">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandShop"):MiniBeanBtnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					<!-- 迷你币栏 -->
+					<Button name="$parentMyMiniCoin" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniBean" relativePoint="right">
+								<Offset>
+									<AbsDimension x="38" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money.png" abs_x="40" abs_y="43">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandShop"):MiniCoinBtnClicked()</OnClick>
+						</Scripts>
+					</Button>
+                    <!-- 家园币栏 -->
+					<Button name="$parentMyManorCoin" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniCoin" relativePoint="right">
+								<Offset>
+									<AbsDimension x="38" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="items/minihomecoin.png" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<!-- <OnClick>GetInst("UIManager"):GetCtrl("HomelandShop"):MiniCoinBtnClicked()</OnClick> -->
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##左侧面板
+			<SlidingFrame name="$parentLeftPanel" slidingY="true" slideplane="$parentPlane" abs_x = "188" abs_y = "560" framelevel = "1011">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="106" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="188" y="560"/>
+						</Size>
+					</Frame>		
+					<Button name="$parentBtn7" inherits="HomelandShopTabBtn" id="7" />
+					<Button name="$parentBtn1" inherits="HomelandShopTabBtn" id="1" />
+					<Button name="$parentBtn2" inherits="HomelandShopTabBtn" id="2" />
+					<Button name="$parentBtn3" inherits="HomelandShopTabBtn" id="3" />
+					<Button name="$parentBtn4" inherits="HomelandShopTabBtn" id="4" />
+					<Button name="$parentBtn5" inherits="HomelandShopTabBtn" id="5" />
+					<Button name="$parentBtn6" inherits="HomelandShopTabBtn" id="6" />
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("HomelandShop"):HandleEvent()</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

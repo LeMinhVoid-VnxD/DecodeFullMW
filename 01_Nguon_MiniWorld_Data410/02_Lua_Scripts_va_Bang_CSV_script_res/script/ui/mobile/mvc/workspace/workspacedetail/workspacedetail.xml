@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDataManager.lua"/>
+    <Script file="ui/mobile/mvc/WorkSpace/WorkSpaceHelper/WorkSpaceInterface.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDetail/WorkSpaceDetailModel.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDetail/WorkSpaceDetailView.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDetail/WorkSpaceDetailCtrl.lua"/>
+
+    <!--页签 作品 成员列表模版-->
+	<Button name="WorkSpaceDetailTabBtnTemplate" virtual="true" abs_x="160" abs_y="46" inherits="TemplateTabBtn3">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):ClickTabBtn();</OnClick>
+        </Scripts>
+    </Button>
+    <!-- 地图 资源切换按钮模版 -->
+    <!-- <Button name="WorkSpaceDetailTabProTemplate" virtual="true" abs_x="50" abs_y="18">
+        <Layers>
+            <Layer>
+                <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="label_ellipse.png" abs_x="8" abs_y="8" >
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parent" relativePoint="left"/>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$25222" abs_x="40" abs_y="20">
+                    <Color r="76" g="76" b="76"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="12" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):ClickProductionBtn();</OnClick>
+        </Scripts>
+    </Button> -->
+    <!-- 地图列表模版 -->
+    <Frame name="WorkSpaceDetailMapTemplete" virtual="true" abs_x="580" abs_y="120">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentPkg" inherits="TemplateBigBkg6">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="3" y="6"/>
+                            </Offset>
+						</Anchor>
+                        <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                            <Offset>
+                                <AbsDimension x="-3" y="-6"/>
+                            </Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPic" file="ui/login_bg.png" abs_x="144" abs_y="98">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentPkg">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentPicExplain" fonttype="BlackFont18" justifyH="center" text="$20309" hidden="true" abs_x="228" abs_y="18">
+					<Color r="255" g="253" b="233"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPic"/>
+					</Anchors>
+				</FontString>
+                <Texture name="$parentTypeBg" inherits="TemplateBkg12" abs_x="52" abs_y="22">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPic" relativePoint="topleft" />
+					</Anchors>
+				</Texture>
+                <FontString name="$parentTypeTxt" fonttype="BlackFont16" justifyH="center" text="$20309" abs_x="50" abs_y="15">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTypeBg"/>
+					</Anchors>
+				</FontString>
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="left" text="$20309" abs_x="200" abs_y="20">
+					<Color r="76" g="76" b="76"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                            <Offset>
+								<AbsDimension x="169" y="14"/>
+							</Offset>
+    					</Anchor>
+					</Anchors>
+				</FontString>
+                <!-- 作者名 -->
+                <Texture name="$parentAuthorIcon" file="ui/mobile/texture0/miniwork.xml" uvname="icon_user" abs_x="21" abs_y="21">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+							<Offset>
+								<AbsDimension x="171" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentAuthorName" fonttype="BlackFont16" justifyH="left" justifyV="top" text="AAA" abs_x="120" abs_y="15">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                            <Offset>
+								<AbsDimension x="199" y="45"/>
+							</Offset>
+    					</Anchor>
+					</Anchors>
+				</FontString>
+                <!-- 下载数 -->
+                <Texture name="$parentDownIcon" file="ui/mobile/texture0/miniwork.xml" uvname="icon_download" abs_x="21" abs_y="20">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+							<Offset>
+								<AbsDimension x="171" y="79"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentDownNum" fonttype="BlackFont16" justifyH="left" justifyV="top" text="1" abs_x="120" abs_y="15">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                            <Offset>
+								<AbsDimension x="198" y="82"/>
+							</Offset>
+    					</Anchor>
+					</Anchors>
+				</FontString>
+                <!-- 方块数 -->
+                <Texture name="$parentSendIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_reward.png" abs_x="20" abs_y="22">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+							<Offset>
+								<AbsDimension x="261" y="78"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentSendNum" fonttype="BlackFont16" justifyH="left" justifyV="top" text="1" abs_x="120" abs_y="15">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                            <Offset>
+								<AbsDimension x="286" y="82"/>
+							</Offset>
+    					</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+        <Frames>
+			<Button name="$parentBtn" abs_x="570" abs_y="112" click_threshold="5" >
+                <Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentPkg" />
+				</Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):ClickMapbtn();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+    <!-- 资源列表模版 -->
+    <!-- 成员列表模版 -->
+    <Frame name="WorkSpaceDetailMemTemplete" virtual="true" abs_x="568" abs_y="104">
+        <Layers>
+			<Layer level="BACKGROUND">
+                <!-- 背景 -->
+				<Texture name="$parentPkg" inherits="TemplateBigBkg6" abs_x="560" abs_y="100">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="3" y="4"/>
+                            </Offset>
+						</Anchor>
+                        <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                            <Offset>
+                                <AbsDimension x="-3" y="-4"/>
+                            </Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <!-- 头像 -->
+                <Texture name="$parentHeadBkg" file="ui/mobile/texture0/miniwork.xml" uvname="img_icon_head" abs_x="82" abs_y="82">
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parentPkg" relativePoint="left" >
+                            <Offset>
+                                <AbsDimension x="9" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="65" abs_y="61">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parentHeadBkg" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+                <!-- 迷你Id -->
+                <FontString name="$parentMemId" fonttype="BlackFont20" text="1000" abs_x="190" abs_y="20">
+                    <Color r="77" g="112" b="117"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                            <Offset>
+                                <AbsDimension x="107" y="58"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <!-- 性别 -->
+                <Texture name="$parentSex" file="ui/mobile/texture0/common_icon.xml" uvname="icon_male.png" abs_x="21" abs_y="21" >
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg" >
+                                <Offset>
+                                <AbsDimension x="400" y="24"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <!-- 成员名 -->
+            <RichText name="$parentMemName" fonttype="BlackFont24" text="1000" abs_x="300" abs_y="25" justifyH="left" justifyV="middle">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                        <Offset>
+                            <AbsDimension x="107" y="23"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </RichText>
+            <Button name = "$parentFrame" abs_x="100" abs_y="100">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parentHeadBkg" relativePoint="center" />
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentTex" file="ui/headframes/1.png" rel_x="1" rel_y="1">
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):headBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentFlg" abs_x="40" abs_y="40" >
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <!-- 管理标签 -->
+                        <Texture name="$parentFlgBg" file="ui/mobile/texture0/playercenter.xml" uvname="label_map_top" abs_x="36" abs_y="28">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentFlg" file="ui/mobile/texture0/common_icon.xml" uvname="icon_notify" abs_x="15" abs_y="15">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Frame>
+        </Frames>
+    </Frame>  
+    <!--展开更多按钮模版-->
+    <Button name="OpenBtnTemplate" abs_x="100" abs_y="20"  virtual="true" >
+        <Layers>
+            <Layer>
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$25221" abs_x="80" abs_y="20">
+                    <Color r="10" g="170" b="26"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="img_arrow_green.png" abs_x="17" abs_y="16" >
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parentName" relativePoint="right">
+                            <Offset>
+                                <AbsDimension x="3" y="-2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Angle value="-90"/>
+                </Texture>
+            </Layer>
+        </Layers>
+    </Button>
+    <!--收起按钮模版-->
+    <Button name="CloseBtnTemplate" abs_x="60" abs_y="20" hidden="true" virtual="true" >
+        <Layers>
+            <Layer>
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$25222" abs_x="40" abs_y="20">
+                    <Color r="10" g="170" b="26"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="img_arrow_green_up.png" abs_x="17" abs_y="16" >
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parentName" relativePoint="right">
+                            <Offset>
+                                <AbsDimension x="3" y="-2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <!-- <Angle value="90"/> -->
+                </Texture>
+            </Layer>
+        </Layers>
+    </Button>
+
+    <!-- 工作室详情界面 -->
+    <Frame name="WorkSpaceDetail" parent="UIClient" hidden="true" frameStrata="MEDIUM" framelevel="3010">
+        <Anchors>
+			<Anchor point="topleft" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="175" y="60"/>
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativePoint="bottomright">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                ##蓝色底板
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="1160" abs_y="689">
+                    <Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+                ##白色底板
+                <Texture name="$parentBkg2" inherits="TemplateBigBkg2">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="2" y="50"/>
+                            </Offset>
+            			</Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="-2" y="-84"/>
+                            </Offset>
+            			</Anchor>
+					</Anchors>
+				</Texture>
+
+                ##小界面蓝色方形底板
+                <Texture name="$parentBkg3" inherits="TemplateBkg26" abs_x="1072" abs_y="588">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="0" y="22"/>
+                            </Offset>
+            			</Anchor>
+					</Anchors>
+				</Texture>
+
+                <Texture name="$parentLine1" file="ui/mobile/texture0/common.xml" uvname="img_line_sink" abs_x="2" abs_y="510" DrawType="center">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="495" y="80" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Center>
+                        <Left offsetX="0" offsetY="0" w="2" h="3" />
+                        <Center offsetX="2" offsetY="0" w="2" h="3" />
+                        <Right offsetX="4" offsetY="0" w="6" h="3" />
+                    </Center>
+                    <Angle value="-90"/>
+                </Texture>
+
+                <Texture name="$parentLine2" file="ui/mobile/texture0/common.xml" uvname="img_line_sink" abs_x="2" abs_y="430" DrawType="center">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+                            <Offset>
+                                <AbsDimension x="460" y="12" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Center>
+                        <Left offsetX="0" offsetY="0" w="2" h="3" />
+                        <Center offsetX="2" offsetY="0" w="2" h="3" />
+                        <Right offsetX="4" offsetY="0" w="6" h="3" />
+                    </Center>
+                    <Angle value="-90"/>
+                </Texture>                
+			</Layer>
+		</Layers>
+        <Frames>
+            <Frame name="$parentTitle">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                    </Anchor>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="0" y="61"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        ##标题栏背景:height:61
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg4">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="4" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-4" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+
+                        <Texture name="$parentBkgLeft" inherits="TemplateTitleLeftBkg" abs_x="303" abs_y="56">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" />
+                            </Anchors>
+                        </Texture>
+
+                        <Texture name="$parentBkgClose" file="ui/mobile/texture0/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="56">
+                            <Anchors>
+                                <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg" />
+                            </Anchors>
+                        </Texture>
+
+                        ##标题名
+                        <FontString name="$parentName" fonttype="BlackFont36" justifyH="left" justifyV="middle" text="$60015" abs_x="260" abs_y="50">
+                            <Color r="255" g="135" b="27"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="20" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##关闭按钮
+                    <Button name="parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):CloseBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+            <!-- 左侧内容 -->
+            <Frame name="$parentLeftCon" abs_x="430" abs_y="510">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="38" y="90" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    ##个人信息
+                    <Frame name="$parentWorkInfo" abs_x="440" abs_y="150">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="18" y="0" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentUin" fonttype="BlackFont18" text="123456" abs_x="190" abs_y="16" justifyH="top" justifyV="left">
+                                    <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="126" y="51"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentChief" fonttype="BlackFont18" text="123456" abs_x="190" abs_y="16" justifyH="top" justifyV="left">
+                                    <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="126" y="76"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <!-- 认证标识 -->
+                                <Texture name="$parentAuthentication" file="ui/mobile/texture0/common_icon.xml" uvname="icon_Certified_Studio.png" abs_x="22" abs_y="22" >
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentName" >
+                                                <Offset>
+                                                <AbsDimension x="9" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                ##创建天数图标
+                                <Texture name="$parentDay" file="ui/mobile/texture0/common_icon.xml" uvname="icon_stn.png" abs_x="22" abs_y="21" >
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                                                <Offset>
+                                                <AbsDimension x="0" y="117"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentDayTxt" fonttype="BlackFont18" text="123" abs_x="190" abs_y="16">
+                                    <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topright" relativeTo="$parentDay">
+                                            <Offset>
+                                                <AbsDimension x="10" y="4"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                ##成员数图标
+                                <Texture name="$parentMem" file="ui/mobile/texture0/common_icon.xml" uvname="icon_group.png" abs_x="22" abs_y="19" >
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentDay" >
+                                                <Offset>
+                                                <AbsDimension x="96" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentMemTxt" fonttype="BlackFont18" text="200" abs_x="190" abs_y="16">
+                                    <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parentDayTxt">
+                                            <Offset>
+                                                <AbsDimension x="117" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                ##作品图标
+                                <Texture name="$parentProduction" file="ui/mobile/texture0/miniwork.xml" uvname="icon_share_map.png" abs_x="28" abs_y="23" >
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentDay" >
+                                                <Offset>
+                                                <AbsDimension x="188" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentProductionNum" fonttype="BlackFont18" text="1000" abs_x="190" abs_y="16">
+                                    <Color r="101" g="116" b="118"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parentDayTxt">
+                                            <Offset>
+                                                <AbsDimension x="212" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##工作室名
+                            <RichText name="$parentName" fonttype="BlackFont22" abs_x="190" abs_y="26">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="126" y="11"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </RichText>
+                            ##工作室图标
+                            <Frame name="$parentHead" abs_x="106" abs_y="106">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+                                    <Offset>
+                                        <AbsDimension x="18" y="6"/>
+                                    </Offset>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentHeadBkg" file="ui/mobile/texture0/miniwork.xml" uvname="img_icon_head" abs_x="98" abs_y="98">
+                                            <Anchors>
+                                                <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                                            </Anchors>
+                                        </Texture>
+                                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="86" abs_y="86">
+                                            <Anchors>
+                                                <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                                            </Anchors>
+                                        </Texture>
+                                        <Texture name="$parentFrame" file="ui/headframes/1.png" abs_x="126" abs_y="126">
+                                            <Anchors>
+                                                <Anchor point="center" relativeTo="$parentHeadBkg" relativePoint="center" />
+                                            </Anchors>
+                                        </Texture>     
+                                    </Layer>
+                                </Layers>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+
+                    <SlidingFrame name="$parentSlider" slidingY="true" slideplane="$parentPlane" disablespring="true">
+                        <Size>
+                            <AbsDimension x="440" y="345"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topleft" relativeTo="$parentWorkInfo" relativePoint="bottomleft">
+                                <Offset>
+                                    <AbsDimension x="-18" y="13" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="440" abs_y="345"/>
+                            <!-- 工作室简介 -->
+                            <Frame name="$parentIntro" abs_x="428" abs_y="150">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane" />
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBg" inherits="TemplateBkg26" abs_x="428" abs_y="44">
+                                            <Anchors>
+                                                <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentTitle" fonttype="BlackFont24" text="$6988" abs_x="190" abs_y="25">
+                                            <Color r="77" g="112" b="117"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parentBg">
+                                                    <Offset>
+                                                        <AbsDimension x="20" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <RichText name="$parentTxt" fonttype="BlackFont20" abs_x="407" abs_y="44">
+                                        <Color r="101" g="116" b="118"/>
+                                        <Anchors>
+                                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="27"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </RichText>
+                                    <Button name="$parentOpenBtn" abs_x="100" abs_y="20" inherits="OpenBtnTemplate" >
+                                        <Anchors>
+                                            <Anchor point="topleft" relativeTo="$parentTxt" relativePoint="bottomleft">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="7"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):OpenIntroBtnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                    <Button name="$parentCloseBtn" abs_x="60" abs_y="20" hidden="true" inherits="CloseBtnTemplate" >
+                                        <Anchors>
+                                            <Anchor point="topleft" relativeTo="$parentTxt" relativePoint="bottomleft">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="7"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):CloseIntroBtnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+                            <!-- 工作室公告 -->
+                            <Frame name="$parentBoard" abs_x="428" abs_y="150">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentIntroOpenBtn">
+                                        <Offset>
+                                            <AbsDimension x="-21" y="21"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBg" inherits="TemplateBkg26" abs_x="428" abs_y="43">
+                                            <Anchors>
+                                                <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentTitle" fonttype="BlackFont24" text="$848" abs_x="190" abs_y="16">
+                                            <Color r="77" g="112" b="117"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parentBg">
+                                                    <Offset>
+                                                        <AbsDimension x="20" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <RichText name="$parentTxt" fonttype="BlackFont20" abs_x="407" abs_y="44">
+                                        <Color r="101" g="116" b="118"/>
+                                        <Anchors>
+                                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="27"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </RichText>
+                                    <Button name="$parentOpenBtn" abs_x="100" abs_y="20" inherits="OpenBtnTemplate" >
+                                        <Anchors>
+                                            <Anchor point="topleft" relativeTo="$parentTxt" relativePoint="bottomleft">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="7"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):OpenBoardBtnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                    <Button name="$parentCloseBtn" abs_x="60" abs_y="20" hidden="true" inherits="CloseBtnTemplate" >
+                                        <Anchors>
+                                            <Anchor point="topleft" relativeTo="$parentTxt" relativePoint="bottomleft">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="7"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):CloseBoardBtnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>                    
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+            <!-- 选择标签栏 -->
+            <Frame name="$parentTabs" abs_x="400" abs_y="46">
+                <Anchors>
+                    <Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="-60" y="140" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentTab1" inherits="WorkSpaceDetailTabBtnTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentTab2" inherits="WorkSpaceDetailTabBtnTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentTab1">
+                                <Offset>
+                                    <AbsDimension x="3" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+            <!-- 作品列表 -->
+            <Frame name="$parentProductions" abs_x="620" abs_y="420">
+                <Anchors>
+                    <Anchor point="topLeft" relativeTo="$parentTabs" relativePoint="bottomleft">
+                        <Offset>
+                            <AbsDimension x="-4" y="13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <!-- 地图 -->
+                    <!-- <Button name="$parentTab1" inherits="WorkSpaceDetailTabProTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="topLeft" relativePoint="topLeft" relativeTo="$parent" >
+                                <Offset>
+                                    <AbsDimension x="10" y="10"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button> -->
+                    <!-- 资源 -->
+                    <!-- <Button name="$parentTab2" inherits="WorkSpaceDetailTabProTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="left" relativeTo="$parentTab1">
+                                <Offset>
+                                    <AbsDimension x="70" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button> -->
+                    <!-- 地图列表 -->
+					<ListViewFrame name="$parentMapList" slidingY="true" slideplane="$parentPlane" autoTextLangScale="true" prefuncname="WorkSpaceDetailViewMapList" abs_x="580" abs_y="480">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="580" abs_y="480"/>
+						</Frames>
+					</ListViewFrame>    
+                    <!-- 资源列表 --> 
+                </Frames>
+            </Frame>
+            <!-- 成员列表 -->
+            <ListViewFrame name="$parentMemberList" hidden="true" slidingY="true" slideplane="$parentPlane" prefuncname="WorkSpaceDetailViewMemberList" abs_x="580" abs_y="480">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTabs">
+                        <Offset>
+                            <AbsDimension x="-4" y="13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="580" abs_y="480"/>
+                </Frames>
+            </ListViewFrame>
+
+            <!-- 申请加入 -->
+            <Button name="$parentApplyJoinBtn" inherits="TemplateBtn3" hidden="true" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension y="-13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" abs_x="180" abs_y="24" text="$60016" justifyH="center" >
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):ApplyJoinWorkSpace();</OnClick>
+                </Scripts>
+            </Button>
+
+            <Frame name="$parentManager" hidden="true" abs_x="416" abs_y="61" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension y="-13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    ##成员管理
+                    <Button name="$parentMemberBtn" inherits="TemplateBtn2">
+                        <Anchors>
+                            <Anchor point="bottomright" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentName" fonttype="BlackFont24" abs_x="180" abs_y="24" text="$60017" justifyH="center" >
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):MemberManagement();</OnClick>
+                        </Scripts>
+                    </Button>
+
+                    ##公会设置
+                    <Button name="$parentSetBtn" inherits="TemplateBtn3">
+                        <Anchors>
+                            <Anchor point="bottomleft" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentName" fonttype="BlackFont24" abs_x="180" abs_y="24" text="$60018" justifyH="center" >
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):SetSpaceInfo();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            <Frame name="$parentLeave" hidden="true" abs_x="430" abs_y="61" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension y="-13"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentTime" fonttype="BlackFont18" abs_x="180" abs_y="20" text="" justifyH="center" justifyV="left">
+                            <Color r="250" g="122" b="15"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension y="3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <!-- 退出工作室 -->
+                    <Button name="$parentLeaveBtn" inherits="TemplateBtn3">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentName" fonttype="BlackFont24" abs_x="180" abs_y="24" text="$60019" justifyH="center" >
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):LeaveWorkSpace();</OnClick>
+                        </Scripts>
+                    </Button>
+                    <!-- 撤销退出申请 -->
+                    <Button name="$parentCancel" inherits="TemplateBtn3">
+                        <Anchors>
+                            <Anchor point="right" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-32"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentName" fonttype="BlackFont24" abs_x="180" abs_y="24" text="$60020" justifyH="center" >
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" >
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceDetail"):CancelLeaveWorkSpace();</OnClick>
+                        </Scripts>
+                    </Button>
+                    
+                </Frames>
+            </Frame>
+        </Frames>
+	</Frame>
+</Ui>

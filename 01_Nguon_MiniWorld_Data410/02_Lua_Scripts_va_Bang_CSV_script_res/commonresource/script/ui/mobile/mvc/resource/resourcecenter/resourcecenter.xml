@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/resource/resourceHelper/ResourceConfig.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceHelper/ResourceInterface.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceHelper/ResourceDataManager.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceHelper/ResourceService.lua"/>
+
+	<Script file="ui/mobile/mvc/resource/resourceCenter/ResourceCenterModel.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/ResourceCenterView.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/ResourceCenterCtrl.lua"/>
+
+	##页签按钮模板
+	<Button name="ResourceCenterLabLabelBtnTemplate" virtual="true" inherits="TemplateBtn36">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="ResourceCenterLabMenuListLabelsFrame" />
+		</Anchors>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):LabLabelBtnCLicked();</OnClick>
+		</Scripts>
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture name="$parentChecked" inherits="TemplateOrangeShade" />
+				<Texture name="$parentFold" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black.png" abs_x="8" abs_y="16" >
+					<Anchors>
+						<Anchor point="center" relativePoint="left">
+							<Offset>
+								<AbsDimension x="18" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+	##分类大页签按钮模板
+	<Button name="TabCheckFoldBtnTemplate" virtual="true" abs_x="175" abs_y="60">
+		<FontString name="$parentName" fonttype="BlackFont24" justifyH="right" justifyV="middle" text="tab按钮" abs_x="109" abs_y="26">
+			<Color r="158" g="225" b="231"/>
+			<Anchors>
+				<Anchor point="right" relativePoint="right" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="-24" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</FontString>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_n.png"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_n.png" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_h.png" abs_x="183" abs_y="60" hidden="true"/>
+				<Texture name="$parentFold" file="ui/mobile/texture2/common_icon.xml" uvname="icon_dropdown_black.png" abs_x="8" abs_y="16" >
+					<Anchors>
+						<Anchor point="center" relativePoint="left">
+							<Offset>
+								<AbsDimension x="34" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+	##文件夹按钮模板
+	<Frame name="ResourceCenterFolderBtnTemplate" virtual="true" inherits="ResourceFolderBtnTemplate" >
+		<Layers>
+			<Layer level="OVERLAY">
+				<Texture name="$parentAddIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green" abs_x="50" abs_y="50" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkgIcon" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterFolderBtnClicked();</OnClick>
+		</Scripts>
+	</Frame>
+	##文件夹按钮(小)模板
+	<Frame name="ResourceCenterSmallFolderBtnTemplate" virtual="true" inherits="ResourceFolderSmallBtnTemplate" >
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterFolderBtnClicked();</OnClick>
+		</Scripts>
+	</Frame>
+	##资源格子模板
+	<Button name="ResourceCenterGridTemplate" virtual="true" abs_x="78" abs_y="78" click_threshold="5">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="78" abs_y="78" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="60" abs_y="60" > 
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMask" inherits="TemplateBigBkg18" hidden="true" abs_x="74" abs_y="74">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentState" file="ui/mobile/texture2/common_icon.xml" uvname="icon_uploading" abs_x="20" abs_y="20" hidden="true" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="4" y="4" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" abs_x="78" abs_y="78">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				#违规
+				<Texture name="$parentBreakBkg"  inherits="TemplateBigBkg18" hidden="true"/>
+				<Texture name="$parentBreakLawIcon" file="ui/mobile/texture2/shop.xml" uvname="pic_warning" hidden="true" abs_x="46" abs_y="39" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBreakBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSelect" abs_x="32" abs_y="32">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="6" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_white"/>
+						<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml"  uvname="btn_circle_yellow" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="overlap">
+						<Texture name="$parentTick" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" hidden="true" abs_x="20" abs_y="15">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridSelectClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterGridTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+	##快捷栏格子模板
+	<Button name="ResourceCenterShortcutBtn" inherits="GridButtonTemplate3"  abs_x="78" abs_y="78" virtual="true">
+		<FontString name="$parentNum" fonttype="BlackFont14" justifyH="center" justifyV="middle" text="1" rel_x="1" abs_y="15">
+			<Color r="61" g="69" b="70"/>
+			<Anchors>
+				<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+					<Offset>
+						<AbsDimension y="8" />
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</FontString>
+	</Button>
+	##资源细分类型页签
+	<Button name="ResourceCenterTabCheckBtn" virtual="true" abs_x="130" abs_y="41" hidden="true">
+		<FontString name="$parentName" fonttype="BlackFont16" lang_ver="en" justifyH="center" justifyV="middle" text="tab按钮" rel_x="1" rel_y="1">
+			<Color r="55" g="54" b="48"/>
+			<Anchors>
+				<Anchor point="left" relativePoint="left" relativeTo="$parent">
+					<Offset>
+							<AbsDimension x="5" y="0"/>
+					</Offset>
+				</Anchor>
+				<Anchor point="right" relativePoint="right" relativeTo="$parent">
+					<Offset>
+							<AbsDimension x="-7" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</FontString>
+		<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="tab按钮" rel_x="1" rel_y="1">
+			<Color r="55" g="54" b="48"/>
+		</FontString>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentNormal" inherits="TemplateBkg6" rel_x="1" rel_y="1"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg7" hidden="true" rel_x="1" rel_y="1"/>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterTabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+	##动作格子模板
+	<Button name="ResourceCenterSubAnimationTemplate" virtual="true" hidden="true" abs_x="47" abs_y="47">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="47" abs_y="47" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_act_walk" abs_x="40" abs_y="40" > 
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" abs_x="49" abs_y="49">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterSubAnimationClicked();</OnClick>
+		</Scripts>
+	</Button>
+	##详情描述模板
+	<Frame name="ResourceCenterDetailDescItemTemplate" virtual="true" hidden="true" abs_x="315" abs_y="40">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentTitle" justifyH="left" justifyV="middle" fonttype="BlackFont20" text="标题ID" abs_x="110" abs_y="22">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="12" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentContent" justifyH="left" justifyV="middle" fonttype="BlackFont20" text="内容" abs_x="180" abs_y="22">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	##资源中心
+	<!-- <Frame name="ResourceCenter" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10"> -->
+	<Frame name="ResourceCenter" parent="UIClient" frameStrata="MEDIUM" inherits="TemplateMainFrame8" hidden="true" framelevel="10" input_transparent="false" rel_x="1.0" rel_y="1.0" autoTextLangScale="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				## 左右两侧的 shadow, 用于异形屏缩进后的过渡效果
+				<Texture name="$parentFrameShadow" file="ui/mobile/texture0/frame_shadow_left.png">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft" relativeTo="$parent" />
+						<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentFrameShadow2" file="ui/mobile/texture0/frame_shadow_right.png">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parent" />
+						<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+
+				<Texture name="$parentBg" inherits="TemplateBigBkg1_ninecenter" rel_x="1" rel_y="1"/>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1104" abs_y="667" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="176" y="53"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLabBkg" inherits="TemplateBigBkg3" abs_x="175" rel_y="1.0" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<Dimension rel_x="1" abs_y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parent" relativePoint="top">
+						<Offset>
+							<AbsDimension y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentHelpIconBkg" file="ui/mobile/texture2/common.xml" uvname="img_doubt" abs_x="70" abs_y="48">
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left"/>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont30" justifyV="middle" shadowcolor="4D352C28" text="$3947" fontStyle="border">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="512" y="40"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="76" y="13"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##统计提示
+						<FontString name="$parentTip" fonttype="BlackFont" abs_x="800" abs_y="18" justifyH="right" justifyV="middle" text="0">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-132" y="20" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentHelpBtn" inherits="TemplateHelpBtn0">
+						<Anchors>
+						    <Anchor point="left" relativePoint="left">
+								<Offset>
+						            <AbsDimension x="13" y="0"/>
+						        </Offset>
+						    </Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnHelpClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##关闭按钮
+			<Button name="$parentCloseBtn" abs_x="36" abs_y="46" inherits="TemplateCloseBtnLarge">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+
+			##左侧页签栏
+			<Frame name="$parentLab" abs_x="175" abs_y="660">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHead">
+						<Offset>
+							<AbsDimension x="0" y="-6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentMenuList" slidingY="true" slideplane="$parentPlane" abs_x="190" abs_y="560">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="190" abs_y="560"/>
+							##一级页签
+							<Button name="$parentLabel1" inherits="TabCheckFoldBtnTemplate" text="$16100" id="1">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension y="17" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):LabBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentLabel2" inherits="TabCheckFoldBtnTemplate" text="$16101" id="2">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension y="92"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):LabBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							##二级页签
+							<Frame name="$parentLabelsFrame" abs_x="175" abs_y="60">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension y="167" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Button name="$parentTab1" inherits="ResourceCenterLabLabelBtnTemplate" id="1"/>
+									<Button name="$parentTab2" inherits="ResourceCenterLabLabelBtnTemplate" id="2"/>
+									<Button name="$parentTab3" inherits="ResourceCenterLabLabelBtnTemplate" id="3"/>
+									<Button name="$parentTab4" inherits="ResourceCenterLabLabelBtnTemplate" id="4"/>
+									<Button name="$parentTab5" inherits="ResourceCenterLabLabelBtnTemplate" id="5"/>
+									<Button name="$parentTab6" inherits="ResourceCenterLabLabelBtnTemplate" id="6"/>
+								</Frames>
+							</Frame>
+							#三级页签--文件夹
+							<Frame name="$parentFoldersFrame" abs_x="175" abs_y="60">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension y="167" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentFolder1" inherits="ResourceCenterSmallFolderBtnTemplate" id="1"/>
+									<Frame name="$parentFolder2" inherits="ResourceCenterSmallFolderBtnTemplate" id="2"/>
+									<Frame name="$parentFolder3" inherits="ResourceCenterSmallFolderBtnTemplate" id="3"/>
+									<Frame name="$parentFolder4" inherits="ResourceCenterSmallFolderBtnTemplate" id="4"/>
+									<Frame name="$parentFolder5" inherits="ResourceCenterSmallFolderBtnTemplate" id="5"/>
+									<Frame name="$parentFolder6" inherits="ResourceCenterSmallFolderBtnTemplate" id="6"/>
+									<Frame name="$parentFolder7" inherits="ResourceCenterSmallFolderBtnTemplate" id="7"/>
+									<Frame name="$parentFolder8" inherits="ResourceCenterSmallFolderBtnTemplate" id="8"/>
+									<Frame name="$parentFolder9" inherits="ResourceCenterSmallFolderBtnTemplate" id="9"/>
+									<Frame name="$parentFolder10" inherits="ResourceCenterSmallFolderBtnTemplate" id="10"/>
+									<Frame name="$parentFolder11" inherits="ResourceCenterSmallFolderBtnTemplate" id="11"/>
+									<Frame name="$parentFolder12" inherits="ResourceCenterSmallFolderBtnTemplate" id="12"/>
+									<Frame name="$parentFolder13" inherits="ResourceCenterSmallFolderBtnTemplate" id="13"/>
+									<Frame name="$parentFolder14" inherits="ResourceCenterSmallFolderBtnTemplate" id="14"/>
+									<Frame name="$parentFolder15" inherits="ResourceCenterSmallFolderBtnTemplate" id="15"/>
+									<Frame name="$parentFolder16" inherits="ResourceCenterSmallFolderBtnTemplate" id="16"/>
+									<Frame name="$parentFolder17" inherits="ResourceCenterSmallFolderBtnTemplate" id="17"/>
+									<Frame name="$parentFolder18" inherits="ResourceCenterSmallFolderBtnTemplate" id="18"/>
+									<Frame name="$parentFolder19" inherits="ResourceCenterSmallFolderBtnTemplate" id="19"/>
+									<Frame name="$parentFolder20" inherits="ResourceCenterSmallFolderBtnTemplate" id="20"/>
+									<Frame name="$parentFolder21" inherits="ResourceCenterSmallFolderBtnTemplate" id="21"/>
+									<Frame name="$parentFolder22" inherits="ResourceCenterSmallFolderBtnTemplate" id="22"/>
+									<Frame name="$parentFolder23" inherits="ResourceCenterSmallFolderBtnTemplate" id="23"/>
+									<Frame name="$parentFolder24" inherits="ResourceCenterSmallFolderBtnTemplate" id="24"/>
+									<Frame name="$parentFolder25" inherits="ResourceCenterSmallFolderBtnTemplate" id="25"/>
+									<Frame name="$parentFolder26" inherits="ResourceCenterSmallFolderBtnTemplate" id="26"/>
+									<Frame name="$parentFolder27" inherits="ResourceCenterSmallFolderBtnTemplate" id="27"/>
+									<Frame name="$parentFolder28" inherits="ResourceCenterSmallFolderBtnTemplate" id="28"/>
+									<Frame name="$parentFolder29" inherits="ResourceCenterSmallFolderBtnTemplate" id="29"/>
+									<Frame name="$parentFolder30" inherits="ResourceCenterSmallFolderBtnTemplate" id="30"/>
+									<Frame name="$parentFolder31" inherits="ResourceCenterSmallFolderBtnTemplate" id="31"/>
+									<Frame name="$parentFolder32" inherits="ResourceCenterSmallFolderBtnTemplate" id="32"/>
+									<Frame name="$parentFolder33" inherits="ResourceCenterSmallFolderBtnTemplate" id="33"/>
+									<Frame name="$parentFolder34" inherits="ResourceCenterSmallFolderBtnTemplate" id="34"/>
+									<Frame name="$parentFolder35" inherits="ResourceCenterSmallFolderBtnTemplate" id="35"/>
+									<Frame name="$parentFolder36" inherits="ResourceCenterSmallFolderBtnTemplate" id="36"/>
+									<Frame name="$parentFolder37" inherits="ResourceCenterSmallFolderBtnTemplate" id="37"/>
+									<Frame name="$parentFolder38" inherits="ResourceCenterSmallFolderBtnTemplate" id="38"/>
+									<Frame name="$parentFolder39" inherits="ResourceCenterSmallFolderBtnTemplate" id="39"/>
+									<Frame name="$parentFolder40" inherits="ResourceCenterSmallFolderBtnTemplate" id="40"/>
+									<Frame name="$parentFolder41" inherits="ResourceCenterSmallFolderBtnTemplate" id="41"/>
+									<Frame name="$parentFolder42" inherits="ResourceCenterSmallFolderBtnTemplate" id="42"/>
+									<Frame name="$parentFolder43" inherits="ResourceCenterSmallFolderBtnTemplate" id="43"/>
+									<Frame name="$parentFolder44" inherits="ResourceCenterSmallFolderBtnTemplate" id="44"/>
+									<Frame name="$parentFolder45" inherits="ResourceCenterSmallFolderBtnTemplate" id="45"/>
+									<Frame name="$parentFolder46" inherits="ResourceCenterSmallFolderBtnTemplate" id="46"/>
+									<Frame name="$parentFolder47" inherits="ResourceCenterSmallFolderBtnTemplate" id="47"/>
+									<Frame name="$parentFolder48" inherits="ResourceCenterSmallFolderBtnTemplate" id="48"/>
+									<Frame name="$parentFolder49" inherits="ResourceCenterSmallFolderBtnTemplate" id="49"/>
+									<Frame name="$parentFolder50" inherits="ResourceCenterSmallFolderBtnTemplate" id="50"/>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+					##资源商店按钮
+					<Button name="$parentResourceShop" inherits="TemplateBtn37" abs_x="158" abs_y="81" >
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" >
+								<AbsDimension x="0" y="-22" />
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_cottage" abs_x="23" abs_y="21">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="15" y="15" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont24" abs_x="100" abs_y="25" justifyH="center" justifyV="middle" text="$16110">
+									<Color r="55" g="52" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="93" y="28" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTips" fonttype="BlackFont" rel_x="1" abs_y="17" justifyH="center" justifyV="middle" text="$16111">
+									<Color r="55" g="52" b="51"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="5" y="-17" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnResourceShopClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##详情栏
+			<Frame name="$parentDetailFrame" abs_x="340" abs_y="632">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentLabBkg">
+						<Offset>
+							<AbsDimension x="15" y="74"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+						<Texture name="$parentModelBg" file="ui/mobile/texture2/common.xml" uvname ="img_board_resource" abs_x="315" abs_y="315" DrawType="ninesquare_center">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+						</Texture>
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="315" abs_y="2">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentModelBg">
+									<Offset>
+										<AbsDimension y="51"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" justifyH="center" justifyV="middle" fonttype="BlackFont22" text="$20403" abs_x="315" abs_y="24">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentModelBg">
+									<Offset>
+										<AbsDimension y="16"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="321" abs_y="183" hidden="true" >
+							<Anchors>
+								<Anchor point="top" relativeTo="$parent" relativePoint="top">
+									<Offset>
+										<AbsDimension y="138"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentEmptyTips" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$20440" abs_x="340" abs_y="26" hidden="true">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+									<Offset>
+										<AbsDimension y="29"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+				<!--
+					##搜索框
+					<Frame name="$parentSearchFrame" abs_x="316" abs_y="46" hidden="true" >
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="15" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg8"/>
+							</Layer>
+						</Layers>
+						<Frames>
+							<SafeEditBox name="$parentEdit" multiLine="false"  editMethod="527" abs_x="200" abs_y="21" letters="30">
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="19" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<FontString name="$parentFont" fonttype="BlackFont20"  justifyH="left" justifyV="middle"/>
+								<FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$16112" textcolor="ffb9b9b9" justifyH="left" justifyV="middle"/>
+								<Scripts>
+									<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("ResourceCenter"):SearchBtnClicked();</OnEnterPressed>
+								</Scripts>
+							</SafeEditBox>
+							<Button name="$parentSearchBtn" abs_x="47" abs_y="50" inherits="TemplateBtn31">
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+								    <Layer level="overlap">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_search.png" abs_x="23" abs_y="24">
+											<Anchors>
+												<Anchor point="center" relativePoint="center">
+												</Anchor>
+											</Anchors>
+										</Texture>
+								    </Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):SearchBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentResetBtn" abs_x="47" abs_y="50">
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+								    <Layer level="overlap">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="19" abs_y="19">
+											<Anchors>
+												<Anchor point="center" relativePoint="center">
+												</Anchor>
+											</Anchors>
+										</Texture>
+								    </Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):SearchResetBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentBackBtn" abs_x="316" abs_y="50" inherits="TemplateBtn12" >
+								<FontString name="$parentName" fonttype="BlackFont20" rel_x="0.7" rel_y="1" text="$16128" justifyV="middle" justifyH="center" >
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" />
+									</Anchors>
+								</FontString>
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="15" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+								    <Layer level="overlap">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_intomap" UVType="turn180" abs_x="24" abs_y="21">
+											<Anchors>
+												<Anchor point="left" relativePoint="left">
+													<Offset>
+														<AbsDimension x="14" y="-2" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+								    </Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):SearchResetBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##文件夹列表
+					<ListViewFrame name="$parentBox" slidingY="true" abs_x="340" abs_y="602" slideplane="$parentPlane" prefuncname="ResourceCenterFolderBox" >
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension y="13" x="10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="320" abs_y="570" />
+						</Frames>
+					</ListViewFrame>
+					##上传提示
+					<Frame name="$parentLoadTipFrame" abs_x="328" abs_y="60">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-6" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg49"/>
+							</Layer>
+							<Layer level="OVERLAY">
+								<FontString name="$parentSlotLimit" fonttype="BlackFont18" abs_x="328" abs_y="20" justifyH="left" justifyV="middle" text="0">
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="11" y="-32" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentCount" fonttype="BlackFont18" abs_x="328" abs_y="20" justifyH="left" justifyV="middle" text="0">
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="11" y="-8" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				-->
+					##模型框
+					<ModelView name="$parentModelView" abs_x="315" abs_y="315">
+						<Anchors>
+							<Anchor point="bottomleft" relativeTo="$parentModelBg" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnRotateMouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnRotateMouseMove();</OnMouseMove>
+						</Scripts>
+					</ModelView>
+					##动作组合子页
+					<Frame name="$parentSubIndex" abs_x="315" abs_y="103">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentModelBg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg18" rel_x="1" rel_y="1"/>
+								<FontString name="$parentTitle" justifyH="center" justifyV="middle" fonttype="BlackFont18" text="组合名字+序号" abs_x="315" abs_y="20">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension y="16"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentFold" rel_x="1" abs_y="50">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="background">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" abs_x="20" abs_y="10">
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-20" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenterSubIndexFoldClick();</OnClick>
+								</Scripts>
+							</Button>
+							<SlidingFrame name="$parentIndexList" slidingY="true" slideplane="$parentPlane" abs_x="315" abs_y="60">
+								<Anchors>
+									<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" abs_x="315" abs_y="60"/>
+									<Button name="$parentTab1" inherits="ResourceCenterSubAnimationTemplate" id="1"/>
+									<Button name="$parentTab2" inherits="ResourceCenterSubAnimationTemplate" id="2"/>
+									<Button name="$parentTab3" inherits="ResourceCenterSubAnimationTemplate" id="3"/>
+									<Button name="$parentTab4" inherits="ResourceCenterSubAnimationTemplate" id="4"/>
+									<Button name="$parentTab5" inherits="ResourceCenterSubAnimationTemplate" id="5"/>
+									<Button name="$parentTab6" inherits="ResourceCenterSubAnimationTemplate" id="6"/>
+									<Button name="$parentTab7" inherits="ResourceCenterSubAnimationTemplate" id="7"/>
+									<Button name="$parentTab8" inherits="ResourceCenterSubAnimationTemplate" id="8"/>
+									<Button name="$parentTab9" inherits="ResourceCenterSubAnimationTemplate" id="9"/>
+									<Button name="$parentTab10" inherits="ResourceCenterSubAnimationTemplate" id="10"/>
+									<Button name="$parentTab11" inherits="ResourceCenterSubAnimationTemplate" id="11"/>
+									<Button name="$parentTab12" inherits="ResourceCenterSubAnimationTemplate" id="12"/>
+									<Button name="$parentTab13" inherits="ResourceCenterSubAnimationTemplate" id="13"/>
+									<Button name="$parentTab14" inherits="ResourceCenterSubAnimationTemplate" id="14"/>
+									<Button name="$parentTab15" inherits="ResourceCenterSubAnimationTemplate" id="15"/>
+									<Button name="$parentTab16" inherits="ResourceCenterSubAnimationTemplate" id="16"/>
+									<Button name="$parentTab17" inherits="ResourceCenterSubAnimationTemplate" id="17"/>
+									<Button name="$parentTab18" inherits="ResourceCenterSubAnimationTemplate" id="18"/>
+									<Button name="$parentTab19" inherits="ResourceCenterSubAnimationTemplate" id="19"/>
+									<Button name="$parentTab20" inherits="ResourceCenterSubAnimationTemplate" id="20"/>
+								</Frames>
+							</SlidingFrame>
+						</Frames>
+					</Frame>
+					##详情描述
+					<SlidingFrame name="$parentDescList" slidingY="true" slideplane="$parentPlane" abs_x="315" abs_y="250">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="315" abs_y="250"/>
+							<Frame name="$parentContent1" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent2" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent3" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent4" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent5" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent6" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent7" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent8" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent9" inherits="ResourceCenterDetailDescItemTemplate"/>
+							<Frame name="$parentContent10" inherits="ResourceCenterDetailDescItemTemplate"/>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+
+			##资源列表
+			<Frame name="$parentResourceList" abs_x="730" abs_y="632">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentDetailFrame">
+						<Offset>
+							<AbsDimension x="9" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="706" abs_y="2">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension y="74"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="435" abs_y="247" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+									<Offset>
+										<AbsDimension y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentEmptyTips" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$16145" abs_x="600" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+									<Offset>
+										<AbsDimension y="37"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##文件夹标题栏
+					<Frame name="$parentFolderTitle" abs_x="280" abs_y="46" >
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="12" y="15" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentNameBkg" inherits="TemplateBkg8" abs_x="280" abs_y="46" />
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" abs_x="280" abs_y="22" text="1" justifyV="middle">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="16" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentModifyBtn" abs_x="47" abs_y="50" inherits="TemplateBtn31">
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parentNameBkg"/>
+								</Anchors>
+								<Layers>
+								    <Layer level="overlap">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_input.png" abs_x="23" abs_y="24">
+											<Anchors>
+												<Anchor point="center" relativePoint="center">
+												</Anchor>
+											</Anchors>
+										</Texture>
+								    </Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ModifyBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentDelBtn" inherits="TemplateDeleteRedBtn">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentModifyBtn">
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):DelBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCreateBoardBtn" inherits="TemplateBtn17" abs_x="50" abs_y="53" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentDelBtn">
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_minicanvas" abs_x="40" abs_y="40">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):CreateBoardBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentImportModelBtn" inherits="TemplateBtn17" abs_x="50" abs_y="53" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCreateBoardBtn">
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_import" abs_x="40" abs_y="40">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ImportModelBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##搜索结果
+					<!--
+					<RichText name="$parentSearchResultTitle" fonttype="BlackFont20" abs_x="220" abs_y="22" justifyH="left" justifyV="middle">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="14" y="28" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					-->
+					##管理按钮
+					<Frame name="$parentManageFrame" abs_x="360" abs_y="74" input_transparent="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" />
+						</Anchors>
+						<Frames>
+							<Button name="$parentManageBtn" inherits="TemplateMiddleYellowBtn" text="$3461">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-12" y="14" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ManageBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentAllBtn" inherits="TemplateMiddleYellowBtn" text="$3798">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-12" y="14" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):AllBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCancelBtn" inherits="TemplateMiddleBlueBtn" text="$3018">
+								<Anchors>
+									<Anchor point="right" relativePoint="left" relativeTo="$parentAllBtn">
+										<Offset>
+											<AbsDimension x="-10" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):CancelBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##细分分类页签
+					<Frame name="$parentClassifyTabFrame" abs_x="706" abs_y="61">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentLine" />
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentLine" inherits="TemplateBkg20" rel_x="1" abs_y="2">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentTab1" inherits="ResourceCenterTabCheckBtn" id="1"/>
+							<Button name="$parentTab2" inherits="ResourceCenterTabCheckBtn" id="2"/>
+							<Button name="$parentTab3" inherits="ResourceCenterTabCheckBtn" id="3"/>
+							<Button name="$parentTab4" inherits="ResourceCenterTabCheckBtn" id="4"/>
+							<Button name="$parentTab5" inherits="ResourceCenterTabCheckBtn" id="5"/>
+							<Button name="$parentTab6" inherits="ResourceCenterTabCheckBtn" id="6"/>
+							<Button name="$parentTab7" inherits="ResourceCenterTabCheckBtn" id="7"/>
+							<Button name="$parentTab8" inherits="ResourceCenterTabCheckBtn" id="8"/>
+							<Button name="$parentTab9" inherits="ResourceCenterTabCheckBtn" id="9"/>
+							<Button name="$parentTab10" inherits="ResourceCenterTabCheckBtn" id="10"/>
+						</Frames>
+					</Frame>
+					##资源列表
+					<ListViewFrame name="$parentBox" slidingY="true" abs_x="730" abs_y="406" slideplane="$parentPlane" prefuncname="ResourceCenterResourceListBox" >
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension y="-139" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="false" abs_x="728" abs_y="360">
+								<Scripts>
+									<OnMouseDown>CreateBackpackFrame_OnMouseDown()</OnMouseDown>
+								</Scripts>
+							</Frame>
+						</Frames>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnClick();</OnMouseDown>
+						</Scripts>
+					</ListViewFrame>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnClick();</OnClick>
+				</Scripts>
+			</Frame>
+
+			##快捷栏
+			<Frame name="$parentShortcut" abs_x="718" abs_y="120">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentResourceList">
+						<Offset>
+							<AbsDimension y="-6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg23"/>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentGrid1" inherits="ResourceCenterShortcutBtn" id="1001"/>
+					<Button name="$parentGrid2" inherits="ResourceCenterShortcutBtn" id="1002"/>
+					<Button name="$parentGrid3" inherits="ResourceCenterShortcutBtn" id="1003"/>
+					<Button name="$parentGrid4" inherits="ResourceCenterShortcutBtn" id="1004"/>
+					<Button name="$parentGrid5" inherits="ResourceCenterShortcutBtn" id="1005"/>
+					<Button name="$parentGrid6" inherits="ResourceCenterShortcutBtn" id="1006"/>
+					<Button name="$parentGrid7" inherits="ResourceCenterShortcutBtn" id="1007"/>
+					<Button name="$parentGrid8" inherits="ResourceCenterShortcutBtn" id="1008"/>
+					<Frame name="$parentMask" hidden="true"></Frame>
+				</Frames>
+				<Scripts>
+					<OnShow>GetInst("UIManager"):GetCtrl("ResourceCenter"):ShortcutOnShow();</OnShow>
+				</Scripts>
+			</Frame>
+
+			##操作管理栏
+			<Frame name="$parentOperateFrame" abs_x="718" abs_y="120">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentResourceList">
+						<Offset>
+							<AbsDimension y="-6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg23"/>
+					</Layer>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" rel_x="1" rel_y="1" justifyH="center" justifyV="middle" text="$16114" >
+							<Color r="77" g="112" b="117" />
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentMoveBtn" inherits="TemplateSquareBlueBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16115" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="ico_bind_move" abs_x="36" abs_y="36">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):MoveBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDelBtn" inherits="TemplateSquareRedBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16116" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete" abs_x="32" abs_y="32">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):DelResourceBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentUploadBtn" inherits="TemplateSquareYellowBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16117" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown" abs_x="33" abs_y="33">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):UploadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCancelUploadBtn" inherits="TemplateSquareRedBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16118" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_cancelupload_black" abs_x="33" abs_y="33">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):CancelUploadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDownloadBtn" inherits="TemplateSquareYellowBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16119" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_download_black" abs_x="33" abs_y="30">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):DownloadBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentUploadTestBtn" inherits="TemplateSquareYellowBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="上传小程序" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown" abs_x="33" abs_y="33">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):UploadTestBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##水印功能
+			<Frame name="$parentWaterMarkFrame" abs_x="380" abs_y="16">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>r
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentFont" fonttype="BlackFont" text="" abs_x="380" abs_y="16" justifyH="right">
+							<Color r="142" g="153" b="155"/>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-4" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>		
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("ResourceCenter"):HandleEvent();</OnEvent>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnClick();</OnClick>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("ResourceCenter"):ResourceCenter_OnUpdate();</OnUpdate>
+			<OnShow>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnShow();</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+</Ui>

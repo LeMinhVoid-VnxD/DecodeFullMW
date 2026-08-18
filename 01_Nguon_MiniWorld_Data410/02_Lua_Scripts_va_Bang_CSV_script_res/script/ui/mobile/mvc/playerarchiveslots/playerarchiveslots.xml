@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/playerArchiveSlots/PlayerArchiveSlotsModel.lua"/>
+    <Script file="ui/mobile/mvc/playerArchiveSlots/PlayerArchiveSlotsView.lua"/>
+    <Script file="ui/mobile/mvc/playerArchiveSlots/PlayerArchiveSlotsCtrl.lua"/>
+    <Script file="ui/mobile/mvc/playerArchiveSlots/PlayerArchiveSlotsInterFace.lua"/>
+
+    <Frame name="ArchiveTem" abs_x="521" abs_y="130" virtual="true" hidden="false">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <!-- <Texture name="$parentBkg" inherits="TemplateBkg54" /> -->
+                <Texture name="$parentMask" inherits="TemplateBigBkg6"/>
+                <Texture name="$parentRightBkg" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray">
+                    <Size>
+                        <AbsDimension x="169" y="120" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-2" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentShadow" inherits="TemplateBkg20_H1" abs_x="519" abs_y="3" color="ffACACAC">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-1" y="-5" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentLeft" abs_x="210" abs_y="120" input_transparent="true">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="3" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentImg" rel_x="1" rel_y="1" ></Texture>
+                    </Layer>
+                    <Layer>
+                        <Texture name="$parentBg" rel_x="1" abs_y="20" file="ui/mobile/texture2/room.xml" uvname="img_board_version">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentTime" text="time" fonttype="BlackFont17" justifyH="center" justifyV="middle" rel_x="1" abs_y="20">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentCenter" abs_x="120" rel_y="1" input_transparent="true">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentLeft">
+                        <Offset>
+                            <AbsDimension x="17" y="33"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentName" text="陀螺大战v0.1" fonttype="BlackFont24" justifyH="left" abs_x="200" abs_y="25">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentPlayTime" text="已玩2.2小时" fonttype="BlackFont20" justifyH="left" abs_x="200" abs_y="25">
+                            <Color r="65" g="74" b="76"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+                                    <Offset>
+                                        <AbsDimension x="0" y="25"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentRight" abs_y="126" abs_x="60" >
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-4" y="-2"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentTrash" rel_x="1" rel_y="0.5" > 
+                        <Layers>
+                            <Layer>
+                                <Texture name="$parentBg" file="ui/mobile/texture0/playercenter.xml" uvname="img_board_data" stretchedge="false">
+                                </Texture>
+                            </Layer>
+                            <Layer>
+                                <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete" abs_x="26" abs_y="26">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):TrashBtClick()</OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="$parentCancel" rel_x="1" rel_y="0.5" >
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentTrash" stretchedge="false">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer>
+                                <Texture name="$parentBg" file="ui/mobile/texture0/playercenter.xml" uvname="img_board_data">>
+                                </Texture>
+                            </Layer>
+                            <Layer>
+                                <Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_no" abs_x="26" abs_y="26">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):CancelUploadBtClick()</OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="$parentUpload" rel_x="1" rel_y="0.5" hidden="true"> 
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentTrash" stretchedge="false">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer>
+                                <Texture name="$parentBg" file="ui/mobile/texture0/playercenter.xml" uvname="img_board_data" stretchedge="false">
+                                </Texture>
+                            </Layer>
+                            <Layer>
+                                <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="icon_updown" abs_x="26" abs_y="26">
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):UploadBtClick()</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+            <Frame name="$parentLabel" abs_x="71" abs_y="23" framelevel="2350" input_transparent="true">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="-3" y="-2" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentBg"  file="ui/mobile/texture0/common.xml" uvname="label_information_green" abs_x="71" abs_y="33" UVType="mirroeu">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentText" text="$25807" justifyH="center" justifyV="middle" fonttype="BlackFont18">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft">
+                                    <Offset>
+                                        <AbsDimension x="1" y="1" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentCheckMask" rel_x="1" rel_y="1" hidden="true" framelevel="2400">
+                <Frames>
+                    <Button name="$parentUnCheckBt" abs_x="38" abs_y="40">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parent" >
+                                <Offset>
+                                    <AbsDimension x="2" y="-2"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray" color="#ffffffff"/>
+                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray" rel_x="0.9" rel_y="0.9"  color="#ffffffff">
+                        </PushedTexture>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):UnCheckBtClick()</OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="$parentCheckBt" inherits="TemplateBtn24" abs_x="38" abs_y="38" hidden="true">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parent" >
+                                <Offset>
+                                    <AbsDimension x="2" y="-1"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):CheckBtClick()</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+			</Frame>
+        </Frames>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):ListItemClick()</OnClick>
+        </Scripts>
+    </Frame>
+
+    
+    <Frame name="ArchiveTemContainer" abs_x="1072" abs_y="130"  virtual="true">
+        <Frames>
+            <Frame name="$parentGrid1" inherits="ArchiveTem" id="1">  
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+            <Frame name="$parentGrid2" inherits="ArchiveTem" id="2">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent" >
+                        <Offset>
+                            <AbsDimension x="536" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+        </Frames>
+    </Frame>
+
+    ##黄色按钮
+    <Button  name="ArchiveTemYellowBt" abs_x="130" abs_y="50" virtual="true">
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow.png" DrawType="center">
+			<Center>
+				<Left offsetX="0" offsetY="0" w="30" h="61"/>
+				<Center offsetX="30" offsetY="0" w="6" h="61" />
+				<Right offsetX="122" offsetY="0" w="60" h="61" />
+			</Center>
+		</NormalTexture>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow.png" DrawType="center" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			</Anchors>
+			<Center>
+				<Left offsetX="0" offsetY="0" w="30" h="61"/>
+				<Center offsetX="30" offsetY="0" w="6" h="61" />
+				<Right offsetX="122" offsetY="0" w="60" h="61" />
+			</Center>
+		</PushedTexture>
+    </Button>
+    
+
+    ##筛选器展示格子
+    <Button name="ArchiveSelectgrudTem" inherits="TemplateSelectGrid" virtual="true" abs_x="216">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):SelectItemClick()</OnClick>
+			<OnEnter>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):SelectItemEnter()</OnEnter>
+			<OnLeave>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):SelectItemLeave()</OnLeave>
+		</Scripts>
+	</Button>
+    
+    ##筛选器
+    <Frame name="ArchiveSelectTem" abs_x="216" abs_y="46" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBg"  inherits="TemplateBkg8">
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentTop" abs_x="216" abs_y="46" hidden="false">
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBg" inherits="TemplateBkg8">
+                        </Texture>
+                    </Layer>
+                    <Layer>
+                        ##三角形
+                        <Texture name="$parentIconUp" file="ui/mobile/texture2/common.xml"  uvname="icon_dropdown" UVType="turn-180" abs_x="20" abs_y="10"  hidden="true">
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="-13" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIconDown" file="ui/mobile/texture2/common.xml"  uvname="icon_dropdown"  abs_x="20" abs_y="10">
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="-13" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Fontstring name="$parentText" text="$7305" fonttype="BlackFont20" justifyH="center" justifyV="middle">
+                        </Fontstring>
+                        <!-- <Texture name="$parentLine" inherits="TemplateBkg20_H1" rel_x="1" abs_y="1" color="##FF3E3E3E">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture> -->
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):SelectClick()</OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentContent" hidden="true" abs_x="216" abs_y="300" >
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentTop" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentItem1" inherits="ArchiveSelectgrudTem" id="1" abs_x="216">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent" >
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentItem2" inherits="ArchiveSelectgrudTem" id="2"  abs_x="216">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentItem1" >
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentItem3" inherits="ArchiveSelectgrudTem" id="3"  abs_x="216">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentItem2" >
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentItem4" inherits="ArchiveSelectgrudTem" id="4"  abs_x="216">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentItem3" >
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentItem5" inherits="ArchiveSelectgrudTem" id="5"  abs_x="216">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentItem4" >
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentItem6" inherits="ArchiveSelectgrudTem" id="6"  abs_x="216">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentItem5" >
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames>
+    </Frame>
+
+    ##滑动条									
+	<Slider name="ArchiveTemplateSliderBar" virtual="true" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="91" abs_y="8">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg31" rel_x="1.0" rel_y="1">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPro" inherits="TemplateBkg32" rel_x="1.0" rel_y="1">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Slider>
+
+    <Frame name="PlayerArchiveSlots" rel_x="1" rel_y="1" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2300" >
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="80000000" />
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentContent" abs_x="1108" abs_y="621" clipped="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>        
+                        <Texture name="$parentBg" inherits="TemplateBigBkg8" abs_x="1116" abs_y="621">
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-1" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Frame name="$parentTop" rel_x="1" abs_y="60">
+                        <Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg4" />
+								<Texture name="$parentBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="303" abs_y="56"/>
+								<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="56">
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg" />
+									</Anchors>
+								</Texture>
+							</Layer>
+							<Layer>
+								<FontString name="$parentText" text="$34618" fonttype="BlackFont36" abs_x="303" rel_y="1" justifyV="middle">
+									<Color r="255" g="135" b="27"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										  <Offset>
+											<AbsDimension x="24" y="0"/>
+										  </Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+                        <Frames>
+                            <Frame name="$parentSelect" inherits="ArchiveSelectTem" framelevel = "2400">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+                                        <Offset>
+                                            <AbsDimension x="548" y="5"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                            <Frame name="$parentSortSelect"  inherits="ArchiveSelectTem" framelevel = "2400">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topright" relativeTo="$parentSelect" >
+                                        <Offset>
+                                            <AbsDimension x="15" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentMiddle" rel_x="1" abs_y="484">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentTop">
+                                <Offset>
+                                    <AbsDimension x="0" y="-6"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBg" file="ui/white.png" stretchedge="true" color="ffffffff" />
+                                <Texture name="$parentListBg" inherits="TemplateBigBkg5"  abs_x="1083" abs_y="460">
+                                    <Anchors>
+                                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="12"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentSlideBkg" inherits="TemplateBkg31" abs_x="6" abs_y="450" hidden="false" framelevel="2350">
+                                    <Anchors>
+                                        <Anchor point="right" relativePoint="right" relativeTo="$parentListView">
+                                            <Offset>
+                                                <AbsDimension x="-11" y="-6"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                            <Layer>
+                                <FontString name="$parentEmpty" text="$34642" fonttype="BlackFont46" justifyH="center" justifyV="middle" hidden="true">
+                                    <Color r="55" g="54" b="51"/>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <ListViewFrame name="$parentListView" slidingY="true" slideplane="$parentPlane" abs_x="1080" abs_y="450" slidebar="$parentBar">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="7" y="22"/>
+										</Offset>
+									</Anchor>
+                                </Anchors>
+								<Frames>
+                                    <Slider name="$parentBar" abs_x="6" rel_y="1" hidden="false" inherits="ArchiveTemplateSliderBar" framelevel="2350">
+                                        <Anchors>
+                                            <Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+                                                <Offset>
+                                                    <AbsDimension x="-11" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </Slider>
+									<Frame name="$parentPlane" hidden="true" abs_x="600" rel_y="1">
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="12"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									##动态创建
+									<!-- ArchiveTem -->
+								</Frames>
+                            </ListViewFrame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentBottom" rel_x="1" abs_y="100" framelevel="2409">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="5"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentNotManage" rel_x="1" rel_y="1">
+                                <Layers>
+                                    <Layer>
+                                        <FontString name="$parentText" text="$25807" justifyV="middle" justifyH="right" fonttype="BlackFont20" abs_x="120" abs_y="21">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="5" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="$parentNum" text="1/10" justifyV="middle" justifyH="left" fonttype="BlackFont20" abs_x="50" abs_y="21">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="right" relativeTo="$parentText">
+                                                    <Offset>
+                                                        <AbsDimension x="15" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button name="$parentAddBt"  abs_x="40" abs_y="42" inherits="TemplateBtn17" hidden="true">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="right" relativeTo="$parentNum">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Layers>
+                                            <Layer level="overlay">
+                                                <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add" abs_x="23" abs_y="23">
+                                                    <Anchors>
+                                                        <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                                                    </Anchors>
+                                                </Texture>
+                                            </Layer>
+                                        </Layers>
+                                        <!-- <Scripts>
+                                            <OnClick>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):HelpBtClicked();</OnClick>
+                                        </Scripts> -->
+                                    </Button>
+                                    <Button inherits="TemplateBtn11" name="$parentManageBt" abs_x="182" abs_y="61">
+                                        <Anchors>
+                                            <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                                <Offset>
+                                                    <AbsDimension x="-22" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" text="$3461" justifyV="middle" justifyH="CENTER" fonttype="BlackFont24">
+                                            <Color r="55" g="54" b="51"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):ManageBtClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+                            <Frame name="$parentManage" rel_x="1" rel_y="1" hidden="true">
+                                <Frames>
+                                    <Button inherits="TemplateMiddleRedBtn" name="$parentTrash" abs_x="130" abs_y="50">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" text="$3017" justifyV="middle" justifyH="CENTER" fonttype="BlackFont20">
+                                            <Color r="55" g="51" b="51"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):ManageDeleteClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                    <Button inherits="TemplateBtn2" name="$parentCancleUpload" abs_x="130" abs_y="50">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="right" relativeTo="$parentTrash">
+                                                <Offset>
+                                                    <AbsDimension x="12" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" text="$16118" justifyV="middle" justifyH="CENTER" fonttype="BlackFont20">
+                                            <Color r="51" g="55" b="55"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):ManageCancelClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                    <Button inherits="TemplateBtn11" name="$parentUpload" abs_x="130" abs_y="50">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="right" relativeTo="$parentCancleUpload">
+                                                <Offset>
+                                                    <AbsDimension x="12" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" text="$16117" justifyV="middle" justifyH="CENTER" fonttype="BlackFont20">
+                                            <Color r="55" g="54" b="51"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):ManageUploadClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                    <Button inherits="TemplateBtn11" name="$parentSelectAll" abs_x="130" abs_y="50">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="right" relativeTo="$parentUpload">
+                                                <Offset>
+                                                    <AbsDimension x="356" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" text="$3798" justifyV="middle" justifyH="CENTER" fonttype="BlackFont20">
+                                            <Color r="55" g="54" b="51"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):SelectAllBtClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                    <Button inherits="TemplateBtn2" name="$parentCancle" abs_x="130" abs_y="50">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="right" relativeTo="$parentSelectAll">
+                                                <Offset>
+                                                    <AbsDimension x="12" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <FontString name="$parentText" text="$970" justifyV="middle" justifyH="CENTER" fonttype="BlackFont20">
+                                            <Color r="51" g="55" b="55"/>
+                                        </FontString>
+                                        <Scripts>
+                                            <OnClick>
+                                                GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):CancelBtClick()
+                                            </OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                </Frames>
+                <Scripts>
+                    <OnUpdate>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):OnUpdate();</OnUpdate>
+                </Scripts>
+            </Frame>
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtnLarge">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="-11" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+        </Frames>
+        <Scripts>
+            <OnShow>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):OnShow();</OnShow>
+            <OnHide>GetInst("UIManager"):GetCtrl("PlayerArchiveSlots"):OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+</Ui>

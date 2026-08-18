@@ -1,0 +1,325 @@
+接口ID,俄语,俄语,俄语,俄语,俄语,俄语,俄语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,Игра,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,Конец игры,local result = Game:doGameEnd()
+10002,Игра,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,Установить атрибут скрипта для пользовательских,"local result = Game:setScriptVar(index, val)"
+10003,Игра,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",Получить атрибут сценария для пользовательских,local result = Game:getScriptVar(index)
+10004,Игра,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,Загрузить атрибут скрипта,local result = Game:sendScriptVars2Client()
+10005,Игра,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",Новый глобальный эффект,local result = Game:addRenderGlobalEffect(path)
+10006,Игра,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,Ясно глобальный эффект,local result = Game:removeRenderGlobalEffect(effectid)
+10007,Игра,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,Установите положение глобального эффекта,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,Игра,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,Установить эффект глобального масштаба,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,Игра,msgBox,Game:msgBox(msg),,,окно сообщения,local result = Game:msgBox(msg)
+20001,Мир,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",Является ли это в дневное время,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,Мир,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",Является ли это настроить игру,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,Мир,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",Является ли это режим создания,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,Мир,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",Режим создания Многопользовательский режим или настроить редактировать,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,Мир,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",Hardcore,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,Мир,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",Режим выживания - Свободный режим,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,Мир,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",Одиночный режим или режим Survival - Свободный режим,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,Мир,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",Режим выживания превратился из режима создания,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,Мир,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",Режим редактирования Индивидуального,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,Мир,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",Индивидуальный режим эксплуатации,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,Мир,getHours,World:getHours(),none,"ErrorCode.OK, result:number",Текущее время (ч),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,Мир,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",Получить вид редактирования состояния,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,Мир,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,Установить вид состояния редактирования,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,Мир,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",Получить настроенную конфигурацию камеры,local result = World:getCustomCameraConfig()
+20015,Мир,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",Получить диапазон блока (фрагмент),"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,Мир,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",Получить актер в обозначенном районе,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,Мир,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",Получить все игроки. Может контролировать их положение выживания,local result = World:getPlayerTotal(alive)
+20018,Мир,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",Получить все игроки. Может контролировать их положение выживания,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,Мир,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",Случайные игрока,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,Мир,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,Удалить актер,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,Мир,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array","Сформировать существо (в том числе монстров, NPC, животных и т.д.)","local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,Мир,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,Удалить существо,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,Мир,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",Сформировать элементы в обозначенном месте,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,Мир,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,Удалить элементы (по регионам),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,Мир,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,Удалить элемент (по ID),"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,Мир,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,Сформировать Projectile,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,блок,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Будет ли блок предприятие,"local result = Block:isSolidBlock(x, y, z)"
+30002,блок,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Будет ли блок жидкости,"local result = Block:isLiquidBlock(x, y, z)"
+30003,блок,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Будет ли блок воздуха,"local result = Block:isAirBlock(x, y, z)"
+30004,блок,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",Получить соответствующий идентификатор блока,"local result = Block:getBlockID(x, y, z)"
+30005,блок,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Установите blockalldata обновление и сообщить,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,блок,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,Уничтожить блок,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,блок,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",Поместите блок,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,блок,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Установить blockalldata и информировать окружающие блоки,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,блок,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Установите blockalldata и обновлять текущие блоки местоположения,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,блок,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,Атрибут набора блоков и состояние,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,блок,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",Получить двухпозиционный состояние функционального блока,local result = Block:getBlockSwitchStatus(pos)
+30012,блок,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,Установите двухпозиционный состояние функционального блока,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,Игра актера,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,"Обнаружить, если это игрок",local result = Actor:isPlayer(objid)
+40002,Игра актера,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,"Обнаружить, если это монстр",local result = Actor:isMob(objid)
+40003,Игра актера,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",Получить тип актера: существо / игрок ...,local result = Actor:getObjType(objid)
+40004,Игра актера,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,Если он находится в воздухе,local result = Actor:isInAir(objid)
+40005,Игра актера,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",Получить расположение актера,local result = Actor:getPosition(objid)
+40006,Игра актера,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Установить местонахождение актера,"local result = Actor:setPosition(objid, x, y, z)"
+40007,Игра актера,jump,Actor:jump(objid),objid:number,ErrorCode.OK,Прыгать,local result = Actor:jump(objid)
+40008,Игра актера,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,Убей себя,local result = Actor:killSelf(objid)
+40009,Игра актера,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",Получить текущее направление обращенного,local result = Actor:getCurPlaceDir(objid)
+40010,Игра актера,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,Двигайтесь к цели актера,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,Игра актера,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,Двигайтесь к цели актера,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,Игра актера,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,Получить Буфф,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,Игра актера,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",Если это имеет какой-либо положительный эффект,"local result = Actor:hasBuff(objid, buffid)"
+40014,Игра актера,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,Удалить бафф,"local result = Actor:removeBuff(objid, buffid)"
+40015,Игра актера,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,Очистить все бафф,local result = Actor:clearAllBuff(objid)
+40016,Игра актера,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,Очистить весь негативный любитель,local result = Actor:clearAllBadBuff(objid)
+40017,Игра актера,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",Получить список баффов,local result = Actor:getBuffList(objid)
+40018,Игра актера,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",Получить оставшийся itck из соответствующих буфф текущего индекса,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,Игра актера,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,Увеличение тока HP,"local result = Actor:addHP(objid, hp)"
+40020,Игра актера,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",Получить текущий HP,local result = Actor:getHP(objid)
+40021,Игра актера,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Получить текущую максимальную HP,local result = Actor:getMaxHP(objid)
+40022,Игра актера,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,Увеличение объема кислорода,"local result = Actor:addOxygen(objid, oxygen)"
+40023,Игра актера,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",Получить объем кислорода,local result = Actor:getOxygen(objid)
+40024,Игра актера,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,Incease очарования соответствующего оборудования,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,Игра актера,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,Очистить зачарование соответствующего оборудования,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,Игра актера,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",Найти идентификатор ближайшего блока,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,Игра актера,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,Установите крестообразный угол отклонения зрения актера,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,Игра актера,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",Получить крестообразный угол отклонения зрения актера,local result = Actor:getFaceYaw(objid)
+40029,Игра актера,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Изменение крестообразного угла отклонения актера,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,Игра актера,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,Установите вверх угол зрения актера,"local result = Actor:setFacePitch(objid, pitch)"
+40031,Игра актера,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",Получить вверх угол зрения актера,local result = Actor:getFacePitch(objid)
+40032,Игра актера,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Изменение угла отклонения вверх актера,"local result = Actor:turnFacePitch(objid, offset)"
+40033,Игра актера,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Играть эффекты,"local result = Actor:playBodyEffect(objid, type)"
+40034,Игра актера,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Прекратить эффекты,"local result = Actor:stopBodyEffect(objid, type)"
+40035,Игра актера,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,Воспроизведение файлов эффектов,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,Игра актера,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,Прекратить эффекты файлов,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,Игра актера,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,Воспроизведение звука,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,Игра актера,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,Воспроизведение звука (определенный тип: GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,Игра актера,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,"Очистить идентификатор существ, чей идентификатор actorid","local result = Actor:clearActorWithId(actorid, bkill)"
+40040,Игра актера,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,Установите тип повреждения,"local result = Actor:setAttackType(objid, attacktype)"
+40041,Игра актера,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,Установить повреждение типа иммунитета,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,Игра актера,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,"Получить, от автомобиля","local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,Игра актера,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Установите поведение, атрибут и состояние существ","local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,Игра актера,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,Найти путь к целевому местоположения,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,Игра актера,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,Получить ObjId в Пферд в,local result = Actor:getRidingActorObjId(objid)
+50001,игрок,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",ноль,local result = Player:getAttr(attrtype)
+50002,игрок,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,ноль,"local result = Player:setAttr(attrtype, val)"
+50003,игрок,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",Получить хост,local result = Player:getHostUin()
+50004,игрок,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,"Обнаружить, если это местный игрок",local result = Player:isMainPlayer(objid)
+50005,игрок,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",Получить UIN местного игрока,local result = Player:getMainPlayerUin()
+50006,игрок,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",Получить результат игры,local result = Player:getGameResults(objid)
+50007,игрок,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,Установить результат игры,"local result = Player:setGameResults(objid, result)"
+50008,игрок,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",Получить счет игры,local result = Player:getGameScore(objid)
+50009,игрок,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",Установить счет игры,"local result = Player:setGameScore(objid, score)"
+50010,игрок,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number","Получить звание игрока,",local result = Player:getGameRanking(objid)
+50011,игрок,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,"Установите ранг игрока,","local result = Player:setGameRanking(objid, rank)"
+50012,игрок,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,Добавление элементов для игроков,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,игрок,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,Перевести на нерест точки,local result = Player:teleportHome(objid)
+50014,игрок,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",Получить идентификатор элемента в настоящее время проводится игрок,local result = Player:getCurToolID(objid)
+50015,игрок,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",Получить имя игрока,local result = Player:getNickname(objid)
+50016,игрок,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,Удалить элементы в рюкзаке,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,игрок,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",Получить количество смертей,local result = Player:getDieTimes(objid)
+50018,игрок,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",Получить количество оставшихся жизней остались,local result = Player:getLeftLifeNum(objid)
+50019,игрок,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,Установите команду существ,"local result = Player:setTeam(objid, team)"
+50020,игрок,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Получить команду существо,local result = Player:getTeam(objid)
+50021,игрок,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,Получить текущую сытость,local result = Player:getFoodLevel(objid)
+50022,игрок,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,Установите текущую сытость,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,игрок,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",Получить текущую панель быстрого доступа,local result = Player:getCurShotcut(objid)
+50024,игрок,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,Установите потребление пункта проводится игроком,"local result = Player:onCurToolUsed(objid, num)"
+50025,игрок,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,Набор CD,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,игрок,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Respawn игрок в назначенном месте,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,игрок,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Изменение точки респауна,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,игрок,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,Игрок играет мультфильм,"local result = Player:playAct(objid, actid)"
+50029,игрок,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,Показать тексты в всплывающем окне,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,игрок,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,Сделать плеер использовать текущий элемент,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,игрок,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,Поворот объектива игрока,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,игрок,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,Изменение угла режим плеера,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,игрок,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Установите поведение, атрибут и состояние существ","local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,игрок,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,"Тумблер поведения, атрибут и состояние игрока","local result = Player:checkActionAttrState(objid, actionattr)"
+50035,игрок,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Получить текущую максимальную HP,local result = Player:getMaxHP(objid)
+50036,игрок,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Получить текущий HP,local result = Player:getCurHP(objid)
+50037,игрок,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP восстановить,local result = Player:getHpRecover(objid)
+50038,игрок,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",ток насыщения,local result = Player:getCurFood(objid)
+50039,игрок,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,игрок,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Текущий объем кислорода,local result = Player:getCurOxygen(objid)
+50041,игрок,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",скорость ходьбы,local result = Player:getWalkSpeed(objid)
+50042,игрок,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Скорость плавания (в воде),local result = Player:getSwimSpeed(objid)
+50043,игрок,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Перейти сила,local result = Player:getJumpPower(objid)
+50044,игрок,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",скорость движения,local result = Player:getRunSpeed(objid)
+50045,игрок,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Sneaking скорость,local result = Player:getSneakSpeed(objid)
+50046,игрок,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Dodging скорость,local result = Player:getDodge(objid)
+50047,игрок,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Атака ближнего боя,local result = Player:getPunchAttack(objid)
+50048,игрок,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Стрелковая атака,local result = Player:getRangeAttack(objid)
+50049,игрок,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Melee защита,local result = Player:getPunchDefense(objid)
+50050,игрок,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Стрелковая защита,local result = Player:getRangeDefense(objid)
+50051,игрок,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Количество звезд,"local result = Player:getStarNum(objid, val)"
+50052,игрок,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Размер модели,"local result = Player:getModelScale(objid, val)"
+50053,игрок,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установите максимальное HP,"local result = Player:setMaxHP(objid, val)"
+50054,игрок,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор HP,"local result = Player:setHP(objid, val)"
+50055,игрок,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Установка восстановления HP,local result = Player:setHpRecover(objid)
+50056,игрок,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Установить сытости тока,local result = Player:setCurFood(objid)
+50057,игрок,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установите кислород,"local result = Player:setOxygen(objid, val)"
+50058,игрок,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить скорость ходьбы,"local result = Player:setWalkSpeed(objid, val)"
+50059,игрок,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установка скорость плавания (в воде),"local result = Player:setSwimSpeed(objid, val)"
+50060,игрок,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить сила прыжка,"local result = Player:setJumpPower(objid, val)"
+50061,игрок,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить скорость бега,"local result = Player:setRunSpeed(objid, val)"
+50062,игрок,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Заданная скорость красться,"local result = Player:setSneakSpeed(objid, val)"
+50063,игрок,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить маневрирование скорости,"local result = Player:setDodge(objid, val)"
+50064,игрок,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить атаки в ближнем бою,"local result = Player:setPunchAttack(objid, val)"
+50065,игрок,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор дальней атаки,"local result = Player:setRangeAttack(objid, val)"
+50066,игрок,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор рукопашная защита,"local result = Player:setPunchDefense(objid, val)"
+50067,игрок,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить колебалась защита,"local result = Player:setRangeDefense(objid, val)"
+50068,игрок,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установите количество звезд,"local result = Player:setStarNum(objid, val)"
+50069,игрок,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить размер модели,"local result = Player:setModelScale(objid, val)"
+50070,игрок,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Установить местонахождение актера,"local result = Player:setPosition(objid, x, y, z)"
+50071,игрок,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,"Получить позицию перекрестие игрока,",local result = Player:getAimPos(objid)
+60001,Существо,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,Является ли это для взрослых?,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,Существо,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,"Срабатывает, если кислород необходим","local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,Существо,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed","Получить идентификатор игрока, который приручил существо","local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,Существо,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,"Срабатывает, если это вызывает панику","local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,Существо,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,"Устанавливается, если AI вступает в силу","local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,Существо,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",Получить идентификатор ресурса монстра,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,Существо,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",Получить идентификатор ресурса монстра,local result = Creature:getActorName(objid)
+60008,Существо,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,Увеличение ModAttrib монстра,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,Существо,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",Увеличение ModAttrib монстра,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,Существо,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,Установите команду существ,"local result = Creature:setTeam(objid, teamid)"
+60011,Существо,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Установите команду существ,local result = Creature:getTeam(objid)
+60012,Существо,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Получить максимальную сытость,local result = Creature:getMaxFood(objid)
+60013,Существо,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Получить сытость,local result = Creature:getFood(objid)
+60014,Существо,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор сытости,"local result = Creature:setFood(objid, val)"
+60015,Существо,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP восстановить,local result = Creature:getHpRecover(objid)
+60016,Существо,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Максимальный объем кислорода,local result = Creature:getMaxOxygen(objid)
+60017,Существо,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",скорость ходьбы,local result = Creature:getWalkSpeed(objid)
+60018,Существо,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Скорость плавания (в воде),local result = Creature:getSwimSpeed(objid)
+60019,Существо,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Перейти сила,local result = Creature:getJumpPower(objid)
+60020,Существо,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Вес,local result = Creature:getMass(objid)
+60021,Существо,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",изворачиваться,local result = Creature:getDodge(objid)
+60022,Существо,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Атака ближнего боя,local result = Creature:getPunchAttack(objid)
+60023,Существо,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Стрелковая атака,local result = Creature:getRangeAttack(objid)
+60024,Существо,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Melee защита,local result = Creature:getPunchDefense(objid)
+60025,Существо,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Стрелковая защита,local result = Creature:getRangeDefense(objid)
+60026,Существо,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор HP,"local result = Creature:setMaxHp(objid, val)"
+60027,Существо,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор HP,"local result = Creature:setHP(objid, val)"
+60028,Существо,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Установка восстановления HP,local result = Creature:setHpRecover(objid)
+60029,Существо,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор кислорода,"local result = Creature:setOxygen(objid, val)"
+60030,Существо,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить скорость ходьбы,"local result = Creature:setWalkSpeed(objid, val)"
+60031,Существо,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установка скорость плавания (в воде),"local result = Creature:setSwimSpeed(objid, val)"
+60032,Существо,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установите скачок силы,"local result = Creature:setJumpPower(objid, val)"
+60033,Существо,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор маневрировании,"local result = Creature:setDodge(objid, val)"
+60034,Существо,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить атаки в ближнем бою,"local result = Creature:setPunchAttack(objid, val)"
+60035,Существо,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор дальней атаки,"local result = Creature:setRangeAttack(objid, val)"
+60036,Существо,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Набор рукопашная защита,"local result = Creature:setPunchDefense(objid, val)"
+60037,Существо,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Установить колебалась защита,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,Набор резюме UI борьбы,"local result = UI:setGBattleUI(name, value)"
+70002,UI,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",Мир координате изменен на миникарте,"local result = UI:world2RadarPos(x, y)"
+70003,UI,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",Wolrd длина изменяется на миникарте,local result = UI:world2RadarDist(length)
+70004,UI,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,Установить режим миникарты: 1. 45 ° угла поворота. Угол обозревает 2. Полный рис,local result = UI:setMinimapRenderMode(mode)
+70005,UI,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,Форма настройки карты знаков. Установить как линии,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,Форма настройки карты знаков. Установить как круг,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,Дисплей экранный эффект,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,чат,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Отправить сообщение чата,local result = Chat:sendChat(content)
+80002,чат,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Отправить сообщение системы,local result = Chat:sendSystemMsg(content)
+90001,команда,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",Получить количество команд,local result = Team:getNumTeam()
+90002,команда,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",Получить команду Назначенный игрок,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,команда,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",Получить команду Назначенный игрок,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,команда,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",Случайные игрока,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,команда,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,Установите счет команды,"local result = Team:setTeamScore(teamid, s)"
+90006,команда,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",Получить счет команды,local result = Team:getTeamScore(teamid)
+90007,команда,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,Увеличение результата команды,"local result = Team:addTeamScore(teamid, score)"
+90008,команда,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,Установите выигрыш Лос-команды,"local result = Team:setTeamResults(teamid, result)"
+90009,команда,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",Получить текущий выигрыш Лос-команды,local result = Team:getTeamResults(teamid)
+90010,команда,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,Установите выигрыш Лос-игрок команды,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,команда,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,Установить общее число смертей от команды,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,команда,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",Получить общее число смертей от команды,local result = Team:getTeamDieTimes(teamid)
+90013,команда,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,Увеличение общего числа смертей от команды,local result = Team:addTeamDieTimes(teamid)
+90014,команда,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,Команда Изменить игрока,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,Реквизит,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",Получить имя элемента,local result = Item:getItemName(itemid)
+100002,Реквизит,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",Получить идентификатор элемента,local result = Item:getItemId(objid)
+100003,Реквизит,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",Получить количество dorps,local result = Item:getDropItemNum(objid)
+110001,Рюкзак,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",Получить диапазон ID рюкзак бара (Start ID ~ Конец ID),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,Рюкзак,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",Получить размер рюкзака бар,local result = Backpack:getBackpackBarSize(bartype)
+110003,Рюкзак,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,Установите рюкзак,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,Рюкзак,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,Удалите некоторые элементы в рюкзаке бар. Удаленные элементы слоты. Все удаляются по умолчанию,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,Рюкзак,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",Удалите некоторые элементы в рюкзаке бар. Удалены по идентификатору товара. Все удаляются по умолчанию,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,Рюкзак,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,Очистить Назначенный рюкзак бар,"local result = Backpack:clearPack(playerid, bartype)"
+110007,Рюкзак,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,"Очистить все рюкзак (включая рюкзак бар, панель быстрого доступа, оборудуют бар)",local result = Backpack:clearAllPack(playerid)
+110008,Рюкзак,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,Удалить элементы в рюкзаке. Все переданы по умолчанию,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,Рюкзак,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,Обмен вещь рюкзак,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,Рюкзак,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 11",ErrorCode.OK,"Если есть достаточно места в рюкзаке (включая рюкзак бар, панель быстрого доступа) для хранения предметов","local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,Рюкзак,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number","Вычислить общее количество оставшихся элементов, которые рюкзак (в том числе рюкзак бар, ярлык бар) может хранить","local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,Рюкзак,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array","Получить действительный список ID предметов, которые уже находятся в рюкзаке баре. Item ID","local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,Рюкзак,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",Получить предметы уже в рюкзаке баре. Item ID,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,Рюкзак,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,"Обнаружить, если есть какой-либо Нужный элемент в рюкзаке","local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,Рюкзак,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",Получить общее количество элементов в рюкзаке. Вернуться к рюкзакам с позиций,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,Рюкзак,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",Получить идентификатор элемента и номер в рюкзаке,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,Рюкзак,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",Получить имя элемента в рюкзаке,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,Рюкзак,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",Получить количество элементов в рюкзаке и макс нет. стеков,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,Рюкзак,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",Получить долговечность элемента в рюкзаке и максимальной прочности,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,Рюкзак,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",Получить зачарование предметов в рюкзаке. Вернуться к очарованию ID.,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,Рюкзак,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",Получить тип элемента инструмента в рюкзаке (<0 означает не инструмент),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,Рюкзак,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",Добавить товар в рюкзак,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,Рюкзак,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,Выбросьте элемент в рюкзаке,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,Рюкзак,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,Получить количество элементов в одном слоте рюкзака,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,Minimap,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number","Новая форма (линия, прямоугольник, круг)","local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,Minimap,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,Удалить форму,local result = MapMark:deleteShape(shapeid)
+120003,Minimap,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,Установите форму и цвет,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,Minimap,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,Установить форму показать или скрыть,"local result = MapMark:showShape(shapeid, showflag)"
+120005,Minimap,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,Форма обновления (линия). Добавить начало координат и конец координат,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,Minimap,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,Форма обновления (прямоугольник). Добавить начало координат и конец координат,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,Minimap,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,Обновление формы (круг). Добавить координаты центра и радиус,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,Точка возрождения,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",Получить расположение Спавнпоинт,local result = Spawnport:getSpawnPoint()
+130002,Точка возрождения,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",Получить точку спавна в регионе. Добавить позицию случайного блока в регионе,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

@@ -1,0 +1,325 @@
+接口ID,印尼语,印尼语,印尼语,印尼语,印尼语,印尼语,印尼语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,Game ,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,Akhiri Permainan,local result = Game:doGameEnd()
+10002,Game ,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,Atur skrip properti utk penggunaan khusus,"local result = Game:setScriptVar(index, val)"
+10003,Game ,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",Menerima skrip properti utk penggunaan khusus,local result = Game:getScriptVar(index)
+10004,Game ,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,Upload properti skrip,local result = Game:sendScriptVars2Client()
+10005,Game ,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",Efek global,local result = Game:addRenderGlobalEffect(path)
+10006,Game ,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,Hapus efek global,local result = Game:removeRenderGlobalEffect(effectid)
+10007,Game ,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,Atur posisi efek global,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,Game ,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,Atur ukuran efek global,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,Game ,msgBox,Game:msgBox(msg),,,Inbox,local result = Game:msgBox(msg)
+20001,Peta,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",Apakah disiang hari?,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,Peta,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",Apakah termasuk customize game?,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,Peta,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",Apakah dimode kreasi?,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,Peta,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",Mode kreasi multiplayer atau mode customized edit?,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,Peta,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",Hardcore,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,Peta,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",Mode petualang-Free mode,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,Peta,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",Mode offline atau mode petualang-Free mode,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,Peta,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",Mode petualangan berubah menjadi mode kreasi,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,Peta,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",Customized edit mode,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,Peta,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",Customized operate mode,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,Peta,getHours,World:getHours(),none,"ErrorCode.OK, result:number",Waktu sekarang(h),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,Peta,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",Dapat status view editing,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,Peta,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,Atur status view editing,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,Peta,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",Dapat mengatur pengaturan kamera,local result = World:getCustomCameraConfig()
+20015,Peta,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number",Dapat block (chunk),"local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,Peta,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",Dapat actor di area yg telah ditentukan,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,Peta,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",Dapat mengontrol situasi semua pemain di mode petualang,local result = World:getPlayerTotal(alive)
+20018,Peta,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",Dapat mengontrol situasi semua pemain di mode petualang,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,Peta,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",Random Player,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,Peta,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,Hapus actor,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,Peta,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array","Menghasilkan makhluk (termasuk monster, NPC, hewan dll)","local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,Peta,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,Hapus makhluk,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,Peta,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",Menghasilkan item di lokasi yg ditentukan,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,Peta,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,Hapus item (berdasarkan wilayah),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,Peta,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,Hapus item (berdasarkan ID),"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,Peta,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,Menghasilkan projektil,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,Block ,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Apakah blok berbentuk benda?,"local result = Block:isSolidBlock(x, y, z)"
+30002,Block ,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Apakah blok berbentuk cairan?,"local result = Block:isLiquidBlock(x, y, z)"
+30003,Block ,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Apakah blok berbentuk udara?,"local result = Block:isAirBlock(x, y, z)"
+30004,Block ,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",Dapat blok sesuai dengan ID,"local result = Block:getBlockID(x, y, z)"
+30005,Block ,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Atur blockalldata update dan beri pengumuman,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,Block ,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,Hancurkan blok,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,Block ,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",Letakkan blok,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,Block ,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Atur blockalldata and umumkan ke blok sekitarnya,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,Block ,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Atur blockalldata and update lokasi blok saat ini,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,Block ,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,Atur properti dan status blok,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,Block ,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",Dapat status on-off blok,local result = Block:getBlockSwitchStatus(pos)
+30012,Block ,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,Atur status on-off pada blok,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,Aktor Game,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,Tes apakah dia seorang pemain,local result = Actor:isPlayer(objid)
+40002,Aktor Game,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,Tes apakah dia monster,local result = Actor:isMob(objid)
+40003,Aktor Game,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",Dapat tipe aktor : makhluk/pemain dll..,local result = Actor:getObjType(objid)
+40004,Aktor Game,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,Apakah di udara?,local result = Actor:isInAir(objid)
+40005,Aktor Game,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",Dapat lokasi aktor,local result = Actor:getPosition(objid)
+40006,Aktor Game,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Atur lokasi aktor,"local result = Actor:setPosition(objid, x, y, z)"
+40007,Aktor Game,jump,Actor:jump(objid),objid:number,ErrorCode.OK,Lompat,local result = Actor:jump(objid)
+40008,Aktor Game,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,Serang diri sendiri,local result = Actor:killSelf(objid)
+40009,Aktor Game,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",Dapat arah pandang utama,local result = Actor:getCurPlaceDir(objid)
+40010,Aktor Game,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,Bergerak ke target aktor,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,Aktor Game,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,Bergerak ke lokasi target aktor,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,Aktor Game,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,Dapat buff,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,Aktor Game,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",Apakah ada buff?,"local result = Actor:hasBuff(objid, buffid)"
+40014,Aktor Game,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,Hapus buff?,"local result = Actor:removeBuff(objid, buffid)"
+40015,Aktor Game,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,Hapus semua buff?,local result = Actor:clearAllBuff(objid)
+40016,Aktor Game,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,Hapus semua buff negative?,local result = Actor:clearAllBadBuff(objid)
+40017,Aktor Game,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",Dapat list buff,local result = Actor:getBuffList(objid)
+40018,Aktor Game,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",Dapatkan sisa itck dari buff yang terkait,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,Aktor Game,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,Meningkatkan nyawa saat ini,"local result = Actor:addHP(objid, hp)"
+40020,Aktor Game,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",Dapat nyawa,local result = Actor:getHP(objid)
+40021,Aktor Game,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Dapat nyawa max,local result = Actor:getMaxHP(objid)
+40022,Aktor Game,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,Meningkatkan volume oksigen,"local result = Actor:addOxygen(objid, oxygen)"
+40023,Aktor Game,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",Dapat volume oksigen,local result = Actor:getOxygen(objid)
+40024,Aktor Game,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,Meningkatkan nilai pesona pada peralatan yang terkait,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,Aktor Game,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,Hapus nilai pesona pada peralatan yang terkait,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,Aktor Game,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",Cari blok terdekat,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,Aktor Game,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,Atur sudut pandang vertikal pada aktor,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,Aktor Game,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",Dapat sudut pandang vertikal aktor,local result = Actor:getFaceYaw(objid)
+40029,Aktor Game,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Ubah sudut pandang vertikal pada aktor,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,Aktor Game,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,Atur sudut tampilan pada aktor,"local result = Actor:setFacePitch(objid, pitch)"
+40031,Aktor Game,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",Dapat sudut tampilan aktor,local result = Actor:getFacePitch(objid)
+40032,Aktor Game,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Ubah sudut tampilan pada aktor,"local result = Actor:turnFacePitch(objid, offset)"
+40033,Aktor Game,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Pakai efek,"local result = Actor:playBodyEffect(objid, type)"
+40034,Aktor Game,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Hentikan efek,"local result = Actor:stopBodyEffect(objid, type)"
+40035,Aktor Game,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,Pakai file efek,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,Aktor Game,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,Hentikan file efek,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,Aktor Game,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,Suara,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,Aktor Game,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,Suara(specific type:GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,Aktor Game,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,Hapus ID makhluk yang bersifat actorid,"local result = Actor:clearActorWithId(actorid, bkill)"
+40040,Aktor Game,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,Atur tipe cedera,"local result = Actor:setAttackType(objid, attacktype)"
+40041,Aktor Game,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,Atur tipe kekebalan,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,Aktor Game,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,Naik atau turun dari kendaraan,"local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,Aktor Game,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Atur perilaku, peralatan dan keadaan makhluk","local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,Aktor Game,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,Temukan cara untuk menargetkan lokasi,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,Aktor Game,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,Dapat berat Pferd,local result = Actor:getRidingActorObjId(objid)
+50001,Pemain,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",nil,local result = Player:getAttr(attrtype)
+50002,Pemain,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,nil,"local result = Player:setAttr(attrtype, val)"
+50003,Pemain,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",Dapat tuan rumah,local result = Player:getHostUin()
+50004,Pemain,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,Test apakah ia pemain lokal,local result = Player:isMainPlayer(objid)
+50005,Pemain,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",Dapat uin pemain lokal,local result = Player:getMainPlayerUin()
+50006,Pemain,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",Lihat hasil permainan,local result = Player:getGameResults(objid)
+50007,Pemain,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,Atur hasil permainan,"local result = Player:setGameResults(objid, result)"
+50008,Pemain,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",Lihat jumlah skor permainan,local result = Player:getGameScore(objid)
+50009,Pemain,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",Atur jumlah skor permainan,"local result = Player:setGameScore(objid, score)"
+50010,Pemain,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",Lihat ranking pemain,local result = Player:getGameRanking(objid)
+50011,Pemain,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,Atur ranking pemain,"local result = Player:setGameRanking(objid, rank)"
+50012,Pemain,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,Tambahkan item utk pemain,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,Pemain,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,Transfer ke titik bangkit,local result = Player:teleportHome(objid)
+50014,Pemain,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",Lihat ID item pemain,local result = Player:getCurToolID(objid)
+50015,Pemain,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",Lihat nama pemain,local result = Player:getNickname(objid)
+50016,Pemain,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,Pindahkan item ke tas,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,Pemain,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",Lihat jumlah angka kematian,local result = Player:getDieTimes(objid)
+50018,Pemain,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",Lihat jumlah nyawa yang tersisa,local result = Player:getLeftLifeNum(objid)
+50019,Pemain,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,Atur team makhluk,"local result = Player:setTeam(objid, team)"
+50020,Pemain,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Dapat team makhluk,local result = Player:getTeam(objid)
+50021,Pemain,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,Cek tingkat kelaparan saat ini,local result = Player:getFoodLevel(objid)
+50022,Pemain,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,Atur tingkat kelaparan,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,Pemain,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",Lihat shortcut bar saat ini,local result = Player:getCurShotcut(objid)
+50024,Pemain,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,Atur pemakaian item oleh pemain,"local result = Player:onCurToolUsed(objid, num)"
+50025,Pemain,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,Set CD,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,Pemain,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Atur pemain bangkit pada titik yang ditentukan,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,Pemain,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Ganti titik bangkit,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,Pemain,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,Pemain memainkan kartun,"local result = Player:playAct(objid, actid)"
+50029,Pemain,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,Tampilkan teks di pop up window,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,Pemain,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,Atur pemain menggunakan item ini,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,Pemain,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,Putar lensa penglihatan,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,Pemain,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,Ubah mode angle penglihatan,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,Pemain,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Atur perilaku, peralatan dan keadaan makhluk","local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,Pemain,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,"Tombol on off perilaku, peralatan dan keadaan makhluk","local result = Player:checkActionAttrState(objid, actionattr)"
+50035,Pemain,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Lihat max nyawa,local result = Player:getMaxHP(objid)
+50036,Pemain,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Lihat nyawa saat ini,local result = Player:getCurHP(objid)
+50037,Pemain,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Pemulihan nyawa,local result = Player:getHpRecover(objid)
+50038,Pemain,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tingkat kelaparan saat ini,local result = Player:getCurFood(objid)
+50039,Pemain,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,Pemain,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Volume oksigen saat ini,local result = Player:getCurOxygen(objid)
+50041,Pemain,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan berjalan,local result = Player:getWalkSpeed(objid)
+50042,Pemain,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan berenang,local result = Player:getSwimSpeed(objid)
+50043,Pemain,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kekuatan lompat,local result = Player:getJumpPower(objid)
+50044,Pemain,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan berlari,local result = Player:getRunSpeed(objid)
+50045,Pemain,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan menyelinap,local result = Player:getSneakSpeed(objid)
+50046,Pemain,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan mengelak,local result = Player:getDodge(objid)
+50047,Pemain,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Serangan jarak dekat,local result = Player:getPunchAttack(objid)
+50048,Pemain,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Serangan jarak jauh,local result = Player:getRangeAttack(objid)
+50049,Pemain,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Perlindungan serangan jarak dekat,local result = Player:getPunchDefense(objid)
+50050,Pemain,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Perlindungan serangan jarak jauh,local result = Player:getRangeDefense(objid)
+50051,Pemain,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Jumlah bintang,"local result = Player:getStarNum(objid, val)"
+50052,Pemain,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Ukuran model,"local result = Player:getModelScale(objid, val)"
+50053,Pemain,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur jumlah max pada nyawa,"local result = Player:setMaxHP(objid, val)"
+50054,Pemain,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur nyawa,"local result = Player:setHP(objid, val)"
+50055,Pemain,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Atur pemulihan pada nyawa,local result = Player:setHpRecover(objid)
+50056,Pemain,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Atur tingkat kelaparan,local result = Player:setCurFood(objid)
+50057,Pemain,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur oksigen,"local result = Player:setOxygen(objid, val)"
+50058,Pemain,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan jalan,"local result = Player:setWalkSpeed(objid, val)"
+50059,Pemain,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan berenang,"local result = Player:setSwimSpeed(objid, val)"
+50060,Pemain,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kekuatan lompat,"local result = Player:setJumpPower(objid, val)"
+50061,Pemain,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan berlari,"local result = Player:setRunSpeed(objid, val)"
+50062,Pemain,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan menyelinap,"local result = Player:setSneakSpeed(objid, val)"
+50063,Pemain,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kekuatan mengelak,"local result = Player:setDodge(objid, val)"
+50064,Pemain,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur serangan jarak dekat,"local result = Player:setPunchAttack(objid, val)"
+50065,Pemain,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur serangan jarak jauh,"local result = Player:setRangeAttack(objid, val)"
+50066,Pemain,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur perlindungan serangan jarak dekat,"local result = Player:setPunchDefense(objid, val)"
+50067,Pemain,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur perlindungan serangan jarak jauh,"local result = Player:setRangeDefense(objid, val)"
+50068,Pemain,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur jumlah bintang,"local result = Player:setStarNum(objid, val)"
+50069,Pemain,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur ukuran model,"local result = Player:setModelScale(objid, val)"
+50070,Pemain,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Atur lokasi aktor,"local result = Player:setPosition(objid, x, y, z)"
+50071,Pemain,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,Lihat posisi pemain dgn tepat,local result = Player:getAimPos(objid)
+60001,Makhluk,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,Apakah seorang dewasa?,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,Makhluk,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,Atur oksigen jika diperlukan,"local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,Makhluk,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed",Lihat ID pemain yang telah menjinakkan makhluk atau hewan,"local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,Makhluk,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,Atur tingkat kepanikan,"local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,Makhluk,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,Atur efek AI,"local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,Makhluk,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",Lihat ID dan meterial monster,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,Makhluk,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",Lihat ID dan meterial monster,local result = Creature:getActorName(objid)
+60008,Makhluk,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,Tingkatkan ModAttrib monster,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,Makhluk,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",Tingkatkan ModAttrib monster,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,Makhluk,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,Atur team makhluk,"local result = Creature:setTeam(objid, teamid)"
+60011,Makhluk,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Atur team makhluk,local result = Creature:getTeam(objid)
+60012,Makhluk,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tingkat max kelaparan,local result = Creature:getMaxFood(objid)
+60013,Makhluk,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Tingkat kelaparan,local result = Creature:getFood(objid)
+60014,Makhluk,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur tingkat kelaparan,"local result = Creature:setFood(objid, val)"
+60015,Makhluk,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Pemulihan nyawa,local result = Creature:getHpRecover(objid)
+60016,Makhluk,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Volume max oksigen,local result = Creature:getMaxOxygen(objid)
+60017,Makhluk,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan berjalan,local result = Creature:getWalkSpeed(objid)
+60018,Makhluk,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kecepatan berenang,local result = Creature:getSwimSpeed(objid)
+60019,Makhluk,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Kekuatan lompat,local result = Creature:getJumpPower(objid)
+60020,Makhluk,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Berat,local result = Creature:getMass(objid)
+60021,Makhluk,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Mengelak,local result = Creature:getDodge(objid)
+60022,Makhluk,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Serangan jarak dekat,local result = Creature:getPunchAttack(objid)
+60023,Makhluk,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Srangan jarak jauh,local result = Creature:getRangeAttack(objid)
+60024,Makhluk,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Perlindungan serangan jarak dekat,local result = Creature:getPunchDefense(objid)
+60025,Makhluk,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Perlindungan serangan jarak jauh,local result = Creature:getRangeDefense(objid)
+60026,Makhluk,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur nyawa,"local result = Creature:setMaxHp(objid, val)"
+60027,Makhluk,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur nyawa,"local result = Creature:setHP(objid, val)"
+60028,Makhluk,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Atur pemulihan nyawa,local result = Creature:setHpRecover(objid)
+60029,Makhluk,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur oksigen,"local result = Creature:setOxygen(objid, val)"
+60030,Makhluk,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan berjalan,"local result = Creature:setWalkSpeed(objid, val)"
+60031,Makhluk,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan berenang,"local result = Creature:setSwimSpeed(objid, val)"
+60032,Makhluk,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kekuatan lompat,"local result = Creature:setJumpPower(objid, val)"
+60033,Makhluk,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur kecepatan mengelak,"local result = Creature:setDodge(objid, val)"
+60034,Makhluk,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur serangan jarak dekat,"local result = Creature:setPunchAttack(objid, val)"
+60035,Makhluk,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur serangan jarak jauh,"local result = Creature:setRangeAttack(objid, val)"
+60036,Makhluk,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur perlindungan serangan jarak dekat,"local result = Creature:setPunchDefense(objid, val)"
+60037,Makhluk,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Atur perlindungan serangan jarak jauh,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,Atur pertarungan UI,"local result = UI:setGBattleUI(name, value)"
+70002,UI,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",Koordinat dunia atau peta berubah menjadi mini map,"local result = UI:world2RadarPos(x, y)"
+70003,UI,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",Ukuran dunia atau peta berubah menjadi mini map,local result = UI:world2RadarDist(length)
+70004,UI,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,Atur mode mini map: 1. Sudut rotasi 45 °. 2. Sudut pandang gambar yang penuh,local result = UI:setMinimapRenderMode(mode)
+70005,UI,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,Pengaturan bentuk pada tanda peta. Tetapkan sbg garis,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,Pengaturan bentuk pada tanda peta. Tetapkan sbg lingkaran,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,Efek tampilan layar,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,Chat,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Kirim pesan chat,local result = Chat:sendChat(content)
+80002,Chat,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Kirim pesan chat,local result = Chat:sendSystemMsg(content)
+90001,Team,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",Lihat jumlah team,local result = Team:getNumTeam()
+90002,Team,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",Lihat team pemain yg ditunjuk,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,Team,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",Lihat team pemain yg ditunjuk,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,Team,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",Random Player,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,Team,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,Atur skor team,"local result = Team:setTeamScore(teamid, s)"
+90006,Team,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",Lihat skor team,local result = Team:getTeamScore(teamid)
+90007,Team,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,Tambah skor team,"local result = Team:addTeamScore(teamid, score)"
+90008,Team,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,Atur team yg menang/kalah,"local result = Team:setTeamResults(teamid, result)"
+90009,Team,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",Lihat team yg menang/kalah saat ini,local result = Team:getTeamResults(teamid)
+90010,Team,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,Atur team yg menang/kalah,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,Team,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,Atur tingkat kematian dari team,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,Team,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",Lihat tingkat kematian team,local result = Team:getTeamDieTimes(teamid)
+90013,Team,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,Tambah tingkat kematian team,local result = Team:addTeamDieTimes(teamid)
+90014,Team,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,Ganti team,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,Alat,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",Ambil nama item,local result = Item:getItemName(itemid)
+100002,Alat,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",Ambil ID item,local result = Item:getItemId(objid)
+100003,Alat,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",Ambil jumlah drops,local result = Item:getDropItemNum(objid)
+110001,Tas,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",Lihat ID dari berbagai tas (ID awal-ID akhir),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,Tas,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",Lihat ukuran tas,local result = Backpack:getBackpackBarSize(bartype)
+110003,Tas,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,Atur settingan tas,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,Tas,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,Hapus beberapa item di tas. Beberapa item akan dihapus secara otomatis.,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,Tas,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",Hapus beberapa item di tas. Beberapa item akan dihapus secara otomatis.,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,Tas,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,Kosongkan tas,"local result = Backpack:clearPack(playerid, bartype)"
+110007,Tas,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,"Kosongkan isi tas (termasuk bar tas, shortcut bar dll)",local result = Backpack:clearAllPack(playerid)
+110008,Tas,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,Hapus item didalam tas. Semua akan ditransfer secara otomatis.,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,Tas,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,Tukar tas item,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,Tas,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 15",ErrorCode.OK,Apakah terdapat cukup ruang di tas untuk menyimpan item?,"local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,Tas,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number","Hitung jumlah total item yang tersisa yang dapat disimpandi tas (termasuk bar backpack, shortcut bar)","local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,Tas,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array",Dapatkan daftar ID barang yang valid dan yang sudah ada di dalam tas. ID barang.,"local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,Tas,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",Dapatkan barang yang sudah ada di bar tas. ID barang.,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,Tas,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,Pendeteksi jika ada barang yang ditunjuk di tas.,"local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,Tas,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",Dapatkan jumlah total barang di tas. Kembali ke tas dengan barang-barang tersebut.,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,Tas,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",Lihat ID item dan jumlahnya di tas,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,Tas,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",Dapat nama tas item,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,Tas,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",Dapatkan jumlah barang di tas dan jumalh maksimal tumpukan,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,Tas,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",Lihat daya tahan barang di tas dan daya tahan maksimumnya,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,Tas,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",Dapatkan nilai pesona dari item di tas. Kembali ke ID pesona.,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,Tas,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",Dapatkan tipe item di tas (<0 berarti bukan sebuah alat),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,Tas,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",Tambahkan item ke tas,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,Tas,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,Buang item dari tas,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,Tas,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,Dapatkan jumlah item di sebuah slot dalam tas,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,Minimap,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number","Bentuk baru (garis, kotak atau bulat)","local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,Minimap,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,Hapus bentuk,local result = MapMark:deleteShape(shapeid)
+120003,Minimap,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,Atur bentuk dan warna,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,Minimap,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,Atur ukuran tertampil atau tersembunyi,"local result = MapMark:showShape(shapeid, showflag)"
+120005,Minimap,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,Update bentuk (garis). Tambahkan kordinasi mulai atau awal dan kordinasi akhir,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,Minimap,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,Update bentuk (kotak). Tambahkan kordinasi mulai atau awal dan kordinasi akhir,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,Minimap,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,Update bentuk (bulat). Tambahkan kordinasi mulai atau awal dan kordinasi akhir,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,Titik Bangkit,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",Lihat lokasi dari titik bangkit,local result = Spawnport:getSpawnPoint()
+130002,Titik Bangkit,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",Lihat titik bangkit di wilayah. Tambahkan posisi dari blok wilayah secara acak.,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

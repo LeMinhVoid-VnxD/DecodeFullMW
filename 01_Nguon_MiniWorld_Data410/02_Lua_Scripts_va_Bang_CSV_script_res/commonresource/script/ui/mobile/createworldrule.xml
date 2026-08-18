@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/createworldrule.lua" />
+
+	##勾选按钮.
+    <Button name="WorldRuleCheckBtnTemplate" virtual="true" inherits="TemplateTickBtn2" abs_x="150" abs_y="24">
+        <Scripts>
+            <OnClick>WorldRuleCheckBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    <Button name="WorldRuleCheckBtnTemplate2" virtual="true" inherits="TemplateTickBtn5" abs_x="150" abs_y="24">
+        <Scripts>
+            <OnClick>WorldRuleCheckBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##tab按钮
+    <Button name="CreateWorldRuleTabBtnTemplate" virtual="true" inherits="TemplateTabBtn2">
+        <Scripts>
+            <OnClick>CreateWorldRuleTabBtnTemplate_OnClick()</OnClick>
+        </Scripts>
+    </Button>
+
+	#地形选择按钮模板(地形选择用)
+    <Button name="CJSJRule_BtnTemplate" virtual="true" >
+        <Size>
+            <AbsDimension x="114" y="35"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg"   inherits="TemplateBkg6" />
+                <Texture name="$parentCheck" inherits="TemplateBkg7" />
+                <FontString name="$parentName" fonttype="BlackFont20" abs_x="130" abs_y="20" justifyH="center" text="普通" >
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentTips" fonttype="BlackFont18" justifyH="center" text="$774" hidden="true" abs_x="250" abs_y="18">
+                    <Color r="104" g="94" b="88"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="0" y="10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Button>
+
+	##自定义存档主窗口
+    <Frame name="CreateWorldRuleFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2252" input_transparent="true">
+		<Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBgMask" file="ui/white.png" color="b2000000" rel_x="1.0" rel_y="1.0" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                ##底部背景
+                <Texture name="$parentBottomBkg" inherits="TemplateBigBkg8" abs_x="1075" abs_y="600">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                            <Offset>
+                                <AbsDimension x="56" y="12" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##背景
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="492">
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parentBottomBkg" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="1" y="20" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##蓝色背景
+                <Texture name="$parentBkgBlue" inherits="TemplateBigBkg5" abs_x="1040" abs_y="456">
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" >
+                            <Offset>
+                                <AbsDimension x="0" y="18"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentClickIntercept" rel_x="1.0" rel_y="1.0" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                </Anchors>
+            </Frame>
+            <Frame name="$parentBody" abs_x="1075" abs_y="620">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg" />
+                </Anchors>
+            </Frame>
+
+            ##标题栏
+            <Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="1070" abs_y="60">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg" >
+                        <Offset>
+                            <AbsDimension x="0" y="8" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+
+			##开发者模式，创作中心进入，显示模式切换标签
+            <Button name="$parentAdvancedSet" inherits="CreateWorldRuleTabBtnTemplate" id="1">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="5" y="30"/>
+						</Offset>
+					</Anchor>
+                </Anchors>
+            </Button>
+
+            ##高级创造模式，创作中心进入，显示模式切换标签
+            <Button name="$parentUGCAdvancedSet" inherits="CreateWorldRuleTabBtnTemplate" id="2">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentAdvancedSet">
+						<Offset>
+							<AbsDimension x="0" y="30"/>
+						</Offset>
+					</Anchor>
+                </Anchors>
+            </Button>
+
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parentTitle">
+                        <Offset>
+                            <AbsDimension x="-11" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>CreateWorldRuleFrameCloseBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            
+			##滑动窗口.
+            <SlidingFrame name="WorldRuleBox" slidingY="true" slideplane="$parentPlane" abs_x="1040" abs_y="456">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkgBlue" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="1040" abs_y="650" />
+          			##名字编辑框
+                    <Frame name="$parentMapName" abs_x="964" abs_y="62">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+                                <Offset>
+                                    <AbsDimension x="0" y="32"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentName" fonttype="BlackFont20" text="$328" abs_x="120" abs_y="20">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="14"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <Texture name="$parentNameEditBkg" inherits="TemplateBkg8" abs_x="293" abs_y="46">
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="125" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                ##分割线
+                                <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <SafeEditBox name="$parentEdit" letters="32" multiLine="false" abs_x="258" abs_y="20">
+                                <Anchors>
+                                    <Anchor point="center" relativePoint="center" relativeTo="$parentNameEditBkg" />
+                                </Anchors>
+                                <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center">
+                                    <Color r="255" g="255" b="255"/>
+                                </FontString>
+                                <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="" textcolor="ffb9b9b9"/>
+                                <Scripts>
+                                    <OnFocusLost>CreateWorldRuleFrameNameEdit_OnFocusLost();</OnFocusLost>
+                                    <OnEnterPressed platform="pc">CreateWorldRuleFrameNameEdit_OnEnterPressed();</OnEnterPressed>
+                                    <OnClick>CreateWorldRuleFrameNameEdit_OnClick();</OnClick>
+                                </Scripts>
+                            </SafeEditBox>
+                        </Frames>
+                    </Frame>
+          
+					##地图大小.
+                    <Frame name="$parentMapSize" abs_x="964" abs_y="76">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentMapName">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+						        <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$9188">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentDesc" fonttype="BlackFont" abs_x="250" abs_y="16" text="$678">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentWidthBkg" >
+                                            <Offset>
+                                                <AbsDimension x="17" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <Texture name="$parentLongBkg" inherits="TemplateBkg8" abs_x="140" abs_y="46">
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="125" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                ##乘号
+                                <FontString name="$parentXX" fonttype="BlackFont20" abs_x="14" abs_y="20" text="X" justifyH="center">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentLongBkg">
+                                            <Offset>
+                                                <AbsDimension x="21" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <Texture name="$parentWidthBkg" inherits="TemplateBkg8" abs_x="140" abs_y="46">
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentLongBkg">
+                                            <Offset>
+                                                <AbsDimension x="58" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                ##分割线
+                                <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <SafeEditBox name="$parentLongEdit" letters="10" editMethod="527" editimetype="1" abs_x="110" abs_y="20">
+                                <Anchors>
+                                    <Anchor point="center" relativeTo="$parentLongBkg" relativePoint="center" />
+                                </Anchors>
+                                <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center" justifyV="middle">
+                                    <Color r="255" g="255" b="255"/>
+                                </FontString>
+                                <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$680" textcolor="ffb9b9b9"/>
+                                <Scripts>
+                                    <OnFocusLost>WorldRuleBoxMapSizeLongEdit_OnFocusLost();</OnFocusLost>
+                                </Scripts>
+                            </SafeEditBox>
+                            <SafeEditBox name="$parentWidthEdit" letters="10"  editMethod="527" editimetype="1" abs_x="110" abs_y="20">
+                                <Anchors>
+                                    <Anchor point="center" relativeTo="$parentWidthBkg" relativePoint="center" />
+                                </Anchors>
+                                <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center" justifyV="middle">
+                                    <Color r="255" g="255" b="255"/>
+                                </FontString>
+                                <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$680" textcolor="ffb9b9b9"/>
+                                <Scripts>
+                                    <OnFocusLost>WorldRuleBoxMapSizeWidthEdit_OnFocusLost();</OnFocusLost>
+                                </Scripts>
+                            </SafeEditBox>
+                        </Frames>
+                    </Frame>
+
+					##地形
+                    <Frame name="$parentTerrain" abs_x="964" abs_y="150">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentMapSize">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$681">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="25"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentTerrainDesc" fonttype="BlackFont18" justifyH="center" text="$6576" abs_x="500" abs_y="20" hidden="true">
+                                    <Color r="55" g="54" b="49"/>
+                                    <Anchors>
+                                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="65"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                ##分割线
+                                <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##地形选择按钮
+                            ##1. 随机
+                            <Button name="$parent1" inherits="CJSJRule_BtnTemplate" abs_x="171" abs_y="35">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentName">
+                                        <Offset>
+                                            <AbsDimension x="125" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>WorldRuleBoxTerrain1_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+							##2. 平坦
+                            <Button name="$parent2" inherits="CJSJRule_BtnTemplate" abs_x="171" abs_y="35">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parent1">
+                                        <Offset>
+                                            <AbsDimension x="14" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>WorldRuleBoxTerrain2_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+							##3. 空岛
+                            <Button name="$parent3" inherits="CJSJRule_BtnTemplate" abs_x="171" abs_y="35">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parent2">
+                                        <Offset>
+                                            <AbsDimension x="14" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>WorldRuleBoxTerrain3_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+							##"自定义"
+                            <Button name="$parent4" inherits="CJSJRule_BtnTemplate" abs_x="171" abs_y="35">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parent3">
+                                        <Offset>
+                                            <AbsDimension x="14" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>WorldRuleBoxTerrain4_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##家园定制地图按钮（只有内部使用显示）
+                            <Button name="$parent5" inherits="CJSJRule_BtnTemplate" abs_x="171" abs_y="35" hidden="true">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parent2">
+                                        <Offset>
+                                            <AbsDimension x="7" y="60"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>WorldRuleBoxTerrain5_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+							##种子编辑框
+                            <Frame name="$parentSeedFrame" abs_x="834" abs_y="46" hidden="true">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                                        <Offset>
+                                            <AbsDimension x="0" y="48"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <FontString name="$parentTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$6304">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                                            </Anchors>
+                                        </FontString>
+                                        <Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="263" abs_y="46">
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="296" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <SafeEditBox name="$parentEdit" letters="28" multiLine="false" editMethod="527" abs_x="238" abs_y="20">
+                                        <Anchors>
+                                            <Anchor point="center" relativeTo="$parentEditBkg" relativePoint="center" />
+                                        </Anchors>
+                                        <FontString name="$parentFont" fonttype="BlackFont20" >
+                                            <Color r="162" g="162" b="162"/>
+                                        </FontString>
+                                        <FontString name="$parentDefault"  default="true" fonttype="BlackFont20" text="$6307" textcolor="ffb9b9b9" />
+                                    </SafeEditBox>
+                                </Frames>
+                            </Frame>
+
+                            ##参数框
+                            ##随机地形:地形码
+                            <Frame name="$parentRandomTerrainParamFrame" abs_x="834" abs_y="46">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                                        <Offset>
+                                            <AbsDimension x="0" y="48"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <FontString name="$parentSeedTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$6304">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button name="$parentSeedSwitch" inherits="mini_SwitchBtnTemplateUI4">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="left" relativeTo="$parentSeedTitle">
+                                                <Offset>
+                                                    <AbsDimension x="125" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnMouseDown>CreateWorldRuleFrameSeedSwitchBtn_OnClick();</OnMouseDown>
+                                        </Scripts>
+                                    </Button>
+                                    <Frame name="$parentSeedEditFrame" abs_x="263" abs_y="46">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="right" relativeTo="$parentSeedSwitch">
+                                                <Offset>
+                                                    <AbsDimension x="9" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Layers>
+                                            <Layer level="BACKGROUND">
+                                                <Texture name="$parentBkg" inherits="TemplateBkg8" />
+                                            </Layer>
+                                        </Layers>
+                                        <Frames>
+                                            <EditBox name="$parentEdit" letters="28" multiLine="false" editMethod="527" abs_x="238" abs_y="16">
+                                                <Anchors>
+                                                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                                                </Anchors>
+                                                <FontString name="$parentFont" fonttype="BlackFont" justifyH="center" >
+                                                    <Color r="162" g="162" b="162"/>
+                                                </FontString>
+                                                <FontString name="$parentDefault"  default="true" fonttype="BlackFont" text="$6307" textcolor="ffb9b9b9"/>
+                                            </EditBox>
+                                        </Frames>
+                                    </Frame>
+                                </Frames>
+                            </Frame>
+
+						    ##平坦地形
+                            <Frame name="$parentFlatTerrainParamFrame" abs_x="500" abs_y="100" hidden="true">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent1">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <Button name="$parentCheckbox1" inherits="WorldRuleCheckBtnTemplate2" id="1">
+                                        <Anchors>
+                                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="10" />
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </Button>
+                                    <Button name="$parentCheckbox2" inherits="WorldRuleCheckBtnTemplate2" id="2">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="left" relativeTo="$parentCheckbox1">
+                                                <Offset>
+                                                    <AbsDimension x="198" y="0" />
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </Button>
+                                    <Button name="$parentCheckbox3" inherits="WorldRuleCheckBtnTemplate2" id="3">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="left" relativeTo="$parentCheckbox2">
+                                                <Offset>
+                                                    <AbsDimension x="198" y="0" />
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </Button>
+                                    <Button name="$parentCheckbox4" inherits="WorldRuleCheckBtnTemplate2" id="4">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="left" relativeTo="$parentCheckbox3">
+                                                <Offset>
+                                                    <AbsDimension x="198" y="0" />
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+
+							##自定义地形
+                            <Frame name="$parentTerrainEditTerrainParamFrame" hidden="true">
+                                <Size>
+                                    <AbsDimension x="500" y="46" />
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                                        <Offset>
+                                            <AbsDimension x="0" y="48"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <FontString name="$parentTitle" justifyH="left" fonttype="BlackFont18" text="$9096" abs_x="150" abs_y="18">
+                                            <Color r="61" g="69" b="70"/>
+                                            <Anchors>
+                                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button name="$parentEditBtn" inherits="TemplateBtn12" abs_x="146" abs_y="50">
+                                        <Anchors>
+                                            <Anchor point="left" relativePoint="left" relativeTo="$parentTitle">
+                                                <Offset>
+                                                    <AbsDimension x="125" y="0"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Layers>
+                                            <Layer level="overlay">
+                                                <FontString name="$parentText" justifyH="center" fonttype="BlackFont20" text="$3529" abs_x="190" abs_y="20">
+                                                    <Color r="51" g="55" b="55"/>
+                                                    <Anchors>
+                                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                                    </Anchors>
+                                                </FontString>
+                                            </Layer>
+                                        </Layers>
+                                        <Scripts>
+                                            <!--<OnClick>TerrainParamFrameEditBtn_OnClick();</OnClick>-->
+                                            <OnClick>NewTerrainEditFrame_OnClick();</OnClick>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+
+					##地貌
+                    <Frame name="$parentLandforms" abs_x="964" abs_y="145">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentTerrain">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$686">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="16"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                ##分割线
+                                <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parent1" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent2" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent3" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent4" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent5" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent6" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent7" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent8" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent9" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent10" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent11" inherits="WorldRuleCheckBtnTemplate"/>
+                            <Button name="$parent12" inherits="WorldRuleCheckBtnTemplate"/>
+                        </Frames>
+                    </Frame>
+
+					##怪物
+                    <Frame name="$parentMonster" abs_x="964" abs_y="60">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentLandforms" />
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$695">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="16"/>
+                                            </Offset>
+                                        </Anchor>
+								    </Anchors>
+                                </FontString>
+                                ##分割线
+                                <Texture name="$parentButtomLine" inherits="TemplateBkg20" abs_x="964" abs_y="2">
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parent1" inherits="WorldRuleCheckBtnTemplate" id="1"/>
+                            <Button name="$parent2" inherits="WorldRuleCheckBtnTemplate" id="2"/>
+                        </Frames>
+                    </Frame>
+
+					##插件
+                    <Frame name="$parentMod" abs_x="964" abs_y="100">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentMonster" />
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentName" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$6329">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentDesc1" fonttype="BlackFont20" abs_x="320" abs_y="20" text="$4099">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parentName">
+                                            <Offset>
+                                                <AbsDimension x="310" y="10"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentDesc2" fonttype="BlackFont20" abs_x="350" abs_y="20" text="$4100">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentDesc1">
+                                            <Offset>
+                                                <AbsDimension x="275" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentChooseModBtn" inherits="TemplateBtn8" abs_x="146" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentName">
+                                        <Offset>
+                                            <AbsDimension x="125" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <FontString name="$parentName" fonttype="BlackFont24" abs_x="125" abs_y="24" justifyH="center" text="$6328" >
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>CreateWorldChooseModBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+
+					##高级物理
+                    <Frame name="$parentAdvancedPhysics" hidden="true">
+                        <Size>
+                            <AbsDimension x="990" y="110"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="top" relativePoint="bottom" relativeTo="$parentMod">
+                                <Offset>
+                                    <AbsDimension x="0" y="10"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBkg" inherits="BkgTemplate3"/>
+                                <FontString name="$parentTitle" fonttype="BlackFont26"  text="$6580">
+                                    <Color r="104" g="73" b="56"/>
+                                    <Size>
+                                        <AbsDimension x="120" y="26"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="20" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentSwitch" abs_x="111" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+                                        <Offset>
+                                            <AbsDimension x="10" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBkg" />
+                                        <Texture name="$parentPoint" >
+                                            <Size>
+                                                <AbsDimension x="57" y="39"/>
+                                            </Size>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="4" y="-3"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnMouseDown>CreateWorldruleAdvancedPhysicsSwitchBtn_OnClick();</OnMouseDown>
+                                </Scripts>
+                            </Button>
+                            <Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="false">
+                                <Anchors>
+                                    <Anchor point="left" relativeTo="$parentSwitch" relativePoint="right">
+                                        <Offset>
+                                            <AbsDimension x="10" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23" abs_y="25">
+                                            <Anchors>
+                                                <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0" />
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>AdvancedPhysicsFrameTipBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </SlidingFrame>
+            <Frame name="$parentGuideArrow" hidden="true">
+                <Size>
+                    <AbsDimension x="48" y="60"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="WorldRuleBox" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-2" y="-2"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg"  />
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnUpdate>CreateWorldRuleFrameGuideArrow_OnUpdate();</OnUpdate>
+                </Scripts>
+            </Frame>
+
+            <!-- 选择Mod-->
+            <Button name="$parentChooseModBtn" hidden="true" inherits="TemplateBtn3">
+                <Size>
+                    <AbsDimension x="169" y="55"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="right" relativeTo="$parentReset" relativePoint="right">
+                        <Offset>
+                            <AbsDimension x="-175" y="0" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentDescFont" fonttype="BlackFont24" justifyH="center" text="$3920" >
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="150" y="24"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Frame name="$parentGuide" hidden="true">
+                        <Size>
+                            <AbsDimension x="270" y="57" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="60" y="25"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentArrow" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="ltjm_mndz_jiantou" UVType="mirroev">
+                                    <Size>
+                                        <AbsDimension x="43" y="28" />
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="bottomleft" relativeTo="$parent" relativePoint="topleft">
+                                            <Offset>
+                                                <AbsDimension x="35" y="3"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentBkg" inherits="BkgTemplate66" />
+                                <FontString name="$parentName" fonttype="BlackFont18" lineInterval="5" justifyH="center" fontStyle="border" autowrap="true" text="$3971" >
+                                    <Color r="254" g="244" b="204"/>
+                                    <Size>
+                                        <AbsDimension x="250" y="25"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                </Frames>
+                <Scripts>
+                    <OnClick>CreateWorldChooseModBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##恢复默认
+            <Button name="$parentReset" inherits="TemplateBtn8" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBottomBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="-215" y="-22" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" abs_x="182" abs_y="24" justifyH="center" text="$676" >
+                            <Color r="51" g="55" b="55"/>
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>CreateWorldRuleFrameResetBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+			##开始游戏
+            <Button name="$parentCreateBtn" inherits="TemplateBtn3" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBottomBkg">
+                        <Offset>
+                            <AbsDimension x="215" y="-17"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" justifyH="center" fonttype="BlackFont24" abs_x="182" abs_y="24" text="$3068" >
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>CreateWorldRuleFrameCreateBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            
+        </Frames>
+        <Scripts>
+            <OnLoad>CreateWorldRuleFrame_OnLoad();</OnLoad>
+            <OnShow>CreateWorldRuleFrame_OnShow();</OnShow>
+            <OnHide>CreateWorldRuleFrame_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+    
+    ##UGC模式选择按钮模板
+    <Button name="CreateWorldUGCSelectBtnTemplate" virtual="true" abs_x="308" abs_y="429">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="308" abs_y="429">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>CreateWorldUGCSelectBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##UGC模式选择界面
+    <Frame name="CreateWorldRuleFrameUGCModeSelectFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2253" input_transparent="true">
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBgMask" file="ui/white.png" color="b2000000" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                ##底部背景
+                <Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="764" abs_y="518">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##底部纹路
+                <Texture name="$parentWaterMark" inherits="TemplateBigBkg7_flat" abs_x="764" abs_y="518">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-12" y="15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>CreateWorldRuleFrameUGCCloseBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+	        ##老模式
+            <Button name="$parentModeBtn1" inherits="CreateWorldUGCSelectBtnTemplate" id="0" abs_x="308" abs_y="429">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="62" y="45"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentNameBkg" file="ui/mobile/texture0/common.xml" uvname="board_title_yellow.png" abs_x="302" abs_y="46">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="3" y="243"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName" fonttype="BlackFont24" abs_x="280" abs_y="46" justifyH="center" justifyV="middle" text="$300133">
+                            <Color r="255" g="255" b="255"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="243"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDesc" fonttype="BlackFont20" abs_x="280" abs_y="20" justifyH="center" text="$300135">
+                            <Color r="101" g="116" b="118"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentName">
+                                    <Offset>
+                                        <AbsDimension x="0" y="60"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+				        <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="img_model01.png" abs_x="300" abs_y="238">
+				        	<Anchors>
+				        		<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				        			<Offset>
+				        				<AbsDimension x="0" y="4"/>
+				        			</Offset>
+				        		</Anchor>
+				        	</Anchors>
+				        </Texture>
+                    </Layer>
+                </Layers>
+            </Button>	
+	        ##新模式
+            <Button name="$parentModeBtn2" inherits="CreateWorldUGCSelectBtnTemplate" id="1" abs_x="308" abs_y="429">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="392" y="45"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentNameBkg" file="ui/mobile/texture0/common.xml" uvname="board_title_purple.png" abs_x="302" abs_y="46">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="3" y="243"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName" fonttype="BlackFont24" abs_x="280" abs_y="46" justifyH="center" justifyV="middle" text="$300134">
+                            <Color r="255" g="255" b="255"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="243"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDesc" fonttype="BlackFont20" abs_x="280" abs_y="80" justifyH="center" autowrap="true" lineInterval="2" text="$300136">
+                            <Color r="101" g="116" b="118"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentName">
+                                    <Offset>
+                                        <AbsDimension x="0" y="60"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+				        <Texture name="$parentIcon" file="ui/mobile/texture0/common.xml" uvname="img_model02.png" abs_x="300" abs_y="238">
+				        	<Anchors>
+				        		<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				        			<Offset>
+				        				<AbsDimension x="0" y="4"/>
+				        			</Offset>
+				        		</Anchor>
+				        	</Anchors>
+				        </Texture>
+                    </Layer>
+                </Layers>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

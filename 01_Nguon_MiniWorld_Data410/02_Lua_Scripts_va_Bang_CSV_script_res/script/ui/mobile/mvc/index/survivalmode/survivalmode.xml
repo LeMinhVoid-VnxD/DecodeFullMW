@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/index/SurvivalMode/SurvivalModeCtrl.lua" />
+    <Script file="ui/mobile/mvc/index/SurvivalMode/SurvivalModeView.lua" />
+    <Script file="ui/mobile/mvc/index/SurvivalMode/SurvivalModeModel.lua" />
+    <Button name="CJSJBtnTemplate" virtual="true" abs_x="132" abs_y="38">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentNormal" inherits="TemplateBkg6" />
+                <Texture name="$parentPushed" inherits="TemplateBkg7" />
+                <FontString name="$parentName" fonttype="BlackFont20" abs_x="132" abs_y="20" justifyH="center" text="普通">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+
+                ##:红点
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="3" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):CJSJBtnTemplate_OnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    <Button name="SurvivalModeCheckBtnTemplate" virtual="true" inherits="TemplateTickBtn5">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):CheckBox_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##冒险模式/创造模式大按钮模板
+    <Button name="SurvivalModeSelectBtnTemplate" virtual="true" abs_x="336" abs_y="456">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBkg12" />
+                <Texture name="$parentIcon" file="ui/mobile/texture2/bigtex/cjsj_beijing03.png" abs_x="326" abs_y="446">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentCheckBkg" inherits="TemplateBkg11" hidden="true"/>
+                <Texture name="$parentNameBkg" inherits="TemplateBigBkg14" abs_x="326" abs_y="92">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="-7"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentName" fonttype="BlackFont46" abs_x="340" abs_y="46" justifyH="center" text="$3005">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-40"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentDesc" fonttype="BlackFont" abs_x="340" abs_y="16" justifyH="center" text="$461">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="0" y="10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##右上角按钮
+            <!--<Button name="$parentSetBtn" abs_x="58" abs_y="44">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-6" y="5" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg9" />
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_set.png" abs_x="33" abs_y="31">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>CreateWorldModeSelectBtnTemplateSetBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>-->
+        </Frames>
+        <!--<Scripts>
+            <OnClick>CreateWorldModeSelectBtnTemplate_OnClick();</OnClick>
+        </Scripts>-->
+    </Button>
+
+    ##主界面
+    <Frame name="SurvivalMode" parent="UIClient" frameStrata="BACKGROUND" hidden="true" framelevel="2101">
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0" />
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <!--半透明遮罩-->
+                <Texture name="$parentBgMask" file="ui/white.png" color="b2000000" stretchedge="true" framelevel="1002">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##底部背景
+                <Texture name="$parentBottomBkg" inherits="TemplateBigBkg8" abs_x="1075" abs_y="600">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center" >
+                            <Offset>
+                                <AbsDimension x="0" y="12" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ##背景
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="492">
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parentBottomBkg" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="1" y="20" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                ##花纹
+                <Texture name="$parentBkgHuawen" inherits="TemplateBigBkg7_flat" abs_x="1072" abs_y="492">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parentBkg" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+
+            </Layer>
+        </Layers>
+
+        <Frames>
+            ##冒险按钮
+            <Button name="$parentBtn1" inherits="SurvivalModeSelectBtnTemplate" id="1" hidden="false" abs_x="340" abs_y="460">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="-214" y="18"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            ##冒险模式参数设置页面
+            <Frame name="$parentParamFrame1" hidden="true" abs_x="1072" abs_y="492" >
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg2"/>
+                        <Texture name="$parentRightBkg" inherits="TemplateBigBkg5" abs_x="684" abs_y="456">
+                            <Anchors>
+                                <Anchor point="topright" relativePoint="topright" topright="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-16" y="20"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##1.名字
+                        <FontString name="$parentNameTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" justifyH="left" text="$328">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentRightBkg">
+                                    <Offset>
+                                        <AbsDimension x="12" y="28"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="293" abs_y="46">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentNameTitle">
+                                    <Offset>
+                                        <AbsDimension x="125" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##分割线
+                        <Texture name="$parentLine1" inherits="TemplateBkg20" abs_x="654" abs_y="2">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentRightBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="73"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##2.房间分类
+                        <FontString name="$parentDifficultyTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$6306">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentNameTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="59"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDifficultyDesc" fonttype="BlackFont" abs_x="500" abs_y="16" justifyH="center" text="$6573">
+                            <Color r="55" g="54" b="49"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDifficultyTitle">
+                                    <Offset>
+                                        <AbsDimension x="50" y="18"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        ##分割线
+                        <Texture name="$parentLine2" inherits="TemplateBkg20" abs_x="654" abs_y="2">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentRightBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="163"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        ##3.地形
+                        <FontString name="$parentTerrainTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" justifyH="left" text="$6305">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDifficultyTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="72"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentTerrainDesc" fonttype="BlackFont18" abs_x="500" abs_y="20" justifyH="center" text="$6576">
+                            <Color r="55" g="54" b="49"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTerrainTitle">
+                                    <Offset>
+                                        <AbsDimension x="50" y="20"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        ##分割线
+                        <Texture name="$parentLine3" inherits="TemplateBkg20" abs_x="654" abs_y="2">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentRightBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="326"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##大图片
+                    <Button name="$parentBigPic" inherits="SurvivalModeSelectBtnTemplate" input_transparent="true" abs_x="336" abs_y="456">
+                        <Anchors>
+                            <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                                <Offset>
+                                    <AbsDimension x="20" y="19"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    ##名字编辑
+                    <SafeEditBox name="$parentNameEdit" letters="33" multiLine="false" editMethod="527">
+                        <Size>
+                            <AbsDimension x="285" y="20" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parentEditBkg" relativePoint="center">
+                                <Offset>
+                                    <AbsDimension x="0" y="0" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <FontString name="$parentFont" fonttype="BlackFont20" justifyH="center">
+                            <Color r="255" g="255" b="255"/>
+                        </FontString>
+                        <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="" textcolor="ff3878a9" />
+                        <Scripts>
+                            <OnFocusLost>CreateWorldFrameParamFrame1NameEdit_OnFocusLost();</OnFocusLost>
+                            <OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("SurvivalMode"):CreateWorldBtn_OnEnterPressed();</OnEnterPressed>
+                            <OnClick>CreateWorldRuleFrameNameEdit_OnClick();</OnClick>
+                        </Scripts>
+                    </SafeEditBox>
+                    <Button name="$parentBtn1" inherits="CJSJBtnTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="left" relativeTo="$parentDifficultyTitle">
+                                <Offset>
+                                    <AbsDimension x="125" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    ##房间分类按钮
+                    <Button name="$parentBtn2" inherits="CJSJBtnTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentBtn1">
+                                <Offset>
+                                    <AbsDimension x="14" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentBtn3" inherits="CJSJBtnTemplate" id="3">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+                                <Offset>
+                                    <AbsDimension x="14" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    ##地形按钮
+                    <Button name="$parentBtn4" inherits="CJSJBtnTemplate" id="4">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="left" relativeTo="$parentTerrainTitle">
+                                <Offset>
+                                    <AbsDimension x="125" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentBtn5" inherits="CJSJBtnTemplate" id="5">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentBtn4">
+                                <Offset>
+                                    <AbsDimension x="14" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    ##页面1:自定义地形按钮
+                    <Button name="$parentBtn6" inherits="CJSJBtnTemplate" id="6">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentBtn5">
+                                <Offset>
+                                    <AbsDimension x="14" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    ##地形种子
+                    <Frame name="$parentRandomTerrainParamFrame" abs_x="340" abs_y="18">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTerrainTitle">
+                                <Offset>
+                                    <AbsDimension x="0" y="62" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentSeedTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$6304">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##开关
+                            <Button name="$parentSeedSwitch" inherits="mini_SwitchBtnTemplateUI4">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentSeedTitle">
+                                        <Offset>
+                                            <AbsDimension x="125" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnMouseDown>GetInst("UIManager"):GetCtrl("SurvivalMode"):SwitchBtn_OnClick();</OnMouseDown>
+                                </Scripts>
+                            </Button>
+                            <Frame name="$parentSeedEditFrame" abs_x="263" abs_y="46">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentSeedSwitch">
+                                        <Offset>
+                                            <AbsDimension x="9" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBkg" inherits="TemplateBkg8" />
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <EditBox name="$parentEdit" letters="28" multiLine="false" editMethod="527" abs_x="250" abs_y="16">
+                                        <Anchors>
+                                            <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                                        </Anchors>
+                                        <FontString name="$parentFont" fonttype="BlackFont" >
+                                            <Color r="255" g="255" b="255"/>
+                                        </FontString>
+                                        <FontString name="$parentDefault" default="true" fonttype="BlackFont" text="$6307" textcolor="ff3878a9"/>
+                                    </EditBox>
+                                </Frames>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentAdvancedPhysicsFrame" hidden="true">
+                        <Size>
+                            <AbsDimension x="280" y="50"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentRandomTerrainParamFrame">
+                                <Offset>
+                                    <AbsDimension x="0" y="10"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" text="$6580">
+                                    <Color r="98" g="65" b="48"/>
+                                    <Size>
+                                        <AbsDimension x="100" y="22"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentSwitch" abs_x="111" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+                                        <Offset>
+                                            <AbsDimension x="-20" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBkg" />
+                                        <Texture name="$parentPoint" >
+                                            <Size>
+                                                <AbsDimension x="57" y="39"/>
+                                            </Size>
+                                            <Anchors>
+                                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="4" y="-3"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnMouseDown>AdvancedPhysicsSwitchBtn_OnClick();</OnMouseDown>
+                                </Scripts>
+                            </Button>
+                            <Button name="$parentTipBtn" abs_x="23" abs_y="25" hidden="false">
+                                <Anchors>
+                                    <Anchor point="left" relativeTo="$parentSwitch" relativePoint="right">
+                                        <Offset>
+                                            <AbsDimension x="10" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="23" abs_y="25">
+                                            <Anchors>
+                                                <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0" />
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>AdvancedPhysicsFrameTipBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                    <Frame name="$parentFlatTerrainParamFrame">
+                        <Size>
+                            <AbsDimension x="500" y="50" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTerrainTitle">
+                                <Offset>
+                                    <AbsDimension x="132" y="40" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND"></Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentCheckbox1" inherits="SurvivalModeCheckBtnTemplate" id="1">
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentCheckbox2" inherits="SurvivalModeCheckBtnTemplate" id="2">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentCheckbox1">
+                                        <Offset>
+                                            <AbsDimension x="20" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentCheckbox3" inherits="SurvivalModeCheckBtnTemplate" id="3">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentCheckbox2">
+                                        <Offset>
+                                            <AbsDimension x="20" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                            <Button name="$parentCheckbox4" inherits="SurvivalModeCheckBtnTemplate" id="4">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentCheckbox1">
+                                        <Offset>
+                                            <AbsDimension x="20" y="65" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Button>
+                        </Frames>
+                    </Frame>
+
+                    ##页面1:自定义地形参数框
+                    <Frame name="$parentTerrainEditTerrainParamFrame">
+                        <Size>
+                            <AbsDimension x="500" y="50" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTerrainTitle">
+                                <Offset>
+                                    <AbsDimension x="0" y="60" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentTitle" justifyH="left" fonttype="BlackFont18" text="$9096" shadowcolor="ff036f00" abs_x="100" abs_y="22">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentEditBtn" inherits="TemplateBtn12" abs_x="146" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentTitle">
+                                        <Offset>
+                                            <AbsDimension x="125" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <FontString name="$parentText" justifyH="center" fonttype="BlackFont20" text="$3529" abs_x="169" abs_y="20">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="-1"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>TerrainParamFrameEditBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                        </Frames>
+                    </Frame>
+
+                    ##插件
+                    <Frame name="$parentFreeModeParamFrame" abs_x="549" abs_y="136">
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentRandomTerrainParamFrame" />
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentModTitle" fonttype="BlackFont20" abs_x="120" abs_y="20" text="$6578">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentDesc1" fonttype="BlackFont" text="$4099" abs_x="175" abs_y="20">
+                                    <Color r="55" g="54" b="49"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentModTitle">
+                                            <Offset>
+                                                <AbsDimension x="4" y="42"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                                <FontString name="$parentDesc2" fonttype="BlackFont" abs_x="175" abs_y="20" text="$4100">
+                                    <Color r="55" g="54" b="49"/>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="right" relativeTo="$parentDesc1">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            ##选择插件
+                            <Button name="$parentChooseModBtn" inherits="TemplateBtn12" abs_x="146" abs_y="50">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="left" relativeTo="$parentModTitle">
+                                        <Offset>
+                                            <AbsDimension x="125" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <FontString name="$parentDescFont" fonttype="BlackFont20" abs_x="146" abs_y="20" justifyH="center" text="$6579">
+                                            <Color r="51" g="55" b="55"/>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):ChooseModBtn_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##勾选按钮
+                            <Button name="$parentCheckboxAddDefaultMod" inherits="TemplateTickBtn4" abs_x="40" abs_y="45">
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentChooseModBtn">
+                                        <Offset>
+                                            <AbsDimension x="20" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):CheckBoxAddDefaultMod_OnClick();</OnClick>
+                                </Scripts>
+                            </Button>
+                            ##下划线问题提醒
+                            <RichText name="$parentTipDesc" fonttype="BlackFont20" abs_x="280" abs_y="20" multiLine="false" autoextend="true" justifyH="left">
+                                <LinkColor r="61" g="69" b="70"/>
+                                <Anchors>
+                                    <Anchor point="left" relativePoint="right" relativeTo="$parentCheckboxAddDefaultMod">
+                                        <Offset>
+                                            <AbsDimension x="5" y="0"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("SurvivalMode"):TipDesc_MouseDownUpdate();</MouseDownUpdate>
+                                    <OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("SurvivalMode"):TipDesc_OnMouseUp();</OnMouseUp>
+                                    <OnEnter platform="pc">GetInst("UIManager"):GetCtrl("SurvivalMode"):TipDesc_OnMouseEnter()</OnEnter>
+                                    <OnLeave platform="pc">GetInst("UIManager"):GetCtrl("SurvivalMode"):TipDesc_OnMouseLeave()</OnLeave>
+                                </Scripts>
+                            </RichText>
+
+                            ##提示框
+                            <Frame name="$parentTipFrame" hidden="true" framelevel="2111" abs_x="550" abs_y="100">
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parentTipDesc" relativePoint="bottom">
+                                        <Offset>
+                                            <AbsDimension x="-20" y="5" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="BACKGROUND">
+                                        <Texture name="$parentBkg" inherits="TemplateBigBkg19"/>
+                                        <Texture name="$parentBkg2" inherits="TemplateBigBkg20" abs_x="540" abs_y="90">
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="0"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </Texture>
+                                        <FontString name="$parentName" fonttype="BlackFont22" abs_x="550" abs_y="100" autowrap="true" justifyH="center" text="$9055">
+                                            <Color r="255" g="253" b="233"/>
+                                            <Anchors>
+                                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                                                    <Offset>
+                                                        <AbsDimension x="20" y="20"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):TipFrame_OnClick();</OnClick>
+                                </Scripts>
+                            </Frame>
+                        </Frames>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            ##标题栏
+            <Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="1070" abs_y="60">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg" >
+                        <Offset>
+                            <AbsDimension x="0" y="8" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parentTitle">
+                        <Offset>
+                            <AbsDimension x="-11" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):CloseClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##开始游戏
+            <Button name="$parentStartBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBottomBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="-17"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$4900" abs_x="182" abs_y="24">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):SurvivalModeStartBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>>
+
+        <Scripts>
+            <!--<OnClick>GetInst("UIManager"):GetCtrl("SurvivalMode"):CloseClicked();</OnClick>
+            <OnLoad>SurvivalMode_OnLoad()</OnLoad>
+            <OnShow>SurvivalMode_OnShow()</OnShow>
+            <OnHide>SurvivalMode_OnHide()</OnHide>-->
+        </Scripts>
+    </Frame>
+    <!--<Frame name="RegulationsTipsFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1" input_transparent="true">
+        <Size>
+            <AbsDimension x="800" y="63" />
+        </Size>
+        <Anchors>
+            <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="149"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg"  abs_x="800" abs_y="31" />
+                <FontString name="$parentTitle" justifyH="center" fontStyle="border" fonttype="BlackFont24" text="$3637">
+                    <Color r="254" g="249" b="209" />
+                    <Size>
+                        <AbsDimension x="800" y="31" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="6" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>RegulationsTipsFrame_OnLoad();</OnLoad>
+            <OnUpdate>RegulationsTipsFrame_OnUpdate();</OnUpdate>
+            <OnShow>RegulationsTipsFrame_OnShow();</OnShow>
+            <OnHide>RegulationsTipsFrame_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+-->
+</Ui>

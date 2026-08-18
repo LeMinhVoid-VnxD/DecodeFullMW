@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/DevTools/DevToolsModel.lua"/>
+	<Script file="ui/mobile/mvc/DevTools/DevToolsView.lua"/>
+	<Script file="ui/mobile/mvc/DevTools/DevToolsCtrl.lua"/>
+	##左侧按钮
+	<Button name="DevToolsLeftTabBtnTemplate" virtual="true" abs_x="175" abs_y="60">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="20"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_h.png" abs_x="183" abs_y="60" hidden="true" DrawType="center">
+					<Center>
+						<Left offsetX="0" offsetY="0" w="51" h="60"/>
+						<Center offsetX="51" offsetY="0" w="22" h="60" />
+						<Right offsetX="73" offsetY="0" w="111" h="60" />
+					</Center>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont26" justifyH="right" text="tab按钮" abs_x="140" abs_y="27">
+					<Color r="255" g="135" b="63"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-30" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##LLDO:红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_n.png"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="tab_fullpage_left_n.png" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):leftTabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+	##触发器/脚本调试开关和打开按钮
+	<Frame name="DevToolsDETriggerDebugFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2301" rel_x="1.0"  abs_y = "56">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="-138" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			##调试开关
+			<Button name="$parentDebugBtn" abs_x="110" abs_y="36" hidden="false">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg69"/>
+						<Texture name="$parentBkgOff" inherits="TemplateBkg8" hidden="true"/>
+						<Texture name="$parentPoint" inherits="TemplateBkg9" abs_x="76" abs_y="43">
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left"/>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" fonttype="BlackFont" text="$15450" justifyH="center" justifyV="middle" abs_x="76" abs_y="43">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentPoint" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>
+
+						if GetInst("UIManager"):GetCtrl("uiScriptEdit") and GetInst("UIManager"):GetCtrl("uiScriptEdit"):IsOpen() then
+							GetInst("UIManager"):GetCtrl("uiScriptEdit"):DebugBtnClick()
+						else 
+							GetInst("UIManager"):GetCtrl("DevTools"):DebugBtnClick()
+						end
+
+					</OnClick>
+				</Scripts>
+			</Button>
+			
+			##调试信息详情按钮
+			<Button name="$parentDebugInfoBtn" inherits="TemplateBtn26" hidden="false">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentDebugBtn">
+						<Offset>
+							<AbsDimension x="-52" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						if GetInst("UIManager"):GetCtrl("uiScriptEdit") and GetInst("UIManager"):GetCtrl("uiScriptEdit"):IsOpen() then
+							GetInst("UIManager"):GetCtrl("uiScriptEdit"):DebugInfoBtnClick()
+						else 
+							GetInst("UIManager"):GetCtrl("DevTools"):DebugInfoBtnClick()
+						end
+					
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+
+	<!-- LLDO: 开发者工具 -->
+	<Frame name="DevTools" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10" inherits="TemplateMainFrame0">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="1097" abs_y="577">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="175" y="56"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="-85"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- BigCloseBtn -->
+			<Button name="$parentBigCloseBtn" abs_x="120" abs_y="60" >
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<!--1.左侧设置底板-->
+			<Frame name="$parentSettingTypeDiban" abs_x="175" abs_y="664">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="56"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			<!-- 2. 左侧按钮 -->
+			<Frame name="$parentTabTypeBox" abs_x="183" abs_y="664">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentSettingTypeDiban">
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="183" abs_y="664" hidden="true" />
+					<Button name="$parentBasicSettings" id="1" inherits="DevToolsLeftTabBtnTemplate"  />
+					<Button name="$parentDevEditTrigger" id="2" inherits="DevToolsLeftTabBtnTemplate"  />
+					<Button name="$parentScript" id="3" inherits="DevToolsLeftTabBtnTemplate"  />
+					<Button name="$parentQuickEntry" id="4" inherits="DevToolsLeftTabBtnTemplate"  />
+				</Frames>
+			</Frame>
+			##跳至开发者学院wiki按钮	
+			<Button name ="$parentCreatorWiki" abs_x ="159" abs_y ="30">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="7" y="-13" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>		
+					<RichText name="$parentRich" lineInterval="1" input_transparent="true" fonttype="BlackFont18" autoextend="true" justifyV="bottom" justifyH="center" text="XXX" abs_x="120" abs_y="25">
+						<LinkColor r="13" g="98" b="118"/>
+						<ShadowColor r="13" g="98" b="118"/>
+						<Anchors>
+							<Anchor point="center" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="86" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):OpenCreatorWiki();</OnClick>
+						</Scripts>
+					</RichText> 
+				</Frames>
+				<Layers>
+					<Layer level= "overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_wiki" abs_x="24" abs_y ="24">
+							<Anchors>
+								<Anchor point="center" relativePoint="left" relativeTo="$parentRich" >
+									<Offset>
+										<AbsDimension x="-17" y="-4" />
+									</Offset>
+								</Anchor>								
+							</Anchors>	
+						</Texture>					
+					</Layer>
+				</Layers>
+			</Button>
+			<!-- 3. 恢复默认 -->
+			<Button name="$parentReSetBtn" inherits="TemplateBtn3" hidden="false">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="255" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$754" abs_x="170" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):ReSetBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!-- 4. 推荐设置 -->
+			<Button name="$parentRuleModeBtn" inherits="TemplateBtn3" hidden="false">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentReSetBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$750" abs_x="170" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):RecommendBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##变量库
+			<Button name="$parentVarLibBtn" inherits="TemplateBtn20">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright" >
+						<Offset>
+							<AbsDimension x="-300" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$13007" abs_x="182" abs_y="24">
+							<Color r="55" g="52" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DeveloperEditTrigger"):VarLibBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 4. 转换玩法地图 -->
+			<Button name="$parentRuleConverBtn" inherits="TemplateBtn2" hidden="false">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-80" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$719" abs_x="170" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):TransformGameplayMode();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+	<!-- 背景音乐选项 -->
+	<Button name="DTOptionMusicTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="533" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" inherits="TemplateBkg33" />
+				<Texture name="$parentCheck" inherits="TemplateBkg33" />
+				<FontString name="$parentDesc" justifyH="center" fonttype="BlackFont18" text="$707">
+					<Color r="55" g="54" b="41"/>
+					<Size>
+						<AbsDimension x="240" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):OptionMusicClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 背景音乐选择(或推荐) -->
+	<Frame name="DTOptionMusicFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1001">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="B1000000" />
+				<Texture name="$parentChenDi1" inherits="TemplateBkg1">
+					<Size>
+						<AbsDimension x="653" y="484"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi2" inherits="TemplateBigBkg5" >
+					<Size>
+						<AbsDimension x="562" y="359"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi1">
+							<Offset>
+								<AbsDimension x="0" y="80"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkgWithHuaWen01" abs_x="638" abs_y="65">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChenDi1" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="-2.5" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentChenDi1" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("DevTools"):OptionMusicCloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="562" y="349"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi2">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="562" y="600"/>
+						</Size>
+					</Frame>
+					<Frame name="$parent1" id="1" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent2" id="2" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent3" id="3" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent4" id="4" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent5" id="5" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent6" id="6" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent7" id="7" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent8" id="8" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent9" id="9" inherits="DTOptionMusicTemplate"/>
+					<Frame name="$parent10" id="10" inherits="DTOptionMusicTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont18">
+				<Size>
+					<AbsDimension x="415" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi1">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnShow>GetInst("UIManager"):GetCtrl("DevTools"):OptionMusicShow();</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

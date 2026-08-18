@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/shop/shopItemBuy/ShopItemBuyModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopItemBuy/ShopItemBuyView.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopItemBuy/ShopItemBuyCtrl.lua"/>
+
+	<Button name="FuncBtnTemplate" inherits="TemplateBtn3" virtual="true">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPrice" fonttype="BlackFont24" justifyH="left" justifyV="middle" autowrap="true" abs_x="80" abs_y="24">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+							<Offset>
+								<AbsDimension x="3" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont24" lineInterval="2" justifyH="center" text="$639">
+					<Color r="55" g="54" b="51"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopItemBuy"):FuncBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+		
+	##通用道具购买面板
+	<Frame name="ShopItemBuy" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2000">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg19">
+					<Size>
+						<AbsDimension x="497" y="470"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIconBkg" inherits="TemplateBkg38" >
+					<Size>
+						<AbsDimension x="74" y="74" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="18" y="18" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="items/ruby.png" >
+					<Size>
+						<AbsDimension x="62" y="62" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNum" fonttype="BlackFont24" lineInterval="2" fontStyle="border" text="10" justifyH="right">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="-17" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont24" lineInterval="2" fontStyle="border" text="红宝石" autowrap="true">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="280" y="50"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="20" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCurrencyIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin" >
+					<Size>
+						<AbsDimension x="35" y="35"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCost" fonttype="BlackFont24" lineInterval="2" text="50元" fontStyle="border" >
+					<Color r="204" g="233" b="69"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentCurrencyIcon">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentDescBkg" inherits="TemplateBigBkg20" >
+					<Size>
+						<AbsDimension x="461" y="290"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="-74"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCostTips" fonttype="BlackFont21" justifyH="center" text="$3782" >
+					<Color r="253" g="230" b="66"/>
+					<Size>
+						<AbsDimension x="270" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="-76"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn"  inherits="TemplateCloseBtn0" id="0">
+				<Size>
+					<AbsDimension x="28" y="36" />
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentChenDi" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-5" y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopItemBuy"):FuncBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<RichText name="$parentDesc" lineInterval="15" multiLine="false" fonttype="BlackFont24" fontStyle="border">
+				<Size>
+					<AbsDimension x="360" y="110"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentDescBkg">
+						<Offset>
+							<AbsDimension x="11" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<Button name="$parentBuyGoodBtn" inherits="TemplateBtn3" id="1">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="0" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="24" abs_y="24">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentPrice" fonttype="BlackFont24" justifyH="left" justifyV="middle" autowrap="true" abs_x="80" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+									<Offset>
+										<AbsDimension x="3" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopItemBuy"):FuncBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentWatchAdBtn" inherits="TemplateBtn3" hidden="true" id="2">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="122" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="24" abs_y="24">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentPrice" fonttype="BlackFont24" justifyH="left" justifyV="middle" autowrap="true" abs_x="80" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+									<Offset>
+										<AbsDimension x="3" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopItemBuy"):FuncBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

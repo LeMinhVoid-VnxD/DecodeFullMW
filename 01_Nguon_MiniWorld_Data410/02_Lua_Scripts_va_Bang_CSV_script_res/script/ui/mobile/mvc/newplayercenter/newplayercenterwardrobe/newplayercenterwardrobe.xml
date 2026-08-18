@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterHelper/NewPlayerCenterInterface.lua"/>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterWardrobe/NewPlayerCenterWardrobeView.lua"/>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterWardrobe/NewPlayerCenterWardrobeModel.lua"/>
+	<Script file="ui/mobile/mvc/NewPlayerCenter/NewPlayerCenterWardrobe/NewPlayerCenterWardrobeCtrl.lua"/>
+
+	<!-- 个人中心衣橱展示位模板 -->
+	<Frame name="NewPlayerCenterWardrobeShowTemplate" virtual="true" abs_x="12" abs_y="12" hidden="true">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="img_label_page"/>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<!-- 个人中心衣橱部件模板 -->
+	<Button name="NewPlayerCenterWardrobePartTypeBtn" virtual="true" abs_x="92" abs_y="50" hidden="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_right_n.png" hidden="false"/>
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_right_h.png" hidden="false">
+					<Size>
+						<AbsDimension x="115" y="69" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="10" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_custom_head.png" hidden="false">
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheckedIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_custom_head.png" hidden="true">
+					<Size>
+						<AbsDimension x="40" y="40" />
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChecked">
+							<Offset>
+								<AbsDimension x="0" y="3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" hidden="true" justifyH="center" text="$140" abs_x="90" abs_y="18">
+					<Color r="60" g="73" b="76"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentCheckedIcon">
+							<Offset>
+								<AbsDimension x="0" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentMask" inherits="TemplateBigBkg18" hidden="true"/>
+				<Texture name="$parentLock" file="ui/mobile/texture0/common_icon.xml" uvname="icon_lock_white.png" hidden="true" abs_x="19" abs_y="23">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):PartTypeBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 个人中心Skin模板 -->
+	<Button name="NewPlayerCenterWardrobeSkinItemTemplate" virtual="true" abs_x="136" abs_y="178" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景图
+				<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_icon_man.png" />
+				##角色阴影
+				<Texture name="$parentActorShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="85" abs_y="25" hidden = "false">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##角色视图
+				<ModelView name="$parentActorView" abs_x="136" abs_y="178" hidden = "true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+				##名字背景
+				<Texture name="$parentNameBg" inherits="TemplateBigBkg18" abs_x="133" abs_y="28" hidden="true">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##名字
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="" abs_x="130" abs_y="20" fontStyle="normal" shadowcolor="ff363731" hidden="true">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNameBg">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCheck" file="ui/mobile/texture2/common.xml" uvname="sel_icon_custom" DrawType="ninesquare" hidden="true">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="6" 	h="6"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="6"  h="6"/>
+						<Topright 		offsetX="24" 	offsetY="0" 	w="6" 	h="6"/>
+						<Left 			offsetX="0" 	offsetY="12" 	w="6" 	h="6"/>
+						<Center 		offsetX="12" 	offsetY="12" 	w="6"  h="6"/>
+						<Right 			offsetX="24" 	offsetY="12" 	w="6" 	h="6"/>
+						<Bottomleft 	offsetX="0" 	offsetY="24" 	w="6" 	h="6"/>
+						<Bottom 		offsetX="12" 	offsetY="24" 	w="6"  h="6"/>
+						<Bottomright 	offsetX="24" 	offsetY="24" 	w="6" 	h="6"/>
+						<OffSet x="6" y="6" />
+					</NineSquare>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):SkinBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 个人中心Avatar模板 -->
+	<Button name="NewPlayerCenterWardrobeAvatarItemTemplate" virtual="true" click_threshold="5" abs_x="132" abs_y="132" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" />
+				##图标
+				<Texture name="$parentIcon" file="ui/roleicons/sdjm_bd07_no.png">
+					<Size>
+						<AbsDimension x="128" y="128"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##选中框
+				<Texture name="$parentCheck" file="ui/mobile/texture2/common.xml" uvname="sel_icon_custom" DrawType="ninesquare" hidden="true">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="6" 	h="6"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="6"  h="6"/>
+						<Topright 		offsetX="24" 	offsetY="0" 	w="6" 	h="6"/>
+						<Left 			offsetX="0" 	offsetY="12" 	w="6" 	h="6"/>
+						<Center 		offsetX="12" 	offsetY="12" 	w="6"  h="6"/>
+						<Right 			offsetX="24" 	offsetY="12" 	w="6" 	h="6"/>
+						<Bottomleft 	offsetX="0" 	offsetY="24" 	w="6" 	h="6"/>
+						<Bottom 		offsetX="12" 	offsetY="24" 	w="6"  h="6"/>
+						<Bottomright 	offsetX="24" 	offsetY="24" 	w="6" 	h="6"/>
+						<OffSet x="6" y="6" />
+					</NineSquare>
+					<Size>
+						<AbsDimension x="132" y="132"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+				<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):PartBtnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 个人中心-衣橱 -->
+	<Frame name="NewPlayerCenterWardrobe" parent="UIClient" frameStrata="MEDIUM" framelevel="2600" hidden="true" abs_x="1104" abs_y="669">
+		<Anchors>
+			<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="173" y="54" />
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+				<Offset>
+					<AbsDimension x="2" y="3" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer>
+				<Texture name="$parentBg" inherits="TemplateBigBkg2"/>
+				<Texture name="$parentHuaWen" inherits="TemplateBigBkg7_flat" rel_x="1.0" rel_y="1.0"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			##角色部分
+			<Frame name="$parentActor">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="14" y="-17"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="$parentPart">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentTex" file="ui/mobile/texture2/bigtex/minilobby.png" rel_x="1.0" rel_y="1.0" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentPanel" rel_x="1.0" rel_y="1.0">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentTex" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="208" abs_y="45" >
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="-125" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<ModelView name="$parentView" rel_x="1.0" rel_y="1.0">
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</ModelView>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentRoleRotateBtn" abs_x="510" abs_y="598">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentTex" relativePoint="center">
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):RotateBtnMouseDown()</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):RotateBtnMouseMove()</OnMouseMove>
+						</Scripts>
+					</Button>
+					<Button name="$parentSaveBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parentPanel" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="-20" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24"  justifyV="middle" justifyH="center" text="$9192">
+									<Color r="55" g="54" b="51" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):SaveBtnClicked()</OnClick>
+						</Scripts>
+					</Button>	
+					<Button name="$parentLeftArrowBtn" inherits="TemplateLeftArrowBtn1">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentPanel" relativePoint="left">
+								<Offset>
+									<AbsDimension x="44" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):LeftBtnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRightArrowBtn" inherits="TemplateRightArrowBtn1">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentPanel" relativePoint="right">
+								<Offset>
+									<AbsDimension x="-44" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewPlayerCenterWardrobe"):RightBtnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name="$parentExhibition" abs_x="0" abs_y="0">
+                        <Anchors>
+                            <Anchor point="bottom" relativeTo="$parentSaveBtn" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+						<Frames>
+							<Frame name="$parentItem1" inherits="NewPlayerCenterWardrobeShowTemplate" id="1" />
+							<Frame name="$parentItem2" inherits="NewPlayerCenterWardrobeShowTemplate" id="2" />
+							<Frame name="$parentItem3" inherits="NewPlayerCenterWardrobeShowTemplate" id="3" />
+							<Frame name="$parentItem4" inherits="NewPlayerCenterWardrobeShowTemplate" id="4" />
+							<Frame name="$parentItem5" inherits="NewPlayerCenterWardrobeShowTemplate" id="5" />
+							<Frame name="$parentItem6" inherits="NewPlayerCenterWardrobeShowTemplate" id="6" />
+							<Frame name="$parentItem7" inherits="NewPlayerCenterWardrobeShowTemplate" id="7" />
+							<Frame name="$parentItem8" inherits="NewPlayerCenterWardrobeShowTemplate" id="8" />
+							<Frame name="$parentItem9" inherits="NewPlayerCenterWardrobeShowTemplate" id="9" />
+						</Frames>
+                    </Frame>
+				</Frames>
+			</Frame>		
+			##部件部分
+			<Frame name="$parentPart" abs_x="470" rel_y="1.0">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentType">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>	
+				</Anchors>
+				<Layers>
+					<Layer>
+						##背景图
+						<Texture name="$parentBg" inherits="TemplateBigBkg23"/>
+						<Texture name="$parentTipsTexture" file="ui/mobile/texture2/bigtex/img_noreview.png" hidden="true" abs_x="244" abs_y="255">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-30"/>
+									</Offset>
+								</Anchor>
+                            </Anchors>
+                        </Texture>
+						<FontString name="$parentTipsText" fonttype="BlackFont24" hidden="true" justifyH="center" text="$110098" abs_x="360" abs_y="24">
+							<Color r="77" g="112" b="116"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentTipsTexture">
+									<Offset>
+										<AbsDimension x="0" y="49"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<ListViewFrame name="$parentSkinListView" slidingY="true" slideplane="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="470" y="576"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="23"/>
+								</Offset>
+							</Anchor>									
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="470" abs_y="576">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+					<ListViewFrame name="$parentAvatarListView" slidingY="true" slideplane="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="470" y="576"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="46"/>
+								</Offset>
+							</Anchor>									
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="470" abs_y="576">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+				</Frames>
+			</Frame>
+			##类型标签部分
+			<Frame name="$parentType" abs_x="122" rel_y="1.0">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parent" relativePoint="right">
+						<Offset>
+							<AbsDimension x="0" y="3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						##部件类型背景图
+						<Texture name="$parentBg" file="ui/mobile/texture2/bigtex/img_crease.png" abs_x="122" rel_y="1.0">
+							<Anchors>
+								<Anchor point="right" relativeTo="$parent" relativePoint="right">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##部件类型滑动列表
+					<SlidingFrame name="$parentSliding" slidingY="true" slideplane="$parentPlane" hidden="false">
+						<Size>
+							<AbsDimension x="154" y="565"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="46"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="142" y="750"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Button name="$parentBtn1" inherits="NewPlayerCenterWardrobePartTypeBtn" id="1" />
+							<Button name="$parentBtn2" inherits="NewPlayerCenterWardrobePartTypeBtn" id="2" />
+							<Button name="$parentBtn3" inherits="NewPlayerCenterWardrobePartTypeBtn" id="3" />
+							<Button name="$parentBtn4" inherits="NewPlayerCenterWardrobePartTypeBtn" id="4" />
+							<Button name="$parentBtn5" inherits="NewPlayerCenterWardrobePartTypeBtn" id="5" />
+							<Button name="$parentBtn6" inherits="NewPlayerCenterWardrobePartTypeBtn" id="6" />
+							<Button name="$parentBtn7" inherits="NewPlayerCenterWardrobePartTypeBtn" id="7" />
+							<Button name="$parentBtn8" inherits="NewPlayerCenterWardrobePartTypeBtn" id="8" />
+							<Button name="$parentBtn9" inherits="NewPlayerCenterWardrobePartTypeBtn" id="9" />
+							<Button name="$parentBtn10" inherits="NewPlayerCenterWardrobePartTypeBtn" id="10" />
+							<!-- <Button name="$parentBtn11" inherits="NewPlayerCenterWardrobePartTypeBtn" id="11" /> -->
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

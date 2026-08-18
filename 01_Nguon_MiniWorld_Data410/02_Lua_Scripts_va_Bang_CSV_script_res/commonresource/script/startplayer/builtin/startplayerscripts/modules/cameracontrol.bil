@@ -1,0 +1,338 @@
+local ContextActionService = game:GetService("ContextActionService")
+local UserInputService = game:GetService("UserInputService")
+local MouseService = game:GetService("MouseService")
+local WorkSpace = game:GetService("WorkSpace")
+local Players = game:GetService('Players')
+local RunService = game:GetService("RunService")
+local WorldService = game:GetService("WorldService")
+local ClassicCamera = require(script.ClassicCamera)
+
+local CameraControl = CommonModule.Class("CameraControl")
+
+
+function CameraControl:OnInit()
+	self:InitControlEvent()
+	self.m_winSize = WorkSpace.CurrentCamera.WindowSize
+	self.m_centerpos = { x = math.ceil(self.m_winSize.x/2), y = math.ceil(self.m_winSize.y/2) }
+	self.m_lastPos = nil
+	self.activeCameraController = ClassicCamera.New(WorkSpace.CurrentCamera);
+	self.m_rightMouseClicked = false
+	self.m_isKeypadRotation = false
+	self.m_isChangeCharacterVisible = false
+
+	self.m_keypadRotation = { x = 0; y = 0 }
+	MouseService:SetMode(0)
+
+	RunService:BindToRenderStep("CameraControlUpdate", Enum.RenderPriority.Camera.Value+1, function( dt ) 
+		self:Update(dt)
+	end)
+
+	Players.LocalPlayer.NotifyAttributeChanged:Connect(function( attname ) 
+		if attname == "CameraMode" then
+			self:updateCameraMode()
+		end
+	end)
+	self:updateCameraMode()
+	self.m_enable = true
+end
+
+function CameraControl:updateCameraMode()
+	local localplayer = Players.LocalPlayer
+	if localplayer.CameraMode == Enum.CameraModel.LockFirstPerson then
+		MouseService:SetMode(1)
+		if localplayer.Character.Visible then
+			self.m_isChangeCharacterVisible = true
+			localplayer.Character.Visible = false
+		end
+	else
+		if self.m_isChangeCharacterVisible then
+			localplayer.Character.Visible = true
+		end
+	end
+end
+
+function CameraControl:handleWinSizeChange()
+	self.m_winSize = WorkSpace.CurrentCamera.WindowSize
+	self.m_centerpos = { x = math.ceil(self.m_winSize.x/2), y = math.ceil(self.m_winSize.y/2) }
+	return false
+end
+
+function CameraControl:handleMouseRightClickBegan( inputObj )
+	self.m_rightMouseClicked = true
+	self.m_lastPos = nil
+	return false
+end
+
+function CameraControl:handleMouseRightClickEnd( inputObj )
+	self.m_rightMouseClicked = false
+	self.m_lastPos = nil
+	return false
+end
+
+function CameraControl:isScriptModel()
+	return WorkSpace.CurrentCamera.CameraType == Enum.CameraType.Scriptable
+end
+
+local function  handleSightModeMove( self, inputObj )
+	-- 光标模式 会不断设置鼠标位置到屏幕中心，所以这里只要处理偏移的move,然后根据偏移offset计算摄像机旋转角度
+	local dx, dy = 0, 0
+	if UserInputService:IsRemoteSession() then
+		local curpos = { x = inputObj.Position.x, y = inputObj.Position.y}
+		if self.m_lastPos == nil then 
+			self.m_lastPos = curpos
+			return
+		end
+		dx = inputObj.Position.x - self.m_lastPos.x
+		dy = inputObj.Position.y - self.m_lastPos.y
+		self.m_lastPos = curpos
+	else
+		dx = inputObj.Position.x - self.m_centerpos.x
+		dy = inputObj.Position.y - self.m_centerpos.y
+	end
+
+	--print("handleSightModeMove", dx, dy, inputObj.Position.x, inputObj.Position.y, self.m_centerpos.x, self.m_centerpos.y)
+
+	self.activeCameraController:RotationByMouseMove(dx, dy)
+
+	return true
+end
+
+
+local function getUIPos( inputObj )
+	local worldpos = inputObj.Position
+	local uiscale = WorldService:GetUIScale()
+
+	return { x = worldpos.x*uiscale.x; y = worldpos.y *uiscale.y }
+end
+
+
+local function handleNormalModeMove(self, inputObj)
+	if self:isScriptModel() or not self.m_rightMouseClicked then return false end
+
+	local curpos = getUIPos(inputObj)
+	if self.m_lastPos ~= nil then 
+		self.activeCameraController:RotationByMouseMove( curpos.x - self.m_lastPos.x, curpos.y - self.m_lastPos.y)
+	end
+	self.m_lastPos = curpos
+
+	return true
+end
+
+local function isValidTouchPos( inputObj )
+	local uipos = getUIPos(inputObj)
+	local viewSize = WorldService:GetUISize()
+
+	if uipos.x < viewSize.x/4 then
+		return false
+	end
+
+	return true
+end
+
+function CameraControl:handleTouchBegan( inputObj )
+	--如果不是 Thumbstick 模式则不处理触摸控制摄像机朝向逻辑
+	if Players.LocalPlayer.TouchMovementMode ~= Enum.DevTouchMovementMode.Thumbstick then
+		return false
+	end
+
+	local curpos = { x = inputObj.Position.x, y = inputObj.Position.y}
+	if not isValidTouchPos(inputObj) then
+		return false
+	end
+	self.m_touchID = inputObj.TouchId 
+	self.m_lastPos = curpos
+	return true
+end
+
+function CameraControl:handleTouchEnd(inputObj)
+	if self.m_touchID == inputObj.TouchId then
+		self.m_lastPos = nil
+		self.m_touchID = nil
+	end
+	return true
+end
+
+function CameraControl:handleTouchMove(inputObj)
+	if self.m_touchID ~= inputObj.TouchId then
+		return false
+	end
+	
+	local curpos = { x = inputObj.Position.x, y = inputObj.Position.y}
+	if not isValidTouchPos(inputObj) then
+		return false
+	end
+	
+	local dx = curpos.x - self.m_lastPos.x
+	local dy = curpos.y - self.m_lastPos.y
+		 
+	if self.m_lastPos ~= nil then 
+		self.activeCameraController:RotationByMouseMove(dx, dy)
+	end
+	self.m_lastPos = curpos
+
+	return true
+end
+
+function CameraControl:handleMouseMove( inputObj )
+	if MouseService:IsSight()  then
+		return handleSightModeMove(self, inputObj)
+	else
+		return handleNormalModeMove(self, inputObj)
+	end	
+
+	return true
+end
+
+function CameraControl:handleMouseWheel( x, y, wheel )
+	self.activeCameraController:ChangeEyeDistanceByWheel(wheel)
+	return true
+end
+
+function CameraControl:handleMouseEnterWindow(inputObj)
+	return false
+end
+
+function CameraControl:handleMouseLeaveWindow(  inputObj )
+	MouseService:SetMode(0)
+	return true
+end
+
+function CameraControl:handleLoseFocus( )
+	MouseService:SetMode(0)
+	self:resetKeypadRotation()
+	return true
+end
+
+function CameraControl:handleMoveLeft(actionName, inputState, inputObj)
+	if inputState == Enum.UserInputState.InputBegin.Value then
+		self.m_isKeypadRotation = true
+		self.m_keypadRotation = { x = -1, y = 0 }
+	elseif inputState == Enum.UserInputState.InputEnd.Value then
+		self:resetKeypadRotation()
+	end
+	return true
+end
+
+function CameraControl:handleMoveRight(actionName, inputState, inputObj)
+	if inputState == Enum.UserInputState.InputBegin.Value then
+		self.m_isKeypadRotation = true
+		self.m_keypadRotation = { x = 1, y = 0 }
+	elseif inputState == Enum.UserInputState.InputEnd.Value then
+		self:resetKeypadRotation()
+	end
+
+	return true
+end
+
+function CameraControl:handleSwitchMouseMode( actionName, inputState, inputObj )
+	if inputState == Enum.UserInputState.InputBegin.Value then
+		local isSight = not MouseService:IsSight()
+		MouseService:SetMode(isSight and 1 or 0)
+		if isSight then
+			self.m_winSize = WorkSpace.CurrentCamera.WindowSize
+			self.m_centerpos = { x = math.ceil(self.m_winSize.x/2), y = math.ceil(self.m_winSize.y/2) }
+		end
+
+		return true
+	end
+
+	return false;
+end
+
+function CameraControl:initKeyboarEvent()
+	ContextActionService:BindAction("CarmeraInput_handleArrowLeft", function(...) return self:handleMoveLeft(...) end, Enum.ContextActionType.KeyBoard.Value, Enum.KeyCode.Left.Value)
+	ContextActionService:BindAction("CarmeraInput_handleArrowRight", function(...)return  self:handleMoveRight(...) end, Enum.ContextActionType.KeyBoard.Value, Enum.KeyCode.Right.Value)
+	ContextActionService:BindAction( "cameraLockDownMousePoint", function(...)return  self:handleSwitchMouseMode(...) end, Enum.ContextActionType.KeyBoard.Value, Enum.KeyCode.Backquote.Value )
+end
+
+function CameraControl:disableKeyboardEvent()
+	ContextActionService:UnbindAction("CarmeraInput_handleArrowLeft")
+	ContextActionService:UnbindAction("CarmeraInput_handleArrowRight")
+	ContextActionService:UnbindAction("cameraLockDownMousePoint")
+end
+
+function CameraControl:InitControlEvent()
+
+	UserInputService.InputBegan:Connect(function( inputObj, bGameProcessd ) 
+		if not self.m_enable then return false end
+
+		if inputObj.UserInputType == Enum.UserInputType.MouseButton2.Value then
+			return self:handleMouseRightClickBegan(inputObj, bGameProcessd)
+		elseif inputObj.UserInputType == Enum.UserInputType.Touch.Value then
+			return self:handleTouchBegan(inputObj, bGameProcessd)
+		elseif inputObj.UserInputType == Enum.UserInputType.MouseMovement.Value then
+			return self:handleMouseEnterWindow()
+		end
+
+		return false;
+	end)
+
+	UserInputService.InputChanged:Connect(function( inputObj, bGameProcessd) 
+		if not self.m_enable then return false end
+		if inputObj.UserInputType == Enum.UserInputType.MouseMovement.Value then
+			return self:handleMouseMove(inputObj, bGameProcessd)
+		elseif inputObj.UserInputType == Enum.UserInputType.Touch.Value then
+			return self:handleTouchMove(inputObj, bGameProcessd)
+		elseif inputObj.UserInputType == Enum.UserInputType.MouseWheel.Value then
+			return self:handleMouseWheel(inputObj.Position.x, inputObj.Position.y, inputObj.Position.z)
+		elseif inputObj.UserInputType == Enum.UserInputType.LostFocus.Value then
+			return self:handleLoseFocus(inputObj, bGameProcessd)
+		elseif inputObj.UserInputType == Enum.UserInputType.WinSize.Value then
+			return self:handleWinSizeChange()
+		end
+
+		return false;
+	end)
+	
+	UserInputService.InputEnded:Connect( function( inputObj, bGameProcessd ) 
+		if not self.m_enable then return end
+		if inputObj.UserInputType == Enum.UserInputType.MouseButton2.Value then
+			return self:handleMouseRightClickEnd(inputObj, bGameProcessd)
+		end
+
+		if inputObj.UserInputType == Enum.UserInputType.Touch.Value then
+			return self:handleTouchEnd(inputObj, bGameProcessd)
+		end
+
+		if inputObj.UserInputType == Enum.UserInputType.MouseMovement.Value then
+			return self:handleMouseLeaveWindow( inputObj, bGameProcessd )
+		end
+
+		return false;
+	end)
+
+	self:initKeyboarEvent()
+end
+
+function CameraControl:resetKeypadRotation()
+	self.m_keypadRotation.x = 0
+	self.m_keypadRotation.y = 0
+	self.m_isKeypadRotation = false
+end
+
+function CameraControl:updateKeypadRotationCamera()
+	if not self.m_isKeypadRotation then return false end
+
+	self.activeCameraController:RotationByMouseMove(self.m_keypadRotation.x, self.m_keypadRotation.y)
+end
+
+function CameraControl:Update( dt )
+	if not self.m_enable then return end
+
+	if self.activeCameraController then
+		self:updateKeypadRotationCamera()
+		self.activeCameraController:Update(dt)
+	end
+end
+
+function CameraControl:Disable()
+	self.m_enable = false
+	self:disableKeyboardEvent()
+end
+
+function CameraControl:Enable()
+	self.m_enable = true
+	self:initKeyboarEvent()
+end
+
+return CameraControl.New()

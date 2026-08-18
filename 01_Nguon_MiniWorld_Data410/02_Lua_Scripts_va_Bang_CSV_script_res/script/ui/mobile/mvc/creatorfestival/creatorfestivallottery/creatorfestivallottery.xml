@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Ui>
+	<Script file="ui/mobile/mvc/creatorFestival/creatorFestivalLottery/CreatorFestivalLotteryModel.lua" />
+	<Script file="ui/mobile/mvc/creatorFestival/creatorFestivalLottery/CreatorFestivalLotteryView.lua" />
+	<Script file="ui/mobile/mvc/creatorFestival/creatorFestivalLottery/CreatorFestivalLotteryCtrl.lua" />
+
+    <!--地图条目模板-->
+	<Button name="LotteryMapTemplate" virtual="true" click_threshold="5">
+		<Size>
+			<AbsDimension x="212" y="122"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+                
+				<Texture name="$parentBkg" file="ui/white.png" color="ffffffff" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                
+				<!--地图缩略图-->
+				<Texture name="$parentPic" file="ui/login_bg.png">
+					<Size>
+						<AbsDimension x="206" y="116"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMask" color="80000000"  file="ui/white.png" rel_x="1.0" rel_y="1.0" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				
+				<FontString name="$parentDownText" fonttype="BlackFont16" justifyH="center" text="下载中" hidden="true">
+					<Color r="241" g="211" b="12"/>
+					<Size>
+						<AbsDimension x="100" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="-20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##进度条
+				<Texture name="$parentProgressBarBkg" file="ui/mobile/texture0/create.xml" uvname="board_create_progressbar.png" hidden="true">
+					<Size>
+						<AbsDimension x="170" y="6" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentPic" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentProgressTex" file="ui/mobile/texture0/create.xml" uvname="board_create_Finish.png" hidden="true">
+					<Size>
+						<AbsDimension x="172" y="6" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentProgressBarBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				##审核中说明
+                <FontString name="$parentPicExplain" fonttype="BlackFont18" justifyH="center" text="$20309" hidden="true">
+					<Color r="255" g="253" b="233"/>
+					<Size>
+						<AbsDimension x="100" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentNameBg" file="ui/white.png" color="80000000">
+					<Size>
+						<AbsDimension x="206" y="28"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##地图名
+				<FontString name="$parentName" fonttype="BlackFont20" justifyV="middle" text="地图的名字" >
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="200" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentNameBg">
+							<Offset>
+								<AbsDimension x="7" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##下载期间不可点击
+			<Frame name="$parentEventPanel" hidden="true">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size> 
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+            </Frame>
+            <Button name="$parentCollectBtn">
+                <Size>
+					<AbsDimension x="22" y="19"/>
+				</Size>
+                <Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-8" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture0/create.xml" uvname="icon_create_collection">
+                    <Size>
+                        <AbsDimension x="22" y="19" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/create.xml" uvname="icon_create_collection">
+                    <Size>
+                        <AbsDimension x="20" y="18"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):OnClickMapCollect();</OnClick>
+                </Scripts>
+            </Button>
+
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):OnClickMapPic();</OnClick>
+		</Scripts>
+	</Button>
+
+	<!--抽奖页面-->
+	<Frame name="CreatorFestivalLottery" parent="UIClient" frameStrata="MEDIUM" abs_x="1072" abs_y="541" hidden="true" framelevel="2450">
+		<!-- <Size>
+			<AbsDimension x="0.832" y="0.743" />
+		</Size> -->
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="56" y="30" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/board_create_background.png" abs_x="1056" abs_y="526">
+					<Anchors>
+						<!-- <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="5" y="5" />
+							</Offset>
+						</Anchor> -->
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-8" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentShadowBkg" file="ui/mobile/texture2/bigtex/img_trans_blue_bp1.png" abs_x="761" rel_y="1" hidden="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+
+			<!--转盘转动期间屏蔽操作-->
+			<Frame name="$parentBlock" rel_x="1.3" rel_y="1.3" hidden="true" framelevel="2460">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$UIClient" />
+				</Anchors>
+			</Frame>
+			
+			<!-- 宣传图，人物-->
+			<Frame name="$parentImg" abs_x="100" abs_y="100">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="6" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<Texture name="$parentSlogan" file="ui/mobile/texture0/create.xml" uvname="img_create_biaoti.png" abs_x="474" abs_y="216">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="64" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPerson" file="ui/mobile/texture0/create.xml" uvname="img_create_xinglingbobo.png" abs_x="98" abs_y="135">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="425" y="137" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			
+            <!-- 地图 -->
+            <Button name="$parentMap1" inherits="LotteryMapTemplate" abs_x="212" abs_y="122" id="1">
+                <Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="84" y="-188" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </Button>
+            <Button name="$parentMap2" inherits="LotteryMapTemplate" abs_x="212" abs_y="122" id="2">
+                <Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="306" y="-188" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </Button>
+            <Button name="$parentMap3" inherits="LotteryMapTemplate" abs_x="212" abs_y="122" id="3">
+                <Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="84" y="-58" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </Button>
+            <Button name="$parentMap4" inherits="LotteryMapTemplate" abs_x="212" abs_y="122" id="4">
+                <Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="306" y="-58" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+            </Button>
+
+			<!--全民创造抽奖页面抽奖轮盘-->
+			<Frame name="$parentWheel" abs_x="481" abs_y="481">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="254" y="-20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBase" file="ui/mobile/texture0/create.xml" uvname="board_create_bottom.png" abs_x="370" abs_y="94">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentInfoBg" file="ui/mobile/texture0/create.xml" uvname="board_create_capsule.png" abs_x="280" abs_y="30" DrawType="Center">
+							<Center>
+								<Left offsetX="0" offsetY="0" w="60" h="30"/>
+								<Center offsetX="60" offsetY="0" w="32" h="30"/>
+								<Right offsetX="92" offsetY="0" w="60" h="30"/>
+							</Center>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-210" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentInfoTxt" fonttype="BlackFont16" justifyH="center" justifyV="middle" text="$110009" hidden="false">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="240" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentInfoBg">
+									<Offset>
+										<AbsDimension x="0" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/board_create_turntable.png" abs_x="368" abs_y="368">
+							<Anchors>
+								<Anchor point="center" relativePoint="top" relativeTo="$parentBase">
+									<Offset>
+										<AbsDimension x="0" y="-148" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer>
+						<Texture name="$parentGift1" file="ui/white.png" abs_x="50" abs_y="50" />
+						<Texture name="$parentGift2" file="ui/white.png" abs_x="50" abs_y="50" />
+						<Texture name="$parentGift3" file="ui/white.png" abs_x="50" abs_y="50" />
+						<Texture name="$parentGift4" file="ui/white.png" abs_x="50" abs_y="50" />
+						<Texture name="$parentGift5" file="ui/white.png" abs_x="50" abs_y="50" />
+						<Texture name="$parentGift6" file="ui/white.png" abs_x="50" abs_y="50" />
+						<Texture name="$parentGift7" file="ui/white.png" abs_x="50" abs_y="50" />
+						<FontString name="$parentName1" fonttype="BlackFont16" justifyH="center" justifyV="middle" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+						<FontString name="$parentName2" fonttype="BlackFont16" justifyH="center" justifyV="middle" color="ff887865" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+						<FontString name="$parentName3" fonttype="BlackFont16" justifyH="center" justifyV="middle" color="ff887865" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+						<FontString name="$parentName4" fonttype="BlackFont16" justifyH="center" justifyV="middle" color="ff887865" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+						<FontString name="$parentName5" fonttype="BlackFont16" justifyH="center" justifyV="middle" color="ff887865" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+						<FontString name="$parentName6" fonttype="BlackFont16" justifyH="center" justifyV="middle" color="ff887865" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+						<FontString name="$parentName7" fonttype="BlackFont16" justifyH="center" justifyV="middle" color="ff887865" rel_x="0.18" rel_y="0.06" >
+							<Color r="136" g="120" b="101"/>
+						</FontString>
+
+						<Texture name="$parentPoint" file="ui/mobile/texture0/bigtex/board_create_sharp.png" abs_x="200" abs_y="200" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentPlayBtnMask">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):PlayLottery_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnUpdate>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):WheelUpdate()</OnUpdate>
+				</Scripts>
+			</Frame>
+			<Button name="$parentPlayLotteryBtn" abs_x="118" abs_y="118" framelevel="2490">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentWheelBkg">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTimes" fonttype="BlackFont18" justifyH="center" text="" hidden="false">
+							<Color r="255" g="237" b="242"/>
+							<Size>
+								<AbsDimension x="80" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/bigtex/bth_create_go.png" rel_x="1.0" rel_y="1.0">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/bigtex/bth_create_go.png" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):PlayLottery_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			## 任务
+			<Button name="$parentTaskBtn" abs_x="386" abs_y="82">
+				<Anchors>
+					<Anchor point="center" relativePoint="bottom" relativeTo="$parentWheelBase">
+						<Offset>
+							<AbsDimension x="0" y="-10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentInfo" fonttype="BlackFont18" justifyH="center" text="" hidden="false">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="280" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-29" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont14" justifyH="center" text="" hidden="false">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="280" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-29" y="6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentFinger" file="ui/mobile/texture2/noviceguide.xml" uvname="img_hand_1.png" hidden="true">
+							<Size>
+								<AbsDimension x="100" y="100"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="202" y="39"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/bigtex/board_create_task.png" rel_x="1.0" rel_y="1.0">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/bigtex/board_create_task.png" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+				<Scripts>
+					<OnLoad>CreatorFestivalLotteryCtrl_OnLoadGuide()</OnLoad>
+					<OnUpdate>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):OnUpdateGuide()</OnUpdate>
+					<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):TaskBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			## 跳转
+			<Button name="$parentThemeBtn" abs_x="152" abs_y="30">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="225" y="-14" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont16" justifyH="center" justifyV="middle" text="$110005" hidden="false">
+							<Color r="255" g="218" b="36"/>
+							<Size>
+								<AbsDimension x="100" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-9" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentArrow" file="ui/mobile/texture0/create.xml" uvname="icon_create_more.png" abs_x="18" abs_y="18">
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-16" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/create.xml" uvname="board_create_capsule.png" rel_x="1.0" rel_y="1.0">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/create.xml" uvname="board_create_capsule.png" rel_x="1.0" rel_y="1.0">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+				
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):JumpBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):OnUpdate()</OnUpdate>
+		</Scripts>
+	</Frame>
+	<Frame name="CreatorFestivalLotteryMask" parent="UIClient" frameStrata="MEDIUM" rel_x="1" rel_y="1" hidden="true" framelevel="2480">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg18" />
+            </Layer>
+        </Layers>
+		<Frames>
+			<Frame name="$parentFinger" hidden="false" framelevel="2490" abs_x="100" abs_y="100">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="CreatorFestivalLotteryPlayLotteryBtn">
+						<Offset>
+							<AbsDimension x="50" y="50"/>
+						</Offset>
+					</Anchor>
+				</Anchors>	
+				<Layers>
+					<Layer>
+						<Texture name="$parentIcon" file="ui/mobile/texture2/noviceguide.xml" uvname="img_hand_1.png" hidden="false" >
+							<Size>
+								<AbsDimension x="100" y="100"/>
+							</Size>
+						</Texture>
+					</Layer>
+        		</Layers>
+			</Frame>
+			<Frame name="$parentDialog" abs_x="364" abs_y="135">
+				<Size>
+					<AbsDimension x="364" y="135"/>
+				</Size>
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="CreatorFestivalLotteryPlayLotteryBtn">
+						<Offset>
+							<AbsDimension x="-20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>	
+				<Layers>
+					<Layer>
+						<Texture name="$parentDialogBkg" file="ui/mobile/texture2/common.xml" uvname="board_more.png" DrawType="ninesquare_center" rel_x="1" rel_y="1">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+						</Texture>
+						<Texture name="$parentArrow"  file="ui/mobile/texture0/common.xml" uvname="img_more_arrow.png" abs_x="30" abs_y="20">
+							<Angle value="-90"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-11" y="-12" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" fonttype="BlackFont24"  text="$110022" hidden="false" autowrap="true">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="311" y="54"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="24"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("CreatorFestivalLottery"):OnUpdateMaskGuide()</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/toolmode/ToolModeFrameModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/toolmode/ToolModeFrameView.lua"/>
+	<Script file="ui/mobile/mvc/developer/toolmode/ToolModeFrameCtrl.lua"/>
+
+	##工具栏格子模板
+	<Button name="ToolModeFrame_ToolBtnTemplate" abs_x="88" abs_y="88" virtual="true">
+		<Layers>
+			<Layer level="overlay" >
+				<Texture name="$parentIcon" file="ui/mobile/texture2/ingame.xml" uvname="icon_area.png" abs_x="54" abs_y="54">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChecked" inherits="TemplateBkg71" abs_x="74" abs_y="74" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentIndex" fonttype="BlackFont18" justifyH="center" text="1" abs_x="50" abs_y="18">
+					<Color r="254" g="248" b="220"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/operate.xml" uvname="operating_board_square.png" />
+		<Scripts>
+			<OnMouseDown>GetInst("UIManager"):GetCtrl("ToolModeFrame"):OnToolBtnClick();</OnMouseDown>
+		</Scripts>
+	</Button>
+	
+    ##工具模式窗口
+	<Frame name="ToolModeFrame" parent="UIClient" frameStrata="BACKGROUND" framelevel="2"  hidden="true" input_transparent="true" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				
+			</Layer>
+		</Layers>
+		<Frames>
+			##实时坐标位置
+			<Frame name="$parentPos" abs_x="164" abs_y="122">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="7" y="7" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background" >
+						<Texture name="$parentBkgOut" inherits="TemplateBkg68" />
+						<Texture name="$parentBkg" inherits="TemplateBkg49" abs_x="160" abs_y="118">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont" justifyH="center" text="区域工具" abs_x="150" abs_y="16">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="7" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##长
+						<FontString name="$parentX" fonttype="BlackFont" justifyH="left" text="长: 1" abs_x="150" abs_y="16">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="46" y="43" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##宽
+						<FontString name="$parentZ" fonttype="BlackFont" justifyH="left" text="宽: 1" abs_x="150" abs_y="16">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="46" y="69" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##高
+						<FontString name="$parentY" fonttype="BlackFont" justifyH="left" text="高: 1" abs_x="150" abs_y="16">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="46" y="95" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			##摆块提示
+			<Frame name="$parentTip" abs_x="250" abs_y="45">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+						<Offset>
+							<AbsDimension x="0" y="50" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background" >
+						<Texture name="$parentBkg" inherits="TemplateBkg52" />
+						<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" text="点击放置起点" abs_x="250" abs_y="20">
+							<Color r="255" g="227" b="38"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+            ##进入/退出工具模式
+			<Button name="$parentToolModeBtn" abs_x="200" abs_y="38" >
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-120" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentNormal" inherits="TemplateBkg82" />
+						<Texture name="$parentChecked" inherits="TemplateBkg83" hidden="true" />
+						<Texture name="$parentIcon" file="ui/mobile/texture2/operate.xml" uvname="icon_set.png" abs_x="29" abs_y="28">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="15" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" text="进入工具模式" abs_x="150" abs_y="15">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ToolModeFrame"):ToolModeBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			##回滚按钮
+			<Button name="$parentRevertBtn" abs_x="88" abs_y="88" >
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentIcon" file="ui/mobile/texture2/ingame.xml" uvname="icon_return.png" abs_x="47" abs_y="47">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/operate.xml" uvname="operating_board_square.png" />
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ToolModeFrame"):RevertBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+            ##工具栏
+			<Frame name="$parentToolFrame" abs_x="358" abs_y="88">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##1. 区域
+					<Button name="$parentArea" inherits="ToolModeFrame_ToolBtnTemplate" id="1">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+						</Anchors>
+					</Button>
+					##2. 位置
+					<Button name="$parentPosition" inherits="ToolModeFrame_ToolBtnTemplate" id="2">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentArea" />
+						</Anchors>
+					</Button>
+					##3. 生物
+					<Button name="$parentActor" inherits="ToolModeFrame_ToolBtnTemplate" id="3">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentPosition" />
+						</Anchors>
+					</Button>
+					##3. 显示板
+					<Button name="$parentDisplayBoard" inherits="ToolModeFrame_ToolBtnTemplate" id="4">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+						</Anchors>
+					</Button>
+					##4. 对象库
+					<Button name="$parentObjLib" abs_x="54" abs_y="54">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="20" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture2/ingame.xml" uvname="icon_object_library.png" abs_x="34" abs_y="33">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentIndex" fonttype="BlackFont18" justifyH="center" text="B" abs_x="50" abs_y="18">
+									<Color r="254" g="248" b="220"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parent" />
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/operate.xml" uvname="operating_board_square.png" />
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("ToolModeFrame"):ObjLibClick();</OnMouseDown>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##生物选择
+			<Button name="$parentActorSelect" abs_x="164" abs_y="38" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="7" y="150" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentNormal" inherits="TemplateBkg82" />
+						<Texture name="$parentCheckedBG" inherits="TemplateBkg83" hidden="true" />
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_select_tool.png" abs_x="13" abs_y="19">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="38" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont" justifyH="left" text="$14517" abs_x="94" abs_y="14">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ToolModeFrame"):OnActorSelect();</OnClick>
+				</Scripts>
+			</Button>
+
+			##生物新建
+			<Button name="$parentActorCreate" abs_x="164" abs_y="38" >
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentActorSelect">
+						<Offset>
+							<AbsDimension x="0" y="8" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentNormal" inherits="TemplateBkg82" />
+						<Texture name="$parentCheckedBG" inherits="TemplateBkg83" hidden="true" />
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_add_tool.png" abs_x="17" abs_y="17">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="37" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont" justifyH="left" text="$14518" abs_x="94" abs_y="14">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ToolModeFrame"):OnActorCreateClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			##显示/隐藏按钮
+			<Button name="$parentShowBtn" abs_x="54" abs_y="54" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="6" y="6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="ico_model_xianshi" abs_x="34" abs_y="24">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/operate.xml" uvname="img_icon_board" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/operate.xml" uvname="img_icon_board" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ToolModeFrame"):ShowBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("ToolModeFrame"):OnEvent();</OnEvent>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("ToolModeFrame"):OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

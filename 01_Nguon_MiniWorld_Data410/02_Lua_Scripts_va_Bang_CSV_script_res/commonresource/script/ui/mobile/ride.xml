@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/ride.lua"/>	
+	<!--坐骑面板-->
+	<Button name="RideSkillBtnTemplate" virtual="true" hidden="true">
+		<Size>
+			<AbsDimension x="120" y="120"/>
+		</Size>
+		<NormalTexture name="$parentNormal" file="ui/rideskillicons/jineng.png" />
+		<PushedTexture name="$parentPushedBG" file="ui/rideskillicons/jineng.png" >
+			<Size>
+				<AbsDimension x="115" y="115"/>
+			</Size>
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>RideSkillBtnTemplate_OnClidk();</OnClick>
+			<OnMouseUp>RideSkillBtnTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate>RideSkillBtnTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+		</Scripts>
+	</Button>
+	<Frame name="RideFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+		</Anchors>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" file="ui/white.png" color="cd000000" stretchedge="true"/>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg2" abs_x="1006" abs_y="516">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentLeftBkg" inherits="TemplateBigBkg5">
+					<Size>
+						<AbsDimension x="540" y="320"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="15" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentRightBkg" inherits="TemplateBigBkg11">
+					<Size>
+						<AbsDimension x="426" y="485"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="-18" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="1000" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##标题名
+						<FontString name="$parentTitle" fonttype="BlackFont38" fontStyle="border" text="$3503" shadowcolor="ff6A3A0C">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="300" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkgLeft">
+									<Offset>
+										<AbsDimension x="25" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>RideFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentCurEquip">
+				<Size>
+					<AbsDimension x="296" y="92" />
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentLeftBkg">
+						<Offset>
+							<AbsDimension x="122" y="40" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parent1" id="21000"> 
+						<Size>
+							<AbsDimension x="92" y="92" />
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png"/>
+								<Texture name="$parentBkgIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="zqsx_an">
+									<Size>
+										<AbsDimension x="62" y="67"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentIcon">
+									<Size>
+										<AbsDimension x="78" y="78"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBoxTexture" inherits="TemplateBkg11" hidden="true">
+									<Size>
+										<AbsDimension x="89" y="89"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>				
+								</Texture>
+							</Layer>
+							<Layer level="ARTWORK">
+								<Texture name="$parentDurBkg" file="ui/mobile/texture2/ingame2.xml" uvname="xsyd_jdt01.png" hidden="true">
+									<Size>
+										<AbsDimension x="73" y="9"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentDuration" file="ui/mobile/texture2/ingame2.xml" uvname="xsyd_jdt02.png" hidden="true">
+									<Size>
+										<AbsDimension x="73" y="9"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentDurBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+							<Layer level="HIGHLIGHT">
+								 <FontString name="$parentCount" fonttype="BlackFont14" fontStyle="border" justifyH="left" text="">
+									<Color r="243" g="245" b="218" />
+									<Size>
+										<AbsDimension x="24" y="14" />
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="5" y="3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>RideFrame_CurEquip1_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parent2" id="21001">
+						<Size>
+							<AbsDimension x="92" y="92" />
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png"/>
+								<Texture name="$parentBkgIcon" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="zqsx_xiangquan">
+									<Size>
+										<AbsDimension x="63" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentIcon">
+									<Size>
+										<AbsDimension x="78" y="78"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBoxTexture" inherits="TemplateBkg11" hidden="true">
+									<Size>
+										<AbsDimension x="89" y="89"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+							<Layer level="ARTWORK">
+								<Texture name="$parentDurBkg" file="ui/mobile/texture2/ingame2.xml" uvname="xsyd_jdt01.png" hidden="true">
+									<Size>
+										<AbsDimension x="73" y="9"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentDuration" file="ui/mobile/texture2/ingame2.xml" uvname="xsyd_jdt02.png" hidden="true">
+									<Size>
+										<AbsDimension x="73" y="9"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentDurBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+							<Layer level="HIGHLIGHT">
+								 <FontString name="$parentCount" fonttype="BlackFont14" fontStyle="border" justifyH="left" text="">
+									<Color r="243" g="245" b="218" />
+									<Size>
+										<AbsDimension x="24" y="14" />
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="5" y="3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>RideFrame_CurEquip2_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentHasEquip">
+				<Size>
+					<AbsDimension x="527" y="98" />
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentLeftBkg">
+						<Offset>
+							<AbsDimension x="0" y="-19" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<FontString name="$parentTitle" fonttype="BlackFont22" justifyH="center" text="$3012">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="380" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SlidingFrame name="EquipRideBox" slidingX="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="503" y="81"/>
+						</Size>
+						<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="11" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="800" y="81"/>
+								</Size>
+							</Frame>
+							<Button name="$parentItem1" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem2" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem3" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem4" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem5" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem6" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem7" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem8" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem9" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem10" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem11" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem12" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem13" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem14" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem15" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem16" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem17" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem18" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem19" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem20" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem21" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem22" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem23" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem24" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem25" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem26" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem27" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem28" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem29" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem30" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem31" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem32" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem33" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem34" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem35" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem36" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem37" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem38" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem39" inherits="PackGridBtnTemplate"/>
+							<Button name="$parentItem40" inherits="PackGridBtnTemplate"/>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			<Frame name="$parentSkill">
+				<Size>
+					<AbsDimension x="572" y="120" />
+				</Size>
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="29" y="-20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<FontString name="$parentTitle" fonttype="BlackFont24" lineInterval="2" fontStyle="border" text="$182" hidden="true">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="110" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="9" y="-11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parent1" inherits="RideSkillBtnTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parent2" inherits="RideSkillBtnTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parent1">
+								<Offset>
+									<AbsDimension x="30" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parent3" inherits="RideSkillBtnTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parent2">
+								<Offset>
+									<AbsDimension x="30" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parent4" inherits="RideSkillBtnTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parent3">
+								<Offset>
+									<AbsDimension x="30" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Frame name="$parentTips" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="1">
+						<Size>
+							<AbsDimension x="460" y="100"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TipsBkgTemplate" />
+								<FontString name="$parentName" fonttype="BlackFont28" lineInterval="2" text="铁剑" fontStyle="border">
+									<Color r="242" g="235" b="23"/>
+									<Size>
+										<AbsDimension x="400" y="29"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="15" y="15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentDesc" lineInterval="10" multiLine="false" fonttype="BlackFont21" fontStyle="border" input_transparent="true">
+								<Size>
+									<AbsDimension x="410" y="165"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="15" y="60"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText> 
+						</Frames>
+						<Scripts>
+							<OnClick>RideFrameRideSkillTips_OnClick();</OnClick>
+						</Scripts>
+					</Frame>
+				</Frames>
+			</Frame>
+			<Frame name="$parentInfo">
+				<Size>
+					<AbsDimension x="425" y="510" />
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentRightBkg">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<FontString name="$parentName" justifyH="center" fonttype="BlackFont22" text="幽灵战马">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="250" y="10"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-206" y="25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentHpBkg" file="ui/mobile/texture2/backpack.xml" uvname="img_num.png">
+							<Size>
+								<AbsDimension x="160" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="9" y="-38"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentHpIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_blood.png">
+							<Size>
+								<AbsDimension x="17" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentHpBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--<Texture name="$parentHp" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="zhzq_xuetiao02">-->
+							<!--<Size>-->
+								<!--<AbsDimension x="147" y="25"/>-->
+							<!--</Size>-->
+							<!--<Anchors>-->
+								<!--<Anchor point="left" relativePoint="left" relativeTo="$parentHpBkg">-->
+									<!--<Offset>-->
+										<!--<AbsDimension x="0" y="0"/>-->
+									<!--</Offset>-->
+								<!--</Anchor>-->
+							<!--</Anchors>	-->
+						<!--</Texture>-->
+						<FontString name="$parentHpFont" fonttype="BlackFont20" justifyH="center" text="20/20">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="100" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentHpBkg">
+									<Offset>
+										<AbsDimension x="37" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentSpeedBkg" file="ui/mobile/texture2/backpack.xml" uvname="img_num.png">
+							<Size>
+								<AbsDimension x="110" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentHpBkg">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentSpeedIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_speed.png">
+							<Size>
+								<AbsDimension x="32" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentSpeedBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentSpeed" fonttype="BlackFont20" text="18">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="70" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentSpeedBkg">
+									<Offset>
+										<AbsDimension x="60" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentJumpBkg" file="ui/mobile/texture2/backpack.xml" uvname="img_num.png">
+							<Size>
+								<AbsDimension x="110" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentSpeedBkg">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentJumpIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_jump.png">
+							<Size>
+								<AbsDimension x="28" y="28"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentJumpBkg">
+									<Offset>
+										<AbsDimension x="0" y="-5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentJump" fonttype="BlackFont20" text="5">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="70" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentJumpBkg">
+									<Offset>
+										<AbsDimension x="60" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+					<Layer level="ARTWORK">
+						<ModelView name="$parentView">
+							<Size>
+								<AbsDimension x="390" y="420"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateView">
+						<Size>
+							<AbsDimension x="390" y="499"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>RideFrameInfoRotateView_OnMouseDown();</OnMouseDown>
+							<OnMouseMove>RideFrameInfoRotateView_OnMouseMove();</OnMouseMove>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnShow>RideFrame_OnShow();</OnShow>
+			<OnHide>RideFrame_OnHide();</OnHide>
+			<OnLoad>RideFrame_OnLoad();</OnLoad>
+			<OnEvent>RideFrame_OnEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+	<Button name="AccRideCallBtnTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="132" y="180"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentHeadBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" abs_x="132" abs_y="132">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentHead" file="ui/rideicons/34303.png">
+					<Size>
+						<AbsDimension x="120" y="123"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentHeadBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentNameBkg" inherits="TemplateBkg13" abs_x="132" abs_y="34">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentHeadBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="$368">
+					<Color r="37" g="37" b="37"/>
+					<Size>
+						<AbsDimension x="140" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentTagBkg" file="ui/mobile/texture0/common.xml" uvname="img_bd_green70.png">
+					<Size>
+						<AbsDimension x="132" y="28"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNameBkg">
+							<Offset>
+								<AbsDimension x="0" y="-36"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTag" fonttype="BlackFont16" justifyH="center" text="$368">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="48" y="15"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTagBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentQuaBg" file="ui/mobile/texture0/common.xml" uvname="label_quality_blue.png">
+					<Size>
+						<AbsDimension x="26" y="52"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentHeadBkg">
+							<Offset>
+								<AbsDimension x="-1" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentQua" fonttype="BlackFont16" justifyH="center" text="稀有" autowrap="true" abs_x="16" abs_y="31">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentQuaBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>AccRideCallBtnTemplate_OnClick();</OnClick>
+			<OnMouseDown>OnClickAnimationInRide("OnMouseDown",{"AccRideCall%dHeadBkg"},{idType=5,isTemplate=true,scale=0.95});</OnMouseDown>
+			<OnMouseUp>OnClickAnimationInRide("OnMouseUp",{"AccRideCall%dHeadBkg"},{idType=5,isTemplate=true,scale=0.95});</OnMouseUp>
+			<OnMouseOut>OnClickAnimationInRide("OnMouseOut",{"AccRideCall%dHeadBkg"},{idType=5,isTemplate=true,scale=0.95});</OnMouseOut>
+		</Scripts>
+	</Button>
+	<Button name="AccPetCallBtnTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="132" y="180"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentHeadBkg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_custom.png" abs_x="132" abs_y="132">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentHead" file="ui/rideicons/34303.png">
+					<Size>
+						<AbsDimension x="120" y="123"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentHeadBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentGrayHeadBkg" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50.png" abs_x="132" abs_y="132" DrawType="ninesquare_center" hidden="true" >
+                	<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentNameBkg" inherits="TemplateBkg13" abs_x="132" abs_y="34">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentHeadBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="$368">
+					<Color r="37" g="37" b="37"/>
+					<Size>
+						<AbsDimension x="140" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentTagBkg" file="ui/mobile/texture2/shop.xml" uvname="label_shop_time.png">
+					<Size>
+						<AbsDimension x="102" y="35"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="topleft" relativeTo="$parentHeadBkg">
+							<Offset>
+								<AbsDimension x="-5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTag" lang_ver="en" fonttype="BlackFont14" justifyH="center" justifyV="middle" text="$368">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="90" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTagBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTag" fonttype="BlackFont18" justifyH="center" text="$368">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="65" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTagBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+        <Frames>
+			<Button name="$parentCancelCallPetBtn" hidden="true" >
+				<Size>
+					<AbsDimension x="128" y="150"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50" abs_x="128" abs_y="28" DrawType="ninesquare_center">    
+                            <NineSquare ox="0" oy="0" tilew="5" tileh="5"/>                        
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="32"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+                        <FontString name="$parentStr" fonttype="BlackFont" justifyH="center" text="$41858">
+                            <Color r="255" g="255" b="255"/>
+                            <Size>
+                                <AbsDimension x="132" y="28"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="6"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AccRideCallFrameCancelCallPetBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+        </Frames>
+		<Scripts>
+			<OnClick>AccPetCallBtnTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="AccRideCallFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" >
+					<Size>
+						<AbsDimension x="926" y="296"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTopBkg" inherits="TemplateBigBkg4">
+					<size>
+						<AbsDimension x="920" y="61"/>
+					</size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="8" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg5"  >
+					<Size>
+						<AbsDimension x="865" y="213"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-250"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" file="ui/mobile/texture2/common.xml" uvname="img_title.png">
+					<Size>
+						<AbsDimension x="303" y="56"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTopBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" fontStyle="border" text="$41655" shadowcolor="4D352C28">
+					<Color r="255" g="135" b="27"/>
+					<Size>
+						<AbsDimension x="300" y="46"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="33" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+                <Texture name="$parentPetTipBkg" file="ui/mobile/texture2/bigtex/img_noroom.png" hidden="true">
+					<Size>
+						<AbsDimension x="282" y="160"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+                <FontString name="$parentPetTipStr" fonttype="BlackFont22" justifyV="middle" justifyH="center" text="$41851" hidden="true" autowrap="true">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="500" y="48"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="89"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTopBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="56">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="AccRideCallFrameTopBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AccRideCallFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 坐骑 -->
+			<Button name="$parentRideBtn1" abs_x="140" abs_y="46" inherits="TemplateTabBtn3" id = "1">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="5" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>AccRideFrame_RideBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentRideBtn2" abs_x="140" abs_y="46" inherits="TemplateTabBtn3" id = "2">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentRideBtn1">
+						<Offset>
+							<AbsDimension x="2" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>AccRideFrame_PetBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="AccRideCallBox" slidingX="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="800" y="220"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="0" y="-10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="680" y="237"/>
+						</Size>
+					</Frame>
+					<Button name="AccRideCall1" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall2" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall3" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall4" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall5" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall6" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall7" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall8" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall9" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall10" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall11" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall12" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall13" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall14" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall15" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall16" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall17" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall18" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall19" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall20" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall21" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall22" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall23" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall24" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall25" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall26" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall27" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall28" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall29" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall30" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall31" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall32" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall33" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall34" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall35" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall36" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall37" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall38" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall39" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall40" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall41" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall42" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall43" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall44" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall45" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall46" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall47" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall48" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall49" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall50" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall51" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall52" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall53" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall54" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall55" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall56" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall57" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall58" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall59" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall60" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall61" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall62" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall63" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall64" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall65" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall66" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall67" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall68" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall69" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall70" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall71" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall72" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall73" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall74" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall75" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall76" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall77" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall78" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall79" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall80" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall81" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall82" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall83" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall84" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall85" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall86" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall87" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall88" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall89" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall90" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall91" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall92" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall93" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall94" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall95" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall96" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall97" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall98" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall99" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall100" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall101" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall102" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall103" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall104" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall105" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall106" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall107" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall108" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall109" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall110" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall111" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall112" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall113" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall114" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall115" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall116" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall117" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall118" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall119" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall120" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall121" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall122" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall123" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall124" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall125" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall126" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall127" inherits="AccRideCallBtnTemplate"/>
+					<Button name="AccRideCall128" inherits="AccRideCallBtnTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<ListViewFrame name="$parentPetListView" slidingX="true" slideplane="$parentPlane" hidden="true">
+				<Size>
+					<AbsDimension x="865" y="213"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="0" y="7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+
+            <!-- 前往家园 -->
+            <Button name="$parentGotoHomeLandBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentCloseBtn">
+                        <Offset>
+                            <AbsDimension x="-32" y="260"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentName" fonttype="BlackFont22" justifyH="center" abs_x="90" abs_y="22" text="$881">
+                    <Color r="55" g="54" b="51"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+						</Anchor>
+                    </Anchors>
+                </FontString>
+                <Scripts>
+                    <OnClick>AccRideCallFrameGotoHomeLandBtn_OnClick()</OnClick>
+                </Scripts>
+			</Button>
+            <!-- 前往商店 -->
+            <Button name="$parentGotoShopBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentCloseBtn">
+                        <Offset>
+                            <AbsDimension x="-32" y="260"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentName" fonttype="BlackFont22" justifyH="center" abs_x="90" abs_y="22" text="$41853">
+                    <Color r="55" g="54" b="51"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+						</Anchor>
+                    </Anchors>
+                </FontString>
+                <Scripts>
+                    <OnClick>AccRideCallFrameGotoShopBtn_OnClick()</OnClick>
+                </Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>AccRideCallFrame_OnLoad();</OnLoad>
+			<OnUpdate>AccRideCallFrame_OnUpdate();</OnUpdate>
+			<OnShow>AccRideCallFrame_OnShow();</OnShow>
+			<OnHide>AccRideCallFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

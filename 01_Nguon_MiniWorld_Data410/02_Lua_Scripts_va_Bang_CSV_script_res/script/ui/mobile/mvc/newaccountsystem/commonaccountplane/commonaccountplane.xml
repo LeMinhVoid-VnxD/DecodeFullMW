@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<!-- 账号安全，验证方式，找回账号3个界面共用 -->
+	<Script file="ui/mobile/mvc/newAccountSystem/CommonAccountPlane/CommonAccountPlaneModel.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/CommonAccountPlane/CommonAccountPlaneView.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/CommonAccountPlane/CommonAccountPlaneCtrl.lua"/>
+
+	<Frame name="CommonAccountPlane" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="6001">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- 背景遮罩 -->
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- 背景图 -->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="584" abs_y="328">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 显示框背景图 -->
+				<Texture name="$parentcontentBkg" inherits="TemplateBigBkg29"  abs_x="547" abs_y="296">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-16"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>         
+			<!-- 标题栏 -->
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg2" abs_x="578" abs_y="56">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>					
+			</Frame>
+			<!-- 返回按钮 -->
+			<Button name="$parentReturnBtn" hidden="false" abs_x="48" abs_y="44">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTitleFrame">
+						<Offset>
+								<AbsDimension x="7" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_return.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):ReturnBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 关闭按钮 -->
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):CloseBtnOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 手机找回 -->
+			<Button name="$parentMobilePhoneRrtrieveBtn" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                        <Offset>
+                            <AbsDimension x="-100" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mobi_getback"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mobi_getback" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="90" abs_y="20" text="$3569">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="15"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):RetrievePasswordByMobilePhoneOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 邮箱找回 -->
+			<Button name="$parentEmailRetrieveBtn" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="100" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_email_getback"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_email_getback" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="400" abs_y="20" text="$6083">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="15"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):RetrievePasswordByEmailOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 手机验证 -->
+			<Button name="$parentMobilePhoneVerificationBtn" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="-100" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mobi_verify"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_mobi_verify" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="90" abs_y="20" text="$3562">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="15"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):MobilePhoneVerificationOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 邮箱验证 -->
+			<Button name="$parentEmailVerificationBtn" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="100" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_email_verify"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_email_verify" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="90" abs_y="20" text="$6084">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="15"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):EmailVerificationOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 信息绑定 -->
+			<Button name="$parentAccountBindBtn" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_bind"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_bind" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="100" abs_y="40" text="$35565" autowrap="true">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="20"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):AccountBindOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 修改密碼 -->
+			<Button name="$parentAccountMidifyPassword" lang_ver="tha" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_modify_pwd"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_modify_pwd" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="120" abs_y="40" text="$32121" autowrap="true">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="20"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):AccountModifyPasswordOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentAccountMidifyPassword" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_modify_pwd"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_modify_pwd" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="100" abs_y="40" text="$32121" autowrap="true">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="20"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):AccountModifyPasswordOnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 账号注销 -->
+			<Button name="$parentAccountLogoutBtn" hidden="false" abs_x="112" abs_y="112">
+				<Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentcontentBkg">
+                            <Offset>
+                                <AbsDimension x="100" y="-15"/>
+                            </Offset>
+                    </Anchor>
+                </Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_del"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_acc_del" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" abs_x="100" abs_y="40" text="$35569" autowrap="true">
+                	<Color r="55" g="54" b="47"/>
+                		<Anchors>
+                    		<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+                        		<Offset>
+                            		<AbsDimension x="0" y="20"/>
+                        		</Offset>
+                    		</Anchor>
+                	</Anchors>
+           		</FontString>             
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CommonAccountPlane"):AccountlogoutOnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

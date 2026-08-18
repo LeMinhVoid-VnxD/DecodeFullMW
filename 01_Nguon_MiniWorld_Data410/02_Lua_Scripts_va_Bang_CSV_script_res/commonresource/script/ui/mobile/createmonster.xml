@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <!--刷怪方块之界面-->
+    <Script file="ui/mobile/createmonster.lua" />
+
+    <!--分隔线-->
+    <Frame name="CreateLineTemplate" abs_x="500" abs_y="31" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="500" abs_y="2">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentLineZheZhao" inherits="TemplateBigBkg5" abs_x="150" abs_y="30" hidden="true">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentTitle" fonttype="BlackFont19" justifyH="center" justifyV="middle" text="标题" abs_x="150" abs_y="30" hidden="true">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Frame>
+    <!--开关模板-->
+    <Frame name="CreateSwitchTemplate" abs_x="500" abs_y="50" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont19" justifyH="right" justifyV="middle" text="$3650">
+                    <Color r="61" g="69" b="70"/>
+                    <Size>
+                        <AbsDimension x="180" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentBtn" abs_x="152" abs_y="43" inherits="SwitchBtnTemplate">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="184" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseUp>SwitchBtn_OnMouseUp();</OnMouseUp>
+                </Scripts>
+            </Button>
+            <Button name="$parentHelpBtn" frameStrata="MEDIUM" hidden="true">
+                <Size>
+                    <AbsDimension x="26" y="37"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="right" relativeTo="$parentBtn">
+                        <Offset>
+                            <AbsDimension x="8" y="-16"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_help.png" abs_x="26" abs_y="37"/>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_help.png">
+                    <Size>
+                        <AbsDimension x="24" y="35"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentNormal"/>
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg19" hidden="true">
+                            <Size>
+                                <AbsDimension x="220" y="160"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentNormal">
+                                    <Offset>
+                                        <AbsDimension x="-6" y="-8"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentTips" justifyH="center" fonttype="BlackFont24" lineInterval="2" text="$21209" autowrap="true" hidden="true" >
+                            <Color r="255" g="109" b="37"/>
+                            <Size>
+                                <AbsDimension x="180" y="110"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-8"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>SingleCreateFeatureHelpBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+    <!--滑动条模板-->
+    <Frame name="CreateSliderTemplate" abs_x="550" abs_y="52" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont19" justifyH="right" justifyV="middle" text="$3648">
+                    <Color r="61" g="69" b="70"/>
+                    <Size>
+                        <AbsDimension x="170" y="26"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-23" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentVal" fonttype="BlackFont19" justifyH="left" justifyV="middle" text="999">
+                    <Color r="61" g="69" b="70"/>
+                    <Size>
+                        <AbsDimension x="80" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parentRightBtn">
+                            <Offset>
+                                <AbsDimension x="48" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentLeftBtn" abs_x="26" abs_y="47" inherits="TemplateLeftArrowBtn1">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="150" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>CreateSliderTemplateLeftBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0">
+                <Size>
+                    <AbsDimension x="183" y="52"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="left" relativeTo="$parentLeftBtn" relativePoint="right">
+                        <Offset>
+                            <AbsDimension x="15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBkg16">
+                            <Size>
+                                <AbsDimension x="183" y="12"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentPro" inherits="TemplateBkg17">
+                            <Size>
+                                <AbsDimension x="178" y="12"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png">
+                    <Size>
+                        <AbsDimension x="28" y="31"/>
+                    </Size>
+                </ThumbTexture>
+                <Scripts>
+                    <OnValueChanged>CreateSliderTemplateBar_OnValueChanged()</OnValueChanged>
+                </Scripts>
+            </Slider>
+            <Button name="$parentRightBtn" abs_x="26" abs_y="47" inherits="TemplateRightArrowBtn1">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>CreateSliderTemplateRightBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentHelpBtn" frameStrata="MEDIUM" hidden="true">
+                <Size>
+                    <AbsDimension x="30" y="31"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="right" relativeTo="$parentVal">
+                        <Offset>
+                            <AbsDimension x="20" y="11"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngf_bzanniu.png" abs_x="30" abs_y="31"/>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngf_bzanniu.png">
+                    <Size>
+                        <AbsDimension x="28" y="29"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="right" relativeTo="SingleCreateSlider2Val">
+                            <Offset>
+                                <AbsDimension x="19" y="10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="dtxx_touxiangkuang_diban.png" color="80000000" DrawType="ninesquare" hidden="true">
+                            <Size>
+                                <AbsDimension x="240" y="200"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <NineSquare>
+                                <Topleft		offsetX="0"  offsetY="0"	w="30"	h="30"/>
+                                <Top			offsetX="30" offsetY="0"	w="30"  h="30"/>
+                                <Topright		offsetX="60" offsetY="0"	w="30"	h="30"/>
+                                <Left			offsetX="0"  offsetY="30"	w="30"	h="30"/>
+                                <Center			offsetX="30" offsetY="30"	w="30"	h="30"/>
+                                <Right			offsetX="60" offsetY="30"	w="30"	h="30"/>
+                                <Bottomleft		offsetX="0"  offsetY="60"	w="30"	h="30"/>
+                                <Bottom			offsetX="30" offsetY="60"	w="30"	h="30"/>
+                                <Bottomright	offsetX="60" offsetY="60"	w="30"	h="30"/>
+                                <OffSet x="30" y="30" />
+                            </NineSquare>
+                        </Texture>
+                        <FontString name="$parentTips" justifyH="center" fonttype="BlackFont24" lineInterval="2" fontStyle="border" text="$21210" autowrap="true" hidden="true">
+                            <Color r="255" g="255" b="0"/>
+                            <Size>
+                                <AbsDimension x="200" y="200"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="20"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>SingleCreateFeatureHelpBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+    <!--选择按钮模板-->
+    <Button name="CreateSelBtnTemplate" abs_x="79" abs_y="78" virtual="true">
+        <Layers>
+            <Layer level="overlay">
+                <Texture name="$parentIcon" alphamode="alphablend">
+                    <Size>
+                        <AbsDimension x="70" y="70"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <NormalTexture name="$parentNormal" inherits="TemplateBigBkg15"/>
+        <Scripts>
+            <OnClick>CreateSelBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+    <!--可选择的-->
+    <Frame name="CreateSelectionTemplate" abs_x="200" abs_y="150" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" fonttype="BlackFont26" justifyH="center" justifyV="middle" text="$6317">
+                    <Size>
+                        <AbsDimension x="384" y="32"/>
+                    </Size>
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="top" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="15"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentChoose" fonttype="BlackFont19" justifyH="center" justifyV="middle" text="$590">
+                    <Size>
+                        <AbsDimension x="384" y="30"/>
+                    </Size>
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentBtn" inherits="CreateSelBtnTemplate" id="1">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+                        <Offset>
+                            <AbsDimension x="0" y="5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <Button name="$parentHelpBtn" hidden="true">
+                <Size>
+                    <AbsDimension x="30" y="31"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentBtn">
+                        <Offset>
+                            <AbsDimension x="5" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="jyzw_button_zhuagntai.png" abs_x="30" abs_y="31"/>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="jyzw_button_zhuagntai.png">
+                    <Size>
+                        <AbsDimension x="28" y="29"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg19" hidden="true" abs_x="660" abs_y="200" />
+                        <Texture name="$parentIcon" alphamode="alphablend" hidden="true">
+                            <Size>
+                                <AbsDimension x="70" y="70"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="left" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="100" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentChoose" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="$590" hidden="true">
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="384" y="50"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="top" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="33"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentAttribute" fonttype="BlackFont22" justifyH="left" text="$1107" hidden="true">
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="256" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+                                    <Offset>
+                                        <AbsDimension x="50" y="-17"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentLife" fonttype="BlackFont22" justifyH="left" text="$4300" hidden="true">
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentAttribute">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentAttack" fonttype="BlackFont22" justifyH="left" text="$4302" hidden="true">
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLife">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDescribe" fonttype="BlackFont22" justifyH="left" text="$3015" hidden="true">
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="200" y="26"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="center" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="100" y="-17"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDetails" fonttype="BlackFont22" autowrap="true" justifyH="left" text="$3813" hidden="true">
+                            <Color r="255" g="253" b="233"/>
+                            <Size>
+                                <AbsDimension x="200" y="100"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDescribe">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>CreateMonsterHelpBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+    <Button name="OrganismGridTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="81" y="81"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg15"/>
+                <Texture name="$parentChecked" inherits="TemplateBkg67" hidden="true"/>
+                <Texture name="$parentIcon" file="items/apple.png" alphamode="alphablend">
+                    <Size>
+                        <AbsDimension x="65" y="65"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+
+        </Frames>
+        <Scripts>
+            <OnClick>OrganismGridTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+    <Button name="CreateTabTemplate" virtual="true" inherits="TemplateCreatureEditorTabBtn">
+        <Scripts>
+            <OnClick>CreateTabTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+    <!--选择生物-->
+    <Frame name="ChooseOrganismFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000" input_transparent="false">
+        <Size>
+            <RelDimension x="1.0" y="1.0"/>
+        </Size>
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0" />
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg8">
+                    <Size>
+                        <AbsDimension x="993" y="571"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg2" inherits="TemplateBigBkg2">
+                    <Size>
+                        <AbsDimension x="991" y="433"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="58"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg3" inherits="TemplateBigBkg5" >
+                    <Size>
+                        <AbsDimension x="772" y="394"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="right" relativePoint="right" relativeTo="$parentBkg2">
+                            <Offset>
+                                <AbsDimension x="-19" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+                <Size>
+                    <AbsDimension x="989" y="61"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="0" y="4"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" shadowcolor="4D352C28" text="$6317">
+                            <Color r="255" g="135" b="27"/>
+                            <Size>
+                                <AbsDimension x="400" y="40"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="33" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Size>
+                    <AbsDimension x="46" y="60"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-10" y="-8"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>ChooseOrganismFrameClose_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentOkBtn" inherits="TemplateBtn2" >
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-21" y="-14"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3010">
+                            <Color r="51" g="55" b="55"/>
+                            <Size>
+                                <AbsDimension x="160" y="31"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>ChooseOrganismFrameOkBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentTabs" hidden="false">
+                <Size>
+                    <AbsDimension x="168" y="394"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="right" relativePoint="left" relativeTo="$parentBkg3">
+                        <Offset>
+                            <AbsDimension x="-16" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="$parent1" inherits="CreateTabTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="12"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parent2" inherits="CreateTabTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parent1" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="72"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parent3" inherits="CreateTabTemplate" id="3">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parent2" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="72"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            <SlidingFrame name="OrganismGridBox" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <AbsDimension x="755" y="333"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg3">
+                        <Offset>
+                            <AbsDimension x="0" y="26"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true">
+                        <Size>
+                            <AbsDimension x="755" y="800"/>
+                        </Size>
+                    </Frame>
+                    <Button name="OrganismGrid1" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid2" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid3" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid4" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid5" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid6" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid7" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid8" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid9" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid10" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid11" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid12" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid13" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid14" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid15" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid16" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid17" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid18" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid19" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid20" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid21" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid22" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid23" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid24" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid25" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid26" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid27" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid28" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid29" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid30" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid31" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid32" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid33" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid34" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid35" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid36" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid37" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid38" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid39" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid40" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid41" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid42" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid43" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid44" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid45" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid46" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid47" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid48" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid49" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid50" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid51" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid52" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid53" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid54" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid55" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid56" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid57" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid58" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid59" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid60" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid61" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid62" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid63" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid64" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid65" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid66" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid67" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid68" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid69" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid70" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid71" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid72" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid73" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid74" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid75" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid76" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid77" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid78" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid79" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid80" inherits="OrganismGridTemplate"/>
+                    <Button name="OrganismGrid81" inherits="OrganismGridTemplate"/>
+                </Frames>
+            </SlidingFrame>
+        </Frames>
+        <Scripts>
+            <OnLoad>ChooseOrganismFrame_OnLoad();</OnLoad>
+            <OnShow>ChooseOrganismFrame_OnShow();</OnShow>
+            <OnHide>ChooseOrganismFrame_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+    <!--属性设置框架-->
+    <Frame name="CreateMonsterFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10">
+        <Size>
+            <RelDimension x="1.0" y="1.0"/>
+        </Size>
+        <Anchors>
+            <Anchor point="TOP" relativePoint="TOP" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0" />
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="background">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2"  abs_x="668" abs_y="680">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" >
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentChenDi" inherits="TemplateBigBkg5">
+                    <Size>
+                        <AbsDimension x="628" y="380"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="215"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+                <Size>
+                    <AbsDimension x="664" y="61"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlap">
+                        <FontString name="$parentTitle" fonttype="BlackFont36" text="$21200" shadowcolor="4D352C28" angle="0" lineInterval="0" justifyV="middle">
+                            <Color r="255" g="135" b="27" />
+                            <Size>
+                                <AbsDimension x="350" y="34" />
+                            </Size>
+                            <Anchors>
+                                <Anchor point="LEFT" relativePoint="LEFT" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="33" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Frame name="SingleCreateSelection1" inherits="CreateSelectionTemplate"/>
+            <SlidingFrame name="SingleCreateAttrBox" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <AbsDimension x="616" y="367"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="65"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true">
+                        <Size>
+                            <AbsDimension x="616" y="800"/>
+                        </Size>
+                        <Layers>
+                            <Layer level="background">
+                                <Texture name="$parentBkg" inherits="TemplateBigBkg5">
+                                    <Anchors>
+                                        <Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>CreateMonsterFrame_OnClick();</OnClick>
+                        </Scripts>
+                    </Frame>
+
+                    <Frame name="SingleCreateLine1" inherits="CreateLineTemplate"/>
+                    <Frame name="SingleCreateLine2" inherits="CreateLineTemplate"/>
+                    <Frame name="SingleCreateLine3" inherits="CreateLineTemplate"/>
+                    <Frame name="SingleCreateSlider1" inherits="CreateSliderTemplate"/>
+                    <Frame name="SingleCreateSlider2" inherits="CreateSliderTemplate"/>
+                    <Frame name="SingleCreateSlider3" inherits="CreateSliderTemplate"/>
+                    <Frame name="SingleCreateSlider4" inherits="CreateSliderTemplate"/>
+                    <Frame name="SingleCreateSlider5" inherits="CreateSliderTemplate"/>
+                    <Frame name="SingleCreateSwitch1" inherits="CreateSwitchTemplate"/>
+                    <Frame name="SingleCreateSwitch2" inherits="CreateSwitchTemplate"/>
+                </Frames>
+                <Scripts>
+                    <OnClick>CreateMonsterFrame_OnClick();</OnClick>
+                </Scripts>
+            </SlidingFrame>
+            <Button name="$parentCloseBtn" holddown_threshold="0.0" inherits="TemplateCloseBtn0">
+                <Size>
+                    <AbsDimension x="46" y="60" />
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parentHead" relativePoint="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-10" y="-8" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>CreateMonsterFrameCloseBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentSaveBtn" inherits="TemplateBtn3">
+                <Anchors>
+                    <Anchor point="BOTTOM" relativeTo="$parent" relativePoint="BOTTOM">
+                        <Offset>
+                            <AbsDimension x="0" y="-35" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="CENTER" justifyV="middle" text="$3934" shadowcolor="ff6a3a0c" abs_x="180" abs_y="29" angle="0" lineInterval="0">
+                    <Color r="55" g="54" b="51" />
+                    <Size>
+                        <AbsDimension x="180" y="29" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="CENTER" relativePoint="CENTER" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Scripts>
+                    <OnClick>CreateMonsterFrameSaveBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnClick>CreateMonsterFrame_OnClick();</OnClick>
+            <OnLoad>CreateMonsterFrame_OnLoad();</OnLoad>
+            <OnShow>CreateMonsterFrame_OnShow();</OnShow>
+            <OnHide>CreateMonsterFrame_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+</Ui>

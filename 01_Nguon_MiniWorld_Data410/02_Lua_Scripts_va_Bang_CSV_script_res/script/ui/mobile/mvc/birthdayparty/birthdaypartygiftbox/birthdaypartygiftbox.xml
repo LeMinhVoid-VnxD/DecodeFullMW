@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ui>
+    <Script file="ui/mobile/mvc/BirthdayParty/BirthdayPartyGiftBox/BirthdayPartyGiftBoxCtrl.lua" />
+    <Script file="ui/mobile/mvc/BirthdayParty/BirthdayPartyGiftBox/BirthdayPartyGiftBoxView.lua" />
+    <Script file="ui/mobile/mvc/BirthdayParty/BirthdayPartyGiftBox/BirthdayPartyGiftBoxModel.lua" />
+
+    ## 关闭按钮模板
+	<Button name="BirthdayGiftBoxCloseTemplate" virtual="true" abs_x="51" abs_y="57">
+        <NormalTexture name="$parentNormal" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_close_yellow"/>
+        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_close_yellow" rel_x="0.9" rel_y="0.9">
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </PushedTexture>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):CloseView_OnClick();</OnClick>
+        </Scripts>
+	</Button>
+
+    ## 选择按钮模板
+    <Button name="BirthdayGiftBoxBtTemplate" virtual="true" abs_x="213" abs_y="78">
+        <NormalTexture name="$parentNormal" file="ui/mobile/texture0/battlepass.xml" uvname="btn_med_yellow"/>
+        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/battlepass.xml" uvname="btn_med_yellow" rel_x="0.9" rel_y="0.9">
+            <Anchors>
+                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+            </Anchors>
+        </PushedTexture>
+        <Layers>
+            <Layer level="overlay">
+                <FontString name="$parentTitle" fonttype="BlackFont36" justifyH="center" text="$3061" abs_x="120" abs_y="35">
+                    <Color r="174" g="90" b="1"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Button>
+    
+    ## 好友列表模板
+	<Frame name="BirthdayPartyFriendTemplate" virtual="true" abs_x="407" abs_y="68">
+		<Layers>
+			<Layer level="overlay">
+                ## 头像背景
+				<Texture name="$parentHeadBg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" abs_x="57" abs_y="57">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+                ## 头像
+                <Texture name="$parentHead" abs_x="48" abs_y="48">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentHeadBg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+                ## 昵称
+                <FontString name="$parentName" fonttype="BlackFont22" justifyH="left" text="" abs_x="180" abs_y ="22">
+                    <Color r="196" g="136" b="87"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topright" relativeTo="$parentHeadBg">
+                            <Offset>
+                                <AbsDimension x="7" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                ## uin
+                <FontString name="$parentUin" fonttype="BlackFont20" justifyH="left" text="" abs_x="180" abs_y ="20">
+                    <Color r="229" g="173" b="106"/>
+                    <Anchors>
+                        <Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentHeadBg">
+                            <Offset>
+                                <AbsDimension x="7" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="FFFFBB62" rel_x="1.0" abs_y="1">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 赠送蛋糕
+            <Button name="$parentSendCakeBtn" inherits="BirthdayGiftBoxBtTemplate" abs_x="109" abs_y="41">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):SendFriendCake_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+	</Frame>
+
+    ## 奖品模板
+	<Frame name="BirthdayGiftBoxAwardItemTemplate" abs_x ="192" abs_y ="192" virtual="true">
+		<Layers>
+            <Layer level="BACKGROUND">
+                ## 背景
+                <Texture name="$parentBkg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="board_jlk" abs_x ="192" abs_y ="192" >
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 图片
+                <Texture name="$parentImage" abs_x ="133" abs_y ="122" >
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-20"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 名称背景
+                <Texture name="$parentNameBkg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="label_bd_prize" abs_x ="185" abs_y ="35">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-25"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                
+                ## 名称
+                <FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="" abs_x="140" abs_y ="19">
+                    <Color r="100" g="59" b="5"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+	</Frame>
+
+    ## 生日派对提示框
+    <Frame name="BirthdayPartyGiftBox" parent="UIClient" frameStrata="HIGH" framelevel="100" input_transparent="false" hidden="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="B1000000" />
+                <Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/img_Birthday_card.png" abs_x="1094" abs_y ="478">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="-64" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 描述 
+                <FontString name="$parentDesc" fonttype="BlackFont22" justifyH="left" text="" abs_x="453" abs_y ="140" autowrap="true" lineInterval="14">
+                    <Color r="187" g="100" b="106"/>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-150" y="190"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 确定
+            <Button name="$parentSureBtn" inherits="BirthdayGiftBoxBtTemplate">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="110" y="-60"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):StartAwardGifgSure_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ## 关闭按钮
+            <Button name="$parentCloseBtn" inherits="BirthdayGiftBoxCloseTemplate" id="1">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+        </Frames>
+    </Frame>
+
+    ## 生日派对礼盒
+    <Frame name="BirthdayPartyGiftAward" parent="UIClient" frameStrata="HIGH" framelevel="100" input_transparent="false" hidden="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/bg_bats_Birthday.png" stretchedge="true"/>
+                <Texture name="$parentTitleBg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_title_birthday" abs_x="1017" abs_y="106">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="46"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                <FontString name="$parentTitleHint" fonttype="BlackFont20" justifyH="center" text="$110073" abs_x="590" abs_y="55" lineInterval="14">
+                    <Color r="173" g="78" b="15"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parentTitleBg">
+                            <Offset>
+                                <AbsDimension x="378" y="7"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                
+                <Texture name="$parentContentBkg" file="ui/mobile/texture0/bigtex/board_sr_birthday.png" abs_x="1155" abs_y="425">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="153"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 右边
+                <FontString name="$parentRightHint" fonttype="BlackFont30" justifyH="center" text="$110074" abs_x="267" abs_y="30">
+                    <Color r="254" g="240" b="223"/>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parentContentBkg">
+                            <Offset>
+                                <AbsDimension x="-92" y="39"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="$parentRightGivingHint" fonttype="BlackFont18" justifyH="right" text="$110075" abs_x="150" abs_y="17">
+                    <Color r="186" g="81" b="15"/>
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parentContentBkg">
+                            <Offset>
+                                <AbsDimension x="-16" y="90"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <Texture name="$parentEditBg" file="ui/mobile/texture0/birthdaysystem.xml" uvname="img_ssk" abs_x="445" abs_y="46">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentFriendListView">
+                            <Offset>
+                                <AbsDimension x="12" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 左边
+            ## 奖品1
+            <Frame name="$parentPrize1" inherits="BirthdayGiftBoxAwardItemTemplate" id="1" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="left" relativeTo="$parentContentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+
+            ## 奖品2
+            <Frame name="$parentPrize2" inherits="BirthdayGiftBoxAwardItemTemplate" id="2" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="left" relativeTo="$parentContentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+
+            ## 奖品3
+            <Frame name="$parentPrize3" inherits="BirthdayGiftBoxAwardItemTemplate" id="3" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="left" relativeTo="$parentContentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+
+            ## 领取
+            <Button name="$parentAwardBtn" inherits="BirthdayGiftBoxBtTemplate" abs_x="161" abs_y="59">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentContentBkg">
+                        <Offset>
+                            <AbsDimension x="275" y="-22"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):AwardPrizeSure_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ## 右边
+            <ListViewFrame name="$parentFriendListView" slidingY="true" slideplane="$parentPlane" abs_x="407" abs_y="260">
+				<Anchors>
+                    <Anchor point="topright" relativePoint="bottomright" relativeTo="$parentRightGivingHint">
+                        <Offset>
+                            <AbsDimension x="-13" y="5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="407" abs_y="260" />
+				</Frames>
+			</ListViewFrame>
+
+            ## 搜索框
+            <EditBox name="$parentSearchEdit" letters="30" multiLine="false" editMethod="527" cursorColor="00000000" abs_x="430" abs_y="46">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentEditBg">
+                        <Offset>
+                            <AbsDimension x="0" y="15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString name="$parentFont" fonttype="BlackFont20">
+                    <Color r="227" g="147" b="93"/>
+                </FontString>
+
+                <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$110077">
+                    <Color r="227" g="147" b="93"/>
+                </FontString>
+                <Scripts>
+                    <OnFinishChar>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):EditBox_OnInputFinish();</OnFinishChar>
+                </Scripts>
+            </EditBox>
+
+            ## 搜索按钮
+            <Button name="$parentSearchBtn" abs_x="48" abs_y="48">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parentEditBg">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_sm_ye3" rel_x="1.0" rel_y="1.0">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/birthdaysystem.xml" uvname="btn_sm_ye3" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):SearchPlayer_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ## 截图分享按钮
+            <Button name="$parentScreenshotBtn" abs_x="161" abs_y="59">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentContentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="35" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture0/battlepass.xml" uvname="btn_med_yellow"/>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/battlepass.xml" uvname="btn_med_yellow" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentIcon" file="ui/mobile/texture0/birthdaysystem.xml" uvname="icon_fx" abs_x="37" abs_y="36">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="26" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+
+                        <FontString name="$parentTitle" fonttype="BlackFont36" justifyH="center" text="$1070" abs_x="70" abs_y="34">
+                            <Color r="174" g="90" b="1"/>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-16" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("BirthdayPartyGiftBox"):ScreenShotBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ## 关闭按钮
+            <Button name="$parentCloseBtn" inherits="BirthdayGiftBoxCloseTemplate" id="2">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-36" y="20"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+        </Frames> 
+    </Frame>
+
+</Ui>

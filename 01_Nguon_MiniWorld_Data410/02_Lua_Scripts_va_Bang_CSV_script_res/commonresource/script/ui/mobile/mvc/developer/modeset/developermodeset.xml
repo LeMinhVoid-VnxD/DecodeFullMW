@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/modeSet/DeveloperModeSetModel.lua"/>
+	<Script file="ui/mobile/mvc/developer/modeSet/DeveloperModeSetView.lua"/>
+	<Script file="ui/mobile/mvc/developer/modeSet/DeveloperModeSetCtrl.lua"/>
+
+	##左侧按钮
+	<Button name="DeveloperModeSetTabBtnTemplate" virtual="true" inherits="TemplateTabBtn0">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="20"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##LLDO:红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("DeveloperModeSet"):TabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="DeveloperModeSet" parent="UIClient"  frameStrata="MEDIUM" hidden="true" framelevel="2400" inherits="TemplateMainFrame">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="1097" abs_y="577">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="175" y="56"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##左侧页签
+            <Frame name="$parentTabs" abs_x="175" abs_y = "500" >
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="78"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>		
+			##跳至开发者学院wiki按钮	
+			<Button name ="$parentCreatorWiki" abs_x ="159" abs_y ="30">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentTabsBkg">
+						<Offset>
+							<AbsDimension x="8" y="-38" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level= "overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_developbook" abs_x="28" abs_y ="32">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+							</Anchors>	
+						</Texture>					
+					</Layer>
+				</Layers>
+				<Frames>		
+					<RichText name="$parentRich" lineInterval="1" input_transparent="true" fonttype="BlackFont24" justifyV="bottom" justifyH="left" text="XXX" abs_x="150" abs_y="25">
+						<LinkColor r="61" g="69" b="70"/>
+						<ShadowColor r="61" g="69" b="70"/>
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="38" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeveloperModeSet"):OpenCreatorWiki();</OnClick>
+						</Scripts>
+					</RichText> 
+				</Frames>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

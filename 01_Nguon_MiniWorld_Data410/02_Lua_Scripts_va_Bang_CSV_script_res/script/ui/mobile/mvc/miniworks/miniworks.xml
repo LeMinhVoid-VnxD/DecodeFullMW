@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##工坊辅助类
+	<Script file="ui/mobile/mvc/miniworks/interface/MiniWorksInterface.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/interface/MiniWorksService.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/interface/MiniWorksServiceExt.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/interface/MiniWorksInterfaceExt.lua"/>
+	##多语言类
+	<Script file="ui/mobile/mvc/miniworks/multilingual/MapMultilingual.lua"/>
+<!-- 	<Script file="ui/mobile/mvc/shop/shopHelper/ShopDataManager.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopHelper/ShopConfig.lua"/> -->
+	##工坊主页
+	<Script file="ui/mobile/mvc/miniworks/MiniWorksModel.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/MiniWorksView.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/MiniWorksCtrl.lua"/>
+
+	##:导航按钮模板
+	<Button name="WorksTabTemplate" virtual="true" inherits="TemplateTabBtn1">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="22" abs_y="22">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="5" y="-9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MiniWorks"):TabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="MiniWorks" parent="UIClient" frameStrata="MEDIUM" inherits="TemplateMainFrame5" hidden="true" framelevel="1000" input_transparent="false" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentPattern" inherits="TemplateBigBkg7_flat">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="-382" y="-260"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPattern1" inherits="TemplateBigBkg7_flat">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="128" y="-252"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentNoNetworkHintText" hidden="true" fonttype="BlackFont30">
+				<Size>
+					<AbsDimension x="600" y="50"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentNetWorkOff">
+						<Offset>
+							<AbsDimension x="450" y="40" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<Button name="$parentBackBtn" hidden="true" framelevel="1105">
+				<Size>
+					<AbsDimension x="43" y="37"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-10" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" >
+					<Size>
+						<AbsDimension x="40" y="34"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+<!-- 				<Scripts>
+					<OnClick>MiniWorksFrameBackBtn_OnClick();</OnClick>
+				</Scripts> -->
+			</Button>
+
+			<Frame name="$parentTopNetwork">
+				<size>
+					<AbsDimension x="500" y="58" />
+				</size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="700" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentStateIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_wificircle_green.png" >
+							<Size>
+								<AbsDimension x="12" y="12"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="155" y="22"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentStateText" fonttype="BlackFont17" text="">
+							<Color r="185" g="185" b="185"/>
+							<Size>
+								<AbsDimension x="330" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentStateIcon">
+									<Offset>
+										<AbsDimension x="8" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentNetworkWifi" file="ui/mobile/texture2/room.xml" uvname="icon_wifi_green.png" >
+							<Size>
+								<AbsDimension x="18" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="450" y="18"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			##左侧面板
+			<Frame name="$parentLeftPanel" abs_x = "175" abs_y = "635">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="78" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentBtn1" inherits="WorksTabTemplate" id="1" />
+					<Button name="$parentBtn2" inherits="WorksTabTemplate" id="2" />
+					<Button name="$parentBtn3" inherits="WorksTabTemplate" id="3" />
+					<Button name="$parentBtn4" inherits="WorksTabTemplate" id="4" />
+					<Button name="$parentBtn5" inherits="WorksTabTemplate" id="5" />
+					<Button name="$parentBtn6" inherits="WorksTabTemplate" id="6" />
+					<Button name="$parentBtn7" inherits="WorksTabTemplate" id="7" />
+					<Button name="$parentBtn8" inherits="WorksTabTemplate" id="8" />
+				</Frames>
+			</Frame>
+
+		</Frames>
+		<Scripts>
+			<!-- <OnEvent>GetInst("UIManager"):GetCtrl("Shop"):HandleEvent();</OnEvent> -->
+			<OnUpdate>GetInst("UIManager"):GetCtrl("MiniWorks"):Update();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

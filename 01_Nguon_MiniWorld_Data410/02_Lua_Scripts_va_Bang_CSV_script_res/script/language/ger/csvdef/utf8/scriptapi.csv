@@ -1,0 +1,325 @@
+接口ID,德语,德语,德语,德语,德语,德语,德语
+ID,TypeName,FunctionName,FunctionDesc,Desc1,Desc2,Desc3,Desc4
+10001,Spiel,doGameEnd,Game:doGameEnd(),nil,ErrorCode.OK,Beenden Sie das Spiel,local result = Game:doGameEnd()
+10002,Spiel,setScriptVar,"Game:setScriptVar(index, val)","index:number index from 1 , val:number customized value",ErrorCode.OK,Setzen Sie das Attribut Skript für benutzerdefinierte,"local result = Game:setScriptVar(index, val)"
+10003,Spiel,getScriptVar,Game:getScriptVar(index),index:number index from 1 ,"ErrorCode.OK, val:number User Value",Erhalten Sie Skript-Attribut für benutzerdefinierte,local result = Game:getScriptVar(index)
+10004,Spiel,sendScriptVars2Client,Game:sendScriptVars2Client(),nil,ErrorCode.OK,Laden Sie das Attribut des Skripts,local result = Game:sendScriptVars2Client()
+10005,Spiel,addRenderGlobalEffect,Game:addRenderGlobalEffect(path),path:string,"ErrorCode.OK, effectid:number",Neue globale Wirkung,local result = Game:addRenderGlobalEffect(path)
+10006,Spiel,removeRenderGlobalEffect,Game:removeRenderGlobalEffect(effectid),effectid:number,ErrorCode.OK,Klare globale Wirkung,local result = Game:removeRenderGlobalEffect(effectid)
+10007,Spiel,setRenderGlobalEffectPos,"Game:setRenderGlobalEffectPos(effectid, x, y, z)","effectid:number, x|y|z:number",ErrorCode.OK,Stellen Sie die Position der globalen Wirkung,"local result = Game:setRenderGlobalEffectPos(effectid, x, y, z)"
+10008,Spiel,setRenderGlobalEffectScale,"Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)","effectid:number, scalex|scaley|scalez:number",ErrorCode.OK,Set globaler Zoom-Effekt,"local result = Game:setRenderGlobalEffectScale(effectid, scalex, scaley, scalez)"
+10009,Spiel,msgBox,Game:msgBox(msg),,,Nachrichtenbox,local result = Game:msgBox(msg)
+20001,Welt,isDaytime,World:isDaytime(),none,"ErrorCode.OK, result:boolean",Ob es Tag,"local isDayTx = World:isDaytime()
+if isDayTx~=ErrorCode.OK then --If it is night, then give the torch to players
+        local itemId, itemCnt = 817, 2 --Torch id and numbers
+        Player:gainItems(playerId, itemId, itemCnt, 1)
+end"
+20002,Welt,isCustomGame,World:isCustomGame(),none,"ErrorCode.OK, result:boolean",Ob es sich um Spiel anpassen,"local result = World:isCustomGame()
+if result==ErrorCode.OK then print('Customize mode') end"
+20003,Welt,isCreativeMode,World:isCreativeMode(),none,"ErrorCode.OK, result:boolean",Ob es sich um Erstellungsmodus,"local result = World:isCreativeMode()
+if result==ErrorCode.OK then print('Creation mode') end"
+20004,Welt,isGodMode,World:isGodMode(),none,"ErrorCode.OK, result:boolean",Multiplayer-Erstellungsmodus oder kundenspezifische Bearbeitungsmodus,"local result = World:isGodMode()
+if result==ErrorCode.OK then print('Multiplayer mode') end"
+20005,Welt,isExtremityMode,World:isExtremityMode(),none,"ErrorCode.OK, result:boolean",Hardcore,"local result = World:isExtremityMode()
+if result==ErrorCode.OK then print('Hardcore mode') end"
+20006,Welt,isFreeMode,World:isFreeMode(),none,"ErrorCode.OK, result:boolean",Survival-Modus - Free-Modus,"local result = World:isFreeMode()
+if result==ErrorCode.OK then print('Survival mode-Free mode') end"
+20007,Welt,isSurviveMode,World:isSurviveMode(),none,"ErrorCode.OK, result:boolean",Single-Modus oder Survival-Modus - Free-Modus,"local result = World:isSurviveMode()
+if result==ErrorCode.OK then print('Single Survival mode') end"
+20008,Welt,isCreateRunMode,World:isCreateRunMode(),none,"ErrorCode.OK, result:boolean",Survival-Modus eingeschaltet aus Erstellungsmodus,"local result = World:isCreateRunMode()
+if result==ErrorCode.OK then print('Survival mode, turned from creation mode') end"
+20009,Welt,isGameMakerMode,World:isGameMakerMode(),none,"ErrorCode.OK, result:boolean",Maßgeschneiderte Bearbeitungsmodus,"local result = World:isGameMakerMode()
+if result==ErrorCode.OK then print('Customized edit mode') end"
+20010,Welt,isGameMakerRunMode,World:isGameMakerRunMode(),none,"ErrorCode.OK, result:boolean",Customized Betriebsmodus,"local result = World:isGameMakerRunMode()
+if result==ErrorCode.OK then print('Customized operation mode') end"
+20011,Welt,getHours,World:getHours(),none,"ErrorCode.OK, result:number",Aktuelle Zeit (h),"local result, dayTime = World:getHours()
+if result==ErrorCode.OK then print('Current time:', dayTime) end"
+20012,Welt,getCameraEditState,World:getCameraEditState(),none,"ErrorCode.OK, state:number0Default，1Edit，2Test",Erhalten Ansicht Bearbeitungszustand,"local result, state = World:getCameraEditState()
+if result==ErrorCode.OK then print('Current view editing state:', state) end"
+20013,Welt,setCameraEditState,World:setCameraEditState(state),state:CameraEditState,ErrorCode.OK,Set Ansicht Bearbeitungszustand,"--Get Camera(userdata)，Back to nil
+local result, config = World:getCustomCameraConfig()
+if result==ErrorCode.OK and config~=nil then --Customized view
+        config:setOption(CAMERA_OPTION_INDEX_CONFIG_SET, CCG_FLATVIEW)
+end"
+20014,Welt,getCustomCameraConfig,World:getCustomCameraConfig(),none,"ErrorCode.OK, config:CameraEditState",Erhalten Sie kundenspezifische Konfiguration der Kamera,local result = World:getCustomCameraConfig()
+20015,Welt,getRangeXZ,World:getRangeXZ(),none,"ErrorCode.OK, startX|startZ|endX|endZ:number","Erhalten, um den Bereich des Blocks (chunk)","local result, startX,startZ,endX,endZ = World:getRangeXZ()
+if result==ErrorCode.OK then print('StartXZ=(',startX,', ',startZ,'), EndXZ=(',endX,', ',endZ,')')  end"
+20016,Welt,getActorsByBox,"World:getActorsByBox(objtype, x1, y1, z1, x2, y2, z2)","type:number designate type, x1|y1|z1:number starting point, x2|y2|z2:number ending point","ErrorCode.OK, num:number, objids:tableobjid array",Erhalten Schauspieler in dafür vorgesehenen Bereich,"local actorType = 0 --OBJ_TYPE_MONSTER
+local x1, y1, z1 = -5, 1, -5
+local x2, y2, z2 = 15, 9, 15
+local ret, num, array = World:getActorsByBox(actorType, x1,y1,z1, x2,y2,z2)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20017,Welt,getPlayerTotal,World:getPlayerTotal(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number Number",Erhalten alle Spieler. Kann ihr Überleben Situation unter Kontrolle,local result = World:getPlayerTotal(alive)
+20018,Welt,getAllPlayers,World:getAllPlayers(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, num:number number, array:table player uin array",Erhalten alle Spieler. Kann ihr Überleben Situation unter Kontrolle,"local aliveType = -1 --Get all players data
+local ret, num, array = World:getAllPlayers(aliveType)
+if ret == ErrorCode.OK then print('Actors ===>> ', num, array) end"
+20019,Welt,randomOnePlayer,World:randomOnePlayer(alive),alive:number0 means being killed，1 means survival，default-1 means all the players,"ErrorCode.OK, uin:number",zufällige Spieler,"local aliveType = 1 --Any survivors Id
+local ret, playerId = World:randomOnePlayer(aliveType)
+if ret == ErrorCode.OK then print('Player ===>> ', playerId) end"
+20020,Welt,despawnActor,World:despawnActor(objid),objid:number,ErrorCode.OK,entfernen Schauspieler,"local ret, num, array = World:getActorsByBox(aType, x1,y1,z1, x2,y2,z2)
+if array and #array>0 then --Remove Actor
+        local result = World:despawnActor(array[#array])
+        if result == ErrorCode.OK then print('Despawn the last actor') end
+end"
+20021,Welt,spawnCreature,"World:spawnCreature(x, y, z, actorid, num)","x|y|z:number, mobid:number, num:number","ErrorCdoe.OK, objids:tableobjid array","Gene Kreatur (einschließlich Monster, NPC, Tiere etc.)","local x, y, z = 6, 7, 8
+local actorId, actorCnt = 3812, 2 --Little cow
+local ret, objids = World:spawnCreature(x, y, z, actorId, actorCnt)
+if objids and #objids>0 then
+        for idx = 1, #objIds do --Set the Oxygen dependence
+                Creature:setOxygenNeed(objids[idx], true)
+        end 
+end"
+20022,Welt,despawnCreature,World:despawnCreature(objid),objid:number,ErrorCode.OK,entfernen Kreatur,"local result = World:despawnCreature(objids[1])
+if result == ErrorCode.OK then print('Despawn the creature') end"
+20023,Welt,spawnItem,"World:spawnItem(x, y, z, itemid, num)","x|y|z:number, itemid:number, num:number","ErrorCode.OK, objid:number",Generieren Sie Elemente in designierten Standort,"local xPos, yPos, zPos = 5, 6, 7
+local itemId, itemCnt = 15003, 30 --Item's id and number
+local ret, objIds = World:spawnItem(xPos, yPos, zPos, itemId, itemCnt)
+if ret == ErrorCode.OK then print(""Item[1]====>>>"", objIds[1]) end"
+20024,Welt,despawnItemByBox,"World:despawnItemByBox(x1, y1, z1, x2, y2, z2)","x1|y1|z1:number starting point, x2|y2|z2:number ending point",ErrorCode.OK,Entfernen Artikel (nach Region),"local x1, y1, z1 = -5, 5, -5
+local x2, y2, z2 = 15, 9, 15
+local result = World:despawnItemByBox(x1,y1,z1, x2,y2,z2)
+if result == ErrorCode.OK then print('Successfully remove Item in designate region') end"
+20025,Welt,despawnItemByObjid,World:despawnItemByObjid(objid),objid:number,ErrorCode.OK,Entfernen Artikel (von ID),"local result = World:despawnItemByObjid(objIds[1])
+if result == ErrorCode.OK then print('Successfully remove designate item') end"
+20026,Welt,spawnProjectile,"World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)","shooter:number, itemid:number, x|y|z:number, dirx|diry|dirz:number, speed:number",ErrorCode.OK,generieren Projektil,"local result = World:spawnProjectile(shooter, itemid, x, y, z, dirx, diry, dirz, speed)"
+30001,Block,isSolidBlock,"Block:isSolidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Ob der Block Einheit,"local result = Block:isSolidBlock(x, y, z)"
+30002,Block,isLiquidBlock,"Block:isLiquidBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Ob der Block Fluid,"local result = Block:isLiquidBlock(x, y, z)"
+30003,Block,isAirBlock,"Block:isAirBlock(x, y, z)",x|y|z:number,"ErrorCode.OK, data:boolean",Ob der Block Luft,"local result = Block:isAirBlock(x, y, z)"
+30004,Block,getBlockID,"Block:getBlockID(x, y, z)",x|y|z:number,"ErrorCode.OK, id:number",Erhalten entsprechende Block-ID,"local result = Block:getBlockID(x, y, z)"
+30005,Block,setBlockAll,"Block:setBlockAll(x, y, z, blockid, data)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Set blockalldata Update und informieren,"local result = Block:setBlockAll(x, y, z, blockid, data)"
+30006,Block,destroyBlock,"Block:destroyBlock(x, y, z, dropitem)","x|y|z:number, dropitem:boolean",ErrorCode.OK,Zerstören Sie den Block,"local result = Block:destroyBlock(x, y, z, dropitem)"
+30007,Block,placeBlock,"Block:placeBlock(blockid, x, y, z, face)","blockid:number, x|y|z:number, face:number","ErrorCode.OK, ret:boolean whether it is placed right",Platzieren Sie den Block,"local result = Block:placeBlock(blockid, x, y, z, face)"
+30008,Block,setBlockAllForUpdate,"Block:setBlockAllForUpdate(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Stellen Sie blockalldata und informieren umliegenden Blöcke,"local result = Block:setBlockAllForUpdate(x, y, z, blockid)"
+30009,Block,setBlockAllForNotify,"Block:setBlockAllForNotify(x, y, z, blockid)","x|y|z:number, blockid:number, data:number, flag:number",ErrorCode.OK,Stellen Sie blockalldata und aktualisieren aktuellen Standort Blöcke,"local result = Block:setBlockAllForNotify(x, y, z, blockid)"
+30010,Block,setBlockSettingAttState,"Block:setBlockSettingAttState(blockid, atttype, switch)","blockid:number, atttype:BLOCKATTR, switch:boolean",ErrorCode.OK,Stellen Block des Attributs und Zustand,"local result = Block:setBlockSettingAttState(blockid, atttype, switch)"
+30011,Block,getBlockSwitchStatus,Block:getBlockSwitchStatus(pos),x|y|z:number,"ErrorCode.OK, isactive:boolean",Erhalten Ein-Aus-Zustand des Funktionsbausteins,local result = Block:getBlockSwitchStatus(pos)
+30012,Block,setBlockSwitchStatus,"Block:setBlockSwitchStatus(pos, isactive)","x|y|z:number, isactive:boolean",ErrorCode.OK,An-Aus-Zustand des Funktionsbausteins,"local result = Block:setBlockSwitchStatus(pos, isactive)"
+40001,Spiel Schauspieler,isPlayer,Actor:isPlayer(objid),objid,ErrorCode.OK is player is player,"Erkennen, ob es ein Spieler ist",local result = Actor:isPlayer(objid)
+40002,Spiel Schauspieler,isMob,Actor:isMob(objid),objid,ErrorCode.OK is monster is monster,"Erkennen, ob es ein Monster ist",local result = Actor:isMob(objid)
+40003,Spiel Schauspieler,getObjType,Actor:getObjType(objid),objid,"ErrorCode.OK, objtype:number",Holen Sie sich das Art von Schauspieler: Kreatur / Spieler ...,local result = Actor:getObjType(objid)
+40004,Spiel Schauspieler,isInAir,Actor:isInAir(objid),objid:number,ErrorCode.OK,Wenn es in der Luft,local result = Actor:isInAir(objid)
+40005,Spiel Schauspieler,getPosition,Actor:getPosition(objid),objid,"ErrorCode.OK, x|y|z:number",Holen Sie sich die Position Schauspieler,local result = Actor:getPosition(objid)
+40006,Spiel Schauspieler,setPosition,"Actor:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Stellen Sie die Lage von Schauspieler,"local result = Actor:setPosition(objid, x, y, z)"
+40007,Spiel Schauspieler,jump,Actor:jump(objid),objid:number,ErrorCode.OK,Springen,local result = Actor:jump(objid)
+40008,Spiel Schauspieler,killSelf,Actor:killSelf(objid),objid:number,ErrorCode.OK,kill yourself,local result = Actor:killSelf(objid)
+40009,Spiel Schauspieler,getCurPlaceDir,Actor:getCurPlaceDir(objid),objid:number,"ErrorCode.OK, dir:number",Holen Sie sich die aktuelle Blickrichtung,local result = Actor:getCurPlaceDir(objid)
+40010,Spiel Schauspieler,tryMoveToActor,"Actor:tryMoveToActor(self_objid, target_objid, speed)","self_objid:number, target_objid:number, speed:number",ErrorCode.OK,Bewegen sich in Richtung Ziel Schauspieler,"local result = Actor:tryMoveToActor(self_objid, target_objid, speed)"
+40011,Spiel Schauspieler,tryMoveToPos,"Actor:tryMoveToPos(objid, x, y, z, speed)","objid:number, x|y|z:number, speed:number",ErrorCode.OK,Bewegen sich in Richtung Ziel Schauspieler,"local result = Actor:tryMoveToPos(objid, x, y, z, speed)"
+40012,Spiel Schauspieler,addBuff,"Actor:addBuff(objid, buffid, bufflv, customticks)","objid:number, buffid:number, bufflv:number, customticks:number",ErrorCode.OK,erhalten Buff,"local result = Actor:addBuff(objid, buffid, bufflv, customticks)"
+40013,Spiel Schauspieler,hasBuff,"Actor:hasBuff(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ret:boolean",Wenn es hat jede Buff,"local result = Actor:hasBuff(objid, buffid)"
+40014,Spiel Schauspieler,removeBuff,"Actor:removeBuff(objid, buffid)","objid:number, buffid:number",ErrorCode.OK,Löschen Sie den Buff,"local result = Actor:removeBuff(objid, buffid)"
+40015,Spiel Schauspieler,clearAllBuff,Actor:clearAllBuff(objid),objid:number,ErrorCode.OK,Alle löschen der Buff,local result = Actor:clearAllBuff(objid)
+40016,Spiel Schauspieler,clearAllBadBuff,Actor:clearAllBadBuff(objid),objid:number,ErrorCode.OK,Alle löschen die negativen Buff,local result = Actor:clearAllBadBuff(objid)
+40017,Spiel Schauspieler,getBuffList,Actor:getBuffList(objid),objid:number,"ErrorCode.OK, num:numberbuff number, array:tablebuffid array",Holen Sie sich die Buff-Liste,local result = Actor:getBuffList(objid)
+40018,Spiel Schauspieler,getBuffLeftTick,"Actor:getBuffLeftTick(objid, buffid)","objid:number, buffid:number","ErrorCode.OK, ticks:number",Holen Sie sich das verbleibende ITCK von entsprechendem Buff des aktuellen Index,"local result = Actor:getBuffLeftTick(objid, buffid)"
+40019,Spiel Schauspieler,addHP,"Actor:addHP(objid, hp)","objid:number, hp:number",ErrorCode.OK,Erhöhen des aktuellen HP,"local result = Actor:addHP(objid, hp)"
+40020,Spiel Schauspieler,getHP,Actor:getHP(objid),objid:number,"ErrorCode.OK, value:number",Holen Sie sich aktuelle HP,local result = Actor:getHP(objid)
+40021,Spiel Schauspieler,getMaxHP,Actor:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Holen Sie sich aktuelle max HP,local result = Actor:getMaxHP(objid)
+40022,Spiel Schauspieler,addOxygen,"Actor:addOxygen(objid, oxygen)","objid:number, oxygen:number",ErrorCode.OK,Erhöhen Sauerstoffvolumen,"local result = Actor:addOxygen(objid, oxygen)"
+40023,Spiel Schauspieler,getOxygen,Actor:getOxygen(objid),objid:number,"ErrorCode.OK, value:number",Erhalten Sauerstoffvolumen,local result = Actor:getOxygen(objid)
+40024,Spiel Schauspieler,addEnchant,"Actor:addEnchant(objid, slot, enchantId, enchantLevel)","objid:number, slot:number, enchantId:number, enchantLevel:number",ErrorCode.OK,Incease die Zauber entsprechender Ausrüstung,"local result = Actor:addEnchant(objid, slot, enchantId, enchantLevel)"
+40025,Spiel Schauspieler,removeEnchant,"Actor:removeEnchant(objid, slot, enchantId)","objid:number, slot:number, enchantId:number",ErrorCode.OK,Klar Zauber der entsprechenden Ausrüstung,"local result = Actor:removeEnchant(objid, slot, enchantId)"
+40026,Spiel Schauspieler,findNearestBlock,"Actor:findNearestBlock(objid, blockid, blockRange)","objid:number, blockid:number, blockRange","ErrorCode.OK, x|y|z:number",Finden Sie den nächsten Block von id,"local result = Actor:findNearestBlock(objid, blockid, blockRange)"
+40027,Spiel Schauspieler,setFaceYaw,"Actor:setFaceYaw(objid, yaw)","objid:number, yaw:number angle",ErrorCode.OK,Stellen Sie den queren Abweichungswinkel von Schauspielern Sicht,"local result = Actor:setFaceYaw(objid, yaw)"
+40028,Spiel Schauspieler,getFaceYaw,Actor:getFaceYaw(objid),objid:number,"ErrorCode.OK, yaw:number",Holen Sie sich den queren Abweichungswinkel von Schauspielern Sicht,local result = Actor:getFaceYaw(objid)
+40029,Spiel Schauspieler,turnFaceYaw,"Actor:turnFaceYaw(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Ändern Sie den quer Abweichungswinkel von Schauspieler,"local result = Actor:turnFaceYaw(objid, offset)"
+40030,Spiel Schauspieler,setFacePitch,"Actor:setFacePitch(objid, pitch)","objid:number, pitch:number upward view",ErrorCode.OK,Stellen Sie den Aufwärtswinkel von Schauspieler Sicht,"local result = Actor:setFacePitch(objid, pitch)"
+40031,Spiel Schauspieler,getFacePitch,Actor:getFacePitch(objid),objid:number,"ErrorCode.OK, pitch:number",Holen Sie sich das Aufwärtswinkel von Schauspieler Sicht,local result = Actor:getFacePitch(objid)
+40032,Spiel Schauspieler,turnFacePitch,"Actor:turnFacePitch(objid, offset)","objid:number, offset:number rotation angle",ErrorCode.OK,Ändern Sie die Abweichung nach oben Winkel von Schauspieler,"local result = Actor:turnFacePitch(objid, offset)"
+40033,Spiel Schauspieler,playBodyEffect,"Actor:playBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Spielen Sie die Effekte,"local result = Actor:playBodyEffect(objid, type)"
+40034,Spiel Schauspieler,stopBodyEffect,"Actor:stopBodyEffect(objid, type)","objid:number, type:number effect type ACTORBODY_EFFECT",ErrorCode.OK,Stoppen Sie die Effekte,"local result = Actor:stopBodyEffect(objid, type)"
+40035,Spiel Schauspieler,playBodyEffectByFile,"Actor:playBodyEffectByFile(objid, filename, sync)","objid:number, filename:string file name, sync:bool synchronize",ErrorCode.OK,Spielen Sie die Datei Effekte,"local result = Actor:playBodyEffectByFile(objid, filename, sync)"
+40036,Spiel Schauspieler,stopBodyEffectByFile,"Actor:stopBodyEffectByFile(objid, filename)","objid:number, filename:string file name",ErrorCode.OK,Stoppen Sie die Datei Effekte,"local result = Actor:stopBodyEffectByFile(objid, filename)"
+40037,Spiel Schauspieler,playSound,"Actor:playSound(objid, name, volume, pitch, flag)","objid:number, name:string, volume:number, pitch:number, flag:number",ErrorCode.OK,Ton abspielen,"local result = Actor:playSound(objid, name, volume, pitch, flag)"
+40038,Spiel Schauspieler,playSoundSpecial,"Actor:playSoundSpecial(objid, name, type)","objid:number, name:string, type:number designate name (GSOUND_TYPE)",ErrorCode.OK,Wiedergabe starten (spezifische Aktivität: GSOUND_TYPE),"local result = Actor:playSoundSpecial(objid, name, type)"
+40039,Spiel Schauspieler,clearActorWithId,"Actor:clearActorWithId(actorid, bkill)","actorid:number, bkill:boolean",ErrorCode.OK,"Deaktivieren der Kreatur-ID, deren ID ist ActorID","local result = Actor:clearActorWithId(actorid, bkill)"
+40040,Spiel Schauspieler,setAttackType,"Actor:setAttackType(objid, attacktype)","objid:number, attacktype:number",ErrorCode.OK,Stellen Sie die Schadensart,"local result = Actor:setAttackType(objid, attacktype)"
+40041,Spiel Schauspieler,setImmuneType,"Actor:setImmuneType(objid, immunetype, isadd)","objid:number, immunetype:number, isadd:number",ErrorCode.OK,Set Schaden Immunität Typ,"local result = Actor:setImmuneType(objid, immunetype, isadd)"
+40042,Spiel Schauspieler,mountActor,"Actor:mountActor(objid, mountobjid, posindex)","objid:number, mountobjid:number, posindex:number ride",ErrorCode.OK,"Holen Sie sich auf, aus dem Fahrzeug","local result = Actor:mountActor(objid, mountobjid, posindex)"
+40043,Spiel Schauspieler,setActionAttrState,"Actor:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Stellen Sie das Verhalten, Attribut und den Zustand der Kreatur","local result = Actor:setActionAttrState(objid, actionattr, switch)"
+40044,Spiel Schauspieler,tryNavigationToPos,"Actor:tryNavigationToPos(objid, x, y, z, cancontrol)","objid:number, x|y|z:number, cancontrol:boolean",ErrorCode.OK,Finden Sie den Weg an den Zielort,"local result = Actor:tryNavigationToPos(objid, x, y, z, cancontrol)"
+40045,Spiel Schauspieler,getRidingActorObjId,Actor:getRidingActorObjId(objid),objid:number,ErrorCode.OK,Holen Sie sich das Pferd des objid,local result = Actor:getRidingActorObjId(objid)
+50001,Spieler,getAttr,Player:getAttr(attrtype),"objid:number, atttype:number","ErrorCode.OK, value:number",Null,local result = Player:getAttr(attrtype)
+50002,Spieler,setAttr,"Player:setAttr(attrtype, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Null,"local result = Player:setAttr(attrtype, val)"
+50003,Spieler,getHostUin,Player:getHostUin(),nil,"ErrorCode.OK, uin:number",Holen Sie sich das Host,local result = Player:getHostUin()
+50004,Spieler,isMainPlayer,Player:isMainPlayer(objid),objid:number,ErrorCode.OK is local player is local player,"Erkennen, ob es lokale Spieler",local result = Player:isMainPlayer(objid)
+50005,Spieler,getMainPlayerUin,Player:getMainPlayerUin(),nil,"ErrorCode.OK, uin:number",Holen Sie sich das lokale Spielers uin,local result = Player:getMainPlayerUin()
+50006,Spieler,getGameResults,Player:getGameResults(objid),objid:number,"ErrorCode.OK, value:number",Erhalten Ergebnis des Spiels,local result = Player:getGameResults(objid)
+50007,Spieler,setGameResults,"Player:setGameResults(objid, result)","objid:number, result",ErrorCode.OK,Set Ergebnis des Spiels,"local result = Player:setGameResults(objid, result)"
+50008,Spieler,getGameScore,Player:getGameScore(objid),objid:number,"ErrorCode.OK, value:number",Erhalten Punktzahl des Spiels,local result = Player:getGameScore(objid)
+50009,Spieler,setGameScore,"Player:setGameScore(objid, score)",objid:number,"ErrorCode.OK, value:number",Set-Score des Spiels,"local result = Player:setGameScore(objid, score)"
+50010,Spieler,getGameRanking,Player:getGameRanking(objid),objid:number,"ErrorCode.OK, rank:number",Holen Sie sich den Rang des Spielers,local result = Player:getGameRanking(objid)
+50011,Spieler,setGameRanking,"Player:setGameRanking(objid, rank)","objid:number, rank:number",ErrorCode.OK,Stellen Sie den Rang des Spielers,"local result = Player:setGameRanking(objid, rank)"
+50012,Spieler,gainItems,"Player:gainItems(objid, itemid, num, prioritytype)","objid:number, itemid:number, num:number, prioritytype:number(1 is shortcut bar prior 2 is backpack bar prior)",ErrorCode.OK,Hinzufügen von Elementen für die Spieler,"local result = Player:gainItems(objid, itemid, num, prioritytype)"
+50013,Spieler,teleportHome,Player:teleportHome(objid),objid:number,ErrorCode.OK,Übergabepunkt zum Laichen,local result = Player:teleportHome(objid)
+50014,Spieler,getCurToolID,Player:getCurToolID(objid),objid:number,"ErrorCode.OK, ret",Holen Sie sich das Element id zur Zeit vom Spieler gehalten,local result = Player:getCurToolID(objid)
+50015,Spieler,getNickname,Player:getNickname(objid),objid:number,"ErrorCode.OK, name:string",Holen Sie den Namen des Spielers,local result = Player:getNickname(objid)
+50016,Spieler,removeBackpackItem,"Player:removeBackpackItem(objid, itemid, num)","objid:number, itemid:number, num:number",ErrorCode.OK,Entfernen Sie Gegenstände im Rucksack,"local result = Player:removeBackpackItem(objid, itemid, num)"
+50017,Spieler,getDieTimes,Player:getDieTimes(objid),objid:number,"ErrorCode.OK, value:number",Holen die Zahl der Todesfälle,local result = Player:getDieTimes(objid)
+50018,Spieler,getLeftLifeNum,Player:getLeftLifeNum(objid),objid:number,"ErrorCode.OK, value:number",Holen Sie die Anzahl der verbleibenden Leben gelassen,local result = Player:getLeftLifeNum(objid)
+50019,Spieler,setTeam,"Player:setTeam(objid, team)","objid:number, teamid:number",ErrorCode.OK,Stellen Sie die Kreatur Team,"local result = Player:setTeam(objid, team)"
+50020,Spieler,getTeam,Player:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Holen Sie sich das Wesen Team,local result = Player:getTeam(objid)
+50021,Spieler,getFoodLevel,Player:getFoodLevel(objid),objid:number,ErrorCode.OK,Holen Sie sich das aktuelle Sättigungs,local result = Player:getFoodLevel(objid)
+50022,Spieler,setFoodLevel,"Player:setFoodLevel(objid, foodLevel)","objid:number, foodLevel:number",ErrorCode.OK,Stellen Sie die aktuelle Sättigung,"local result = Player:setFoodLevel(objid, foodLevel)"
+50023,Spieler,getCurShotcut,Player:getCurShotcut(objid),objid:number,"ErrorCode.OK, scutIdx:number",Holen Sie sich die aktuelle Shortcut-Leiste,local result = Player:getCurShotcut(objid)
+50024,Spieler,onCurToolUsed,"Player:onCurToolUsed(objid, num)","objid:number, num:number items number",ErrorCode.OK,Stellen Sie den Verbrauch von Artikel durch Spieler gehalten,"local result = Player:onCurToolUsed(objid, num)"
+50025,Spieler,setSkillCD,"Player:setSkillCD(objid, itemid, cd)","objid:number, itemid:number, cd:number",ErrorCode.OK,Legen Sie CD,"local result = Player:setSkillCD(objid, itemid, cd)"
+50026,Spieler,reviveToPos,"Player:reviveToPos(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Respawn Spieler an bestimmten Punkt,"local result = Player:reviveToPos(objid, x, y, z)"
+50027,Spieler,setRevivePoint,"Player:setRevivePoint(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Ändern Sie den Respawn-Punkt,"local result = Player:setRevivePoint(objid, x, y, z)"
+50028,Spieler,playAct,"Player:playAct(objid, actid)","objid:number, actid:number动作id",ErrorCode.OK,Spieler spielen die Karikatur,"local result = Player:playAct(objid, actid)"
+50029,Spieler,notifyGameInfo2Self,"Player:notifyGameInfo2Self(objid, info)","objid:number, info:string text content",ErrorCode.OK,Anzeigetexte in Popup-Fenster,"local result = Player:notifyGameInfo2Self(objid, info)"
+50030,Spieler,useItem,"Player:useItem(objid, itemid, status, onshift)","objid:number, itemid:number, status:number state of using, onshift:boolean whether to press shift",ErrorCode.OK,Make-Player aktuelles Element verwenden,"local result = Player:useItem(objid, itemid, status, onshift)"
+50031,Spieler,rotateCamera,"Player:rotateCamera(objid, yaw, pitch)","objid:number, yaw:number, pitch:number",ErrorCode.OK,Drehen der Linse des Players,"local result = Player:rotateCamera(objid, yaw, pitch)"
+50032,Spieler,changeViewMode,"Player:changeViewMode(objid, viewmode, islock)","objid:number, viewmode:numberVIEWPORTTYPE, islock:boolean",ErrorCode.OK,Ändern Winkelmodus des Spielers,"local result = Player:changeViewMode(objid, viewmode, islock)"
+50033,Spieler,setActionAttrState,"Player:setActionAttrState(objid, actionattr, switch)","objid:number, actionattr:numberPLAYERATTR, switch:boolean",ErrorCode.OK,"Stellen Sie das Verhalten, Attribut und den Zustand der Kreatur","local result = Player:setActionAttrState(objid, actionattr, switch)"
+50034,Spieler,checkActionAttrState,"Player:checkActionAttrState(objid, actionattr)","objid:number, actionattr:numberPLAYERATTR",ErrorCode.OK,"Das Umschalten des Verhaltens, Attribut und den Zustand der Spieler","local result = Player:checkActionAttrState(objid, actionattr)"
+50035,Spieler,getMaxHP,Player:getMaxHP(objid),objid:number,"ErrorCode.OK, value:number",Holen Sie sich den aktuellen max HP,local result = Player:getMaxHP(objid)
+50036,Spieler,getCurHP,Player:getCurHP(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Holen Sie sich das aktuelle HP,local result = Player:getCurHP(objid)
+50037,Spieler,getHpRecover,Player:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP erholen,local result = Player:getHpRecover(objid)
+50038,Spieler,getCurFood,Player:getCurFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",aktuelle Sättigungs,local result = Player:getCurFood(objid)
+50039,Spieler,getMaxOxygen,Player:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",[[,local result = Player:getMaxOxygen(objid)
+50040,Spieler,getCurOxygen,Player:getCurOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Aktuelle Sauerstoffvolumen,local result = Player:getCurOxygen(objid)
+50041,Spieler,getWalkSpeed,Player:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Schrittgeschwindigkeit,local result = Player:getWalkSpeed(objid)
+50042,Spieler,getSwimSpeed,Player:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Schwimmgeschwindigkeit (in Wasser),local result = Player:getSwimSpeed(objid)
+50043,Spieler,getJumpPower,Player:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Sprungkraft,local result = Player:getJumpPower(objid)
+50044,Spieler,getRunSpeed,Player:getRunSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Laufgeschwindigkeit,local result = Player:getRunSpeed(objid)
+50045,Spieler,getSneakSpeed,Player:getSneakSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",schleichen Geschwindigkeit,local result = Player:getSneakSpeed(objid)
+50046,Spieler,getDodge,Player:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Dodging Geschwindigkeit,local result = Player:getDodge(objid)
+50047,Spieler,getPunchAttack,Player:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Nahkampfangriff,local result = Player:getPunchAttack(objid)
+50048,Spieler,getRangeAttack,Player:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Fernangriff,local result = Player:getRangeAttack(objid)
+50049,Spieler,getPunchDefense,Player:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Melee Verteidigung,local result = Player:getPunchDefense(objid)
+50050,Spieler,getRangeDefense,Player:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",lag im Bereich Verteidigung,local result = Player:getRangeDefense(objid)
+50051,Spieler,getStarNum,"Player:getStarNum(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Anzahl der Sterne,"local result = Player:getStarNum(objid, val)"
+50052,Spieler,getModelScale,"Player:getModelScale(objid, val)","objid:number, atttype:number","ErrorCode.OK, value:number",Größe des Modells,"local result = Player:getModelScale(objid, val)"
+50053,Spieler,setMaxHP,"Player:setMaxHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie den max HP,"local result = Player:setMaxHP(objid, val)"
+50054,Spieler,setHP,"Player:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set HP,"local result = Player:setHP(objid, val)"
+50055,Spieler,setHpRecover,Player:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie HP Recovery,local result = Player:setHpRecover(objid)
+50056,Spieler,setCurFood,Player:setCurFood(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Eingestellte Stromsättigungs,local result = Player:setCurFood(objid)
+50057,Spieler,setOxygen,"Player:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie den Sauerstoff,"local result = Player:setOxygen(objid, val)"
+50058,Spieler,setWalkSpeed,"Player:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Gehgeschwindigkeit,"local result = Player:setWalkSpeed(objid, val)"
+50059,Spieler,setSwimSpeed,"Player:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Schwimmgeschwindigkeit (in Wasser),"local result = Player:setSwimSpeed(objid, val)"
+50060,Spieler,setJumpPower,"Player:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Sprungkraft,"local result = Player:setJumpPower(objid, val)"
+50061,Spieler,setRunSpeed,"Player:setRunSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie Laufgeschwindigkeit,"local result = Player:setRunSpeed(objid, val)"
+50062,Spieler,setSneakSpeed,"Player:setSneakSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie schleichen Geschwindigkeit,"local result = Player:setSneakSpeed(objid, val)"
+50063,Spieler,setDodge,"Player:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie ausweich Geschwindigkeit,"local result = Player:setDodge(objid, val)"
+50064,Spieler,setPunchAttack,"Player:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Nahkampfangriff,"local result = Player:setPunchAttack(objid, val)"
+50065,Spieler,setRangeAttack,"Player:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Distanzangriff,"local result = Player:setRangeAttack(objid, val)"
+50066,Spieler,setPunchDefense,"Player:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Nahkampfverteidigung,"local result = Player:setPunchDefense(objid, val)"
+50067,Spieler,setRangeDefense,"Player:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set reichte Verteidigung,"local result = Player:setRangeDefense(objid, val)"
+50068,Spieler,setStarNum,"Player:setStarNum(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Legen Sie die Anzahl der Sterne,"local result = Player:setStarNum(objid, val)"
+50069,Spieler,setModelScale,"Player:setModelScale(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Legen Sie die Größe des Modells,"local result = Player:setModelScale(objid, val)"
+50070,Spieler,setPosition,"Player:setPosition(objid, x, y, z)","objid:number, x|y|z:number",ErrorCode.OK,Stellen Sie die Lage von Schauspieler,"local result = Player:setPosition(objid, x, y, z)"
+50071,Spieler,getAimPos,Player:getAimPos(objid),objid:number,ErrorCode.OK,Holen Sie sich das Fadenkreuz Position des Spielers,local result = Player:getAimPos(objid)
+60001,Kreatur,isAdult,Creature:isAdult(objid),objid:number,ErrorCode.OK is adult is adult,Ist es für Erwachsene?,"local result = Creature:isAdult(objId)
+if result == ErrorCode.OK then print(""This creature is adult"") end"
+60002,Kreatur,setOxygenNeed,"Creature:setOxygenNeed(objid, v)","objid:number, v:boolean",ErrorCode.OK,"Gesetzt, wenn Sauerstoff ist notwendig,","local result = Creature:setOxygenNeed(objId, true)
+if result == ErrorCode.OK then print(""This creature relies on oxygen!"") end"
+60003,Kreatur,getTamedOwnerID,Creature:getTamedOwnerID(objid),objid:number,"ErrorCode.OK, uin:number0 means untamed","Holen Sie sich das ID von Spielern, die Kreatur gezähmt hat","local result, ownerId = Creature:getTamedOwnerID(objId)
+if result == ErrorCode.OK and ownerId ~= 0 then
+        local result, nickName = Player:getNickname(ownerId)
+        if result == ErrorCode.OK then print('Player<'+nickName+'>pet...')
+end"
+60004,Kreatur,setPanic,"Creature:setPanic(objid, v)","objid:number, v:boolean",ErrorCode.OK,"Gesetzt, wenn es Panik verursacht","local result = Creature:setPanic(objId, true)
+if result == ErrorCode.OK then print(""The creature is in panic"") end"
+60005,Kreatur,setAIActive,"Creature:setAIActive(objid, v)","objid:number, v:boolean",ErrorCode.OK,"Gesetzt, wenn AI Wirksam","local result = Creature:setAIActive(objId, true)
+if result == ErrorCode.OK then print(""This creatures AI takes effect"") end"
+60006,Kreatur,getActorID,Creature:getActorID(objid),objid:number,"ErrorCode.OK, actorid:number",Get ID von Monster Ressource,"local wolfId, dogId = 3407, 3408 --Wolf/Dogs resource Id
+local result, actorId = Creature:getActorID(objId)
+if result == ErrorCode.OK then
+        if actorId == dogId then print(""The creature is A Dog!"") end
+        if actorId == wolfId then print(""The creature is A Wolf!"") end
+end"
+60007,Kreatur,getActorName,Creature:getActorName(objid),objid:number,"ErrorCode.OK, name:string",Get ID von Monster Ressource,local result = Creature:getActorName(objid)
+60008,Kreatur,addModAttrib,"Creature:addModAttrib(objid, attrtype, value)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type, value:number",ErrorCode.OK,Erhöhen Sie die ModAttrib von Monster,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result = Creature:addModAttrib(objid, modAttrType, 5)
+if result == ErrorCode.OK then print('Increase the moving speed of monster') end"
+60009,Kreatur,getModAttrib,"Creature:getModAttrib(objid, attrtype)","objid:number, attrtype:MODATTRIB_TYPE Enchantment attribute type","ErrorCode.OK, value:number",Erhöhen Sie die ModAttrib von Monster,"local modAttrType = MODATTRIB_TYPE.MODATTR_MOVE_SPEED
+local result, modAttrVal = Creature:getModAttrib(objid, modAttrType)
+if result == ErrorCode.OK then print('Moving speed of monster is', modAttrVal) end"
+60010,Kreatur,setTeam,"Creature:setTeam(objid, teamid)","objid:number, teamid:number",ErrorCode.OK,Stellen Sie die Kreatur Team,"local result = Creature:setTeam(objid, teamid)"
+60011,Kreatur,getTeam,Creature:getTeam(objid),objid:number,"ErrorCode.OK, teamid:number",Stellen Sie die Kreatur Team,local result = Creature:getTeam(objid)
+60012,Kreatur,getMaxFood,Creature:getMaxFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Erhalten Sie max Sättigung,local result = Creature:getMaxFood(objid)
+60013,Kreatur,getFood,Creature:getFood(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",erhalten Sättigung,local result = Creature:getFood(objid)
+60014,Kreatur,setFood,"Creature:setFood(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Sättigung,"local result = Creature:setFood(objid, val)"
+60015,Kreatur,getHpRecover,Creature:getHpRecover(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",HP erholen,local result = Creature:getHpRecover(objid)
+60016,Kreatur,getMaxOxygen,Creature:getMaxOxygen(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Max Sauerstoffvolumen,local result = Creature:getMaxOxygen(objid)
+60017,Kreatur,getWalkSpeed,Creature:getWalkSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Schrittgeschwindigkeit,local result = Creature:getWalkSpeed(objid)
+60018,Kreatur,getSwimSpeed,Creature:getSwimSpeed(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Schwimmgeschwindigkeit (in Wasser),local result = Creature:getSwimSpeed(objid)
+60019,Kreatur,getJumpPower,Creature:getJumpPower(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Sprungkraft,local result = Creature:getJumpPower(objid)
+60020,Kreatur,getMass,Creature:getMass(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Gewicht,local result = Creature:getMass(objid)
+60021,Kreatur,getDodge,Creature:getDodge(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Ausweichen,local result = Creature:getDodge(objid)
+60022,Kreatur,getPunchAttack,Creature:getPunchAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Nahkampfangriff,local result = Creature:getPunchAttack(objid)
+60023,Kreatur,getRangeAttack,Creature:getRangeAttack(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Fernangriff,local result = Creature:getRangeAttack(objid)
+60024,Kreatur,getPunchDefense,Creature:getPunchDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",Melee Verteidigung,local result = Creature:getPunchDefense(objid)
+60025,Kreatur,getRangeDefense,Creature:getRangeDefense(objid),"objid:number, atttype:number","ErrorCode.OK, value:number",lag im Bereich Verteidigung,local result = Creature:getRangeDefense(objid)
+60026,Kreatur,setMaxHp,"Creature:setMaxHp(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set HP,"local result = Creature:setMaxHp(objid, val)"
+60027,Kreatur,setHP,"Creature:setHP(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set HP,"local result = Creature:setHP(objid, val)"
+60028,Kreatur,setHpRecover,Creature:setHpRecover(objid),"objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie HP Recovery,local result = Creature:setHpRecover(objid)
+60029,Kreatur,setOxygen,"Creature:setOxygen(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Sauerstoff,"local result = Creature:setOxygen(objid, val)"
+60030,Kreatur,setWalkSpeed,"Creature:setWalkSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Gehgeschwindigkeit,"local result = Creature:setWalkSpeed(objid, val)"
+60031,Kreatur,setSwimSpeed,"Creature:setSwimSpeed(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Schwimmgeschwindigkeit (in Wasser),"local result = Creature:setSwimSpeed(objid, val)"
+60032,Kreatur,setJumpPower,"Creature:setJumpPower(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Stellen Sie die Sprungkraft,"local result = Creature:setJumpPower(objid, val)"
+60033,Kreatur,setDodge,"Creature:setDodge(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set ausweich,"local result = Creature:setDodge(objid, val)"
+60034,Kreatur,setPunchAttack,"Creature:setPunchAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Nahkampfangriff,"local result = Creature:setPunchAttack(objid, val)"
+60035,Kreatur,setRangeAttack,"Creature:setRangeAttack(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Distanzangriff,"local result = Creature:setRangeAttack(objid, val)"
+60036,Kreatur,setPunchDefense,"Creature:setPunchDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set Nahkampfverteidigung,"local result = Creature:setPunchDefense(objid, val)"
+60037,Kreatur,setRangeDefense,"Creature:setRangeDefense(objid, val)","objid:number, val:number, atttype:number",ErrorCode.OK,Set reichte Verteidigung,"local result = Creature:setRangeDefense(objid, val)"
+70001,UI,setGBattleUI,"UI:setGBattleUI(name, value)","name:string set name, value:string or boolean set value",ErrorCode.OK,Set Zusammenfassung UI des Kampfes,"local result = UI:setGBattleUI(name, value)"
+70002,UI,world2RadarPos,"UI:world2RadarPos(x, y)","x:number, z:number","ErrorCode.OK, x:number, z:number",Weltkoordinaten geändert Minimap,"local result = UI:world2RadarPos(x, y)"
+70003,UI,world2RadarDist,UI:world2RadarDist(length),length:number,"ErrorCode.OK, length:number",Wolrd Länge geändert Minimap,local result = UI:world2RadarDist(length)
+70004,UI,setMinimapRenderMode,UI:setMinimapRenderMode(mode),mode:number,ErrorCode.OK,Set Minimap-Modus: 1. 45 ° Drehwinkel. 2. Voll pic Überschauwinkel,local result = UI:setMinimapRenderMode(mode)
+70005,UI,setShapeLine,"UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)","uiname:string, p1x:number, p1y:number, p2x:number, p2y:number",ErrorCode.OK,Form-Einstellung von Kartenmarkierungen. Stellen Sie als Linie,"local result = UI:setShapeLine(uiname, p1x, p1y, p2x, p2y)"
+70006,UI,setShapeCircle,"UI:setShapeCircle(uiname, x, y, radius)","uiname:string, x:number, y:number, radius:number",ErrorCode.OK,Form-Einstellung von Kartenmarkierungen. Stellen Sie als Kreis,"local result = UI:setShapeCircle(uiname, x, y, radius)"
+70007,UI,ShowScreenEffect,"UI:ShowScreenEffect(type, isloop, incspeed)","type:number effect type, isloop:boolean if it is a loop, incspeed:number speed increasing",ErrorCode.OK,Display-Screen-Effekt,"local result = UI:ShowScreenEffect(type, isloop, incspeed)"
+80001,Plaudern,sendChat,Chat:sendChat(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Senden Chat-Nachricht,local result = Chat:sendChat(content)
+80002,Plaudern,sendSystemMsg,Chat:sendSystemMsg(content),"content:string, type:number0 means chat，1 means system message",ErrorCode.OK,Senden Systemmeldung,local result = Chat:sendSystemMsg(content)
+90001,Mannschaft,getNumTeam,Team:getNumTeam(),nil,"ErrorCode.OK, num:number",Gibt die Anzahl der Mannschaften,local result = Team:getNumTeam()
+90002,Mannschaft,getTeamPlayerNum,"Team:getTeamPlayerNum(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number the number of players in the group",Holen Sie sich das designierte Spieler Team,"local result = Team:getTeamPlayerNum(teamid, alive)"
+90003,Mannschaft,getTeamPlayers,"Team:getTeamPlayers(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, num:number  the number of players in the group , array:table member uin array",Holen Sie sich das designierte Spieler Team,"local result = Team:getTeamPlayers(teamid, alive)"
+90004,Mannschaft,randomTeamPlayer,"Team:randomTeamPlayer(teamid, alive)","teamid:number team ID, default all, alive:number whether survive, default all","ErrorCode.OK, uin:number random player uin",zufällige Spieler,"local result = Team:randomTeamPlayer(teamid, alive)"
+90005,Mannschaft,setTeamScore,"Team:setTeamScore(teamid, s)","teamid:number, score:number",ErrorCode.OK,Stellen Sie die Mannschaftswertung,"local result = Team:setTeamScore(teamid, s)"
+90006,Mannschaft,getTeamScore,Team:getTeamScore(teamid),teamid:number,"ErrorCode.OK, score:number",Holen Sie sich das Team der Gäste,local result = Team:getTeamScore(teamid)
+90007,Mannschaft,addTeamScore,"Team:addTeamScore(teamid, score)","teamid:number, score:number",ErrorCode.OK,Erhöhen Sie die Teamwertung,"local result = Team:addTeamScore(teamid, score)"
+90008,Mannschaft,setTeamResults,"Team:setTeamResults(teamid, result)",teamid:number result?number,ErrorCode.OK,Stellen Sie die Win-los von Team,"local result = Team:setTeamResults(teamid, result)"
+90009,Mannschaft,getTeamResults,Team:getTeamResults(teamid),teamid:number,"ErrorCode.OK, teamresult:number",Holen Sie sich die aktuelle Win-los von Team,local result = Team:getTeamResults(teamid)
+90010,Mannschaft,setTeamPlayersResults,"Team:setTeamPlayersResults(teamid, result)","teamid:number, result:number",ErrorCode.OK,Stellen Sie die Win-los von Spieler-Team,"local result = Team:setTeamPlayersResults(teamid, result)"
+90011,Mannschaft,setTeamDieTimes,"Team:setTeamDieTimes(teamid, times)","teamid:number, times:number",ErrorCode.OK,Stellen Sie die Gesamtzahl der Todesfälle von Team,"local result = Team:setTeamDieTimes(teamid, times)"
+90012,Mannschaft,getTeamDieTimes,Team:getTeamDieTimes(teamid),teamid:number,"ErrorCode.OK, times:number",Holen Sie sich die Gesamtzahl der Todesfälle von Team,local result = Team:getTeamDieTimes(teamid)
+90013,Mannschaft,addTeamDieTimes,Team:addTeamDieTimes(teamid),teamid:number,ErrorCode.OK,Erhöhen Sie die Gesamtzahl der Todesfälle von Team,local result = Team:addTeamDieTimes(teamid)
+90014,Mannschaft,changePlayerTeam,"Team:changePlayerTeam(uin, teamid)","uin:number, teamid:number",ErrorCode.OK,Änderung des Spielerteams,"local result = Team:changePlayerTeam(uin, teamid)"
+100001,Requisiten,getItemName,Item:getItemName(itemid),itemid:number,"ErrorCode.OK, name:string",Holen Sie sich den Namen des Elements,local result = Item:getItemName(itemid)
+100002,Requisiten,getItemId,Item:getItemId(objid),objid:number,"ErrorCode.OK, itemid:number",Holen Sie sich das ID von Artikel,local result = Item:getItemId(objid)
+100003,Requisiten,getDropItemNum,Item:getDropItemNum(objid),objid:number,"ErrorCode.OK, itemnum:number",Gibt die Anzahl der dorps,local result = Item:getDropItemNum(objid)
+110001,Rucksack,getBackpackBarIDRange,Backpack:getBackpackBarIDRange(bartype),"bartype:number backpack type, shortcut bar, saving bar,equipment bar","ErrorCode.OK, begid:number item slot starting ID, endid:number item slot ending ID",Holen Sie sich das Angebot an Rucksack Leiste des ID (Start-ID ~ Ende ID),local result = Backpack:getBackpackBarIDRange(bartype)
+110002,Rucksack,getBackpackBarSize,Backpack:getBackpackBarSize(bartype),bartype:number,"ErrorCode.OK, size:number",Ermittelt die Größe des Rucksacks Bar,local result = Backpack:getBackpackBarSize(bartype)
+110003,Rucksack,setGridItem,"Backpack:setGridItem(playerid, gridid, itemid, num, durability)","playerid:number, gridid:number item slot ID, itemid:number, num:number default 1, durability:number durability, default durability max",ErrorCode.OK,Stellen Sie den Rucksack,"local result = Backpack:setGridItem(playerid, gridid, itemid, num, durability)"
+110004,Rucksack,removeGridItem,"Backpack:removeGridItem(playerid, gridid, num)","playerid:number, gridid:number, num:number default all items",ErrorCode.OK,Entfernen Sie einige Elemente in Rucksack bar. Entfernt von Element-Slots. Alle standardmäßig entfernt,"local result = Backpack:removeGridItem(playerid, gridid, num)"
+110005,Rucksack,removeGridItemByItemID,"Backpack:removeGridItemByItemID(playerid, itemid, num)","playerid:number, itemid:number, num:number default all items","ErrorCode.OK, num:number Remove the number successfully",Entfernen Sie einige Elemente in Rucksack bar. Entfernt von Artikel ID. Alle standardmäßig entfernt,"local result = Backpack:removeGridItemByItemID(playerid, itemid, num)"
+110006,Rucksack,clearPack,"Backpack:clearPack(playerid, bartype)","playerid:number, bartype:number Backpack type",ErrorCode.OK,Klar designierter Rucksack bar,"local result = Backpack:clearPack(playerid, bartype)"
+110007,Rucksack,clearAllPack,Backpack:clearAllPack(playerid),playerid:number,,"Alle löscht den Rucksack (einschließlich Rucksack Bar, Shortcut-Leiste ausrüsten bar)",local result = Backpack:clearAllPack(playerid)
+110008,Rucksack,moveGridItem,"Backpack:moveGridItem(playerid, gridsrc, griddst, num)","playerid:number, gridsrc:number, griddst:number, num:number default transfer all ",ErrorCode.OK,Entfernen Sie Gegenstände im Rucksack. Alle standardmäßig übertragen,"local result = Backpack:moveGridItem(playerid, gridsrc, griddst, num)"
+110009,Rucksack,swapGridItem,"Backpack:swapGridItem(playerid, gridsrc, griddst)","playerid:number, gridsrc:number, griddst:number",ErrorCode.OK,Exchange-Objekt Rucksack,"local result = Backpack:swapGridItem(playerid, gridsrc, griddst)"
+110010,Rucksack,enoughSpaceForItem,"Backpack:enoughSpaceForItem(playerid, itemid, num)","playerid:number, itemid:number, num:number default 14",ErrorCode.OK,"Wenn es genügend Platz im Rucksack ist (einschließlich Rucksack Bar, Shortcut-Leiste) zum Speichern von Elementen","local result = Backpack:enoughSpaceForItem(playerid, itemid, num)"
+110011,Rucksack,calcSpaceNumForItem,"Backpack:calcSpaceNumForItem(playerid, itemid)","playerid:number, itemid:number","ErrorCode.OK, num:number","Berechnen der Gesamtzahl der verbleibenden Elemente, die den Rucksack (einschließlich Rucksack bar, Shortcutleiste) speichern kann","local result = Backpack:calcSpaceNumForItem(playerid, itemid)"
+110012,Rucksack,getBackpackBarValidList,"Backpack:getBackpackBarValidList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number, array:table backpack slots ID array","Erhalten Sie gültige Liste der Elemente ID, die bereits im Rucksack bar sind. Artikel Identifikationsnummer","local result = Backpack:getBackpackBarValidList(playerid, bartype)"
+110013,Rucksack,getBackpackBarItemList,"Backpack:getBackpackBarItemList(playerid, bartype)","playerid:number, bartype:number Backpack type","ErrorCode.OK, num:number number , arr:table item ID array",Erhalten Sie Artikel bereits in Rucksack bar. Artikel Identifikationsnummer,"local result = Backpack:getBackpackBarItemList(playerid, bartype)"
+110014,Rucksack,hasItemByBackpackBar,"Backpack:hasItemByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number",ErrorCode.OK,"Erkennen, ob es ein benannten Artikel in Rucksack","local result = Backpack:hasItemByBackpackBar(playerid, bartype, itemid)"
+110015,Rucksack,getItemNumByBackpackBar,"Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)","playerid:number, bartype:number, itemid:number","ErrorCode.OK, num:number total number of items , arr:table item slot ID array",Holen Sie sich die Gesamtzahl der Elemente im Rucksack. Zurück zu Rucksäcken mit Artikeln,"local result = Backpack:getItemNumByBackpackBar(playerid, bartype, itemid)"
+110016,Rucksack,getGridItemID,"Backpack:getGridItemID(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, itemid:number, num:number",Erhalten Sie Artikel-ID und Nummer in Rucksack,"local result = Backpack:getGridItemID(playerid, gridid)"
+110017,Rucksack,getGridItemName,"Backpack:getGridItemName(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, name:string",Erhalten Sie Elementname in Rucksack,"local result = Backpack:getGridItemName(playerid, gridid)"
+110018,Rucksack,getGridStack,"Backpack:getGridStack(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number, maxstack:number",Holen Sie die Anzahl der Elemente in Rucksack und max nicht. von Stapeln,"local result = Backpack:getGridStack(playerid, gridid)"
+110019,Rucksack,getGridDurability,"Backpack:getGridDurability(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, durcur:number, durmax:number",Erhalten Sie Artikel Haltbarkeit in Rucksack und maximale Haltbarkeit,"local result = Backpack:getGridDurability(playerid, gridid)"
+110020,Rucksack,getGridEnchantList,"Backpack:getGridEnchantList(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, num:number number, arr:table enchanted ID array",Holen Zauber der Elemente im Rucksack. Zurück zur Verzauberung ID.,"local result = Backpack:getGridEnchantList(playerid, gridid)"
+110021,Rucksack,getGridToolType,"Backpack:getGridToolType(playerid, gridid)","playerid:number, gridid:number","ErrorCode.OK, type:number tool type",Holen Sie sich das Element Werkzeugtyp in Rucksack (<0 bedeutet nicht-Werkzeug),"local result = Backpack:getGridToolType(playerid, gridid)"
+110022,Rucksack,addItem,"Backpack:addItem(playerid, itemid, num)","playerid:number, itemid:number, num:number","ErrorCode.OK, successNum:number the number of successfully added",Fügen Sie den Artikel Rucksack,"local result = Backpack:addItem(playerid, itemid, num)"
+110023,Rucksack,discardItem,"Backpack:discardItem(playerid, gridid, num)","playerid:number, gridid:number, num:number",ErrorCode.OK,Entsorgen Sie den Artikel in Rucksack,"local result = Backpack:discardItem(playerid, gridid, num)"
+110024,Rucksack,getGridNum,"Backpack:getGridNum(playerid, gridid)","playerid:number, gridid:number",ErrorCode.OK,Holen Sie die Anzahl der Elemente in einem Schlitz des Rucksacks,"local result = Backpack:getGridNum(playerid, gridid)"
+120001,Minimap,newShape,"MapMark:newShape(type, isshow, r, g, b)","type:number, isshow:boolean, r:number, g:number, b:number","ErrorCode.OK, shapeid:number","Neue Form (Linie, Rechteck, Kreis)","local result = MapMark:newShape(type, isshow, r, g, b)"
+120002,Minimap,deleteShape,MapMark:deleteShape(shapeid),shapeid:number,ErrorCode.OK,Löschen einer Form,local result = MapMark:deleteShape(shapeid)
+120003,Minimap,setShapeColor,"MapMark:setShapeColor(shapeid, r, g, b)","shapeid:number, r:number, g:number, b:number",ErrorCode.OK,Stellen Sie die Form und Farbe,"local result = MapMark:setShapeColor(shapeid, r, g, b)"
+120004,Minimap,showShape,"MapMark:showShape(shapeid, showflag)","shapeid:number, showflag:boolean",ErrorCode.OK,Set Form angezeigt oder verborgen,"local result = MapMark:showShape(shapeid, showflag)"
+120005,Minimap,updateLine,"MapMark:updateLine(shapeid, sx, sz, ex, ez)","shapeid:number, sx:number, sz:number, ex:number, ez:number",ErrorCode.OK,Update Form (Linie). In Startkoordinate und Endkoordinate,"local result = MapMark:updateLine(shapeid, sx, sz, ex, ez)"
+120006,Minimap,updateRectangle,"MapMark:updateRectangle(shapeid, sx, sz, w, h)","shapeid:number, sx:number, sz:number, w:number, h:number",ErrorCode.OK,Update Form (rechteckig). In Startkoordinate und Endkoordinate,"local result = MapMark:updateRectangle(shapeid, sx, sz, w, h)"
+120007,Minimap,updateCircle,"MapMark:updateCircle(shapeid, cx, cz, r)","shapeid:number, cx:number, cz:number, r:number",ErrorCode.OK,Aktualisieren Sie die Form (Kreis). In Zentrum Koordinaten und Radius,"local result = MapMark:updateCircle(shapeid, cx, cz, r)"
+130001,Spawnpunkt,getSpawnPoint,Spawnport:getSpawnPoint(),nil,"ErrorCode.OK, x:number, y:number, z:number",Holen Sie sich die Position Spawnpunkt,local result = Spawnport:getSpawnPoint()
+130002,Spawnpunkt,getChunkValidSpawnPos,"Spawnport:getChunkValidSpawnPos(x, y, z)","x:number, y:number, z:number","ErrorCode.OK, x:number, y:number, z:number",Holen Sie sich das Spawnpunkt in der Region. Fügen Sie die Position des statistischen Block in der Region,"local result = Spawnport:getChunkValidSpawnPos(x, y, z)"

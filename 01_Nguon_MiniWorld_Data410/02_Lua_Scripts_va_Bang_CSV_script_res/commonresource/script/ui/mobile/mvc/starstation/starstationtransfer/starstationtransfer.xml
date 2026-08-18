@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/StarStation/StarStationManager.lua"/>
+	<Script file="ui/mobile/mvc/StarStation/StarStationInterface.lua"/>
+	<Script file="ui/mobile/mvc/StarStation/StarStationTransfer/StarStationTransferCtrl.lua"/>
+	<Script file="ui/mobile/mvc/StarStation/StarStationTransfer/StarStationTransferModel.lua"/>
+	<Script file="ui/mobile/mvc/StarStation/StarStationTransfer/StarStationTransferView.lua"/>
+	<!--目标星站选择按钮模板-->
+ 	<Button name="DestStarStationSelectBtnTemplate" abs_x="418" abs_y="61" virtual="true" hidden="true">
+ 		<Layers>
+ 			<Layer level="BACKGROUND">
+ 				<Texture name="$parentBkg" inherits="TemplateBigBkg6"/>
+ 				<FontString name="$parentTitle" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="一二三四五六" abs_x="400" abs_y="50">
+ 					<color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+ 				</FontString>
+ 			</Layer>
+ 			<Layer level="overlay">
+ 				<Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true"/>
+ 			</Layer>
+ 		</Layers>
+ 		<Scripts>
+ 			<OnClick>GetInst("UIManager"):GetCtrl("StarStationTransfer"):DestStarStationSelectBtnTemplate_OnClick();</OnClick>
+ 		</Scripts>
+ 	</Button>
+	<Frame name="StarStationTransfer" parent="UIClient" frameStrata="HIGH" framelevel="6000" hidden="true" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+        	<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="A0000000" stretchedge="true">
+					<Size>
+						<RelDimension x="1" y="1"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="480" abs_y="586">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTip" fonttype="BlackFont24" text="$80014" justifyV="middle" justifyH="center" abs_x="434" abs_y="23">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentChendi" inherits="TemplateBigBkg5" abs_x="434" abs_y="438">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom_gray.png" abs_x="280" abs_y="160" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parenteChendi">
+							<Offset>
+								<AbsDimension x="0" y="-32"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNoTitle" fonttype="BlackFont24" text="$21497" justifyH="center" justifyV="middle" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="400" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="434" abs_y="398">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentChendi">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="434" abs_y="1000">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    <Frame name="$parentData" abs_x="434" abs_y="100" hidden="true">
+                    	<Layers>
+                    		<Layer level="BACKGROUND">
+                    			<FontString name="$parentPos" fonttype="BlackFont20" abs_x="418" abs_y="22" justifyH="left" justifyV="middle" text="$21518">
+                    				<Color r="61" g="69" b="70"/>
+                    				<Anchors>
+                    					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                    						<Offset>
+                    							<AbsDimension x="30" y="10"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+								<FontString name="$parentCost" fonttype="BlackFont20" abs_x="60" abs_y="19" justifyH="left" justifyV="middle" text="$80016">
+                    				<Color r="61" g="69" b="70"/>
+                    				<Anchors>
+                    					<Anchor point="topleft" relativeTo="$parentPos" relativePoint="bottomleft">
+                    						<Offset>
+                    							<AbsDimension x="0" y="20"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+								<Texture name="$parentStarIcon" file="ui/mobile/texture2/outgame.xml" uvname="juese_xingxing05" abs_x="38" abs_y="41">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parentCost">
+											<Offset>
+												<AbsDimension x="10" y="-11"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentCostNum" fonttype="BlackFont18" abs_x="17" abs_y="15" justifyH="left" justifyV="middle" text="*5">
+                    				<Color r="61" g="69" b="70"/>
+                    				<Anchors>
+                    					<Anchor point="topleft" relativeTo="$parentStarIcon" relativePoint="topright">
+                    						<Offset>
+                    							<AbsDimension x="8" y="14"/>
+                    						</Offset>
+                    					</Anchor>
+                    				</Anchors>
+                    			</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+                    <Button name="$parentD1" inherits="DestStarStationSelectBtnTemplate" id="1"/>
+                    <Button name="$parentD2" inherits="DestStarStationSelectBtnTemplate" id="2"/>
+                    <Button name="$parentD3" inherits="DestStarStationSelectBtnTemplate" id="3"/>
+                    <Button name="$parentD4" inherits="DestStarStationSelectBtnTemplate" id="4"/>
+                    <Button name="$parentD5" inherits="DestStarStationSelectBtnTemplate" id="5"/>
+                    <Button name="$parentD6" inherits="DestStarStationSelectBtnTemplate" id="6"/>
+                    <Button name="$parentD7" inherits="DestStarStationSelectBtnTemplate" id="7"/>
+                    <Button name="$parentD8" inherits="DestStarStationSelectBtnTemplate" id="8"/>
+                    <Button name="$parentD9" inherits="DestStarStationSelectBtnTemplate" id="9"/>
+                    <Button name="$parentD10" inherits="DestStarStationSelectBtnTemplate" id="10"/>
+                    <Button name="$parentD11" inherits="DestStarStationSelectBtnTemplate" id="11"/>
+                    <Button name="$parentD12" inherits="DestStarStationSelectBtnTemplate" id="12"/>
+                    <Button name="$parentD13" inherits="DestStarStationSelectBtnTemplate" id="13"/>
+                    <Button name="$parentD14" inherits="DestStarStationSelectBtnTemplate" id="14"/>
+                    <Button name="$parentD15" inherits="DestStarStationSelectBtnTemplate" id="15"/>
+                    <Button name="$parentD16" inherits="DestStarStationSelectBtnTemplate" id="16"/>
+                    <Button name="$parentD17" inherits="DestStarStationSelectBtnTemplate" id="17"/>
+                    <Button name="$parentD18" inherits="DestStarStationSelectBtnTemplate" id="18"/>
+                    <Button name="$parentD19" inherits="DestStarStationSelectBtnTemplate" id="19"/>
+                    <Button name="$parentD20" inherits="DestStarStationSelectBtnTemplate" id="20"/>
+                    <Button name="$parentD21" inherits="DestStarStationSelectBtnTemplate" id="21"/>
+                    <Button name="$parentD22" inherits="DestStarStationSelectBtnTemplate" id="22"/>
+                    <Button name="$parentD23" inherits="DestStarStationSelectBtnTemplate" id="23"/>
+                    <Button name="$parentD24" inherits="DestStarStationSelectBtnTemplate" id="24"/>
+                    <Button name="$parentD25" inherits="DestStarStationSelectBtnTemplate" id="25"/>
+                    <Button name="$parentD26" inherits="DestStarStationSelectBtnTemplate" id="26"/>
+                    <Button name="$parentD27" inherits="DestStarStationSelectBtnTemplate" id="27"/>
+                    <Button name="$parentD28" inherits="DestStarStationSelectBtnTemplate" id="28"/>
+                    <Button name="$parentD29" inherits="DestStarStationSelectBtnTemplate" id="29"/>
+                    <Button name="$parentD30" inherits="DestStarStationSelectBtnTemplate" id="30"/>
+                    <Button name="$parentD31" inherits="DestStarStationSelectBtnTemplate" id="31"/>
+                    <Button name="$parentD32" inherits="DestStarStationSelectBtnTemplate" id="32"/>
+                    <Button name="$parentD33" inherits="DestStarStationSelectBtnTemplate" id="33"/>
+                    <Button name="$parentD34" inherits="DestStarStationSelectBtnTemplate" id="34"/>
+                    <Button name="$parentD35" inherits="DestStarStationSelectBtnTemplate" id="35"/>
+                    <Button name="$parentD36" inherits="DestStarStationSelectBtnTemplate" id="36"/>
+                    <Button name="$parentD37" inherits="DestStarStationSelectBtnTemplate" id="37"/>
+                    <Button name="$parentD38" inherits="DestStarStationSelectBtnTemplate" id="38"/>
+                    <Button name="$parentD39" inherits="DestStarStationSelectBtnTemplate" id="39"/>
+                    <Button name="$parentD40" inherits="DestStarStationSelectBtnTemplate" id="40"/>
+                    <Button name="$parentD41" inherits="DestStarStationSelectBtnTemplate" id="41"/>
+                    <Button name="$parentD42" inherits="DestStarStationSelectBtnTemplate" id="42"/>
+                    <Button name="$parentD43" inherits="DestStarStationSelectBtnTemplate" id="43"/>
+                    <Button name="$parentD44" inherits="DestStarStationSelectBtnTemplate" id="44"/>
+                    <Button name="$parentD45" inherits="DestStarStationSelectBtnTemplate" id="45"/>
+                    <Button name="$parentD46" inherits="DestStarStationSelectBtnTemplate" id="46"/>
+                    <Button name="$parentD47" inherits="DestStarStationSelectBtnTemplate" id="47"/>
+                    <Button name="$parentD48" inherits="DestStarStationSelectBtnTemplate" id="48"/>
+                    <Button name="$parentD49" inherits="DestStarStationSelectBtnTemplate" id="49"/>
+					<Button name="$parentD50" inherits="DestStarStationSelectBtnTemplate" id="50" />
+					<Button name="$parentD51" inherits="DestStarStationSelectBtnTemplate" id="51" />
+					<Button name="$parentD52" inherits="DestStarStationSelectBtnTemplate" id="52" />
+					<Button name="$parentD53" inherits="DestStarStationSelectBtnTemplate" id="53" />
+					<Button name="$parentD54" inherits="DestStarStationSelectBtnTemplate" id="54" />
+					<Button name="$parentD55" inherits="DestStarStationSelectBtnTemplate" id="55" />
+					<Button name="$parentD56" inherits="DestStarStationSelectBtnTemplate" id="56" />
+					<Button name="$parentD57" inherits="DestStarStationSelectBtnTemplate" id="57" />
+					<Button name="$parentD58" inherits="DestStarStationSelectBtnTemplate" id="58" />
+					<Button name="$parentD59" inherits="DestStarStationSelectBtnTemplate" id="59" />
+					<Button name="$parentD60" inherits="DestStarStationSelectBtnTemplate" id="60" />
+					<Button name="$parentD61" inherits="DestStarStationSelectBtnTemplate" id="61" />
+					<Button name="$parentD62" inherits="DestStarStationSelectBtnTemplate" id="62" />
+					<Button name="$parentD63" inherits="DestStarStationSelectBtnTemplate" id="63" />
+					<Button name="$parentD64" inherits="DestStarStationSelectBtnTemplate" id="64" />
+					<Button name="$parentD65" inherits="DestStarStationSelectBtnTemplate" id="65" />
+					<Button name="$parentD66" inherits="DestStarStationSelectBtnTemplate" id="66" />
+					<Button name="$parentD67" inherits="DestStarStationSelectBtnTemplate" id="67" />
+					<Button name="$parentD68" inherits="DestStarStationSelectBtnTemplate" id="68" />
+					<Button name="$parentD69" inherits="DestStarStationSelectBtnTemplate" id="69" />
+					<Button name="$parentD70" inherits="DestStarStationSelectBtnTemplate" id="70" />
+					<Button name="$parentD71" inherits="DestStarStationSelectBtnTemplate" id="71" />
+					<Button name="$parentD72" inherits="DestStarStationSelectBtnTemplate" id="72" />
+					<Button name="$parentD73" inherits="DestStarStationSelectBtnTemplate" id="73" />
+					<Button name="$parentD74" inherits="DestStarStationSelectBtnTemplate" id="74" />
+					<Button name="$parentD75" inherits="DestStarStationSelectBtnTemplate" id="75" />
+					<Button name="$parentD76" inherits="DestStarStationSelectBtnTemplate" id="76" />
+					<Button name="$parentD77" inherits="DestStarStationSelectBtnTemplate" id="77" />
+					<Button name="$parentD78" inherits="DestStarStationSelectBtnTemplate" id="78" />
+					<Button name="$parentD79" inherits="DestStarStationSelectBtnTemplate" id="79" />
+					<Button name="$parentD80" inherits="DestStarStationSelectBtnTemplate" id="80" />
+					<Button name="$parentD81" inherits="DestStarStationSelectBtnTemplate" id="81" />
+					<Button name="$parentD82" inherits="DestStarStationSelectBtnTemplate" id="82" />
+					<Button name="$parentD83" inherits="DestStarStationSelectBtnTemplate" id="83" />
+					<Button name="$parentD84" inherits="DestStarStationSelectBtnTemplate" id="84" />
+					<Button name="$parentD85" inherits="DestStarStationSelectBtnTemplate" id="85" />
+					<Button name="$parentD86" inherits="DestStarStationSelectBtnTemplate" id="86" />
+					<Button name="$parentD87" inherits="DestStarStationSelectBtnTemplate" id="87" />
+					<Button name="$parentD88" inherits="DestStarStationSelectBtnTemplate" id="88" />
+					<Button name="$parentD89" inherits="DestStarStationSelectBtnTemplate" id="89" />
+					<Button name="$parentD90" inherits="DestStarStationSelectBtnTemplate" id="90" />
+					<Button name="$parentD91" inherits="DestStarStationSelectBtnTemplate" id="91" />
+					<Button name="$parentD92" inherits="DestStarStationSelectBtnTemplate" id="92" />
+					<Button name="$parentD93" inherits="DestStarStationSelectBtnTemplate" id="93" />
+					<Button name="$parentD94" inherits="DestStarStationSelectBtnTemplate" id="94" />
+					<Button name="$parentD95" inherits="DestStarStationSelectBtnTemplate" id="95" />
+					<Button name="$parentD96" inherits="DestStarStationSelectBtnTemplate" id="96" />
+					<Button name="$parentD97" inherits="DestStarStationSelectBtnTemplate" id="97" />
+					<Button name="$parentD98" inherits="DestStarStationSelectBtnTemplate" id="98" />
+					<Button name="$parentD99" inherits="DestStarStationSelectBtnTemplate" id="99" />
+					<Button name="$parentD100" inherits="DestStarStationSelectBtnTemplate" id="100" />
+					<Button name="$parentD101" inherits="DestStarStationSelectBtnTemplate" id="101" />
+					<Button name="$parentD102" inherits="DestStarStationSelectBtnTemplate" id="102" />
+					<Button name="$parentD103" inherits="DestStarStationSelectBtnTemplate" id="103" />
+					<Button name="$parentD104" inherits="DestStarStationSelectBtnTemplate" id="104" />
+					<Button name="$parentD105" inherits="DestStarStationSelectBtnTemplate" id="105" />
+					<Button name="$parentD106" inherits="DestStarStationSelectBtnTemplate" id="106" />
+					<Button name="$parentD107" inherits="DestStarStationSelectBtnTemplate" id="107" />
+					<Button name="$parentD108" inherits="DestStarStationSelectBtnTemplate" id="108" />
+					<Button name="$parentD109" inherits="DestStarStationSelectBtnTemplate" id="109" />
+					<Button name="$parentD110" inherits="DestStarStationSelectBtnTemplate" id="110" />
+					<Button name="$parentD111" inherits="DestStarStationSelectBtnTemplate" id="111" />
+					<Button name="$parentD112" inherits="DestStarStationSelectBtnTemplate" id="112" />
+					<Button name="$parentD113" inherits="DestStarStationSelectBtnTemplate" id="113" />
+					<Button name="$parentD114" inherits="DestStarStationSelectBtnTemplate" id="114" />
+					<Button name="$parentD115" inherits="DestStarStationSelectBtnTemplate" id="115" />
+					<Button name="$parentD116" inherits="DestStarStationSelectBtnTemplate" id="116" />
+					<Button name="$parentD117" inherits="DestStarStationSelectBtnTemplate" id="117" />
+					<Button name="$parentD118" inherits="DestStarStationSelectBtnTemplate" id="118" />
+					<Button name="$parentD119" inherits="DestStarStationSelectBtnTemplate" id="119" />
+					<Button name="$parentD120" inherits="DestStarStationSelectBtnTemplate" id="120" />
+					<Button name="$parentD121" inherits="DestStarStationSelectBtnTemplate" id="121" />
+					<Button name="$parentD122" inherits="DestStarStationSelectBtnTemplate" id="122" />
+					<Button name="$parentD123" inherits="DestStarStationSelectBtnTemplate" id="123" />
+					<Button name="$parentD124" inherits="DestStarStationSelectBtnTemplate" id="124" />
+					<Button name="$parentD125" inherits="DestStarStationSelectBtnTemplate" id="125" />
+					<Button name="$parentD126" inherits="DestStarStationSelectBtnTemplate" id="126" />
+					<Button name="$parentD127" inherits="DestStarStationSelectBtnTemplate" id="127" />
+					<Button name="$parentD128" inherits="DestStarStationSelectBtnTemplate" id="128" />
+					<Button name="$parentD129" inherits="DestStarStationSelectBtnTemplate" id="129" />
+					<Button name="$parentD130" inherits="DestStarStationSelectBtnTemplate" id="130" />
+					<Button name="$parentD131" inherits="DestStarStationSelectBtnTemplate" id="131" />
+					<Button name="$parentD132" inherits="DestStarStationSelectBtnTemplate" id="132" />
+					<Button name="$parentD133" inherits="DestStarStationSelectBtnTemplate" id="133" />
+					<Button name="$parentD134" inherits="DestStarStationSelectBtnTemplate" id="134" />
+					<Button name="$parentD135" inherits="DestStarStationSelectBtnTemplate" id="135" />
+					<Button name="$parentD136" inherits="DestStarStationSelectBtnTemplate" id="136" />
+					<Button name="$parentD137" inherits="DestStarStationSelectBtnTemplate" id="137" />
+					<Button name="$parentD138" inherits="DestStarStationSelectBtnTemplate" id="138" />
+					<Button name="$parentD139" inherits="DestStarStationSelectBtnTemplate" id="139" />
+					<Button name="$parentD140" inherits="DestStarStationSelectBtnTemplate" id="140" />
+					<Button name="$parentD141" inherits="DestStarStationSelectBtnTemplate" id="141" />
+					<Button name="$parentD142" inherits="DestStarStationSelectBtnTemplate" id="142" />
+					<Button name="$parentD143" inherits="DestStarStationSelectBtnTemplate" id="143" />
+					<Button name="$parentD144" inherits="DestStarStationSelectBtnTemplate" id="144" />
+					<Button name="$parentD145" inherits="DestStarStationSelectBtnTemplate" id="145" />
+					<Button name="$parentD146" inherits="DestStarStationSelectBtnTemplate" id="146" />
+					<Button name="$parentD147" inherits="DestStarStationSelectBtnTemplate" id="147" />
+					<Button name="$parentD148" inherits="DestStarStationSelectBtnTemplate" id="148" />
+					<Button name="$parentD149" inherits="DestStarStationSelectBtnTemplate" id="149" />
+					<Button name="$parentD150" inherits="DestStarStationSelectBtnTemplate" id="150" />
+                </Frames>
+            </SlidingFrame>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="480" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" shadowcolor="4D352C28" text="$21512">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="384" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("StarStationTransfer"):CloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--切换星球按钮-->
+			<Button name="$parentSwitchStarBtn" inherits="TemplateBtn2" hidden="false">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="26" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$80017" abs_x="170" abs_y="28">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("StarStationTransfer"):SwitchStarBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!--确认按钮-->
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn3" hidden="false">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-23" y="-12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont24" text="$80018" abs_x="170" abs_y="28">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("StarStationTransfer"):ConfirmBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

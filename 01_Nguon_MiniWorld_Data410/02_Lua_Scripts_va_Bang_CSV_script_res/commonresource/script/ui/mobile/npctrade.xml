@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/npctrade.lua" />
+	<Button name="GoodsTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="92" y="92"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="TemplateBkg38"/>
+				<Texture name="$parentHightLight" inherits="TemplateBkg11" hidden="true"/>
+				<Texture name="$parentIcon" file="items/apple.png" alphamode="alphablend">
+					<Size>
+						<AbsDimension x="64" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentNum" fonttype="BlackFont20" justifyH="right" text="99" rel_x="0.9" abs_y="15" justifyV="middle">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--TODO-->
+				<Texture name="$parentLock" file="ui/mobile/texture2/outgame.xml" uvname="srdh_ysw">
+					<Size>
+						<AbsDimension x="41" y="41"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="橡木板">
+					<Color r="4" g="147" b="0"/>
+					<Size>
+						<AbsDimension x="160" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="7"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>Goods_OnClick();</OnClick>
+            <MouseDownUpdate platform="mobile">Goods_OnMouseDownUpdate();</MouseDownUpdate>
+            <OnMouseUp platform="mobile">Goods_OnMouseUp();</OnMouseUp>
+			<OnEnter platform="pc">Goods_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">Goods_OnMouseUp()</OnLeave>
+		</Scripts>
+	</Button>
+	<Frame name="NpcTradeFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="40000000" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8">
+					<Size>
+						<AbsDimension x="808" y="558"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="87"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentBkg2" inherits="TemplateBigBkg14">
+					<Size>
+						<AbsDimension x="798" y="346"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="49"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentNpcHead" file="ui/roleicons/1.png" >
+					<Size>
+						<AbsDimension x="123" y="129"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+							<Offset>
+								<AbsDimension x="20" y="13"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentTitle" abs_x="800" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg4">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="61"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="303" abs_y="56" />
+						<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="56">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont34" fontStyle="normal" abs_x="303" abs_y="35" text="$910">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="33" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-10" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>NpcTradeFrameCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<RichText name="$parentMonologue" lineInterval="8" multiLine="false" fonttype="BlackFont22">
+				<Size>
+					<AbsDimension x="373" y="111"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+						<Offset>
+							<AbsDimension x="163" y="32"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<Button name="$parentRefreshBtn" inherits="TemplateBtn33" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg2" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-23" y="37"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" text="$547">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="215" y="27"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>					
+						<FontString name="$parentConsume" fonttype="BlackFont20" justifyH="right" text="$548">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="107" y="19"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="49"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>						
+						<Texture name="$parentStarBkg" file="ui/mobile/texture2/outgame.xml" uvname="srdh_xingxing">
+							<Size>
+								<AbsDimension x="25" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentConsume">
+									<Offset>
+										<AbsDimension x="5" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>						
+						<FontString name="$parentCost" fonttype="BlackFont20" text="5">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="75" y="19"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentStarBkg">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>NpcTradeFrameRefreshBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentSmallRefreshBtn" inherits="TemplateBtn12" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg2" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-28" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$4931">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent"/>
+								<Anchor point="right" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentStarBkg" file="ui/mobile/texture2/outgame.xml" uvname="srdh_xingxing">
+							<Size>
+								<AbsDimension x="25" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="104" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>						
+						<FontString name="$parentCost" fonttype="BlackFont24" fontStyle="border" text="5">
+							<Color r="255" g="255" b="0"/>
+							<Size>
+								<AbsDimension x="61" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentStarBkg">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>NpcTradeFrameRefreshBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentADRefreshBtn" inherits="TemplateBtn12" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentSmallRefreshBtn" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">											
+						<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="ggjr_icon02">
+							<Size>
+								<AbsDimension x="23" y="23"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="26" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>	
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$4932">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentIcon"/>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent"/>
+							</Anchors>
+						</FontString>				
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>NpcTradeFrameADRefreshBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentRack">
+				<Size>
+					<AbsDimension x="760" y="180"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg2">
+						<Offset>
+							<AbsDimension x="0" y="143"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg11"/>
+						<Texture name="$parentNameBkg" inherits="TemplateBkg25">
+							<Size>
+								<AbsDimension x="757" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="2" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>	
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$549">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="100" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentLeftBtn" abs_x="26" abs_y="47">
+						<Anchors>
+							<Anchor point="left" relativePoint="left">
+								<Offset>
+									<AbsDimension x="24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_pull"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_pull" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>NpcTradeFrameRackLeft_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRightBtn" abs_x="26" abs_y="47">
+						<Anchors>
+						    <Anchor point="right" relativePoint="right">
+						          <Offset>
+						            <AbsDimension x="-24"/>
+						        </Offset>
+						    </Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_pull" UVType="mirroeu"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_pull" UVType="mirroeu" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>NpcTradeFrameRackRight_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentGoods1" inherits="GoodsTemplate">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="173" y="44"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentGoods2" inherits="GoodsTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentGoods1">
+								<Offset>
+									<AbsDimension x="68" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentGoods3" inherits="GoodsTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentGoods2">
+								<Offset>
+									<AbsDimension x="68" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentTradeShow">
+				<Size>
+					<AbsDimension x="806" y="163"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg2">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentName" justifyH="center" fonttype="BlackFont24" text="$550">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="157" y="23"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="56"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentArrow" inherits="TemplateArrowBkg">
+							<Size>
+								<AbsDimension x="59" y="55"/>
+							</Size>
+							<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="283" y="42"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentPayItem" inherits="GoodsTemplate">
+						<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentName">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<MouseDownUpdate>TradeShowPayItem_MouseDownUpdate();</MouseDownUpdate>
+							<OnMouseUp>TradeShowPayItem_OnMouseUp();</OnMouseUp>
+						</Scripts>
+					</Button>
+					<Button name="$parentGetItem" inherits="GoodsTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentPayItem">
+								<Offset>
+									<AbsDimension x="128" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<MouseDownUpdate>TradeShowGetItem_MouseDownUpdate();</MouseDownUpdate>
+							<OnMouseUp>TradeShowGetItem_OnMouseUp();</OnMouseUp>
+						</Scripts>
+					</Button>
+					<Button name="$parentExchange" inherits="TemplateBtn34">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-24" y="-46"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<FontString name="$parentText" fonttype="BlackFont28" justifyH="center" text="$539">
+									<Color r="55" g="54" b="49"/>
+									<Size>
+										<AbsDimension x="215" y="28"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentEffect" file="ui/mobile/effect/achievement_award_3.png" hidden="true">
+									<Angle value="-30" />
+									<Size>
+										<AbsDimension x="150" y="220"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-70" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+									<UVAnimation texrows="2" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>NpcTradeFrame_Exchange();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentSmallExchange" inherits="TemplateBtn11">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-28" y="-35"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<FontString name="$parentText" fonttype="BlackFont30" fontStyle="border" justifyH="center" text="$539">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="70" y="31"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentEffect" file="ui/mobile/effect/achievement_award_3.png" hidden="true">
+									<Angle value="-30" />
+									<Size>
+										<AbsDimension x="150" y="220"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-70" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+									<UVAnimation texrows="2" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>NpcTradeFrame_Exchange();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentADExchange" inherits="TemplateBtn11">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-28" y="35"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="ggjr_icon02">
+									<Size>
+										<AbsDimension x="23" y="23"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="26" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentText" fonttype="BlackFont24" fontStyle="border" text="$4933">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="100" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>NpcTradeFrame_ADExchange();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>		
+		<Scripts>
+			<OnLoad>NpcTradeFrame_OnLoad();</OnLoad>
+			<OnEvent>NpcTradeFrame_OnEvent();</OnEvent>
+			<OnShow>NpcTradeFrame_OnShow();</OnShow>
+			<OnHide>NpcTradeFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

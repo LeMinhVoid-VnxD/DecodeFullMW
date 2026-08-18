@@ -1,0 +1,49 @@
+local WorldService = game:GetService("WorldService")
+local RunService = game:GetService("RunService")
+local State = CommonModule.GetRegisterClass("State")
+local AttackState = CommonModule.Class("AttackState", State)
+
+AttackState.FROM_STATE = { "IdleState" }
+
+local ATTACK_GAP = 1000
+
+function AttackState:OnInit(...)
+	State.OnInit(self, ...)
+	self.m_attackTime = 0
+end
+
+function AttackState:checkAttack()
+	local curtime = RunService:CurrentMilliSecondTimeStamp()
+	if curtime - self.m_attackTime < ATTACK_GAP then
+		return
+	end
+
+	local result = self.m_host:doPick()
+	print("checkAttack pickType", result.pickType, result.actor)
+	local pickType = result.pickType
+
+	if pickType == 2 then
+		self.m_attackTime = curtime
+		self.m_host:PlayAnim("100105")
+		WorldService:AttackTarget(result.actor)
+	end
+end
+
+function AttackState:EnterState()
+	self:checkAttack()
+end
+
+function AttackState:LeaveState()
+	self.m_attackTime = 0
+	self.m_host:StopAnim("100105")
+end
+
+function AttackState:OnUpdate(dt)
+	if not self.m_host:isLeftClickDown() then
+		return "IdleState"
+	else
+		self:checkAttack()
+	end
+end
+
+return AttackState

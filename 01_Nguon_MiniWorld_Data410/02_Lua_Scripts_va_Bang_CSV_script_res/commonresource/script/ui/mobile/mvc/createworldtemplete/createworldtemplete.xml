@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/createWorldTemplete/createWorldTempleteModel.lua"/>
+	<Script file="ui/mobile/mvc/createWorldTemplete/createWorldTempleteView.lua"/>
+	<Script file="ui/mobile/mvc/createWorldTemplete/createWorldTempleteCtrl.lua"/>
+
+	##模版按钮
+    <Button name="Temp_BtnTemplate" virtual="true" abs_x="132" abs_y="38">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentNormal" inherits="TemplateBkg6" />
+                <Texture name="$parentPushed" inherits="TemplateBkg7" />
+                <FontString name="$parentName" fonttype="BlackFont20" abs_x="132" abs_y="20" justifyH="center" text="普通">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </FontString>
+
+                ##:红点
+                <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+                    <Anchors>
+                        <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="3" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("createWorldTemplete"):templeteBtnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    <Frame name="createWorldTempleteListItem" virtual="true" abs_x="246" abs_y="202">
+        <Layers>
+			<Layer level="BACKGROUND">
+                ##底板
+				<Texture name="$parentBkg" inherits="TemplateBigBkg9" abs_x="246" abs_y="202">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                ##封面图
+                <Texture name="$parentImg" file="ui/mobile/texture0/bigtex/Tree.png">
+                    <Size>
+                        <AbsDimension x="242" y="140"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="2" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentCheckBkg" inherits="TemplateBkg11" hidden="true"/>
+				##地图名
+				<FontString name="$parentName" fonttype="BlackFont24" text="迷你队长" abs_x="180" abs_y="26" justifyH="center">
+					<Color r="55" g="53" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="72"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- ##描述
+				<FontString name="$parentDesc" fonttype="BlackFont16" text="11111111" abs_x="180" abs_y="20" justifyH="center">
+					<Color r="135" g="134" b="131"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="86"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+			</Layer>
+		</Layers>
+		<Frames>
+            ##右上角按钮
+            <Button name="$parentSetBtn" abs_x="58" abs_y="44" hidden="true">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-6" y="5" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg9" />
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_set.png" abs_x="33" abs_y="31">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("createWorldTemplete"):setBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+		</Frames>
+        <Scripts>
+        <OnClick>GetInst("UIManager"):GetCtrl("createWorldTemplete"):TableViewItemClicked();</OnClick>
+        </Scripts>
+    </Frame>
+
+	##高级创造模式，模版选择界面
+    <Frame name="createWorldTemplete" parent="UIClient" abs_x="1040" abs_y="456" frameStrata="MEDIUM" hidden="true" framelevel="2253" input_transparent="true">
+        <Anchors>
+            <Anchor point="top" relativePoint="top" relativeTo="CreateWorldRuleFrameBkgBlue" >
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Frames>
+            ##所有模版
+            <Button name="$parentBtn1" inherits="Temp_BtnTemplate" id="1">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="12" y="12"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##主题模版
+            <Button name="$parentBtn2" inherits="Temp_BtnTemplate" id="2">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBtn1">
+                        <Offset>
+                            <AbsDimension x="8" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##游戏模版
+            <Button name="$parentBtn3" inherits="Temp_BtnTemplate" id="3">
+                <Anchors> 
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+                        <Offset>
+                            <AbsDimension x="8" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##游戏模版
+            <Button name="$parentBtn4" inherits="Temp_BtnTemplate" id="4">
+                <Anchors> 
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBtn3">
+                        <Offset>
+                            <AbsDimension x="8" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##游戏模版
+            <Button name="$parentBtn5" inherits="Temp_BtnTemplate" id="5">
+                <Anchors> 
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBtn4">
+                        <Offset>
+                            <AbsDimension x="8" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##游戏模版
+            <Button name="$parentBtn6" inherits="Temp_BtnTemplate" id="6">
+                <Anchors> 
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBtn5">
+                        <Offset>
+                            <AbsDimension x="8" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##游戏模版
+            <Button name="$parentBtn7" inherits="Temp_BtnTemplate" id="7">
+                <Anchors> 
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBtn6">
+                        <Offset>
+                            <AbsDimension x="8" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            ##滑动列表
+			<ListViewFrame name="$parentBox" abs_x="1014" abs_y="392" slidingY="true" slideplane="$parentPlane" prefuncname="createWorldTemplete">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-2" y="60" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="1014" abs_y="360" hidden="true"/>
+				</Frames>
+			</ListViewFrame>
+            ##开始创作
+            <Button name="$parentCreateBtn2" inherits="TemplateBtn3" >
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="88"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" justifyH="center" fonttype="BlackFont24" abs_x="182" abs_y="24" text="$1000708" >
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("createWorldTemplete"):CreateMap2();</OnClick>
+                </Scripts>
+            </Button>
+            ### 原开发者模式
+            <Button name="$parentOldCreate" abs_x="130" abs_y="34">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="400" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">				
+                        <FontString name="$parentGuide" fonttype="BlackFont22" text="$300399" justifyH="left" justifyV="middle" abs_x="180" abs_y="25">
+                            <Color r="74" g="74" b="74"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentLine" file="ui/white.png" color="ff000000" abs_x="142" abs_y="2">
+                            <Anchors>
+                                <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentGuide">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>CreateWorldFrameAdvancedSetBtn_OnClick_New();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

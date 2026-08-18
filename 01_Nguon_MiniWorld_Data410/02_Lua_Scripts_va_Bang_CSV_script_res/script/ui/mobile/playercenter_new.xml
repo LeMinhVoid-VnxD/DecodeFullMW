@@ -1,0 +1,3340 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/playercenter_new.lua" />
+
+	##动态发布页面
+	<Frame name="DynamicPublishFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="9400" input_transparent="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="B1000000" rel_x="1" rel_y="1" >
+					<Anchors>
+						 <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                </Offset>
+                        </Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                </Offset>
+                        </Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="967" abs_y="580" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEditBkg" inherits="TemplateBigBkg29" abs_x="890" abs_y="255">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="84"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="950" abs_y="67">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="6" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleHuaWen" inherits="TemplateBigBkg7_flat" abs_x="946" abs_y="86">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="$20510" abs_x="650" abs_y="30">
+					<Color r="77" g="112" b="116"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentEditDefaultTxt" fonttype="BlackFont24" text="$10646" abs_x="890" abs_y="24">
+					<Color r="150" g="161" b="157"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTextEdit">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" >
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-23" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>DynamicPublishFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##编辑框
+			<SafeMultiEditBox name="$parentTextEdit" letters="150" multiLine="false" abs_x="830" abs_y="110">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEditBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="15" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<cursorcolor r="61" g="69" b="70"/>
+				<textcolor r="61" g="69" b="70"/>
+				<FontString name="$parentFont" fonttype="BlackFont24" >
+					<Color r="61" g="69" b="70"/>
+				</FontString>
+				<Scripts>
+					<OnFocusLost>DynamicPublishFrameTextEdit_OnFocusLost();</OnFocusLost>
+					<OnFocusGained>DynamicPublishFrameTextEdit_OnFocusGained();</OnFocusGained>
+					<OnTabPressed platform="pc">DynamicPublishFrameTextEdit_OnTabPressed();</OnTabPressed>
+				</Scripts>
+			</SafeMultiEditBox>
+			##图片
+			<Frame name="$parentDynamicPic" abs_x="555" abs_y="125" >
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentEditBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="0" y="-5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parent1" file="ui/white.png" abs_x="120" abs_y="120">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parent2" file="ui/white.png" abs_x="120" abs_y="120">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent1">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parent3" file="ui/white.png" abs_x="120" abs_y="120">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent2">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parent1Del" abs_x="31" abs_y="32" hidden="true">
+		                <Anchors>
+		                    <Anchor point="center" relativePoint="topright" relativeTo="$parent1">
+		                        <Offset>
+		                            <AbsDimension x="-9" y="8"/>
+		                        </Offset>
+		                    </Anchor>
+		                </Anchors>
+		                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02"/>
+		                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02" abs_x="28" abs_y="29">
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+		                    </Anchors>
+		                </PushedTexture>
+		                <Scripts>
+		                    <OnClick>DynamicPublishFrameDynamicPicDel_OnClick(1);</OnClick>
+		                </Scripts>
+		            </Button>
+		            <Button name="$parent2Del" abs_x="31" abs_y="32" hidden="true">
+		                <Anchors>
+		                    <Anchor point="center" relativePoint="topright" relativeTo="$parent2">
+		                        <Offset>
+		                            <AbsDimension x="-9" y="8"/>
+		                        </Offset>
+		                    </Anchor>
+		                </Anchors>
+		                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02"/>
+		                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02" abs_x="28" abs_y="29">
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+		                    </Anchors>
+		                </PushedTexture>
+		                <Scripts>
+		                    <OnClick>DynamicPublishFrameDynamicPicDel_OnClick(2);</OnClick>
+		                </Scripts>
+		            </Button>
+		            <Button name="$parent3Del" abs_x="31" abs_y="32" hidden="true">
+		                <Anchors>
+		                    <Anchor point="center" relativePoint="topright" relativeTo="$parent3">
+		                        <Offset>
+		                            <AbsDimension x="-9" y="8"/>
+		                        </Offset>
+		                    </Anchor>
+		                </Anchors>
+		                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02"/>
+		                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02" abs_x="28" abs_y="29">
+		                    <Anchors>
+		                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+		                    </Anchors>
+		                </PushedTexture>
+		                <Scripts>
+		                    <OnClick>DynamicPublishFrameDynamicPicDel_OnClick(3);</OnClick>
+		                </Scripts>
+		            </Button>
+				</Frames>
+			</Frame>
+			##链接
+			<Frame name="$parentDynamicLink" abs_x="890" abs_y="40" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentEditBkg">
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+
+						<Texture name="$parentLine" inherits="TemplateBkg36">
+							<Size>
+								<AbsDimension x="880" y="2"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="top">
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCurLink" fonttype="BlackFont24"  abs_x="800" abs_y="40">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="10" y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			
+			##插入图片
+			<Button name="$parentInsertPicBtn" abs_x="120" abs_y="120">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentEditBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="0" y="12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_picture" abs_x="60" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg30" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg30" abs_x="110" abs_y="110">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>DynamicPublishFrameInsertPicBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##插入链接
+			<Button name="$parentInsertLinkBtn" abs_x="120" abs_y="120">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentEditBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="125" y="12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_link"  abs_x="60" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg30" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg30" abs_x="110" abs_y="110">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<!-- <FontString name="$parentName" fonttype="BlackFont24" text="插入链接" abs_x="120" abs_y="24">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentNormal">
+							<Offset>
+								<AbsDimension x="12" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<Scripts>
+					<OnClick>DynamicPublishFrameInsertLinkBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			
+			##提交
+			<Button name="$parentCommitBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-80" y="-23"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$661" abs_x="180" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>DynamicPublishFrameCommitBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##动态管理-->改成'一键清除'
+			<Button name="$parentCleanBtn" inherits="TemplateBtn2" hidden="false">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="80" y="-23"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$4731" abs_x="180" abs_y="24">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>DynamicPublishFrameCleanBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+
+		<Scripts>
+			<OnShow>DynamicPublishFrame_OnShow();</OnShow>
+			<OnHide>DynamicPublishFrame_OnHide();</OnHide>
+			<OnUpdate>DynamicPublishFrame_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+
+	##:链接编辑
+	<Frame name="DynamicLinkEditFrame" parent="UIClient" hidden="true" frameStrata="HIGH" framelevel="9500" input_transparent="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="B1000000" />
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="408">
+					<Anchors>
+						<Anchor point = "center" relativeTo="$parent" relativePoint="center">
+						</Anchor>
+					</Anchors>
+				</Texture> 
+				<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-23" y="-23" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+				<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="516" abs_y="144">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="145"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEditBkg2" inherits="TemplateBkg8" abs_x="516" abs_y="46">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="70"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentEditDefaultTxt" fonttype="BlackFont24" justifyH="left" text="$21851" abs_x="450" abs_y="24">
+					<Color r="185" g="185" b="185"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentEditBkg">
+							<Offset>
+								<AbsDimension x="-28" y="-55"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentEditDefaultTxt2" fonttype="BlackFont24" justifyH="left" text="$21850" abs_x="450" abs_y="24">
+					<Color r="185" g="185" b="185"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentEditBkg2">
+							<Offset>
+								<AbsDimension x="8" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" >
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-23" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>DynamicLinkEditFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			##链接框
+			<MultiEditBox name="$parentLinkEdit" letters="1000" multiLine="false" editMethod="527" abs_x="500" abs_y="120">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEditBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<cursorcolor r="61" g="69" b="70"/>
+				<textcolor r="255" g="255" b="255"/>
+				<FontString name="$parentFont" fonttype="BlackFont24" >
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<Scripts>
+					<OnFocusLost>DynamicLinkEditFrameLinkEdit_OnFocusLost();</OnFocusLost>
+					<OnFocusGained>DynamicLinkEditFrameLinkEdit_OnFocusGained();</OnFocusGained>
+				</Scripts>
+			</MultiEditBox>
+
+			##标题框
+			<EditBox name="$parentTitleEdit" letters="100" multiLine="false" editMethod="527" abs_x="500" abs_y="27">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEditBkg2" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<cursorcolor r="61" g="69" b="70"/>
+				<textcolor r="255" g="255" b="255"/>
+				<FontString name="$parentFont" fonttype="BlackFont24" >
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<Scripts>
+					<OnFocusLost>DynamicLinkEditFrameTitleEdit_OnFocusLost();</OnFocusLost>
+					<OnFocusGained>DynamicLinkEditFrameTitleEdit_OnFocusGained();</OnFocusGained>
+				</Scripts>
+			</EditBox>
+
+			##清空
+			<Button name="$parentCancelBtn" inherits="TemplateBtn2">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="62" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>				
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" text="$21852" abs_x="100" abs_y="24" justifyH="center">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>DynamicLinkEditFrameCancleBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			##确定
+			<Button name="$parentDeterBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-62" y="-26"/>
+						</Offset>
+					</Anchor>
+				</Anchors>	
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" text="$3010" abs_x="100" abs_y="24" justifyH="center">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>DynamicLinkEditFrameDeterBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##:导航按钮
+	<Button name="DynamicHandleTabBtnTemplate" virtual="true" abs_x="140" abs_y="63">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="BkgTemplate77"/>
+				<Texture name="$parentChecked" inherits="BkgTemplate78"/>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>DynamicHandleTabBtnTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##我的动态条目模板
+	<Button name="MyDynamicTemplate" virtual="true" click_threshold="10" abs_x="1042" abs_y="137">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg39" />
+				<FontString name="$parentName" fonttype="BlackFont24" text="名字最多七个字" abs_x="300" abs_y="24">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="102" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCountryFlag" file="ui/mobile/texture0/countryflag.xml" uvname="img_Taiwan" hidden="true">
+					<Size>
+						<AbsDimension x="33" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentName" relativePoint="right">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentContent"  fonttype="BlackFont22" lineInterval="2" autowrap="true" abs_x="735" abs_y="18" text="这次更新主要修复了一些错误，不够我们页借此机会介绍一系列其他的内容，愉快的节日即将来到。增加：加入火箭背包2">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##审核状态
+				<FontString name="$parentState"  fonttype="BlackFont22" lineInterval="2" abs_x="200" abs_y="22" text="">
+					<Color r="159" g="124" b="82"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="190" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDate"  fonttype="BlackFont18" text="2018-11-23" abs_x="200" abs_y="18">
+					<Color r="142" g="153" b="155"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentComment">
+							<Offset>
+								<AbsDimension x="98" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="90" abs_y="90">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="10" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" abs_x="55" abs_y="55">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="74" abs_y="74">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal"   file="ui/headframes/1.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" />
+				<Scripts>
+					<!-- <OnClick></OnClick> -->
+				</Scripts>						
+			</Button>
+			##编辑按钮
+			<Button name="$parentFunc" abs_x="44" abs_y="36" hidden="false">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent" />
+				</Anchors>
+				<!--<Layers>-->
+					<!--<Layer level="overlay">-->
+						<!--<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_set" abs_x="26" abs_y="26">-->
+							<!--<Anchors>-->
+								<!--<Anchor point="center" relativePoint="center" relativeTo="$parent" />-->
+							<!--</Anchors>-->
+						<!--</Texture>-->
+					<!--</Layer>-->
+				<!--</Layers>-->
+				<NormalTexture name="$parentNormal"   file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="grzx_icon_slh" abs_x="18" abs_y="6">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="grzx_icon_slh" abs_x="16" abs_y="4">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>MyDynamicTemplateFunc_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##标签
+			<Frame name = "$parentLabel" abs_x="36" abs_y="28">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>	
+						<Texture name="$parentPic"  file="ui/mobile/texture2/playercenter.xml" uvname="label_map_top"/>
+						<Texture name="$parentIcon"  file="ui/mobile/texture2/playercenter.xml" uvname="icon_top" abs_x="17" abs_y="11">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPic">
+									<Offset>
+										<AbsDimension x="3" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont20" justifyV ="middle" justifyH="center" text="" hidden="true" abs_x="1" abs_y="1">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			##评论按钮
+			<Button name="$parentCommentBtn" abs_x="135" abs_y="30">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentDate" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="516" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/playercenter.xml" uvname="icon_chat_gray" abs_x="31" abs_y="30">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" text="(999999)" abs_x="100" abs_y="20">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<!-- <OnClick>FriendDynamicFrameInfoCommentBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+			##点赞
+			<Button name="$parentPraiseBtn" abs_x="135" abs_y="30">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentCommentBtn" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="150" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_thumb_n" abs_x="30" abs_y="33">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" text="(999999)" abs_x="100" abs_y="20">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Button>
+			##踩(去掉)
+			<Button name="$parentNegativeBtn" abs_x="100" abs_y="25" hidden="true">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentLine" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-80" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngfg_dianzan02" UVType="mirroev" abs_x="22" abs_y="24" >
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentFont" fonttype="BlackFont17" lineInterval="1" text="(999999)" justifyV="middle" abs_x="100" abs_y="17">
+							<Color r="159" g="124" b="82"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Button>
+			##3张图片
+			<Frame name="$parentPic" abs_x="600" abs_y="118" input_transparent="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="0" y="25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers  >
+					<Layer level="BACKGROUND">
+						<Texture name="$parent1" file="ui/white.png" abs_x="118" abs_y="118">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parent2" file="ui/white.png" abs_x="118" abs_y="118">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent1">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parent3" file="ui/white.png" abs_x="118" abs_y="118">
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parent2">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parent1Btn" abs_x="118" abs_y="118" >
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent1" />
+						</Anchors>
+						<Scripts>
+							<OnClick>FriendDynamicFrameInfoPicBtn_OnClick(1);</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parent2Btn" abs_x="118" abs_y="118" >
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent2" />
+						</Anchors>
+						<Scripts>
+							<OnClick>FriendDynamicFrameInfoPicBtn_OnClick(2);</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parent3Btn" abs_x="118" abs_y="118" >
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent3" />
+						</Anchors>
+						<Scripts>
+							<OnClick>FriendDynamicFrameInfoPicBtn_OnClick(3);</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##评论
+			<Frame name="$parentComment" abs_x="1042" abs_y="85" input_transparent="true" hidden="false">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##线换成背景图
+						<Texture name="$parentBkg" inherits="TemplateBkg26" hidden="false" />
+					</Layer>
+				</Layers>
+				<Frames>
+					<RichText name="$parent1" fonttype="BlackFont18" abs_x="640" abs_y="40">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="98" y="5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					<RichText name="$parent2" fonttype="BlackFont18" abs_x="640" abs_y="40">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="98" y="45"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+				</Frames>
+			</Frame>
+			##更多(...)
+			<Button name="$parentMoreBtn" abs_x="100" abs_y="50" hidden="true">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal"   file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="grzx_icon_slh" abs_x="18" abs_y="6">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="grzx_icon_slh" abs_x="16" abs_y="4">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>MyDynamicTemplateMore_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##跳转超链接文本
+			<RichText name="$parentJumpText" fonttype="BlackFont22" multiLine="false" autoextend="false" text="" input_transparent="false">
+				<Size>
+					<AbsDimension x="500" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentContent">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>FriendDynamicFrameListJumpBtn_OnClick();</OnClick>
+				</Scripts>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>MyDynamicTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##最近回复条目模板
+	<Button name="LatestDynamicTemplate" virtual="true" click_threshold="10" abs_x="1042" abs_y="137">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBkg39" />
+				<FontString name="$parentName" fonttype="BlackFont24" text="名字最多七个字" abs_x="300" abs_y="24">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="102" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCountryFlag" file="ui/mobile/texture0/countryflag.xml" uvname="img_Taiwan" hidden="true">
+					<Size>
+						<AbsDimension x="33" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentName" relativePoint="right">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- <FontString name="$parentContent"  fonttype="BlackFont18" lineInterval="2" autowrap="true" abs_x="775" abs_y="18" text="这次更新主要修复了一些错误，不够我们页借此机会介绍一系列其他的内容，愉快的节日即将来到。增加：加入火箭背包2">
+					<Color r="159" g="124" b="82"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<FontString name="$parentDate"  fonttype="BlackFont18" lineInterval="2" autowrap="true" text="2018-11-23" abs_x="200" abs_y="18" hidden="false">
+					<Color r="142" g="153" b="155"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="102" y="103"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##回复信息
+				<Texture name="$parentCommentBkg" inherits="TemplateBigBkg1" abs_x="110" abs_y="110">
+					<Anchors>
+						<Anchor point="right" relativeTo="$parent" relativePoint="right" >
+							<Offset>
+								<AbsDimension x="-10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##右边正方形是动态内容
+				<FontString name="$parentContent"  fonttype="BlackFont18" lineInterval="2" autowrap="true" letters="60" abs_x="108" abs_y="108" text="这次更新主要修复了一些错误，不够我们页借此机会介绍一系列其他的内容，愉快的节日即将来到">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentCommentBkg" />
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="90" abs_y="90">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="10" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="ljdt_txdikuang02" abs_x="55" abs_y="55">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="74" abs_y="74">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal"   file="ui/headframes/1.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" abs_x="90" abs_y="90">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<!-- <OnClick></OnClick> -->
+				</Scripts>						
+			</Button>
+			##中间的主题是这个人的回复内容
+			<RichText name="$parentComment1" fonttype="BlackFont22" input_transparent="true" abs_x="640" abs_y="22">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+						<Offset>
+							<AbsDimension x="5" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>LatestDynamicTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##编辑菜单
+	<Frame name="EditMenuFrame" parent="UIClient" hidden="true" frameStrata="MEDIUM" framelevel="7000" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<Frame name="$parentDialog" abs_x="190" abs_y="253">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+				</Anchors>
+				<Layers>
+		            <Layer level="background">
+		                <Texture name="$parentBkg" inherits="TemplateBigBkg22" />
+		                <Texture name="$parentJianTou" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow" UVType="mirroev" abs_x="32" abs_y="20" >
+		                	<Anchors>
+								<Anchor point="bottomright" relativeTo="$parent" relativePoint="topright" >
+									<Offset>
+										<AbsDimension x="-7" y="4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+		                </Texture>
+		            </Layer>
+		        </Layers>
+				<Frames>
+					##置顶
+					<Button name="$parentBtn1" inherits="TemplateBtn12" id="1" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="0" y="8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_top_b">
+									<Size>
+										<AbsDimension x="21" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" text="$20557" justifyH="center" abs_x="180" abs_y="22">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>EditMenuFrameTopBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##关闭评论
+					<Button name="$parentBtn2" inherits="TemplateBtn12" id="2" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn1" >
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_shield" abs_x="22" abs_y="22">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" text="$20558" justifyH="center" abs_x="180" abs_y="22">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>EditMenuFrameCloseCommentBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##隐藏
+					<Button name="$parentBtn3" inherits="TemplateBtn12" id="3" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn2" >
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_hide" abs_x="27" abs_y="14">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" text="$20559" justifyH="center" abs_x="180" abs_y="22">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>EditMenuFrameHideCommentBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##删除
+					<Button name="$parentBtn4" inherits="TemplateBtn27" id="4" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentBtn3" >
+								<Offset>
+									<AbsDimension x="0" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete" >
+									<Size>
+										<AbsDimension x="26" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" text="$20560" justifyH="center" abs_x="180" abs_y="22">
+									<Color r="55" g="51" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>EditMenuFrameDeleteBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnShow>EditMenuFrame_OnShow();</OnShow>
+			<OnHide>EditMenuFrame_OnHide();</OnHide>
+			<OnClick>EditMenuFrame_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##好友动态回复条目模板
+	<Button name="FriendDynamicReplyTemplate" virtual="true" click_threshold="10" abs_x="944" abs_y="98">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentName" fonttype="BlackFont24" text="名字最多七个字" abs_x="300" abs_y="24">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="119" y="22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- <FontString name="$parentContent"  fonttype="BlackFont18" lineInterval="2" autowrap="true" abs_x="950" abs_y="18" text="这次更新主要修复了一些错误，不够我们页借此机会介绍一系列其他的内容，愉快的节日即将来到。增加：加入火箭背包2">
+					<Color r="159" g="124" b="82"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<FontString name="$parentDate"  fonttype="BlackFont18" justifyH="right" text="2018-11-23" abs_x="180" abs_y="18">
+					<Color r="142" g="153" b="155"/>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-36" y="22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg20_H1" abs_x="944" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##举报状态显示
+				<Texture name="$parentReportPic" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="ico_shenheing.png" abs_x="40" abs_y="34">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-17" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentReportTitle" fonttype="BlackFont14" justifyH="center" text="$1305" abs_x="105" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentReportPic">
+							<Offset>
+								<AbsDimension x="0" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="80" abs_y="80">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="20" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" abs_x="60" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="60" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal"   file="ui/headframes/1.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" abs_x="75" abs_y="75">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>FriendDynamicReplyTemplateHead_OnClick();</OnClick>
+				</Scripts>						
+			</Button>
+			<RichText name="$parentContent" fonttype="BlackFont22" input_transparent="true" abs_x="800" abs_y="40">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##回复按钮(去掉, 改成点击整个条目)
+			<Button name="$parentCommentBtn" abs_x="780" abs_y="90" hidden="true">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="280" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- <Texture name="$parentIcon" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="grzx_icon_chat" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentFont" fonttype="BlackFont17" lineInterval="1" text="(999999)" justifyV="middle" abs_x="100" abs_y="17" hidden="true">
+							<Color r="159" g="124" b="82"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString> -->
+					</Layer>
+				</Layers>
+				<Scripts>
+					<!-- <OnClick>FriendDynamicReplyTemplateCommentBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>FriendDynamicFrameReplyBoxItem_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##好友动态/动态详情页
+	<Frame name="FriendDynamicFrame" parent="UIClient" hidden="true" frameStrata="MEDIUM" framelevel="6300" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="B1000000">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="967" abs_y="720" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg" inherits="TemplateBigBkg31" abs_x="954" abs_y="67">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="4" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleHuaWen" inherits="TemplateBigBkg7_flat" abs_x="964" abs_y="86">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="$20514" abs_x="650" abs_y="30">
+					<Color r="77" g="112" b="116"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentEmptyBkg" file="ui/mobile/texture2/bigtex/img_noreview.png">
+					<Size>
+						<AbsDimension x="244" y="255"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="-25" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentEmptyTips" fonttype="BlackFont26" lineInterval="1" text="$30009" justifyH="center" hidden="false" abs_x="500" abs_y="25">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyBkg">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" >
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-23" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>FriendDynamicFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			##动态内容
+			<Frame name="$parentInfo" abs_x="967" abs_y="278" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="67"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentName" fonttype="BlackFont24" text="名字最多七个字" abs_x="300" abs_y="24">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="122" y="36"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentContent"  fonttype="BlackFont22" lineInterval="2" autowrap="true" abs_x="820" abs_y="30" text="这次更新主要修复了一些错误，不够我们页借此机会介绍一系列其他的内容，愉快的节日即将来到。增加：加入火箭背包2">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDate"  fonttype="BlackFont18" lineInterval="2" autowrap="true" text="2018-11-23" abs_x="110" abs_y="18">
+							<Color r="142" g="153" b="155"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="117" y="-17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##举报状态显示
+						<Texture name="$parentReportPic" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="ico_shenheing.png" abs_x="40" abs_y="34">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentReportTitle" fonttype="BlackFont14" justifyH="center" text="$1305" abs_x="105" abs_y="20">
+							<Color r="106" g="80" b="49"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentReportPic">
+									<Offset>
+										<AbsDimension x="0" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##头像
+					<Button name="$parentHead" abs_x="91" abs_y="91">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="30" y="16" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" abs_x="72" abs_y="72">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="72" abs_y="72">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal"   file="ui/headframes/1.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" abs_x="91" abs_y="91">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<!-- <OnClick></OnClick> -->
+						</Scripts>						
+					</Button>
+					#举报
+					<Button name="$parentReportBtn" hidden="false" abs_x="40" abs_y="42">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="FriendDynamicFrameBkg">
+								<Offset>
+									<AbsDimension x="-23" y="90"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_report.png" abs_x="22" abs_y="19">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center">
+											<Offset>
+												<AbsDimension y="-4"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red.png" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_red.png" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>FriendDynamicFrameReportBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##评论
+					<Button name="$parentCommentBtn" abs_x="150" abs_y="30">
+						<Anchors>
+							<Anchor point="bottomright" relativeTo="$parentPraiseBtn" relativePoint="bottomleft">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/playercenter.xml" uvname="icon_chat_gray" abs_x="31" abs_y="30">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" text="(999999)" justifyV="middle" abs_x="120" abs_y="20">
+									<Color r="106" g="121" b="122"/>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameInfoCommentBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##点赞
+					<Button name="$parentPraiseBtn" abs_x="150" abs_y="33">
+						<Anchors>
+							<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+								<Offset>
+									<AbsDimension x="0" y="-12"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_thumb_n" abs_x="30" abs_y="33">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" text="(999999)" justifyV="middle" abs_x="120" abs_y="20">
+									<Color r="106" g="121" b="122"/>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameInfoPraiseBtn_OnClick(1);</OnClick>
+						</Scripts>
+					</Button>
+					##踩(去掉)
+					<Button name="$parentNegativeBtn" abs_x="100" abs_y="25" hidden="true">
+						<Anchors>
+							<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngfg_dianzan02" UVType="mirroev" abs_x="22" abs_y="24" >
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont17" lineInterval="1" text="(999999)" justifyV="middle" abs_x="100" abs_y="17">
+									<Color r="159" g="124" b="82"/>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameInfoPraiseBtn_OnClick(2);</OnClick>
+						</Scripts>
+					</Button>
+					##3张图片
+					<Frame name="$parentPic" abs_x="1080" abs_y="118" input_transparent="true">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-42"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers  >
+							<Layer level="BACKGROUND">
+								<Texture name="$parent1" file="ui/white.png" abs_x="118" abs_y="118">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="115" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parent2" file="ui/white.png" abs_x="118" abs_y="118">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parent1">
+											<Offset>
+												<AbsDimension x="20" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parent3" file="ui/white.png" abs_x="118" abs_y="118">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parent2">
+											<Offset>
+												<AbsDimension x="20" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parent1Btn" abs_x="118" abs_y="118" >
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent1" />
+								</Anchors>
+								<Scripts>
+									<OnClick>FriendDynamicFrameInfoPicBtn_OnClick(1);</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parent2Btn" abs_x="118" abs_y="118" >
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent2" />
+								</Anchors>
+								<Scripts>
+									<OnClick>FriendDynamicFrameInfoPicBtn_OnClick(2);</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parent3Btn" abs_x="118" abs_y="118" >
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent3" />
+								</Anchors>
+								<Scripts>
+									<OnClick>FriendDynamicFrameInfoPicBtn_OnClick(3);</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##跳转超链接文本
+					<RichText name="$parentJumpText" fonttype="BlackFont22" multiLine="false" autoextend="false" text="" input_transparent="false">
+						<Color r="91" g="142" b="213"/>
+						<Size>
+							<AbsDimension x="500" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentContent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FriendDynamicFrameJumpBtn_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+				</Frames>
+				<Scripts>
+					<OnClick>FriendDynamicFrameInfo_OnClick()</OnClick>
+				</Scripts>
+			</Frame>
+
+			##跳转按钮
+			<Button name="$parentJumpBtn" abs_x="91" abs_y="43" hidden="true">
+				<Anchors>
+		            <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+		                <Offset>
+		                    <AbsDimension x="-80" y="90"/>
+		                </Offset>
+		            </Anchor>
+		        </Anchors>
+		        <Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="center" justifyV = "middle" text="$20612">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_middle_yellow.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+		        <Scripts>
+		        	<OnClick>FriendDynamicFrameJumpBtn_OnClick();</OnClick>
+		        </Scripts>
+			</Button>
+
+			##回复列表
+			<SlidingFrame name="$parentReplyBox" slidingY="true" slideplane="$parentPlane" abs_x="944" abs_y="345" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentInfo">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!--<Texture name="$parentBkg" inherits="BkgTemplate98" hidden="true"/>-->
+						<Texture name="$parentTitleBkg" inherits="TemplateBkg26" abs_x="944" abs_y="36">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPlane" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont24" text="$764" justifyH="center" abs_x="200" abs_y="24">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg" />
+							</Anchors>
+						</FontString>
+						<Texture name="$parentEmptyBkg" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="435" abs_y="247">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentEmptyTips" fonttype="BlackFont26" lineInterval="1" text="$20590" justifyH="center" hidden="false" abs_x="500" abs_y="25">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyBkg">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentPlane" hidden="true" abs_x="944" abs_y="345" />
+					<Button name="$parentItem1" inherits="FriendDynamicReplyTemplate" id="1" />
+					<Button name="$parentItem2" inherits="FriendDynamicReplyTemplate" id="2" />
+					<Button name="$parentItem3" inherits="FriendDynamicReplyTemplate" id="3" />
+					<Button name="$parentItem4" inherits="FriendDynamicReplyTemplate" id="4" />
+					<Button name="$parentItem5" inherits="FriendDynamicReplyTemplate" id="5" />
+					<Button name="$parentItem6" inherits="FriendDynamicReplyTemplate" id="6" />
+					<Button name="$parentItem7" inherits="FriendDynamicReplyTemplate" id="7" />
+					<Button name="$parentItem8" inherits="FriendDynamicReplyTemplate" id="8" />
+					<Button name="$parentItem9" inherits="FriendDynamicReplyTemplate" id="9" />
+					<Button name="$parentItem10" inherits="FriendDynamicReplyTemplate" id="10" />
+					<Button name="$parentItem11" inherits="FriendDynamicReplyTemplate" id="11" />
+					<Button name="$parentItem12" inherits="FriendDynamicReplyTemplate" id="12" />
+					<Button name="$parentItem13" inherits="FriendDynamicReplyTemplate" id="13" />
+					<Button name="$parentItem14" inherits="FriendDynamicReplyTemplate" id="14" />
+					<Button name="$parentItem15" inherits="FriendDynamicReplyTemplate" id="15" />
+					<Button name="$parentItem16" inherits="FriendDynamicReplyTemplate" id="16" />
+					<Button name="$parentItem17" inherits="FriendDynamicReplyTemplate" id="17" />
+					<Button name="$parentItem18" inherits="FriendDynamicReplyTemplate" id="18" />
+					<Button name="$parentItem19" inherits="FriendDynamicReplyTemplate" id="19" />
+					<Button name="$parentItem20" inherits="FriendDynamicReplyTemplate" id="20" />
+					<Button name="$parentItem21" inherits="FriendDynamicReplyTemplate" id="21" />
+					<Button name="$parentItem22" inherits="FriendDynamicReplyTemplate" id="22" />
+					<Button name="$parentItem23" inherits="FriendDynamicReplyTemplate" id="23" />
+					<Button name="$parentItem24" inherits="FriendDynamicReplyTemplate" id="24" />
+					<Button name="$parentItem25" inherits="FriendDynamicReplyTemplate" id="25" />
+					<Button name="$parentItem26" inherits="FriendDynamicReplyTemplate" id="26" />
+					<Button name="$parentItem27" inherits="FriendDynamicReplyTemplate" id="27" />
+					<Button name="$parentItem28" inherits="FriendDynamicReplyTemplate" id="28" />
+					<Button name="$parentItem29" inherits="FriendDynamicReplyTemplate" id="29" />
+					<Button name="$parentItem30" inherits="FriendDynamicReplyTemplate" id="30" />
+					<Button name="$parentItem31" inherits="FriendDynamicReplyTemplate" id="31" />
+					<Button name="$parentItem32" inherits="FriendDynamicReplyTemplate" id="32" />
+					<Button name="$parentItem33" inherits="FriendDynamicReplyTemplate" id="33" />
+					<Button name="$parentItem34" inherits="FriendDynamicReplyTemplate" id="34" />
+					<Button name="$parentItem35" inherits="FriendDynamicReplyTemplate" id="35" />
+					<Button name="$parentItem36" inherits="FriendDynamicReplyTemplate" id="36" />
+					<Button name="$parentItem37" inherits="FriendDynamicReplyTemplate" id="37" />
+					<Button name="$parentItem38" inherits="FriendDynamicReplyTemplate" id="38" />
+					<Button name="$parentItem39" inherits="FriendDynamicReplyTemplate" id="39" />
+					<Button name="$parentItem40" inherits="FriendDynamicReplyTemplate" id="40" />
+					<Button name="$parentItem41" inherits="FriendDynamicReplyTemplate" id="41" />
+					<Button name="$parentItem42" inherits="FriendDynamicReplyTemplate" id="42" />
+					<Button name="$parentItem43" inherits="FriendDynamicReplyTemplate" id="43" />
+					<Button name="$parentItem44" inherits="FriendDynamicReplyTemplate" id="44" />
+					<Button name="$parentItem45" inherits="FriendDynamicReplyTemplate" id="45" />
+					<Button name="$parentItem46" inherits="FriendDynamicReplyTemplate" id="46" />
+					<Button name="$parentItem47" inherits="FriendDynamicReplyTemplate" id="47" />
+					<Button name="$parentItem48" inherits="FriendDynamicReplyTemplate" id="48" />
+					<Button name="$parentItem49" inherits="FriendDynamicReplyTemplate" id="49" />
+					
+					<Button name="$parentItem50" inherits="FriendDynamicReplyTemplate" id="50" />
+					<Button name="$parentItem51" inherits="FriendDynamicReplyTemplate" id="51" />
+					<Button name="$parentItem52" inherits="FriendDynamicReplyTemplate" id="52" />
+					<Button name="$parentItem53" inherits="FriendDynamicReplyTemplate" id="53" />
+					<Button name="$parentItem54" inherits="FriendDynamicReplyTemplate" id="54" />
+					<Button name="$parentItem55" inherits="FriendDynamicReplyTemplate" id="55" />
+					<Button name="$parentItem56" inherits="FriendDynamicReplyTemplate" id="56" />
+					<Button name="$parentItem57" inherits="FriendDynamicReplyTemplate" id="57" />
+					<Button name="$parentItem58" inherits="FriendDynamicReplyTemplate" id="58" />
+					<Button name="$parentItem59" inherits="FriendDynamicReplyTemplate" id="59" />
+					<Button name="$parentItem60" inherits="FriendDynamicReplyTemplate" id="60" />
+					<Button name="$parentItem61" inherits="FriendDynamicReplyTemplate" id="61" />
+					<Button name="$parentItem62" inherits="FriendDynamicReplyTemplate" id="62" />
+					<Button name="$parentItem63" inherits="FriendDynamicReplyTemplate" id="63" />
+					<Button name="$parentItem64" inherits="FriendDynamicReplyTemplate" id="64" />
+					<Button name="$parentItem65" inherits="FriendDynamicReplyTemplate" id="65" />
+					<Button name="$parentItem66" inherits="FriendDynamicReplyTemplate" id="66" />
+					<Button name="$parentItem67" inherits="FriendDynamicReplyTemplate" id="67" />
+					<Button name="$parentItem68" inherits="FriendDynamicReplyTemplate" id="68" />
+					<Button name="$parentItem69" inherits="FriendDynamicReplyTemplate" id="69" />
+					<Button name="$parentItem70" inherits="FriendDynamicReplyTemplate" id="70" />
+					<Button name="$parentItem71" inherits="FriendDynamicReplyTemplate" id="71" />
+					<Button name="$parentItem72" inherits="FriendDynamicReplyTemplate" id="72" />
+					<Button name="$parentItem73" inherits="FriendDynamicReplyTemplate" id="73" />
+					<Button name="$parentItem74" inherits="FriendDynamicReplyTemplate" id="74" />
+					<Button name="$parentItem75" inherits="FriendDynamicReplyTemplate" id="75" />
+					<Button name="$parentItem76" inherits="FriendDynamicReplyTemplate" id="76" />
+					<Button name="$parentItem77" inherits="FriendDynamicReplyTemplate" id="77" />
+					<Button name="$parentItem78" inherits="FriendDynamicReplyTemplate" id="78" />
+					<Button name="$parentItem79" inherits="FriendDynamicReplyTemplate" id="79" />
+					<Button name="$parentItem80" inherits="FriendDynamicReplyTemplate" id="80" />
+					<Button name="$parentItem81" inherits="FriendDynamicReplyTemplate" id="81" />
+					<Button name="$parentItem82" inherits="FriendDynamicReplyTemplate" id="82" />
+					<Button name="$parentItem83" inherits="FriendDynamicReplyTemplate" id="83" />
+					<Button name="$parentItem84" inherits="FriendDynamicReplyTemplate" id="84" />
+					<Button name="$parentItem85" inherits="FriendDynamicReplyTemplate" id="85" />
+					<Button name="$parentItem86" inherits="FriendDynamicReplyTemplate" id="86" />
+					<Button name="$parentItem87" inherits="FriendDynamicReplyTemplate" id="87" />
+					<Button name="$parentItem88" inherits="FriendDynamicReplyTemplate" id="88" />
+					<Button name="$parentItem89" inherits="FriendDynamicReplyTemplate" id="89" />
+					<Button name="$parentItem90" inherits="FriendDynamicReplyTemplate" id="90" />
+					<Button name="$parentItem91" inherits="FriendDynamicReplyTemplate" id="91" />
+					<Button name="$parentItem92" inherits="FriendDynamicReplyTemplate" id="92" />
+					<Button name="$parentItem93" inherits="FriendDynamicReplyTemplate" id="93" />
+					<Button name="$parentItem94" inherits="FriendDynamicReplyTemplate" id="94" />
+					<Button name="$parentItem95" inherits="FriendDynamicReplyTemplate" id="95" />
+					<Button name="$parentItem96" inherits="FriendDynamicReplyTemplate" id="96" />
+					<Button name="$parentItem97" inherits="FriendDynamicReplyTemplate" id="97" />
+					<Button name="$parentItem98" inherits="FriendDynamicReplyTemplate" id="98" />
+					<Button name="$parentItem99" inherits="FriendDynamicReplyTemplate" id="99" />
+					<Button name="$parentItem100" inherits="FriendDynamicReplyTemplate" id="100" />
+				</Frames>
+				<Scripts>
+					<OnMovieFinished>FriendDynamicFrameReplyBox_OnMovieFinished();</OnMovieFinished>
+				</Scripts>
+			</SlidingFrame>
+
+			##回复输入框
+			<Frame name="$parentEdit" framelevel="7000" rel_x="1.0" rel_y="1.0">
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg25" abs_x="944" abs_y="102" >
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom"  relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="-25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="705" abs_y="87" >
+							<Anchors>
+								<Anchor point="left" relativePoint="left"  relativeTo="$parentBkg" >
+									<Offset>
+										<AbsDimension x="80" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##"回复XXX"提示
+						<FontString name="$parentEditDefaultTxt" fonttype="BlackFont24" text="$10646" abs_x="500" abs_y="24">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTextEdit">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##警告提示"请勿发布虚假和诈骗信息..."
+						<FontString name="$parentEditWarnTxt" fonttype="BlackFont20" text="$10647" abs_x="690" abs_y="40" hidden="false" autowrap="true">
+							<Color r="185" g="185" b="185"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTextEdit">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##表情
+					<Button name="$parentMoodBtn" hidden="false" inherits="TemplateBtn18" abs_x="50" abs_y="53">
+		                <Anchors>
+		                    <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+		                        <Offset>
+		                            <AbsDimension x="10" y="0"/>
+		                        </Offset>
+		                    </Anchor>
+		                </Anchors>
+		                <Layers>
+                            <Layer level="overlay">
+                                <Texture name="$parentBkg" file="ui/mobile/texture2/friend.xml" uvname="icon_express" abs_x="30" abs_y="30">
+                                    <Anchors>
+                                        <Anchor relativePoint="center" point="center" relativeTo="$parent"/>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+		                <Scripts>
+		                    <OnClick>FriendDynamicFrameEditMoodBtn_OnClick();</OnClick>
+		                </Scripts>
+		            </Button>
+		            ##编辑框
+		            <SafeMultiEditBox name="$parentTextEdit" letters="100" multiLine="false" returnkey="false" abs_x="680" abs_y="120" autowrap="true">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentEditBkg" relativePoint="top" >
+								<Offset>
+		                            <AbsDimension x="0" y="10"/>
+		                        </Offset>
+							</Anchor>
+						</Anchors>
+						<textcolor r="255" g="255" b="255"/>
+						<FontString name="$parentFont" fonttype="BlackFont24" >
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" justifyH="left" default="true" fonttype="BlackFont24" text="$656" textcolor="ffd1bc89"/>
+						<Scripts>
+							<!-- <OnFocusLost>ReportsystemFrameTextEdit_OnFocusLost();</OnFocusLost>
+							<OnFocusGained>ReportsystemFrameTextEdit_OnFocusGained();</OnFocusGained>
+							<OnTabPressed platform="pc">ReportsystemFrameTextEdit_OnTabPressed();</OnTabPressed> -->
+							<OnEnterPressed platform="pc">FriendDynamicFrameEditTextEdit_OnEnterPressed();</OnEnterPressed>
+							<OnTextSet >FriendDynamicFrameEditTextEdit_OnTextSet();</OnTextSet>
+						</Scripts>
+					</SafeMultiEditBox>
+		            ##发送按钮
+                    <Button name="$parentSendBtn" inherits="TemplateBtn7" abs_x="130" abs_y="50">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentEditBkg">
+                                <Offset>
+                                    <AbsDimension x="10" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentTxt" fonttype="BlackFont24" justifyH="center" text="$4717" abs_x="130" abs_y="24">
+                                    <Color r="55" g="54" b="51"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>FriendDynamicFrameEditSendBtn_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+				</Frames>
+				<Scripts>
+					<OnClick>FriendDynamicFrameEdit_OnClick();</OnClick>
+					<OnShow>FriendDynamicFrameEdit_OnShow();</OnShow>
+				</Scripts>
+			</Frame>
+
+			##举报、回复、黑名单、删除
+			<Frame name="$parentCommentFunc" abs_x="190" abs_y="253"  hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" inherits="TemplateBkg50"/>
+						<Texture name="$parentArrows" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow" UVType="turn90" abs_x="20" abs_y="32" >
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="4" y="-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentReplyBtn" inherits="TemplateBtn12" abs_x="170" abs_y="50">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="13"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_chat" abs_x="25" abs_y="25" >
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="16" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$20609" abs_x="105" abs_y="20">
+									<Color r="55" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="21" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicReplyTemplateCommentBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDeleteBtn" inherits="TemplateBtn27" abs_x="170" abs_y="50" >
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentReplyBtn" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png" abs_x="26" abs_y="25" >
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="14" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$21832" abs_x="105" abs_y="20">
+									<Color r="55" g="51" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="21" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameCommentFuncDeleteBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentBlacklistBtn" inherits="TemplateBtn27" abs_x="170" abs_y="50" >
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentDeleteBtn" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_shield" abs_x="22" abs_y="22" >
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="16" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$21831" abs_x="105" abs_y="20">
+									<Color r="55" g="51" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="21" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameCommentFuncBlacklistBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentReportBtn" inherits="TemplateBtn27" abs_x="170" abs_y="50" >
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="-13"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_report" abs_x="28" abs_y="23">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="13" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$1305" abs_x="105" abs_y="20">
+									<Color r="55" g="51" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="21" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameReplyReportBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnHide></OnHide>
+				</Scripts>
+			</Frame>
+
+			##确认删除提示框
+			<Frame name="$parentAlertFrame" parent="UIClient"  frameStrata="MEDIUM" framelevel="6301" hidden="true" rel_x="1.0" rel_y="1.0">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentMask1" file="ui/white.png" color="B1000000">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="338">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentDescBkg" inherits="TemplateBigBkg23" abs_x="515" abs_y="64">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="0" y="105"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-19" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont26" justifyV="middle" text="$21834" abs_x="320" abs_y="26">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="66" y="59"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDesc" justifyH="left" fonttype="BlackFont18" justifyV="middle" text="222\n22" abs_x="504" abs_y="42">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentDescBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-23" y="16"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FriendDynamicFrameAlertFrameClose_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##打钩
+					<Button name="$parentTickBtn" abs_x="100" abs_y="24">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentDescBkg">
+								<Offset>
+									<AbsDimension x="0" y="28"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="board_check_circle.png" abs_x="24" abs_y="24">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentTick" file="ui/mobile/texture2/common.xml" uvname="icon_tick_multi.png" hidden="true" abs_x="20" abs_y="20">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##名字
+								<FontString name="$parentName" fonttype="BlackFont18" justifyH="left" text="$21835" abs_x="180" abs_y="18">
+									<Color r="83" g="95" b="97"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="8" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameAlertFrameTickBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##确定
+					<Button name="$parentOkBtn" inherits="TemplateBtn11" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-66" y="-26"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" justifyH="center" fonttype="BlackFont20" justifyV="middle" text="$969">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+										<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameAlertFrameOkBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					##取消
+					<Button name="$parentCancleBtn" inherits="TemplateBtn12" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="66" y="-26"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$970">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+										<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>FriendDynamicFrameAlertFrameClose_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnShow>FriendDynamicFrameAlertFrame_OnShow();</OnShow>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>FriendDynamicFrame_OnLoad();</OnLoad>
+			<OnShow>FriendDynamicFrame_OnShow();</OnShow>
+			<OnHide>FriendDynamicFrame_OnHide();</OnHide>
+			<OnClick>FriendDynamicFrame_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##图片展示模板
+	<Frame name="ZonePicDisplayFrame" parent="UIClient" hidden="true" frameStrata="MEDIUM" framelevel="7000" rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="A1000000"/>
+				<Texture name="$parentPic" file="ui/white.png" abs_x="1280" abs_y="720">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnShow>ZonePicDisplayFrame_OnShow();</OnShow>
+			<OnClick>ZonePicDisplayFrame_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##表情按钮模板
+    <Button name="DynamicEmojiBtnTemplate" virtual="true" inherits="EmojiBtnTemplate_Base">
+        <Scripts>
+            <OnClick>DynamicEmojiBtnTemplate_OnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+	##表情面板
+    <Frame name="DynamicEmojiFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="7100" rel_x="1.0" rel_y="1.0">
+        <Frames>
+            <Frame name="$parentDialog" parent="UIClient" frameStrata="MEDIUM" abs_x="430" abs_y="219">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="FriendDynamicFrameEditMoodBtn">
+                        <Offset>
+                            <AbsDimension x="115" y="-150"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg2" />
+                        <Texture name="$parentArrowDown" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow.png" abs_x="32" abs_y="20">
+                            <Anchors>
+                                <Anchor point="top" relativePoint="bottom" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="-147" y="-5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                	##关闭按钮:'DynamicEmojiFrameDialogCloseBtn_OnClick'
+                    <Button name="$parentEmojiBtn1" inherits="DynamicEmojiBtnTemplate" id="1" />
+                    <Button name="$parentEmojiBtn2" inherits="DynamicEmojiBtnTemplate" id="2" />
+                    <Button name="$parentEmojiBtn3" inherits="DynamicEmojiBtnTemplate" id="3" />
+                    <Button name="$parentEmojiBtn4" inherits="DynamicEmojiBtnTemplate" id="4" />
+                    <Button name="$parentEmojiBtn5" inherits="DynamicEmojiBtnTemplate" id="5" />
+                    <Button name="$parentEmojiBtn6" inherits="DynamicEmojiBtnTemplate" id="6" />
+                    <Button name="$parentEmojiBtn7" inherits="DynamicEmojiBtnTemplate" id="7" />
+                    <Button name="$parentEmojiBtn8" inherits="DynamicEmojiBtnTemplate" id="8" />
+                    <Button name="$parentEmojiBtn9" inherits="DynamicEmojiBtnTemplate" id="9" />
+                    <Button name="$parentEmojiBtn10" inherits="DynamicEmojiBtnTemplate" id="10" />
+                    <Button name="$parentEmojiBtn11" inherits="DynamicEmojiBtnTemplate" id="11" />
+                    <Button name="$parentEmojiBtn12" inherits="DynamicEmojiBtnTemplate" id="12" />
+                    <Button name="$parentEmojiBtn13" inherits="DynamicEmojiBtnTemplate" id="13" />
+                    <Button name="$parentEmojiBtn14" inherits="DynamicEmojiBtnTemplate" id="14" />
+                    <Button name="$parentEmojiBtn15" inherits="DynamicEmojiBtnTemplate" id="15" />
+                    <Button name="$parentEmojiBtn16" inherits="DynamicEmojiBtnTemplate" id="16" />
+                    <Button name="$parentEmojiBtn17" inherits="DynamicEmojiBtnTemplate" id="17" />
+                    <Button name="$parentEmojiBtn18" inherits="DynamicEmojiBtnTemplate" id="18" />
+                    <Button name="$parentCancle" inherits="TemplateCloseBtn0">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="47" abs_y="46">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>DynamicEmojiFrameDialogCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnClick>DynamicEmojiFrame_OnClick();</OnClick>
+            <OnShow>DynamicEmojiFrame_OnShow();</OnShow>
+        </Scripts>
+    </Frame>
+
+    ##发表心情页面
+    <Frame name="MoodPublishFrame" parent="UIClient" hidden="true" frameStrata="MEDIUM" framelevel="2600" rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="A1000000" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="724" abs_y="391" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgHuaWen" inherits="TemplateBigBkg7_flat" abs_x="724" abs_y="391" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="650" abs_y="114">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="90"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			##标题栏背景
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="719" abs_y="56">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-17" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>MoodPublishFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			
+			<Frame name="$parentMoodPage" inherits="MoodPublishFrameTemplate">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentEditBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			##提交
+			<Button name="$parentCommitBtn" inherits="TemplateBtn7" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="150" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$661" abs_x="160" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MoodPublishFrameCommitBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##取消
+			<Button name="$parentCancelBtn" inherits="TemplateBtn8" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="-150" y="-20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$3485" abs_x="160" abs_y="24">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>MoodPublishFrameCancelBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+		</Frames>
+
+		<Scripts>
+			<OnShow>MoodPublishFrame_OnShow();</OnShow>
+			<OnHide>MoodPublishFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+	#头像框编辑页面
+	<Frame name="ZoneHeadEdit" parent="UIClient" frameStrata="MEDIUM" framelevel="6000" hidden="true" input_transparent="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="22000000" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1075" abs_y="600" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				#蓝色大框
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg5" abs_x="672" abs_y="437">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="188" y="78"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#左分割框
+				<Texture name="$parentBkg2"  inherits="TemplateBkg14" abs_x="11" abs_y="535">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+							<Offset>
+								<AbsDimension x="164" y="60"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#说明1
+				<FontString name="$parentTips1" fonttype="BlackFont24" hidden="true" text="$3490" abs_x="510" abs_y="62" justifyH="center" autowrap="true" lang_ver="jpn">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentBkg1" >
+							<Offset>
+								<AbsDimension x="-50" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTips1" fonttype="BlackFont24" hidden="true" text="$3490" abs_x="510" abs_y="62" justifyH="center" autowrap="true" lang_ver="tha">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentBkg1" >
+							<Offset>
+								<AbsDimension x="-50" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTips1" fonttype="BlackFont24" hidden="true" text="$3490" abs_x="510" abs_y="62" justifyH="center" autowrap="true" lang_ver="en">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentBkg1" >
+							<Offset>
+								<AbsDimension x="-50" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentTips1" fonttype="BlackFont23" hidden="true" text="$3490" abs_x="510" abs_y="31" justifyH="center" autowrap="true" lang_ver="esn">
+				    <Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentBkg1" >
+							<Offset>
+								<AbsDimension x="-50" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#说明1
+				<FontString name="$parentTips1" fonttype="BlackFont24" hidden="true" text="$3490" abs_x="520" abs_y="31" justifyH="center" autowrap="true">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentBkg1" >
+							<Offset>
+								<AbsDimension x="-50" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#说明2
+				<FontString name="$parentTips2" fonttype="BlackFont22" hidden="true" lineInterval="2" text="$3490" abs_x="510" abs_y="31" justifyH="center" alpha="0.5" lang_ver="esn"	>
+				    <Color r="108" g="75" b="39"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTips1" >
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#说明2
+				<FontString name="$parentTips2" fonttype="BlackFont22" hidden="true" lineInterval="2" text="$3490" abs_x="520" abs_y="31" justifyH="center" alpha="0.5" >
+					<Color r="108" g="75" b="39"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTips1" >
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#上传头像底图
+				<Texture name="$parentHeadUpBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" abs_x="182" abs_y="182">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-22" y="181"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#头像默认内容
+				<Texture name="$parentHeadUpContent" file="ui/mobile/texture2/outgame2/uitex4.xml"  uvname="txbj_icon04.png" abs_x="101" abs_y="83" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentHeadUpBkg" />
+					</Anchors>
+				</Texture>
+				#头像
+				<Texture name="$parentHead" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_03" abs_x="166" abs_y="166" hidden="true" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentHeadUpBkg" />
+					</Anchors>
+				</Texture>
+				--未审核
+				<Texture name="$parentPendingPic" file="ui/mobile/texture2/playercenter.xml"  uvname="grzx_diban07.png" hidden="true" abs_x="120" abs_y="35" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentHeadUpBkg">
+							<Offset>
+								<AbsDimension x="0" y="50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPendingTxt" fonttype="BlackFont24"  hidden="true"  justifyH="center" text="审核中" abs_x="300" abs_y="24">
+					<Color r="255" g="248" b="219"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPendingPic" />
+					</Anchors>
+				</FontString>
+				#上传进度条
+				<Texture name="$parentBarBkg" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_49" hidden="true" abs_x="100" abs_y="12">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentHeadUpBkg" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="-10" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBar" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_50" hidden="true" abs_x="0" abs_y="12">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBarBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1070" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+			#确认
+			<Button name="$parentConfirm" abs_x="130" abs_y="50" inherits="TemplateBtn11">
+				<Anchors>
+					<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentBkg1">
+						<Offset>
+							<AbsDimension x="0" y="17"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$3486" abs_x="130" abs_y="20">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneHeadEditConfirm_OnClick(1);</OnClick>
+				</Scripts>
+			</Button>
+			#上传头像按钮
+			<Button name="$parentUploadBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentHeadUpBkg" >
+						<Offset>
+							<AbsDimension x="0" y="13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentText" justifyH="center" fonttype="BlackFont24" text="$3470" abs_x="220" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+
+				<Scripts>
+					<OnClick>ZoneHeadEditUploadHeadBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			#修改头像
+			<Button name="$parentChangeHeadBtn" inherits="TemplateBtn2" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentHeadUpBkg" >
+						<Offset>
+							<AbsDimension x="0" y="13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" justifyH="center" text="$3489"  abs_x="182" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneHeadEditChangeHeadBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			#恢复默认
+			<Button name="$parentDelHeadBtn" inherits="TemplateBtn2" hidden="true" >
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentChangeHeadBtn" >
+						<Offset>
+							<AbsDimension x="0" y="13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" justifyH="center" text="$3492"  abs_x="182" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneHeadEditDelHeadBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			#全部头像
+			<Button name="$parentChannel1" abs_x="142" abs_y="61">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="13" y="78"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture  name="$parentNormal"    inherits="TemplateBkg6" />
+				<PushedTexture  name="$parentPushedBG"  inherits="TemplateBkg6" />
+				<DisabledTexture name="$parentDiabledBG" inherits="TemplateBkg7"/>
+				<CheckedTexture name="$parentCheckedBG" inherits="TemplateBkg7" />
+				<FontString     name="$parentTxt" fonttype="BlackFont22" lineInterval="2" text="$3820" abs_x="140" abs_y="22" justifyH="center" >
+				    <Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" />
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnClick>ZoneHeadEditChannel_OnClick(1);</OnClick>
+				</Scripts>
+			</Button>
+			#活动头像
+			<Button name="$parentChannel2" abs_x="142" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChannel1" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture  name="$parentNormal"    inherits="TemplateBkg6" />
+				<PushedTexture  name="$parentPushedBG"  inherits="TemplateBkg6" />
+				<DisabledTexture name="$parentDiabledBG" inherits="TemplateBkg7"/>
+				<CheckedTexture name="$parentCheckedBG" inherits="TemplateBkg7" />
+				<FontString     name="$parentTxt" fonttype="BlackFont22" lineInterval="2" text="$6063" abs_x="140" abs_y="22" justifyH="center" >
+				    <Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" />
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnClick>ZoneHeadEditChannel_OnClick(2);</OnClick>
+				</Scripts>
+			</Button>
+			#主播头像
+			<Button name="$parentChannel3" abs_x="142" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentChannel2" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture  name="$parentNormal"    inherits="TemplateBkg6" />
+				<PushedTexture  name="$parentPushedBG"  inherits="TemplateBkg6" />
+				<DisabledTexture name="$parentDiabledBG" inherits="TemplateBkg7"/>
+				<CheckedTexture name="$parentCheckedBG" inherits="TemplateBkg7" />
+				<FontString     name="$parentTxt" fonttype="BlackFont22" lineInterval="2" text="$3491" abs_x="140" abs_y="22" justifyH="center" >
+				    <Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" />
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnClick>ZoneHeadEditChannel_OnClick(3);</OnClick>
+				</Scripts>
+			</Button>
+
+			#头像框1
+			<SlidingFrame name="ZoneHeadEditBox" slidingY="true" slideplane="$parentPlane" abs_x="620" abs_y="410">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg1" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="620" abs_y="410" />
+					##动态创建
+					<!-- <Button name="ZoneHeadEditHeadFrame1"  inherits="ZoneHeadFrameTemplate"  id="1" /> -->
+					<!-- <Button name="ZoneHeadEditHeadFrame2"  inherits="ZoneHeadFrameTemplate"  id="2" /> -->
+					<!-- ... -->
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnShow>ZoneHeadEdit_OnShow();</OnShow>
+			<OnLoad>ZoneHeadEdit_OnLoad();</OnLoad>
+		</Scripts>
+
+	</Frame>
+
+	##上传头像页面
+	<Frame name="PlayerCenterFrameHeadChange" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="8000" input_transparent="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="80000000" />
+				<Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="500" abs_y="358" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			#修改头像
+			<Button name="$parentChange" inherits="TemplateBtn2" >
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-230"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" justifyH="center" text="$3489"  abs_x="182" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>PlayerCenterFrameHeadChange_OnClick(1);</OnClick>
+				</Scripts>
+			</Button>
+
+			#恢复默认
+			<Button name="$parentDel" inherits="TemplateBtn2" >
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-130"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" justifyH="center" text="$3492"  abs_x="182" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>PlayerCenterFrameHeadChange_OnClick(2);</OnClick>
+				</Scripts>
+			</Button>
+
+			#取消
+			<Button name="$parentCancel" inherits="TemplateBtn2" >
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" justifyH="center" text="$3485"  abs_x="182" abs_y="24" >
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>PlayerCenterFrameHeadChange_OnClick(3);</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##性别编辑
+	<Frame name="ZoneEditGender" parent="UIClient" frameStrata="MEDIUM" framelevel="6000" hidden="true" input_transparent="false" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask1" file="ui/white.png" color="40000000" />
+				<Texture name="$parentBkg" inherits="BkgTemplate8" abs_x="724" abs_y="321" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center"  relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="0" y="-25"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+			</Layer>
+		</Layers>
+
+		<Frames>
+			#PlayerCenterFrameEditGenderCloseBtn
+			<Button name="$parentCloseBtn" abs_x="53" abs_y="53">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+								<AbsDimension x="-17" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+					<Size>
+						<AbsDimension x="48" y="48"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>ZoneEditGenderCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+
+			#点击选择性别为 秘密
+			#PlayerCenterFrameEditGenderSelect0
+			<Button name="$parentSelect0" abs_x="182" abs_y="81">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+						<Offset>
+								<AbsDimension x="230" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="txbj_diban04.png" />
+				<CheckedTexture name="$parentChecked"  file="ui/mobile/texture2/outgame2/uitex4.xml"  uvname="txbj_diban01.png" />
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_sex" abs_x="62" abs_y="62">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<FontString name="$parentTips" fonttype="BlackFont28" justifyH="center" text="$3467" abs_x="80" abs_y="28">
+							<Color r="149" g="131" b="95"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneEditGenderSelect_OnClick(0);</OnClick>
+				</Scripts>
+
+			</Button>
+
+			#点击选择性别为 男
+			#PlayerCenterFrameEditGenderSelect1
+			<Button name="$parentSelect1" abs_x="182" abs_y="81">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+						<Offset>
+								<AbsDimension x="-230" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>			
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml"  uvname="icon_male" abs_x="62" abs_y="62">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTips" fonttype="BlackFont28" justifyH="center" text="$3465" abs_x="80" abs_y="28">
+							<Color r="149" g="131" b="95"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneEditGenderSelect_OnClick(1);</OnClick>
+				</Scripts>
+
+			</Button>
+
+			#点击选择性别为 女
+			#PlayerCenterFrameEditGenderSelect2
+			<Button name="$parentSelect2" abs_x="182" abs_y="81">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+						<Offset>
+								<AbsDimension x="0" y="-30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>				
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml"  uvname="icon_female.png" abs_x="62" abs_y="62">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<FontString name="$parentTips" fonttype="BlackFont28" justifyH="center" text="$3466" abs_x="80" abs_y="28">
+							<Color r="149" g="131" b="95"/>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneEditGenderSelect_OnClick(2);</OnClick>
+				</Scripts>
+
+			</Button>
+			#取消
+			#PlayerCenterFrameEditGenderConfirm0
+			<Button name="$parentConfirm0" inherits="BtnTemplate9">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-170" y="50"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" fontStyle="border" shadowcolor="ff4e2b09" text="$3485" abs_x="137" abs_y="29">
+							<Color r="255" g="253" b="233"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneEditGenderConfirm_OnClick(0);</OnClick>
+				</Scripts>
+			</Button>
+			#确认
+			#PlayerCenterFrameEditGenderConfirm1
+			<Button name="$parentConfirm1" inherits="BtnTemplate3">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="170" y="50"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" fontStyle="border" shadowcolor="ff4e2b09" text="$3486">
+							<Color r="255" g="253" b="233"/>
+							<Size>
+								<AbsDimension x="137" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ZoneEditGenderConfirm_OnClick(1);</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnShow>ZoneEditGender_OnShow();</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

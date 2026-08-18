@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/adventruenote.lua"/>	
+	
+	#UI继承类
+	<Texture name="taskNormalTemplate" virtual="true" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="npchat_btn_n" DrawType="center" >
+		<Center>
+				<Left			offsetX="0"  offsetY="0" w="30"	h="61"/>
+				<Center			offsetX="30" offsetY="0" w="30"	h="61"	/>
+				<Right			offsetX="60" offsetY="0" w="30"	h="61" />
+			</Center>
+	</Texture>
+
+	<Texture name="taskCheckedTemplate" virtual="true" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="npchat_btn_h" DrawType="center" >
+		<Center>
+				<Left			offsetX="0"  offsetY="0" w="30"	h="61"/>
+				<Center			offsetX="30" offsetY="0" w="30"	h="61"	/>
+				<Right			offsetX="60" offsetY="0" w="30"	h="61" />
+			</Center>
+	</Texture>
+
+	<Button name="AdventrueNoteTaskBtnTemplate" virtual="true" hidden="true" abs_x="222" abs_y="61">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_attack" abs_x="27" abs_y="27">
+					<Anchors> 
+						<Anchor point="left" relativePoint="left" relativeTo="$parentNormal" >
+							<Offset>
+								<AbsDimension x="11" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName"  fonttype="BlackFont20" lineInterval="2" text="$328" abs_x="175" abs_y="20">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="44" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits = "TemplateBkg8" />
+		<PushedTexture name="$parentPushedBG" inherits = "TemplateBkg8" />
+		<CheckedTexture name="$parentCheckedBG" inherits = "TemplateBkg7" samplermode="2" />
+		<Scripts>
+			<OnClick>AdventureNoteFrameTaskBtn()</OnClick>
+		</Scripts>
+	</Button>
+
+	<Button name="AdventrueNoteRewardBtnTemplate" virtual="true" hidden="true" abs_x="94" abs_y="94">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_exp" abs_x="84" abs_y="72" >
+					<Anchors> 
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNum"  fonttype="BlackFont20" lineInterval="2" justifyH="right"  text="50" abs_x="60" abs_y="20">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits="TemplateBigBkg10" />
+	</Button>
+
+	## 冒险笔记
+	<Frame name="AdventureNoteFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="B1000000" framelevel="1" stretchedge="true"/>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="595">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIconBox" inherits="TemplateBigBkg9" abs_x="783" abs_y="507">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-14" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentTaskListBkg" inherits="TemplateBigBkg3" abs_x="248" abs_y="502">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="18" y="75"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentNullBkg" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="435" abs_y="247" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBox">
+							<Offset>
+								<AbsDimension x="0" y="-20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+
+				<FontString name="$parentNullTitle"  fonttype="BlackFont34"  text="$11207" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="300" y="70"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentNullBkg">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="1071" abs_y="61">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft" />
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+			##任务列表
+			<SlidingFrame name="$parentTaskList"  slidingY="true" slideplane="$parentPlane">
+				<Size>
+					<AbsDimension x="224" y="455"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentTaskListBkg">
+						<Offset>
+							<AbsDimension x="0" y="30"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="224" y="690"/>
+						</Size>
+					</Frame>
+					<Button name="$parentTaskBtn1" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn2" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn1">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn3" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn2">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn4" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn5" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn1">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn6" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn2">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn7" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn8" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn1">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn9" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn2">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn10" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn11" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn1">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn12" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn2">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn13" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn14" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn1">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn15" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn2">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn16" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn17" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn1">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTaskBtn18" inherits="AdventrueNoteTaskBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTaskBtn2">
+								<Offset>
+									<AbsDimension x="0" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnShow>AdventureNoteFrameTaskList_OnShow()</OnShow>
+				</Scripts>
+			</SlidingFrame>
+
+			##任务详细面板
+			<Frame name="TaskDetailFrame" hidden="false" abs_x="783" abs_y="507">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentIconBox" />
+				</Anchors>	
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentTaskNameBkg" inherits="TemplateBkg26" abs_x="768" abs_y="55">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="0" y="8"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentTaskName"  fonttype="BlackFont24"  text="疯狂伐木工！" abs_x="300" abs_y="24">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentTaskNameBkg">
+									<Offset>
+										<AbsDimension x="18" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						
+						<FontString name="$parentTaskContent"  fonttype="BlackFont20" lineInterval="2" autowrap="true" text="" abs_x="730" abs_y="80">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="27" y="99"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						
+						<FontString name="$parentTaskScheduleTitle"  fonttype="BlackFont20"  text="$11002" abs_x="730" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="27" y="290"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<FontString name="$parentTaskSchedule"  fonttype="BlackFont20" autowrap="true" lineInterval="2" text="采集木头（0/1）（1/1）" abs_x="500" abs_y="20">
+							<Color r="98" g="65" b="48"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentTaskScheduleTitle">
+									<Offset>
+										<AbsDimension x="83" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<FontString name="$parentRewardTitle"  fonttype="BlackFont20"  text="$11003" abs_x="60" abs_y="20">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="26" y="-155"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<FontString name="$parentDeliveryTargetTitle"  fonttype="BlackFont20"  text="$11004">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="300" y="70"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Bottomright" relativePoint="Bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="35" y="25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentDelete" inherits="TemplateBtn23" abs_x="40" abs_y="40">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-40" y="20"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>AdventureNoteFrame_TaskDelete()</OnClick>
+						</Scripts>
+					</Button>
+
+					<Button name = "$parentRewardItem1" inherits = "AdventrueNoteRewardBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentRewardTitle">
+								<Offset>
+									<AbsDimension x="80" y="-6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+
+					<Button name = "$parentRewardItem2" inherits = "AdventrueNoteRewardBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentRewardItem1">
+								<Offset>
+									<AbsDimension x="135" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+
+					<Button name = "$parentRewardItem3" inherits = "AdventrueNoteRewardBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentRewardItem2">
+								<Offset>
+									<AbsDimension x="135" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+
+					<Button name = "$parentRewardItem4" inherits = "AdventrueNoteRewardBtnTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentRewardItem3">
+								<Offset>
+									<AbsDimension x="135" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>	
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+
+					<Button name="$parentTargetNpc"  >
+						<Size>
+							<AbsDimension x="74" y="75"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentDeliveryTargetTitle" relativePoint="left">
+								<Offset>
+									<AbsDimension x="130" y="-50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="npchat_bd_role" >
+									
+									<Size>
+										<AbsDimension x="64" y="65"/>
+									</Size>
+									<Anchors> 
+										<Anchor point="center" relativePoint="center" relativeTo="$parentNormal" >
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="npchat_bd_role" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="npchat_bd_role" >
+							<Size>
+								<AbsDimension x="74" y="75"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parentNormal">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<CheckedTexture name="$parentCheckedBG" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="npchat_bd_role">
+							<Size>
+								<AbsDimension x="74" y="75"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parentNormal">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</CheckedTexture>	
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnShow>TaskDetailFrame_OnShow()</OnShow>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnShow>AdventureNoteFrame_OnShow()</OnShow>
+			<OnHide>AdventureNoteFrame_OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

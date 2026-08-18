@@ -1,0 +1,53 @@
+local PlayersService = game:GetService('Players')
+
+local State = CommonModule.Class("State")
+
+State.FROM_STATE = {}
+
+function State:OnInit()
+
+end
+
+function State:SetStateId( stateid )
+	self.m_stateid = stateid
+end
+
+function State:SetHost( host )
+	self.m_host = host
+end
+
+function State:getHost()
+	return self.m_host
+end
+
+function State:EnterState()
+
+end
+
+function State:LeaveState()
+
+end
+
+function State:GetStateId()
+	return self.m_stateid
+end
+
+function State:CheckTransformState( fromState )
+	if fromState == nil then --空状态可以切换到任意状态
+		return true
+	end
+
+	for _, stateid in ipairs(self.FROM_STATE) do
+		if stateid == fromState:GetStateId() then
+			return true
+		end
+	end
+
+	return false
+end
+
+function State:OnUpdate( dt )
+	return nil
+end
+
+return State

@@ -1,0 +1,240 @@
+local Players = game:GetService('Players')
+local ContextActionService = game:GetService("ContextActionService")
+local UserInputService = game:GetService("UserInputService")
+local MouseService = game:GetService("MouseService")
+local WorkSpace = game:GetService("WorkSpace")
+local WoldService = game:GetService("WorldService")
+local KeyboardControl = CommonModule.Class("KeyboardControl")
+local ConfigService = game:GetService("ConfigService")
+
+
+local MoveDir = {
+	FORWARD = 1,
+	BACK = 2,
+	LEFT = 3,
+	RIGHT = 4,
+}
+
+function KeyboardControl:OnInit()
+	self.m_enable = true
+	self:InitEvent()
+	self.m_moveStatus = {}
+
+	self.m_player = Players.LocalPlayer
+	self.m_actor = self.m_player.Character
+end
+
+local function attachMoveVector( self )
+	local z = 0
+	local x = 0
+	
+	if self.m_moveStatus[MoveDir.FORWARD] then
+		z = z + 1
+	end
+
+	if self.m_moveStatus[MoveDir.BACK] then
+		z = z - 1
+	end
+
+	if self.m_moveStatus[MoveDir.LEFT] then
+		x = x - 1
+	end
+
+	if self.m_moveStatus[MoveDir.RIGHT] then
+		x = x + 1
+	end
+
+	local relateCamera = true
+
+	if z <= 0 then
+		if z < 0 then
+			z = 1
+			x = 1
+		end
+		relateCamera = false
+	end
+
+	if math.abs(x) > 0 and z == 0 then
+		z = 1
+	end
+
+	return Vector3.New(x, 0, z*2), relateCamera
+end
+
+local function normalMoveVector(self)
+	local z = 0
+	local x = 0
+	if self.m_moveStatus[MoveDir.FORWARD] then
+		z = z + 1
+	end
+
+	if self.m_moveStatus[MoveDir.BACK] then
+		z = z - 1
+	end
+
+	if self.m_moveStatus[MoveDir.LEFT] then
+		x = x - 1
+	end
+
+	if self.m_moveStatus[MoveDir.RIGHT] then
+		x = x + 1
+	end
+
+	return Vector3.New(x, 0, z), true
+end
+
+function KeyboardControl:getMoveVector()
+	local currentCamera = WorkSpace.CurrentCamera
+	local camType = currentCamera.CameraType
+
+	if camType == Enum.CameraType.Attach then
+		return attachMoveVector(self)
+	else
+		return normalMoveVector(self)
+	end
+end
+
+function KeyboardControl:doMove( dir, relateCamera)
+	if self.m_actor ~= nil then
+		self.m_actor:Move(dir, relateCamera)
+	end
+end
+
+function KeyboardControl:handleMove( inputstate, param )
+    --特殊模式过滤
+    if ConfigService.LCSMode then
+        return true
+    end
+
+	if  inputstate == Enum.UserInputState.InputBegin.Value then
+		self.m_moveStatus[param.dir] = true
+	else
+		self.m_moveStatus[param.dir] = false
+	end
+	self:doMove(self:getMoveVector())
+
+	return true
+end
+
+function KeyboardControl:handleJump( inputstate, param )
+    --特殊模式过滤
+    if ConfigService.LCSMode then
+        return true
+    end
+
+	if self.m_actor ~= nil then
+		if  inputstate == Enum.UserInputState.InputBegin.Value then
+			self.m_actor:Jump(true)
+		else
+			self.m_actor:Jump(false)
+		end
+	end
+	return true
+end
+
+function KeyboardControl:handleLoseFocus()
+	self.m_moveStatus = {}
+	self:doMove(self:getMoveVector())
+
+	return true
+end
+
+local KeyEvent = {
+	[Enum.KeyCode.W.Value] = { func = "handleMove", param = { dir = MoveDir.FORWARD;} };
+	[Enum.KeyCode.S.Value] = { func = "handleMove", param = { dir = MoveDir.BACK; } };
+	[Enum.KeyCode.A.Value] = { func = "handleMove", param = { dir = MoveDir.LEFT; } };
+	[Enum.KeyCode.D.Value] = { func = "handleMove", param = { dir = MoveDir.RIGHT; } };
+
+	[Enum.KeyCode.Space.Value] = { func = "handleJump", param = {} };
+	[Enum.KeyCode.Up.Value] = { func = "handleMove", param = { dir = MoveDir.FORWARD; } };
+	[Enum.KeyCode.Down.Value] = { func = "handleMove", param = { dir = MoveDir.BACK; } };
+}
+
+local function getKeyActionName( keycode )
+	return string.format("keyboardEvent_%d_event", keycode)
+end
+
+local function handleESCKeyCode(inputObj, bGameProcessd)
+	if inputObj.UserInputState == Enum.UserInputState.InputBegin.Value then
+		--if  MouseService:IsSight() then
+			--MouseService:SetMode(0)
+			--return true
+		--else
+			local bMode = WoldService:EmitMiniGameESCKey()
+			MouseService:SetMode(bMode)
+			return true
+		--end
+	end
+
+	return true
+end
+
+local InnerForceKeycodeMap = {
+	[Enum.KeyCode.Escape.Value] = handleESCKeyCode,
+}
+
+function KeyboardControl:InitEvent()
+	for key, config in pairs(KeyEvent) do
+		local func = self[config.func]
+		local param = config.param
+		ContextActionService:BindActionAtPriority(getKeyActionName(key), function( actionName, inputState, inputObj) 
+			return func(self, inputState, param)
+		end, Enum.ContextActionPriority.Default.Value - 1, Enum.ContextActionType.KeyBoard.Value, key)
+	end
+
+	UserInputService.InputBegan:Connect(function(inputObj, bGameProcessd) 
+		if not self.m_enable then return false end
+
+		if inputObj.UserInputType == Enum.UserInputType.Keyboard.Value then
+			local func = InnerForceKeycodeMap[inputObj.KeyCode]
+			if type(func) == "function" then
+				return func(inputObj, bGameProcessd)
+			end
+		end
+
+		return false;
+	end)
+
+	UserInputService.InputEnded:Connect( function( inputObj, bGameProcessd ) 
+		if not self.m_enable then return false end
+
+		if inputObj.UserInputType == Enum.UserInputType.MouseMovement.Value then
+			return self:handleLoseFocus()
+		end
+
+		if inputObj.UserInputType == Enum.UserInputType.Keyboard.Value then
+			local func = InnerForceKeycodeMap[inputObj.KeyCode]
+			if type(func) == "function" then
+				return func(inputObj, bGameProcessd)
+			end
+		end
+
+		return false
+	end)
+end
+
+function KeyboardControl:Disable()
+	self.m_enable = false
+	for key, config in pairs(KeyEvent) do
+		local func = self[config.func]
+		local param = config.param
+		ContextActionService:UnbindAction(getKeyActionName(key))
+	end
+	self.m_moveStatus = {}
+end
+
+function KeyboardControl:UnbindEvent()
+	self:Disable()
+end
+
+function KeyboardControl:UnbindContextActions()
+	self:Disable();
+end
+
+function KeyboardControl:BindContextActions()
+	self:InitEvent();
+end
+
+
+
+return KeyboardControl.New()

@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/shop/shopFriendGift/ShopFriendGiftCtrl.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopFriendGift/ShopFriendGiftModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopFriendGift/ShopFriendGiftView.lua"/>
+
+ 	<Frame name="ShopGiftFriendTemplate" virtual="true">
+ 		<Size>
+			<AbsDimension x="592" y="89"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+				<Texture name="$parentBkgMask" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="101" abs_y="84">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg" >
+							<Offset>
+								<AbsDimension x="-2" y="2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNickName" fonttype="BlackFont18" lineInterval="2" text="">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="276" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="91" y="21"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentMiniNum" fonttype="BlackFont18" lineInterval="2" text="">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="276" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="91" y="51"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>		
+		<Frames>
+			<Button name="$parentHead">
+                <Size>
+                    <AbsDimension x="89" y="89"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/headframes/1.png" />
+                <PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_head.png">
+                            <Size>
+                                <AbsDimension x="70" y="70"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png">
+                            <Size>
+                                <AbsDimension x="64" y="64"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                </Scripts>
+            </Button>
+            <Button name="$parentSendBtn" inherits="TemplateBtn17">
+                <Size>
+                    <AbsDimension x="50" y="53"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-12" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_invited">
+                            <Size>
+                                <AbsDimension x="29" y="24"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-1" y="-1"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BestowalSendBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):ShopGiftFriendTemplateBtnClicked();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##好友赠送功能
+	<Frame name="ShopFriendGift" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3" rel_x="1.0" rel_y="1.0">
+		<Frames>
+			<Frame name="$parentBestowal" rel_x="1.0" rel_y="1.0" hidden="true">
+				<Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentMask" file="ui/white.png" color="cd000000" stretchedge="true"/>
+						<Texture name="$parentChenDi" inherits="TemplateBigBkg2">
+							<Size>
+								<AbsDimension x="993" y="624"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="79"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTips" fonttype="BlackFont20"  justifyV="middle" justifyH="center" text="$30157" abs_x="628" abs_y="21" hidden="true">
+							<Color r="77" g="112" b="117" />
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentFriend">
+									<Offset>
+										<AbsDimension x="0" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##标题栏
+					<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="987" abs_y="61">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentChenDi" relativePoint="top" >
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_give_.png" abs_x="76" abs_y="74">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="13" y="-14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##标题名
+								<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont36" lineInterval="2" fontStyle="border" text="$30151" >
+									<Color r="255" g="135" b="27"/>
+									<Size>
+										<AbsDimension x="300" y="36"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="14" y="24"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="46" y="60"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-8" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BestowalCloseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##模型展示
+					<Frame name="$parentExhibition" abs_x="309" abs_y="444">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentTitleFrame" relativePoint="bottomleft" >
+								<Offset>
+									<AbsDimension x="20" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBorder" inherits="TemplateBkg12" abs_x="311" abs_y="446" >
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" >
+											<Offset>
+												<AbsDimension x="-2" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/dtxx_beijingtu.png" DrawType="center" abs_x="309" abs_y="444">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="0" h="0"/>
+										<Center offsetX="314" offsetY="152" w="319" h="444" />
+										<Right offsetX="0" offsetY="0" w="0" h="0" />
+									</Center>
+								</Texture>
+								<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="208" abs_y="45">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-62"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<ModelView name="$parentModelView" rel_x="1.0" rel_y="1.0">
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</ModelView>
+								<Texture name="$parentMiniCoinBkg" inherits="TemplateBigBkg18" abs_x="310" abs_y="54">
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom" >
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentMiniCoinIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin">
+									<Size>
+										<AbsDimension x="31" y="32"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentMiniCoinBkg">
+											<Offset>
+												<AbsDimension x="102" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentMiniCoinNum" fonttype="BlackFont28" justifyH="left" text="500" abs_x="200" abs_y="21">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="Right" relativeTo="$parentMiniCoinIcon">
+											<Offset>
+												<AbsDimension x="16" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentItem" abs_x="250" abs_y="300">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" >
+										<Offset>
+											<AbsDimension x="20" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentIcon" file="items/ruby.png" alphamode="alphablend">
+											<Size>
+												<AbsDimension x="104" y="94"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="73" y="-42" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentMinNum" fonttype="BlackFont28" justifyH="right" text="1" abs_x="30" abs_y="30">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="Right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-247" y="98"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentMaxNum" fonttype="BlackFont28" justifyH="left" text="20" abs_x="60" abs_y="30">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="Right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-31" y="98"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentStr" fonttype="BlackFont28" justifyH="center" text="请选择数量" abs_x="300" abs_y="30">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="Right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-275" y="54"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentSelectNum" fonttype="BlackFont28" justifyH="center" text="1" abs_x="60" abs_y="30">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="Right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-148" y="133"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Slider name="$parentBar" orientation="HORIZONTAL" minValue="-100" maxValue="100" valueStep="1" defaultValue="0" inherits="TemplateSingleBar2">
+										<Size>
+											<AbsDimension x="171" y="30"/>
+										</Size>
+										<Anchors>
+											<Anchor point="left" relativeTo="$parent" relativePoint="left">
+												<Offset>
+													<AbsDimension x="40" y="98"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnValueChanged>GetInst("UIManager"):GetCtrl("ShopFriendGift"):ShopGiftFriendExhibitionBarClicked();</OnValueChanged>
+										</Scripts>
+									</Slider>
+								</Frames>
+							</Frame>
+						</Frames>
+					</Frame>
+					<Frame name="$parentFriend" abs_x="628" abs_y="446">
+						<Anchors>
+                            <Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="bottomright">
+                                <Offset>
+                                    <AbsDimension x="-19" y="15" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+						<Layers>
+                         	<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+								<Texture name="$parentSearchBkg" inherits="TemplateBkg8" abs_x="427" abs_y="46" >
+									<Anchors>
+			                            <Anchor point="top" relativeTo="$parent" relativePoint="top">
+			                                <Offset>
+			                                    <AbsDimension x="0" y="11" />
+			                                </Offset>
+			                            </Anchor>
+			                        </Anchors>
+								</Texture>
+								<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="594" abs_y="2" >
+									<Anchors>
+			                            <Anchor point="top" relativeTo="$parentSearchBkg" relativePoint="bottom">
+			                                <Offset>
+			                                    <AbsDimension x="0" y="9" />
+			                                </Offset>
+			                            </Anchor>
+			                        </Anchors>
+								</Texture>
+								<Texture name="$parentNotNet" file="ui/mobile/texture2/bigtex/img_noroom.png" hidden="true" >
+									<Size>
+										<AbsDimension x="435" y="247"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg" >
+											<Offset>
+												<AbsDimension x="0" y="86" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNullTitle" fonttype="BlackFont26" lineInterval="1" text="$25211" justifyH="center" hidden="true" >
+									<Color r="77" g="112" b="116"/>
+									<Size>
+										<AbsDimension x="500" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="Bottom" relativePoint="Bottom" relativeTo="$parentNotNet">
+											<Offset>
+												<AbsDimension x="0" y="50"/>
+											</Offset>
+										</Anchor>
+									</Anchors> 
+								</FontString>
+                        	</Layer>
+                        </Layers>
+                        <Frames>
+                        	<EditBox name="$parentSearchEdit" letters="120" multiLine="false">
+			                    <Size>
+		                            <AbsDimension x="360" y="21"/>
+		                        </Size>
+		                        <Anchors>
+		                            <Anchor point="left" relativePoint="left" relativeTo="$parentSearchBkg">
+		                                <Offset>
+		                                    <AbsDimension x="15" y="0"/>
+		                                </Offset>
+		                            </Anchor>
+		                        </Anchors>
+		                        <FontString name="$parentFont" fonttype="BlackFont20">
+		                            <Color r="185" g="185" b="185"/>
+		                        </FontString>
+		                        <FontString name="$parentDefault" default="true" fonttype="BlackFont20" text="$30152" textcolor="FFB9B9B9"/>
+		                        <Scripts>
+		                            <OnFocusLost></OnFocusLost>
+		                            <OnEnterPressed platform="pc"></OnEnterPressed>
+		                        </Scripts>
+		                    </EditBox>
+                        	<Button name="$parentSearchBtn" inherits="TemplateYellowSearchBtn" >
+                        		<Anchors>
+		                            <Anchor point="Right" relativeTo="$parentSearchBkg" relativePoint="Right">
+		                                <Offset>
+		                                    <AbsDimension x="0" y="0" />
+		                                </Offset>
+		                            </Anchor>
+		                        </Anchors>
+		                        <Scripts>
+		                        	<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):SearchBtnClicked();</OnClick>
+		                        </Scripts>
+                        	</Button>
+                        	<Frame name="$parentList" abs_x="592" abs_y="362">
+                        		<Anchors>
+		                            <Anchor point="top" relativeTo="$parentLine" relativePoint="bottom">
+		                                <Offset>
+		                                    <AbsDimension x="0" y="16" />
+		                                </Offset>
+		                            </Anchor>
+		                        </Anchors>
+		                        <Frames>
+		                        	<ListViewFrame name="$parentBox" slidingY="true" slideplane="$parentPlane">
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>v
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+											<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="-5"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Frames>
+											<Frame name="$parentPlane"  abs_x="646" abs_y="515"/>
+										</Frames>
+									</ListViewFrame>
+		                        </Frames>
+                        	</Frame>
+                        </Frames>
+					</Frame>
+					<Button name="$parentWechat" inherits="TemplateBtn2" abs_x="182" abs_y="61" hidden="true">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentChenDi">
+								<Offset>
+									<AbsDimension x="-67" y="-22"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parenticonqa" file="ui/mobile/texture2/common_icon.xml" uvname="icon_wechat" abs_x="30" abs_y="30">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$30186">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="135" y="23"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="-5" y=""/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BestowalWechatWant_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentBlessingTips" rel_x="1.0" rel_y="1.0" hidden="true">
+				<Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentMask" file="ui/white.png" color="cd000000" stretchedge="true"/>
+						<Texture name="$parentBkg" inherits="TemplateBkg1">
+							<Size>
+								<AbsDimension x="757" y="474"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="259" y="134"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNickName" fonttype="BlackFont22" justifyH="right" text="$30159">
+                            <Color r="101" g="116" b="118"/>
+                            <Size>
+                                <AbsDimension x="400" y="21"/>
+                            </Size>
+                            <Anchors>
+								<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentSelectList">
+									<Offset>
+										<AbsDimension x="0" y="9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+                        </FontString>
+                        <Texture name="$parentLine" inherits="TemplateBkg20_H1">
+							<Size>
+								<AbsDimension x="744" y="2"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentSelectList">
+									<Offset>
+										<AbsDimension x="0" y="39"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentTitle" inherits="TemplateTopTitleBkgWithHuaWen0" abs_x="746" abs_y="67">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="3" y="6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_give_.png" abs_x="76" abs_y="74">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="210" y="-10" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" justifyH="left" fonttype="BlackFont30" lineInterval="2"  text="$30158" >
+									<Color r="77" g="112" b="116"/>
+									<Size>
+										<AbsDimension x="300" y="29"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="13" y="9"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+						<Size>
+							<AbsDimension x="36" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentTitle" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-8" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BlessingTipsCloseBtnClicked(0);</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name="$parentSelectList" abs_x="690" abs_y="255">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+								<Offset>
+									<AbsDimension x="0" y="11"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentContentBkg" inherits="TemplateBigBkg23"/>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="BlessingTipsTemplate" virtual="true" abs_x="665" abs_y="60">
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+										<Texture name="$parentLabel" inherits="TemplateBigBkg13" abs_x="671" abs_y="65" hidden="true">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-3" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" lineInterval="2" text="$30161">
+											<Color r="61" g="69" b="70"/>
+											<Size>
+												<AbsDimension x="640" y="24"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="2"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BlessingTipsSelectListBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parent1" inherits="BlessingTipsTemplate" abs_x="665" abs_y="60" id="1">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="16"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parent2" inherits="BlessingTipsTemplate" abs_x="665" abs_y="60" id="2">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parent1">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parent3" inherits="BlessingTipsTemplate" abs_x="665" abs_y="60" id="3">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parent2">
+										<Offset>
+											<AbsDimension x="0" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+						</Frames>
+					</Frame>
+					<Button name="$parentCancel" inherits="TemplateBtn2" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="58" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$970">
+		                            <Color r="51" g="55" b="55"/>
+		                            <Size>
+		                                <AbsDimension x="182" y="24"/>
+		                            </Size>
+		                            <Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>	
+		                        </FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BlessingTipsCloseBtnClicked(1);</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentConfirm" inherits="TemplateBtn3" abs_x="182" abs_y="61" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="-55" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$30160">
+		                            <Color r="51" g="55" b="55"/>
+		                            <Size>
+		                                <AbsDimension x="182" y="24"/>
+		                            </Size>
+		                            <Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>	
+		                        </FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BlessingTipsConfirmBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentWechat" inherits="TemplateBtn2" abs_x="182" abs_y="61" hidden="true">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="58" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$30186">
+		                            <Color r="51" g="55" b="55"/>
+		                            <Size>
+		                                <AbsDimension x="182" y="24"/>
+		                            </Size>
+		                            <Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>	
+		                        </FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):BlessingTipsWechatWant_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentWantGift" inherits="TemplateBtn3" abs_x="182" abs_y="61" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="-55" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" text="$30184">
+		                            <Color r="51" g="55" b="55"/>
+		                            <Size>
+		                                <AbsDimension x="182" y="24"/>
+		                            </Size>
+		                            <Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>	
+		                        </FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):WantGiftBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentMessageBox" rel_x="1.0" rel_y="1.0" hidden="true">
+				<Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="40000000"/>
+						<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="662" abs_y="338">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-19" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>		
+						<Texture name="$parentIcon" file="ui/mobile/ui2.png" x="885" y="449" w="61" h="61" hidden="true">
+							<Size>
+								<AbsDimension x="60" y="60" />
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="34" y="26" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont24" justifyV="middle" justifyH="center" abs_x="525" abs_y="50" text="$30193">
+							<Color r="55" g="54" b="47"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentChenDi" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-57" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentDesc1" lineInterval="2" multiLine="false" fonttype="BlackFont24" abs_x="525" abs_y="50" justifyV="middle" justifyH="center" text="">
+							<Color r="55" g="54" b="47"/>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentChenDi" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentCenterBtn" inherits="TemplateBtn3">
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="-26"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" abs_x="180" abs_y="26" text="$969">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopFriendGift"):WantGiftMessageBox_OkClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

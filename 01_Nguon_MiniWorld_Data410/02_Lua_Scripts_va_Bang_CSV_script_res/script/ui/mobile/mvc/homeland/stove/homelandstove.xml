@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##灶台界面
+	<Script file="ui/mobile/mvc/homeland/stove/HomelandStoveModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/stove/HomelandStoveView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/stove/HomelandStoveCtrl.lua"/>
+	<Script file="ui/mobile/mvc/homeland/stove/HomelandStoveInterface.lua"/>
+
+	##左侧选项模板
+	<Button name="HomelandStoveTypeTabBtn" virtual="true" abs_x="113" abs_y="60">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentCheckedBG" inherits="TemplateBkg93">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="6" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCheckedName" fonttype="BlackFont28" justifyH="center" text="tab按钮" abs_x="120" abs_y="27">
+					<Color r="255" g="153" b="63"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentCheckedBG">
+							<Offset>
+								<AbsDimension x="4" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="tab按钮" abs_x="108" abs_y="23" autoextend="true" >
+					<Color r="142" g="135" b="119"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg92" />
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg92" />
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):GoodsType_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##物品格子模板
+	<Button name="HomelandStoveGridGoodsButtonTemplate" virtual="true" click_threshold="50" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt"/>
+				<Texture name="$parentIcon" alphamode="alphablend" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				##选中图标
+				<Texture name="$parentCheck" inherits="TemplateBigBkg13" hidden="true" abs_x="78" abs_y="78">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##未解锁标识
+				<Texture name="$parentLock" file="ui/mobile/texture2/outgame.xml" uvname="btn_ban" hidden="true" abs_x="20" abs_y="22">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##可制作次数(0时隐藏)
+				<FontString name="$parentCreateNum" fonttype="BlackFont20" justifyH="right" justifyV="bottom" shadowcolor="801E1E1E" text="">
+					<Color r="255" g="255" b="255" />
+					<Size>
+						<AbsDimension x="70" y="15"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-8" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<!-- <OnClick platform="mobile">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnMouseLeave_PC()</OnLeave> -->
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandNormalGridButtonTemplate_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##制作材料模板
+	<Button name="HomelandStoveMaterialTemplate" virtual="true" hidden="true" abs_x="70" abs_y="70">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="70" abs_y="70">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<AbsDimension x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" alphamode="alphablend" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+				<!-- <FontString name="$parentNowNum" fonttype="BlackFont" justifyH="right" justifyV="top" text="0">
+					<Color r="10" g="170" b="26" />
+					<Size>
+						<AbsDimension x="61" y="12"/>
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="6" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<FontString name="$parentNeedNum" fonttype="BlackFont" justifyH="center" justifyV="middle" text="/1">
+					<Color r="61" g="69" b="70" />
+					<Size>
+						<AbsDimension x="100" y="12"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="6" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandStoveMaterial_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandStoveMaterial_OnMouseUp();</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandStoveMaterial_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandStoveMaterial_OnMouseLeave_PC()</OnLeave>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandStoveMaterial_OnClick_PC()</OnClick>
+		</Scripts>
+	</Button>
+
+	##灶台
+	<Frame name="HomelandStove" parent="UIClient" frameStrata="MEDIUM" hidden="false" framelevel="10">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="40000000" stretchedge="true"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentBody" abs_x="1072" abs_y="594">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="56" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg2" stretchedge="true"/>
+					</Layer>
+				</Layers>
+				<Frames>
+					##标题栏:height:56
+					<Frame name="$parentTitle" inherits="TemplateTopTitleBkg3" rel_x="1" abs_y="56">
+						<Layers>
+							<Layer>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_stove" abs_x="70" abs_y="72">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="9" y="-15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<!-- 迷你币栏 -->
+							<Button name="$parentMyMiniCoin" abs_x="203" abs_y="36">
+								<Anchors>
+									<Anchor point="right" relativeTo="$parent" relativePoint="center">
+										<Offset>
+											<AbsDimension x="80" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBkg10" />
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin" abs_x="37" abs_y="38">
+											<Anchors>
+												<Anchor point="center" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<!-- <Texture name="$parentAddIcon" inherits="TemplateBkg5" abs_x="40" abs_y="43">
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentAddIcon1" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn" abs_x="22" abs_y="22">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentAddIcon">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture> -->
+										<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="4" y="3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+											<Size>
+												<AbsDimension x="285" y="115"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+											<UVAnimation texrows="4" texcols="4" />
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):MiniCoinBtnClicked()</OnClick>
+								</Scripts>
+							</Button>
+		                    <!-- 家园币栏 -->
+							<Button name="$parentMyManorCoin" abs_x="203" abs_y="36">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentMyMiniCoin" relativePoint="right">
+										<Offset>
+											<AbsDimension x="50" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBkg10" />
+										<Texture name="$parentIcon" file="items/minihomecoin.png" abs_x="37" abs_y="38">
+											<Anchors>
+												<Anchor point="center" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="4" y="3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+											<Size>
+												<AbsDimension x="285" y="115"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+											<UVAnimation texrows="4" texcols="4" />
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<!-- <OnClick>GetInst("UIManager"):GetCtrl("FarmShop"):MiniCoinBtnClicked()</OnClick> -->
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+
+
+					##关闭按钮
+					<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentTitle">
+								<Offset>
+									<AbsDimension x="-11" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):HomelandStoveCloseBtn_OnClick()</OnClick>
+						</Scripts>
+					</Frame>
+				</Frames>				
+			</Frame>
+			##左侧类别
+			<Button name="$parentTypeBtn1" inherits="HomelandStoveTypeTabBtn" id="1">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="$parentBody">
+						<Offset>
+							<AbsDimension x="5" y="87"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTypeBtn2" inherits="HomelandStoveTypeTabBtn" id="2">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn1">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTypeBtn3" inherits="HomelandStoveTypeTabBtn" hidden="true" id="3">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn2">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTypeBtn4" inherits="HomelandStoveTypeTabBtn" hidden="true" id="4">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn3">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTypeBtn5" inherits="HomelandStoveTypeTabBtn" hidden="true" id="5">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn4">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##面板内容
+			<Frame name="$parentContent" abs_x="1072" abs_y="542">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBody">
+						<Offset>
+							<AbsDimension x="0" y="55"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##物品列表背景
+						<Texture name="$parentBkgLeftBlue" inherits="TemplateBigBkg5" abs_x="512" abs_y="428">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="19" y="67"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##子标题
+						<FontString name="$parentTitle" fonttype="BlackFont26" justifyH="center" justifyV="middle" text="$41102">
+							<Color r="61" g="69" b="70" />
+							<Size>
+								<AbsDimension x="300" y="64"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="top" relativeTo="$parentBkgLeftBlue">
+									<Offset>
+										<AbsDimension x="0" y="-31"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##左右分割线
+						<Texture name="$parentBkgLine" inherits="TemplateBkg14" abs_x="11" abs_y="536">
+							<Anchors>
+								<Anchor point="top" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="551" y="3"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##物品展示背景
+						<Texture name="$parentShowGoodsBkg" inherits="TemplateBigBkg11" abs_x="472" abs_y="142">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-21" y="24"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##物品名称背景
+						<Texture name="$parentGoodsNameBkg" inherits="TemplateBkg25" abs_x="470" abs_y="36">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentShowGoodsBkg">
+									<Offset>
+										<AbsDimension x="0" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##物品名称
+						<FontString name="$parentGoodsName" fonttype="BlackFont20" justifyH="center" text="">
+							<Color r="61" g="69" b="70" />
+							<Size>
+								<AbsDimension x="400" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentGoodsNameBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##物品背景
+						<Texture name="$parentGoodsBkg" inherits="TemplateBigBkg15" abs_x="78" abs_y="78">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentShowGoodsBkg">
+									<Offset>
+										<AbsDimension x="13" y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##物品展示图
+						<Texture name="$parentGoodsIcon" alphamode="alphablend" abs_x="60" abs_y="62">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentGoodsBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##物品介绍
+						<FontString name="$parentGoodsDesc" fonttype="BlackFont18" justifyH="left" justifyV="top" autowrap="true">
+							<Color r="101" g="116" b="118"/>
+							<Size>
+								<AbsDimension x="350" y="200"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parentGoodsBkg">
+									<Offset>
+										<AbsDimension x="20" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##右侧背景箭头
+						<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml" uvname="img_frame_arrow">
+							<Angle value="-90"/>
+							<Size>
+								<AbsDimension x="29" y="36"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parentShowGoodsBkg">
+									<Offset>
+										<AbsDimension x="0" y="15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##材料面板背景
+						<Texture name="$parentMaterialBkg" inherits="TemplateBigBkg5" abs_x="472" abs_y="298">
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentShowGoodsBkg">
+									<Offset>
+										<AbsDimension x="0" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##材料标题
+						<FontString name="$parentMaterialTitle" fonttype="BlackFont18" justifyH="center" text="$41054">
+							<Color r="61" g="69" b="70" />
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentMaterialBkg">
+									<Offset>
+										<AbsDimension x="0" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##可制作数量
+						<FontString name="$parentCreateNum" fonttype="BlackFont24" justifyH="center" justifyV="center" text="">
+							<Color r="61" g="69" b="70" />
+							<Size>
+								<AbsDimension x="300" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentMaterialBkg">
+									<Offset>
+										<AbsDimension x="0" y="-80"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##解锁提示信息
+						<FontString name="$parentUnlockTxt" fonttype="BlackFont24" hidden="true" justifyH="center" justifyV="middle" text="">
+							<Color r="61" g="69" b="70" />
+							<Size>
+								<AbsDimension x="300" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentMaterialBkg">
+									<Offset>
+										<AbsDimension x="0" y="-46"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##批量制作数量背景框
+						<Texture name="$parentBatchNumBkg" inherits="TemplateBkg31" abs_x="150" abs_y="25">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentMaterialBkg">
+									<Offset>
+										<AbsDimension x="0" y="-110"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- ##批量制作数量
+						<FontString name="$parentBatchNumTxt" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="1">
+							<Color r="61" g="69" b="70" />
+							<Size>
+								<AbsDimension x="144" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBatchNumBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString> -->
+					</Layer>
+				</Layers>
+				<Frames>
+                    <!-- 拥有数量层 -->
+                    <Frame name="$parentOwnNumLayer" abs_x="150" abs_y="30" input_transparent="true">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentShowGoodsBkg" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="290" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+                            <Button name="$parentBtn">
+                                <Size>
+                                    <RelDimension x="1.0" y="1.0"/>
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Scripts>
+                                    <OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):OwnNumLayer_OnClick()</OnClick>
+                                </Scripts>
+                            </Button>
+							<RichText name="$parentText" multiLine="false" fonttype="BlackFont18" autoextend="true" input_transparent="true" abs_x="150" abs_y="30" justifyH="right" text="拥有" >
+                                <Color r="73" g="70" b="63"/>
+                                <Anchors>
+                                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                        <Offset>
+                                            <AbsDimension x="0" y="10"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </RichText>
+						</Frames>
+					</Frame>
+					<!-- 数量编辑框 -->
+                    <SafeEditBox name="$parentEdit" letters="9" multiLine="false" editMethod="2" editimetype="0" abs_x="150" abs_y="25" cursorColor="ff3d4546">
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parentBatchNumBkg" relativePoint="center">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <FontString name="$parentFont" fonttype="BlackFont20"  justifyH="center" justifyV = "middle" text = "1">
+                            <Color r="101" g="116" b="118"/>
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Scripts>
+                            <OnFocusLost>GetInst("UIManager"):GetCtrl("HomelandStove"):Edit_OnFocusLost()</OnFocusLost>
+                        </Scripts>
+                    </SafeEditBox>
+					##减少按钮
+					<Button name="$parentSubNumBtn" abs_x="30" abs_y="40">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentBatchNumBkg">
+								<Offset>
+									<AbsDimension x="-8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+                        <NormalTexture name="$parentNormal" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" UVType="mirroeu" abs_x="15" abs_y="26">
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent" />
+                            </Anchors>
+                        </NormalTexture>
+                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" UVType="mirroeu" abs_x="13.5" abs_y="23.4">
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent" />
+                            </Anchors>
+                        </PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):OnSubNumClick()</OnClick>
+						</Scripts>
+					</Button>
+					##增加按钮
+					<Button name="$parentAddNumBtn" abs_x="30" abs_y="40">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBatchNumBkg">
+								<Offset>
+									<AbsDimension x="8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+                        <NormalTexture name="$parentNormal" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  abs_x="15" abs_y="26">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                            </Anchors>
+                        </NormalTexture>
+                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png" abs_x="13.5" abs_y="23.4">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent" />
+                            </Anchors>
+                        </PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):OnAddNumClick()</OnClick>
+						</Scripts>
+					</Button>
+					##最大制作数量按钮
+					<Button name="$parentMaxBtn" abs_x="40" abs_y="40">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentAddNumBtn">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common_icon.xml" uvname="icon_maximum" abs_x="15" abs_y="26">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <AbsDimension x="0" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                        </NormalTexture>
+                        <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common_icon.xml" uvname="icon_maximum" abs_x="13.5" abs_y="23.4">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <AbsDimension x="0" y="0"/>
+                                </Anchor>
+                            </Anchors>
+                        </PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):OnMaxBtnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##制作按钮
+					<Button name="$parentCreateBtn" abs_x="182" abs_y="61" hidden="true">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentMaterialBkg">
+								<Offset>
+									<AbsDimension x="0" y="-14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+							</Layer>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" text="$41051">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="100" y="23"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="9"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin" abs_x="24" abs_y="24">
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="65" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentCostNum" fonttype="BlackFont" justifyH="left" justifyV="middle" text="">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="100" y="360"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentFree" fonttype="BlackFont22" justifyH="center" justifyV="middle" text="$41051" hidden="true">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="100" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<AbsDimension x="0" y="0"/>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandStove"):OnCreateBtnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##物品列表
+					<ListViewFrame name="HomelandStoveGrid" slidingY="true" slideplane="$parentPlane" abs_x="498" abs_y="410">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkgLeftBlue">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="498" abs_y="410">
+								<Scripts>
+									<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):OnClick()</OnMouseDown>
+								</Scripts>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+					##制作材料列表
+					<!-- <ListViewFrame name="CreateMaterialList" slidingX="true" slideplane="$parentPlane" abs_x="440" abs_y="180">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentMaterialBkg">
+								<Offset>
+									<AbsDimension x="0" y="46"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="440" abs_y="180">
+								<Scripts>
+									<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandStove"):OnClick()</OnMouseDown>
+								</Scripts>
+							</Frame>
+						</Frames>
+					</ListViewFrame> -->
+					<Frame name="$parentMaterialItem1" inherits="HomelandStoveMaterialTemplate" id="1">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMaterialBkg">
+								<Offset>
+									<AbsDimension x="20" y="50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem2" inherits="HomelandStoveMaterialTemplate" id="2">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem1">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem3" inherits="HomelandStoveMaterialTemplate" id="3">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem2">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem4" inherits="HomelandStoveMaterialTemplate" id="4">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem3">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem5" inherits="HomelandStoveMaterialTemplate" id="5">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem4">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem6" inherits="HomelandStoveMaterialTemplate" id="6">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentMaterialItem1">
+								<Offset>
+									<AbsDimension x="0" y="32"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem7" inherits="HomelandStoveMaterialTemplate" id="7">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem6">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem8" inherits="HomelandStoveMaterialTemplate" id="8">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem7">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem9" inherits="HomelandStoveMaterialTemplate" id="9">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem8">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentMaterialItem10" inherits="HomelandStoveMaterialTemplate" id="10">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMaterialItem9">
+								<Offset>
+									<AbsDimension x="21" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<!-- <Frame name="$parentGoodsDetails" hidden="true" abs_x="497" abs_y="183">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-2" y="70"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg19" abs_x="497" abs_y="223">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut" abs_x="74" abs_y="74">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="18" y="18"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" abs_x="66" abs_y="66">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" justifyV="middle">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="100" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topright" relativeTo="$parentIconBkg">
+											<Offset>
+												<AbsDimension x="13" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentType" fonttype="BlackFont18" justifyH="left" justifyV="middle">
+									<Color r="204" g="233" b="69"/>
+									<Size>
+										<AbsDimension x="100" y="17"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentIconBkg">
+											<Offset>
+												<AbsDimension x="14" y="-15"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentDescBkg" inherits="TemplateBigBkg20" abs_x="461" abs_y="101">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="-14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="left"  autowrap="true">
+									<Color r="224" g="220" b="202"/>
+									<Size>
+										<AbsDimension x="430" y="65"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentDescBkg">
+											<Offset>
+												<AbsDimension x="13" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame> -->
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnHide>GetInst("UIManager"):GetCtrl("HomelandStove"):OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

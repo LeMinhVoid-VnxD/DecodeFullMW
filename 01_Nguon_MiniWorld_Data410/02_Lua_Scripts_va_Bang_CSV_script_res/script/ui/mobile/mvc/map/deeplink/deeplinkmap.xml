@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/map/deeplink/DeepLinkMapCtrl.lua"/>
+	<Script file="ui/mobile/mvc/map/deeplink/DeepLinkMapModel.lua"/>
+	<Script file="ui/mobile/mvc/map/deeplink/DeepLinkMapView.lua"/>
+
+	<Frame name="DeepLinkMap" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="4" input_transparent="false">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+		</Anchors>
+		<!-- 背景 -->
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentMask" file="ui/white.png" color="B1000000" stretchedge="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="MiniContentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" abs_x="444" abs_y="524" file="ui/mobile/texture0/deepLinkMap.xml" uvname="board_tips_map">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			<!-- 标题栏 -->
+			<Frame name="$parentTitle" abs_x = "444" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension y="50"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<!-- 标题 -->
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file = "ui/mobile/texture0/deepLinkMap.xml" uvname="img_title">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="61"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" justifyV="middle" text="$1000018" abs_x="188" abs_y="21">
+							<Color r="234" g="248" b="249"/> 
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<!-- 内容 -->
+			<Frame name = "$parentContent" abs_x = "444" abs_y = "480" >
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentTitle" relativePoint="top">
+						<Offset>
+							<AbsDimension y="58"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<!-- 地图 -->
+					<Layer>
+						<Texture name = "$parentMap" file = "ui/snap_empty.png" abs_x = "388" abs_y = "224">
+							<Anchors >
+								<Anchor point="top" relativeTo="$parent" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<Texture name="$parentTypeIcon" file="ui/mobile/texture2/index.xml" uvname="icon_label_hot" hidden = "true">
+                            <Size>
+                                <AbsDimension x="46" y="39"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMap">
+                                    <Offset>
+                                        <AbsDimension x="-3" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+
+						<Texture name = "$parentMapTitleBkg" file = "ui/mobile/texture0/deepLinkMap.xml" uvname = "board_map_text" 
+							abs_x = "388" abs_y = "46" DrawType = "center" >
+							<Center>
+								<Left offsetX="0" offsetY="0" w="64" h="34"/>
+								<Center offsetX="64" offsetY="0" w="64" h="34"/>
+								<Right offsetX="128" offsetY="0" w="64" h="34"/>
+							</Center>
+
+							<Anchors >
+								<Anchor point="bottom" relativeTo="$parentMap" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="46"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentMapTitleText" fonttype="BlackFont26" justifyH="center" justifyV="middle" text="" abs_x="388" abs_y="26">
+							<Color r="100" g="117" b="157"/> 
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="33"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+
+					<!-- 玩家推荐提示 -->
+					<Layer>
+						<Texture name = "$parentTipsBkg" file = "ui/mobile/texture0/deepLinkMap.xml" uvname = "board_tips_explain" 
+							abs_x = "388" abs_y = "77" DrawType = "center" >
+							<Center>
+								<Left offsetX="0" offsetY="0" w="64" h="34"/>
+								<Center offsetX="64" offsetY="0" w="64" h="34"/>
+								<Right offsetX="128" offsetY="0" w="64" h="34"/>
+							</Center>
+
+							<Anchors >
+								<Anchor point="bottom" relativeTo="$parentMapTitleBkg" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="87"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentRecommendTips" fonttype="BlackFont24" text="" abs_x="350" abs_y = "24" justifyH="center" justifyV="middle" hidden="false" >
+							<Color r="127" g="142" b="175"/> 
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentMapTitleBkg">
+									<Offset>
+										<AbsDimension x="0" y="63"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<!-- 加入按钮 -->
+			<Frame name = "$parentJoin" abs_x = "198" abs_y = "65" hidden = "true">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentContent" relativePoint="bottom">
+						<Offset>
+							<AbsDimension y="-25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name = "$parentJoinBtn" hidden = "false" abs_x="198" abs_y="65">
+						<Size>
+							<AbsDimension x = "198" y = "65" />
+						</Size>
+						<Anchors>
+							<Anchor point = "center" relativePoint = "center" relativeTo = "$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>						
+							<Layer level = "overlay">
+								<FontString name="$parentText" fonttype="BlackFont28" text="$1000021" abs_x="186" abs_y="26" justifyH="center" 
+								justifyV="middle">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg15" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg15" abs_x="185" abs_y="60">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("DeepLinkMap"):OnDeepLinkMapJoinClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>DeepLinkMapFrame_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

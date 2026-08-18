@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/scriptResourceLib/ScriptDeveloperResourceLibCtrl.lua" />
+	<Script file="ui/mobile/mvc/developer/scriptResourceLib/ScriptDeveloperResourceLibModel.lua" />
+	<Script file="ui/mobile/mvc/developer/scriptResourceLib/ScriptDeveloperResourceLibView.lua" />
+	
+	##左侧分类按钮模板
+	<Button name="ScriptDeveloperResourceLib_TabBtnTemplate" inherits="TemplateTabBtn4" virtual="true">
+		<Scripts>
+			<onClick>GetInst("UIManager"):GetCtrl("ScriptDeveloperResourceLib"):TabBtnClicked(); </onClick>
+		</Scripts>
+	</Button>
+	
+	##item格子模板
+	<Button name="ScriptDeveloperResourceLib_CellTemplate" virtual="true" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg15" />
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true" />
+				<Texture name="$parentIcon" file="item/apple.png" alphamode="alphablend" abs_x="70" abs_y="70">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				##特效、音效库显示item序号，其他库不显示序号
+				<FontString name="$parentIndex" hidden="true" fonttype="BlackFont18" fontStyle="border" text="1" justifyH="right" abs_x="70" abs_y="18">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-7" y="-7" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			##点击效果自动触发（PC上鼠标点击、手机上触屏）可使用platform指定触发平台
+			<OnClick>GetInst("UIManager"):GetCtrl("ScriptDeveloperResourceLib"):CellBtnClicked();</OnClick>	
+			##鼠标移入格子范围是自动触发
+			<OnEnterUpdate>GetInst("UIManager"):GetCtrl("ScriptDeveloperResourceLib"):OnMouseEnter_PC();</OnEnterUpdate>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("ScriptDeveloperResourceLib"):OnMouseLeave_PC();</OnLeave>
+		</Scripts>
+	</Button>
+	
+	<Frame name="ScriptDeveloperResourceLib" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000">
+		##背景层
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" />
+				<Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="996" abs_y="571">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="993" abs_y="433">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<offset>
+								<AbsDimension x="0" y="52" />
+							</offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTabsBkg" inherits="TemplateBigBkg29" abs_x="168" abs_y="394">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="18" y="23" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="773" abs_y="394" hidden="true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="202" y="23" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgBody2" inherits="TemplateBigBkg5" abs_x="362" abs_y="394" hidden="false">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+							<Offset>
+								<AbsDimension x="613" y="23" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>				
+			</Layer>
+		</Layers>
+		##UI层
+		<Frames>
+			##标题
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="988" abs_y="61">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="4" y="4" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0"  abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-10" y="-4" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					##点击关闭按钮关闭ScriptDeveloperResourceLib界面
+					<OnClick>GetInst("UIManager"):GetCtrl("ScriptDeveloperResourceLib"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##插入ID按钮
+			<Button name="$parentInsertIDBtn" text="$34002" inherits="TemplateBtnBig_OKBtn">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-20" y="-13" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ScriptDeveloperResourceLib"):InsertBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##左侧滑动列表tab按钮组
+			<SlidingFrame name="$parentTabs" slidingY="true" slideplane="$parentPlane" abs_x="160" abs_y="385">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentTabsBkg" />
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="160" abs_y="385" />
+					<Button name="$parenttab1" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="1" />
+					<Button name="$parenttab2" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="2" />
+					<Button name="$parenttab3" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="3" />
+					<Button name="$parenttab4" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="4" />
+					<Button name="$parenttab5" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="5" />
+					<Button name="$parenttab6" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="6" />
+					<Button name="$parenttab7" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="7" />
+					<Button name="$parenttab8" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="8" />
+					<Button name="$parenttab9" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="9" />
+					<Button name="$parenttab10" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="10" />
+					<Button name="$parenttab11" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="11" />
+					<Button name="$parenttab12" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="12" />
+					<Button name="$parenttab13" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="13" />
+					<Button name="$parenttab14" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="14" />
+					<Button name="$parenttab15" inherits="ScriptDeveloperResourceLib_TabBtnTemplate" id="15" />
+				</Frames>
+			</SlidingFrame>
+			##item展示列表: 方块库、道具库、生物库、音效库、状态库、附魔库、动作库
+			<ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="752" abs_y="374" hidden="true" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody">
+						<Offset>
+							<AbsDimension x="0" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="752" abs_y="374" />
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			##item展示列表: 特效库专用
+			<ListViewFrame name="$parentParticleList" slidingY="true" slideplane="$parentPlane" abs_x="450" abs_y="374" hidden="true" slidebar="$parentBar">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody2">
+						<Offset>
+							<AbsDimension x="59" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="450" abs_y="374" />					
+					##item通过代码动态创建
+				</Frames>
+			</ListViewFrame>
+			##特效展示UI
+			<Frame name="$parentStage" abs_x="397" abs_y="394" hidden="false">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+						<Offset>
+							<AbsDimension x="201" y="23" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg12" abs_x="397" abs_y="394" />
+						##展示粒子特效UI
+						<ModelView name="$parentBkgEffect" abs_x="391" abs_y="388">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+							</Anchors>
+						</ModelView>
+						##循环图标
+						<Texture name="$parentLoopIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_refresh_white" abs_x="20" abs_y="20" hidden="false">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset> 
+										<AbsDimension x="8" y="8" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##循环提示
+						<FontString name="$parentLoopText" fonttype="BlackFont18" text="$7554" justifyH="left" abs_x="36" abs_y="18" hidden="false">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="34" y="10" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##格子内容详情面板
+			<Frame name="$parentTipsFrame" frameStrata="HIGH" framelevel="9999" abs_x="200" abs_y="88">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkgWhite">
+						<Offset>
+							<AbsDimension x="201" y="23" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg19"/>
+						<FontString name="$parentName" fonttype="BlackFont22" text="格子名称" justifyH="center">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor>
+									<Offset>
+										<AbsDimension y="20" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##justifyH="center" 水平居中 justifyV="center" 垂直居中 justifyV="center"
+						<FontString name="$parentID" fonttype="BlackFont20" text="格子ID" justifyH="center" autowrap="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor>
+									<Offset>
+										<AbsDimension y="52" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentLine" inherits="TemplateBkg20_H1" abs_x="160" abs_y="2">
+							<Anchors>
+								<Anchor>
+									<Offset> 
+										<AbsDimension x="20" y="80" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" fonttype="BlackFont18" text="格子描述" lineInterval="12" autowrap="true" abs_x="162" abs_y="300">
+							<Color r="224" g="220" b="202"/>
+							<Anchors>
+								<Anchor point="topleft">
+									<Offset>
+										<AbsDimension x="19" y="90" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

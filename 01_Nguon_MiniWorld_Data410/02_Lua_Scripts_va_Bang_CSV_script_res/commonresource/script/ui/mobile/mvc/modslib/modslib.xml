@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/modsLib/modsLibHelper/ModsLibDataManager.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibHelper/ModsLibInterface.lua"/>
+    <Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibSelector/ModsLibSelectorMgr.lua"/>
+    <Script file="ui/mobile/mvc/modsLib/modsLibEditor/modsLibEditorItem/modsLibEditorItemPart/ModsLibEditorItemPartMgr.lua"/>
+
+	<Script file="ui/mobile/mvc/modsLib/ModsLibModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/ModsLibView.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/ModsLibCtrl.lua"/>
+
+    ##左侧导航按钮
+    <Button name="ModsLibTabTemplate" virtual="true" inherits="TemplateTabBtn0">
+		<Layers>
+			<Layer level="overlay">
+				##LLDO:红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="center" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-2" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentSighTag" file="ui/mobile/texture2/common.xml" uvname="icon_tipoff_o" hidden="true" abs_x="10" abs_y="25">
+					<Angle value="37" />
+					<Anchors>
+						<Anchor point="center" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-2" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):TabBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##格子模板
+    <Frame name="ModsLibItemTemplate" virtual="true" abs_x="122" abs_y="152">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits="TemplateBigBkg9" />
+                <Texture name="$parentChecked" inherits="TemplateBigBkg30" hidden="true"/>
+                <Texture name="$parentBkg1" inherits="TemplateBigBkg15" abs_x="94" abs_y="94">
+                    <Anchors>
+                        <Anchor point="top" relativeTo="$parent" relativePoint="top">
+                            <Offset>
+                                <AbsDimension x="0" y="14" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIcon" file="items/apple.png" alphamode="alphablend" abs_x="75" abs_y="75">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parentBkg1" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentAddIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="48" abs_y="48" hidden="true">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parentBkg1" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentName" fonttype="BlackFont21" justifyH="center" justifyV="middle" text="方块名称" abs_x="110" abs_y="32" >
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="-12"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentSighTag" file="ui/mobile/texture2/common.xml" uvname="icon_tipoff_o" hidden="true">
+					<Angle value="37" />
+					<Size>
+						<AbsDimension x="10" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="16" abs_y="16">
+					<Anchors>
+						<Anchor point="center" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentForbidden" hidden="true" input_transparent="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg14" stretchedge="true" color="40000000"/>
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_shield_white" abs_x="50" abs_y="50">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Button name="$parentSelBtn" hidden="true" abs_x="40" abs_y="43">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="3" y="-4"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow" />
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow_tick" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibItemSelBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibItemClicked();</OnClick>
+        </Scripts>
+    </Frame>
+
+	##插件主界面
+    <Frame name="ModsLib" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2200" inherits="TemplateMainFrame5">
+        <Frames>
+            ##新建插件包入口
+            <Button name="$parentCreatePkgBtn" abs_x="50" abs_y="53">
+                <Anchors>
+                    <Anchor point="right" relativePoint="left" relativeTo="$parentCloseBtn">
+                        <Offset>
+                            <AbsDimension x="-35" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon2" file="ui/mobile/texture2/common_icon.xml" uvname="icon_plugin_add.png" abs_x="26" abs_y="26">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibCreatePkgBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##删除 取消删除
+            <Button name="$parentDelBtn" inherits="TemplateBtn2">
+                <Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="210" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3017" abs_x="182" abs_y="24">
+                            <Color r="51" g="55" b="55"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibDelBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##删除确认
+            <Button name="$parentConfirmDelBtn" inherits="TemplateBtn35" abs_x="182" abs_y="61" hidden="true">
+                <Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-220" y="-15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete.png" abs_x="32" abs_y="31">
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="17" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3753" abs_x="130" abs_y="24">
+                            <Color r="55" g="51" b="51"/>
+                            <Anchors>
+                                <Anchor point="right" relativePoint="right" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibConfirmDelBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            
+			##左侧导航按钮
+            <Frame name="$parentEditorTabs" hidden="false" abs_x="183" abs_y="720">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="56"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentTab1" inherits="ModsLibTabTemplate" id="1" />
+                    <Button name="$parentTab2" inherits="ModsLibTabTemplate" id="2" />
+                    <Button name="$parentTab3" inherits="ModsLibTabTemplate" id="3" />
+                    <Button name="$parentTab4" inherits="ModsLibTabTemplate" id="4" />
+                    <Button name="$parentTab5" inherits="ModsLibTabTemplate" id="5" />
+                    <Button name="$parentTab6" inherits="ModsLibTabTemplate" id="6" />
+                    <Button name="$parentTab7" inherits="ModsLibTabTemplate" id="7" />
+                    <Button name="$parentTab8" inherits="ModsLibTabTemplate" id="8" />
+                </Frames>
+ 
+            </Frame>
+            ##跳至开发者学院wiki按钮	
+            <Button name ="$parentCreatorWiki" abs_x ="159" abs_y ="30">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="14" y="-12" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+				<Layers>
+					<Layer level= "overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_wiki" abs_x="24" abs_y ="24">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension x="7" y="1" />
+									</Offset>
+								</Anchor>								
+							</Anchors>	
+						</Texture>					
+					</Layer>
+				</Layers>
+				<Frames>		
+					<RichText name="$parentRich" lineInterval="1" input_transparent="true" fonttype="BlackFont18" justifyV="bottom" justifyH="left" text="XXX" abs_x="150" abs_y="25">
+						<LinkColor r="13" g="98" b="118"/>
+						<ShadowColor r="13" g="98" b="118"/>
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="36" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):OpenCreatorWiki();</OnClick>
+						</Scripts>
+					</RichText> 
+				</Frames>
+            </Button>
+            ##插件列表
+            <ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+				<Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="195" y="78"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-16" y="-88"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+                    </Layer>
+                </Layers>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x = "1060" abs_y = "580" />
+					## ModsLibItemTemplate
+				</Frames>
+			</ListViewFrame>
+
+            ##插件包 选择插件包
+            <Button name="$parentShowMyModsBtn"  inherits="TemplateBtn20">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="9" y="-16"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$4058" abs_x="158" abs_y="24">
+                            <Color r="55" g="52" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibShowMyModsBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+
+            <Button name="$parentConfirmMapModsBtn" inherits="TemplateBtn11" abs_x="182" abs_y="61" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="MyModsEditorFrame">
+                        <Offset>
+                            <AbsDimension x="-15" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$4097">
+                            <Color r="55" g="54" b="51"/>
+                            <Size>
+                                <AbsDimension x="160" y="25"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <!-- <OnClick>MyModsEditorFrameConfirmMapModsBtn_OnClick();</OnClick> -->
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibConfirmMapModsBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##进入游戏
+            <Button name="$parentStartGameBtn" inherits="TemplateBtn3" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-20" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" abs_x="182" abs_y="24" text="$4102">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibStartGameBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##确认添加
+            <Button name="$parentConfirmAddBtn" inherits="TemplateBtn3" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-90" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" abs_x="182" abs_y="24" text="$4062">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibConfirmAddBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+
+            <Frame name="$parentTabSettingFrame" hidden="true">
+                <Size>
+                    <AbsDimension x="805" y="534"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="230" y="90"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentThumbTitle" fonttype="BlackFont24" fontStyle="normal" justifyH="right" text="$4054">
+                            <Color r="61" g="69" b="70"/>
+                            <Size>
+                                <AbsDimension x="225" y="40"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="30" y="10"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentNameTitle" fonttype="BlackFont24" fontStyle="normal" justifyH="right" text="$4055">
+                            <Color r="61" g="69" b="70"/>
+                            <Size>
+                                <AbsDimension x="225" y="30"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentThumbTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="250"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentDescTitle" fonttype="BlackFont24" fontStyle="normal" justifyH="right" text="$4056">
+                            <Color r="61" g="69" b="70"/>
+                            <Size>
+                                <AbsDimension x="225" y="33"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parentNameTitle">
+                                    <Offset>
+                                        <AbsDimension x="0" y="60"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <Texture name="$parentModNameBkg" inherits="TemplateBkg8">
+                            <Size>
+                                <AbsDimension x="420" y="49"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="right" relativeTo="$parentNameTitle">
+                                    <Offset>
+                                        <AbsDimension x="8" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentModDescBkg" inherits="TemplateBkg8" >
+                            <Size>
+                                <AbsDimension x="422" y="200"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topRight" relativeTo="$parentDescTitle">
+                                    <Offset>
+                                        <AbsDimension x="8" y="-3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Frame name="$parentModThumbFrame">
+                        <Size>
+                            <AbsDimension x="616" y="240"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="165" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentLogo" file="ui/mobile/texture2/bigtex/cjk_tydt02.png">
+                                    <Size>
+                                        <AbsDimension x="416" y="240"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0" />
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Button name="$parentSetLogoBtn" hidden = "true">
+                                <Size>
+                                    <AbsDimension x="416" y="45" />
+                                </Size>
+                                <Anchors>
+                                    <Anchor point="top" relativeTo="$parentLogo" relativePoint="bottom">
+                                        <Offset>
+                                            <AbsDimension x="0" y="-45"/>
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="overlay">
+                                        <FontString name="$parentText" fonttype="BlackFont24" justifyH="center" lineInterval="2" fontStyle="normal" text="$3924">
+                                            <Color r="255" g="255" b="255"/>
+                                            <Size>
+                                                <AbsDimension x="135" y="34"/>
+                                            </Size>
+                                            <Anchors>
+                                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="5"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="cjk_heidi.png"/>
+                                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="cjk_heidi.png">
+                                    <Size>
+                                        <AbsDimension x="416" y="42"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </PushedTexture>
+                            </Button>
+                        </Frames>
+                    </Frame>
+                    <!--插件名称-->
+                    <SafeEditBox name="$parentModNameEdit" letters="26" multiLine="false" editMethod="527">
+                        <Size>
+                            <AbsDimension x="380" y="30" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="left" relativeTo="$parentModNameBkg" relativePoint="left">
+                                <Offset>
+                                    <AbsDimension x="15" y="0" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <FontString name="$parentFont" fonttype="BlackFont24" >
+                            <Color r="240" g="240" b="240"/>
+                        </FontString>
+                        <FontString name="$parentDefault" justifyH="center" default="true" fonttype="BlackFont24" text="$3925" textcolor="ffc3b288"/>
+                    </SafeEditBox>
+                    <!--插件描述-->
+                    <RichText name="$parentModDescTip" lineInterval="5" multiLine="false" fonttype="BlackFont24" fontStyle="normal" autoextend="false" input_transparent="true">
+                        <Size>
+                            <AbsDimension x="390" y="185" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parentModDescBkg" relativePoint="top">
+                                <Offset>
+                                    <AbsDimension x="0" y="10" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </RichText>
+                    <SafeMultiEditBox name="$parentModDescEdit" letters="1500" multiLine="false" editMethod="527">
+                        <Size>
+                            <AbsDimension x="380" y="185" />
+                        </Size>
+                        <Anchors>
+                            <Anchor point="center" relativeTo="$parentModDescBkg" relativePoint="center">
+                                <Offset>
+                                    <AbsDimension x="0" y="5" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <textcolor r="240" g="240" b="240"/>
+                        <FontString name="$parentFont" fonttype="BlackFont24" >
+                            <Color r="195" g="178" b="136"/>
+                        </FontString>
+                        <Scripts>
+                            <OnFocusLost>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibModDescEditOnFocusLost();</OnFocusLost>
+                            <OnFocusGained>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibModDescEditOnFocusGained();</OnFocusGained>
+                        </Scripts>
+                    </SafeMultiEditBox>
+<!--                     <Button name="$parentEditableChecker" hidden="true">
+                        <Size>
+                            <AbsDimension x="40" y="30"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+                                <Offset>
+                                    <AbsDimension x="-230" y="10"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND" >
+                                <Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_diban05" >
+                                    <Size>
+                                        <AbsDimension x="45" y="45"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentTick" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_gou" hidden="true">
+                                    <Size>
+                                        <AbsDimension x="46" y="38"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                            <Offset>
+                                                <AbsDimension x="7" y="-4"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentName" fonttype="BlackFont28"  justifyH="left" text="$3927">
+                                    <Color r="126" g="103" b="71"/>
+                                    <Size>
+                                        <AbsDimension x="112" y="30"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+                                            <Offset>
+                                                <AbsDimension x="60" y="1"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>SettingEditableChecker_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="$parentLoadOnlyOneChecker" hidden="true">
+                        <Size>
+                            <AbsDimension x="40" y="30"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parentEditableChecker" relativePoint="bottom">
+                                <Offset>
+                                    <AbsDimension x="0" y="20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_diban05" >
+                                    <Size>
+                                        <AbsDimension x="45" y="45"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <Texture name="$parentTick" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="cjsj_gou" hidden="true">
+                                    <Size>
+                                        <AbsDimension x="46" y="38"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                                            <Offset>
+                                                <AbsDimension x="7" y="-4"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </Texture>
+                                <FontString name="$parentName" fonttype="BlackFont28"  justifyH="left" text="$3928">
+                                    <Color r="126" g="103" b="71"/>
+                                    <Size>
+                                        <AbsDimension x="242" y="30"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+                                            <Offset>
+                                                <AbsDimension x="60" y="1"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>SettingLoadOnlyOneChecker_OnClick();</OnClick>
+                        </Scripts>
+                    </Button> -->
+                    <Button name="$parentSaveModBtn" inherits="TemplateBtn6">
+                        <Anchors>
+                            <Anchor point="bottomright" relativeTo="MyModsEditorFrame" relativePoint="bottomright">
+                                <Offset>
+                                    <AbsDimension x="-20" y="-12" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentFont" fonttype="BlackFont24" justifyH="center" text="$3934" >
+                                    <Color r="55" g="52" b="51"/>
+                                    <Size>
+                                        <AbsDimension x="150" y="24"/>
+                                    </Size>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("ModsLib"):ModsLibModEditorSaveModBtnOnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            ##插件包选择情况提示
+            <Frame name="$parentMapModStateFrame" abs_x="450" abs_y="70" hidden="true">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentDelBtn">
+                        <Offset>
+                            <AbsDimension x="8" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentLine1" fonttype="BlackFont22" justifyH="center" text="$4096">
+                            <Color r="55" g="54" b="49"/>
+                            <Size>
+                                <AbsDimension x="600" y="35"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                        <FontString name="$parentLine2" fonttype="BlackFont22" justifyH="center" text="$4095">
+                            <Color r="55" g="54" b="49"/>
+                            <Size>
+                                <AbsDimension x="450" y="35"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="35"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+
+            <Frame name="$parentAddComponentTip" hidden="true">
+                <Size>
+                    <AbsDimension x="370" y="22"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="MyModsEditorFrame">
+                        <Offset>
+                            <AbsDimension x="-277" y="-37"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentLine1" fonttype="BlackFont22" justifyH="right" text="$4098">
+                            <Color r="101" g="116" b="118"/>
+                            <Size>
+                                <AbsDimension x="370" y="22"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+        </Frames>
+        <Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("ModsLib"):HandleEvent();</OnEvent>
+		</Scripts>
+    </Frame>
+</Ui>

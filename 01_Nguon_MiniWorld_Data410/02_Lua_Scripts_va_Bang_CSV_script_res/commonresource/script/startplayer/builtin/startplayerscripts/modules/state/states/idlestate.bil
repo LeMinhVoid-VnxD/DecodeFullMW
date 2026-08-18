@@ -1,0 +1,36 @@
+local State = CommonModule.GetRegisterClass("State")
+local IdleState = CommonModule.Class("IdleState", State)
+local MouseService = game:GetService("MouseService")
+
+IdleState.FROM_STATE = {}
+
+function IdleState:OnInit(...)
+	State.OnInit(self, ...)
+	self.m_digFlag = false
+end
+
+function IdleState:EnterState()
+	--self.m_host:PlayAnim("100100")
+end
+
+function IdleState:LeaveState()
+
+end
+
+function IdleState:OnUpdate(dt)
+	if self.m_host:isLeftClickDown() then
+		return self:updateOnPCLeftClick()
+	end
+end
+
+function IdleState:updateOnPCLeftClick()
+	if not MouseService:IsSight() then
+		return
+	end
+end
+
+function IdleState:CheckTransformState( fromState )
+	return true -- 可以从任何状态切换成 空闲状态
+end
+
+return IdleState

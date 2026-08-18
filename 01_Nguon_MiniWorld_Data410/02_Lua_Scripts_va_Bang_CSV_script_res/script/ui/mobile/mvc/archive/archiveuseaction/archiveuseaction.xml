@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/archive/ArchiveUseAction/ArchiveUseActionModel.lua"/>
+	<Script file="ui/mobile/mvc/archive/ArchiveUseAction/ArchiveUseActionView.lua"/>
+	<Script file="ui/mobile/mvc/archive/ArchiveUseAction/ArchiveUseActionCtrl.lua"/>
+	##定制皮肤展示框
+	<Button name="ArchiveUseActionCell" virtual="true" click_threshold="5" abs_x="132" abs_y="190" hidden="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBg" file="ui/mobile/texture2/shop.xml" uvname="img_icon_act.png"  abs_x="132" abs_y="132">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##模型
+				<ModelView name="$parentModeView" background="ui/models/selrole1.omod" hidden="false">
+					<Anchors>
+						<Anchor point="bottomright" relativeTo="$parentBg" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+						<Anchor point="topleft" relativeTo="$parentBg" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+				##名字背景
+				<Texture name="$parentNameBkg" inherits="TemplateBigBkg18" abs_x="128" abs_y="30">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##名字
+				<FontString name="$parentName" fonttype="BlackFont18"  justifyH="center"  text="名字" abs_x="100" abs_y="19">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##审核状态
+				<FontString name="$parentAuditText" fonttype="BlackFont20"  justifyH="left"  text="$16264" abs_x="100" abs_y="19" hidden = "true">
+					<Color r="34" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##违规标识
+				<Texture name="$parentViolationsIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_warn.png"  abs_x="34" abs_y="29" hidden = "true">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="2" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentModeBtn">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+					<Anchor point="topleft" relativeTo="$parentBg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):ModeBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##使用按钮
+			<Button name="$parentUseBtn"  abs_x="130" abs_y="50" hidden = "false">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture  level="BACKGROUND" name="$parentBg" inherits = "TemplateBkg24">
+					<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+				</NormalTexture>
+				<PushedTexture   level="BACKGROUND" name="$parentPushedBg" inherits = "TemplateBkg24" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+
+				<Layers>
+					<Layer level="highlight">
+						<!-- <Texture name="$parentBg" inherits = "TemplateBkg24">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</Texture> -->
+						<FontString name="$parentName" fonttype="BlackFont19"  justifyH="center"  text="$186" abs_x="100" abs_y="19">
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):ActionUseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##已使用按钮
+			<Button name="$parentAlreadyUsedBtn" abs_x="130" abs_y="50" hidden="true" >
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<FontString name="$parentName" fonttype="BlackFont19"  justifyH="center"  text="$186" abs_x="100" abs_y="19">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):ActionAlreadyUsedClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##添加坑位
+			<Button name="$parentAdd" hidden="true" abs_x="132" abs_y="132">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentBg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="63" abs_y="63" color="80FFFFFF">
+						<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="58" abs_y="58" color="80FFFFFF">
+					<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+				</PushedTexture>
+
+				<Layers>
+					<Layer level="overlay">
+						<!-- <Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="63" abs_y="63" color="80FFFFFF">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture> -->
+						<FontString name="$parentDesc" fonttype="BlackFont20" justifyH="center" justifyV="middle" abs_x="122" abs_y="22" text="$3739">
+							<Color r="73" g="70" b="63"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):ActionCellAddClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##解锁坑位
+			<Button name="$parentUnlock" hidden="true" abs_x="132" abs_y="132">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentBg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_lock_green.png" abs_x="51" abs_y="65">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-10" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedIcon" file="ui/mobile/texture2/common.xml" uvname="icon_lock_green.png" abs_x="45" abs_y="60">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-10" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<!-- <Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_lock_green.png" abs_x="51" abs_y="65">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture> -->
+						<Texture name="$parentDescIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="27" abs_y="28">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-26" y="-4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDesc" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="x999" abs_x="83" abs_y="20">
+							<Color r="255" g="137" b="32"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentDescIcon">
+									<Offset>
+										<AbsDimension y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):ActionCellUnlockClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##删除坑位按钮
+			<Button name="$parentDeleteBtn" abs_x="30" abs_y="30" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="9" y="-10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				
+
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_no.png" abs_x="18" abs_y="18">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_no.png" abs_x="15" abs_y="15">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):DeleteBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##上传动作按钮
+			<Button name="$parentUploadBtn" abs_x="40" abs_y="40" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="9" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBg" file="ui/mobile/texture2/common.xml" uvname="btn_long_yellow.png"/>
+						<!-- <Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown.png" abs_x="23" abs_y="23">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture> -->
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown.png" abs_x="23" abs_y="23">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedIcon" file="ui/mobile/texture2/common.xml" uvname="icon_updown.png" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):UploadBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Button>
+	<!--应用动作-->
+	<Frame name="ArchiveUseAction" parent="UIClient" frameStrata="MEDIUM" hidden="true" rel_x="0.45" rel_y="1.0" framelevel="3200" input_transparent="false">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg19" abs_x = "310" abs_y = "532">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="0" y="-79" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg20" abs_x = "297" abs_y = "472" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="24"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDir" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+					<Angle value="90"></Angle>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-108" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle"  fonttype="BlackFont22" lineInterval="2" justifyH="center" text="$20374" >
+					<Color r="224" g="220" b="202"/>
+					<Size>
+						<AbsDimension x="200" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##帮助按钮
+			<Button name="$parentHelpBtn" abs_x="44" abs_y="50">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>v
+							<AbsDimension x="2" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_help.png" abs_x="18" abs_y="25">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_help.png" abs_x="15" abs_y="22">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNormal" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):HelpBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<ListViewFrame name="$parentListView" abs_x="297" abs_y="455" slidingY="true" slideplane="$parentPlane">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentBkg" relativePoint="left">
+						<Offset>
+							<AbsDimension x="7" y="27" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" rel_x="1.0" rel_y="1.0">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+			##动作审核入口
+			<RichText name="$parentActionVerify" fonttype="BlackFont20" input_transparent="false" justifyH="left" >
+				<ShadowColor r="239" g="45" b="45"/>
+				<LinkColor r="239" g="45" b="45"/>
+				<Size>
+					<AbsDimension x="95" y="32"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-6" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):ActionVerifyClick();</OnClick>
+				</Scripts>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ArchiveUseAction"):CloseClicked();</OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

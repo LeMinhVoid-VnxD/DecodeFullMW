@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/LanguageTranslation.lua"/>
+
+    ##游戏里留言板编辑窗口
+    <Frame name="GameSignEditFrame" parent="UIClient" hidden="true" frameStrata="MEDIUM"
+           framelevel="6200" rel_x="1.0" rel_y="1.0">
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask1" file="ui/white.png" color="00000000">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="714" abs_y="449">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentEditBkg" inherits="TemplateBigBkg23" abs_x="668" abs_y="288">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="80"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+               
+            </Layer>
+        </Layers>
+        <Frames>
+            <Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+                <Size>
+                    <AbsDimension x="708" y="61"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle"
+                                    shadowcolor="4D352C28" text="$21686">
+                            <Color r="255" g="135" b="27"/>
+                            <Size>
+                                <AbsDimension x="400" y="40"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="33" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+            </Frame>
+            <Button name="$parentCloseBtn" abs_x="46" abs_y="60" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-10" y="-8"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GameSignEditFrameCloseBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##编辑框
+            <SafeMultiEditBox name="$parentEdit" letters="162" abs_x="628" abs_y="248">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parentEditBkg" relativePoint="center"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        ##用于保存字段
+                        <FontString name="$parentTextHold" fonttype="BlackFont26" hidden="true">
+                            <Color r="55" g="54" b="49"/>
+                        </FontString>
+                        --用于按下回车的时候备份保存的字段
+                        <FontString name="$parentTextHoldBackup" fonttype="BlackFont26" hidden="true">
+                            <Color r="55" g="54" b="49"/>
+                        </FontString>
+                        <FontString name="$parentDefault" fonttype="BlackFont26" autowrap="true" text="$10646"
+                            abs_x="628" abs_y="52">
+                            <Color r="150" g="161" b="157"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <textcolor r="61" g="69" b="70"/>
+                <FontString name="$parentFont" fonttype="BlackFont26">
+                    <Color r="55" g="54" b="49"/>
+                </FontString>
+                <Scripts>
+                    <OnFocusLost>GameSignEditFrameEdit_OnFocusLost();</OnFocusLost>
+                    <OnFocusGained>GameSignEditFrameEdit_OnFocusGained();</OnFocusGained>
+                    <OnEnterPressed>GameSignEditFrameEdit_OnEnterPressed();</OnEnterPressed>
+                    <OnTextSet>GameSignEditFrameEdit_onTextChage();</OnTextSet>
+                </Scripts>
+            </SafeMultiEditBox>
+
+            ##翻译按钮
+            <Button name="$parentTranslateBtn" inherits="TranslateBtnTemplate" hidden="false">
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentEditBkg"
+                            relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-10" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            ##保存
+            <Button name="$parentSaveBtn" inherits="TemplateBtn2">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="0" y="-12"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" fonttype="BlackFont24" justifyH="center" justifyV="middle"
+                                    lineInterval="2" text="$3934" abs_x="160"
+                                    abs_y="24">
+                            <Color r="51" g="55" b="55"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GameSignEditFrameSaveBtn_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnLoad>GameSignEditFrame_OnLoad();</OnLoad>
+            <OnShow>GameSignEditFrame_OnShow();</OnShow>
+            <OnHide>GameSignEditFrame_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+</Ui>

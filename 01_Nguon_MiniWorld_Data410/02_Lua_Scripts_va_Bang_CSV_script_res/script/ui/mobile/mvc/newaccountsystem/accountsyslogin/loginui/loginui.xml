@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysConfig.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysDataManager.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysInterface.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysLogin/LoginUI/LoginUIModel.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysLogin/LoginUI/LoginUIView.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysLogin/LoginUI/LoginUICtrl.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysInterfaceExt.lua"/>
+	<!--文字问题列表模板1-->
+	<Button name="QuestionTemplateNew1" virtual="true" abs_x="265" abs_y="51">
+		<Anchors>
+			<Anchor point="top" relativePoint="top" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="20" y="38"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentContent" lineInterval="2" fonttype="BlackFont22"  justifyV="middle" text="howareyou" >
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="243" y="49"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentLine">
+							<Offset>
+								<AbsDimension x="16" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg36" abs_x="265" abs_y="2">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):QuestionItemSelect_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	<Frame name="LoginUI" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="6003">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- <Texture name="$parentTitleBkg" inherits="TemplateBigBkg2" abs_x="580" abs_y="56">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="164"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture> -->
+				<Texture name="$parentOutBkg" inherits="TemplateBigBkg2" abs_x="584" abs_y="328">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 显示框背景图 -->
+				<Texture name="$parentcontentBkg" inherits="TemplateBigBkg29" abs_x="547" abs_y="249">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentOutBkg">
+							<Offset>
+								<AbsDimension x="0" y="19"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 登录栏标题 -->
+				<FontString name="$parentLoginTitle" justifyH="center" fonttype="BlackFont20" lineInterval="2"  text="$35571" >
+					<Color r="77" g="112" b="117"/>
+					<Size>
+						<AbsDimension x="140" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentOutBkg">
+							<Offset>
+								<AbsDimension x="53" y="290"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="580" abs_y="56">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentOutBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- ##标题栏背景:height:61
+						<Texture name="$parentBkg" inherits="TemplateBigBkg4">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="48"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="303" abs_y="48" DrawType="center">
+							<Center>
+								<Left offsetX="0" offsetY="0" w="150" h="48" />
+								<Center offsetX="150" offsetY="0" w="3" h="48" />
+								<Right offsetX="153" offsetY="0" w="150" h="48" />
+							</Center>
+						</Texture>
+						<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="48">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent" />
+							</Anchors>
+						</Texture> -->
+						<Texture name="$parentBkgHelp" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" UVType="turn180" abs_x="68" abs_y="56"/>
+						##标题名
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont38" lineInterval="2" fontStyle="border" text="$35553"  >
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="250" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="70" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##返回按钮
+			<Button name="$parentReturnBtn" inherits="TemplateYelllowBackBtn">				
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentTitleFrame" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="5" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):ReturnBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentContent">
+				<Size>
+					<AbsDimension x="547" y="249"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentcontentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentMiniEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="36"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPasswordEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="97"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 问题BG -->
+						<Texture name="$parentQuestionBkgOut" inherits="TemplateBkg8" hidden = "true">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentMiniEditBkg">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--密码 隐藏/显示 切换按钮-->
+					<Button name="$parentPassWordCoderBtn" inherits="TemplateEditBoxCoderBtn" abs_x="46" abs_y="46">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentPasswordEditBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):PassWordCoderBtn_OnClick();</OnClick>
+							<OnShow>GetInst("UIManager"):GetCtrl("LoginUI"):PassWordCoderBtn_OnShow();</OnShow>
+						</Scripts>
+					</Button>
+					<!-- 迷你号输入框 -->
+					<EditBox name="$parentMiniEdit" letters="10" multiLine="false" editMethod="527" editimetype="1">
+						<Size>
+							<AbsDimension x="180" y="46" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentMiniEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-23" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$145" textcolor="FFB9B9B9"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnEnterPressed();</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<!-- 邮箱输入框 -->
+					<EditBox name="$parentMiniOrEmailEdit" letters="60" multiLine="false" editMethod="527" hidden="true">
+						<Size>
+							<AbsDimension x="220" y="46" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentMiniEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$55528" textcolor="FFB9B9B9"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnEnterPressed();</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<!-- 密码输入框 -->
+					<EditBox name="$parentPasswordEdit" letters="12" multiLine="false" editMethod="7" password="true">
+						<Size>
+							<AbsDimension x="200" y="29" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentPasswordEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-13" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22"  justifyH="left" justifyV="middle">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$3073" textcolor="FFB9B9B9"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):PasswordEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):PasswordEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<!-- 忘记密码 -->
+					<RichText name="$parentForgetPwd" lang_ver="en" fonttype="BlackFont20" ineInterval="2" multiLine="false" autowrap="true" text="" input_transparent="false" justifyH="left" >
+						<ShadowColor r="239" g="45" b="45"/>
+						<LinkColor r="239" g="45" b="45"/>
+						<Size>
+							<AbsDimension x="135" y="45"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentPasswordEditBkg">
+								<Offset>
+									<AbsDimension x="17" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):ForgetPwd_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+					<RichText name="$parentForgetPwd" fonttype="BlackFont20" ineInterval="2" multiLine="false" autowrap="true" text="" input_transparent="false" justifyH="left" >
+						<ShadowColor r="239" g="45" b="45"/>
+						<LinkColor r="239" g="45" b="45"/>
+						<Size>
+							<AbsDimension x="135" y="45"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentPasswordEditBkg">
+								<Offset>
+									<AbsDimension x="17" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):ForgetPwd_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+					<Button name="$parentLoginBtn">
+						<!-- 登录按钮 -->
+						<Size>
+							<AbsDimension x="266" y="50" />
+						</Size>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg23"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23">
+							<Size>
+								<RelDimension x="0.95" y="0.9"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Anchors>
+							<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="-37"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" justifyV="center" lineInterval="2" text="$3074">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="250" y="50"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):LoginBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentTextPwdContent" hidden = "true">
+				<Size>
+					<AbsDimension x="547" y="249"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentcontentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentMiniEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 问题BG -->
+						<Texture name="$parentQuestionBkgOut" inherits="TemplateBkg8" hidden = "true">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentMiniEditBkg">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPasswordEditBkg" inherits="TemplateBkg8">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentQuestionBkgOut">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--密码 隐藏/显示 切换按钮-->
+					<Button name="$parentPassWordCoderBtn" inherits="TemplateEditBoxCoderBtn" abs_x="46" abs_y="46">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentPasswordEditBkg" relativePoint="right">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):PassWordCoderBtn_OnClick();</OnClick>
+							<OnShow>GetInst("UIManager"):GetCtrl("LoginUI"):PassWordCoderBtn_OnShow();</OnShow>
+						</Scripts>
+					</Button>
+					<!-- 迷你号输入框 -->
+					<EditBox name="$parentMiniEdit" letters="10" multiLine="false" editMethod="2" editimetype="1">
+						<Size>
+							<AbsDimension x="180" y="46" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentMiniEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-23" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$145" textcolor="FFB9B9B9"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnEnterPressed();</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<!-- 邮箱输入框 -->
+					<EditBox name="$parentMiniOrEmailEdit" letters="60" multiLine="false" editMethod="527" hidden="true">
+						<Size>
+							<AbsDimension x="180" y="46" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentMiniEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-23" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$50589" textcolor="FFB9B9B9"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnEnterPressed();</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):MiniEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<!-- 密码输入框 -->
+					<EditBox name="$parentPasswordEdit" letters="15" multiLine="false" password="true">
+						<Size>
+							<AbsDimension x="200" y="29" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentPasswordEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension x="-10" y="4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont22"  justifyH="left">
+							<Color r="255" g="255" b="255"/>
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont22" text="$3075" textcolor="FFB9B9B9"/>
+						<Scripts>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):PasswordEdit_OnEnterPressed()</OnEnterPressed>
+							<OnTabPressed platform="pc">GetInst("UIManager"):GetCtrl("LoginUI"):PasswordEdit_OnTabPressed();</OnTabPressed>
+						</Scripts>
+					</EditBox>
+					<!-- 忘记密码 -->
+					<RichText name="$parentForgetPwd" lang_ver="en" fonttype="BlackFont20" multiLine="false" autoextend="false" text="" input_transparent="false" justifyH="left" >
+						<ShadowColor r="239" g="45" b="45"/>
+						<LinkColor r="239" g="45" b="45"/>
+						<Size>
+							<AbsDimension x="135" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentPasswordEditBkg">
+								<Offset>
+									<AbsDimension x="17" y="4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):ForgetPwd_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+					<RichText name="$parentForgetPwd" fonttype="BlackFont20" multiLine="false" autoextend="false" text="" input_transparent="false" justifyH="left" >
+						<ShadowColor r="239" g="45" b="45"/>
+						<LinkColor r="239" g="45" b="45"/>
+						<Size>
+							<AbsDimension x="135" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentPasswordEditBkg">
+								<Offset>
+									<AbsDimension x="17" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):ForgetPwd_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+					<Button name="$parentLoginBtn">
+						<!-- 登录按钮 -->
+						<Size>
+							<AbsDimension x="266" y="50" />
+						</Size>
+						<NormalTexture name="$parentNormal"  inherits="TemplateBkg23"/>
+						<PushedTexture name="$parentPushedBG"  inherits="TemplateBkg23">
+							<Size>
+								<RelDimension x="0.95" y="0.9"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentPasswordEditBkg" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" lineInterval="2" text="$3074">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="48" y="23"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):LoginBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--文字问题-->
+					<Button name="$parentQuestion" abs_x="266" abs_y="46" framelevel="6500">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentQuestionBkgOut">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentListBkg" inherits="TemplateBkg8" abs_x="266" abs_y="348" hidden="true">
+									<Anchors>
+										<Anchor point="top" relativeTo="$parentBkg" relativePoint="top">
+											<offset>
+												<AbsDimension x="0" y="5"/>
+											</offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkg" inherits="TemplateBkg8">
+									<Size>
+										<AbsDimension x="266" y="46"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentContent" fonttype="BlackFont22" justifyV="middle" justifyH="left" text="$9016" abs_x="243" abs_y="49" id="0">
+									<Color r="185" g="185" b="185"/>
+									<Anchors>
+										<Anchor point="top" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="11" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentList" hidden="true" >
+								<Size>
+									<AbsDimension x="261" y="353"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativeTo="$parentListBkg" relativePoint="top">
+										<offset>
+											<AbsDimension x="0" y="0"/>
+										</offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Button name="$parentQuestion1" inherits="QuestionTemplateNew1" id="1"/>						
+									<Button name="$parentQuestion2" inherits="QuestionTemplateNew1" id="2"/>
+									<Button name="$parentQuestion3" inherits="QuestionTemplateNew1" id="3"/>
+									<Button name="$parentQuestion4" inherits="QuestionTemplateNew1" id="4"/>
+									<Button name="$parentQuestion5" inherits="QuestionTemplateNew1" id="5"/>
+									<Button name="$parentQuestion6" inherits="QuestionTemplateNew1" id="6"/>
+								</Frames>
+								
+							</Frame>
+							<Button name="$parentDropDown"> <!-- 下拉按钮 -->
+								<Size>
+									<AbsDimension x="46" y="46"/>
+								</Size>
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown">
+									<Size>
+										<AbsDimension x="20" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</NormalTexture>
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+									<Size>
+										<AbsDimension x="15" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBackGround" inherits="TemplateBkg28"/>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):QuestionDropDown_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Button>
+				</Frames>
+			</Frame>
+			<!-- 数字密码登录 -->
+			<Button name="$parentNumberPwdLogin">
+				<Size>
+					<AbsDimension x="41" y="44"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentOutBkg">
+						<Offset>
+							<AbsDimension x="210" y="-14"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parenticonqa" file="ui/mobile/texture2/common_icon.xml" uvname="icon_lock" abs_x="20" abs_y="27">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSelectIcon" file="ui/mobile/texture0/outgame.xml" uvname="bjjm_anniu01" abs_x="23" abs_y="24">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="22" y="25" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):NumberPwdLogin_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 文字密码登录 -->
+			<Button name="$parentTextPwdLogin">
+				<Size>
+					<AbsDimension x="41" y="44"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentNumberPwdLogin">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parenticonqa" file="ui/mobile/texture0/common_icon.xml" uvname="icon_qa" abs_x="30" abs_y="30">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSelectIcon" file="ui/mobile/texture0/outgame.xml" uvname="bjjm_anniu01" abs_x="23" abs_y="24">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="22" y="25" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):TextPwdLogin_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 微信登录 -->
+			<Button name="$parentWeChatLogin">
+				<Size>
+					<AbsDimension x="41" y="44"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentTextPwdLogin">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parenticonqa" file="ui/mobile/texture2/common_icon.xml" uvname="icon_wechat" abs_x="30" abs_y="30">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSelectIcon" file="ui/mobile/texture0/outgame.xml" uvname="bjjm_anniu01" abs_x="23" abs_y="24">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="22" y="25" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):WeChatLogin_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- QQ登录 -->
+			<Button name="$parentQQLogin">
+				<Size>
+					<AbsDimension x="41" y="44"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentWeChatLogin">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parenticonqa" file="ui/mobile/texture0/common_icon.xml" uvname="icon_qq_black" abs_x="22" abs_y="26">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSelectIcon" file="ui/mobile/texture0/outgame.xml" uvname="bjjm_anniu01" abs_x="23" abs_y="24">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="22" y="25" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):QQLogin_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- FaceBook登录 -->
+			<Button name="$parentFaceBookLogin">
+				<Size>
+					<AbsDimension x="41" y="44"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentQQLogin">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parenticonqa" file="ui/mobile/texture0/common_icon.xml" uvname="icon_facebook" abs_x="22" abs_y="26">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentSelectIcon" file="ui/mobile/texture0/outgame.xml" uvname="bjjm_anniu01" abs_x="23" abs_y="24">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="22" y="25" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray.png" rel_x="0.8" rel_y="0.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):FaceBookLogin_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+					<Size>
+						<AbsDimension x="40" y="50"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("LoginUI"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("LoginUI"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

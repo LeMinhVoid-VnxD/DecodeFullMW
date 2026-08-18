@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/createBoard/ResourceCenterCreateBoardModel.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/createBoard/ResourceCenterCreateBoardView.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/createBoard/ResourceCenterCreateBoardCtrl.lua"/>
+
+	##资源格子模板
+	<Frame name="ResourceCenterCreateBoardGridTemplate" inherits="ResourceGridTemplate" virtual="true" >
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" inherits="TemplateBigBkg18" hidden="true" abs_x="74" abs_y="74">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentState" file="ui/mobile/texture2/common_icon.xml" uvname="icon_minicanvas_white" abs_x="22" abs_y="22" hidden="true" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="4" y="4" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCreateBoard"):GridClicked();</OnClick>
+		</Scripts>
+	</Frame>
+
+	##资源中心移动文件
+	<Frame name="ResourceCenterCreateBoard" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="12" rel_x="1.0" rel_y="1.0" >
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBgMask" file="ui/white.png" color="80000000" stretchedge="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBg" inherits="TemplateBigBkg2" abs_x="822" abs_y="501" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMiddleBg" inherits="TemplateBigBkg5" abs_x="788" abs_y="291" >
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBg">
+							<Offset>
+								<AbsDimension x="0" y="-97"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTip" fonttype="BlackFont22" justifyH="left" justifyV="middle" text="$16156" abs_x="788" abs_y="24">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentMiddleBg">
+							<Offset>
+								<AbsDimension x="0" y="-36" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> 
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="2" y="0" />
+						</Offset>
+					</Anchor>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBg">
+						<Offset>
+							<AbsDimension x="-2" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCreateBoard"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			##资源列表
+			<ListViewFrame name="$parentResourceBox" slidingY="true" abs_x="788" abs_y="280" slideplane="$parentPlane" prefuncname="ResourceCenterCreateBoardResourceBox" >
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentMiddleBg" >
+						<Offset>
+							<AbsDimension y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="788" abs_y="291" />
+				</Frames>
+			</ListViewFrame>
+			##确认按钮
+			<Button name="$parentConfirmBtn" inherits="TemplateBtn13" text="$969" >
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBg" >
+						<Offset>
+							<AbsDimension x="0" y="-19" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCreateBoard"):ConfirmBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDetail/WorkSpaceMemberList/WorkSpaceMemberListModel.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDetail/WorkSpaceMemberList/WorkSpaceMemberListView.lua"/>
+	<Script file="ui/mobile/mvc/WorkSpace/WorkSpaceDetail/WorkSpaceMemberList/WorkSpaceMemberListCtrl.lua"/>
+    
+    <!-- 成员列表模版 -->
+    <Frame name="WorkSpaceMemberListTemplete" virtual="true" abs_x="568" abs_y="104">
+        <Layers>
+			<Layer level="BACKGROUND">
+                <!-- 背景 -->
+				<Texture name="$parentPkg" inherits="TemplateBigBkg6">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="6" y="3"/>
+                            </Offset>
+						</Anchor>
+                        <Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+                            <Offset>
+                                <AbsDimension x="-6" y="-3"/>
+                            </Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <!-- 头像 -->
+                <Texture name="$parentHeadBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head" abs_x="76" abs_y="76">
+                    <Anchors>
+                        <Anchor point="left" relativeTo="$parentPkg" relativePoint="left" >
+                            <Offset>
+                                <AbsDimension x="14" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="65" abs_y="65">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parentHeadBkg" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+                <!-- 迷你Id -->
+                <FontString name="$parentMemId" fonttype="BlackFont20" text="1000" abs_x="190" abs_y="20" justifyH="left" justifyV="middle">
+                    <Color r="77" g="112" b="117"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                            <Offset>
+                                <AbsDimension x="107" y="58"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <!-- 性别 -->
+                <Texture name="$parentSex" file="ui/mobile/texture2/common_icon.xml" uvname="icon_male.png" abs_x="22" abs_y="22" >
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg" >
+                            <Offset>
+                                <AbsDimension x="400" y="23"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <!-- 成员名 -->
+            <RichText name="$parentMemName" fonttype="BlackFont24" text="1000" abs_x="300" abs_y="25" justifyH="left" justifyV="middle">
+                <!-- <Color r="61" g="69" b="70"/> -->
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                        <Offset>
+                            <AbsDimension x="107" y="23"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </RichText>
+            <Button name="$parentDelBtn" inherits="t_btn_sy">
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parentPkg">
+                        <Offset>
+                            <AbsDimension x="-32" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceMemberList"):ClickDelBtn();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name = "$parentFrame" abs_x="100" abs_y="100">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parentHeadBkg" relativePoint="center" />
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <Texture name="$parentTex" file="ui/headframes/1.png" rel_x="1" rel_y="1">
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceMemberList"):headBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Frame name="$parentFlg" abs_x="40" abs_y="40" >
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPkg">
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer>
+                        <!-- 管理标签 -->
+                        <Texture name="$parentFlgBg" file="ui/mobile/texture0/playercenter.xml" uvname="label_map_top" abs_x="36" abs_y="28">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentFlg" file="ui/mobile/texture0/common_icon.xml" uvname="icon_notify" abs_x="15" abs_y="15">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Frame>
+        </Frames>
+    </Frame> 
+    ##工作室成员管理
+    <Frame name="WorkSpaceMemberList" parent="UIClient" hidden="true" frameStrata="MEDIUM" framelevel="3020">
+        <Anchors>
+			<Anchor point="topleft" relativePoint="topleft"/>
+			<Anchor point="bottomright" relativePoint="bottomright"/>
+		</Anchors>
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                ##白色底板
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1160" abs_y="689">
+                    <Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                ##透明图片
+                <Texture name="$parentBkg2" inherits="TemplateBigBkg7_flat">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="2" y="50"/>
+                            </Offset>
+            			</Anchor>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="-2" y="-0"/>
+                            </Offset>
+            			</Anchor>
+					</Anchors>
+				</Texture>
+                ##小界面蓝色方形底板
+                <Texture name="$parentBkg3" inherits="TemplateBkg26" abs_x="1105" abs_y="531">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg" >
+                            <Offset>
+                                <AbsDimension x="0" y="-24"/>
+                            </Offset>
+            			</Anchor>
+					</Anchors>
+				</Texture>
+                <Texture name="$parentMinTitleBg" inherits="TemplateBkg26" abs_x="1103" abs_y="43">
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parentBkg3" relativePoint="topleft" />
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentMinTitleTxt" fonttype="BlackFont24" text="$60022" abs_x="200" abs_y="26" justifyH="left" justifyV="middle">
+                    <Color r="77" g="112" b="117"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="left" relativeTo="$parentMinTitleBg">
+                            <Offset>
+                                <AbsDimension x="18" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+        <Frames>
+            <Frame name="$parentTitle">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="0" y="61"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        ##标题栏背景:height:61
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg4">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="2" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                                <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="-4" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgLeft" inherits="TemplateTitleLeftBkg" abs_x="303" abs_y="56">
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="56">
+                            <Anchors>
+                                <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg" />
+                            </Anchors>
+                        </Texture>
+                        ##标题名
+                        <FontString name="$parentName" fonttype="BlackFont36" justifyH="left" justifyV="middle" text="$60017" abs_x="260" abs_y="50">
+                            <Color r="255" g="135" b="27"/>
+                            <Anchors>
+                                <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="20" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    ##关闭按钮
+                    <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceMemberList"):CloseBtnClicked();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            <!-- 成员列表 -->
+            <ListViewFrame name="$parentMemberList" slidingY="true" slideplane="$parentPlane" prefuncname="WorkSpaceMemberListView" abs_x="580" abs_y="480">
+                <Anchors>
+                    <Anchor point="top" relativePoint="bottom" relativeTo="$parentMinTitleBg">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="580" abs_y="480"/>
+                </Frames>
+            </ListViewFrame>
+
+            <Button name="$parentInviteBtn" inherits="TemplateBtnMini_OKBtn">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-203" y="-567"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceMemberList"):ClickInviteBtn();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentCheckBtn" inherits="TemplateBtnMini_OKBtn">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-55" y="-567"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+                            <Size>
+                                <AbsDimension x="16" y="16"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="6" y="-9"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("WorkSpaceMemberList"):ClinkCheckBtn();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+	</Frame>
+</Ui>

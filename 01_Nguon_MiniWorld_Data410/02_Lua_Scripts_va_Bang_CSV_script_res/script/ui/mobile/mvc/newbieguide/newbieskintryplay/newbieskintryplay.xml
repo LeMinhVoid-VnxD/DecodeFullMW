@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ui>
+    <Script file="ui/mobile/mvc/NewbieGuide/NewbieSkinTryPlay/NewbieSkinTryPlayCtrl.lua" />
+    <Script file="ui/mobile/mvc/NewbieGuide/NewbieSkinTryPlay/NewbieSkinTryPlayView.lua" />
+    <Script file="ui/mobile/mvc/NewbieGuide/NewbieSkinTryPlay/NewbieSkinTryPlayModel.lua" />
+
+    ## 皮肤试玩角色模板
+	<Frame name="NewbieSkinPlayerTemplate" abs_x ="444" abs_y ="444" virtual="true">
+		<Layers>
+            <Layer level="BACKGROUND">
+                ## 底台 SetTexUV
+                <Texture name="$parentStageBkg" file="ui/mobile/texture0/noviceguide.xml" uvname="img_role_stage" abs_x ="196" abs_y ="60" >
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="-165"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+               
+                ## 遮罩
+                <Texture name="$parentStageMask" file="ui/mobile/texture0/noviceguide.xml" uvname="img_guide_character_projection" abs_x ="113" abs_y ="26">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="-25"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 3D人物
+				<ModelView name="$parentModelView" abs_x="370" abs_y ="360">
+					<Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="5"/>
+                            </Offset>
+                        </Anchor>
+					</Anchors>
+				</ModelView>
+
+                ## 光
+                <Texture name="$parentLightBkg" file="ui/mobile/texture0/noviceguide.xml" uvname="img_guide_light_blue" abs_x ="186" abs_y ="150">
+                    <Color a="204"/>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="6" y="-20"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 试玩文字
+                <FontString name="$parentPlayTip" fonttype="BlackFont22" justifyH="center" rel_x="1.0" abs_y ="12">
+                    <Color r="55" g="54" b="49"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentStageBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="47"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+
+        <Frames>
+            ## 旋转按钮
+            <Button name="$parentRotateView1" abs_x="370" abs_y ="300" >
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentModelView" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseDown>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):UsePlayerSkin_OnMouseDown();</OnMouseDown>
+                    <OnMouseMove>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):UsePlayerSkin_OnMouseMove();</OnMouseMove>
+                </Scripts>
+            </Button>
+
+            <Button name="$parentRotateView2" abs_x="370" abs_y ="300" hidden="true" >
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentModelView" >
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseDown>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):UsePlayerSkin_OnMouseDown();</OnMouseDown>
+                    <OnMouseMove>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):UsePlayerSkin_OnMouseMove();</OnMouseMove>
+                    <OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):UsePlayerSkin_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ## 使用
+            <Button name="$parentUseBt" hidden="true" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" inherits="TemplateBkg24" />
+                <PushedTexture name="$parentPushedBG" inherits="TemplateBkg24" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$186" rel_x="1.0" abs_y="24">
+                            <Color r="51" g="55" b="55"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):UsePlayerSkin_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ## 选择
+            <Button name="$parentSelBtn" inherits="TemplateBtn3" hidden="true" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$3044" rel_x="1.0" abs_y="24">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):SelectPlayerSkin_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+	</Frame>
+
+    ## 调查类型选择模板
+    <Button name="NewbieResearchTypeBtTemplate" inherits="TemplateBtn19" virtual="true" abs_x="128" abs_y="45">
+        <NormalTexture name="$parentNormal" inherits="TemplateBkg7"/>
+        <Layers>
+			<Layer level="overlay">
+                <Texture name="$parentChecked" inherits="TemplateBkg6" hidden="true" />
+                <FontString name="$parentText" fonttype="BlackFont20" abs_x ="100" abs_y ="20">
+                    <Color r="55" g="54" b="48"/>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+		
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):SelectResearchType_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+    ## 皮肤装扮风格模板
+    <Button name="NewbieSkinStyleTemplate" abs_x ="165" abs_y ="225" virtual="true">
+		<Layers>
+			<Layer level="overlay">
+                <Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/img_antiquity.png"/>
+                <Texture name="$parentSelBg" file="ui/mobile/texture0/bigtex/sel_yellow.png" hidden="true" abs_x ="184" abs_y ="244">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):SelectResearchStyle_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+    ## 皮肤试玩选择界面
+    <Frame name="NewbieSkinTryPlay" parent="UIClient" frameStrata="HIGH" framelevel="100" input_transparent="false" hidden="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/board_beginner_guidance.png" stretchedge="true"/>
+                ## 标题
+                <FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="$100705" abs_x="299" abs_y="29">
+                <Color r="55" g="54" b="49"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="65"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 选择界面
+            <Frame name="$parentSelectContainer" abs_x="844" abs_y="444" hidden="true">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Frames>
+                    ##  选择角色1
+                    <Frame name="$parentSelectRole1" inherits="NewbieSkinPlayerTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-339" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    
+                    ##  选择角色2
+                    <Frame name="$parentSelectRole2" inherits="NewbieSkinPlayerTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+
+                    ##  选择角色3
+                    <Frame name="$parentSelectRole3" inherits="NewbieSkinPlayerTemplate" id="3">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="339" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            ## 使用界面
+            <Frame name="$parentUseContainer" hidden="true" abs_x ="188" abs_y ="444">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Frames>
+                    ##  使用角色
+                    <Frame name="$parentUseRole" inherits="NewbieSkinPlayerTemplate">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                </Frames>
+            </Frame>
+
+            ## 关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" hidden="true" abs_x="36" abs_y="46">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-49" y="50"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):CloseSelectRoleView_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames> 
+    </Frame>
+
+    ## 调查问卷
+    <Frame name="NewbieSkinResearchView" parent="UIClient" frameStrata="HIGH" framelevel="101" input_transparent="false" hidden="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="B1000000" />
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="920" abs_y="422">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+                ## 标题
+                <FontString name="$parentTitle" fonttype="BlackFont30" justifyH="center" text="$100706" abs_x="328" abs_y="30">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="27"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                ## 页码
+                <FontString name="$parentPageDesc" fonttype="BlackFont20" justifyH="center" abs_x="30" abs_y ="16">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-28" y="-29"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+
+        <Frames>
+            ## 类型选择界面
+            <Frame name="$parentTypeContainer" hidden="true" abs_x="920" abs_y="422">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        ## 子标题
+                        <FontString name="$parentSubTitle" fonttype="BlackFont20" justifyH="left" text="$100707" abs_x="260" abs_y="20">
+                            <Color r="101" g="116" b="118"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="195" y="94"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Frames>
+                    <Button name="$parentTypeItem1" inherits="NewbieResearchTypeBtTemplate" id="1"/>
+                    <Button name="$parentTypeItem2" inherits="NewbieResearchTypeBtTemplate" id="2"/>
+                    <Button name="$parentTypeItem3" inherits="NewbieResearchTypeBtTemplate" id="3"/>
+                    <Button name="$parentTypeItem4" inherits="NewbieResearchTypeBtTemplate" id="4"/>
+                    <Button name="$parentTypeItem5" inherits="NewbieResearchTypeBtTemplate" id="5"/>
+                    <Button name="$parentTypeItem6" inherits="NewbieResearchTypeBtTemplate" id="6"/>
+                    <Button name="$parentTypeItem7" inherits="NewbieResearchTypeBtTemplate" id="7"/>
+                    <Button name="$parentTypeItem8" inherits="NewbieResearchTypeBtTemplate" id="8"/>
+                    <Button name="$parentTypeItem9" inherits="NewbieResearchTypeBtTemplate" id="9"/>
+                    <Button name="$parentTypeItem10" inherits="NewbieResearchTypeBtTemplate" id="10"/>
+                    <Button name="$parentTypeItem11" inherits="NewbieResearchTypeBtTemplate" id="11"/>
+                    <Button name="$parentTypeItem12" inherits="NewbieResearchTypeBtTemplate" id="12"/>
+                </Frames>
+            </Frame>
+
+            ## 风格选择界面
+            <Frame name="$parentStypeContainer" hidden="true" abs_x="920" abs_y="422">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Frames>
+                    <Button name="$parentStyleBt1" inherits="NewbieSkinStyleTemplate" id="1">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-272" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentStyleBt2" inherits="NewbieSkinStyleTemplate" id="2">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-91" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentStyleBt3" inherits="NewbieSkinStyleTemplate" id="3">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="91" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentStyleBt4" inherits="NewbieSkinStyleTemplate" id="4">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="272" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            ## 男女选择界面
+            <Frame name="$parentSexSelectContainer" hidden="true" abs_x="920" abs_y="422">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Frames>
+                    <Button name="$parentSexBt1" inherits="NewbieSkinStyleTemplate" id="11">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-90" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                    <Button name="$parentSexBt2" inherits="NewbieSkinStyleTemplate" id="12">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-90" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Button>
+                </Frames>
+            </Frame>
+
+            ## 返回按钮
+            <Button name="$parentBack" hidden="true" abs_x="55" abs_y="20">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="27" y="34" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentPic" file="ui/mobile/texture0/noviceguide.xml" uvname="btn_guide_skip" abs_x="18" abs_y="18" >
+                            <Angle value="180"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+                        <FontString name="$parentName1" fonttype="BlackFont20" justifyH="center" text="$177" abs_x="39" abs_y="20">
+							<Color r="10" g="170" b="26"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPic">
+									<Offset>
+										<AbsDimension x="2" y="4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):SelectResearchBack_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+            ## 下一步/完成
+            <Button name="$parentNextBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="0" y="-30" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3772" abs_x ="71" abs_y ="23">
+                            <Color r="55" g="54" b="51"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>						
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("NewbieSkinTryPlay"):SelectResearchNext_OnClick();</OnClick>
+                </Scripts>
+            </Button>           
+
+        </Frames>  
+    </Frame>
+</Ui>

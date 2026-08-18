@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/homeland/shop/homelandshopdunhuang/HomelandShopDunHuangModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/shop/homelandshopdunhuang/HomelandShopDunHuangView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/shop/homelandshopdunhuang/HomelandShopDunHuangCtrl.lua"/>
+
+	<Button name="HomelandShopDunHuangBuyBtnTemplate" virtual="true" abs_x="215" abs_y="81">
+		<Anchors>
+			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="0" y="-56"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				##按钮名称
+				<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" text="" abs_x="140" abs_y="27">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="14"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##货币的icon
+				<Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="22" abs_y="23" hidden="false">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="76" y="-16" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##货币的数量
+				<FontString name="$parentPriceNum" fonttype="BlackFont20" justifyH="left" text="1000" abs_x="92" abs_y="16">
+					<Color r="55" g="54" b="51"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+							<Offset>
+								<AbsDimension x="2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##折扣背景
+				<Texture name="$parentDiscountBkg" file="ui/mobile/texture2/common.xml" uvname="label_information_red.png" UVType="turn180" abs_x="71" abs_y="33" hidden="false">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="-4" y="-11" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##折扣数量
+				<FontString name="$parentDiscountNum" fonttype="BlackFont18" justifyH="left" text="" abs_x="28" abs_y="17" hidden="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentDiscountBkg">
+							<Offset>
+								<AbsDimension x="0" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg57" />
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg57" rel_x="0.9" rel_y="0.9">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandShopDunHuang"):BuyBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+	<Frame name="HomelandShopDunHuangItemTemplate" virtual="true" click_threshold="10" abs_x="252" abs_y="137">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##图标
+				<Texture name="$parentIcon" alphamode="alphablend" abs_x="240" abs_y="125">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##选中按钮
+				<Texture name="$parentCheck" inherits="TemplateBigBkg13" hidden="true" abs_x="252" abs_y="137">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##标签背景
+				<Texture name="$parentTag" file="ui/mobile/texture2/shop.xml" uvname="label_shop_hot.png" hidden="true">
+					<Size>
+						<AbsDimension x="88" y="31"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="2" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##标签字
+				<FontString name="$parentTagName" fonttype="BlackFont18" lineInterval="1" text="" justifyH="center" hidden="true">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="70" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTag">
+							<Offset>
+								<AbsDimension x="-2" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandShopDunHuang"):SelectItemBtn_OnClicked()</OnClick>
+		</Scripts>
+	</Frame>
+
+	<Frame name="HomelandShopDunHuang" parent="UIClient" frameStrata="MEDIUM" abs_x = "1104" abs_y = "659" framelevel="1011">
+        <Anchors>
+            <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="179" y="58"/>
+                </Offset>
+            </Anchor>
+            <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" stretchedge="true" />
+				##分割线
+				<Texture name="$parentline" inherits="TemplateBkg20_V" abs_x="2" abs_y="622">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentContent">
+							<Offset>
+								<AbsDimension x="8" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##箭头
+				<Texture name="$parentArrow" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" abs_x="15" abs_y="26">
+					<Anchors>
+						<Anchor point="right" relativePoint="left" relativeTo="$parentline">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentContent" abs_x="781" abs_y="659">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="-160" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##内容背景
+						<Texture name="$parentBkg" inherits="TemplateBkg22" abs_x="751" abs_y="527">
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="15" y="-115" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##顶部信息背景
+						<Texture name="$parentTopBkg" inherits="TemplateBkg25" abs_x="747" abs_y="60">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="-2" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##名称
+						<FontString name="$parentName" fonttype="BlackFont26" justifyH="center" justifyV="middle" text="" abs_x="400" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTopBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##描述
+						<FontString name="$parentTime" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="" abs_x="500" abs_y="20" hidden="true">
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentTopBkg">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##图片背景
+						<Texture name="$parentIconBkg" inherits="TemplateBkg12" abs_x="700" abs_y="350">
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentTopBkg">
+									<Offset>
+										<AbsDimension x="0" y="45" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##图标
+						<Texture name="$parentIcon" alphamode="alphablend" abs_x="688" abs_y="338">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##底部信息背景
+						<Texture name="$parentBottomBkg" inherits="TemplateBkg29" abs_x="688" abs_y="40">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIconBkg">
+									<Offset>
+										<AbsDimension x="0" y="-6" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##描述
+						<FontString name="$parentBottomInfo" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="" abs_x="500" abs_y="20">
+							<Color r="55" g="54" b="50"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBottomBkg">
+									<Offset>
+										<AbsDimension x="0" y="1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<RichText name="$parentTips" lineInterval="2" multiLine="false" fonttype="BlackFont22" text="" abs_x="500" abs_y="24">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="63" y="-27"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					<Button name="$parentHelpBtn" inherits="TemplateBtn32">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentTips" >
+								<Offset>
+									<AbsDimension x="-5" y="-4"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandShopDunHuang"):HelpBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					
+					<Button name="$parentBuyBtn1" inherits="HomelandShopDunHuangBuyBtnTemplate" hidden="false" id="1">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="15" y="-24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentBuyBtn2" inherits="HomelandShopDunHuangBuyBtnTemplate" hidden="false" id="2">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="283" y="-24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentBuyBtn3" inherits="HomelandShopDunHuangBuyBtnTemplate" hidden="false" id="3">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="551" y="-24"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+
+					##详情
+					<Frame name="$parentDetailInfo" abs_x="320" abs_y="353" hidden="true">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentHelpBtn">
+								<Offset>
+									<AbsDimension x="18" y="16" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">						
+								<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="320" abs_y="353" DrawType="ninesquare">
+									<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkg2" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" abs_x="298" abs_y="290" DrawType="ninesquare">
+									<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-11" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentLine" inherits="TexTemplate_brown_fengexian" abs_x="270" abs_y="2">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBkg2">
+											<Offset>
+												<AbsDimension x="0" y="3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>	
+								<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" UVType="turn180" abs_x="10" abs_y="17" >
+									<Anchors>
+										<Anchor point="bottomright" relativePoint="bottomleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="-22"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" text="$41072" abs_x="120" abs_y="20" autowrap="true">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="24" y="16" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle2" fonttype="BlackFont18" justifyH="left" text="$41482" abs_x="200" abs_y="20" autowrap="false">
+									<Color r="224" g="220" b="202"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+											<Offset>
+												<AbsDimension x="15" y="158" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTips1" lang_ver="ptb" fonttype="BlackFont15" lineInterval="4" justifyH="left" text="$41139" abs_x="268" abs_y="114" autowrap="true">
+									<Color r="224" g="220" b="202"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+											<Offset>
+												<AbsDimension x="15" y="14" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTips1" fonttype="BlackFont18" lineInterval="4" justifyH="left" text="$41139" abs_x="268" abs_y="114" autowrap="true">
+									<Color r="224" g="220" b="202"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg2">
+											<Offset>
+												<AbsDimension x="15" y="14" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--传世-->
+								<FontString name="$parentTips2" fonttype="BlackFont18" justifyH="left" text="$41008" abs_x="268" abs_y="20" autowrap="false">
+									<Color r="250" g="122" b="15"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle2">
+											<Offset>
+												<AbsDimension x="0" y="5" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--珍贵-->
+								<FontString name="$parentTips3" fonttype="BlackFont18" justifyH="left" text="$41007" abs_x="268" abs_y="20" autowrap="false">
+									<Color r="218" g="111" b="255"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTips2">
+											<Offset>
+												<AbsDimension x="0" y="5" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--稀有-->
+								<FontString name="$parentTips4" fonttype="BlackFont18" justifyH="left" text="$41006" abs_x="268" abs_y="20" autowrap="false">
+									<Color r="10" g="175" b="255"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTips3">
+											<Offset>
+												<AbsDimension x="0" y="5" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<!--普通-->
+								<FontString name="$parentTips5" fonttype="BlackFont18" justifyH="left" text="$41005" abs_x="268" abs_y="20" autowrap="false">
+									<Color r="224" g="220" b="202"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTips4">
+											<Offset>
+												<AbsDimension x="0" y="5" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentCheckAllTips" abs_x="320" abs_y="353" hidden="true">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="topright" relativeTo="$parentCheckAll">
+								<Offset>
+									<AbsDimension x="0" y="-5" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">						
+								<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="320" abs_y="353" DrawType="ninesquare">
+									<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkg2" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" abs_x="298" abs_y="290" DrawType="ninesquare">
+									<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-11" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" text="$41072" abs_x="220" abs_y="20" autowrap="true">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="24" y="16" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentText" lineInterval="2" multiLine="true" fonttype="BlackFont18" input_transparent="true" abs_x="272" abs_y="278">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentBkg2" >
+										<Offset>
+											<AbsDimension x="0" y="6"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+					</Frame>
+					<RichText name="$parentCheckAll" lineInterval="2" multiLine="false" fonttype="BlackFont24" text="" autoextend="false" input_transparent="true" style="underline" abs_x="160" abs_y="26">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-35" y="-27"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandShopDunHuang"):CheckAllBtn_OnClick()</OnClick>
+						</Scripts>
+					</RichText>
+				</Frames>
+			</Frame>
+			<Frame name="$parentlist" abs_x="292" abs_y="622">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentContent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="16" y="18" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##列表背景
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="292" abs_y="622">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<ListViewFrame name="HomelandShopDunHuangBox" slidingY="true" slideplane="$parentPlane" abs_x="252" abs_y="582">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="252" abs_y="582"/>
+						</Frames>
+					</ListViewFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+    </Frame>
+</Ui>

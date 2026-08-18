@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##灶台界面
+	<Script file="ui/mobile/mvc/homeland/archive/HomelandArchiveModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/archive/HomelandArchiveView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/archive/HomelandArchiveCtrl.lua"/>
+	<Script file="ui/mobile/mvc/homeland/archive/HomelandArchiveInterface.lua"/>
+
+	##左侧类型按钮模板
+	<Button name="ButtonLeftTabTemplate" virtual="true" abs_x="63" abs_y="56" hidden="true" level="40">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormalIcon" file="ui/mobile/texture2/homechest.xml" uvname="icon_resource_tab_g" abs_x="35" abs_y="35">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-12" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheckBkg" file="ui/mobile/texture2/common.xml" uvname="tab_book_left_h" abs_x="104" abs_y="83">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="6" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheckIcon" file="ui/mobile/texture2/homechest.xml" uvname="icon_resource_tab_o" abs_x="48" abs_y="48">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentCheckBkg">
+							<Offset>
+								<AbsDimension x="0" y="7"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCheckName" fonttype="BlackFont20" justifyH="center" justifyV="bottom" text="name" abs_x="100" abs_y="20">
+					<Color r="255" g="153" b="63"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentCheckBkg">
+							<Offset>
+								<AbsDimension x="0" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_book_left_n"  abs_x="63" abs_y="56"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="tab_book_left_n"  abs_x="63" abs_y="56">
+			<Anchors>
+				<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):TabType_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##类型的子类型按钮模板
+	<Button name="ButtonSubTypeTemplate" virtual="true" abs_x="109" abs_y="49">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentCheck" file="ui/mobile/texture2/common.xml" uvname="tab_bookc_line_h" hidden="true" abs_x="109" abs_y="9">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="分类">
+					<Color r="77" g="112" b="117" />
+					<Size>
+						<AbsDimension x="97" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveSubTypeList_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##图鉴列表图鉴模板
+	<Button name="HomelandArchiveItemTemplate" virtual="true" hidden="true" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="78" abs_y="78">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##选中图标
+				<Texture name="$parentCheck" inherits="TemplateBigBkg13" hidden="true" abs_x="78" abs_y="78">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##图鉴icon
+				<Texture name="$parentIcon" alphamode="alphablend" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<!-- <OnClick platform="mobile">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnMouseLeave_PC()</OnLeave> -->
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveList_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+
+	##图鉴列表cell模板(包含图鉴Item)
+	<Frame name="HomelandArchiveListCellTemplate1" virtual="true" hidden="true" abs_x="430" abs_y="78">
+		<Frames>
+			<Button name="$parentItem1" inherits="HomelandArchiveItemTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem2" inherits="HomelandArchiveItemTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentItem1">
+						<Offset>
+							<AbsDimension x="6" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem3" inherits="HomelandArchiveItemTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentItem2">
+						<Offset>
+							<AbsDimension x="6" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem4" inherits="HomelandArchiveItemTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentItem3">
+						<Offset>
+							<AbsDimension x="6" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentItem5" inherits="HomelandArchiveItemTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentItem4">
+						<Offset>
+							<AbsDimension x="6" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	##图鉴列表cell模板(包含标题)
+	<Frame name="HomelandArchiveListCellTemplate2" virtual="true" hidden="true" abs_x="415" abs_y="40">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_grade_title_v" abs_x="415" abs_y="26">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="left" justifyV="middle">
+					<Color r="61" g="69" b="70" />
+					<Size>
+						<AbsDimension x="300" y="26"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="6" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	##获取途径面板模板
+	<Frame name="HomelandArchiveAccessTemplate" virtual="true" abs_x="418" abs_y="86" hidden="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##图鉴获取途径背景
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="frame_sink" abs_x="418" abs_y="86" DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##图鉴获取途径标题背景
+				<Texture name="$parentTitleBkg" file="ui/mobile/texture2/common.xml" uvname="frame_title_board" abs_x="416" abs_y="36" DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="10" tileh="12"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##图鉴获取途径标题
+				<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$41576">
+					<Color r="61" g="69" b="70" />
+					<Size>
+						<AbsDimension x="300" y="100"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##图鉴获取途径
+				<FontString name="$parentTxt" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="">
+					<Color r="101" g="116" b="118" />
+					<Size>
+						<AbsDimension x="400" y="40"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<Texture name="ArchivePetSkillTemplate" virtual="true" hidden="true" file="ui/itemskillicons/100.png" abs_x="32" abs_y="32">
+	</Texture>
+
+	##下拉列表条目模板
+	<Button name="SortDropDownListItemTemplate" inherits="TemplateDownListItem" virtual="true">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):onSortListItemClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="HomelandArchive" parent="UIClient" frameStrata="MEDIUM" hidden="false" framelevel="10">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="C0000000" stretchedge="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentPanel" abs_x="978" abs_y="578">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="36"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				##背景
+				<Layers>
+					<Layer level="BACKGROUND">
+						##关闭按钮背景
+						<Texture name="$parentCloseBkg" file="ui/mobile/texture2/common.xml" uvname="img_book_mark" abs_x="52" abs_y="62">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-8" y="40"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentLeftBkg" file="ui/mobile/texture2/common.xml" uvname="img_book_l" abs_x="489" abs_y="578" DrawType="ninesquare_center">
+							<NineSquare ox="0" oy="0" tilew="72" tileh="31"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentRightBkg" file="ui/mobile/texture2/common.xml" uvname="img_book_r" abs_x="489" abs_y="578" DrawType="ninesquare_center">
+							<NineSquare ox="0" oy="0" tilew="51" tileh="31"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##标题栏
+					<Frame name="$parentTitle" abs_x="546" abs_y="58">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentText" fonttype="BlackFont26" justifyH="center" justifyV="middle" text="我的好友七个字的图鉴" abs_x="400" abs_y="30" hidden="true">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_board_tips_white" abs_x="546" abs_y="58" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentUnlock" file="ui/mobile/texture2/common_icon.xml" uvname="icon_lock_open_white">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="12" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTxtPercent" fonttype="BlackFont" justifyH="left" justifyV="middle" text="0%">
+									<Color r="255" g="255" b="255" />
+									<Size>
+										<AbsDimension x="350" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentUnlock">
+											<Offset>
+												<AbsDimension x="6" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentFlag" file="ui/mobile/texture2/common_icon.xml" uvname="icon_home_score_w" abs_x="34" abs_y="34">
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="-8" y="4"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTxtCollect" fonttype="BlackFont" justifyH="right" justifyV="middle">
+									<Color r="255" g="255" b="255" />
+									<Size>
+										<AbsDimension x="350" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="left" relativeTo="$parentFlag">
+											<Offset>
+												<AbsDimension x="-2" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentBarBkg" file="ui/mobile/texture2/common.xml" uvname="img_board_bar" abs_x="523" abs_y="12" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="-12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<ProgressBar name="$parentTotalBar" barname="TotalBarTex" orientation="HORIZONTAL" defaultValue="0">
+								<Size>
+									<AbsDimension x="521" y="10"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parentBarBkg">
+										<Offset>
+											<AbsDimension x="1" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="TotalBarTex" file="ui/mobile/texture2/common.xml" uvname="img_bar_orange" DrawType="center" >
+											<Center>
+												<Left			offsetX="0" offsetY="0" w="4" h="12"/>
+												<Center			offsetX="4" offsetY="0" w="4" h="12"	/>
+												<Right			offsetX="8" offsetY="0" w="4" h="12" />
+											</Center>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+									</Layer>
+								</Layers>
+							</ProgressBar>
+						</Frames>
+					</Frame>
+					##关闭按钮
+					<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn" framelevel="30">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentCloseBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):HomelandArchiveCloseBtn_OnClick()</OnClick>
+						</Scripts>
+					</Frame>
+					##面板内容
+					<Frame name="$parentContent" abs_x="978" abs_y="578">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<AbsDimension x="0" y="0"/>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								##图鉴列表背景
+								<Texture name="$parentArchiveListBkg" inherits="TemplateBkg30" abs_x="438" abs_y="469">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="39" y="79"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##列表分割线
+								<Texture name="$parentArchiveListLine" file="ui/mobile/texture2/common.xml" uvname="frame_commend_line" abs_x="438" abs_y="2">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentArchiveListBkg">
+											<Offset>
+												<AbsDimension x="0" y="46"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							##资源类型右侧面板
+							<Frame name="$parentResourceView" hidden="true" abs_x="538" abs_y="578">
+								<Layers>
+									<Layer level="BACKGROUND">
+										##图鉴Icon背景
+										<Texture name="$parentItemIconBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="92" abs_y="92" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="48"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴Icon
+										<Texture name="$parentItemIcon" alphamode="alphablend" abs_x="82" abs_y="82">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴名称
+										<FontString name="$parentItemName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="图鉴名称">
+											<Color r="61" g="69" b="70" />
+											<Size>
+												<AbsDimension x="300" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topright" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="9" y="5"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##图鉴类型
+										<FontString name="$parentItemType" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="类型:资源">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="300" y="18"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemName">
+													<Offset>
+														<AbsDimension x="1" y="13"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##图鉴价格标题
+										<FontString name="$parentItemPriceTitle" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="$3524">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="100" y="18"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemType">
+													<Offset>
+														<AbsDimension x="0" y="13"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##图鉴价格货币图标
+										<Texture name="$parentItemPriceMoney" file="ui/mobile/texture2/common_icon.xml" uvname="icon_bean" abs_x="22" abs_y="23">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemPriceTitle">
+													<Offset>
+														<AbsDimension x="11" y="-3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴价格
+										<FontString name="$parentItemPrice" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="0">
+											<Color r="61" g="69" b="70" />
+											<Size>
+												<AbsDimension x="200" y="18"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemPriceMoney">
+													<Offset>
+														<AbsDimension x="6" y="3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##右侧分割线
+										<Texture name="$parentCutLine" file="ui/mobile/texture2/common.xml" uvname="img_line_drak" abs_x="418" abs_y="1" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="2" tileh="1"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="152"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴介绍
+										<FontString name="$parentItemDesc" fonttype="BlackFont18" justifyH="left" justifyV="top" text="" autowrap="true">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="414" y="72"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentCutLine">
+													<Offset>
+														<AbsDimension x="2" y="16"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Frame name="$parentItemAccess" inherits="HomelandArchiveAccessTemplate">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentCutLine">
+												<Offset>
+													<AbsDimension x="0" y="100"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+							##宠物类型右侧面板
+							<Frame name="$parentPetView" hidden="true" abs_x="538" abs_y="578">
+								<Layers>
+									<Layer level="BACKGROUND">
+										##图鉴Icon普通品质背景
+										<Texture name="$parentItemNormalBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="418" abs_y="201" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="48"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴Icon背景
+										<Texture name="$parentItemIconBkg" file="ui/mobile/texture2/common.xml" uvname="board_tips_icon_v" abs_x="418" abs_y="201" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="51"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="48"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴Icon
+										<Texture name="$parentItemIcon" alphamode="alphablend" abs_x="109" abs_y="109">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="-15"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>										
+										##图鉴名称背景
+										<Texture name="$parentItemNameBkg" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50" abs_x="418" abs_y="30" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴名称
+										<FontString name="$parentItemName" fonttype="BlackFont18" justifyH="center" justifyV="middle">
+											<Color r="255" g="255" b="255" />
+											<Size>
+												<AbsDimension x="300" y="17"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentItemNameBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##宠物品质背景
+										<Texture name="$parentItemQualityBkg" file="ui/mobile/texture2/room.xml" uvname="label_map_purple" abs_x="72" abs_y="26">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="1" y="1"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##宠物品质
+										<FontString name="$parentItemQualityName" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="图鉴名称">
+											<Color r="255" g="255" b="255" />
+											<Size>
+												<AbsDimension x="300" y="17"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentItemQualityBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##宠物等级背景
+										<Texture name="$parentItemLevelBkg" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50" abs_x="28" abs_y="27">
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="-1" y="1"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##宠物等级
+										<Texture name="$parentItemLevel" file="ui/mobile/texture2/common_icon.xml" uvname="ico_lv1" abs_x="20" abs_y="20">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentItemLevelBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##右侧分割线
+										<Texture name="$parentCutLine" file="ui/mobile/texture2/common.xml" uvname="img_line_drak" abs_x="418" abs_y="1" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="2" tileh="1"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="12"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##宠物初始体力
+										<FontString name="$parentItemPower" fonttype="BlackFont20" justifyH="left" justifyV="middle">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentCutLine">
+													<Offset>
+														<AbsDimension x="1" y="15"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##宠物初始速度
+										<FontString name="$parentItemSpeed" fonttype="BlackFont20" justifyH="left" justifyV="middle">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentCutLine">
+													<Offset>
+														<AbsDimension x="209" y="15"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##宠物初始运气
+										<FontString name="$parentItemLuck" fonttype="BlackFont20" justifyH="left" justifyV="middle">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemPower">
+													<Offset>
+														<AbsDimension x="0" y="11"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##宠物天生特性
+										<FontString name="$parentItemFeature" fonttype="BlackFont20" justifyH="left" justifyV="middle">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="100" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemLuck">
+													<Offset>
+														<AbsDimension x="0" y="15"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##宠物特性图标
+										<Texture name="$parentItemFeatureIcon1" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeature">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon2" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon1">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon3" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon2">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon4" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon3">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon5" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon4">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon6" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon5">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon7" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon6">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon8" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon7">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon9" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon8">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentItemFeatureIcon10" inherits="ArchivePetSkillTemplate" abs_x="32" abs_y="32">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemFeatureIcon9">
+													<Offset>
+														<AbsDimension x="1" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Frame name="$parentItemAccess" inherits="HomelandArchiveAccessTemplate">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentCutLine">
+												<Offset>
+													<AbsDimension x="0" y="121"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Button name="$parentLastBtn" abs_x="28" abs_y="51" framelevel="30">
+										<Anchors>
+											<Anchor point="left" relativePoint="left" relativeTo="$parentItemIconBkg">
+												<Offset>
+													<AbsDimension x="0" y="-10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80"  abs_x="28" abs_y="51" UVType="mirroeu">
+										</NormalTexture>
+										<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80"  abs_x="28" abs_y="51" UVType="mirroeu">
+										</PushedTexture>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):CheckLast_OnClick()</OnClick>
+										</Scripts>
+									</Button>
+									<Button name="$parentNextBtn" abs_x="28" abs_y="51" framelevel="30">
+										<Anchors>
+											<Anchor point="right" relativePoint="right" relativeTo="$parentItemIconBkg">
+												<Offset>
+													<AbsDimension x="0" y="-10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80"  abs_x="28" abs_y="51">
+										</NormalTexture>
+										<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80"  abs_x="28" abs_y="51">
+										</PushedTexture>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):CheckNext_OnClick()</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							##家具右侧面板
+							<Frame name="$parentFurnitureView" hidden="true" abs_x="538" abs_y="578">
+								<Layers>
+									<Layer level="BACKGROUND">
+										##图鉴Icon普通品质背景
+										<Texture name="$parentItemNormalBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="418" abs_y="161" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="48"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴Icon背景
+										<Texture name="$parentItemIconBkg" file="ui/mobile/texture2/common.xml" uvname="board_tips_icon_v" abs_x="418" abs_y="161" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="10" tileh="51"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="48"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴Icon
+										<Texture name="$parentItemIcon" abs_x="109" abs_y="109">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="-15"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>										
+										##图鉴详情背景
+										<Texture name="$parentItemDetailsBkg" file="ui/mobile/texture2/common.xml" uvname="img_bd_black50" abs_x="416" abs_y="30" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##品牌图标(有品牌才显示)
+										<Texture name="$parentItemBrandIcon" hidden="true" abs_x="49" abs_y="49">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="515" y="48"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴积分图标
+										<Texture name="$parentItemScoreIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_home_score_w" abs_x="34" abs_y="34">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parentItemDetailsBkg">
+													<Offset>
+														<AbsDimension x="6" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴积分
+										<FontString name="$parentItemScore" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="">
+											<Color r="255" g="255" b="255" />
+											<Size>
+												<AbsDimension x="300" y="15"/>
+											</Size>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentItemScoreIcon">
+													<Offset>
+														<AbsDimension x="2" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##家具尺寸
+										<FontString name="$parentItemSize" fonttype="BlackFont18" justifyH="right" justifyV="middle" text="">
+											<Color r="255" g="255" b="255" />
+											<Size>
+												<AbsDimension x="50" y="15"/>
+											</Size>
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parentItemDetailsBkg">
+													<Offset>
+														<AbsDimension x="-10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##家具尺寸图标
+										<Texture name="$parentItemSizeIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_size_w" abs_x="27" abs_y="27">
+											<Anchors>
+												<Anchor point="right" relativePoint="left" relativeTo="$parentItemSize">
+													<Offset>
+														<AbsDimension x="6" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##家具名称
+										<FontString name="$parentItemName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="2" y="10"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##家具所属系列
+										<FontString name="$parentItemSeries" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="213" y="10"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##家具品质
+										<FontString name="$parentItemQuality" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemName">
+													<Offset>
+														<AbsDimension x="0" y="9"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##家具品牌文字
+										<FontString name="$parentItemBrandTxt" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="200" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentItemSeries">
+													<Offset>
+														<AbsDimension x="0" y="9"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										##右侧分割线
+										<Texture name="$parentCutLine" file="ui/mobile/texture2/common.xml" uvname="img_line_drak" abs_x="418" abs_y="1" DrawType="ninesquare_center">
+											<NineSquare ox="0" oy="0" tilew="2" tileh="1"/>
+											<Anchors>
+												<Anchor point="top" relativePoint="bottom" relativeTo="$parentItemIconBkg">
+													<Offset>
+														<AbsDimension x="0" y="68"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										##图鉴介绍
+										<FontString name="$parentItemDesc" fonttype="BlackFont18" justifyH="left" justifyV="top" text="" autowrap="true">
+											<Color r="101" g="116" b="118" />
+											<Size>
+												<AbsDimension x="414" y="72"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentCutLine">
+													<Offset>
+														<AbsDimension x="0" y="16"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Frame name="$parentItemAccess" inherits="HomelandArchiveAccessTemplate">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentCutLine">
+												<Offset>
+													<AbsDimension x="0" y="81"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+							##左侧类型按钮
+							<Button name="$parentTabType1" inherits="ButtonLeftTabTemplate" id="1">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="20" y="90"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTabType2" inherits="ButtonLeftTabTemplate" id="2">
+								<Anchors>
+									<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentTabType1">
+										<Offset>
+											<AbsDimension x="0" y="25"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTabType3" inherits="ButtonLeftTabTemplate" id="3">
+								<Anchors>
+									<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentTabType2">
+										<Offset>
+											<AbsDimension x="0" y="25"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTabType4" inherits="ButtonLeftTabTemplate" id="4">
+								<Anchors>
+									<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentTabType3">
+										<Offset>
+											<AbsDimension x="0" y="25"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTabType5" inherits="ButtonLeftTabTemplate" id="5">
+								<Anchors>
+									<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentTabType4">
+										<Offset>
+											<AbsDimension x="0" y="25"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<ProgressBar name="$parentPercentIcon1" barname="PercentBarTex1" orientation="VERTICAL" defaultValue="0">
+								<Size>
+									<AbsDimension x="48" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentTabType1CheckBkg">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="PercentBarTex1" file="ui/mobile/texture2/homechest.xml" uvname="icon_furniture_tab_o">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentCheckPercent" fonttype="BlackFont" justifyH="center" justifyV="middle" text="" abs_x="120" abs_y="13" lineInterval="2" fontStyle="shadow" shadowcolor="ff000000">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</ProgressBar>
+							<ProgressBar name="$parentPercentIcon2" barname="PercentBarTex2" orientation="VERTICAL" defaultValue="0">
+								<Size>
+									<AbsDimension x="48" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentTabType2CheckBkg">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="PercentBarTex2" file="ui/mobile/texture2/homechest.xml" uvname="icon_resource_tab_o">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentCheckPercent" fonttype="BlackFont" justifyH="center" justifyV="middle" text="" abs_x="120" abs_y="13" lineInterval="2" fontStyle="shadow" shadowcolor="ff000000">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</ProgressBar>
+							<ProgressBar name="$parentPercentIcon3" barname="PercentBarTex3" orientation="VERTICAL" defaultValue="0">
+								<Size>
+									<AbsDimension x="48" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentTabType3CheckBkg">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="PercentBarTex3" file="ui/mobile/texture2/homechest.xml" uvname="icon_resource_tab_o">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentCheckPercent" fonttype="BlackFont" justifyH="center" justifyV="middle" text="" abs_x="120" abs_y="13" lineInterval="2" fontStyle="shadow" shadowcolor="ff000000">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</ProgressBar>
+							<ProgressBar name="$parentPercentIcon4" barname="PercentBarTex4" orientation="VERTICAL" defaultValue="0">
+								<Size>
+									<AbsDimension x="48" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentTabType4CheckBkg">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="PercentBarTex4" file="ui/mobile/texture2/homechest.xml" uvname="icon_resource_tab_o">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentCheckPercent" fonttype="BlackFont" justifyH="center" justifyV="middle" text="" abs_x="120" abs_y="13" lineInterval="2" fontStyle="shadow" shadowcolor="ff000000">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</ProgressBar>
+							<ProgressBar name="$parentPercentIcon5" barname="PercentBarTex5" orientation="VERTICAL" defaultValue="0">
+								<Size>
+									<AbsDimension x="48" y="48"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentTabType5CheckBkg">
+										<Offset>
+											<AbsDimension x="0" y="7"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="ARTWORK">
+										<Texture name="PercentBarTex5" file="ui/mobile/texture2/homechest.xml" uvname="icon_resource_tab_o">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentCheckPercent" fonttype="BlackFont" justifyH="center" justifyV="middle" text="" abs_x="120" abs_y="13" lineInterval="2" fontStyle="shadow" shadowcolor="ff000000">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</ProgressBar>
+							##二级分类列表
+							<ListViewFrame name="HomelandArchiveSubTypeList" slidingX="true" slideplane="$parentPlane" abs_x="436" abs_y="49">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentArchiveListBkg">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" abs_x="438" abs_y="46">
+										<!-- <Scripts>
+											<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):OnClick()</OnMouseDown>
+										</Scripts> -->
+									</Frame>
+								</Frames>
+							</ListViewFrame>
+							##图鉴列表
+							<ListViewFrame name="HomelandArchiveList" slidingY="true" hidden="true" slideplane="$parentPlane" abs_x="430" abs_y="410">
+								<Anchors>
+									<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentArchiveListBkg">
+										<Offset>
+											<AbsDimension x="0" y="-5"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" abs_x="430" abs_y="410">
+										<!-- <Scripts>
+											<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandArchive"):OnClick()</OnMouseDown>
+										</Scripts> -->
+									</Frame>
+								</Frames>
+							</ListViewFrame>
+							#排序按钮
+							<Button name="$parentTypeSelect" abs_x="201" abs_y="30">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+										<Offset>
+											<AbsDimension x="39" y="39" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer>
+										<Texture name="$parentBkg" inherits="TemplateBkg8" />
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_whole_w" abs_x="19" abs_y="19">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="6" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<Texture name="$parentArrowIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" abs_x="20" abs_y="10">
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentName" fonttype="BlackFont20" justifyV="middle"  justifyH="left" text="$41001" abs_x="130" abs_y="20">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+													<Offset>
+														<AbsDimension x="7" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):TypeSelectOnClick()</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+			<Frame name="$parentDropDownList" hidden="true" framelevel="9000">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentView" inherits="TemplateBkg8">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="bottomleft" relativeTo="HomelandArchivePanelContentTypeSelect">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandArchive"):closeSortDropDownList();</OnClick>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

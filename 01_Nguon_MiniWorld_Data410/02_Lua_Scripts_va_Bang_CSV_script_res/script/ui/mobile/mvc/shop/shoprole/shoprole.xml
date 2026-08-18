@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/shop/shopRole/ShopRoleModel.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopRole/ShopRoleView.lua"/>
+	<Script file="ui/mobile/mvc/shop/shopRole/ShopRoleCtrl.lua"/>
+
+	## 角色
+	<Frame name="ShopRole" parent="UIClient" frameStrata="MEDIUM" hidden = "true" abs_x = "1100" abs_y = "600" framelevel="1011">
+		<Anchors>
+			<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="173" y="54" />
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+				<Offset>
+					<AbsDimension x="2" y="3" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##模型
+			<Frame name="$parentLeft" abs_x="500" abs_y="620">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="14" y="-17"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="$parentRight">
+						<Offset>
+							<AbsDimension x="-10" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" hidden="true" rel_x="1.0" rel_y="1.0" />
+						<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="208" abs_y="45">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-100"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<ModelView name="$parentRoleView" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="bottomleft" relativeTo="$parent" relativePoint="bottomleft">
+									<Offset>
+										<AbsDimension x="0" y="-50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+						<FontString name="$parentName" fonttype="BlackFont30" justifyH="center"  text="迅猛龙" abs_x="350" abs_y="34">
+							<Color r="73" g="70" b="63"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="23"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateView" rel_x="1.0" rel_y="1.0">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("ShopRole"):RoleRotateBtnMouseDown();</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("ShopRole"):RoleRotateBtnMouseMove();</OnMouseMove>
+						</Scripts>
+					</Button>
+					##购买
+					<Button name="$parentBuyBtn" inherits="TemplateBtnBigYellow">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<!-- <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$638" shadowcolor="ff411a07" abs_x="160" abs_y="25">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="12" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString> -->
+								<Texture name="$parentIcon" abs_x="42" abs_y="42">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="7" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$638" shadowcolor="ff411a07" abs_x="133" abs_y="25">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="7" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentCost" lineInterval="1" multiLine="false" fonttype="BlackFont18"  input_transparent="true" abs_x="105" abs_y="19">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+										<Offset>
+											<AbsDimension x="7" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleLeftBuyBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##激活特长
+					<Button name="$parentActivateBtn" inherits="TemplateBtnBigYellow" hidden="true">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBuyBtn">
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentEffect" file="ui/mobile/effect/roleicon_2.png" hidden="true" abs_x="185" abs_y="185">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-3" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" abs_x="42" abs_y="42">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="7" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!-- <FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="$8010" shadowcolor="ff411a07" abs_x="160" abs_y="25">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="12" y="7"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString> -->
+								<FontString name="$parentName" fonttype="BlackFont20" text="$8010" shadowcolor="ff411a07" abs_x="133" abs_y="25">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+											<Offset>
+												<AbsDimension x="7" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentCost" lineInterval="1" multiLine="false" fonttype="BlackFont18" input_transparent="true" abs_x="75" abs_y="19">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+										<Offset>
+											<AbsDimension x="7" y="10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleLeftActivateBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##分享
+					<Button name="$parentShareBtn" inherits="ShopShareBtnTemplate" hidden="true" >
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBuyBtn">
+								<Offset>
+									<AbsDimension x="50" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleBtnShared();</OnClick>
+						</Scripts>
+					</Button>
+					##提示
+					<Button name="$parentTipBtn" inherits="ShopTipBtnTemplate">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentBuyBtn">
+								<Offset>
+									<AbsDimension x="-54" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleLeftTipBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					##提示框
+					<Frame name="$parentTipFrame" rel_x="1.0" rel_y="1.0" hidden="true">
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg19" abs_x="391" abs_y="407" >
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="topleft" relativeTo="ShopRoleLeftTipBtn">
+											<Offset>
+												<AbsDimension x="-33" y="-13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17" >
+									<Angle value="90" />
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="50" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentBkg2" inherits="TemplateBigBkg20" hidden="false" abs_x="379" abs_y="295" >
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="-1" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentDesc" fonttype="BlackFont21" autowrap="true" lineInterval="15" justifyH="left" text="国家科学院的老教授为什么会出现在这片荒芜的?" abs_x="370" abs_y="80">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="10" y="20"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle" fonttype="BlackFont21" lineInterval="15" justifyH="center" text="$616" abs_x="200" abs_y="21" hidden="true">
+									<Color r="254" g="248" b="219"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="100"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentSkill1" lineInterval="5" multiLine="true" autoextend="true" fonttype="BlackFont21" input_transparent="true" abs_x="350" abs_y="220">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+										<Offset>
+											<AbsDimension x="13" y="121"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):ShopRoleLeftTipFrameClicked();</OnClick>
+						</Scripts>
+					</Frame>
+				</Frames>
+			</Frame>
+			##列表
+			<Frame name="$parentRight" abs_x="600" abs_y="620">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="0" y="16" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentChenDi" inherits="TemplateBigBkg5">
+							<Size>
+								<AbsDimension x="588" y="585" />
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="51"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- <Texture name="$parentTitleBkg" inherits="TemplateBkg26" abs_x="576" abs_y="36" >
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="center" text="$9058" abs_x="300" abs_y="24">
+							<Color r="73" g="70" b="63"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg">
+								</Anchor>
+							</Anchors>
+						</FontString> -->
+					</Layer>
+				</Layers> 
+				<Frames>
+					<Button name="$parentMountBtn" inherits="TemplateBtn4"  abs_x="160" abs_y="41" hidden="true" >
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" lineInterval="2" text="$215">
+									<Color r="55" g="54" b="49"/>
+									<Size>
+										<AbsDimension x="135" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<ModelView name="$parentParticle" />
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ShopRole"):MountTabBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRoleBtn" inherits="TemplateBtn5"  abs_x="160" abs_y="41" hidden="true" >
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topright" relativeTo="$parentMountBtn">
+								<Offset>
+									<AbsDimension x="15" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" lineInterval="2" text="$3127">
+									<Color r="55" g="54" b="49"/>
+									<Size>
+										<AbsDimension x="135" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Button>
+					<ListViewFrame name="$parentBoxListView" slidingY="true" slideplane="$parentPlane" abs_x="576" abs_y="570">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="576" abs_y="570">
+                                <Anchors>
+                                    <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                                        <Offset>
+                                            <AbsDimension x="0" y="0" />
+                                        </Offset>
+                                    </Anchor>
+                                </Anchors>
+                            </Frame>
+						</Frames>
+					</ListViewFrame>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

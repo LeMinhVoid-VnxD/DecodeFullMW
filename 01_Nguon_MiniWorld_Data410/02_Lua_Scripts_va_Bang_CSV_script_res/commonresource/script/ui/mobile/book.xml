@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/book.lua" />
+	<Frame name="BookFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2400">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			##书封面
+			<Frame name="$parentCover" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2400">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/book_fm.png">
+							<Size>
+								<AbsDimension x="584" y="669"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="5" y="-15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" justifyH="center" fonttype="BlackFont46" text="BookName">
+							<Color r="255" g="255" b="233"/>
+							<Size>
+								<AbsDimension x="400" y="48"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="13" y="138"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- <FontString name="$parentTitle2" justifyH="center" fonttype="BlackFont46" fontStyle="border" shadowcolor="fffde9" text="BookName" autowrap="true">
+							<Color r="255" g="255" b="233"/>
+							<Size>
+								<AbsDimension x="400" y="96"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="13" y="109"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString> -->
+						<FontString name="$parentAuthor" justifyH="center" fonttype="BlackFont30" text="author">
+							<Color r="255" g="255" b="233"/>
+							<Size>
+								<AbsDimension x="400" y="32"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle">
+									<Offset>
+										<AbsDimension x="0" y="65"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentOpenBtn" hidden="true">
+						<Size>
+							<AbsDimension x="93" y="93"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="-40"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentOpen" file="ui/mobile/texture2/bigtex/book_kakou.png" >
+									<Size>
+										<AbsDimension x="93" y="93"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentOpenTag" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="ljdt_jiantou02.png" >
+									<Size>
+										<AbsDimension x="28" y="45"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentOpen">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>BookCoverFrameOpenBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentBook">
+						<Size>
+							<AbsDimension x="584" y="669"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>BookCoverFrameOpenBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCloseBtn">
+						<Size>
+							<AbsDimension x="36" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+					<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" rel_x="0.95" rel_y="0.95">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</PushedTexture>
+						<Scripts>
+							<OnClick>BookFrameCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnShow>BookCoverFrame_OnShow();</OnShow>
+					<OnHide>BookCoverFrame_OnHide();</OnHide>
+					<OnClick>BookCoverFrame_OnClick();</OnClick>
+				</Scripts>
+			</Frame>
+			#书内容
+			<Frame name="$parentContent" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2400">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/book_ny.png">
+							<Size>
+								<AbsDimension x="618" y="704"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentPage" justifyH="center" fonttype="BlackFont24" text="$21683">
+							<Color r="136" g="96" b="72"/>
+							<Size>
+								<AbsDimension x="100" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="15" y="-50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentPageType1" hidden="true" >
+						<Size>
+							<AbsDimension x="510" y="620"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="16" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle1" justifyH="center" fonttype="BlackFont24" text="title" hidden="false">
+									<Color r="136" g="96" b="72"/>
+									<Size>
+										<AbsDimension x="480" y="50"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="20" y="50"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTitle2" justifyH="center" fonttype="BlackFont24" autowrap="true" text="title" hidden="true">
+									<Color r="136" g="96" b="72"/>
+									<Size>
+										<AbsDimension x="480" y="50"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="20" y="50"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLine" inherits="TemplateBkg20_H1" abs_x="510" abs_y="6">
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle1">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentAuthor" justifyH="right" fonttype="BlackFont18" text="author">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="480" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentLine">
+											<Offset>
+												<AbsDimension x="0" y="12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentContent" justifyH="left" fonttype="BlackFont20" lineInterval="8" autowrap="true" text="Content">
+									<Color r="136" g="96" b="72"/>
+									<Size>
+										<AbsDimension x="480" y="420"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentAuthor">
+											<Offset>
+												<AbsDimension x="0" y="30"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentPageType2" hidden="true" >
+						<Size>
+							<AbsDimension x="510" y="620"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="16" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentContent" justifyH="left" fonttype="BlackFont20" lineInterval="8" autowrap="true" text="Content">
+									<Color r="136" g="96" b="72"/>
+									<Size>
+										<AbsDimension x="480" y="620"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="30"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentPageType3" hidden="true" >
+						<Size>
+							<AbsDimension x="510" y="620"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="16" y="-15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentAuthor" justifyH="right" fonttype="BlackFont18" text="author">
+									<Color r="113" g="101" b="87"/>
+									<Size>
+										<AbsDimension x="480" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentContent" justifyH="left" fonttype="BlackFont20" lineInterval="8" autowrap="true" text="Content">
+									<Color r="136" g="96" b="72"/>
+									<Size>
+										<AbsDimension x="480" y="600"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentAuthor">
+											<Offset>
+												<AbsDimension x="0" y="30"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					
+					<!-- <Button name="$parentCloseUpBtn">
+						<Size>
+							<AbsDimension x="93" y="93"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="-40"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentOpen" file="ui/mobile/texture2/outgame2/uitex2.xml" uvname="book_kakou.png" >
+									<Size>
+										<AbsDimension x="93" y="93"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button> -->
+					<Button name="$parentLeftBtn1">
+						<Size>
+							<AbsDimension x="309" y="704"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>BookContentFrameLeftBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentLeftBtn2">
+						<Size>
+							<AbsDimension x="15" y="18"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="256" y="-55"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="img_arrow_arrowhead_n">
+							<Angle value="180"/>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="img_arrow_arrowhead_n">
+							<Angle value="180"/>
+							<Size>
+								<AbsDimension x="13" y="15"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>BookContentFrameLeftBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRightBtn1">
+						<Size>
+							<AbsDimension x="309" y="704"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>BookContentFrameRightBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRightBtn2">
+						<Size>
+							<AbsDimension x="15" y="18"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-228" y="-55"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="img_arrow_arrowhead_n">
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="img_arrow_arrowhead_n">
+							<Size>
+								<AbsDimension x="13" y="15"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>BookContentFrameRightBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCloseBtn">
+						<Size>
+							<AbsDimension x="36" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-16" y="9"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+					<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" rel_x="0.95" rel_y="0.95">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					</PushedTexture>
+						<Scripts>
+							<OnClick>BookFrameCloseBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnShow>BookFrame_OnShow();</OnShow>
+			<OnClick>BookFrameCloseBtn_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

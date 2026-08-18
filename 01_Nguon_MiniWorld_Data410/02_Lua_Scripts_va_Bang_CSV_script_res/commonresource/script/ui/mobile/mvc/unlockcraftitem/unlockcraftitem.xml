@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/unlockCraftItem/UnlockCraftItemModel.lua"/>
+	<Script file="ui/mobile/mvc/unlockCraftItem/UnlockCraftItemView.lua"/>
+	<Script file="ui/mobile/mvc/unlockCraftItem/UnlockCraftItemCtrl.lua"/>
+	##原料格子模板
+	<Button name="UnlockCraftItemGridTemplate" inherits="CraftingTableGridBtnTemplate2" virtual="true" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" text="苹果" abs_x="90" abs_y="20" hidden="true">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont" justifyH="left" text="" autowrap="true" abs_x="160" abs_y="60" hidden="true">
+					<Color r="106" g="111" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##合成描述
+				<FontString name="$parentCraftDesc" fonttype="BlackFont14" justifyH="left" text="" autowrap="true" abs_x="90" abs_y="60" hidden="true">
+					<Color r="106" g="111" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Frame name="UnlockCraftItem" parent="UIClient" frameStrata="MEDIUM" framelevel="1001">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="800" abs_y="550">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+				##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="800" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##左边的格子列表
+			<ListViewFrame name="$parentNormalProductBox" slidingY="true" slideplane="$parentPlane" abs_x="800" abs_y="443">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="800" abs_y="443" />
+				</Frames>
+			</ListViewFrame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("UnlockCraftItem"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

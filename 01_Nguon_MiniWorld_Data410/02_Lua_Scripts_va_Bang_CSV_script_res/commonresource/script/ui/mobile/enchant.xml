@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/enchant.lua"/>
+	<Button name="EnchantItemBtnTemplate" virtual="true" holddown_threshold="0.6">
+		<Size>
+			<AbsDimension x="78" y="78"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkgTexture" inherits="TemplateBigBkg15" />
+				<Texture name="$parentIconFumoEffect1" file="ui/mobile/effect/juese_gezi05.png" hidden="true"/>
+				<Texture name="$parentBoxTexture" file="ui/mobile/texture2/ingame2.xml" uvname="juese_xuanzhong.png" hidden="true">
+					<Size>
+						<AbsDimension x="83" y="83"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon">
+						<Size>
+							<RelDimension x="0.9" y="0.9"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+				</Texture>
+				<Texture name="$parentIconFumoEffect2" file="ui/mobile/effect/FUMO_4x4_03.png" alphamode="add" hidden="true">
+					<Size>
+						<RelDimension x="0.9" y="0.9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<UVAnimation texrows="4" texcols="4" />
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture name="$parentDurBkg" file="ui/mobile/texture2/ingame2.xml" uvname="xsyd_jdt01.png" hidden="true">
+					<Size>
+						<AbsDimension x="73" y="9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDuration" file="ui/mobile/texture2/ingame2.xml" uvname="xsyd_jdt02.png" hidden="true">
+					<Size>
+						<AbsDimension x="73" y="9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentDurBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<FontString name="$parentCount" fonttype="BlackFont18" fontStyle="border" text="" shadowcolor="ff624130">
+					<Color r="253" g="253" b="222" />
+					<Size>
+						<AbsDimension x="45" y="19" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="5" y="6" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>EnchantItemBtn_OnClick();</OnClick>
+			<MouseDownUpdate>EnchantItemBtn_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnMouseUp>EnchantItemBtn_OnMouseUp();</OnMouseUp>
+			<OnEnter platform="pc">GridButtonTemplate2_OnMouseEnter_PC()</OnEnter>
+			<OnEnterUpdate platform="pc">GridButtonTemplate2_OnEnterUpdate_PC()</OnEnterUpdate>
+			<OnLeave platform="pc">GridButtonTemplate2_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+	#属性条tips
+	<Frame name="EnchantAttrTipsFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1005">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TipsBkgTemplate"/>
+				<FontString name="$parentName" fonttype="BlackFont28" lineInterval="2" text="铁剑" fontStyle="border">
+					<Color r="0" g="176" b="240"/>
+					<Size>
+						<AbsDimension x="200" y="29"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="15" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentDesc" lineInterval="4" multiLine="false" fonttype="BlackFont18" fontStyle="border" autoextend="true" input_transparent="true">
+				<Size>
+					<AbsDimension x="300" y="65" />
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="15" y="20" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnShow>EnchantAttrTipsFrame_OnShow();</OnShow>
+			<OnClick>EnchantAttrTipsFrame_OnClick();</OnClick>
+		</Scripts>
+	</Frame>
+	#属性条模版
+	<Button name="EnchantAttrBtnTemplate" virtual="true" hidden="true">
+		<Size>
+			<AbsDimension x="259" y="36"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal"  inherits="TemplateBkg8" />
+				<Texture name="$parentUpArrow" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_52" hidden="true">
+					<Size>
+						<AbsDimension x="19" y="27" />
+					</Size>
+					<Anchors>
+						<Anchor point="right" relativeTo="$parent" relativePoint="right">
+							<Offset>
+								<AbsDimension x="-5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont20" input_transparent="true">
+				<Size>
+					<AbsDimension x="230" y="29"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="8" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>EnchantAttrBtn_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	#选择属性条模版
+	<Button name="ChooseEnchantAttrBtnTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="248" y="43"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" inherits="TemplateBkg8"/>
+				<Texture name="$parentCheckedBG" inherits="TemplateBigBkg13" hidden="true"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentDesc" lineInterval="2" multiLine="false" fonttype="BlackFont20" fontStyle="border" input_transparent="true">
+				<Color r="36" g="180" b="254" />
+				<Size>
+					<AbsDimension x="205" y="20"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="21" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>ChooseEnchantAttrBtn_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+	#选择属性面板
+	<Frame name="ChooseEnchantFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1000">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentChenDi" inherits="TemplateBkg1">
+					<Size>
+						<AbsDimension x="653" y="470" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-24" y="-22" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTips" fonttype="BlackFont24" justifyH="left" text="点击选择要保留的属性:">
+					<Color r="55" g="54" b="49" />
+					<Size>
+						<AbsDimension x="630" y="25" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="50" y="67" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentAttrBtn1" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn2" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn3" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn4" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn5" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn6" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn7" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn8" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn9" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentAttrBtn10" inherits="ChooseEnchantAttrBtnTemplate"/>
+			<Button name="$parentConfirmBtn" inherits="BtnTemplate2" abs_x="215" abs_y = "81">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="140" y="-22" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont28" justifyH="left" text="$477">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="90" y="29"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="117" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentStarIcon" file="ui/mobile/texture2/outgame.xml" uvname="srdh_xingxing">
+							<Size>
+								<AbsDimension x="25" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="44" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont24" lineInterval="2" text="0" justifyH="left">
+							<Color r="53" g="162" b="24"/>
+							<Size>
+								<AbsDimension x="90" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentStarIcon">
+									<Offset>
+										<AbsDimension x="5" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ChooseEnchantFrameConfirmBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCancelBtn" inherits="TemplateBtn2" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentChenDi" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="-160" y="-32" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTitle" fonttype="BlackFont24" lineInterval="2" justifyH="center" text="$3018">
+							<Color r="55" g="54" b="49"/>
+							<Size>
+								<AbsDimension x="68" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						## 这是什么？
+						<!--<Texture name="$parentName" file="ui/mobile/ui.png" x="961" y="830" w="60" h="33" hidden="true">
+							<Size>
+								<AbsDimension x="68" y="37"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>-->
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>ChooseEnchantFrameCancelBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentChenDi" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-23" y="16" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>ChooseEnchantFrameCancelBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>ChooseEnchantFrame_OnLoad();</OnLoad>
+			<OnShow>ChooseEnchantFrame_OnShow();</OnShow>
+		</Scripts>
+	</Frame>
+	<Frame name="EnchantFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="600" input_transparent="true" >
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" >
+					<Size>
+						<AbsDimension x="1078" y="626"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="56" y="25"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDivider" inherits="TemplateBkg14" abs_x="11" abs_y="620">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+							<Offset>
+								<AbsDimension x="32" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#左框
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg5">
+					<Size>
+						<AbsDimension x="523" y="518"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="29" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#右框
+				<Texture name="$parentBkg2">
+					<Size>
+						<AbsDimension x="500" y="555"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentDivider">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle1" fonttype="BlackFont30" justifyH="center" hide="true" text="选择要附魔的物品">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="527" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg1">
+							<Offset>
+								<AbsDimension x="0" y="-19"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#上框
+				<Texture name="$parentBkg3" inherits="TemplateBigBkg5">
+					<Size>
+						<AbsDimension x="527" y="189"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle1">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTitle2" fonttype="BlackFont30" justifyH="center" text="请选择主物品">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="527" y="32"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTitle1">
+							<Offset>
+								<AbsDimension x="0" y="264"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				#下框
+				<Texture name="$parentBkg4" inherits="TemplateBigBkg5">
+					<Size>
+						<AbsDimension x="527" y="189"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentTitle2">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentArrow1" inherits="TemplateArrowBkg">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg2">
+							<Offset>
+								<AbsDimension x="0" y="-133"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentArrow2" inherits="TemplateArrowBkg">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg2">
+							<Offset>
+								<AbsDimension x="0" y="133"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentArrow3" file="ui/mobile/texture2/room.xml"  uvname="img_frame_arrow.png" abs_x="29" abs_y="36">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEnchantItem1">
+							<Offset>
+								<AbsDimension x="0" y="69"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentGreenLine" file="ui/mobile/ui.png" x="973" y="324" w="25" h="54" hidden="true">
+					<Size>
+						<AbsDimension x="28" y="61"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentArrow2">
+							<Offset>
+								<AbsDimension x="0" y="90"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				#随机给予
+				<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" justifyV="middle" lineInterval="2" text="请选择附魔物品">
+					<Color r="247" g="119" b="15"/>
+					<Size>
+						<AbsDimension x="288" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentEnchantBtn">
+							<Offset>
+								<AbsDimension x="0" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="1075" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlap">
+						<FontString name="$parentTitle" fonttype="BlackFont36" justifyV="middle" text="$809" shadowcolor="4D352C28">
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="300" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left">
+									<Offset>
+										<AbsDimension x="33" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			#关闭
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>EnchantFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<SlidingFrame name="EnchantRandomBox" slidingY="true" slideplane="$parentPlane" hidden="true">
+				<Size>
+					<AbsDimension x="488" y="490"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBkg1">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="488" y="600"/>
+						</Size>
+					</Frame>
+					<Button name="$parentItem1" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem2" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem3" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem4" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem5" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem6" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem7" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem8" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem9" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem10" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem11" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem12" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem13" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem14" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem15" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem16" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem17" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem18" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem19" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem20" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem21" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem22" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem23" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem24" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem25" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem26" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem27" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem28" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem29" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem30" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem31" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem32" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem33" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem34" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem35" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem36" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem37" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem38" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem39" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem40" inherits="EnchantItemBtnTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<SlidingFrame name="EnchantTopBox" slidingY="true" slideplane="$parentPlane" hidden="true">
+				<Size>
+					<AbsDimension x="503" y="166"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg3">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="503" y="414"/>
+						</Size>
+					</Frame>
+					<Button name="$parentItem1" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem2" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem3" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem4" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem5" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem6" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem7" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem8" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem9" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem10" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem11" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem12" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem13" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem14" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem15" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem16" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem17" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem18" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem19" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem20" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem21" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem22" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem23" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem24" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem25" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem26" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem27" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem28" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem29" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem30" inherits="EnchantItemBtnTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<SlidingFrame name="EnchantBottomBox" slidingY="true" slideplane="$parentPlane" hidden="true">
+				<Size>
+					<AbsDimension x="503" y="166"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg4">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true">
+						<Size>
+							<AbsDimension x="503" y="414"/>
+						</Size>
+					</Frame>
+					<Button name="$parentItem1" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem2" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem3" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem4" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem5" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem6" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem7" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem8" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem9" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem10" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem11" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem12" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem13" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem14" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem15" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem16" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem17" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem18" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem19" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem20" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem21" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem22" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem23" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem24" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem25" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem26" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem27" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem28" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem29" inherits="EnchantItemBtnTemplate"/>
+					<Button name="$parentItem30" inherits="EnchantItemBtnTemplate"/>
+				</Frames>
+			</SlidingFrame>
+			<Button name="$parentEnchantItem1" inherits="EnchantItemBtnTemplate" id="16001">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentArrow1">
+						<Offset>
+							<AbsDimension x="13" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentName" fonttype="BlackFont22" justifyH="center">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="200" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentUvAnimation" file="ui/mobile/effect/ui_enchant_1.png" hidden="true">
+							<Size>
+								<AbsDimension x="200" y="200"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<UVAnimation texrows="3" texcols="3" />
+						</Texture>
+					</Layer>
+				</Layers>
+			</Button>
+			<Button name="$parentEnchantItem2" inherits="EnchantItemBtnTemplate" id="16002">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentArrow2">
+						<Offset>
+							<AbsDimension x="13" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="200" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Button>
+			<Button name="$parentStar">
+				<Size>
+					<AbsDimension x="119" y="26"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg2">
+						<Offset>
+							<AbsDimension x="-25" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="juese_xingxing05" abs_x="38" abs_y="40">
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<Offset>
+										<AbsDimension x="-9" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont22" justifyH="center" text="8888">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="64" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentBkg" file="ui/mobile/texture2/backpack.xml" uvname="img_num.png" DrawType="center">
+                    <Center>
+                        <Left offsetX="0" offsetY="0" w="36" h="26"/>
+                        <Center offsetX="36" offsetY="0" w="18" h="26" />
+                        <Right offsetX="54" offsetY="0" w="6" h="26" />
+                    </Center>
+                </NormalTexture>
+				<Scripts>
+					<OnClick>EnchantFrameAddStar_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentAddStar">
+				<Size>
+					<AbsDimension x="40" y="43"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentStar">
+						<Offset>
+							<AbsDimension x="3" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money" abs_x="40" abs_y="43">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money" rel_x="0.9" rel_y="0.9">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+                    </Anchors>
+                </PushedTexture>
+				<Scripts>
+					<OnClick>EnchantFrameAddStar_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			
+			
+			#附魔按钮
+			<Button name="$parentEnchantBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentAttr5">
+						<Offset>
+							<AbsDimension x="0" y="60"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle"  text="$809">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="170" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-13"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentName1" fonttype="BlackFont20" justifyH="right" text="$548">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="90" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-43" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						#消耗多少星
+						<Texture name="$parentStarIcon" file="ui/mobile/texture2/outgame.xml" uvname="juese_xingxing05">
+							<Size>
+								<AbsDimension x="25" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentName1">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont20" lineInterval="2" text="500" justifyV="middle" justifyH="left" fontStyle="border">
+							<Color r="53" g="162" b="24"/>
+							<Size>
+								<AbsDimension x="82" y="19"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentStarIcon">
+									<Offset>
+										<AbsDimension x="2" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>			
+				<Scripts>
+					<OnClick>EnchantFrameEnchantBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentAttr1" inherits="EnchantAttrBtnTemplate"/>
+			<Button name="$parentAttr2" inherits="EnchantAttrBtnTemplate"/>
+			<Button name="$parentAttr3" inherits="EnchantAttrBtnTemplate"/>
+			<Button name="$parentAttr4" inherits="EnchantAttrBtnTemplate"/>
+			<Button name="$parentAttr5" inherits="EnchantAttrBtnTemplate"/>
+		</Frames>
+		<Scripts>
+			<OnLoad>EnchantFrame_OnLoad();</OnLoad>
+			<OnEvent>EnchantFrame_OnEvent();</OnEvent>
+			<OnShow>EnchantFrame_OnShow();</OnShow>
+			<OnHide>EnchantFrame_OnHide();</OnHide>
+			<OnUpdate>EnchantFrame_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

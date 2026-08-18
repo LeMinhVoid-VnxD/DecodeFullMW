@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/mapEdit/mapEditBlockLib/MapEditBlockLibModel.lua"/>
+	<Script file="ui/mobile/mvc/mapEdit/mapEditBlockLib/MapEditBlockLibView.lua"/>
+	<Script file="ui/mobile/mvc/mapEdit/mapEditBlockLib/MapEditBlockLibCtrl.lua"/>
+
+	##左侧导航按钮
+    <Button name="MapEditBlockLib_TabBtnTemplate" inherits="TemplateTabBtn4" virtual="true">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("MapEditBlockLib"):TabBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##格子模板
+    <Button name="MapEditBlockLib_CellTemplate" virtual="true" inherits="TemplateBtn22" abs_x="78" abs_y="78">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("MapEditBlockLib"):CellBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+    ##多选格子模板
+    <Button name="MapEditBlockLib_SelectTemplate" virtual="true"  abs_x="75" abs_y="75">
+        <Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" virtual="true" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png" abs_x="75" abs_y="75"/>
+				<Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true" abs_x="75" abs_y="75"/>
+                <Texture name="$parentIcon" file="items/apple.png" alphamode="alphablend" abs_x="60" abs_y="60">
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("MapEditBlockLib"):SelectBtnClicked();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##格子选择器
+	<Frame name="MapEditBlockLib" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="5000">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg8" abs_x="996" abs_y="571">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>	
+				</Texture>
+                <Texture name="$parentBkgWhite" inherits="TemplateBigBkg2" abs_x="993" abs_y="433">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="52"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkgBody" inherits="TemplateBigBkg5" abs_x="534" abs_y="394">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="202" y="79"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBlueLine" inherits="TemplateBkg14" abs_x="11" abs_y="427">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="755" y="56"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentTabsBkg" inherits="TemplateBigBkg29" abs_x="168" abs_y="394">
+                	<Anchors>
+	                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+	                        <Offset>
+	                            <AbsDimension x="19" y="79"/>
+	                        </Offset>
+	                    </Anchor>
+	                </Anchors>
+                </Texture>
+                 <FontString name="$parentSubTitle" fonttype="BlackFont24" justifyV="middle" justifyH="center"  text="$25013"  abs_x="227" abs_y="56">
+                       <Color r="61" g="69" b="70"/>
+					        <Anchors>
+                                 <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright" >
+                                    <Offset>
+                                        <AbsDimension x="0" y="60"/>
+                                     </Offset>
+                                 </Anchor>
+                            </Anchors>
+				 </FontString>
+                 <Texture name="$parentBkgReplace" inherits="TemplateBigBkg5" abs_x="186" abs_y="357">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="785" y="116"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="992" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MapEditBlockLib"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+            ##确认
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn" >
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-20" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("MapEditBlockLib"):OKBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##只填充空气
+            <Button name="$parentTickBtn" inherits="TemplateTickBtn1" >
+                <Anchors>
+                    <Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+                        <Offset>
+                            <AbsDimension x="20" y="-27"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("MapEditBlockLib"):TickBtnClicked();</OnClick>
+                </Scripts>
+            </Button>
+            ##tab按钮
+            <SlidingFrame name="$parentTabs" slidingY="true" slideplane="$parentPlane" abs_x="160" abs_y="385">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parentTabsBkg" />
+                </Anchors>
+                <Frames>
+                	<Frame name="$parentPlane" hidden="true" abs_x="160" abs_y="385" />
+                    <Button name="$parent1" inherits="MapEditBlockLib_TabBtnTemplate" id="1" />
+                    <Button name="$parent2" inherits="MapEditBlockLib_TabBtnTemplate" id="2" />
+                    <Button name="$parent3" inherits="MapEditBlockLib_TabBtnTemplate" id="3" />
+                    <Button name="$parent4" inherits="MapEditBlockLib_TabBtnTemplate" id="4" />
+                    <Button name="$parent5" inherits="MapEditBlockLib_TabBtnTemplate" id="5" />
+                    <Button name="$parent6" inherits="MapEditBlockLib_TabBtnTemplate" id="6" />
+                    <Button name="$parent7" inherits="MapEditBlockLib_TabBtnTemplate" id="7" />
+                    <Button name="$parent8" inherits="MapEditBlockLib_TabBtnTemplate" id="8" />
+                    <Button name="$parent9" inherits="MapEditBlockLib_TabBtnTemplate" id="9" />
+                    <Button name="$parent10" inherits="MapEditBlockLib_TabBtnTemplate" id="10" />
+                    <Button name="$parent11" inherits="MapEditBlockLib_TabBtnTemplate" id="11" />
+                    <Button name="$parent12" inherits="MapEditBlockLib_TabBtnTemplate" id="12" />
+                    <Button name="$parent13" inherits="MapEditBlockLib_TabBtnTemplate" id="13" />
+                    <Button name="$parent14" inherits="MapEditBlockLib_TabBtnTemplate" id="14" />
+                    <Button name="$parent15" inherits="MapEditBlockLib_TabBtnTemplate" id="15" />
+                </Frames>
+            </SlidingFrame>
+            ##方块库列表
+            <ListViewFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="534" abs_y="374"> 
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgBody">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="534" abs_y="374">
+                        <Anchors>
+                            <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                                <Offset>
+                                    <AbsDimension x="0" y="0" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+					 
+					##格子, 动态创建..."$parentItem1", "$parentItem2" ...
+				</Frames>
+			</ListViewFrame>
+            ##预览涵盖方块列表
+            <SlidingFrame name="$parentSelectList" slidingY="true" slideplane="$parentPlane" abs_x="166" abs_y="332">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkgReplace">
+                        <Offset>
+                            <AbsDimension x="3" y="12" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" abs_x="166" abs_y="332">
+  
+                    </Frame>
+                    ##格子, 动态创建..."$parentItem1", "$parentItem2" ...
+                </Frames>
+            </SlidingFrame>
+        </Frames>
+        <Scripts>   
+    </Scripts>
+	</Frame>
+</Ui>

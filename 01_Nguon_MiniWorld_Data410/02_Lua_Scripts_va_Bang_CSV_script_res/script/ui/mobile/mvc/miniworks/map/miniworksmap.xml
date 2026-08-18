@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##商城主页
+	<Script file="ui/mobile/mvc/miniworks/map/MiniWorksMapModel.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/map/MiniWorksMapView.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/map/MiniWorksMapCtrl.lua"/>
+
+	##子窗口内切换页面按钮模板
+	<Button name="MapSwitchBtnTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="120" y="46"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentPic" file="ui/mobile/texture2/common.xml" uvname="tab_up_n" /><!--选中02,未选中03-->
+			</Layer>
+		</Layers>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3816">
+					<Color r="186" g="210" b="210"/>
+					<Size>
+						<AbsDimension x="100" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksMap"):TabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="MiniWorksMap" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1011" input_transparent="true">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="192" y="67"/>
+				</Offset>
+			</Anchor>
+			<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="-16" y="-10"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg5">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="61"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Frames>
+			##顶部按钮
+			<Frame name="$parentTopFrame" abs_x = "1080" abs_y = "52">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<!--鉴赏家按钮-->
+					<Button name="$parentSwitchBtn1" inherits="MapSwitchBtnTemplate" id="1" />
+					<!--精选按钮-->
+					<Button name="$parentSwitchBtn2" inherits="MapSwitchBtnTemplate" id="2" />
+					<!--玩家按钮-->
+					<Button name="$parentSwitchBtn3" inherits="MapSwitchBtnTemplate" id="3" />
+					<!--助审按钮-->
+					<Button name="$parentSwitchBtn4" inherits="MapSwitchBtnTemplate" id="4" />
+					<!--活动按钮-->
+					<Button name="$parentSwitchBtn5" inherits="MapSwitchBtnTemplate" id="5" />
+
+					<Button name="$parentFilterBtn">
+						<Size>
+							<AbsDimension x="164" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="670" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentListBkg" inherits="TemplateBkg8" rel_x="1.0" abs_y="500" hidden="true">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentType" fonttype="BlackFont20" justifyH="center" text="$3820">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="120" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-15" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentArrowIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+									<Size>
+										<AbsDimension x="20" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg8" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg8" >
+							<Size>
+								<AbsDimension x="164" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksMap"):FilterBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentSortBtn">
+						<Size>
+							<AbsDimension x="164" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentFilterBtn">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentListBkg" inherits="TemplateBkg8" rel_x="1.0" abs_y="100" hidden="true">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentType" fonttype="BlackFont20" justifyH="center" text="$3820">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="120" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-15" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentArrowIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+									<Size>
+										<AbsDimension x="20" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg8" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg8" >
+							<Size>
+								<AbsDimension x="164" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksMap"):SortBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRefreshBtn">
+						<Size>
+							<AbsDimension x="47" y="50"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentSortBtn">
+								<Offset>
+									<AbsDimension x="12" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+		                <Layers>
+		                    <Layer level="overlay">
+		                        <Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_refresh">
+		                            <Size>
+		                                <AbsDimension x="28" y="28"/>
+		                            </Size>
+		                            <Anchors>
+		                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+		                                    <Offset>
+		                                        <AbsDimension x="0" y="0" />
+		                                    </Offset>
+		                                </Anchor>
+		                            </Anchors>
+		                        </Texture>
+		                    </Layer>
+		                </Layers>
+						<NormalTexture name="$parentNormal"   file="ui/mobile/texture2/common.xml"  uvname="btn_square_yellow"  />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml"  uvname="btn_square_yellow" abs_x="44" abs_y="47" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksMap"):RefreshBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##信息为空时的Tips
+			<Frame name="$parentTipsFrame" hidden="true">
+				<Size>
+					<AbsDimension x="815" y="636" />
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<Layers>
+					<Layer level="BACKGROUND">
+						#头像
+						<Texture name="$parentHead" file="ui/mobile/texture2/bigtex/img_noroom.png" >
+							<Size>
+								<AbsDimension x="227" y="175"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								</Anchor>
+							</Anchors>
+						</Texture>
+
+						<FontString name="$parentTxt" justifyH="center" fonttype="BlackFont34" text="$1334">
+							<Color r="77" g="112" b="117"/>
+							<Size>
+								<AbsDimension x="600" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentHead">
+									<Offset>
+										<AbsDimension x="0" y="25"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##推荐
+			<Frame name="$parentCommendFrame" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="12" y="61"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="1" y="1369"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="3"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="3"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+<!-- 							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="1"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="2"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="3"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="4"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="5"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="6"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="7"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="8"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="9"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="10"/>
+							<Button name="$parentItem1" inherits="NewConnoisseurArchiveTemplate" id="11"/>
+							<Button name="ConnoisseurArchive12" inherits="NewConnoisseurArchiveTemplate" id="12"/>
+							<Button name="ConnoisseurArchive13" inherits="NewConnoisseurArchiveTemplate" id="13"/>
+							<Button name="ConnoisseurArchive14" inherits="NewConnoisseurArchiveTemplate" id="14"/>
+							<Button name="ConnoisseurArchive15" inherits="NewConnoisseurArchiveTemplate" id="15"/>
+							<Button name="ConnoisseurArchive16" inherits="NewConnoisseurArchiveTemplate" id="16"/> -->
+						</Frames>
+						<Scripts>
+							<OnMovieFinished>ConnoisseurArchiveBox_OnMovieFinished();</OnMovieFinished>
+							<OnMouseScrollPosition>ConnoisseurArchiveBox_Scroll();</OnMouseScrollPosition>
+						</Scripts>
+					</SlidingFrame>
+				</Frames>
+			</Frame>
+			##精选
+			<Frame name="$parentChoice" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="49"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="12"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="1000" y="600"/>
+								</Size>
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+<!-- 							<Button name="ChosenArchive1" inherits="WorksArchiveTemplate" id="1"/>
+							<Button name="ChosenArchive2" inherits="WorksArchiveTemplate" id="2"/>
+							<Button name="ChosenArchive3" inherits="WorksArchiveTemplate" id="3"/>
+							<Button name="ChosenArchive4" inherits="WorksArchiveTemplate" id="4"/>
+							<Button name="ChosenArchive5" inherits="WorksArchiveTemplate" id="5"/>
+							<Button name="ChosenArchive6" inherits="WorksArchiveTemplate" id="6"/>
+							<Button name="ChosenArchive7" inherits="WorksArchiveTemplate" id="7"/>
+							<Button name="ChosenArchive8" inherits="WorksArchiveTemplate" id="8"/>
+							<Button name="ChosenArchive9" inherits="WorksArchiveTemplate" id="9"/>
+							<Button name="ChosenArchive10" inherits="WorksArchiveTemplate" id="10"/>
+							<Button name="ChosenArchive11" inherits="WorksArchiveTemplate" id="11"/>
+							<Button name="ChosenArchive12" inherits="WorksArchiveTemplate" id="12"/>
+							<Button name="ChosenArchive13" inherits="WorksArchiveTemplate" id="13"/>
+							<Button name="ChosenArchive14" inherits="WorksArchiveTemplate" id="14"/>
+							<Button name="ChosenArchive15" inherits="WorksArchiveTemplate" id="15"/>
+							<Button name="ChosenArchive16" inherits="WorksArchiveTemplate" id="16"/>
+							<Button name="ChosenArchive17" inherits="WorksArchiveTemplate" id="17"/>
+							<Button name="ChosenArchive18" inherits="WorksArchiveTemplate" id="18"/>
+							<Button name="ChosenArchive19" inherits="WorksArchiveTemplate" id="19"/>
+							<Button name="ChosenArchive20" inherits="WorksArchiveTemplate" id="20"/>
+							<Button name="ChosenArchive21" inherits="WorksArchiveTemplate" id="21"/>
+							<Button name="ChosenArchive22" inherits="WorksArchiveTemplate" id="22"/>
+							<Button name="ChosenArchive23" inherits="WorksArchiveTemplate" id="23"/>
+							<Button name="ChosenArchive24" inherits="WorksArchiveTemplate" id="24"/>
+							<Button name="ChosenArchive25" inherits="WorksArchiveTemplate" id="25"/>
+							<Button name="ChosenArchive26" inherits="WorksArchiveTemplate" id="26"/>
+							<Button name="ChosenArchive27" inherits="WorksArchiveTemplate" id="27"/>
+							<Button name="ChosenArchive28" inherits="WorksArchiveTemplate" id="28"/>
+							<Button name="ChosenArchive29" inherits="WorksArchiveTemplate" id="29"/>
+							<Button name="ChosenArchive30" inherits="WorksArchiveTemplate" id="30"/>
+							<Button name="ChosenArchive31" inherits="WorksArchiveTemplate" id="31"/>
+							<Button name="ChosenArchive32" inherits="WorksArchiveTemplate" id="32"/>
+							<Button name="ChosenArchive33" inherits="WorksArchiveTemplate" id="33"/>
+							<Button name="ChosenArchive34" inherits="WorksArchiveTemplate" id="34"/>
+							<Button name="ChosenArchive35" inherits="WorksArchiveTemplate" id="35"/>
+							<Button name="ChosenArchive36" inherits="WorksArchiveTemplate" id="36"/>
+							<Button name="ChosenArchive37" inherits="WorksArchiveTemplate" id="37"/>
+							<Button name="ChosenArchive38" inherits="WorksArchiveTemplate" id="38"/>
+							<Button name="ChosenArchive39" inherits="WorksArchiveTemplate" id="39"/>
+							<Button name="ChosenArchive40" inherits="WorksArchiveTemplate" id="40"/>
+							<Button name="ChosenArchive41" inherits="WorksArchiveTemplate" id="41"/>
+							<Button name="ChosenArchive42" inherits="WorksArchiveTemplate" id="42"/>
+							<Button name="ChosenArchive43" inherits="WorksArchiveTemplate" id="43"/>
+							<Button name="ChosenArchive44" inherits="WorksArchiveTemplate" id="44"/>
+							<Button name="ChosenArchive45" inherits="WorksArchiveTemplate" id="45"/>
+							<Button name="ChosenArchive46" inherits="WorksArchiveTemplate" id="46"/>
+							<Button name="ChosenArchive47" inherits="WorksArchiveTemplate" id="47"/>
+							<Button name="ChosenArchive48" inherits="WorksArchiveTemplate" id="48"/>
+							<Button name="ChosenArchive49" inherits="WorksArchiveTemplate" id="49"/>
+							<Button name="ChosenArchive50" inherits="WorksArchiveTemplate" id="50"/>
+							<Button name="ChosenArchive51" inherits="WorksArchiveTemplate" id="51"/>
+							<Button name="ChosenArchive52" inherits="WorksArchiveTemplate" id="52"/>
+							<Button name="ChosenArchive53" inherits="WorksArchiveTemplate" id="53"/>
+							<Button name="ChosenArchive54" inherits="WorksArchiveTemplate" id="54"/>
+							<Button name="ChosenArchive55" inherits="WorksArchiveTemplate" id="55"/>
+							<Button name="ChosenArchive56" inherits="WorksArchiveTemplate" id="56"/>
+							<Button name="ChosenArchive57" inherits="WorksArchiveTemplate" id="57"/>
+							<Button name="ChosenArchive58" inherits="WorksArchiveTemplate" id="58"/>
+							<Button name="ChosenArchive59" inherits="WorksArchiveTemplate" id="59"/>
+							<Button name="ChosenArchive60" inherits="WorksArchiveTemplate" id="60"/> -->
+							<Button name="$parentMoreMap" hidden="true">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont21" justifyH="center" text="$3854">
+											<Color r="150" g="161" b="157"/>
+											<Size>
+												<AbsDimension x="280" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>ChosenArchiveBoxMoreMap_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentMoreMapNotice" hidden="true">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont21" justifyH="center" text="$3894">
+											<Color r="150" g="161" b="157"/>
+											<Size>
+												<AbsDimension x="280" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentMoreMap2" inherits="BtnTemplate6">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" text="$3849">
+											<Color r="150" g="161" b="157"/>
+											<Size>
+												<AbsDimension x="190" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>ChosenArchiveBoxMoreMap2_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnMovieFinished>ChosenArchiveBox_OnMovieFinished();</OnMovieFinished>
+							<OnMouseScrollPosition>ChosenArchiveBox_Scroll();</OnMouseScrollPosition>
+						</Scripts>
+					</SlidingFrame>
+				</Frames>
+				<Scripts>
+					<OnLoad>MiniWorksFrameChosen_OnLoad();</OnLoad>
+					<OnShow>MiniWorksFrameChosen_OnShow();</OnShow>
+					<OnHide>MiniWorksFrameChosen_OnHide();</OnHide>
+				</Scripts>
+			</Frame>
+			##玩家
+			<Frame name="$parentPlayer" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="49"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="12"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="1" y="600"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<Frame name="$parentActivityMaps" hidden="true" inherits="SectionTemplate4">
+								<Frames>
+									<Button name="$parentRefresh" inherits="SectionTitleBtnTemplate">
+										<Scripts>
+											<OnClick>PlayerArchiveBoxActivityMapsRefresh_OnClick();</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentPlayerMaps" hidden="true">
+								<Frames>
+									<Button name="$parentArchive1" inherits="WorksArchiveTemplate" id="1"/>
+									<Button name="$parentArchive2" inherits="WorksArchiveTemplate" id="2"/>
+									<Button name="$parentArchive3" inherits="WorksArchiveTemplate" id="3"/>
+									<Button name="$parentArchive4" inherits="WorksArchiveTemplate" id="4"/>
+									<Button name="$parentArchive5" inherits="WorksArchiveTemplate" id="5"/>
+									<Button name="$parentArchive6" inherits="WorksArchiveTemplate" id="6"/>
+									<Button name="$parentArchive7" inherits="WorksArchiveTemplate" id="7"/>
+									<Button name="$parentArchive8" inherits="WorksArchiveTemplate" id="8"/>
+									<Button name="$parentArchive9" inherits="WorksArchiveTemplate" id="9"/>
+									<Button name="$parentArchive10" inherits="WorksArchiveTemplate" id="10"/>
+									<Button name="$parentArchive11" inherits="WorksArchiveTemplate" id="11"/>
+									<Button name="$parentArchive12" inherits="WorksArchiveTemplate" id="12"/>
+									<Button name="$parentArchive13" inherits="WorksArchiveTemplate" id="13"/>
+									<Button name="$parentArchive14" inherits="WorksArchiveTemplate" id="14"/>
+									<Button name="$parentArchive15" inherits="WorksArchiveTemplate" id="15"/>
+									<Button name="$parentArchive16" inherits="WorksArchiveTemplate" id="16"/>
+									<Button name="$parentArchive17" inherits="WorksArchiveTemplate" id="17"/>
+									<Button name="$parentArchive18" inherits="WorksArchiveTemplate" id="18"/>
+									<Button name="$parentArchive19" inherits="WorksArchiveTemplate" id="19"/>
+									<Button name="$parentArchive20" inherits="WorksArchiveTemplate" id="20"/>
+								</Frames>
+							</Frame>
+							<!-- 去掉了 -->
+							<Button name="$parentMoreMap" inherits="BtnTemplate6" hidden="true">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" text="$3849">
+											<Color r="254" g="249" b="224"/>
+											<Size>
+												<AbsDimension x="190" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>PlayerArchiveBoxMoreMap_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnMouseScrollPosition>PlayerArchiveBox_Scroll();</OnMouseScrollPosition>
+						</Scripts>
+					</SlidingFrame>
+				</Frames>
+				<Scripts>
+					<OnLoad>MiniWorksFramePlayer_OnLoad();</OnLoad>
+					<OnShow>MiniWorksFramePlayer_OnShow();</OnShow>
+					<OnHide>MiniWorksFramePlayer_OnHide();</OnHide>
+				</Scripts>
+			</Frame>
+			##助审
+			<Frame name="$parentReview" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="12" y="61"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="5" y="0"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<RelDimension x="0.975" y="1.25"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="3"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="3"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+<!-- 							<Button name="ReviewArchive1" inherits="WorksArchiveTemplate" id="1"/>
+							<Button name="ReviewArchive2" inherits="WorksArchiveTemplate" id="2"/>
+							<Button name="ReviewArchive3" inherits="WorksArchiveTemplate" id="3"/>
+							<Button name="ReviewArchive4" inherits="WorksArchiveTemplate" id="4"/>
+							<Button name="ReviewArchive5" inherits="WorksArchiveTemplate" id="5"/>
+							<Button name="ReviewArchive6" inherits="WorksArchiveTemplate" id="6"/>
+							<Button name="ReviewArchive7" inherits="WorksArchiveTemplate" id="7"/>
+							<Button name="ReviewArchive8" inherits="WorksArchiveTemplate" id="8"/>
+							<Button name="ReviewArchive9" inherits="WorksArchiveTemplate" id="9"/>
+							<Button name="ReviewArchive10" inherits="WorksArchiveTemplate" id="10"/>
+							<Button name="ReviewArchive11" inherits="WorksArchiveTemplate" id="11"/>
+							<Button name="ReviewArchive12" inherits="WorksArchiveTemplate" id="12"/>
+							<Button name="ReviewArchive13" inherits="WorksArchiveTemplate" id="13"/>
+							<Button name="ReviewArchive14" inherits="WorksArchiveTemplate" id="14"/>
+							<Button name="ReviewArchive15" inherits="WorksArchiveTemplate" id="15"/>
+							<Button name="ReviewArchive16" inherits="WorksArchiveTemplate" id="16"/>
+							<Button name="ReviewArchive17" inherits="WorksArchiveTemplate" id="17"/>
+							<Button name="ReviewArchive18" inherits="WorksArchiveTemplate" id="18"/>
+							<Button name="ReviewArchive19" inherits="WorksArchiveTemplate" id="19"/>
+							<Button name="ReviewArchive20" inherits="WorksArchiveTemplate" id="20"/>
+							<Button name="ReviewArchive21" inherits="WorksArchiveTemplate" id="21"/>
+							<Button name="ReviewArchive22" inherits="WorksArchiveTemplate" id="22"/>
+							<Button name="ReviewArchive23" inherits="WorksArchiveTemplate" id="23"/>
+							<Button name="ReviewArchive24" inherits="WorksArchiveTemplate" id="24"/>
+							<Button name="ReviewArchive25" inherits="WorksArchiveTemplate" id="25"/>
+							<Button name="ReviewArchive26" inherits="WorksArchiveTemplate" id="26"/>
+							<Button name="ReviewArchive27" inherits="WorksArchiveTemplate" id="27"/>
+							<Button name="ReviewArchive28" inherits="WorksArchiveTemplate" id="28"/>
+							<Button name="ReviewArchive29" inherits="WorksArchiveTemplate" id="29"/>
+							<Button name="ReviewArchive30" inherits="WorksArchiveTemplate" id="30"/>
+							<Button name="ReviewArchive31" inherits="WorksArchiveTemplate" id="31"/>
+							<Button name="ReviewArchive32" inherits="WorksArchiveTemplate" id="32"/>
+							<Button name="ReviewArchive33" inherits="WorksArchiveTemplate" id="33"/>
+							<Button name="ReviewArchive34" inherits="WorksArchiveTemplate" id="34"/>
+							<Button name="ReviewArchive35" inherits="WorksArchiveTemplate" id="35"/>
+							<Button name="ReviewArchive36" inherits="WorksArchiveTemplate" id="36"/>
+							<Button name="ReviewArchive37" inherits="WorksArchiveTemplate" id="37"/>
+							<Button name="ReviewArchive38" inherits="WorksArchiveTemplate" id="38"/>
+							<Button name="ReviewArchive39" inherits="WorksArchiveTemplate" id="39"/>
+							<Button name="ReviewArchive40" inherits="WorksArchiveTemplate" id="40"/>
+							<Button name="ReviewArchive41" inherits="WorksArchiveTemplate" id="41"/>
+							<Button name="ReviewArchive42" inherits="WorksArchiveTemplate" id="42"/>
+							<Button name="ReviewArchive43" inherits="WorksArchiveTemplate" id="43"/>
+							<Button name="ReviewArchive44" inherits="WorksArchiveTemplate" id="44"/>
+							<Button name="ReviewArchive45" inherits="WorksArchiveTemplate" id="45"/>
+							<Button name="ReviewArchive46" inherits="WorksArchiveTemplate" id="46"/>
+							<Button name="ReviewArchive47" inherits="WorksArchiveTemplate" id="47"/>
+							<Button name="ReviewArchive48" inherits="WorksArchiveTemplate" id="48"/>
+							<Button name="ReviewArchive49" inherits="WorksArchiveTemplate" id="49"/>
+							<Button name="ReviewArchive50" inherits="WorksArchiveTemplate" id="50"/>
+							<Button name="ReviewArchive51" inherits="WorksArchiveTemplate" id="51"/>
+							<Button name="ReviewArchive52" inherits="WorksArchiveTemplate" id="52"/>
+							<Button name="ReviewArchive53" inherits="WorksArchiveTemplate" id="53"/>
+							<Button name="ReviewArchive54" inherits="WorksArchiveTemplate" id="54"/>
+							<Button name="ReviewArchive55" inherits="WorksArchiveTemplate" id="55"/>
+							<Button name="ReviewArchive56" inherits="WorksArchiveTemplate" id="56"/>
+							<Button name="ReviewArchive57" inherits="WorksArchiveTemplate" id="57"/>
+							<Button name="ReviewArchive58" inherits="WorksArchiveTemplate" id="58"/>
+							<Button name="ReviewArchive59" inherits="WorksArchiveTemplate" id="59"/>
+							<Button name="ReviewArchive60" inherits="WorksArchiveTemplate" id="60"/> -->
+							<Button name="$parentMoreMap" hidden="true">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont21" justifyH="center" text="$3854">
+											<Color r="254" g="249" b="224"/>
+											<Size>
+												<AbsDimension x="280" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>ReviewArchiveBoxMoreMap_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentMoreMapNotice" hidden="true">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont21" justifyH="center" text="$3894">
+											<Color r="254" g="249" b="224"/>
+											<Size>
+												<AbsDimension x="280" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Button>
+							<Button name="$parentMoreMap2" inherits="BtnTemplate6">
+								<Size>
+									<AbsDimension x="198" y="63"/>
+								</Size>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont28" justifyH="center" text="$3849">
+											<Color r="254" g="249" b="224"/>
+											<Size>
+												<AbsDimension x="190" y="28"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>ReviewArchiveBoxMoreMap2_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+						<Scripts>
+							<OnMovieFinished>ReviewArchiveBox_OnMovieFinished();</OnMovieFinished>
+						</Scripts>
+					</SlidingFrame>
+				</Frames>
+				<Scripts>
+					<OnLoad>MiniWorksFrameReview_OnLoad();</OnLoad>
+					<OnShow>MiniWorksFrameReview_OnShow();</OnShow>
+					<OnHide>MiniWorksFrameReview_OnHide();</OnHide>
+				</Scripts>
+			</Frame>
+			##活动
+			<Frame name="$parentActivity" hidden="true">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="12" y="61"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="5" y="0"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="-8"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="1" y="600"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="3"/>
+										</Offset>
+									</Anchor>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="3"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Frame>
+							<!-- 小标题栏 -->
+							<Frame name="$parentTitleFrame" abs_x="1092" abs_y="45">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parentPlane">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<!--:小标题前面的图标-->
+										<Texture name="$parentIcon" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngfg_icon015" abs_x="26"  abs_y="26">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="4" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<!--:小标题 -->
+										<FontString name="$parentText" fonttype="BlackFont26" text="活动标题" abs_x="300"  abs_y="26">
+											<Color r="123" g="92" b="60"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+													<Offset>
+														<AbsDimension x="8" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+							</Frame>
+
+							<Frame name="$parentActivityMaps" hidden="true" >
+								<Frames>
+									<Button name="$parentArchive1" inherits="WorksArchiveTemplate" id="1"/>
+									<Button name="$parentArchive2" inherits="WorksArchiveTemplate" id="2"/>
+									<Button name="$parentArchive3" inherits="WorksArchiveTemplate" id="3"/>
+									<Button name="$parentArchive4" inherits="WorksArchiveTemplate" id="4"/>
+									<Button name="$parentArchive5" inherits="WorksArchiveTemplate" id="5"/>
+									<Button name="$parentArchive6" inherits="WorksArchiveTemplate" id="6"/>
+									<Button name="$parentArchive7" inherits="WorksArchiveTemplate" id="7"/>
+									<Button name="$parentArchive8" inherits="WorksArchiveTemplate" id="8"/>
+									<Button name="$parentArchive9" inherits="WorksArchiveTemplate" id="9"/>
+									<Button name="$parentArchive10" inherits="WorksArchiveTemplate" id="10"/>
+									<Button name="$parentArchive11" inherits="WorksArchiveTemplate" id="11"/>
+									<Button name="$parentArchive12" inherits="WorksArchiveTemplate" id="12"/>
+									<Button name="$parentArchive13" inherits="WorksArchiveTemplate" id="13"/>
+									<Button name="$parentArchive14" inherits="WorksArchiveTemplate" id="14"/>
+									<Button name="$parentArchive15" inherits="WorksArchiveTemplate" id="15"/>
+									<Button name="$parentArchive16" inherits="WorksArchiveTemplate" id="16"/>
+									<Button name="$parentArchive17" inherits="WorksArchiveTemplate" id="17"/>
+									<Button name="$parentArchive18" inherits="WorksArchiveTemplate" id="18"/>
+									<Button name="$parentArchive19" inherits="WorksArchiveTemplate" id="19"/>
+									<Button name="$parentArchive20" inherits="WorksArchiveTemplate" id="20"/>
+								</Frames>
+							</Frame>
+						</Frames>
+					</SlidingFrame>
+				</Frames>
+				<Scripts>
+					<OnLoad>MiniWorksFrameMapActivity_OnLoad();</OnLoad>
+					<OnShow>MiniWorksFrameMapActivity_OnShow();</OnShow>
+					<OnHide>MiniWorksFrameMapActivity_OnHide();</OnHide>
+				</Scripts>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

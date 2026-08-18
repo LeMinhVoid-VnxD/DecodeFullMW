@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/vehicle/actioner/VehicleActionerModel.lua"/>
+	<Script file="ui/mobile/mvc/vehicle/actioner/VehicleActionerView.lua"/>
+	<Script file="ui/mobile/mvc/vehicle/actioner/VehicleActionerCtrl.lua"/>
+	<Script file="ui/mobile/mvc/vehicle/actioner/VehicleActionerInterface.lua"/>
+
+	<!--按钮模板-->
+	<Frame name="VehicleActionerUnitTemplate" virtual="true" abs_x="50" abs_y="73">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml" uvname="img_frame_arrow" abs_x="15" abs_y="18">
+					<Angle value="90"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentText" fonttype="BlackFont14" justifyV="middle" justifyH="left" abs_x="60" abs_y="15" text="360°">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parent"> 
+							<Offset>
+								<AbsDimension x="-4" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>			
+			<Button name="$parentBtn">
+				<Size>
+					<AbsDimension x="50" y="52" />
+				</Size>
+				<Anchors>
+				  	<Anchor point="top" relativePoint="top" relativeTo="$parent"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="btn_instruct_n.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentRotateIcon" file="ui/mobile/texture0/outgame.xml" uvname="btn_order_n.png“">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentAngleIcon" file="ui/mobile/texture2/outgame.xml" uvname="img_order_color_b.png" DrawType="center_rotate" progressvalue="1">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentArrow" file="ui/mobile/texture2/common_icon.xml" uvname="icon_return_white" abs_x="30" abs_y="30">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentIcon" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+                        <FontString name="$parentRopeText" fonttype="BlackFont24" justifyV="middle" justifyH="center" abs_x="30" abs_y="30" text="1">
+							<Color r="0" g="0" b="0"/>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topright" relativeTo="$parent"> 
+										<Offset>
+											<AbsDimension x="-41" y="4"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+				        </FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):UnitBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<!--行号模板-->
+	<Frame name="VehicleActionerLineIndexTemplate" virtual="true" abs_x="50" abs_y="73">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml" uvname="img_frame_arrow" abs_x="15" abs_y="18">
+					<Angle value="90"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentActiveBtn" abs_x="32" abs_y="34">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/outgame.xml" uvname="btn_instruct_num" abs_x="32" abs_y="34"/>
+						<FontString name="$parentNum" fonttype="BlackFont24" justifyV="middle" justifyH="center" abs_x="20" abs_y="20" text="1">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</FontString>			
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):ActiveLineBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<!--列图标模板-->
+	<Frame name="VehicleActionerColumnIconTemplate" virtual="true" abs_x="55" abs_y="55" framelevel="15">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg15"/>
+				<Texture name="$parentIcon" abs_x="43" abs_y="43">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNum" fonttype="BlackFont18" justifyV="bottom" justifyH="center" abs_x="18" abs_y="18" text="1">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topleft"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseSetAngleFrame()</OnClick>
+		</Scripts>
+	</Frame>
+
+	## 每一行数据对应的模板 一个索引按钮 8个数据按钮
+	<Frame name="VehicleActionerRowTemplate" virtual="true" abs_x="831" abs_y="73">
+		<Frames>
+			<Frame name="$parentIndexBtn" inherits="VehicleActionerLineIndexTemplate">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn1" inherits="VehicleActionerUnitTemplate" id="1">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="85" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn2" inherits="VehicleActionerUnitTemplate" id="2">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn1">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn3" inherits="VehicleActionerUnitTemplate" id="3">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn2">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn4" inherits="VehicleActionerUnitTemplate" id="4">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn3">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn5" inherits="VehicleActionerUnitTemplate" id="5">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn4">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn6" inherits="VehicleActionerUnitTemplate" id="6">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn5">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn7" inherits="VehicleActionerUnitTemplate" id="7">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn6">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentBtn8" inherits="VehicleActionerUnitTemplate" id="8">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentBtn7">
+						<Offset>
+							<AbsDimension x="46" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseSetAngleFrame()</OnClick>
+		</Scripts>
+	</Frame>
+
+	<Frame name="VehicleActioner" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="bottom" relativePoint="top" >
+				<Offset>
+					<AbsDimension x="0" y="720" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2"  abs_x="960" abs_y="542">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="26" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+    		    <Texture name="$parentTopBkg2" inherits="TemplateBigBkg5">
+			     	<Size>
+			        	<AbsDimension x="770" y="296"/>
+			        </Size>
+			        <Anchors>
+			        	<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+			        	<Offset>
+			         		<AbsDimension x="40" y="88"/>
+			        	</Offset>
+			       		</Anchor>
+			      	</Anchors>
+    			 </Texture>
+    			<Texture name="$parentTopBkg3"  inherits="TemplateBigBkg5">
+			     	<Size>
+			        	<AbsDimension x="50" y="296"/>
+			        </Size>
+			        <Anchors>
+			        	<Anchor point="right" relativePoint="left" relativeTo="$parentTopBkg2">
+			        	<Offset>
+			         		<AbsDimension x="-16" y="0"/>
+			        	</Offset>
+			       		</Anchor>
+			      	</Anchors>
+    			 </Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentC1" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="151" y="23"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC2" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC1">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC3" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC2">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC4" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC3">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC5" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC4">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC6" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC5">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC7" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC6">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<Frame name="$parentC8" inherits="VehicleActionerColumnIconTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentC7">
+						<Offset>
+							<AbsDimension x="41" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			<ListViewFrame name="$parentMainBox" slidingY="true" slideplane="$parentPlane" abs_x="831" abs_y="296">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentTopBkg3">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="831" abs_y="296"/>
+				</Frames>
+			</ListViewFrame>
+            <Frame name="$parentMask" abs_x="831" abs_y="451" framelevel="14" input_transparent="true">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentTopBkg3"/>
+                </Anchors>
+                <Layers>
+					<Layer level="BACKGROUND">
+						<!-- <Texture name="$parentBkg1" inherits="TemplateBigBkg37" abs_x="831" abs_y="80">
+							<Anchors>
+                				<Anchor point="bottom" relativePoint="top" relativeTo="VehicleActionerMainBox"/>
+                			</Anchors>
+                		</Texture>
+                		<Texture name="$parentBkg2" inherits="TemplateBigBkg37"  abs_x="831" abs_y="80">
+							<Anchors>
+                				<Anchor point="top" relativePoint="bottom" relativeTo="VehicleActionerMainBox"/>
+                			</Anchors>
+                		</Texture> -->
+                	</Layer>
+                </Layers>
+            </Frame>
+            <Frame name="$parentSetAngle" hidden="true" abs_x="640" abs_y="150" frameStrata="HIGH">
+            	<Layers>
+            		<Layer level="BACKGROUND">
+            			<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="15" abs_y="25">
+								<Angle value="-90"/>
+				        </Texture>
+            			<Texture name="$parentBkg" inherits="TemplateBigBkg19" abs_x="640" abs_y="150"/>
+            			<Texture name="$parentSliderBkg" inherits="TemplateBkg16" abs_x="360" abs_y="12">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset> 
+								</Anchor>					
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentSliderPro" inherits="TemplateBkg17" abs_x="360" abs_y="12">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg" />
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentVal" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="360" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentRightBtn" relativePoint="right">
+									<Offset>
+										<AbsDimension x="23" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="right" justifyV="middle" text="$12331" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentBkg" relativePoint="left">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentText1" fonttype="BlackFont14" justifyH="left" justifyV="middle" text="-360°" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentSliderBkg" relativePoint="bottomleft">
+									<Offset>
+										<AbsDimension x="0" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentText2" fonttype="BlackFont14" justifyH="right" justifyV="middle" text="360°" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topright" relativeTo="$parentSliderBkg" relativePoint="bottomright">
+									<Offset>
+										<AbsDimension x="7" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentText3" fonttype="BlackFont14" justifyH="center" justifyV="middle" text="0°" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentSliderBkg" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="7" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+            		</Layer>
+            	</Layers>
+            	<Frames>
+            		<Slider name="$parentBar" orientation="HORIZONTAL" minValue="-360" maxValue="360" valueStep="15" defaultValue="0" abs_x="360" abs_y="52">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentSliderBkg" relativePoint="left" />
+						</Anchors>
+						<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30" />
+						<Scripts>
+							<OnValueChanged>GetInst("UIManager"):GetCtrl("VehicleActioner"):AngleBarOnValueChanged()</OnValueChanged>
+						</Scripts>
+					</Slider>
+					<Button name="$parentLeftBtn" inherits="TemplateLeftArrowBtn1" abs_x="26" abs_y="47">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentBar">
+								<Offset>
+									<AbsDimension x="-18" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):SetAngleLeftBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRightBtn"  inherits="TemplateRightArrowBtn1" abs_x="26" abs_y="47">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+								<Offset>
+									<AbsDimension x="18" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):SetAngleRightBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+            		<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseSetAngleFrame()</OnClick>
+            	</Scripts>
+            </Frame>
+			<Frame name="$parentSetRope" hidden="true" abs_x="636" abs_y="120" frameStrata="HIGH">
+            	<Layers>
+            		<Layer level="BACKGROUND">
+            			<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+								<Angle value="-90"/>
+								<Anchors>
+								<Anchor>
+									<Offset>
+										<AbsDimension x="34" y="-15"/>
+									</Offset> 
+								</Anchor>					
+							</Anchors>	
+				        </Texture>
+            			<Texture name="$parentBkg" inherits="TemplateBigBkg19"  abs_x="636" abs_y="120"/> 
+            			<Texture name="$parentSliderBkg" inherits="TemplateBkg16" abs_x="360" abs_y="12">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset> 
+								</Anchor>					
+							</Anchors>	
+						</Texture>
+						<Texture name="$parentSliderPro" inherits="TemplateBkg17" abs_x="360" abs_y="12">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg" />
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentVal" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="15" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentRightBtn" relativePoint="right">
+									<Offset>
+										<AbsDimension x="23" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTitle" fonttype="BlackFont18" justifyH="right" justifyV="middle" text="$12329" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentBkg" relativePoint="left">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+           		</Layer>
+            	</Layers>
+            	<Frames>
+            		<Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="15" valueStep="1" defaultValue="0" abs_x="360" abs_y="52">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentSliderBkg" relativePoint="left" />
+						</Anchors>
+						<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30" />
+						<Scripts>
+							<OnValueChanged>GetInst("UIManager"):GetCtrl("VehicleActioner"):RopeBarOnValueChanged()</OnValueChanged>
+						</Scripts>
+					</Slider>
+					<Button name="$parentLeftBtn" inherits="TemplateLeftArrowBtn1" abs_x="26" abs_y="47">      <!-- 悬浮板左边的指示按钮 -->
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentBar">
+								<Offset>
+									<AbsDimension x="-18" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):SetRopeLeftBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentRightBtn"  inherits="TemplateRightArrowBtn1" abs_x="26" abs_y="47">     <!-- 悬浮板右边的指示按钮 -->
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+								<Offset>
+									<AbsDimension x="18" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):SetRopeRightBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+            		<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseSetAngleFrame()</OnClick>
+            	</Scripts>
+			</Frame>
+            <Frame name="$parentModelScale" abs_x="560" abs_y="48" hidden="false" framelevel="15">
+				<Anchors>
+				  <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTopBkg3">
+					<Offset>
+					  <AbsDimension x="0" y="20"/>
+					</Offset>
+				  </Anchor>
+				</Anchors>
+				  <Layers>
+					  <Layer level="BACKGROUND">
+						<FontString name="$parentName" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="$12301">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="140" y="24"/>
+							</Size>
+						    <Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentVal" fonttype="BlackFont24" justifyH="left" justifyV="middle" text="1.0秒">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="62" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentRightBtn">
+									<Offset>
+										<AbsDimension x="18" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					 </Layer>
+				 </Layers>
+				 <Frames>
+					  <Slider name="$parentBar" orientation="HORIZONTAL" minValue="0.4" maxValue="10" valueStep="0.2" defaultValue="5">
+						  <Size>
+							  <AbsDimension x="270" y="12"/>
+						  </Size>
+						  <Anchors>
+							  <Anchor point="left" relativePoint="right" relativeTo="$parentLeftBtn">
+								  <Offset>
+									  <AbsDimension x="18" y="0"/>
+								  </Offset>
+							  </Anchor>
+						  </Anchors>
+						  <Layers>
+							  <Layer level="BACKGROUND">
+								  <Texture name="$parentBkg" inherits="TemplateBkg16">
+									  <Size>
+										  <AbsDimension x="270" y="12"/>
+									  </Size>
+									  <Anchors>
+										  <Anchor point="center" relativePoint="center" relativeTo="$parent">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Texture>
+								  <Texture name="$parentPro" inherits="TemplateBkg17">
+									  <Size>
+										  <AbsDimension x="270" y="12"/>
+									  </Size>
+									  <Anchors>
+										  <Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+											  <Offset>
+												  <AbsDimension x="0" y="0"/>
+											  </Offset>
+										  </Anchor>
+									  </Anchors>
+								  </Texture>
+
+							  </Layer>
+						  </Layers>
+						  <!-- <ThumbTexture name="$parentThumbTexture" inherits="TemplateBkg5"> -->
+							  <!-- <Size>
+								  <AbsDimension x="28" y="30"/>
+							  </Size> -->
+						  <!-- </ThumbTexture> -->
+						  <ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30" />
+						  <Scripts>
+							  <OnValueChanged>GetInst("UIManager"):GetCtrl("VehicleActioner"):RunTimeOnValueChanged()</OnValueChanged>
+						  </Scripts>
+					  </Slider>
+					 <Button name="$parentLeftBtn" inherits="TemplateLeftArrowBtn1" abs_x="26" abs_y="47">
+						 <Anchors>
+							 <Anchor point="left" relativePoint="right" relativeTo="$parentName">
+								 <Offset>
+									 <AbsDimension x="5" y="0"/>
+								 </Offset>
+							 </Anchor>
+						 </Anchors>
+						 <Scripts>
+							 <OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):RunTimeLeftBtnClicked();</OnClick>
+						 </Scripts>
+					 </Button>
+					 <Button name="$parentRightBtn"  inherits="TemplateRightArrowBtn1" abs_x="26" abs_y="47">
+						 <Anchors>
+							 <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+								 <Offset>
+									 <AbsDimension x="18" y="0"/>
+								 </Offset>
+							 </Anchor>
+						 </Anchors>
+						 <Scripts>
+							 <OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):RunTimeRightBtnClicked();</OnClick>
+						 </Scripts>
+					 </Button>
+				  </Frames>
+			</Frame>
+			<Button name="$parentSaveBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-56" y="-19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3934" abs_x="176" abs_y="56">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<Onclick>GetInst("UIManager"):GetCtrl("VehicleActioner"):SaveBtnClicked()</Onclick>
+				</Scripts>
+			</Button>
+			<Button name="$parentResetBtn" inherits="TemplateBtn2" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="71" y="-19"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentText" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$12303" abs_x="176" abs_y="56">
+							<Color r="51" g="55" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<Onclick>GetInst("UIManager"):GetCtrl("VehicleActioner"):ResetBtnClicked()</Onclick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentHead" inherits="TemplateTopTitleBkg0">
+				<Size>
+					<AbsDimension x="956" y="61"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle" fonttype="BlackFont34" justifyH="left" justifyV="middle" text="$12300" abs_x="200" abs_y="33" >
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="VehicleActionerHelpBtn">
+									<Offset>
+										<AbsDimension x="31" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseSetAngleFrame();</OnClick>
+				</Scripts>
+			</Frame>
+			<Button name="$parentLoopBtn" inherits="TemplateTickBtn5" framelevel="15">
+				<Anchors>
+					<Anchor point="topright" relativePoint="bottomright" relativeTo="VehicleActionerTopBkg2">
+						<Offset>
+							<AbsDimension x="0" y="29"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):LoopBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn" abs_x="46" abs_y="60" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentHead" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentHelpBtn" inherits="TemplateHelpBtn0" >
+				<Size>
+					<AbsDimension x="26" y="37"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentHead">
+						<Offset>
+							<AbsDimension x="15" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):HelpBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("VehicleActioner"):CloseSetAngleFrame()</OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

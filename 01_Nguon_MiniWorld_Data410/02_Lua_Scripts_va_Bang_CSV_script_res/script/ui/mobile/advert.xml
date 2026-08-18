@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/advert.lua" />
+
+	#可下拉框中的按钮模版
+	<Button name="AdvertSlideCellTemplate" virtual="true" hidden="true" abs_x="224" abs_y="85" framelevel="3" click_threshold="50">
+		<Anchors>
+			<Anchor point="center" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg6"/>
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg6"/>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentCheckedBG" inherits="TemplateBkg7"/>
+				<!--居中短标题 小于等于八个汉字的长度-->
+				<FontString name="$parentShortText" justifyH="center" justifyV="middle" fonttype="BlackFont24" hidden="true" fontStyle="normal" text="短标题少于九个字">
+					<Color r="55" g="54" b="49"/>
+					<Size>
+						<AbsDimension x="224" y="85"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="-2" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<!-- 时间 -->
+				<FontString name="$parentText2" fonttype="BlackFont18" hidden="true" fontStyle="normal" abs_x="320" abs_y="51">
+					<Anchors>
+						<Anchor point="left" relativePoint="left">
+							<Offset>
+								<AbsDimension x="90" y="37" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentRedDot" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="false">
+					<Size>
+						<AbsDimension x="22" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="5" y="-9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+
+		<Scripts>
+			<OnClick>AdvertCellBtn_OnClick();</OnClick>
+		</Scripts>
+
+		<Frames>
+			<!-- 标题 -->
+			<RichText name="$parentLongText" hidden="true" fonttype="BlackFont24" lineInterval="5" input_transparent="true" fontStyle="normal" multiLine="false" abs_x="207" abs_y="107">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="10" y="14" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+
+	</Button>
+
+	<Frame name="AdvertContentBlockTemplate" virtual="true" hidden="true" abs_x="746" abs_y="151">
+		<Anchors>
+			<Anchor point="center" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont24" abs_x="746" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentText" fonttype="BlackFont22" lineInterval="2" input_transparent="true" fontStyle="normal" multiLine="false" abs_x="748" abs_y="113">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="1" y="14" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+	</Frame>
+
+	#游戏公告 main
+	<Frame name="AdvertFrame" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2" input_transparent="false">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentBkg" hidden="true" file="ui/white.png" color="01000000" abs_x="1075" abs_y="600">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="56" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentContentBkg" hidden="true" file="ui/white.png" color="01000000" abs_x="758" abs_y="436">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="279" y="82"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="758" abs_y="2">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="279" y="514"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<FontString name="$parentDuration" justifyH="left" justifyV="middle" fonttype="BlackFont24" lineInterval="2" abs_x="576" abs_y="23">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="279" y="545"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+			</Layer>
+		</Layers>
+
+		<Frames>
+
+			#跳转按钮
+			<Button name="$parentGotoBtn" inherits="TemplateBtn3" framelevel="3">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-38" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer>
+						<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont24" fontStyle="normal" text="TODO">
+							<Color r="55" g="54" b="51" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>AdvertBtnGoto_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			#标题滑动背景
+			<SlidingFrame name="$parentContentSliderBox" slidingY="true" slideplane="$parentPlane" abs_x="246" abs_y="491">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="5" y="89"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="246" abs_y="1800">
+					</Frame>
+
+					<Button name="AdvertSlideCell1" inherits="AdvertSlideCellTemplate" id="1" />
+					<Button name="AdvertSlideCell2" inherits="AdvertSlideCellTemplate" id="2" />
+					<Button name="AdvertSlideCell3" inherits="AdvertSlideCellTemplate" id="3" />
+					<Button name="AdvertSlideCell4" inherits="AdvertSlideCellTemplate" id="4" />
+					<Button name="AdvertSlideCell5" inherits="AdvertSlideCellTemplate" id="5" />
+					<Button name="AdvertSlideCell6" inherits="AdvertSlideCellTemplate" id="6" />
+					<Button name="AdvertSlideCell7" inherits="AdvertSlideCellTemplate" id="7" />
+					<Button name="AdvertSlideCell8" inherits="AdvertSlideCellTemplate" id="8" />
+					<Button name="AdvertSlideCell9" inherits="AdvertSlideCellTemplate" id="9" />
+					<Button name="AdvertSlideCell10" inherits="AdvertSlideCellTemplate" id="10" />
+					<Button name="AdvertSlideCell11" inherits="AdvertSlideCellTemplate" id="11" />
+					<Button name="AdvertSlideCell12" inherits="AdvertSlideCellTemplate" id="12" />
+					<Button name="AdvertSlideCell13" inherits="AdvertSlideCellTemplate" id="13" />
+					<Button name="AdvertSlideCell14" inherits="AdvertSlideCellTemplate" id="14" />
+					<Button name="AdvertSlideCell15" inherits="AdvertSlideCellTemplate" id="15" />
+					<Button name="AdvertSlideCell16" inherits="AdvertSlideCellTemplate" id="16" />
+					<Button name="AdvertSlideCell17" inherits="AdvertSlideCellTemplate" id="17" />
+					<Button name="AdvertSlideCell18" inherits="AdvertSlideCellTemplate" id="18" />
+					<Button name="AdvertSlideCell19" inherits="AdvertSlideCellTemplate" id="19" />
+					<Button name="AdvertSlideCell20" inherits="AdvertSlideCellTemplate" id="20" />
+					<Button name="AdvertSlideCell21" inherits="AdvertSlideCellTemplate" id="21" />
+					<Button name="AdvertSlideCell22" inherits="AdvertSlideCellTemplate" id="22" />
+					<Button name="AdvertSlideCell23" inherits="AdvertSlideCellTemplate" id="23" />
+					<Button name="AdvertSlideCell24" inherits="AdvertSlideCellTemplate" id="24" />
+					<Button name="AdvertSlideCell25" inherits="AdvertSlideCellTemplate" id="25" />
+
+					<Frame name="$parentUpdownMask" framelevel="4" input_transparent="true">
+						<Layers>
+							<Layer level="overlay">
+								#上下遮盖
+								<Texture name="$parentSliderBkgup1" file="ui/mobile/texture2/common.xml" uvname="tab_up_n.png" abs_x="385" abs_y="30" hidden="true">
+									<Anchors>
+										<Anchor point="top" relativePoint="top">
+											<Offset>
+												<AbsDimension x="-2" y="-13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+								<Texture name="$parentSliderBkgup2" file="ui/mobile/texture2/common.xml" uvname="tab_up_n.png" abs_x="385" abs_y="30" hidden="true">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="-2" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</SlidingFrame>
+
+			#图文滑动背景
+			<SlidingFrame name="$parentDetailSliderBox" slidingY="true" slideplane="$parentPlane" abs_x="758" abs_y="433">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentContentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="758" abs_y="423"/>
+
+					<Frame name="AdvertFrameNoContentFrame" abs_x="758" abs_y="433">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="AdvertFrameContentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								#头像
+								<Texture name="$parentHead" file="ui/mobile/texture2/bigtex/img_noroom.png" >
+									<Size>
+										<AbsDimension x="435" y="247"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+								<FontString name="$parentTxt" justifyH="center" fonttype="BlackFont34" text="$50193">
+									<Color r="77" g="112" b="117"/>
+									<Size>
+										<AbsDimension x="600" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentHead">
+											<Offset>
+												<AbsDimension x="0" y="25"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+
+					<Frame name="AdvertFramePicFrame" abs_x="758" abs_y="433">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="AdvertFrameContentBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer>
+								<Texture name="$parentBkg" inherits="TemplateBkg12"/>
+
+								#大图片
+								<Texture name="AdvertFrameBigPic" file="ui/mobile/texture2/bigtex/empty.png"   abs_x="748" abs_y="423" hidden="true">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="AdvertFramePicFrame">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							#图片按钮
+							<Button name="AdvertFramePicBtn" click_threshold="5" abs_x="748" abs_y="423">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="AdvertFrameBigPic" >
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/bigtex/empty.png"   alpha="0.0" abs_x="0" abs_y="0" />
+
+								<Scripts>
+									<OnClick>AdvertPicBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+
+					<Frame name="$parentUpdownMask" framelevel="4" input_transparent="true">
+						<Layers>
+							<Layer level="overlay">
+								#上下遮盖
+								<Texture name="$parentSliderBkgUp" file="ui/mobile/texture2/bigtex/empty.png"   abs_x="758" abs_y="30" hidden="true">
+									<Anchors>
+										<Anchor point="top" relativePoint="top">
+											<Offset>
+												<AbsDimension x="-2" y="-13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+								<Texture name="$parentSliderBkgDown" file="ui/mobile/texture2/bigtex/empty.png"   abs_x="758" abs_y="30" hidden="true">
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="-2" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnLoad>AdvertFrame_OnLoad();</OnLoad>
+			<OnEvent>AdvertFrame_OnEvent();</OnEvent>
+			<OnShow>AdvertFrame_OnShow();</OnShow>
+			<OnHide>AdvertFrame_OnHide();</OnHide>
+			<OnUpdate>AdvertFrame_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+</Ui>

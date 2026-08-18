@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/developer/scriptprint/scriptprintDataMgr.lua"/>
+	<Script file="ui/mobile/mvc/developer/scriptprint/scriptprintView.lua"/>
+	<Script file="ui/mobile/mvc/developer/scriptprint/scriptprintCtrl.lua"/>
+
+	<Frame name="scriptprint" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="2000" abs_x="500" abs_y="700">
+		<Anchors>
+            <Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+                <Offset>
+                    <AbsDimension x="5" y="5"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkgHead" inherits="TemplateBkg13" rel_x="1.0" abs_y="50">
+					<Anchor point="top" relativeTo="$parent" relativePoint="top" />
+				</Texture>
+				<Texture name="$parentBoxBkg" file="ui/white.png" color="80000000" abs_x="500" abs_y="650">
+					<Anchors>
+			            <Anchor point="top" relativeTo="$parent" relativePoint="top">
+			                <Offset>
+			                    <AbsDimension x="0" y="50"/>
+			                </Offset>
+			            </Anchor>
+			        </Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-10" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("scriptprint"):CloseBtnClicked();</OnClick>
+				</Scripts>
+            </Button>
+            ##暂停
+            <Button name="$parentParseBtn" abs_x="25" abs_y="25" hidden="true">
+                <Anchors>
+                    <Anchor point="right" relativeTo="$parentCloseBtn" relativePoint="left">
+                        <Offset>
+                            <AbsDimension x="-10" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                	<Layer>
+                		<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="ico_ani_pause" abs_x="18" abs_y="17">
+			                <Anchors>
+			                    <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			                </Anchors>
+			            </Texture>
+                	</Layer>
+                </Layers>
+                <Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("scriptprint"):ParseBtnClick();</OnClick>
+				</Scripts>
+            </Button>
+
+            ##内容
+            <SlidingFrame name="$parentBox" slidingY="true" slideplane="$parentPlane" abs_x="490" abs_y="640">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentBoxBkg" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentDesc" fonttype="BlackFont18" text="XXXX" hidden="true">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+			                            <AbsDimension x="0" y="50"/>
+			                        </Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentPlane" hidden="true" abs_x="490" abs_y="640"/>
+					##输出信息
+					<RichText name="$parentContent" lineInterval="4" multiLine="false" fonttype="BlackFont18" autoextend="false" input_transparent="true" abs_x="890" abs_y="1000">
+                        <Anchors>
+                            <Anchor point="top" relativeTo="$parentPlane" relativePoint="top" />
+                        </Anchors>
+                    </RichText>
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+	</Frame>
+</Ui>

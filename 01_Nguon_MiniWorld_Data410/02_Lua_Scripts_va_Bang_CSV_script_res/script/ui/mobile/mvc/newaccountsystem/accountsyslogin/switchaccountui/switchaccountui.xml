@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##辅助类
+	<!-- <Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysConfig.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysDataManager.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysHelper/AccountSysInterface.lua"/> -->
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysLogin/SwitchAccountUI/SwitchAccountUIModel.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysLogin/SwitchAccountUI/SwitchAccountUIView.lua"/>
+	<Script file="ui/mobile/mvc/newAccountSystem/AccountSysLogin/SwitchAccountUI/SwitchAccountUICtrl.lua"/>
+	<!--文字问题列表模板1-->
+	<Button name="HistoryItemTemplateNew" virtual="true" abs_x="266" abs_y="69" id="0">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="266" abs_y="69"/>
+				<FontString name="$parentNickName" lineInterval="2" fonttype="BlackFont20" text="名字最多七个字" justifyH="left" >
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="139" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="84" y="11"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentMini" lineInterval="2" fonttype="BlackFont20" text="1234567890" justifyH="left" >
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="119" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="84" y="41"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg36" abs_x="265" abs_y="2">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentLoginType" abs_x="51" abs_y="55" >
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="16" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray" abs_x="51" abs_y="55">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="37" abs_y="38">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			<Button name="$parentDeleteItemBtn" abs_x="25" abs_y="26" hidden="true">
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02"  abs_x="25" abs_y="26"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniu02" abs_x="20" abs_y="20">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-6" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):DeleteItemSelect_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):HistoryItemSelect_OnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="SwitchAccountUI" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="6004">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="80000000" stretchedge="true"/>
+				<!-- <Texture name="$parentTitleBkg" inherits="TemplateBigBkg2" abs_x="580" abs_y="56">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="164"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture> -->
+				<Texture name="$parentOutBkg" inherits="TemplateBigBkg2" abs_x="584" abs_y="328">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- 显示框背景图 -->
+				<Texture name="$parentcontentBkg" inherits="TemplateBigBkg29" abs_x="547" abs_y="296">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentOutBkg">
+							<Offset>
+								<AbsDimension x="0" y="19"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="580" abs_y="56">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentOutBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- ##标题栏背景:height:61
+						<Texture name="$parentBkg" inherits="TemplateBigBkg4">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="48"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="303" abs_y="48" DrawType="center">
+							<Center>
+								<Left offsetX="0" offsetY="0" w="150" h="48" />
+								<Center offsetX="150" offsetY="0" w="3" h="48" />
+								<Right offsetX="153" offsetY="0" w="150" h="48" />
+							</Center>
+						</Texture>
+						<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="84" abs_y="48">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent" />
+							</Anchors>
+						</Texture> -->
+						<Texture name="$parentBkgHelp" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" UVType="turn180" abs_x="68" abs_y="56"/>
+						##标题名
+						<FontString name="$parentTitle" justifyH="left" fonttype="BlackFont38" lineInterval="2" fontStyle="border" text="$35558" >
+							<Color r="255" g="135" b="27"/>
+							<Size>
+								<AbsDimension x="250" y="50"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="70" y="11"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			##返回按钮
+			<Button name="$parentReturnBtn" inherits="TemplateYelllowBackBtn">				
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentTitleFrame" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="5" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):ReturnBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name="$parentContent">
+				<Size>
+					<AbsDimension x="547" y="249"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentcontentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<!-- 问题BG -->
+						<Texture name="$parentQuestionBkgOut" inherits="TemplateBkg8" hidden = "true">
+							<Size>
+								<AbsDimension x="266" y="46"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Frame name="$parentCurSelectedHistoryItem" abs_x="266" abs_y="69">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="266" abs_y="69"/>
+								<FontString name="$parentNickName" lineInterval="2" fonttype="BlackFont20" text="名字最多七个字" justifyH="left" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="139" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="84" y="11"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentMini" lineInterval="2" fonttype="BlackFont20" text="1234567890" justifyH="left" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="119" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="84" y="41"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentDropDown"> <!-- 下拉按钮 -->
+								<Size>
+									<AbsDimension x="40" y="40"/>
+								</Size>
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+										<Offset>
+											<AbsDimension x="-9" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown">
+									<Size>
+										<AbsDimension x="20" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-9" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</NormalTexture>
+								<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown" >
+									<Size>
+										<AbsDimension x="15" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-9" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):HistoryAccoutDropDown_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Frame name="$parentLoginType" abs_x="51" abs_y="55">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+										<Offset>
+											<AbsDimension x="16" y="6"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentIconBkg" file="ui/mobile/texture2/common.xml" uvname="btn_circle_gray" abs_x="51" abs_y="55">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="37" abs_y="38">
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+							</Frame>
+						</Frames>
+					</Frame>
+					<!--账号的历史记录-->
+					<ListViewFrame name="$parentHistoryListView" slidingY="true" slideplane="$parentPlane" abs_x="266" abs_y="202" clipped="true" framelevel="6010">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentCurSelectedHistoryItem">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="266" abs_y="374" />
+							##动态创建
+							<!-- <Button name="$parentGrid1" inherits="HistoryItemTemplateNew" /> -->
+						</Frames>
+					</ListViewFrame>
+					## 删除按钮
+					<Button name="$parentDeleteBtn" hidden="true" framelevel="6500">
+						<Size>
+							<AbsDimension x="266" y="68" />
+						</Size>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="266" abs_y="69"/>
+								<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" lineInterval="2" text="$35561">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="150" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="bjjm_anniu02" abs_x="24" abs_y="25">
+									<Anchors>
+										<Anchor point="right" relativePoint="left" relativeTo="$parentText">
+											<Offset>
+												<AbsDimension x="-10" y="-5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):DeleteBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					## 新版删除+添加账号按钮
+					<Frame name="$parentDeleteFrame" hidden="true" framelevel="6500" abs_x="266" abs_y="68">
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="266" abs_y="69"/>
+							</Layer>
+						</Layers>
+
+						<Frames>
+							## 添加其他按钮
+							<Button name="$parentAddBtn" abs_x="200" abs_y="68" >
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent" relativePoint="left">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/outgame.xml" uvname="bjjm_anniu01_add" abs_x="25" abs_y="26">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="16" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" lineInterval="2" text="$120124" abs_x="80" abs_y="20">
+											<Color r="254" g="254" b="254"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentIcon">
+													<Offset>
+														<AbsDimension x="9" y="1"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):AddAccountBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							## 删除按钮
+							<Button name="$parentDeleteBtn" abs_x="40" abs_y="68">
+								<Anchors>
+									<Anchor point="right" relativeTo="$parent" relativePoint="right">
+										<Offset>
+											<AbsDimension x="-21" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentText" fonttype="BlackFont20" justifyH="center" lineInterval="2" text="$3017" abs_x="40" abs_y="20">
+											<Color r="185" g="185" b="185"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="3"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):DeleteBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					<!-- 登录按钮 -->
+					<Button name="$parentLoginBtn">
+						<Size>
+							<AbsDimension x="266" y="50" />
+						</Size>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg23"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23">
+							<Size>
+								<RelDimension x="0.95" y="0.9"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-5" y="139"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont28" justifyH="center" lineInterval="2" text="$3074">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="266" y="40"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<!-- <OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):LoginBtn_OnClick();</OnClick> -->
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):LoginBtn_OnClick();</OnMouseUp>
+						</Scripts>
+					</Button>
+					<!-- 更多登录方式 -->
+					<RichText name="$parentLoginEnterType" lang_ver="en" fonttype="BlackFont20" multiLine="false" autoextend="false" text="" input_transparent="false" justifyH="left" >
+						<ShadowColor r="77" g="112" b="117"/>
+						<LinkColor r="77" g="112" b="117"/>
+						<Size>
+							<AbsDimension x="180" y="25"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentLoginBtn">
+								<Offset>
+									<AbsDimension x="4" y="60"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):EnterRouteSelect_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+					<RichText name="$parentLoginEnterType" fonttype="BlackFont20" multiLine="false" autoextend="false" text="" input_transparent="false" justifyH="left" >
+						<ShadowColor r="77" g="112" b="117"/>
+						<LinkColor r="77" g="112" b="117"/>
+						<Size>
+							<AbsDimension x="180" y="25"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentLoginBtn">
+								<Offset>
+									<AbsDimension x="30" y="60"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):EnterRouteSelect_OnClick();</OnClick>
+						</Scripts>
+					</RichText>
+				</Frames>
+			</Frame>
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentTitleFrame" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" >
+					<Size>
+						<AbsDimension x="40" y="50"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("SwitchAccountUI"):HandleEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

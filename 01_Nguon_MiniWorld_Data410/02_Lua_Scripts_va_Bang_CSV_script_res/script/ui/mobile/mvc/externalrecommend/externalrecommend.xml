@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/externalRecommend/ExternalRecommendModel.lua"/>
+	<Script file="ui/mobile/mvc/externalRecommend/ExternalRecommendView.lua"/>
+	<Script file="ui/mobile/mvc/externalRecommend/ExternalRecommendCtrl.lua"/>
+	<!-- <Script file="ui/mobile/mvc/externalRecommend/ExternalRecommendMgr.lua"/> -->
+	<!-- 1. 外界推荐显示页面 -->
+	<Frame name="ExternalRecommend" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="1700">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size> 
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			<!-- 地图信息获取正常时候显示的界面-->
+			<Frame name="$parentNormal" parent="$parent" frameStrata="HIGH" hidden="true" framelevel="1750">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size> 
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBgMask" file="ui/white.png" color="80000000" stretchedge="true" framelevel="1002">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--背景-->
+						<Texture name="$parentPicBkg" inherits="TemplateBkg1" abs_x="711" abs_y="416" >
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-7" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--曲别针图片-->
+						<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentPicBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-19" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 地图淡青色背景 -->
+						<Texture name="$parentMapBkg1" inherits="TemplateBigBkg5" abs_x="567" abs_y="170" >
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentPicBkg" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-52" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 地图白色背景 -->
+						<Texture name="$parentMapBkg2" inherits="TemplateBigBkg6" abs_x="527" abs_y="130" >
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentMapBkg1" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--地图缩略图-->
+						<Texture name="$parentPic" file="ui/login_bg.png" abs_x="230" abs_y="120">
+							<Anchors>
+								<Anchor point="Left" relativeTo="$parentMapBkg2" relativePoint="Left">
+									<Offset>
+										<AbsDimension x="4" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--文本提示标识-->
+						<FontString name="$parentPicExplain" fonttype="BlackFont21" justifyH="center" text="$20309" hidden="true">
+							<Color r="255" g="253" b="233"/>
+							<Size>
+								<AbsDimension x="230" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPic">
+									<Offset>
+										<AbsDimension x="0" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 地图类型(背景) -->
+						<Texture name="$parentLabelBkg" inherits="TemplateBkg12" hidden="false" abs_x="52" abs_y="22">
+							<Anchors>
+								<Anchor point="topright" relativeTo="$parentPic" relativePoint="topright">
+									<Offset>
+										<AbsDimension x="-1" y="1" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 这个用不上, 为了兼容老接口也不能删除, 故设为隐藏 -->
+						<Texture name="$parentMapIcon" file="ui/mobile/ui1.png" hidden="true">
+							<Size>
+								<AbsDimension x="39" y="39" />
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentLabelBkg" relativePoint="left">
+									<Offset>
+										<AbsDimension x="8" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 地图类型(文字) -->
+						<FontString name="$parentMapType" fonttype="BlackFont18" justifyH="center" text="未知" hidden="false">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="50" y="21"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentLabelBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 地图白色背景 的右边梯形背景图-->
+						<Texture name="$parentMapBkg21" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="151" abs_y="125">
+							<Anchors>
+								<Anchor point="Right" relativePoint="Right" relativeTo="$parentMapBkg2">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--作为对齐使用的锚点节点 对齐地图白色背景的中心-->
+						<Texture name="$parentMapBkg2Anchor" inherits="TemplateBkg12" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentMapBkg2" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--地图名字-->
+						<FontString name="$parentMapName" fonttype="BlackFont24" text="unknow">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="455" y="23"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Left" relativePoint="center" relativeTo="$parentMapBkg2Anchor">
+									<Offset>
+										<AbsDimension x="-20" y="-40"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--地图大小-->
+						<FontString name="$parentMapSize" fonttype="BlackFont18" justifyH="left" text="0.00M">
+							<Color r="101" g="116" b="118"/>
+							<Size>
+								<AbsDimension x="120" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentMapName">
+									<Offset>
+										<AbsDimension x="220" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--制作者图标-->
+						<Texture name="$parentAuthorIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_user" abs_x="21" abs_y="21">
+							<Anchors>
+								<Anchor point="Left" relativePoint="center" relativeTo="$parentMapBkg2Anchor">
+									<Offset>
+										<AbsDimension x="-20" y="10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--地图作者名-->
+						<FontString name="$parentAuthor" fonttype="BlackFont18" text="unknow" justifyH="left" justifyV="bottom">
+							<Color r="101" g="116" b="118"/>
+							<Size>
+								<AbsDimension x="100" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Left" relativePoint="Right" relativeTo="$parentAuthorIcon">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--下载图标-->
+						<Texture name="$parentDownIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download">
+							<Size>
+								<AbsDimension x="21" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Left" relativePoint="center" relativeTo="$parentMapBkg2Anchor">
+									<Offset>
+										<AbsDimension x="-20" y="45"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--下载量-->
+						<FontString name="$parentDown" fonttype="BlackFont18" text="9999万" justifyH="left" justifyV="bottom">
+							<Color r="101" g="116" b="118"/>
+							<Size>
+								<AbsDimension x="120" y="17"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Left" relativePoint="Right" relativeTo="$parentDownIcon">
+									<Offset>
+										<AbsDimension x="15" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						
+					</Layer>
+					<Layer level="BACKGROUND">
+						<!--作为对齐使用的锚点节点-->
+						<Texture name="$parentAnchor2" inherits="TemplateBkg12" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--进度条背景框-->
+						<Texture name="$parentProgressBarBkg" inherits="TemplateBkg16" hidden="true">
+							<Size>
+								<AbsDimension x="567" y="16" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentAnchor2" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="50" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--进度条-->
+						<Texture name="$parentProgressTex" inherits="TemplateBkg17" hidden="true">
+							<Size>
+								<AbsDimension x="46" y="12" />
+							</Size>
+							<Anchors>
+								<Anchor point="Left" relativePoint="Left" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="2" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--文字 您关注的主播给您推荐了好玩的地图！！！-->
+						<FontString name="$parentTip" fonttype="BlackFont24" justifyH="center" text="您关注的主播给您推荐了好玩的地图！！！" hidden="true">
+							<Color r="55" g="55" b="47"/>
+							<Size>
+								<AbsDimension x="440" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--文字 地图下载中...-->
+						<FontString name="$parentMapDownloading" fonttype="BlackFont24" justifyH="center" text="地图下载中..." hidden="true">
+							<Color r="55" g="55" b="47"/>
+							<Size>
+								<AbsDimension x="142" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--文字 下载完成-->
+						<FontString name="$parentMapDownloadOK" fonttype="BlackFont24" justifyH="center" text="下载完成" hidden="true">
+							<Color r="55" g="55" b="47"/>
+							<Size>
+								<AbsDimension x="142" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="-50" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--小勾图片-->
+						<Texture name="$parentMapDownloadOKIcon" file="ui/mobile/texture2/friend.xml" uvname="icon_yes.png" abs_x="24" abs_y="18" hidden="true">
+							<Anchors>
+								<Anchor point="Left" relativePoint="Right" relativeTo="$parentMapDownloadOK">
+									<Offset>
+										<AbsDimension x="5" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 关闭页面 -->
+					<Button name="$parentCloseBtn" abs_x="36" abs_y="46" >
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentPicBkg" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-24" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="36" abs_y="46" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="30" abs_y="40" >
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ExternalRecommend"):NormalViewCloseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<!-- 联机按钮 -->
+					<Button name="$parentConnectBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentMapBkg1">
+								<Offset>
+									<AbsDimension x="0" y="88"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" justifyH="center" fonttype="BlackFont24" lineInterval="1" text="联机">
+									<Color r="51" g="55" b="55"/>
+									<Size>
+										<AbsDimension x="47" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg2" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2" abs_x="178" abs_y="58">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ExternalRecommend"):ConnectBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--马上开玩按钮-->
+					<Button name="$parentReadyPlayBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentMapBkg1">
+								<Offset>
+									<AbsDimension x="0" y="88"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<!-- 马上开玩-->
+								<FontString name="$parentName1" fonttype="BlackFont24" justifyH="center" text="马上开玩">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="94" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" abs_x="178" abs_y="58">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ExternalRecommend"):PlayGameBtnOnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<!-- 地图信息获取异常时候显示的界面-->
+			<Frame name="$parentExcept" parent="$parent" frameStrata="HIGH" hidden="false" framelevel="1850">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size> 
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBgMask" file="ui/white.png" color="80000000" stretchedge="true" framelevel="1002">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--背景-->
+						<Texture name="$parentPicBkg" inherits="TemplateBkg1" abs_x="711" abs_y="416" >
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="-7" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--曲别针图片-->
+						<Texture name="$parentClipIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentPicBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="-19" y="-22" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- 背景 没有房间 -->
+						<Texture name="$parentBgNoroom" file="ui/mobile/texture2/bigtex/img_noroom.png">
+							<Size>
+								<AbsDimension x="329" y="187" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentPicBkg">
+									<Offset>
+										<AbsDimension x="0" y="-50"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="BACKGROUND">
+						<!--作为对齐使用的锚点节点-->
+						<Texture name="$parentAnchor2" inherits="TemplateBkg12" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--进度条背景框-->
+						<!--文字 您关注的主播地图码填写有误，不能带您进入地图哦。-->
+						<FontString name="$parentTip" fonttype="BlackFont24" justifyH="center" text="您关注的主播地图码填写有误，不能带您进入地图哦。" hidden="false">
+							<Color r="55" g="55" b="47"/>
+							<Size>
+								<AbsDimension x="562" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentAnchor2">
+									<Offset>
+										<AbsDimension x="0" y="60"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 关闭页面 -->
+					<Button name="$parentCloseBtn" abs_x="36" abs_y="46" >
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parentPicBkg" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-24" y="15"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="36" abs_y="46" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close.png" abs_x="30" abs_y="40" >
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ExternalRecommend"):ExceptViewCloseBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<!--地图错误时此按钮跳转到迷你工坊-->
+					<Button name="$parentReadyPlayBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="Bottom" relativePoint="Bottom" relativeTo="$parentPicBkg">
+								<Offset>
+									<AbsDimension x="0" y="-28"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<!-- 马上开玩-->
+								<FontString name="$parentName1" fonttype="BlackFont24" justifyH="center" text="确定">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="94" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" abs_x="178" abs_y="58">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ExternalRecommend"):ExceptViewEnsureBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("ExternalRecommend"):onEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

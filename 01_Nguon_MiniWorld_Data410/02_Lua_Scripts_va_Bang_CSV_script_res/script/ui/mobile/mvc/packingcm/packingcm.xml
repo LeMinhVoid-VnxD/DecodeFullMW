@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##商城主页
+	<Script file="ui/mobile/mvc/packingcm/PackingCMModel.lua"/>
+	<Script file="ui/mobile/mvc/packingcm/PackingCMView.lua"/>
+	<Script file="ui/mobile/mvc/packingcm/PackingCMCtrl.lua"/>
+	<Script file="ui/mobile/mvc/packingcm/PackingCMInterface.lua"/>
+
+	##功能按钮模板
+	<Button name="PackingCMFunctionBtnTemplate" abs_x="88" abs_y="88" virtual="true">
+		<Layers>
+			<Layer level="overlay" >
+				<Texture name="$parentChecked" inherits="TemplateBkg71" rel_x="0.85" rel_y="0.85" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_square.png" hidden="true"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_board_square.png"  hidden="true" rel_x="0.95" rel_y="0.95">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+			</Anchors>
+		</PushedTexture>
+		<Scripts>
+		</Scripts>
+	</Button>
+
+	##地图编辑主界面
+	<Frame name="PackingCM" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2400" input_transparent="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentModelBkg" inherits="TemplateBkg83" abs_x="200" abs_y="38">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-112"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentModeText" fonttype="BlackFont18" justifyH="center" text="$25014">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="200" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentModelBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentFunctionBtns" abs_x="300" abs_y="100" input_transparent="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentBlockCMBtn" inherits="PackingCMFunctionBtnTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_narrow_block.png" abs_x="50" abs_y="50">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="1" platform='pc'>
+									<Color r="254" g="248" b="240"/>
+									<Size>
+										<AbsDimension x="75" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("PackingCM"):BlockCMBtnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCombinationCMBtn" inherits="PackingCMFunctionBtnTemplate">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentBlockCMBtn">
+								<Offset>
+									<AbsDimension x="15" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay" >
+								<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_narrow_compose.png" abs_x="50" abs_y="50">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<FontString name="$parentKeyName" fonttype="BlackFont17" justifyV="middle" justifyH="center" text="2" platform='pc'>
+									<Color r="254" g="248" b="240"/>
+									<Size>
+										<AbsDimension x="75" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("PackingCM"):CombinationCMBtnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames> 
+			</Frame>
+			##右侧功能按钮
+			<Frame name="$parentRightFunctionFrame" abs_x="77" abs_y="190" input_transparent="true">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset platform='pc'>
+							<AbsDimension x="-20" y="0" />
+						</Offset>
+						<Offset platform='mobile'>
+							<AbsDimension x="-20" y="-80" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##调节远近滑块
+					<Slider name="$parentAdjustmentBar" orientation="VERTICAL" startPosition="bottom" ignoreLeftDown="false" minValue="5" maxValue="64" valueStep="1" defaultValue="0" abs_x="42" abs_y="245" >
+						<Anchors>
+							<Anchor point="right" relativeTo="$parent" relativePoint="left">
+								<Offset>
+									<AbsDimension x="-10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg68" abs_x="42" abs_y="293">
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+											<Offset>
+												<AbsDimension x="0" y="10" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentProBkg" inherits="TemplateBkg16" abs_x="12" abs_y="240">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentPro" inherits="TemplateBkg17" abs_x="12" abs_y="240">
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom"/>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNum" fonttype="BlackFont24" justifyV="middle" justifyH="center" text="100">
+									<Color r="254" g="248" b="220"/>
+									<Size>
+										<AbsDimension x="32" y="19"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="8"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30">
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="-213" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ThumbTexture>
+
+						<Scripts>
+							<OnValueChanged>GetInst("UIManager"):GetCtrl("PackingCM"):AdjustmentBarValueChanged();</OnValueChanged>
+						</Scripts>
+					</Slider>
+				</Frames>
+			</Frame>
+			##退出编辑
+			<Button name="$parentExitBtn" abs_x="82" abs_y="82">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="PackingCMFunctionBtnsCombinationCMBtn">
+						<Offset>
+							<AbsDimension x="15" y="3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay" >
+						<Texture name="$parentIcon" file="ui/mobile/texture0/ingame.xml" uvname="icon_cancel.png" abs_x="33" abs_y="33">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentKeyName" fonttype="BlackFont14" justifyV="middle" justifyH="center" text="ESC" platform='pc'>
+							<Color r="254" g="248" b="240"/>
+							<Size>
+								<AbsDimension x="75" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/operate.xml" uvname="operating_board_s" rel_x="0.95" rel_y="0.95">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("PackingCM"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+		</Scripts>
+	</Frame>
+</Ui>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibOption/ModsLibOptionModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibOption/ModsLibOptionView.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibOption/ModsLibOptionCtrl.lua"/>
+
+    ##格子模板
+    <Button name="ModsLibOption_ItemTemplate" inherits="t_btn_24e" virtual="true" abs_x="533" abs_y="50">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibOption"):OptionOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+	##主界面
+    <Frame name="ModsLibOption" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000" >
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="A0000000" />
+                <Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="653" abs_y="500">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentDesc" fonttype="BlackFont20" text="描述描述描述" justifyH="center" autowrap="true" abs_x="562" abs_y="20">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="80"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkgWithHuaWen01" abs_x="638" abs_y="65">
+                <Anchors>
+                    <Anchor point="topleft" relativeTo="$parentBkg" relativePoint="topleft" >
+                        <Offset>
+                            <AbsDimension x="6" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibOption"):CloseBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##选项列表
+            <Frame name="$parentCenter" abs_x="562" abs_y="330">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="122"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SlidingFrame name="$parentList" slidingY="true" slideplane="$parentPlane" abs_x="562" abs_y="310">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="562" abs_y="310"/>
+                            ##'ModsLibOption_ItemTemplate'
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+        </Frames>
+    </Frame>
+</Ui>

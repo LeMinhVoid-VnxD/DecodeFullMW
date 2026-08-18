@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/altar/AltarAwardsEditModel.lua"/>
+	<Script file="ui/mobile/mvc/altar/AltarAwardsEditView.lua"/>
+	<Script file="ui/mobile/mvc/altar/AltarAwardsEditCtrl.lua"/>
+	
+	##MessageBox弹框: 白底 中间带文字 有关闭按钮
+	<Frame name="AltarMainFrame1" virtual="true" rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				
+				<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="413" abs_y="388">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentMask2" inherits="TemplateBigBkg31" abs_x="399" abs_y="67">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="5" y="5" />
+							</Offset>
+						</Anchor>
+					</Anchors>						
+				</Texture>
+
+				<Texture name="$parentMask1" inherits="TemplateBigBkg7_flat" abs_x="399" abs_y="67">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentChenDi" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="5" y="5" />
+							</Offset>
+						</Anchor>
+					</Anchors>						
+				</Texture>
+				<FontString name="$parentTitle" fonttype="BlackFont30"  text="$2070" justifyV="middle" justifyH="center">
+					<Color r="77" g="112" b="116"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask2">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>									
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-27" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("AltarAwardsEdit"):CloseBtnClicked();</OnClick>
+				</Scripts>				
+			</Button>
+		</Frames>
+	</Frame>
+
+	<!--tab按钮模板-->
+
+	<Frame name="AltarAwardsEdit" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10" abs_x="413" abs_y="388" >
+		<Anchors>
+			<Anchor point="center" relativeTo="$parent" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>	
+		<Frames>
+			## (标题名, 关闭按钮, 白底) 仿TemplateMainFrame2
+			<Frame name="$parentFrame" inherits="AltarMainFrame1"  abs_x="413" abs_y="388">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>			
+			</Frame>
+
+
+
+			##祭品 原料栏
+			<Frame name="$parentTop2" abs_x="413" abs_y="220">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentFrame">
+						<Offset>
+							<AbsDimension x="0" y="67"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle2" fonttype="BlackFont24"  text="$2071" justifyV="middle" justifyH="center" abs_x="413" abs_y="23">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="27"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>								
+					</Layer>
+				</Layers>
+				<Frames>
+					##原料栏Item
+					<Button name="$parentItem1" platform="mobile" inherits="CraftingTableGridBtnTemplate" abs_x="117" abs_y="117" id="40001">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="60"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentItem1" platform="pc" inherits="GridButtonTemplate2" abs_x="117" abs_y="117" id="40001">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="60"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+
+					##黄色按钮 
+					<Button name="$parentBtnSave" inherits="TemplateLongYellowBtn" text="$2072">
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="229"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("AltarAwardsEdit"):SaveBtnClicked();</OnClick>
+						</Scripts>						
+					</Button>	
+					##数量
+					<RichText name="$parentMaterialCount" multiLine="false" fonttype="BlackFont20" lineInterval="1" text="0/0" abs_x="413" abs_y="40" > 
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="190" y="187"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>										
+				</Frames>
+			</Frame>			
+		</Frames>	
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("AltarAwardsEdit"):HandleEvent();</OnEvent>
+		</Scripts>			
+	</Frame>
+</Ui>

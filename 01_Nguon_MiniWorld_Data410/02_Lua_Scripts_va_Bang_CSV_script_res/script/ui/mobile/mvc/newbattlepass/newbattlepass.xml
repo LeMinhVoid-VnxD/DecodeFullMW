@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Ui>
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassModel.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassView.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassCtrl.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassHelper/NewBattlePassInterface.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassHelper/NewBattlePassService.lua" />
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassHelper/NewBattlePassDataManager.lua"/>
+	<Script file="ui/mobile/mvc/NewBattlePass/NewBattlePassHelper/NewBattlePassPay.lua" />
+
+	<!--右侧页签按钮模板-->
+	<Button name="NewBattlePassTabBtnTemplate" virtual="true" abs_x="106" abs_y="50">
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Unselected" abs_x="106" abs_y="50">
+			<Anchors>
+				<Anchor point="top" relativePoint="top" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</NormalTexture>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Unselected" abs_x="106" abs_y="50">
+			<Anchors>
+				<Anchor point="top" relativePoint="top" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</PushedTexture>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" fonttype="BlackFont24"  justifyH="center" justifyV="middle" abs_x="100" abs_y="30">
+					<Color r="221" g="234" b="243" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##红点
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_newreddot" abs_x="14" abs_y="14" hidden="true">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):SwitchTabBtn_OnClicked()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!--NewBattlePass通行证主界面-->
+	<Frame name="NewBattlePass" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="700">
+		<Size>
+			<RelDimension x="1.0" y="1.0" />
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/bg_battlepass.png" stretchedge="true" rel_x="1" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentScoreBg" file="ui/mobile/texture0/newbattlepass.xml" uvname="score_bg" abs_x="133" abs_y="39" >
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-589" y="31" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="items/icon10026.png" abs_x="46" abs_y="46">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-693" y="27" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentScore" fonttype="BlackFont26" text="50000" justifyH="left" justifyV="middle" abs_x="100" abs_y="30">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-584" y="37" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<ModelView name="$parentEffect" abs_x="1000" abs_y="480">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentPopBtn" abs_x="28" abs_y="27" hidden="true">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-589" y="27" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/battlepass.xml" uvname="icon_box_gold.png" abs_x="28" abs_y="27">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):TestClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentCloseBtn" abs_x="43" abs_y="43">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-44" y="29" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_close_blue.png" abs_x="42" abs_y="42">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):CloseBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentTab1" inherits="NewBattlePassTabBtnTemplate" id="1" text="奖励">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-103" y="22" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTab2" inherits="NewBattlePassTabBtnTemplate" id="2" text="任务">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentTab1">
+						<Offset>
+							<AbsDimension x="-5" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTab3" inherits="NewBattlePassTabBtnTemplate" id="3" text="挑战">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentTab2">
+						<Offset>
+							<AbsDimension x="-5" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTab4" inherits="NewBattlePassTabBtnTemplate" id="4" text="兑换">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentTab3">
+						<Offset>
+							<AbsDimension x="-5" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			##大奖预览
+			<Button name="$parentCheckBigRewardBtn" abs_x="86" abs_y="39">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="91" y="36"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_translucent" rel_x="1.0" rel_y="1.0" DrawType="ninesquare_center">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="12" 	h="17"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="5"  h="17"/>
+						<Topright 		offsetX="18" 	offsetY="0" 	w="13" 	h="17"/>
+						<Left 			offsetX="0" 	offsetY="17" 	w="12" 	h="10"/>
+						<Center 		offsetX="12" 	offsetY="17" 	w="5"  h="10"/>
+						<Right 			offsetX="18" 	offsetY="17" 	w="13" 	h="10"/>
+						<Bottomleft 	offsetX="0" 	offsetY="27" 	w="12" 	h="12"/>
+						<Bottom 		offsetX="12" 	offsetY="27" 	w="5"  h="12"/>
+						<Bottomright 	offsetX="18" 	offsetY="27" 	w="13" 	h="12"/>
+						<OffSet x="12" y="17" />
+					</NineSquare>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_translucent" rel_x="0.9" rel_y="0.9" DrawType="ninesquare_center">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="12" 	h="17"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="5"  h="17"/>
+						<Topright 		offsetX="18" 	offsetY="0" 	w="13" 	h="17"/>
+						<Left 			offsetX="0" 	offsetY="17" 	w="12" 	h="10"/>
+						<Center 		offsetX="12" 	offsetY="17" 	w="5"  h="10"/>
+						<Right 			offsetX="18" 	offsetY="17" 	w="13" 	h="10"/>
+						<Bottomleft 	offsetX="0" 	offsetY="27" 	w="12" 	h="12"/>
+						<Bottom 		offsetX="12" 	offsetY="27" 	w="5"  h="12"/>
+						<Bottomright 	offsetX="18" 	offsetY="27" 	w="13" 	h="12"/>
+						<OffSet x="12" y="17" />
+					</NineSquare>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont20" text="$70505" justifyH="center" justifyV="middle" abs_x="100" abs_y="30">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-3" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentName" fonttype="BlackFont20" text="$70505" justifyH="center" justifyV="middle" abs_x="100" abs_y="30">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):CheckBigRewardBtn_OnClicked()</OnClick>
+				</Scripts>
+			</Button>
+
+			##玩法说明
+			<Button name="$parentPlayContentdBtn" abs_x="86" abs_y="39">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentCheckBigRewardBtn">
+						<Offset>
+							<AbsDimension x="54" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_translucent" rel_x="1.0" rel_y="1.0" DrawType="ninesquare_center">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="12" 	h="17"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="5"  h="17"/>
+						<Topright 		offsetX="18" 	offsetY="0" 	w="13" 	h="17"/>
+						<Left 			offsetX="0" 	offsetY="17" 	w="12" 	h="10"/>
+						<Center 		offsetX="12" 	offsetY="17" 	w="5"  h="10"/>
+						<Right 			offsetX="18" 	offsetY="17" 	w="13" 	h="10"/>
+						<Bottomleft 	offsetX="0" 	offsetY="27" 	w="12" 	h="12"/>
+						<Bottom 		offsetX="12" 	offsetY="27" 	w="5"  h="12"/>
+						<Bottomright 	offsetX="18" 	offsetY="27" 	w="13" 	h="12"/>
+						<OffSet x="12" y="17" />
+					</NineSquare>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_translucent" rel_x="0.9" rel_y="0.9" DrawType="ninesquare_center">
+					<NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="12" 	h="17"/>
+						<Top 			offsetX="12" 	offsetY="0" 	w="5"  h="17"/>
+						<Topright 		offsetX="18" 	offsetY="0" 	w="13" 	h="17"/>
+						<Left 			offsetX="0" 	offsetY="17" 	w="12" 	h="10"/>
+						<Center 		offsetX="12" 	offsetY="17" 	w="5"  h="10"/>
+						<Right 			offsetX="18" 	offsetY="17" 	w="13" 	h="10"/>
+						<Bottomleft 	offsetX="0" 	offsetY="27" 	w="12" 	h="12"/>
+						<Bottom 		offsetX="12" 	offsetY="27" 	w="5"  h="12"/>
+						<Bottomright 	offsetX="18" 	offsetY="27" 	w="13" 	h="12"/>
+						<OffSet x="12" y="17" />
+					</NineSquare>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont20" text="$41072" justifyH="center" justifyV="middle" abs_x="100" abs_y="30">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):PlayContent_OnClicked()</OnClick>
+				</Scripts>
+			</Button>
+
+			##通用赛季基础信息
+			<Frame name="$parentBPDestailPanel" abs_x="300" abs_y="330" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-417" y="-90" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentSeasonName" file="ui/mobile/texture0/bigtex/board_title.png" abs_x="268" abs_y="81">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-115" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentSeasonTime" fonttype="BlackFont20" fontStyle="embolden" justifyH="center" justifyV="middle" abs_x="250" abs_y="20">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-55" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentProgressBarBkg" file="ui/mobile/texture0/newbattlepass.xml" uvname="img_progressbar_dark" abs_x="180" abs_y="16" DrawType="Center">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="42" y="72" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Center>
+								<Left	offsetX="0"  offsetY="0" w="10"	h="20"/>
+								<Center	offsetX="10"  offsetY="0" w="10"	h="20"/>
+								<Right	offsetX="20" offsetY="0" w="10"	h="20"/>
+							</Center>
+						</Texture>
+						<Texture name="$parentProgressBar" file="ui/mobile/texture0/newbattlepass.xml" uvname="img_progressbar_yellow" abs_x="100" abs_y="24" >
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="-4" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentProgressValue" fonttype="BlackFont20" text="999/1000" fontStyle="embolden" justifyH="right" justifyV="middle" abs_x="150" abs_y="20">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="-30" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentIcon" file="ui/mobile/texture0/newbattlepass.xml" uvname="icon_box_on_big" abs_x="92" abs_y="89">
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="8" y="-35" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- <Texture name="$parentLight" file="ui/mobile/texture0/battlepass.xml" uvname="icon_box_gh" abs_x="114" abs_y="112" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>	 -->
+						<Texture name="$parentLevelBg" file="ui/mobile/texture0/newbattlepass.xml" uvname="label_dbt" abs_x="80" abs_y="27">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="0" y="7" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentLevel" fonttype="BlackFont22" justifyH="center" justifyV="middle" abs_x="80" abs_y="22">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentLevelBg">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##购买悦享卡
+					<Button name="$parentBuyBPCardBtn" abs_x="109" abs_y="41">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-77" y="130"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Medium_yellow" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Medium_yellow" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont18" text="$70057" justifyH="center" justifyV="middle">
+									<Color r="174" g="90" b="1" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-5" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" fonttype="BlackFont18" text="$70057" justifyH="center" justifyV="middle">
+									<Color r="174" g="90" b="1" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):BuyLevelBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					##购买等级
+					<Button name="$parentBuyLevelBtn" abs_x="109" abs_y="41">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-77" y="130"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/battlepass.xml" uvname="btn_small_yellow.png" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/battlepass.xml" uvname="btn_small_yellow.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont18" text="$70416" justifyH="center" justifyV="middle">
+									<Color r="174" g="90" b="1" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):BuyLevelBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					##获取经验
+					<Button name="$parentGoToTaskBtn" abs_x="109" abs_y="41">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="77" y="130"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/battlepass.xml" uvname="btn_small_bule.png" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/battlepass.xml" uvname="btn_small_bule.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont18" text="$70435" justifyH="center" justifyV="middle">
+									<Color r="0" g="90" b="127" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" fonttype="BlackFont18" text="$70435" justifyH="center" justifyV="middle">
+									<Color r="0" g="90" b="127" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):GoToTaskBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##通用赛季基础信息2
+			<Frame name="$parentBPDestailPanelBig" abs_x="340" abs_y="430" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-380" y="-72" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentSeasonName" file="ui/mobile/texture0/bigtex/board_title.png" abs_x="337" abs_y="101">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-115" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentSeasonTime" fonttype="BlackFont26" fontStyle="embolden" justifyH="center" justifyV="middle" abs_x="340" abs_y="26">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-40" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentProgressBarBkg" file="ui/mobile/texture0/newbattlepass.xml" uvname="img_progressbar_dark" abs_x="224" abs_y="20" DrawType="Center">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="52" y="132" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Center>
+								<Left	offsetX="0"  offsetY="0" w="10"	h="20"/>
+								<Center	offsetX="10"  offsetY="0" w="10"	h="20"/>
+								<Right	offsetX="20" offsetY="0" w="10"	h="20"/>
+							</Center>
+						</Texture>
+						<Texture name="$parentProgressBar" file="ui/mobile/texture0/newbattlepass.xml" uvname="img_progressbar_yellow" abs_x="150" abs_y="30" DrawType="ninesquare_center">
+							<NineSquare>
+								<Topleft                 offsetX="0"         offsetY="0"         w="10"         h="14"/>
+								<Top                         offsetX="10"         offsetY="0"         w="13"  h="14"/>
+								<Topright                 offsetX="23"         offsetY="0"         w="19"         h="14"/>
+								<Left                         offsetX="0"         offsetY="14"         w="10"         h="5"/>
+								<Center                 offsetX="10"         offsetY="14"         w="13"  h="5"/>
+								<Right                         offsetX="23"         offsetY="14"         w="19"         h="5"/>
+								<Bottomleft         offsetX="0"         offsetY="19"         w="10"         h="7"/>
+								<Bottom                 offsetX="10"         offsetY="19"         w="13"  h="7"/>
+								<Bottomright         offsetX="23"         offsetY="19"         w="19"         h="7"/>
+								<OffSet x="13" y="8" />
+							</NineSquare>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="3" y="-6" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentProgressValue" fonttype="BlackFont28" text="999/1000" fontStyle="embolden" justifyH="right" justifyV="middle" abs_x="250" abs_y="28">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="-40" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentIcon" file="ui/mobile/texture0/bigtex/bg_battlepass.png" uvname="icon_box_on" abs_x="148" abs_y="96">
+							<Anchors>
+								<Anchor point="right" relativePoint="left" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="37" y="-60" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!-- <Texture name="$parentLight" file="ui/mobile/texture0/battlepass.xml" uvname="icon_box_gh" abs_x="104" abs_y="102" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>						 -->
+						<Texture name="$parentLevelBg" file="ui/mobile/texture0/newbattlepass.xml" uvname="label_dbt" abs_x="98" abs_y="38">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="1" y="30" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentLevel" fonttype="BlackFont28" text="999" fontStyle="embolden" justifyH="center" justifyV="middle" abs_x="80" abs_y="30">
+							<Color r="65" g="71" b="91" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentLevelBg">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##购买悦享卡
+					<Button name="$parentBuyBPCardBtn" abs_x="197" abs_y="54">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="9" y="198"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_buy" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_buy" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont22" text="$70057" justifyH="center" justifyV="middle">
+									<Color r="174" g="90" b="1" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):BuyLevelBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					##购买等级
+					<Button name="$parentBuyLevelBtn" abs_x="134" abs_y="50">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-97" y="208"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Medium_yellow" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/newbattlepass.xml" uvname="btn_Medium_yellow" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont22" text="$70003" justifyH="center" justifyV="middle">
+									<Color r="174" g="90" b="1" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):BuyLevelBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+					##获取经验
+					<Button name="$parentGoToTaskBtn" abs_x="134" abs_y="50">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="97" y="208"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/battlepass.xml" uvname="btn_mediuml_blue.png" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/battlepass.xml" uvname="btn_mediuml_blue.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" lang_ver="tha" fonttype="BlackFont22" text="$70435" justifyH="center" justifyV="middle">
+									<Color r="0" g="90" b="127" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-5" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" fonttype="BlackFont22" text="$70435" justifyH="center" justifyV="middle">
+									<Color r="0" g="90" b="127" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NewBattlePass"):GoToTaskBtn_OnClicked()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##奖励预览
+			<Frame name="$parentBPRewardShowPanel" abs_x="400" abs_y="380" hidden="true">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="-50" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentShadow" file="ui/mobile/texture0/battlepass.xml" uvname="img_shadow_role" abs_x="217" abs_y="46">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="150" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentItemIcon" file="ui/mobile/texture0/battlepass.xml" uvname="icon_lv_bp1" abs_x="128" abs_y="128" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="43" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<ModelView name="$parentView" abs_x="1280" abs_y="720" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNewBattlePass">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentRotateBtn" rel_x="1.0" rel_y="1.0" hidden="true">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("NewBattlePass"):RotateBtnMouseDown()</OnMouseDown>
+							<OnMouseMove>GetInst("UIManager"):GetCtrl("NewBattlePass"):RotateBtnMouseMove()</OnMouseMove>
+						</Scripts>
+					</Button>
+					<Frame name="$parentDescPanel" abs_x="320" abs_y="200">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentTagBg" file="ui/mobile/texture0/battlepass.xml" uvname="board_yellow" abs_x="68" abs_y="30" DrawType="Center">
+									<Center>
+										<Left	offsetX="0"  offsetY="0" w="10"	h="30"/>
+										<Center	offsetX="10" offsetY="0" w="12" h="30"/>
+										<Right	offsetX="22" offsetY="0" w="10"	h="30"/>
+									</Center>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentTag" fonttype="BlackFont18" justifyH="center" justifyV="middle" abs_x="70" abs_y="30">
+									<Color r="163" g="75" b="6" />
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentTagBg">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" fonttype="BlackFont26" shadowcolor = "ff674065" justifyV="middle" abs_x="260" abs_y="30">
+									<Color r="255" g="255" b="255" />
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="35" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentNum" fonttype="BlackFont22" text="x100" shadowcolor = "ff674065" justifyV="middle"  abs_x="100" abs_y="30">
+									<Color r="254" g="236" b="129" />
+									<ShadowColor r="103" g="64" b="101"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="10" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLock" file="ui/mobile/texture0/battlepass.xml" uvname="icon_lock_small" abs_x="23" abs_y="28">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="-4" y="5"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentUnLockTip" lang_ver="ptb" fonttype="BlackFont18" shadowcolor = "ff674065" lineInterval="2"  abs_x="300" abs_y="40" autowrap="true">
+									<Color r="0" g="0" b="0" />
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentLock">
+											<Offset>
+												<AbsDimension x="3" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentUnLockTip" fonttype="BlackFont18" lineInterval="2" shadowcolor = "ff674065" abs_x="300" abs_y="20" autowrap="true">
+									<Color r="0" g="0" b="0" />
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentLock">
+											<Offset>
+												<AbsDimension x="3" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentItemDes" fonttype="BlackFont20" lineInterval="2" abs_x="300" abs_y="200" autowrap="true">
+									<Color r="0" g="0" b="0" />
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentUnLockTip">
+											<Offset>
+												<AbsDimension x="-24" y="4" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("NewBattlePass"):OnUpdate();</OnUpdate>
+			<OnEvent>GetInst("UIManager"):GetCtrl("NewBattlePass"):HandleEvent();</OnEvent>
+			<OnShow>GetInst("UIManager"):GetCtrl("NewBattlePass"):OnShowBP()</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("NewBattlePass"):OnHideBP()</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

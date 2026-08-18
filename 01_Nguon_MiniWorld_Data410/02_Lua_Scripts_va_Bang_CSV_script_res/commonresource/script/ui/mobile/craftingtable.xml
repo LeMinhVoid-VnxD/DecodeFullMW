@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/craftingtable.lua"/>
+	##tab按钮模板
+	<Button name="CraftingTabBtnTemplate" inherits="TemplateTabBtn2" virtual="true" >
+		<Scripts>
+			<OnClick>CraftingTabBtnTemplate_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##原料格子模板
+	<Button name="CraftingStuffGridTemplate" inherits="CraftingTableGridBtnTemplate" virtual="true" abs_x="73" abs_y="73">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" text="苹果" abs_x="140" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont" justifyH="left" text="" autowrap="true" abs_x="160" abs_y="60">
+					<Color r="106" g="111" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	##主界面
+	<Frame name="CraftingTableFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="11">
+		<Layers>
+			<Layer level="background">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1072" abs_y="594" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="56" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDivider" inherits="TemplateBkg14" abs_x="11" abs_y="544">
+					<Anchors>
+						<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="76" y="22"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="1072" abs_y="54">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg" />
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			##常用
+			<Button name="$parentCommonBtn" inherits="CraftingTabBtnTemplate" id="1">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="5" y="87"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<!-- <OnClick>CraftingTableFrameCommonBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+			##装备
+			<Button name="$parentEquipBtn" inherits="CraftingTabBtnTemplate" id="2">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentCommonBtn">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<!-- <OnClick>CraftingTableFrameEquipBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+			##建筑
+			<Button name="$parentBuildBtn" inherits="CraftingTabBtnTemplate" id="3">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentEquipBtn">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<!-- <OnClick>CraftingTableFrameBuildBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+			##机械
+			<Button name="$parentMachineBtn" inherits="CraftingTabBtnTemplate" id="4">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentBuildBtn">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<!-- <OnClick>CraftingTableFrameMachineBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+			##配方
+			<Button name="$parentRecipeBtn" inherits="CraftingTabBtnTemplate" id="5">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentMachineBtn">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<!-- <OnClick>CraftingTableFrameRecipeBtn_OnClick();</OnClick> -->
+				</Scripts>
+			</Button>
+
+			##制作面板
+			<Frame name="$parentCraftingFrame" parent="$parent" frameStrata="MEDIUM" framelevel="11" abs_x="1075" abs_y="600">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg" />
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						##左
+						<Texture name="$parentLeftBkg" inherits="TemplateBigBkg5" abs_x="512" abs_y="428">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="19" y="119"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<FontString name="$parentLeftTips" justifyH="center" justifyV="middle" fonttype="BlackFont26" text="$3007" abs_x="510" abs_y="32">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parentLeftBkg">
+									<Offset>
+										<AbsDimension x="0" y="-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##右
+						<Texture name="$parentRightBkg" inherits="TemplateBigBkg11" abs_x="472" abs_y="282">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-21" y="80"/>
+									</Offset>
+								</Anchor>
+							</Anchors>		
+						</Texture>
+						<Texture name="$parentRightTitleBkg" inherits="TemplateBkg25" abs_x="472" abs_y="36">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentRightBkg" />
+							</Anchors>
+						</Texture>
+						##右下
+						<Texture name="$parentRightBkg2" inherits="TemplateBigBkg5" abs_x="472" abs_y="110">
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentRightBkg">
+									<Offset>
+										<AbsDimension x="0" y="36"/>
+									</Offset>
+								</Anchor>
+							</Anchors>		
+						</Texture>
+						##箭头
+						<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml"  uvname="img_frame_arrow.png" abs_x="36" abs_y="37">
+							<Angle value="90"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentRightBkg">
+									<Offset>
+										<AbsDimension x="0" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						##未知
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="" fontStyle="border" hidden="true" abs_x="150" abs_y="24">
+							<Color r="98" g="65" b="48"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="780" y="470"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentEffect" file="ui/mobile/effect/achievement_award_3.png" hidden="true" abs_x="150" abs_y="220">
+							<Angle value="-50" />
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="660" y="478"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+							<UVAnimation texrows="2" texcols="4" />
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<RichText name="$parentRightTips" lineInterval="1" multiLine="false" fonttype="BlackFont21" autoextend="true" hidden="false">
+						<Size>
+							<AbsDimension x="132" y="22" />
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentRightBkg" relativePoint="top">
+								<Offset>
+									<AbsDimension x="0" y="8" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					##未知
+					<RichText name="$parentItemDesc" fonttype="BlackFont24" fontStyle="border" autoextend="true" hidden="true" abs_x="270" abs_y="60">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentName" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</RichText>
+					##原料格子
+					<Button name="$parentStuffGrid1" inherits="CraftingStuffGridTemplate" id="4001" abs_x="73" abs_y="73" />
+					<Button name="$parentStuffGrid2" inherits="CraftingStuffGridTemplate" id="4002" abs_x="73" abs_y="73" />
+					<Button name="$parentStuffGrid3" inherits="CraftingStuffGridTemplate" id="4003" abs_x="73" abs_y="73" />
+					<Button name="$parentStuffGrid4" inherits="CraftingStuffGridTemplate" id="4004" abs_x="73" abs_y="73" />
+					<Button name="$parentStuffGrid5" inherits="CraftingStuffGridTemplate" id="4005" abs_x="73" abs_y="73" />
+					<Button name="$parentStuffGrid6" inherits="CraftingStuffGridTemplate" id="4006" abs_x="73" abs_y="73" />
+					##结果格子
+					<Button name="$parentMakeResult" inherits="CraftingTableGridBtnTemplate" id="4010" abs_x="73" abs_y="73">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parentRightBkg2">
+								<Offset>
+									<AbsDimension x="12" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="苹果" abs_x="200" abs_y="24">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="152" y="-14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentDesc" lineInterval="1" multiLine="false" fonttype="BlackFont18" autoextend="true" abs_x="350" abs_y="65">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="90" y="17" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>
+						</Frames>
+					</Button>
+					##左边的格子列表
+					<SlidingFrame name="NormalProductBox" slidingY="true" slideplane="$parentPlane" abs_x="512" abs_y="416">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentLeftBkg" />
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="512" abs_y="416" />
+							<Button name="$parentItem1" inherits="CraftingTableGridBtnTemplate2" id="11001"/>
+							<Button name="$parentItem2" inherits="CraftingTableGridBtnTemplate2" id="11002"/>
+							<Button name="$parentItem3" inherits="CraftingTableGridBtnTemplate2" id="11003"/>
+							<Button name="$parentItem4" inherits="CraftingTableGridBtnTemplate2" id="11004"/>
+							<Button name="$parentItem5" inherits="CraftingTableGridBtnTemplate2" id="11005"/>
+							<Button name="$parentItem6" inherits="CraftingTableGridBtnTemplate2" id="11006"/>
+							<Button name="$parentItem7" inherits="CraftingTableGridBtnTemplate2" id="11007"/>
+							<Button name="$parentItem8" inherits="CraftingTableGridBtnTemplate2" id="11008"/>
+							<Button name="$parentItem9" inherits="CraftingTableGridBtnTemplate2" id="11009"/>
+							<Button name="$parentItem10" inherits="CraftingTableGridBtnTemplate2" id="11010"/>
+							<Button name="$parentItem11" inherits="CraftingTableGridBtnTemplate2" id="11011"/>
+							<Button name="$parentItem12" inherits="CraftingTableGridBtnTemplate2" id="11012"/>
+							<Button name="$parentItem13" inherits="CraftingTableGridBtnTemplate2" id="11013"/>
+							<Button name="$parentItem14" inherits="CraftingTableGridBtnTemplate2" id="11014"/>
+							<Button name="$parentItem15" inherits="CraftingTableGridBtnTemplate2" id="11015"/>
+							<Button name="$parentItem16" inherits="CraftingTableGridBtnTemplate2" id="11016"/>
+							<Button name="$parentItem17" inherits="CraftingTableGridBtnTemplate2" id="11017"/>
+							<Button name="$parentItem18" inherits="CraftingTableGridBtnTemplate2" id="11018"/>
+							<Button name="$parentItem19" inherits="CraftingTableGridBtnTemplate2" id="11019"/>
+							<Button name="$parentItem20" inherits="CraftingTableGridBtnTemplate2" id="11020"/>
+							<Button name="$parentItem21" inherits="CraftingTableGridBtnTemplate2" id="11021"/>
+							<Button name="$parentItem22" inherits="CraftingTableGridBtnTemplate2" id="11022"/>
+							<Button name="$parentItem23" inherits="CraftingTableGridBtnTemplate2" id="11023"/>
+							<Button name="$parentItem24" inherits="CraftingTableGridBtnTemplate2" id="11024"/>
+							<Button name="$parentItem25" inherits="CraftingTableGridBtnTemplate2" id="11025"/>
+							<Button name="$parentItem26" inherits="CraftingTableGridBtnTemplate2" id="11026"/>
+							<Button name="$parentItem27" inherits="CraftingTableGridBtnTemplate2" id="11027"/>
+							<Button name="$parentItem28" inherits="CraftingTableGridBtnTemplate2" id="11028"/>
+							<Button name="$parentItem29" inherits="CraftingTableGridBtnTemplate2" id="11029"/>
+							<Button name="$parentItem30" inherits="CraftingTableGridBtnTemplate2" id="11030"/>
+							<Button name="$parentItem31" inherits="CraftingTableGridBtnTemplate2" id="11031"/>
+							<Button name="$parentItem32" inherits="CraftingTableGridBtnTemplate2" id="11032"/>
+							<Button name="$parentItem33" inherits="CraftingTableGridBtnTemplate2" id="11033"/>
+							<Button name="$parentItem34" inherits="CraftingTableGridBtnTemplate2" id="11034"/>
+							<Button name="$parentItem35" inherits="CraftingTableGridBtnTemplate2" id="11035"/>
+							<Button name="$parentItem36" inherits="CraftingTableGridBtnTemplate2" id="11036"/>
+							<Button name="$parentItem37" inherits="CraftingTableGridBtnTemplate2" id="11037"/>
+							<Button name="$parentItem38" inherits="CraftingTableGridBtnTemplate2" id="11038"/>
+							<Button name="$parentItem39" inherits="CraftingTableGridBtnTemplate2" id="11039"/>
+							<Button name="$parentItem40" inherits="CraftingTableGridBtnTemplate2" id="11040"/>
+							<Button name="$parentItem41" inherits="CraftingTableGridBtnTemplate2" id="11041"/>
+							<Button name="$parentItem42" inherits="CraftingTableGridBtnTemplate2" id="11042"/>
+							<Button name="$parentItem43" inherits="CraftingTableGridBtnTemplate2" id="11043"/>
+							<Button name="$parentItem44" inherits="CraftingTableGridBtnTemplate2" id="11044"/>
+							<Button name="$parentItem45" inherits="CraftingTableGridBtnTemplate2" id="11045"/>
+							<Button name="$parentItem46" inherits="CraftingTableGridBtnTemplate2" id="11046"/>
+							<Button name="$parentItem47" inherits="CraftingTableGridBtnTemplate2" id="11047"/>
+							<Button name="$parentItem48" inherits="CraftingTableGridBtnTemplate2" id="11048"/>
+							<Button name="$parentItem49" inherits="CraftingTableGridBtnTemplate2" id="11049"/>
+							<Button name="$parentItem50" inherits="CraftingTableGridBtnTemplate2" id="11050"/>
+							<Button name="$parentItem51" inherits="CraftingTableGridBtnTemplate2" id="11051"/>
+							<Button name="$parentItem52" inherits="CraftingTableGridBtnTemplate2" id="11052"/>
+							<Button name="$parentItem53" inherits="CraftingTableGridBtnTemplate2" id="11053"/>
+							<Button name="$parentItem54" inherits="CraftingTableGridBtnTemplate2" id="11054"/>
+							<Button name="$parentItem55" inherits="CraftingTableGridBtnTemplate2" id="11055"/>
+							<Button name="$parentItem56" inherits="CraftingTableGridBtnTemplate2" id="11056"/>
+							<Button name="$parentItem57" inherits="CraftingTableGridBtnTemplate2" id="11057"/>
+							<Button name="$parentItem58" inherits="CraftingTableGridBtnTemplate2" id="11058"/>
+							<Button name="$parentItem59" inherits="CraftingTableGridBtnTemplate2" id="11059"/>
+							<Button name="$parentItem60" inherits="CraftingTableGridBtnTemplate2" id="11060"/>
+							<Button name="$parentItem61" inherits="CraftingTableGridBtnTemplate2" id="11061"/>
+							<Button name="$parentItem62" inherits="CraftingTableGridBtnTemplate2" id="11062"/>
+							<Button name="$parentItem63" inherits="CraftingTableGridBtnTemplate2" id="11063"/>
+							<Button name="$parentItem64" inherits="CraftingTableGridBtnTemplate2" id="11064"/>
+							<Button name="$parentItem65" inherits="CraftingTableGridBtnTemplate2" id="11065"/>
+							<Button name="$parentItem66" inherits="CraftingTableGridBtnTemplate2" id="11066"/>
+							<Button name="$parentItem67" inherits="CraftingTableGridBtnTemplate2" id="11067"/>
+							<Button name="$parentItem68" inherits="CraftingTableGridBtnTemplate2" id="11068"/>
+							<Button name="$parentItem69" inherits="CraftingTableGridBtnTemplate2" id="11069"/>
+							<Button name="$parentItem70" inherits="CraftingTableGridBtnTemplate2" id="11070"/>
+							<Button name="$parentItem71" inherits="CraftingTableGridBtnTemplate2" id="11071"/>
+							<Button name="$parentItem72" inherits="CraftingTableGridBtnTemplate2" id="11072"/>
+							<Button name="$parentItem73" inherits="CraftingTableGridBtnTemplate2" id="11073"/>
+							<Button name="$parentItem74" inherits="CraftingTableGridBtnTemplate2" id="11074"/>
+							<Button name="$parentItem75" inherits="CraftingTableGridBtnTemplate2" id="11075"/>
+							<Button name="$parentItem76" inherits="CraftingTableGridBtnTemplate2" id="11076"/>
+							<Button name="$parentItem77" inherits="CraftingTableGridBtnTemplate2" id="11077"/>
+							<Button name="$parentItem78" inherits="CraftingTableGridBtnTemplate2" id="11078"/>
+							<Button name="$parentItem79" inherits="CraftingTableGridBtnTemplate2" id="11079"/>
+							<Button name="$parentItem80" inherits="CraftingTableGridBtnTemplate2" id="11080"/>
+							<Button name="$parentItem81" inherits="CraftingTableGridBtnTemplate2" id="11081"/>
+							<Button name="$parentItem82" inherits="CraftingTableGridBtnTemplate2" id="11082"/>
+							<Button name="$parentItem83" inherits="CraftingTableGridBtnTemplate2" id="11083"/>
+							<Button name="$parentItem84" inherits="CraftingTableGridBtnTemplate2" id="11084"/>
+							<Button name="$parentItem85" inherits="CraftingTableGridBtnTemplate2" id="11085"/>
+							<Button name="$parentItem86" inherits="CraftingTableGridBtnTemplate2" id="11086"/>
+							<Button name="$parentItem87" inherits="CraftingTableGridBtnTemplate2" id="11087"/>
+							<Button name="$parentItem88" inherits="CraftingTableGridBtnTemplate2" id="11088"/>
+							<Button name="$parentItem89" inherits="CraftingTableGridBtnTemplate2" id="11089"/>
+							<Button name="$parentItem90" inherits="CraftingTableGridBtnTemplate2" id="11090"/>
+							<Button name="$parentItem91" inherits="CraftingTableGridBtnTemplate2" id="11091"/>
+							<Button name="$parentItem92" inherits="CraftingTableGridBtnTemplate2" id="11092"/>
+							<Button name="$parentItem93" inherits="CraftingTableGridBtnTemplate2" id="11093"/>
+							<Button name="$parentItem94" inherits="CraftingTableGridBtnTemplate2" id="11094"/>
+							<Button name="$parentItem95" inherits="CraftingTableGridBtnTemplate2" id="11095"/>
+							<Button name="$parentItem96" inherits="CraftingTableGridBtnTemplate2" id="11096"/>
+							<Button name="$parentItem97" inherits="CraftingTableGridBtnTemplate2" id="11097"/>
+							<Button name="$parentItem98" inherits="CraftingTableGridBtnTemplate2" id="11098"/>
+							<Button name="$parentItem99" inherits="CraftingTableGridBtnTemplate2" id="11099"/>
+							<Button name="$parentItem100" inherits="CraftingTableGridBtnTemplate2" id="11100"/>
+							<Button name="$parentItem101" inherits="CraftingTableGridBtnTemplate2" id="11101"/>
+							<Button name="$parentItem102" inherits="CraftingTableGridBtnTemplate2" id="11102"/>
+						</Frames>
+					</SlidingFrame>
+					##制作按钮				
+					<Button name="$parentMakeBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="top" relativeTo="$parentRightBkg" relativePoint="bottom">
+								<Offset>
+									<AbsDimension x="0" y="156"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3084" abs_x="182" abs_y="24">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>CraftingFrameMakeBtn_OnClick();</OnClick>
+							<MouseDownUpdate>CraftingFrameMakeBtn_MouseDownUpdate();</MouseDownUpdate>
+						</Scripts>
+					</Button>
+				</Frames>
+				<Scripts>
+					<OnLoad>CraftingFrame_OnLoad();</OnLoad>
+					<OnEvent>CraftingFrame_OnEvent();</OnEvent>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>CraftingTableFrame_OnLoad();</OnLoad>
+			<OnShow>CraftingTableFrame_OnShow();</OnShow>
+			<OnHide>CraftingTableFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

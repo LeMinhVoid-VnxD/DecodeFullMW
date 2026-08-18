@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/rune/merge/MergeModel.lua"/>
+	<Script file="ui/mobile/mvc/rune/merge/MergeView.lua"/>
+	<Script file="ui/mobile/mvc/rune/merge/MergeCtrl.lua"/>
+	<Script file="ui/mobile/mvc/rune/RuneManager.lua"/>
+	##描述模板
+	<Frame name="MergeItemTemplate" virtual="true" abs_x="169" abs_y="30">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentTitle" fonttype="BlackFont16" justifyH="center" justifyV="center" text="攻击攻击" abs_x="169" abs_y="20">
+					<Color r="73" g="70" b="63"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	##原料格子模板
+	<Button name="MergeStuffGridTemplate" inherits="CraftingTableGridBtnTemplate2" virtual="true" abs_x="73" abs_y="73">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="苹果" autowrap="true" abs_x="240" abs_y="20" hidden="true">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont18" justifyH="center" text="攻击" autowrap="true" abs_x="160" abs_y="22" hidden="true">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="bottom" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+	<Frame name = "Merge" parent="UIClient" frameStrata="MEDIUM" framelevel="11" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="993" abs_y="550">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+							##背景
+				<Texture name="$parentLeftBkg" inherits="TemplateBigBkg11" abs_x="351" abs_y="512">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="23" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentBlueLine" inherits="TemplateBkg14" abs_x="11" abs_y="544">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="392" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBkg1" inherits="TemplateBkg25" abs_x="349" abs_y="36">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentLeftBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##背景
+				<Texture name="$parentRightBkg" inherits="TemplateBigBkg11" abs_x="549" abs_y="512">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBlueLine">
+							<Offset>
+								<AbsDimension x="30" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBoard" inherits="TemplateBkg25" abs_x="547" abs_y="36">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="0" y="36"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentGreenTag" file="ui/mobile/texture2/ingame.xml" uvname="img_connect_green.png">
+					<Size>
+						<AbsDimension x="50" y="255"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="-115" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml" uvname="img_frame_arrow.png" abs_x="29" abs_y="36">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentGreenTag">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentMakeResultName" fonttype="BlackFont24" justifyH="center" text="" abs_x="71" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="813" y="-361"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentRuneName" fonttype="BlackFont24" justifyH="left" text="$2096" abs_x="170" abs_y="26">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTitleBkg1">
+							<Offset>
+								<AbsDimension x="10" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentMaterialName" fonttype="BlackFont24" justifyH="left" text="$2092" abs_x="170" abs_y="26">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="15" y="8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				#内框背景
+				<Texture name="$parentChenDi" inherits="TemplateBigBkg5" abs_x="169" abs_y="435">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="-20" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<FontString name="$parentDesc" fonttype="BlackFont20" justifyH="center" text="可能获得属性" autowrap="true" abs_x="169" abs_y="20">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentChenDi">
+							<Offset>
+								<AbsDimension x="0" y="15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			##制作按钮				
+			<Button name="$parentMakeBtn" inherits="TemplateBtn3" abs_x="130" abs_y="44">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentRightBkg">
+						<Offset>
+							<AbsDimension x="6" y="-110"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$2097" abs_x="182" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Merge"):OnMakeBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+				##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="987" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##原料格子
+			<Button name="$parentStuffGrid1" inherits="MergeStuffGridTemplate" id="46001" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="right" relativePoint="topleft" relativeTo="$parentGreenTag">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentStuffGrid2" inherits="MergeStuffGridTemplate" id="46002" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="right" relativePoint="bottomleft" relativeTo="$parentGreenTag">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##结果格子
+			<Button name="$parentStuffGrid3" inherits="MergeStuffGridTemplate" id="46003" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentArrow">
+						<Offset>
+							<AbsDimension x="20" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##右边的格子列表
+			<ListViewFrame name="MergeDescCreateBox" slidingY="true" slideplane="$parentPlane" abs_x="169" abs_y="400">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="169" abs_y="400">
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+			##左边的格子列表
+			<SlidingFrame name="$parentListInfoBox" slidingY="true" slideplane="$parentPlane" abs_x="351" abs_y="460">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentLeftBkg">
+						<Offset>
+							<AbsDimension x="-2" y="18" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="351" abs_y="460" />
+					<Button name="$parentItem1" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem2" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem3" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem4" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem5" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem6" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem7" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem8" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem9" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem10" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem11" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem12" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem13" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem14" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem15" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem16" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem17" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem18" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem19" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem20" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem21" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem22" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem23" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem24" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem25" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem26" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem27" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem28" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem29" inherits="CraftingTableGridBtnTemplate2"/>
+					<Button name="$parentItem30" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem31" inherits="CraftingTableGridBtnTemplate2" />
+					<Button name="$parentItem32" inherits="CraftingTableGridBtnTemplate2" />
+				</Frames>
+			</SlidingFrame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("Merge"):OnEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

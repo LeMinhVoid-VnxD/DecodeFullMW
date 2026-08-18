@@ -1,0 +1,3084 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    ##辅助类
+    <Script file="ui/mobile/mvc/lobby/lobbyHelper/lobbyInterface.lua"/>
+
+	<Script file="ui/mobile/mvc/lobby/MiniLobbyEx/MiniLobbyExModel.lua"/>
+	<Script file="ui/mobile/mvc/lobby/MiniLobbyEx/MiniLobbyExView.lua"/>
+	<Script file="ui/mobile/mvc/lobby/MiniLobbyEx/MiniLobbyExCtrl.lua"/>
+	<Script file="ui/mobile/mvc/lobby/MiniLobbyEx/MiniLobbyExViewExt.lua"/>
+	<Script file="ui/mobile/mvc/lobby/MiniLobbyEx/MiniLobbyExCtrlExt.lua"/>
+
+    ##新生日选择按钮模板
+    <Button name="NewBirthTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="140" y="51"/>
+		</Size>
+		<Anchors>
+			<Anchor point="bottom" relativePoint="bottom" relativeTo="MiniLobbyExBirthSelectMonthListBkg">
+				<Offset>
+					<AbsDimension x="0" y="-11"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentLine" inherits="TemplateBkg36">
+					<Size>
+						<AbsDimension x="140" y="2"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNum" fonttype="BlackFont24" justifyV="middle" text="Janunary">
+					<Color r="195" g="195" b="195"/>
+					<Size>
+						<AbsDimension x="140" y="39"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):BirthTime_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##活动入口按钮模板
+   	<Button name="AtivityTemplate" virtual="true" hidden="true"> 
+	     <Size>
+		     <AbsDimension x="50" y="50"/>
+		 </Size>
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture0/minilobby.xml" uvname="icon_gambling" >
+				<Anchors>
+				    	<Anchor point="center" relativePoint="center">
+							<Offset>
+								<AbsDimension x="0" y="-15"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentNameBkg" file="ui/mobile/texture0/minilobby.xml" uvname="board_font_home"  >
+				   <Size>
+					   <AbsDimension x="50" y="18"/>
+				   </Size>
+				   <Anchors>
+				    	<Anchor point="center" relativePoint="center" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="0" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			    <Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden ="true" >
+				   <Size>
+					   <AbsDimension x="16" y="16"/>
+				   </Size>
+				   <Anchors>
+				    	<Anchor point="center" relativePoint="topright" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="-5" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont18"  text="福利" fontStyle="border">
+					<Color r="177" g="254" b="255"/>
+					<Size>
+						<AbsDimension x="35" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer> 
+		</Layers>
+		<Scripts>
+			<!-- <OnClick>AtivityRoomTemplate_OnClick();</OnClick> -->
+		</Scripts>
+	</Button>
+
+	<!--新版大厅-->
+	<Frame name="MiniLobbyEx" parent="UIClient" frameStrata="BACKGROUND" hidden="true" framelevel="2">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/dtxx_dtbeijingtu.png" stretchedge="true"/>				
+			</Layer>
+            <Layer level="ARTWORK">
+                <ModelView name="$parentRoleView">
+                    <Size>
+                        <RelDimension x="1.0" y="1.0"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativeTo="$parent" relativePoint="center">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </ModelView>
+            </Layer>
+		</Layers>
+		<Frames>
+			<!-- Top顶部区域 -->
+			<Frame name="$parentTop" rel_x="1.0" abs_y="66">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/img_title_hall_l.png" rel_x="1.2" abs_y="82" DrawType="center">
+							<Center>
+								<Left	offsetX="0"  offsetY="0" w="428" h="82"/>
+								<Center	offsetX="428" offsetY="0" w="20" h="82"/>
+								<Right	offsetX="448" offsetY="0" w="10" h="82"/>
+							</Center>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-128" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentRightBkg" file="ui/mobile/texture2/bigtex/img_title_hall_r.png" abs_x="684" abs_y="55" DrawType="center">
+							<Center>
+								<Left	offsetX="0"  offsetY="0" w="200" h="55"/>
+								<Center	offsetX="200" offsetY="0" w="300" h="55"/>
+								<Right	offsetX="500" offsetY="0" w="56" h="55"/>
+							</Center>	
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="128" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentLine" file="ui/mobile/texture2/minilobby.xml" uvname="line_blue_hall">
+							<Size>
+								<AbsDimension x="2" y="26"/>
+							</Size>
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-275" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##头像
+					<Frame name="$parentRoleInfo">
+						<Size>
+							<AbsDimension x="260" y="82"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="7" y="-5" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentUin" fonttype="BlackFont18" text="迷你号：123456789" justifyV="middle" >
+									<Color r="45" g="98" b="98"/>
+									<Size>
+										<AbsDimension x="250" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="84" y="-12"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<RichText name="$parentName" fonttype="BlackFont22" text="昵称：子不语耶耶">
+								<Size>
+									<AbsDimension x="250" y="22"/>
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="84" y="20"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</RichText>	
+							<Button name="$parentHead">
+								<Size>
+									<AbsDimension x="81" y="81"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" file="ui/mobile/texture2/miniwork.xml" uvname="img_icon_head">
+											<Size>
+												<AbsDimension x="62" y="62" />
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center">
+													<Offset>
+														<AbsDimension x="0" y="0" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentIcon" file="ui/roleicons/1.png">
+											<Size>
+												<AbsDimension x="62" y="62" />
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center">
+													<Offset>
+														<AbsDimension x="0" y="0" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Layers>
+									<Layer level="overlay">
+										##帖子回复红点提示
+										<Texture name="$parentPostingRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+											<Size>
+												<AbsDimension x="16" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-5" y="8"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentAchieveRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+											<Size>
+												<AbsDimension x="16" y="16"/>
+											</Size>
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-5" y="8"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal"   file="ui/headframes/1.png" />
+								<PushedTexture name="$parentPushedBG" file="ui/headframes/1.png" >
+									<Size>
+										<RelDimension x="0.9" y="0.9" />
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):PlayerCenter_OnClick()</OnClick>
+								</Scripts>						
+							</Button>
+						</Frames>
+					</Frame>
+					##迷你豆
+					<Button name="$parentMiniBean" hidden="true">
+						<Size>
+							<AbsDimension x="125" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topright" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="194" y="20" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_numbg_hall" DrawType="center">
+									<Center>
+										<Left	offsetX="0"  offsetY="0" w="20"	 h="24"/>
+										<Center	offsetX="20" offsetY="0" w="73"	 h="24"/>
+										<Right	offsetX="93" offsetY="0" w="20" h="24"/>
+									</Center>								
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy_2.png" hidden="true">
+									<Size>
+										<AbsDimension x="146" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="8" texcols="2" />
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_bean" abs_x="28" abs_y="28">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNum" fonttype="BlackFont18" justifyH="center" justifyV="middle" autowrap="true" text="10000000" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="110" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="5" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MiniBean_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##迷你币
+					<Button name="$parentMiniCoin" hidden="true">
+						<Size>
+							<AbsDimension x="125" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentMiniBean">
+								<Offset>
+									<AbsDimension x="14" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_numbg_hall" DrawType="center">
+									<Center>
+										<Left	offsetX="0"  offsetY="0" w="20"	 h="24"/>
+										<Center	offsetX="20" offsetY="0" w="73"	 h="24"/>
+										<Right	offsetX="93" offsetY="0" w="20" h="24"/>
+									</Center>								
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy_2.png" hidden="true">
+									<Size>
+										<AbsDimension x="146" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="8" texcols="2" />
+								</Texture>
+								<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_coin" abs_x="28" abs_y="28">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-12" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNum" fonttype="BlackFont18" justifyH="center" justifyV="middle" autowrap="true" text="10000000" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="110" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="5" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MiniCoin_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+
+					<!-- 顶部按钮：常驻功能（设置/邮件/好友/商城特惠礼包）-->
+					##游戏通用设置
+					<Button name="$parentSetting">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-20" y="-4" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_set.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_set.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Setting_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##邮箱
+					<Button name="$parentMail" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentSetting">
+								<Offset>
+									<AbsDimension x="-10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_letter.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_letter.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Mail_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##好友（手Q渠道，好友图标会变成企鹅）
+					<Button name="$parentBuddy" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentMail">
+								<Offset>
+									<AbsDimension x="-10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_friend.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_friend.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Buddy_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##海外版：商城特惠礼包
+                    <Button name="$parentGift" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentBuddy">
+								<Offset>
+									<AbsDimension x="-10" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_pack.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_halltop_pack.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Gift_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+							
+					<!--顶部右侧按钮：可配置功能（社区（海外是facebook社区）/直播/赛事/订阅） -->  
+					##海外版：facebook点赞（facebook社区）
+					<Button name="$parentFacebookThumbUp" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="-10" y="2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_fblikes.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_fblikes.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">								
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):FacebookThumbUp_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##国内版：社区
+					<Button name="$parentCommunity" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentLine">
+								<Offset>
+									<AbsDimension x="-10" y="2" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_box.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_box.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="10" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-13" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Community_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##直播
+					<Button name="$parentVideoLive" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentCommunity">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_tv.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_tv.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="10" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-13" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):VideoLive_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##订阅
+					<Button name="$parentSubscribe" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentVideoLive">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_subscribe.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_subscribe.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="10" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-13" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Subscribe_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##赛事
+					<Button name="$parentMatch" hidden="true">
+						<Size>
+							<AbsDimension x="56" y="56"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentSubscribe">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_match.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/minilobby.xml" uvname="icon_hallmini_match.png" rel_x="0.95" rel_y="0.95">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">							
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="10" y="10"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-13" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>								
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Match_OnClick()</OnClick>
+						</Scripts>
+					</Button>	
+
+					<!--顶部左侧按钮：根据渠道配置功能-->
+					<!--官版国内渠道：福利中心（也叫官版特权）-->
+					<Button name="$parentGuanBanFuliBtn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="15" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_official.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_official.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):GuanBanFuliBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<!--QQ大厅渠道：蓝钻特权按钮-->
+					<Button name="$parentQQBlueVipBtn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="15" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentUVAnimationTex" file="ui/mobile/texture2/vipicon.xml" uvname="gztq_icon02" hidden="true" alphamode="add">
+									<Size>
+										<AbsDimension x="101" y="101"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="3" texcols="3" />
+								</Texture>	
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_qqbluediamond1.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_qqbluediamond1.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTopQQBlueVipBtn_OnClick();</OnClick>
+							<OnEnter>MiniLobbyFrameTopQQBlueVipBtn_OnMouseEnter();</OnEnter>
+							<OnLeave>MiniLobbyFrameTopQQBlueVipBtn_OnMouseLeave();</OnLeave>
+							<OnMouseDown>MiniLobbyFrameQQBlueVipBtn_OnMouseDown();</OnMouseDown>
+							<MouseDownUpdate>MiniLobbyFrameQQBlueVipBtn_MouseDownUpdate();</MouseDownUpdate>
+						</Scripts>
+					</Button>	
+					<!--7K7K渠道:贵族特权（有特权说明Tips）-->
+					<Button name="$parent7k7kBlueVipBtn" hidden="true">
+						<Size>
+							<AbsDimension x="48" y="47"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="15" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_7kvip.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_7kvip.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<!--红点-->
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTop7k7kBlueVipBtn_OnClick();</OnClick>
+							<OnEnter>MiniLobbyFrameTop7k7kBlueVipBtn_OnMouseEnter();</OnEnter>
+							<OnLeave>MiniLobbyFrameTop7k7kBlueVipBtn_OnMouseLeave();</OnLeave>
+							<OnMouseDown>MiniLobbyFrame7k7kBlueVipBtn_OnMouseDown();</OnMouseDown>
+							<MouseDownUpdate>MiniLobbyFrame7k7kBlueVipBtn_MouseDownUpdate();</MouseDownUpdate>
+						</Scripts>
+					</Button>
+					<!--手机QQ渠道：新版手Q会员（拉起外部链接，具体配置：ns_version.qqvip）-->
+					<Button name="$parentShouQBtn" hidden="true">
+						<Size>
+							<AbsDimension x="33" y="46"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="15" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_qqvip">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_qqvip">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTopShouqBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--QQ 綁定-->
+					<Button name="$parentBindQQBtn" hidden="true">
+						<Size>
+							<AbsDimension x="33" y="46"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="95" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_qqvip">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_qqvip">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTopShouqBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--4399渠道：礼包特权 -->
+					<Button name="$parentActivity4399Btn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="15" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_4399box.png" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_4399box.png" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>					
+						<Scripts>
+							<OnClick>GongNengFrameActivity4399Btn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--4399渠道：4399账号绑定-->
+					<Button name="$parentLogin4399Btn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="60" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_4399id.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_4399id.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTop4399LoginBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--应用宝渠道&OPPO渠道&VIVO渠道：特权奖励礼包（三个渠道用的icon不一样）-->
+					<Button name="$parentChannelRewardBtn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentRoleInfo">
+								<Offset>
+									<AbsDimension x="15" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="6" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_tencentappvip.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_tencentappvip.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ChannelRewardBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>					
+					<!--应用宝渠道：应用宝论坛-->
+					<Button name="$parentYYBForumBtn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y= "44"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentChannelRewardBtn">
+								<Offset>
+									<AbsDimension x="20" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_tencentapp.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_tencentapp.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTopYYBForumBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--OPPO渠道：oppo论坛-->
+					<Button name="$parentOppoForumBtn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentChannelRewardBtn">
+								<Offset>
+									<AbsDimension x="20" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_oppo_hall.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_oppo_hall.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTopOppoForumBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--VIVO渠道：vivo论坛-->
+					<Button name="$parentVivoForumBtn" hidden="true">
+						<Size>
+							<AbsDimension x="44" y="44"/>
+						</Size>	
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentChannelRewardBtn">
+								<Offset>
+									<AbsDimension x="20" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_vivo.png">
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_prom_vivo.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>MiniLobbyFrameTopVivoForumBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>  
+				</Frames>
+			</Frame>
+
+			<!-- Center主区域：资源工坊/迷你工坊/开始游戏/联机大厅/我的家园 当前使用的角色、皮肤 -->
+			<Frame name="$parentCenter" rel_x="1.0" rel_y="0.7">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+                    <!--人物旋转 -->
+                    <Button name="$parentRoleRotateView">
+                        <Size>
+                            <AbsDimension x="300" y="350"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="bottom" relativeTo="$parentRoleView" relativePoint="bottom">
+                                <Offset>
+                                    <AbsDimension x="0" y="-150" />
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnMouseDown>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):RoleRotateView_OnMouseDown()</OnMouseDown>
+                            <OnMouseMove>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):RoleRotateView_OnMouseMove()</OnMouseMove>
+                            <OnMouseUp>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):RoleRotateView_OnMouseUp()</OnMouseUp>
+                            <OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ChangeView_OnClick()</OnClick>
+                        </Scripts>
+                    </Button>
+                    <!-- 点击模型中间小块地方, 变换动作 -->
+                    
+					##开始游戏按钮
+					<Button name="$parentLocalMap">
+						<Size>
+							<AbsDimension x="298" y="100"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-42"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="btn_orange_hall"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="btn_orange_hall" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">								
+								<FontString name="$parentName" fonttype="BlackFont40" justifyH="center" justifyV="middle" text="$3068" fontStyle="border" shadowcolor="ff522b09" rel_x="0.8" rel_y="0.8" >
+									<Color r="254" g="251" b="234"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentFinger" file="ui/mobile/texture2/noviceguide.xml" uvname="img_hand_1.png" hidden="true">
+									<Size>
+										<AbsDimension x="121" y="121"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="20" y="-25"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):LocalMap_OnClick()</OnClick>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):LocalMap_OnMouseDown()</OnMouseDown>
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):LocalMap_OnMouseUp()</OnMouseUp>
+						</Scripts>
+					</Button>					
+					##迷你工坊按钮
+					<Button name="$parentMiniWorks">
+						<Size>
+							<AbsDimension x="221" y="88"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentLocalMap">
+								<Offset>
+									<AbsDimension x="-235" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="btn_blue_hall"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="btn_blue_hall" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont30" justifyH="center" justifyV="middle" text="$3815" fontStyle="border" shadowcolor="ff000000" rel_x="0.8" rel_y="0.8" >
+									<Color r="254" g="251" b="234"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentGuide" hidden="true">
+								<Size>
+									<AbsDimension x="287" y="147" />
+								</Size>
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="-95"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBkg8" />
+										<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow.png">
+											<Angle value = "90" />
+											<Size>
+												<AbsDimension x="28" y="28" />
+											</Size>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="bottomleft">
+													<Offset>
+														<AbsDimension x="45" y="-2"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+										<FontString name="$parentTips" fonttype="BlackFont18" lineInterval="5" fontStyle="border" autowrap="true" text="$3834" >
+											<Color r="255" g="255" b="255"/>
+											<Size>
+												<AbsDimension x="250" y="126"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentFinger" ffile="ui/mobile/texture2/noviceguide.xml" uvname="img_hand_1.png" hidden="true">
+											<Size>
+												<AbsDimension x="121" y="121"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-40" y="-25"/>
+													</Offset>
+												</Anchor>
+											</Anchors>	
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnLoad>MiniLobbyFrameCenterMiniWorksBtnGuide_OnLoad();</OnLoad>
+									<OnUpdate>MiniLobbyFrameCenterMiniWorksBtnGuide_OnUpdate();</OnUpdate>
+								</Scripts>
+							</Frame>
+						</Frames>					
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MiniWorks_OnClick()</OnClick>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MiniWorks_OnMouseDown()</OnMouseDown>
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MiniWorks_OnMouseUp()</OnMouseUp>
+						</Scripts>
+					</Button>
+					##资源工坊按钮
+					<Button name="$parentResourceShop">
+						<Size>
+							<AbsDimension x="160" y="54"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentMiniWorks">
+								<Offset>
+									<AbsDimension x="-172" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="btn_purple_hall"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="btn_purple_hall" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$16110" fontStyle="border" shadowcolor="ff000000" rel_x="0.8" rel_y="0.8" >
+									<Color r="254" g="251" b="234"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+                        <Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ResourceShop_OnClick()</OnClick>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ResourceShop_OnMouseDown()</OnMouseDown>
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ResourceShop_OnMouseUp()</OnMouseUp>
+						</Scripts>
+					</Button>
+					##联机大厅按钮
+					<Button name="$parentMultiplayer">
+						<Size>
+							<AbsDimension x="221" y="88"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentLocalMap">
+								<Offset>
+									<AbsDimension x="235" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="btn_lgreen_hall"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="btn_lgreen_hall" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont30" justifyH="center" justifyV="middle" text="$3443" fontStyle="border" shadowcolor="ff000000" rel_x="0.8" rel_y="0.8" >
+									<Color r="254" g="251" b="234"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentFinger" file="ui/mobile/texture2/noviceguide.xml" uvname="img_hand_1.png" hidden="true">
+									<Size>
+										<AbsDimension x="121" y="121"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="20" y="-25"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Multiplayer_OnClick()</OnClick>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Multiplayer_OnMouseDown()</OnMouseDown>
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Multiplayer_OnMouseUp()</OnMouseUp>
+						</Scripts>
+					</Button>
+					##我的家园按钮
+					<Button name="$parentHomeChest">
+						<Size>
+							<AbsDimension x="160" y="54"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentMultiplayer">
+								<Offset>
+									<AbsDimension x="172" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="btn_dgreen_hall"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="btn_dgreen_hall" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="overlay">								
+								<!--LLTODO:家园红点-->
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3444" fontStyle="border" shadowcolor="ff000000" rel_x="0.8" rel_y="0.8" >
+									<Color r="254" g="251" b="234"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):HomeChest_OnClick()</OnClick>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):HomeChest_OnMouseDown()</OnMouseDown>
+							<OnMouseUp>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):HomeChest_OnMouseUp()</OnMouseUp>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			
+			<!-- Left区域：兼容宽屏 -->
+			<Frame name="$parentLeft">
+				<Size>
+					<AbsDimension x="100" y="500"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			<!-- Right区域：兼容宽屏 -->
+			<Frame name="$parentRight">
+				<Size>
+					<AbsDimension x="100" y="500"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentTop">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##回流系统入口
+					<Button name="$parentComeBackBtn" hidden="true">
+						<Size>
+							<AbsDimension x="60" y="60"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">								
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="img_circlebg">
+									<Size>
+										<AbsDimension x="50" y="50"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>	
+								<Texture name="$parentIcon" file="ui/mobile/texture2/minilobby.xml" uvname="icon_return_home_flat">
+									<Size>
+										<AbsDimension x="48" y="48"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentBkg"/>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentNameBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_font">
+									<Size>
+										<AbsDimension x="64" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont18" justifyH="center" justifyV="middle" text="$32252" fontStyle="border" shadowcolor="ff000000">
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="64" y="18"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="0" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer> 
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ComeBackBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##活动
+					<Button name="$parentActivity" hidden="true">
+						<Size>
+							<AbsDimension x="64" y="64"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="130" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_events"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_events" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="img_hexagonbg">
+									<Size>
+										<AbsDimension x="68" y="78"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Layers>
+							<Layer level="overlay">							
+								<Texture name="$parentNameBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_font">
+									<Size>
+										<AbsDimension x="64" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$6063" fontStyle="border" shadowcolor="ff000000" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="64" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Activity_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##星工场
+					<Button name="$parentARFactory">
+						<Size>
+							<AbsDimension x="64" y="64"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentActivity">
+								<Offset>
+									<AbsDimension x="0" y="20" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_starfactory"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_starfactory" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="img_hexagonbg">
+									<Size>
+										<AbsDimension x="68" y="78"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentNameBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_font">
+									<Size>
+										<AbsDimension x="64" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$32254" fontStyle="border" shadowcolor="ff000000" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="64" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):ARFactory_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##商城
+					<Button name="$parentShop" hidden="true">
+						<Size>
+							<AbsDimension x="64" y="64"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentARFactory">
+								<Offset>
+									<AbsDimension x="0" y="20" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_shopee"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_shopee" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="img_hexagonbg">
+									<Size>
+										<AbsDimension x="68" y="78"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>								
+							</Layer>
+						</Layers>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentNameBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_font">
+									<Size>
+										<AbsDimension x="64" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$3745" fontStyle="border" shadowcolor="ff000000" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="64" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Shop_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+					##BattlePass
+					<Button name="$parentBattlePass" hidden="true">
+						<Size>
+							<AbsDimension x="64" y="64"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentShop">
+								<Offset>
+									<AbsDimension x="0" y="20" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/minilobby.xml" uvname="icon_bp"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/minilobby.xml" uvname="icon_bp" rel_x="1.05" rel_y="1.05">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="img_hexagonbg">
+									<Size>
+										<AbsDimension x="68" y="78"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>								
+							</Layer>
+						</Layers>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentNameBkg" file="ui/mobile/texture2/minilobby.xml" uvname="board_font">
+									<Size>
+										<AbsDimension x="64" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="$70062" fontStyle="border" shadowcolor="ff000000" >
+									<Color r="255" g="255" b="255"/>
+									<Size>
+										<AbsDimension x="64" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true">
+									<Size>
+										<AbsDimension x="16" y="16"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):BattlePass_OnClick()</OnClick>
+						</Scripts>							
+					</Button>
+				</Frames>
+			</Frame>
+
+			<!-- Bottom底部区域 -->
+			<Frame name="$parentBottom" rel_x="1.0" abs_y="50">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentNetworkBkg" file="ui/mobile/texture0/minilobby.xml" hidden="false" uvname="img_circlebg_gray">
+							<Size>
+								<AbsDimension x="38" y="38"/>
+							</Size>
+							<Anchors>
+								<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="13" y="-11" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNetwork" file="ui/mobile/texture0/room.xml" hidden="false" uvname="icon_wifi_green">
+							<Size>
+								<AbsDimension x="18" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNetworkBkg" />
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNetworkText" fonttype="BlackFont22" lineInterval="13" autowrap="true" text="$25831" hidden="true">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="120" y="22"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentNetworkBkg">
+									<Offset>
+										<AbsDimension x="90" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##网络状态
+					<Button name="$parentShrink" hidden="false">
+						<Size>
+							<AbsDimension x="75" y="58"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="15" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="" />
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="" >
+							<Size>
+								<AbsDimension x="57" y="60"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Shrink_OnClick();</OnClick>
+						</Scripts>							
+					</Button>										
+					##模板展示(仅测试服)
+					<Button name="$parentTempDisplayBtn" hidden="true" abs_x="61" abs_y="64">
+						<Anchors>
+							<Anchor point="left" relativePoint="left" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="100" y="2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont" justifyH="center" fontStyle="border" text="展示模板" abs_x="100" abs_y="16">
+									<Color r="254" g="255" b="254"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>MiniLobbyFrameBottomTempDisplayBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>									
+				</Frames>
+			</Frame>
+
+			<!-- 系统公告 -->
+			<Frame name="$parentNoticeFrame" abs_x="610" abs_y="40">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="82"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentNoticeBkg" file="ui/mobile/texture0/bigtex/img_hall_notice.png">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<RichText name="$parentNoticeText" fonttype="BlackFont20">
+						<Size>
+							<AbsDimension x="500" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentNoticeBkg" />
+						</Anchors>
+						<Scripts>
+							<OnClick>MiniLobbyFrameBottomNoticeText_OnClick();</OnClick>
+							<OnMouseUp>MiniLobbyFrameBottomNoticeText_OnMouseUp();</OnMouseUp>
+						</Scripts>
+					</RichText>	
+				</Frames>				
+			</Frame>
+
+			<!-- 游客模式在线时间提示 -->
+			<Button name="$parentGameMode" framelevel="3000" hidden="true">
+				<Size>
+					<AbsDimension x="224" y="42"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="109" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/minilobby.xml" uvname="img_board_healthmode.png">
+							<Size>
+								<AbsDimension x="352" y="42"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-128" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIconTime" file="ui/mobile/texture0/common_icon.xml" uvname="icon_time_h.png">
+							<Size>
+								<AbsDimension x="27" y="27"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="20" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentText" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$100263" fontStyle="border" shadowcolor="ff522b09">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="80" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentIconTime">
+									<Offset>
+										<AbsDimension x="31" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTime" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="08:56:00" fontStyle="border" shadowcolor="ff522b09">
+							<Color r="255" g="255" b="255"/>
+							<Size>
+								<AbsDimension x="80" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentText">
+									<Offset>
+										<AbsDimension x="83" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+                <Scripts>
+                    <OnClick>GameMode_OnClick();</OnClick>
+                </Scripts>
+			</Button>
+
+			<!-- Uin、时间、版本号等信息 -->
+			<Frame name="$parentWaterMarkFrame" abs_x="380" abs_y="16">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-5" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentFont" fonttype="BlackFont" text="" abs_x="380" abs_y="16" justifyH="right">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<!-- 新版新手引导 -->
+			<Frame name="$parentNewGuide" frameStrata="BACKGROUND" hidden="true" framelevel="2000">
+				<Layers>
+					<Layer level="BACKGROUND">
+						## 背景暗色
+						<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000"/>
+					</Layer>
+				</Layers>
+
+				<Frames>
+					<Frame name="$parentContent" abs_x ="364" abs_y ="135">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topleft" relativeTo="MiniLobbyExCenterMultiplayer">
+								<Offset>
+									<AbsDimension x="-26" y="50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<!--气泡-->
+								<Texture name="$parentGuideBkg" inherits="TemplateBkg50"/>
+								<Texture name="$parentGuideBkgArrow" file="ui/mobile/texture2/common.xml" uvname="img_more_arrow.png" UVType="mirroeu" abs_x ="50" abs_y ="20">
+									<Angle value="-90"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-21" y="51"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentGuideTip1" fonttype="BlackFont24" justifyH="left" lineInterval="2" text="$100675" abs_x="311" abs_y="53" autowrap="true">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="26" y="24"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+
+								<FontString name="$parentGuideTip2" fonttype="BlackFont20" justifyH="right" text="$100676" abs_x="118" abs_y="20">
+									<Color r="10" g="170" b="26"/>
+									<Anchors>
+										<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-28" y="-24"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames> 
+			</Frame>
+
+			<!-- 新手引导 -->
+			<Frame name="$parentGuide" frameStrata="BACKGROUND" hidden="true" framelevel="2000">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size>				
+				<Frames>
+					<Frame name="$parentMask">
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="78000000" />
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):GuideContentNextBtn_OnClick();</OnClick>
+						</Scripts>
+					</Frame>
+					<Frame name="$parentContent" frameStrata="BACKGROUND" framelevel="2200">
+						<Size>
+							<AbsDimension x="582" y="329"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottom" relativeTo="MiniLobbyFrameCenterLocalMap">
+								<Offset>
+									<AbsDimension x="220" y="-100"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">								
+								<Texture name="$parentDecorate" file="ui/mobile/texture0/bigtex/edu_tumeimei.png">
+									<Size>
+										<AbsDimension x="161" y="209"/>
+									</Size>	
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-20"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentText" fonttype="BlackFont24" justifyV="middle" lineInterval="13" autowrap="true" text="$3773">
+									<Size>
+										<AbsDimension x="410" y="220"/>
+									</Size>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="165" y="-8"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentContinueIcon" inherits="TemplateBkg47" hidden="true">
+									<Size>
+										<AbsDimension x="151" y="39"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-20"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<FontString name="$parentContinueText" fonttype="BlackFont18" justifyH="center" text="$4961" abs_x="151" abs_y="18" hidden="true">
+									<Color r="10" g="170" b="26"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentContinueIcon" />
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLineH" file="ui/mobile/texture0/shop.xml" uvname="img_line_white.png" DrawType="center">
+									<Center>
+										<Left offsetX="0" offsetY="0" w="2" h="2"/>
+										<Center offsetX="2" offsetY="0" w="2" h="2" />
+										<Right offsetX="2" offsetY="0" w="2" h="2" />
+									</Center>
+									<Size>
+										<AbsDimension x="331" y="2"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="167" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentLine" file="ui/mobile/texture0/noviceguide/img_line_white_novice1.png">
+									<Size>
+										<AbsDimension x="158" y="2"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="165" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+								<Texture name="$parentSquare" file="ui/mobile/texture0/common.xml" uvname="img_dot_diamond_white.png">
+									<Size>
+										<AbsDimension x="20" y="20"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):GuideContentNextBtn_OnClick();</OnClick>
+						</Scripts>				
+					</Frame>
+				</Frames>
+			</Frame>
+
+			<!-- 新手选择生日日期，这里设置了framelevel，避免与公告界面重叠 -->
+			<Frame name="$parentBirthSelect" hidden="true" frameStrata="HIGH" framelevel="10">
+				<Size>
+					<RelDimension x="1.0" y="1.0"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentmask" file="ui/white.png" stretchedge="true" color="4c000000" />
+						<Texture name="$parentBkg1" inherits="TemplateBkg51">
+							<Size>
+								<AbsDimension x="500" y="286"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" fonttype="BlackFont26" text="$4840" justifyV="middle" justifyH="center" abs_x="400" abs_y="40" >
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentBkg1" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentTitle2" fonttype="BlackFont18" text="$4845" justifyH="center" abs_x="430" abs_y="80" autowrap="true" >
+							<Color r="101" g="116" b="118"/>
+							<Anchors>
+								<Anchor point="top" relativeTo="$parentBkg1" relativePoint="top">
+									<Offset>
+										<AbsDimension x="0" y="58"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentOKBtn" inherits="TemplateBtn11">
+						<Size>
+							<AbsDimension x="135" y="42"/>
+						</Size>
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="0" y="-25"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentText" fonttype="BlackFont24" justifyH="center"  lineInterval="2" text="$3010">
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="105" y="34"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center">
+											<offset>
+												<AbsDimension x="0" y="5"/>
+											</offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):BirthSelectOKBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMonth" >
+						<Size>
+							<AbsDimension x="174" y="41"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="40" y="127"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentListBkg" inherits="TemplateBkg8" hidden="true">
+									<Size>
+										<AbsDimension x="174" y="317"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<SlidingFrame name="$parentList"  slidingY="true" slideplane="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="160" y="317"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentListBkg" relativePoint="left">
+										<offset>
+											<AbsDimension x="0" y="0"/>
+										</offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" abs_x="174" abs_y="620"/>
+									<Button name="$parentM1" inherits="NewBirthTemplate" id="1"/>
+									<Button name="$parentM2" inherits="NewBirthTemplate" id="2"/>
+									<Button name="$parentM3" inherits="NewBirthTemplate" id="3"/>
+									<Button name="$parentM4" inherits="NewBirthTemplate" id="4"/>
+									<Button name="$parentM5" inherits="NewBirthTemplate" id="5"/>
+									<Button name="$parentM6" inherits="NewBirthTemplate" id="6"/>
+									<Button name="$parentM7" inherits="NewBirthTemplate" id="7"/>
+									<Button name="$parentM8" inherits="NewBirthTemplate" id="8"/>
+									<Button name="$parentM9" inherits="NewBirthTemplate" id="9"/>
+									<Button name="$parentM10" inherits="NewBirthTemplate" id="10"/>
+									<Button name="$parentM11" inherits="NewBirthTemplate" id="11"/>
+									<Button name="$parentM12" inherits="NewBirthTemplate" id="12"/>
+								</Frames>
+								<Scripts>
+									<OnMouseWheel>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MonthSlide_OnMouseWheel()</OnMouseWheel>
+									<OnMouseMove>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MonthSlide_OnMouseWheel()</OnMouseMove>
+								</Scripts>
+							</SlidingFrame>
+							<Slider name="$parentBar" orientation="VERTICAL" minValue="0" maxValue="303" valueStep="1" ignoreLeftDown="true" defaultValue="151" hidden="true">
+								<Size>
+									<AbsDimension x="20" y="300"/>
+								</Size>
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parentListBkg">
+										<Offset>
+											<AbsDimension x="5" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="img_check_slider.png" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Size>
+										<AbsDimension x="6" y="60"/>
+									</Size>
+								</ThumbTexture>
+								<Scripts>
+									<OnValueChanged>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MonthBar_OnValueChanged()</OnValueChanged>
+								</Scripts>
+							</Slider>
+							<Button name="$parentTitle" abs_x="174" abs_y="41">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" abs_x="174" abs_y="41" inherits="TemplateBkg8">
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentArrowBkg" abs_x="41" abs_y="41" inherits="TemplateBkg8">
+											<Anchors>
+												<Anchor point="right" relativeTo="$parentBkg" relativePoint="right">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<texture name="$parentDown" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" abs_x="16" abs_y="10">
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-11" y="13"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</texture>
+										<texture name="$parentUp" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" UVType="turn180" abs_x="16" abs_y="10" hidden="true">
+											<Anchors>
+												<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+													<Offset>
+														<AbsDimension x="-11" y="13"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</texture>
+										<FontString name="$parentName" fonttype="BlackFont24"  justifyV="middle" fontStyle="normal" text="$4844">
+											<Color r="185" g="185" b="185"/>
+											<Size>
+												<AbsDimension x="140" y="39"/>
+											</Size>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MonthSelect_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Button>
+					<Button name="$parentYear" >
+						<Size>
+							<AbsDimension x="174" y="41"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg1">
+								<Offset>
+									<AbsDimension x="-40" y="127"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentListBkg" inherits="TemplateBkg8" hidden="true">
+									<Size>
+										<AbsDimension x="174" y="317"/>
+									</Size>
+									<Anchors>
+										<Anchor point="bottom" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="13"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<SlidingFrame name="$parentList"  slidingY="true" slideplane="$parentPlane" hidden="true">
+								<Size>
+									<AbsDimension x="160" y="317"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentListBkg" relativePoint="left">
+										<offset>
+											<AbsDimension x="0" y="0"/>
+										</offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentPlane" hidden="true" abs_x="174" abs_y="2048"/>
+									<Button name="$parentY1" inherits="NewBirthTemplate" id="1"/>
+									<Button name="$parentY2" inherits="NewBirthTemplate" id="2"/>
+									<Button name="$parentY3" inherits="NewBirthTemplate" id="3"/>
+									<Button name="$parentY4" inherits="NewBirthTemplate" id="4"/>
+									<Button name="$parentY5" inherits="NewBirthTemplate" id="5"/>
+									<Button name="$parentY6" inherits="NewBirthTemplate" id="6"/>
+									<Button name="$parentY7" inherits="NewBirthTemplate" id="7"/>
+									<Button name="$parentY8" inherits="NewBirthTemplate" id="8"/>
+									<Button name="$parentY9" inherits="NewBirthTemplate" id="9"/>
+									<Button name="$parentY10" inherits="NewBirthTemplate" id="10"/>
+									<Button name="$parentY11" inherits="NewBirthTemplate" id="11"/>
+									<Button name="$parentY12" inherits="NewBirthTemplate" id="12"/>
+									<Button name="$parentY13" inherits="NewBirthTemplate" id="13"/>
+									<Button name="$parentY14" inherits="NewBirthTemplate" id="14"/>
+									<Button name="$parentY15" inherits="NewBirthTemplate" id="15"/>
+									<Button name="$parentY16" inherits="NewBirthTemplate" id="16"/>
+									<Button name="$parentY17" inherits="NewBirthTemplate" id="17"/>
+									<Button name="$parentY18" inherits="NewBirthTemplate" id="18"/>
+									<Button name="$parentY19" inherits="NewBirthTemplate" id="19"/>
+									<Button name="$parentY20" inherits="NewBirthTemplate" id="20"/>
+									<Button name="$parentY21" inherits="NewBirthTemplate" id="21"/>
+									<Button name="$parentY22" inherits="NewBirthTemplate" id="22"/>
+									<Button name="$parentY23" inherits="NewBirthTemplate" id="23"/>
+									<Button name="$parentY24" inherits="NewBirthTemplate" id="24"/>
+									<Button name="$parentY25" inherits="NewBirthTemplate" id="25"/>
+									<Button name="$parentY26" inherits="NewBirthTemplate" id="26"/>
+									<Button name="$parentY27" inherits="NewBirthTemplate" id="27"/>
+									<Button name="$parentY28" inherits="NewBirthTemplate" id="28"/>
+									<Button name="$parentY29" inherits="NewBirthTemplate" id="29"/>
+									<Button name="$parentY30" inherits="NewBirthTemplate" id="30"/>
+									<Button name="$parentY31" inherits="NewBirthTemplate" id="31"/>
+									<Button name="$parentY32" inherits="NewBirthTemplate" id="32"/>
+									<Button name="$parentY33" inherits="NewBirthTemplate" id="33"/>
+									<Button name="$parentY34" inherits="NewBirthTemplate" id="34"/>
+									<Button name="$parentY35" inherits="NewBirthTemplate" id="35"/>
+									<Button name="$parentY36" inherits="NewBirthTemplate" id="36"/>
+									<Button name="$parentY37" inherits="NewBirthTemplate" id="37"/>
+									<Button name="$parentY38" inherits="NewBirthTemplate" id="38"/>
+									<Button name="$parentY39" inherits="NewBirthTemplate" id="39"/>
+									<Button name="$parentY40" inherits="NewBirthTemplate" id="40"/>
+								</Frames>
+								<Scripts>
+									<OnMouseWheel>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):YearSlide_OnMouseWheel()</OnMouseWheel>
+									<OnMouseMove>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):YearSlide_OnMouseWheel()</OnMouseMove>
+								</Scripts>
+							</SlidingFrame>
+							<Slider name="$parentBar" orientation="VERTICAL" minValue="0" maxValue="1731" valueStep="1" ignoreLeftDown="true" defaultValue="865" hidden="true">
+								<Size>
+									<AbsDimension x="20" y="300"/>
+								</Size>
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parentListBkg">
+										<Offset>
+											<AbsDimension x="5" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="img_check_slider.png" DrawType="ninesquare_center">
+									<NineSquare ox="0" oy="0" tilew="2" tileh="2"/>
+									<Size>
+										<AbsDimension x="6" y="30"/>
+									</Size>
+								</ThumbTexture>
+								<Scripts>
+									<OnValueChanged>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):YearBar_OnValueChanged()</OnValueChanged>
+								</Scripts>
+							</Slider>
+							<Button name="$parentTitle" abs_x="174" abs_y="41">
+								<Anchors>
+									<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" abs_x="174" abs_y="41" inherits="TemplateBkg8">
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentArrowBkg" abs_x="41" abs_y="41" inherits="TemplateBkg8">
+											<Anchors>
+												<Anchor point="right" relativeTo="$parentBkg" relativePoint="right">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<texture name="$parentDown" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" abs_x="16" abs_y="10">
+											<Anchors>
+												<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="-11" y="13"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</texture>
+										<texture name="$parentUp" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" UVType="turn180" abs_x="16" abs_y="10" hidden="true">
+											<Anchors>
+												<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+													<Offset>
+														<AbsDimension x="-11" y="13"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</texture>
+										<FontString name="$parentName" fonttype="BlackFont24"  justifyV="middle" fontStyle="normal" text="$4843">
+											<Color r="185" g="185" b="185"/>
+											<Size>
+												<AbsDimension x="140" y="39"/>
+											</Size>
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):MonthSelect_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Button>
+				</Frames>			
+			</Frame>
+
+		</Frames>
+        <Scripts>
+            <OnEvent>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):HandleEvent()</OnEvent>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("MiniLobbyEx"):Update()</OnUpdate>
+		</Scripts>
+	</Frame>
+
+	<!-- 订阅 -->
+	<Frame name="SubscribeFrameEx" parent="UIClient" frameStrata="HIGH"  framelevel="1" input_transparent="false" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true"  color="4c0000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2">
+					<Size>
+						<AbsDimension x="650" y="628"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg0" abs_x="650" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top" >
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##标题名
+						<FontString name="$parentTitle" fonttype="BlackFont38" lineInterval="2" fontStyle="border" text="$6334" shadowcolor="ff6A3A0C" abs_x="500" abs_y="34">
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkgLeft">
+									<Offset>
+										<AbsDimension x="25" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!--关闭按钮-->
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="46" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-8" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_close" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_close" >
+					<Size>
+						<RelDimension x="0.9" y="0.9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>SubscribeFrameCloseBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 微信 -->
+			<Button name="$parentWeChatBtn">
+				<Size>
+					<AbsDimension x="610" y="260"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="75"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/bigtex/dy_img_1.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/bigtex/dy_img_1.png" >
+					<Size>
+						<AbsDimension x="600" y="250"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>SubscribeFrameWeChatBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 微博 -->
+			<Button name="$parentWeiboBtn">
+				<Size>
+					<AbsDimension x="610" y="260"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentWeChatBtn">
+						<Offset>
+							<AbsDimension x="0" y="15"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/bigtex/dy_img_2.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/bigtex/dy_img_2.png" >
+					<Size>
+						<AbsDimension x="600" y="250"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>SubscribeFrameWeiboBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Frame>
+</Ui>

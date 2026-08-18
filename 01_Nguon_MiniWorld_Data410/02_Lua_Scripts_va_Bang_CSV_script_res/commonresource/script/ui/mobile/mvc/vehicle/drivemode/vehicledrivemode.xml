@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/vehicle/drivemode/VehicleDriveModeModel.lua"/>
+	<Script file="ui/mobile/mvc/vehicle/drivemode/VehicleDriveModeView.lua"/>
+	<Script file="ui/mobile/mvc/vehicle/drivemode/VehicleDriveModeCtrl.lua"/>
+
+	<Frame name="VehicleKeyBtnTemplate_Text" virtual="true" framelevel="3" input_transparent="true">
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" fonttype="BlackFont" justifyV="bottom" fontStyle="border" justifyH="center" text="左键" abs_x="80" abs_y="40" autowrap="true" hidden="true">
+					<color r="254" g="248" b="220"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentNum" fonttype="BlackFont" justifyV="middle" fontStyle="border" justifyH="center" text="3" abs_x="30" abs_y="20">
+					<color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-15" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+
+	<!--方形按键-->
+	<Button name="VehicleKeyBtnTemplate_R" virtual="true" hidden="true">
+		<Size platform="pc">
+			<AbsDimension x="70" y="70" />
+		</Size>
+		<Size platform="mobile">
+			<AbsDimension x="74" y="74" />
+		</Size>
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/operate.xml" uvname="operating_board_square.png" color="0x80ffffff"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/operate.xml" uvname="operating_board_square.png"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentOpenIcon" file="ui/mobile/texture2/operate.xml" uvname="operating_special_open_b" hidden="true"/>
+				<Texture name="$parentIcon" alphamode="alphablend" file="ui/vehicle/icon_getout.png">
+					<Size>
+						<RelDimension x="0.761" y="0.636"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentProcessBkg" file="ui/mobile/texture2/operate.xml" uvname="operating_board_bar" abs_x="119" abs_y="119" hidden="true">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentProcessBar" file="ui/mobile/texture2/operate.xml" uvname="img_operating_bar_r" abs_x="104" abs_y="104" DrawType="bottomright_rotate" progressvalue="0">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentProcessBkg">
+							<Offset>
+								<AbsDimension x="-8" y="-8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentText" inherits="VehicleKeyBtnTemplate_Text"/>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnClicked();</OnClick>
+			<OnMouseDown>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnMouseDown();</OnMouseDown>
+			<OnMouseUp>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnMouseUp();</OnMouseUp>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnUpdate()</OnUpdate>
+		</Scripts>
+	</Button>
+
+	<!--mobile端圆形键位-->
+	<Button name="VehicleKeyBtnTemplate_C" virtual="true" abs_x="89" abs_y="91" hidden="true">
+		<NormalTexture name="$parentNormal" file="ui/mobile/texture2/operate.xml" uvname="operating_board_m" color="0x80ffffff"/>
+		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/operate.xml" uvname="operating_board_m">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parentNormal"/>
+			</Anchors>
+		</PushedTexture>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentOpenIcon" file="ui/mobile/texture2/operate.xml" uvname="operating_special_open_r" hidden="true"/>
+				<Texture name="$parentIcon" alphamode="alphablend" file="ui/vehicle/icon_getout.png">
+					<Size>
+						<RelDimension x="0.761" y="0.636"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center"/>
+					</Anchors>
+				</Texture>	
+				<Texture name="$parentProcessBkg" file="ui/mobile/texture2/operate.xml" uvname="operating_board_bar" hidden="true">
+					<Size>
+						<RelDimension x="1.12" y="1.12"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<Texture name="$parentProcessBar" file="ui/mobile/texture2/operate.xml" uvname="img_operating_bar_r" DrawType="bottomright_rotate" progressvalue="0" >
+					<Size>
+						<RelDimension x="0.98" y="0.98"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentProcessBkg">
+							<Offset>
+								<AbsDimension x="-8" y="-8"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentText" inherits="VehicleKeyBtnTemplate_Text"/>
+		</Frames>
+
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnClicked();</OnClick>
+			<OnMouseDown>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnMouseDown();</OnMouseDown>
+			<OnMouseUp>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnMouseUp();</OnMouseUp>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):KeyBtnUpdate()</OnUpdate>
+		</Scripts>
+	</Button>
+
+
+	<Frame name="VehicleDriveMode" parent="UIClient" frameStrata="BACKGROUND" framelevel="2"  hidden="true" input_transparent="true" >
+		<Frames>
+			<Frame name="$parentPCFrame" hidden="true" input_transparent="true">
+
+				<Frames>
+					<Button name="$parentK1" inherits="VehicleKeyBtnTemplate_R" id="1">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+					<Button name="$parentK2" inherits="VehicleKeyBtnTemplate_R" id="2">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK3" inherits="VehicleKeyBtnTemplate_R" id="3">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK4" inherits="VehicleKeyBtnTemplate_R" id="4">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK5" inherits="VehicleKeyBtnTemplate_R" id="5">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK6" inherits="VehicleKeyBtnTemplate_R" id="6">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK7" inherits="VehicleKeyBtnTemplate_R" id="7">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK8" inherits="VehicleKeyBtnTemplate_R" id="8">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK9" inherits="VehicleKeyBtnTemplate_R" id="9">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK10" inherits="VehicleKeyBtnTemplate_R" id="10">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK11" inherits="VehicleKeyBtnTemplate_R" id="11">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK12" inherits="VehicleKeyBtnTemplate_R" id="12">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK13" inherits="VehicleKeyBtnTemplate_R" id="13">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK14" inherits="VehicleKeyBtnTemplate_R" id="14">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK15" inherits="VehicleKeyBtnTemplate_R" id="15">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK16" inherits="VehicleKeyBtnTemplate_R" id="16">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK17" inherits="VehicleKeyBtnTemplate_R" id="17">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK18" inherits="VehicleKeyBtnTemplate_R" id="18">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK19" inherits="VehicleKeyBtnTemplate_R" id="19">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK20" inherits="VehicleKeyBtnTemplate_R" id="20">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK21" inherits="VehicleKeyBtnTemplate_R" id="21">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentMobileFrame" hidden="true" input_transparent="true">
+
+				<Frames>
+					<!--1~4为上下左右移动键位，写在C++了，这里有1~4的Btn但是没用到-->
+					<Button name="$parentK1" inherits="VehicleKeyBtnTemplate_R" id="1">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="60" abs_y="60">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+					<Button name="$parentK2" inherits="VehicleKeyBtnTemplate_R" id="2">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK3" inherits="VehicleKeyBtnTemplate_R" id="3">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK4" inherits="VehicleKeyBtnTemplate_R" id="4">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK5" inherits="VehicleKeyBtnTemplate_R" id="5">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK6" inherits="VehicleKeyBtnTemplate_R" id="6">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK7" inherits="VehicleKeyBtnTemplate_R" id="7">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK8" inherits="VehicleKeyBtnTemplate_R" id="8">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK9" inherits="VehicleKeyBtnTemplate_R" id="9">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK10" inherits="VehicleKeyBtnTemplate_R" id="10">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK11" inherits="VehicleKeyBtnTemplate_R" id="11">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+				    <Button name="$parentK12" inherits="VehicleKeyBtnTemplate_R" id="12">
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false" abs_x="75" abs_y="75">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_s">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+				    </Button>
+
+					
+
+					<Button name="$parentK13" inherits="VehicleKeyBtnTemplate_C" id="13" abs_x="83" abs_y="87">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-212" y="-183"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK14" inherits="VehicleKeyBtnTemplate_C" id="14" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-118" y="-269"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK15" inherits="VehicleKeyBtnTemplate_C" id="15" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-21" y="-269"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK16" inherits="VehicleKeyBtnTemplate_C" id="16" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-118" y="-177"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK17" inherits="VehicleKeyBtnTemplate_C" id="17" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-21" y="-177"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK18" inherits="VehicleKeyBtnTemplate_C" id="18" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-178" y="-99"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK19" inherits="VehicleKeyBtnTemplate_C" id="19" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-178" y="-7"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK20" inherits="VehicleKeyBtnTemplate_C" id="20" abs_x="106" abs_y="106">
+						<Anchors>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-54" y="-50"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+					<Button name="$parentK21" inherits="VehicleKeyBtnTemplate_C" id="21" abs_x="76" abs_y="76">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="22" y="-395"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<ProgressBar name="$parentProcess" input_transparent="true" barname="$parentProcessTex" orientation="VERTICAL" hidden="false">
+								<Anchors>
+									<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+								</Anchors>
+								<Size>
+									<RelDimension x="0.85" y="0.85"/>
+								</Size>
+				        		<Layers>
+				        	    	<Layer level="overlay">
+				        	    	    <Texture name="$parentProcessTex" file="ui/mobile/texture2/operate.xml" uvname="img_operating_board_r">
+				        	        		<Anchors>
+				        	        			<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+				        	        		</Anchors>
+				        	        	</Texture>			        	        	
+				    		        </Layer>
+				    		    </Layers>
+				    		</ProgressBar>
+				    	</Frames>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("VehicleDriveMode"):OnUpdate()</OnUpdate>
+		</Scripts>
+	</Frame>
+
+</Ui>

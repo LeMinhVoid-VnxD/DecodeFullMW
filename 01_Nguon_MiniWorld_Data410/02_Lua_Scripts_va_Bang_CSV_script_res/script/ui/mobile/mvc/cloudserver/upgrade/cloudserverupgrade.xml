@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/cloudserver/upgrade/CloudServerUpgradeModel.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/upgrade/CloudServerUpgradeView.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/upgrade/CloudServerUpgradeCtrl.lua"/>
+	##档次升级模版
+	<Button name="CloudServerUpgradeTemplate" virtual="true" abs_x="487" abs_y="133">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/homechest.xml" uvname="board_shop_recharge_p.png" DrawType="center" >
+					<Center>
+						<Left			offsetX="0"  offsetY="0" w="150"	h="133"/>
+						<Center			offsetX="150" offsetY="0" w="12"	h="133"	/>
+						<Right			offsetX="162" offsetY="0" w="12"	h="133" />
+					</Center>
+				</Texture>
+			</Layer>
+			<Layer level="overlay">
+				<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_server_1.png">
+					<Size>
+						<AbsDimension x="118" y="118"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parent" relativePoint="left">
+							<Offset>
+								<AbsDimension x="15" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont24" justifyH="left" text="$9522" abs_x="270" abs_y="24">
+					<Color r="255" g="253" b="232"/>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="152" y="11"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont21" autowrap="true" justifyH="left" text="$9513" abs_x="270" abs_y="70">
+					<Color r="228" g="218" b="207"/>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="154" y="45"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCheck1" file="ui/mobile/texture0/common/label_ser_sel.png" hidden="true" abs_x="36" abs_y="28">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" abs_x="487" abs_y="133">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):CloudServerUpgradeTemplateOnClick()</OnClick>
+		</Scripts>
+	</Button>
+	##时间模版
+	<Button name="CloudServerUpgradeTime" virtual="true" abs_x="122" abs_y="32">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormal" inherits="TemplateBkg6"/>
+				<Texture name="$parentChecked" inherits="TemplateBkg7" hidden="true"/>
+				<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" text="$9520" abs_x="120" abs_y="20" >
+					<Color r="55" g="54" b="48"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):CloudServerUpgradeTimeOnClick()</OnClick>
+		</Scripts>
+	</Button>
+	##租赁服续费升级
+	<Frame name="CloudServerUpgrade" parent="UIClient" frameStrata="MEDIUM" rel_x="1.0" rel_y="1.0" framelevel="1009" hidden="true">
+		<Anchors>
+			<Anchor point="center" relativeTo="$parent" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000" />
+			</Layer>
+		</Layers>
+		<Frames>
+			##详细的信息显示
+			<Frame name="$parentInfo" abs_x="1114" abs_y="627">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##标题栏背景:height:61
+						<Texture name="$parentTitleBkg" inherits="TemplateBigBkg4">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" />
+								<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="61"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentTitleBkgLeft" file="ui/mobile/texture2/common.xml" uvname="img_title.png" abs_x="333" abs_y="56" />
+						<Texture name="$parentBkgClose" file="ui/mobile/texture2/common.xml" uvname="img_close_bd.png" abs_x="80" abs_y="56">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent" />
+							</Anchors>
+						</Texture>
+						<Texture name="$parentBkg1" inherits="TemplateBigBkg2" abs_x="1118" abs_y="574">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="54"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##标题名
+						<FontString name="$parentTitleName" fonttype="BlackFont34" justifyH="left" text="$9510" fontStyle="border" abs_x="200" abs_y="34" >
+							<Color r="255" g="135" b="27"/>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentTitleBkg">
+									<Offset>
+										<AbsDimension x="23" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##关闭按钮
+					<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkgClose">
+								<Offset>
+									<AbsDimension x="-11" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):Close("CloudServerUpgrade")</OnClick>
+						</Scripts>
+					</Frame>
+					<Button name="$parentGold" abs_x="201" abs_y="38">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="620" y="9" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##金币背景
+								<Texture name="$parentBkg" inherits="TemplateBkg10" abs_x="196" abs_y="38" />
+								##金币图标
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="40" abs_y="40">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+											<Offset>
+												<AbsDimension x="-16" y="2" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##金币数量
+								<FontString name="$parentNumber" fonttype="BlackFont18" justifyH="left" text="500000000" fontStyle="border" abs_x="120" abs_y="18" >
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="45" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentAddIcon" inherits="TemplateBkg5" abs_x="40" abs_y="43">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAddIcon1" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn" abs_x="20" abs_y="20">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentAddIcon">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):AddMiniCoin()</OnClick>
+						</Scripts>
+					</Button>
+					<Frame name="$parentLevel" abs_x="1012" abs_y="304">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-13" y="66"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="1012" abs_y="304" />
+								<FontString name="$parentType" fonttype="BlackFont20" text="$187" abs_x="60" abs_y="20" justifyH="right">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativeTo="CloudServerUpgradeInfoTitleBkg" relativePoint="bottomleft">
+											<Offset>
+												<AbsDimension x="5" y="20" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parent1" id="1" inherits="CloudServerUpgradeTemplate">
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="13" y="12" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parent2" id="2" inherits="CloudServerUpgradeTemplate">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent1" relativePoint="right">
+										<Offset>
+											<AbsDimension x="14" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parent3" id="3" inherits="CloudServerUpgradeTemplate">
+								<Anchors>
+									<Anchor point="top" relativeTo="$parent1" relativePoint="bottom">
+										<Offset>
+											<AbsDimension x="0" y="10" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parent4" id="4" inherits="CloudServerUpgradeTemplate">
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent3" relativePoint="right">
+										<Offset>
+											<AbsDimension x="14" y="0" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+						</Frames>
+					</Frame>
+					## 时间
+					<Frame name="$parentDate" abs_x="1012" abs_y="72">
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parentLevel">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##续期
+								<FontString name="$parentFont1" fonttype="BlackFont20" justifyH="right" text="$9525" abs_x="60" abs_y="19" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="bottomleft" relativeTo="CloudServerUpgradeInfoTitleBkg">
+											<Offset>
+												<AbsDimension x="5" y="334"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentTime1" id="1" inherits="CloudServerUpgradeTime">
+								<Anchors>
+									<Anchor point="left" relativePoint="left" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTime2" id="2" inherits="CloudServerUpgradeTime">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentTime1">
+										<Offset>
+											<AbsDimension x="11" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTime3" id="3" inherits="CloudServerUpgradeTime">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentTime2">
+										<Offset>
+											<AbsDimension x="11" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTime4" id="4" inherits="CloudServerUpgradeTime">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentTime3">
+										<Offset>
+											<AbsDimension x="11" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							<Button name="$parentTime5" id="5" inherits="CloudServerUpgradeTime">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentTime4">
+										<Offset>
+											<AbsDimension x="11" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Button>
+							##是否自动续费 勾选框
+							<Button name="$parentFee" inherits="TemplateTickBtn4" hidden="true">
+								<Size>
+									<AbsDimension x="24" y="24"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativeTo="$parent" relativePoint="left">
+										<Offset>
+											<AbsDimension x="860" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):UpgradeAutoFee_OnClick()</OnClick>
+								</Scripts>
+							</Button>
+							##自动续费
+							<Button name="$parentFeeTip" hidden="true">
+								<Size>
+									<AbsDimension x="90" y="30"/>
+								</Size>
+								<Anchors>
+									<Anchor point="left" relativeTo="$parentFee" relativePoint="right">
+										<Offset>
+											<AbsDimension x="13" y="3"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentFont" fonttype="BlackFont30" justifyH="left" text="$9523" abs_x="81" abs_y="23" >
+												<Color r="83" g="95" b="97"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentLine" file="ui/mobile/texture2/common.xml" uvname="board_map_pic.png" abs_x="90" abs_y="1" >
+											<Anchors>
+												<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentFont">
+													<Offset>
+														<AbsDimension x="0" y="0" />
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerUpgrade").view:ShowFeeTips()</MouseDownUpdate>
+									<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerUpgrade").view:HideFeeTips()</OnMouseUp>
+									<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("CloudServerUpgrade").view:ShowFeeTips()</OnEnter>
+									<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("CloudServerUpgrade").view:HideFeeTips()</OnLeave>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					## 自动续费的提示框
+					<Frame name="$parentFeeTip" abs_x="209" abs_y="130" hidden="true">
+						<Anchors>
+							<Anchor point="bottomright" relativeTo="$parentDateFeeTip" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="0" y="-10" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg19" />
+								<Texture name="$parentBkg1" inherits="TemplateBigBkg20" abs_x="196" abs_y="110">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17" >
+									<Angle value="90" />
+									<Anchors>
+										<Anchor point="topright" relativePoint="bottomright" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="-29" y="-6"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont14" justifyH="left" autowrap="true" text="$9524" abs_x="186" abs_y="90">
+									<Color r="224" g="220" b="201"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parentBkg1">
+											<Offset>
+												<AbsDimension x="0" y="8"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					## 升级各种描述
+					<Frame name="$parentDesc" abs_x="1012" abs_y="96">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-13" y="435"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont20" abs_x="60" abs_y="19" text="$9681" justifyH="right">
+									<Color r="61" g="69" b="70" />
+									<Anchors>
+										<Anchor point="topleft" relativeTo="CloudServerUpgradeInfoTitleBkg" relativePoint="bottomleft">
+											<Offset>
+												<AbsDimension x="5" y="397" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentBkg" inherits="TemplateBigBkg1" abs_x="1012" abs_y="96" />
+								##升级等级
+								<FontString name="$parentUpLevel" fonttype="BlackFont20" justifyH="left" text="$9533" abs_x="350" abs_y="20" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="13" y="19"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								##升级价格
+								<FontString name="$parentUpLevelPrice" fonttype="BlackFont20" justifyH="left" text="$9535" abs_x="200" abs_y="20" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentUpLevel">
+											<Offset>
+												<AbsDimension x="260" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								##续期
+								<FontString name="$parentUpTime" fonttype="BlackFont20" justifyH="left" text="$9534" abs_x="350" abs_y="20" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="13" y="56"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								##续期价格
+								<FontString name="$parentUpTimePrice" fonttype="BlackFont20" justifyH="left" text="$9535" abs_x="200" abs_y="20" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentUpTime">
+											<Offset>
+												<AbsDimension x="260" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+					##是否同意迷你云服协议 勾选框
+					<Button name="$parentAgreeContract" inherits="TemplateTickBtn4">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="86" y="569"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):UpgradeAutoAgreeContract_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<RichText name="CloudServerUpgradeContractAgree"  fonttype="BlackFont20">
+						<Size>
+							<AbsDimension x="400" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentAgreeContract">
+								<Offset>
+									<AbsDimension x="6" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):UpgradeAutoAgreeContract_OnClick()</OnClick>
+						</Scripts>
+					</RichText>
+					<RichText name="CloudServerUpgradeContractTip"  fonttype="BlackFont20">
+						<Size>
+							<AbsDimension x="400" y="20"/>
+						</Size>
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="CloudServerUpgradeContractAgree">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):CloudServerContractTip_OnClick()</OnClick>
+						</Scripts>
+					</RichText>
+					##共计
+					<Button name="$parentSumPrice" abs_x="300" abs_y="32">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="646" y="570"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								## 总计价格前缀
+								<FontString name="$parentPrefix" fonttype="BlackFont20" justifyH="right" text="$9530" abs_x="100" abs_y="20" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								## 续期价格
+								<FontString name="$parentPrice" fonttype="BlackFont30" justifyH="left" text="120000" abs_x="90" abs_y="30" >
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentPrefix">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								## 续期价格 图标
+								<Texture name="$parentIcon2" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="32" abs_y="32">
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentPrice" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Button>
+					##购买
+					<Button name="$parentConfirmBtn">
+						<Size>
+							<AbsDimension x="182" y="61" />
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-28" y="554" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont22" justifyH="center" textcolor="FF373633" text="$9531" >
+									<Size>
+										<AbsDimension x="108" y="22"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center">
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3">
+							<Size>
+								<AbsDimension x="99" y="38"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("CloudServerUpgrade"):UpgradeConfirmBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

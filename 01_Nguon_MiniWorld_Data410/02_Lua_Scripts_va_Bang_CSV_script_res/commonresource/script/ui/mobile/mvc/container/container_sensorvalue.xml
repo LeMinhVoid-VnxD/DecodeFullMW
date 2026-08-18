@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/container/container_sensorvalue.lua" />	
+	<Frame name="SingleSliderTemplate" abs_x="400" abs_y="52" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">             
+                <FontString name="$parentVal" fonttype="BlackFont30" justifyH="left" justifyV="middle" text="999" abs_x="130" abs_y="22">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentRightBtn">
+                            <Offset>
+                                <AbsDimension x="10" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>              
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentLeftBtn" inherits="TemplateLeftArrowBtn1"  abs_x="26" abs_y="47">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ContainerSensorValue"):SingleSliderTemplateBtnOnClick(0)</OnClick>
+                </Scripts>
+            </Button>
+			<Slider name="$parentBar" orientation="HORIZONTAL" minValue="0" maxValue="100" valueStep="1" defaultValue="0" abs_x="328" abs_y="30">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentLeftBtn" relativePoint="right">
+						<Offset>
+							<AbsDimension x="10" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBkg16" abs_x="328" abs_y="12">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPro" inherits="TemplateBkg17" abs_x="328" abs_y="12">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentBkg" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<ThumbTexture name="$parentThumbTexture" file="ui/mobile/texture2/common.xml" uvname="btn_mini_orange.png" abs_x="28" abs_y="30" />
+                <Scripts>
+                    <OnValueChanged>GetInst("UIManager"):GetCtrl("ContainerSensorValue"):SingleSliderTemplateBarOnValueChanged()</OnValueChanged>
+                </Scripts>
+            </Slider>
+            <Button name="$parentRightBtn" inherits="TemplateRightArrowBtn1" abs_x="26" abs_y="47">
+                <Anchors>
+                    <Anchor point="left" relativePoint="right" relativeTo="$parentBar">
+                        <Offset>
+                            <AbsDimension x="10" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ContainerSensorValue"):SingleSliderTemplateBtnOnClick(1)</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+	
+	<Frame name="ContainerSensorValue" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="10" rel_x="1.0" rel_y="1.0">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="896" abs_y="349">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parent" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+				</Texture>
+				<Texture name="$parentCenterBkg" inherits="TemplateBigBkg23">
+					<Size>
+						<AbsDimension x="863" y="220"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="-50"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDesc" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="XXXXXXXXX" abs_x="370" abs_y="16">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="-14"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentTiFrame" inherits="TemplateTopTitleBkg1" abs_x="890" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+				</Anchors>				
+			</Frame>
+			<Button name="$parentCloseBtn" abs_x="46" abs_y="60" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentTiFrame" relativePoint="bottomright" >
+						<Offset>
+							<AbsDimension x="-10" y="-4"/>
+						</Offset>
+					</Anchor>
+				</Anchors>				
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ContainerSensorValue"):CloseBtnClicked()</OnClick>
+				</Scripts>
+			</Button>
+		    <Frame name="$parentConFrame">
+				<Size>
+					<AbsDimension x="863" y="220"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentCenterBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>				
+					<Frame name="$parentV" abs_x="560" abs_y="30" >
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="240" y="51" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="right" justifyV="middle" text="$12031" shadowcolor="ff6A3A0C" abs_x="170" abs_y="24">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>								
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentSlider" inherits="SingleSliderTemplate">
+						        <Anchors>
+							        <Anchor point="left" relativeTo="$parentTitle" relativePoint="right">
+								        <Offset>
+									        <AbsDimension x="30" y="0"/>
+								        </Offset>	
+							        </Anchor>
+						        </Anchors>
+					        </Frame>
+						</Frames>
+					</Frame>
+					<Frame name="$parentS" abs_x="560" abs_y="30">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="240" y="149" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentTitle" fonttype="BlackFont24" justifyH="right" justifyV="middle" text="$12031" shadowcolor="ff6A3A0C" abs_x="170" abs_y="24">
+									<Color r="61" g="69" b="70"/>
+									<Anchors>
+										<Anchor point="right" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>								
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentRever" inherits="SwitchBtnTemplate" abs_x="110" abs_y="36">
+						        <Anchors>
+							       	<Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+										<Offset>
+											<AbsDimension x="35" y="0"/>
+										</Offset>
+									</Anchor>
+						        </Anchors>
+                                <Scripts>
+			                        <OnClick>GetInst("UIManager"):GetCtrl("ContainerSensorValue"):SwitchReverClicked()</OnClick>
+		                        </Scripts>
+					        </Button>
+						</Frames>
+					</Frame>					
+				</Frames>
+			</Frame>			
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ContainerSensorValue"):CloseBtnClicked()</OnClick>
+		</Scripts>
+	</Frame>
+
+
+	
+</Ui>

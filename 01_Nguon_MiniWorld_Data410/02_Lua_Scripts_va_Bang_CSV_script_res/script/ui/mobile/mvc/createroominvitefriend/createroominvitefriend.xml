@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file = "ui/mobile/mvc/createRoomInviteFriend/CreateRoomInviteFriendCtrl.lua"/>
+    <Script file = "ui/mobile/mvc/createRoomInviteFriend/CreateRoomInviteFriendModel.lua"/>
+    <Script file = "ui/mobile/mvc/createRoomInviteFriend/CreateRoomInviteFriendView.lua"/>
+    <Script file = "ui/mobile/mvc/createRoomInviteFriend/CreateRoomInviteFriendMgr.lua"/>
+    <Frame name="CreateRoomInviteFriendTemplate" virtual="true" abs_x="910" abs_y="109">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6"/>
+				<!-- <FontString name="$parentName" justifyH="left" fonttype="BlackFont24" text="名字最多七个字" abs_x="400" abs_y="26">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentHead">
+							<Offset>
+								<AbsDimension x="15" y="-18"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<FontString name="$parentUin" justifyH="left" fonttype="BlackFont20" text="迷你号：9958746147" abs_x="300" abs_y="26">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHead">
+							<Offset>
+								<AbsDimension x="119" y="-35"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentBkgRight" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="126" abs_y="104">
+					<Anchors>
+						<Anchor point="right" relativePoint="right">
+							<Offset>
+								<AbsDimension x="-73"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentClientVersion" justifyH="left" fonttype="BlackFont20" text="版本：" abs_x="300" abs_y="26">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHead">
+							<Offset>
+								<AbsDimension x="335" y="-35"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentRecentInfo" justifyH="left" justifyV="top" fonttype="BlackFont20" text="" abs_x="450" abs_y="40" autowrap="true">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentHead">
+							<Offset>
+								<AbsDimension x="333" y="-87"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentName" justifyH="left" fonttype="BlackFont24" text="名字最多七个字" abs_x="180" abs_y="49" justifyV="top" autowrap="true">
+				<Color r="61" g="69" b="70"/>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentHead">
+						<Offset>
+							<AbsDimension x="15" y="-13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			<Button name="$parentHead" abs_x="105" abs_y="105">
+				<Anchors>
+					<Anchor point="left" relativePoint="left">
+						<Offset>
+							<AbsDimension x="12"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentFrameNormal" file="ui/headframes/1.png"/>
+				<PushedTexture name="$parentFramePushedBG" file="ui/headframes/1.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+				</PushedTexture>
+				<Layers>
+					<Layer level="overlap">
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="81" abs_y="81">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onFriendItemHeadBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentInviteBtn"  inherits="TemplateBtnMini_OKBtn" text="$26064" abs_x="88" abs_y="43">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-21"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onFriendItemInviteBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentQQInviteBtn" abs_x="50" abs_y="53" inherits="TemplateBtn17" hidden="true">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-21"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlap">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_invited_qq" abs_x="34" abs_y="29">
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+									<Offset>
+										<AbsDimension x="4" y="-4"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>RoomQQInviteFriendTemplateInviteBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+			##已邀请
+			<Frame name = "$parentInvited" hidden = "true" abs_x="117" abs_y="80">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlap">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="img_invited" abs_x="40" abs_y="40">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y = "-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentInvitedStr" justifyH="center" fonttype="BlackFont18" text="$111720" abs_x="66" abs_y="26">
+							<Color r="111" g="145" b="150"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="0" y="42"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+
+				</Layers>
+
+			</Frame>
+            ##取消邀请
+            <Button name="$parentCancelInvite" abs_x="41" abs_y="41" hidden="true">
+				<Anchors>
+					<Anchor point="right" relativePoint="left" relativeTo="$parentInvited">
+						<Offset>
+							<AbsDimension x="17" y="-9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentFrameNormal" file="ui/mobile/texture0/common_icon.xml" uvname="btn_cancel"/>
+				<PushedTexture name="$parentFramePushedBG" file="ui/mobile/texture0/common_icon.xml" uvname="btn_cancel" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center"/>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onCancelInviteBtnClick();</OnClick>
+				</Scripts>
+			</Button>
+			<Frame name = "$parentNotSameVersion" hidden = "true" abs_x="117" abs_y="80">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlap">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="img_warning" abs_x="41" abs_y="42">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y = "-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNotSameVersionStr" justifyH="center" fonttype="BlackFont18" text="$190013" abs_x="107" abs_y="42">
+							<Color r="111" g="145" b="150"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentIcon">
+									<Offset>
+										<AbsDimension x="0" y="42"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+
+				</Layers>
+
+			</Frame>
+		</Frames>
+	</Frame>
+
+    <Frame name="CreateRoomInviteGroupTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="910" y="109"/>
+        </Size>
+        <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" inherits = "TemplateBigBkg6">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<Texture name="$parentBkgRight" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="126" abs_y="104">
+					<Anchors>
+						<Anchor point="right" relativePoint="right">
+							<Offset>
+								<AbsDimension x="-73"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                <FontString name="$parentName" fonttype="BlackFont20" text="$20611" abs_x="256" abs_y="20">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="90" y="23"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentNumber" fonttype="BlackFont20" text="16/40" abs_x="243" abs_y="20">
+                    <Color r="61" g="69" b="70"/>
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+                            <Offset>
+                                <AbsDimension x="0" y="10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentHead" abs_x="85" abs_y="85">
+                <Anchors>
+                    <Anchor point="left" relativePoint="left" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentFrameNormal"   file="ui/headframes/1.png" />
+                <PushedTexture name="$parentFramePushedBG" file="ui/headframes/1.png" abs_x="100" abs_y="100">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Layers>
+                    <Layer level="background">
+                        <Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="70" abs_y="70">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>
+                        <Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="70" abs_y="70">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </Texture>                
+                    </Layer>
+                </Layers>
+            </Button>
+            <Button name="$parentInviteBtn" inherits="TemplateBtn17">
+                <Size>
+                    <AbsDimension x="50" y="53"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="right" relativePoint="right" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-15" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/common_icon.xml" uvname="icon_invited">
+                            <Size>
+                                <AbsDimension x="29" y="24"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onGroupItemInviteBtnClick();</OnClick> 
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+
+    <Frame name="CreateRoomInviteFriend" parent="UIClient" frameStrata="MEDIUM"  framelevel="9999" rel_x="1.0" rel_y="1.0">
+        <Size>
+            <RelDimension x="1.0" y="1.0"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="cd000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBkg1" abs_x="967" abs_y="580" >
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentTitleBkg" inherits="TemplateBigBkg31"  abs_x="950"  abs_y="67">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="-3" y="5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentTitlePattern" inherits="TemplateBigBkg7_flat" abs_x="956" abs_y="67">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg"/>
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkgMiddle" inherits="TemplateBigBkg5" abs_x="924" abs_y="370">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentTitleBkg">
+                            <Offset>
+                                <AbsDimension y="55"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentTitle" fonttype="BlackFont30" justifyV="MIDDLE" justifyH="center" text="$1195" shadowcolor="4D352C28">
+                    <Color r="77" g="112" b="116"/>
+                    <Size>
+                        <AbsDimension x="512" y="38"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parentTitleBkg"/>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentNoPlayer"  hidden="true" file="ui/mobile/texture2/bigtex/img_noroom.png">
+                    <Size>
+                        <AbsDimension x="435" y="247"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+                <FontString name="$parentEmptyTxt" hidden="true" fonttype="BlackFont38" justifyV="middle" justifyH="center" text="$50191">
+                    <Color r="77" g="112" b="117"/>
+                    <Size>
+                        <AbsDimension x="930" y="40"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentNoPlayer">
+                            <Offset>
+                                <AbsDimension x="0" y="35"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <SlidingFrame name="CreateRoomInviteFriendBox" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <AbsDimension x="910" y="350"/>
+                </Size>
+                <Anchors>
+                <Anchor point="top" relativePoint="top" relativeTo="$parentBkgMiddle">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true">
+                        <Size>
+                            <AbsDimension x="910" y="350"/>
+                        </Size>
+                    </Frame>
+                    <Frame name="CreateRoomInviteFriend1" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend2" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend3" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend4" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend5" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend6" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend7" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend8" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend9" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend10" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend11" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend12" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend13" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend14" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend15" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend16" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend17" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend18" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend19" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend20" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend21" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend22" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend23" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend24" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend25" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend26" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend27" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend28" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend29" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend30" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend31" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend32" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend33" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend34" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend35" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend36" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend37" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend38" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend39" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend40" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend41" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend42" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend43" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend44" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend45" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend46" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend47" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend48" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend49" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend50" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend51" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend52" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend53" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend54" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend55" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend56" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend57" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend58" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend59" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend60" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend61" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend62" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend63" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend64" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend65" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend66" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend67" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend68" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend69" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend70" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend71" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend72" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend73" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend74" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend75" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend76" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend77" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend78" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend79" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend80" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend81" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend82" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend83" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend84" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend85" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend86" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend87" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend88" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend89" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend90" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend91" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend92" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend93" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend94" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend95" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend96" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend97" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend98" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend99" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend100" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend101" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend102" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend103" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend104" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend105" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend106" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend107" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend108" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend109" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend110" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend111" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend112" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend113" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend114" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend115" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend116" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend117" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend118" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend119" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteFriend120" inherits="CreateRoomInviteFriendTemplate"/>
+                </Frames>
+                <Scripts>
+                    <OnShow>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):myOnlineFriendsRefreshUpdate();</OnShow>
+                </Scripts>
+            </SlidingFrame>
+            <SlidingFrame name="CreateRoomInviteGroupBox" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <AbsDimension x="910" y="350"/>
+                </Size>
+                <Anchors>
+                <Anchor point="top" relativePoint="top" relativeTo="$parentBkgMiddle">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true">
+                        <Size>
+                            <AbsDimension x="910" y="350"/>
+                        </Size>
+                    </Frame>
+                    <Frame name="CreateRoomInviteGroup1" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup2" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup3" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup4" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup5" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup6" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup7" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup8" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup9" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup10" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup11" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup12" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup13" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup14" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup15" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup16" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup17" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup18" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup19" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup20" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup21" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup22" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup23" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup24" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup25" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup26" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup27" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup28" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup29" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup30" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup31" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup32" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup33" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup34" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup35" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup36" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup37" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup38" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup39" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup40" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup41" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup42" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup43" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup44" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup45" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup46" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup47" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup48" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup49" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup50" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup51" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup52" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup53" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup54" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup55" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup56" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup57" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup58" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup59" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup60" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup61" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup62" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup63" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup64" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup65" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup66" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup67" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup68" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup69" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup70" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup71" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup72" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup73" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup74" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup75" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup76" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup77" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup78" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup79" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup80" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup81" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup82" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup83" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup84" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup85" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup86" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup87" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup88" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup89" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup90" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup91" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup92" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup93" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup94" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup95" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup96" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup97" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup98" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup99" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup100" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup101" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup102" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup103" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup104" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup105" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup106" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup107" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup108" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup109" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup110" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup111" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup112" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup113" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup114" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup115" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup116" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup117" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup118" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup119" inherits="CreateRoomInviteGroupTemplate"/>
+                    <Frame name="CreateRoomInviteGroup120" inherits="CreateRoomInviteGroupTemplate"/>
+                </Frames>
+            </SlidingFrame>
+
+            <SlidingFrame name="CreateRoomInviteRecentPlayerBox" slidingY="true" slideplane="$parentPlane" hidden="true">
+                <Size>
+                    <AbsDimension x="910" y="350"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkgMiddle">
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true">
+                        <Size>
+                            <AbsDimension x="910" y="5000"/>
+                        </Size>
+                    </Frame>
+                    <Frame name="CreateRoomInviteRecentPlayer1" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer2" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer3" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer4" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer5" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer6" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer7" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer8" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer9" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer10" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer11" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer12" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer13" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer14" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer15" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer16" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer17" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer18" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer19" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer20" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer21" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer22" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer23" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer24" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer25" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer26" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer27" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer28" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer29" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer30" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer31" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer32" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer33" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer34" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer35" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer36" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer37" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer38" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer39" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer40" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer41" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer42" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer43" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer44" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer45" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer46" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer47" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer48" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer49" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer50" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer51" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer52" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer53" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer54" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer55" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer56" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer57" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer58" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer59" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer60" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer61" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer62" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer63" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer64" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer65" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer66" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer67" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer68" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer69" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer70" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer71" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer72" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer73" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer74" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer75" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer76" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer77" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer78" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer79" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer80" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer81" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer82" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer83" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer84" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer85" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer86" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer87" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer88" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer89" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer90" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer91" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer92" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer93" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer94" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer95" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer96" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer97" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer98" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer99" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer100" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer101" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer102" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer103" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer104" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer105" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer106" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer107" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer108" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer109" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer110" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer111" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer112" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer113" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer114" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer115" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer116" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer117" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer118" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer119" inherits="CreateRoomInviteFriendTemplate"/>
+                    <Frame name="CreateRoomInviteRecentPlayer120" inherits="CreateRoomInviteFriendTemplate"/>
+                </Frames>
+            </SlidingFrame>
+            <Button name="$parentAllInviteBtn" inherits="TemplateLongBlueBtn" text="$1196" abs_x="275" abs_y="60">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="-206" y="-23"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onAllInviteFriendClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentShareInviteBtn" inherits="TemplateLongBlueBtn" text="$9335" abs_x="275" abs_y="60">
+                <Anchors>
+                    <Anchor point="bottom" relativeTo="$parentBkg" relativePoint="bottom">
+                        <Offset>
+                            <AbsDimension x="206" y="-23"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onShareInviteBtnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-24" y="15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):OnCloseClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentSwitchFriendBtn">
+                <Size>
+                    <AbsDimension x="120" y="46"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBkgMiddle">
+                        <Offset>
+                            <AbsDimension x="20" y="-1"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentPic" file="ui/mobile/texture2/common.xml" uvname="tab_up_n" /><!--选中02,未选中03-->
+                    </Layer>
+                </Layers>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$20571">
+                            <Color r="186" g="210" b="210"/>
+                            <Size>
+                                <AbsDimension x="100" y="23"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onFriendTabClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentSwitchGroupBtn">
+                <Size>
+                    <AbsDimension x="120" y="46"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBkgMiddle">
+                        <Offset>
+                            <AbsDimension x="150" y="-1"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentPic" file="ui/mobile/texture2/common.xml" uvname="tab_up_n" /><!--选中02,未选中03-->
+                    </Layer>
+                </Layers>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$20610">
+                            <Color r="186" g="210" b="210"/>
+                            <Size>
+                                <AbsDimension x="100" y="23"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onGroupTabClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            <Button name="$parentSwitchRecentPlayerBtn">
+                <Size>
+                    <AbsDimension x="120" y="46"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBkgMiddle">
+                        <Offset>
+                            <AbsDimension x="150" y="-1"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentPic" file="ui/mobile/texture2/common.xml" uvname="tab_up_n" />
+                        <!--选中02,未选中03-->
+                    </Layer>
+                </Layers>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$9326">
+                            <Color r="186" g="210" b="210"/>
+                            <Size>
+                                <AbsDimension x="100" y="23"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("CreateRoomInviteFriend"):onRecentPlayerTabClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

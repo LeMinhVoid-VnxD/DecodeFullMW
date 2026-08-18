@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/PlayerAttr/AllModelSelector/AllModelSelectorCtrl.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/PlayerAttr/AllModelSelector/AllModelSelectorModel.lua"/>
+    <Script file="ui/mobile/mvc/DevTools/BasicSettings/PlayerAttr/AllModelSelector/AllModelSelectorView.lua"/>
+
+    ##左侧tab按钮模板
+    <Button name="AllModelSelector_TabBtnTemp" inherits="TemplateTabBtn4" virtual="true">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):TabBtnOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##格子模板
+    <Button name="AllModelSelector_CellTemp" inherits="TemplateBtn22" virtual="true" abs_x="78" abs_y="78">
+        <Frames>
+            <Button name="$parentSelBtn" hidden="true" abs_x="53" abs_y="53">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="10" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniudi" abs_x="31" abs_y="32">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </NormalTexture>
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame.xml"  uvname="bjjm_anniudi" abs_x="28" abs_y="29">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):AvatarSelectBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):CellOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##新建avator按钮
+    <Button name="AllModelSelector_AddBtnTemp" inherits="TemplateCellAddBtn" abs_x="78" abs_y="78" id="1000" virtual="true">
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):AddAvatorBtnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+    ##子类tab按钮模板
+	<Button name="AllModelSelector_SubBtnTemplate" virtual="true" abs_x="92" abs_y="50">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="tab_right_n.png">
+                    <Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+                </Texture>
+				<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml" uvname="tab_right_h.png" hidden = "true">
+                    <Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+                </Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" lineInterval="2"  text="" justifyH="center" justifyV="MIDDLE" abs_x="92" abs_y="50">
+					<Color r="60" g="73" b="76"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):SubBtnClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##主界面
+    <Frame name="AllModelSelector" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000" >
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="993" abs_y="571">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkgBottom" inherits="TemplateBigBkg29" abs_x="991" abs_y="85">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg" />
+                    </Anchors>  
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ## 事件吞没区域
+			<Frame name="$parentEventPanel" abs_x="993" abs_y="571">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parent" relativePoint="center" />
+                </Anchors>
+            </Frame>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="992" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):CloseBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ##垃圾桶按钮
+            <Button name="$parentDelBtn" hidden="true" abs_x="45" abs_y="53">
+                <Anchors>
+                    <Anchor point="right" relativePoint="left" relativeTo="$parentCloseBtn">
+                        <Offset>
+                            <AbsDimension x="-90" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture name="$parentNormal" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="cjk_xinzengicon03" />
+                <PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="cjk_xinzengicon03" abs_x="41" abs_y="49">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </PushedTexture>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):AvatorDelBtnOclick();</OnClick>
+                </Scripts>
+            </Button>
+            ##确认删除按钮
+            <Button name="$parentConfirmDelBtn" hidden="true" inherits="TemplateBtnBig_DeleteBtn">
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-220" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):AvatorConfirmDelBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn" >
+                <Anchors>
+                    <Anchor point="bottomright" relativeTo="$parentBkg" relativePoint="bottomright">
+                        <Offset>
+                            <AbsDimension x="-20" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):OkBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+
+            ##左侧tab按钮
+            <Frame name="$parentLeft" abs_x="160" abs_y="400">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="12" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SlidingFrame name="$parentTab" slidingY="true" slideplane="$parentPlane" abs_x="155" abs_y="380">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" hidden="true" abs_x="155" abs_y="380"/>
+                            <Button name="$parentBtn1" id="1" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn2" id="2" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn3" id="3" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn4" id="4" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn5" id="5" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn6" id="6" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn7" id="7" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn8" id="8" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn9" id="9" inherits="AllModelSelector_TabBtnTemp" />
+                            <Button name="$parentBtn10" id="10" inherits="AllModelSelector_TabBtnTemp" />
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##格子列表
+            <Frame name="$parentRight" abs_x="336" abs_y="400">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-125" y="70"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+                        <FontString name="$parentEmptyTip" fonttype="BlackFont20" lineInterval="1" text="$23231" justifyV="MIDDLE" abs_x="300" abs_y="100" hidden = "true" autowrap="true">
+                            <Color r="60" g="73" b="76"/>
+                            <Anchors>
+                                <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="50"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <ListViewFrame name="$parentCellBox" slidingY="true" slideplane="$parentPlane" abs_x="330" abs_y="390">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" abs_x="330" abs_y="390"/>
+                            ##模板"AllModelSelector_CellTemp"
+                            <!-- <Button name="$parent1" inherits="AllModelSelector_CellTemp"/>
+                            <Button name="$parent2" inherits="AllModelSelector_CellTemp"/>
+                            <Button name="$parent10" inherits="AllModelSelector_CellTemp"/> -->
+
+                            ##新建avator按钮
+                        </Frames>
+                    </ListViewFrame>
+
+                    <SlidingFrame name="$parentSpecialCellBox" slidingY="true" slideplane="$parentPlane" abs_x="330" abs_y="390" hidden = "true">
+                        <Anchors>
+                            <Anchor point="top" relativePoint="top" relativeTo="$parent" />
+                        </Anchors>
+                        <Offset>
+                            <AbsDimension x="0" y="10"/>
+                        </Offset>
+                        <Frames>
+                            <Frame name="$parentPlane" abs_x="330" abs_y="390"/>
+                            ##模板"AllModelSelector_CellTemp"
+                            <!-- <Button name="$parent1" inherits="AllModelSelector_CellTemp"/>
+                            <Button name="$parent2" inherits="AllModelSelector_CellTemp"/>
+                            <Button name="$parent10" inherits="AllModelSelector_CellTemp"/> -->
+
+                            ##新建avator按钮
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##右侧tab按钮
+            <Frame name="$parentSub" abs_x="110" abs_y="415">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-10" y="65"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg1" />
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <SlidingFrame name="$parentTab" slidingY="true" slideplane="$parentPlane" abs_x="92" abs_y="400">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                        </Anchors>
+                        <Frames>
+                            <Frame name="$parentPlane" abs_x="92" abs_y="400"/>
+                            <Button name="$parentBtn1" id="1" inherits="AllModelSelector_SubBtnTemplate" />
+                            <Button name="$parentBtn2" id="2" inherits="AllModelSelector_SubBtnTemplate" />
+                            <Button name="$parentBtn3" id="3" inherits="AllModelSelector_SubBtnTemplate" />
+                            <Button name="$parentBtn4" id="4" inherits="AllModelSelector_SubBtnTemplate" />
+                            <Button name="$parentBtn5" id="5" inherits="AllModelSelector_SubBtnTemplate" />
+                        </Frames>
+                    </SlidingFrame>
+                </Frames>
+            </Frame>
+
+            ##模型
+            <Frame name="$parentModelFrame" abs_x="380" abs_y="340">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topright" relativeTo="$parentLeft">
+                        <Offset>
+                            <AbsDimension x="0" y="30"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/img_land.png" abs_x="245" abs_y="150">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-24"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <ModelView name="$parentView" abs_x="320" abs_y="320">
+                            <Anchors>
+                                <Anchor point="bottom" relativePoint="center" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="0" y="5"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </ModelView>
+                        <Texture name="$parentBlockIcon" alphamode="alphablend" abs_x="120" abs_y="120" hidden = "true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentModelBkg">
+									<Offset>
+										<AbsDimension x="-130" y="-60"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+                    </Layer>
+                </Layers>
+            </Frame>
+
+            ##旋转button
+            <Button name="$parentRotateBtn" abs_x="380" abs_y="340">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topright" relativeTo="$parentLeft">
+                        <Offset>
+                            <AbsDimension x="0" y="30"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnMouseDown>GetInst("UIManager"):GetCtrl("AllModelSelector"):RotateBtnMouseDown();</OnMouseDown>
+                    <OnMouseMove>GetInst("UIManager"):GetCtrl("AllModelSelector"):RotateBtnMouseMove();</OnMouseMove>
+                </Scripts>
+            </Button>
+
+            ##滑动条
+            <Frame name="$parentScale" abs_x="380" abs_y="35" hidden = "true">
+                <Anchors>
+                    <Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentLeft">
+                        <Offset>
+                            <AbsDimension x="-5" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Slider name="$parentBar" inherits="TemplateSingleBar2" abs_x="288" abs_y="30" minValue="0.1" maxValue="2" valueStep="0.1" defaultValue="1">
+                        <Anchors>
+                            <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString name="$parentScaleVal" justifyH="center" fonttype="BlackFont24" text="1.5" abs_x="150" abs_y="24">
+                                    <Color r="61" g="69" b="70"/>
+                                    <Anchors>
+                                        <Anchor point="bottom" relativePoint="top" relativeTo="$parent" />
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnValueChanged>GetInst("UIManager"):GetCtrl("AllModelSelector"):SliderValueChanged()</OnValueChanged>
+                        </Scripts>
+                    </Slider>
+                    <Button name="$parentBarLeftBtn" inherits="TemplateSingleBar_LeftBtn01">
+                        <Anchors>
+                            <Anchor point="right" relativeTo="$parentBar" relativePoint="left">
+                                <Offset>
+                                    <AbsDimension x="-5" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):SliderLeftRightBtnClicked(false);</OnClick>
+                        </Scripts>
+                    </Button>
+                    <Button name="$parentBarRightBtn" inherits="TemplateSingleBar_RightBtn01" >
+                        <Anchors>
+                            <Anchor point="left" relativeTo="$parentBar" relativePoint="right">
+                                <Offset>
+                                    <AbsDimension x="5" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):SliderLeftRightBtnClicked(true);</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("AllModelSelector"):OnAllModelSelectorFrameBgMaskClick();</OnClick>
+		</Scripts>
+    </Frame>
+</Ui>

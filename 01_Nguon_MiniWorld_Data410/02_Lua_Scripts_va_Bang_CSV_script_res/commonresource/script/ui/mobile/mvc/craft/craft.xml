@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/craft/CraftModel.lua"/>
+	<Script file="ui/mobile/mvc/craft/CraftView.lua"/>
+	<Script file="ui/mobile/mvc/craft/CraftCtrl.lua"/>
+	##原料格子模板
+	<Button name="CraftStuffGridTemplate" inherits="CraftingTableGridBtnTemplate2" virtual="true" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" text="苹果" abs_x="90" abs_y="20" hidden="true">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentDesc" fonttype="BlackFont" justifyH="left" text="" autowrap="true" abs_x="160" abs_y="60" hidden="true">
+					<Color r="106" g="111" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##合成描述
+				<FontString name="$parentCraftDesc" fonttype="BlackFont14" justifyH="left" text="" autowrap="true" abs_x="90" abs_y="60" hidden="true">
+					<Color r="106" g="111" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" hidden="true" uvname="img_dot_tips" abs_x="12" abs_y="12">
+					<Anchors>
+						<Anchor point="center" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="-12" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Button name="CraftTypeBtn" inherits="CKXL_XLKBtnTemplate5" virtual="true">
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("Craft"):OnCraftTypeBtnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	<Frame name="Craft" parent="UIClient" frameStrata="MEDIUM" framelevel="11" hidden="true">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="993" abs_y="550">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="55" y="26"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+							##背景
+				<Texture name="$parentLeftBkg" inherits="TemplateBigBkg5" abs_x="351" abs_y="453">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="23" y="79"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentBlueLine" inherits="TemplateBkg14" abs_x="11" abs_y="544">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="392" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				##背景
+				<Texture name="$parentRightBkg" inherits="TemplateBigBkg11" abs_x="276" abs_y="512">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentBlueLine">
+							<Offset>
+								<AbsDimension x="18" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTitleBoard" inherits="TemplateBkg25" abs_x="274" abs_y="36">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="top" relativeTo="$parentRightBkg">
+							<Offset>
+								<AbsDimension x="0" y="36"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDivide" inherits="TemplateBkg20" abs_x="244" abs_y="2">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="726" y="-354"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentArrow" file="ui/mobile/texture2/room.xml" uvname="img_frame_arrow.png" abs_x="29" abs_y="36">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="697" y="-408"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentMakeResultName" fonttype="BlackFont24" justifyH="center" text="" abs_x="71" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="813" y="-361"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentNumBg" inherits="TemplateBkg8" abs_x="117" abs_y="36">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="788" y="-106"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCraftName" fonttype="BlackFont24" justifyH="left" text="$1231" abs_x="100" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="34" y="-496"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentMaterialName" fonttype="BlackFont24" justifyH="left" text="$1233" abs_x="200" abs_y="24">
+					<Color r="77" g="112" b="117"/>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="435" y="-502"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+				##标题栏
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" abs_x="987" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="-10" y="8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			<Button name="$parentType" abs_x="161" abs_y="46">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="201" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##下拉列表
+					<Frame name="$parentList" abs_x="161" abs_y="303" frameStrata="HIGH" hidden="true">
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg8">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-3"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Button name="$parentItem1" inherits="CraftTypeBtn" id="1" />
+							<Button name="$parentItem2" inherits="CraftTypeBtn" id="2" />
+							<Button name="$parentItem3" inherits="CraftTypeBtn" id="3" />
+							<Button name="$parentItem4" inherits="CraftTypeBtn" id="4" />
+							<Button name="$parentItem5" inherits="CraftTypeBtn" id="5" />
+							<Button name="$parentItem6" inherits="CraftTypeBtn" id="6" />
+						</Frames>
+					</Frame>
+					##按钮
+					<Button name="$parentBtn" abs_x="161" abs_y="46">
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg8" abs_x="161" abs_y="46" />
+								##下拉图标
+								<Texture name="$parentDownIcon" file="ui/mobile/texture2/common.xml" uvname="icon_dropdown.png" abs_x="20" abs_y="10" hidden="false">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-22" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##名字
+								<FontString name="$parentName" fonttype="BlackFont21" justifyV="middle" justifyH="center" text="$7305" abs_x="44" abs_y="22">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-18" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("Craft"):OnCraftDropdownBtnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Button>
+			##制作面板
+
+			<RichText name="$parentRightTips" lineInterval="1" multiLine="false" fonttype="BlackFont21" autoextend="true" hidden="false">
+				<Size>
+					<AbsDimension x="132" y="22" />
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentRightBkg" relativePoint="top">
+						<Offset>
+							<AbsDimension x="0" y="8" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+					##未知
+			<RichText name="$parentItemDesc" fonttype="BlackFont24" fontStyle="border" autoextend="true" hidden="true" abs_x="270" abs_y="60">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentName" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="10" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+					##原料格子
+			<Button name="$parentStuffGrid1" inherits="CraftStuffGridTemplate" id="4001" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitleBoard">
+						<Offset>
+							<AbsDimension x="24" y="22"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentStuffGrid2" inherits="CraftStuffGridTemplate" id="4002" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitleBoard">
+						<Offset>
+							<AbsDimension x="157" y="22"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentStuffGrid3" inherits="CraftStuffGridTemplate" id="4003" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitleBoard">
+						<Offset>
+							<AbsDimension x="24" y="178"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentStuffGrid4" inherits="CraftStuffGridTemplate" id="4004" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitleBoard">
+						<Offset>
+							<AbsDimension x="157" y="178"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentStuffGrid5" inherits="CraftStuffGridTemplate" id="4005" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitleBoard">
+						<Offset>
+							<AbsDimension x="24" y="334"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentStuffGrid6" inherits="CraftStuffGridTemplate" id="4006" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentTitleBoard">
+						<Offset>
+							<AbsDimension x="157" y="334"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+					##结果格子
+			<Button name="$parentMakeResult" inherits="CraftingTableGridBtnTemplate" id="4010" abs_x="94" abs_y="94">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="801" y="-390"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<RichText name="$parentMakeResultDesc" lineInterval="1" multiLine="false" fonttype="BlackFont18" autoextend="true" abs_x="242" abs_y="90">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentDivide">
+						<Offset>
+							<AbsDimension x="0" y="5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+					##左边的格子列表
+			<ListViewFrame name="$parentNormalProductBox" slidingY="true" slideplane="$parentPlane" abs_x="351" abs_y="443">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentLeftBkg">
+						<Offset>
+							<AbsDimension x="0" y="3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="351" abs_y="443" />
+				</Frames>
+			</ListViewFrame>
+			<!-- 数量编辑框 -->
+			<SafeEditBox name="$parentEdit" letters="9" multiLine="false" editimetype="0"  editMethod = "2" abs_x="150" abs_y="25" cursorColor="ff3d4546">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="772" y="-111"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" justifyV = "middle" text = "1">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="772" y="-111"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Scripts>
+					<OnFocusLost>GetInst("UIManager"):GetCtrl("Craft"):Edit_OnFocusLost()</OnFocusLost>
+				</Scripts>
+			</SafeEditBox>
+			<Button name="$parentnDecreaseBtn" inherits="TemplateLeftArrowBtn1" abs_x="21" abs_y="37">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="754" y="-105"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Craft"):OnDecreaseNum()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentIncreaseBtn" inherits="TemplateRightArrowBtn1" abs_x="21" abs_y="37">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="916" y="-105"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Craft"):OnIncreaseNum()</OnClick>
+				</Scripts>
+			</Button>
+			##制作按钮				
+			<Button name="$parentMakeBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="754" y="-18"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3084" abs_x="182" abs_y="24">
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Craft"):OnMakeBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+											##最大制作数量按钮
+			<Button name="$parentMaxBtn" abs_x="40" abs_y="40">
+				<Anchors>
+					<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="936" y="-104"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_maximum_orange" abs_x="29.6" abs_y="36.8">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<AbsDimension x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_maximum_orange" abs_x="23.68" abs_y="29.44">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<AbsDimension x="0" y="0"/>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("Craft"):OnSetMaxNumClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("Craft"):OnEvent();</OnEvent>
+		</Scripts>
+	</Frame>
+</Ui>

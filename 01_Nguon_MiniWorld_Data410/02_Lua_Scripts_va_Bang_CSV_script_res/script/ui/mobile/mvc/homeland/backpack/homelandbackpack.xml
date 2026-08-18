@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/homeland/backpack/HomelandBackpackModel.lua"/>
+	<Script file="ui/mobile/mvc/homeland/backpack/HomelandBackpackView.lua"/>
+	<Script file="ui/mobile/mvc/homeland/backpack/HomelandBackpackCtrl.lua"/>
+
+	##tab按钮模板
+	<Button name="HomelandBackpackTabBtnTemplate" inherits="TemplateTabBtn7" virtual="true" >
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="center" relativePoint="topleft"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBigRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="center" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="6" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNewNumberTag" fonttype="BlackFont20" fontStyle="border" justifyH="center" text="1" justifyV="middle" hidden="true" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBigRedTag">
+							<Offset>
+								<AbsDimension x="-2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):BackpackTypeTabBtnTemplate_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##子类tab按钮模板
+	<Button name="HomelandSubTypeBtnTemplate" virtual="true" abs_x="120" abs_y="46">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="tab_up_n.png" />
+				<Texture name="$parentCheckedBG" file="ui/mobile/texture2/common.xml" uvname="tab_up_h.png" />
+				<FontString name="$parentTitle" fonttype="BlackFont23" lineInterval="0"  text="" justifyH="center" justifyV="MIDDLE" abs_x="114" abs_y="46">
+					<Color r="76" g="76" b="76"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentRedTag" file="ui/mobile/texture2/common.xml" uvname="img_dot_tips" hidden="true" abs_x="24" abs_y="24">
+					<Anchors>
+						<Anchor point="center" relativePoint="topright" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):BackpackSubTypeTabBtnTemplate_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	##方块详情模板
+	<Frame name="HomelandCreateTypeDetailTemplate" virtual="true" abs_x="262" abs_y="480">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="262" abs_y="480">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##物品图片背景
+				<Texture name="$parentPicBkg" inherits="TemplateBkg91" abs_x="244" abs_y="163" hidden="false">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##物品图片
+				<Texture name="$parentPic" alphamode="alphablend" abs_x="100" abs_y="100" hidden="false">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##方块品牌
+				<Texture name="$parentBrand" alphamode="alphablend" abs_x="49" abs_y="44" hidden="false">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPicBkg" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-5" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##信息背景
+				<Texture name="$parentInfoBkg" inherits="TemplateBigBkg18" abs_x="242" abs_y="30" hidden="false">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentPicBkg" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				##评分Icon
+				<Texture name="$parentScoreIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_home_score_w" abs_x="24" abs_y="24" hidden="false">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentInfoBkg">
+							<Offset>
+								<AbsDimension x="10" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##评分分数
+				<FontString name="$parentScore" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="1000" abs_x="100" abs_y="15" hidden="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentScoreIcon">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				
+				##占地大小标识
+				<Texture name="$parentSizeIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_size_w" abs_x="27" abs_y="27" hidden="false">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentInfoBkg" relativePoint="left">
+							<Offset>
+								<AbsDimension x="154" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##占地大小
+				<FontString name="$parentSize" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="1x1x1" abs_x="60" abs_y="15" hidden="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentSizeIcon">
+							<Offset>
+								<AbsDimension x="7" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##分割线
+				<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="240" abs_y="2">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-78"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##基本信息 ##名称
+			<RichText name="$parentBaseInfo1" lineInterval="1" multiLine="false" fonttype="BlackFont20" justifyH="left" text="" abs_x="242" abs_y="20">
+				<Color r="77" g="112" b="117"/>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentPicBkg">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##基本信息 ##品质
+			<RichText name="$parentBaseInfo2" lineInterval="1" multiLine="false" fonttype="BlackFont20" justifyH="left" text="" abs_x="242" abs_y="20">
+				<Color r="77" g="112" b="117"/>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBaseInfo1">
+						<Offset>
+							<AbsDimension x="0" y="25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##基本信息 ##系列
+			<RichText name="$parentBaseInfo3" lineInterval="1" multiLine="false" fonttype="BlackFont20" justifyH="left" text="" abs_x="242" abs_y="20">
+				<Color r="77" g="112" b="117"/>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBaseInfo2">
+						<Offset>
+							<AbsDimension x="0" y="25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##描述
+			<RichText name="$parentMemo" multiLine="true" fonttype="BlackFont18" text="" autowrap="true" lineInterval="4f" abs_x="242" abs_y="100">
+				<Color r="101" g="116" b="118" />
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBaseInfo3">
+						<Offset>
+							<AbsDimension x="0" y="25"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+
+			##前往获得面板
+			<Frame name="$parentLotteryFrame" abs_x="182" abs_y="61" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##前往获得
+					<Button name="$parentGetBtn" abs_x="182" abs_y="61" hidden="false">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##前往获得
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$41216" abs_x="95" abs_y="23">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):GetBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##解锁面板
+			<Frame name="$parentUnlockFrame" abs_x="182" abs_y="61" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##解锁
+					<Button name="$parentUnlockBtn" abs_x="182" abs_y="61" hidden="false">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##按钮名字
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$3033" abs_x="47" abs_y="23">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-45" y="9"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								##材料标记
+								<Texture name="$parentMaterialIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="41" abs_y="41">
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="5" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##材料数量
+								<FontString name="$parentMaterialNum" fonttype="BlackFont" justifyH="center" justifyV="middle" text="10/100" abs_x="81" abs_y="14">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+											<Offset>
+												<AbsDimension x="" y="4"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):UnlockBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			##购买面板
+			<Frame name="$parentBuyFrame" abs_x ="182" abs_y ="61" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						##数量背景
+						<Texture name="$parentNumEditBkg" inherits="TemplateBkg31" abs_x="111" abs_y="26">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<SafeEditBox name="$parentNumEdit" letters="15" multiLine="false" editMethod="2" editimetype="0" abs_x="111" abs_y="26" cursorColor="ff3d4546">
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentNumEditBkg" relativePoint="center">
+								<Offset>
+									<AbsDimension y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" justifyV="middle" textcolor="FF3D4546"/>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont20" justifyV="middle" text="1" textcolor="FF3D4546"/>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("HomelandBackpack"):BuyNumEidt_OnFocusLost()</OnFocusLost>
+						</Scripts>
+					</SafeEditBox>
+					##减号
+					<Button name="$parentDelBtn" abs_x="15" abs_y="26" hidden="false">
+						<Anchors>
+							<Anchor point="right" relativePoint="left" relativeTo="$parentNumEditBkg" >
+								<Offset>
+									<AbsDimension x="-8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+		
+						<NormalTexture name="$parentNormal"  file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" abs_x="15" abs_y="26">
+							<Angle value = "0" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" rel_x="0.9" rel_y="0.9" >
+							<Angle value = "0" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):DelBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##加号
+					<Button name="$parentAddBtn" abs_x="15" abs_y="26" hidden="false">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentNumEditBkg" >
+								<Offset>
+									<AbsDimension x="8" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+		
+						<NormalTexture name="$parentNormal"  file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" abs_x="15" abs_y="26">
+							<Angle value = "180" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/modlib.xml" uvname="icon_pull_green.png"  UVType="turn180" rel_x="0.9" rel_y="0.9" >
+							<Angle value = "180" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):AddBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					##购买
+					<Button name="$parentBuyBtn" abs_x="170" abs_y="50" hidden="false">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="0" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##货币的icon
+								<Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="40" abs_y="40" hidden="false">
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="40" y="3" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								##货币的数量
+								<FontString name="$parentPriceNum" fonttype="BlackFont20" justifyH="left" text="1000" abs_x="92" abs_y="20">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+											<Offset>
+												<AbsDimension x="6" y="2"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg23" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg23" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):BuyBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	##图纸详情模板
+	<Frame name="HomelandBlueprintDetailTemplate" virtual="true" abs_x="262" abs_y="480">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="262" abs_y="480">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##物品图片背景
+				<Texture name="$parentPicBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" abs_x="244" abs_y="163" hidden="false" DrawType="ninesquare">
+					<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<ModelView name="$parentModelView" abs_x="220" abs_y="146">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</ModelView>
+				##信息背景
+				<Texture name="$parentInfoBkg" inherits="TemplateBigBkg18" abs_x="242" abs_y="30" hidden="false">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentPicBkg" relativePoint="bottom">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##占地大小标识
+				<Texture name="$parentSizeIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_size_w" abs_x="27" abs_y="27" hidden="false">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentInfoBkg" relativePoint="left">
+							<Offset>
+								<AbsDimension x="65" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##占地大小
+				<FontString name="$parentSize" fonttype="BlackFont18" justifyH="left" justifyV="middle" text="0x0x0" abs_x="60" abs_y="15" hidden="false">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentSizeIcon">
+							<Offset>
+								<AbsDimension x="7" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				##分割线
+				<Texture name="$parentline" inherits="TemplateBkg20" abs_x="240" abs_y="2">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##基本信息 ##名称
+			<RichText name="$parentName" lineInterval="1" multiLine="false" fonttype="BlackFont20" justifyH="left" text="" abs_x="242" abs_y="20">
+				<Color r="77" g="112" b="117"/>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentPicBkg">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##材料数量
+			<RichText name="$parentMaterialNum" lineInterval="1" multiLine="false" fonttype="BlackFont18" text="" justifyH="left" justifyV="middle" abs_x="244" abs_y="22">
+				<Color r="77" g="112" b="117"/>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentline">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+
+			<ListViewFrame name="$parentMaterialBox" slidingY="true" slideplane="$parentPlane" abs_x="244" abs_y="222">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentMaterialNum">
+						<Offset>
+							<AbsDimension x="0" y="9"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="244" abs_y="222">
+					</Frame>
+				</Frames>
+			</ListViewFrame>
+		</Frames>
+	</Frame>
+
+	##玩法详情模板
+	<Frame name="HomelandPlayTypeDetailTemplate" virtual="true" abs_x="262" abs_y="480">
+		<Layers>
+			<Layer level="BACKGROUND">
+				##背景
+				<Texture name="$parentBkg" inherits="TemplateBigBkg5" abs_x="262" abs_y="480">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##物品图片背景
+				<Texture name="$parentPicBkg" inherits="TemplateBigBkg19" abs_x="92" abs_y="92" hidden="false">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="9" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##物品图片
+				<Texture name="$parentPic" alphamode="alphablend" abs_x="78" abs_y="78" hidden="false">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##等级
+				<FontString name="$parentLevel" fonttype="BlackFont18" text="" justifyH="right" justifyV="middle" abs_x="80" abs_y="18" hidden="true"> 
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="-10" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##基本信息 ##名称
+				<FontString name="$parentItemName" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="" abs_x="150" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="5" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentQualityText" lineInterval="1" multiLine="false" fonttype="BlackFont18" justifyH="left" text="$41083" justifyV="middle" abs_x="54" abs_y="20">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentItemName">
+							<Offset>
+								<AbsDimension x="0" y="32"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##基本信息 ##价格
+				<FontString name="$parentPrice" fonttype="BlackFont18" text="$3524" justifyH="left" justifyV="middle" abs_x="60" abs_y="18">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentQualityText">
+							<Offset>
+								<AbsDimension x="0" y="32"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##价格Icon
+				<Texture name="$parentPriceIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_coin" abs_x="22" abs_y="23">
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentPrice">
+							<Offset>
+								<AbsDimension x="-6" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##价格数目
+				<FontString name="$parentPriceNum" fonttype="BlackFont18" text="100" justifyH="left" justifyV="middle" abs_x="68" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentPriceIcon">
+							<Offset>
+								<AbsDimension x="6" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##分割线
+				<Texture name="$parentline" inherits="TemplateBkg20" abs_x="240" abs_y="2">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentPicBkg">
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##基本信息 ##品质
+			<RichText name="$parentQuality" lineInterval="1" multiLine="false" fonttype="BlackFont18" justifyH="left" text="" justifyV="middle" abs_x="90" abs_y="20">
+				<Color r="101" g="116" b="118"/>
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentQualityText">
+						<Offset>
+							<AbsDimension x="0" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##描述
+			<RichText name="$parentMemo" multiLine="false" fonttype="BlackFont18" text="" autowrap="true" lineInterval="4f" abs_x="233" abs_y="200">
+				<Color r="101" g="116" b="118" />
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentline">
+						<Offset>
+							<AbsDimension x="0" y="13"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##使用
+			<Frame name="$parentUseFrame" abs_x="182" abs_y="61" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-7"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					##使用
+					<Button name="$parentUseBtn" abs_x="182" abs_y="61" hidden="false">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								##使用
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$186" abs_x="95" abs_y="23">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg2" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):PlayBagUseBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##放生
+			<Frame name="$parentFreePetFrame" abs_x="182" abs_y="61" hidden="true">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="top" relativeTo="$parentUseFrame">
+						<Offset>
+							<AbsDimension x="0" y="-10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Button name="$parentFreeBtn" abs_x="182" abs_y="61" hidden="false">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent" >
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$41280" abs_x="95" abs_y="23">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3_1" />
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3_1" rel_x="0.9" rel_y="0.9">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):PlayBagFreePetBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+
+	##普通格子
+	<Button name="HomelandNormalGridButtonTemplate" virtual="true" click_threshold="50" abs_x="82" abs_y="82">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="78" abs_y="78">
+                    <Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+                </Texture>
+				<Texture name="$parentIcon" alphamode="alphablend" abs_x="64" abs_y="64">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCount" fonttype="BlackFont20" abs_x="60" abs_y="20" justifyH="right" text="100" fontStyle="shadow" shadowcolor="ff1e1e1e">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-9" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentDurBkg" file="ui/mobile/texture2/operate.xml" uvname="img_progress_bar.png" DrawType="center" hidden="true">
+					<Center>
+						<Left			offsetX="0"  offsetY="0" w="3"	h="8"/>
+						<Center			offsetX="3" offsetY="0" w="3"	h="8"	/>
+						<Right			offsetX="6" offsetY="0" w="3"	h="8" />
+					</Center>
+					<Size platform="pc">
+						<AbsDimension x="50" y="7"/>
+					</Size>
+					<Size platform="mobile">
+						<AbsDimension x="73" y="9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentDuration" file="ui/mobile/texture2/operate.xml" uvname="img_progress_bar_orange" DrawType="center" hidden="true">
+					<Center>
+						<Left			offsetX="0"  offsetY="0" w="3"	h="6"/>
+						<Center			offsetX="3" offsetY="0" w="3"	h="6"	/>
+						<Right			offsetX="6" offsetY="0" w="3"	h="6" />
+					</Center>
+					<Size platform="pc">
+						<AbsDimension x="50" y="7"/>
+					</Size>
+					<Size platform="mobile">
+						<AbsDimension x="73" y="9"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentDurBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBan" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_15" hidden="true" abs_x="22" abs_y="22">
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-10" y="-10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" file="ui/mobile/texture2/common.xml" uvname="sel_icon_map" DrawType="ninesquare_center" hidden="true" abs_x="82" abs_y="82">
+                    <NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##品质
+				<Texture name="$parentQuality" file="ui/mobile/texture2/common.xml" uvname="sel_icon_map" DrawType="ninesquare_center"  hidden="true" abs_x="82" abs_y="82">
+                    <NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentLevel" fonttype="BlackFont18" fontStyle="border" justifyH="right" text="" shadowcolor="ff624130" hidden="false" abs_x="40" abs_y="19">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-5" y="8" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentUnlock" hidden="true" input_transparent="true" abs_x="90" abs_y="20">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentProBkg" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_55" hidden="false" abs_x="81" abs_y="22">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPro" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_56" hidden="false" abs_x="75" abs_y="18">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentProBkg">
+									<Offset>
+										<AbsDimension x="3" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentLock" file="ui/mobile/texture2/outgame2/uitex.xml" uvname="juese_suo02.png" hidden="true" abs_x="17" abs_y="23">
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-7" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCount" fonttype="BlackFont" fontStyle="border" justifyH="center" text="999/999" abs_x="81" abs_y="19">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentProBkg">
+									<Offset>
+										<AbsDimension x="0" y="-3" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnEnterUpdate platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnEnterUpdate_PC()</OnEnterUpdate>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandNormalGridButtonTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+	##蓝图格子
+	<Button name="HomelandBlueprintGridButtonTemplate" virtual="true" click_threshold="50" abs_x="146" abs_y="174">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" />
+				<Texture name="$parentIconBkg" inherits="TemplateBigBkg15" abs_x="140" abs_y="139">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-1" y="3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+
+				<Texture name="$parentIcon" alphamode="alphablend" abs_x="115" abs_y="90">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentAddFlag" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="68" abs_y="68" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" justifyV="middle" text="" abs_x="126" abs_y="17">
+					<Color r="101" g="116" b="118" />
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-9" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentCount" fonttype="BlackFont20" abs_x="100" abs_y="26" justifyH="center" text="99" hidden="true">
+					<Color r="101" g="116" b="118" />
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentIconBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" abs_x="146" abs_y="174">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentUnlock" hidden="true" input_transparent="true" abs_x="90" abs_y="20">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentProBkg" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_55" hidden="false" abs_x="81" abs_y="22">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPro" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_56" hidden="false" abs_x="75" abs_y="18">
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parentProBkg">
+									<Offset>
+										<AbsDimension x="3" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentLock" file="ui/mobile/texture2/outgame2/uitex.xml" uvname="juese_suo02.png" hidden="true" abs_x="17" abs_y="23">
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-7" y="-2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCount" fonttype="BlackFont" fontStyle="border" justifyH="center" text="999/999" abs_x="81" abs_y="19">
+							<Color r="255" g="255" b="255" />
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentProBkg">
+									<Offset>
+										<AbsDimension x="0" y="-3" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBlueprintGridButtonTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+	##蓝图材料格子
+	<Button name="HomelandMaterialGridButtonTemplate" virtual="true" click_threshold="50" abs_x="78" abs_y="78">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" />
+				<Texture name="$parentIcon" alphamode="alphablend" abs_x="64" abs_y="64">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMoreIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_more_b" rel_x="0.9" rel_y="0.9" hidden="true">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentCount" fonttype="BlackFont20" abs_x="75" abs_y="20" justifyH="right" text="20">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-6" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont18" fontStyle="shadow" text="" shadowcolor="ff624130" hidden="true" abs_x="60" abs_y="19">
+					<Color r="255" g="255" b="255" />
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="" y="8" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnClick();</OnClick>
+			<OnMouseDown platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseDown();</OnMouseDown>
+			<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseUp();</OnMouseUp>
+			<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseDownUpdate();</MouseDownUpdate>
+			<OnClick platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnClick_PC();</OnClick>
+			<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseDown_PC()</OnMouseDown>
+			<OnMouseUp platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseUp_PC()</OnMouseUp>
+			<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseEnter_PC()</OnEnter>
+			<OnEnterUpdate platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnEnterUpdate_PC()</OnEnterUpdate>
+			<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandMaterialGridButtonTemplate_OnMouseLeave_PC()</OnLeave>
+		</Scripts>
+	</Button>
+	##底部快捷栏模板
+	<Button name="HomelandBackpack_GridButtomTemplate" inherits="GridButtonTemplate3" abs_x="92" abs_y="92" virtual="true">
+		<Layers>
+			<Layer level="background">
+				<FontString name="$parentNum" fonttype="BlackFont" justifyH="center" text="1" abs_x="80" abs_y="16">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+	##家园背包
+	<Frame name="HomelandBackpack" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="1900">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" color="40000000" stretchedge="true"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			##body
+			<Frame name="$parentBody" abs_x="1075" abs_y="677">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="56" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg2" stretchedge="true"/>
+					</Layer>
+				</Layers>
+				<Frames>
+					##标题栏:height:56
+					<Frame name="$parentTitle" inherits="TemplateTopTitleBkg1" rel_x="1" abs_y="56"/>
+
+					##关闭按钮
+					<Frame name="$parentCloseBtn" inherits="TemplateCloseBtn" abs_x="46" abs_y="60">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentTitle">
+								<Offset>
+									<AbsDimension x="-11" y="-6"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):HomelandBackpackCloseBtn_OnClick()</OnClick>
+						</Scripts>
+					</Frame>
+					<!-- 迷你币栏 -->
+					<Button name="$parentMyMiniCoin" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="right" relativeTo="$parentTitle" relativePoint="center">
+								<Offset>
+									<AbsDimension x="80" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common.xml" uvname="icon_coin" abs_x="37" abs_y="38">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								 <Texture name="$parentAddIcon" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn_money.png" abs_x="40" abs_y="43">
+									<Anchors>
+										<Anchor point="right" relativePoint="right" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<!--
+								<Texture name="$parentAddIcon1" file="ui/mobile/texture2/shop.xml" uvname="icon_add_btn" abs_x="22" abs_y="22">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parentAddIcon">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture> -->
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):MiniCoinBtnClicked()</OnClick>
+						</Scripts>
+					</Button>
+                    <!-- 家园币栏 -->
+					<Button name="$parentMyManorCoin" abs_x="203" abs_y="36">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentMyMiniCoin" relativePoint="right">
+								<Offset>
+									<AbsDimension x="50" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentBkg" inherits="TemplateBkg10" />
+								<Texture name="$parentIcon" file="items/minihomecoin.png" abs_x="37" abs_y="38">
+									<Anchors>
+										<Anchor point="center" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentFont" fonttype="BlackFont20" lineInterval="1" justifyH="center"  text="1234567" fontStyle="border" abs_x="170" abs_y="25">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="3"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentUvA" file="ui/mobile/effect/minicoinbuy.png" alphamode="add" hidden="true">
+									<Size>
+										<AbsDimension x="285" y="115"/>
+									</Size>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-10" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>	
+									<UVAnimation texrows="4" texcols="4" />
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##大类1
+			<Button name="$parentTypeBtn1" inherits="HomelandBackpackTabBtnTemplate" id="1">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topleft" relativeTo="$parentBody">
+						<Offset>
+							<AbsDimension x="5" y="87"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##大类2
+			<Button name="$parentTypeBtn2" inherits="HomelandBackpackTabBtnTemplate" id="2">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn1">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			##大类3
+			<Button name="$parentTypeBtn3" inherits="HomelandBackpackTabBtnTemplate" hidden="true" id="3">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn2">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTypeBtn4" inherits="HomelandBackpackTabBtnTemplate" hidden="true" id="4">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn3">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentTypeBtn5" inherits="HomelandBackpackTabBtnTemplate" hidden="true" id="5">
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTypeBtn4">
+						<Offset>
+							<AbsDimension x="0" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+			##方块内容
+			<Frame name="$parentNormalContent" abs_x="1072" abs_y="503" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBody">
+						<Offset>
+							<AbsDimension x="0" y="55"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkgBlue" inherits="TemplateBigBkg5" abs_x="768" abs_y="433">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="16" y="61" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNull" file="ui/mobile/texture2/bigtex/img_noroom.png" hidden="true">
+							<Size>
+								<AbsDimension x="435" y="247" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentBkgBlue" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNullTitle" fonttype="BlackFont26" lineInterval="1" text="" justifyV="middle" justifyH="center" hidden="true" >
+							<Color r="77" g="112" b="116"/>
+							<Size>
+								<AbsDimension x="500" y="30"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Bottom" relativePoint="Bottom" relativeTo="$parentNull">
+									<Offset>
+										<AbsDimension x="0" y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors> 
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					##全部 ##装饰 ##功能 ##家具 ##建材
+					<Button name="$parentSubType1" inherits="HomelandSubTypeBtnTemplate" id ="1">
+						<Anchors>
+							<Anchor point="bottomleft" relativePoint="topleft" relativeTo="$parentBkgBlue">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentSubType2" inherits="HomelandSubTypeBtnTemplate" id ="2">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentSubType1">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentSubType3" inherits="HomelandSubTypeBtnTemplate" id ="3">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentSubType2">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentSubType4" inherits="HomelandSubTypeBtnTemplate" id ="4">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentSubType3">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentSubType5" inherits="HomelandSubTypeBtnTemplate" id ="5">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentSubType4">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<Button name="$parentSubType6" inherits="HomelandSubTypeBtnTemplate" id ="6">
+						<Anchors>
+							<Anchor point="left" relativePoint="right" relativeTo="$parentSubType5">
+								<Offset>
+									<AbsDimension x="3" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Button>
+					<ListViewFrame name="HomelandBackpackNormalBox" slidingY="true" slideplane="$parentPlane" abs_x="768" abs_y="415">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkgBlue">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="768" abs_y="415">
+								<Scripts>
+									<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):OnClick()</OnMouseDown>
+								</Scripts>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+					<Frame name="$parentCreateTypeDetail" inherits="HomelandCreateTypeDetailTemplate" hidden="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-16" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentPlayTypeDetail" inherits="HomelandPlayTypeDetailTemplate" hidden="false">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-16" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):OnClick()</OnClick>
+				</Scripts>
+			</Frame>
+			##图纸内容
+			<Frame name="$parentBlueprintContent" abs_x="1072" abs_y="1072" hidden="true">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBody">
+						<Offset>
+							<AbsDimension x="0" y="55"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkgBlue" inherits="TemplateBigBkg5" abs_x="768" abs_y="480">
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="16" y="12" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentNull" file="ui/mobile/texture2/bigtex/img_noroom.png" hidden="true">
+							<Size>
+								<AbsDimension x="435" y="247" />
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentBkgBlue" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNullTitle" fonttype="BlackFont26" lineInterval="1" text="" justifyH="center" hidden="true" >
+							<Color r="77" g="112" b="116"/>
+							<Size>
+								<AbsDimension x="500" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="Bottom" relativePoint="Bottom" relativeTo="$parentNull">
+									<Offset>
+										<AbsDimension x="0" y="50"/>
+									</Offset>
+								</Anchor>
+							</Anchors> 
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<ListViewFrame name="HomelandBackpackBlueprintBox" slidingY="true" slideplane="$parentPlane" abs_x="750" abs_y="462">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentBkgBlue">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" abs_x="750" abs_y="462">
+								<Scripts>
+									<OnMouseDown platform="pc">GetInst("UIManager"):GetCtrl("HomelandBackpack"):OnClick()</OnMouseDown>
+								</Scripts>
+							</Frame>
+						</Frames>
+					</ListViewFrame>
+					<Frame name="$parentDetail" inherits="HomelandBlueprintDetailTemplate">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-16" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):OnClick()</OnClick>
+				</Scripts>
+			</Frame>
+
+			##快捷栏
+			<Frame name="$parentShortcut" abs_x="1069" abs_y="122">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentBody" relativePoint="bottom" />
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkgBottom" inherits="TemplateBigBkg1"  />
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentGrid1" inherits="HomelandBackpack_GridButtomTemplate" id="1001" />
+					<Button name="$parentGrid2" inherits="HomelandBackpack_GridButtomTemplate" id="1002" />
+					<Button name="$parentGrid3" inherits="HomelandBackpack_GridButtomTemplate" id="1003" />
+					<Button name="$parentGrid4" inherits="HomelandBackpack_GridButtomTemplate" id="1004" />
+					<Button name="$parentGrid5" inherits="HomelandBackpack_GridButtomTemplate" id="1005" />
+					<Button name="$parentGrid6" inherits="HomelandBackpack_GridButtomTemplate" id="1006" />
+					<Button name="$parentGrid7" inherits="HomelandBackpack_GridButtomTemplate" id="1007" />
+					<Button name="$parentGrid8" inherits="HomelandBackpack_GridButtomTemplate" id="1008" />
+
+					##出售
+					<Button name="$parentSellBtn" abs_x="96" abs_y="61" hidden="true">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parentBkgBottom">
+								<Offset>
+									<AbsDimension x="-17" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$41218" abs_x="46" abs_y="23">
+									<Color r="51" g="55" b="55"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="4" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg2" abs_x="96" abs_y="61"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2" abs_x="96" abs_y="61">
+							<Anchors>
+								<Anchor point="right" relativePoint="right" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):SellBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			##家园商店
+			<Button name="$parentShopBtn" hidden="true">
+				<Size>
+					<AbsDimension x="76" y="79"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBody" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="-12" y="-24"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_box" abs_x="40" abs_y="35">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$41159" abs_x="100" abs_y="26">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray">
+					<Size>
+						<RelDimension x="0.9" y="0.9" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):ShopBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##仓库
+			<Button name="$parentStashBtn" hidden="true">
+				<Size>
+					<AbsDimension x="76" y="79"/>
+				</Size>
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentBody" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="-12" y="-24"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_box" abs_x="40" abs_y="35">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" text="$3056" abs_x="100" abs_y="26">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_circle_gray">
+					<Size>
+						<RelDimension x="0.9" y="0.9" />
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):StashBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("HomelandBackpack"):HandleEvent()</OnEvent>
+			<OnHide>GetInst("UIManager"):GetCtrl("HomelandBackpack"):OnHide()</OnHide>
+			<OnClick>GetInst("UIManager"):GetCtrl("HomelandBackpack"):OnClick()</OnClick>
+		</Scripts>
+	</Frame>
+</Ui>

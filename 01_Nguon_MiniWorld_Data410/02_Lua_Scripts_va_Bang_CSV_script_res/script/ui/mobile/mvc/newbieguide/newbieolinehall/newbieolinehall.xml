@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Ui>
+    <Script file="ui/mobile/mvc/NewbieGuide/NewbieOlineHall/NewbieOlineHallCtrl.lua" />
+    <Script file="ui/mobile/mvc/NewbieGuide/NewbieOlineHall/NewbieOlineHallView.lua" />
+    <Script file="ui/mobile/mvc/NewbieGuide/NewbieOlineHall/NewbieOlineHallModel.lua" />
+
+    ##新手推荐地图模版
+	<Frame name="NewbieRecommendMapItem" abs_x ="308" abs_y ="272" frameStrata="HIGH" framelevel="101" virtual="true">
+		<Layers>
+            ## 背景
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBg" inherits="TemplateBigBkg9"/>
+			</Layer>
+			<Layer level="overlay">
+                ## 图片
+				<Texture name="$parentPicBg" file="ui/snap_empty.png" abs_x ="300" abs_y ="168">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+                ## 类型
+                <Texture name="$parentTypeBg" file="ui/mobile/texture2/common.xml" uvname="board_map_pic.png" hidden="false" abs_x ="52" abs_y ="22">
+                    <Anchors>
+                        <Anchor point="topleft" relativeTo="$parentPicBg" relativePoint="topleft">
+                            <Offset>
+                                <AbsDimension x="0" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+				<FontString name="$parentTypeDesc" fonttype="BlackFont18" justifyH="center" hidden="false" text="-" abs_x ="35" abs_y ="17">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTypeBg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+                ## 地图名
+				<FontString name="$parentMapName" fonttype="BlackFont24" justifyH="left" text="XXXXXX" abs_x ="200" abs_y ="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentPicBg">
+							<Offset>
+								<AbsDimension x="11" y="16"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+               ## 作者名
+               <Texture name="$parentAuthorIcon" file="ui/mobile/texture0/miniwork.xml" uvname="icon_user" abs_x="18" abs_y="18">
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentMapName">
+                        <Offset>
+                            <AbsDimension x="0" y="18"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                </Texture>
+                <FontString name="$parentAuthorName" fonttype="BlackFont18" justifyH="left" justifyV="top" text="XXXXXX" abs_x="125" abs_y="18">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="left" relativePoint="right" relativeTo="$parentAuthorIcon">
+                            <Offset>
+                                <AbsDimension x="7" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                ## 在玩人数
+				<!-- <FontString name="$parentNowPlayer" fonttype="BlackFont18" text="9999" abs_x ="100" abs_y ="18" justifyH="right">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="right" relativePoint="bottomright" relativeTo="$parentPicBg">
+							<Offset>
+								<AbsDimension x="-16" y="72"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+
+                ## 地图描述
+                <FontString name="$parentMapDes" fonttype="BlackFont20" justifyH="left" justifyV="top" abs_x="279" abs_y="60" autowrap="true" autorect="true">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentPicBg">
+                        	<Offset>
+								<AbsDimension x="0" y="91"/>
+							</Offset>
+						</Anchor>
+                    </Anchors>
+                </FontString>
+			</Layer>
+		</Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):RecommendMapPlay_Click();</OnClick>
+        </Scripts>
+	</Frame>
+
+    ## 联机大厅推荐弹框
+    <Frame name="NewbieOlineHall" parent="UIClient" frameStrata="HIGH" framelevel="100" input_transparent="false" hidden="true">
+        <Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentMask" file="ui/white.png" stretchedge="true" color="B1000000" />
+			</Layer>
+		</Layers>
+
+        <Frames>
+            <Frame name="$parentContainer" abs_x ="1032" abs_y ="483">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <!--白色背景-->
+                        <Texture name="$parentBkg" inherits="TemplateBigBkg2"/>
+                        <FontString name="$parentTitle" fonttype="BlackFont30" justifyH="right" text="$100677" abs_x="370" abs_y="30">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+                                    <Offset>
+                                        <AbsDimension x="31" y="60"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Frames>
+                    ## 换一批
+                    <Button name="$parentChangeRoomBt" abs_x="130" abs_y="50">
+                        <Anchors>
+                            <Anchor point="left" relativePoint="right" relativeTo="$parentTitle">
+                                <Offset>
+                                    <AbsDimension x="31" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <NormalTexture name="$parentNormal" inherits="TemplateBkg24" />
+                        <PushedTexture name="$parentPushedBG" inherits="TemplateBkg24" rel_x="0.9" rel_y="0.9">
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                            </Anchors>
+                        </PushedTexture>
+                        <Layers>
+                            <Layer level="overlay">
+                                <FontString name="$parentTitle" fonttype="BlackFont20" justifyH="center" text="$3849" abs_x="59" abs_y="20">
+                                    <Color r="51" g="55" b="55"/>
+                                    <Anchors>
+                                        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                            <Offset>
+                                                <AbsDimension x="0" y="0"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):OnlineHallChangeRooms_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+
+                    #推荐地图
+                    <Frame name="$parentMap1" inherits="NewbieRecommendMapItem" id="1">
+                        <Anchors>
+                            <Anchor point="bottomright" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-180" y="-75"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    <Frame name="$parentMap2" inherits="NewbieRecommendMapItem" id="2">
+                        <Anchors>
+                            <Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="0" y="-75"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+                    <Frame name="$parentMap3" inherits="NewbieRecommendMapItem" id="3">
+                        <Anchors>
+                            <Anchor point="bottomleft" relativePoint="bottom" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="180" y="-75"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                    </Frame>
+
+                    ## 关闭按钮
+                    <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+                        <Anchors>
+                            <Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+                                <Offset>
+                                    <AbsDimension x="-12" y="-23"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):CloseRecommendView_OnClick();</OnClick>
+                        </Scripts>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames> 
+        <Scripts>
+            <OnEvent>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):HandleEvent();</OnEvent>
+        </Scripts>
+    </Frame>
+
+
+    ## 新手引导完成提示
+    <Frame name="NewbieOlineHallCompleteGuide" parent="UIClient" frameStrata="HIGH" framelevel="100" input_transparent="false" hidden="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+                ## 背景暗色
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000"/>
+			</Layer>
+		</Layers>
+
+        <Frames>
+            <Frame name="$parentContent" abs_x ="400" abs_y ="258">
+                <Anchors>
+                    <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentGuideBkg" inherits="TemplateBkg50"/>
+                        <Texture name="$parentGuideBkg2" inherits="TemplateBigBkg2" hidden="true"/>
+                        <Texture name="$parentHead" file="ui/mobile/texture2/emoticon.xml" uvname="dianzan" abs_x ="83" abs_y ="69">
+                            <Anchors>
+                                <Anchor point="center" relativeTo="$parent" relativePoint="top">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0" />
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </Texture>
+                        <FontString name="$parentGuideTip1" fonttype="BlackFont24" justifyH="left" lineInterval="2" text="$100728" abs_x="224" abs_y="62" autowrap="true">
+                            <Color r="61" g="69" b="70"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="-8"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+
+                <Frames>
+                    <RichText name="$parentGuideTip2" fonttype="BlackFont20" justifyH="right" multiLine="false" abs_x="144" abs_y="20">
+                        <Anchors>
+                            <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                                <Offset>
+                                    <AbsDimension x="-20" y="-20"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):CompleteGuideCloseView_OnClick();</OnClick>
+                        </Scripts>
+                    </RichText>
+                </Frames>
+            </Frame>
+        </Frames> 
+
+       
+        <Frames>
+            ## 关闭按钮
+            <Button name="$parentCloseGuideBtn" inherits="TemplateCloseBtn0" abs_x="36" abs_y="46">
+                <Anchors>
+                    <Anchor point="topright" relativePoint="topright" relativeTo="$parentContent">
+                        <Offset>
+                            <AbsDimension x="-9" y="-23"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):CompleteGuideCloseView_OnClick();</OnClick>
+                </Scripts>
+            </Button>
+            ## 去领奖
+            <Button name="$parentGetRewardBtn" inherits="TemplateBtn3" abs_x="182" abs_y="61">
+                <Anchors>
+                    <Anchor point="center" relativeTo="$parentContent" relativePoint="center">
+                        <Offset>
+                            <AbsDimension x="0" y="88" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="overlay">
+                        <FontString name="$parentText" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$100729" abs_x ="71" abs_y ="23">
+                            <Color r="55" g="54" b="49"/>
+                            <Anchors>
+                                <Anchor point="center" relativePoint="center" relativeTo="$parent">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>						
+                <Scripts>
+                     <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):CloseView_OpenNoviceTask();</OnClick>
+                </Scripts>
+            </Button>             
+        </Frames>  
+        <Scripts>
+            <!-- <OnClick>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):CompleteGuideCloseView_OnClick();</OnClick> -->
+            <OnHide>GetInst("UIManager"):GetCtrl("NewbieOlineHall"):CompleteGuide_OnHide();</OnHide>
+        </Scripts>
+    </Frame>
+    
+</Ui>

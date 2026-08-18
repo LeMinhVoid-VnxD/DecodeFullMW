@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/UserTask/NoviceTask/NoviceTaskModel.lua"/>
+	<Script file="ui/mobile/mvc/UserTask/NoviceTask/NoviceTaskView.lua"/>
+	<Script file="ui/mobile/mvc/UserTask/NoviceTask/NoviceTaskCtrl.lua"/>
+	<Script file="ui/mobile/mvc/UserTask/NoviceTask/NoviceTaskCtrlExt.lua"/>
+	
+	<Script file="ui/mobile/mvc/UserTask/UserTaskDataManager.lua"/>
+	<Script file="ui/mobile/mvc/UserTask/UserTaskInterface.lua"/>
+	<Script file="ui/mobile/mvc/UserTask/UserTaskService.lua"/>
+	
+	<Script file="ui/mobile/mvc/UserTask/UserTaskDataManagerExt.lua"/>
+	<Script file="ui/mobile/mvc/UserTask/UserTaskServiceExt.lua"/>
+
+
+	##任务item
+	<Frame name="UserTask_NoviceTaskTemplate" hidden="false" virtual="true" >
+		<Size>
+			<AbsDimension x="610" y="168"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="cc6275A0" abs_x="610" abs_y="168">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--任务名及进度 eg:体验地图1次 (1/1) -->
+				<FontString name="$parentTaskName" justifyH="left" justifyV="middle" fonttype="BlackFont22" lineInterval="2" text="体验地图1次 (1/1)" abs_x="225" abs_y="24" >
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="20" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--任务截至时间 eg:01.18 - 02.03 -->
+				<FontString name="$parentTime" justifyH="right" justifyV="middle" fonttype="BlackFont18" lineInterval="2" text="01.18 - 02.03" abs_x="225" abs_y="24" >
+					<Color r="164" g="203" b="246"/>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-39" y="13"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--分割线-->
+				<Texture name="$parentLine" file="ui/mobile/texture0/common.xml" uvname="line_blue" abs_x="570" abs_y="2" DrawType="ninesquare">
+					<NineSquare ox="0" oy="0" tilew="3" tileh="3"/>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<!-- -->
+			<Button name="$parentItemBtn" >
+				<Size>
+					<AbsDimension x="92" y="92"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="20" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIconFrame" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png" abs_x="92" abs_y="92">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="72" abs_y="72">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIcon2" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_17" abs_x="25" abs_y="25">
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentNums" justifyH="right" justifyV="middle" fonttype="BlackFont16" fontStyle="shadow" lineInterval="2" text="n" abs_x="50" abs_y="16" >
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentIconFrame">
+									<Offset>
+										<AbsDimension x="-10" y="-10"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ShowItemDetail();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 领取 -->
+			<Button name="$parentReceive" inherits="TemplateBtn11"  abs_x="130" abs_y="50">
+				<Anchors>
+					<Anchor point="right" relativePoint="right" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-20" y="20"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						#领取
+						<FontString name="$parentTip" justifyH="center" justifyV="center" fonttype="BlackFont20" lineInterval="2" text="$492" abs_x="100" abs_y="20" >
+							<Color r="55" g="54" b="51"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ReceiveReward();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 前往任务 -->
+			<Button name="$parentForward" inherits="TemplateBtn12"  abs_x="130" abs_y="50">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentReceive">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<!--前往任务 -->
+						<FontString name="$parentTip" justifyH="center" justifyV="center" fonttype="BlackFont20" lineInterval="2" text="$1000169" abs_x="100" abs_y="20" >
+							<Color r="51" g="51" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ForwardTask();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 已领取 -->
+			<Button name="$parentDisable" abs_x="130" abs_y="50">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentReceive">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						#已领取
+						<FontString name="$parentTip" justifyH="center" justifyV="center" fonttype="BlackFont18" lineInterval="2" text="$1000170" abs_x="100" abs_y="20" >
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="1" rel_y="1">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick></OnClick>
+		</Scripts>
+	</Frame>
+
+	<Frame name="NoviceTask" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="3" input_transparent="false">
+		<Size>
+			<RelDimension x="1.0" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/bigtex/img_newbie_task_bg.png" abs_x="1067" abs_y="537" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="56" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentActorPanelBkg" file="ui/mobile/texture0/bigtex/img_newbie_task_stands.png" abs_x="312" abs_y="105">
+					<Anchors>
+						<Anchor point="top" relativePoint="bottom" relativeTo="$parentActorPanel">
+							<Offset>
+								<AbsDimension x="7" y="-82"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				#每日0点刷新任务，抓紧做任务哦！
+				<FontString name="$parentItemBoxTip" justifyH="left" justifyV="middle" fonttype="BlackFont20" lineInterval="2" text="$50148" abs_x="400" abs_y="24" >
+					<Color r="61" g="80" b="120"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentItemBox">
+							<Offset>
+								<AbsDimension x="15" y="-30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentTitleFrameTitle2" lineInterval="4" multiLine="false" justifyH="left" justifyV="center" fonttype="BlackFont24" text="" >
+				<Size>
+					<AbsDimension x="250" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="300" y="-296"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			
+
+			<!-- 套装 -->
+			<Frame name="$parentActorPanel" abs_x="300" abs_y="410">
+				<Anchors>
+					<Anchor point="bottomleft" relativeTo="$parentBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="70" y="-105" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					 <Layer level="BACKGROUND">
+						<Texture name="$parentShadow" file="ui/mobile/texture2/shop.xml" uvname="img_shadow_role.png" abs_x="116" abs_y="25" >
+							 <Anchors>
+								 <Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									 <Offset>
+										 <AbsDimension x="0" y="-47" />
+									 </Offset>
+								 </Anchor>
+							 </Anchors>
+						 </Texture>
+						<ModelView name="$parentView" rel_x="1.0" rel_y="1.0">
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="0" y="10" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</ModelView>
+					</Layer>
+				</Layers>
+			</Frame>
+			<!-- 套装标签信息 -->
+			<Frame name="$parentModelInfo" abs_x="1" abs_y="1">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parentActorPanel" relativePoint="left">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					 <Layer level="BACKGROUND">
+						<Texture name="$parentLabelBg1" file="ui/mobile/texture0/common.xml" uvname="img_board_custom_title.png" abs_x="146" abs_y="47" >
+							 <Anchors>
+								 <Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									 <Offset>
+										 <AbsDimension x="20" y="-108" />
+									 </Offset>
+								 </Anchor>
+							 </Anchors>
+						</Texture>
+						<FontString name="$parentLabelStr1" fonttype="BlackFont20" justifyH="center" text="xxx" abs_x="122" abs_y="20">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentLabelBg1">
+									<Offset>
+										<AbsDimension x="-8" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+
+						<Texture name="$parentLabelBg2" file="ui/mobile/texture0/common.xml" uvname="img_board_custom_title.png" abs_x="146" abs_y="47" >
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="19" y="5" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentLabelStr2" fonttype="BlackFont20" justifyH="center" text="xxx" abs_x="122" abs_y="20">
+						   <Color r="255" g="255" b="255"/>
+						   <Anchors>
+							   <Anchor point="center" relativePoint="center" relativeTo="$parentLabelBg2">
+								   <Offset>
+									   <AbsDimension x="-8" y="-6"/>
+								   </Offset>
+							   </Anchor>
+						   </Anchors>
+					   	</FontString>
+
+						<Texture name="$parentLabelBg3" file="ui/mobile/texture0/common.xml" uvname="img_board_custom_title.png" abs_x="146" abs_y="47" >
+							<Anchors>
+								<Anchor point="bottom" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="19" y="70" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentLabelStr3" fonttype="BlackFont20" justifyH="center" text="xxx" abs_x="122" abs_y="20">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parentLabelBg3">
+									<Offset>
+										<AbsDimension x="-8" y="-6"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+
+			<Button name="$parentRoleRotateBtn" rel_x="1" rel_y="1">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentActorPanel" relativePoint="center">
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnMouseDown>GetInst("UIManager"):GetCtrl("NoviceTask"):RotateBtnMouseDown();</OnMouseDown>
+					<OnMouseMove>GetInst("UIManager"):GetCtrl("NoviceTask"):RotateBtnMouseMove();</OnMouseMove>
+				</Scripts>
+			</Button>
+
+			#关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn" abs_x="46" abs_y="60">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="-63"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentForwardRewardBtn" inherits="TemplateBtn12"  abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentActorPanel" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<!--前往任务 -->
+						#前往穿戴
+						<FontString name="$parentTip" justifyH="center" justifyV="center" fonttype="BlackFont24" lineInterval="2" text="$1000171" abs_x="120" abs_y="20" >
+							<Color r="51" g="51" b="55"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ToWear();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 领取 -->
+			<Button name="$parentRewardBtn" inherits="TemplateBtn11"  abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentActorPanel" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<!--可领取 -->
+						#领取
+						<FontString name="$parentTip" justifyH="center" justifyV="center" fonttype="BlackFont24" lineInterval="2" text="$492" abs_x="180" abs_y="24" >
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ObtainTaskReward();</OnClick>
+				</Scripts>
+			</Button>
+			<!-- 领取灰(不可领取，需继续完成任务)-->
+			<Button name="$parentRewardBtnGray" abs_x="182" abs_y="61">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentActorPanel">
+						<Offset>
+							<AbsDimension x="0" y="40"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						#领取
+						<FontString name="$parentTip" justifyH="center" justifyV="center" fonttype="BlackFont24" lineInterval="2" text="$492" abs_x="100" abs_y="20" >
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentPushedBG" inherits="TemplateBkg3" rel_x="1" rel_y="1">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Button>
+			<RichText name="$parentTips1" lineInterval="4" multiLine="false" justifyH="left" justifyV="center" fonttype="BlackFont22" text="" >
+				<Size>
+					<AbsDimension x="300" y="24"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentRewardBtn">
+						<Offset>
+							<AbsDimension x="0" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</RichText>
+			<RichText name="$parentTips2" lineInterval="4" multiLine="false" justifyH="center" justifyV="center" fonttype="BlackFont22" text="" >
+				<Size>
+					<AbsDimension x="368" y="60"/>
+				</Size>
+				<Anchors>
+					<Anchor point="top" relativePoint="bottom" relativeTo="$parentTips1">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</RichText>
+			##左右按钮 下一个或上一个
+			<Button name="$parentActorLast" abs_x="33" abs_y="62">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentActorPanel" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="-180" y="3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80"/>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80" abs_x="29" abs_y="60"/>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ObtainLastSkin();</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentActorNext" abs_x="33" abs_y="62">
+				<Anchors>
+					<Anchor point="bottom" relativeTo="$parentActorPanel" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="180" y="3"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80" abs_x="33" abs_y="62" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="icon_pull_80" abs_x="29" abs_y="60"/>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):ObtainNextSkin();</OnClick>
+				</Scripts>
+			</Button>
+
+			##分割线------------------------------------------------------
+			<SlidingFrame name="$parentItemBox" slidingY="true" slideplane="$parentPlane" >
+				<Size>
+					<AbsDimension x="610" y="460"/>
+				</Size>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<!-- 描述-->
+					</Layer>
+				</Layers>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="-28" y="48" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" hidden="false">
+						<Size>
+							<AbsDimension x="610" y="460"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+					</Frame>
+					<Frame name="$parentItem1" inherits="UserTask_NoviceTaskTemplate" id="1"/>
+				</Frames>
+				<Scripts>
+				</Scripts>
+			</SlidingFrame>
+			##道具详情
+			<Frame name="$parentItemDetail" hidden="true" >
+				<Size>
+					<AbsDimension x="427" y="200"/>
+				</Size>
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentItemBox" relativePoint="center">
+						<Offset>
+							<AbsDimension x="-140" y="30" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_icon" DrawType="ninesquare_center" abs_x="427" abs_y="200">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<!--道具名 eg:小白象-碎片-->
+						<FontString name="$parentName" justifyH="left" justifyV="middle" fonttype="BlackFont22" lineInterval="2" text="小白象-碎片" abs_x="225" abs_y="24" >
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension x="106" y="24"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!-- 文字描述背景图-->
+						<Texture name="$parentDesBkg" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_explain" DrawType="ninesquare_center" abs_x="391" abs_y="73">
+							<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="-18"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- -->
+					<Button name="$parentItemBtn" >
+						<Size>
+							<AbsDimension x="74" y="74"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="18" y="18"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentIconFrame" file="ui/mobile/texture2/common.xml" uvname="img_icon_shortcut.png" abs_x="74" abs_y="74">
+									<Anchors>
+										<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="58" abs_y="58">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentIcon2" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_17" abs_x="15" abs_y="15">
+									<Anchors>
+										<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</Button>
+					<RichText name="$parentDes" lineInterval="8" multiLine="false" justifyH="left" justifyV="center" fonttype="BlackFont18" text="" >
+						<Size>
+							<AbsDimension x="360" y="50"/>
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parentDesBkg">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick></OnClick>
+						</Scripts>
+					</RichText>
+				</Frames>
+				<Scripts>
+					<OnClick></OnClick>
+				</Scripts>
+			</Frame>
+			<Frame name="$parentMask" hidden="true" rel_x="1.0" rel_y="1.0">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parent" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+				</Frames>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NoviceTask"):MaskClicked();</OnClick>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick></OnClick>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("NoviceTask"):OnUpdate()</OnUpdate>
+			<OnShow>GetInst("UIManager"):GetCtrl("NoviceTask"):OnShow()</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("NoviceTask"):OnHide()</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

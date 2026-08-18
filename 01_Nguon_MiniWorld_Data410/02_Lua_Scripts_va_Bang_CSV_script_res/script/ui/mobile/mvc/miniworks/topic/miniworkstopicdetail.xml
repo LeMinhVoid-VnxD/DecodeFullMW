@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+    <Script file="ui/mobile/mvc/miniworks/topic/MiniWorksTopicDetailView.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/topic/MiniWorksTopicDetailModel.lua"/>
+	<Script file="ui/mobile/mvc/miniworks/topic/MiniWorksTopicDetailCtrl.lua"/>
+
+	##列表模板
+    <Button name="MiniWorksTopicDetailItemTemplate" virtual="true" click_threshold="5">
+		<Size>
+			<AbsDimension x="463" y="129"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!--背景换成九宫拉伸-->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentRightMask" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" rel_x="0.28" rel_y="0.95">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--缩略图-->
+				<Texture name="$parentPic" file="ui/snap_empty.png">
+					<Size>
+						<AbsDimension x="229" y="120"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="5" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--文本提示标识-->
+				<FontString name="$parentPicExplain" fonttype="BlackFont14" justifyH="center" text="$20309" hidden="true">
+					<Color r="255" g="253" b="233"/>
+					<Size>
+						<AbsDimension x="185" y="14"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!-- 名字 -->
+				<FontString name="$parentMapName" fonttype="BlackFont24" justifyH="left" text="地图名称">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="200" y="26"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="244" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--地图作者-->
+				<Texture name="$parentAuthorIcon" file="ui/mobile/texture0/ingame2.xml" uvname="icon_team_entrance">
+					<Size>
+						<AbsDimension x="22" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="15" y="40"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!-- <FontString name="$parentAuthorName" fonttype="BlackFont18" text="工坊地图的作者">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="190" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentAuthorIcon">
+							<Offset>
+								<AbsDimension x="4" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString> -->
+				<!--下载量-->
+				<Texture name="$parentDownIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download">
+					<Size>
+						<AbsDimension x="22" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="15" y="68"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentDownCount" fonttype="BlackFont18" text="0">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="120" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentDownIcon">
+							<Offset>
+								<AbsDimension x="8" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--创建时间-->
+				<Texture name="$parentTimeIcon" file="ui/mobile/texture0/ingame2.xml" uvname="icon_topic_time">
+					<Size>
+						<AbsDimension x="22" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="15" y="97"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTime" fonttype="BlackFont18" text="2020-07-19">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="200" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentTimeIcon">
+							<Offset>
+								<AbsDimension x="8" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--:地图类型_背景-->
+				<Texture name="$parentMapTypeBkg" inherits="TemplateBkg12" abs_x="85" abs_y="24">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--地图类型_名字-->
+				<FontString name="$parentMapTypeName" fonttype="BlackFont18" justifyH="center" text="生存">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="70" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMapTypeBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--话题_背景-->
+				<Texture name="$parentTopicBkg" inherits="TemplateBigBkg18" abs_x="229" abs_y="28">
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--话题_背景-->
+				<FontString name="$parentTopicTitle" fonttype="BlackFont20" justifyH="left" text="##全民创造节">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="229" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentTopicBkg">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentAuthorName" fonttype="BlackFont18" text="工坊地图的作者">
+				<Color r="101" g="116" b="118"/>
+				<Size>
+					<AbsDimension x="190" y="30"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentAuthorIcon">
+						<Offset>
+							<AbsDimension x="4" y="1"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):MapItemClicked();</OnClick>
+		</Scripts>
+	</Button>
+	
+	<Texture name="MiniWorksTopicDetail_DropDownItemBkg" virtual="true" file="ui/mobile/texture2/bigtex/empty.png" hidden="false">
+	</Texture>
+	<Texture name="MiniWorksTopicDetail_DropDownItemBkg1" virtual="true" file="ui/mobile/texture0/ingame2.xml" uvname="board_select_top.png" DrawType="ninesquare_center">
+		<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+	</Texture>
+	<Texture name="MiniWorksTopicDetail_DropDownItemBkg2" virtual="true" file="ui/mobile/texture0/ingame2.xml" uvname="board_select_mild.png" DrawType="ninesquare_center">
+		<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+	</Texture>
+	#下拉框按钮
+	<Button name="MiniWorksTopicDetail_DropDownItem" virtual="true">
+		<Size>
+			<AbsDimension x="140" y="70"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentNormal" />
+				<Texture name="$parentChecked" inherits="MiniWorksTopicDetail_DropDownItemBkg1" hidden="true">
+					<Size>
+						<AbsDimension x="140" y="70"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentFont" fonttype="BlackFont20" justifyH="center" lineInterval="1" >
+					<Color r="185" g="185" b="185"/>
+					<Size>
+						<AbsDimension x="120" y="19"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+	##下拉框
+	<Frame name="MiniWorksTopicDetail_DropDown" parent="UIClient" frameStrata="HIGH" hidden="true" framelevel="1003">
+		<Size>
+			<RelDimension x="1.2" y="1.0"/>
+		</Size>
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="-130" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBoard" file="ui/mobile/texture0/ingame2.xml" uvname="board_map_dropdownbox_back.png" DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="16" tileh="16"/>
+					<Size>
+						<AbsDimension x="140" y="217"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativeTo="MiniWorksTopicDetailRightSortBtn" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="0" y="5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentType1" inherits="MiniWorksTopicDetail_DropDownItem" id="1">
+				<Anchors>
+					<Anchor point="topright" relativeTo="MiniWorksTopicDetailRightSortBtn" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="0" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnDropDownItemDown(1);</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentType2" inherits="MiniWorksTopicDetail_DropDownItem" id="2">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentType1" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnDropDownItemDown(2);</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentType3" inherits="MiniWorksTopicDetail_DropDownItem" id="3">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentType2" relativePoint="bottom">
+						<Offset>
+							<AbsDimension x="0" y="1" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnDropDownItemDown(3);</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<!-- <OnLoad>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):DropDownOnLoad();</OnLoad>
+			<OnShow>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):DoropDownOnShow();</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):DoropDownOnHide();</OnHide> -->
+			<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnDropDownClose();</OnClick>
+		</Scripts>
+	</Frame>
+
+    <Frame name="MiniWorksTopicDetail" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="1002">
+        <Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg0" file="ui/mobile/texture2/bigtex/minilobby.png" hidden="false" stretchedge="true"/>
+				<Texture name="$parentBkg1" inherits="TemplateBigBkg2" color="FFCBD5CE"/>
+				<Texture name="$parentBkg2" inherits="TemplateBigBkg5">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTabBkg" inherits="TemplateLeftTabBkg" rel_y="1.0" file="ui/mobile/texture0/ingame2.xml" uvname="board_topic_back_left.png" DrawType="ninesquare_center">
+					<NineSquare ox="0" oy="0" tilew="10" tileh="10"/>
+					<Size>
+						<AbsDimension x="309" y="720"/>
+					</Size>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##标题栏:height:56
+			<Frame name="$parentTitle" inherits="TemplateTopTitleBkgFit" />
+			##返回按钮
+			<Frame name="$parentBackBtn" inherits="TemplateYelllowBackBtn">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentTitle">
+						<Offset>
+							<AbsDimension x="4" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):CloseBtnClicked();</OnClick>
+				</Scripts>
+			</Frame>
+		</Frames>
+		<Frames>
+			<Frame name="$parentLeft" abs_x="309" abs_y="660">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentTabBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="0" y="60"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentPicBkg" inherits="TemplateBigBkg19" >
+							<Size>
+								<AbsDimension x="250" y="130"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="28" y="21" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentPic" file="ui/mobile/texture0/bigtex/img_map_graychart.png">
+							<Size>
+								<AbsDimension x="250" y="130"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentPicBkg" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##话题名称
+						<FontString name="$parentTopicTitle" fonttype="BlackFont24" justifyH="left" text="##全民创造节" abs_x="300" abs_y="26">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentPicBkg">
+									<Offset>
+										<AbsDimension x="0" y="148"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##下载量
+						<Texture name="$parentDownIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download" abs_x="22" abs_y="22" >
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentPicBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="115" y="184" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentDownTip" justifyH="left" justifyV="left" fonttype="BlackFont20" lineInterval="1" text="$25225">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="118" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentDownIcon">
+									<Offset>
+										<AbsDimension x="32" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##下载人数
+						<Texture name="$parentCountIcon" file="ui/mobile/texture0/ingame2.xml" uvname="icon_map_number_edits" abs_x="22" abs_y="22" >
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parentPicBkg" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="0" y="184" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentCountTip" justifyH="left" justifyV="left" fonttype="BlackFont20" lineInterval="1" text="$25226">
+							<Color r="61" g="69" b="70"/>
+							<Size>
+								<AbsDimension x="118" y="18"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentCountIcon">
+									<Offset>
+										<AbsDimension x="32" y="2"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					#关注按钮
+					<Button name="$parentFollowBtn">
+						<Size>
+							<AbsDimension x="182" y="61" />
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parentPicBkg" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="35" y="253" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentCountIcon" file="ui/mobile/texture0/ingame2.xml" uvname="icon_map_attention" abs_x="29" abs_y="29" >
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="44" y="12" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="left" text="$4738" >
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="108" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="85" y="17"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg3"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg3">
+							<Size>
+								<AbsDimension x="168" y="56"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnFollowButtonDown();</OnClick>
+						</Scripts>
+					</Button>
+					#已关注按钮
+					<Button name="$parentFollowedBtn" hidden="true">
+						<Size>
+							<AbsDimension x="182" y="61" />
+						</Size>
+						<Anchors>
+							<Anchor point="center" relativeTo="$parentFollowBtn" relativePoint="center">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentCountIcon" file="ui/mobile/texture0/ingame2.xml" uvname="icon_map_followed" abs_x="29" abs_y="29" >
+									<Anchors>
+										<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+											<Offset>
+												<AbsDimension x="34" y="12" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentName" fonttype="BlackFont24" justifyH="left" text="$25238" >
+									<Color r="55" g="54" b="51"/>
+									<Size>
+										<AbsDimension x="108" y="25"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="75" y="17"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" inherits="TemplateBkg2"/>
+						<PushedTexture name="$parentPushedBG" inherits="TemplateBkg2">
+							<Size>
+								<AbsDimension x="182" y="61"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnFollowedButtonDown();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			
+			<Frame name="$parentRight" abs_x="970" abs_y="660">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentTabBkg" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="310" y="60"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentMapTitle" fonttype="BlackFont24" justifyH="left" text="$6030" abs_x="300" abs_y="26">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="41" y="19"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##线
+						<Texture name="$parentLine1" file="ui/mobile/texture0/team.xml" uvname="img_team_partingline.png" abs_x="939" abs_y="1" DrawType="center">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="52" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<Center>
+								<Left offsetX="0" offsetY="0" w="4" h="1"/>
+								<Center offsetX="4" offsetY="0" w="4" h="1"/>
+								<Right offsetX="8" offsetY="0" w="4" h="1"/>
+							</Center>
+						</Texture>
+						##排序文字
+						<FontString name="$parentSortTitle" fonttype="BlackFont24" justifyH="right" text="最多下载" abs_x="200" abs_y="26">
+							<Color r="61" g="69" b="70"/>
+							<Anchors>
+								<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-81" y="18"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					#排序按钮
+					<Button name="$parentSortBtn">
+						<Size>
+							<AbsDimension x="34" y="34"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="-43" y="11" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture0/ingame2.xml" uvname="icon_map_sorting"/>
+                		<PushedTexture name="$parentPushedBG" file="ui/mobile/texture0/ingame2.xml" uvname="icon_map_sorting">
+							<Size>
+								<AbsDimension x="34" y="34"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnSortButtonDown();</OnClick>
+						</Scripts>
+					</Button>
+					##地图列表
+					<ListViewFrame name="$parentMapList" slidingY="true" slideplane="$parentPlane">
+						<Size>
+							<AbsDimension x="939" y="580"/>
+						</Size>
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parentLine1">
+								<Offset>
+									<AbsDimension x="0" y="16"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane"  abs_x="888" abs_y="580"/>
+						</Frames>
+						<Scripts>
+							<OnMouseScrollPosition>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnScrollPosition();</OnMouseScrollPosition>
+							<OnMovieFinished>GetInst("UIManager"):GetCtrl("MiniWorksTopicDetail"):OnMoveFinished();</OnMovieFinished>
+						</Scripts>
+					</ListViewFrame>
+				</Frames>
+			</Frame>
+
+		</Frames>
+    </Frame>
+</Ui>

@@ -1,0 +1,2069 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	##地图房间列表页
+	<Script file="ui/mobile/mvc/newSearchPlatform/NSearchPlatformModel.lua"/>
+	<Script file="ui/mobile/mvc/newSearchPlatform/NSearchPlatformView.lua"/>
+	<Script file="ui/mobile/mvc/newSearchPlatform/NSearchPlatformCtrl.lua"/>
+	<Script file="ui/mobile/mvc/newSearchPlatform/NSearchPlatformService.lua"/>
+	
+	
+	<!-- 顶部tab按钮模板 -->
+	<Button name="NSP_TopTabTemplate"  virtual="true" abs_x="140" abs_y="49">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="tab_up_n.png" rel_x="1" abs_y="46">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheckedBG" file="ui/mobile/texture2/common.xml" uvname="tab_up_h.png" rel_x="1" abs_y="49">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentFnt" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$21860" abs_x="130" abs_y="23">
+					<Color r="191" g="228" b="227"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<!-- 搜索热词条目模板 -->
+	<Button name="NSP_HotWordTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="100" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/common.xml" uvname="btn_trending_yellow" hidden="false" DrawType="ninesquare">
+					<NineSquare>
+						<Topleft offsetX="0" offsetY="0" w="15" h="15"/>
+						<Top offsetX="15" offsetY="0" w="20" h="15"/>
+						<Topright offsetX="35" offsetY="0" w="15" h="15"/>
+						<Left offsetX="0" offsetY="15" w="15" h="15"/>
+						<Center offsetX="15" offsetY="15" w="20" h="15"/>
+						<Right offsetX="35" offsetY="15" w="15" h="15"/>
+						<Bottomleft offsetX="0" offsetY="35" w="15" h="15"/>
+						<Bottom offsetX="15" offsetY="35" w="20" h="15"/>
+						<Bottomright offsetX="35" offsetY="35" w="15" h="15"/>
+						<OffSet x="15" y="15" />
+					</NineSquare>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="地图">
+					<Color r="0" g="0" b="0"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="$parentFireMark"  abs_x="31" abs_y="20">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="2" y="2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBg" file="ui/mobile/texture0/common.xml" uvname="label_search_recommend">
+							<Size>
+								<AbsDimension x="31" y="20"/>
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentFtn" fonttype="BlackFont16" justifyH="center" text="荐">
+							<Color r="255" g="251" b="144"/>
+							<Size>
+								<AbsDimension x="16" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):HotWordItemBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+	
+	<!-- 搜索记录条目模板 -->
+	<Button name="NSP_RecordTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="100" y="50"/>
+		</Size>
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_middle_empty" hidden="false" DrawType="ninesquare">
+					<NineSquare>
+						<Topleft		offsetX="0"  offsetY="0"	w="44"	h="17"/>
+						<Top			offsetX="44" offsetY="0"	w="44"  h="17"/>
+						<Topright		offsetX="88" offsetY="0"	w="44"	h="17"/>
+						<Left			offsetX="0"  offsetY="17"	w="44"	h="17"/>
+						<Center			offsetX="44" offsetY="17"	w="44"	h="17"/>
+						<Right			offsetX="88" offsetY="17"	w="44"	h="17"/>
+						<Bottomleft		offsetX="0"  offsetY="34"	w="44"	h="17"/>
+						<Bottom			offsetX="44" offsetY="34"	w="44"	h="17"/>
+						<Bottomright	offsetX="88" offsetY="34"	w="44"	h="17"/>
+						<OffSet x="44" y="17" />
+					</NineSquare>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" text="地图">
+					<Color r="54" g="53" b="53"/>
+					<Size>
+						<AbsDimension x="100" y="25"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):RecordItemBtn_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!-- 玩家头像模板 -->	
+	<Button name="NSP_PlayerHeadTemplate" virtual="true" click_threshold="5">
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentHeadBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_head.png" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/roleicons/32.png" rel_x="0.9" rel_y="0.9">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIconBox" file="ui/headframes/1.png" rel_x="1.3" rel_y="1.3">
+					<Anchors>
+						<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+		</Frames>
+	</Button>
+
+	<!-- 搜索作者信息条目模板 -->
+	<Button name="NSP_PlayerTemplate" virtual="true" click_threshold="5" abs_x="564" abs_y="130">
+		<Layers>
+			<Layer level="background">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentRightMask" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="151" abs_y="124">
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-2" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentName" fonttype="BlackFont24" text="工坊地图的名字">
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="294" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="129" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentCountryFlag" file="ui/mobile/texture0/countryflag.xml" uvname="img_Taiwan" hidden="true">
+					<Size>
+						<AbsDimension x="33" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentName" relativePoint="right">
+							<Offset>
+								<AbsDimension x="10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentUID" fonttype="BlackFont20" text="工坊地图的作者">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="295" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="11"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentFunIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_fans_gray.png">
+					<Size>
+						<AbsDimension x="21" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentUID">
+							<Offset>
+								<AbsDimension x="0" y="29"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentFunCount" fonttype="BlackFont18" text="9527万">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="120" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentFunIcon">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentMapIcon" file="ui/mobile/texture0/miniwork.xml" uvname="icon_share_map.png">
+					<Size>
+						<AbsDimension x="27" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentFunIcon">
+							<Offset>
+								<AbsDimension x="105" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentMapCount" fonttype="BlackFont18" text="9999">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="200" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentMapIcon">
+							<Offset>
+								<AbsDimension x="7" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentPic" inherits="NSP_PlayerHeadTemplate" abs_x="108" abs_y="108">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="11" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):PlayerItemHeadBtn_OnClick()</OnClick>
+				</Scripts>				
+			</Button>
+			
+			<Button name="$parentFollow" abs_x="50" abs_y="53" hidden="false" inherits="TemplateBtn17">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-32" y="38"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_n.png" abs_x="28" abs_y="25">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentIconFollowed" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_h.png" abs_x="28" abs_y="25">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):PlayerItemFollowBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+	</Button>
+
+	<!-- 房间条目模板 -->
+	<Button name="NSP_RoomTemplate" virtual="true" click_threshold="5" abs_x="564" abs_y="130">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+				<Texture name="$parentRightMask" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="151" abs_y="120">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentPic" file="ui/white.png" abs_x="230" abs_y="120">
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+							<Offset>
+								<AbsDimension x="2" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##附近
+				<Texture name="$parentNearByBkg" file="ui/mobile/texture2/miniwork.xml" uvname="label_map_hot" abs_x="87" abs_y="41">
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPic" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-5" y="-3" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture> 				
+				<FontString name="$parentNearBy" justifyH="center" fonttype="BlackFont20" abs_x="87" abs_y="20" text="$9334">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNearByBkg">
+							<Offset>
+								<AbsDimension x="-2" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##版本号
+				<Texture name="$parentVersionBkg" file="ui/mobile/texture2/room.xml" uvname="img_board_version" abs_x="105" abs_y="24">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parentPic" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture> 				
+				<FontString name="$parentVersion" justifyH="left" fonttype="BlackFont" lineInterval="1" text="版本：0.1.5" abs_x="100" abs_y="16">
+					<Color r="219" g="219" b="219"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentVersionBkg">
+							<Offset>
+								<AbsDimension x="11" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##密码
+				<Texture name="$parentPassWord" file="ui/mobile/texture2/ingame2.xml" uvname="lzy_04" hidden="true">
+					<Size>
+						<AbsDimension x="31" y="36"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativeTo="$parentPic" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="-8" y="5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				##房间名
+				<FontString name="$parentRoomName" fonttype="BlackFont24" lineInterval="1" text="一二三四五六七的房间" abs_x="250" abs_y="24">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="8" y="6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##游戏状态
+				<Texture name="$parentGameStageBkg" inherits="TemplateBkg13" abs_x="68" abs_y="25">
+					<Anchors>
+						<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+							<Offset>
+								<AbsDimension x="-5" y="9" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture> 	
+				<FontString name="$parentGameStage" fonttype="BlackFont16" justifyH="center" lineInterval="1" text="$1343" hidden="true" abs_x="80" abs_y="17">
+					<Color r="0" g="151" b="137"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentGameStageBkg" >
+							<Offset>
+								<AbsDimension x="0" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##uin
+				<FontString name="$parentUin" fonttype="BlackFont20" lineInterval="1" text="952728" abs_x="180" abs_y="20">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentRoomName">
+							<Offset>
+								<AbsDimension x="0" y="7"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##类型
+				<Texture name="$parentTagIcon" file="ui/mobile/texture2/room.xml" uvname="icon_adv_n" abs_x="21" abs_y="20">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentPic" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="11" y="-36" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>			
+				<FontString name="$parentTag" fonttype="BlackFont18" lineInterval="1" text="生存"  abs_x="100" abs_y="18">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentTagIcon">
+							<Offset>
+								<AbsDimension x="3" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##平台标识
+				<Texture name="$parentPlatformIcon" file="ui/mobile/texture2/room.xml" uvname="icon_pcserver" hidden="false" abs_x="19" abs_y="20">
+					<Anchors>
+						<Anchor point="bottom" relativeTo="$parentPic" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="22" y="-2	" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentPCHint" fonttype="BlackFont18" lineInterval="1" text="$6090" hidden="true" abs_x="160" abs_y="18">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentTag" relativePoint="bottomleft">
+							<Offset>
+								<AbsDimension x="0" y="9"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##网络
+				<Texture name="$parentNetIcon" file="ui/mobile/texture2/room.xml" uvname="icon_wifi_green" abs_x="18" abs_y="18">
+					<Anchors>
+						<Anchor point="bottomleft" relativeTo="$parentPlatformIcon" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="5" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentNetDelay" fonttype="BlackFont18" lineInterval="1" text="良好" hidden="true" abs_x="50" abs_y="18">
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentNetIcon">
+							<Offset>
+								<AbsDimension x="2" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentNetName" hidden="true" justifyH="left" fonttype="BlackFont18" lineInterval="1" text="（广东电信）" abs_x="120" abs_y="18">
+					<Color r="1" g="194" b="16"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentNetDelay">
+							<Offset>
+								<AbsDimension x="-10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##维护状态
+				<Texture name="$parentMaintenanceIcon" file="ui/mobile/texture2/room.xml" uvname="icon_repair_server_green" abs_x="18" abs_y="18" hidden="true">
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentNetIcon" relativePoint="right">
+							<Offset>
+								<AbsDimension x="10" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				
+				##上次进入的房间
+				<FontString name="$parentForeEnter" fonttype="BlackFont21" justifyH="right" lineInterval="2" fontStyle="border" text="$164" hidden="true">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="250" y="22"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-10" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				##人数
+				<FontString name="$parentNum" fonttype="BlackFont16" justifyH="center" lineInterval="2" text="5/40" abs_x="70" abs_y="17">
+					<Color r="1" g="194" b="16"/>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-2" y="-12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentNumIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_user_black" abs_x="18" abs_y="18">
+					<Anchors>
+						<Anchor point="right" relativeTo="$parentNum" relativePoint="left">
+							<Offset>
+								<AbsDimension x="20" y="-2" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>	
+			</Layer>
+		</Layers>
+		<Frames>
+			##收藏
+			<Button name="$parentCollect" abs_x="39" abs_y="35">
+				<Anchors>
+					<Anchor point="bottomright" relativeTo="$parentPic" relativePoint="bottomright">
+						<Offset>
+							<AbsDimension x="-1" y="-3" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_like_h"/>
+					</Layer>
+				</Layers>
+			</Button>
+			##加入
+			<Button name="$parentEnterBtn" abs_x="40" abs_y="42">
+				<Anchors>
+					<Anchor point="right" relativeTo="$parent" relativePoint="right">
+						<Offset>
+							<AbsDimension x="-18" y="-2" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<Texture name="$parentNumIcon" file="ui/mobile/texture2/room.xml" uvname="icon_intomap.png" abs_x="24" abs_y="22">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" />
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_circle_yellow.png" abs_x="36" abs_y="37">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):RoomItemEnterBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##违规
+			<Button name="$parentViolationBtn" abs_x="98" abs_y="30" hidden="true">
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg90" abs_x="98" abs_y="30">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+						</Anchor>
+					</Anchors>
+				</NormalTexture>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentTxt" fonttype="BlackFont20" justifyH="center" lineInterval="2" text="$20310" abs_x="98" abs_y="18">
+							<Color r="248" g="50" b="50"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):RoomItemViolationBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			##地图违规
+			<Button name="$parentMapViolationBtn" abs_x="100" abs_y="100" hidden="true" >
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parentPic">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						##违规提示
+						<Texture name="$parentBreakLawIcon" file="ui/mobile/texture2/shop.xml" uvname="pic_warning" hidden="false" abs_x="87" abs_y="74">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						##违规提示字符
+						<FontString name="$parentBreakLawTag" fonttype="BlackFont18" justifyH="center" text="$20310" rel_x="1" abs_y="24" hidden="false">
+							<Color r="255" g="255" b="255"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentBreakLawIcon">
+									<Offset>
+										<AbsDimension x="0" y="5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):RoomItemMapViolationBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):RoomItem_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	<!--搜索地图条目模板-->
+	<Button name="NSP_ArchiveTemplate" virtual="true" click_threshold="5" abs_x="564" abs_y="130">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!--<Texture name="$parentBkg" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="mngf_kapiandi"/>-->
+				<!--背景换成九宫拉伸-->
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" rel_x="1.0" rel_y="1.0">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentRightMask" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" rel_x="0.28" rel_y="0.95">
+					<Anchors>
+						<Anchor point="right" relativePoint="right" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--地图缩略图-->
+				<Texture name="$parentPic" file="ui/login_bg.png">
+					<Size>
+						<AbsDimension x="230" y="121"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="4" y="4"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--文本提示标识-->
+				<FontString name="$parentPicExplain" fonttype="BlackFont18" justifyH="center" text="$20309" hidden="true">
+					<Color r="255" g="253" b="233"/>
+					<Size>
+						<AbsDimension x="228" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="-6"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentHaveModPic" file="ui/mobile/texture2/miniwork.xml" uvname="ico_plugin_stroke">
+					<Size>
+						<AbsDimension x="21" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentHaveCodePic" file="ui/mobile/texture2/common_icon.xml" uvname="icon_program.png" hidden = "true">
+					<Size>
+						<AbsDimension x="28" y="28"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--缩略图遮罩-->
+				<!--<Texture name="$parentMask" file="ui/mobile/texture2/outgame2/uitex4.xml" uvname="grzx_diban_zhz" samplermode="2">-->
+					<!--<Size>-->
+						<!--<AbsDimension x="230" y="121"/>-->
+					<!--</Size>-->
+					<!--<Anchors>-->
+						<!--<Anchor point="center" relativePoint="center" relativeTo="$parentPic">-->
+							<!--<Offset>-->
+								<!--<AbsDimension x="0" y="0"/>-->
+							<!--</Offset>-->
+						<!--</Anchor>-->
+					<!--</Anchors>-->
+				<!--</Texture>-->
+				<!--点赞背景-->
+				<Texture name="$parentGradeBkg" file="ui/mobile/texture2/outgame2/uitex3.xml" uvname="dtxx_pingfen.png" hidden="true">
+					<Size>
+						<AbsDimension x="60" y="60" />
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativeTo="$parentPic" relativePoint="bottomright">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--点赞-->
+				<FontString name="$parentGrade" fonttype="BlackFont21" justifyH="center" text="4.1" hidden="true">
+					<Color r="85" g="60" b="32"/>
+					<Size>
+						<AbsDimension x="50" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentGradeBkg">
+							<Offset>
+								<AbsDimension x="0" y="-3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--标签_图标old:mngf_biaoqian01-->
+				<Texture name="$parentTagBkg" file="ui/mobile/texture2/miniwork.xml" uvname="label_map_selection" hidden="false">
+					<Size>
+						<AbsDimension x="87" y="41" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parentPic" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="-6" y="-5" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--标签-->
+				<FontString name="$parentTagName" fonttype="BlackFont20" justifyH="center" text="精选" >
+					<Color r="55" g="54" b="49"/>
+					<Size>
+						<AbsDimension x="75" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentTagBkg">
+							<Offset>
+								<AbsDimension x="0" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentName" fonttype="BlackFont24" text="工坊地图的名字" >
+					<Color r="61" g="69" b="70"/>
+					<Size>
+						<AbsDimension x="285" y="23"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="9" y="10"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--地图作者_图标-->
+				<Texture name="$parentAuthorIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_user">
+					<Size>
+						<AbsDimension x="21" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentName">
+							<Offset>
+								<AbsDimension x="0" y="25"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--地图作者-->
+				<FontString name="$parentAuthorName" fonttype="BlackFont18" text="工坊地图的作者">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="230" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentAuthorIcon">
+							<Offset>
+								<AbsDimension x="3" y="1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--下载量_图标-->
+				<Texture name="$parentDownIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_download">
+					<Size>
+						<AbsDimension x="21" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="bottomleft" relativeTo="$parentAuthorIcon">
+							<Offset>
+								<AbsDimension x="0" y="17"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--下载量-->
+				<FontString name="$parentDown" fonttype="BlackFont18" text="9527万">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="120" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentDownIcon">
+							<Offset>
+								<AbsDimension x="5" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--:在玩人数_图标-->
+				<Texture name="$parentNowPlayerIcon" file="ui/mobile/texture2/miniwork.xml" uvname="icon_player">
+					<Size>
+						<AbsDimension x="27" y="20"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomright" relativeTo="$parentDownIcon">
+							<Offset>
+								<AbsDimension x="105" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--:在玩人数-->
+				<FontString name="$parentNowPlayer" fonttype="BlackFont18" text="9999">
+					<Color r="101" g="116" b="118"/>
+					<Size>
+						<AbsDimension x="200" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="right" relativeTo="$parentNowPlayerIcon">
+							<Offset>
+								<AbsDimension x="7" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--:地图类型_背景-->
+				<Texture name="$parentLabelBkg" file="ui/mobile/texture2/room.xml" uvname="img_board_version" abs_x="85" abs_y="24">
+				
+					<Anchors>
+						<Anchor point="topright" relativePoint="topright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="1" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<!--地图类型_图标-->
+				<Texture name="$parentLabelIcon" file="ui/mobile/texture2/room.xml" uvname="icon_adv_mini" hidden="true">
+					<Size>
+						<AbsDimension x="15" y="15"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentLabelBkg">
+							<Offset>
+								<AbsDimension x="6" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>	
+				</Texture>
+				<!--地图类型_名字-->
+				<FontString name="$parentLabelName" fonttype="BlackFont18" justifyH="center" text="生存">
+					<Color r="255" g="255" b="255"/>
+					<Size>
+						<AbsDimension x="70" y="17"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentLabelBkg">
+							<Offset>
+								<AbsDimension x="0" y="-1"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<!--活动-->
+				<Texture name="$parentActivityLabelBkg" file="ui/mobile/texture0/miniwork.xml" uvname="label_map_match.png">
+					<Size>
+						<AbsDimension x="80" y="30"/>
+					</Size>
+					<Anchors>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentPic">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentActivityLabelName" fonttype="BlackFont18" text="$30011" justifyH="center" justifyV="middle">
+					<Color r="253" g="255" b="60"/>
+					<Size>
+						<AbsDimension x="36" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentActivityLabelBkg">
+							<Offset>
+								<AbsDimension x="36" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+			</Layer>
+		</Layers>
+		<Frames>
+			<!--下载按钮-->
+			<Button name="$parentFuncBtn">
+				<Size>
+					<AbsDimension x="91" y="43"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-7" y="46"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<!--:下载:下载用向下的箭头标识, 隐藏掉”下载"字样-->
+						<FontString name="$parentName1" fonttype="BlackFont24" justifyH="center" text="$4039">
+							<Color r="11" g="105" b="11"/>
+							<Size>
+								<AbsDimension x="95" y="25"/>
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--进入-->
+						<FontString name="$parentName2" fonttype="BlackFont18" justifyH="center" text="$520" hidden="true">
+							<Color r="51" g="55" b="55"/>
+							<Size>
+								<AbsDimension x="95" y="17"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<!--暂停-->
+						<FontString name="$parentName3" fonttype="BlackFont18" justifyH="center" text="$4769" hidden="true">
+							<Color r="55" g="51" b="51"/>
+							<Size>
+								<AbsDimension x="95" y="17"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentProgressBarBkg" inherits="TemplateBkg16" hidden="false">
+							<Size>
+								<AbsDimension x="91" y="8" />
+							</Size>
+							<Anchors>
+								<Anchor point="top" relativeTo="$parent" relativePoint="bottom">
+									<Offset>
+										<AbsDimension x="0" y="2" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<Texture name="$parentProgressTex" inherits="TemplateBkg17" hidden="false">
+							<Size>
+								<AbsDimension x="50" y="8" />
+							</Size>
+							<Anchors>
+								<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentProgressBarBkg">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<!--下载箭头图片-->
+						<Texture name="$parentPicDown" file="ui/mobile/texture2/common_icon.xml" uvname="icon_download_black.png" hidden="true">
+							<Size>
+								<AbsDimension x="20" y="18" />
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="left" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="3" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>	
+						</Texture>
+						<!--地图大小-->
+						<FontString name="$parentSize" fonttype="BlackFont18" justifyH="center" text="6.66M">
+							<Color r="55" g="54" b="51"/>
+							<Size>
+								<AbsDimension x="64" y="16"/>
+							</Size>
+							<Anchors>
+								<Anchor point="left" relativePoint="right" relativeTo="$parentPicDown">
+									<Offset>
+										<AbsDimension x="2" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<NormalTexture name="$parentNormal" inherits="TemplateBkg9" />
+				<PushedTexture name="$parentPushedBG" inherits="TemplateBkg9" >
+					<Size>
+						<AbsDimension x="87" y="41"/>
+					</Size>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):MapItemFuncBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):MapItem_OnClick()</OnClick>
+		</Scripts>
+	</Button>
+
+	<Button name="NSP_MoreBtnTemplate" virtual="true" abs_x="90" abs_y="47">
+		<Anchors>
+			<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="-14" y="5"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="overlay">
+				<FontString name="$parentName" justifyH="center" fonttype="BlackFont20" lineInterval="1" text="更多》" abs_x="60" abs_y="20">
+					<Color r="55" g="54" b="49"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<NormalTexture name="$parentNormal" inherits="TemplateBkg84" rel_x="1.0" rel_y="1.0"/>
+		<PushedTexture name="$parentPushedBG" inherits="TemplateBkg84" rel_x="0.8" rel_y="0.8">
+			<Anchors>
+				<Anchor point="center" relativePoint="center" relativeTo="$parentNormal" />
+			</Anchors>
+		</PushedTexture>
+	</Button>
+	<!--综合搜索结果 作者部分-->
+	<Frame name="NSP_MulResultPlayerPartTemplate" abs_x="1172" abs_y="203" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentTipTitle" fonttype="BlackFont24" justifyH="left"  text="$21864">
+					<Color r="77" g="112" b="117" />
+					<Size>
+						<AbsDimension x="120" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="11" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg20" rel_x="1.0" abs_y="2">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentMoreBtn" inherits="NSP_MoreBtnTemplate">
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):ResultPlayerPartMoreBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentPlayerA" inherits="NSP_PlayerTemplate">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="11" y="56"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentPlayerB" inherits="NSP_PlayerTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentPlayerA">
+						<Offset>
+							<AbsDimension x="22" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<!--综合搜索结果 房间部分-->
+	<Frame name="NSP_MulResultRoomPartTemplate" abs_x="1172" abs_y="203" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentTipTitle" fonttype="BlackFont24" justifyH="left"  text="$21862">
+					<Color r="77" g="112" b="117" />
+					<Size>
+						<AbsDimension x="120" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="11" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentLine" inherits="TemplateBkg20" rel_x="1.0" abs_y="2">
+					<Anchors>
+						<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="0" y="-5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentMoreBtn" inherits="NSP_MoreBtnTemplate">
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):ResultRoomPartMoreBtn_OnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parentRoomA" inherits="NSP_RoomTemplate">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="11" y="56"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parentRoomB" inherits="NSP_RoomTemplate">
+				<Anchors>
+					<Anchor point="left" relativePoint="right" relativeTo="$parentRoomA">
+						<Offset>
+							<AbsDimension x="22" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+		</Frames>
+	</Frame>
+
+	<!--综合搜索结果 地图部分-->
+	<Frame name="NSP_MulResultMapPartTemplate" abs_x="1172" abs_y="56" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentTipTitle" fonttype="BlackFont24" justifyH="left"  text="$21865">
+					<Color r="77" g="112" b="117" />
+					<Size>
+						<AbsDimension x="120" y="24"/>
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="11" y="20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+		</Frames>
+	</Frame>
+
+
+	<!--搜索平台主体界面-->
+	<Frame name="NSearchPlatform" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2000" rel_x="1.0" rel_y="1.0"  autoTextLangScale="true">
+		<Anchors>
+			<Anchor point="center" relativePoint="center" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg2" stretchedge="true" abs_x="1" abs_y="1">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="-6" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="3" y="3"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##关闭按钮
+			<Button name="$parentCloseBtn">
+				<Size>
+					<AbsDimension x="58" y="54"/>
+				</Size>
+				<Anchors>
+					<Anchor point="topleft" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-606" y="35"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" abs_x="48" abs_y="44">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</NormalTexture>
+				<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_return.png" abs_x="42" abs_y="38">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentNormal" />
+					</Anchors>
+				</PushedTexture>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):backBtn_OnClick();</OnClick>
+				</Scripts>
+			</Button>
+
+			<!-- defaultframe -->
+			<Frame name="$parentDefaultFrame" hidden="false" abs_x="1196" abs_y="580">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="120" />
+						</Offset>
+					</Anchor>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-23" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- 左边热词 -->
+					<Frame name="$parentHotWordFrame" abs_x="680" rel_y="1.0">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg5" rel_x="1.0" rel_y="1.0">
+								</Texture>
+								<FontString name="$parentTipTitle" fonttype="BlackFont24" justifyH="left"  text="$21859">
+									<Color r="77" g="112" b="117" />
+									<Size>
+										<AbsDimension x="300" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="31" y="27"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLine" inherits="TemplateBkg20">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="31" y="69"/>
+											</Offset>
+										</Anchor>
+										<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-31" y="71"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentSwitchBtn" abs_x="91" abs_y="43">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-31" y="17"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentText" fonttype="BlackFont18" justifyH="center" text="$3849">
+											<Color r="51" g="55" b="55"/>
+											<Size>
+												<AbsDimension x="80" y="19"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-1"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" inherits="TemplateBkg15" />
+								<PushedTexture name="$parentPushed" inherits="TemplateBkg15" abs_x="87" abs_y="40" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):HotWordSwitchBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentItem1" inherits="NSP_HotWordTemplate" id="1"/>
+							<Button name="$parentItem2" inherits="NSP_HotWordTemplate" id="2"/>
+							<Button name="$parentItem3" inherits="NSP_HotWordTemplate" id="3"/>
+							<Button name="$parentItem4" inherits="NSP_HotWordTemplate" id="4"/>
+							<Button name="$parentItem5" inherits="NSP_HotWordTemplate" id="5"/>
+							<Button name="$parentItem6" inherits="NSP_HotWordTemplate" id="6"/>
+							<Button name="$parentItem7" inherits="NSP_HotWordTemplate" id="7"/>
+							<Button name="$parentItem8" inherits="NSP_HotWordTemplate" id="8"/>
+							<Button name="$parentItem9" inherits="NSP_HotWordTemplate" id="9"/>
+							<Button name="$parentItem10" inherits="NSP_HotWordTemplate" id="10"/>
+							<Button name="$parentItem11" inherits="NSP_HotWordTemplate" id="11"/>
+							<Button name="$parentItem12" inherits="NSP_HotWordTemplate" id="12"/>
+							<Button name="$parentItem13" inherits="NSP_HotWordTemplate" id="13"/>
+							<Button name="$parentItem14" inherits="NSP_HotWordTemplate" id="14"/>
+							<Button name="$parentItem15" inherits="NSP_HotWordTemplate" id="15"/>
+							<Button name="$parentItem16" inherits="NSP_HotWordTemplate" id="16"/>
+							<Button name="$parentItem17" inherits="NSP_HotWordTemplate" id="17"/>
+							<Button name="$parentItem18" inherits="NSP_HotWordTemplate" id="18"/>
+							<Button name="$parentItem19" inherits="NSP_HotWordTemplate" id="19"/>
+							<Button name="$parentItem20" inherits="NSP_HotWordTemplate" id="20"/>
+							<Button name="$parentItem21" inherits="NSP_HotWordTemplate" id="21"/>
+							<Button name="$parentItem22" inherits="NSP_HotWordTemplate" id="22"/>
+							<Button name="$parentItem23" inherits="NSP_HotWordTemplate" id="23"/>
+							<Button name="$parentItem24" inherits="NSP_HotWordTemplate" id="24"/>
+							<Button name="$parentItem25" inherits="NSP_HotWordTemplate" id="25"/>
+						</Frames>
+						##无热词搜索提示
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentNoTips" file="ui/mobile/texture2/bigtex/img_noroom.png" 
+									abs_x="435" abs_y="247" hidden="false" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNoTipText" fonttype="BlackFont46" lineInterval="2" justifyH="center" text="$50104" 
+									abs_x="300" abs_y="35" hidden="false">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentNoTips">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					
+					</Frame>
+					<!-- 右边历史 -->
+					<Frame name="$parentRecordFrame" abs_x="495" rel_y="1.0">
+						<Anchors>
+							<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg5" rel_x="1.0" rel_y="1.0">
+								</Texture>
+								<FontString name="$parentTipTitle" fonttype="BlackFont24" justifyH="left"  text="$21821">
+									<Color r="77" g="112" b="117" />
+									<Size>
+										<AbsDimension x="120" y="24"/>
+									</Size>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="31" y="27"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<Texture name="$parentLine" inherits="TemplateBkg20">
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="31" y="69"/>
+											</Offset>
+										</Anchor>
+										<Anchor point="bottomright" relativePoint="topright" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="-31" y="71"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNoRecordTip" fonttype="BlackFont24" justifyH="left" text="暂无记录~" hidden="true">
+									<!-- <Color r="77" g="112" b="117"/> -->
+									<Color r="177" g="200" b="190"/>
+									<Size>
+										<AbsDimension x="140" y="26"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="128"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						##无搜索历史提示
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentNoRecordIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" 
+									abs_x="435" abs_y="247" hidden="false" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNoRecordText" fonttype="BlackFont46" lineInterval="2" justifyH="center" text="$50105" 
+									abs_x="200" abs_y="22" hidden="false">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="top" relativePoint="bottom" relativeTo="$parentNoRecordIcon">
+											<Offset>
+												<AbsDimension x="0" y="14"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentClearBtn" abs_x="91" abs_y="43">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-31" y="17"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentText" fonttype="BlackFont18" justifyH="center" text="$21852">
+											<Color r="51" g="55" b="55"/>
+											<Size>
+												<AbsDimension x="80" y="19"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="-1"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<NormalTexture name="$parentNormal" inherits="TemplateBkg15" />
+								<PushedTexture name="$parentPushed" inherits="TemplateBkg15" abs_x="87" abs_y="40" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</PushedTexture>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):RecordClearBtn_OnClick();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentItem1" inherits="NSP_RecordTemplate" id="1"/>
+							<Button name="$parentItem2" inherits="NSP_RecordTemplate" id="2"/>
+							<Button name="$parentItem3" inherits="NSP_RecordTemplate" id="3"/>
+							<Button name="$parentItem4" inherits="NSP_RecordTemplate" id="4"/>
+							<Button name="$parentItem5" inherits="NSP_RecordTemplate" id="5"/>
+							<Button name="$parentItem6" inherits="NSP_RecordTemplate" id="6"/>
+							<Button name="$parentItem7" inherits="NSP_RecordTemplate" id="7"/>
+							<Button name="$parentItem8" inherits="NSP_RecordTemplate" id="8"/>
+							<Button name="$parentItem9" inherits="NSP_RecordTemplate" id="9"/>
+							<Button name="$parentItem10" inherits="NSP_RecordTemplate" id="10"/>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+
+			<!-- 搜索结果页frame -->
+			<Frame name="$parentSearchResultFrame" hidden="true" abs_x="1240" abs_y="580">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="120" />
+						</Offset>
+					</Anchor>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="-17" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" rel_x="1.0" abs_y="578">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="48" />
+									</Offset>
+								</Anchor>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!-- tab按钮-->
+					<Button name="$parentTabBtn1" inherits="NSP_TopTabTemplate">
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="0" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):ResultTabBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTabBtn2" inherits="NSP_TopTabTemplate">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentTabBtn1" relativePoint="right">
+								<Offset>
+									<AbsDimension x="2" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):ResultTabBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTabBtn3" inherits="NSP_TopTabTemplate">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentTabBtn2" relativePoint="right">
+								<Offset>
+									<AbsDimension x="2" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):ResultTabBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentTabBtn4" inherits="NSP_TopTabTemplate">
+						<Anchors>
+							<Anchor point="left" relativeTo="$parentTabBtn3" relativePoint="right">
+								<Offset>
+									<AbsDimension x="2" y="0" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):ResultTabBtn_OnClick()</OnClick>
+						</Scripts>
+					</Button>
+					<!-- common result list 显示综合/房间/作者/地图搜索结果的listview -->
+					<ListViewFrame name="$parentCommonResultList" hidden="true" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="34" y="11" />
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-34" y="-11" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" rel_x='1.0' abs_y="1700" >	
+								<Frames>
+									<Frame name="$parentPlayerPart" inherits="NSP_MulResultPlayerPartTemplate">
+										<Anchors>
+											<Anchor point="top" relativePoint="top" relativeTo="$parent">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentRoomPart" inherits="NSP_MulResultRoomPartTemplate">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentPlayerPart">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+									<Frame name="$parentMapPart" inherits="NSP_MulResultMapPartTemplate">
+										<Anchors>
+											<Anchor point="top" relativePoint="bottom" relativeTo="$parentRoomPart">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>			
+						</Frames>
+					</ListViewFrame>
+					<!-- common result list 玩家搜索结果的listview -->
+					<ListViewFrame name="$parentPlayerResultList" hidden="true" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="34" y="11" />
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-34" y="-11" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" rel_x='1.0' abs_y="1700" >	
+							</Frame>			
+						</Frames>
+					</ListViewFrame>
+					<!-- common result list 房间搜索结果的listview -->
+					<ListViewFrame name="$parentRoomResultList" hidden="true" slidingY="true" slideplane="$parentPlane">
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="34" y="11" />
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+								<Offset>
+									<AbsDimension x="-34" y="-11" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" rel_x='1.0' abs_y="1700" >	
+							</Frame>			
+						</Frames>
+					</ListViewFrame>
+					
+					<Frame name="$parentNullResult" hidden="true" abs_x='392' abs_y="326">
+						<Anchors>
+							<Anchor point="center" relativePoint="center" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="-13" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="background">
+								<Texture name="$parentBkg" file="ui/mobile/texture2/bigtex/img_noroom.png">
+									<Size>
+										<AbsDimension x="392" y="223" />
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativeTo="$parent" relativePoint="top">
+											<Offset>
+												<AbsDimension x="0" y="0" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<FontString name="$parentNullTitle" fonttype="BlackFont30" lineInterval="1" text="$21824" justifyH="center">
+									<Color r="77" g="112" b="117"/>
+									<Size>
+										<AbsDimension x="392" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="Bottom" relativeTo="$parentBkg">
+											<Offset>
+												<AbsDimension x="0" y="21"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentNullTitleS" fonttype="BlackFont30" lineInterval="1" text="$21858" justifyH="center">
+									<Color r="77" g="112" b="117"/>
+									<Size>
+										<AbsDimension x="392" y="30"/>
+									</Size>
+									<Anchors>
+										<Anchor point="top" relativePoint="Bottom" relativeTo="$parentNullTitle">
+											<Offset>
+												<AbsDimension x="0" y="21"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+
+			<!-- 搜索输入框 -->
+			<Frame name="$parentInput" abs_x="878" abs_y="57">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="top">
+						<Offset>
+							<AbsDimension x="-512" y="35"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="top">
+						<Offset>
+							<AbsDimension x="598" y="35"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="parentEditBkg" file="ui/mobile/texture2/common.xml" uvname="board_recharge_num.png" DrawType="ninesquare_center" color = "25D9D9D9">
+							<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+							<Anchors>
+								<Anchor point="left" relativeTo="$parent" relativePoint="left">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+								<Anchor point="right" relativeTo="$parent" relativePoint="right">
+									<Offset>
+										<AbsDimension x="-224" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<!--搜索按钮图标-->
+					<Layer level="overlay">
+						<Texture name="$parentIcon" file="ui/mobile/texture0/ingame2.xml" uvname="icon_search_map02.png" abs_x="26" abs_y="26" >
+							<Color r="185" g="185" b="185"/>
+							<Anchors>
+								<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+									<Offset>
+										<AbsDimension x="35" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					<!--搜索输入框-->
+					<SafeEditBox name="$parentEdit" letters="24" multiLine="false"  >
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="76" y="17" />
+								</Offset>
+							</Anchor>
+							<Anchor point="bottomright" relativeTo="$parent" relativePoint="bottomright">
+								<Offset>
+									<AbsDimension x="-324" y="-13" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<FontString name="$parentFont" fonttype="BlackFont26"  justifyH="left" textcolor="ff657476">
+						</FontString>
+						<FontString name="$parentDefault" default="true" fonttype="BlackFont26" text="$21857" textcolor="ffb9b9b9"/>
+						<Scripts>
+							<OnFocusLost>GetInst("UIManager"):GetCtrl("NSearchPlatform"):InputOnFocusLost();</OnFocusLost>
+							<OnEnterPressed platform="pc">GetInst("UIManager"):GetCtrl("NSearchPlatform"):InputOnEnterPressed();</OnEnterPressed>
+							<OnFinishChar> GetInst("UIManager"):GetCtrl("NSearchPlatform"):OnFinishCharChanged(); </OnFinishChar>
+						</Scripts>
+					</SafeEditBox>
+					<!--搜索按钮-->
+					<Button name="$parentSearchBtn" abs_x="182" abs_y="61">
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<FontString name="$parentName" fonttype="BlackFont24" justifyV="middle" justifyH="center" text="$3818">
+									<Color r="55" g="54" b="51"/>
+									<Anchors>
+										<Anchor point="center" relativePoint="center" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="0" y="-1"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow"/>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/common.xml" uvname="btn_big_yellow">
+							<Size>
+								<AbsDimension x="172" y="51"/>
+							</Size>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):InputSearchBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+					<!--搜索按钮图标-->
+					<!-- <Layers>
+						<Layer level="overlay">
+							<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_search" abs_x="25" abs_y="25" >
+								<Anchors>
+									<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+										<Offset>
+											<AbsDimension x="36" y="18"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+							</Texture>
+						</Layer>
+					</Layers> -->
+					<!--清空按钮-->					
+					<Button name="$parentClearBtn" hidden="true">
+						<Size>
+							<AbsDimension x="50" y="50"/>
+						</Size>
+						<Anchors>
+							<Anchor point="right" relativePoint="right" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="-260" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture name="$parentNormal" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="19" abs_y="19" color = "ff657476">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</NormalTexture>
+						<PushedTexture name="$parentPushedBG" file="ui/mobile/texture2/miniwork.xml" uvname="icon_reset" abs_x="16" abs_y="16" color = "ff657476">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</PushedTexture>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("NSearchPlatform"):InputClearBtn_OnClick();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+
+			<!-- 水印 -->
+			<Frame name="$parentWaterMarkFrame" abs_x="380" abs_y="16">
+				<Anchors>
+					<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<FontString name="$parentFont" fonttype="BlackFont" text="" abs_x="380" abs_y="16" justifyH="right">
+							<Color r="142" g="153" b="155"/>
+							<Anchors>
+								<Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="-4" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnEvent>GetInst("UIManager"):GetCtrl("NSearchPlatform"):HandleEvent();</OnEvent>
+			<OnShow>GetInst("UIManager"):GetCtrl("NSearchPlatform"):OnShow();</OnShow>
+			<OnHide>GetInst("UIManager"):GetCtrl("NSearchPlatform"):OnHide();</OnHide>
+			<!-- <OnLoad>RoomFrame_OnLoad();</OnLoad>
+			<OnShow>RoomFrame_OnShow();</OnShow>
+			<OnHide>RoomFrame_Hide();</OnHide>
+			<OnUpdate>RoomFrame_OnUpdate();</OnUpdate> -->
+		</Scripts>
+	</Frame>
+</Ui>

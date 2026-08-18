@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Frame name="ChatInputFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="12">
+		<Size>
+			<RelDimension x="1.0" y="0.04" />
+		</Size>
+		<Anchors>
+			<Anchor point="bottomleft" relativePoint="bottomleft" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="0"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="40000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0"/>
+					</Size>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<SafeEditBox name="ChatInputBox" letters="256" historyLines="1" multiLine="false">
+				<Size>
+					<RelDimension x="1.0" y="1.0" />
+				</Size>
+				<FontString name="$parentDefault" default="true" fonttype="BlackFont" text="$20210" textcolor="ff4c4c4c" />
+				<FontString name="$parentFont" fonttype="BlackFont">abc:</FontString>
+				<Scripts>
+					<OnEnterPressed>SpamPreventionPresenter:displayFullscreenSendChat();</OnEnterPressed>
+				</Scripts>
+			</SafeEditBox>
+		</Frames>
+		<Scripts>
+			<OnShow>ChatInputFrame_OnShow();</OnShow>
+			<OnHide>ChatInputFrame_OnHide();</OnHide>
+		</Scripts>
+	</Frame>
+
+    <Frame name="ChatMsgTemplate" virtual="true" hidden="true" abs_x="315" abs_y="30" input_transparent="true">
+		<Layers>
+			<Layer level="overlay">
+				<Texture name="$parentTagBkg" abs_x="75" abs_y="21" file="ui/mobile/texture0/common.xml" uvname="img_board_chat_b">
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+							<Offset>
+								<AbsDimension x="10" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentTag" fonttype="BlackFont" justifyH="center" justifyV="middle" text="系统" abs_x="75" abs_y="21">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentTagBkg">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="$parentContent" lineInterval="5" multiLine="true" fonttype="BlackFont18" fontStyle="border" justifyV="middle" abs_x="210" rel_y="1.0" input_transparent="true">				
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="95" y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+		</Frames>
+	</Frame>
+
+	##游戏地图聊天框
+	<Frame name="ChatContentFrame" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="9" input_transparent="true">
+		<Size>
+			<AbsDimension x="343" y="260" />
+		</Size>
+		<Anchors>
+			<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="94"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" color="40000000">
+					<Size>
+						<RelDimension x="1.0" y="1.0" />
+					</Size>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<RichText name="ChatContentText" lineInterval="10" multiLine="true" fonttype="BlackFont18" fontStyle="border" autoextend="true" input_transparent="true">
+				<Size>
+					<AbsDimension x="333" y="250" />
+				</Size>		
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+						<Offset>
+							<AbsDimension x="5" y="5" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>ChatContentFrame_OnClick()</OnClick>
+				</Scripts>
+			</RichText>
+		</Frames>
+		<Scripts>
+			<OnLoad>ChatContentFrame_OnLoad();</OnLoad>
+			<OnEvent>ChatContentFrame_OnEvent();</OnEvent>
+			<OnUpdate>ChatContentFrame_OnUpdate();</OnUpdate>
+		</Scripts>
+	</Frame>
+
+	##家园地图聊天框
+	<Frame name="HomeChatContentFrame" parent="UIClient" frameStrata="BACKGROUND" hidden="true" framelevel="2" input_transparent="true">
+		<Size>
+			<AbsDimension x="315" y="195" />
+		</Size>
+		<Anchors>
+			<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+				<Offset>
+					<AbsDimension x="0" y="120"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture0/common.xml" uvname="img_bd_black50_r.png" DrawType="NineSquare">
+                    <NineSquare>
+						<Topleft 		offsetX="0" 	offsetY="0" 	w="5" 	h="5"/>
+						<Top 			offsetX="5" 	offsetY="0" 	w="5"  h="5"/>
+						<Topright 		offsetX="10" 	offsetY="0" 	w="5" 	h="5"/>
+						<Left 			offsetX="0" 	offsetY="5" 	w="5" 	h="5"/>
+						<Center 		offsetX="5" 	offsetY="5" 	w="5"  h="5"/>
+						<Right 			offsetX="10" 	offsetY="5" 	w="5" 	h="5"/>
+						<Bottomleft 	offsetX="0" 	offsetY="10" 	w="5" 	h="5"/>
+						<Bottom 		offsetX="5" 	offsetY="10" 	w="5"  h="5"/>
+						<Bottomright 	offsetX="10" 	offsetY="10" 	w="5" 	h="5"/>
+						<OffSet x="5" y="5" />
+					</NineSquare>
+                    <Size>
+                        <RelDimension x="1.0" y="1.0" />
+                    </Size>
+					<Anchors>
+						<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+							<Offset>
+								<AbsDimension x="0" y="0" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			##用于辅助计算消息内容高度(宽度需和消息内容RichText保持一致)
+			<RichText name="$parentTest" lineInterval="5" multiLine="true" fonttype="BlackFont18" fontStyle="border" justifyV="middle" hidden="true" abs_x="210" abs_y="175" input_transparent="true">	
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parent" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-10" y="10" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</RichText>
+			##用SlidingFrame实现
+			<SlidingFrame name="HomeChatMessages" slidingY="true" slideplane="$parentPlane">
+                <Size>
+                    <RelDimension x="1.0" y="1.0"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentPlane" hidden="true" />
+                    <Frame name="$parentMsg1" inherits="ChatMsgTemplate" id="1"/>
+                    <Frame name="$parentMsg2" inherits="ChatMsgTemplate" id="2"/>
+                    <Frame name="$parentMsg3" inherits="ChatMsgTemplate" id="3"/>
+                    <Frame name="$parentMsg4" inherits="ChatMsgTemplate" id="4"/>
+                    <Frame name="$parentMsg5" inherits="ChatMsgTemplate" id="5"/>
+                    <Frame name="$parentMsg6" inherits="ChatMsgTemplate" id="6"/>
+                    <Frame name="$parentMsg7" inherits="ChatMsgTemplate" id="7"/>
+                    <Frame name="$parentMsg8" inherits="ChatMsgTemplate" id="8"/>
+                    <Frame name="$parentMsg9" inherits="ChatMsgTemplate" id="9"/>
+					<Frame name="$parentMsg10" inherits="ChatMsgTemplate" id="10"/>
+				</Frames>
+				<Scripts>
+					<OnLoad>HomeChatContentFrame_OnLoad()</OnLoad>
+                    <OnUpdate>HomeChatContentFrame_OnUpdate()</OnUpdate>
+				</Scripts>
+            </SlidingFrame>
+		</Frames>
+	</Frame>
+</Ui>

@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/customPicMgr/ResourceCenterCustomPicMgrCtrl.lua"/>
+    <Script file="ui/mobile/mvc/resource/resourceCenter/customPicMgr/ResourceCenterCustomPicMgrModel.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/customPicMgr/ResourceCenterCustomPicMgrView.lua"/>
+	<Script file="ui/mobile/mvc/resource/resourceCenter/customPicMgr/ResourceCenterCustomPicMgrInterface.lua"/>
+
+	##资源格子模板
+	<Button name="ResourceCenterCustomPicMgrTemplate" virtual="true" abs_x="78" abs_y="78" click_threshold="5">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="78" abs_y="78" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/bigtex/shengli.png" abs_x="74" abs_y="74" > 
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentMask" inherits="TemplateBigBkg18" hidden="true" abs_x="74" abs_y="74">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+				<FontString name="$parentMaskText" hidden="true" justifyH="center" justifyV="middle" fonttype="BlackFont22" text="$16264" abs_x="315" abs_y="24">
+					<Color r="255" g="255" b="255"/>
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentMask" />
+					</Anchors>
+				</FontString>
+				<Texture name="$parentAdd" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="48" abs_y="48" >	
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBkg" />
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentState" file="ui/mobile/texture2/common_icon.xml" uvname="icon_uploading" abs_x="20" abs_y="20" hidden="true" >
+					<Anchors>
+						<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="4" y="4" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" inherits="TemplateBkg11" hidden="true" abs_x="80" abs_y="80">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+					</Anchors>
+				</Texture>
+				#违规
+				<Texture name="$parentBreakBkg"  inherits="TemplateBigBkg18" hidden="true"/>
+				<Texture name="$parentBreakLawIcon" file="ui/mobile/texture2/shop.xml" uvname="pic_warning" hidden="true" abs_x="46" abs_y="39" >
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parentBreakBkg">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentSelect" abs_x="32" abs_y="32">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="6" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/common.xml" uvname="btn_blackboard_white"/>
+						<Texture name="$parentChecked" file="ui/mobile/texture2/common.xml"  uvname="btn_circle_yellow" hidden="true">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+					<Layer level="overlap">
+						<Texture name="$parentTick" file="ui/mobile/texture2/friend.xml" uvname="icon_yes" hidden="true" abs_x="20" abs_y="15">
+							<Anchors>
+								<Anchor point="center" relativePoint="center"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):OnGridSelect();</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):OnGridClick();</OnClick>
+		</Scripts>
+	</Button>
+
+	##界面
+	<Frame name="ResourceCenterCustomPicMgr" parent="UIClient" frameStrata="MEDIUM" framelevel="11" hidden="true" abs_x="1079" abs_y="554">
+		<Anchors>
+			<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+				<Offset>
+					<AbsDimension x="190" y="74"/>
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Frames>
+			##详情栏
+			<Frame name="$parentDetailFrame" abs_x="340" abs_y="632">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+						<Texture name="$parentTextureBg" file="ui/mobile/texture2/common.xml" uvname ="img_board_resource" abs_x="315" abs_y="315" DrawType="ninesquare_center">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="9"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+							<NineSquare ox="0" oy="0" tilew="5" tileh="5"/>
+						</Texture>
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="315" abs_y="2">
+							<Anchors>
+								<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentTextureBg">
+									<Offset>
+										<AbsDimension y="51"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentTitle" justifyH="center" justifyV="middle" fonttype="BlackFont22" text="$20403" abs_x="315" abs_y="24">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentTextureBg">
+									<Offset>
+										<AbsDimension y="16"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentEmptyIcon" file="ui/mobile/texture2/bigtex/img_noroom.png" abs_x="321" abs_y="183" hidden="true" >
+							<Anchors>
+								<Anchor point="top" relativeTo="$parent" relativePoint="top">
+									<Offset>
+										<AbsDimension y="138"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+						<FontString name="$parentEmptyTips" justifyH="center" justifyV="middle" fonttype="BlackFont26" text="$16171" abs_x="600" abs_y="26">
+							<Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="top" relativePoint="bottom" relativeTo="$parentEmptyIcon">
+									<Offset>
+										<AbsDimension y="37"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						##图片
+						<Texture name="$parentTextureView" abs_x="315" abs_y="315">
+							<Anchors>
+								<Anchor point="center" relativeTo="$parentTextureBg" relativePoint="center">
+									<Offset>
+										<AbsDimension x="0" y="0" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##详情描述
+					<Frame name="$parentDesc" abs_x="315" abs_y="250">
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent" />
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<FontString name="$parentNameTitle" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$153" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+											<Offset>
+												<AbsDimension x="10" y="19"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentName" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$153" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentNameTitle">
+											<Offset>
+												<AbsDimension x="150" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentTypeTitle" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$20405" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentNameTitle">
+											<Offset>
+												<AbsDimension x="0" y="43"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentType" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$20405" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTypeTitle">
+											<Offset>
+												<AbsDimension x="150" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentAuthorTitle" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$20407" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentTypeTitle">
+											<Offset>
+												<AbsDimension x="0" y="43"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentAuthor" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$20407" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentAuthorTitle">
+											<Offset>
+												<AbsDimension x="150" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentStatusTitle" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$9550" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentAuthorTitle">
+											<Offset>
+												<AbsDimension x="0" y="43"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+								<FontString name="$parentStatus" justifyH="left" justifyV="middle" fonttype="BlackFont24" text="$9550" abs_x="150" abs_y="26">
+									<Color r="77" g="112" b="117"/>
+									<Anchors>
+										<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentStatusTitle">
+											<Offset>
+												<AbsDimension x="150" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+			</Frame>
+			##资源列表
+			<Frame name="$parentPicList" abs_x="730" abs_y="632">
+				<Anchors>
+					<Anchor point="topleft" relativePoint="topright" relativeTo="$parentDetailFrame">
+						<Offset>
+							<AbsDimension x="9" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg5" />
+						<Texture name="$parentLine" inherits="TemplateBkg20" abs_x="706" abs_y="2">
+							<Anchors>
+								<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+									<Offset>
+										<AbsDimension y="74"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Frames>
+					##文件夹标题栏
+					<Frame name="$parentFolderTitle" abs_x="280" abs_y="46" >
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="12" y="15" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="BACKGROUND">
+								<Texture name="$parentNameBkg" inherits="TemplateBkg8" abs_x="280" abs_y="46" />
+								<FontString name="$parentName" fonttype="BlackFont20" justifyH="left" abs_x="280" abs_y="22" text="1" justifyV="middle">
+									<Color r="255" g="255" b="255"/>
+									<Anchors>
+										<Anchor point="left" relativePoint="left" relativeTo="$parentNameBkg">
+											<Offset>
+												<AbsDimension x="16" />
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Button name="$parentModifyBtn" abs_x="47" abs_y="50" inherits="TemplateBtn31">
+								<Anchors>
+									<Anchor point="right" relativePoint="right" relativeTo="$parentNameBkg"/>
+								</Anchors>
+								<Layers>
+								    <Layer level="overlap">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_input.png" abs_x="23" abs_y="24">
+											<Anchors>
+												<Anchor point="center" relativePoint="center">
+												</Anchor>
+											</Anchors>
+										</Texture>
+								    </Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ModifyBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentDelBtn" inherits="TemplateDeleteRedBtn">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentModifyBtn">
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):DelFolderBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCreateBoardBtn" inherits="TemplateBtn17" abs_x="50" abs_y="53" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentDelBtn">
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_minicanvas" abs_x="40" abs_y="40">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):CreateBoardBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentImportModelBtn" inherits="TemplateBtn17" abs_x="50" abs_y="53" hidden="true">
+								<Anchors>
+									<Anchor point="left" relativePoint="right" relativeTo="$parentCreateBoardBtn">
+										<Offset>
+											<AbsDimension x="22" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_import" abs_x="40" abs_y="40">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parent" relativePoint="center" />
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenter"):ImportModelBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##管理按钮
+					<Frame name="$parentManageFrame" abs_x="360" abs_y="74" input_transparent="true">
+						<Anchors>
+							<Anchor point="topright" relativePoint="topright" />
+						</Anchors>
+						<Frames>
+							<Button name="$parentManageBtn" inherits="TemplateMiddleYellowBtn" text="$3461">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-12" y="14" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):ManageBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentAllBtn" inherits="TemplateMiddleYellowBtn" text="$3798">
+								<Anchors>
+									<Anchor point="topright" relativePoint="topright" relativeTo="$parent">
+										<Offset>
+											<AbsDimension x="-12" y="14" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):AllBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+							<Button name="$parentCancelBtn" inherits="TemplateMiddleBlueBtn" text="$3018">
+								<Anchors>
+									<Anchor point="right" relativePoint="left" relativeTo="$parentAllBtn">
+										<Offset>
+											<AbsDimension x="-10" />
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):CancelBtnClicked();</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					##资源列表
+					<ListViewFrame name="$parentBox" slidingY="true" abs_x="730" abs_y="406" slideplane="$parentPlane" prefuncname="ResourceCenterPicListBox" >
+						<Anchors>
+							<Anchor point="bottom" relativePoint="bottom" relativeTo="$parent">
+								<Offset>
+									<AbsDimension y="-139" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Frames>
+							<Frame name="$parentPlane" hidden="true" abs_x="728" abs_y="360" />
+						</Frames>
+						<Scripts>
+							<OnMouseDown>GetInst("UIManager"):GetCtrl("ResourceCenter"):OnClick();</OnMouseDown>
+						</Scripts>
+					</ListViewFrame>
+					<Button name="$parentUploadBtn" >
+						<Size>
+							<AbsDimension x="84" y="84"/>
+						</Size>
+						<Anchors>
+							<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+								<Offset>
+									<AbsDimension x="326" y="277"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture  name="$parentNormal"     abs_x="120" abs_y="150" />
+						<PushedTexture  name="$parentPushedBG"   abs_x="110" abs_y="140" >
+							<Anchors>
+								<Anchor point="center" relativePoint="center">
+								</Anchor>
+							</Anchors>
+						</PushedTexture>
+					<FontString name="$parentTxt" fonttype="BlackFont26" lineInterval="2" text="$16170" abs_x="100" abs_y="28" justifyH="center" >
+						    <Color r="77" g="112" b="117"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" >
+									<Offset>
+										<AbsDimension x="0" y="64"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentBkg" inherits="TemplateBigBkg15">
+									<Anchors>
+										<Anchor point="center" relativePoint="center" abs_x="60	" abs_y="60">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+								<Texture name="$parentAdd" file="ui/mobile/texture2/common.xml" uvname="icon_add_green.png" abs_x="48" abs_y="48" >
+									<Anchors>
+										<Anchor point="center" relativePoint="center">
+											<Offset>
+												<AbsDimension x="0" y="0"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):OnUploadPic();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			
+			##操作管理栏
+			<Frame name="$parentOperateFrame" abs_x="718" abs_y="120">
+				<Anchors>
+					<Anchor point="bottom" relativePoint="bottom" relativeTo="$parentPicList">
+						<Offset>
+							<AbsDimension y="-6" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="background">
+						<Texture name="$parentBkg" inherits="TemplateBigBkg23"/>
+					</Layer>
+					<Layer level="overlay">
+						<FontString name="$parentTips" fonttype="BlackFont24" rel_x="1" rel_y="1" justifyH="center" justifyV="middle" text="$16114" >
+							<Color r="77" g="112" b="117" />
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentMoveBtn" inherits="TemplateSquareBlueBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16115" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="40" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="ico_bind_move" abs_x="36" abs_y="36">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):MoveBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDelBtn" inherits="TemplateSquareRedBtn" abs_x="78" abs_y="70">
+						<FontString name="$parentName" justifyH="center" justifyV="middle" text="$16116" rel_x="1" abs_y="20" fonttype="BlackFont18" textcolor="#ff3d4546">
+							<Anchors>
+								<Anchor point="center" relativePoint="bottom" relativeTo="$parent" >
+									<Offset>
+										<AbsDimension y="14" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<Anchors>
+							<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+								<Offset>
+									<AbsDimension x="155" y="14" />
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="overlay">
+								<Texture name="$parentIcon" file="ui/mobile/texture2/common_icon.xml" uvname="icon_delete" abs_x="32" abs_y="32">
+									<Anchors>
+										<Anchor point="center" relativePoint="center"/>
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnClick>GetInst("UIManager"):GetCtrl("ResourceCenterCustomPicMgr"):DelPicBtnClicked();</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+	</Frame>
+</Ui>

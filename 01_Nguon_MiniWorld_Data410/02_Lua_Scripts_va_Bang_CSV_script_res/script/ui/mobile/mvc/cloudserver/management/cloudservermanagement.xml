@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/cloudserver/management/CloudServerManagementModel.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/management/CloudServerManagementView.lua"/>
+	<Script file="ui/mobile/mvc/cloudserver/management/CloudServerManagementCtrl.lua"/>
+
+
+	##地图数据源模板
+	<Button name= "CloudServerRoomDataSourceTemplate" virtual="true" abs_x="539" abs_y="108">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" inherits="TemplateBigBkg6" />
+				<Texture name="$parentRightBkg" file="ui/mobile/texture2/room.xml" uvname="img_borad_map_ray" abs_x="108" abs_y="102">
+					<Anchors>
+						<Anchor point="right" relativeTo="$parent" relativePoint="right"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentCheck" inherits="TemplateBigBkg13"  hidden="true" />
+				<FontString name="$parentName" fonttype="BlackFont22" justifyH="left" justifyV="middle" text="地鼠和三号的生活" abs_x="200" abs_y="30" >
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="200" y="-20"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parentUin" fonttype="BlackFont18" text="" abs_x="250" abs_y="20">
+					<Color r="61" g="69" b="70"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="200" y="5"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_adv_mini.png">
+					<Size>
+						<AbsDimension x="22" y="21"/>
+					</Size>
+					<Anchors>
+						<Anchor point="left" relativeTo="$parentBkg" relativePoint="left">
+							<Offset>
+								<AbsDimension x="200" y="30" />
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parentType" fonttype="BlackFont17" justifyH="left" justifyV="middle" text="$1053" abs_x="100" abs_y="25" >
+					<Color r="101" g="116" b="118"/>
+					<Anchors>
+						<Anchor point="left" relativePoint="left" relativeTo="$parentIcon">
+							<Offset>
+								<AbsDimension x="28" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentHead" abs_x="184" abs_y="97">
+				<Anchors>
+					<Anchor point="left" relativeTo="$parent" relativePoint="left">
+						<Offset>
+							<AbsDimension x="6" y="-2"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentBkg" file="ui/mobile/texture2/miniwork.xml" hidden="true" uvname="img_icon_head" />
+						<Texture name="$parentIcon" file="ui/roleicons/1.png" abs_x="184" abs_y="97">
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent"/>
+							</Anchors>
+						</Texture>
+
+					</Layer>
+				</Layers>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnClick> GetInst("UIManager"):GetCtrl("CloudServerCopy"):MapArchiveClicked();</OnClick>
+		</Scripts>
+	</Button>
+	##管理界面右侧模板
+	<Button name= "CloudServerTabBtnTemplate" virtual="true" inherits="TemplateWhiteGrayTabCheckBtn" >
+		<Scripts>
+			<OnClick> GetInst("UIManager"):GetCtrl("CloudServerManagement"):LeftTabBtnClicked();</OnClick>
+		</Scripts>
+	</Button>
+
+	##租赁服房间管理
+	<Frame name="CloudServerManagement" parent="UIClient" frameStrata="MEDIUM" rel_x="1.0" rel_y="1.0" framelevel="2302" hidden="true">
+		<Anchors>
+			<Anchor point="center" relativeTo="$parent" relativePoint="center">
+				<Offset>
+					<AbsDimension x="0" y="0" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<!-- <Texture name="$parentMask" file="ui/white.png" color="ad000000" /> -->
+		<!-- 		<Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="1076" abs_y="600">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture> -->
+				
+			</Layer>
+		</Layers>
+		<Frames>
+			##遮罩 
+			<Button name="$parentMask" rel_x="1.0" rel_y="1.0">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentMask" file="ui/white.png" color="ad000000" />
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):CloseManagementPanel() </OnClick>
+				</Scripts>
+			</Button>
+			##内容区域
+			<Frame name="$parentBkg" abs_x="1076" abs_y="600">
+				<Anchors>
+					<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture name="$parentTex" inherits="TemplateBigBkg2" />
+						<Texture name="$parentLeftBkg" inherits="TemplateBigBkg24" abs_x="168" abs_y="500">
+							<Anchors>
+								<Anchor point="left" relativeTo="$parentTex" relativePoint="left">
+									<Offset>
+										<AbsDimension x="18" y="30"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+			</Frame>
+			##标题栏
+			<Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg2" abs_x="1072" abs_y="61">
+				<Anchors>
+					<Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+				</Anchors>
+			</Frame>
+			##帮助按钮
+			<Frame name="$parentHelpBtn" inherits="TemplateHelpBtn">
+				<Anchors>
+					<Anchor point="left" relativePoint="left" relativeTo="$parentTitleFrame">
+						<Offset>
+							<AbsDimension x="15" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):HelpBtnClicked() </OnClick>
+				</Scripts>
+			</Frame>
+			##关闭按钮
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+				<Anchors>
+					<Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+						<Offset>
+							<AbsDimension x="-11" y="6"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):CloseManagementPanel() </OnClick>
+				</Scripts>
+			</Button>
+			##左侧按钮列表
+			<SlidingFrame name="CloudServerManagementLeft" slideplane="$parentPlane" slidingY="true" abs_x="168" abs_y="478">
+				<Anchors>
+					<Anchor point="top" relativePoint="top" relativeTo="$parentBkgLeftBkg" >
+						<Offset>
+							<AbsDimension x="0" y="11"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPlane" abs_x="168" abs_y="458" >
+						<Anchors>
+							<Anchor point="top" relativePoint="top" relativeTo="$parent"/>
+						</Anchors>
+					</Frame>
+					<Button name= "$parentBtn1" inherits= "CloudServerTabBtnTemplate" id ="1" />
+					<Button name= "$parentBtn2" inherits= "CloudServerTabBtnTemplate" id ="2" />
+					<Button name= "$parentBtn3" inherits= "CloudServerTabBtnTemplate" id ="3" />
+					<Button name= "$parentBtn4" inherits= "CloudServerTabBtnTemplate" id ="4" />
+
+				</Frames>
+			</SlidingFrame>
+			##右侧详情页
+			<Frame name="CloudServerManagementRight"  abs_x="851" abs_y="495" >
+				<Anchors>
+					<Anchor point="right" relativeTo="$parentBkg" relativePoint="right">
+						<Offset>
+							<AbsDimension x="-22" y="30"/>
+						</Offset>
+					</Anchor>
+
+				</Anchors>
+				<Frames>
+					<Frame name="$parentPage1" abs_x="851" abs_y="495" hidden="true">
+						<Layers>
+							<Layer>
+								<Texture name="$parentRightBkg" inherits="TemplateBigBkg5" abs_x="851" abs_y="495">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name = "$parentName" abs_x="840" abs_y="50">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+										<Offset>
+											<AbsDimension x="0" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$961" abs_x="140" abs_y="40">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentBg" inherits="TemplateBkg8" abs_x="355" abs_y="46">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentTitle" >
+													<Offset>
+														<AbsDimension x="15" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentCheckTips" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$16264" abs_x="140" abs_y="40" hidden="true">
+											<Color r="255" g="135" b="28"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBg" >
+													<Offset>
+														<AbsDimension x="10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<SafeEditBox name="$parentContent" letters="40" multiLine="false"  hidden="false" abs_x="335" abs_y="40">
+										<Anchors>
+											<Anchor point="center" relativePoint="center" relativeTo="$parentBg" >
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<FontString name="$parentFont" fonttype="BlackFont20" justifyV="middle">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativeTo="$parent" relativePoint="left">
+													<OffSet>
+														<AbsDimension x="16" y="0"/>
+													</OffSet>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentDefault" default="true" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="">
+											<Color r="255" g="255" b="255"/>
+										</FontString>
+										<Scripts>
+											<OnFocusLost>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPageName_OnFocusLost()</OnFocusLost>
+											<OnFocusGained>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPageName_OnClicked()</OnFocusGained>
+										</Scripts>
+									</SafeEditBox>
+								</Frames>
+							</Frame>
+							<Frame name = "$parentIntroduction" abs_x="840" abs_y="93">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentName" >
+										<Offset>
+											<AbsDimension x="0" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$169" abs_x="140" abs_y="40">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentBg" inherits="TemplateBkg8" abs_x="355" abs_y="94">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topright" relativeTo="$parentTitle" >
+													<Offset>
+														<AbsDimension x="15" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentCheckTips" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$16264" abs_x="140" abs_y="40" hidden="true">
+											<Color r="255" g="135" b="28"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topright" relativeTo="$parentBg" >
+													<Offset>
+														<AbsDimension x="10" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<SafeMultiEditBox name="$parentEdit" fonttype="BlackFont20" letters="200" multiLine="true" editMethod="527" abs_x="335" abs_y="80">
+										<Anchors>
+											<Anchor point="center" relativePoint="center" relativeTo="$parentBg" />
+										</Anchors>
+										<Scripts>
+											<OnFocusLost>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPageIntroduction_OnFocusLost()</OnFocusLost>
+											<OnFocusGained>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPageIntroduction_OnClicked()</OnFocusGained>
+										</Scripts>
+									</SafeMultiEditBox>
+								</Frames>
+							</Frame>
+							<Frame name = "$parentPassword" abs_x="840" abs_y="50">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentIntroduction" >
+										<Offset>
+											<AbsDimension x="0" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$3073" abs_x="140" abs_y="40">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<Texture name="$parentBg" inherits="TemplateBkg8" abs_x="355" abs_y="46">
+											<Anchors>
+												<Anchor point="left" relativePoint="right" relativeTo="$parentTitle" >
+													<Offset>
+														<AbsDimension x="15" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+									</Layer>
+								</Layers>
+								<Frames>
+									<EditBox name="$parentContent" letters="4" multiLine="false" abs_x="300" abs_y="40" password="true">
+										<Anchors>
+											<Anchor point="center" relativePoint="center" relativeTo="$parentBg" >
+												<Offset>
+													<AbsDimension x="-20" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<FontString name="$parentFont" fonttype="BlackFont20" justifyV="middle">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="left" relativeTo="$parent" relativePoint="left">
+													<OffSet>
+														<AbsDimension x="16" y="0"/>
+													</OffSet>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentDefault" default="true" fonttype="BlackFont20" textcolor="FFB9B9B9" justifyH="left" justifyV="middle" text="">
+										</FontString>
+										<Scripts>
+											<OnFocusLost>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPagePassword_OnFocusLost()</OnFocusLost>
+										</Scripts>
+									</EditBox>
+									<Button name="$parentCoderBtn" inherits="TemplateEditBoxCoderBtn" abs_x="46" abs_y="46">
+										<Anchors>
+											<Anchor point="right" relativeTo="$parentBg" relativePoint="right">
+												<Offset>
+													<AbsDimension x="0" y="0" />
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):PasswordCoderBtn_OnClick();</OnClick>
+											<OnShow>GetInst("UIManager"):GetCtrl("CloudServerManagement"):PasswordCoderBtn_OnShow();</OnShow>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentLimit" abs_x="840" abs_y="90">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentPassword" >
+										<Offset>
+											<AbsDimension x="0" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="right" justifyV="middle" text="$412" abs_x="140" abs_y="40">
+											<Color r="61" g="69" b="70"/>
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent" >
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<Button name="$parentFirend" inherits="TemplateTickBtn0">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentTitle" >
+												<Offset>
+													<AbsDimension x="15" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="overlay">
+												<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$9538" abs_x="240" abs_y="40">
+													<Color r="83" g="95" b="97"/>
+													<Anchors>
+														<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+															<Offset>
+																<AbsDimension x="40" y="2"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPageFriendEnterBtnClicked()</OnClick>
+										</Scripts>
+									</Button>
+									<Button name ="$parentWhitelist" inherits="TemplateTickBtn0">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentTitle" >
+												<Offset>
+													<AbsDimension x="290" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="overlay">
+												<FontString name="$parentTitle" fonttype="BlackFont20" justifyH="left" justifyV="middle" text="$9539" abs_x="2140" abs_y="40">
+													<Color r="83" g="95" b="97"/>
+													<Anchors>
+														<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+															<Offset>
+																<AbsDimension x="40" y="2"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomPageWhitelistEnterBtnClicked()</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Button name="$parentSaveBtn" abs_x="130" abs_y="50" inherits="TemplateBtn12">
+								<Anchors>
+									<Anchor point="bottomright" relativeTo="CloudServerManagementRightPage1" relativePoint="bottomright">
+										<Offset>
+											<AbsDimension x="-12" y="-10"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="overlay">
+										<FontString name="$parentName" fonttype="BlackFont20" justifyH="center" lineInterval="2" text="$3934">
+											<Color r="51" g="55" b="55"/>
+											<Size>
+												<AbsDimension x="130" y="20"/>
+											</Size>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>   
+									<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):SaveBtnClicked()</OnClick>
+								</Scripts>
+							</Button>
+						</Frames>
+					</Frame>
+					<Frame name="$parentPage4" abs_x="851" abs_y="495" hidden="false">
+						<Layers>
+							<Layer>
+								<Texture name="$parentRightBkg" inherits="TemplateBigBkg5" abs_x="851" abs_y="415">
+									<Anchors>
+										<Anchor point="top" relativePoint="top" relativeTo="$parent" />
+									</Anchors>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentLimit1" abs_x="840" abs_y="70">
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+										<Offset>
+											<AbsDimension x="0" y="15"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<RichText name="$parentTitle" fonttype="BlackFont20" justifyH="right" abs_x="140" abs_y="20">
+										<Anchors>
+											<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerManagement"):ShowTips(1)</MouseDownUpdate>
+											<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerManagement"):HideTips()</OnMouseUp>
+											<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("CloudServerManagement"):ShowTips(1)</OnEnter>
+											<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("CloudServerManagement"):HideTips()</OnLeave>
+										</Scripts>
+									</RichText>
+									<Button name = "$parentSwitch1" inherits="mini_SwitchBtnTemplateUI2" id = "1">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentTitle" >
+												<Offset>
+													<AbsDimension x="15" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer>
+												#倒计时
+												<FontString name="$parentTimeText" justifyH="left" fonttype="BlackFont20" lineInterval="2" fontStyle="normal" text="(14s)" abs_x="90" abs_y="20" >
+													<Color r="51" g="55" b="55"/>
+													<Anchors>
+														<Anchor point="left" relativePoint="left" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="125" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RoomLimitStartSwitchClicked()</OnClick>
+										</Scripts>
+									</Button>
+
+									#重启
+									<Button name="$parentReStart" inherits="TemplateBtn12">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentSwitch1">
+												<Offset>
+													<AbsDimension x="136" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer>
+												#文字
+												<FontString name="$parentText" justifyH="center" justifyV="middle" fonttype="BlackFont20" lineInterval="2" fontStyle="normal" text="$9737">
+													<Color r="51" g="55" b="55"/>
+													<Anchors>
+														<Anchor point="center" relativePoint="center">
+															<Offset>
+																<AbsDimension x="0" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+												#倒计时
+												<FontString name="$parentTimeText" justifyH="left" fonttype="BlackFont20" lineInterval="2" fontStyle="normal" text="(14s)" abs_x="90" abs_y="20">
+													<Color r="51" g="55" b="55"/>
+													<Anchors>
+														<Anchor point="left" relativePoint="left" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="145" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):CSRoomReStart_OnClick()</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentLimit2" abs_x="840" abs_y="70">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentLimit1" >
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<RichText name="$parentTitle" fonttype="BlackFont20" justifyH="right" abs_x="140" abs_y="20">
+										<Anchors>
+											<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerManagement"):ShowTips(2)</MouseDownUpdate>
+											<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerManagement"):HideTips()</OnMouseUp>
+											<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("CloudServerManagement"):ShowTips(2)</OnEnter>
+											<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("CloudServerManagement"):HideTips()</OnLeave>
+										</Scripts>
+									</RichText>
+									<Button name="CloudServerManagementLimit2Start" id="1" inherits="TemplateTickBtn5">
+										<Anchors>
+											<Anchor point="left" relativeTo="$parent" relativePoint="left">
+												<Offset>
+													<AbsDimension x="155" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):CloudServerManagementLimit2Maintain()</OnClick>
+										</Scripts>
+									</Button>
+									<Button name="CloudServerManagementLimit2Close" id="2" inherits="TemplateTickBtn5">
+										<Anchors>
+											<Anchor point="left" relativeTo="CloudServerManagementLimit2Start" relativePoint="right">
+												<Offset>
+													<AbsDimension x="15" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):CloudServerManagementLimit2Maintain()</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentNotice" abs_x="840" abs_y="140">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentLimit2" >
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="650" abs_y="99">
+											<Anchors>
+												<Anchor point="left" relativeTo="$parent" relativePoint="left">
+													<Offset>
+														<AbsDimension x="155" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentEditDefaultTxt" fonttype="BlackFont20" text="$9648" autowrap="true" abs_x="630" abs_y="80">
+											<Color r="255" g="255" b="255"/>
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parentEditBkg">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									<RichText name="$parentTitle" fonttype="BlackFont20" justifyH="right" abs_x="140" abs_y="20">
+										<Anchors>
+											<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+												<Offset>
+													<AbsDimension x="0" y="-40"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</RichText>
+									<Button name="$parentEdit" id="1" abs_x="47" abs_y="50">
+										<Anchors>
+											<Anchor point="bottomright" relativeTo="$parentEditBkg" relativePoint="bottomright">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="overlay">
+												<Texture name="$parentIcon" file="ui/mobile/texture0/common_icon.xml" uvname="icon_input">
+													<Size>
+														<AbsDimension x="28" y="28"/>
+													</Size>
+													<Anchors>
+														<Anchor point="center" relativePoint="center" relativeTo="$parent">
+															<Offset>
+																<AbsDimension x="0" y="0" />
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</Texture>
+											</Layer>
+										</Layers>
+										<NormalTexture name="$parentNormal"   inherits="TemplateBkg56_1"  />
+										<PushedTexture name="$parentPushedBG" inherits="TemplateBkg56_1" abs_x="44" abs_y="47" >
+											<Anchors>
+												<Anchor point="center" relativePoint="center" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</PushedTexture>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):SetServerRoomNoticeBtnClicked()</OnClick>
+										</Scripts>
+									</Button>
+
+								</Frames>
+							</Frame>
+							<Frame name="$parentAuto" abs_x="840" abs_y="100" hidden="true">
+								<Anchors>
+									<Anchor point="top" relativePoint="bottom" relativeTo="$parentNotice" >
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<RichText name="$parentTitle" fonttype="BlackFont20" justifyH="right" abs_x="140" abs_y="20">
+										<Anchors>
+											<Anchor point="left" relativePoint="left" relativeTo="$parent" >
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<MouseDownUpdate platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerManagement"):ShowTips(3)</MouseDownUpdate>
+											<OnMouseUp platform="mobile">GetInst("UIManager"):GetCtrl("CloudServerManagement"):HideTips()</OnMouseUp>
+											<OnEnter platform="pc">GetInst("UIManager"):GetCtrl("CloudServerManagement"):ShowTips(3)</OnEnter>
+											<OnLeave platform="pc">GetInst("UIManager"):GetCtrl("CloudServerManagement"):HideTips()</OnLeave>
+										</Scripts>
+									</RichText>
+									<Button name="$parentPay" inherits="mini_SwitchBtnTemplateUI2" id = "1">
+										<Anchors>
+											<Anchor point="left" relativePoint="right" relativeTo="$parentTitle" >
+												<Offset>
+													<AbsDimension x="15" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):AutoPaySwitchClicked()</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentDetail" abs_x="851" abs_y="80" >
+								<Anchors>
+									<Anchor point="top" relativePoint="top" relativeTo="$parent" >
+										<Offset>
+											<AbsDimension x="0" y="415"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer>
+										<Texture name="$parentIconBg" file="ui/mobile/texture2/common.xml" uvname="img_icon_lignt" abs_x="74" abs_y="74">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="8"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_server_4.png" abs_x="74" abs_y="74">
+											<Anchors>
+												<Anchor point="left" relativePoint="left" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="0" y="8"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentNetIcon" file="ui/mobile/texture2/room.xml" uvname="icon_wifi_green" abs_x="18" abs_y="18">
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parent">
+													<Offset>
+														<AbsDimension x="282" y="22"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentRepairIcon" file="ui/mobile/texture2/room.xml" uvname="icon_repair_server_green" abs_x="18" abs_y="18" hidden="true">
+											<Anchors>
+												<Anchor point="right" relativePoint="right" relativeTo="$parentNetIcon">
+													<Offset>
+														<AbsDimension x="30" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										#云服状态
+										<FontString name="$parentText1" fonttype="BlackFont18" abs_x="180" abs_y="18">
+											<Color r="83" g="95" b="97"/>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="130" y="22"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										#云服剩余时间
+										<FontString name="$parentText2" fonttype="BlackFont18" abs_x="260" abs_y="18" >
+											<Color r="83" g="95" b="97"/>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="400" y="22"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										#云服人数
+										<FontString name="$parentText3" fonttype="BlackFont18" abs_x="180" abs_y="18">
+											<Color r="83" g="95" b="97"/>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="130" y="56"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+										#云服创建时间
+										<FontString name="$parentText4" fonttype="BlackFont18" abs_x="280" abs_y="18">
+											<Color r="83" g="95" b="97"/>
+											<Anchors>
+												<Anchor point="topleft" relativeTo="$parent" relativePoint="topleft">
+													<Offset>
+														<AbsDimension x="400" y="56"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Frames>
+									##刷新按钮
+									<Button name="$parentFlashBtn" inherits="TemplateBtn7" hidden="false" abs_x="47" abs_y="50">
+										<Anchors>
+											<Anchor point="right" relativeTo="$parent" relativePoint="right">
+												<Offset>
+													<AbsDimension x="-30" y="10"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="ARTWORK">
+												<Texture name="$parentIcon" file="ui/mobile/texture2/room.xml" uvname="icon_refresh.png" abs_x="28" abs_y="28">
+													<Anchors>
+														<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+													</Anchors>
+												</Texture>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):RefreshClicked()</OnClick>
+										</Scripts>
+									</Button>
+								</Frames>
+							</Frame>
+							<Frame name="$parentTips" abs_x="262" abs_y="140"  hidden="true">
+								<Anchors>
+									<Anchor point="center" relativeTo="RoomUIFrame" relativePoint="center">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="BACKGROUND">
+										<Texture name="$parentBkg" inherits="TemplateBigBkg19"/>
+										<Texture name="$parentBkg2" inherits="TemplateBigBkg20" abs_x="242" abs_y="120">
+											<Anchors>
+												<Anchor point="center" relativeTo="$parentBkg" relativePoint="center">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<Texture name="$parentArrow" file="ui/mobile/texture2/messagebox.xml" uvname="board_tips_arrow" abs_x="10" abs_y="17">
+											<Angle value="-90" />
+											<Anchors>
+												<Anchor point="topleft" relativePoint="topleft" relativeTo="$parentBkg">
+													<Offset>
+														<AbsDimension x="35" y="-14"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</Texture>
+										<FontString name="$parentText" fonttype="BlackFont14" abs_x="225" abs_y="105" autowrap="true" lineInterval="8">
+											<Color r="224" g="220" b="202"/>
+											<Anchors>
+												<Anchor point="center" relativeTo="$parentBkg2" relativePoint="center">
+													<Offset>
+														<AbsDimension x="0" y="0"/>
+													</Offset>
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<Scripts>
+									<OnClick></OnClick>
+								</Scripts>
+							</Frame>
+						</Frames>
+					</Frame>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnUpdate>GetInst("UIManager"):GetCtrl("CloudServerManagement"):UpdateManagementPanel()</OnUpdate>
+			<OnClick>GetInst("UIManager"):GetCtrl("CloudServerManagement"):CloseManagementPanel()</OnClick>
+		</Scripts>
+	</Frame>
+	<Frame name="CloudServerNotice" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="2400"  rel_x="1.0" rel_y="1.0">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentBkg" file="ui/white.png" stretchedge="true" color="80000000"/>
+
+				<Texture name="$parentChenDi" inherits="TemplateBkg1" abs_x="653" abs_y="338">
+					<Anchors>
+						<Anchor point="center" relativePoint="center" relativeTo="$parent" />
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBkgIcon" file="ui/mobile/texture2/messagebox.xml" uvname="popup_clip.png" abs_x="105" abs_y="100" >
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="-300" y="169"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentEditBkg" inherits="TemplateBkg8" abs_x="515" abs_y="150">
+					<Anchors>
+						<Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+							<Offset>
+								<AbsDimension x="0" y="270"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parentCloseBtn" inherits="TemplateCloseBtn">
+				<Anchors>
+					<Anchor point="topright" relativePoint="topright" relativeTo="$parentChenDi">
+						<Offset>
+							<AbsDimension x="-27" y="16"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>RentPermitCtrl:CloseNoticeEditBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<SafeMultiEditBox name="$parentTextEdit" letters="250" multiLine="false" editMethod="527" abs_x="495" abs_y="130">
+				<Anchors>
+					<Anchor point="center" relativeTo="$parentEditBkg" relativePoint="center">
+						<Offset>
+							<AbsDimension x="0" y="0" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<textcolor r="255" g="255" b="255"/>
+				<FontString name="$parentFont" fonttype="BlackFont24" >
+					<Color r="255" g="255" b="255"/>
+				</FontString>
+				<FontString name="$parentDefault" justifyH="left" default="true" fonttype="BlackFont24" text="$9589" textcolor="ffd1bc89"/>
+				<Scripts>
+					<OnFocusGained>RentPermitCtrl:CloudServerNotice_OnFocusGained();</OnFocusGained>
+					<OnFocusLost>RentPermitCtrl:CloudServerNotice_OnFocusLost();</OnFocusLost>
+				</Scripts>
+			</SafeMultiEditBox>
+			<Button name="$parentSureBtn" inherits="TemplateBtn3">
+				<Anchors>
+					<Anchor  point="top" relativePoint="bottom" relativeTo="$parentBkg">
+						<Offset>
+							<AbsDimension x="0" y="-280" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="overlay">
+						<FontString name="$parentName" fonttype="BlackFont24" justifyH="center" justifyV="middle" text="$9589" abs_x="200" abs_y="40" >
+							<Color r="55" g="54" b="49"/>
+							<Anchors>
+								<Anchor point="center" relativePoint="center" relativeTo="$parent">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnClick>RentPermitCtrl:SureChangeNoticeBtnClick()</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="CloudServerNoticeOnlyAStart" id="1" inherits="TemplateTickBtn1">
+				<Anchors>
+					<Anchor point="topleft" relativeTo="$parentEditBkg" relativePoint="bottomleft">
+						<Offset>
+							<AbsDimension x="0" y="21"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>RentPermitCtrl:CloudServerNoticeOnlyATickedClicked()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnShow>RentPermitCtrl:CloudServerNotice_OnShow()</OnShow>
+		</Scripts>
+	</Frame>
+</Ui>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Ui>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibItemTypeSelect/ModsLibItemTypeSelectView.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibItemTypeSelect/ModsLibItemTypeSelectModel.lua"/>
+	<Script file="ui/mobile/mvc/modsLib/modsLibCommon/modsLibItemTypeSelect/ModsLibItemTypeSelectCtrl.lua"/>
+
+    ##道具类型格子模板
+    <Button name="ModsLibItemTypeSelect_TypeBtnTemp" virtual="true" abs_x="100" abs_y="100" hidden="false">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBkg" file="ui/mobile/texture2/modlib.xml" uvname="img_icon_select.png" />
+                <Texture name="$parentChecked" inherits="TemplateBigBkg13" hidden="true">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentIcon" file="ui/mobile/texture2/modlib.xml" uvname="icon_form_mess.png" abs_x="80" abs_y="80">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnClick>GetInst("UIManager"):GetCtrl("ModsLibItemTypeSelect"):TypeBtnOnClick();</OnClick>
+        </Scripts>
+    </Button>
+
+	##主界面
+    <Frame name="ModsLibItemTypeSelect" parent="UIClient" frameStrata="MEDIUM" hidden="true" framelevel="3000" >
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentMask" file="ui/white.png" color="80000000" stretchedge="true"/>
+                <Texture name="$parentBkg" inherits="TemplateBigBkg2" abs_x="993" abs_y="571">
+                    <Anchors>
+                        <Anchor point="center" relativePoint="center" relativeTo="$parent" />
+                    </Anchors>
+                </Texture>
+                <Texture name="$parentBkgBottom" inherits="TemplateBigBkg29" abs_x="991" abs_y="85">
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="bottom" relativeTo="$parentBkg" />
+                    </Anchors>  
+                </Texture>
+                <FontString name="$parentTip" fonttype="BlackFont26" justifyH="center" text="$4591" abs_x="500" abs_y="26">
+                    <Color r="101" g="116" b="118"/>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                            <Offset>
+                                <AbsDimension x="0" y="91"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentLine" inherits="TemplateBkg20" abs_x="936" abs_y="2">
+                    <Anchors>
+                        <Anchor point="top" relativePoint="bottom" relativeTo="$parentPrompt">
+                            <Offset>
+                                <AbsDimension x="0" y="22"/>
+                            </Offset>
+                        </Anchor>
+                  </Anchors>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            ##标题栏
+            <Frame name="$parentTitleFrame" inherits="TemplateTopTitleBkg1" abs_x="992" abs_y="61">
+                <Anchors>
+                    <Anchor point="top" relativeTo="$parentBkg" relativePoint="top" />
+                </Anchors>
+            </Frame>
+            ##关闭按钮
+            <Button name="$parentCloseBtn" inherits="TemplateCloseBtn0">
+                <Anchors>
+                    <Anchor point="topright" relativeTo="$parentBkg" relativePoint="topright">
+                        <Offset>
+                            <AbsDimension x="-11" y="6"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibItemTypeSelect"):CloseBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+            
+            ##格子列表
+            <LayoutBox name="$parentBox" layoutstyle="grid" spacex="40" spacey="40" autoupdate="false" abs_x="680" abs_y="250">
+                <Anchors>
+                    <Anchor point="top" relativePoint="top" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="0" y="180"/>
+                        </Offset>                       
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <Button name="$parentType1" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="1"/>
+                    <Button name="$parentType2" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="2"/>
+                    <Button name="$parentType3" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="3"/>
+                    <Button name="$parentType4" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="4"/>
+                    <Button name="$parentType5" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="5"/>
+                    <Button name="$parentType6" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="6"/>
+                    <Button name="$parentType7" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="7"/>
+                    <Button name="$parentType8" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="8"/>
+                    <Button name="$parentType9" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="9"/>
+                    <Button name="$parentType10" inherits="ModsLibItemTypeSelect_TypeBtnTemp" id="10"/>
+                </Frames>
+            </LayoutBox>
+
+            ##确定
+            <Button name="$parentOkBtn" inherits="TemplateBtnBig_OKBtn">
+                <Anchors>
+                    <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parentBkg">
+                        <Offset>
+                            <AbsDimension x="-20" y="-10"/>
+                        </Offset>                       
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>GetInst("UIManager"):GetCtrl("ModsLibItemTypeSelect"):OkBtnOnClick();</OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+        <Scripts>
+            <!-- <OnLoad>ChooseOriginalFrame_OnLoad();</OnLoad>
+            <OnShow>ChooseOriginalFrame_OnShow();</OnShow>
+            <OnHide>ChooseOriginalFrame_OnHide();</OnHide> -->
+        </Scripts>
+    </Frame>
+</Ui>
