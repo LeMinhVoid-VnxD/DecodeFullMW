@@ -1,0 +1,3255 @@
+# C++ API Reference: `libframework.dll`
+
+- **Tổng số Hàm Export**: 3,239
+- **Tổng số Lớp RTTI**: 6
+
+## Danh sách Classes (C++ Object Models)
+
+1. `BufferStackWalker`
+2. `MyStackWalker`
+3. `NonCopyable`
+4. `StackWalker`
+5. `StringStackWalker`
+6. `type_info`
+
+## Danh sách Hàm C++ Chi Tiết
+
+- `0x2399e0` : `int `private: static class core::hash_map<unsigned int,class Rainbow::RuntimeClass const *,struct Rainbow::UInt32HashFunction,struct std::equal_to<unsigned int> > & __cdecl Rainbow::RuntimeClassManager::StaticIdToTypeMap(void)'::`2'::$TSS0`
+- `0x2399fc` : `int `private: static class core::hash_map<char const *,class Rainbow::RuntimeClass const *,struct ConstCharPtrHashFunctor,struct ConstCharPtrEqualTo> & __cdecl Rainbow::RuntimeClassManager::StaticStringToTypeMap(void)'::`2'::$TSS0`
+- `0x21390` : `public: __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>(void)`
+- `0x21390` : `public: __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>(void)`
+- `0x21390` : `public: __thiscall CallbackArraySubBase<void (__cdecl*)(void)>::CallbackArraySubBase<void (__cdecl*)(void)>(void)`
+- `0x21390` : `public: __thiscall CallbackArraySubBase<bool (__cdecl*)(void)>::CallbackArraySubBase<bool (__cdecl*)(void)>(void)`
+- `0x31d70` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>(class Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> &&)`
+- `0x31dd0` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>(class Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> const &)`
+- `0x31e20` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>(void)`
+- `0x31d70` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>(class Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> &&)`
+- `0x31dd0` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>(class Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> const &)`
+- `0x31e20` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>(void)`
+- `0x31d70` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)>::CallbackDynamicArraySubBase<void (__cdecl*)(void)>(class Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)> &&)`
+- `0x31dd0` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)>::CallbackDynamicArraySubBase<void (__cdecl*)(void)>(class Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)> const &)`
+- `0x31e20` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)>::CallbackDynamicArraySubBase<void (__cdecl*)(void)>(void)`
+- `0x31d70` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>(class Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)> &&)`
+- `0x31dd0` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>(class Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)> const &)`
+- `0x31e20` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>(void)`
+- `0xa99d0` : `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask> const &)`
+- `0xa9aa0` : `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>(void)`
+- `0xac740` : `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask> const &)`
+- `0xac810` : `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>(void)`
+- `0xad9c0` : `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::IHttpTaskIterFace<class Rainbow::Http::WebRequest>(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest> const &)`
+- `0xada90` : `public: __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::IHttpTaskIterFace<class Rainbow::Http::WebRequest>(void)`
+- `0x43cc0` : `public: __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::SharedObject<class Rainbow::DataStream,1>(class Rainbow::SharedObject<class Rainbow::DataStream,1> const &)`
+- `0x43ce0` : `public: __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::SharedObject<class Rainbow::DataStream,1>(struct MemLabelId)`
+- `0x41450` : `public: __thiscall Rainbow::TRect<int>::TRect<int>(int,int,int,int)`
+- `0x41470` : `public: __thiscall Rainbow::TRect<int>::TRect<int>(void)`
+- `0x41490` : `public: __thiscall Rainbow::TRect<float>::TRect<float>(float,float,float,float)`
+- `0x41470` : `public: __thiscall Rainbow::TRect<float>::TRect<float>(void)`
+- `0x2ba10` : `public: __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::TextDOMTransferReadBase<class Rainbow::JSONRead>(class Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead> const &)`
+- `0x2bb10` : `public: __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::TextDOMTransferReadBase<class Rainbow::JSONRead>(void)`
+- `0x43cc0` : `protected: __thiscall Rainbow::ThreadSharedObject<class Rainbow::DataStream>::ThreadSharedObject<class Rainbow::DataStream>(class Rainbow::ThreadSharedObject<class Rainbow::DataStream> const &)`
+- `0x43ce0` : `protected: __thiscall Rainbow::ThreadSharedObject<class Rainbow::DataStream>::ThreadSharedObject<class Rainbow::DataStream>(struct MemLabelId)`
+- `0x32e10` : `public: __thiscall Rainbow::AABB::AABB(class Rainbow::AABB &&)`
+- `0x32e10` : `public: __thiscall Rainbow::AABB::AABB(class Rainbow::AABB const &)`
+- `0x32e40` : `public: __thiscall Rainbow::AABB::AABB(class Rainbow::MinMaxAABB const &)`
+- `0x32ef0` : `public: __thiscall Rainbow::AABB::AABB(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x20c50` : `public: __thiscall Rainbow::AABB::AABB(void)`
+- `0x414c0` : `public: __thiscall Rainbow::AspectRatios::AspectRatios(void)`
+- `0x43d00` : `public: __thiscall Rainbow::AsyncReadCommand::AsyncReadCommand(struct Rainbow::AsyncReadCommand &&)`
+- `0x43da0` : `public: __thiscall Rainbow::AsyncReadCommand::AsyncReadCommand(struct Rainbow::AsyncReadCommand const &)`
+- `0x43e60` : `public: __thiscall Rainbow::AsyncReadCommand::AsyncReadCommand(void)`
+- `0x45600` : `public: __thiscall Rainbow::AsyncReadManagerThreaded::AsyncReadManagerThreaded(struct MemLabelId)`
+- `0x21e30` : `public: __thiscall Rainbow::AtomicNode::AtomicNode(class Rainbow::AtomicNode &&)`
+- `0x21e30` : `public: __thiscall Rainbow::AtomicNode::AtomicNode(class Rainbow::AtomicNode const &)`
+- `0x26520` : `public: __thiscall Rainbow::AtomicPageAllocator::AtomicPageAllocator(class Rainbow::AtomicPageAllocator const &)`
+- `0x26560` : `public: __thiscall Rainbow::AtomicPageAllocator::AtomicPageAllocator(char const *,struct MemLabelId)`
+- `0x83080` : `public: __thiscall Rainbow::AtomicQueue::AtomicQueue(void)`
+- `0x22960` : `public: __thiscall Rainbow::AtomicSafetyHandle::AtomicSafetyHandle(void)`
+- `0x830d0` : `public: __thiscall Rainbow::AtomicStack::AtomicStack(void)`
+- `0x207c0` : `public: __thiscall Rainbow::Mutex::AutoAllowWorkerThreadLock::AutoAllowWorkerThreadLock(bool)`
+- `0x66630` : `public: __thiscall Rainbow::BackgroundJobQueue::BackgroundJobQueue(void)`
+- `0x21b10` : `public: __thiscall Rainbow::BatchAllocator::BatchAllocator(void)`
+- `0x46250` : `public: __thiscall Rainbow::BinaryStream::BinaryStream(class Rainbow::BinaryStream const &)`
+- `0x53c90` : `public: __thiscall Rainbow::BinaryStream::BinaryStream(struct MemLabelId)`
+- `0x53d60` : `public: __thiscall Rainbow::BinaryStream::BinaryStream(struct MemLabelId,class Rainbow::DataStream &)`
+- `0x53e60` : `public: __thiscall Rainbow::BinaryStream::BinaryStream(struct MemLabelId,unsigned int)`
+- `0x6f0a0` : `public: __thiscall Rainbow::Blackboard::Blackboard(class Rainbow::Blackboard &&)`
+- `0x6f100` : `public: __thiscall Rainbow::Blackboard::Blackboard(struct MemLabelId)`
+- `0x6f170` : `public: __thiscall Rainbow::Blackboard::Blackboard(void)`
+- `0x290e0` : `public: __thiscall Rainbow::BlockRange::BlockRange(unsigned int,unsigned int)`
+- `0x29100` : `public: __thiscall Rainbow::BlockRange::BlockRange(void)`
+- `0x66c90` : `public: __thiscall Rainbow::BlockRangeBalancedWorkload::BlockRangeBalancedWorkload(struct Rainbow::BlockRange *,unsigned int)`
+- `0x38440` : `public: __thiscall Rainbow::BoundsInt::BoundsInt(struct math::_int3 const &,struct math::_int3 const &)`
+- `0x20c50` : `public: __thiscall Rainbow::BoundsInt::BoundsInt(void)`
+- `0x860d0` : `public: __thiscall Rainbow::CPUInfo::CPUInfo(void)`
+- `0x55dc0` : `public: __thiscall Rainbow::CacheReaderBase::CacheReaderBase(class Rainbow::CacheReaderBase const &)`
+- `0x55dd0` : `public: __thiscall Rainbow::CacheReaderBase::CacheReaderBase(void)`
+- `0x55de0` : `public: __thiscall Rainbow::CacheWriterBase::CacheWriterBase(class Rainbow::CacheWriterBase const &)`
+- `0x55df0` : `public: __thiscall Rainbow::CacheWriterBase::CacheWriterBase(void)`
+- `0xa4090` : `public: __thiscall Rainbow::CachedReader::CachedReader(void)`
+- `0x2bb90` : `public: __thiscall Rainbow::CachedWriter::CachedWriter(void)`
+- `0x21390` : `public: __thiscall CallbackArray::CallbackArray(void)`
+- `0x21390` : `public: __thiscall CallbackArrayReturnsAnyTrue::CallbackArrayReturnsAnyTrue(void)`
+- `0x31d70` : `public: __thiscall Rainbow::CallbackDynamicArray::CallbackDynamicArray(class Rainbow::CallbackDynamicArray &&)`
+- `0x31dd0` : `public: __thiscall Rainbow::CallbackDynamicArray::CallbackDynamicArray(class Rainbow::CallbackDynamicArray const &)`
+- `0x31e20` : `public: __thiscall Rainbow::CallbackDynamicArray::CallbackDynamicArray(void)`
+- `0x31d70` : `public: __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::CallbackDynamicArrayReturnsAnyTrue(class Rainbow::CallbackDynamicArrayReturnsAnyTrue &&)`
+- `0x31dd0` : `public: __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::CallbackDynamicArrayReturnsAnyTrue(class Rainbow::CallbackDynamicArrayReturnsAnyTrue const &)`
+- `0x31e20` : `public: __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::CallbackDynamicArrayReturnsAnyTrue(void)`
+- `0x2bfa0` : `public: __thiscall Rainbow::Capsule::Capsule(class Rainbow::Capsule &&)`
+- `0x2bfa0` : `public: __thiscall Rainbow::Capsule::Capsule(class Rainbow::Capsule const &)`
+- `0x38ac0` : `public: __thiscall Rainbow::Capsule::Capsule(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float)`
+- `0x20c50` : `public: __thiscall Rainbow::Capsule::Capsule(void)`
+- `0x2bbc0` : `public: __thiscall Rainbow::ColorRGBAf::ColorRGBAf(float,float,float,float)`
+- `0x22140` : `public: __thiscall Rainbow::ColorRGBAf::ColorRGBAf(float const *)`
+- `0x20c50` : `public: __thiscall Rainbow::ColorRGBAf::ColorRGBAf(void)`
+- `0x86190` : `public: __thiscall Rainbow::ConsoleStringProgressor::ConsoleStringProgressor(void)`
+- `0xa6cf0` : `public: __thiscall Rainbow::Http::CurlHandle::CurlHandle(class Rainbow::Http::CurlRequestMessage *)`
+- `0xa6e10` : `public: __thiscall Rainbow::Http::CurlRequestMessage::CurlRequestMessage(class Rainbow::Http::CurlRequestMessage const &)`
+- `0xa7150` : `public: __thiscall Rainbow::Http::CurlRequestMessage::CurlRequestMessage(void)`
+- `0x207d0` : `public: __thiscall BootConfig::Data::Data(void)`
+- `0x43f40` : `public: __thiscall Rainbow::DataStream::DataStream(class Rainbow::DataStream const &)`
+- `0x43fd0` : `public: __thiscall Rainbow::DataStream::DataStream(struct MemLabelId)`
+- `0x44020` : `public: __thiscall Rainbow::DataStream::DataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x440b0` : `public: __thiscall Rainbow::DataStreamObject::DataStreamObject(class Rainbow::DataStreamObject const &)`
+- `0x440c0` : `public: __thiscall Rainbow::DataStreamObject::DataStreamObject(void)`
+- `0x440d0` : `public: __thiscall Rainbow::DataStreamShell::DataStreamShell(class Rainbow::DataStreamShell &&)`
+- `0x440d0` : `public: __thiscall Rainbow::DataStreamShell::DataStreamShell(class Rainbow::DataStreamShell const &)`
+- `0x54780` : `public: __thiscall Rainbow::DataStreamShell::DataStreamShell(class Rainbow::DataStream *)`
+- `0x6f800` : `public: __thiscall Rainbow::DateTime::DateTime(int,int,int,int,int,int,int)`
+- `0x22960` : `public: __thiscall Rainbow::DateTime::DateTime(void)`
+- `0x46cf0` : `public: __thiscall Rainbow::DirVisitor::DirVisitor(class Rainbow::DirVisitor &&)`
+- `0x46d80` : `public: __thiscall Rainbow::DirVisitor::DirVisitor(class Rainbow::DirVisitor const &)`
+- `0x46e00` : `public: __thiscall Rainbow::DirVisitor::DirVisitor(void)`
+- `0x46e30` : `public: __thiscall Rainbow::DirVisitorCalSize::DirVisitorCalSize(class Rainbow::DirVisitorCalSize &&)`
+- `0x46e60` : `public: __thiscall Rainbow::DirVisitorCalSize::DirVisitorCalSize(class Rainbow::DirVisitorCalSize const &)`
+- `0x46ef0` : `public: __thiscall Rainbow::DirVisitorCalSize::DirVisitorCalSize(void)`
+- `0x46f40` : `public: __thiscall Rainbow::DirVisitorDelete::DirVisitorDelete(class Rainbow::DirVisitorDelete &&)`
+- `0x46f60` : `public: __thiscall Rainbow::DirVisitorDelete::DirVisitorDelete(class Rainbow::DirVisitorDelete const &)`
+- `0x46fe0` : `public: __thiscall Rainbow::DirVisitorDelete::DirVisitorDelete(void)`
+- `0x47010` : `public: __thiscall Rainbow::DirVisitorDeleteFileByExt::DirVisitorDeleteFileByExt(class Rainbow::DirVisitorDeleteFileByExt &&)`
+- `0x47060` : `public: __thiscall Rainbow::DirVisitorDeleteFileByExt::DirVisitorDeleteFileByExt(class Rainbow::DirVisitorDeleteFileByExt const &)`
+- `0x47100` : `public: __thiscall Rainbow::DirVisitorDeleteFileByExt::DirVisitorDeleteFileByExt(char const *)`
+- `0x471b0` : `public: __thiscall Rainbow::DirVisitorGenFileList::DirVisitorGenFileList(class Rainbow::DirVisitorGenFileList &&)`
+- `0x47250` : `public: __thiscall Rainbow::DirVisitorGenFileList::DirVisitorGenFileList(class Rainbow::DirVisitorGenFileList const &)`
+- `0x47300` : `public: __thiscall Rainbow::DirVisitorGenFileList::DirVisitorGenFileList(void)`
+- `0x47360` : `public: __thiscall Rainbow::DirVisitorScaner::DirVisitorScaner(class Rainbow::DirVisitorScaner &&)`
+- `0x47400` : `public: __thiscall Rainbow::DirVisitorScaner::DirVisitorScaner(class Rainbow::DirVisitorScaner const &)`
+- `0x474b0` : `public: __thiscall Rainbow::DirVisitorScaner::DirVisitorScaner(void)`
+- `0x20c50` : `public: __thiscall Rainbow::DisallowSyncFence::DisallowSyncFence(void)`
+- `0xa9b30` : `protected: __thiscall Rainbow::Http::DownLoadFileTask::DownLoadFileTask(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0xa9e70` : `protected: __thiscall Rainbow::Http::DownLoadFileTask::DownLoadFileTask(void)`
+- `0x86440` : `public: __thiscall Rainbow::EndOfFrameCallbacks::EndOfFrameCallbacks(void)`
+- `0x290e0` : `public: __thiscall Rainbow::EventContent::EventContent(int,void *)`
+- `0x29100` : `public: __thiscall Rainbow::EventContent::EventContent(void)`
+- `0x29120` : `public: __thiscall Rainbow::EventDispatcher::EventDispatcher(class Rainbow::EventDispatcher const &)`
+- `0x29160` : `public: __thiscall Rainbow::EventDispatcher::EventDispatcher(void)`
+- `0x2a380` : `public: __thiscall Rainbow::EventDispatcherWithLambda::EventDispatcherWithLambda(class Rainbow::EventDispatcherWithLambda &&)`
+- `0x2a380` : `public: __thiscall Rainbow::EventDispatcherWithLambda::EventDispatcherWithLambda(class Rainbow::EventDispatcherWithLambda const &)`
+- `0x2a430` : `public: __thiscall Rainbow::EventDispatcherWithLambda::EventDispatcherWithLambda(void)`
+- `0x51380` : `public: __thiscall Rainbow::File::File(void)`
+- `0x414d0` : `public: __thiscall Rainbow::FileAccessor::FileAccessor(class Rainbow::FileAccessor const &)`
+- `0x97570` : `public: __thiscall Rainbow::FileAccessor::FileAccessor(void)`
+- `0x97660` : `public: __thiscall Rainbow::FileEntryData::FileEntryData(struct Rainbow::FileEntryData const &)`
+- `0x41510` : `public: __thiscall Rainbow::FileEntryData::FileEntryData(void)`
+- `0x49de0` : `public: __thiscall Rainbow::FileHandleDataStream::FileHandleDataStream(class Rainbow::FileHandleDataStream const &)`
+- `0x57780` : `public: __thiscall Rainbow::FileHandleDataStream::FileHandleDataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &,struct _iobuf *)`
+- `0x57850` : `public: __thiscall Rainbow::FileHandleDataStream::FileHandleDataStream(struct MemLabelId,struct _iobuf *)`
+- `0x578e0` : `public: __thiscall Rainbow::FileHandleDataStream::FileHandleDataStream(struct MemLabelId,char const *,enum Rainbow::FILE_MODE)`
+- `0x49e80` : `public: __thiscall Rainbow::FileManager::FileManager(void)`
+- `0x440f0` : `public: __thiscall Rainbow::FileStreamDataStream::FileStreamDataStream(class Rainbow::FileStreamDataStream const &)`
+- `0x547a0` : `public: __thiscall Rainbow::FileStreamDataStream::FileStreamDataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class std::basic_ifstream<char,struct std::char_traits<char> > *,unsigned int,bool)`
+- `0x54840` : `public: __thiscall Rainbow::FileStreamDataStream::FileStreamDataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class std::basic_ifstream<char,struct std::char_traits<char> > *,bool)`
+- `0x54920` : `public: __thiscall Rainbow::FileStreamDataStream::FileStreamDataStream(struct MemLabelId,class std::basic_ifstream<char,struct std::char_traits<char> > *,bool)`
+- `0x41550` : `public: __thiscall Rainbow::FileSystem::FileSystem(class Rainbow::FileSystem const &)`
+- `0x976d0` : `public: __thiscall Rainbow::FileSystem::FileSystem(struct MemLabelId)`
+- `0x97810` : `public: __thiscall Rainbow::FileSystemEntry::FileSystemEntry(struct Rainbow::FileEntryData const &)`
+- `0x415c0` : `public: __thiscall Rainbow::FileSystemEntry::FileSystemEntry(class Rainbow::FileSystemEntry const &)`
+- `0x97830` : `public: __thiscall Rainbow::FileSystemEntry::FileSystemEntry(char const *)`
+- `0x978c0` : `public: __thiscall Rainbow::FileSystemEntry::FileSystemEntry(char const *,class Rainbow::FileSystemHandler &)`
+- `0x97970` : `public: __thiscall Rainbow::FileSystemEntry::FileSystemEntry(void)`
+- `0x70180` : `public: __thiscall Rainbow::FixedString::FixedString(class Rainbow::FixedString const &)`
+- `0x70180` : `public: __thiscall Rainbow::FixedString::FixedString(class Rainbow::NoFreeFixedString const &)`
+- `0x701a0` : `public: __thiscall Rainbow::FixedString::FixedString(int)`
+- `0x701c0` : `public: __thiscall Rainbow::FixedString::FixedString(char const *)`
+- `0x701e0` : `public: __thiscall Rainbow::FixedString::FixedString(char const *,unsigned int)`
+- `0x207d0` : `public: __thiscall Rainbow::FixedString::FixedString(void)`
+- `0x20c50` : `public: __thiscall Rainbow::FloatToHalfConverter::FloatToHalfConverter(void)`
+- `0x3a620` : `public: __thiscall Rainbow::Frustum::Frustum(class Rainbow::Frustum &&)`
+- `0x3a620` : `public: __thiscall Rainbow::Frustum::Frustum(class Rainbow::Frustum const &)`
+- `0x3a670` : `public: __thiscall Rainbow::Frustum::Frustum(class Rainbow::Vector3f const &,class Rainbow::Matrix3x3f const &,float,float,float,float)`
+- `0x20c50` : `public: __thiscall Rainbow::Frustum::Frustum(void)`
+- `0x31e60` : `public: __thiscall Rainbow::GlobalCallbacks::GlobalCallbacks(struct Rainbow::GlobalCallbacks &&)`
+- `0x31e60` : `public: __thiscall Rainbow::GlobalCallbacks::GlobalCallbacks(struct Rainbow::GlobalCallbacks const &)`
+- `0x32270` : `public: __thiscall Rainbow::GlobalCallbacks::GlobalCallbacks(void)`
+- `0x8adf0` : `public: __thiscall Rainbow::Gradient::Gradient(void)`
+- `0x719e0` : `public: __thiscall Rainbow::HandleIndexedBitSet::HandleIndexedBitSet(class Rainbow::HandleManager &,bool)`
+- `0x71a00` : `public: __thiscall Rainbow::HandleIndexedCountedBitSet::HandleIndexedCountedBitSet(class Rainbow::HandleManager &,bool)`
+- `0x71a30` : `public: __thiscall Rainbow::HandleManager::HandleManager(class Rainbow::HandleManager const &)`
+- `0x71b30` : `public: __thiscall Rainbow::HandleManager::HandleManager(void)`
+- `0xa9ff0` : `public: __thiscall Rainbow::Http::HttpTaskManager::HttpTaskManager(class Rainbow::Http::HttpTaskManager const &)`
+- `0xabb10` : `public: __thiscall Rainbow::Http::HttpTaskManager::HttpTaskManager(void)`
+- `0xa7410` : `public: __thiscall Rainbow::Http::IHttpTask::IHttpTask(class Rainbow::Http::IHttpTask &&)`
+- `0xa7510` : `public: __thiscall Rainbow::Http::IHttpTask::IHttpTask(class Rainbow::Http::IHttpTask const &)`
+- `0xa75e0` : `public: __thiscall Rainbow::Http::IHttpTask::IHttpTask(void)`
+- `0x9eb40` : `public: __thiscall Rainbow::JSONRead::JSONRead(class Rainbow::JSONBufferedReadStream &,enum Rainbow::TransferInstructionFlags,struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > *,int)`
+- `0x9ed60` : `public: __thiscall Rainbow::JSONRead::JSONRead(char const *,enum Rainbow::TransferInstructionFlags,struct MemLabelId,bool,class core::basic_string<char,class core::StringStorageDefault<char> > *,int)`
+- `0xa0410` : `public: __thiscall Rainbow::JSONWrite::JSONWrite(enum Rainbow::TransferInstructionFlags,class core::basic_string<char,class core::StringStorageDefault<char> > *)`
+- `0x6b030` : `public: __thiscall Rainbow::ThreadedJobBatch::JobBatch::JobBatch(void)`
+- `0x671c0` : `public: __thiscall Rainbow::JobBatchDispatcher::JobBatchDispatcher(enum Rainbow::JobPriority,int)`
+- `0x44190` : `private: __thiscall Rainbow::JobGroup::JobGroup(void)`
+- `0x6b620` : `public: __thiscall Rainbow::JobQueue::JobQueue(unsigned int,unsigned int,int,enum Rainbow::JobQueue::JobQueueFlags,char const *,char const *)`
+- `0x55e00` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::LZMAStreamingCompress(class Rainbow::FileCompressHelper::LZMAStreamingCompress &&)`
+- `0x55e00` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::LZMAStreamingCompress(class Rainbow::FileCompressHelper::LZMAStreamingCompress const &)`
+- `0x55ea0` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::LZMAStreamingCompress(void)`
+- `0x55f00` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::LZMAStreamingDeCompress(class Rainbow::FileCompressHelper::LZMAStreamingDeCompress const &)`
+- `0x56120` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::LZMAStreamingDeCompress(void)`
+- `0x22960` : `public: __thiscall Rainbow::ListElement::ListElement(void)`
+- `0x5b030` : `public: __thiscall Rainbow::LogSystem::LogSystem(void)`
+- `0x77130` : `public: __thiscall Rainbow::MD5::MD5(void)`
+- `0x20950` : `public: __thiscall Rainbow::MD5Hash::MD5Hash(void)`
+- `0x6ad50` : `public: __thiscall Rainbow::MainThreadJob::MainThreadJob(void)`
+- `0x8bbc0` : `public: __thiscall Rainbow::Matrix3x3f::Matrix3x3f(class Rainbow::Matrix4x4f const &)`
+- `0x32f30` : `public: __thiscall Rainbow::Matrix3x3f::Matrix3x3f(float,float,float,float,float,float,float,float,float)`
+- `0x20c50` : `public: __thiscall Rainbow::Matrix3x3f::Matrix3x3f(void)`
+- `0x8d780` : `public: __thiscall Rainbow::Matrix4x4f::Matrix4x4f(class Rainbow::Matrix3x3f const &)`
+- `0x8d800` : `public: __thiscall Rainbow::Matrix4x4f::Matrix4x4f(class Rainbow::Vector4f const &,class Rainbow::Vector4f const &,class Rainbow::Vector4f const &,class Rainbow::Vector4f const &)`
+- `0x8d880` : `public: __thiscall Rainbow::Matrix4x4f::Matrix4x4f(float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float)`
+- `0x8d930` : `public: __thiscall Rainbow::Matrix4x4f::Matrix4x4f(float const * const)`
+- `0x20c50` : `public: __thiscall Rainbow::Matrix4x4f::Matrix4x4f(void)`
+- `0x207e0` : `public: __thiscall MemLabelRootId::MemLabelRootId(struct MemLabelId)`
+- `0x441e0` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(class Rainbow::MemoryDataStream const &)`
+- `0x549e0` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(struct MemLabelId,class Rainbow::DataStream &)`
+- `0x54ab0` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class Rainbow::DataStream &)`
+- `0x54b90` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &,unsigned int)`
+- `0x54c60` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(struct MemLabelId,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class Rainbow::DataStream const *)`
+- `0x54d40` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(struct MemLabelId,unsigned int)`
+- `0x54df0` : `public: __thiscall Rainbow::MemoryDataStream::MemoryDataStream(struct MemLabelId,class Rainbow::DataStream *)`
+- `0x24460` : `public: __thiscall Rainbow::MemoryManager::MemoryManager(void)`
+- `0x73550` : `public: __thiscall Rainbow::MemoryPool::MemoryPool(class Rainbow::MemoryPool const &)`
+- `0x735c0` : `public: __thiscall Rainbow::MemoryPool::MemoryPool(bool,char const *,int,int,int)`
+- `0x32e10` : `public: __thiscall Rainbow::MinMaxAABB::MinMaxAABB(class Rainbow::MinMaxAABB &&)`
+- `0x32e10` : `public: __thiscall Rainbow::MinMaxAABB::MinMaxAABB(class Rainbow::MinMaxAABB const &)`
+- `0x32fa0` : `public: __thiscall Rainbow::MinMaxAABB::MinMaxAABB(class Rainbow::AABB const &)`
+- `0x32ef0` : `public: __thiscall Rainbow::MinMaxAABB::MinMaxAABB(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x33010` : `public: __thiscall Rainbow::MinMaxAABB::MinMaxAABB(void)`
+- `0x32e10` : `public: __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::MultiWriterSingleReaderAtomicCircularBuffer(class Rainbow::MultiWriterSingleReaderAtomicCircularBuffer const &)`
+- `0x837a0` : `public: __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::MultiWriterSingleReaderAtomicCircularBuffer(int)`
+- `0x83b90` : `public: __thiscall Rainbow::Mutex::Mutex(void)`
+- `0x44290` : `public: __thiscall Rainbow::MutexLockedQueue::MutexLockedQueue(void)`
+- `0x44300` : `public: __thiscall Rainbow::MutexLockedStack::MutexLockedStack(void)`
+- `0x2bbf0` : `public: __thiscall Rainbow::NamedObject::NamedObject(struct MemLabelId)`
+- `0x207f0` : `public: __thiscall Rainbow::NoFreeFixedString::NoFreeFixedString(class Rainbow::NoFreeFixedString const &)`
+- `0x70200` : `public: __thiscall Rainbow::NoFreeFixedString::NoFreeFixedString(class Rainbow::FixedString const &)`
+- `0x70220` : `public: __thiscall Rainbow::NoFreeFixedString::NoFreeFixedString(int)`
+- `0x70240` : `public: __thiscall Rainbow::NoFreeFixedString::NoFreeFixedString(char const *)`
+- `0x70270` : `public: __thiscall Rainbow::NoFreeFixedString::NoFreeFixedString(char const *,unsigned int)`
+- `0x207d0` : `public: __thiscall Rainbow::NoFreeFixedString::NoFreeFixedString(void)`
+- `0x2db00` : `public: __thiscall Rainbow::Object::Object(struct MemLabelId)`
+- `0x44320` : `public: __thiscall Rainbow::ObjectDataStream::ObjectDataStream(class Rainbow::ObjectDataStream const &)`
+- `0x54ec0` : `public: __thiscall Rainbow::ObjectDataStream::ObjectDataStream(struct MemLabelId,class Rainbow::DataStreamObject *)`
+- `0x47510` : `public: __thiscall Rainbow::OneLevelScaner::OneLevelScaner(class Rainbow::OneLevelScaner &&)`
+- `0x475b0` : `public: __thiscall Rainbow::OneLevelScaner::OneLevelScaner(class Rainbow::OneLevelScaner const &)`
+- `0x47660` : `public: __thiscall Rainbow::OneLevelScaner::OneLevelScaner(void)`
+- `0x49ee0` : `public: __thiscall Rainbow::PackageAsset::PackageAsset(class Rainbow::PackageAsset const &)`
+- `0x5b0e0` : `public: __thiscall Rainbow::PackageAsset::PackageAsset(void)`
+- `0x5b1d0` : `public: __thiscall Rainbow::PackageFileSystem::PackageFileSystem(class Rainbow::PackageFileSystem &&)`
+- `0x5b220` : `public: __thiscall Rainbow::PackageFileSystem::PackageFileSystem(class Rainbow::PackageFileSystem const &)`
+- `0x643c0` : `public: __thiscall Rainbow::PackageFileSystem::PackageFileSystem(char const *)`
+- `0x73c50` : `public: __thiscall Rainbow::PackedFloatVector::PackedFloatVector(class Rainbow::PackedFloatVector &&)`
+- `0x73cc0` : `public: __thiscall Rainbow::PackedFloatVector::PackedFloatVector(class Rainbow::PackedFloatVector const &)`
+- `0x73d20` : `public: __thiscall Rainbow::PackedFloatVector::PackedFloatVector(void)`
+- `0x73d70` : `public: __thiscall Rainbow::PackedQuatVector::PackedQuatVector(class Rainbow::PackedQuatVector &&)`
+- `0x73dd0` : `public: __thiscall Rainbow::PackedQuatVector::PackedQuatVector(class Rainbow::PackedQuatVector const &)`
+- `0x73e20` : `public: __thiscall Rainbow::PackedQuatVector::PackedQuatVector(void)`
+- `0x26580` : `public: __thiscall Rainbow::PerThreadPageAllocator::PerThreadPageAllocator(class Rainbow::AtomicPageAllocator &)`
+- `0x265c0` : `public: __thiscall Rainbow::PerThreadPageAllocator::PerThreadPageAllocator(void)`
+- `0x79b80` : `public: __thiscall Rainbow::PlaneColliderCache_dense_hashmap::PlaneColliderCache_dense_hashmap(class Rainbow::PlaneColliderCache_dense_hashmap const &)`
+- `0x29160` : `public: __thiscall Rainbow::PlaneColliderCache_dense_hashmap::PlaneColliderCache_dense_hashmap(void)`
+- `0x79bc0` : `public: __thiscall Rainbow::PlaneData::PlaneData(struct Rainbow::PlaneData &&)`
+- `0x79bc0` : `public: __thiscall Rainbow::PlaneData::PlaneData(struct Rainbow::PlaneData const &)`
+- `0x79c00` : `public: __thiscall Rainbow::PlaneData::PlaneData(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,unsigned int,unsigned int)`
+- `0x20c50` : `public: __thiscall Rainbow::PlaneData::PlaneData(void)`
+- `0xb9350` : `protected: __thiscall Rainbow::PlatformMutex::PlatformMutex(void)`
+- `0x22960` : `private: __thiscall Rainbow::PlatformThread::PlatformThread(void)`
+- `0x41650` : `public: __thiscall Rainbow::PlayerSettings::PlayerSettings(class Rainbow::PlayerSettings &&)`
+- `0x41790` : `public: __thiscall Rainbow::PlayerSettings::PlayerSettings(class Rainbow::PlayerSettings const &)`
+- `0x877f0` : `public: __thiscall Rainbow::PlayerSettings::PlayerSettings(void)`
+- `0x666d0` : `public: __thiscall Rainbow::PriorityMutableBackgroundJob::PriorityMutableBackgroundJob(void (__cdecl*)(void *),void *,enum Rainbow::ThreadPriority)`
+- `0x20950` : `public: __thiscall Rainbow::ProfilerManager::ProfilerManager(void)`
+- `0x2bbc0` : `public: __thiscall Rainbow::Quaternionf::Quaternionf(float,float,float,float)`
+- `0x22140` : `public: __thiscall Rainbow::Quaternionf::Quaternionf(float const *)`
+- `0x33080` : `public: __thiscall Rainbow::Quaternionf::Quaternionf(void)`
+- `0x26870` : `public: __thiscall Rainbow::QueueAllocator::QueueAllocator(unsigned int,struct MemLabelId)`
+- `0x70fc0` : `public: __thiscall Rainbow::Rand::Rand(unsigned int)`
+- `0x70ff0` : `public: __thiscall Rainbow::RandN::RandN(struct math::_int1 const &)`
+- `0x71010` : `public: __thiscall Rainbow::RandN::RandN(struct math::_int4 const &)`
+- `0x33290` : `public: __thiscall Rainbow::RandN::RandN(class Rainbow::RandN const &)`
+- `0x32e10` : `public: __thiscall Rainbow::Ray::Ray(class Rainbow::Ray &&)`
+- `0x32e10` : `public: __thiscall Rainbow::Ray::Ray(class Rainbow::Ray const &)`
+- `0x3beb0` : `public: __thiscall Rainbow::Ray::Ray(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x20c50` : `public: __thiscall Rainbow::Ray::Ray(void)`
+- `0x979c0` : `public: __thiscall Rainbow::ReadWriteLock::ReadWriteLock(void)`
+- `0x207d0` : `public: __thiscall Rainbow::ReadWriteSpinLock::ReadWriteSpinLock(void)`
+- `0x2edb0` : `public: __thiscall Rainbow::RefObject::RefObject(struct MemLabelId)`
+- `0x76bb0` : `public: __thiscall RegisterRuntimeInitializeAndCleanup::RegisterRuntimeInitializeAndCleanup(void (__cdecl*)(void *),void (__cdecl*)(void *),int,void *)`
+- `0x2eef0` : `public: __thiscall Rainbow::RuntimeClass::RuntimeClass(char const *,class Rainbow::RuntimeClass const *,unsigned int,class Rainbow::Object * (__cdecl*)(struct MemLabelId),unsigned int)`
+- `0x77160` : `public: __thiscall Rainbow::SHA1::SHA1(void)`
+- `0x20960` : `public: __thiscall Rainbow::SHAHash::SHAHash(void)`
+- `0x443c0` : `public: __thiscall Rainbow::Rainbow::Semaphore::Semaphore(void)`
+- `0x443c0` : `public: __thiscall Rainbow::Semaphore::Semaphore(void)`
+- `0xb49f0` : `public: __thiscall Rainbow::SingleAppInstance::SingleAppInstance(class Rainbow::SingleAppInstance const &)`
+- `0xb4aa0` : `public: __thiscall Rainbow::SingleAppInstance::SingleAppInstance(char const *)`
+- `0x22140` : `public: __thiscall Rainbow::Sphere::Sphere(class Rainbow::Sphere &&)`
+- `0x22140` : `public: __thiscall Rainbow::Sphere::Sphere(class Rainbow::Sphere const &)`
+- `0x330f0` : `public: __thiscall Rainbow::Sphere::Sphere(class Rainbow::Vector3f const &,float)`
+- `0x20c50` : `public: __thiscall Rainbow::Sphere::Sphere(void)`
+- `0x20970` : `public: __thiscall Rainbow::SpinCountTracker::SpinCountTracker(unsigned int)`
+- `0x2bc20` : `public: __thiscall Rainbow::StreamedBinaryRead::StreamedBinaryRead(void)`
+- `0x2bc60` : `public: __thiscall Rainbow::StreamedBinaryWrite::StreamedBinaryWrite(void)`
+- `0x535d0` : `public: __thiscall Rainbow::StreamedResource::StreamedResource(struct Rainbow::StreamedResource &&)`
+- `0x53630` : `public: __thiscall Rainbow::StreamedResource::StreamedResource(struct Rainbow::StreamedResource const &)`
+- `0x536c0` : `public: __thiscall Rainbow::StreamedResource::StreamedResource(void)`
+- `0x7a4a0` : `public: __thiscall core::StringBuilder::StringBuilder(class core::basic_string<char,class core::StringStorageDefault<char> > const &,unsigned int)`
+- `0x7a530` : `public: __thiscall core::StringBuilder::StringBuilder(unsigned int)`
+- `0x7a570` : `public: __thiscall core::StringBuilder::StringBuilder(char const *,unsigned int)`
+- `0x443e0` : `public: __thiscall Rainbow::Rainbow::SuspendableSemaphore::SuspendableSemaphore(bool)`
+- `0x443e0` : `public: __thiscall Rainbow::SuspendableSemaphore::SuspendableSemaphore(bool)`
+- `0x83cc0` : `public: __thiscall Rainbow::Thread::Thread(void)`
+- `0x845e0` : `public: __thiscall Rainbow::ThreadedBlockAllocatingBuffer::ThreadedBlockAllocatingBuffer(void)`
+- `0x84e10` : `public: __thiscall Rainbow::ThreadedStreamBuffer::ThreadedStreamBuffer(void const *,unsigned int)`
+- `0x84f10` : `public: __thiscall Rainbow::ThreadedStreamBuffer::ThreadedStreamBuffer(enum Rainbow::ThreadedStreamBuffer::Mode,unsigned int)`
+- `0x85010` : `public: __thiscall Rainbow::ThreadedStreamBuffer::ThreadedStreamBuffer(void)`
+- `0x884d0` : `public: __thiscall Rainbow::TimeCallManager::TimeCallManager(void)`
+- `0x265c0` : `public: __thiscall Rainbow::TransferBase::TransferBase(void)`
+- `0x418e0` : `public: __thiscall UGUID::UGUID(unsigned int,unsigned int,unsigned int,unsigned int)`
+- `0x265c0` : `public: __thiscall UGUID::UGUID(void)`
+- `0x7d010` : `public: __thiscall Rainbow::UnicodeString::UnicodeString(char const *)`
+- `0x7d0a0` : `public: __thiscall Rainbow::UnicodeString::UnicodeString(wchar_t const *)`
+- `0x7d690` : `public: __thiscall Rainbow::UniqueIDGenerator::UniqueIDGenerator(class Rainbow::UniqueIDGenerator &&)`
+- `0x7d6e0` : `public: __thiscall Rainbow::UniqueIDGenerator::UniqueIDGenerator(class Rainbow::UniqueIDGenerator const &)`
+- `0x7d730` : `public: __thiscall Rainbow::UniqueIDGenerator::UniqueIDGenerator(struct MemLabelId)`
+- `0x7d7c0` : `public: __thiscall Rainbow::UniqueSmallID::UniqueSmallID(void)`
+- `0xac8a0` : `protected: __thiscall Rainbow::Http::UpLoadFileTask::UpLoadFileTask(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0xacbc0` : `protected: __thiscall Rainbow::Http::UpLoadFileTask::UpLoadFileTask(void)`
+- `0xacca0` : `public: __thiscall Rainbow::Http::UpLoadFileTask::UpLoadFileTask(class Rainbow::Http::UpLoadFileTask const &)`
+- `0x38d00` : `public: __thiscall Rainbow::Vector2f::Vector2f(float)`
+- `0x38d20` : `public: __thiscall Rainbow::Vector2f::Vector2f(float,float)`
+- `0x20c50` : `public: __thiscall Rainbow::Vector2f::Vector2f(void)`
+- `0x29560` : `public: __thiscall Rainbow::Vector3f::Vector3f(class Rainbow::Vector3f const &)`
+- `0x330a0` : `public: __thiscall Rainbow::Vector3f::Vector3f(float)`
+- `0x330c0` : `public: __thiscall Rainbow::Vector3f::Vector3f(float,float,float)`
+- `0x29560` : `public: __thiscall Rainbow::Vector3f::Vector3f(float *)`
+- `0x20c50` : `public: __thiscall Rainbow::Vector3f::Vector3f(void)`
+- `0x330f0` : `public: __thiscall Rainbow::Vector4f::Vector4f(class Rainbow::Vector3f const &,float)`
+- `0x33120` : `public: __thiscall Rainbow::Vector4f::Vector4f(float)`
+- `0x2bbc0` : `public: __thiscall Rainbow::Vector4f::Vector4f(float,float,float,float)`
+- `0x20c50` : `public: __thiscall Rainbow::Vector4f::Vector4f(void)`
+- `0xadb20` : `protected: __thiscall Rainbow::Http::WebRequest::WebRequest(class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0xadcd0` : `protected: __thiscall Rainbow::Http::WebRequest::WebRequest(void)`
+- `0xadd80` : `public: __thiscall Rainbow::Http::WebRequest::WebRequest(class Rainbow::Http::WebRequest const &)`
+- `0x207d0` : `public: __thiscall Rainbow::XMLData::XMLData(void)`
+- `0x207e0` : `public: __thiscall Rainbow::XMLNode::XMLNode(class tinyxml2::XMLElement *)`
+- `0x207d0` : `public: __thiscall Rainbow::XMLNode::XMLNode(void)`
+- `0x6f5a0` : `public: __thiscall Rainbow::crc32::crc32(void)`
+- `0x20990` : `public: __thiscall dynamic_array_detail::dynamic_array_data::dynamic_array_data(struct dynamic_array_detail::dynamic_array_data &&)`
+- `0x209e0` : `public: __thiscall dynamic_array_detail::dynamic_array_data::dynamic_array_data(struct MemLabelId)`
+- `0x41900` : `public: __thiscall dynamic_bitset::dynamic_bitset(class dynamic_bitset const &)`
+- `0x41980` : `public: __thiscall dynamic_bitset::dynamic_bitset(unsigned int,unsigned long,struct MemLabelId)`
+- `0x41a30` : `public: __thiscall dynamic_bitset::dynamic_bitset(struct MemLabelId)`
+- `0x41a60` : `public: __thiscall dynamic_bitset::dynamic_bitset(void)`
+- `0x41a90` : `public: __thiscall dynamic_bitset_base::dynamic_bitset_base(unsigned int,struct MemLabelId)`
+- `0x41b00` : `public: __thiscall dynamic_bitset_base::dynamic_bitset_base(struct MemLabelId)`
+- `0x2ef40` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::~CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>(void)`
+- `0x2ef40` : `public: __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::~CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>(void)`
+- `0x2ef40` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)>::~CallbackDynamicArraySubBase<void (__cdecl*)(void)>(void)`
+- `0x2ef40` : `public: __thiscall Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>::~CallbackDynamicArraySubBase<bool (__cdecl*)(void)>(void)`
+- `0xaa0e0` : `public: virtual __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::~IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>(void)`
+- `0xaa0e0` : `public: virtual __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::~IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>(void)`
+- `0xaa0e0` : `public: virtual __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::~IHttpTaskIterFace<class Rainbow::Http::WebRequest>(void)`
+- `0x2bd90` : `public: __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::~TextDOMTransferReadBase<class Rainbow::JSONRead>(void)`
+- `0x44480` : `public: __thiscall Rainbow::AsyncReadCommand::~AsyncReadCommand(void)`
+- `0x45720` : `public: __thiscall Rainbow::AsyncReadManagerThreaded::~AsyncReadManagerThreaded(void)`
+- `0x265e0` : `public: __thiscall Rainbow::AtomicPageAllocator::~AtomicPageAllocator(void)`
+- `0x83100` : `public: __thiscall Rainbow::AtomicQueue::~AtomicQueue(void)`
+- `0x20870` : `public: __thiscall Rainbow::AtomicStack::~AtomicStack(void)`
+- `0x66710` : `public: __thiscall Rainbow::BackgroundJobQueue::~BackgroundJobQueue(void)`
+- `0x53fa0` : `public: virtual __thiscall Rainbow::BinaryStream::~BinaryStream(void)`
+- `0x6f280` : `public: __thiscall Rainbow::Blackboard::~Blackboard(void)`
+- `0xa3e10` : `public: virtual __thiscall Rainbow::CacheReaderBase::~CacheReaderBase(void)`
+- `0xa3f40` : `public: virtual __thiscall Rainbow::CacheWriterBase::~CacheWriterBase(void)`
+- `0xa40b0` : `public: __thiscall Rainbow::CachedReader::~CachedReader(void)`
+- `0x2ef40` : `public: __thiscall Rainbow::CallbackDynamicArray::~CallbackDynamicArray(void)`
+- `0x2ef40` : `public: __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::~CallbackDynamicArrayReturnsAnyTrue(void)`
+- `0x86220` : `public: __thiscall Rainbow::ConsoleStringProgressor::~ConsoleStringProgressor(void)`
+- `0xa77c0` : `public: __thiscall Rainbow::Http::CurlHandle::~CurlHandle(void)`
+- `0xa7950` : `public: virtual __thiscall Rainbow::Http::CurlRequestMessage::~CurlRequestMessage(void)`
+- `0xa52f0` : `public: __thiscall BootConfig::Data::~Data(void)`
+- `0x44520` : `public: virtual __thiscall Rainbow::DataStream::~DataStream(void)`
+- `0x44590` : `protected: virtual __thiscall Rainbow::DataStreamObject::~DataStreamObject(void)`
+- `0x445a0` : `public: virtual __thiscall Rainbow::DataStreamShell::~DataStreamShell(void)`
+- `0x476f0` : `public: __thiscall Rainbow::DirVisitor::~DirVisitor(void)`
+- `0x47780` : `public: __thiscall Rainbow::DirVisitorCalSize::~DirVisitorCalSize(void)`
+- `0x47780` : `public: __thiscall Rainbow::DirVisitorDelete::~DirVisitorDelete(void)`
+- `0x47790` : `public: __thiscall Rainbow::DirVisitorDeleteFileByExt::~DirVisitorDeleteFileByExt(void)`
+- `0x477f0` : `public: __thiscall Rainbow::DirVisitorGenFileList::~DirVisitorGenFileList(void)`
+- `0x477f0` : `public: __thiscall Rainbow::DirVisitorScaner::~DirVisitorScaner(void)`
+- `0x20870` : `public: __thiscall Rainbow::DisallowSyncFence::~DisallowSyncFence(void)`
+- `0xaa380` : `public: virtual __thiscall Rainbow::Http::DownLoadFileTask::~DownLoadFileTask(void)`
+- `0x86460` : `public: __thiscall Rainbow::EndOfFrameCallbacks::~EndOfFrameCallbacks(void)`
+- `0x291a0` : `public: __thiscall Rainbow::EventDispatcher::~EventDispatcher(void)`
+- `0x2a4c0` : `public: __thiscall Rainbow::EventDispatcherWithLambda::~EventDispatcherWithLambda(void)`
+- `0x513d0` : `public: __thiscall Rainbow::File::~File(void)`
+- `0x97a80` : `public: virtual __thiscall Rainbow::FileAccessor::~FileAccessor(void)`
+- `0x97b00` : `public: __thiscall Rainbow::FileEntryData::~FileEntryData(void)`
+- `0x57990` : `public: virtual __thiscall Rainbow::FileHandleDataStream::~FileHandleDataStream(void)`
+- `0x4a460` : `public: __thiscall Rainbow::FileManager::~FileManager(void)`
+- `0x54f20` : `public: virtual __thiscall Rainbow::FileStreamDataStream::~FileStreamDataStream(void)`
+- `0x97b50` : `public: __thiscall Rainbow::FileSystem::~FileSystem(void)`
+- `0x41b90` : `public: __thiscall Rainbow::FileSystemEntry::~FileSystemEntry(void)`
+- `0x702a0` : `public: __thiscall Rainbow::FixedString::~FixedString(void)`
+- `0x32540` : `public: __thiscall Rainbow::GlobalCallbacks::~GlobalCallbacks(void)`
+- `0x20870` : `public: __thiscall Rainbow::Gradient::~Gradient(void)`
+- `0x71bc0` : `public: __thiscall Rainbow::HandleIndexedBitSet::~HandleIndexedBitSet(void)`
+- `0x71bc0` : `public: __thiscall Rainbow::HandleIndexedCountedBitSet::~HandleIndexedCountedBitSet(void)`
+- `0x71c00` : `public: __thiscall Rainbow::HandleManager::~HandleManager(void)`
+- `0xabcd0` : `public: __thiscall Rainbow::Http::HttpTaskManager::~HttpTaskManager(void)`
+- `0xa7c60` : `public: virtual __thiscall Rainbow::Http::IHttpTask::~IHttpTask(void)`
+- `0x9f200` : `public: __thiscall Rainbow::JSONRead::~JSONRead(void)`
+- `0x6b050` : `public: __thiscall Rainbow::ThreadedJobBatch::JobBatch::~JobBatch(void)`
+- `0x67240` : `public: __thiscall Rainbow::JobBatchDispatcher::~JobBatchDispatcher(void)`
+- `0x445b0` : `private: __thiscall Rainbow::JobGroup::~JobGroup(void)`
+- `0x6ba60` : `public: __thiscall Rainbow::JobQueue::~JobQueue(void)`
+- `0x562a0` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::~LZMAStreamingCompress(void)`
+- `0x562c0` : `public: __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::~LZMAStreamingDeCompress(void)`
+- `0x22970` : `public: __thiscall Rainbow::ListElement::~ListElement(void)`
+- `0x80900` : `public: __thiscall Rainbow::LogSystem::~LogSystem(void)`
+- `0x20870` : `public: __thiscall Rainbow::MD5::~MD5(void)`
+- `0x6ad70` : `public: __thiscall Rainbow::MainThreadJob::~MainThreadJob(void)`
+- `0x54fe0` : `public: virtual __thiscall Rainbow::MemoryDataStream::~MemoryDataStream(void)`
+- `0x245f0` : `public: __thiscall Rainbow::MemoryManager::~MemoryManager(void)`
+- `0x736a0` : `public: __thiscall Rainbow::MemoryPool::~MemoryPool(void)`
+- `0x83820` : `public: __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::~MultiWriterSingleReaderAtomicCircularBuffer(void)`
+- `0x83bb0` : `public: __thiscall Rainbow::Mutex::~Mutex(void)`
+- `0x445f0` : `public: __thiscall Rainbow::MutexLockedQueue::~MutexLockedQueue(void)`
+- `0x44650` : `public: __thiscall Rainbow::MutexLockedStack::~MutexLockedStack(void)`
+- `0x2be60` : `public: virtual __thiscall Rainbow::NamedObject::~NamedObject(void)`
+- `0x20870` : `public: __thiscall Rainbow::NoFreeFixedString::~NoFreeFixedString(void)`
+- `0x2db40` : `protected: virtual __thiscall Rainbow::Object::~Object(void)`
+- `0x55080` : `public: virtual __thiscall Rainbow::ObjectDataStream::~ObjectDataStream(void)`
+- `0x477f0` : `public: __thiscall Rainbow::OneLevelScaner::~OneLevelScaner(void)`
+- `0x5b5b0` : `public: virtual __thiscall Rainbow::PackageAsset::~PackageAsset(void)`
+- `0x5b6c0` : `public: virtual __thiscall Rainbow::PackageFileSystem::~PackageFileSystem(void)`
+- `0x73e50` : `public: __thiscall Rainbow::PackedFloatVector::~PackedFloatVector(void)`
+- `0x73ec0` : `public: __thiscall Rainbow::PackedQuatVector::~PackedQuatVector(void)`
+- `0x79c40` : `public: __thiscall Rainbow::PlaneColliderCache_dense_hashmap::~PlaneColliderCache_dense_hashmap(void)`
+- `0xb9370` : `protected: __thiscall Rainbow::PlatformMutex::~PlatformMutex(void)`
+- `0xb93b0` : `private: __thiscall Rainbow::PlatformThread::~PlatformThread(void)`
+- `0x41ba0` : `public: __thiscall Rainbow::PlayerSettings::~PlayerSettings(void)`
+- `0x66780` : `public: __thiscall Rainbow::PriorityMutableBackgroundJob::~PriorityMutableBackgroundJob(void)`
+- `0x268c0` : `public: __thiscall Rainbow::QueueAllocator::~QueueAllocator(void)`
+- `0x97c80` : `public: __thiscall Rainbow::ReadWriteLock::~ReadWriteLock(void)`
+- `0x2be60` : `public: virtual __thiscall Rainbow::RefObject::~RefObject(void)`
+- `0x771a0` : `public: __thiscall Rainbow::SHA1::~SHA1(void)`
+- `0x44660` : `public: __thiscall Rainbow::Rainbow::Semaphore::~Semaphore(void)`
+- `0x44660` : `public: __thiscall Rainbow::Semaphore::~Semaphore(void)`
+- `0xb4be0` : `public: __thiscall Rainbow::SingleAppInstance::~SingleAppInstance(void)`
+- `0x2be80` : `public: __thiscall Rainbow::StreamedBinaryRead::~StreamedBinaryRead(void)`
+- `0x53710` : `public: __thiscall Rainbow::StreamedResource::~StreamedResource(void)`
+- `0x7a5f0` : `public: __thiscall core::StringBuilder::~StringBuilder(void)`
+- `0x44670` : `public: __thiscall Rainbow::Rainbow::SuspendableSemaphore::~SuspendableSemaphore(void)`
+- `0x44670` : `public: __thiscall Rainbow::SuspendableSemaphore::~SuspendableSemaphore(void)`
+- `0x83d20` : `public: __thiscall Rainbow::Thread::~Thread(void)`
+- `0x846a0` : `public: virtual __thiscall Rainbow::ThreadedBlockAllocatingBuffer::~ThreadedBlockAllocatingBuffer(void)`
+- `0x85100` : `public: virtual __thiscall Rainbow::ThreadedStreamBuffer::~ThreadedStreamBuffer(void)`
+- `0x885b0` : `public: __thiscall Rainbow::TimeCallManager::~TimeCallManager(void)`
+- `0x7d150` : `public: __thiscall Rainbow::UnicodeString::~UnicodeString(void)`
+- `0x7d7d0` : `public: __thiscall Rainbow::UniqueIDGenerator::~UniqueIDGenerator(void)`
+- `0xacd60` : `public: virtual __thiscall Rainbow::Http::UpLoadFileTask::~UpLoadFileTask(void)`
+- `0xadde0` : `public: virtual __thiscall Rainbow::Http::WebRequest::~WebRequest(void)`
+- `0x89110` : `public: __thiscall Rainbow::XMLData::~XMLData(void)`
+- `0x41c40` : `public: __thiscall dynamic_bitset::~dynamic_bitset(void)`
+- `0x41c90` : `public: __thiscall dynamic_bitset_base::~dynamic_bitset_base(void)`
+- `0x24680` : `void * __cdecl operator new(unsigned int,struct MemLabelId,unsigned int,char const *,int)`
+- `0x246d0` : `void __cdecl operator delete(void *,struct MemLabelId,unsigned int,char const *,int)`
+- `0x213a0` : `public: class CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> & __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::operator=(class CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> &&)`
+- `0x21410` : `public: class CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> & __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::operator=(class CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> const &)`
+- `0x213a0` : `public: class CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> & __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::operator=(class CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> &&)`
+- `0x21410` : `public: class CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> & __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::operator=(class CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> const &)`
+- `0x21410` : `public: class CallbackArraySubBase<void (__cdecl*)(void)> & __thiscall CallbackArraySubBase<void (__cdecl*)(void)>::operator=(class CallbackArraySubBase<void (__cdecl*)(void)> &&)`
+- `0x21410` : `public: class CallbackArraySubBase<void (__cdecl*)(void)> & __thiscall CallbackArraySubBase<void (__cdecl*)(void)>::operator=(class CallbackArraySubBase<void (__cdecl*)(void)> const &)`
+- `0x21410` : `public: class CallbackArraySubBase<bool (__cdecl*)(void)> & __thiscall CallbackArraySubBase<bool (__cdecl*)(void)>::operator=(class CallbackArraySubBase<bool (__cdecl*)(void)> &&)`
+- `0x21410` : `public: class CallbackArraySubBase<bool (__cdecl*)(void)> & __thiscall CallbackArraySubBase<bool (__cdecl*)(void)>::operator=(class CallbackArraySubBase<bool (__cdecl*)(void)> const &)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> & __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::operator=(class Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> &&)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> & __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::operator=(class Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)> const &)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> & __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::operator=(class Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> &&)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> & __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::operator=(class Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)> const &)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)> & __thiscall Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)>::operator=(class Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)> &&)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)> & __thiscall Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)>::operator=(class Rainbow::CallbackDynamicArraySubBase<void (__cdecl*)(void)> const &)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)> & __thiscall Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>::operator=(class Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)> &&)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)> & __thiscall Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)>::operator=(class Rainbow::CallbackDynamicArraySubBase<bool (__cdecl*)(void)> const &)`
+- `0xaa530` : `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask> &&)`
+- `0xaa680` : `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask> const &)`
+- `0xaa530` : `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask> &&)`
+- `0xaa680` : `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask> const &)`
+- `0xaa530` : `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest> &&)`
+- `0xaa680` : `public: class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest> & __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::operator=(class Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest> const &)`
+- `0x207c0` : `public: struct IsConvertible<enum Rainbow::ColorSpace,struct ReflectableEnum> & __thiscall IsConvertible<enum Rainbow::ColorSpace,struct ReflectableEnum>::operator=(struct IsConvertible<enum Rainbow::ColorSpace,struct ReflectableEnum> &&)`
+- `0x207c0` : `public: struct IsConvertible<enum Rainbow::ColorSpace,struct ReflectableEnum> & __thiscall IsConvertible<enum Rainbow::ColorSpace,struct ReflectableEnum>::operator=(struct IsConvertible<enum Rainbow::ColorSpace,struct ReflectableEnum> const &)`
+- `0x207c0` : `public: struct IsConvertible<enum Rainbow::FullscreenMode,struct ReflectableEnum> & __thiscall IsConvertible<enum Rainbow::FullscreenMode,struct ReflectableEnum>::operator=(struct IsConvertible<enum Rainbow::FullscreenMode,struct ReflectableEnum> &&)`
+- `0x207c0` : `public: struct IsConvertible<enum Rainbow::FullscreenMode,struct ReflectableEnum> & __thiscall IsConvertible<enum Rainbow::FullscreenMode,struct ReflectableEnum>::operator=(struct IsConvertible<enum Rainbow::FullscreenMode,struct ReflectableEnum> const &)`
+- `0x207c0` : `public: struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::ColorSpace> & __thiscall EnumTraits::internal::IsReflectableEnum<enum Rainbow::ColorSpace>::operator=(struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::ColorSpace> &&)`
+- `0x207c0` : `public: struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::ColorSpace> & __thiscall EnumTraits::internal::IsReflectableEnum<enum Rainbow::ColorSpace>::operator=(struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::ColorSpace> const &)`
+- `0x207c0` : `public: struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::FullscreenMode> & __thiscall EnumTraits::internal::IsReflectableEnum<enum Rainbow::FullscreenMode>::operator=(struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::FullscreenMode> &&)`
+- `0x207c0` : `public: struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::FullscreenMode> & __thiscall EnumTraits::internal::IsReflectableEnum<enum Rainbow::FullscreenMode>::operator=(struct EnumTraits::internal::IsReflectableEnum<enum Rainbow::FullscreenMode> const &)`
+- `0x22140` : `public: class Rainbow::TRect<int> & __thiscall Rainbow::TRect<int>::operator=(class Rainbow::TRect<int> &&)`
+- `0x26670` : `public: class Rainbow::TRect<int> & __thiscall Rainbow::TRect<int>::operator=(class Rainbow::TRect<int> const &)`
+- `0x22140` : `public: class Rainbow::TRect<float> & __thiscall Rainbow::TRect<float>::operator=(class Rainbow::TRect<float> &&)`
+- `0x26670` : `public: class Rainbow::TRect<float> & __thiscall Rainbow::TRect<float>::operator=(class Rainbow::TRect<float> const &)`
+- `0x2be90` : `public: class Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead> & __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::operator=(class Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead> &&)`
+- `0x2be90` : `public: class Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead> & __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::operator=(class Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead> const &)`
+- `0x32e10` : `public: class Rainbow::AABB & __thiscall Rainbow::AABB::operator=(class Rainbow::AABB &&)`
+- `0x32e10` : `public: class Rainbow::AABB & __thiscall Rainbow::AABB::operator=(class Rainbow::AABB const &)`
+- `0x41ce0` : `public: struct Rainbow::AspectRatios & __thiscall Rainbow::AspectRatios::operator=(struct Rainbow::AspectRatios &&)`
+- `0x41d10` : `public: struct Rainbow::AspectRatios & __thiscall Rainbow::AspectRatios::operator=(struct Rainbow::AspectRatios const &)`
+- `0x44680` : `public: struct Rainbow::AsyncReadCommand & __thiscall Rainbow::AsyncReadCommand::operator=(struct Rainbow::AsyncReadCommand &&)`
+- `0x44760` : `public: struct Rainbow::AsyncReadCommand & __thiscall Rainbow::AsyncReadCommand::operator=(struct Rainbow::AsyncReadCommand const &)`
+- `0x22140` : `public: class Rainbow::AtomicNode & __thiscall Rainbow::AtomicNode::operator=(class Rainbow::AtomicNode &&)`
+- `0x22140` : `public: class Rainbow::AtomicNode & __thiscall Rainbow::AtomicNode::operator=(class Rainbow::AtomicNode const &)`
+- `0x26620` : `public: class Rainbow::AtomicPageAllocator & __thiscall Rainbow::AtomicPageAllocator::operator=(class Rainbow::AtomicPageAllocator const &)`
+- `0x20b60` : `public: class Rainbow::AtomicSafetyHandle & __thiscall Rainbow::AtomicSafetyHandle::operator=(class Rainbow::AtomicSafetyHandle &&)`
+- `0x20b60` : `public: class Rainbow::AtomicSafetyHandle & __thiscall Rainbow::AtomicSafetyHandle::operator=(class Rainbow::AtomicSafetyHandle const &)`
+- `0x29580` : `public: class Rainbow::BackgroundJobQueue & __thiscall Rainbow::BackgroundJobQueue::operator=(class Rainbow::BackgroundJobQueue const &)`
+- `0x21b30` : `public: class Rainbow::BatchAllocator & __thiscall Rainbow::BatchAllocator::operator=(class Rainbow::BatchAllocator &&)`
+- `0x21b80` : `public: class Rainbow::BatchAllocator & __thiscall Rainbow::BatchAllocator::operator=(class Rainbow::BatchAllocator const &)`
+- `0x29560` : `public: struct Rainbow::BlockRange & __thiscall Rainbow::BlockRange::operator=(struct Rainbow::BlockRange &&)`
+- `0x29580` : `public: struct Rainbow::BlockRange & __thiscall Rainbow::BlockRange::operator=(struct Rainbow::BlockRange const &)`
+- `0x66cc0` : `public: struct Rainbow::BlockRangeBalancedWorkload & __thiscall Rainbow::BlockRangeBalancedWorkload::operator=(struct Rainbow::BlockRangeBalancedWorkload &&)`
+- `0x20830` : `public: struct Rainbow::BlockRangeBalancedWorkload & __thiscall Rainbow::BlockRangeBalancedWorkload::operator=(struct Rainbow::BlockRangeBalancedWorkload const &)`
+- `0x384a0` : `public: class Rainbow::BoundsInt & __thiscall Rainbow::BoundsInt::operator=(class Rainbow::BoundsInt &&)`
+- `0x33140` : `public: class Rainbow::BoundsInt & __thiscall Rainbow::BoundsInt::operator=(class Rainbow::BoundsInt const &)`
+- `0x207c0` : `public: class Rainbow::CPUInfo & __thiscall Rainbow::CPUInfo::operator=(class Rainbow::CPUInfo &&)`
+- `0x207c0` : `public: class Rainbow::CPUInfo & __thiscall Rainbow::CPUInfo::operator=(class Rainbow::CPUInfo const &)`
+- `0x207c0` : `public: class Rainbow::CacheReaderBase & __thiscall Rainbow::CacheReaderBase::operator=(class Rainbow::CacheReaderBase const &)`
+- `0x207c0` : `public: class Rainbow::CacheWriterBase & __thiscall Rainbow::CacheWriterBase::operator=(class Rainbow::CacheWriterBase const &)`
+- `0x20830` : `public: class Rainbow::CachedWriter & __thiscall Rainbow::CachedWriter::operator=(class Rainbow::CachedWriter &&)`
+- `0x20830` : `public: class Rainbow::CachedWriter & __thiscall Rainbow::CachedWriter::operator=(class Rainbow::CachedWriter const &)`
+- `0x21410` : `public: class CallbackArray & __thiscall CallbackArray::operator=(class CallbackArray &&)`
+- `0x21410` : `public: class CallbackArray & __thiscall CallbackArray::operator=(class CallbackArray const &)`
+- `0x21410` : `public: class CallbackArrayReturnsAnyTrue & __thiscall CallbackArrayReturnsAnyTrue::operator=(class CallbackArrayReturnsAnyTrue &&)`
+- `0x21410` : `public: class CallbackArrayReturnsAnyTrue & __thiscall CallbackArrayReturnsAnyTrue::operator=(class CallbackArrayReturnsAnyTrue const &)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArray & __thiscall Rainbow::CallbackDynamicArray::operator=(class Rainbow::CallbackDynamicArray &&)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArray & __thiscall Rainbow::CallbackDynamicArray::operator=(class Rainbow::CallbackDynamicArray const &)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArrayReturnsAnyTrue & __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::operator=(class Rainbow::CallbackDynamicArrayReturnsAnyTrue &&)`
+- `0x32790` : `public: class Rainbow::CallbackDynamicArrayReturnsAnyTrue & __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::operator=(class Rainbow::CallbackDynamicArrayReturnsAnyTrue const &)`
+- `0x2bfa0` : `public: class Rainbow::Capsule & __thiscall Rainbow::Capsule::operator=(class Rainbow::Capsule &&)`
+- `0x2bfa0` : `public: class Rainbow::Capsule & __thiscall Rainbow::Capsule::operator=(class Rainbow::Capsule const &)`
+- `0x2bf40` : `public: struct Rainbow::ColorRGBA32Icall & __thiscall Rainbow::ColorRGBA32Icall::operator=(struct Rainbow::ColorRGBA32Icall &&)`
+- `0x207f0` : `public: struct Rainbow::ColorRGBA32Icall & __thiscall Rainbow::ColorRGBA32Icall::operator=(struct Rainbow::ColorRGBA32Icall const &)`
+- `0x2bf70` : `public: class Rainbow::ColorRGBAf & __thiscall Rainbow::ColorRGBAf::operator=(class Rainbow::ColorRGBAf const &)`
+- `0xa7cf0` : `public: class Rainbow::Http::CurlRequestMessage & __thiscall Rainbow::Http::CurlRequestMessage::operator=(class Rainbow::Http::CurlRequestMessage const &)`
+- `0x207c0` : `public: class Rainbow::DataStreamObject & __thiscall Rainbow::DataStreamObject::operator=(class Rainbow::DataStreamObject const &)`
+- `0x44830` : `public: class Rainbow::DataStreamShell & __thiscall Rainbow::DataStreamShell::operator=(class Rainbow::DataStreamShell &&)`
+- `0x44830` : `public: class Rainbow::DataStreamShell & __thiscall Rainbow::DataStreamShell::operator=(class Rainbow::DataStreamShell const &)`
+- `0x20b60` : `public: struct Rainbow::DateTime & __thiscall Rainbow::DateTime::operator=(struct Rainbow::DateTime &&)`
+- `0x20b60` : `public: struct Rainbow::DateTime & __thiscall Rainbow::DateTime::operator=(struct Rainbow::DateTime const &)`
+- `0x47960` : `public: class Rainbow::DirVisitor & __thiscall Rainbow::DirVisitor::operator=(class Rainbow::DirVisitor &&)`
+- `0x479f0` : `public: class Rainbow::DirVisitor & __thiscall Rainbow::DirVisitor::operator=(class Rainbow::DirVisitor const &)`
+- `0x47a50` : `public: class Rainbow::DirVisitorCalSize & __thiscall Rainbow::DirVisitorCalSize::operator=(class Rainbow::DirVisitorCalSize &&)`
+- `0x47a80` : `public: class Rainbow::DirVisitorCalSize & __thiscall Rainbow::DirVisitorCalSize::operator=(class Rainbow::DirVisitorCalSize const &)`
+- `0x47af0` : `public: class Rainbow::DirVisitorDelete & __thiscall Rainbow::DirVisitorDelete::operator=(class Rainbow::DirVisitorDelete &&)`
+- `0x479f0` : `public: class Rainbow::DirVisitorDelete & __thiscall Rainbow::DirVisitorDelete::operator=(class Rainbow::DirVisitorDelete const &)`
+- `0x47b10` : `public: class Rainbow::DirVisitorDeleteFileByExt & __thiscall Rainbow::DirVisitorDeleteFileByExt::operator=(class Rainbow::DirVisitorDeleteFileByExt &&)`
+- `0x47b60` : `public: class Rainbow::DirVisitorDeleteFileByExt & __thiscall Rainbow::DirVisitorDeleteFileByExt::operator=(class Rainbow::DirVisitorDeleteFileByExt const &)`
+- `0x47be0` : `public: class Rainbow::DirVisitorGenFileList & __thiscall Rainbow::DirVisitorGenFileList::operator=(class Rainbow::DirVisitorGenFileList &&)`
+- `0x47c70` : `public: class Rainbow::DirVisitorGenFileList & __thiscall Rainbow::DirVisitorGenFileList::operator=(class Rainbow::DirVisitorGenFileList const &)`
+- `0x47be0` : `public: class Rainbow::DirVisitorScaner & __thiscall Rainbow::DirVisitorScaner::operator=(class Rainbow::DirVisitorScaner &&)`
+- `0x47c70` : `public: class Rainbow::DirVisitorScaner & __thiscall Rainbow::DirVisitorScaner::operator=(class Rainbow::DirVisitorScaner const &)`
+- `0x207c0` : `public: struct Rainbow::DisallowSyncFence & __thiscall Rainbow::DisallowSyncFence::operator=(struct Rainbow::DisallowSyncFence const &)`
+- `0x29580` : `public: class Rainbow::EndOfFrameCallbacks & __thiscall Rainbow::EndOfFrameCallbacks::operator=(class Rainbow::EndOfFrameCallbacks const &)`
+- `0x29560` : `public: class Rainbow::EventContent & __thiscall Rainbow::EventContent::operator=(class Rainbow::EventContent &&)`
+- `0x29580` : `public: class Rainbow::EventContent & __thiscall Rainbow::EventContent::operator=(class Rainbow::EventContent const &)`
+- `0x295a0` : `public: class Rainbow::EventDispatcher & __thiscall Rainbow::EventDispatcher::operator=(class Rainbow::EventDispatcher const &)`
+- `0x2a680` : `public: class Rainbow::EventDispatcherWithLambda & __thiscall Rainbow::EventDispatcherWithLambda::operator=(class Rainbow::EventDispatcherWithLambda &&)`
+- `0x2a680` : `public: class Rainbow::EventDispatcherWithLambda & __thiscall Rainbow::EventDispatcherWithLambda::operator=(class Rainbow::EventDispatcherWithLambda const &)`
+- `0x41d30` : `public: class Rainbow::FileAccessor & __thiscall Rainbow::FileAccessor::operator=(class Rainbow::FileAccessor const &)`
+- `0x97cb0` : `public: struct Rainbow::FileEntryData & __thiscall Rainbow::FileEntryData::operator=(struct Rainbow::FileEntryData const &)`
+- `0x41d60` : `public: class Rainbow::FileSystem & __thiscall Rainbow::FileSystem::operator=(class Rainbow::FileSystem const &)`
+- `0x97d30` : `public: class Rainbow::FileSystemEntry & __thiscall Rainbow::FileSystemEntry::operator=(class Rainbow::FileSystemEntry const &)`
+- `0x702e0` : `public: class Rainbow::FixedString & __thiscall Rainbow::FixedString::operator=(class Rainbow::FixedString const &)`
+- `0x207f0` : `public: class Rainbow::FixedString & __thiscall Rainbow::FixedString::operator=(class Rainbow::NoFreeFixedString const &)`
+- `0x70320` : `public: class Rainbow::FixedString & __thiscall Rainbow::FixedString::operator=(char const *)`
+- `0x207c0` : `public: class Rainbow::FloatToHalfConverter & __thiscall Rainbow::FloatToHalfConverter::operator=(class Rainbow::FloatToHalfConverter &&)`
+- `0x207c0` : `public: class Rainbow::FloatToHalfConverter & __thiscall Rainbow::FloatToHalfConverter::operator=(class Rainbow::FloatToHalfConverter const &)`
+- `0x3a620` : `public: class Rainbow::Frustum & __thiscall Rainbow::Frustum::operator=(class Rainbow::Frustum &&)`
+- `0x3a620` : `public: class Rainbow::Frustum & __thiscall Rainbow::Frustum::operator=(class Rainbow::Frustum const &)`
+- `0x32e10` : `public: struct Rainbow::FrustumPlanes & __thiscall Rainbow::FrustumPlanes::operator=(struct Rainbow::FrustumPlanes &&)`
+- `0x33140` : `public: struct Rainbow::FrustumPlanes & __thiscall Rainbow::FrustumPlanes::operator=(struct Rainbow::FrustumPlanes const &)`
+- `0x327d0` : `public: struct Rainbow::GlobalCallbacks & __thiscall Rainbow::GlobalCallbacks::operator=(struct Rainbow::GlobalCallbacks &&)`
+- `0x327d0` : `public: struct Rainbow::GlobalCallbacks & __thiscall Rainbow::GlobalCallbacks::operator=(struct Rainbow::GlobalCallbacks const &)`
+- `0x8aea0` : `public: class Rainbow::Gradient & __thiscall Rainbow::Gradient::operator=(class Rainbow::Gradient const &)`
+- `0x71cf0` : `public: class Rainbow::HandleManager & __thiscall Rainbow::HandleManager::operator=(class Rainbow::HandleManager const &)`
+- `0xaa700` : `public: class Rainbow::Http::HttpTaskManager & __thiscall Rainbow::Http::HttpTaskManager::operator=(class Rainbow::Http::HttpTaskManager const &)`
+- `0xa7ec0` : `public: class Rainbow::Http::IHttpTask & __thiscall Rainbow::Http::IHttpTask::operator=(class Rainbow::Http::IHttpTask &&)`
+- `0xa7f70` : `public: class Rainbow::Http::IHttpTask & __thiscall Rainbow::Http::IHttpTask::operator=(class Rainbow::Http::IHttpTask const &)`
+- `0x207c0` : `public: struct Rainbow::IntIdentityFunc & __thiscall Rainbow::IntIdentityFunc::operator=(struct Rainbow::IntIdentityFunc &&)`
+- `0x207c0` : `public: struct Rainbow::IntIdentityFunc & __thiscall Rainbow::IntIdentityFunc::operator=(struct Rainbow::IntIdentityFunc const &)`
+- `0x20b60` : `public: struct Rainbow::Job & __thiscall Rainbow::Job::operator=(struct Rainbow::Job &&)`
+- `0x20b60` : `public: struct Rainbow::Job & __thiscall Rainbow::Job::operator=(struct Rainbow::Job const &)`
+- `0x2bfe0` : `public: class Rainbow::JobBatchDispatcher & __thiscall Rainbow::JobBatchDispatcher::operator=(class Rainbow::JobBatchDispatcher const &)`
+- `0x44850` : `public: struct Rainbow::JobInfo & __thiscall Rainbow::JobInfo::operator=(struct Rainbow::JobInfo &&)`
+- `0x20830` : `public: struct Rainbow::JobInfo & __thiscall Rainbow::JobInfo::operator=(struct Rainbow::JobInfo const &)`
+- `0x56420` : `public: class Rainbow::FileCompressHelper::LZMAStreamingCompress & __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::operator=(class Rainbow::FileCompressHelper::LZMAStreamingCompress &&)`
+- `0x56420` : `public: class Rainbow::FileCompressHelper::LZMAStreamingCompress & __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::operator=(class Rainbow::FileCompressHelper::LZMAStreamingCompress const &)`
+- `0x56470` : `public: class Rainbow::FileCompressHelper::LZMAStreamingDeCompress & __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::operator=(class Rainbow::FileCompressHelper::LZMAStreamingDeCompress const &)`
+- `0x20a70` : `public: class Rainbow::MD5 & __thiscall Rainbow::MD5::operator=(class Rainbow::MD5 const &)`
+- `0x20ab0` : `public: struct Rainbow::MD5Hash & __thiscall Rainbow::MD5Hash::operator=(struct Rainbow::MD5Hash &&)`
+- `0x20af0` : `public: struct Rainbow::MD5Hash & __thiscall Rainbow::MD5Hash::operator=(struct Rainbow::MD5Hash const &)`
+- `0x20b60` : `public: class Rainbow::MainThreadJob & __thiscall Rainbow::MainThreadJob::operator=(class Rainbow::MainThreadJob const &)`
+- `0x33160` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator=(class Rainbow::Matrix3x3f &&)`
+- `0x2c010` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator=(class Rainbow::Matrix3x3f const &)`
+- `0x8bbc0` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator=(class Rainbow::Matrix4x4f const &)`
+- `0x331e0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::operator=(class Rainbow::Matrix4x4f &&)`
+- `0x33290` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::operator=(class Rainbow::Matrix4x4f const &)`
+- `0x8d780` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::operator=(class Rainbow::Matrix3x3f const &)`
+- `0x728d0` : `public: class Rainbow::Md5Context & __thiscall Rainbow::Md5Context::operator=(class Rainbow::Md5Context &&)`
+- `0x20a70` : `public: class Rainbow::Md5Context & __thiscall Rainbow::Md5Context::operator=(class Rainbow::Md5Context const &)`
+- `0x207f0` : `public: struct MemLabelId & __thiscall MemLabelId::operator=(struct MemLabelId &&)`
+- `0x207f0` : `public: struct MemLabelId & __thiscall MemLabelId::operator=(struct MemLabelId const &)`
+- `0x207f0` : `public: struct MemLabelRootId & __thiscall MemLabelRootId::operator=(struct MemLabelRootId &&)`
+- `0x207f0` : `public: struct MemLabelRootId & __thiscall MemLabelRootId::operator=(struct MemLabelRootId const &)`
+- `0x73700` : `public: class Rainbow::MemoryPool & __thiscall Rainbow::MemoryPool::operator=(class Rainbow::MemoryPool const &)`
+- `0x32e10` : `public: class Rainbow::MinMaxAABB & __thiscall Rainbow::MinMaxAABB::operator=(class Rainbow::MinMaxAABB &&)`
+- `0x32e10` : `public: class Rainbow::MinMaxAABB & __thiscall Rainbow::MinMaxAABB::operator=(class Rainbow::MinMaxAABB const &)`
+- `0x32e10` : `public: class Rainbow::MultiWriterSingleReaderAtomicCircularBuffer & __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::operator=(class Rainbow::MultiWriterSingleReaderAtomicCircularBuffer const &)`
+- `0x207f0` : `public: class Rainbow::NoFreeFixedString & __thiscall Rainbow::NoFreeFixedString::operator=(class Rainbow::NoFreeFixedString const &)`
+- `0x70200` : `public: class Rainbow::NoFreeFixedString & __thiscall Rainbow::NoFreeFixedString::operator=(class Rainbow::FixedString const &)`
+- `0x70240` : `public: class Rainbow::NoFreeFixedString & __thiscall Rainbow::NoFreeFixedString::operator=(char const *)`
+- `0x207c0` : `public: class Rainbow::ObjectTypeManager & __thiscall Rainbow::ObjectTypeManager::operator=(class Rainbow::ObjectTypeManager &&)`
+- `0x207c0` : `public: class Rainbow::ObjectTypeManager & __thiscall Rainbow::ObjectTypeManager::operator=(class Rainbow::ObjectTypeManager const &)`
+- `0x47be0` : `public: class Rainbow::OneLevelScaner & __thiscall Rainbow::OneLevelScaner::operator=(class Rainbow::OneLevelScaner &&)`
+- `0x47c70` : `public: class Rainbow::OneLevelScaner & __thiscall Rainbow::OneLevelScaner::operator=(class Rainbow::OneLevelScaner const &)`
+- `0x4a950` : `public: class Rainbow::PackageAsset & __thiscall Rainbow::PackageAsset::operator=(class Rainbow::PackageAsset const &)`
+- `0x5b790` : `public: class Rainbow::PackageFileSystem & __thiscall Rainbow::PackageFileSystem::operator=(class Rainbow::PackageFileSystem &&)`
+- `0x5b790` : `public: class Rainbow::PackageFileSystem & __thiscall Rainbow::PackageFileSystem::operator=(class Rainbow::PackageFileSystem const &)`
+- `0x73f30` : `public: class Rainbow::PackedFloatVector & __thiscall Rainbow::PackedFloatVector::operator=(class Rainbow::PackedFloatVector &&)`
+- `0x73f30` : `public: class Rainbow::PackedFloatVector & __thiscall Rainbow::PackedFloatVector::operator=(class Rainbow::PackedFloatVector const &)`
+- `0x73f70` : `public: class Rainbow::PackedQuatVector & __thiscall Rainbow::PackedQuatVector::operator=(class Rainbow::PackedQuatVector &&)`
+- `0x73f70` : `public: class Rainbow::PackedQuatVector & __thiscall Rainbow::PackedQuatVector::operator=(class Rainbow::PackedQuatVector const &)`
+- `0x22140` : `public: class Rainbow::PerThreadPageAllocator & __thiscall Rainbow::PerThreadPageAllocator::operator=(class Rainbow::PerThreadPageAllocator &&)`
+- `0x26670` : `public: class Rainbow::PerThreadPageAllocator & __thiscall Rainbow::PerThreadPageAllocator::operator=(class Rainbow::PerThreadPageAllocator const &)`
+- `0x79e50` : `public: class Rainbow::PlaneColliderCache_dense_hashmap & __thiscall Rainbow::PlaneColliderCache_dense_hashmap::operator=(class Rainbow::PlaneColliderCache_dense_hashmap const &)`
+- `0x79bc0` : `public: struct Rainbow::PlaneData & __thiscall Rainbow::PlaneData::operator=(struct Rainbow::PlaneData &&)`
+- `0x79bc0` : `public: struct Rainbow::PlaneData & __thiscall Rainbow::PlaneData::operator=(struct Rainbow::PlaneData const &)`
+- `0x41dc0` : `public: class Rainbow::PlayerSettings & __thiscall Rainbow::PlayerSettings::operator=(class Rainbow::PlayerSettings &&)`
+- `0x41dc0` : `public: class Rainbow::PlayerSettings & __thiscall Rainbow::PlayerSettings::operator=(class Rainbow::PlayerSettings const &)`
+- `0xa6060` : `public: class Rainbow::ProfilerManager & __thiscall Rainbow::ProfilerManager::operator=(class Rainbow::ProfilerManager &&)`
+- `0xa6060` : `public: class Rainbow::ProfilerManager & __thiscall Rainbow::ProfilerManager::operator=(class Rainbow::ProfilerManager const &)`
+- `0x22140` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator=(class Rainbow::Quaternionf &&)`
+- `0x26670` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator=(class Rainbow::Quaternionf const &)`
+- `0x24740` : `public: struct Rainbow::QueueAllocInfo & __thiscall Rainbow::QueueAllocInfo::operator=(struct Rainbow::QueueAllocInfo &&)`
+- `0x20b60` : `public: struct Rainbow::QueueAllocInfo & __thiscall Rainbow::QueueAllocInfo::operator=(struct Rainbow::QueueAllocInfo const &)`
+- `0x20830` : `public: class Rainbow::QueueAllocator & __thiscall Rainbow::QueueAllocator::operator=(class Rainbow::QueueAllocator const &)`
+- `0x26670` : `public: class Rainbow::Rand & __thiscall Rainbow::Rand::operator=(class Rainbow::Rand &&)`
+- `0x26670` : `public: class Rainbow::Rand & __thiscall Rainbow::Rand::operator=(class Rainbow::Rand const &)`
+- `0x33290` : `public: class Rainbow::RandN & __thiscall Rainbow::RandN::operator=(class Rainbow::RandN const &)`
+- `0x22140` : `public: struct Rainbow::RandState & __thiscall Rainbow::RandState::operator=(struct Rainbow::RandState &&)`
+- `0x26670` : `public: struct Rainbow::RandState & __thiscall Rainbow::RandState::operator=(struct Rainbow::RandState const &)`
+- `0x32e10` : `public: class Rainbow::Ray & __thiscall Rainbow::Ray::operator=(class Rainbow::Ray &&)`
+- `0x32e10` : `public: class Rainbow::Ray & __thiscall Rainbow::Ray::operator=(class Rainbow::Ray const &)`
+- `0x32e10` : `public: struct Rainbow::ReadCommand & __thiscall Rainbow::ReadCommand::operator=(struct Rainbow::ReadCommand &&)`
+- `0x33140` : `public: struct Rainbow::ReadCommand & __thiscall Rainbow::ReadCommand::operator=(struct Rainbow::ReadCommand const &)`
+- `0x20800` : `public: struct EnumTraits::ReflectionInfo & __thiscall EnumTraits::ReflectionInfo::operator=(struct EnumTraits::ReflectionInfo &&)`
+- `0x20830` : `public: struct EnumTraits::ReflectionInfo & __thiscall EnumTraits::ReflectionInfo::operator=(struct EnumTraits::ReflectionInfo const &)`
+- `0x207c0` : `public: class RegisterRuntimeInitializeAndCleanup & __thiscall RegisterRuntimeInitializeAndCleanup::operator=(class RegisterRuntimeInitializeAndCleanup &&)`
+- `0x207c0` : `public: class RegisterRuntimeInitializeAndCleanup & __thiscall RegisterRuntimeInitializeAndCleanup::operator=(class RegisterRuntimeInitializeAndCleanup const &)`
+- `0x2bfa0` : `public: class Rainbow::RuntimeClass & __thiscall Rainbow::RuntimeClass::operator=(class Rainbow::RuntimeClass &&)`
+- `0x2bfe0` : `public: class Rainbow::RuntimeClass & __thiscall Rainbow::RuntimeClass::operator=(class Rainbow::RuntimeClass const &)`
+- `0x207c0` : `public: class Rainbow::RuntimeClassManager & __thiscall Rainbow::RuntimeClassManager::operator=(class Rainbow::RuntimeClassManager &&)`
+- `0x207c0` : `public: class Rainbow::RuntimeClassManager & __thiscall Rainbow::RuntimeClassManager::operator=(class Rainbow::RuntimeClassManager const &)`
+- `0x20b10` : `public: class Rainbow::SHA1 & __thiscall Rainbow::SHA1::operator=(class Rainbow::SHA1 const &)`
+- `0x20b30` : `public: class Rainbow::SHAHash & __thiscall Rainbow::SHAHash::operator=(class Rainbow::SHAHash &&)`
+- `0x20830` : `public: class Rainbow::SHAHash & __thiscall Rainbow::SHAHash::operator=(class Rainbow::SHAHash const &)`
+- `0xb4c80` : `public: class Rainbow::SingleAppInstance & __thiscall Rainbow::SingleAppInstance::operator=(class Rainbow::SingleAppInstance const &)`
+- `0x22140` : `public: class Rainbow::Sphere & __thiscall Rainbow::Sphere::operator=(class Rainbow::Sphere &&)`
+- `0x22140` : `public: class Rainbow::Sphere & __thiscall Rainbow::Sphere::operator=(class Rainbow::Sphere const &)`
+- `0x91e70` : `public: struct Rainbow::SphericalHarmonicsL1 & __thiscall Rainbow::SphericalHarmonicsL1::operator=(struct Rainbow::SphericalHarmonicsL1 &&)`
+- `0x3e700` : `public: struct Rainbow::SphericalHarmonicsL1 & __thiscall Rainbow::SphericalHarmonicsL1::operator=(struct Rainbow::SphericalHarmonicsL1 const &)`
+- `0x91ed0` : `public: struct Rainbow::SphericalHarmonicsL2 & __thiscall Rainbow::SphericalHarmonicsL2::operator=(struct Rainbow::SphericalHarmonicsL2 &&)`
+- `0x91f40` : `public: struct Rainbow::SphericalHarmonicsL2 & __thiscall Rainbow::SphericalHarmonicsL2::operator=(struct Rainbow::SphericalHarmonicsL2 const &)`
+- `0x20b60` : `public: class Rainbow::SpinCountTracker & __thiscall Rainbow::SpinCountTracker::operator=(class Rainbow::SpinCountTracker &&)`
+- `0x20b60` : `public: class Rainbow::SpinCountTracker & __thiscall Rainbow::SpinCountTracker::operator=(class Rainbow::SpinCountTracker const &)`
+- `0x2c010` : `public: class Rainbow::StreamedBinaryWrite & __thiscall Rainbow::StreamedBinaryWrite::operator=(class Rainbow::StreamedBinaryWrite &&)`
+- `0x2c010` : `public: class Rainbow::StreamedBinaryWrite & __thiscall Rainbow::StreamedBinaryWrite::operator=(class Rainbow::StreamedBinaryWrite const &)`
+- `0x53770` : `public: struct Rainbow::StreamedResource & __thiscall Rainbow::StreamedResource::operator=(struct Rainbow::StreamedResource &&)`
+- `0x53770` : `public: struct Rainbow::StreamedResource & __thiscall Rainbow::StreamedResource::operator=(struct Rainbow::StreamedResource const &)`
+- `0x3e6d0` : `public: struct Rainbow::TangentInfo & __thiscall Rainbow::TangentInfo::operator=(struct Rainbow::TangentInfo &&)`
+- `0x3e700` : `public: struct Rainbow::TangentInfo & __thiscall Rainbow::TangentInfo::operator=(struct Rainbow::TangentInfo const &)`
+- `0x207c0` : `public: class Rainbow::ThreadHelper & __thiscall Rainbow::ThreadHelper::operator=(class Rainbow::ThreadHelper &&)`
+- `0x207c0` : `public: class Rainbow::ThreadHelper & __thiscall Rainbow::ThreadHelper::operator=(class Rainbow::ThreadHelper const &)`
+- `0x22140` : `public: class Rainbow::TransferBase & __thiscall Rainbow::TransferBase::operator=(class Rainbow::TransferBase &&)`
+- `0x26670` : `public: class Rainbow::TransferBase & __thiscall Rainbow::TransferBase::operator=(class Rainbow::TransferBase const &)`
+- `0x22140` : `public: struct UGUID & __thiscall UGUID::operator=(struct UGUID &&)`
+- `0x26670` : `public: struct UGUID & __thiscall UGUID::operator=(struct UGUID const &)`
+- `0x7d820` : `public: class Rainbow::UniqueIDGenerator & __thiscall Rainbow::UniqueIDGenerator::operator=(class Rainbow::UniqueIDGenerator &&)`
+- `0x7d820` : `public: class Rainbow::UniqueIDGenerator & __thiscall Rainbow::UniqueIDGenerator::operator=(class Rainbow::UniqueIDGenerator const &)`
+- `0x7d850` : `public: struct Rainbow::UniqueSmallID & __thiscall Rainbow::UniqueSmallID::operator=(struct Rainbow::UniqueSmallID &&)`
+- `0x207f0` : `public: struct Rainbow::UniqueSmallID & __thiscall Rainbow::UniqueSmallID::operator=(struct Rainbow::UniqueSmallID const &)`
+- `0xace10` : `public: class Rainbow::Http::UpLoadFileTask & __thiscall Rainbow::Http::UpLoadFileTask::operator=(class Rainbow::Http::UpLoadFileTask const &)`
+- `0x20b60` : `public: class Rainbow::Vector2f & __thiscall Rainbow::Vector2f::operator=(class Rainbow::Vector2f const &)`
+- `0x29560` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator=(class Rainbow::Vector3f const &)`
+- `0x22140` : `public: class Rainbow::Vector4f & __thiscall Rainbow::Vector4f::operator=(class Rainbow::Vector4f const &)`
+- `0xade60` : `public: class Rainbow::Http::WebRequest & __thiscall Rainbow::Http::WebRequest::operator=(class Rainbow::Http::WebRequest const &)`
+- `0x2bfe0` : `public: struct Rainbow::WorkStealingAllocationData & __thiscall Rainbow::WorkStealingAllocationData::operator=(struct Rainbow::WorkStealingAllocationData &&)`
+- `0x2bfe0` : `public: struct Rainbow::WorkStealingAllocationData & __thiscall Rainbow::WorkStealingAllocationData::operator=(struct Rainbow::WorkStealingAllocationData const &)`
+- `0x2bfa0` : `public: struct Rainbow::WorkStealingRange & __thiscall Rainbow::WorkStealingRange::operator=(struct Rainbow::WorkStealingRange &&)`
+- `0x2bfe0` : `public: struct Rainbow::WorkStealingRange & __thiscall Rainbow::WorkStealingRange::operator=(struct Rainbow::WorkStealingRange const &)`
+- `0x207f0` : `public: class Rainbow::XMLData & __thiscall Rainbow::XMLData::operator=(class Rainbow::XMLData const &)`
+- `0x207f0` : `public: class Rainbow::XMLNode & __thiscall Rainbow::XMLNode::operator=(class Rainbow::XMLNode &&)`
+- `0x207f0` : `public: class Rainbow::XMLNode & __thiscall Rainbow::XMLNode::operator=(class Rainbow::XMLNode const &)`
+- `0x207f0` : `public: class Rainbow::crc32 & __thiscall Rainbow::crc32::operator=(class Rainbow::crc32 &&)`
+- `0x207f0` : `public: class Rainbow::crc32 & __thiscall Rainbow::crc32::operator=(class Rainbow::crc32 const &)`
+- `0x41ea0` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator=(class dynamic_bitset const &)`
+- `0x26670` : `public: class dynamic_bitset_base & __thiscall dynamic_bitset_base::operator=(class dynamic_bitset_base const &)`
+- `0x332c0` : `public: bool __thiscall Rainbow::AABB::operator==(class Rainbow::AABB const &)const `
+- `0x384d0` : `public: bool __thiscall Rainbow::BoundsInt::operator==(class Rainbow::BoundsInt const &)const `
+- `0x38b00` : `public: bool __thiscall Rainbow::Capsule::operator==(class Rainbow::Capsule const &)const `
+- `0x41f20` : `public: bool __thiscall Rainbow::FileEntryData::operator==(struct Rainbow::FileEntryData &)const `
+- `0x41f20` : `public: bool __thiscall Rainbow::FileSystemEntry::operator==(class Rainbow::FileSystemEntry &)const `
+- `0x8af60` : `public: bool __thiscall Rainbow::Gradient::operator==(class Rainbow::Gradient const &)const `
+- `0x33330` : `public: bool __thiscall Rainbow::Quaternionf::operator==(class Rainbow::Quaternionf const &)const `
+- `0x70350` : `bool __cdecl Rainbow::operator==(class Rainbow::FixedString const &,char const *)`
+- `0x70350` : `bool __cdecl Rainbow::operator==(class Rainbow::NoFreeFixedString const &,char const *)`
+- `0x71030` : `public: bool __thiscall Rainbow::Rand::operator==(class Rainbow::Rand const &)const `
+- `0x91f60` : `public: bool __thiscall Rainbow::SphericalHarmonicsL2::operator==(struct Rainbow::SphericalHarmonicsL2 const &)const `
+- `0x537b0` : `public: bool __thiscall Rainbow::StreamedResource::operator==(struct Rainbow::StreamedResource const &)`
+- `0x41f80` : `public: bool __thiscall UGUID::operator==(struct UGUID const &)const `
+- `0x38d40` : `public: bool __thiscall Rainbow::Vector2f::operator==(class Rainbow::Vector2f const &)const `
+- `0x33380` : `public: bool __thiscall Rainbow::Vector3f::operator==(class Rainbow::Vector3f const &)const `
+- `0x33330` : `public: bool __thiscall Rainbow::Vector4f::operator==(class Rainbow::Vector4f const &)const `
+- `0x38580` : `public: bool __thiscall Rainbow::BoundsInt::operator!=(class Rainbow::BoundsInt const &)const `
+- `0x333c0` : `public: bool __thiscall Rainbow::Quaternionf::operator!=(class Rainbow::Quaternionf const &)const `
+- `0x703a0` : `bool __cdecl Rainbow::operator!=(class Rainbow::FixedString const &,char const *)`
+- `0x703a0` : `bool __cdecl Rainbow::operator!=(class Rainbow::NoFreeFixedString const &,char const *)`
+- `0x91f90` : `public: bool __thiscall Rainbow::SphericalHarmonicsL2::operator!=(struct Rainbow::SphericalHarmonicsL2 const &)const `
+- `0x41fb0` : `public: bool __thiscall UGUID::operator!=(struct UGUID const &)const `
+- `0x38d70` : `public: bool __thiscall Rainbow::Vector2f::operator!=(class Rainbow::Vector2f const &)const `
+- `0x33410` : `public: bool __thiscall Rainbow::Vector3f::operator!=(class Rainbow::Vector3f const &)const `
+- `0x33450` : `public: float & __thiscall Rainbow::Matrix3x3f::operator[](int)`
+- `0x33460` : `public: float __thiscall Rainbow::Matrix3x3f::operator[](int)const `
+- `0x33450` : `public: float & __thiscall Rainbow::Matrix4x4f::operator[](int)`
+- `0x33460` : `public: float __thiscall Rainbow::Matrix4x4f::operator[](int)const `
+- `0x33450` : `public: float & __thiscall Rainbow::Quaternionf::operator[](int)`
+- `0x33450` : `public: float const & __thiscall Rainbow::Quaternionf::operator[](int)const `
+- `0x41fe0` : `public: class dynamic_bitset::reference __thiscall dynamic_bitset::operator[](unsigned int)`
+- `0x42000` : `public: bool __thiscall dynamic_bitset::operator[](unsigned int)const `
+- `0x20850` : `public: __thiscall Rainbow::FixedString::operator char const *(void)const `
+- `0x20860` : `public: __thiscall MemLabelRootId::operator struct MemLabelId(void)const `
+- `0x20850` : `public: __thiscall Rainbow::NoFreeFixedString::operator char const *(void)const `
+- `0x20c50` : `public: __thiscall Rainbow::Vector2f::operator float *(void)`
+- `0x20c50` : `public: __thiscall Rainbow::Vector2f::operator float const *(void)const `
+- `0x20c50` : `public: __thiscall Rainbow::Vector3f::operator float *(void)`
+- `0x20c50` : `public: __thiscall Rainbow::Vector3f::operator float const *(void)const `
+- `0x20c50` : `public: __thiscall Rainbow::Vector4f::operator float *(void)`
+- `0x20c50` : `public: __thiscall Rainbow::Vector4f::operator float const *(void)const `
+- `0x33470` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::operator*(class Rainbow::Quaternionf const &)const `
+- `0x33550` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::operator*(float)const `
+- `0x33570` : `public: class Rainbow::Vector3f __thiscall Rainbow::Quaternionf::operator*(class Rainbow::Vector3f const &)const `
+- `0x38da0` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator*(class Rainbow::Vector2f const &)const `
+- `0x38dd0` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator*(float)const `
+- `0x33690` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator*(class Rainbow::Vector3f const &)const `
+- `0x336d0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator*(float)const `
+- `0x33710` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator*(class Rainbow::Vector4f const &)const `
+- `0x33550` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator*(float)const `
+- `0x33730` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::operator-(class Rainbow::Quaternionf const &)const `
+- `0x33750` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::operator-(void)const `
+- `0x38e00` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator-(class Rainbow::Vector2f const &)const `
+- `0x38e30` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator-(void)const `
+- `0x33770` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator-(class Rainbow::Vector3f const &)const `
+- `0x337b0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator-(float)const `
+- `0x337f0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator-(void)const `
+- `0x33730` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator-(class Rainbow::Vector4f const &)const `
+- `0x33750` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator-(void)const `
+- `0x33830` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::operator+(class Rainbow::Quaternionf const &)const `
+- `0x703f0` : `class Rainbow::FixedString __cdecl Rainbow::operator+(class Rainbow::FixedString const &,char const *)`
+- `0x704e0` : `class Rainbow::FixedString __cdecl Rainbow::operator+(char const *,class Rainbow::FixedString const &)`
+- `0x705d0` : `class Rainbow::NoFreeFixedString __cdecl Rainbow::operator+(class Rainbow::NoFreeFixedString const &,char const *)`
+- `0x706d0` : `class Rainbow::NoFreeFixedString __cdecl Rainbow::operator+(char const *,class Rainbow::NoFreeFixedString const &)`
+- `0x38e60` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator+(class Rainbow::Vector2f const &)const `
+- `0x38e90` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator+(void)const `
+- `0x33850` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator+(class Rainbow::Vector3f const &)const `
+- `0x33890` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator+(float)const `
+- `0x338d0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator+(void)const `
+- `0x33830` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator+(class Rainbow::Vector4f const &)const `
+- `0x338f0` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator+(void)const `
+- `0x33900` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::operator/(float)const `
+- `0x38eb0` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator/(class Rainbow::Vector2f const &)const `
+- `0x38ee0` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::operator/(float)const `
+- `0x33980` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator/(class Rainbow::Vector3f const &)const `
+- `0x339c0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::operator/(float)const `
+- `0x33a00` : `public: class Rainbow::Vector4f __thiscall Rainbow::Vector4f::operator/(class Rainbow::Vector4f const &)const `
+- `0x71060` : `public: bool __thiscall Rainbow::Rand::operator<(class Rainbow::Rand const &)const `
+- `0x42050` : `public: bool __thiscall UGUID::operator<(struct UGUID const &)const `
+- `0x420a0` : `public: bool __thiscall UGUID::operator>(struct UGUID const &)const `
+- `0x2e760` : `public: unsigned int __thiscall Rainbow::IntIdentityFunc::operator()(unsigned int)const `
+- `0x420f0` : `public: class dynamic_bitset __thiscall dynamic_bitset::operator~(void)const `
+- `0x2c030` : `public: class Rainbow::ColorRGBAf & __thiscall Rainbow::ColorRGBAf::operator*=(class Rainbow::ColorRGBAf const &)`
+- `0x2c080` : `public: class Rainbow::ColorRGBAf & __thiscall Rainbow::ColorRGBAf::operator*=(float)`
+- `0x8bc00` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator*=(class Rainbow::Matrix3x3f const &)`
+- `0x8bd80` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator*=(class Rainbow::Matrix4x4f const &)`
+- `0x8bf00` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator*=(float)`
+- `0x33a20` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator*=(class Rainbow::Quaternionf const &)`
+- `0x2c080` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator*=(float)`
+- `0x38f10` : `public: class Rainbow::Vector2f & __thiscall Rainbow::Vector2f::operator*=(float)`
+- `0x33b20` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator*=(class Rainbow::Vector3f const &)`
+- `0x33b60` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator*=(float)`
+- `0x2c080` : `public: class Rainbow::Vector4f & __thiscall Rainbow::Vector4f::operator*=(float)`
+- `0x2c0a0` : `public: class Rainbow::ColorRGBAf & __thiscall Rainbow::ColorRGBAf::operator+=(class Rainbow::ColorRGBAf const &)`
+- `0x2c0a0` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator+=(class Rainbow::Quaternionf const &)`
+- `0x92180` : `public: struct Rainbow::SphericalHarmonicsL2 & __thiscall Rainbow::SphericalHarmonicsL2::operator+=(struct Rainbow::SphericalHarmonicsL2 const &)`
+- `0x38f40` : `public: class Rainbow::Vector2f & __thiscall Rainbow::Vector2f::operator+=(class Rainbow::Vector2f const &)`
+- `0x33ba0` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator+=(class Rainbow::Vector3f const &)`
+- `0x2c0a0` : `public: class Rainbow::Vector4f & __thiscall Rainbow::Vector4f::operator+=(class Rainbow::Vector4f const &)`
+- `0x2c0f0` : `public: class Rainbow::ColorRGBAf & __thiscall Rainbow::ColorRGBAf::operator-=(class Rainbow::ColorRGBAf const &)`
+- `0x2c0f0` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator-=(class Rainbow::Quaternionf const &)`
+- `0x38f70` : `public: class Rainbow::Vector2f & __thiscall Rainbow::Vector2f::operator-=(class Rainbow::Vector2f const &)`
+- `0x33be0` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator-=(class Rainbow::Vector3f const &)`
+- `0x2c0f0` : `public: class Rainbow::Vector4f & __thiscall Rainbow::Vector4f::operator-=(class Rainbow::Vector4f const &)`
+- `0x42160` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator-=(class dynamic_bitset const &)`
+- `0x33c20` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::operator/=(float)`
+- `0x33c40` : `public: class Rainbow::Quaternionf & __thiscall Rainbow::Quaternionf::operator/=(float)`
+- `0x38fa0` : `public: class Rainbow::Vector2f & __thiscall Rainbow::Vector2f::operator/=(float)`
+- `0x33ca0` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator/=(class Rainbow::Vector3f const &)`
+- `0x33ce0` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::operator/=(float)`
+- `0x33d20` : `public: class Rainbow::Vector4f & __thiscall Rainbow::Vector4f::operator/=(float)`
+- `0x42200` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator>>=(unsigned int)`
+- `0x42310` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator<<=(unsigned int)`
+- `0x42410` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator&=(class dynamic_bitset const &)`
+- `0x42460` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator|=(class dynamic_bitset const &)`
+- `0x42500` : `public: class dynamic_bitset & __thiscall dynamic_bitset::operator^=(class dynamic_bitset const &)`
+- `0x1b651c` : `const Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::`vftable'`
+- `0x1b68d8` : `const Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::`vftable'`
+- `0x1b69f4` : `const Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::`vftable'`
+- `0x1ad4c8` : `const Rainbow::BinaryStream::`vftable'`
+- `0x1add00` : `const Rainbow::CacheReaderBase::`vftable'`
+- `0x1add24` : `const Rainbow::CacheWriterBase::`vftable'`
+- `0x1b62d4` : `const Rainbow::Http::CurlRequestMessage::`vftable'`
+- `0x1ad19c` : `const Rainbow::DataStream::`vftable'`
+- `0x1ad260` : `const Rainbow::DataStreamObject::`vftable'`
+- `0x1ad2cc` : `const Rainbow::DataStreamShell::`vftable'`
+- `0x1ad59c` : `const Rainbow::DirVisitor::`vftable'`
+- `0x1ad5cc` : `const Rainbow::DirVisitorCalSize::`vftable'`
+- `0x1ad5ac` : `const Rainbow::DirVisitorDelete::`vftable'`
+- `0x1ad5bc` : `const Rainbow::DirVisitorDeleteFileByExt::`vftable'`
+- `0x1ad5fc` : `const Rainbow::DirVisitorGenFileList::`vftable'`
+- `0x1ad5dc` : `const Rainbow::DirVisitorScaner::`vftable'`
+- `0x1b654c` : `const Rainbow::Http::DownLoadFileTask::`vftable'`
+- `0x1ad188` : `const Rainbow::FileAccessor::`vftable'`
+- `0x1ad66c` : `const Rainbow::FileHandleDataStream::`vftable'`
+- `0x1ad21c` : `const Rainbow::FileStreamDataStream::`vftable'`
+- `0x1b62a4` : `const Rainbow::Http::IHttpTask::`vftable'`
+- `0x1ad1dc` : `const Rainbow::MemoryDataStream::`vftable'`
+- `0x1abd48` : `const Rainbow::NamedObject::`vftable'`
+- `0x1abed8` : `const Rainbow::Object::`vftable'`
+- `0x1ad280` : `const Rainbow::ObjectDataStream::`vftable'`
+- `0x1ad5ec` : `const Rainbow::OneLevelScaner::`vftable'`
+- `0x1ad6d4` : `const Rainbow::PackageAsset::`vftable'`
+- `0x1ae128` : `const Rainbow::PackageFileSystem::`vftable'`
+- `0x1ac338` : `const Rainbow::RefObject::`vftable'`
+- `0x1ada90` : `const Rainbow::StreamedResource::`vftable'`
+- `0x1b2d4c` : `const Rainbow::ThreadedBlockAllocatingBuffer::`vftable'`
+- `0x1b2d64` : `const Rainbow::ThreadedStreamBuffer::`vftable'`
+- `0x1b6908` : `const Rainbow::Http::UpLoadFileTask::`vftable'`
+- `0x1b6a24` : `const Rainbow::Http::WebRequest::`vftable'`
+- `0x44cb0` : `public: void __thiscall Rainbow::ThreadSharedObject<class Rainbow::DataStream>::`default constructor closure'(void)`
+- `0x20870` : `public: void __thiscall Rainbow::Mutex::AutoAllowWorkerThreadLock::`default constructor closure'(void)`
+- `0x567d0` : `public: void __thiscall Rainbow::JobBatchDispatcher::`default constructor closure'(void)`
+- `0x710d0` : `public: void __thiscall Rainbow::Rand::`default constructor closure'(void)`
+- `0x710f0` : `public: void __thiscall Rainbow::RandN::`default constructor closure'(void)`
+- `0x7a690` : `public: void __thiscall core::StringBuilder::`default constructor closure'(void)`
+- `0x44cc0` : `public: void __thiscall Rainbow::Rainbow::SuspendableSemaphore::`default constructor closure'(void)`
+- `0x44cc0` : `public: void __thiscall Rainbow::SuspendableSemaphore::`default constructor closure'(void)`
+- `0x7d870` : `public: void __thiscall Rainbow::UniqueIDGenerator::`default constructor closure'(void)`
+- `0x24680` : `void * __cdecl operator new[](unsigned int,struct MemLabelId,unsigned int,char const *,int)`
+- `0x246d0` : `void __cdecl operator delete[](void *,struct MemLabelId,unsigned int,char const *,int)`
+- `0xa8110` : `public: void __thiscall Rainbow::Http::CurlRequestMessage::Abort(void)`
+- `0x38fd0` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::Abs(void)const `
+- `0x26690` : `private: void __thiscall Rainbow::PerThreadPageAllocator::AcquireNewPage(unsigned int)`
+- `0xb4cc0` : `public: bool __thiscall Rainbow::SingleAppInstance::ActivateOtherInstance(void)const `
+- `0x83150` : `public: bool __thiscall Rainbow::AtomicList::Add(class Rainbow::AtomicNode *,class Rainbow::AtomicNode *,int)`
+- `0x92280` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::AddAmbientLight(class Rainbow::ColorRGBAf const &)`
+- `0x86290` : `public: void __thiscall Rainbow::ConsoleStringProgressor::AddCount(int)`
+- `0x862b0` : `public: void __thiscall Rainbow::ConsoleStringProgressor::AddCountAndPrint(int)`
+- `0x24770` : `public: int __thiscall Rainbow::MemoryManager::AddCustomAllocator(class Rainbow::BaseAllocator *)`
+- `0x922c0` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::AddDirectionalLight(struct math::_float3 const &,struct math::_float4 const &)`
+- `0x4ac90` : `public: void __thiscall Rainbow::FileManager::AddEncryptSubPath(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,bool (__cdecl*)(char *,int,struct dynamic_array<unsigned char,0> &,class core::basic_string<char,class core::StringStorageDefault<char> > &))`
+- `0xaeb30` : `void __cdecl Rainbow::winutils::AddErrorMessage(char const *,...)`
+- `0x298a0` : `public: void __thiscall Rainbow::EventDispatcher::AddEvent(int,void (__cdecl*)(class Rainbow::EventContent const *))`
+- `0x2a880` : `public: unsigned __int64 __thiscall Rainbow::EventDispatcherWithLambda::AddEventWithLambda(int,class std::function<void __cdecl(class Rainbow::EventContent const *)>)`
+- `0x5bbb0` : `public: unsigned int __thiscall Rainbow::PackageAsset::AddFileInto(class core::basic_string<char,class core::StringStorageDefault<char> > const &,unsigned char *,unsigned int,union Rainbow::PackageAsset::AssetFlag)`
+- `0x5c5d0` : `private: unsigned int __thiscall Rainbow::PackageAsset::AddFileIntoNoData(class core::basic_string<char,class core::StringStorageDefault<char> > const &,struct Hash128,unsigned int,union Rainbow::PackageAsset::AssetFlag)`
+- `0x66cf0` : `struct Rainbow::BlockRange __cdecl Rainbow::AddGroupToWorkload(struct Rainbow::BlockRangeBalancedWorkload &,unsigned int,struct dynamic_array<struct Rainbow::BlockRange,0> &,struct dynamic_array<unsigned int,0> &)`
+- `0xadfa0` : `public: void __thiscall Rainbow::Http::WebRequest::AddHeader(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0xabe40` : `private: void __thiscall Rainbow::Http::HttpTaskManager::AddHttpTask(class Rainbow::Http::IHttpTask *)`
+- `0x2c1f0` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::AddMetaFlag(int)`
+- `0x21a70` : `public: void __thiscall Rainbow::TransferBase::AddMetaFlag(int)`
+- `0x4ae50` : `public: class Rainbow::FilePkgBase * __thiscall Rainbow::FileManager::AddPackage(unsigned int,char const *,char const *,int,enum Rainbow::FILETYPE_FLAG)`
+- `0x4b2d0` : `public: void __thiscall Rainbow::FileManager::AddPackage(class Rainbow::SharePtr<class Rainbow::FilePkgBase>)`
+- `0x44d10` : `public: void __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::AddRef(void)const `
+- `0x2ee90` : `public: void __thiscall Rainbow::RefObject::AddRef(void)`
+- `0x91fc0` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::AddToCoefficients(struct math::_float4 const *,struct math::_float1 const *)`
+- `0xac660` : `protected: void __thiscall Rainbow::Http::IHttpTask::AddToTaskManager(void)`
+- `0x92030` : `public: void __thiscall Rainbow::SphericalHarmonicsL1::AddWeighted(struct Rainbow::SphericalHarmonicsL1 const &,float)`
+- `0x92380` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::AddWeighted(struct Rainbow::SphericalHarmonicsL2 const &,float)`
+- `0x924b0` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::AddWeighted(struct Rainbow::SphericalHarmonicsL1 const &,float)`
+- `0x8d9a0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::AdjustDepthRange(float,float)`
+- `0xa4100` : `public: void __thiscall Rainbow::CachedReader::Align4Read(void)`
+- `0xa4b30` : `public: void __thiscall Rainbow::CachedWriter::Align4Write(void)`
+- `0xa2d10` : `public: void __thiscall Rainbow::StreamedBinaryRead::Align(void)`
+- `0xa2eb0` : `public: void __thiscall Rainbow::StreamedBinaryWrite::Align(void)`
+- `0x847d0` : `protected: static unsigned int __cdecl Rainbow::ThreadedStreamBuffer::Align(unsigned int,unsigned int)`
+- `0x20870` : `public: void __thiscall Rainbow::TransferBase::Align(void)`
+- `0x847f0` : `protected: static unsigned int __cdecl Rainbow::ThreadedStreamBuffer::AlignPos(unsigned int,unsigned int)`
+- `0x84810` : `protected: static unsigned int __cdecl Rainbow::ThreadedStreamBuffer::AlignSize(unsigned int,unsigned int)`
+- `0x26980` : `public: void * __thiscall Rainbow::QueueAllocator::Alloc(unsigned int)`
+- `0x73750` : `private: void __thiscall Rainbow::MemoryPool::AllocNewBubble(void)`
+- `0x71d70` : `public: int __thiscall Rainbow::HandleManager::Allocate(void)`
+- `0x24850` : `public: void * __thiscall Rainbow::MemoryManager::Allocate(unsigned int,unsigned int,struct MemLabelId,int,char const *,int)`
+- `0x73830` : `public: void * __thiscall Rainbow::MemoryPool::Allocate(unsigned int)`
+- `0x73870` : `public: void * __thiscall Rainbow::MemoryPool::Allocate(void)`
+- `0x2dc60` : `public: static class Rainbow::Object * __cdecl Rainbow::Object::AllocateAndAssignInstanceID(class Rainbow::Object *)`
+- `0x2dd10` : `public: static class Rainbow::Object * __cdecl Rainbow::Object::AllocateAndAssignInstanceIDNoLock(class Rainbow::Object *)`
+- `0x26700` : `public: void * __thiscall Rainbow::PerThreadPageAllocator::AllocateAndCopy(void *,unsigned int)`
+- `0x21ba0` : `public: void __thiscall Rainbow::BatchAllocator::AllocateField(void * &,unsigned int,unsigned int,unsigned int)`
+- `0x21bf0` : `private: void __thiscall Rainbow::BatchAllocator::AllocateInternal(void * *,int,unsigned int,unsigned int,unsigned int)`
+- `0x26760` : `public: void * __thiscall Rainbow::PerThreadPageAllocator::AllocateInternal(unsigned int)`
+- `0x267b0` : `public: void * __thiscall Rainbow::AtomicPageAllocator::AllocatePage(unsigned int)`
+- `0x6b260` : `void __cdecl Rainbow::AllocateWorkStealingRange(class Rainbow::BatchAllocator &,int,int,struct Rainbow::WorkStealingAllocationData &,int)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::TRect<int>::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::TRect<float>::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::AABB::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::ColorRGBAf::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::DateTime::AllowTransferOptimization(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Gradient::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::MD5Hash::AllowTransferOptimization(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Matrix3x3f::AllowTransferOptimization(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Matrix4x4f::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::MinMaxAABB::AllowTransferOptimization(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::NamedObject::AllowTransferOptimization(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::PlayerSettings::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::Quaternionf::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::SHAHash::AllowTransferOptimization(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::StreamedResource::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl UGUID::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::Vector2f::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::Vector3f::AllowTransferOptimization(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::Vector4f::AllowTransferOptimization(void)`
+- `0x6ebe0` : `void __cdecl BitSetUtility::AndNotBitSet(unsigned int const * __restrict,unsigned int,unsigned int * __restrict)`
+- `0x33d40` : `class Rainbow::Quaternionf __cdecl Rainbow::AngleEulerToQuaternionf(class Rainbow::Vector3f const &,enum math::RotationOrder)`
+- `0x7d170` : `int __cdecl Rainbow::CodeUtil::AnsiToUnicode(wchar_t *,int,char const *,int)`
+- `0x7d190` : `wchar_t const * __cdecl Rainbow::CodeUtil::AnsiToUnicode(char const *,int)`
+- `0x21430` : `public: bool __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::AnyRegistered(void)const `
+- `0x21430` : `public: bool __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::AnyRegistered(void)const `
+- `0x7e510` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Append(char const *,char const *)`
+- `0xa5300` : `public: void __thiscall BootConfig::Data::Append(char const *,char const *)`
+- `0xa5370` : `public: void __thiscall BootConfig::Data::Append(char const *,unsigned int,char const *,unsigned int)`
+- `0x7a6c0` : `private: void __thiscall core::StringBuilder::AppendBlock(char *,unsigned int,unsigned int)`
+- `0x74f70` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl AppendPathName(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x74ff0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl AppendPathName(char const *,char const *)`
+- `0x75140` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl AppendPathNameExtension(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x75260` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl AppendPathNameExtensionIfNecessary(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xa08b0` : `private: void __thiscall Rainbow::JSONWrite::AppendToNode(class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> *,char const *,class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> &)`
+- `0x683c0` : `void __cdecl Rainbow::AssertExecutingJobIsSafeDependency(struct Rainbow::JobFence const &)`
+- `0x80670` : `void __cdecl AssertImplementation(char const *,int,char const *)`
+- `0x2c210` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::AssetMetaDataOnly(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::AssetMetaDataOnly(void)`
+- `0x458d0` : `void __cdecl Rainbow::AsyncReadRequest(struct Rainbow::AsyncReadCommand *)`
+- `0x458f0` : `public: void __thiscall Rainbow::AsyncReadManagerThreaded::AsyncRequest(struct Rainbow::AsyncReadCommand *)`
+- `0x7e5e0` : `float __cdecl Atof(char const *)`
+- `0x7e600` : `int __cdecl Atoi(char const *)`
+- `0x97d50` : `private: bool __thiscall Rainbow::FileSystemEntry::AtomicMove(class Rainbow::FileSystemEntry &)`
+- `0x2c220` : `public: float __thiscall Rainbow::ColorRGBAf::AverageRGB(void)const `
+- `0x33da0` : `class Rainbow::Quaternionf __cdecl Rainbow::AxisAngleToQuaternionf(class Rainbow::Vector3f const &,float)`
+- `0x20870` : `protected: void __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::BaseReset(void)`
+- `0x6baf0` : `public: static void __cdecl Rainbow::JobQueue::BeginExecutingFakeJob(void)`
+- `0xaa910` : `protected: virtual void __thiscall Rainbow::Http::DownLoadFileTask::BeginHandle(void)`
+- `0xacf20` : `protected: virtual void __thiscall Rainbow::Http::UpLoadFileTask::BeginHandle(void)`
+- `0xae060` : `protected: virtual void __thiscall Rainbow::Http::WebRequest::BeginHandle(void)`
+- `0x2c230` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::BeginMetaGroup(char const *)`
+- `0x9f2c0` : `public: void __thiscall Rainbow::JSONRead::BeginMetaGroup(char const *)`
+- `0x21a70` : `public: void __thiscall Rainbow::TransferBase::BeginMetaGroup(char const *)`
+- `0x9f350` : `public: void __thiscall Rainbow::JSONRead::BeginMetaTypeId(unsigned int &)`
+- `0x2c280` : `public: void __thiscall Rainbow::StreamedBinaryRead::BeginMetaTypeId(unsigned int &)`
+- `0x2c2b0` : `public: void __thiscall Rainbow::StreamedBinaryWrite::BeginMetaTypeId(unsigned int &)`
+- `0x7e610` : `bool __cdecl BeginsWith(char const *,char const *)`
+- `0x7e640` : `bool __cdecl BeginsWithCaseInsensitive(char const *,char const *)`
+- `0x22dc0` : `public: unsigned int * __thiscall Rainbow::HandleIndexedBitSet::Bits(void)`
+- `0x22dc0` : `public: unsigned int const * __thiscall Rainbow::HandleIndexedCountedBitSet::Bits(void)const `
+- `0x459a0` : `public: void __thiscall Rainbow::AsyncReadManagerThreaded::BlockRequest(struct Rainbow::AsyncReadCommand *)`
+- `0x83bc0` : `public: void __thiscall Rainbow::Mutex::BlockUntilUnlocked(void)`
+- `0xaad10` : `public: virtual void __thiscall Rainbow::Http::DownLoadFileTask::Break(void)`
+- `0x567e0` : `public: void __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::Break(void)`
+- `0xad120` : `public: virtual void __thiscall Rainbow::Http::UpLoadFileTask::Break(void)`
+- `0xae350` : `public: virtual void __thiscall Rainbow::Http::WebRequest::Break(void)`
+- `0x7e6a0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl BytesToHexString(void const *,unsigned int)`
+- `0x7e770` : `void __cdecl BytesToHexString(void const *,unsigned int,char *)`
+- `0x6f550` : `unsigned int __cdecl CRCBegin(void)`
+- `0x6f560` : `unsigned int __cdecl CRCDone(unsigned int)`
+- `0x6f570` : `unsigned int __cdecl CRCFeed(unsigned int,unsigned char const *,unsigned int)`
+- `0x39010` : `float __cdecl Rainbow::CalculateBoxAreaRadialFrustum2(class Rainbow::Vector3f *,float,float,float)`
+- `0x39340` : `float __cdecl Rainbow::CalculateBoxAreaRadialFrustum(class Rainbow::Vector3f *,float,float,float,float)`
+- `0x2ddd0` : `public: static class Rainbow::Object * __cdecl Rainbow::Object::CalculateCachedTypeIndex(class Rainbow::Object *)`
+- `0x33e90` : `public: class Rainbow::Vector3f __thiscall Rainbow::MinMaxAABB::CalculateCenter(void)const `
+- `0x33ee0` : `void __cdecl Rainbow::CalculateClosestPoint(class Rainbow::Vector3f const &,class Rainbow::AABB const &,class Rainbow::Vector3f &,float &)`
+- `0x34030` : `public: class Rainbow::Vector3f __thiscall Rainbow::MinMaxAABB::CalculateExtent(void)const `
+- `0x2c2e0` : `public: void __thiscall Rainbow::ColorRGBAf::CalculateHSV(float &,float &,float &)`
+- `0x66e80` : `int __cdecl Rainbow::CalculateJobCountWithMinIndicesPerJob(int,int)`
+- `0x66ea0` : `int __cdecl Rainbow::CalculateJobCountWithMinIndicesPerJob(int,int,int)`
+- `0x66f10` : `int __cdecl Rainbow::CalculateJobCountWithMinIndicesPerJobMaxWorkerThreads(int,int)`
+- `0x34080` : `public: class Rainbow::Vector3f __thiscall Rainbow::AABB::CalculateMax(void)const `
+- `0x340c0` : `public: class Rainbow::Vector3f __thiscall Rainbow::AABB::CalculateMin(void)const `
+- `0x39730` : `float __cdecl Rainbow::CalculateProjectedBoxArea2D(class Rainbow::Vector3f const *)`
+- `0x34100` : `public: class Rainbow::Vector3f __thiscall Rainbow::MinMaxAABB::CalculateSize(void)const `
+- `0x34140` : `float __cdecl Rainbow::CalculateSqrDistance(class Rainbow::Vector3f const &,class Rainbow::AABB const &)`
+- `0x39940` : `float __cdecl Rainbow::CalculateTriangleAreaRadialFrustum2(class Rainbow::Vector3f *,float,float,float)`
+- `0x39a70` : `float __cdecl Rainbow::CalculateTriangleAreaRadialFrustum(class Rainbow::Vector3f *,float,float,float,float)`
+- `0x39c60` : `float __cdecl Rainbow::CalculateTriangleAreaRotationless(class Rainbow::Vector3f *,float,float,float,class Rainbow::Vector3f &)`
+- `0x341c0` : `public: void __thiscall Rainbow::AABB::CalculateVertices(class Rainbow::Vector3f * const)const `
+- `0x385a0` : `public: void __thiscall Rainbow::BoundsInt::CalculateVertices(struct math::_int3 const * const)const `
+- `0x34330` : `public: void __thiscall Rainbow::MinMaxAABB::CalculateVertices(class Rainbow::Vector3f * const)const `
+- `0xb8340` : `void __cdecl Rainbow::winutils::CenterWindowOnParent(struct HWND__ *)`
+- `0x4b410` : `public: void __thiscall Rainbow::FileManager::CheckAndGetInfo(class Rainbow::FixedString const &,unsigned int &,bool &,bool &,struct Hash128 &)`
+- `0x5c990` : `public: void __thiscall Rainbow::PackageAsset::CheckAndGetInfo(class Rainbow::FixedString const &,unsigned int &,bool &,struct Hash128 &)`
+- `0x6e1a0` : `void __cdecl CheckBatchModeErrorString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x4b4d0` : `public: bool __thiscall Rainbow::FileManager::CheckBufferEncrypt(struct dynamic_array<unsigned char,0> const &)`
+- `0x65920` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::CheckDeallocateAndThrow(class Rainbow::AtomicSafetyHandle)`
+- `0x68580` : `bool __cdecl Rainbow::CheckDidSyncFence(struct Rainbow::JobFence const &)`
+- `0x20870` : `public: void __thiscall Rainbow::MemoryManager::CheckDisalowAllocation(void)`
+- `0x68920` : `bool __cdecl Rainbow::CheckFenceIsDependencyOrDidSyncFence(struct Rainbow::JobFence const &,struct Rainbow::JobFence const &)`
+- `0x689a0` : `bool __cdecl Rainbow::CheckFenceIsDependencyOrDidSyncFence(struct Rainbow::JobFence const &,struct Rainbow::JobFence const *,unsigned int)`
+- `0x4e570` : `bool __cdecl Rainbow::CheckFileOrDirectoryIfExists(char const *)`
+- `0x659c0` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::CheckGetSecondaryDataPointerAndThrow(class Rainbow::AtomicSafetyHandle)`
+- `0xa50d0` : `bool __cdecl BootConfig::CheckKeyValuePairExists(char const *,char const *)`
+- `0x567f0` : `bool __cdecl Rainbow::FileCompressHelper::CheckLZMAFileCorrect(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0xb4d00` : `public: long __thiscall Rainbow::SingleAppInstance::CheckMessage(unsigned int,unsigned int,long)const `
+- `0x5cc60` : `public: static bool __cdecl Rainbow::PackageAsset::CheckPkgEqual(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x5d970` : `public: bool __thiscall Rainbow::PackageAsset::CheckPkgIntegrity(void)`
+- `0x65a40` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::CheckReadAndThrowNoEarlyOut(class Rainbow::AtomicSafetyHandle)`
+- `0x65ab0` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::CheckWriteAndBumpSecondaryVersion(class Rainbow::AtomicSafetyHandle)`
+- `0x65b00` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::CheckWriteAndThrowNoEarlyOut(class Rainbow::AtomicSafetyHandle)`
+- `0x2c480` : `public: class Rainbow::ColorRGBAf __thiscall Rainbow::ColorRGBAf::Clamp01(void)const `
+- `0x42650` : `public: void __thiscall Rainbow::TRect<int>::Clamp(class Rainbow::TRect<int> const &)`
+- `0x426d0` : `public: void __thiscall Rainbow::TRect<float>::Clamp(class Rainbow::TRect<float> const &)`
+- `0x85230` : `protected: static unsigned int __cdecl Rainbow::ThreadedStreamBuffer::ClampToBufferSize(int,unsigned int)`
+- `0x7d8f0` : `public: void __thiscall Rainbow::UniqueIDGenerator::Cleanup(void)`
+- `0x21440` : `public: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::CleanupAfterInvoke(void)`
+- `0x21440` : `public: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::CleanupAfterInvoke(void)`
+- `0x32a60` : `public: void __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::CleanupAfterInvoke(void)`
+- `0x32a60` : `public: void __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::CleanupAfterInvoke(void)`
+- `0x66bc0` : `void __cdecl Rainbow::CleanupBatchedJobs(void)`
+- `0x514b0` : `public: static void __cdecl Rainbow::File::CleanupClass(void)`
+- `0x6bb00` : `private: static void __cdecl Rainbow::JobQueue::CleanupPools(void)`
+- `0x214f0` : `public: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Clear(void)`
+- `0x214f0` : `public: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Clear(void)`
+- `0x32b60` : `public: void __thiscall Rainbow::CallbackDynamicArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Clear(void)`
+- `0x32b60` : `public: void __thiscall Rainbow::CallbackDynamicArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Clear(void)`
+- `0x831d0` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicList::Clear(class Rainbow::AtomicNode *,int)`
+- `0x26800` : `public: void __thiscall Rainbow::AtomicPageAllocator::Clear(void)`
+- `0x6f2f0` : `public: void __thiscall Rainbow::Blackboard::Clear(void)`
+- `0x71f30` : `public: void __thiscall Rainbow::HandleIndexedBitSet::Clear(void)`
+- `0x71f50` : `public: void __thiscall Rainbow::HandleIndexedCountedBitSet::Clear(void)`
+- `0x79e70` : `public: void __thiscall Rainbow::PlaneColliderCache_dense_hashmap::Clear(void)`
+- `0x20870` : `public: static void __cdecl Rainbow::RuntimeClassManager::ClearAllTypes(void)`
+- `0xaad30` : `public: virtual void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::ClearCallback(void)`
+- `0xaad30` : `public: virtual void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::ClearCallback(void)`
+- `0xaad30` : `public: virtual void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::ClearCallback(void)`
+- `0x66050` : `void __cdecl Rainbow::ClearFenceWithoutSync(struct Rainbow::JobFence &)`
+- `0x26a60` : `private: void __thiscall Rainbow::QueueAllocator::ClearFreedAllocations(bool)`
+- `0x71f70` : `public: void __thiscall Rainbow::HandleManager::ClearHandles(void)`
+- `0x6f350` : `public: class Rainbow::Blackboard __thiscall Rainbow::Blackboard::Clone(void)const `
+- `0x54030` : `public: virtual void __thiscall Rainbow::BinaryStream::Close(void)`
+- `0x51580` : `public: bool __thiscall Rainbow::File::Close(void)`
+- `0x97da0` : `public: bool __thiscall Rainbow::FileAccessor::Close(void)`
+- `0x57a40` : `public: virtual void __thiscall Rainbow::FileHandleDataStream::Close(void)`
+- `0x55100` : `public: virtual void __thiscall Rainbow::FileStreamDataStream::Close(void)`
+- `0x55150` : `public: virtual void __thiscall Rainbow::MemoryDataStream::Close(void)`
+- `0x55180` : `public: virtual void __thiscall Rainbow::ObjectDataStream::Close(void)`
+- `0x57a80` : `public: void __thiscall Rainbow::FileHandleDataStream::CloseHandle(void)`
+- `0x66f40` : `unsigned int __cdecl Rainbow::CombineBlockRangesOrdered(void *,unsigned int,struct Rainbow::BlockRange const *,int const *,int)`
+- `0x21d20` : `public: void __thiscall Rainbow::BatchAllocator::Commit(void)`
+- `0x8da60` : `bool __cdecl Rainbow::CompareApproximately(class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f const &,float)`
+- `0x8a070` : `bool __cdecl Rainbow::CompareApproximately(class Rainbow::ColorRGBAf,class Rainbow::ColorRGBAf,float)`
+- `0x71120` : `bool __cdecl CompareGUIDStringLess(struct UGUID const &,struct UGUID const &)`
+- `0x65ca0` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::ComparePointingToSameBuffer(class Rainbow::AtomicSafetyHandle const &,class Rainbow::AtomicSafetyHandle const &)`
+- `0x68a50` : `void __cdecl Rainbow::CompleteAllJobs(void)`
+- `0x675f0` : `void __cdecl Rainbow::CompleteFenceInternal(struct Rainbow::JobFence &,enum Rainbow::WorkStealFlags)`
+- `0x67630` : `bool __cdecl Rainbow::CompleteManualJobFence(struct Rainbow::JobFence &)`
+- `0x6bbd0` : `public: bool __thiscall Rainbow::JobQueue::CompleteManualJobFenceGroup(struct Rainbow::JobGroupID &)`
+- `0xa8120` : `public: void __thiscall Rainbow::Http::CurlHandle::CompleteTransfer(enum CURLcode)`
+- `0xa4b80` : `public: bool __thiscall Rainbow::CachedWriter::CompleteWriting(void)`
+- `0x56970` : `bool __cdecl Rainbow::FileCompressHelper::CompressByLZ4Buffer(unsigned char *,unsigned int,struct dynamic_array<unsigned char,0> &,unsigned int &)`
+- `0x56a20` : `public: bool __thiscall Rainbow::FileCompressHelper::LZMAStreamingCompress::CompressFileTo(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x72670` : `struct Hash128 __cdecl ComputeHash128FromString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x3a780` : `public: void __thiscall Rainbow::Frustum::ComputePoints(struct dynamic_array<class Rainbow::Vector3f,0> &)const `
+- `0x3e730` : `void __cdecl Rainbow::ComputeTriangleTangentBasis(class Rainbow::Vector3f const * const,class Rainbow::Vector2f const * const,struct Rainbow::TangentInfo * const)`
+- `0x8dab0` : `float __cdecl Rainbow::ComputeUniformScale(class Rainbow::Matrix4x4f const &)`
+- `0x67000` : `int __cdecl Rainbow::ConfigureBlockRanges(struct Rainbow::BlockRange *,int,int)`
+- `0x670d0` : `int __cdecl Rainbow::ConfigureBlockRangesWithMinIndicesPerJob(struct Rainbow::BlockRange *,int,int)`
+- `0x34410` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::Conjugate(void)const `
+- `0x42770` : `public: bool __thiscall Rainbow::TRect<int>::Contains(class Rainbow::Vector2f const &)const `
+- `0x427b0` : `public: bool __thiscall Rainbow::TRect<int>::Contains(int,int)const `
+- `0x427f0` : `public: bool __thiscall Rainbow::TRect<float>::Contains(class Rainbow::Vector2f const &)const `
+- `0x42840` : `public: bool __thiscall Rainbow::TRect<float>::Contains(float,float)const `
+- `0x8db00` : `public: bool __thiscall Rainbow::Matrix4x4f::ContainsNaN(void)const `
+- `0x34450` : `public: bool __thiscall Rainbow::Quaternionf::ContainsNaN(void)const `
+- `0x42890` : `public: bool __thiscall Rainbow::TRect<int>::ContainsRel(int,int)const `
+- `0x428c0` : `public: bool __thiscall Rainbow::TRect<float>::ContainsRel(float,float)const `
+- `0x2c500` : `public: void __thiscall Rainbow::FloatToHalfConverter::Convert(float const &,unsigned short &)`
+- `0x2c530` : `public: void __thiscall Rainbow::FloatToHalfConverter::Convert(unsigned int,float const *,unsigned short *)`
+- `0x20870` : `void __cdecl Rainbow::ConvertAndCopySHCoefficientArraysToPropertySheet(class Rainbow::ShaderPropertySheet &,struct Rainbow::SphericalHarmonicsL2 const *,unsigned int,int)`
+- `0x20870` : `void __cdecl Rainbow::ConvertAndCopySHCoefficientArraysToPropertySheetFromScript(class Rainbow::ShaderPropertySheet *,struct dynamic_array<struct Rainbow::SphericalHarmonicsL2,0> const &,int,int,int)`
+- `0x2c570` : `public: unsigned short __thiscall Rainbow::FloatToHalfConverter::ConvertBits(unsigned int)`
+- `0x20e50` : `public: bool __thiscall Rainbow::StreamedBinaryRead::ConvertEndianess(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::StreamedBinaryWrite::ConvertEndianess(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::ConvertEndianess(void)`
+- `0xb3d40` : `void __cdecl Rainbow::ConvertEnginePathName(char const *,wchar_t *,int)`
+- `0x7c690` : `bool __cdecl Rainbow::ConvertUTF16toUTF8(struct dynamic_array<unsigned short,0> const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x7c710` : `bool __cdecl Rainbow::ConvertUTF16toUTF8(unsigned short const *,int,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x7c780` : `bool __cdecl Rainbow::ConvertUTF16toUTF8(unsigned short const *,int,unsigned char *,int &)`
+- `0x7c7f0` : `bool __cdecl Rainbow::ConvertUTF32toUTF16(unsigned int const *,int,unsigned short *,int &)`
+- `0x7c900` : `bool __cdecl Rainbow::ConvertUTF32toUTF8(struct dynamic_array<unsigned int,0> const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x7c980` : `bool __cdecl Rainbow::ConvertUTF32toUTF8(unsigned int const *,int,unsigned char *,int &)`
+- `0x7c9d0` : `bool __cdecl Rainbow::ConvertUTF8toUTF16(class core::basic_string<char,class core::StringStorageDefault<char> > const &,struct dynamic_array<unsigned short,0> &)`
+- `0x7cb10` : `bool __cdecl Rainbow::ConvertUTF8toUTF16(unsigned char const *,int,struct dynamic_array<unsigned short,0> &)`
+- `0x7cc20` : `bool __cdecl Rainbow::ConvertUTF8toUTF16(unsigned char const *,int,unsigned short *,int &)`
+- `0x7cca0` : `bool __cdecl Rainbow::ConvertUTF8toUTF32(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char32_t,class core::StringStorageDefault<char32_t> > &)`
+- `0x7cd10` : `bool __cdecl Rainbow::ConvertUTF8toUTF32(unsigned char const *,int,unsigned int *,int &)`
+- `0xb3d80` : `void __cdecl Rainbow::ConvertWindowsPathName(wchar_t const *,char *,int)`
+- `0x6ecd0` : `void __cdecl BitSetUtility::CopyBitSet(unsigned int const * __restrict,unsigned int,unsigned int * __restrict)`
+- `0x6ecf0` : `void __cdecl BitSetUtility::CopyBits(unsigned int const * __restrict,unsigned int,unsigned int,unsigned int * __restrict,unsigned int)`
+- `0x83870` : `public: void __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::CopyDataAndMakeAvailableForRead(class Rainbow::AtomicCircularBufferHandle *,unsigned char *,int,int)`
+- `0x83970` : `public: void __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::CopyDataToBuffer(class Rainbow::AtomicCircularBufferHandle *,unsigned char *,int,int)`
+- `0x707d0` : `public: void __thiscall Rainbow::FixedString::CopyFrom(class Rainbow::FixedString const &)`
+- `0x707d0` : `public: void __thiscall Rainbow::NoFreeFixedString::CopyFrom(class Rainbow::NoFreeFixedString const &)`
+- `0x8cd60` : `void __cdecl Rainbow::CopyMatrix4x4REF(float const * __restrict,float * __restrict)`
+- `0x4b4f0` : `public: bool __thiscall Rainbow::FileManager::CopyPKgFileToWritePath(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x20870` : `void __cdecl Rainbow::CopyProbeOcclusionArrayToPropertySheet(class Rainbow::ShaderPropertySheet &,class Rainbow::Vector4f const *,unsigned int,int)`
+- `0x20870` : `void __cdecl Rainbow::CopyProbeOcclusionArrayToPropertySheetFromScript(class Rainbow::ShaderPropertySheet *,struct dynamic_array<class Rainbow::Vector4f,0> const &,int,int,int)`
+- `0x97dd0` : `public: bool __thiscall Rainbow::FileSystemEntry::CopyTo(class Rainbow::FileSystemEntry &,enum Rainbow::FileSystemCopyMoveFlags)`
+- `0x4b6d0` : `public: bool __thiscall Rainbow::FileManager::CopyWritePathFileOrDir(char const *,char const *)`
+- `0x71190` : `struct UGUID __cdecl CoreStringToGUID(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x8a0d0` : `class Rainbow::ColorRGBAf __cdecl Rainbow::CorrelatedColorTemperatureToRGB(float)`
+- `0x2c8f0` : `public: unsigned int __thiscall Rainbow::HandleIndexedCountedBitSet::Count(void)const `
+- `0x20850` : `public: int __thiscall Rainbow::PackedFloatVector::Count(void)const `
+- `0x20850` : `public: int __thiscall Rainbow::PackedQuatVector::Count(void)`
+- `0x6bf20` : `private: int __thiscall Rainbow::JobQueue::CountGroup(class Rainbow::JobGroup *)`
+- `0x65d20` : `public: static class Rainbow::AtomicSafetyHandle __cdecl Rainbow::AtomicSafetyHandle::Create(void)`
+- `0xaad90` : `public: static class Rainbow::SharePtr<class Rainbow::Http::DownLoadFileTask> __cdecl Rainbow::Http::DownLoadFileTask::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0xb9400` : `protected: void __thiscall Rainbow::PlatformThread::Create(class Rainbow::Thread *,unsigned int,int)`
+- `0x85250` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::Create(enum Rainbow::ThreadedStreamBuffer::Mode,unsigned int)`
+- `0xad130` : `public: static class Rainbow::SharePtr<class Rainbow::Http::UpLoadFileTask> __cdecl Rainbow::Http::UpLoadFileTask::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0xae360` : `public: static class Rainbow::SharePtr<class Rainbow::Http::WebRequest> __cdecl Rainbow::Http::WebRequest::Create(class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0x983c0` : `public: bool __thiscall Rainbow::FileSystemEntry::CreateAsDir(void)`
+- `0x4e6d0` : `bool __cdecl Rainbow::CreateAsDirectoryIfNotExists(char const *,bool)`
+- `0x983e0` : `public: bool __thiscall Rainbow::FileSystemEntry::CreateAsFile(void)`
+- `0x4e8e0` : `bool __cdecl Rainbow::CreateAsFileIfNotExists(char const *)`
+- `0x83210` : `class Rainbow::AtomicQueue * __cdecl Rainbow::CreateAtomicQueue(void)`
+- `0x832d0` : `class Rainbow::AtomicStack * __cdecl Rainbow::CreateAtomicStack(void)`
+- `0x66790` : `void __cdecl Rainbow::CreateBackgroundJobQueue(void)`
+- `0x6ee50` : `unsigned int * __cdecl BitSetUtility::CreateBitSet(unsigned int,struct MemLabelId)`
+- `0x84830` : `public: void __thiscall Rainbow::ThreadedBlockAllocatingBuffer::CreateBlockAllocating(unsigned int,void * (__cdecl*)(unsigned int),void (__cdecl*)(void *,unsigned int))`
+- `0x4b980` : `public: bool __thiscall Rainbow::FileManager::CreateDir(char const *)`
+- `0x51750` : `bool __cdecl Rainbow::CreateDirectory(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4ea50` : `bool __cdecl Rainbow::CreateDirectoryRecursive(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x6bf60` : `public: class Rainbow::JobGroup * __thiscall Rainbow::JobQueue::CreateForEachJobBatch(void (__cdecl*)(void *,unsigned int),void *,unsigned int,void (__cdecl*)(void *),struct Rainbow::JobGroupID,class Rainbow::JobGroup *)`
+- `0x6bfc0` : `public: class Rainbow::JobGroup * __thiscall Rainbow::JobQueue::CreateGroup(unsigned int,struct Rainbow::JobGroupID)`
+- `0x7d930` : `public: struct Rainbow::UniqueSmallID __thiscall Rainbow::UniqueIDGenerator::CreateID(void)`
+- `0x6c190` : `private: class Rainbow::JobGroup * __thiscall Rainbow::JobQueue::CreateJob(void (__cdecl*)(void *),void *,struct Rainbow::JobGroupID)`
+- `0x6c1d0` : `public: class Rainbow::JobGroup * __thiscall Rainbow::JobQueue::CreateJobBatch(void (__cdecl*)(void *),void *,struct Rainbow::JobGroupID,class Rainbow::JobGroup *)`
+- `0x6c240` : `private: class Rainbow::JobGroup * __thiscall Rainbow::JobQueue::CreateJobMultipleDependencies(void (__cdecl*)(void *),void *,struct Rainbow::JobGroupID *,int)`
+- `0x6c2e0` : `void __cdecl Rainbow::CreateJobQueue(char const *,char const *,int)`
+- `0x67550` : `void __cdecl Rainbow::JobSystem::CreateJobSystem(int)`
+- `0x6c490` : `private: class Rainbow::JobGroup * __thiscall Rainbow::JobQueue::CreateJobsForEach(void (__cdecl*)(void *,unsigned int),void *,unsigned int,void (__cdecl*)(void *),struct Rainbow::JobGroupID)`
+- `0x6ae20` : `private: class Rainbow::AtomicNode * __thiscall Rainbow::MainThreadJob::CreateMainThreadGroup(void)`
+- `0x67660` : `struct Rainbow::JobFence __cdecl Rainbow::CreateManualJobFence(void)`
+- `0x6c500` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::CreateManualJobFenceGroup(void)`
+- `0x20880` : `struct MemLabelId __cdecl CreateMemLabel(struct MemLabelId,struct MemLabelId)`
+- `0x20880` : `struct MemLabelId __cdecl CreateMemLabel(struct MemLabelId,int)`
+- `0x20880` : `struct MemLabelId __cdecl CreateMemLabel(struct MemLabelId,void *)`
+- `0x20880` : `struct MemLabelId __cdecl CreateMemLabel(enum MemLabelIdentifier)`
+- `0x20880` : `struct MemLabelId __cdecl CreateMemLabel(enum MemLabelIdentifier,int)`
+- `0x20880` : `struct MemLabelId __cdecl CreateMemLabel(enum MemLabelIdentifier,void *)`
+- `0x42900` : `public: static struct UGUID __cdecl UGUID::CreateMinimumLexicographicalValue(void)`
+- `0x2f540` : `public: class Rainbow::Object * __thiscall Rainbow::RuntimeClass::CreateObject(struct MemLabelId)const `
+- `0x98400` : `public: bool __thiscall Rainbow::FileSystem::CreatePath(char const *)const `
+- `0x887d0` : `public: class Rainbow::SharePtr<class Rainbow::TimeCallHolder> __thiscall Rainbow::TimeCallManager::CreatePreTickOnceCallSafe(void)`
+- `0x7d9d0` : `public: unsigned int __thiscall Rainbow::UniqueIDGenerator::CreatePureIndex(void)`
+- `0x853f0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::CreateReadOnly(void const *,unsigned int)`
+- `0x854e0` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::CreateSemaphores(void)`
+- `0x3f600` : `void __cdecl Rainbow::CreateTangentSpaceTangents(class Rainbow::Vector3f const *,class Rainbow::Vector2f const *,class Rainbow::Vector3f const *,class Rainbow::Matrix3x3f *,int,int const *,int)`
+- `0x888d0` : `public: class Rainbow::SharePtr<class Rainbow::TimeCallHolder> __thiscall Rainbow::TimeCallManager::CreateTimeOutCall(unsigned __int64)`
+- `0x88980` : `public: class Rainbow::SharePtr<class Rainbow::TimeCallHolder> __thiscall Rainbow::TimeCallManager::CreateTimeRepeat(unsigned int)`
+- `0x88a20` : `public: class Rainbow::SharePtr<class Rainbow::TimeCallHolder> __thiscall Rainbow::TimeCallManager::CreateTimeRepeatCount(unsigned short,unsigned int)`
+- `0x4eb40` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::CreateUniqueTempDirectory(class core::basic_string<char,class core::StringStorageDefault<char> > const &,unsigned int)`
+- `0x4ba70` : `public: bool __thiscall Rainbow::FileManager::CreateWritePathDir(char const *)`
+- `0x344d0` : `public: static class Rainbow::Vector3f __cdecl Rainbow::Vector3f::Cross(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x989d0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::CurrentDirectory(void)const `
+- `0x83df0` : `bool __cdecl Rainbow::CurrentThreadIsMainThread(void)`
+- `0x56da0` : `bool __cdecl Rainbow::FileCompressHelper::DeCompressByLZ4Buffer(unsigned char *,unsigned int,struct dynamic_array<unsigned char,0> &)`
+- `0x56e30` : `public: void __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::DeCompressStreamingToFile(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x24ac0` : `public: void __thiscall Rainbow::MemoryManager::Deallocate(void *)`
+- `0x24b30` : `public: void __thiscall Rainbow::MemoryManager::Deallocate(void *,struct MemLabelId)`
+- `0x73890` : `public: void __thiscall Rainbow::MemoryPool::Deallocate(void *)`
+- `0x738b0` : `public: void __thiscall Rainbow::MemoryPool::DeallocateAll(void)`
+- `0x21db0` : `public: static void __cdecl Rainbow::BatchAllocator::DeallocateRoot(void *)`
+- `0x68bc0` : `void __cdecl Rainbow::DebugDidScheduleJob(struct Rainbow::JobFence const &,struct Rainbow::JobFence const &)`
+- `0x68cd0` : `void __cdecl Rainbow::DebugDidScheduleJob(struct Rainbow::JobFence const &,struct Rainbow::JobFence const *,unsigned int)`
+- `0x68df0` : `void __cdecl Rainbow::DebugDidSyncFence(struct Rainbow::JobFence const &)`
+- `0xb85a0` : `void __cdecl Rainbow::winutils::DebugMessageBox(char const *,...)`
+- `0x80a40` : `void __cdecl DebugStringToFileDataCall(struct DebugStringToFileData const &)`
+- `0x80e70` : `void __cdecl DebugTextLineByLine(char const *,int)`
+- `0x771e0` : `private: void __thiscall Rainbow::MD5::Decode(unsigned int *,unsigned char const *,int)`
+- `0x91c50` : `class Rainbow::ColorRGBAf __cdecl Rainbow::DecodeRGBM(class Rainbow::ColorRGBA32 const &,enum RGBMRanges)`
+- `0x91cc0` : `unsigned int __cdecl Rainbow::DecodeRGBMChannel(unsigned int,unsigned int,unsigned int,unsigned char)`
+- `0x8db40` : `public: struct Rainbow::FrustumPlanes __thiscall Rainbow::Matrix4x4f::DecomposeProjection(void)const `
+- `0x6c570` : `private: void __thiscall Rainbow::JobQueue::DecrementActiveThreadCount(void)`
+- `0x6c5b0` : `private: bool __thiscall Rainbow::JobQueue::DecrementActiveThreadCountIfThreadNeedsToSleep(void)`
+- `0x4bbb0` : `public: void __thiscall Rainbow::FileManager::Decrypt(struct dynamic_array<unsigned char,0> const &,struct dynamic_array<unsigned char,0> &)`
+- `0x4bbd0` : `private: bool __thiscall Rainbow::FileManager::DecryptBySubPath(class core::basic_string<char,class core::StringStorageDefault<char> >,char *,int,struct dynamic_array<unsigned char,0> &)`
+- `0x1aeae8` : `private: static enum Rainbow::ThreadPriority const Rainbow::BackgroundJobQueue::DefaultJobThreadPriority`
+- `0x6b0a0` : `private: static void __cdecl Rainbow::ThreadedJobBatch::JobBatch::DeferScheduleJobsInternal(void (__cdecl*)(class Rainbow::JobBatchDispatcher &,void *),void *)`
+- `0x989f0` : `public: bool __thiscall Rainbow::FileSystem::Delete(char const *,bool)const `
+- `0x98ab0` : `public: bool __thiscall Rainbow::FileSystemEntry::Delete(bool)`
+- `0x51930` : `bool __cdecl Rainbow::DeleteFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x519e0` : `bool __cdecl Rainbow::DeleteFileOrDirectory(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4efa0` : `bool __cdecl Rainbow::DeleteFileOrDirectoryIfExists(char const *,bool)`
+- `0x75500` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl DeleteFirstPathNameComponent(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x755c0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl DeleteLastPathNameComponent(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x75760` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl DeleteLastPathNameComponentWithAnySlash(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x75790` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl DeletePathNameExtension(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x2e770` : `void __cdecl Rainbow::DeleteTypeHash(void *)`
+- `0x4bdc0` : `public: bool __thiscall Rainbow::FileManager::DeleteWritePathFileOrDir(char const *)`
+- `0x864c0` : `public: static void __cdecl Rainbow::EndOfFrameCallbacks::DequeAll(void)`
+- `0x83320` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicQueue::Dequeue(void)`
+- `0x44d50` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::MutexLockedQueue::Dequeue(void)`
+- `0x45b30` : `void __cdecl Rainbow::DestoryAsyncReadManager(void)`
+- `0xac260` : `void __cdecl Rainbow::Http::DestoryHttpTaskManager(void)`
+- `0x6aed0` : `void __cdecl Rainbow::DestoryMainThreadJob(void)`
+- `0x7d9f0` : `public: void __thiscall Rainbow::UniqueIDGenerator::DestroyAllIndices(void)`
+- `0x833a0` : `void __cdecl Rainbow::DestroyAtomicQueue(class Rainbow::AtomicQueue *)`
+- `0x83420` : `void __cdecl Rainbow::DestroyAtomicStack(class Rainbow::AtomicStack *)`
+- `0x66840` : `void __cdecl Rainbow::DestroyBackgroundJobQueue(void)`
+- `0x6ee90` : `void __cdecl BitSetUtility::DestroyBitSet(unsigned int * &,struct MemLabelId)`
+- `0x7da30` : `public: void __thiscall Rainbow::UniqueIDGenerator::DestroyID(struct Rainbow::UniqueSmallID)`
+- `0x6c600` : `void __cdecl Rainbow::DestroyJobQueue(void)`
+- `0x67580` : `void __cdecl Rainbow::JobSystem::DestroyJobSystem(void)`
+- `0x20880` : `struct MemLabelId __cdecl DestroyMemLabel(struct MemLabelId)`
+- `0x2de20` : `void __cdecl Rainbow::DestroyObject(class Rainbow::Object *)`
+- `0x7da60` : `public: void __thiscall Rainbow::UniqueIDGenerator::DestroyPureIndex(unsigned int)`
+- `0x85580` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::DestroySemaphores(void)`
+- `0x2c680` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::DidReadLastPPtrProperty(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryRead::DidReadLastPPtrProperty(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::DidReadLastPPtrProperty(void)const `
+- `0x2c680` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::DidReadLastProperty(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryRead::DidReadLastProperty(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::DidReadLastProperty(void)const `
+- `0x5d9f0` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::PackageAsset::DiffToHotFixPkg(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x20b80` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::DirectStringTransfer(void)`
+- `0x20870` : `void __cdecl Rainbow::winutils::DisableWindowsKey(void)`
+- `0xb86b0` : `void __cdecl Rainbow::winutils::DisplayErrorMessages(char const *)`
+- `0xb8720` : `void __cdecl Rainbow::winutils::DisplayErrorMessagesAndQuit(char const *)`
+- `0x3a010` : `public: float __thiscall Rainbow::Vector2f::Distance(class Rainbow::Vector2f const &)const `
+- `0x34530` : `public: float __thiscall Rainbow::Vector4f::Distance(class Rainbow::Vector4f const &)const `
+- `0x3a060` : `public: float __thiscall Rainbow::Vector2f::DistanceSqr(class Rainbow::Vector2f const &)const `
+- `0x345a0` : `public: float __thiscall Rainbow::Vector4f::DistanceSqr(class Rainbow::Vector4f const &)const `
+- `0x3a9f0` : `public: float __thiscall Rainbow::Frustum::DistanceToPoint(class Rainbow::Vector3f const &)const `
+- `0x80fa0` : `public: void __thiscall Rainbow::LogSystem::DoLogData(struct DebugStringToFileData &)`
+- `0x878f0` : `public: bool __thiscall Rainbow::PlayerSettings::DoesSupportResolution(int,int)const `
+- `0x34600` : `public: float __thiscall Rainbow::Quaternionf::Dot(class Rainbow::Quaternionf const &)const `
+- `0x7e7b0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl DoubleToString(double)`
+- `0x9aba0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl DoubleToStringAccurate(double)`
+- `0x9ac80` : `void __cdecl DoubleToStringAccurate(double,char *,unsigned int)`
+- `0x810a0` : `void __cdecl DumpCallstackConsole(char const *,char const *,int)`
+- `0xb8740` : `void __cdecl Rainbow::winutils::EnableWindowsKey(void)`
+- `0x5e5e0` : `public: void __thiscall Rainbow::PackageAsset::EnableWrite(void)`
+- `0x34650` : `public: void __thiscall Rainbow::MinMaxAABB::Encapsulate(class Rainbow::MinMaxAABB const &)`
+- `0x346c0` : `public: void __thiscall Rainbow::MinMaxAABB::Encapsulate(class Rainbow::AABB const &)`
+- `0x34740` : `public: void __thiscall Rainbow::MinMaxAABB::Encapsulate(class Rainbow::Vector3f const &)`
+- `0x77240` : `private: void __thiscall Rainbow::MD5::Encode(unsigned char *,unsigned int const *,int)`
+- `0x91cf0` : `class Rainbow::ColorRGBA32 __cdecl Rainbow::EncodeRGBM(class Rainbow::ColorRGBAf const &,enum RGBMRanges)`
+- `0x4bf00` : `public: void __thiscall Rainbow::FileManager::Encrypt(struct dynamic_array<unsigned char,0> const &,struct dynamic_array<unsigned char,0> &)`
+- `0x4bf20` : `public: void __thiscall Rainbow::FileManager::Encrypt(char *,int,struct dynamic_array<unsigned char,0> &)`
+- `0xa4120` : `public: unsigned int __thiscall Rainbow::CachedReader::End(void)`
+- `0x6c670` : `public: static void __cdecl Rainbow::JobQueue::EndExecutingFakeJob(void)`
+- `0xaaf00` : `protected: virtual void __thiscall Rainbow::Http::DownLoadFileTask::EndHandle(void)`
+- `0xad2a0` : `protected: virtual void __thiscall Rainbow::Http::UpLoadFileTask::EndHandle(void)`
+- `0xae470` : `protected: virtual void __thiscall Rainbow::Http::WebRequest::EndHandle(void)`
+- `0x2c690` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::EndMetaGroup(void)`
+- `0x9f470` : `public: void __thiscall Rainbow::JSONRead::EndMetaGroup(void)`
+- `0x20870` : `public: void __thiscall Rainbow::TransferBase::EndMetaGroup(void)`
+- `0x9f470` : `public: void __thiscall Rainbow::JSONRead::EndMetaTypeId(void)`
+- `0x20870` : `public: void __thiscall Rainbow::StreamedBinaryRead::EndMetaTypeId(void)`
+- `0x20870` : `public: void __thiscall Rainbow::StreamedBinaryWrite::EndMetaTypeId(void)`
+- `0x7e870` : `bool __cdecl EndsWith(char const *,unsigned int,char const *,unsigned int)`
+- `0x7e8a0` : `bool __cdecl EndsWithCaseInsensitive(char const *,unsigned int,char const *,unsigned int)`
+- `0x65e50` : `public: static enum Rainbow::EnforceJobResult __cdecl Rainbow::AtomicSafetyHandle::EnforceAllBufferJobsHaveCompleted(class Rainbow::AtomicSafetyHandle)`
+- `0x69140` : `enum Rainbow::EnforceJobResult __cdecl Rainbow::EnforceAllBufferJobsHaveCompleted(class Rainbow::AtomicSafetyHandle const &)`
+- `0x65e70` : `public: static enum Rainbow::EnforceJobResult __cdecl Rainbow::AtomicSafetyHandle::EnforceAllBufferJobsHaveCompletedAndDisableReadWrite(class Rainbow::AtomicSafetyHandle)`
+- `0x65ed0` : `public: static enum Rainbow::EnforceJobResult __cdecl Rainbow::AtomicSafetyHandle::EnforceAllBufferJobsHaveCompletedAndRelease(class Rainbow::AtomicSafetyHandle)`
+- `0x83450` : `public: void __thiscall Rainbow::AtomicQueue::Enqueue(class Rainbow::AtomicNode *)`
+- `0x86530` : `public: static void __cdecl Rainbow::EndOfFrameCallbacks::Enqueue(class Rainbow::EndOfFrameCallback *,bool)`
+- `0x44dd0` : `public: void __thiscall Rainbow::MutexLockedQueue::Enqueue(class Rainbow::AtomicNode *)`
+- `0x83470` : `public: void __thiscall Rainbow::AtomicQueue::EnqueueAll(class Rainbow::AtomicNode *,class Rainbow::AtomicNode *)`
+- `0x6c680` : `private: void __thiscall Rainbow::JobQueue::EnqueueAll(class Rainbow::JobGroup *,class Rainbow::JobGroup *)`
+- `0x44e30` : `public: void __thiscall Rainbow::MutexLockedQueue::EnqueueAll(class Rainbow::AtomicNode *,class Rainbow::AtomicNode *)`
+- `0x6c6b0` : `private: unsigned int __thiscall Rainbow::JobQueue::EnqueueAllInternal(class Rainbow::JobGroup *,class Rainbow::JobGroup *,class Rainbow::AtomicQueue *,int *)`
+- `0xb9440` : `protected: void __thiscall Rainbow::PlatformThread::Enter(class Rainbow::Thread *)`
+- `0x98ae0` : `public: bool __thiscall Rainbow::FileSystem::Enumerate(char const *,struct dynamic_block_array<struct Rainbow::FileEntryInfo,32> *,bool,enum Rainbow::FileEnumerationFlag,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> const &)const `
+- `0x54060` : `public: virtual bool __thiscall Rainbow::BinaryStream::Eof(void)const `
+- `0x57aa0` : `public: virtual bool __thiscall Rainbow::FileHandleDataStream::Eof(void)const `
+- `0x551a0` : `public: virtual bool __thiscall Rainbow::FileStreamDataStream::Eof(void)const `
+- `0x551b0` : `public: virtual bool __thiscall Rainbow::MemoryDataStream::Eof(void)const `
+- `0x551c0` : `public: virtual bool __thiscall Rainbow::ObjectDataStream::Eof(void)const `
+- `0x2c6b0` : `public: bool __thiscall Rainbow::ColorRGBAf::Equals(class Rainbow::ColorRGBAf const &,float)const `
+- `0x2c6b0` : `public: bool __thiscall Rainbow::Vector4f::Equals(class Rainbow::Vector4f const &,float)const `
+- `0x83720` : `bool __cdecl Rainbow::CurrentThread::EqualsID(unsigned __int64)`
+- `0x83720` : `bool __cdecl Rainbow::CurrentThread::EqualsIDForAssert(unsigned __int64)`
+- `0x20b90` : `public: static bool __cdecl Rainbow::Thread::EqualsThreadID(unsigned __int64,unsigned __int64)`
+- `0xb8770` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::winutils::ErrorCodeToMsg(unsigned long)`
+- `0x8bf60` : `void __cdecl Rainbow::EulerToMatrix(class Rainbow::Vector3f const &,class Rainbow::Matrix3x3f &)`
+- `0x906c0` : `class Rainbow::Quaternionf __cdecl Rainbow::EulerToQuaternionf(class Rainbow::Vector3f const &,enum math::RotationOrder)`
+- `0x8b0e0` : `public: struct math::pix4 __thiscall Rainbow::Gradient::Evaluate(struct math::_float4 const &)const `
+- `0x8b110` : `public: class Rainbow::ColorRGBA32 __thiscall Rainbow::Gradient::Evaluate(float)const `
+- `0x925b0` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::Evaluate(class Rainbow::Vector3f const * const,int,class Rainbow::ColorRGBAf *)const `
+- `0x8b200` : `public: struct math::floatNx4 __thiscall Rainbow::Gradient::EvaluateHDR(struct math::_float4 const &)const `
+- `0x8b230` : `public: class Rainbow::ColorRGBAf __thiscall Rainbow::Gradient::EvaluateHDR(float)const `
+- `0x44ea0` : `public: void __thiscall Rainbow::AsyncReadCommand::Excuse(void)`
+- `0x6c7d0` : `private: int __thiscall Rainbow::JobQueue::Exec(struct Rainbow::JobInfo *,int,int)`
+- `0x76be0` : `public: static void __cdecl RegisterRuntimeInitializeAndCleanup::ExecuteCleanup(void)`
+- `0x76c10` : `public: static void __cdecl RegisterRuntimeInitializeAndCleanup::ExecuteInitializations(void)`
+- `0x6c8c0` : `private: bool __thiscall Rainbow::JobQueue::ExecuteJobFromHighPriorityStack(void)`
+- `0x6c920` : `private: bool __thiscall Rainbow::JobQueue::ExecuteJobFromQueue(void)`
+- `0x6ca40` : `private: void __thiscall Rainbow::JobQueue::ExecuteJobFunc(struct Rainbow::JobInfo *)`
+- `0x6af10` : `public: void __thiscall Rainbow::MainThreadJob::ExecuteMainThreadJobs(void)`
+- `0x6cab0` : `public: bool __thiscall Rainbow::JobQueue::ExecuteOneJob(void)`
+- `0x67590` : `bool __cdecl Rainbow::JobSystem::ExecuteOneJobQueueJob(void)`
+- `0x98bf0` : `public: bool __thiscall Rainbow::FileSystemEntry::Exists(void)const `
+- `0x7da80` : `public: bool __thiscall Rainbow::UniqueIDGenerator::Exists(struct Rainbow::UniqueSmallID)const `
+- `0x21aa0` : `protected: void __thiscall Rainbow::PlatformThread::Exit(class Rainbow::Thread const *,void *)`
+- `0x347a0` : `public: void __thiscall Rainbow::AABB::Expand(float)`
+- `0x386c0` : `public: void __thiscall Rainbow::BoundsInt::Expand(struct math::_int3 const &)`
+- `0x347e0` : `public: void __thiscall Rainbow::MinMaxAABB::Expand(class Rainbow::Vector3f const &)`
+- `0x34870` : `public: void __thiscall Rainbow::MinMaxAABB::Expand(float)`
+- `0x92810` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::Expand(struct Rainbow::SphericalHarmonicsL1 const &)`
+- `0x20bb0` : `public: void __thiscall Rainbow::Thread::ExternalEarlySetRunningFalse(void)`
+- `0x20870` : `void __cdecl Rainbow::ExtractSHCoefficientsFromPropertySheet(class fixed_array<class Rainbow::Vector4f,7> &,class Rainbow::ShaderPropertySheet const *)`
+- `0x98c10` : `public: char const * __thiscall Rainbow::FileSystemEntry::Filename(void)const `
+- `0x77290` : `public: void __thiscall Rainbow::MD5::Final(struct Hash128 &)`
+- `0x772a0` : `public: void __thiscall Rainbow::MD5::Final(unsigned char *)`
+- `0x77380` : `public: void __thiscall Rainbow::SHA1::Final(void)`
+- `0x7a010` : `public: bool __thiscall Rainbow::PlaneColliderCache_dense_hashmap::Find(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f &,class Rainbow::Vector3f &,unsigned int &,unsigned int &,float)const `
+- `0x2f580` : `public: void __thiscall Rainbow::RuntimeClass::FindAllDerivedClass(struct dynamic_array<class Rainbow::RuntimeClass const *,0> &,enum Rainbow::RuntimeClass::TypeFilterOptions)const `
+- `0x2f5a0` : `public: static void __cdecl Rainbow::RuntimeClassManager::FindAllRTTIDerivedTypes(class Rainbow::RuntimeClass const *,struct dynamic_array<class Rainbow::RuntimeClass const *,0> &,bool)`
+- `0x2c720` : `int __cdecl FindIndexOfValueInArrayUnique(int const *,int,int,int)`
+- `0xb4d20` : `public: bool __thiscall Rainbow::SingleAppInstance::FindOtherInstance(void)`
+- `0x4bf40` : `public: class Rainbow::FilePkgBase * __thiscall Rainbow::FileManager::FindPackage(char const *)`
+- `0x6cb10` : `public: struct Rainbow::JobInfo * __thiscall Rainbow::JobGroup::FirstJob(void)`
+- `0x70800` : `void __cdecl Rainbow::FixedStringRelease(void)`
+- `0x7e8d0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl FloatToString(float,char const *)`
+- `0x9ad00` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl FloatToStringAccurate(float)`
+- `0x9ade0` : `void __cdecl FloatToStringAccurate(float,char *,unsigned int)`
+- `0x98c40` : `public: bool __thiscall Rainbow::FileSystemEntry::FolderExists(void)const `
+- `0x7ea50` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Format(char const *,...)`
+- `0x7ea70` : `int __cdecl FormatBuffer(char *,int,char const *,char *)`
+- `0x7ead0` : `int __cdecl FormatBuffer(char *,int,char const *,...)`
+- `0x7eb30` : `int __cdecl FormatLength(char const *,char *)`
+- `0x24bc0` : `public: void __thiscall Rainbow::MemoryManager::FrameMaintenance(bool)`
+- `0x71fc0` : `public: void __thiscall Rainbow::HandleManager::Free(int)`
+- `0x26ab0` : `public: void __thiscall Rainbow::QueueAllocator::Free(void *)`
+- `0x32c30` : `public: static void __cdecl Rainbow::GlobalCallbacks::FreeAll(void)`
+- `0x26b00` : `public: void __thiscall Rainbow::QueueAllocator::FreeAll(void)`
+- `0x34ac0` : `private: void __thiscall Rainbow::MinMaxAABB::FromAABB(class Rainbow::AABB const &)`
+- `0x6f840` : `public: static struct Rainbow::DateTime __cdecl Rainbow::DateTime::FromISO8601DateTimeString(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x6f980` : `public: static struct Rainbow::DateTime __cdecl Rainbow::DateTime::FromMicrosecondsSinceUnixEpoch(unsigned __int64)`
+- `0x34b30` : `public: void __thiscall Rainbow::AABB::FromMinMax(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x34bc0` : `public: void __thiscall Rainbow::AABB::FromMinMaxAABB(class Rainbow::MinMaxAABB const &)`
+- `0x2f640` : `public: static class Rainbow::RuntimeClass const * __cdecl Rainbow::RuntimeClass::FromName(char const *)`
+- `0x2f650` : `public: static class Rainbow::RuntimeClass const * __cdecl Rainbow::RuntimeClassManager::FromName(char const *)`
+- `0x6f9c0` : `public: static struct Rainbow::DateTime __cdecl Rainbow::DateTime::FromSecondsSinceUnixEpoch(unsigned __int64)`
+- `0x20bc0` : `public: void __thiscall Rainbow::SHAHash::FromString(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x908a0` : `class Rainbow::Quaternionf __cdecl Rainbow::FromToQuaternion(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x2f7a0` : `public: static class Rainbow::RuntimeClass const * __cdecl Rainbow::RuntimeClass::FromTypeId(unsigned int)`
+- `0x2f7f0` : `public: static class Rainbow::RuntimeClass const * __cdecl Rainbow::RuntimeClassManager::FromTypeId(unsigned int)`
+- `0x34c70` : `public: void __thiscall Rainbow::Quaternionf::FromUInt32(unsigned int)`
+- `0x240740` : `private: static class std::map<class core::basic_string<char,class core::StringStorageDefault<char> >,unsigned char *,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<struct std::pair<class core::basic_string<char,class core::StringStorageDefault<char> > const ,unsigned char *> > > Rainbow::SHA1::FullFileSHAHashMap`
+- `0x711c0` : `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl GUIDToString(struct UGUID const &)`
+- `0x71230` : `void __cdecl GUIDToString(struct UGUID const &,char *)`
+- `0x71280` : `struct UGUID __cdecl GenerateGUID(void)`
+- `0x712f0` : `public: unsigned __int64 __thiscall Rainbow::Rand::Get64(void)`
+- `0x32ca0` : `public: static struct Rainbow::GlobalCallbacks & __cdecl Rainbow::GlobalCallbacks::Get(void)`
+- `0x43bb0` : `public: bool __thiscall Rainbow::HandleIndexedBitSet::Get(int)const `
+- `0x43bb0` : `public: bool __thiscall Rainbow::HandleIndexedCountedBitSet::Get(int)const `
+- `0x34d40` : `public: float & __thiscall Rainbow::Matrix3x3f::Get(int,int)`
+- `0x34d40` : `public: float const & __thiscall Rainbow::Matrix3x3f::Get(int,int)const `
+- `0x34d60` : `public: float & __thiscall Rainbow::Matrix4x4f::Get(int,int)`
+- `0x34d60` : `public: float const & __thiscall Rainbow::Matrix4x4f::Get(int,int)const `
+- `0x71340` : `public: unsigned int __thiscall Rainbow::Rand::Get(void)`
+- `0x71370` : `public: struct math::_int4 const __thiscall Rainbow::RandN::Get(void)`
+- `0x20850` : `public: unsigned char * __thiscall Rainbow::CachedReader::GetAbsoluteMemoryPosition(void)`
+- `0x8a2a0` : `enum Rainbow::ColorSpace __cdecl Rainbow::GetActiveColorSpace(void)`
+- `0x6cb20` : `public: unsigned int __thiscall Rainbow::JobQueue::GetActiveThreadCount(void)const `
+- `0x4f430` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetActualPathSlow(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xa3e20` : `public: virtual unsigned char * __thiscall Rainbow::CacheReaderBase::GetAddressOfMemory(void)`
+- `0xa3f50` : `public: virtual unsigned char * __thiscall Rainbow::CacheWriterBase::GetAddressOfMemory(void)`
+- `0x6e300` : `class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > __cdecl GetAllArguments(void)`
+- `0x73950` : `public: unsigned int __thiscall Rainbow::MemoryPool::GetAllocatedBytes(void)const `
+- `0x24c00` : `public: unsigned int __thiscall Rainbow::MemoryManager::GetAllocatedMemory(struct MemLabelId)`
+- `0x24c10` : `public: class Rainbow::BaseAllocator * __thiscall Rainbow::MemoryManager::GetAllocator(struct MemLabelId)`
+- `0x24cd0` : `public: class Rainbow::BaseAllocator * __thiscall Rainbow::MemoryManager::GetAllocatorAtIndex(int)`
+- `0x24d10` : `public: class Rainbow::BaseAllocator * __thiscall Rainbow::MemoryManager::GetAllocatorContainingPtr(void const *)`
+- `0x24ea0` : `public: int __thiscall Rainbow::MemoryManager::GetAllocatorCount(void)`
+- `0x24eb0` : `public: int __thiscall Rainbow::MemoryManager::GetAllocatorIndex(class Rainbow::BaseAllocator *)`
+- `0x69250` : `bool __cdecl Rainbow::GetAllowReadOrWriteAccess(class Rainbow::AtomicSafetyHandle const &)`
+- `0x8b2b0` : `public: unsigned short & __thiscall Rainbow::Gradient::GetAlphaTime(unsigned int)`
+- `0x8b2b0` : `public: unsigned short const & __thiscall Rainbow::Gradient::GetAlphaTime(unsigned int)const `
+- `0x42930` : `public: int __thiscall Rainbow::PlayerSettings::GetAndroidBlitType(void)const `
+- `0x42b30` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::GetAnyJobGroupID(void)const `
+- `0x98c80` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetApplicationAssetsPath(void)const `
+- `0x98ca0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetApplicationFolder(void)const `
+- `0x4f580` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetApplicationFolder(void)`
+- `0x98cc0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetApplicationPath(void)const `
+- `0x4f5a0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetApplicationPath(void)`
+- `0x6e470` : `int __cdecl GetArgc(void)`
+- `0x6e480` : `char const * * __cdecl GetArgv(void)`
+- `0x2c8f0` : `public: unsigned int __thiscall Rainbow::UniqueIDGenerator::GetArraySize(void)const `
+- `0x54070` : `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::BinaryStream::GetAsString(void)`
+- `0x551e0` : `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::DataStream::GetAsString(void)`
+- `0x5e6f0` : `public: bool __thiscall Rainbow::PackageAsset::GetAssetFileInfo(class core::basic_string<char,class core::StringStorageDefault<char> > const &,struct Rainbow::PackageAsset::AssetFileInfo &)`
+- `0x98ce0` : `public: struct UGUID __thiscall Rainbow::FileSystemEntry::GetAssetGUID(void)const `
+- `0x879a0` : `public: bool __thiscall Rainbow::PlayerSettings::GetAutoRotationAllowed(int)const `
+- `0x98d50` : `public: bool __thiscall Rainbow::FileSystem::GetAvailableDiskSpace(char const *,unsigned __int64 &)const `
+- `0x34d80` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetAxis(int)const `
+- `0x338d0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetAxisX(void)const `
+- `0x34db0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Quaternionf::GetAxisX(void)const `
+- `0x34e20` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetAxisY(void)const `
+- `0x34e40` : `public: class Rainbow::Vector3f __thiscall Rainbow::Quaternionf::GetAxisY(void)const `
+- `0x34ec0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetAxisZ(void)const `
+- `0x34ee0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Quaternionf::GetAxisZ(void)const `
+- `0x66900` : `class Rainbow::BackgroundJobQueue & __cdecl Rainbow::GetBackgroundJobQueue(void)`
+- `0x2c8f0` : `public: class Rainbow::RuntimeClass const * __thiscall Rainbow::RuntimeClass::GetBaseClass(void)const `
+- `0x73fa0` : `public: float __thiscall Rainbow::PackedFloatVector::GetBitSize(void)const `
+- `0x42940` : `public: int __thiscall Rainbow::TRect<int>::GetBottom(void)const `
+- `0x42950` : `public: float __thiscall Rainbow::TRect<float>::GetBottom(void)const `
+- `0x20c30` : `public: unsigned int __thiscall Rainbow::MemoryPool::GetBubbleCount(void)const `
+- `0x855f0` : `public: void const * __thiscall Rainbow::ThreadedStreamBuffer::GetBuffer(void)const `
+- `0x24fc0` : `public: unsigned int __thiscall Rainbow::QueueAllocator::GetBufferSize(void)const `
+- `0x713d0` : `public: static unsigned char __cdecl Rainbow::Rand::GetByteFromInt(unsigned int)`
+- `0x713e0` : `public: static struct math::_int4 const __cdecl Rainbow::RandN::GetByteFromInt(struct math::_int4 const &)`
+- `0x20c10` : `public: unsigned char const * __thiscall Rainbow::MD5Hash::GetBytes(void)const `
+- `0x2c750` : `public: class Rainbow::CacheWriterBase & __thiscall Rainbow::CachedWriter::GetCacheBase(void)`
+- `0x2c760` : `public: class Rainbow::CachedReader & __thiscall Rainbow::StreamedBinaryRead::GetCachedReader(void)`
+- `0x2c760` : `public: class Rainbow::CachedWriter & __thiscall Rainbow::StreamedBinaryWrite::GetCachedWriter(void)`
+- `0x24fc0` : `public: class Rainbow::CacheReaderBase * __thiscall Rainbow::CachedReader::GetCacher(void)const `
+- `0x20c50` : `public: class Rainbow::Vector3f & __thiscall Rainbow::AABB::GetCenter(void)`
+- `0x20c50` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::AABB::GetCenter(void)const `
+- `0x20c50` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Sphere::GetCenter(void)`
+- `0x20c50` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::Sphere::GetCenter(void)const `
+- `0x42960` : `public: class Rainbow::Vector2f __thiscall Rainbow::TRect<int>::GetCenterPos(void)const `
+- `0x429b0` : `public: class Rainbow::Vector2f __thiscall Rainbow::TRect<float>::GetCenterPos(void)const `
+- `0x920e0` : `public: float & __thiscall Rainbow::SphericalHarmonicsL1::GetCoefficient(enum SphericalHarmonics::ColorChannel,int)`
+- `0x920e0` : `public: float const & __thiscall Rainbow::SphericalHarmonicsL1::GetCoefficient(enum SphericalHarmonics::ColorChannel,int)const `
+- `0x92100` : `public: float & __thiscall Rainbow::SphericalHarmonicsL2::GetCoefficient(enum SphericalHarmonics::ColorChannel,int)`
+- `0x92100` : `public: float const & __thiscall Rainbow::SphericalHarmonicsL2::GetCoefficient(enum SphericalHarmonics::ColorChannel,int)const `
+- `0x429f0` : `public: struct dynamic_array<int,0> const & __thiscall Rainbow::PlayerSettings::GetColorGamuts(void)const `
+- `0x87ad0` : `public: enum Rainbow::ColorSpace __thiscall Rainbow::PlayerSettings::GetColorSpace(void)`
+- `0x8b2d0` : `public: unsigned short & __thiscall Rainbow::Gradient::GetColorTime(unsigned int)`
+- `0x8b2d0` : `public: unsigned short const & __thiscall Rainbow::Gradient::GetColorTime(unsigned int)const `
+- `0x34f60` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix3x3f::GetColumn(int)const `
+- `0x34f90` : `public: class Rainbow::Vector4f __thiscall Rainbow::Matrix4x4f::GetColumn(int)const `
+- `0x81100` : `char const * __cdecl GetConsoleLogPath(void)`
+- `0x338f0` : `public: class Rainbow::ColorRGBAf __thiscall Rainbow::Gradient::GetConstantColor(void)const `
+- `0x4f5c0` : `struct Rainbow::DateTime __cdecl Rainbow::GetContentModificationDate(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x86350` : `public: int __thiscall Rainbow::ConsoleStringProgressor::GetCount(void)const `
+- `0x51c90` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::File::GetCurrentDirectoryA(void)`
+- `0x46470` : `public: unsigned char * __thiscall Rainbow::BinaryStream::GetCurrentPtr(void)`
+- `0x44ec0` : `public: unsigned char * __thiscall Rainbow::MemoryDataStream::GetCurrentPtr(void)`
+- `0x85600` : `public: unsigned int __thiscall Rainbow::ThreadedStreamBuffer::GetCurrentSize(void)const `
+- `0xb9460` : `protected: static unsigned __int64 __cdecl Rainbow::PlatformThread::GetCurrentThreadID(void)`
+- `0x6cb40` : `protected: static unsigned __int64 __cdecl Rainbow::ThreadHelper::GetCurrentThreadId(void)`
+- `0x20c20` : `public: static void * __cdecl Rainbow::Thread::GetCurrentThreadStackBase(void)`
+- `0x6f9f0` : `struct Rainbow::DateTime __cdecl Rainbow::GetCurrentTimeAsDateTime(void)`
+- `0x20c50` : `public: struct Rainbow::FileEntryData const & __thiscall Rainbow::FileSystemEntry::GetData(void)`
+- `0x46480` : `public: struct dynamic_array<unsigned char,0> & __thiscall Rainbow::BinaryStream::GetDataRef(void)`
+- `0x5e8b0` : `public: unsigned int __thiscall Rainbow::PackageAsset::GetDataSize(void)const `
+- `0x9f4e0` : `private: int __thiscall Rainbow::JSONRead::GetDataVersion(void)`
+- `0x848b0` : `public: unsigned int __thiscall Rainbow::ThreadedStreamBuffer::GetDebugReadPosition(void)const `
+- `0x848c0` : `public: unsigned int __thiscall Rainbow::ThreadedStreamBuffer::GetDebugWritePosition(void)const `
+- `0x81120` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl GetDefaultConsoleLogPath(void)`
+- `0x20890` : `public: static enum Rainbow::ThreadPriority const __cdecl Rainbow::BackgroundJobQueue::GetDefaultJobThreadPriority(void)`
+- `0x42a00` : `public: int __thiscall Rainbow::PlayerSettings::GetDefaultOrientation(void)const `
+- `0x8c0b0` : `public: float __thiscall Rainbow::Matrix3x3f::GetDeterminant(void)const `
+- `0x8dc80` : `public: float __thiscall Rainbow::Matrix4x4f::GetDeterminant(void)const `
+- `0x2c810` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::Ray::GetDirection(void)const `
+- `0x20b80` : `public: bool __thiscall Rainbow::PlayerSettings::GetDisableDepthAndStencilBuffers(void)const `
+- `0xb7150` : `bool __cdecl Rainbow::windriverutils::GetDisplayDriverInfoRegistry(class core::basic_string<char,class core::StringStorageDefault<char> > *,class core::basic_string<char,class core::StringStorageDefault<char> > *,struct Rainbow::windriverutils::VersionInfo &)`
+- `0xb76d0` : `bool __cdecl Rainbow::windriverutils::GetDisplayDriverVersionString(int,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x42a10` : `public: float __thiscall Rainbow::PlayerSettings::GetDistancefactor(void)const `
+- `0x2c770` : `public: class Rainbow::rapidjson::GenericDocument<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator,class Rainbow::JSONAllocator> * __thiscall Rainbow::JSONRead::GetDocument(void)`
+- `0xb8880` : `bool __cdecl Rainbow::winutils::GetDontDisplayDialogs(void)`
+- `0x42a20` : `public: float __thiscall Rainbow::PlayerSettings::GetDopplerscale(void)const `
+- `0x2c810` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::Capsule::GetEnd(void)const `
+- `0x2c800` : `public: unsigned int __thiscall Rainbow::CachedReader::GetEndPosition(void)`
+- `0x56f30` : `public: int __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::GetErrorCode(void)`
+- `0xa8220` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::CurlHandle::GetErrorMessage(void)`
+- `0xab1f0` : `public: char const * __thiscall Rainbow::Http::DownLoadFileTask::GetErrorMessage(void)`
+- `0xae5e0` : `public: char const * __thiscall Rainbow::Http::WebRequest::GetErrorMessage(void)`
+- `0xaebe0` : `class core::basic_string<char,class core::StringStorageDefault<char> > const & __cdecl Rainbow::winutils::GetErrorMessages(void)`
+- `0x8df70` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetEulerAngle(void)const `
+- `0x98d70` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetExecutablePath(void)const `
+- `0x69270` : `struct Rainbow::JobFence __cdecl Rainbow::GetExecutingJob(void)`
+- `0x6cb50` : `public: static struct Rainbow::JobGroupID __cdecl Rainbow::JobQueue::GetExecutingJobGroupID(void)`
+- `0x2c810` : `public: class Rainbow::Vector3f & __thiscall Rainbow::AABB::GetExtent(void)`
+- `0x2c810` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::AABB::GetExtent(void)const `
+- `0x2c810` : `public: void * & __thiscall Rainbow::TransferBase::GetExtraDataForSerializingManagedReferences(void)`
+- `0x3aa20` : `public: float __thiscall Rainbow::Frustum::GetFarPlane(void)const `
+- `0xa8290` : `public: int __thiscall Rainbow::Http::CurlRequestMessage::GetFetchedSize(void)`
+- `0xab220` : `public: int __thiscall Rainbow::Http::DownLoadFileTask::GetFetchedSize(void)`
+- `0x51cb0` : `public: unsigned __int64 __thiscall Rainbow::File::GetFileLength(void)`
+- `0x51cc0` : `unsigned __int64 __cdecl Rainbow::GetFileLength(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4c0a0` : `class Rainbow::FileManager & __cdecl Rainbow::GetFileManager(void)`
+- `0x4c160` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::FileManager::GetFileName(char const *)`
+- `0x77520` : `public: static bool __cdecl Rainbow::SHA1::GetFileSHAHash(char const *,unsigned char * const,bool)`
+- `0x98d90` : `class Rainbow::FileSystem & __cdecl Rainbow::GetFileSystem(void)`
+- `0xb7840` : `bool __cdecl Rainbow::windriverutils::GetFileVersionOfFile(wchar_t const *,struct Rainbow::windriverutils::VersionInfo &)`
+- `0x6e490` : `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl GetFirstValueForARGV(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x42a30` : `public: double __thiscall Rainbow::PlayerSettings::GetFixedTime(void)`
+- `0x44ed0` : `public: int __thiscall Rainbow::AsyncReadCommand::GetFlag(void)`
+- `0x20850` : `public: enum Rainbow::TransferInstructionFlags __thiscall Rainbow::TransferBase::GetFlags(void)const `
+- `0x71400` : `public: float __thiscall Rainbow::Rand::GetFloat(void)`
+- `0x71470` : `public: struct math::_float4 const __thiscall Rainbow::RandN::GetFloat(void)`
+- `0x714e0` : `public: static float __cdecl Rainbow::Rand::GetFloatFromInt(unsigned int)`
+- `0x71520` : `public: static struct math::_float4 const __cdecl Rainbow::RandN::GetFloatFromInt(struct math::_int4 const &)`
+- `0x51da0` : `bool __cdecl Rainbow::GetFolderContentsAtPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class std::set<class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > &,enum Rainbow::FolderContentsPathMode,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x51dc0` : `bool __cdecl Rainbow::GetFolderContentsAtPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,enum Rainbow::FileEnumerationFlag,class std::set<class core::basic_string<char,class core::StringStorageDefault<char> >,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > &,enum Rainbow::FolderContentsPathMode,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xab240` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::DownLoadFileTask::GetFullFileName(void)const `
+- `0x4c320` : `public: int __thiscall Rainbow::FileManager::GetFullPathFileSize(char const *)`
+- `0x87ae0` : `public: enum Rainbow::FullscreenMode const __thiscall Rainbow::PlayerSettings::GetFullscreenMode(void)const `
+- `0xa5100` : `class BootConfig::Data const & __cdecl BootConfig::GetGlobalConfig(void)`
+- `0x20850` : `public: int __thiscall Rainbow::FixedString::GetHandle(void)const `
+- `0x20850` : `public: int __thiscall Rainbow::NoFreeFixedString::GetHandle(void)const `
+- `0x98da0` : `public: class Rainbow::FileSystemHandler * __thiscall Rainbow::FileSystem::GetHandlerForPath(char const *)const `
+- `0x70950` : `public: unsigned int const __thiscall Rainbow::FixedString::GetHash(void)const `
+- `0x70950` : `public: unsigned int const __thiscall Rainbow::NoFreeFixedString::GetHash(void)const `
+- `0x77800` : `public: void __thiscall Rainbow::SHA1::GetHash(unsigned char *)`
+- `0xa82a0` : `private: static struct curl_slist * __cdecl Rainbow::Http::CurlHandle::GetHeadersForRequest(class Rainbow::Http::CurlRequestMessage *,bool)`
+- `0x24fc0` : `public: int __thiscall Rainbow::TRect<int>::GetHeight(void)const `
+- `0x42a40` : `public: float __thiscall Rainbow::TRect<float>::GetHeight(void)const `
+- `0x3ae20` : `public: float __thiscall Rainbow::Frustum::GetHeight(void)const `
+- `0x2c820` : `public: unsigned int __thiscall Rainbow::ColorRGBAf::GetHex(void)const `
+- `0xab2b0` : `public: int __thiscall Rainbow::Http::DownLoadFileTask::GetHttpCode(void)`
+- `0xad340` : `public: int __thiscall Rainbow::Http::UpLoadFileTask::GetHttpCode(void)const `
+- `0xae610` : `public: int __thiscall Rainbow::Http::WebRequest::GetHttpCode(void)`
+- `0xac2a0` : `class Rainbow::Http::HttpTaskManager & __cdecl Rainbow::Http::GetHttpTaskManager(void)`
+- `0x6cb40` : `unsigned __int64 __cdecl Rainbow::CurrentThread::GetID(void)`
+- `0x45b70` : `private: void __thiscall Rainbow::AsyncReadManagerThreaded::GetIncomingRequests(struct dynamic_array<struct Rainbow::AsyncReadCommand *,0> &,struct dynamic_array<struct Rainbow::AsyncReadCommand *,0> &)`
+- `0x21530` : `public: class Rainbow::BaseAllocator * __thiscall Rainbow::MemoryManager::GetInitialFallbackAllocator(void)const `
+- `0xb8890` : `struct HINSTANCE__ * __cdecl Rainbow::winutils::GetInstanceHandle(void)`
+- `0x2c8f0` : `public: unsigned int __thiscall Rainbow::Object::GetInstanceID(void)const `
+- `0x87ae0` : `public: void * __thiscall Rainbow::Http::CurlHandle::GetInternalHandle(void)const `
+- `0x65f30` : `public: static struct Rainbow::AtomicSafetyNode * __cdecl Rainbow::AtomicSafetyHandle::GetInternalNode(class Rainbow::AtomicSafetyHandle const &)`
+- `0x34fc0` : `public: class Rainbow::Matrix4x4f __thiscall Rainbow::Matrix4x4f::GetInvert_Full(void)const `
+- `0x34fe0` : `public: class Rainbow::Matrix4x4f __thiscall Rainbow::Matrix4x4f::GetInvert_General3D(void)const `
+- `0x6cba0` : `private: int __thiscall Rainbow::JobGroup::GetJobCountExcludingCompleteJob(void)const `
+- `0x692a0` : `bool __cdecl Rainbow::GetJobDebuggerEnabled(void)`
+- `0x6cbc0` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::GetJobGroupID(class Rainbow::JobGroup *)`
+- `0x6cbf0` : `class Rainbow::JobQueue & __cdecl Rainbow::GetJobQueue(void)`
+- `0x672b0` : `private: struct Rainbow::JobGroupID __thiscall Rainbow::JobBatchDispatcher::GetJobQueueDependency(struct Rainbow::JobFence const &)`
+- `0x675b0` : `int __cdecl Rainbow::JobSystem::GetJobQueueThreadCount(void)`
+- `0xa5430` : `public: char const * __thiscall BootConfig::Data::GetKey(unsigned int)const `
+- `0x8b2f0` : `public: class Rainbow::ColorRGBAf & __thiscall Rainbow::Gradient::GetKey(unsigned int)`
+- `0x8b2f0` : `public: class Rainbow::ColorRGBAf const & __thiscall Rainbow::Gradient::GetKey(unsigned int)const `
+- `0xa5460` : `public: unsigned int __thiscall BootConfig::Data::GetKeyCount(void)const `
+- `0x5e960` : `public: unsigned int __thiscall Rainbow::PackageAsset::GetKeyDataSize(void)const `
+- `0x20880` : `enum MemLabelIdentifier __cdecl GetLabelIdentifier(struct MemLabelId)`
+- `0x75a60` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl GetLastPathNameComponent(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x75b00` : `char const * __cdecl GetLastPathNameComponent(char const *,unsigned int)`
+- `0x20850` : `public: int __thiscall Rainbow::TRect<int>::GetLeft(void)const `
+- `0x42a50` : `public: float __thiscall Rainbow::TRect<float>::GetLeft(void)const `
+- `0x54150` : `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::BinaryStream::GetLine(bool)`
+- `0x54150` : `public: virtual class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::DataStream::GetLine(bool)`
+- `0xab2d0` : `public: char const * __thiscall Rainbow::Http::DownLoadFileTask::GetLoadedFileName(void)`
+- `0x30930` : `void * __cdecl GetLoadedLibrary(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x81230` : `class Rainbow::LogSystem & __cdecl Rainbow::GetLogSystem(void)`
+- `0x81300` : `public: enum LogType __thiscall Rainbow::LogSystem::GetLogType(void)`
+- `0x8dfd0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetLossyScale(void)const `
+- `0x24fd0` : `public: static unsigned int __cdecl Rainbow::MemoryManager::GetLowLevelAllocatedSize(void)`
+- `0x6af70` : `class Rainbow::MainThreadJob & __cdecl Rainbow::GetMainThreadJob(void)`
+- `0x35000` : `public: class Rainbow::Matrix3x3f __thiscall Rainbow::Matrix4x4f::GetMatrix3(void)const `
+- `0x2c810` : `public: class Rainbow::Matrix3x3f const & __thiscall Rainbow::Frustum::GetMatrix(void)const `
+- `0x2c810` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::MinMaxAABB::GetMax(void)const `
+- `0x54720` : `public: unsigned int __thiscall Rainbow::ThreadedStreamBuffer::GetMaxNonStreamSize(void)const `
+- `0x73fc0` : `public: float __thiscall Rainbow::PackedFloatVector::GetMaxValue(void)const `
+- `0x42a60` : `public: int __thiscall Rainbow::PlayerSettings::GetMaxchannels(void)const `
+- `0x20860` : `public: struct MemLabelId __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::GetMemLabel(void)const `
+- `0x20860` : `public: struct MemLabelId __thiscall Rainbow::AtomicPageAllocator::GetMemLabel(void)const `
+- `0x24fe0` : `public: char const * __thiscall Rainbow::MemoryManager::GetMemcatName(struct MemLabelId)`
+- `0x44ee0` : `public: virtual void * __thiscall Rainbow::BinaryStream::GetMemoryImage(void)`
+- `0x57ac0` : `public: virtual void * __thiscall Rainbow::FileHandleDataStream::GetMemoryImage(void)`
+- `0x44ee0` : `public: virtual void * __thiscall Rainbow::MemoryDataStream::GetMemoryImage(void)`
+- `0x55370` : `public: virtual void * __thiscall Rainbow::ObjectDataStream::GetMemoryImage(void)`
+- `0x2c900` : `public: struct MemLabelId __thiscall Rainbow::Object::GetMemoryLabel(void)const `
+- `0x2c920` : `public: struct MemLabelId __thiscall Rainbow::TransferBase::GetMemoryLabel(void)const `
+- `0x25000` : `class Rainbow::MemoryManager & __cdecl Rainbow::GetMemoryManager(void)`
+- `0x2c930` : `public: unsigned __int64 __thiscall Rainbow::DateTime::GetMillisecondsSinceUnixEpoch(void)const `
+- `0x20c50` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::MinMaxAABB::GetMin(void)const `
+- `0x42bc0` : `public: float __thiscall Rainbow::PackedFloatVector::GetMinValue(void)const `
+- `0x8b300` : `public: enum Rainbow::GradientMode __thiscall Rainbow::Gradient::GetMode(void)const `
+- `0x848d0` : `public: enum Rainbow::ThreadedStreamBuffer::Mode __thiscall Rainbow::ThreadedStreamBuffer::GetMode(void)const `
+- `0x42a70` : `public: bool __thiscall Rainbow::PlayerSettings::GetMuteOtherAudioSources(void)const `
+- `0x2c760` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > const & __thiscall Rainbow::DataStream::GetName(void)`
+- `0x24fc0` : `public: virtual char const * __thiscall Rainbow::NamedObject::GetName(void)const `
+- `0x2c950` : `public: virtual char const * __thiscall Rainbow::Object::GetName(void)const `
+- `0x70140` : `public: char const * __thiscall EnumTraits::ReflectionInfo::GetNameForValue(int)const `
+- `0x3ae30` : `public: float __thiscall Rainbow::Frustum::GetNearPlane(void)const `
+- `0x22dc0` : `public: class Rainbow::ListElement * __thiscall Rainbow::ListElement::GetNext(void)const `
+- `0x26b40` : `private: struct Rainbow::QueueAllocInfo * __thiscall Rainbow::QueueAllocator::GetNext(struct Rainbow::QueueAllocInfo *)`
+- `0x83a00` : `public: int __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::GetNextPayloadSize(void)`
+- `0x848e0` : `public: unsigned int __thiscall Rainbow::ThreadedStreamBuffer::GetNextWritePosition(unsigned int,unsigned int)const `
+- `0x35050` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::GetNormalized(void)const `
+- `0x3a090` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::GetNormalized(void)const `
+- `0x35160` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::GetNormalized(void)const `
+- `0x35230` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::GetNormalizedSafe(void)const `
+- `0x3a0f0` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::GetNormalizedSafe(float)const `
+- `0x35330` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::GetNormalizedSafe(float)const `
+- `0x8b310` : `public: int __thiscall Rainbow::Gradient::GetNumAlphaKeys(void)const `
+- `0x8b320` : `public: int __thiscall Rainbow::Gradient::GetNumColorKeys(void)const `
+- `0x21540` : `public: unsigned int __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::GetNumRegistered(void)const `
+- `0x21540` : `public: unsigned int __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::GetNumRegistered(void)const `
+- `0x43330` : `unsigned int __cdecl BitSetUtility::GetNumberOfBlocks(unsigned int)`
+- `0xb9d60` : `int __cdecl systeminfo::GetOperatingSystemNumeric(void)`
+- `0x29a40` : `protected: struct Rainbow::EventDispatcher::EventStructList & __thiscall Rainbow::EventDispatcher::GetOrCreateEventSturct(int)`
+- `0x20c50` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::Ray::GetOrigin(void)const `
+- `0x4c420` : `public: struct Rainbow::AssetPKGHeader __thiscall Rainbow::PackageAsset::GetPKGHeader(void)`
+- `0x4c440` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::PackageAsset::GetPKGPath(void)const `
+- `0x75b30` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl GetPathNameExtension(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x75be0` : `char const * __cdecl GetPathNameExtension(char const *,unsigned int)`
+- `0x30a80` : `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl GetPathWithPlatformSpecificDllExtension(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x56f40` : `public: int __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::GetPercent(void)`
+- `0xb9de0` : `int __cdecl systeminfo::GetPhysicalMemoryMB(void)`
+- `0xb9e30` : `int __cdecl systeminfo::GetPhysicalProcessorCount(void)`
+- `0x42a80` : `public: class Rainbow::PhysicsSetting const & __thiscall Rainbow::PlayerSettings::GetPhysicsSetting(void)const `
+- `0x5e9e0` : `public: virtual int __thiscall Rainbow::PackageAsset::GetPkgFileSize(char const *)`
+- `0x64490` : `public: virtual int __thiscall Rainbow::PackageFileSystem::GetPkgFileSize(char const *)`
+- `0x5ec70` : `public: static int __cdecl Rainbow::PackageAsset::GetPkgFileVersion(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x20c50` : `public: class Rainbow::Rainbow::PlatformSemaphore const & __thiscall Rainbow::Rainbow::Semaphore::GetPlatformSemaphore(void)const `
+- `0x20c50` : `public: class Rainbow::PlatformSemaphore const & __thiscall Rainbow::Semaphore::GetPlatformSemaphore(void)const `
+- `0x87af0` : `class Rainbow::PlayerSettings & __cdecl Rainbow::GetPlayerSettings(void)`
+- `0x87af0` : `class Rainbow::PlayerSettings * __cdecl Rainbow::GetPlayerSettingsPtr(void)`
+- `0x3bf70` : `public: class Rainbow::Vector3f __thiscall Rainbow::Ray::GetPoint(float)const `
+- `0x20c50` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::Frustum::GetPos(void)const `
+- `0x42a90` : `public: class Rainbow::Vector2f __thiscall Rainbow::TRect<int>::GetPosition(void)const `
+- `0x38e90` : `public: class Rainbow::Vector2f __thiscall Rainbow::TRect<float>::GetPosition(void)const `
+- `0x2c960` : `public: unsigned int __thiscall Rainbow::CachedReader::GetPosition(void)const `
+- `0xa4bb0` : `public: unsigned int __thiscall Rainbow::CachedWriter::GetPosition(void)const `
+- `0x42ac0` : `public: unsigned __int64 __thiscall Rainbow::File::GetPosition(void)const `
+- `0x353d0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::GetPosition(void)const `
+- `0x20b80` : `public: bool __thiscall Rainbow::PlayerSettings::GetPreserveFramebufferAlpha(void)const `
+- `0x20850` : `public: class Rainbow::ListElement * __thiscall Rainbow::ListElement::GetPrev(void)const `
+- `0xab300` : `public: virtual int __thiscall Rainbow::Http::DownLoadFileTask::GetPriority(void)const `
+- `0x20c30` : `public: enum Rainbow::ThreadPriority __thiscall Rainbow::Thread::GetPriority(void)const `
+- `0xab300` : `public: virtual int __thiscall Rainbow::Http::UpLoadFileTask::GetPriority(void)const `
+- `0xab300` : `public: virtual int __thiscall Rainbow::Http::WebRequest::GetPriority(void)const `
+- `0xb9e40` : `int __cdecl systeminfo::GetProcessorCount(void)`
+- `0xb9e60` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl systeminfo::GetProcessorType(void)`
+- `0xa6070` : `class Rainbow::ProfilerManager & __cdecl Rainbow::GetProfileManager(void)`
+- `0x88dc0` : `unsigned __int64 __cdecl Rainbow::GetProfilerTime(void)`
+- `0x4f650` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetProjectRelativePath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x44ee0` : `public: unsigned char * __thiscall Rainbow::BinaryStream::GetPtr(void)`
+- `0x20c50` : `public: float * __thiscall Rainbow::ColorRGBAf::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::ColorRGBAf::GetPtr(void)const `
+- `0x20c50` : `public: float * __thiscall Rainbow::Matrix3x3f::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::Matrix3x3f::GetPtr(void)const `
+- `0x20c50` : `public: float * __thiscall Rainbow::Matrix4x4f::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::Matrix4x4f::GetPtr(void)const `
+- `0x44ee0` : `public: unsigned char * __thiscall Rainbow::MemoryDataStream::GetPtr(void)`
+- `0x20c50` : `public: float * __thiscall Rainbow::Quaternionf::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::Quaternionf::GetPtr(void)const `
+- `0x20c50` : `public: float const * __thiscall Rainbow::Sphere::GetPtr(void)const `
+- `0x20c50` : `public: float * __thiscall Rainbow::SphericalHarmonicsL1::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::SphericalHarmonicsL1::GetPtr(void)const `
+- `0x928d0` : `public: float * __thiscall Rainbow::SphericalHarmonicsL2::GetPtr(enum SphericalHarmonics::ColorChannel)`
+- `0x20c50` : `public: float * __thiscall Rainbow::SphericalHarmonicsL2::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::SphericalHarmonicsL2::GetPtr(void)const `
+- `0x20c50` : `public: float * __thiscall Rainbow::Vector2f::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::Vector2f::GetPtr(void)const `
+- `0x20c50` : `public: float * __thiscall Rainbow::Vector3f::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::Vector3f::GetPtr(void)const `
+- `0x20c50` : `public: float * __thiscall Rainbow::Vector4f::GetPtr(void)`
+- `0x20c50` : `public: float const * __thiscall Rainbow::Vector4f::GetPtr(void)const `
+- `0x2c970` : `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::NamedObject::GetRTTI(void)const `
+- `0x2c980` : `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::Object::GetRTTI(void)const `
+- `0x2eea0` : `public: virtual class Rainbow::RuntimeClass const * __thiscall Rainbow::RefObject::GetRTTI(void)const `
+- `0x353f0` : `public: float __thiscall Rainbow::AABB::GetRadius(void)const `
+- `0x38b80` : `public: float __thiscall Rainbow::Capsule::GetRadius(void)const `
+- `0x2c810` : `public: float & __thiscall Rainbow::Sphere::GetRadius(void)`
+- `0x2c810` : `public: float const & __thiscall Rainbow::Sphere::GetRadius(void)const `
+- `0x35440` : `public: float __thiscall Rainbow::AABB::GetRadiusSquare(void)const `
+- `0x84930` : `public: void * __thiscall Rainbow::ThreadedStreamBuffer::GetReadDataPointer(unsigned int,unsigned int)`
+- `0x93a70` : `void __cdecl GetReadableStackTrace(char *,int,void * const *,int)`
+- `0x65f70` : `public: static int __cdecl Rainbow::AtomicSafetyHandle::GetReaderArray(class Rainbow::AtomicSafetyHandle,int,struct Rainbow::JobFence *)`
+- `0x65ff0` : `public: static char const * __cdecl Rainbow::AtomicSafetyHandle::GetReaderName(class Rainbow::AtomicSafetyHandle,int)`
+- `0x2c8f0` : `public: int __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::GetRefCount(void)const `
+- `0x2c750` : `public: int __thiscall Rainbow::RefObject::GetRefCount(void)const `
+- `0x6e530` : `class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > __cdecl GetRelaunchApplicationArguments(void)`
+- `0x4c4b0` : `public: unsigned int __thiscall Rainbow::PackageAsset::GetResVersion(void)`
+- `0x20e10` : `public: bool __thiscall Rainbow::PlayerSettings::GetResizableWindow(void)const `
+- `0xad360` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::UpLoadFileTask::GetResponse(void)const `
+- `0xae640` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Http::WebRequest::GetResponse(void)`
+- `0x42ad0` : `public: int __thiscall Rainbow::TRect<int>::GetRight(void)const `
+- `0x42ae0` : `public: float __thiscall Rainbow::TRect<float>::GetRight(void)const `
+- `0x42af0` : `public: float __thiscall Rainbow::PlayerSettings::GetRolloffscale(void)const `
+- `0x20890` : `int __cdecl GetRootReference(struct MemLabelId)`
+- `0x8e0e0` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Matrix4x4f::GetRotation(void)const `
+- `0x35480` : `public: class Rainbow::Vector4f __thiscall Rainbow::Matrix4x4f::GetRow(int)const `
+- `0x2c990` : `private: static struct Rainbow::RuntimeClassManager::RuntimClassArray & __cdecl Rainbow::RuntimeClassManager::GetRuntimeClasses(void)`
+- `0x20890` : `public: virtual unsigned int __thiscall Rainbow::Object::GetRuntimeMemorySize(void)const `
+- `0x93d80` : `class Rainbow::Rand & __cdecl Rainbow::GetScriptingRand(void)`
+- `0x2c9a0` : `public: unsigned __int64 __thiscall Rainbow::DateTime::GetSecondsSinceUnixEpoch(void)const `
+- `0x20850` : `public: unsigned int __thiscall Rainbow::Rand::GetSeed(void)const `
+- `0x338f0` : `public: struct math::_int4 const __thiscall Rainbow::RandN::GetSeed(void)const `
+- `0xa4170` : `public: char const * __thiscall Rainbow::CachedReader::GetSerializedFilePathName(void)`
+- `0x2c9c0` : `public: char const * __thiscall Rainbow::StreamedBinaryRead::GetSerializedFilePathName(void)`
+- `0x20870` : `public: static void __cdecl Rainbow::SphericalHarmonicsL2::GetShaderConstantsFromNormalizedSH(struct Rainbow::SphericalHarmonicsL2 const &,class fixed_array<class Rainbow::Vector4f,7> &)`
+- `0x20870` : `public: static void __cdecl Rainbow::SphericalHarmonicsL2::GetShaderConstantsFromNormalizedSH(struct Rainbow::SphericalHarmonicsL2 const &,struct math::_float4 const *)`
+- `0x98e50` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetSharedAssetsCacheFolder(void)const `
+- `0x4fa40` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetSharedAssetsCacheFolder(void)`
+- `0x21550` : `public: class Rainbow::BaseAllocator * __thiscall Rainbow::MemoryManager::GetSharedBucketAllocator(void)const `
+- `0x71550` : `public: float __thiscall Rainbow::Rand::GetSignedFloat(void)`
+- `0x715c0` : `public: struct math::_float4 const __thiscall Rainbow::RandN::GetSignedFloat(void)`
+- `0x42b00` : `public: class Rainbow::Vector2f __thiscall Rainbow::TRect<int>::GetSize(void)const `
+- `0x42b30` : `public: class Rainbow::Vector2f __thiscall Rainbow::TRect<float>::GetSize(void)const `
+- `0x20c40` : `public: int const __thiscall Rainbow::MD5Hash::GetSize(void)const `
+- `0x98e70` : `public: unsigned __int64 const __thiscall Rainbow::FileSystem::GetSizeAtPath(char const *)`
+- `0x67130` : `unsigned int __cdecl Rainbow::BlockRangeInternal::GetSizeFromLastBlockRange(struct Rainbow::BlockRange *,unsigned int)`
+- `0x93b00` : `unsigned int __cdecl GetStacktracetNativeOption(void * *,int,int,bool)`
+- `0x20c50` : `public: class Rainbow::Vector3f const & __thiscall Rainbow::Capsule::GetStart(void)const `
+- `0xa82e0` : `public: enum Rainbow::Http::CurlRequestMessage::State __thiscall Rainbow::Http::CurlRequestMessage::GetState(void)`
+- `0x20c30` : `protected: int __thiscall Rainbow::Http::IHttpTask::GetState(void)`
+- `0x20c50` : `public: struct Rainbow::RandState const & __thiscall Rainbow::Rand::GetState(void)const `
+- `0x70120` : `bool __cdecl GetSystemEntropy(unsigned char *,unsigned int)`
+- `0x87b10` : `public: int __thiscall Rainbow::PlayerSettings::GetTargetFrameRate(void)const `
+- `0x42b50` : `public: int __thiscall Rainbow::PlayerSettings::GetTargetPixelDensity(void)const `
+- `0x2c8f0` : `public: enum Rainbow::Http::IHttpTask::HttpTaskType __thiscall Rainbow::Http::IHttpTask::GetTaskType(void)`
+- `0x66050` : `public: static class Rainbow::AtomicSafetyHandle __cdecl Rainbow::AtomicSafetyHandle::GetTempMemoryHandle(void)`
+- `0x66070` : `public: static class Rainbow::AtomicSafetyHandle __cdecl Rainbow::AtomicSafetyHandle::GetTempUnsafePtrSliceHandle(void)`
+- `0x20c50` : `public: class Rainbow::PlatformThread & __thiscall Rainbow::Thread::GetThread(void)`
+- `0x20c50` : `public: class Rainbow::PlatformThread const & __thiscall Rainbow::Thread::GetThread(void)const `
+- `0x44ef0` : `public: unsigned int __thiscall Rainbow::JobQueue::GetThreadCount(void)const `
+- `0x20c60` : `protected: unsigned __int64 const __thiscall Rainbow::PlatformThread::GetThreadID(void)const `
+- `0x20c60` : `public: unsigned __int64 const __thiscall Rainbow::Thread::GetThreadID(void)const `
+- `0x6cc20` : `public: enum Rainbow::ThreadPriority __thiscall Rainbow::JobQueue::GetThreadPriority(unsigned __int64)const `
+- `0x83e00` : `public: static double __cdecl Rainbow::Thread::GetThreadRunningTime(unsigned __int64)`
+- `0x84150` : `protected: static double __cdecl Rainbow::ThreadHelper::GetThreadRunningTime(unsigned __int64)`
+- `0x88ac0` : `class Rainbow::TimeCallManager & __cdecl Rainbow::GetTimeCallManager(void)`
+- `0x88dc0` : `unsigned __int64 __cdecl Rainbow::GetTimeMS(void)`
+- `0x88e40` : `double __cdecl Rainbow::GetTimeSec(void)`
+- `0x88ed0` : `double __cdecl Rainbow::GetTimeSinceStartup(void)`
+- `0x88f00` : `unsigned __int64 __cdecl Rainbow::GetTimeSinceStartupMS(void)`
+- `0x22dc0` : `public: int __thiscall Rainbow::TRect<int>::GetTop(void)const `
+- `0x42b60` : `public: float __thiscall Rainbow::TRect<float>::GetTop(void)const `
+- `0x25030` : `public: unsigned int __thiscall Rainbow::MemoryManager::GetTotalAllocatedMemory(void)`
+- `0x25120` : `public: unsigned int __thiscall Rainbow::MemoryManager::GetTotalAllocationCount(void)`
+- `0x25210` : `public: unsigned int __thiscall Rainbow::MemoryManager::GetTotalReservedMemorySize(void)`
+- `0xa82f0` : `public: int __thiscall Rainbow::Http::CurlRequestMessage::GetTotalSize(void)`
+- `0xab310` : `public: int __thiscall Rainbow::Http::DownLoadFileTask::GetTotalSize(void)`
+- `0x2e970` : `public: static unsigned int __cdecl Rainbow::ObjectTypeManager::GetTypeCount(unsigned int)`
+- `0x2c9d0` : `public: virtual unsigned int __thiscall Rainbow::NamedObject::GetTypeId(void)const `
+- `0x2c9e0` : `public: virtual unsigned int __thiscall Rainbow::Object::GetTypeId(void)const `
+- `0x2eeb0` : `public: virtual unsigned int __thiscall Rainbow::RefObject::GetTypeId(void)const `
+- `0x22dc0` : `public: unsigned int __thiscall Rainbow::RuntimeClass::GetTypeId(void)const `
+- `0x2c9f0` : `public: char const * __thiscall Rainbow::Object::GetTypeName(void)const `
+- `0x42b70` : `public: static char const * __cdecl Rainbow::TRect<int>::GetTypeString(void)`
+- `0x42b80` : `public: static char const * __cdecl Rainbow::TRect<float>::GetTypeString(void)`
+- `0x354b0` : `public: static char const * __cdecl Rainbow::AABB::GetTypeString(void)`
+- `0x2ca00` : `public: static char const * __cdecl Rainbow::ColorRGBAf::GetTypeString(void)`
+- `0x2ca10` : `public: static char const * __cdecl Rainbow::DateTime::GetTypeString(void)`
+- `0x8b330` : `public: static char const * __cdecl Rainbow::Gradient::GetTypeString(void)`
+- `0x20c80` : `public: static char const * __cdecl Rainbow::MD5Hash::GetTypeString(void)`
+- `0x354c0` : `public: static char const * __cdecl Rainbow::Matrix3x3f::GetTypeString(void)`
+- `0x354d0` : `public: static char const * __cdecl Rainbow::Matrix4x4f::GetTypeString(void)`
+- `0x354e0` : `public: static char const * __cdecl Rainbow::MinMaxAABB::GetTypeString(void)`
+- `0x2ca20` : `public: static char const * __cdecl Rainbow::NamedObject::GetTypeString(void)`
+- `0x42b90` : `public: static char const * __cdecl Rainbow::PlayerSettings::GetTypeString(void)`
+- `0x354f0` : `public: static char const * __cdecl Rainbow::Quaternionf::GetTypeString(void)`
+- `0x20850` : `public: char const * __thiscall Rainbow::RuntimeClass::GetTypeString(void)const `
+- `0x20c90` : `public: static char const * __cdecl Rainbow::SHAHash::GetTypeString(void)`
+- `0x53850` : `public: static char const * __cdecl Rainbow::StreamedResource::GetTypeString(void)`
+- `0x42ba0` : `public: static char const * __cdecl UGUID::GetTypeString(void)`
+- `0x3a160` : `public: static char const * __cdecl Rainbow::Vector2f::GetTypeString(void)`
+- `0x35500` : `public: static char const * __cdecl Rainbow::Vector3f::GetTypeString(void)`
+- `0x35510` : `public: static char const * __cdecl Rainbow::Vector4f::GetTypeString(void)`
+- `0x71610` : `public: static class Rainbow::Rand __cdecl Rainbow::Rand::GetUniqueGenerator(void)`
+- `0x4fa60` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetUniqueTempPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4fc50` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetUniqueTempPathInDirectory(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4fde0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetUniqueTempPathInProject(void)`
+- `0xa8300` : `public: virtual char const * __thiscall Rainbow::Http::IHttpTask::GetUrl(void)const `
+- `0xad430` : `protected: virtual char const * __thiscall Rainbow::Http::UpLoadFileTask::GetUrl(void)`
+- `0x42bb0` : `public: bool __thiscall Rainbow::PlayerSettings::GetUse32BitDisplayBuffer(void)const `
+- `0x720a0` : `public: unsigned int __thiscall Rainbow::HandleManager::GetUsedHandleCount(void)const `
+- `0x73bb0` : `unsigned int __cdecl GetUsedHeapSize(void)`
+- `0xa8310` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::Http::GetUserAgentString(void)`
+- `0x98fc0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetUserAppDataFolder(void)const `
+- `0x4fe90` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetUserAppDataFolder(void)`
+- `0x98fe0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::GetUserConfigFolder(void)const `
+- `0x4feb0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::GetUserConfigFolder(void)`
+- `0x5e960` : `public: void * __thiscall Rainbow::Http::IHttpTask::GetUserData(void)`
+- `0x22dc0` : `public: void * __thiscall Rainbow::TransferBase::GetUserData(void)`
+- `0xa5110` : `char const * __cdecl BootConfig::GetValue(char const *,unsigned int)`
+- `0xa5480` : `public: char const * __thiscall BootConfig::Data::GetValue(char const *,unsigned int)const `
+- `0x55380` : `public: virtual bool __thiscall Rainbow::DataStreamShell::GetValue(class Rainbow::DataStream * &)`
+- `0xa54f0` : `public: unsigned int __thiscall BootConfig::Data::GetValueCount(char const *)const `
+- `0x9f580` : `private: class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> const * __thiscall Rainbow::JSONRead::GetValueForKey(class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> const *,char const *)`
+- `0x9f730` : `private: class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> const * __thiscall Rainbow::JSONRead::GetValueForKeyWithNameConversion(char const *,class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> const *,char const *)`
+- `0x9f7c0` : `public: class Rainbow::rapidjson::GenericValue<struct Rainbow::rapidjson::UTF8<char>,class Rainbow::JSONAllocator> const * __thiscall Rainbow::JSONRead::GetValueNodeForKey(char const *)`
+- `0xa5540` : `public: unsigned int __thiscall BootConfig::Data::GetValues(char const *,char const * * const,unsigned int)const `
+- `0x6e550` : `class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > __cdecl GetValuesForARGV(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x20c50` : `public: class Rainbow::Vector4f & __thiscall Rainbow::ColorRGBAf::GetVector4f(void)`
+- `0x20c50` : `public: class Rainbow::Vector4f const & __thiscall Rainbow::ColorRGBAf::GetVector4f(void)const `
+- `0xb78c0` : `unsigned int __cdecl Rainbow::windriverutils::GetVideoMemorySizeMB(struct HMONITOR__ *,char const * *)`
+- `0x2c8f0` : `public: int __thiscall Rainbow::TRect<int>::GetWidth(void)const `
+- `0x42bc0` : `public: float __thiscall Rainbow::TRect<float>::GetWidth(void)const `
+- `0x3ae40` : `public: float __thiscall Rainbow::Frustum::GetWidth(void)const `
+- `0xb88c0` : `struct HWND__ * __cdecl Rainbow::winutils::GetWindowTopmostParent(struct HWND__ *)`
+- `0xb88d0` : `void __cdecl Rainbow::winutils::GetWindowsCurrentDirectory(class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0xb8a20` : `int __cdecl Rainbow::winutils::GetWindowsVersion(void)`
+- `0x6b370` : `bool __cdecl Rainbow::GetWorkStealingRange(struct Rainbow::WorkStealingRange &,int,int &,int &)`
+- `0x87b20` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::PlayerSettings::GetWriteDataPath(void)const `
+- `0x849a0` : `public: void * __thiscall Rainbow::ThreadedStreamBuffer::GetWriteDataPointer(unsigned int,unsigned int)`
+- `0xa86b0` : `public: void __thiscall Rainbow::Http::CurlHandle::GetWriteFileBuffer(struct dynamic_array<unsigned char,0> &)`
+- `0x4c4c0` : `public: unsigned __int64 __thiscall Rainbow::FileManager::GetWritePathDirFileSize(char const *)`
+- `0x4c910` : `public: int __thiscall Rainbow::FileManager::GetWritePathFileSize(char const *)`
+- `0x4ca90` : `public: char const * __thiscall Rainbow::FileManager::GetWritePathRoot(void)`
+- `0xab330` : `protected: virtual class core::basic_string<char,class core::StringStorageDefault<char> > & __thiscall Rainbow::Http::DownLoadFileTask::GetWriteTempFileName(class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x66090` : `public: static struct Rainbow::JobFence __cdecl Rainbow::AtomicSafetyHandle::GetWriter(class Rainbow::AtomicSafetyHandle)`
+- `0x660f0` : `public: static char const * __cdecl Rainbow::AtomicSafetyHandle::GetWriterName(class Rainbow::AtomicSafetyHandle)`
+- `0x42ad0` : `public: int __thiscall Rainbow::TRect<int>::GetXMax(void)const `
+- `0x42ae0` : `public: float __thiscall Rainbow::TRect<float>::GetXMax(void)const `
+- `0x42940` : `public: int __thiscall Rainbow::TRect<int>::GetYMax(void)const `
+- `0x42950` : `public: float __thiscall Rainbow::TRect<float>::GetYMax(void)const `
+- `0x2ca30` : `public: float __thiscall Rainbow::ColorRGBAf::GreyScaleValue(void)const `
+- `0x720b0` : `private: void __thiscall Rainbow::HandleManager::GrowBitSet(unsigned int * *,int,int)`
+- `0x72100` : `private: void __thiscall Rainbow::HandleManager::GrowPodArray(unsigned int,unsigned char * *,int,int)`
+- `0x77820` : `public: static void __cdecl Rainbow::SHA1::HMACBuffer(void const *,unsigned int,void const *,unsigned __int64,unsigned char *)`
+- `0xb8aa0` : `void __cdecl Rainbow::winutils::HandleDebugBreak(int)`
+- `0x672e0` : `private: void __thiscall Rainbow::JobBatchDispatcher::HandleJobKickInternal(class Rainbow::JobQueue &,struct Rainbow::JobFence &,class Rainbow::JobGroup *,int)`
+- `0x81310` : `public: void __thiscall Rainbow::LogSystem::HandleLog(void)`
+- `0x84a10` : `protected: virtual struct Rainbow::ThreadedStreamBuffer::DataOffsets __thiscall Rainbow::ThreadedBlockAllocatingBuffer::HandleOutOfBufferToReadFrom(struct Rainbow::ThreadedStreamBuffer::DataOffsets)`
+- `0x85620` : `protected: virtual struct Rainbow::ThreadedStreamBuffer::DataOffsets __thiscall Rainbow::ThreadedStreamBuffer::HandleOutOfBufferToReadFrom(struct Rainbow::ThreadedStreamBuffer::DataOffsets)`
+- `0x84b50` : `protected: virtual struct Rainbow::ThreadedStreamBuffer::DataOffsets __thiscall Rainbow::ThreadedBlockAllocatingBuffer::HandleOutOfBufferToWriteTo(struct Rainbow::ThreadedStreamBuffer::DataOffsets)`
+- `0x85790` : `protected: virtual struct Rainbow::ThreadedStreamBuffer::DataOffsets __thiscall Rainbow::ThreadedStreamBuffer::HandleOutOfBufferToWriteTo(struct Rainbow::ThreadedStreamBuffer::DataOffsets)`
+- `0xab510` : `protected: virtual void __thiscall Rainbow::Http::DownLoadFileTask::HandleProcess(void)`
+- `0xad450` : `protected: virtual void __thiscall Rainbow::Http::UpLoadFileTask::HandleProcess(void)`
+- `0xae710` : `protected: virtual void __thiscall Rainbow::Http::WebRequest::HandleProcess(void)`
+- `0xac330` : `private: static void __cdecl Rainbow::Http::HttpTaskManager::HandleTaskBegin(class Rainbow::Http::IHttpTask *)`
+- `0xac350` : `private: static void __cdecl Rainbow::Http::HttpTaskManager::HandleTaskEnd(class Rainbow::Http::IHttpTask *)`
+- `0x6e790` : `bool __cdecl HasARGV(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x35520` : `public: static bool __cdecl Rainbow::CPUInfo::HasAVX2Support(void)`
+- `0x35530` : `public: static bool __cdecl Rainbow::CPUInfo::HasAVX512Support(void)`
+- `0x35540` : `public: static bool __cdecl Rainbow::CPUInfo::HasAVXSupport(void)`
+- `0x85920` : `public: bool __thiscall Rainbow::ThreadedStreamBuffer::HasDataToRead(void)const `
+- `0x29b40` : `public: bool __thiscall Rainbow::EventDispatcher::HasEvent(int)`
+- `0x35550` : `public: static bool __cdecl Rainbow::CPUInfo::HasFMASupport(void)`
+- `0x35560` : `public: static bool __cdecl Rainbow::CPUInfo::HasFP16CSupport(void)`
+- `0x99000` : `public: bool __thiscall Rainbow::FileSystemEntry::HasFastHash(struct Hash128 &)`
+- `0x6cc80` : `public: bool __thiscall Rainbow::JobQueue::HasJobGroupIDCompleted(struct Rainbow::JobGroupID)`
+- `0xa5130` : `bool __cdecl BootConfig::HasKey(char const *)`
+- `0xa55b0` : `public: bool __thiscall BootConfig::Data::HasKey(char const *)const `
+- `0x44f00` : `private: bool __thiscall Rainbow::JobGroup::HasMultipleDependencies(void)const `
+- `0x3ae50` : `public: bool __thiscall Rainbow::Frustum::HasNearPlane(void)const `
+- `0x2ca70` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::HasNode(char const *)`
+- `0x75c10` : `bool __cdecl HasPathComponent(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x35570` : `public: static bool __cdecl Rainbow::CPUInfo::HasSSE3Support(void)`
+- `0x35580` : `public: static bool __cdecl Rainbow::CPUInfo::HasSSE41Support(void)`
+- `0x35590` : `public: static bool __cdecl Rainbow::CPUInfo::HasSSE42Support(void)`
+- `0x355a0` : `public: static bool __cdecl Rainbow::CPUInfo::HasSupplementalSSE3Support(void)`
+- `0x7cd60` : `bool __cdecl Rainbow::HasUTF8BOM(unsigned char const *)`
+- `0x726a0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Hash128ToString(struct Hash128 const &)`
+- `0x72770` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Hash128ToString(unsigned int,unsigned int,unsigned int,unsigned int)`
+- `0x727c0` : `void __cdecl Hash128ToString(struct Hash128 const &,char *)`
+- `0x20ca0` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::MD5::HashAnsiString(char const *)`
+- `0x77aa0` : `public: static void __cdecl Rainbow::SHA1::HashBuffer(void const *,unsigned __int64,unsigned char *)`
+- `0x20cd0` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::MD5::HashBytes(unsigned char const *,unsigned __int64)`
+- `0xa86e0` : `private: static unsigned int __cdecl Rainbow::Http::CurlHandle::HeaderCallback(void *,unsigned int,unsigned int,void *)`
+- `0x7eeb0` : `void __cdecl HexStringToBytes(char const *,unsigned int,void *)`
+- `0x2ca90` : `public: static class Rainbow::Object * __cdecl Rainbow::Object::IDToPointer(unsigned int)`
+- `0x2cae0` : `public: static class Rainbow::Object * __cdecl Rainbow::Object::IDToPointerNoThreadCheck(unsigned int)`
+- `0x2cb20` : `public: static class Rainbow::Object * __cdecl Rainbow::Object::IDToPointerThreadSafe(unsigned int)`
+- `0x1abc0c` : `protected: static unsigned int const Rainbow::Object::INVALID_CACHED_TYPEINDEX`
+- `0x6ccb0` : `private: void __thiscall Rainbow::JobQueue::IncrementActiveThreadCount(void)`
+- `0x2cb80` : `protected: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::Init(enum Rainbow::TransferInstructionFlags,struct MemLabelId)`
+- `0x83490` : `public: void __thiscall Rainbow::AtomicList::Init(void)`
+- `0xa5150` : `void __cdecl BootConfig::Init(char const * * const,unsigned int)`
+- `0xa8960` : `public: void __thiscall Rainbow::Http::CurlHandle::Init(class core::basic_string<char,class core::StringStorageDefault<char> >,enum CURLcode &)`
+- `0xa55e0` : `public: void __thiscall BootConfig::Data::Init(char const * * const,unsigned int)`
+- `0x9f800` : `private: void __thiscall Rainbow::JSONRead::Init(enum Rainbow::TransferInstructionFlags,struct MemLabelId)`
+- `0x355b0` : `public: void __thiscall Rainbow::MinMaxAABB::Init(void)`
+- `0x2cbb0` : `public: class Rainbow::CachedReader & __thiscall Rainbow::StreamedBinaryRead::Init(enum Rainbow::TransferInstructionFlags,struct MemLabelId)`
+- `0xa2ec0` : `public: class Rainbow::CachedWriter & __thiscall Rainbow::StreamedBinaryWrite::Init(class Rainbow::CachedWriter const &,enum Rainbow::TransferInstructionFlags,struct Rainbow::BuildUsageTag const &,struct Rainbow::GlobalBuildData const &)`
+- `0xa2ef0` : `public: class Rainbow::CachedWriter & __thiscall Rainbow::StreamedBinaryWrite::Init(enum Rainbow::TransferInstructionFlags)`
+- `0x71640` : `public: void __thiscall UGUID::Init(void)`
+- `0xa4bd0` : `private: static void __cdecl Rainbow::CachedWriter::InitActiveWriter(struct Rainbow::CachedWriter::ActiveWriter &,class Rainbow::CacheWriterBase &)`
+- `0x2cbd0` : `protected: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::InitArrays(void)`
+- `0x6eec0` : `void __cdecl BitSetUtility::InitBitSet(unsigned int *,unsigned int)`
+- `0xa5170` : `bool __cdecl BootConfig::InitFromFile(char const * * const,unsigned int,char const *)`
+- `0xa5600` : `public: bool __thiscall BootConfig::Data::InitFromFile(char const * * const,unsigned int,char const *)`
+- `0xa5190` : `bool __cdecl BootConfig::InitFromFileFormatted(char const * * const,unsigned int,char const *,...)`
+- `0xa5250` : `void __cdecl BootConfig::InitFromString(char const * * const,unsigned int,char const *)`
+- `0xa5720` : `public: void __thiscall BootConfig::Data::InitFromString(char const * * const,unsigned int,char const *)`
+- `0xa41f0` : `public: void __thiscall Rainbow::CachedReader::InitRead(class Rainbow::CacheReaderBase &,unsigned int,unsigned int)`
+- `0x93bb0` : `void __cdecl InitStackTrace(void)`
+- `0x2e9c0` : `void __cdecl Rainbow::InitTypeHash(void *)`
+- `0xa4c20` : `public: void __thiscall Rainbow::CachedWriter::InitWrite(class Rainbow::CacheWriterBase &)`
+- `0x26850` : `public: void __thiscall Rainbow::PerThreadPageAllocator::Initialize(class Rainbow::AtomicPageAllocator &)`
+- `0x2f830` : `public: static void __cdecl Rainbow::RuntimeClassManager::InitializeAllTypes(void)`
+- `0x66c00` : `void __cdecl Rainbow::InitializeBatchedJobs(void)`
+- `0x25300` : `private: class Rainbow::BucketAllocator * __thiscall Rainbow::MemoryManager::InitializeBucketAllocator(void)`
+- `0x20e50` : `private: bool __thiscall Rainbow::MemoryManager::InitializeDebugAllocator(void)`
+- `0x25340` : `private: void __thiscall Rainbow::MemoryManager::InitializeDefaultAllocators(void)`
+- `0x2f8e0` : `private: static void __cdecl Rainbow::RuntimeClassManager::InitializeDerivedFromInfoAndRegisterAttributes(void)`
+- `0x77b40` : `public: static void __cdecl Rainbow::SHA1::InitializeFileHashesFromBuffer(unsigned char *,unsigned __int64,bool)`
+- `0x255c0` : `private: void __thiscall Rainbow::MemoryManager::InitializeMainThreadAllocators(void)`
+- `0x8b340` : `public: void __thiscall Rainbow::Gradient::InitializeOptimized(struct Rainbow::OptimizedGradient &)const `
+- `0x8a570` : `public: static void __cdecl Rainbow::FloatToHalfConverter::InitializePrecomputeTables(void)`
+- `0x20870` : `private: void __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::InitializeSharedObject(void)`
+- `0x6f5c0` : `public: static void __cdecl Rainbow::crc32::InitializeTable(void)`
+- `0x6b4d0` : `void __cdecl Rainbow::InitializeWorkStealingRange(struct Rainbow::WorkStealingAllocationData const &,struct Rainbow::WorkStealingRange &)`
+- `0x7d1c0` : `int __cdecl Rainbow::CodeUtil::InputAnsiToUnicode(wchar_t *,int,char const *,int)`
+- `0x22ec0` : `public: void __thiscall Rainbow::ListElement::InsertInList(class Rainbow::ListElement *)`
+- `0x2de50` : `private: static void __cdecl Rainbow::Object::InsertObjectInMap(class Rainbow::Object *)`
+- `0x2eac0` : `public: static void __cdecl Rainbow::ObjectTypeManager::InsertObjectToTypeManager(class Rainbow::Object *)`
+- `0x7ef00` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Int64ToString(__int64)`
+- `0x7efc0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl IntToString(int)`
+- `0x3ae60` : `public: bool __thiscall Rainbow::Frustum::Intersect(class Rainbow::Frustum const &)const `
+- `0x3b5f0` : `public: bool __thiscall Rainbow::Frustum::Intersect(class Rainbow::Sphere const &)const `
+- `0x3bfc0` : `bool __cdecl Rainbow::IntersectAABBAABB(class Rainbow::AABB const &,class Rainbow::AABB const &)`
+- `0x3c030` : `bool __cdecl Rainbow::IntersectAABBAABB(class Rainbow::MinMaxAABB const &,class Rainbow::MinMaxAABB const &)`
+- `0x3c090` : `bool __cdecl Rainbow::IntersectAABBAABBInclusive(class Rainbow::AABB const &,class Rainbow::AABB const &)`
+- `0x3c100` : `bool __cdecl Rainbow::IntersectAABBFrustum(class Rainbow::AABB const &,class Rainbow::Planef const *,unsigned int)`
+- `0x3c1a0` : `bool __cdecl Rainbow::IntersectAABBFrustumFull(class Rainbow::AABB const &,class Rainbow::Planef const * const)`
+- `0x3c230` : `bool __cdecl Rainbow::IntersectAABBPlaneBounds(class Rainbow::AABB const &,class Rainbow::Planef const *,int)`
+- `0x3c2d0` : `bool __cdecl Rainbow::IntersectAABBPlaneBoundsOptimized(class Rainbow::AABB const &,struct math::_float4 const *,int)`
+- `0x3c3d0` : `bool __cdecl Rainbow::IntersectAABBSphere(class Rainbow::AABB const &,class Rainbow::Sphere const &)`
+- `0x3c460` : `bool __cdecl Rainbow::IntersectCapsuleCapsule(class Rainbow::Capsule const &,class Rainbow::Capsule const &)`
+- `0x3c850` : `bool __cdecl Rainbow::IntersectCapsuleSphere(class Rainbow::Capsule const &,class Rainbow::Sphere const &)`
+- `0x3c950` : `bool __cdecl Rainbow::IntersectLineSegmentWithLine(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f &)`
+- `0x3ca40` : `bool __cdecl Rainbow::IntersectRayAABB(class Rainbow::Ray const &,class Rainbow::AABB const &)`
+- `0x3ca60` : `bool __cdecl Rainbow::IntersectRayAABB(class Rainbow::Ray const &,class Rainbow::AABB const &,float *,float *)`
+- `0x3cb60` : `bool __cdecl Rainbow::IntersectRayAABB(class Rainbow::Ray const &,class Rainbow::AABB const &,float *)`
+- `0x3cb80` : `bool __cdecl Rainbow::IntersectRayPlane(class Rainbow::Ray const &,class Rainbow::Planef const &,float *)`
+- `0x3cc40` : `bool __cdecl Rainbow::IntersectRayPlaneOriented(class Rainbow::Ray const &,class Rainbow::Planef const &,float *)`
+- `0x3cd00` : `bool __cdecl Rainbow::IntersectRaySphere(class Rainbow::Ray const &,class Rainbow::Sphere const &)`
+- `0x3cd90` : `bool __cdecl Rainbow::IntersectRaySphere(class Rainbow::Ray const &,class Rainbow::Sphere const &,float *,float *)`
+- `0x3cea0` : `bool __cdecl Rainbow::IntersectRayTriangle(class Rainbow::Ray const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x3cec0` : `bool __cdecl Rainbow::IntersectRayTriangle(class Rainbow::Ray const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float *)`
+- `0x3d0b0` : `bool __cdecl Rainbow::IntersectSegmentPlane(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Planef const &,class Rainbow::Vector3f *)`
+- `0x3d1c0` : `bool __cdecl Rainbow::IntersectSpherePlaneBoundsOptimized(struct math::_float4 const &,struct math::_float4 const *,int)`
+- `0x3d240` : `bool __cdecl Rainbow::IntersectSphereSphere(class Rainbow::Sphere const &,class Rainbow::Sphere const &)`
+- `0x3d290` : `bool __cdecl Rainbow::IntersectSphereSphereInclusive(class Rainbow::Sphere const &,class Rainbow::Sphere const &)`
+- `0x3d2e0` : `bool __cdecl Rainbow::IntersectSphereTriangle(class Rainbow::Sphere const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x3d8c0` : `bool __cdecl Rainbow::IntersectTransformedAABBSphere(class Rainbow::AABB const &,class Rainbow::Matrix4x4f const &,class Rainbow::Sphere const &)`
+- `0x3dee0` : `bool __cdecl Rainbow::IntersectTriTri(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f *,class Rainbow::Vector3f *,bool *)`
+- `0x3df20` : `bool __cdecl Rainbow::IntersectionAABBAABB(class Rainbow::MinMaxAABB const &,class Rainbow::MinMaxAABB const &,class Rainbow::MinMaxAABB *)`
+- `0x42bd0` : `public: bool __thiscall Rainbow::TRect<int>::Intersects(class Rainbow::TRect<int> const &)const `
+- `0x42c30` : `public: bool __thiscall Rainbow::TRect<float>::Intersects(class Rainbow::TRect<float> const &)const `
+- `0x66290` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::InvalidateAndCreate(class Rainbow::AtomicSafetyHandle &)`
+- `0x34410` : `public: class Rainbow::Quaternionf __thiscall Rainbow::Quaternionf::Inverse(void)const `
+- `0x8b680` : `private: static struct math::_float4 const __cdecl Rainbow::Gradient::InverseLerp(struct math::_float1 const &,struct math::_float1 const &,struct math::_float4 const &)`
+- `0x35610` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::InverseMultiplyPoint3Affine(class Rainbow::Vector3f const &)const `
+- `0x356b0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::InverseMultiplyVector3Affine(class Rainbow::Vector3f const &)const `
+- `0x35740` : `void __cdecl Rainbow::InverseTransformAABB(class Rainbow::AABB const &,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::AABB &)`
+- `0x8c140` : `public: bool __thiscall Rainbow::Matrix3x3f::Invert(void)`
+- `0x8e450` : `bool __cdecl Rainbow::InvertMatrix4x4_Full(float const *,float *)`
+- `0x8edd0` : `bool __cdecl Rainbow::InvertMatrix4x4_General3D(float const *,float *)`
+- `0x8c1c0` : `public: void __thiscall Rainbow::Matrix3x3f::InvertTranspose(void)`
+- `0x358e0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::Invert_Full(void)`
+- `0x35900` : `public: static bool __cdecl Rainbow::Matrix4x4f::Invert_Full(class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f &)`
+- `0x35910` : `public: static bool __cdecl Rainbow::Matrix4x4f::Invert_General3D(class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f &)`
+- `0x21560` : `public: void __thiscall CallbackArray::Invoke(void)`
+- `0x215c0` : `public: bool __thiscall CallbackArrayReturnsAnyTrue::Invoke(void)`
+- `0x32cb0` : `public: void __thiscall Rainbow::CallbackDynamicArray::Invoke(void)`
+- `0x32d00` : `public: bool __thiscall Rainbow::CallbackDynamicArrayReturnsAnyTrue::Invoke(void)`
+- `0x29ba0` : `public: void __thiscall Rainbow::EventDispatcher::InvokeEvent(int,void *)`
+- `0x45e00` : `private: void __thiscall Rainbow::AsyncReadManagerThreaded::InvokeUserCallback(struct Rainbow::AsyncReadCommand *,enum Rainbow::AsyncReadCommand::Status)`
+- `0x99060` : `public: bool __thiscall Rainbow::FileSystem::IsAbsoluteFilePath(char const *)const `
+- `0x51fc0` : `bool __cdecl Rainbow::IsAbsoluteFilePath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x2cc90` : `public: bool __thiscall Rainbow::RuntimeClass::IsAbstract(void)const `
+- `0x216d0` : `public: bool __thiscall Rainbow::MemoryManager::IsActive(void)`
+- `0x860b0` : `bool __cdecl Rainbow::IsAppShutdowning(void)`
+- `0x208a0` : `bool __cdecl Rainbow::IsAssetDevelopMode(void)`
+- `0x2cca0` : `public: bool __thiscall Rainbow::RuntimeClass::IsBaseOf(unsigned int)const `
+- `0x2ccc0` : `public: bool __thiscall Rainbow::RuntimeClass::IsBaseOf(class Rainbow::RuntimeClass const *)const `
+- `0x6e870` : `bool __cdecl IsBatchmode(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsBlobWrite(void)const `
+- `0xab6a0` : `public: virtual bool __thiscall Rainbow::Http::DownLoadFileTask::IsBreak(void)const `
+- `0xad4d0` : `public: virtual bool __thiscall Rainbow::Http::UpLoadFileTask::IsBreak(void)const `
+- `0xae760` : `public: virtual bool __thiscall Rainbow::Http::WebRequest::IsBreak(void)const `
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsBuildingResourceImage(void)`
+- `0x2cce0` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsCloningObject(void)`
+- `0x2cce0` : `public: bool __thiscall Rainbow::StreamedBinaryRead::IsCloningObject(void)`
+- `0x2cce0` : `public: bool __thiscall Rainbow::StreamedBinaryWrite::IsCloningObject(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsCloningObject(void)`
+- `0x35920` : `bool __cdecl Rainbow::IsContainedInAABB(class Rainbow::AABB const &,class Rainbow::AABB const &)`
+- `0x2ccf0` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsCurrentVersion(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::TransferBase::IsCurrentVersion(void)`
+- `0x25650` : `public: bool __thiscall Rainbow::MemoryManager::IsCustomAllocator(int)const `
+- `0x20e50` : `public: virtual bool __thiscall Rainbow::DataStream::IsCustomImage(void)`
+- `0x7d220` : `bool __cdecl Rainbow::CodeUtil::IsDBCSLeadByte(char)`
+- `0x662e0` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::IsDefaultValue(class Rainbow::AtomicSafetyHandle const &)`
+- `0x2cd00` : `public: static bool __cdecl Rainbow::RuntimeClass::IsDerivedFrom(class Rainbow::RuntimeClass const &,class Rainbow::RuntimeClass const &)`
+- `0x2cd20` : `public: static bool __cdecl Rainbow::RuntimeClass::IsDerivedFrom(unsigned int,class Rainbow::RuntimeClass const &)`
+- `0x2cd40` : `public: static bool __cdecl Rainbow::RuntimeClass::IsDerivedFrom(unsigned int,unsigned int,unsigned int)`
+- `0x99120` : `public: bool __thiscall Rainbow::FileSystemEntry::IsDir(void)const `
+- `0x51fe0` : `bool __cdecl Rainbow::IsDirectoryCreated(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x520c0` : `bool __cdecl Rainbow::IsDirectoryEmpty(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4fed0` : `bool __cdecl Rainbow::IsDirectoryWritable(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x42ca0` : `public: bool __thiscall Rainbow::TRect<int>::IsEmpty(void)const `
+- `0x42cc0` : `public: bool __thiscall Rainbow::TRect<float>::IsEmpty(void)const `
+- `0x834c0` : `public: int __thiscall Rainbow::AtomicQueue::IsEmpty(void)const `
+- `0x834e0` : `public: int __thiscall Rainbow::AtomicStack::IsEmpty(void)const `
+- `0x44f10` : `public: int __thiscall Rainbow::MutexLockedQueue::IsEmpty(void)`
+- `0x44f70` : `public: int __thiscall Rainbow::MutexLockedStack::IsEmpty(void)const `
+- `0x2cd60` : `public: bool __thiscall Rainbow::Object::IsExactKindOf(class Rainbow::RuntimeClass const *)const `
+- `0x6ccf0` : `public: static bool __cdecl Rainbow::JobQueue::IsExecutingJob(void)`
+- `0x693c0` : `bool __cdecl Rainbow::IsExecutingJob(void)`
+- `0x42ce0` : `public: bool __thiscall Rainbow::PlayerSettings::IsFakeSoundSystem(void)const `
+- `0x66930` : `public: bool __thiscall Rainbow::BackgroundJobQueue::IsFenceCompleted(struct Rainbow::BackgroundJobQueue::BackJobFence const &)`
+- `0x67690` : `bool __cdecl Rainbow::IsFenceDone(struct Rainbow::JobFence const &)`
+- `0x52220` : `bool __cdecl Rainbow::IsFileCreated(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x4cab0` : `public: bool __thiscall Rainbow::FileManager::IsFileExist(char const *)`
+- `0x4cb20` : `public: bool __thiscall Rainbow::FileManager::IsFileExist(char const *,bool &)`
+- `0x5eef0` : `public: virtual bool __thiscall Rainbow::PackageAsset::IsFileExist(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x5f1a0` : `public: virtual bool __thiscall Rainbow::PackageAsset::IsFileExist(char const *)`
+- `0x64520` : `public: virtual bool __thiscall Rainbow::PackageFileSystem::IsFileExist(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x646a0` : `public: virtual bool __thiscall Rainbow::PackageFileSystem::IsFileExist(char const *)`
+- `0x4cbb0` : `public: bool __thiscall Rainbow::FileManager::IsFileExistWritePath(char const *)`
+- `0x5f460` : `public: virtual bool __thiscall Rainbow::PackageAsset::IsFileExistWritePath(char const *)`
+- `0x52310` : `bool __cdecl Rainbow::IsFileOrDirectoryInUse(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x359e0` : `public: bool __thiscall Rainbow::AABB::IsFinite(void)const `
+- `0x50070` : `bool __cdecl Rainbow::IsFolderReadOnly(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x99140` : `public: bool __thiscall Rainbow::FileSystemEntry::IsHidden(void)const `
+- `0x6e880` : `bool __cdecl IsHumanControllingUs(void)`
+- `0x8c270` : `public: bool __thiscall Rainbow::Matrix3x3f::IsIdentity(float)`
+- `0x8f100` : `public: bool __thiscall Rainbow::Matrix4x4f::IsIdentity(float)const `
+- `0x22f10` : `public: bool __thiscall Rainbow::ListElement::IsInList(void)const `
+- `0x72130` : `public: bool __thiscall Rainbow::HandleManager::IsInValidHandleRange(int)const `
+- `0x4ce50` : `public: bool __thiscall Rainbow::FileManager::IsIndexOfWriteablePath(class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x35ab0` : `public: bool __thiscall Rainbow::AABB::IsInside(class Rainbow::Vector3f const &)const `
+- `0x38710` : `public: bool __thiscall Rainbow::BoundsInt::IsInside(struct math::_int3 const &)const `
+- `0x38b90` : `public: bool __thiscall Rainbow::Capsule::IsInside(class Rainbow::Vector3f const &)const `
+- `0x35b30` : `public: bool __thiscall Rainbow::MinMaxAABB::IsInside(class Rainbow::Vector3f const &)const `
+- `0x3b620` : `public: bool __thiscall Rainbow::Sphere::IsInside(class Rainbow::Sphere const &)const `
+- `0x2cd80` : `public: bool __thiscall Rainbow::Object::IsInstanceIDCreated(void)const `
+- `0x2dee0` : `public: bool __thiscall Rainbow::Object::IsKindOf(class Rainbow::RuntimeClass const *)const `
+- `0x6fb90` : `public: static bool __cdecl Rainbow::DateTime::IsLeapYear(int)`
+- `0x99160` : `public: bool __thiscall Rainbow::FileSystemEntry::IsLocal(void)const `
+- `0x99180` : `public: bool __thiscall Rainbow::FileSystemEntry::IsLocked(void)`
+- `0x83740` : `bool __cdecl Rainbow::CurrentThread::IsMainThread(void)`
+- `0x56f50` : `public: bool __thiscall Rainbow::JobBatchDispatcher::IsManualKickMode(void)const `
+- `0x42cf0` : `public: bool __thiscall Rainbow::PlayerSettings::IsMute(void)const `
+- `0x3a170` : `public: bool __thiscall Rainbow::Vector2f::IsNormalized(float)const `
+- `0x35b80` : `public: bool __thiscall Rainbow::Vector3f::IsNormalized(float)const `
+- `0x35be0` : `public: bool __thiscall Rainbow::Vector4f::IsNormalized(class Rainbow::Vector4f const &,float)const `
+- `0x2cd90` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsOldVersion(int)`
+- `0x2cdb0` : `public: bool __thiscall Rainbow::TransferBase::IsOldVersion(int)`
+- `0x75d60` : `bool __cdecl IsPathSeparator(char)`
+- `0x35c50` : `public: bool __thiscall Rainbow::Matrix4x4f::IsPerspective(void)const `
+- `0x42d00` : `public: bool __thiscall Rainbow::PlayerSettings::IsPrintLog(void)const `
+- `0x20df0` : `public: bool __thiscall Rainbow::Thread::IsQuitSignaled(void)const `
+- `0x991a0` : `public: bool __thiscall Rainbow::FileSystemEntry::IsReadOnly(void)const `
+- `0x20b80` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsReading(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryRead::IsReading(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsReading(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsReadingBackwardsCompatible(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsReadingBackwardsCompatible(void)`
+- `0x2cdc0` : `public: bool __thiscall Rainbow::TransferBase::IsReadingOrWritingSerializedFile(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsReadingPPtr(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryRead::IsReadingPPtr(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsReadingPPtr(void)`
+- `0x216e0` : `protected: bool __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::IsRegistered(union CallbackInfoBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::FunctionPointers &,void const *)const `
+- `0x21730` : `public: bool __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::IsRegistered(void (__cdecl*)(void const *),void const *)const `
+- `0x21770` : `public: bool __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::IsRegistered(void (__cdecl*)(void))const `
+- `0x216e0` : `protected: bool __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::IsRegistered(union CallbackInfoBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::FunctionPointers &,void const *)const `
+- `0x21730` : `public: bool __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::IsRegistered(bool (__cdecl*)(void const *),void const *)const `
+- `0x21770` : `public: bool __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::IsRegistered(bool (__cdecl*)(void))const `
+- `0x21770` : `public: bool __thiscall CallbackArraySubBase<void (__cdecl*)(void)>::IsRegistered(void (__cdecl*)(void))const `
+- `0x21770` : `public: bool __thiscall CallbackArraySubBase<bool (__cdecl*)(void)>::IsRegistered(bool (__cdecl*)(void))const `
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsRemapPPtrTransfer(void)`
+- `0x20e10` : `public: bool __thiscall Rainbow::ProfilerManager::IsRuning(void)`
+- `0x5f470` : `public: bool __thiscall Rainbow::LogSystem::IsRunning(void)`
+- `0x20e00` : `public: bool __thiscall Rainbow::Thread::IsRunning(void)const `
+- `0x6e8a0` : `bool __cdecl IsRunningUnitTests(void)`
+- `0x66300` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::IsSecondaryVersion(class Rainbow::AtomicSafetyHandle const &)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsSerializingDebugProperties(void)const `
+- `0x20e50` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsSerializingForGameRelease(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::TransferBase::IsSerializingForGameRelease(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsSerializingForInspector(void)const `
+- `0x7cd80` : `bool __cdecl Rainbow::IsStringValidUTF8(unsigned char const *,int)`
+- `0xa9450` : `public: bool __thiscall Rainbow::Http::CurlRequestMessage::IsSuccess(void)`
+- `0xae780` : `public: bool __thiscall Rainbow::Http::WebRequest::IsSuccess(void)`
+- `0x44fd0` : `public: bool __thiscall Rainbow::Rainbow::SuspendableSemaphore::IsSuspended(void)const `
+- `0x44fd0` : `public: bool __thiscall Rainbow::SuspendableSemaphore::IsSuspended(void)const `
+- `0x991c0` : `public: bool __thiscall Rainbow::FileSystemEntry::IsSymLink(void)const `
+- `0x502b0` : `bool __cdecl Rainbow::IsSymlink(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x217b0` : `public: static bool __cdecl Rainbow::MemoryManager::IsTempAllocatorLabel(struct MemLabelId)`
+- `0x208b0` : `bool __cdecl IsTempLabel(struct MemLabelId)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::IsTempMemoryHandle(class Rainbow::AtomicSafetyHandle)`
+- `0xab6e0` : `public: bool __thiscall Rainbow::Http::DownLoadFileTask::IsTimeOut(void)`
+- `0xae7b0` : `public: bool __thiscall Rainbow::Http::WebRequest::IsTimeout(void)`
+- `0x7d240` : `bool __cdecl Rainbow::CodeUtil::IsUTF8String(char const *,int)`
+- `0x66320` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::IsUndisposable(class Rainbow::AtomicSafetyHandle)`
+- `0x693d0` : `bool __cdecl Rainbow::IsUndisposable(class Rainbow::AtomicSafetyHandle const &)`
+- `0xa9460` : `public: virtual bool __thiscall Rainbow::Http::IHttpTask::IsUpOrDownType(void)const `
+- `0xae7d0` : `public: virtual bool __thiscall Rainbow::Http::WebRequest::IsUpOrDownType(void)const `
+- `0x208c0` : `public: bool __thiscall Rainbow::FixedString::IsVaild(void)`
+- `0x66340` : `public: bool __thiscall Rainbow::AtomicSafetyHandle::IsValid(void)const `
+- `0x52390` : `public: bool __thiscall Rainbow::File::IsValid(void)`
+- `0x20e10` : `public: bool __thiscall Rainbow::MD5Hash::IsValid(void)const `
+- `0x35ca0` : `public: bool __thiscall Rainbow::MinMaxAABB::IsValid(void)const `
+- `0x20e20` : `public: bool __thiscall Rainbow::SHAHash::IsValid(void)const `
+- `0x42d10` : `public: bool __thiscall UGUID::IsValid(void)const `
+- `0x72150` : `public: bool __thiscall Rainbow::HandleManager::IsValidHandle(int)const `
+- `0x2cdd0` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::IsVersionSmallerOrEqual(int)`
+- `0x2cdb0` : `public: bool __thiscall Rainbow::TransferBase::IsVersionSmallerOrEqual(int)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryWrite::IsWriting(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsWriting(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryWrite::IsWritingGameReleaseData(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsWritingGameReleaseData(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::StreamedBinaryWrite::IsWritingPPtr(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::IsWritingPPtr(void)`
+- `0x56f60` : `private: static void __cdecl Rainbow::FileCompressHelper::LZMAStreamingDeCompress::JobProgress(class Rainbow::FileCompressHelper::LZMAStreamingDeCompress *)`
+- `0x6cd10` : `bool __cdecl Rainbow::JobQueueCreated(void)`
+- `0x7f070` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Join(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class std::vector<class core::basic_string<char,class core::StringStorageDefault<char> >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > const &)`
+- `0xb9480` : `protected: void __thiscall Rainbow::PlatformThread::Join(class Rainbow::Thread const *)`
+- `0x6b1a0` : `public: void __thiscall Rainbow::ThreadedJobBatch::JobBatch::KickJobs(void)`
+- `0x67360` : `public: void __thiscall Rainbow::JobBatchDispatcher::KickJobs(void)`
+- `0x5f480` : `public: static bool __cdecl Rainbow::PackageAsset::LZMACompressPkg(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x42d30` : `public: enum Rainbow::FileSystemError __thiscall Rainbow::FileAccessor::LastError(void)`
+- `0x991e0` : `public: int __thiscall Rainbow::FileSystem::LastError(void)const `
+- `0x42d40` : `public: enum Rainbow::FileSystemError __thiscall Rainbow::FileSystemEntry::LastError(void)`
+- `0x991f0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::LastErrorMessage(void)const `
+- `0x24fc0` : `public: struct Rainbow::JobInfo * __thiscall Rainbow::JobGroup::LastJob(void)`
+- `0x99210` : `public: struct Rainbow::DateTime __thiscall Rainbow::FileSystemEntry::LastModified(void)const `
+- `0x45e40` : `public: void __thiscall Rainbow::AsyncReadManagerThreaded::LaunchThread(void)`
+- `0x3a1d0` : `public: float __thiscall Rainbow::Vector2f::Length(void)const `
+- `0x35d30` : `public: float __thiscall Rainbow::Vector3f::Length(void)const `
+- `0x35d80` : `public: float __thiscall Rainbow::Vector4f::Length(void)const `
+- `0x3a210` : `public: float __thiscall Rainbow::Vector2f::LengthSqr(void)const `
+- `0x35de0` : `public: float __thiscall Rainbow::Vector3f::LengthSqr(void)const `
+- `0x35e20` : `public: float __thiscall Rainbow::Vector4f::LengthSqr(void)const `
+- `0x77ca0` : `void __cdecl Rainbow::LexFromString(struct Rainbow::MD5Hash &,char const *)`
+- `0x77d50` : `void __cdecl Rainbow::LexFromString(class Rainbow::SHAHash &,char const *)`
+- `0x77e30` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::LexToString(struct Rainbow::MD5Hash const &)`
+- `0x20900` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::LexToString(class Rainbow::SHAHash const &)`
+- `0x83500` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicNode::Link(class Rainbow::AtomicNode *)`
+- `0x2cf00` : `private: void __thiscall Rainbow::JobInfo::Link(struct Rainbow::JobInfo *)`
+- `0x6cd20` : `private: static void __cdecl Rainbow::JobQueue::LinkBatchedJob(class Rainbow::JobGroup *,class Rainbow::JobGroup *)`
+- `0x83510` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicList::Load(int &)`
+- `0x30bc0` : `void * __cdecl LoadAndLookupSymbol(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x30c90` : `bool __cdecl LoadAndLookupSymbols(char const *,...)`
+- `0x87cb0` : `public: void __thiscall Rainbow::PlayerSettings::LoadConfigFile(void)`
+- `0x30e20` : `void * __cdecl LoadDynamicLibrary(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x50330` : `bool __cdecl Rainbow::LoadFileAsBinary(char const *,struct dynamic_array<unsigned char,0> &)`
+- `0x50470` : `bool __cdecl Rainbow::LoadFileAsString(char const *,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x4ce90` : `public: bool __thiscall Rainbow::FileManager::LoadFullPathFileAsBinary(char const *,struct dynamic_array<unsigned char,0> &)`
+- `0x5f510` : `public: bool __thiscall Rainbow::PackageAsset::LoadPkgFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x22dc0` : `public: class Rainbow::FileSystemHandler * __thiscall Rainbow::FileSystem::LocalFileSystem(void)const `
+- `0x523b0` : `public: bool __thiscall Rainbow::File::Lock(enum Rainbow::File::LockMode,bool)`
+- `0x99250` : `public: bool __thiscall Rainbow::FileSystemEntry::Lock(enum Rainbow::FileLockMode,class Rainbow::FileAccessor *)`
+- `0x83bd0` : `public: void __thiscall Rainbow::Mutex::Lock(void)`
+- `0xb9380` : `protected: void __thiscall Rainbow::PlatformMutex::Lock(void)`
+- `0xa42a0` : `private: void __thiscall Rainbow::CachedReader::LockCacheBlockBounded(void)`
+- `0x20870` : `void __cdecl Rainbow::LogNotSyncedJobs(void)`
+- `0x807a0` : `void __cdecl LogSystemWriteLog(struct DebugStringToFileData &)`
+- `0x8c340` : `bool __cdecl Rainbow::LookRotationToMatrix(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Matrix3x3f *)`
+- `0x908f0` : `bool __cdecl Rainbow::LookRotationToQuaternionf(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Quaternionf *)`
+- `0x30f70` : `void * __cdecl LookupSymbol(void *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x25660` : `public: static void * __cdecl Rainbow::MemoryManager::LowLevelAllocate(unsigned int)`
+- `0x25690` : `public: static void * __cdecl Rainbow::MemoryManager::LowLevelCAllocate(unsigned int,unsigned int)`
+- `0x257c0` : `public: static void __cdecl Rainbow::MemoryManager::LowLevelFree(void *,unsigned int)`
+- `0x257f0` : `public: static void * __cdecl Rainbow::MemoryManager::LowLevelReallocate(void *,unsigned int,unsigned int)`
+- `0x208e0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl MD5ToString(unsigned char * const)`
+- `0x35d80` : `public: float __thiscall Rainbow::Quaternionf::Magnitude(void)const `
+- `0x20870` : `public: virtual void __thiscall Rainbow::Object::MainThreadCleanup(void)`
+- `0xac670` : `private: static void __cdecl Rainbow::Http::IHttpTask::MainThreadReload(class Rainbow::Http::IHttpTask *)`
+- `0x992b0` : `public: bool __thiscall Rainbow::FileSystemEntry::MakeLocal(bool)`
+- `0x90930` : `void __cdecl Rainbow::MatrixToQuaternionf(class Rainbow::Matrix3x3f const &,class Rainbow::Quaternionf &)`
+- `0x90c00` : `void __cdecl Rainbow::MatrixToQuaternionf(class Rainbow::Matrix4x4f const &,class Rainbow::Quaternionf &)`
+- `0x3a240` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::Maximize(class Rainbow::Vector2f const &)const `
+- `0x6f410` : `public: void __thiscall Rainbow::Blackboard::Merge(class Rainbow::Blackboard const &)`
+- `0xab730` : `public: void __thiscall Rainbow::Http::DownLoadFileTask::MergeTask(class Rainbow::Http::DownLoadFileTask *)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::TRect<int>::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::TRect<float>::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::AABB::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::ColorRGBAf::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::DateTime::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Gradient::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::MD5Hash::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Matrix3x3f::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Matrix4x4f::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::MinMaxAABB::MightContainPPtr(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::NamedObject::MightContainPPtr(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::PlayerSettings::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Quaternionf::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::SHAHash::MightContainPPtr(void)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::StreamedResource::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl UGUID::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Vector2f::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Vector3f::MightContainPPtr(void)`
+- `0x20e50` : `public: static bool __cdecl Rainbow::Vector4f::MightContainPPtr(void)`
+- `0x3a270` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::Minimize(class Rainbow::Vector2f const &)const `
+- `0x89280` : `public: bool __thiscall Rainbow::FileSystem::MountDataFolderFileSystem(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x992d0` : `public: bool __thiscall Rainbow::FileSystem::MountHandler(class Rainbow::FileSystemHandler *)`
+- `0x24fc0` : `public: class Rainbow::MemoryFileSystem * __thiscall Rainbow::FileSystem::MountMemoryFileSystem(void)`
+- `0x42d50` : `public: void __thiscall Rainbow::TRect<int>::Move(int,int)`
+- `0x42d70` : `public: void __thiscall Rainbow::TRect<float>::Move(float,float)`
+- `0x993b0` : `public: bool __thiscall Rainbow::FileSystemEntry::Move(class Rainbow::FileSystemEntry &,enum Rainbow::FileSystemCopyMoveFlags)`
+- `0x6eee0` : `void __cdecl BitSetUtility::MoveBits(unsigned int *,unsigned int,unsigned int,unsigned int)`
+- `0x99740` : `private: bool __thiscall Rainbow::FileSystemEntry::MoveByCopying(class Rainbow::FileSystemEntry &,enum Rainbow::FileSystemCopyMoveFlags)`
+- `0x505b0` : `bool __cdecl Rainbow::MoveFileOrDirectory(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x217c0` : `protected: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::MoveFoward(unsigned int)`
+- `0x217c0` : `protected: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::MoveFoward(unsigned int)`
+- `0x523d0` : `bool __cdecl Rainbow::MoveReplaceFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x50830` : `bool __cdecl Rainbow::MoveToFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x99c10` : `public: bool __thiscall Rainbow::FileSystem::MoveToTrash(char const *)const `
+- `0x99cd0` : `public: bool __thiscall Rainbow::FileSystemEntry::MoveToTrash(void)`
+- `0x4ceb0` : `public: bool __thiscall Rainbow::FileManager::MoveWritePathFileOrDir(char const *,char const *)`
+- `0x20870` : `private: static void __cdecl Rainbow::JobQueue::MultiDependentMainForEachJobFunc(class Rainbow::JobGroup *,unsigned int)`
+- `0x8f260` : `void __cdecl Rainbow::MultiplyMatrices3x4(class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f const &,class Rainbow::Matrix4x4f &)`
+- `0x8cec0` : `void __cdecl Rainbow::MultiplyMatrices4x4REF(class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f * __restrict)`
+- `0x8d280` : `void __cdecl Rainbow::MultiplyMatrixArray4x4REF(class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f * __restrict,unsigned int)`
+- `0x8d420` : `void __cdecl Rainbow::MultiplyMatrixArrayWithBase4x4REF(class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f * __restrict,unsigned int)`
+- `0x35e60` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix3x3f::MultiplyPoint3(class Rainbow::Vector3f const &)const `
+- `0x35ef0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::MultiplyPoint3(class Rainbow::Vector3f const &)const `
+- `0x35f90` : `public: void __thiscall Rainbow::Matrix4x4f::MultiplyPoint3(class Rainbow::Vector3f const &,class Rainbow::Vector3f &)const `
+- `0x36030` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix3x3f::MultiplyPoint3Transpose(class Rainbow::Vector3f const &)const `
+- `0x35e60` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix3x3f::MultiplyVector3(class Rainbow::Vector3f const &)const `
+- `0x360c0` : `public: void __thiscall Rainbow::Matrix3x3f::MultiplyVector3(class Rainbow::Vector3f const &,class Rainbow::Vector3f &)const `
+- `0x36150` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix4x4f::MultiplyVector3(class Rainbow::Vector3f const &)const `
+- `0x361e0` : `public: void __thiscall Rainbow::Matrix4x4f::MultiplyVector3(class Rainbow::Vector3f const &,class Rainbow::Vector3f &)const `
+- `0x36030` : `public: class Rainbow::Vector3f __thiscall Rainbow::Matrix3x3f::MultiplyVector3Transpose(class Rainbow::Vector3f const &)const `
+- `0x36270` : `public: class Rainbow::Vector4f __thiscall Rainbow::Matrix4x4f::MultiplyVector4(class Rainbow::Vector4f const &)const `
+- `0x36370` : `public: void __thiscall Rainbow::Matrix4x4f::MultiplyVector4(class Rainbow::Vector4f const &,class Rainbow::Vector4f &)const `
+- `0x2cdc0` : `public: bool __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::NeedsInstanceIDRemapping(void)`
+- `0x2cdc0` : `public: bool __thiscall Rainbow::StreamedBinaryRead::NeedsInstanceIDRemapping(void)`
+- `0x2cdc0` : `public: bool __thiscall Rainbow::StreamedBinaryWrite::NeedsInstanceIDRemapping(void)`
+- `0x20e50` : `public: bool __thiscall Rainbow::TransferBase::NeedsInstanceIDRemapping(void)`
+- `0x20850` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicNode::Next(void)const `
+- `0x20850` : `public: struct Rainbow::JobInfo * __thiscall Rainbow::JobInfo::Next(void)`
+- `0x5f9b0` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::PackageAsset::NormalPkgMergeHotfixPkg(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x60610` : `public: static class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::PackageAsset::NormalPkgMergePatchPkg(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x42da0` : `public: void __thiscall Rainbow::TRect<int>::Normalize(void)`
+- `0x42dc0` : `public: void __thiscall Rainbow::TRect<float>::Normalize(void)`
+- `0x36460` : `public: float __thiscall Rainbow::Quaternionf::Normalize(void)`
+- `0x3a2a0` : `public: float __thiscall Rainbow::Vector2f::Normalize(void)`
+- `0x36530` : `public: float __thiscall Rainbow::Vector3f::Normalize(void)`
+- `0x36600` : `public: float __thiscall Rainbow::Vector4f::Normalize(void)`
+- `0x3a310` : `public: class Rainbow::Vector2f __thiscall Rainbow::Vector2f::NormalizeFast(void)const `
+- `0x929a0` : `class Rainbow::Vector3f __cdecl Rainbow::NormalizeRobust(class Rainbow::Vector3f const &)`
+- `0x929d0` : `class Rainbow::Vector3f __cdecl Rainbow::NormalizeRobust(class Rainbow::Vector3f const &,float &,float)`
+- `0x36670` : `public: float __thiscall Rainbow::Quaternionf::NormalizeSafe(void)`
+- `0x3a3a0` : `public: float __thiscall Rainbow::Vector2f::NormalizeSafe(float)`
+- `0x36730` : `public: float __thiscall Rainbow::Vector3f::NormalizeSafe(float)`
+- `0x2cdf0` : `public: bool __thiscall Rainbow::ColorRGBAf::NotEquals(class Rainbow::ColorRGBAf const &,float)const `
+- `0x36810` : `public: void __thiscall Rainbow::AABB::Offset(class Rainbow::Vector3f const &)`
+- `0x387a0` : `public: void __thiscall Rainbow::BoundsInt::Offset(struct math::_int3 const &)`
+- `0x20870` : `protected: virtual void __thiscall Rainbow::Object::OnAwake(void)`
+- `0xab790` : `protected: virtual bool __thiscall Rainbow::Http::DownLoadFileTask::OnDownLoadThreadFinishHandle(void)`
+- `0xac5c0` : `private: void __thiscall Rainbow::Http::HttpTaskManager::OnPreTick(void)`
+- `0x2eec0` : `protected: virtual void __thiscall Rainbow::RefObject::OnRelease(void)`
+- `0xac690` : `protected: void __thiscall Rainbow::Http::IHttpTask::OnScheduleEnd(void)`
+- `0x52640` : `public: bool __thiscall Rainbow::File::Open(class core::basic_string<char,class core::StringStorageDefault<char> > const &,enum Rainbow::File::Permission,enum Rainbow::File::AutoBehavior)`
+- `0x99cf0` : `public: bool __thiscall Rainbow::FileAccessor::Open(class Rainbow::FileSystemEntry &,enum Rainbow::FilePermission,enum Rainbow::FileAutoBehavior)`
+- `0x42df0` : `public: bool __thiscall Rainbow::FileAccessor::Open(class core::basic_string<char,class core::StringStorageDefault<char> > const &,enum Rainbow::FilePermission,enum Rainbow::FileAutoBehavior)`
+- `0x99d30` : `public: bool __thiscall Rainbow::FileAccessor::Open(char const *,enum Rainbow::FilePermission,enum Rainbow::FileAutoBehavior)`
+- `0x4d090` : `public: class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::FileManager::OpenFile(char const *,bool)`
+- `0x61090` : `public: virtual class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::PackageAsset::OpenFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x61620` : `public: virtual class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::PackageAsset::OpenFile(char const *)`
+- `0x64830` : `public: virtual class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::PackageFileSystem::OpenFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x64a90` : `public: virtual class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall Rainbow::PackageFileSystem::OpenFile(char const *)`
+- `0x52730` : `public: bool __thiscall Rainbow::File::OpenFileSystemEntry(class Rainbow::FileSystemEntry const &,enum Rainbow::File::Permission,enum Rainbow::File::AutoBehavior)`
+- `0x92e50` : `class Rainbow::Vector3f __cdecl Rainbow::OrthoNormalVectorFast(class Rainbow::Vector3f const &)`
+- `0x8c590` : `void __cdecl Rainbow::OrthoNormalize(class Rainbow::Matrix3x3f &)`
+- `0x92f30` : `void __cdecl Rainbow::OrthoNormalize(class Rainbow::Vector3f *,class Rainbow::Vector3f *,class Rainbow::Vector3f *)`
+- `0x93310` : `void __cdecl Rainbow::OrthoNormalize(class Rainbow::Vector3f *,class Rainbow::Vector3f *)`
+- `0x3ed60` : `void __cdecl Rainbow::OrthogonalizeTangent(struct Rainbow::TangentInfo &,class Rainbow::Vector3f,class Rainbow::Vector4f &)`
+- `0xa42e0` : `private: void __thiscall Rainbow::CachedReader::OutOfBoundsError(unsigned int,unsigned int)`
+- `0xa1230` : `public: void __thiscall Rainbow::JSONWrite::OutputToString(class core::basic_string<char,class core::StringStorageDefault<char> > &,bool)`
+- `0x2ce60` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::OverrideRootTypeName(char const *)`
+- `0x73fd0` : `public: void __thiscall Rainbow::PackedFloatVector::PackFloats(float const *,int,int,int,int,bool)`
+- `0x74310` : `public: void __thiscall Rainbow::PackedQuatVector::PackQuats(class Rainbow::Quaternionf *,int)`
+- `0x21dd0` : `public: void __thiscall Rainbow::BatchAllocator::PadToCacheLine(void)`
+- `0x99e10` : `public: bool __thiscall Rainbow::FileSystemEntry::Parent(class Rainbow::FileSystemEntry *)const `
+- `0xa5ea0` : `public: int __thiscall BootConfig::ParameterParser<int>::Parse(char const *,int)const `
+- `0xa5ed0` : `public: unsigned int __thiscall BootConfig::ParameterParser<unsigned int>::Parse(char const *,unsigned int)const `
+- `0xa5f00` : `public: char const * __thiscall BootConfig::ParameterParser<char const *>::Parse(char const *,char const *)const `
+- `0xa5f10` : `public: __int64 __thiscall BootConfig::ParameterParser<__int64>::Parse(char const *,__int64)const `
+- `0xa5f50` : `public: unsigned __int64 __thiscall BootConfig::ParameterParser<unsigned __int64>::Parse(char const *,unsigned __int64)const `
+- `0xa5f90` : `public: bool __thiscall BootConfig::ParameterParser<bool>::Parse(char const *,bool)const `
+- `0x61bc0` : `public: static void __cdecl Rainbow::PackageAsset::PatchMergeHotfixPkg(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x20c50` : `public: char const * __thiscall Rainbow::FileSystemEntry::Path(void)const `
+- `0x52930` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::PathToAbsolutePath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x83530` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicList::Peek(void)`
+- `0xa9480` : `public: enum CURLcode __thiscall Rainbow::Http::CurlHandle::Perform(void)`
+- `0x36850` : `public: bool __thiscall Rainbow::Matrix4x4f::PerspectiveMultiplyPoint3(class Rainbow::Vector3f const &,class Rainbow::Vector3f &)const `
+- `0x36970` : `public: bool __thiscall Rainbow::Matrix4x4f::PerspectiveMultiplyVector3(class Rainbow::Vector3f const &,class Rainbow::Vector3f &)const `
+- `0x3e010` : `float __cdecl Rainbow::PointDistanceToFrustum(class Rainbow::Vector4f const &,class Rainbow::Planef const *,int)`
+- `0x83550` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicStack::Pop(void)`
+- `0x44fe0` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::MutexLockedStack::Pop(void)`
+- `0x835a0` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicStack::PopAll(void)`
+- `0x45040` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::MutexLockedStack::PopAll(void)`
+- `0x67170` : `int __cdecl Rainbow::BlockRangeInternal::PopLastNodeIndex(struct Rainbow::BlockRange *,unsigned int,int)`
+- `0x2ce70` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::PopMetaFlag(void)`
+- `0x99f50` : `public: unsigned __int64 __thiscall Rainbow::FileAccessor::Position(void)const `
+- `0xae810` : `public: void __thiscall Rainbow::Http::WebRequest::PostData(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0xae8b0` : `public: void __thiscall Rainbow::Http::WebRequest::PostFile(class Rainbow::Http::CurlUpLoadFileInfo &)`
+- `0x20870` : `public: virtual void __thiscall Rainbow::Object::PostLoad(void)`
+- `0x73960` : `public: void __thiscall Rainbow::MemoryPool::PreallocateMemory(int)`
+- `0x3e0a0` : `int __cdecl Rainbow::PrepareOptimizedPlanes(class Rainbow::Planef const *,int,struct math::_float4 const *)`
+- `0x3e1a0` : `void __cdecl Rainbow::PrepareOptimizedPlanes(class Rainbow::Planef const *,int,struct math::_float4 const *,int)`
+- `0x66360` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::PrepareReadOnlyBufferFromJob(class Rainbow::AtomicSafetyHandle &)`
+- `0x66370` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::PrepareReadWriteBufferFromJob(class Rainbow::AtomicSafetyHandle &)`
+- `0x66380` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::PrepareUndisposable(class Rainbow::AtomicSafetyHandle &)`
+- `0x693f0` : `void __cdecl Rainbow::PrepareUndisposable(class Rainbow::AtomicSafetyHandle const &)`
+- `0x66390` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::PrepareUndisposableFromJob(class Rainbow::AtomicSafetyHandle &)`
+- `0x663a0` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::PrepareWriteOnlyBufferFromJob(class Rainbow::AtomicSafetyHandle &)`
+- `0x86360` : `public: void __thiscall Rainbow::ConsoleStringProgressor::Print(void)`
+- `0x6e8b0` : `void __cdecl PrintARGV(void)`
+- `0x20890` : `int __cdecl Rainbow::winutils::ProcessInternalCrash(struct _EXCEPTION_POINTERS *,bool)`
+- `0x6cd50` : `private: void __thiscall Rainbow::JobQueue::ProcessJobs(struct Rainbow::JobQueue::ThreadInfo *,void *)`
+- `0xa94a0` : `private: static int __cdecl Rainbow::Http::CurlHandle::ProgressCallback(void *,double,double,double,double)`
+- `0x45ea0` : `public: bool __thiscall Rainbow::AsyncReadManagerThreaded::PumpRequests(struct dynamic_array<struct Rainbow::AsyncReadCommand *,0> &,struct dynamic_array<struct Rainbow::AsyncReadCommand *,0> &)`
+- `0x835f0` : `public: void __thiscall Rainbow::AtomicStack::Push(class Rainbow::AtomicNode *)`
+- `0x450a0` : `public: void __thiscall Rainbow::MutexLockedStack::Push(class Rainbow::AtomicNode *)`
+- `0x83640` : `public: void __thiscall Rainbow::AtomicStack::PushAll(class Rainbow::AtomicNode *,class Rainbow::AtomicNode *)`
+- `0x45100` : `public: void __thiscall Rainbow::MutexLockedStack::PushAll(class Rainbow::AtomicNode *,class Rainbow::AtomicNode *)`
+- `0x2ce80` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::PushMetaFlag(int)`
+- `0x90c80` : `class Rainbow::Vector3f __cdecl Rainbow::QuaternionToEuler(class Rainbow::Quaternionf const &,enum math::RotationOrder)`
+- `0x36a70` : `class Rainbow::Vector3f __cdecl Rainbow::QuaternionToEulerAngle(class Rainbow::Quaternionf const &,enum math::RotationOrder)`
+- `0x36ac0` : `void __cdecl Rainbow::QuaternionfToAxisAngle(class Rainbow::Quaternionf const &,class Rainbow::Vector3f *,float *)`
+- `0x915e0` : `void __cdecl Rainbow::QuaternionfToMatrix(class Rainbow::Quaternionf const &,class Rainbow::Matrix3x3f &)`
+- `0x916f0` : `void __cdecl Rainbow::QuaternionfToMatrix(class Rainbow::Quaternionf const &,class Rainbow::Matrix4x4f &)`
+- `0x93d90` : `public: void __thiscall Rainbow::Rand::RandomizeState(void)`
+- `0x3e1e0` : `float __cdecl Rainbow::RayDistanceToFrustumOriented(class Rainbow::Ray const &,class Rainbow::Planef const *,int,int &)`
+- `0x36bf0` : `public: class Rainbow::Vector3f __thiscall Rainbow::Vector3f::Rcp(float)const `
+- `0x54410` : `public: virtual unsigned int __thiscall Rainbow::BinaryStream::Read(void *,unsigned int)`
+- `0xa4810` : `public: void __thiscall Rainbow::CachedReader::Read(void *,unsigned int)`
+- `0x52960` : `public: unsigned int __thiscall Rainbow::File::Read(void *,unsigned int)`
+- `0x529a0` : `public: unsigned int __thiscall Rainbow::File::Read(unsigned __int64,void *,unsigned int)`
+- `0x99f90` : `public: bool __thiscall Rainbow::FileAccessor::Read(unsigned __int64,unsigned __int64,void *,unsigned __int64 *)`
+- `0x42e10` : `public: bool __thiscall Rainbow::FileAccessor::Read(unsigned __int64,void *)`
+- `0x99fd0` : `public: bool __thiscall Rainbow::FileAccessor::Read(unsigned __int64,void *,unsigned __int64 *)`
+- `0x57b40` : `public: unsigned int __thiscall Rainbow::FileHandleDataStream::Read(unsigned char *,unsigned int,unsigned int)`
+- `0x57b80` : `public: virtual unsigned int __thiscall Rainbow::FileHandleDataStream::Read(void *,unsigned int)`
+- `0x553a0` : `public: virtual unsigned int __thiscall Rainbow::FileStreamDataStream::Read(void *,unsigned int)`
+- `0x553d0` : `public: virtual unsigned int __thiscall Rainbow::MemoryDataStream::Read(void *,unsigned int)`
+- `0x55410` : `public: virtual unsigned int __thiscall Rainbow::ObjectDataStream::Read(void *,unsigned int)`
+- `0x529f0` : `bool __cdecl Rainbow::ReadBufferFromFile(struct dynamic_array<unsigned char,0> *,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xa2d20` : `public: void __thiscall Rainbow::StreamedBinaryRead::ReadDirect(void *,int)`
+- `0xa9590` : `private: static unsigned int __cdecl Rainbow::Http::CurlHandle::ReadFileCallback(void *,unsigned int,unsigned int,void *)`
+- `0x52bb0` : `bool __cdecl Rainbow::ReadFromFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &,void *,unsigned __int64,unsigned int)`
+- `0x54460` : `public: virtual unsigned int __thiscall Rainbow::BinaryStream::ReadLine(char *,unsigned int,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x54460` : `public: virtual unsigned int __thiscall Rainbow::DataStream::ReadLine(char *,unsigned int,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x55470` : `public: virtual unsigned int __thiscall Rainbow::FileStreamDataStream::ReadLine(char *,unsigned int,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x55700` : `public: virtual unsigned int __thiscall Rainbow::MemoryDataStream::ReadLine(char *,unsigned int,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x9a000` : `public: void __thiscall Rainbow::ReadWriteLock::ReadLock(void)`
+- `0x83c00` : `public: void __thiscall Rainbow::ReadWriteSpinLock::ReadLock(void)`
+- `0x20870` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::ReadMagicValue(void)`
+- `0x83a20` : `public: bool __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::ReadNextPayload(unsigned char *,int)`
+- `0x84c70` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::ReadReleaseData(enum Rainbow::ThreadedStreamBuffer::SignalMode)`
+- `0x85940` : `public: unsigned int __thiscall Rainbow::ThreadedStreamBuffer::ReadStreamingData(void (__cdecl*)(void const *,unsigned int,void *),void *,enum Rainbow::ThreadedStreamBuffer::SignalMode,unsigned int,unsigned int)`
+- `0x85ac0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::ReadStreamingData(void *,unsigned int,enum Rainbow::ThreadedStreamBuffer::SignalMode,unsigned int,unsigned int)`
+- `0x52ca0` : `bool __cdecl Rainbow::ReadStringFromFile(class core::string_with_label<1> *,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x9a0b0` : `public: void __thiscall Rainbow::ReadWriteLock::ReadUnlock(void)`
+- `0x20e60` : `public: void __thiscall Rainbow::ReadWriteSpinLock::ReadUnlock(void)`
+- `0x25d00` : `public: void * __thiscall Rainbow::MemoryManager::Reallocate(void *,unsigned int,unsigned int,struct MemLabelId,int,char const *,int)`
+- `0x21df0` : `private: void __thiscall Rainbow::BatchAllocator::ReallocateInternal(void * *,unsigned int,unsigned int,unsigned int,unsigned int)`
+- `0x21810` : `protected: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Register(void (__cdecl*)(void),void (__cdecl*)(void const *),void const *)`
+- `0x21850` : `public: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Register(void (__cdecl*)(void const *),void const *)`
+- `0x21880` : `public: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Register(void (__cdecl*)(void))`
+- `0x21810` : `protected: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Register(bool (__cdecl*)(void),bool (__cdecl*)(void const *),void const *)`
+- `0x21850` : `public: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Register(bool (__cdecl*)(void const *),void const *)`
+- `0x21880` : `public: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Register(bool (__cdecl*)(void))`
+- `0x21880` : `public: void __thiscall CallbackArraySubBase<void (__cdecl*)(void)>::Register(void (__cdecl*)(void))`
+- `0x21880` : `public: void __thiscall CallbackArraySubBase<bool (__cdecl*)(void)>::Register(bool (__cdecl*)(void))`
+- `0x76c90` : `public: static void __cdecl RegisterRuntimeInitializeAndCleanup::Register(void (__cdecl*)(void *),void (__cdecl*)(void *),int,void *)`
+- `0xa3bc0` : `void __cdecl Rainbow::RegisterAllowNameConversion(class Rainbow::AllowNameConversions &,char const *,char const *,char const *)`
+- `0xa3ca0` : `void __cdecl Rainbow::RegisterAllowNameConversion(char const *,char const *,char const *)`
+- `0x721a0` : `public: void __thiscall Rainbow::HandleManager::RegisterBitSet(unsigned int * *,unsigned int *,bool)`
+- `0x20870` : `void __cdecl Rainbow::RegisterFrameworkClass(void)`
+- `0x2df20` : `public: static void __cdecl Rainbow::Object::RegisterInstanceID(class Rainbow::Object *)`
+- `0x2dfa0` : `public: static void __cdecl Rainbow::Object::RegisterInstanceIDNoLock(class Rainbow::Object *)`
+- `0x72280` : `public: void __thiscall Rainbow::HandleManager::RegisterPodArray(unsigned int,unsigned char * *,unsigned char *,unsigned char *)`
+- `0x2fc30` : `public: static void __cdecl Rainbow::RuntimeClassManager::RegisterRuntimeClass(class Rainbow::RuntimeClass const *)`
+- `0x73a90` : `public: static void __cdecl Rainbow::MemoryPool::RegisterStaticMemoryPool(class Rainbow::MemoryPool *)`
+- `0xb8ba0` : `unsigned short __cdecl Rainbow::winutils::RegisterWindowClass(wchar_t const *,long (__stdcall*)(struct HWND__ *,unsigned int,unsigned int,long),unsigned int,struct HICON__ *)`
+- `0x451c0` : `public: void __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::Release(void)const `
+- `0x663b0` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::Release(class Rainbow::AtomicSafetyHandle)`
+- `0x6cf80` : `private: void __thiscall Rainbow::JobGroup::Release(void)`
+- `0x2eed0` : `public: void __thiscall Rainbow::RefObject::Release(void)`
+- `0x84ca0` : `protected: void __thiscall Rainbow::ThreadedBlockAllocatingBuffer::ReleaseBlocks(void)`
+- `0x6cfb0` : `private: void __thiscall Rainbow::JobQueue::ReleaseGroup(class Rainbow::JobGroup *)`
+- `0x26b70` : `public: bool __thiscall Rainbow::QueueAllocator::ReleasePendingFreedBlocks(void)`
+- `0x6b5d0` : `void __cdecl Rainbow::ReleaseWorkStealingRange(struct Rainbow::WorkStealingAllocationData &)`
+- `0xac610` : `private: void __thiscall Rainbow::Http::HttpTaskManager::ReloadHttpTask(class Rainbow::Http::IHttpTask *)`
+- `0xac6b0` : `protected: void __thiscall Rainbow::Http::IHttpTask::ReloadTask(void)`
+- `0xa5930` : `public: void __thiscall BootConfig::Data::RemoveAll(void)`
+- `0x25fa0` : `public: class Rainbow::BaseAllocator * __thiscall Rainbow::MemoryManager::RemoveCustomAllocator(int)`
+- `0x29cf0` : `public: bool __thiscall Rainbow::EventDispatcher::RemoveEvent(int,void (__cdecl*)(class Rainbow::EventContent const *))`
+- `0x29ee0` : `public: void __thiscall Rainbow::EventDispatcher::RemoveEventByType(int)`
+- `0x2aad0` : `public: bool __thiscall Rainbow::EventDispatcherWithLambda::RemoveEventWithLambda(unsigned __int64)`
+- `0x230a0` : `public: bool __thiscall Rainbow::ListElement::RemoveFromList(void)`
+- `0x4d630` : `public: void __thiscall Rainbow::FileManager::RemovePackage(char const *)`
+- `0x6d010` : `private: class Rainbow::AtomicNode * __thiscall Rainbow::JobQueue::RemoveSingleJobWithGroup(class Rainbow::AtomicNode *,class Rainbow::JobGroup *,class Rainbow::AtomicNode * *)`
+- `0x7d300` : `void __cdecl Rainbow::CodeUtil::RemoveUTF8BOM(class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x4d7a0` : `public: void __thiscall Rainbow::FileManager::RenameWritePathFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x7a0a0` : `public: bool __thiscall Rainbow::PlaneColliderCache_dense_hashmap::Replace(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,unsigned int,unsigned int,float)`
+- `0x75db0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl ReplaceDirectoryInPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x7cdc0` : `void __cdecl Rainbow::ReplaceInvalidUTF8(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x7ce40` : `void __cdecl Rainbow::ReplaceInvalidUTF8(unsigned char const *,int,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0xab870` : `public: void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::DownLoadFileTask>::Request(class std::function<bool __cdecl(class Rainbow::Http::DownLoadFileTask *)>,class std::function<void __cdecl(class Rainbow::Http::DownLoadFileTask *)>,class std::function<void __cdecl(bool,class Rainbow::Http::DownLoadFileTask *)>)`
+- `0xab870` : `public: void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::UpLoadFileTask>::Request(class std::function<bool __cdecl(class Rainbow::Http::UpLoadFileTask *)>,class std::function<void __cdecl(class Rainbow::Http::UpLoadFileTask *)>,class std::function<void __cdecl(bool,class Rainbow::Http::UpLoadFileTask *)>)`
+- `0xab870` : `public: void __thiscall Rainbow::Http::IHttpTaskIterFace<class Rainbow::Http::WebRequest>::Request(class std::function<bool __cdecl(class Rainbow::Http::WebRequest *)>,class std::function<void __cdecl(class Rainbow::Http::WebRequest *)>,class std::function<void __cdecl(bool,class Rainbow::Http::WebRequest *)>)`
+- `0x83b00` : `public: class Rainbow::AtomicCircularBufferHandle * __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::ReserveSpaceForData(int)`
+- `0x42e50` : `public: void __thiscall Rainbow::TRect<int>::Reset(void)`
+- `0x42e50` : `public: void __thiscall Rainbow::TRect<float>::Reset(void)`
+- `0x42e70` : `public: void __thiscall Rainbow::AspectRatios::Reset(void)`
+- `0x45230` : `public: void __thiscall Rainbow::AsyncReadCommand::Reset(void)`
+- `0x83690` : `public: void __thiscall Rainbow::AtomicList::Reset(class Rainbow::AtomicNode *,int)`
+- `0x73ac0` : `private: void __thiscall Rainbow::MemoryPool::Reset(void)`
+- `0x771a0` : `public: void __thiscall Rainbow::SHA1::Reset(void)`
+- `0x45330` : `public: void __thiscall Rainbow::Rainbow::Semaphore::Reset(void)`
+- `0x45330` : `public: void __thiscall Rainbow::Semaphore::Reset(void)`
+- `0x45360` : `public: void __thiscall Rainbow::Rainbow::SuspendableSemaphore::Reset(void)`
+- `0x45360` : `public: void __thiscall Rainbow::SuspendableSemaphore::Reset(void)`
+- `0x84d30` : `public: void __thiscall Rainbow::ThreadedBlockAllocatingBuffer::ResetBlockAllocating(void)`
+- `0x85cc0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::ResetGrowable(void)`
+- `0x20870` : `void __cdecl ResetStdout(void)`
+- `0x85d00` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::ResizeBuffer(unsigned int)`
+- `0x509a0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::ResolveRedirectedPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x50b10` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl Rainbow::ResolveSymlinks(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x45390` : `public: void __thiscall Rainbow::Rainbow::SuspendableSemaphore::Resume(bool)`
+- `0x45390` : `public: void __thiscall Rainbow::SuspendableSemaphore::Resume(bool)`
+- `0x69430` : `bool __cdecl Rainbow::ReturnBufferLabelNotSupportedError(struct Rainbow::BufferDebugReflectionData const &,char *)`
+- `0x83e20` : `public: void __thiscall Rainbow::Thread::Run(void * (__cdecl*)(void *),void *,unsigned int,int)`
+- `0x83e70` : `private: static unsigned long __stdcall Rainbow::Thread::RunThreadWrapper(void *)`
+- `0x88b90` : `public: void __thiscall Rainbow::TimeCallManager::RunTimeCallWhenPretick(void)`
+- `0x20900` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl SHA1ToString(unsigned char * const)`
+- `0x3e2e0` : `float __cdecl Rainbow::SafeClampRatio(float,float)`
+- `0x4d9d0` : `public: bool __thiscall Rainbow::FileManager::SaveFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &,void const *,unsigned int)`
+- `0x56fa0` : `private: void __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::SaveFile(void)`
+- `0x62f70` : `public: bool __thiscall Rainbow::PackageAsset::SavePKGToFile(unsigned int,union Rainbow::AssetPKGHeader::HeaderFlag)`
+- `0xa5980` : `public: bool __thiscall BootConfig::Data::SaveToFile(char const *)const `
+- `0x50cf0` : `bool __cdecl Rainbow::SaveToFile(char const *,void const *,unsigned int)`
+- `0x50de0` : `bool __cdecl Rainbow::SaveToFile(char const *,struct dynamic_array<unsigned char,0>)`
+- `0x4dba0` : `public: bool __thiscall Rainbow::FileManager::SaveToWritePath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,void const *,unsigned int,bool)`
+- `0x42e80` : `public: void __thiscall Rainbow::TRect<int>::Scale(int,int)`
+- `0x42ec0` : `public: void __thiscall Rainbow::TRect<float>::Scale(float,float)`
+- `0x36c80` : `public: void __thiscall Rainbow::AABB::Scale(class Rainbow::Vector3f const &)`
+- `0x387f0` : `public: void __thiscall Rainbow::BoundsInt::Scale(struct math::_int3 const &)`
+- `0x8c5b0` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::Scale(class Rainbow::Vector3f const &)`
+- `0x8f4a0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::Scale(class Rainbow::Vector3f const &)`
+- `0x33b20` : `public: class Rainbow::Vector3f & __thiscall Rainbow::Vector3f::Scale(class Rainbow::Vector3f const &)`
+- `0x6d080` : `private: void __thiscall Rainbow::JobQueue::ScheduleDependencies(struct Rainbow::JobGroupID &,struct Rainbow::JobInfo *,struct Rainbow::JobInfo *)`
+- `0x6d210` : `private: void __thiscall Rainbow::JobQueue::ScheduleDependencyCompletedJobList(class Rainbow::AtomicNode *)`
+- `0x676c0` : `void __cdecl Rainbow::ScheduleDifferentJobsConcurrent(struct Rainbow::JobFence &,struct Rainbow::Job const *,int,enum Rainbow::JobPriority)`
+- `0x676f0` : `void __cdecl Rainbow::ScheduleDifferentJobsConcurrentDepends(struct Rainbow::JobFence &,struct Rainbow::Job const *,int,struct Rainbow::JobFence const &,enum Rainbow::JobPriority)`
+- `0x6d2e0` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::ScheduleGroup(class Rainbow::JobGroup *,enum Rainbow::JobQueue::JobQueuePriority)`
+- `0x6c680` : `public: void __thiscall Rainbow::JobQueue::ScheduleGroups(class Rainbow::JobGroup *,class Rainbow::JobGroup *)`
+- `0x6d470` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::ScheduleJob(void (__cdecl*)(void *),void *,struct Rainbow::JobGroupID,enum Rainbow::JobQueue::JobQueuePriority)`
+- `0x673a0` : `private: void __thiscall Rainbow::JobBatchDispatcher::ScheduleJobDependsInternal(struct Rainbow::JobFence &,void (__cdecl*)(void *),void *,struct Rainbow::JobFence const &)`
+- `0x677e0` : `void __cdecl Rainbow::ScheduleJobDependsInternal(struct Rainbow::JobFence &,void (__cdecl*)(void *),void *,struct Rainbow::JobFence const &,enum Rainbow::JobPriority)`
+- `0x67880` : `void __cdecl Rainbow::ScheduleJobForEachDependsInternal(struct Rainbow::JobFence &,void (__cdecl*)(void *,unsigned int),void *,int,struct Rainbow::JobFence const &,void (__cdecl*)(void *),enum Rainbow::JobPriority)`
+- `0x67410` : `private: void __thiscall Rainbow::JobBatchDispatcher::ScheduleJobForEachInternal(struct Rainbow::JobFence &,void (__cdecl*)(void *,unsigned int),void *,int,void (__cdecl*)(void *),struct Rainbow::JobFence const &)`
+- `0x67940` : `void __cdecl Rainbow::ScheduleJobForEachInternal(struct Rainbow::JobFence &,void (__cdecl*)(void *,unsigned int),void *,int,void (__cdecl*)(void *),enum Rainbow::JobPriority)`
+- `0x66950` : `private: struct Rainbow::BackgroundJobQueue::BackJobFence __thiscall Rainbow::BackgroundJobQueue::ScheduleJobInternal(void (__cdecl*)(void *),void *,struct Rainbow::BackgroundJobQueue::BackJobFence const &,enum Rainbow::JobQueue::JobQueuePriority)`
+- `0x67a00` : `void __cdecl Rainbow::ScheduleJobInternal(struct Rainbow::JobFence &,void (__cdecl*)(void *),void *,enum Rainbow::JobPriority)`
+- `0x6d4c0` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::ScheduleJobMultipleDependencies(void (__cdecl*)(void *),void *,struct Rainbow::JobGroupID *,int)`
+- `0x67aa0` : `void __cdecl Rainbow::ScheduleJobWithoutFence(void (__cdecl*)(void *),void *,enum Rainbow::JobPriority)`
+- `0x6d670` : `public: struct Rainbow::JobGroupID __thiscall Rainbow::JobQueue::ScheduleJobsForEach(void (__cdecl*)(void *,unsigned int),void *,unsigned int,void (__cdecl*)(void *),struct Rainbow::JobGroupID,enum Rainbow::JobQueue::JobQueuePriority)`
+- `0x6b000` : `private: void __thiscall Rainbow::MainThreadJob::ScheduleMainThreadJobInternal(void (__cdecl*)(void *),void *)`
+- `0x67490` : `void __cdecl Rainbow::ScheduleMultiDependencyJob(struct Rainbow::JobFence &,class Rainbow::JobBatchDispatcher &,struct Rainbow::JobFence const *,unsigned int)`
+- `0x669a0` : `public: struct Rainbow::BackgroundJobQueue::BackJobFence __thiscall Rainbow::BackgroundJobQueue::SchedulePriorityMutableJob(class Rainbow::PriorityMutableBackgroundJob *,struct Rainbow::BackgroundJobQueue::BackJobFence const &,enum Rainbow::JobQueue::JobQueuePriority)`
+- `0x24075c` : `private: static class std::map<class core::basic_string<char,class core::StringStorageDefault<char> >,unsigned char *,struct std::less<class core::basic_string<char,class core::StringStorageDefault<char> > >,class std::allocator<struct std::pair<class core::basic_string<char,class core::StringStorageDefault<char> > const ,unsigned char *> > > Rainbow::SHA1::ScriptSHAHashMap`
+- `0xb4ee0` : `private: static int __stdcall Rainbow::SingleAppInstance::SearchOtherInstance(struct HWND__ *,long)`
+- `0x6fbf0` : `__int64 __cdecl Rainbow::SecondsBetween(struct Rainbow::DateTime const &,struct Rainbow::DateTime const &)`
+- `0x545d0` : `public: virtual void __thiscall Rainbow::BinaryStream::Seek(unsigned int)`
+- `0x9a110` : `public: bool __thiscall Rainbow::FileAccessor::Seek(__int64,enum Rainbow::FileOrigin)`
+- `0x57bb0` : `public: virtual void __thiscall Rainbow::FileHandleDataStream::Seek(unsigned int)`
+- `0x55870` : `public: virtual void __thiscall Rainbow::FileStreamDataStream::Seek(unsigned int)`
+- `0x558a0` : `public: virtual void __thiscall Rainbow::MemoryDataStream::Seek(unsigned int)`
+- `0x558b0` : `public: virtual void __thiscall Rainbow::ObjectDataStream::Seek(unsigned int)`
+- `0xb4f30` : `public: void __thiscall Rainbow::SingleAppInstance::SendCommandToOtherInstance(class core::basic_string<char,class core::StringStorageDefault<char> > const &,bool)const `
+- `0x85d30` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::SendReadSignal(void)`
+- `0x85d50` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::SendWriteSignal(void)`
+- `0x453d0` : `public: unsigned int __thiscall Rainbow::DataStream::SerializeTypeId(void)`
+- `0x42f10` : `public: void __thiscall Rainbow::TRect<int>::Set(int,int,int,int)`
+- `0x42f30` : `public: void __thiscall Rainbow::TRect<float>::Set(float,float,float,float)`
+- `0x38c80` : `public: void __thiscall Rainbow::Capsule::Set(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float)`
+- `0x2ced0` : `public: void __thiscall Rainbow::ColorRGBAf::Set(float,float,float,float)`
+- `0xa5b50` : `public: void __thiscall BootConfig::Data::Set(char const *,char const *)`
+- `0xa5bc0` : `public: void __thiscall BootConfig::Data::Set(char const *,unsigned int,char const *,unsigned int)`
+- `0x9a140` : `public: void __thiscall Rainbow::FileSystemEntry::Set(char const *)`
+- `0x72340` : `public: void __thiscall Rainbow::HandleIndexedBitSet::Set(int,bool)`
+- `0x72380` : `public: void __thiscall Rainbow::HandleIndexedCountedBitSet::Set(int,bool)`
+- `0x453e0` : `public: struct Rainbow::JobInfo * __thiscall Rainbow::JobInfo::Set(void (__cdecl*)(void *),void *)`
+- `0x20e70` : `public: void __thiscall Rainbow::MD5Hash::Set(class Rainbow::MD5 &)`
+- `0x36ce0` : `public: void __thiscall Rainbow::Quaternionf::Set(class Rainbow::Quaternionf const &)`
+- `0x2ced0` : `public: void __thiscall Rainbow::Quaternionf::Set(float,float,float,float)`
+- `0x36ce0` : `public: void __thiscall Rainbow::Quaternionf::Set(float const *)`
+- `0x3b680` : `public: void __thiscall Rainbow::Sphere::Set(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x3b720` : `public: void __thiscall Rainbow::Sphere::Set(class Rainbow::Vector3f const &)`
+- `0x36d50` : `public: void __thiscall Rainbow::Sphere::Set(class Rainbow::Vector3f const &,float)`
+- `0x3e620` : `public: void __thiscall Rainbow::Sphere::Set(class Rainbow::Vector3f const *,unsigned int)`
+- `0x3a420` : `public: void __thiscall Rainbow::Vector2f::Set(float,float)`
+- `0x36d00` : `public: void __thiscall Rainbow::Vector3f::Set(float,float,float)`
+- `0x36d30` : `public: void __thiscall Rainbow::Vector3f::Set(float *)`
+- `0x36d30` : `public: void __thiscall Rainbow::Vector3f::Set(float const *)`
+- `0x36d50` : `public: void __thiscall Rainbow::Vector4f::Set(class Rainbow::Vector3f const &,float)`
+- `0x2ced0` : `public: void __thiscall Rainbow::Vector4f::Set(float,float,float,float)`
+- `0x2cf00` : `public: void __thiscall Rainbow::CachedReader::SetAbsoluteMemoryPosition(unsigned char *)`
+- `0x6d6b0` : `public: void __thiscall Rainbow::JobQueue::SetActiveThreadCount(unsigned int)`
+- `0x6d6f0` : `private: int __thiscall Rainbow::JobQueue::SetActiveThreadCountTargetImpl(unsigned int)`
+- `0x6d750` : `void __cdecl Rainbow::CurrentThread::SetAffinity(int)`
+- `0x73ad0` : `public: void __thiscall Rainbow::MemoryPool::SetAllocateMemoryAutomatically(bool)`
+- `0x2cf10` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::SetAllowNameConversions(class Rainbow::AllowNameConversions const *)`
+- `0x69500` : `void __cdecl Rainbow::SetAllowReadOrWriteAccess(class Rainbow::AtomicSafetyHandle const &,bool)`
+- `0x66540` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::SetAllowSecondaryVersionWriting(class Rainbow::AtomicSafetyHandle,bool)`
+- `0x69540` : `void __cdecl Rainbow::SetAllowSecondaryVersionWriting(class Rainbow::AtomicSafetyHandle const &,bool)`
+- `0x8b6c0` : `public: void __thiscall Rainbow::Gradient::SetAlphaKeys(struct Rainbow::Gradient::AlphaKey *,unsigned int)`
+- `0x860c0` : `void __cdecl Rainbow::SetAppShutdowning(bool)`
+- `0x9a210` : `public: void __thiscall Rainbow::FileSystem::SetApplicationPath(char const *)const `
+- `0x50e60` : `void __cdecl Rainbow::SetApplicationPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x3e320` : `public: void __thiscall Rainbow::Ray::SetApproxDirection(class Rainbow::Vector3f const &)`
+- `0x230d0` : `protected: void __thiscall Rainbow::ListElement::SetAsListRoot(void)`
+- `0x63270` : `public: static void __cdecl Rainbow::PackageAsset::SetAssetCacheDelCall(class std::function<void __cdecl(class core::basic_string<char,class core::StringStorageDefault<char> > const &)>)`
+- `0x20920` : `void __cdecl Rainbow::SetAssetDevelopMode(bool)`
+- `0x87ed0` : `public: void __thiscall Rainbow::PlayerSettings::SetAutoRotationAllowed(int,bool)`
+- `0x36d80` : `public: void __thiscall Rainbow::Matrix4x4f::SetAxis(int,class Rainbow::Vector3f const &)`
+- `0x8c640` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetAxisAngle(class Rainbow::Vector3f const &,float)`
+- `0x8f560` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetAxisAngle(class Rainbow::Vector3f const &,float)`
+- `0x36d30` : `public: void __thiscall Rainbow::Matrix4x4f::SetAxisX(class Rainbow::Vector3f const &)`
+- `0x36db0` : `public: void __thiscall Rainbow::Matrix4x4f::SetAxisY(class Rainbow::Vector3f const &)`
+- `0x36dd0` : `public: void __thiscall Rainbow::Matrix4x4f::SetAxisZ(class Rainbow::Vector3f const &)`
+- `0x8c760` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetBasis(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x8f5a0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetBasis(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x8c7b0` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetBasisTransposed(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x8f620` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetBasisTransposed(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x6efc0` : `void __cdecl BitSetUtility::SetBits(unsigned int *,unsigned int,unsigned int,bool)`
+- `0x42f60` : `public: void __thiscall Rainbow::TRect<int>::SetBottom(int)`
+- `0x42f70` : `public: void __thiscall Rainbow::TRect<float>::SetBottom(float)`
+- `0xae8f0` : `public: void __thiscall Rainbow::Http::WebRequest::SetCaCertsFile(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x36df0` : `public: void __thiscall Rainbow::AABB::SetCenterAndExtent(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x42f90` : `public: void __thiscall Rainbow::TRect<int>::SetCenterPos(int,int)`
+- `0x42fc0` : `public: void __thiscall Rainbow::TRect<float>::SetCenterPos(float,float)`
+- `0x43000` : `public: void __thiscall Rainbow::PlayerSettings::SetColorGamuts(struct dynamic_array<int,0> const &)`
+- `0x8b820` : `public: void __thiscall Rainbow::Gradient::SetColorKeys(struct Rainbow::Gradient::ColorKey *,unsigned int)`
+- `0x880b0` : `public: void __thiscall Rainbow::PlayerSettings::SetColorSpace(enum Rainbow::ColorSpace)`
+- `0x36e30` : `public: void __thiscall Rainbow::Matrix4x4f::SetColumn(int,class Rainbow::Vector4f const &)`
+- `0x45400` : `public: struct Rainbow::JobInfo * __thiscall Rainbow::JobInfo::SetComposite(void (__cdecl*)(void *),void *)`
+- `0xae980` : `public: void __thiscall Rainbow::Http::WebRequest::SetConnectTimeOut(int)`
+- `0x814f0` : `void __cdecl SetConsoleLogPath(char const *,bool)`
+- `0x8b9c0` : `public: void __thiscall Rainbow::Gradient::SetConstantColor(class Rainbow::ColorRGBAf const &)`
+- `0x21aa0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetConsumerThreadID(unsigned __int64)`
+- `0x50e80` : `bool __cdecl Rainbow::SetContentModificationDateToCurrentTime(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x863f0` : `public: void __thiscall Rainbow::ConsoleStringProgressor::SetCount(int)`
+- `0x52ea0` : `public: static void __cdecl Rainbow::File::SetCurrentDirectoryA(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x9a230` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::SetCurrentDirectoryA(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x20880` : `struct MemLabelId __cdecl SetCurrentMemoryOwner(struct MemLabelId)`
+- `0x6d750` : `public: static void __cdecl Rainbow::ThreadHelper::SetCurrentThreadAffinity(int)`
+- `0x20870` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetCurrentThreadAsConsumer(void)`
+- `0x20870` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetCurrentThreadAsProducer(void)`
+- `0x84250` : `public: static void __cdecl Rainbow::ThreadHelper::SetCurrentThreadName(char const *)`
+- `0x20e90` : `public: static void __cdecl Rainbow::Thread::SetCurrentThreadStackBase(void)`
+- `0xb8cd0` : `void __cdecl Rainbow::winutils::SetDPIAware(void)`
+- `0xa5270` : `void __cdecl BootConfig::SetData(char const *,char const *)`
+- `0xa5290` : `void __cdecl BootConfig::SetData(char const *,unsigned int,char const *,unsigned int)`
+- `0xac6d0` : `public: void __thiscall Rainbow::Http::IHttpTask::SetDecodeFunc(class std::function<void * __cdecl(unsigned int,void *,unsigned int,unsigned int)>)`
+- `0x3e3f0` : `public: void __thiscall Rainbow::Ray::SetDirection(class Rainbow::Vector3f const &)`
+- `0x43030` : `public: void __thiscall Rainbow::PlayerSettings::SetDirty(void)`
+- `0xb8cf0` : `void __cdecl Rainbow::winutils::SetDontDisplayDialogs(bool)`
+- `0x38cc0` : `public: void __thiscall Rainbow::Capsule::SetEnd(class Rainbow::Vector3f const &)`
+- `0x570d0` : `private: void __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::SetErrorCode(int)`
+- `0xa95e0` : `public: void __thiscall Rainbow::Http::CurlHandle::SetErrorMessage(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xa9630` : `public: void __thiscall Rainbow::Http::CurlHandle::SetErrorMessage(char const *)`
+- `0x3b750` : `public: void __thiscall Rainbow::Frustum::SetFarPlane(float)`
+- `0xa9690` : `public: void __thiscall Rainbow::Http::CurlRequestMessage::SetFetchedSize(int)`
+- `0x52f20` : `public: bool __thiscall Rainbow::File::SetFileLength(unsigned __int64)`
+- `0x45430` : `public: void __thiscall Rainbow::AsyncReadCommand::SetFlag(int)`
+- `0x9a250` : `public: bool __thiscall Rainbow::FileSystemEntry::SetFlags(unsigned int,unsigned int)`
+- `0x86400` : `public: void __thiscall Rainbow::ConsoleStringProgressor::SetFormat(char const *)`
+- `0x8c800` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetFromToRotation(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x8f6a0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetFromToRotation(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x8f6d0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetFrustum(float,float,float,float,float,float)`
+- `0x2cf20` : `public: void __thiscall Rainbow::ColorRGBAf::SetHSV(float,float,float)`
+- `0x723e0` : `public: static void __cdecl Rainbow::HandleManager::SetHandleArrayInvalid(int *,unsigned int)`
+- `0x3b770` : `public: void __thiscall Rainbow::Frustum::SetHeight(float)`
+- `0x2d050` : `public: void __thiscall Rainbow::ColorRGBAf::SetHex(unsigned int)`
+- `0x8cc30` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetIdentity(void)`
+- `0x8f7c0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetIdentity(void)`
+- `0x84d70` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetIdleCallback(bool (__cdecl*)(void))`
+- `0xb8d00` : `void __cdecl Rainbow::winutils::SetInstanceHandle(struct HINSTANCE__ *)`
+- `0x2d100` : `private: void __thiscall Rainbow::Object::SetInstanceID(unsigned int)`
+- `0x45440` : `private: struct Rainbow::JobInfo * __thiscall Rainbow::JobInfo::SetInternal(void (__cdecl*)(void *),void *,int)`
+- `0x84d80` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetInterruptCallback(void (__cdecl*)(class Rainbow::ThreadedStreamBuffer *))`
+- `0x6e990` : `void __cdecl SetIsBatchmode(bool)`
+- `0x69580` : `void __cdecl Rainbow::SetJobDebuggerEnabled(bool)`
+- `0x8ba00` : `public: void __thiscall Rainbow::Gradient::SetKeys(struct Rainbow::Gradient::ColorKey *,unsigned int,struct Rainbow::Gradient::AlphaKey *,unsigned int)`
+- `0x7d3e0` : `void __cdecl Rainbow::CodeUtil::SetLang(int)`
+- `0x43040` : `public: void __thiscall Rainbow::TRect<int>::SetLeft(int)`
+- `0x43060` : `public: void __thiscall Rainbow::TRect<float>::SetLeft(float)`
+- `0x9a280` : `public: bool __thiscall Rainbow::FileAccessor::SetLength(unsigned __int64)`
+- `0x21a70` : `private: void __thiscall Rainbow::ListElement::SetList(void *)`
+- `0x81570` : `public: void __thiscall Rainbow::LogSystem::SetLogType(enum LogType)`
+- `0x3b790` : `public: void __thiscall Rainbow::Frustum::SetMatrix(class Rainbow::Matrix3x3f const &)`
+- `0x43090` : `public: void __thiscall Rainbow::File::SetMemoryLabel(struct MemLabelId)`
+- `0x2d100` : `public: void __thiscall Rainbow::TransferBase::SetMemoryLabel(struct MemLabelId)`
+- `0x8ba30` : `public: void __thiscall Rainbow::Gradient::SetMode(enum Rainbow::GradientMode)`
+- `0x2d110` : `public: virtual void __thiscall Rainbow::NamedObject::SetName(char const *)`
+- `0x21a70` : `public: virtual void __thiscall Rainbow::Object::SetName(char const *)`
+- `0x20eb0` : `public: void __thiscall Rainbow::Thread::SetName(char const *)`
+- `0x3b7b0` : `public: void __thiscall Rainbow::Frustum::SetNearPlane(float)`
+- `0x8ba40` : `public: void __thiscall Rainbow::Gradient::SetNumAlphaKeys(int)`
+- `0x8ba50` : `public: void __thiscall Rainbow::Gradient::SetNumColorKeys(int)`
+- `0x36d30` : `public: void __thiscall Rainbow::Ray::SetOrigin(class Rainbow::Vector3f const &)`
+- `0x8f840` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetOrtho(float,float,float,float,float,float)`
+- `0x632d0` : `public: void __thiscall Rainbow::PackageAsset::SetPKGFilePath(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x570f0` : `private: void __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::SetPercent(int)`
+- `0x8f8f0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetPerspective(float,float,float,float)`
+- `0x8f9e0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetPerspectiveCotan(float,float,float)`
+- `0x36d30` : `public: void __thiscall Rainbow::Frustum::SetPos(class Rainbow::Vector3f const &)`
+- `0x430a0` : `public: void __thiscall Rainbow::TRect<int>::SetPosition(class Rainbow::Vector2f const &)`
+- `0x430c0` : `public: void __thiscall Rainbow::TRect<float>::SetPosition(class Rainbow::Vector2f const &)`
+- `0xa4960` : `public: void __thiscall Rainbow::CachedReader::SetPosition(unsigned int)`
+- `0xa4c70` : `private: void __thiscall Rainbow::CachedWriter::SetPosition(unsigned int)`
+- `0x36e60` : `public: void __thiscall Rainbow::Matrix4x4f::SetPosition(class Rainbow::Vector3f const &)`
+- `0x8fa80` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetPositionAndOrthoNormalBasis(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0xad4f0` : `public: void __thiscall Rainbow::Http::UpLoadFileTask::SetPostDataName(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x83ee0` : `public: void __thiscall Rainbow::Thread::SetPriority(enum Rainbow::ThreadPriority)`
+- `0x21aa0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetProducerThreadID(unsigned __int64)`
+- `0x38ce0` : `public: void __thiscall Rainbow::Capsule::SetRadius(float)`
+- `0x9a2b0` : `public: bool __thiscall Rainbow::FileSystemEntry::SetReadOnly(bool)`
+- `0x84d90` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetReadWaitCallback(void (__cdecl*)(bool))`
+- `0xb8d30` : `void __cdecl Rainbow::winutils::SetRegEditForDump(void)`
+- `0x6e9a0` : `void __cdecl SetRelaunchApplicationArguments(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &)`
+- `0x4dc60` : `public: void __thiscall Rainbow::PackageAsset::SetRemoteRecordCall(class std::function<void __cdecl(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,unsigned char *,unsigned int)>)`
+- `0x430e0` : `public: void __thiscall Rainbow::PlayerSettings::SetResizableWindow(bool)`
+- `0x72400` : `public: void __thiscall Rainbow::HandleManager::SetReuseDelay(unsigned int)`
+- `0x430f0` : `public: void __thiscall Rainbow::TRect<int>::SetRight(int)`
+- `0x43100` : `public: void __thiscall Rainbow::TRect<float>::SetRight(float)`
+- `0x36e80` : `public: void __thiscall Rainbow::Matrix4x4f::SetRow(int,class Rainbow::Vector4f const &)`
+- `0x8cc80` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetScale(class Rainbow::Vector3f const &)`
+- `0x8fb00` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetScale(class Rainbow::Vector3f const &)`
+- `0x71690` : `public: void __thiscall Rainbow::Rand::SetSeed(unsigned int)`
+- `0x93e60` : `public: void __thiscall Rainbow::RandN::SetSeed(struct math::_int1 const &)`
+- `0x716c0` : `public: void __thiscall Rainbow::RandN::SetSeed(struct math::_int4 const &)`
+- `0x45470` : `public: void __thiscall Rainbow::DataStream::SetSerializeTypeId(unsigned int)`
+- `0x43120` : `public: void __thiscall Rainbow::TRect<int>::SetSize(class Rainbow::Vector2f const &)`
+- `0x43140` : `public: void __thiscall Rainbow::TRect<float>::SetSize(class Rainbow::Vector2f const &)`
+- `0x36d30` : `public: void __thiscall Rainbow::Capsule::SetStart(class Rainbow::Vector3f const &)`
+- `0xa96b0` : `public: void __thiscall Rainbow::Http::CurlRequestMessage::SetState(enum Rainbow::Http::CurlRequestMessage::State)`
+- `0xac730` : `protected: void __thiscall Rainbow::Http::IHttpTask::SetState(enum Rainbow::Http::IHttpTask::HttpTaskState)`
+- `0x71810` : `public: void __thiscall Rainbow::Rand::SetState(struct Rainbow::RandState)`
+- `0x8fb80` : `public: void __thiscall Rainbow::Matrix4x4f::SetTR(class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &)`
+- `0x8fbb0` : `public: void __thiscall Rainbow::Matrix4x4f::SetTRInverse(class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &)`
+- `0x8fce0` : `public: void __thiscall Rainbow::Matrix4x4f::SetTRS(class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::Vector3f const &)`
+- `0x20f80` : `public: void __thiscall Rainbow::Thread::SetTempAllocatorSize(unsigned int)`
+- `0x20870` : `public: static void __cdecl Rainbow::ThreadHelper::SetThreadAffinity(class Rainbow::Thread const *,int)`
+- `0x6d770` : `public: void __thiscall Rainbow::JobQueue::SetThreadCPUAffinity(unsigned int)`
+- `0x84270` : `protected: static void __cdecl Rainbow::ThreadHelper::SetThreadName(class Rainbow::Thread const *)`
+- `0x84290` : `private: static void __cdecl Rainbow::ThreadHelper::SetThreadNameInternal(class Rainbow::Thread const *,char const *)`
+- `0x6d7b0` : `public: void __thiscall Rainbow::JobQueue::SetThreadPriority(int)`
+- `0x6d7e0` : `public: void __thiscall Rainbow::JobQueue::SetThreadPriority(unsigned __int64,int)`
+- `0x669f0` : `public: void __thiscall Rainbow::PriorityMutableBackgroundJob::SetThreadPriority(enum Rainbow::ThreadPriority)`
+- `0xae9a0` : `public: void __thiscall Rainbow::Http::WebRequest::SetTimeout(long)`
+- `0x43160` : `public: void __thiscall Rainbow::TRect<int>::SetTop(int)`
+- `0x43180` : `public: void __thiscall Rainbow::TRect<float>::SetTop(float)`
+- `0x86430` : `public: void __thiscall Rainbow::ConsoleStringProgressor::SetTotalCount(int)`
+- `0xa96d0` : `public: void __thiscall Rainbow::Http::CurlRequestMessage::SetTotalSize(int)`
+- `0x8fd90` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetTranslate(class Rainbow::Vector3f const &)`
+- `0x431b0` : `public: void __thiscall Rainbow::PlayerSettings::SetUse32BitDisplayBuffer(bool)`
+- `0x2cf10` : `public: void __thiscall Rainbow::Http::IHttpTask::SetUserData(void *)`
+- `0x2d120` : `public: void __thiscall Rainbow::TransferBase::SetUserData(void *)`
+- `0x2d130` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::SetVersion(int)`
+- `0xa1620` : `public: void __thiscall Rainbow::JSONWrite::SetVersion(int)`
+- `0x21a70` : `public: void __thiscall Rainbow::TransferBase::SetVersion(int)`
+- `0x3b7d0` : `public: void __thiscall Rainbow::Frustum::SetWidth(float)`
+- `0x63380` : `public: void __thiscall Rainbow::LogSystem::SetWriteLogFile(bool)`
+- `0x84da0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::SetWriteWaitCallback(void (__cdecl*)(bool))`
+- `0x8ccd0` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::SetZero(void)`
+- `0x8fe10` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::SetZero(void)`
+- `0x92120` : `public: void __thiscall Rainbow::SphericalHarmonicsL1::SetZero(void)`
+- `0x92990` : `public: void __thiscall Rainbow::SphericalHarmonicsL2::SetZero(void)`
+- `0x3a440` : `public: void __thiscall Rainbow::Vector2f::SetZero(void)`
+- `0x36eb0` : `public: void __thiscall Rainbow::Vector3f::SetZero(void)`
+- `0x6e9c0` : `void __cdecl SetupArgv(int,char const * *)`
+- `0xb8e10` : `void __cdecl Rainbow::winutils::SetupInternalCrashHandler(void)`
+- `0x85d70` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::SetupMaxNonStreamSize(unsigned int)`
+- `0xb8e20` : `void __cdecl Rainbow::winutils::SetupWideArgs(void)`
+- `0x20b80` : `public: bool __thiscall Rainbow::TransferBase::ShouldPopulateNullManagedFieldsWhenWriting(void)const `
+- `0x92130` : `public: void __thiscall Rainbow::SphericalHarmonicsL1::Shrink(struct Rainbow::SphericalHarmonicsL2 const &)`
+- `0x66a90` : `public: void __thiscall Rainbow::BackgroundJobQueue::Shutdown(void)`
+- `0x9a2e0` : `public: void __thiscall Rainbow::FileSystem::Shutdown(void)`
+- `0x6d830` : `public: void __thiscall Rainbow::JobQueue::Shutdown(enum Rainbow::JobQueue::ShutdownMode)`
+- `0x675c0` : `void __cdecl Rainbow::JobSystem::ShutdownJobThreads(void)`
+- `0x454b0` : `public: void __thiscall Rainbow::Rainbow::Semaphore::Signal(int)`
+- `0x454d0` : `public: void __thiscall Rainbow::Rainbow::Semaphore::Signal(void)`
+- `0x454b0` : `public: void __thiscall Rainbow::Semaphore::Signal(int)`
+- `0x454d0` : `public: void __thiscall Rainbow::Semaphore::Signal(void)`
+- `0x454e0` : `public: void __thiscall Rainbow::Rainbow::SuspendableSemaphore::Signal(void)`
+- `0x454e0` : `public: void __thiscall Rainbow::SuspendableSemaphore::Signal(void)`
+- `0x6d9b0` : `private: int __thiscall Rainbow::JobQueue::SignalOnFinish(struct Rainbow::JobGroupID,class Rainbow::Semaphore *)`
+- `0x83f10` : `public: void __thiscall Rainbow::Thread::SignalQuit(void)`
+- `0x3a450` : `float __cdecl Rainbow::SignedTriangleArea2D(class Rainbow::Vector2f const &,class Rainbow::Vector2f const &,class Rainbow::Vector2f const &)`
+- `0x3a4c0` : `float __cdecl Rainbow::SignedTriangleArea2D(class Rainbow::Vector3f const *)`
+- `0x7f1e0` : `float __cdecl SimpleStringToFloat(char const *,int *)`
+- `0x46720` : `public: virtual unsigned int __thiscall Rainbow::BinaryStream::Size(void)const `
+- `0x45500` : `public: virtual unsigned int __thiscall Rainbow::DataStream::Size(void)const `
+- `0x9a320` : `public: unsigned __int64 __thiscall Rainbow::FileAccessor::Size(void)const `
+- `0x57bd0` : `public: virtual unsigned int __thiscall Rainbow::FileHandleDataStream::Size(void)const `
+- `0x9a360` : `public: unsigned __int64 __thiscall Rainbow::FileSystemEntry::Size(void)const `
+- `0x558d0` : `public: virtual unsigned int __thiscall Rainbow::ObjectDataStream::Size(void)const `
+- `0x2c8f0` : `public: int __thiscall Rainbow::PlaneColliderCache_dense_hashmap::Size(void)const `
+- `0x54610` : `public: virtual void __thiscall Rainbow::BinaryStream::Skip(long)`
+- `0xa49d0` : `public: void __thiscall Rainbow::CachedReader::Skip(unsigned int)`
+- `0x57c10` : `public: virtual void __thiscall Rainbow::FileHandleDataStream::Skip(long)`
+- `0x558e0` : `public: virtual void __thiscall Rainbow::FileStreamDataStream::Skip(long)`
+- `0x55930` : `public: virtual void __thiscall Rainbow::MemoryDataStream::Skip(long)`
+- `0x55940` : `public: virtual void __thiscall Rainbow::ObjectDataStream::Skip(long)`
+- `0x54660` : `public: virtual unsigned int __thiscall Rainbow::BinaryStream::SkipLine(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x54660` : `public: virtual unsigned int __thiscall Rainbow::DataStream::SkipLine(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x55970` : `public: virtual unsigned int __thiscall Rainbow::MemoryDataStream::SkipLine(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x75fd0` : `char const * __cdecl SkipPathPrefix(char const *,char const *,unsigned int,bool)`
+- `0x76030` : `char const * __cdecl SkipPathPrefixCaseInsensitive(char const *,char const *,unsigned int,bool)`
+- `0x83f20` : `public: static void __cdecl Rainbow::Thread::Sleep(double)`
+- `0x83770` : `void __cdecl Rainbow::CurrentThread::SleepForSeconds(double)`
+- `0x84430` : `protected: static void __cdecl Rainbow::ThreadHelper::SleepInSeconds(double)`
+- `0x91830` : `class Rainbow::Quaternionf __cdecl Rainbow::Slerp(class Rainbow::Quaternionf const &,class Rainbow::Quaternionf const &,float)`
+- `0x93580` : `class Rainbow::Vector3f __cdecl Rainbow::Slerp(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,float)`
+- `0x36ed0` : `public: void __thiscall Rainbow::AABB::SlowLossyEncapsulate(class Rainbow::Vector3f const &)`
+- `0x38960` : `public: void __thiscall Rainbow::BoundsInt::SlowLossyEncapsulate(struct math::_int3 const &)`
+- `0x20f90` : `public: void __thiscall Rainbow::SpinCountTracker::Spin(void)`
+- `0x7f2e0` : `void __cdecl Split(class core::basic_string_ref<char>,char,class std::vector<class core::basic_string<char,class core::StringStorageDefault<char> >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > &,unsigned int)`
+- `0x7f310` : `void __cdecl Split(class core::basic_string_ref<char>,char,class std::vector<class core::basic_string_ref<char>,class std::allocator<class core::basic_string_ref<char> > > &,unsigned int)`
+- `0x7f340` : `void __cdecl Split(class core::basic_string_ref<char>,char const *,class std::vector<class core::basic_string<char,class core::StringStorageDefault<char> >,class std::allocator<class core::basic_string<char,class core::StringStorageDefault<char> > > > &,unsigned int)`
+- `0x7f370` : `void __cdecl Split(class core::basic_string_ref<char>,char const *,class std::vector<class core::basic_string_ref<char>,class std::allocator<class core::basic_string_ref<char> > > &,unsigned int)`
+- `0x3e550` : `public: float __thiscall Rainbow::Ray::SqrDistToPoint(class Rainbow::Vector3f const &)const `
+- `0x3b7f0` : `public: float __thiscall Rainbow::Frustum::SqrDistanceToPoint(class Rainbow::Vector3f const &)const `
+- `0x35e20` : `public: float __thiscall Rainbow::Quaternionf::SqrMagnitude(void)const `
+- `0x3a210` : `public: float __thiscall Rainbow::Vector2f::SqrMagnitude(void)`
+- `0x3a210` : `public: float __thiscall Rainbow::Vector2f::SqrMagnitude(void)const `
+- `0x76090` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl StandardizePathName(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x9a390` : `public: void __thiscall Rainbow::FileSystem::Start(void)`
+- `0x81580` : `public: void __thiscall Rainbow::LogSystem::Start(void)`
+- `0xa6100` : `public: void __thiscall Rainbow::ProfilerManager::Start(void)`
+- `0x26050` : `public: void __thiscall Rainbow::MemoryManager::StartLoggingAllocations(unsigned int,bool)`
+- `0x9f9e0` : `public: int __thiscall Rainbow::JSONRead::StartSequence(void)`
+- `0x20870` : `public: static void __cdecl Rainbow::FileSystem::StaticDestroy(void *)`
+- `0x26070` : `public: static void __cdecl Rainbow::MemoryManager::StaticDestroy(void)`
+- `0x73ae0` : `public: static void __cdecl Rainbow::MemoryPool::StaticDestroy(void *)`
+- `0x2e050` : `public: static void __cdecl Rainbow::Object::StaticDestroy(void)`
+- `0x2d140` : `private: static class core::hash_map<unsigned int,class Rainbow::RuntimeClass const *,struct Rainbow::UInt32HashFunction,struct std::equal_to<unsigned int> > & __cdecl Rainbow::RuntimeClassManager::StaticIdToTypeMap(void)`
+- `0x20870` : `public: static void __cdecl Rainbow::FileSystem::StaticInitialize(void *)`
+- `0x26080` : `public: static void __cdecl Rainbow::MemoryManager::StaticInitialize(void)`
+- `0x73b60` : `public: static void __cdecl Rainbow::MemoryPool::StaticInitialize(void *)`
+- `0x2e150` : `public: static void __cdecl Rainbow::Object::StaticInitialize(void)`
+- `0x2c970` : `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::NamedObject::StaticRTTI(void)`
+- `0x2c980` : `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::Object::StaticRTTI(void)`
+- `0x2eea0` : `public: static class Rainbow::RuntimeClass const & __cdecl Rainbow::RefObject::StaticRTTI(void)`
+- `0x2d1d0` : `private: static class core::hash_map<char const *,class Rainbow::RuntimeClass const *,struct ConstCharPtrHashFunctor,struct ConstCharPtrEqualTo> & __cdecl Rainbow::RuntimeClassManager::StaticStringToTypeMap(void)`
+- `0x46060` : `private: static void * __cdecl Rainbow::AsyncReadManagerThreaded::StaticThreadEntry(void *)`
+- `0x6db10` : `private: int __thiscall Rainbow::JobQueue::Steal(class Rainbow::JobGroup *,struct Rainbow::JobInfo *,int,int,bool)`
+- `0x81760` : `public: void __thiscall Rainbow::LogSystem::Stop(void)`
+- `0xa6140` : `public: void __thiscall Rainbow::ProfilerManager::Stop(void)`
+- `0x260d0` : `public: void __thiscall Rainbow::MemoryManager::StopLoggingAllocations(void)`
+- `0x7f4c0` : `int __cdecl StrCmp(char const *,char const *)`
+- `0x7f4f0` : `int __cdecl StrICmp(char const *,char const *)`
+- `0x7f530` : `char const * __cdecl StrIFind(char const *,char const *,bool)`
+- `0x7f670` : `char const * __cdecl StrIStr(char const *,char const *)`
+- `0x7f760` : `int __cdecl StrNCmp(char const *,char const *,unsigned int)`
+- `0x7f7a0` : `void __cdecl StrNCpy(char *,char const *,unsigned int)`
+- `0x7f7d0` : `int __cdecl StrNICmp(char const *,char const *,unsigned int)`
+- `0x7f820` : `char const * __cdecl StrNStr(char const *,char const *,unsigned int)`
+- `0x7f890` : `int __cdecl StrSpn(char const *,char const *)`
+- `0x7f8c0` : `char const * __cdecl StrStr(char const *,char const *)`
+- `0x7f8d0` : `int __cdecl StrTol(char const *,char * *,int)`
+- `0x57110` : `private: bool __thiscall Rainbow::FileCompressHelper::LZMAStreamingDeCompress::Streaming(void)`
+- `0x9ae60` : `double __cdecl StringToDoubleAccurate(char const *)`
+- `0x9aea0` : `double __cdecl StringToDoubleAccurate(char const *,unsigned int)`
+- `0x9aed0` : `float __cdecl StringToFloatAccurate(char const *)`
+- `0x9af10` : `float __cdecl StringToFloatAccurate(char const *,unsigned int)`
+- `0x71190` : `struct UGUID __cdecl StringToGUID(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x71820` : `struct UGUID __cdecl StringToGUID(char const *)`
+- `0x71850` : `struct UGUID __cdecl StringToGUID(char const *,unsigned int)`
+- `0x72810` : `struct Hash128 __cdecl StringToHash128(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x72840` : `struct Hash128 __cdecl StringToHash128(char const *,unsigned int)`
+- `0x7f8e0` : `int __cdecl StringToInt(class core::basic_string_ref<char> const &)`
+- `0x7f9e0` : `__int64 __cdecl StringToSInt64(class core::basic_string_ref<char> const &)`
+- `0x7fa20` : `unsigned int __cdecl StringToUInt32(class core::basic_string_ref<char> const &)`
+- `0x7fa60` : `unsigned int __cdecl StringToUInt32Hex(class core::basic_string_ref<char>)`
+- `0x7fb20` : `unsigned __int64 __cdecl StringToUInt64(class core::basic_string_ref<char> const &)`
+- `0x7fb60` : `unsigned __int64 __cdecl StringToUInt64Hex(class core::basic_string_ref<char>)`
+- `0x45510` : `public: void __thiscall Rainbow::Rainbow::SuspendableSemaphore::Suspend(bool)`
+- `0x45510` : `public: void __thiscall Rainbow::SuspendableSemaphore::Suspend(bool)`
+- `0x8ba60` : `public: void __thiscall Rainbow::Gradient::SwapAlphaKeys(int,int)`
+- `0x8bad0` : `public: void __thiscall Rainbow::Gradient::SwapColorKeys(int,int)`
+- `0x66aa0` : `public: void __thiscall Rainbow::BackgroundJobQueue::SyncFence(struct Rainbow::BackgroundJobQueue::BackJobFence &)`
+- `0x67ae0` : `void __cdecl Rainbow::SyncFenceNoClear(struct Rainbow::JobFence const &)`
+- `0x67b10` : `void __cdecl Rainbow::SyncFences(struct Rainbow::JobFence *,unsigned int)`
+- `0x46070` : `void __cdecl Rainbow::SyncReadRequest(struct Rainbow::AsyncReadCommand *)`
+- `0x836c0` : `public: int __thiscall Rainbow::AtomicList::Tag(void)`
+- `0x9a430` : `public: bool __thiscall Rainbow::FileSystemEntry::Target(class Rainbow::FileSystemEntry &)const `
+- `0x54720` : `public: virtual unsigned int __thiscall Rainbow::BinaryStream::Tell(void)const `
+- `0x57c30` : `public: virtual unsigned int __thiscall Rainbow::FileHandleDataStream::Tell(void)const `
+- `0x55a60` : `public: virtual unsigned int __thiscall Rainbow::FileStreamDataStream::Tell(void)const `
+- `0x55aa0` : `public: virtual unsigned int __thiscall Rainbow::MemoryDataStream::Tell(void)const `
+- `0x44ec0` : `public: virtual unsigned int __thiscall Rainbow::ObjectDataStream::Tell(void)const `
+- `0x3e490` : `bool __cdecl Rainbow::TestPlanesAABB(class Rainbow::Planef const *,int,class Rainbow::AABB const &)`
+- `0x260e0` : `public: void __thiscall Rainbow::MemoryManager::ThreadCleanup(void)`
+- `0x46090` : `private: void __thiscall Rainbow::AsyncReadManagerThreaded::ThreadEntry(void)`
+- `0x81790` : `private: static void * __cdecl Rainbow::LogSystem::ThreadFunc(void *)`
+- `0x261e0` : `public: void __thiscall Rainbow::MemoryManager::ThreadInitialize(unsigned int)`
+- `0x262e0` : `public: void __thiscall Rainbow::MemoryManager::ThreadTempAllocFrameMaintenance(void)`
+- `0x20870` : `public: virtual void __thiscall Rainbow::Object::ThreadedCleanup(void)`
+- `0x9a460` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::ToAbsolute(char const *)const `
+- `0x6fc20` : `public: void __thiscall Rainbow::DateTime::ToComponents(int &,int &,int &,int &,int &,int &,int &)const `
+- `0x4dcd0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileManager::ToFullPath(char const *)`
+- `0x63390` : `public: virtual bool __thiscall Rainbow::PackageAsset::ToFullPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x4de50` : `public: virtual bool __thiscall Rainbow::PackageFileSystem::ToFullPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x2d260` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::DateTime::ToISO8601DateTimeString(int)const `
+- `0x6fe30` : `public: void __thiscall Rainbow::DateTime::ToISO8601DateTimeString(class core::basic_string<char,class core::StringStorageDefault<char> > &,int)const `
+- `0x9a5b0` : `public: bool __thiscall Rainbow::FileSystemEntry::ToLocal(class core::basic_string<char,class core::StringStorageDefault<char> > &,unsigned __int64 &,unsigned __int64 &)const `
+- `0x70020` : `struct Rainbow::DateTime __cdecl Rainbow::ToLocalFileSystemPrecision(struct Rainbow::DateTime const &)`
+- `0x9a5e0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::ToLogicalPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x9a720` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileSystem::ToPhysicalPath(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x36fe0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Matrix3x3f::ToString(void)const `
+- `0x37080` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Matrix4x4f::ToString(void)const `
+- `0x37190` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Quaternionf::ToString(void)const `
+- `0x20fb0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::SHAHash::ToString(void)const `
+- `0x7a720` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall core::StringBuilder::ToString(void)const `
+- `0x3a530` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Vector2f::ToString(void)const `
+- `0x371f0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Vector3f::ToString(void)const `
+- `0x37240` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::Vector4f::ToString(void)const `
+- `0x372a0` : `public: unsigned int __thiscall Rainbow::Quaternionf::ToUInt32(void)`
+- `0x4de60` : `public: bool __thiscall Rainbow::FileManager::ToWritePathFull(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x4df50` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileManager::ToWriteableFullPath(class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0x4e020` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall Rainbow::FileManager::ToWriteableFullPath(char const *)`
+- `0x836e0` : `public: class Rainbow::AtomicNode * __thiscall Rainbow::AtomicList::Touch(int)`
+- `0x9a7e0` : `public: bool __thiscall Rainbow::FileSystemEntry::Touch(void)`
+- `0x63630` : `public: void __thiscall Rainbow::PackageAsset::TranceAssetProfile(unsigned int)`
+- `0x6b210` : `public: void __thiscall Rainbow::ThreadedJobBatch::JobBatch::Transfer(class Rainbow::JobBatchDispatcher &)`
+- `0x2d2e0` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::TransferResourceImage(enum Rainbow::ActiveResourceImage,char const *,struct Rainbow::StreamingInfo &,void *,unsigned int,unsigned int,class Rainbow::RuntimeClass const *)`
+- `0xa2d30` : `public: void __thiscall Rainbow::StreamedBinaryRead::TransferResourceImage(enum Rainbow::ActiveResourceImage,char const *,struct Rainbow::StreamingInfo &,void *,unsigned int,unsigned int,class Rainbow::RuntimeClass const *)`
+- `0xa1700` : `private: void __thiscall Rainbow::JSONWrite::TransferStringToCurrentNode(char const *)`
+- `0x2d300` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::TransferTypeless(unsigned int *,char const *,enum Rainbow::TransferMetaFlags)`
+- `0xa2e30` : `public: void __thiscall Rainbow::StreamedBinaryRead::TransferTypeless(unsigned int *,char const *,enum Rainbow::TransferMetaFlags)`
+- `0xa2f10` : `public: void __thiscall Rainbow::StreamedBinaryWrite::TransferTypeless(unsigned int *,char const *,enum Rainbow::TransferMetaFlags)`
+- `0x2d320` : `public: void __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::TransferTypelessData(unsigned int,void *,enum Rainbow::TransferMetaFlags)`
+- `0xa2e70` : `public: void __thiscall Rainbow::StreamedBinaryRead::TransferTypelessData(unsigned int,void *,int)`
+- `0xa2f50` : `public: void __thiscall Rainbow::StreamedBinaryWrite::TransferTypelessData(unsigned int,void *,int)`
+- `0x77ec0` : `private: void __thiscall Rainbow::MD5::Transform(unsigned int *,unsigned char const *)`
+- `0x785d0` : `private: void __thiscall Rainbow::SHA1::Transform(unsigned int *,unsigned char const *)`
+- `0x37370` : `void __cdecl Rainbow::TransformAABB(class Rainbow::AABB const &,class Rainbow::Matrix4x4f const &,class Rainbow::AABB &)`
+- `0x374d0` : `void __cdecl Rainbow::TransformAABB(class Rainbow::AABB const &,class Rainbow::Vector3f const &,class Rainbow::Quaternionf const &,class Rainbow::AABB &)`
+- `0x37630` : `void __cdecl Rainbow::TransformAABBSlow(class Rainbow::AABB const &,class Rainbow::Matrix4x4f const &,class Rainbow::AABB &)`
+- `0x37cb0` : `void __cdecl Rainbow::TransformAABBSlow(class Rainbow::MinMaxAABB const &,class Rainbow::Matrix4x4f const &,class Rainbow::MinMaxAABB &)`
+- `0x3bde0` : `public: class Rainbow::Sphere __thiscall Rainbow::Sphere::TransformBy(class Rainbow::Matrix4x4f const &)`
+- `0x8fe90` : `void __cdecl Rainbow::TransformPoints3x3(class Rainbow::Matrix4x4f const &,class Rainbow::Vector3f const *,unsigned int,class Rainbow::Vector3f *,unsigned int,int)`
+- `0x8ff50` : `void __cdecl Rainbow::TransformPoints3x3(class Rainbow::Matrix4x4f const &,class Rainbow::Vector3f const *,class Rainbow::Vector3f *,int)`
+- `0x90020` : `void __cdecl Rainbow::TransformPoints3x4(class Rainbow::Matrix4x4f const &,class Rainbow::Vector3f const *,unsigned int,class Rainbow::Vector3f *,unsigned int,int)`
+- `0x900f0` : `void __cdecl Rainbow::TransformPoints3x4(class Rainbow::Matrix4x4f const &,class Rainbow::Vector3f const *,class Rainbow::Vector3f *,int)`
+- `0x901b0` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::Translate(class Rainbow::Vector3f const &)`
+- `0x8cd20` : `public: class Rainbow::Matrix3x3f & __thiscall Rainbow::Matrix3x3f::Transpose(void)`
+- `0x90280` : `public: class Rainbow::Matrix4x4f & __thiscall Rainbow::Matrix4x4f::Transpose(void)`
+- `0x902f0` : `public: class Rainbow::Matrix4x4f __thiscall Rainbow::Matrix4x4f::Transpose(void)const `
+- `0x8d6f0` : `void __cdecl Rainbow::TransposeMatrix4x4REF(class Rainbow::Matrix4x4f const * __restrict,class Rainbow::Matrix4x4f * __restrict)`
+- `0x3a570` : `float __cdecl Rainbow::TriangleArea3D(class Rainbow::Vector3f const &,class Rainbow::Vector3f const &,class Rainbow::Vector3f const &)`
+- `0x72410` : `public: void __thiscall Rainbow::HandleManager::TrimFreeHandles(void)`
+- `0x38340` : `public: void __thiscall Rainbow::Vector3f::Truncate(float)`
+- `0x83be0` : `public: bool __thiscall Rainbow::Mutex::TryLock(void)`
+- `0xb9390` : `protected: bool __thiscall Rainbow::PlatformMutex::TryLock(void)`
+- `0x8a2b0` : `bool __cdecl Rainbow::TryParseHtmlColor(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class Rainbow::ColorRGBA32 &)`
+- `0x83c40` : `public: bool __thiscall Rainbow::ReadWriteSpinLock::TryReadLock(void)`
+- `0x20fd0` : `public: bool __thiscall Rainbow::ReadWriteSpinLock::TryWriteLock(void)`
+- `0x2fdb0` : `public: static char const * __cdecl Rainbow::RuntimeClass::TypeIdToName(unsigned int)`
+- `0x7d3f0` : `int __cdecl Rainbow::CodeUtil::UTF8ToUnicode(wchar_t *,int,char const *,int)`
+- `0x7d4c0` : `wchar_t const * __cdecl Rainbow::CodeUtil::UTF8ToUnicode(char const *,int)`
+- `0xb82b0` : `void __cdecl UTF8ToWide(char const *,wchar_t *,int)`
+- `0x7d4f0` : `int __cdecl Rainbow::CodeUtil::UnicodeToAnsi(char *,int,wchar_t const *,int)`
+- `0x7d550` : `char const * __cdecl Rainbow::CodeUtil::UnicodeToAnsi(wchar_t const *,int)`
+- `0x7d5b0` : `int __cdecl Rainbow::CodeUtil::UnicodeToUTF8(char *,int,wchar_t const *,int)`
+- `0x7d660` : `char const * __cdecl Rainbow::CodeUtil::UnicodeToUTF8(wchar_t const *,int)`
+- `0x93d60` : `void __cdecl UninitStackTrace(void)`
+- `0x70060` : `void __cdecl Rainbow::UnixTimeToEngineTime(__int64,struct Rainbow::DateTime &)`
+- `0x31050` : `void __cdecl UnloadDynamicLibrary(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x31140` : `void __cdecl UnloadDynamicLibrary(void *)`
+- `0x83bf0` : `public: void __thiscall Rainbow::Mutex::Unlock(void)`
+- `0xb93a0` : `protected: void __thiscall Rainbow::PlatformMutex::Unlock(void)`
+- `0x9a800` : `public: bool __thiscall Rainbow::FileSystem::UnmountHandler(class Rainbow::FileSystemHandler *)`
+- `0x20870` : `public: void __thiscall Rainbow::FileSystem::UnmountMemoryFileSystem(void)`
+- `0x74590` : `public: void __thiscall Rainbow::PackedFloatVector::UnpackFloats(float *,int,int,int,int)`
+- `0x74710` : `public: void __thiscall Rainbow::PackedQuatVector::UnpackQuats(class Rainbow::Quaternionf *)`
+- `0x218c0` : `protected: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Unregister(union CallbackInfoBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::FunctionPointers &,void const *)`
+- `0x21980` : `public: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Unregister(void (__cdecl*)(void const *),void const *)`
+- `0x219a0` : `public: void __thiscall CallbackArrayBase<void (__cdecl*)(void),void (__cdecl*)(void const *)>::Unregister(void (__cdecl*)(void))`
+- `0x218c0` : `protected: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Unregister(union CallbackInfoBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::FunctionPointers &,void const *)`
+- `0x21980` : `public: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Unregister(bool (__cdecl*)(void const *),void const *)`
+- `0x219a0` : `public: void __thiscall CallbackArrayBase<bool (__cdecl*)(void),bool (__cdecl*)(void const *)>::Unregister(bool (__cdecl*)(void))`
+- `0x219a0` : `public: void __thiscall CallbackArraySubBase<void (__cdecl*)(void)>::Unregister(void (__cdecl*)(void))`
+- `0x219a0` : `public: void __thiscall CallbackArraySubBase<bool (__cdecl*)(void)>::Unregister(bool (__cdecl*)(void))`
+- `0x724c0` : `public: void __thiscall Rainbow::HandleManager::UnregisterBitSet(unsigned int * *)`
+- `0x72550` : `public: void __thiscall Rainbow::HandleManager::UnregisterPodArray(unsigned char * *)`
+- `0xb8f70` : `void __cdecl Rainbow::winutils::UnregisterWindowClass(wchar_t const *)`
+- `0x7fee0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl UnsignedInt64ToString(unsigned __int64)`
+- `0x7ffa0` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl UnsignedIntToString(unsigned int)`
+- `0x79770` : `public: void __thiscall Rainbow::MD5::Update(unsigned char const *,unsigned __int64)`
+- `0x79860` : `public: void __thiscall Rainbow::SHA1::Update(unsigned char const *,unsigned __int64)`
+- `0xb9500` : `protected: void __thiscall Rainbow::PlatformThread::UpdatePriority(class Rainbow::Thread *)const `
+- `0xa4a00` : `private: void __thiscall Rainbow::CachedReader::UpdateReadCache(void *,unsigned int)`
+- `0x69620` : `void __cdecl Rainbow::UpdateScheduledJobBuffers(struct Rainbow::JobFence const &,struct Rainbow::BufferDebugReflectionData const *,unsigned int,struct Rainbow::BufferDebugReflectionData const *,unsigned int)`
+- `0x79960` : `public: void __thiscall Rainbow::SHA1::UpdateWithString(char const *,unsigned int)`
+- `0xa4cf0` : `private: void __thiscall Rainbow::CachedWriter::UpdateWriteCache(void const *,unsigned int)`
+- `0x7a840` : `private: char * __thiscall core::StringBuilder::UpdateWritePtr(char * &,bool)`
+- `0x66560` : `public: static void __cdecl Rainbow::AtomicSafetyHandle::UseSecondaryVersion(class Rainbow::AtomicSafetyHandle &)`
+- `0x80050` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl VFormat(char const *,char *)`
+- `0x22dc0` : `public: int __thiscall Rainbow::HandleManager::ValidHandlesEnd(void)const `
+- `0x90380` : `public: bool __thiscall Rainbow::Matrix4x4f::ValidTRS(void)const `
+- `0x8bb60` : `private: void __thiscall Rainbow::Gradient::ValidateAlphaKeys(void)`
+- `0x8bb90` : `private: void __thiscall Rainbow::Gradient::ValidateColorKeys(void)`
+- `0x69850` : `bool __cdecl Rainbow::ValidateDeferredLengthListIncluded(struct dynamic_array<struct Rainbow::BufferDebugReflectionData,0> const &,struct dynamic_array<struct Rainbow::BufferDebugReflectionData,0> const &,struct dynamic_array<struct Rainbow::BufferDebugReflectionData,0> const &,class Rainbow::AtomicSafetyHandle *,char *)`
+- `0x69930` : `bool __cdecl Rainbow::ValidateFixedLengthBuffers(unsigned char const *,struct Rainbow::BufferDebugReflectionData const *,unsigned int const *,unsigned int const *,unsigned int,char *)`
+- `0x699c0` : `bool __cdecl Rainbow::ValidateIsAllowedToDeallocate(class Rainbow::AtomicSafetyHandle const &,char *)`
+- `0x665a0` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::ValidateIsAllowedToDisposeEarlyOut(class Rainbow::AtomicSafetyHandle const &)`
+- `0x69b10` : `bool __cdecl Rainbow::ValidateIsAllowedToGetSecondaryDataPointer(class Rainbow::AtomicSafetyHandle const &,char *)`
+- `0x69c10` : `bool __cdecl Rainbow::ValidateIsAllowedToRead(class Rainbow::AtomicSafetyHandle const &,char *)`
+- `0x665d0` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::ValidateIsAllowedToReadEarlyOut(class Rainbow::AtomicSafetyHandle const &)`
+- `0x69d60` : `bool __cdecl Rainbow::ValidateIsAllowedToWrite(class Rainbow::AtomicSafetyHandle const &,char *)`
+- `0x66600` : `public: static bool __cdecl Rainbow::AtomicSafetyHandle::ValidateIsAllowedToWriteEarlyOut(class Rainbow::AtomicSafetyHandle const &)`
+- `0x69f80` : `char const * __cdecl Rainbow::ValidateMustBeExecutingJob(void)`
+- `0x69fa0` : `bool __cdecl Rainbow::ValidateParallelForLengthBuffers(unsigned char const *,struct Rainbow::BufferDebugReflectionData const *,unsigned int const *,unsigned int,unsigned int,char *)`
+- `0x6a020` : `bool __cdecl Rainbow::ValidateScheduleJobBuffers(struct Rainbow::JobFence const *,unsigned int,struct Rainbow::BufferDebugReflectionData const *,unsigned int,struct Rainbow::BufferDebugReflectionData const *,unsigned int,struct Rainbow::BufferDebugReflectionData const *,unsigned int,char *)`
+- `0x20870` : `protected: void __thiscall Rainbow::MultiWriterSingleReaderAtomicCircularBuffer::ValidateSentinels(void)`
+- `0x45540` : `protected: void __thiscall Rainbow::SharedObject<class Rainbow::DataStream,1>::ValidateThreadID(void)const `
+- `0x38430` : `public: static bool __cdecl Rainbow::CPUInfo::VerifySSE2Support(void)`
+- `0x2d430` : `public: virtual void __thiscall Rainbow::NamedObject::VirtualRedirectTransfer(class Rainbow::JSONRead &)`
+- `0x2d450` : `public: virtual void __thiscall Rainbow::NamedObject::VirtualRedirectTransfer(class Rainbow::JSONWrite &)`
+- `0x2d470` : `public: virtual void __thiscall Rainbow::NamedObject::VirtualRedirectTransfer(class Rainbow::StreamedBinaryRead &)`
+- `0x2d520` : `public: virtual void __thiscall Rainbow::NamedObject::VirtualRedirectTransfer(class Rainbow::StreamedBinaryWrite &)`
+- `0x2d5e0` : `public: virtual void __thiscall Rainbow::Object::VirtualRedirectTransfer(class Rainbow::JSONRead &)`
+- `0x2d680` : `public: virtual void __thiscall Rainbow::Object::VirtualRedirectTransfer(class Rainbow::JSONWrite &)`
+- `0x2d720` : `public: virtual void __thiscall Rainbow::Object::VirtualRedirectTransfer(class Rainbow::StreamedBinaryRead &)`
+- `0x2d7c0` : `public: virtual void __thiscall Rainbow::Object::VirtualRedirectTransfer(class Rainbow::StreamedBinaryWrite &)`
+- `0x53860` : `public: virtual void __thiscall Rainbow::StreamedResource::VirtualRedirectTransfer(class Rainbow::JSONRead &)`
+- `0x53950` : `public: virtual void __thiscall Rainbow::StreamedResource::VirtualRedirectTransfer(class Rainbow::JSONWrite &)`
+- `0x53a90` : `public: virtual void __thiscall Rainbow::StreamedResource::VirtualRedirectTransfer(class Rainbow::StreamedBinaryRead &)`
+- `0x53bb0` : `public: virtual void __thiscall Rainbow::StreamedResource::VirtualRedirectTransfer(class Rainbow::StreamedBinaryWrite &)`
+- `0x83f40` : `public: void __thiscall Rainbow::Thread::WaitForExit(bool)`
+- `0x6dcd0` : `public: void __thiscall Rainbow::JobQueue::WaitForJobGroupID(struct Rainbow::JobGroupID,enum Rainbow::JobQueue::JobQueueWorkStealFlags)`
+- `0x455e0` : `public: void __thiscall Rainbow::Rainbow::Semaphore::WaitForSignal(void)`
+- `0x455e0` : `public: void __thiscall Rainbow::Semaphore::WaitForSignal(void)`
+- `0x455f0` : `public: void __thiscall Rainbow::Rainbow::SuspendableSemaphore::WaitForSignal(void)`
+- `0x455f0` : `public: void __thiscall Rainbow::SuspendableSemaphore::WaitForSignal(void)`
+- `0x455e0` : `public: void __thiscall Rainbow::Rainbow::Semaphore::WaitForSignalNoProfile(void)`
+- `0x455e0` : `public: void __thiscall Rainbow::Semaphore::WaitForSignalNoProfile(void)`
+- `0x6dfa0` : `public: void __thiscall Rainbow::JobQueue::Wake(unsigned int)`
+- `0x84db0` : `protected: virtual void __thiscall Rainbow::ThreadedBlockAllocatingBuffer::WakeConsumerThread(void)`
+- `0x84dd0` : `public: virtual void __thiscall Rainbow::ThreadedStreamBuffer::WakeConsumerThread(void)`
+- `0x70090` : `void __cdecl Rainbow::WindowsFileTimeToEngineTime(struct _FILETIME const &,struct Rainbow::DateTime &)`
+- `0x6dfc0` : `private: static void * __cdecl Rainbow::JobQueue::WorkLoop(void *)`
+- `0x54730` : `public: virtual unsigned int __thiscall Rainbow::BinaryStream::Write(void const *,unsigned int)`
+- `0xa4e70` : `public: void __thiscall Rainbow::CachedWriter::Write(void const *,unsigned int)`
+- `0x52f40` : `public: bool __thiscall Rainbow::File::Write(void const *,unsigned int)`
+- `0x52fd0` : `public: bool __thiscall Rainbow::File::Write(unsigned __int64,void const *,unsigned int)`
+- `0x9a910` : `public: bool __thiscall Rainbow::FileAccessor::Write(unsigned __int64,unsigned __int64,void const *,unsigned __int64 *)`
+- `0x431c0` : `public: bool __thiscall Rainbow::FileAccessor::Write(unsigned __int64,void const *)`
+- `0x9a950` : `public: bool __thiscall Rainbow::FileAccessor::Write(unsigned __int64,void const *,unsigned __int64 *)`
+- `0x57c50` : `public: virtual unsigned int __thiscall Rainbow::FileHandleDataStream::Write(void const *,unsigned int)`
+- `0x55ab0` : `public: virtual unsigned int __thiscall Rainbow::FileStreamDataStream::Write(void const *,unsigned int)`
+- `0x55ac0` : `public: virtual unsigned int __thiscall Rainbow::MemoryDataStream::Write(void const *,unsigned int)`
+- `0x55b00` : `public: virtual unsigned int __thiscall Rainbow::ObjectDataStream::Write(void const *,unsigned int)`
+- `0x53070` : `bool __cdecl Rainbow::WriteBytesToFile(void const *,unsigned int,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xa96f0` : `private: static unsigned int __cdecl Rainbow::Http::CurlHandle::WriteFileCallback(void *,unsigned int,unsigned int,void *)`
+- `0xa4070` : `public: virtual bool __thiscall Rainbow::CacheWriterBase::WriteHeaderAndCloseFile(void *,unsigned int,unsigned int)`
+- `0x9a980` : `public: void __thiscall Rainbow::ReadWriteLock::WriteLock(void)`
+- `0x83c80` : `public: void __thiscall Rainbow::ReadWriteSpinLock::WriteLock(void)`
+- `0x20870` : `protected: void __thiscall Rainbow::ThreadedStreamBuffer::WriteMagicValue(void)`
+- `0xa9750` : `private: static unsigned int __cdecl Rainbow::Http::CurlHandle::WriteMemoryCallback(void *,unsigned int,unsigned int,void *)`
+- `0x85da0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::WriteStreamingData(bool (__cdecl*)(void *,unsigned int,unsigned int &,void *),void *,enum Rainbow::ThreadedStreamBuffer::SignalMode,unsigned int,unsigned int)`
+- `0x85f30` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::WriteStreamingData(void const *,unsigned int,enum Rainbow::ThreadedStreamBuffer::SignalMode,unsigned int,unsigned int)`
+- `0x84de0` : `public: void __thiscall Rainbow::ThreadedStreamBuffer::WriteSubmitData(enum Rainbow::ThreadedStreamBuffer::SignalMode)`
+- `0x9a9f0` : `public: void __thiscall Rainbow::ReadWriteLock::WriteUnlock(void)`
+- `0x20ff0` : `public: void __thiscall Rainbow::ReadWriteSpinLock::WriteUnlock(void)`
+- `0x83790` : `void __cdecl Rainbow::CurrentThread::Yield(void)`
+- `0xb95c0` : `protected: static void __cdecl Rainbow::PlatformThread::Yield(void)`
+- `0x84450` : `protected: static void __cdecl Rainbow::ThreadHelper::Yield(void)`
+- `0x83f90` : `public: static void __cdecl Rainbow::Thread::_mm_pause(void)`
+- `0x892c0` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::addChild(char const *)`
+- `0x21000` : `public: void * __thiscall dynamic_array_detail::dynamic_array_data::allocate(unsigned int,unsigned int,unsigned int)`
+- `0x43200` : `public: bool __thiscall dynamic_bitset::any(void)const `
+- `0x72920` : `public: void __thiscall Rainbow::Md5Context::append(unsigned char const *,unsigned int)`
+- `0x7a8c0` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x7a8e0` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(signed char)`
+- `0x7a980` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(unsigned char)`
+- `0x7aa20` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(short)`
+- `0x7aac0` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(unsigned short)`
+- `0x7ab60` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(int)`
+- `0x7ac00` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(unsigned int)`
+- `0x7aca0` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(float)`
+- `0x7ad40` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(double)`
+- `0x7ade0` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(char const *)`
+- `0x7af60` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(char const *,unsigned int)`
+- `0x7b100` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(__int64)`
+- `0x7b1a0` : `public: class core::StringBuilder & __thiscall core::StringBuilder::append(unsigned __int64)`
+- `0x43230` : `public: void __thiscall dynamic_bitset::append(unsigned int)`
+- `0x70cb0` : `public: void __thiscall Rainbow::FixedString::assign(char const *,unsigned int)`
+- `0x70cd0` : `public: void __thiscall Rainbow::NoFreeFixedString::assign(char const *,unsigned int)`
+- `0x89360` : `public: bool __thiscall Rainbow::XMLNode::attribToBool(char const *)`
+- `0x89390` : `public: float __thiscall Rainbow::XMLNode::attribToFloat(char const *)`
+- `0x893c0` : `public: bool __thiscall Rainbow::XMLNode::attribToFloat(char const *,float &)`
+- `0x893f0` : `public: __int64 __thiscall Rainbow::XMLNode::attribToInt64(char const *)`
+- `0x89430` : `public: int __thiscall Rainbow::XMLNode::attribToInt(char const *)`
+- `0x89460` : `public: bool __thiscall Rainbow::XMLNode::attribToInt(char const *,int &)`
+- `0x89490` : `public: char const * __thiscall Rainbow::XMLNode::attribToString(char const *)`
+- `0x72a00` : `public: void __thiscall Rainbow::Md5Context::begin(void)`
+- `0x246810` : `public: static class Rainbow::ColorRGBA32 const Rainbow::ColorRGBA32::black`
+- `0x246814` : `public: static class Rainbow::ColorRGBAf const Rainbow::ColorRGBAf::black`
+- `0x230390` : `public: static class Rainbow::ColorRGBA32 const Rainbow::ColorRGBA32::blue`
+- `0x230364` : `public: static class Rainbow::ColorRGBAf const Rainbow::ColorRGBAf::blue`
+- `0x20850` : `public: char const * __thiscall Rainbow::FixedString::c_str(void)const `
+- `0x20850` : `public: char const * __thiscall Rainbow::NoFreeFixedString::c_str(void)const `
+- `0x43330` : `public: static unsigned int __cdecl dynamic_bitset_base::calc_num_blocks(unsigned int)`
+- `0x262f0` : `void * __cdecl calloc_internal(unsigned int,unsigned int,unsigned int,struct MemLabelId,int,char const *,int)`
+- `0x7b240` : `public: unsigned int __thiscall core::StringBuilder::capacity(void)const `
+- `0x211e0` : `public: unsigned int __thiscall dynamic_array_detail::dynamic_array_data::capacity(void)const `
+- `0x6f6b0` : `public: unsigned int __thiscall Rainbow::crc32::checksum(void)const `
+- `0x47f50` : `public: void __thiscall Rainbow::DirVisitorScaner::clean(void)`
+- `0x7b270` : `public: void __thiscall core::StringBuilder::clear(void)`
+- `0x43340` : `public: void __thiscall dynamic_bitset::clear(void)`
+- `0x43380` : `public: unsigned int __thiscall dynamic_bitset::count(void)const `
+- `0x47fc0` : `public: static void __cdecl Rainbow::DirVisitor::deleteFile(char const *)`
+- `0x47fd0` : `public: void __thiscall Rainbow::DirVisitor::deleteFileRel(char const *)`
+- `0x20930` : `public: bool __thiscall Rainbow::FixedString::empty(void)const `
+- `0x20930` : `public: bool __thiscall Rainbow::NoFreeFixedString::empty(void)const `
+- `0x23dd64` : `public: static class Rainbow::FixedString const Rainbow::FixedString::empty_str`
+- `0x23dd60` : `public: static class Rainbow::NoFreeFixedString const Rainbow::NoFreeFixedString::empty_str`
+- `0x72a30` : `public: void __thiscall Rainbow::Md5Context::end(unsigned char * const)`
+- `0x894f0` : `public: void __thiscall Rainbow::XMLNode::eraseChild(class Rainbow::XMLNode)`
+- `0x89510` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::firstChild(void)`
+- `0x433f0` : `public: class dynamic_bitset & __thiscall dynamic_bitset::flip(unsigned int)`
+- `0x43440` : `public: class dynamic_bitset & __thiscall dynamic_bitset::flip(void)`
+- `0x26350` : `void __cdecl free_alloc_internal(void *,char const *,int)`
+- `0x26390` : `void __cdecl free_alloc_internal(void *,struct MemLabelId,char const *,int)`
+- `0x26350` : `void __cdecl free_internal(void *)`
+- `0x23d8a0` : `class Rainbow::JobBatchDispatcher * Rainbow::gBatchScheduler`
+- `0x230440` : `unsigned short * Rainbow::g_ByteToNormalizedHalf`
+- `0x246c70` : `class Rainbow::FloatToHalfConverter Rainbow::g_FloatToHalf`
+- `0x23d910` : `private: static class Rainbow::AtomicStack * Rainbow::JobQueue::g_JobGroupPool`
+- `0x23d914` : `private: static class Rainbow::AtomicStack * Rainbow::JobQueue::g_JobInfoPool`
+- `0x230240` : `int g_LogTypeLevel`
+- `0x230640` : `unsigned short * Rainbow::g_SignedByteToNormalizedHalf`
+- `0x89530` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::getChild(char const *)`
+- `0x48120` : `public: static unsigned int __cdecl Rainbow::DirVisitor::getFileSize(char const *)`
+- `0x48180` : `public: unsigned int __thiscall Rainbow::DirVisitor::getFileSizeRel(char const *)`
+- `0x89560` : `public: char * __thiscall Rainbow::XMLNode::getFullName(char *,unsigned int)`
+- `0x24fc0` : `public: int __thiscall Rainbow::TRect<int>::getHeight(void)const `
+- `0x42a40` : `public: float __thiscall Rainbow::TRect<float>::getHeight(void)const `
+- `0x72b90` : `public: void __thiscall Rainbow::Md5Context::getMD5Base16Str(char *)`
+- `0x20890` : `public: virtual void * __thiscall Rainbow::FileStreamDataStream::getMemoryImage(void)`
+- `0x89790` : `public: char const * __thiscall Rainbow::XMLNode::getName(void)`
+- `0x897a0` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLData::getNodeByPath(char const *,bool)`
+- `0x89920` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::getOrCreateChild(char const *)`
+- `0x89510` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLData::getRootNode(void)`
+- `0x89960` : `public: char const * __thiscall Rainbow::XMLNode::getText(void)`
+- `0x20850` : `public: class tinyxml2::XMLDocument * __thiscall Rainbow::XMLData::getTiXmlDocument(void)`
+- `0x2c8f0` : `public: int __thiscall Rainbow::TRect<int>::getWidth(void)const `
+- `0x42bc0` : `public: float __thiscall Rainbow::TRect<float>::getWidth(void)const `
+- `0x23038c` : `public: static class Rainbow::ColorRGBA32 const Rainbow::ColorRGBA32::green`
+- `0x230354` : `public: static class Rainbow::ColorRGBAf const Rainbow::ColorRGBAf::green`
+- `0x80240` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::grow(unsigned int,unsigned int)`
+- `0x21a70` : `private: virtual void __thiscall Rainbow::DirVisitor::handleDir(char const *)`
+- `0x48240` : `private: virtual void __thiscall Rainbow::DirVisitorDelete::handleDir(char const *)`
+- `0x21a70` : `private: virtual void __thiscall Rainbow::DirVisitorDeleteFileByExt::handleDir(char const *)`
+- `0x21a70` : `private: virtual void __thiscall Rainbow::DirVisitor::handleDirBegin(char const *)`
+- `0x48280` : `public: virtual void __thiscall Rainbow::DirVisitorGenFileList::handleDirBegin(char const *)`
+- `0x48360` : `private: virtual void __thiscall Rainbow::OneLevelScaner::handleDirBegin(char const *)`
+- `0x21a70` : `private: virtual void __thiscall Rainbow::DirVisitor::handleFile(char const *)`
+- `0x48450` : `private: virtual void __thiscall Rainbow::DirVisitorCalSize::handleFile(char const *)`
+- `0x484a0` : `private: virtual void __thiscall Rainbow::DirVisitorDelete::handleFile(char const *)`
+- `0x484e0` : `private: virtual void __thiscall Rainbow::DirVisitorDeleteFileByExt::handleFile(char const *)`
+- `0x48530` : `public: virtual void __thiscall Rainbow::DirVisitorGenFileList::handleFile(char const *)`
+- `0x48610` : `private: virtual void __thiscall Rainbow::DirVisitorScaner::handleFile(char const *)`
+- `0x487d0` : `private: virtual void __thiscall Rainbow::OneLevelScaner::handleFile(char const *)`
+- `0x89990` : `public: bool __thiscall Rainbow::XMLNode::hasAttrib(char const *)`
+- `0x899b0` : `public: bool __thiscall Rainbow::XMLNode::hasChild(char const *)`
+- `0x48940` : `public: bool __thiscall Rainbow::DirVisitor::hasError(void)`
+- `0x2399c8` : `class core::hash_map<unsigned int,class Rainbow::RuntimeClass const *,struct Rainbow::UInt32HashFunction,struct std::equal_to<unsigned int> > `private: static class core::hash_map<unsigned int,class Rainbow::RuntimeClass const *,struct Rainbow::UInt32HashFunction,struct std::equal_to<unsigned int> > & __cdecl Rainbow::RuntimeClassManager::StaticIdToTypeMap(void)'::`2'::idToTypeMap`
+- `0x230888` : `public: static class Rainbow::Matrix3x3f const Rainbow::Matrix3x3f::identity`
+- `0x2308b0` : `public: static class Rainbow::Matrix4x4f const Rainbow::Matrix4x4f::identity`
+- `0x231138` : `public: static class Rainbow::Quaternionf const Rainbow::Quaternionf::identity`
+- `0x6f6c0` : `private: static unsigned char __cdecl Rainbow::crc32::index(unsigned int,unsigned char)`
+- `0x23d5f8` : `public: static class Rainbow::AABB const Rainbow::AABB::infinity`
+- `0x23007c` : `public: static class Rainbow::Sphere const Rainbow::Sphere::infinity`
+- `0x2311dc` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::infinity`
+- `0x231230` : `public: static class Rainbow::Vector4f const Rainbow::Vector4f::infinity`
+- `0x434b0` : `public: void __thiscall Rainbow::TRect<int>::inset(int,int)`
+- `0x434f0` : `public: void __thiscall Rainbow::TRect<float>::inset(int,int)`
+- `0x230064` : `public: static class Rainbow::MinMaxAABB const Rainbow::MinMaxAABB::invalid`
+- `0x48950` : `public: static bool __cdecl Rainbow::DirVisitor::isDir(char const *)`
+- `0x48970` : `public: bool __thiscall Rainbow::DirVisitor::isDirRel(char const *)`
+- `0x48a10` : `public: static bool __cdecl Rainbow::DirVisitor::isExist(char const *)`
+- `0x48a40` : `public: bool __thiscall Rainbow::DirVisitor::isExistRel(char const *)`
+- `0x899d0` : `public: bool __thiscall Rainbow::XMLNode::isNull(void)`
+- `0x43570` : `public: bool __thiscall dynamic_bitset::is_proper_subset_of(class dynamic_bitset const &)const `
+- `0x43600` : `public: bool __thiscall dynamic_bitset::is_subset_of(class dynamic_bitset const &)const `
+- `0x899e0` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::iterateChild(class Rainbow::XMLNode)`
+- `0x89510` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::iterateChild(void)`
+- `0x66ad0` : `private: static void __cdecl Rainbow::PriorityMutableBackgroundJob::jobFuncWrapper(void *)`
+- `0x1a9744` : `public: static unsigned int const Rainbow::SpinCountTracker::kDefaultSpinBeforeYield`
+- `0x1ac66c` : `unsigned int const core::hash_set_detail::kEmptyNode`
+- `0x1a9a74` : `public: static unsigned int const Rainbow::MemoryManager::kMaxAllocators`
+- `0x1a9a78` : `public: static unsigned int const Rainbow::MemoryManager::kMaxCustomAllocators`
+- `0x246e80` : `public: static float const * const Rainbow::SphericalHarmonicsL2::kNormalizationConstants`
+- `0x1abc20` : `public: static __int64 const Rainbow::DateTime::kUnixEpochInTicks`
+- `0x1a9748` : `private: static unsigned int const dynamic_array_detail::dynamic_array_data::k_reference_bit`
+- `0x70d00` : `public: unsigned int __thiscall Rainbow::FixedString::length(void)const `
+- `0x70d00` : `public: unsigned int __thiscall Rainbow::NoFreeFixedString::length(void)const `
+- `0x7b2c0` : `public: unsigned int __thiscall core::StringBuilder::length(void)const `
+- `0x89a10` : `public: bool __thiscall Rainbow::XMLData::loadBuffer(void const *,unsigned int)`
+- `0x89b60` : `public: bool __thiscall Rainbow::XMLData::loadFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x89c20` : `public: enum tinyxml2::XMLError __thiscall Rainbow::XMLData::loadRawFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x89cf0` : `public: bool __thiscall Rainbow::XMLData::loadStream(class Rainbow::DataStream *)`
+- `0x246870` : `private: static struct Rainbow::FloatToHalfConverter::ExponentData * Rainbow::FloatToHalfConverter::m_ExponentTable`
+- `0x2467a9` : `private: static bool Rainbow::CPUInfo::m_Initialized`
+- `0x2467b0` : `private: static bool Rainbow::CPUInfo::m_IsAVX2Supported`
+- `0x2467b1` : `private: static bool Rainbow::CPUInfo::m_IsAVX512Supported`
+- `0x2467af` : `private: static bool Rainbow::CPUInfo::m_IsAVXSupported`
+- `0x2467b3` : `private: static bool Rainbow::CPUInfo::m_IsFMASupported`
+- `0x2467b2` : `private: static bool Rainbow::CPUInfo::m_IsFP16CSupported`
+- `0x2467aa` : `private: static bool Rainbow::CPUInfo::m_IsSSE2Supported`
+- `0x2467ab` : `private: static bool Rainbow::CPUInfo::m_IsSSE3Supported`
+- `0x2467ad` : `private: static bool Rainbow::CPUInfo::m_IsSSE41Supported`
+- `0x2467ae` : `private: static bool Rainbow::CPUInfo::m_IsSSE42Supported`
+- `0x2467ac` : `private: static bool Rainbow::CPUInfo::m_IsSupplementalSSE3Supported`
+- `0x235ca0` : `private: static unsigned int volatile Rainbow::MemoryManager::m_LowLevelAllocated`
+- `0x23aa04` : `private: static class Rainbow::RuntimeClass const Rainbow::NamedObject::m_RTTI`
+- `0x23aa40` : `private: static class Rainbow::RuntimeClass const Rainbow::Object::m_RTTI`
+- `0x23aa64` : `private: static class Rainbow::RuntimeClass const Rainbow::RefObject::m_RTTI`
+- `0x239a00` : `struct Rainbow::RuntimeClassManager::RuntimClassArray `private: static struct Rainbow::RuntimeClassManager::RuntimClassArray & __cdecl Rainbow::RuntimeClassManager::GetRuntimeClasses(void)'::`2'::m_RuntimeClasses`
+- `0x43670` : `public: void __thiscall dynamic_bitset::m_zero_unused_bits(void)`
+- `0x2467a0` : `public: static unsigned __int64 Rainbow::Thread::mainThreadId`
+- `0x48ae0` : `public: static bool __cdecl Rainbow::DirVisitor::makeDir(char const *)`
+- `0x48b00` : `public: bool __thiscall Rainbow::DirVisitor::makeDirRel(char const *)`
+- `0x263d0` : `void * __cdecl malloc_internal(unsigned int,unsigned int,int,char const *,int)`
+- `0x26420` : `void * __cdecl malloc_internal(unsigned int,unsigned int,struct MemLabelId,int,char const *,int)`
+- `0x436c0` : `public: static unsigned int __cdecl dynamic_bitset_base::mask0(unsigned int)`
+- `0x436e0` : `public: static unsigned int __cdecl dynamic_bitset_base::mask1(unsigned int)`
+- `0x211f0` : `public: unsigned int __thiscall dynamic_array_detail::dynamic_array_data::max_size(void)const `
+- `0x73bc0` : `void __cdecl memset32(void *,unsigned int,unsigned __int64)`
+- `0x23aa20` : `private: static class core::hash_map<unsigned int,class Rainbow::Object *,struct core::hash<unsigned int>,struct std::equal_to<unsigned int> > * Rainbow::Object::ms_IDToPointer`
+- `0x23aa24` : `private: static class core::hash_set<class Rainbow::Object *,struct core::hash<class Rainbow::Object *>,struct std::equal_to<class Rainbow::Object *> > * Rainbow::Object::ms_TypeToObjectSet`
+- `0x23120c` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::neg_xAxis`
+- `0x231218` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::neg_yAxis`
+- `0x231224` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::neg_zAxis`
+- `0x89dc0` : `public: class Rainbow::XMLNode __thiscall Rainbow::XMLNode::nextSibling(void)`
+- `0x43700` : `public: bool __thiscall dynamic_bitset::none(void)const `
+- `0x24fc0` : `public: unsigned int __thiscall dynamic_bitset::num_blocks(void)const `
+- `0x43730` : `public: static unsigned int __cdecl dynamic_bitset_base::offset(unsigned int)`
+- `0x2311b8` : `public: static class Rainbow::Vector2f const Rainbow::Vector2f::one`
+- `0x2311d0` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::one`
+- `0x231240` : `public: static class Rainbow::Vector4f const Rainbow::Vector4f::one`
+- `0x21200` : `public: bool __thiscall dynamic_array_detail::dynamic_array_data::owns_data(void)`
+- `0x81960` : `void __cdecl print_realstdout(char const *,int)`
+- `0x72bd0` : `private: void __thiscall Rainbow::Md5Context::process(unsigned char const *)`
+- `0x6f6d0` : `public: void __thiscall Rainbow::crc32::process_block(void const *,void const *)`
+- `0x6f740` : `public: void __thiscall Rainbow::crc32::process_block_skip2(void const *,void const *)`
+- `0x6f7b0` : `public: void __thiscall Rainbow::crc32::process_bytes(void const *,unsigned int)`
+- `0x6f7d0` : `public: void __thiscall Rainbow::crc32::process_bytes_skip2(void const *,unsigned int)`
+- `0x43740` : `public: void __thiscall dynamic_bitset::push_back(bool)`
+- `0x26470` : `void * __cdecl realloc_internal(void *,unsigned int,unsigned int,int,char const *,int)`
+- `0x264d0` : `void * __cdecl realloc_internal(void *,unsigned int,unsigned int,struct MemLabelId,int,char const *,int)`
+- `0x212f0` : `public: void * __thiscall dynamic_array_detail::dynamic_array_data::reallocate(void *,unsigned int,unsigned int,unsigned int)`
+- `0x230388` : `public: static class Rainbow::ColorRGBA32 const Rainbow::ColorRGBA32::red`
+- `0x230344` : `public: static class Rainbow::ColorRGBAf const Rainbow::ColorRGBAf::red`
+- `0x48d10` : `public: static bool __cdecl Rainbow::DirVisitor::renameFile(char const *,char const *)`
+- `0x48d70` : `public: bool __thiscall Rainbow::DirVisitor::renameFileRel(char const *,char const *)`
+- `0x80390` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::reserve(unsigned int,unsigned int,unsigned int)`
+- `0x80390` : `private: void __thiscall dynamic_array_detail::dynamic_array_data::reserve_impl(unsigned int,unsigned int,unsigned int)`
+- `0x43780` : `public: class dynamic_bitset & __thiscall dynamic_bitset::reset(unsigned int)`
+- `0x437d0` : `public: class dynamic_bitset & __thiscall dynamic_bitset::reset(void)`
+- `0x43800` : `private: void __thiscall dynamic_bitset::reset_(unsigned int)`
+- `0x43830` : `public: void __thiscall dynamic_bitset::resize(unsigned int,bool)`
+- `0x804e0` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::resize_buffer(unsigned int,enum ResizePolicy,unsigned int,unsigned int)`
+- `0x246fc0` : `struct math::_float4 const math::rsqrte_magicnumber`
+- `0x231148` : `public: static class fixed_array<class Rainbow::Vector4f,7> const Rainbow::SphericalHarmonicsL2::s_BlackCoeffs`
+- `0x23dd50` : `private: static bool Rainbow::crc32::s_Initialized`
+- `0x23df30` : `private: static class std::vector<class Rainbow::MemoryPool *,class std::allocator<class Rainbow::MemoryPool *> > * Rainbow::MemoryPool::s_MemoryPools`
+- `0x23d944` : `private: static unsigned short Rainbow::Blackboard::s_SlotCounter`
+- `0x246798` : `private: static class Rainbow::ThreadSpecificValue<void *> Rainbow::Thread::s_StackBase`
+- `0x23d950` : `private: static unsigned int * Rainbow::crc32::s_Table`
+- `0x23d948` : `private: static class std::map<unsigned int,struct Rainbow::Blackboard::SlotInfo,struct std::less<unsigned int>,class std::allocator<struct std::pair<unsigned int const ,struct Rainbow::Blackboard::SlotInfo> > > Rainbow::Blackboard::s_TypeToSlots`
+- `0x89de0` : `public: bool __thiscall Rainbow::XMLData::saveFile(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x48fc0` : `private: void __thiscall Rainbow::DirVisitor::scanDirContent(char const *)`
+- `0x49380` : `public: void __thiscall Rainbow::DirVisitor::scanTree(char const *,int)`
+- `0x49400` : `private: void __thiscall Rainbow::DirVisitor::scanTreeRecursive(char const *)`
+- `0x20c50` : `private: class Rainbow::JSONRead & __thiscall Rainbow::TextDOMTransferReadBase<class Rainbow::JSONRead>::self(void)`
+- `0x43990` : `public: class dynamic_bitset & __thiscall dynamic_bitset::set(unsigned int,bool)`
+- `0x439f0` : `public: class dynamic_bitset & __thiscall dynamic_bitset::set(void)`
+- `0x89e10` : `public: void __thiscall Rainbow::XMLNode::setAttribBool(char const *,bool)`
+- `0x89e40` : `public: void __thiscall Rainbow::XMLNode::setAttribFloat(char const *,float)`
+- `0x89eb0` : `public: void __thiscall Rainbow::XMLNode::setAttribInt64(char const *,__int64)`
+- `0x89f10` : `public: void __thiscall Rainbow::XMLNode::setAttribInt(char const *,int)`
+- `0x89f30` : `public: void __thiscall Rainbow::XMLNode::setAttribStr(char const *,char const *)`
+- `0x49450` : `public: void __thiscall Rainbow::DirVisitor::setRoot(char const *)`
+- `0x43a60` : `private: void __thiscall dynamic_bitset::set_(unsigned int)`
+- `0x43a90` : `private: bool __thiscall dynamic_bitset::set_(unsigned int,bool)`
+- `0x43ad0` : `private: void __thiscall dynamic_bitset::set_block_(unsigned int,unsigned int)`
+- `0x21340` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::set_capacity_not_owned(unsigned int)`
+- `0x21360` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::set_capacity_owned(unsigned int)`
+- `0x43af0` : `public: void __thiscall dynamic_bitset::set_memory_label(struct MemLabelId)`
+- `0x21370` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::set_owns_data(bool)`
+- `0x6f7f0` : `private: static unsigned int __cdecl Rainbow::crc32::shift(unsigned int)`
+- `0x7b2c0` : `public: unsigned int __thiscall core::StringBuilder::size(void)const `
+- `0x2c8f0` : `public: unsigned int __thiscall dynamic_bitset::size(void)const `
+- `0x80210` : `void __cdecl strcpy_truncate(char *,char const *,unsigned int,unsigned int)`
+- `0x2399e4` : `class core::hash_map<char const *,class Rainbow::RuntimeClass const *,struct ConstCharPtrHashFunctor,struct ConstCharPtrEqualTo> `private: static class core::hash_map<char const *,class Rainbow::RuntimeClass const *,struct ConstCharPtrHashFunctor,struct ConstCharPtrEqualTo> & __cdecl Rainbow::RuntimeClassManager::StaticStringToTypeMap(void)'::`2'::stringToTypeMap`
+- `0x70d10` : `public: class Rainbow::FixedString __thiscall Rainbow::FixedString::substr(unsigned int,unsigned int)const `
+- `0x70e60` : `public: class Rainbow::NoFreeFixedString __thiscall Rainbow::NoFreeFixedString::substr(unsigned int,unsigned int)const `
+- `0x93f20` : `struct math::float3x3 __cdecl math::svdInverse(struct math::float3x3 const &)`
+- `0x95a00` : `struct math::_float4 const __cdecl math::svdRotation(struct math::float3x3 const &)`
+- `0x80640` : `public: void __thiscall dynamic_array_detail::dynamic_array_data::swap(struct dynamic_array_detail::dynamic_array_data &)`
+- `0x43b20` : `public: void __thiscall dynamic_bitset::swap(class dynamic_bitset &)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::DirVisitor::syncFile(int)`
+- `0x20b80` : `public: static bool __cdecl Rainbow::DirVisitor::syncFile(struct _iobuf *)`
+- `0x43b60` : `public: bool __thiscall dynamic_bitset::test(unsigned int)const `
+- `0x43bb0` : `private: bool __thiscall dynamic_bitset::test_(unsigned int)const `
+- `0x89f50` : `public: bool __thiscall Rainbow::XMLData::toBuffer(struct dynamic_array<unsigned char,0> &)`
+- `0x733a0` : `public: static void __cdecl Rainbow::Md5Context::toHex(char *,unsigned char const *)`
+- `0x40c80` : `int __cdecl Rainbow::tri_tri_intersect_with_isectline(float * const,float * const,float * const,float * const,float * const,float * const,int *,float * const,float * const)`
+- `0x230384` : `public: static class Rainbow::ColorRGBA32 const Rainbow::ColorRGBA32::white`
+- `0x230334` : `public: static class Rainbow::ColorRGBAf const Rainbow::ColorRGBAf::white`
+- `0x43be0` : `public: static unsigned int __cdecl dynamic_bitset_base::word(unsigned int)`
+- `0x2311c0` : `public: static class Rainbow::Vector2f const Rainbow::Vector2f::xAxis`
+- `0x2311e8` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::xAxis`
+- `0x2311c8` : `public: static class Rainbow::Vector2f const Rainbow::Vector2f::yAxis`
+- `0x2311f4` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::yAxis`
+- `0x230394` : `public: static class Rainbow::ColorRGBA32 const Rainbow::ColorRGBA32::yellow`
+- `0x230374` : `public: static class Rainbow::ColorRGBAf const Rainbow::ColorRGBAf::yellow`
+- `0x231200` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::zAxis`
+- `0x23d5e0` : `public: static class Rainbow::AABB const Rainbow::AABB::zero`
+- `0x23d6e0` : `public: static class Rainbow::BoundsInt const Rainbow::BoundsInt::zero`
+- `0x246d88` : `public: static class Rainbow::Matrix3x3f const Rainbow::Matrix3x3f::zero`
+- `0x246e70` : `public: static class Rainbow::Quaternionf const Rainbow::Quaternionf::zero`
+- `0x240748` : `public: static class Rainbow::SHAHash const Rainbow::SHAHash::zero`
+- `0x23d7d0` : `public: static class Rainbow::Sphere const Rainbow::Sphere::zero`
+- `0x246ea4` : `public: static class Rainbow::Vector2f const Rainbow::Vector2f::zero`
+- `0x246eac` : `public: static class Rainbow::Vector3f const Rainbow::Vector3f::zero`
+- `0x246eb8` : `public: static class Rainbow::Vector4f const Rainbow::Vector4f::zero`
+- `0x81ad0` : `printf_console`

@@ -1,0 +1,4170 @@
+# C++ API Reference: `libiworld.dll`
+
+- **Tổng số Hàm Export**: 3,860
+- **Tổng số Lớp RTTI**: 1,157
+
+## Danh sách Classes (C++ Object Models)
+
+1. `<lambda_001896c5a56dcc43f70f70151874c346>`
+2. `<lambda_0068ba7faf4df363fc6fd5262d764847>`
+3. `<lambda_00c85baa79e42bf23eb82e43660deb8d>`
+4. `<lambda_00e4acc873e644260ce1596e4f3113ff>`
+5. `<lambda_013c5ad7f6c96217470fb90218fc127f>`
+6. `<lambda_01a9496e002ad56e4156609b86dbaf01>`
+7. `<lambda_01b7df6124015b906a78177569177b70>`
+8. `<lambda_02b8e5910bf02e59b33683269a017c8a>`
+9. `<lambda_03b6c7312ab51068d40b9ca09e3f68d2>`
+10. `<lambda_03be5bf6a53322c0e5bf192eb36ac3ca>`
+11. `<lambda_04d3e61354a517ac4c1369d0b99f34e1>`
+12. `<lambda_051434973f4ce00900e8140b0e3daced>`
+13. `<lambda_059b21b087c887735fae7c42271d657d>`
+14. `<lambda_065762157d168fc960db81226e4f6d09>`
+15. `<lambda_068fa7800e2ee8c0a9240fb252639a0b>`
+16. `<lambda_0696fe83a5197bab360c211b962a8a67>`
+17. `<lambda_06fb1b8e9409976bceb05edee46c1e0d>`
+18. `<lambda_074f7b9fed98a913896f85730b5cd3c9>`
+19. `<lambda_07e85cd1811b0a2582eebd57c413e233>`
+20. `<lambda_08ece49addfd1ff9f0f5cf51c41111ac>`
+21. `<lambda_09a7f08a9b7f7c74254624109b1a4ea5>`
+22. `<lambda_0a815e9d691cf6bbf51258f8452799dd>`
+23. `<lambda_0adf04b3635bd9926c065143dfc58244>`
+24. `<lambda_0b4f19ae4cae8c5c278e43b3e8e3735d>`
+25. `<lambda_0c06b49573ae809027e5a0445dc81b21>`
+26. `<lambda_0c55e5127f542f4f43a33781cd27d88f>`
+27. `<lambda_0d2ca7507c60eeb73af2846a6d526492>`
+28. `<lambda_0d2f8958c24162b46b5607eaeaaeb491>`
+29. `<lambda_0d7d41f13c46f260e13fd6a5f3d87c00>`
+30. `<lambda_0daac789ffd005c39fbfd7c4d5c43852>`
+31. `<lambda_0e541ffd87bb27704c62eade37d8e0cb>`
+32. `<lambda_0e723108132325af757ce7fedbb666fa>`
+33. `<lambda_0f2a2312c34d9752ae354fb4f0e0d139>`
+34. `<lambda_1006d66c212cf4338db1c3db3a98866a>`
+35. `<lambda_113959b61640bbf769ec73987a779452>`
+36. `<lambda_11a3007686fdbce2f4e94bf39367f728>`
+37. `<lambda_11e192eac5e76c52b1404e621cc9a8ae>`
+38. `<lambda_12574c3cb05ff5c0945b8a6a2159528a>`
+39. `<lambda_13df6b1edaed328ec7f2c76ac60e2c23>`
+40. `<lambda_14f574fc29bfa236393739fcec7febe0>`
+41. `<lambda_15cb39a0eb47b9e102b827229b77d1b2>`
+42. `<lambda_15f12cdd82960161290b47f35eb609f9>`
+43. `<lambda_16373710734a784921d21a861e2d2329>`
+44. `<lambda_16df172c3207e1b57a4cb60e2b7fef6a>`
+45. `<lambda_17036e9834945b355e6d54fdad21d134>`
+46. `<lambda_171445a1e59d615c366c392b0070dae1>`
+47. `<lambda_1816b45335e33c983c3e78d5811ff37c>`
+48. `<lambda_18274532971f31cb37976c04a2be7a00>`
+49. `<lambda_18689ffe93489587ceea95605d5007a2>`
+50. `<lambda_191410d4e17df001b27a4a704fcb3f47>`
+51. `<lambda_1960d0904a463e6d51410c203546b0f1>`
+52. `<lambda_197fdf96488d412d80885cd844021f61>`
+53. `<lambda_19c11a80f0d466122e05c1e530cee103>`
+54. `<lambda_19db404d7176daed0f3c1d46c9e61b66>`
+55. `<lambda_1a0cc6259118aa6b325ba8ce4cee2ef3>`
+56. `<lambda_1a20633c9dfab7c3a256bb73072042e4>`
+57. `<lambda_1a3c1923b18dc77fdde0f464efe61c49>`
+58. `<lambda_1abd8c40c79b6080b4e560da0a24ec01>`
+59. `<lambda_1b294762a0d2bca4673197c283d6d583>`
+60. `<lambda_1b5ff9552b38a809f8e33376ccc9bc69>`
+61. `<lambda_1bb220459f05657f84369b89c70abb6c>`
+62. `<lambda_1c3a426727263f64502d5d1c01d33332>`
+63. `<lambda_1c8d164277cf234715f4e27357b73f60>`
+64. `<lambda_1d21c0febbdbf719a58c05c7bd5b4134>`
+65. `<lambda_1d3690056811ed5a353bd430940c34fb>`
+66. `<lambda_1df9b5b273e627adefea11b6e9dff0ef>`
+67. `<lambda_1e86d948a6396de2bb828e324f48add5>`
+68. `<lambda_1eb196f846678ed95f64279ccb6de745>`
+69. `<lambda_1ed423adca2921e7eae900b8cf58d26c>`
+70. `<lambda_1ed81d9ea2420be08f6e43aac020866c>`
+71. `<lambda_1f67979acaed78f788144b048c51e4ea>`
+72. `<lambda_1f74227621bc5f9dd8a57c9ff5e8aa57>`
+73. `<lambda_1fc8ca2406345688b84dd6073e60cc50>`
+74. `<lambda_1ff71ecff3c0bf6c293920e18fd24143>`
+75. `<lambda_200db7334d3ba4040fed21e5d0b4b082>`
+76. `<lambda_21555933a5cee16a0993714d869eab4b>`
+77. `<lambda_2181635a5ba6ded50ffe304887714181>`
+78. `<lambda_21a68dbf9d6142de3ff2fcb92a20040c>`
+79. `<lambda_220770afd1cdef95181efe0dbc9d24fb>`
+80. `<lambda_2217720c5be0c8de61dd6d3877d65302>`
+81. `<lambda_22d948fa74af57f7533b2ba9c646dff2>`
+82. `<lambda_24c8176091a04139c66bc81fe0223ab8>`
+83. `<lambda_257fcd5316e1bc8282b31e0d51f95715>`
+84. `<lambda_25e5736ebd8a049f38160cffad8336f7>`
+85. `<lambda_26e8d57793dc3886b2daf0190f4384fc>`
+86. `<lambda_27d059f493d66a3c5299180d3006b59e>`
+87. `<lambda_28183e1225ae054c8054b189a2cc00b3>`
+88. `<lambda_28a5035f6e82a238296fdec15aafeefe>`
+89. `<lambda_28f6befc13dd28428b231c44b45710e0>`
+90. `<lambda_2907ff557b6f2e22a3c6365399a5936f>`
+91. `<lambda_29e9449a27a5c43ae993b602015dc906>`
+92. `<lambda_2a1a0a5380bd2521b1f27b1ba1fdd779>`
+93. `<lambda_2ac4027efbf892aec86ff28d5c3d59d0>`
+94. `<lambda_2acda8811c6da7de968ee58d9f55065a>`
+95. `<lambda_2ba1cded95a2d15f53ba8544023c3a81>`
+96. `<lambda_2c0832c9866ad9040cf1f34a3e91f548>`
+97. `<lambda_2c982f1d28c7e9a2d99734f06d56d535>`
+98. `<lambda_2d391aab38e1c32198b613bb335018f5>`
+99. `<lambda_2d54d91766c4486c5a2d293429c821b1>`
+100. `<lambda_2efcbeb4a38cc3fabdbdf8785531d056>`
+101. `<lambda_2f376b720199112d65e6ea551962fd41>`
+102. `<lambda_2f4a5dac236b960673779c5146692db1>`
+103. `<lambda_2fc21ce12dcf37f47a5319915e3df662>`
+104. `<lambda_2fc280e54992e7178b563c21c73ba4bf>`
+105. `<lambda_304a8f3ea4ab1dd56c5b290a074e2d8d>`
+106. `<lambda_3101e4684adfd3f176362346c7fc9ac4>`
+107. `<lambda_313ddeb182cd61112e7f06cd994aa2b5>`
+108. `<lambda_3250bdeff60e733261f9ae3185fd47d1>`
+109. `<lambda_32cba9d620b7f89b6e9034144c4ce43a>`
+110. `<lambda_32dc975e89d778158cc0fb4b9ab31bcc>`
+111. `<lambda_331432d498f2db756abef19e42298103>`
+112. `<lambda_33a1882f7e98e0c88180ad785755924b>`
+113. `<lambda_33d541601609e01987ad8e90a24730ce>`
+114. `<lambda_33f6921450727480885aa661f805b758>`
+115. `<lambda_34ce81d04ca0bd880340d130ab64e6b5>`
+116. `<lambda_353a5cef6a037788618b5e6fe4aca6ef>`
+117. `<lambda_35448cfa5f5c8a165c98bd015dcf8ef3>`
+118. `<lambda_35cc6f6d1ef2b0419548d5461b727ef1>`
+119. `<lambda_35cdb90f3cd819a07c9e3cb7c523122e>`
+120. `<lambda_35de033218b37622024c9f0f5ffbdbd2>`
+121. `<lambda_3606f717c0deb65fa7d1d9064ef56ea7>`
+122. `<lambda_380e83bd81bd41735840b925b9fa8746>`
+123. `<lambda_387ab7004c6eb0028c6871fe6e5a3352>`
+124. `<lambda_38c0a3f8376168801f9fe39982628524>`
+125. `<lambda_390e2d6ba019bbeada8743fd84b6d8af>`
+126. `<lambda_3ab6d3b9eac1f0e80eb4133344bffd81>`
+127. `<lambda_3b0992eeaebdf505397b76ec8507faed>`
+128. `<lambda_3b19c7f29e2add27bc11df3f2200d93e>`
+129. `<lambda_3be63b891c313223040520810f40cda2>`
+130. `<lambda_3c2bb3a3d76b5f20453f5d10e3083734>`
+131. `<lambda_3d2f2f7b316d0ee85440757c2a902c89>`
+132. `<lambda_3d3275d202aab171a7d5e830c262a2b0>`
+133. `<lambda_3d6e9c1a44cae978d38e18adc39899f9>`
+134. `<lambda_3dffc79bb3e059f338330953fc3911cb>`
+135. `<lambda_3e6425e15521a3375daf73f9e6342219>`
+136. `<lambda_3fab21dee4cbe2b165484f1800eabe7f>`
+137. `<lambda_408888839d86b43a3aaf3d08fc5f1ce2>`
+138. `<lambda_408ddd9ce1291fd0206cf93a37f2c5d9>`
+139. `<lambda_40c195b250d784bfc1419d062dc4fa98>`
+140. `<lambda_40dbb90175ac185a92daf08c0a11aa1f>`
+141. `<lambda_40e10d90bb68c1ee7b6c90deb4c72103>`
+142. `<lambda_40f2d6e9002ee3b686d46aecc8291c0e>`
+143. `<lambda_415c61cae0000eb7200fe0cafe756323>`
+144. `<lambda_419bdca0a4ce1fdad685adfeb241aea5>`
+145. `<lambda_41e23c6575f34d093f18f01c0be80c4b>`
+146. `<lambda_42497953a24ef2c97057b9593343c9bd>`
+147. `<lambda_424ba10dcc7c50edf7aad9aaafd2dd42>`
+148. `<lambda_42962a3c507a43fcd4e3e0f51852db24>`
+149. `<lambda_42c11946bc26f0f327ac30fe01195e61>`
+150. `<lambda_42ebf327e0e8256e6e65b54dae464462>`
+151. `<lambda_439e521a6b9fe950c8aa3720f14e25fb>`
+152. `<lambda_43dbde5ae982cfad6aa1c83ae38f75d5>`
+153. `<lambda_445e9cdb68cf72eb63abbb4f2fc69b3f>`
+154. `<lambda_4471f41b0684079d6d13b89052b95bac>`
+155. `<lambda_44c16d00253573d320e3da06452d39f5>`
+156. `<lambda_47c3894afa8f39b9089d6809f8578727>`
+157. `<lambda_48190089dd7043e3da2c7ba0e17efb2e>`
+158. `<lambda_48720d2363770cc89fe3d4077403704a>`
+159. `<lambda_488762ba686403765c8616cead3d836a>`
+160. `<lambda_488fc0660e5e398fbde5a7c047742292>`
+161. `<lambda_49a03f52fb3e9485dd883f77d07d1465>`
+162. `<lambda_49cb90c5fab4c96171ed2b40fd56ee66>`
+163. `<lambda_49deaf3c4f293976e1989a793e6e70a8>`
+164. `<lambda_49e6b815bd5a1ee7b16b5802ea07ea35>`
+165. `<lambda_4a4513b3faeb5cd2a4a89fa9f19da453>`
+166. `<lambda_4ac4c7985e55cd2b272f33f32cce2b33>`
+167. `<lambda_4ae9550ba116fcff7ac78f9e7cc8d724>`
+168. `<lambda_4c3ccb1d766c7e2b98d0f01b0da6ea1a>`
+169. `<lambda_4d5e37affdf5b77ec40771267bd6dd8a>`
+170. `<lambda_4e15cbc5f0ab1ce201f6f8ceb0fd64d0>`
+171. `<lambda_4e917e8e42a492bca4ab198081658898>`
+172. `<lambda_4ed0b1bb68a1e3566e57e563a8809d0c>`
+173. `<lambda_4ee002dd8971d18dc53a43970834f6f6>`
+174. `<lambda_4f71798f574274af604109bbd7370115>`
+175. `<lambda_509d64aa9eab6304616a4b09ed39b386>`
+176. `<lambda_50e60c779c26297f8c3c300151c13c50>`
+177. `<lambda_527afba56e7c9b1f755187aa86a3b503>`
+178. `<lambda_52961f2a3b05b183ece4e5845174ad42>`
+179. `<lambda_5329a5bb33d882a7aaff402cba5a82cc>`
+180. `<lambda_535960034f63556ab57d22d00b3986c0>`
+181. `<lambda_539ad57d942f4e22d305345a3bc0bb91>`
+182. `<lambda_53a576043279f8cae2d08fb4178d6ea4>`
+183. `<lambda_5430c3b9e5e9c69172f040f2774f22fd>`
+184. `<lambda_54bd384c3cd09cb1952cb3b67131349f>`
+185. `<lambda_54ee5eceddcb82691388aaeb9a325e14>`
+186. `<lambda_5550c97febc0cc0c623615e7caabe0ce>`
+187. `<lambda_565dce9218a1368d65f73ce954aee24d>`
+188. `<lambda_56cea611c18c765cb156367811e4dd69>`
+189. `<lambda_58dd28a9759f7126d4b77eb2185992e1>`
+190. `<lambda_5a56e8b601d6dbd2c0c43f9f96580a53>`
+191. `<lambda_5a9c55bd5bbf28a5e51031e3f8c68010>`
+192. `<lambda_5ba2505fe3056a46e37bc86e89ef77c2>`
+193. `<lambda_5bffabe2cbdba38c62b494f1da445a57>`
+194. `<lambda_5c6f0362b5ebf4e9b7d65d9d12303a9c>`
+195. `<lambda_5c87f8f3575d22cf75a8cbb38ca80a90>`
+196. `<lambda_5c8c980b69930202aa6202ea8b9db344>`
+197. `<lambda_5ce209b57fda93e50bdb3186647e02f3>`
+198. `<lambda_5d568ec168899de82f4183f5a7d3bfb7>`
+199. `<lambda_5d740694add2767c1f0ff0a05ad906be>`
+200. `<lambda_5d7eb78e6a597b88a00fbbd348be69d8>`
+201. `<lambda_5dc1d80f39d23c67c5c8ba944075439c>`
+202. `<lambda_5deea72ca57f575477d0bea7d3a9faa6>`
+203. `<lambda_5e1cb3cd804882427b9e39a746626740>`
+204. `<lambda_5f046d4eca5b20e6dd28d13b1f128eb8>`
+205. `<lambda_5f1a7a98115fe8c79d5f603222f9546b>`
+206. `<lambda_5fc4ef4869e38b3edc8cf3634ef7832e>`
+207. `<lambda_602a7bc10720371dfef3ed2d4ed2fe3c>`
+208. `<lambda_60434222f73623fea3dbef395e426f5d>`
+209. `<lambda_60584bac55d7e0f8d6703e057a79002e>`
+210. `<lambda_614fc9d9b198ead8036bb91bbdaf7ecb>`
+211. `<lambda_615f0d1f722067b1bb9d9a4ec1785759>`
+212. `<lambda_62387c83a06f605bb04dab4e3fe774c1>`
+213. `<lambda_626d002717fce070ffbc2ade2ebd9dcc>`
+214. `<lambda_62a9183c78125d3c2717a82811c84269>`
+215. `<lambda_62eed2ebcf24d124305ef619cb62b9a9>`
+216. `<lambda_6388b87c52ffbb4391d0860db3497af6>`
+217. `<lambda_64359eef1326959e00a195888f0697de>`
+218. `<lambda_662c809179f8823dcc72437410601d6a>`
+219. `<lambda_665dc52eafc728ccdbaed4784f69773c>`
+220. `<lambda_668931f1c44a1760cc669b36bb9173c7>`
+221. `<lambda_6750405eb01fd016777eb475bed3a50b>`
+222. `<lambda_6804986c039e673ba9b086f55c15dfd0>`
+223. `<lambda_6806c73a75338bba55ff0cd0a0aff842>`
+224. `<lambda_68613d2d9d08469608e7bc79fec85df8>`
+225. `<lambda_6924b592a10122d00549ee9cc440ea63>`
+226. `<lambda_69395a1d64b70908042ca9bf4246eac0>`
+227. `<lambda_695b4978405790f5d9e7c33a17915552>`
+228. `<lambda_6984c7c3e2807d5bb47038a050c7aaf9>`
+229. `<lambda_6a6f1b09a06aee4c9ee1aa6e0f8ccb22>`
+230. `<lambda_6a973515fce4192064d19a5491e601e2>`
+231. `<lambda_6b2572c37c9db41f525abbda3943678a>`
+232. `<lambda_6b63364055e68b1682f5e061f666bd0f>`
+233. `<lambda_6bdf0283ee4f46227c37c0dec0fec08b>`
+234. `<lambda_6c14109e11243e8017bec19da7e4171c>`
+235. `<lambda_6c4f6060bcad72c30106012329143d21>`
+236. `<lambda_6d8932414e86cc1936426b3949b0c555>`
+237. `<lambda_6e5c5c91d2c0dd21e8401c482a2bc446>`
+238. `<lambda_6eddb95c7eea0eb16692b419f48ff30c>`
+239. `<lambda_6f0455224488c3abb0abc3380882d6f4>`
+240. `<lambda_6f5a38a36529b218619e922461a58581>`
+241. `<lambda_6fba77be9b51933e1b77e8000e2cc788>`
+242. `<lambda_6ff9cb029f84df4076df32fea99631f9>`
+243. `<lambda_702576134cb1ced88c83e32a9016fe7a>`
+244. `<lambda_718c7bf6f80bef80ddf1cc6af389e2c3>`
+245. `<lambda_736403f9ad0f43c38e929c6ec01e0f75>`
+246. `<lambda_73fbea180cddcd6d5aaa71adef131edd>`
+247. `<lambda_744d6848aadb81544929f709831fa479>`
+248. `<lambda_749b3c6557c03ba67c5c3ce75a3b9829>`
+249. `<lambda_75b1162f5483b2238003d4e98feefce6>`
+250. `<lambda_77b4077593e1b61957130b90d67208e6>`
+251. `<lambda_781a0993ead360fbf6bcc212a059cf6e>`
+252. `<lambda_785d0349cc90051a2c12855aa68d8617>`
+253. `<lambda_788dc4fa87b10bb13ac1d9f8a9c97b65>`
+254. `<lambda_78e2da4ccd30f2c2061b79b80f40be7c>`
+255. `<lambda_7909a14d33a2c4bc67f5f51219c267cd>`
+256. `<lambda_790fa8074fd10b2603f255bdef63c594>`
+257. `<lambda_7a9bc06da759dd58cd04afeec282dba5>`
+258. `<lambda_7b0fd32a33e261cf685a4b8483d9d3c6>`
+259. `<lambda_7c0bee41528834e8a099627855b9f6bf>`
+260. `<lambda_7c611e163a8dd6cff3ccaf0bc2e3e942>`
+261. `<lambda_7c80eec9bdadd757e169093a9cb2862e>`
+262. `<lambda_7ccd1907581fecddf8220da3e42f052a>`
+263. `<lambda_7d80167caf4a939766953ec1e93cbc6a>`
+264. `<lambda_7ddb7f9afc41049db537d7d0469913ac>`
+265. `<lambda_7e6eba5e8c358ab13f8972ef9da093de>`
+266. `<lambda_7ebc28a0480c154667723dd7435cf7e7>`
+267. `<lambda_7ef2923deaf4ad495fe54545344131ab>`
+268. `<lambda_7f6e2467330bdbd13b464817b077b606>`
+269. `<lambda_7f8209bfac3cac6a3793c2c402964354>`
+270. `<lambda_7f9f7d449a42982ebab64f3ef6e5ff93>`
+271. `<lambda_7fa21193edc6aba4256a1b659e678787>`
+272. `<lambda_7fe554b23c16f6467536b18634037f74>`
+273. `<lambda_80bc6771ea686f9e3e1b586e858b290c>`
+274. `<lambda_80ff99ac99aa56e4f0bff1e27da25810>`
+275. `<lambda_81b1292aa0686e4365ab44ceacdb2150>`
+276. `<lambda_81ee44cce413199e274880f05dbad75a>`
+277. `<lambda_828a73b614af267d2e6ae37360a4a448>`
+278. `<lambda_82b9727daea1d858ab1a33f2fe7d7462>`
+279. `<lambda_8305914b43fe59cc43f3aa65fbc0ca29>`
+280. `<lambda_83ad19eeb2c55bc2faa3bd9248eea625>`
+281. `<lambda_85d451aeb9887f7bef90d0c17182d3cd>`
+282. `<lambda_8765a5fa740ad3d4720f3c2906899cd6>`
+283. `<lambda_8769a4fa2da85a13986514b3520c9224>`
+284. `<lambda_87ff8397f323dad954e57bf23f360f35>`
+285. `<lambda_882625a62a199da79e88d3b12e97f96d>`
+286. `<lambda_887b7e32258b3d525863247e1d4ac27b>`
+287. `<lambda_888179dee71e9c9116123fa4247b7752>`
+288. `<lambda_898b5bb1c4a32017c43700755a1cccee>`
+289. `<lambda_89aa27ca87d5842ff9d8aab0b7a52bd8>`
+290. `<lambda_89c32fa6cf308c29be3b58b5a01d98fa>`
+291. `<lambda_8b2e61e565711dccfd26d3d6477849ef>`
+292. `<lambda_8b336330190f4aadbcf85bb66a8b6849>`
+293. `<lambda_8b68fbb10a13bbb92514ffd7d6a0385a>`
+294. `<lambda_8c726702371aa1f9f24740b370d0b4a7>`
+295. `<lambda_8c9630c46d8466fb328b22fbd784db5f>`
+296. `<lambda_8cf12232008bbf31c28d2df26d9dd389>`
+297. `<lambda_8dd4bf6ee3ce8e5d2b8497acd77053dd>`
+298. `<lambda_8df0876620c2413f24d1184dfa1f7da8>`
+299. `<lambda_8e1ab41072b4fa64658f42371f0beddc>`
+300. `<lambda_8e81fba2612697eef15f3aa2a8bbb42c>`
+
+## Danh sách Hàm C++ Chi Tiết
+
+- `0xe61d0` : `public: __thiscall Rainbow::Singleton<class ChangeModelMgr>::Singleton<class ChangeModelMgr>(void)`
+- `0xf9e60` : `public: __thiscall Rainbow::Singleton<class FunnyCore>::Singleton<class FunnyCore>(void)`
+- `0xc8230` : `public: __thiscall Rainbow::Singleton<class Mini::MmkvMgr>::Singleton<class Mini::MmkvMgr>(void)`
+- `0xf9e70` : `public: __thiscall Rainbow::Singleton<class SnapshotForPC>::Singleton<class SnapshotForPC>(void)`
+- `0xf9e80` : `public: __thiscall Rainbow::Singleton<class StringLoaderManager>::Singleton<class StringLoaderManager>(void)`
+- `0x2a7670` : `protected: __thiscall AbsCsv::AbsCsv(void)`
+- `0xc88a0` : `public: __thiscall AbsCsv::AbsCsv(class AbsCsv const &)`
+- `0xc88c0` : `public: __thiscall AccountData::AccountData(class AccountData const &)`
+- `0x6facf0` : `public: __thiscall AccountData::AccountData(void)`
+- `0xc8c90` : `public: __thiscall AccountFBData::AccountFBData(class AccountFBData const &)`
+- `0x7b9bf0` : `public: __thiscall AccountFBData::AccountFBData(void)`
+- `0xc8ed0` : `public: __thiscall AchievementManager::AchievementManager(class AchievementManager const &)`
+- `0x73e440` : `public: __thiscall AchievementManager::AchievementManager(void)`
+- `0x13d440` : `public: __thiscall MINIW::AdventureReportMgr::AdventureReportMgr(class MINIW::AdventureReportMgr const &)`
+- `0x796ef0` : `public: __thiscall MINIW::AdventureReportMgr::AdventureReportMgr(void)`
+- `0xc9120` : `public: __thiscall cocos2d::AnimationFrameData::AnimationFrameData(struct cocos2d::AnimationFrameData &&)`
+- `0xc9120` : `public: __thiscall cocos2d::AnimationFrameData::AnimationFrameData(struct cocos2d::AnimationFrameData const &)`
+- `0xc9160` : `public: __thiscall cocos2d::AnimationFrameData::AnimationFrameData(void)`
+- `0x1423f0` : `public: __thiscall MINIW::AppUpdateScene::AppUpdateScene(void)`
+- `0xc91b0` : `public: __thiscall ArchiveManager::ArchiveManager(class ArchiveManager const &)`
+- `0x56fb70` : `public: __thiscall ArchiveManager::ArchiveManager(void)`
+- `0x74e6d0` : `private: __thiscall ArchiveTempMgr::ArchiveTempMgr(void)`
+- `0xc9390` : `public: __thiscall ArchiveTempMgr::ArchiveTempMgr(class ArchiveTempMgr const &)`
+- `0x2a8650` : `public: __thiscall AvatarDefCsv::AvatarDefCsv(class AvatarDefCsv const &)`
+- `0x2a8730` : `public: __thiscall AvatarDefCsv::AvatarDefCsv(void)`
+- `0x2aa0b0` : `public: __thiscall BlockDefCsv::BlockDefCsv(class BlockDefCsv const &)`
+- `0x2aa1d0` : `public: __thiscall BlockDefCsv::BlockDefCsv(void)`
+- `0x2acd40` : `public: __thiscall BotConversationsDefCsv::BotConversationsDefCsv(class BotConversationsDefCsv const &)`
+- `0x2ace20` : `public: __thiscall BotConversationsDefCsv::BotConversationsDefCsv(void)`
+- `0xe61e0` : `public: __thiscall ChangeModelMgr::ChangeModelMgr(class ChangeModelMgr const &)`
+- `0x517fe0` : `public: __thiscall ChangeModelMgr::ChangeModelMgr(void)`
+- `0xc9450` : `public: __thiscall ClientAccountMgr::ClientAccountMgr(class ClientAccountMgr const &)`
+- `0x70a860` : `public: __thiscall ClientAccountMgr::ClientAccountMgr(void)`
+- `0xc9570` : `public: __thiscall MINIW::ClientApp::ClientApp(class MINIW::ClientApp const &)`
+- `0xc9600` : `public: __thiscall MINIW::ClientApp::ClientApp(void)`
+- `0xc9780` : `public: __thiscall ClientBuddyMgr::ClientBuddyMgr(class ClientBuddyMgr const &)`
+- `0x7144e0` : `public: __thiscall ClientBuddyMgr::ClientBuddyMgr(void)`
+- `0xc9b50` : `public: __thiscall ClientCSOWorld::ClientCSOWorld(class ClientCSOWorld const &)`
+- `0x7544c0` : `public: __thiscall ClientCSOWorld::ClientCSOWorld(void)`
+- `0x4903f0` : `public: __thiscall ClientDnsMgr::ClientDnsMgr(class ClientDnsMgr const &)`
+- `0x720470` : `public: __thiscall ClientDnsMgr::ClientDnsMgr(void)`
+- `0xc9d60` : `public: __thiscall ClientGameManager::ClientGameManager(class ClientGameManager const &)`
+- `0x16ccb0` : `public: __thiscall ClientGameManager::ClientGameManager(void)`
+- `0xc9eb0` : `public: __thiscall MINIW::ClientInfo::ClientInfo(class MINIW::ClientInfo const &)`
+- `0xf2830` : `public: __thiscall MINIW::ClientInfo::ClientInfo(enum PLATFORM_TYPE)`
+- `0xfa300` : `public: __thiscall MINIW::ClientInfo_PC::ClientInfo_PC(void)`
+- `0xca180` : `public: __thiscall MINIW::ClientLogin::ClientLogin(class MINIW::ClientLogin const &)`
+- `0xca190` : `public: __thiscall MINIW::ClientLogin::ClientLogin(void)`
+- `0xca1a0` : `public: __thiscall MINIW::ClientManager::ClientManager(void)`
+- `0xca1a0` : `public: __thiscall ClientUrl::ClientUrl(void)`
+- `0xdca80` : `public: __thiscall MINIW::ClientVersion::ClientVersion(class MINIW::ClientVersion const &)`
+- `0xdcaa0` : `public: __thiscall MINIW::ClientVersion::ClientVersion(void)`
+- `0xca1b0` : `public: __thiscall CustomPicMgr::CustomPicMgr(class CustomPicMgr const &)`
+- `0x5e77c0` : `public: __thiscall CustomPicMgr::CustomPicMgr(void)`
+- `0xca1a0` : `public: __thiscall CustommodelParse::CustommodelParse(void)`
+- `0x53d7f0` : `public: __thiscall cocos2d::DataVisitor::DataVisitor(class cocos2d::DataVisitor const &)`
+- `0x53d800` : `public: __thiscall cocos2d::DataVisitor::DataVisitor(void)`
+- `0xca450` : `public: __thiscall DefaultCsvLoadConfig::DefaultCsvLoadConfig(class DefaultCsvLoadConfig const &)`
+- `0xca460` : `public: __thiscall DefaultCsvLoadConfig::DefaultCsvLoadConfig(void)`
+- `0x5e1850` : `private: __thiscall Dev3DUIManager::Dev3DUIManager(void)`
+- `0xca470` : `public: __thiscall Dev3DUIManager::Dev3DUIManager(class Dev3DUIManager const &)`
+- `0xe6390` : `public: __thiscall DeveloperSystem::DeveloperSystem(class DeveloperSystem const &)`
+- `0x4f2ac0` : `public: __thiscall DeveloperSystem::DeveloperSystem(class PluginManager *)`
+- `0xca4f0` : `public: __thiscall EditorLang::EditorLang(class EditorLang const &)`
+- `0x53b800` : `public: __thiscall EditorLang::EditorLang(void)`
+- `0xca570` : `public: __thiscall FileAndDirInfo::FileAndDirInfo(class FileAndDirInfo const &)`
+- `0x6debe0` : `public: __thiscall FileAndDirInfo::FileAndDirInfo(void)`
+- `0x608bf0` : `public: __thiscall FmodSoundSystemEX::FmodSoundSystemEX(void)`
+- `0xca6a0` : `public: __thiscall cocos2d::FontDefinition::FontDefinition(struct cocos2d::FontDefinition &&)`
+- `0xca7a0` : `public: __thiscall cocos2d::FontDefinition::FontDefinition(struct cocos2d::FontDefinition const &)`
+- `0xca870` : `public: __thiscall cocos2d::FontDefinition::FontDefinition(void)`
+- `0xca950` : `public: __thiscall cocos2d::FontShadow::FontShadow(struct cocos2d::FontShadow &&)`
+- `0xca950` : `public: __thiscall cocos2d::FontShadow::FontShadow(struct cocos2d::FontShadow const &)`
+- `0xca980` : `public: __thiscall cocos2d::FontShadow::FontShadow(void)`
+- `0xca9a0` : `public: __thiscall cocos2d::FontStroke::FontStroke(void)`
+- `0x297ea0` : `public: __thiscall FunnyCore::FunnyCore(void)`
+- `0xe63c0` : `public: __thiscall GameLanguageCsv::GameLanguageCsv(class GameLanguageCsv const &)`
+- `0x319ea0` : `public: __thiscall GameLanguageCsv::GameLanguageCsv(void)`
+- `0x4e7fe0` : `public: __thiscall GameServerConfig::GameServerConfig(class GameServerConfig &&)`
+- `0x4e8100` : `public: __thiscall GameServerConfig::GameServerConfig(class GameServerConfig const &)`
+- `0xe63e0` : `public: __thiscall GameZoneCsv::GameZoneCsv(class GameZoneCsv const &)`
+- `0x31bc20` : `public: __thiscall GameZoneCsv::GameZoneCsv(void)`
+- `0xca9d0` : `public: __thiscall GlobalSetParse::GlobalSetParse(class GlobalSetParse const &)`
+- `0x6ded50` : `public: __thiscall GlobalSetParse::GlobalSetParse(void)`
+- `0x31ddb0` : `public: __thiscall HomeCsvManagerProxy::HomeCsvManagerProxy(class HomeCsvManagerProxy const &)`
+- `0x31ddc0` : `public: __thiscall HomeCsvManagerProxy::HomeCsvManagerProxy(void)`
+- `0x13d5a0` : `public: __thiscall MINIW::HotFixTipsConfig::HotFixTipsConfig(class MINIW::HotFixTipsConfig const &)`
+- `0x49da90` : `public: __thiscall MINIW::HotFixTipsConfig::HotFixTipsConfig(void)`
+- `0xcaa40` : `public: __thiscall MINIW::HotfixPkgLoader::HotfixPkgLoader(class MINIW::HotfixPkgLoader const &)`
+- `0x4a23b0` : `public: __thiscall MINIW::HotfixPkgLoader::HotfixPkgLoader(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int,struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0>)`
+- `0x14d180` : `public: __thiscall MINIW::HotfixProcessMgr::HotfixProcessMgr(class MINIW::HotfixProcessMgr &&)`
+- `0x14d1f0` : `public: __thiscall MINIW::HotfixProcessMgr::HotfixProcessMgr(class MINIW::HotfixProcessMgr const &)`
+- `0x14d350` : `public: __thiscall MINIW::HotfixProcessMgr::HotfixProcessMgr(void)`
+- `0x46a0f0` : `public: __thiscall Mini::HttpReportMgr::HttpReportMgr(class MINIW::ScriptVM *)`
+- `0x46a590` : `public: __thiscall Mini::HttpReportMgr::HttpReportMgr(void)`
+- `0x103570` : `public: __thiscall ItemDefCsv::ItemDefCsv(class ItemDefCsv const &)`
+- `0x31f290` : `public: __thiscall ItemDefCsv::ItemDefCsv(void)`
+- `0x127a20` : `public: __thiscall KeywordFilterMgr::KeywordFilterMgr(class KeywordFilterMgr const &)`
+- `0x7e6170` : `public: __thiscall KeywordFilterMgr::KeywordFilterMgr(void)`
+- `0x144b40` : `public: __thiscall MINIW::LaunchScene::LaunchScene(void)`
+- `0xca1a0` : `public: __thiscall MapConvertMgr::MapConvertMgr(void)`
+- `0x696fe0` : `public: __thiscall MapEditManager::MapEditManager(void)`
+- `0xcac60` : `private: __thiscall MidiFileInfo::MidiFileInfo(void)`
+- `0xcac90` : `public: __thiscall MidiFileInfo::MidiFileInfo(class MidiFileInfo const &)`
+- `0xe66d0` : `public: __thiscall MiniBuzzSytem::MiniBuzzSytem(class MiniBuzzSytem const &)`
+- `0x392cd0` : `public: __thiscall MiniBuzzSytem::MiniBuzzSytem(class PluginManager *)`
+- `0xe6700` : `public: __thiscall MiniReportSystem::MiniReportSystem(class MiniReportSystem const &)`
+- `0x79f3a0` : `public: __thiscall MiniReportSystem::MiniReportSystem(class PluginManager *)`
+- `0xcad00` : `public: __thiscall MiniWorldPreferences::MiniWorldPreferences(class MiniWorldPreferences const &)`
+- `0xee340` : `public: __thiscall MiniWorldPreferences::MiniWorldPreferences(void)`
+- `0xcad40` : `public: __thiscall Mini::MmkvMgr::MmkvMgr(class Mini::MmkvMgr const &)`
+- `0x79fcd0` : `public: __thiscall Mini::MmkvMgr::MmkvMgr(char const *)`
+- `0xcad50` : `public: __thiscall ModEditorManager::ModEditorManager(class ModEditorManager const &)`
+- `0x59dff0` : `public: __thiscall ModEditorManager::ModEditorManager(void)`
+- `0xcaf50` : `public: __thiscall MINIW::ModFileManager::ModFileManager(class MINIW::ModFileManager const &)`
+- `0x5da7f0` : `public: __thiscall MINIW::ModFileManager::ModFileManager(void)`
+- `0x5aefe0` : `public: __thiscall ModManager::ModManager(void)`
+- `0x152840` : `public: __thiscall MonsterCsv::MonsterCsv(class MonsterCsv const &)`
+- `0x3267a0` : `public: __thiscall MonsterCsv::MonsterCsv(void)`
+- `0x830530` : `private: __thiscall MultiLocalMgr::MultiLocalMgr(void)`
+- `0xcb060` : `public: __thiscall MultiLocalMgr::MultiLocalMgr(class MultiLocalMgr const &)`
+- `0x6f4b90` : `private: __thiscall MusicItemLogical::MusicItemLogical(void)`
+- `0xcb130` : `public: __thiscall MusicItemLogical::MusicItemLogical(class MusicItemLogical const &)`
+- `0xe6730` : `public: __thiscall NewYearSystem::NewYearSystem(class NewYearSystem const &)`
+- `0x6fa0e0` : `public: __thiscall NewYearSystem::NewYearSystem(class PluginManager *)`
+- `0x7c1420` : `public: __thiscall OWorldList::OWorldList(void)`
+- `0xca1a0` : `public: __thiscall OWorldUtils::OWorldUtils(void)`
+- `0xcb170` : `public: __thiscall OnlineService::OnlineService(class OnlineService const &)`
+- `0x4c5530` : `public: __thiscall OnlineService::OnlineService(void)`
+- `0xcb1e0` : `public: __thiscall OverseasCsvLoadConfig::OverseasCsvLoadConfig(class OverseasCsvLoadConfig const &)`
+- `0xcb1f0` : `public: __thiscall OverseasCsvLoadConfig::OverseasCsvLoadConfig(void)`
+- `0x151d40` : `private: __thiscall PlatformUtility::PlatformUtility(void)`
+- `0xcb200` : `public: __thiscall PlatformUtility::PlatformUtility(class PlatformUtility const &)`
+- `0xcb220` : `public: __thiscall cocos2d::PointSprite::PointSprite(void)`
+- `0x53d840` : `public: __thiscall cocos2d::PrettyPrinter::PrettyPrinter(class cocos2d::PrettyPrinter &&)`
+- `0x53d8d0` : `public: __thiscall cocos2d::PrettyPrinter::PrettyPrinter(class cocos2d::PrettyPrinter const &)`
+- `0xcb250` : `public: __thiscall cocos2d::Quad2::Quad2(void)`
+- `0xcb290` : `public: __thiscall cocos2d::Quad3::Quad3(struct cocos2d::Quad3 &&)`
+- `0xcb290` : `public: __thiscall cocos2d::Quad3::Quad3(struct cocos2d::Quad3 const &)`
+- `0xcb2f0` : `public: __thiscall cocos2d::Quad3::Quad3(void)`
+- `0xe6760` : `public: __thiscall MINIW::ReportCrashMgr::ReportCrashMgr(class MINIW::ReportCrashMgr const &)`
+- `0x79c4e0` : `public: __thiscall MINIW::ReportCrashMgr::ReportCrashMgr(void)`
+- `0xcb350` : `public: __thiscall cocos2d::ResizeTo::ResizeTo(void)`
+- `0x2f2380` : `public: __thiscall ResourcePackDefCsv::ResourcePackDefCsv(class ResourcePackDefCsv const &)`
+- `0x330000` : `public: __thiscall ResourcePackDefCsv::ResourcePackDefCsv(void)`
+- `0x2f2460` : `public: __thiscall RoleSkinCsv::RoleSkinCsv(class RoleSkinCsv const &)`
+- `0x330d70` : `public: __thiscall RoleSkinCsv::RoleSkinCsv(void)`
+- `0xcb3c0` : `public: __thiscall RoomManager::RoomManager(class RoomManager const &)`
+- `0x4cd6a0` : `public: __thiscall RoomManager::RoomManager(void)`
+- `0xcb6e0` : `public: __thiscall cocos2d::ScissorRect::ScissorRect(void)`
+- `0x2a51c0` : `public: __thiscall Rainbow::SentryModule::SentryModule(void)`
+- `0x4c5590` : `public: __thiscall ServerPerf::ServerPerf(class ServerPerf const &)`
+- `0x4e5590` : `public: __thiscall SimulateMgr::SimulateMgr(class SimulateMgr &&)`
+- `0x4e5780` : `public: __thiscall SimulateMgr::SimulateMgr(class SimulateMgr const &)`
+- `0x4e5960` : `public: __thiscall SimulateMgr::SimulateMgr(void)`
+- `0x2f2510` : `public: __thiscall SkinActCsv::SkinActCsv(class SkinActCsv const &)`
+- `0x335070` : `public: __thiscall SkinActCsv::SkinActCsv(void)`
+- `0xcb700` : `public: __thiscall SnapshotForGame::SnapshotForGame(class SnapshotForGame const &)`
+- `0x833550` : `public: __thiscall SnapshotForGame::SnapshotForGame(void)`
+- `0xfa770` : `public: __thiscall SnapshotForPC::SnapshotForPC(class SnapshotForPC const &)`
+- `0x835b80` : `public: __thiscall SnapshotForPC::SnapshotForPC(void)`
+- `0xcb830` : `public: __thiscall SnapshotForShare::SnapshotForShare(class SnapshotForShare const &)`
+- `0x8365b0` : `public: __thiscall SnapshotForShare::SnapshotForShare(void)`
+- `0xcb9c0` : `public: __thiscall SnapshotMgr::SnapshotMgr(class SnapshotMgr const &)`
+- `0x8374f0` : `public: __thiscall SnapshotMgr::SnapshotMgr(void)`
+- `0xcbb30` : `public: __thiscall SpringFestivalActivityMgr::SpringFestivalActivityMgr(class SpringFestivalActivityMgr const &)`
+- `0x4b86f0` : `public: __thiscall SpringFestivalActivityMgr::SpringFestivalActivityMgr(void)`
+- `0x127a40` : `public: __thiscall StatisticRainforest::StatisticRainforest(class StatisticRainforest &&)`
+- `0x127d10` : `public: __thiscall StatisticRainforest::StatisticRainforest(class StatisticRainforest const &)`
+- `0x721fe0` : `public: __thiscall StatisticRainforest::StatisticRainforest(void)`
+- `0x128310` : `public: __thiscall StatisticTerrgen::StatisticTerrgen(class StatisticTerrgen &&)`
+- `0x128450` : `public: __thiscall StatisticTerrgen::StatisticTerrgen(class StatisticTerrgen const &)`
+- `0x737060` : `public: __thiscall StatisticTerrgen::StatisticTerrgen(void)`
+- `0x732510` : `public: __thiscall StatisticsManager::StatisticsManager(class StatisticsManager const &)`
+- `0x732530` : `public: __thiscall StatisticsManager::StatisticsManager(void)`
+- `0x13d790` : `public: __thiscall StatisticsTools::StatisticsTools(class StatisticsTools const &)`
+- `0x7327a0` : `public: __thiscall StatisticsTools::StatisticsTools(void)`
+- `0xcbc30` : `public: __thiscall StringDefCsv::StringDefCsv(class StringDefCsv const &)`
+- `0x3371e0` : `public: __thiscall StringDefCsv::StringDefCsv(void)`
+- `0xfa830` : `public: __thiscall StringLoaderManager::StringLoaderManager(class StringLoaderManager const &)`
+- `0x7a43f0` : `public: __thiscall StringLoaderManager::StringLoaderManager(void)`
+- `0x2f25f0` : `public: __thiscall SummonDefCsv::SummonDefCsv(class SummonDefCsv const &)`
+- `0x337b50` : `public: __thiscall SummonDefCsv::SummonDefCsv(void)`
+- `0x2f26d0` : `public: __thiscall SurviveObjectiveDefCsv::SurviveObjectiveDefCsv(class SurviveObjectiveDefCsv const &)`
+- `0x3384a0` : `public: __thiscall SurviveObjectiveDefCsv::SurviveObjectiveDefCsv(void)`
+- `0x2f27b0` : `public: __thiscall SurviveTaskDefCsv::SurviveTaskDefCsv(class SurviveTaskDefCsv const &)`
+- `0x338ea0` : `public: __thiscall SurviveTaskDefCsv::SurviveTaskDefCsv(void)`
+- `0xcbd10` : `public: __thiscall cocos2d::T2F_Quad::T2F_Quad(void)`
+- `0xcbd50` : `public: __thiscall cocos2d::Tex2F::Tex2F(float,float)`
+- `0xcbd70` : `public: __thiscall cocos2d::Tex2F::Tex2F(void)`
+- `0x2f2ca0` : `public: __thiscall ToolDefCsv::ToolDefCsv(class ToolDefCsv const &)`
+- `0x33a3a0` : `public: __thiscall ToolDefCsv::ToolDefCsv(void)`
+- `0xcbd80` : `public: __thiscall cocos2d::TransitionEaseScene::TransitionEaseScene(class cocos2d::TransitionEaseScene const &)`
+- `0xcbd90` : `public: __thiscall cocos2d::TransitionEaseScene::TransitionEaseScene(void)`
+- `0xcbda0` : `public: __thiscall TriggerScriptMgr::TriggerScriptMgr(class TriggerScriptMgr const &)`
+- `0x513390` : `public: __thiscall TriggerScriptMgr::TriggerScriptMgr(void)`
+- `0x553300` : `private: __thiscall UIEditorManager::UIEditorManager(void)`
+- `0xcbe70` : `public: __thiscall UIEditorManager::UIEditorManager(class UIEditorManager const &)`
+- `0xcbf60` : `public: __thiscall UIFrameManager::UIFrameManager(void)`
+- `0x55e010` : `private: __thiscall UIProjectLibManager::UIProjectLibManager(void)`
+- `0xcc210` : `public: __thiscall UIProjectLibManager::UIProjectLibManager(class UIProjectLibManager const &)`
+- `0x7274a0` : `public: __thiscall UpdateArchiveManager::UpdateArchiveManager(char const *)`
+- `0xe6800` : `public: __thiscall UrlInfo::UrlInfo(struct UrlInfo &&)`
+- `0xe6850` : `public: __thiscall UrlInfo::UrlInfo(struct UrlInfo const &)`
+- `0xe6880` : `public: __thiscall UrlInfo::UrlInfo(void)`
+- `0xcc2d0` : `public: __thiscall cocos2d::V2F_C4B_T2F_Quad::V2F_C4B_T2F_Quad(void)`
+- `0xcc370` : `public: __thiscall cocos2d::V2F_C4B_T2F_Triangle::V2F_C4B_T2F_Triangle(void)`
+- `0xcc3f0` : `public: __thiscall cocos2d::V2F_C4F_T2F::V2F_C4F_T2F(void)`
+- `0xcc420` : `public: __thiscall cocos2d::V2F_C4F_T2F_Quad::V2F_C4F_T2F_Quad(void)`
+- `0xcc4c0` : `public: __thiscall cocos2d::V3F_C4B_T2F::V3F_C4B_T2F(struct cocos2d::V3F_C4B_T2F &&)`
+- `0xcc4c0` : `public: __thiscall cocos2d::V3F_C4B_T2F::V3F_C4B_T2F(struct cocos2d::V3F_C4B_T2F const &)`
+- `0xcc4f0` : `public: __thiscall cocos2d::V3F_C4B_T2F::V3F_C4B_T2F(void)`
+- `0xcc530` : `public: __thiscall cocos2d::V3F_C4B_T2F_Quad::V3F_C4B_T2F_Quad(struct cocos2d::V3F_C4B_T2F_Quad &&)`
+- `0xcc530` : `public: __thiscall cocos2d::V3F_C4B_T2F_Quad::V3F_C4B_T2F_Quad(struct cocos2d::V3F_C4B_T2F_Quad const &)`
+- `0xcc5d0` : `public: __thiscall cocos2d::V3F_C4B_T2F_Quad::V3F_C4B_T2F_Quad(void)`
+- `0xcc680` : `public: __thiscall cocos2d::V3F_C4F::V3F_C4F(struct cocos2d::V3F_C4F &&)`
+- `0xcc680` : `public: __thiscall cocos2d::V3F_C4F::V3F_C4F(struct cocos2d::V3F_C4F const &)`
+- `0xcc6b0` : `public: __thiscall cocos2d::V3F_C4F::V3F_C4F(void)`
+- `0xcc6e0` : `public: __thiscall cocos2d::V3F_T2F::V3F_T2F(struct cocos2d::V3F_T2F &&)`
+- `0xcc6e0` : `public: __thiscall cocos2d::V3F_T2F::V3F_T2F(struct cocos2d::V3F_T2F const &)`
+- `0xcc710` : `public: __thiscall cocos2d::V3F_T2F::V3F_T2F(void)`
+- `0xcc740` : `public: __thiscall cocos2d::V3F_T2F_Quad::V3F_T2F_Quad(struct cocos2d::V3F_T2F_Quad &&)`
+- `0xcc740` : `public: __thiscall cocos2d::V3F_T2F_Quad::V3F_T2F_Quad(struct cocos2d::V3F_T2F_Quad const &)`
+- `0xcc7d0` : `public: __thiscall cocos2d::V3F_T2F_Quad::V3F_T2F_Quad(void)`
+- `0xcb6e0` : `public: __thiscall cocos2d::Viewport::Viewport(void)`
+- `0x4c4bf0` : `public: __thiscall WXGameLiveManager::WXGameLiveManager(void)`
+- `0xcc860` : `public: __thiscall Rainbow::WindowsCrashHandler::WindowsCrashHandler(class Rainbow::WindowsCrashHandler const &)`
+- `0x295760` : `public: __thiscall Rainbow::WindowsCrashHandler::WindowsCrashHandler(void)`
+- `0xcc8e0` : `public: __thiscall WorldArchiveMgr::WorldArchiveMgr(class WorldArchiveMgr const &)`
+- `0x77b2c0` : `public: __thiscall WorldArchiveMgr::WorldArchiveMgr(void)`
+- `0xccc10` : `public: __thiscall WorldBackupMgr::WorldBackupMgr(class WorldBackupMgr const &)`
+- `0x7847e0` : `public: __thiscall WorldBackupMgr::WorldBackupMgr(void)`
+- `0xe68a0` : `public: __thiscall WorldList::WorldList(class WorldList const &)`
+- `0x793410` : `public: __thiscall WorldList::WorldList(void)`
+- `0x793440` : `public: __thiscall WorldList::WorldList(bool)`
+- `0xccd20` : `public: __thiscall WorldStringManager::WorldStringManager(class WorldStringManager const &)`
+- `0x7b3570` : `public: __thiscall WorldStringManager::WorldStringManager(void)`
+- `0x53da80` : `public: __thiscall cocos2d::__Array::__Array(class cocos2d::__Array const &)`
+- `0xe69d0` : `public: __thiscall Rainbow::Singleton<class ChangeModelMgr>::~Singleton<class ChangeModelMgr>(void)`
+- `0xfab20` : `public: __thiscall Rainbow::Singleton<class FunnyCore>::~Singleton<class FunnyCore>(void)`
+- `0xccf20` : `public: __thiscall Rainbow::Singleton<class Mini::MmkvMgr>::~Singleton<class Mini::MmkvMgr>(void)`
+- `0xfab30` : `public: __thiscall Rainbow::Singleton<class SnapshotForPC>::~Singleton<class SnapshotForPC>(void)`
+- `0xfab40` : `public: __thiscall Rainbow::Singleton<class StringLoaderManager>::~Singleton<class StringLoaderManager>(void)`
+- `0x2a7680` : `public: virtual __thiscall AbsCsv::~AbsCsv(void)`
+- `0x6faec0` : `public: __thiscall AccountData::~AccountData(void)`
+- `0x7b9d30` : `public: __thiscall AccountFBData::~AccountFBData(void)`
+- `0x73ec10` : `public: __thiscall AchievementManager::~AchievementManager(void)`
+- `0x797180` : `public: virtual __thiscall MINIW::AdventureReportMgr::~AdventureReportMgr(void)`
+- `0x142580` : `public: virtual __thiscall MINIW::AppUpdateScene::~AppUpdateScene(void)`
+- `0x56fe00` : `public: __thiscall ArchiveManager::~ArchiveManager(void)`
+- `0x74e7e0` : `public: __thiscall ArchiveTempMgr::~ArchiveTempMgr(void)`
+- `0x2a88f0` : `public: virtual __thiscall AvatarDefCsv::~AvatarDefCsv(void)`
+- `0x2aa250` : `public: virtual __thiscall BlockDefCsv::~BlockDefCsv(void)`
+- `0x2ad070` : `public: virtual __thiscall BotConversationsDefCsv::~BotConversationsDefCsv(void)`
+- `0x518190` : `public: __thiscall ChangeModelMgr::~ChangeModelMgr(void)`
+- `0x70ac20` : `public: __thiscall ClientAccountMgr::~ClientAccountMgr(void)`
+- `0xce1c0` : `public: virtual __thiscall MINIW::ClientApp::~ClientApp(void)`
+- `0x7149b0` : `public: __thiscall ClientBuddyMgr::~ClientBuddyMgr(void)`
+- `0x7550d0` : `public: __thiscall ClientCSOWorld::~ClientCSOWorld(void)`
+- `0xde7a0` : `public: __thiscall ClientDnsMgr::~ClientDnsMgr(void)`
+- `0x16ce00` : `public: __thiscall ClientGameManager::~ClientGameManager(void)`
+- `0xf31a0` : `public: virtual __thiscall MINIW::ClientInfo::~ClientInfo(void)`
+- `0xfabd0` : `public: virtual __thiscall MINIW::ClientInfo_PC::~ClientInfo_PC(void)`
+- `0x13dc60` : `public: __thiscall MINIW::ClientLogin::~ClientLogin(void)`
+- `0xce3d0` : `public: __thiscall MINIW::ClientManager::~ClientManager(void)`
+- `0xce3d0` : `public: __thiscall ClientUrl::~ClientUrl(void)`
+- `0xdcc10` : `public: virtual __thiscall MINIW::ClientVersion::~ClientVersion(void)`
+- `0x5e7990` : `public: __thiscall CustomPicMgr::~CustomPicMgr(void)`
+- `0xce3d0` : `public: __thiscall CustommodelParse::~CustommodelParse(void)`
+- `0x53dab0` : `public: virtual __thiscall cocos2d::DataVisitor::~DataVisitor(void)`
+- `0xce3e0` : `public: virtual __thiscall DefaultCsvLoadConfig::~DefaultCsvLoadConfig(void)`
+- `0x5e1880` : `public: virtual __thiscall Dev3DUIManager::~Dev3DUIManager(void)`
+- `0xe6bb0` : `public: virtual __thiscall DeveloperSystem::~DeveloperSystem(void)`
+- `0x53b880` : `public: __thiscall EditorLang::~EditorLang(void)`
+- `0x6ded80` : `public: __thiscall FileAndDirInfo::~FileAndDirInfo(void)`
+- `0x6091d0` : `public: virtual __thiscall FmodSoundSystemEX::~FmodSoundSystemEX(void)`
+- `0xcda30` : `public: __thiscall cocos2d::FontDefinition::~FontDefinition(void)`
+- `0xfab20` : `public: __thiscall FunnyCore::~FunnyCore(void)`
+- `0x31a010` : `public: virtual __thiscall GameLanguageCsv::~GameLanguageCsv(void)`
+- `0x4e8200` : `public: __thiscall GameServerConfig::~GameServerConfig(void)`
+- `0x31bee0` : `public: virtual __thiscall GameZoneCsv::~GameZoneCsv(void)`
+- `0xcdf50` : `public: __thiscall GlobalSetParse::~GlobalSetParse(void)`
+- `0xce3d0` : `public: virtual __thiscall HomeCsvManagerProxy::~HomeCsvManagerProxy(void)`
+- `0x494e30` : `public: __thiscall MINIW::HotFixTipsConfig::~HotFixTipsConfig(void)`
+- `0x4a2870` : `public: __thiscall MINIW::HotfixPkgLoader::~HotfixPkgLoader(void)`
+- `0x14d5a0` : `public: __thiscall MINIW::HotfixProcessMgr::~HotfixProcessMgr(void)`
+- `0x46c220` : `public: virtual __thiscall Mini::HttpReportMgr::~HttpReportMgr(void)`
+- `0x31f630` : `public: virtual __thiscall ItemDefCsv::~ItemDefCsv(void)`
+- `0x7e6400` : `public: __thiscall KeywordFilterMgr::~KeywordFilterMgr(void)`
+- `0x144c60` : `public: virtual __thiscall MINIW::LaunchScene::~LaunchScene(void)`
+- `0xce3d0` : `public: __thiscall MapConvertMgr::~MapConvertMgr(void)`
+- `0x697590` : `public: virtual __thiscall MapEditManager::~MapEditManager(void)`
+- `0xce3f0` : `public: __thiscall MidiFileInfo::~MidiFileInfo(void)`
+- `0xe6bb0` : `public: virtual __thiscall MiniBuzzSytem::~MiniBuzzSytem(void)`
+- `0xe6bb0` : `public: virtual __thiscall MiniReportSystem::~MiniReportSystem(void)`
+- `0xee370` : `public: __thiscall MiniWorldPreferences::~MiniWorldPreferences(void)`
+- `0x79fd40` : `public: virtual __thiscall Mini::MmkvMgr::~MmkvMgr(void)`
+- `0x59e2b0` : `public: __thiscall ModEditorManager::~ModEditorManager(void)`
+- `0x5da8d0` : `public: virtual __thiscall MINIW::ModFileManager::~ModFileManager(void)`
+- `0x5b0140` : `public: __thiscall ModManager::~ModManager(void)`
+- `0x326b50` : `public: virtual __thiscall MonsterCsv::~MonsterCsv(void)`
+- `0x830670` : `public: __thiscall MultiLocalMgr::~MultiLocalMgr(void)`
+- `0x6f4ce0` : `public: __thiscall MusicItemLogical::~MusicItemLogical(void)`
+- `0xe6bb0` : `public: virtual __thiscall NewYearSystem::~NewYearSystem(void)`
+- `0x7c1a20` : `public: __thiscall OWorldList::~OWorldList(void)`
+- `0xce3d0` : `public: __thiscall OWorldUtils::~OWorldUtils(void)`
+- `0xcdef0` : `public: __thiscall OnlineService::~OnlineService(void)`
+- `0xce3e0` : `public: virtual __thiscall OverseasCsvLoadConfig::~OverseasCsvLoadConfig(void)`
+- `0x151d60` : `public: virtual __thiscall PlatformUtility::~PlatformUtility(void)`
+- `0x53dad0` : `public: virtual __thiscall cocos2d::PrettyPrinter::~PrettyPrinter(void)`
+- `0x79c5d0` : `public: __thiscall MINIW::ReportCrashMgr::~ReportCrashMgr(void)`
+- `0xce450` : `public: virtual __thiscall cocos2d::ResizeTo::~ResizeTo(void)`
+- `0x330130` : `public: virtual __thiscall ResourcePackDefCsv::~ResourcePackDefCsv(void)`
+- `0x331090` : `public: virtual __thiscall RoleSkinCsv::~RoleSkinCsv(void)`
+- `0x4cdf70` : `public: virtual __thiscall RoomManager::~RoomManager(void)`
+- `0x2a52e0` : `public: __thiscall Rainbow::SentryModule::~SentryModule(void)`
+- `0x4e5c70` : `public: __thiscall SimulateMgr::~SimulateMgr(void)`
+- `0x3351a0` : `public: virtual __thiscall SkinActCsv::~SkinActCsv(void)`
+- `0x833640` : `public: __thiscall SnapshotForGame::~SnapshotForGame(void)`
+- `0x835ca0` : `public: __thiscall SnapshotForPC::~SnapshotForPC(void)`
+- `0x836710` : `public: __thiscall SnapshotForShare::~SnapshotForShare(void)`
+- `0x837670` : `public: virtual __thiscall SnapshotMgr::~SnapshotMgr(void)`
+- `0x4b8980` : `public: __thiscall SpringFestivalActivityMgr::~SpringFestivalActivityMgr(void)`
+- `0x128d30` : `public: virtual __thiscall StatisticRainforest::~StatisticRainforest(void)`
+- `0x128de0` : `public: virtual __thiscall StatisticTerrgen::~StatisticTerrgen(void)`
+- `0x732550` : `public: __thiscall StatisticsManager::~StatisticsManager(void)`
+- `0x732810` : `public: virtual __thiscall StatisticsTools::~StatisticsTools(void)`
+- `0x337330` : `public: virtual __thiscall StringDefCsv::~StringDefCsv(void)`
+- `0x7a4da0` : `public: __thiscall StringLoaderManager::~StringLoaderManager(void)`
+- `0x337c80` : `public: virtual __thiscall SummonDefCsv::~SummonDefCsv(void)`
+- `0x338640` : `public: virtual __thiscall SurviveObjectiveDefCsv::~SurviveObjectiveDefCsv(void)`
+- `0x3390b0` : `public: virtual __thiscall SurviveTaskDefCsv::~SurviveTaskDefCsv(void)`
+- `0x33a5b0` : `public: virtual __thiscall ToolDefCsv::~ToolDefCsv(void)`
+- `0xce480` : `public: virtual __thiscall cocos2d::TransitionEaseScene::~TransitionEaseScene(void)`
+- `0x513600` : `public: virtual __thiscall TriggerScriptMgr::~TriggerScriptMgr(void)`
+- `0x553580` : `public: __thiscall UIEditorManager::~UIEditorManager(void)`
+- `0x54f450` : `public: virtual __thiscall UIFrameManager::~UIFrameManager(void)`
+- `0x55e0b0` : `public: __thiscall UIProjectLibManager::~UIProjectLibManager(void)`
+- `0xe6be0` : `public: __thiscall UrlInfo::~UrlInfo(void)`
+- `0xce3d0` : `public: __thiscall WXGameLiveManager::~WXGameLiveManager(void)`
+- `0x295890` : `public: __thiscall Rainbow::WindowsCrashHandler::~WindowsCrashHandler(void)`
+- `0x77b580` : `public: __thiscall WorldArchiveMgr::~WorldArchiveMgr(void)`
+- `0x784850` : `public: __thiscall WorldBackupMgr::~WorldBackupMgr(void)`
+- `0x793470` : `public: __thiscall WorldList::~WorldList(void)`
+- `0x7b36f0` : `public: virtual __thiscall WorldStringManager::~WorldStringManager(void)`
+- `0xceb90` : `public: class Rainbow::Singleton<class ChangeModelMgr> & __thiscall Rainbow::Singleton<class ChangeModelMgr>::operator=(class Rainbow::Singleton<class ChangeModelMgr> const &)`
+- `0xceb90` : `public: class Rainbow::Singleton<class FunnyCore> & __thiscall Rainbow::Singleton<class FunnyCore>::operator=(class Rainbow::Singleton<class FunnyCore> const &)`
+- `0xceb90` : `public: class Rainbow::Singleton<class Mini::MmkvMgr> & __thiscall Rainbow::Singleton<class Mini::MmkvMgr>::operator=(class Rainbow::Singleton<class Mini::MmkvMgr> const &)`
+- `0xceb90` : `public: class Rainbow::Singleton<class SnapshotForPC> & __thiscall Rainbow::Singleton<class SnapshotForPC>::operator=(class Rainbow::Singleton<class SnapshotForPC> const &)`
+- `0xceb90` : `public: class Rainbow::Singleton<class StringLoaderManager> & __thiscall Rainbow::Singleton<class StringLoaderManager>::operator=(class Rainbow::Singleton<class StringLoaderManager> const &)`
+- `0xceb90` : `public: class ARInterface & __thiscall ARInterface::operator=(class ARInterface &&)`
+- `0xceb90` : `public: class ARInterface & __thiscall ARInterface::operator=(class ARInterface const &)`
+- `0xcf460` : `public: class AbsCsv & __thiscall AbsCsv::operator=(class AbsCsv const &)`
+- `0xcf480` : `public: class AccountData & __thiscall AccountData::operator=(class AccountData const &)`
+- `0xcf900` : `public: class AccountFBData & __thiscall AccountFBData::operator=(class AccountFBData const &)`
+- `0xcfaf0` : `public: class AchievementManager & __thiscall AchievementManager::operator=(class AchievementManager const &)`
+- `0xceb90` : `public: class ActionLogger & __thiscall ActionLogger::operator=(class ActionLogger &&)`
+- `0xceb90` : `public: class ActionLogger & __thiscall ActionLogger::operator=(class ActionLogger const &)`
+- `0x13e210` : `public: class MINIW::AdventureReportMgr & __thiscall MINIW::AdventureReportMgr::operator=(class MINIW::AdventureReportMgr const &)`
+- `0xcfce0` : `public: struct cocos2d::AffineTransform & __thiscall cocos2d::AffineTransform::operator=(struct cocos2d::AffineTransform &&)`
+- `0xcfd10` : `public: struct cocos2d::AffineTransform & __thiscall cocos2d::AffineTransform::operator=(struct cocos2d::AffineTransform const &)`
+- `0xcfd30` : `public: struct cocos2d::AnimationFrameData & __thiscall cocos2d::AnimationFrameData::operator=(struct cocos2d::AnimationFrameData &&)`
+- `0xcfd30` : `public: struct cocos2d::AnimationFrameData & __thiscall cocos2d::AnimationFrameData::operator=(struct cocos2d::AnimationFrameData const &)`
+- `0xcfd70` : `public: class ArchiveManager & __thiscall ArchiveManager::operator=(class ArchiveManager const &)`
+- `0xcff30` : `public: class ArchiveTempMgr & __thiscall ArchiveTempMgr::operator=(class ArchiveTempMgr const &)`
+- `0x2a8920` : `public: class AvatarDefCsv & __thiscall AvatarDefCsv::operator=(class AvatarDefCsv const &)`
+- `0xd0030` : `public: struct cocos2d::BlendFunc & __thiscall cocos2d::BlendFunc::operator=(struct cocos2d::BlendFunc &&)`
+- `0xd0050` : `public: struct cocos2d::BlendFunc & __thiscall cocos2d::BlendFunc::operator=(struct cocos2d::BlendFunc const &)`
+- `0x2aa310` : `public: class BlockDefCsv & __thiscall BlockDefCsv::operator=(class BlockDefCsv const &)`
+- `0x2ad140` : `public: class BotConversationsDefCsv & __thiscall BotConversationsDefCsv::operator=(class BotConversationsDefCsv const &)`
+- `0xe6cf0` : `public: class ChangeModelMgr & __thiscall ChangeModelMgr::operator=(class ChangeModelMgr const &)`
+- `0xd0070` : `public: class ClientAccountMgr & __thiscall ClientAccountMgr::operator=(class ClientAccountMgr const &)`
+- `0xd01a0` : `public: class MINIW::ClientApp & __thiscall MINIW::ClientApp::operator=(class MINIW::ClientApp const &)`
+- `0xd0220` : `public: class ClientBuddyMgr & __thiscall ClientBuddyMgr::operator=(class ClientBuddyMgr const &)`
+- `0xd04c0` : `public: class ClientCSOWorld & __thiscall ClientCSOWorld::operator=(class ClientCSOWorld const &)`
+- `0x490460` : `public: class ClientDnsMgr & __thiscall ClientDnsMgr::operator=(class ClientDnsMgr const &)`
+- `0xd0630` : `public: class ClientGameManager & __thiscall ClientGameManager::operator=(class ClientGameManager const &)`
+- `0xd0770` : `public: class MINIW::ClientInfo & __thiscall MINIW::ClientInfo::operator=(class MINIW::ClientInfo const &)`
+- `0xceb90` : `public: class MINIW::ClientLogin & __thiscall MINIW::ClientLogin::operator=(class MINIW::ClientLogin const &)`
+- `0xceb90` : `public: class MINIW::ClientManager & __thiscall MINIW::ClientManager::operator=(class MINIW::ClientManager const &)`
+- `0xceb90` : `public: class ClientUrl & __thiscall ClientUrl::operator=(class ClientUrl const &)`
+- `0xdcd90` : `public: class MINIW::ClientVersion & __thiscall MINIW::ClientVersion::operator=(class MINIW::ClientVersion const &)`
+- `0xd0a50` : `public: class CustomPicMgr & __thiscall CustomPicMgr::operator=(class CustomPicMgr const &)`
+- `0xceb90` : `public: class CustommodelParse & __thiscall CustommodelParse::operator=(class CustommodelParse const &)`
+- `0xceb90` : `public: class cocos2d::DataVisitor & __thiscall cocos2d::DataVisitor::operator=(class cocos2d::DataVisitor const &)`
+- `0xceb90` : `public: class DefaultCsvLoadConfig & __thiscall DefaultCsvLoadConfig::operator=(class DefaultCsvLoadConfig const &)`
+- `0xd0b50` : `public: class Dev3DUIManager & __thiscall Dev3DUIManager::operator=(class Dev3DUIManager const &)`
+- `0xe6df0` : `public: class DeveloperSystem & __thiscall DeveloperSystem::operator=(class DeveloperSystem const &)`
+- `0xd0bc0` : `public: class EditorLang & __thiscall EditorLang::operator=(class EditorLang const &)`
+- `0xd0c00` : `public: class FileAndDirInfo & __thiscall FileAndDirInfo::operator=(class FileAndDirInfo const &)`
+- `0xd0c80` : `public: struct cocos2d::FontDefinition & __thiscall cocos2d::FontDefinition::operator=(struct cocos2d::FontDefinition &&)`
+- `0xd0d20` : `public: struct cocos2d::FontDefinition & __thiscall cocos2d::FontDefinition::operator=(struct cocos2d::FontDefinition const &)`
+- `0xd0dd0` : `public: struct cocos2d::FontShadow & __thiscall cocos2d::FontShadow::operator=(struct cocos2d::FontShadow &&)`
+- `0xd0dd0` : `public: struct cocos2d::FontShadow & __thiscall cocos2d::FontShadow::operator=(struct cocos2d::FontShadow const &)`
+- `0xd0e00` : `public: struct cocos2d::FontStroke & __thiscall cocos2d::FontStroke::operator=(struct cocos2d::FontStroke &&)`
+- `0xd0e30` : `public: struct cocos2d::FontStroke & __thiscall cocos2d::FontStroke::operator=(struct cocos2d::FontStroke const &)`
+- `0xfb200` : `public: class FunnyCore & __thiscall FunnyCore::operator=(class FunnyCore const &)`
+- `0xcf460` : `public: class GameLanguageCsv & __thiscall GameLanguageCsv::operator=(class GameLanguageCsv const &)`
+- `0x4e8310` : `public: class GameServerConfig & __thiscall GameServerConfig::operator=(class GameServerConfig &&)`
+- `0x4e8450` : `public: class GameServerConfig & __thiscall GameServerConfig::operator=(class GameServerConfig const &)`
+- `0xe6e10` : `public: class GameZoneCsv & __thiscall GameZoneCsv::operator=(class GameZoneCsv const &)`
+- `0xd0e50` : `public: class GlobalSetParse & __thiscall GlobalSetParse::operator=(class GlobalSetParse const &)`
+- `0xceb90` : `public: class HomeCsvManagerProxy & __thiscall HomeCsvManagerProxy::operator=(class HomeCsvManagerProxy const &)`
+- `0x13e300` : `public: class MINIW::HotFixTipsConfig & __thiscall MINIW::HotFixTipsConfig::operator=(class MINIW::HotFixTipsConfig const &)`
+- `0xd0ec0` : `public: class MINIW::HotfixPkgLoader & __thiscall MINIW::HotfixPkgLoader::operator=(class MINIW::HotfixPkgLoader const &)`
+- `0x14d8f0` : `public: class MINIW::HotfixProcessMgr & __thiscall MINIW::HotfixProcessMgr::operator=(class MINIW::HotfixProcessMgr &&)`
+- `0x14d930` : `public: class MINIW::HotfixProcessMgr & __thiscall MINIW::HotfixProcessMgr::operator=(class MINIW::HotfixProcessMgr const &)`
+- `0x103900` : `public: class ItemDefCsv & __thiscall ItemDefCsv::operator=(class ItemDefCsv const &)`
+- `0x129130` : `public: class KeywordFilterMgr & __thiscall KeywordFilterMgr::operator=(class KeywordFilterMgr const &)`
+- `0xceb90` : `public: class MapConvertMgr & __thiscall MapConvertMgr::operator=(class MapConvertMgr const &)`
+- `0xd1070` : `public: class MidiFileInfo & __thiscall MidiFileInfo::operator=(class MidiFileInfo const &)`
+- `0xe6df0` : `public: class MiniBuzzSytem & __thiscall MiniBuzzSytem::operator=(class MiniBuzzSytem const &)`
+- `0xceb90` : `public: class MiniConfLoad & __thiscall MiniConfLoad::operator=(class MiniConfLoad &&)`
+- `0xceb90` : `public: class MiniConfLoad & __thiscall MiniConfLoad::operator=(class MiniConfLoad const &)`
+- `0xe6df0` : `public: class MiniReportSystem & __thiscall MiniReportSystem::operator=(class MiniReportSystem const &)`
+- `0xd10c0` : `public: class MiniWorldPreferences & __thiscall MiniWorldPreferences::operator=(class MiniWorldPreferences const &)`
+- `0xceb90` : `public: class Mini::MmkvMgr & __thiscall Mini::MmkvMgr::operator=(class Mini::MmkvMgr const &)`
+- `0xd10e0` : `public: class ModEditorManager & __thiscall ModEditorManager::operator=(class ModEditorManager const &)`
+- `0xd1250` : `public: class MINIW::ModFileManager & __thiscall MINIW::ModFileManager::operator=(class MINIW::ModFileManager const &)`
+- `0x153820` : `public: class MonsterCsv & __thiscall MonsterCsv::operator=(class MonsterCsv const &)`
+- `0xd1310` : `public: class MultiLocalMgr & __thiscall MultiLocalMgr::operator=(class MultiLocalMgr const &)`
+- `0xd1400` : `public: class MusicItemLogical & __thiscall MusicItemLogical::operator=(class MusicItemLogical const &)`
+- `0xe6df0` : `public: class NewYearSystem & __thiscall NewYearSystem::operator=(class NewYearSystem const &)`
+- `0xd1440` : `public: class OWorldList & __thiscall OWorldList::operator=(class OWorldList const &)`
+- `0xceb90` : `public: class OWorldUtils & __thiscall OWorldUtils::operator=(class OWorldUtils const &)`
+- `0xd15e0` : `public: class OnlineService & __thiscall OnlineService::operator=(class OnlineService const &)`
+- `0xceb90` : `public: class OverseasCsvLoadConfig & __thiscall OverseasCsvLoadConfig::operator=(class OverseasCsvLoadConfig const &)`
+- `0xd1640` : `public: class PlatformUtility & __thiscall PlatformUtility::operator=(class PlatformUtility const &)`
+- `0xd1660` : `public: struct cocos2d::PointSprite & __thiscall cocos2d::PointSprite::operator=(struct cocos2d::PointSprite &&)`
+- `0xd1660` : `public: struct cocos2d::PointSprite & __thiscall cocos2d::PointSprite::operator=(struct cocos2d::PointSprite const &)`
+- `0x53dc60` : `public: class cocos2d::PrettyPrinter & __thiscall cocos2d::PrettyPrinter::operator=(class cocos2d::PrettyPrinter &&)`
+- `0x53dc90` : `public: class cocos2d::PrettyPrinter & __thiscall cocos2d::PrettyPrinter::operator=(class cocos2d::PrettyPrinter const &)`
+- `0xd1690` : `public: struct cocos2d::Quad2 & __thiscall cocos2d::Quad2::operator=(struct cocos2d::Quad2 &&)`
+- `0xd1690` : `public: struct cocos2d::Quad2 & __thiscall cocos2d::Quad2::operator=(struct cocos2d::Quad2 const &)`
+- `0xcb290` : `public: struct cocos2d::Quad3 & __thiscall cocos2d::Quad3::operator=(struct cocos2d::Quad3 &&)`
+- `0xcb290` : `public: struct cocos2d::Quad3 & __thiscall cocos2d::Quad3::operator=(struct cocos2d::Quad3 const &)`
+- `0xe6f90` : `public: class MINIW::ReportCrashMgr & __thiscall MINIW::ReportCrashMgr::operator=(class MINIW::ReportCrashMgr const &)`
+- `0x2f40e0` : `public: class ResourcePackDefCsv & __thiscall ResourcePackDefCsv::operator=(class ResourcePackDefCsv const &)`
+- `0x2f4160` : `public: class RoleSkinCsv & __thiscall RoleSkinCsv::operator=(class RoleSkinCsv const &)`
+- `0xd16d0` : `public: class RoomManager & __thiscall RoomManager::operator=(class RoomManager const &)`
+- `0xd1a30` : `public: class cocos2d::SAXParser & __thiscall cocos2d::SAXParser::operator=(class cocos2d::SAXParser const &)`
+- `0xd1660` : `public: struct cocos2d::ScissorRect & __thiscall cocos2d::ScissorRect::operator=(struct cocos2d::ScissorRect &&)`
+- `0xd1a40` : `public: struct cocos2d::ScissorRect & __thiscall cocos2d::ScissorRect::operator=(struct cocos2d::ScissorRect const &)`
+- `0x4c5630` : `public: class ServerPerf & __thiscall ServerPerf::operator=(class ServerPerf const &)`
+- `0x4e5cc0` : `public: class SimulateMgr & __thiscall SimulateMgr::operator=(class SimulateMgr &&)`
+- `0x4e5e80` : `public: class SimulateMgr & __thiscall SimulateMgr::operator=(class SimulateMgr const &)`
+- `0x2f41d0` : `public: class SkinActCsv & __thiscall SkinActCsv::operator=(class SkinActCsv const &)`
+- `0xd1a60` : `public: class SnapshotForGame & __thiscall SnapshotForGame::operator=(class SnapshotForGame const &)`
+- `0xfb220` : `public: class SnapshotForPC & __thiscall SnapshotForPC::operator=(class SnapshotForPC const &)`
+- `0xd1b80` : `public: class SnapshotForShare & __thiscall SnapshotForShare::operator=(class SnapshotForShare const &)`
+- `0xd1d40` : `public: class SnapshotMgr & __thiscall SnapshotMgr::operator=(class SnapshotMgr const &)`
+- `0xd1e80` : `public: class SpringFestivalActivityMgr & __thiscall SpringFestivalActivityMgr::operator=(class SpringFestivalActivityMgr const &)`
+- `0x129150` : `public: class StatisticTerrgen & __thiscall StatisticTerrgen::operator=(class StatisticTerrgen &&)`
+- `0x129200` : `public: class StatisticTerrgen & __thiscall StatisticTerrgen::operator=(class StatisticTerrgen const &)`
+- `0x732560` : `public: class StatisticsManager & __thiscall StatisticsManager::operator=(class StatisticsManager const &)`
+- `0x13e330` : `public: class StatisticsTools & __thiscall StatisticsTools::operator=(class StatisticsTools const &)`
+- `0xd1f00` : `public: class StringDefCsv & __thiscall StringDefCsv::operator=(class StringDefCsv const &)`
+- `0xfb300` : `public: class StringLoaderManager & __thiscall StringLoaderManager::operator=(class StringLoaderManager const &)`
+- `0x2f4250` : `public: class SummonDefCsv & __thiscall SummonDefCsv::operator=(class SummonDefCsv const &)`
+- `0x2f42d0` : `public: class SurviveObjectiveDefCsv & __thiscall SurviveObjectiveDefCsv::operator=(class SurviveObjectiveDefCsv const &)`
+- `0x2f4350` : `public: class SurviveTaskDefCsv & __thiscall SurviveTaskDefCsv::operator=(class SurviveTaskDefCsv const &)`
+- `0xd1f40` : `public: struct cocos2d::T2F_Quad & __thiscall cocos2d::T2F_Quad::operator=(struct cocos2d::T2F_Quad &&)`
+- `0xd1f80` : `public: struct cocos2d::T2F_Quad & __thiscall cocos2d::T2F_Quad::operator=(struct cocos2d::T2F_Quad const &)`
+- `0xd0030` : `public: struct cocos2d::Tex2F & __thiscall cocos2d::Tex2F::operator=(struct cocos2d::Tex2F &&)`
+- `0xd0050` : `public: struct cocos2d::Tex2F & __thiscall cocos2d::Tex2F::operator=(struct cocos2d::Tex2F const &)`
+- `0x2f4a40` : `public: class ToolDefCsv & __thiscall ToolDefCsv::operator=(class ToolDefCsv const &)`
+- `0xceb90` : `public: class cocos2d::TransitionEaseScene & __thiscall cocos2d::TransitionEaseScene::operator=(class cocos2d::TransitionEaseScene const &)`
+- `0xd1fa0` : `public: class TriggerScriptMgr & __thiscall TriggerScriptMgr::operator=(class TriggerScriptMgr const &)`
+- `0xd2030` : `public: class UIEditorManager & __thiscall UIEditorManager::operator=(class UIEditorManager const &)`
+- `0xd20f0` : `public: class UIProjectLibManager & __thiscall UIProjectLibManager::operator=(class UIProjectLibManager const &)`
+- `0xe7010` : `public: struct UrlInfo & __thiscall UrlInfo::operator=(struct UrlInfo &&)`
+- `0xe7040` : `public: struct UrlInfo & __thiscall UrlInfo::operator=(struct UrlInfo const &)`
+- `0xcc740` : `public: struct cocos2d::V2F_C4B_T2F_Quad & __thiscall cocos2d::V2F_C4B_T2F_Quad::operator=(struct cocos2d::V2F_C4B_T2F_Quad &&)`
+- `0xcc740` : `public: struct cocos2d::V2F_C4B_T2F_Quad & __thiscall cocos2d::V2F_C4B_T2F_Quad::operator=(struct cocos2d::V2F_C4B_T2F_Quad const &)`
+- `0xd2190` : `public: struct cocos2d::V2F_C4B_T2F_Triangle & __thiscall cocos2d::V2F_C4B_T2F_Triangle::operator=(struct cocos2d::V2F_C4B_T2F_Triangle &&)`
+- `0xd2190` : `public: struct cocos2d::V2F_C4B_T2F_Triangle & __thiscall cocos2d::V2F_C4B_T2F_Triangle::operator=(struct cocos2d::V2F_C4B_T2F_Triangle const &)`
+- `0xd2200` : `public: struct cocos2d::V2F_C4F_T2F & __thiscall cocos2d::V2F_C4F_T2F::operator=(struct cocos2d::V2F_C4F_T2F &&)`
+- `0xd2200` : `public: struct cocos2d::V2F_C4F_T2F & __thiscall cocos2d::V2F_C4F_T2F::operator=(struct cocos2d::V2F_C4F_T2F const &)`
+- `0xd2230` : `public: struct cocos2d::V2F_C4F_T2F_Quad & __thiscall cocos2d::V2F_C4F_T2F_Quad::operator=(struct cocos2d::V2F_C4F_T2F_Quad &&)`
+- `0xd2230` : `public: struct cocos2d::V2F_C4F_T2F_Quad & __thiscall cocos2d::V2F_C4F_T2F_Quad::operator=(struct cocos2d::V2F_C4F_T2F_Quad const &)`
+- `0xcc4c0` : `public: struct cocos2d::V3F_C4B_T2F & __thiscall cocos2d::V3F_C4B_T2F::operator=(struct cocos2d::V3F_C4B_T2F &&)`
+- `0xcc4c0` : `public: struct cocos2d::V3F_C4B_T2F & __thiscall cocos2d::V3F_C4B_T2F::operator=(struct cocos2d::V3F_C4B_T2F const &)`
+- `0xcc530` : `public: struct cocos2d::V3F_C4B_T2F_Quad & __thiscall cocos2d::V3F_C4B_T2F_Quad::operator=(struct cocos2d::V3F_C4B_T2F_Quad &&)`
+- `0xcc530` : `public: struct cocos2d::V3F_C4B_T2F_Quad & __thiscall cocos2d::V3F_C4B_T2F_Quad::operator=(struct cocos2d::V3F_C4B_T2F_Quad const &)`
+- `0xcc680` : `public: struct cocos2d::V3F_C4F & __thiscall cocos2d::V3F_C4F::operator=(struct cocos2d::V3F_C4F &&)`
+- `0xcc680` : `public: struct cocos2d::V3F_C4F & __thiscall cocos2d::V3F_C4F::operator=(struct cocos2d::V3F_C4F const &)`
+- `0xcc6e0` : `public: struct cocos2d::V3F_T2F & __thiscall cocos2d::V3F_T2F::operator=(struct cocos2d::V3F_T2F &&)`
+- `0xcc6e0` : `public: struct cocos2d::V3F_T2F & __thiscall cocos2d::V3F_T2F::operator=(struct cocos2d::V3F_T2F const &)`
+- `0xcc740` : `public: struct cocos2d::V3F_T2F_Quad & __thiscall cocos2d::V3F_T2F_Quad::operator=(struct cocos2d::V3F_T2F_Quad &&)`
+- `0xcc740` : `public: struct cocos2d::V3F_T2F_Quad & __thiscall cocos2d::V3F_T2F_Quad::operator=(struct cocos2d::V3F_T2F_Quad const &)`
+- `0xd1660` : `public: struct cocos2d::Viewport & __thiscall cocos2d::Viewport::operator=(struct cocos2d::Viewport &&)`
+- `0xd1a40` : `public: struct cocos2d::Viewport & __thiscall cocos2d::Viewport::operator=(struct cocos2d::Viewport const &)`
+- `0xd22c0` : `public: class Rainbow::WindowsCrashHandler & __thiscall Rainbow::WindowsCrashHandler::operator=(class Rainbow::WindowsCrashHandler const &)`
+- `0xd2330` : `public: class WorldArchiveMgr & __thiscall WorldArchiveMgr::operator=(class WorldArchiveMgr const &)`
+- `0xd2580` : `public: class WorldBackupMgr & __thiscall WorldBackupMgr::operator=(class WorldBackupMgr const &)`
+- `0xe7080` : `public: class WorldList & __thiscall WorldList::operator=(class WorldList const &)`
+- `0xd25c0` : `public: class WorldStringManager & __thiscall WorldStringManager::operator=(class WorldStringManager const &)`
+- `0x53dcf0` : `public: class cocos2d::__Array & __thiscall cocos2d::__Array::operator=(class cocos2d::__Array const &)`
+- `0xd2700` : `public: bool __thiscall cocos2d::BlendFunc::operator==(struct cocos2d::BlendFunc const &)const `
+- `0xd2780` : `public: bool __thiscall cocos2d::BlendFunc::operator!=(struct cocos2d::BlendFunc const &)const `
+- `0xd2ad0` : `public: bool __thiscall cocos2d::BlendFunc::operator<(struct cocos2d::BlendFunc const &)const `
+- `0xc4d57c` : `const AbsCsv::`vftable'`
+- `0xc56824` : `const MINIW::AdventureReportMgr::`vftable'`
+- `0xc5742c` : `const MINIW::AppUpdateScene::`vftable'`
+- `0xc6faac` : `const AvatarDefCsv::`vftable'`
+- `0xc6fd40` : `const BlockDefCsv::`vftable'{for `AbsCsv'}`
+- `0xc6fd5c` : `const BlockDefCsv::`vftable'{for `IBlockDefMgr'}`
+- `0xc700cc` : `const BotConversationsDefCsv::`vftable'`
+- `0xc4d2fc` : `const MINIW::ClientApp::`vftable'{for `ClientAppProxy'}`
+- `0xc4d29c` : `const MINIW::ClientApp::`vftable'{for `Rainbow::GameApp'}`
+- `0xc4d50c` : `const ClientGameManager::`vftable'`
+- `0xc4d5bc` : `const MINIW::ClientInfo::`vftable'`
+- `0xc51524` : `const MINIW::ClientInfo_PC::`vftable'`
+- `0xc4d314` : `const MINIW::ClientLogin::`vftable'`
+- `0xc4e980` : `const MINIW::ClientVersion::`vftable'`
+- `0xc97d94` : `const cocos2d::DataVisitor::`vftable'`
+- `0xc4d3f4` : `const DefaultCsvLoadConfig::`vftable'`
+- `0xc4d8f8` : `const Dev3DUIManager::`vftable'`
+- `0xc4f5e4` : `const DeveloperSystem::`vftable'`
+- `0xca1884` : `const FmodSoundSystemEX::`vftable'`
+- `0xc4f57c` : `const GameLanguageCsv::`vftable'`
+- `0xc4f6d4` : `const GameZoneCsv::`vftable'`
+- `0xc75f70` : `const HomeCsvManagerProxy::`vftable'`
+- `0xc896c0` : `const Mini::HttpReportMgr::`vftable'`
+- `0xc524d0` : `const ItemDefCsv::`vftable'`
+- `0xc57d20` : `const MINIW::LaunchScene::`vftable'`
+- `0xcac37c` : `const MapEditManager::`vftable'`
+- `0xc4f684` : `const MiniBuzzSytem::`vftable'`
+- `0xc4f6ac` : `const MiniReportSystem::`vftable'`
+- `0xc4d30c` : `const Mini::MmkvMgr::`vftable'`
+- `0xc4d430` : `const MINIW::ModFileManager::`vftable'`
+- `0xc59344` : `const MonsterCsv::`vftable'`
+- `0xc4f65c` : `const NewYearSystem::`vftable'`
+- `0xc4d410` : `const OverseasCsvLoadConfig::`vftable'`
+- `0xc4d32c` : `const PlatformUtility::`vftable'`
+- `0xc97dc0` : `const cocos2d::PrettyPrinter::`vftable'`
+- `0xc4d3b0` : `const cocos2d::ResizeTo::`vftable'{for `cocos2d::Clonable'}`
+- `0xc4d38c` : `const cocos2d::ResizeTo::`vftable'{for `cocos2d::Ref'}`
+- `0xc70f54` : `const ResourcePackDefCsv::`vftable'`
+- `0xc70f70` : `const RoleSkinCsv::`vftable'`
+- `0xc4d354` : `const RoomManager::`vftable'`
+- `0xc92cc4` : `const SimulateMgr::`vftable'`
+- `0xc70f8c` : `const SkinActCsv::`vftable'`
+- `0xc4d370` : `const SnapshotMgr::`vftable'`
+- `0xc552f4` : `const StatisticRainforest::`vftable'`
+- `0xc551c8` : `const StatisticTerrgen::`vftable'`
+- `0xcbad38` : `const StatisticsManager::`vftable'`
+- `0xc5687c` : `const StatisticsTools::`vftable'`
+- `0xc4d598` : `const StringDefCsv::`vftable'`
+- `0xc70fa8` : `const SummonDefCsv::`vftable'`
+- `0xc70fc4` : `const SurviveObjectiveDefCsv::`vftable'`
+- `0xc70fe0` : `const SurviveTaskDefCsv::`vftable'`
+- `0xc70ffc` : `const ToolDefCsv::`vftable'`
+- `0xc4d3cc` : `const cocos2d::TransitionEaseScene::`vftable'`
+- `0xc4d4a8` : `const TriggerScriptMgr::`vftable'`
+- `0xc4d440` : `const UIFrameManager::`vftable'`
+- `0xc4d494` : `const WorldStringManager::`vftable'`
+- `0xc97e00` : `const cocos2d::__Array::`vftable'{for `cocos2d::Clonable'}`
+- `0xc97df4` : `const cocos2d::__Array::`vftable'{for `cocos2d::Ref'}`
+- `0x53df20` : `public: void __thiscall cocos2d::PrettyPrinter::`default constructor closure'(void)`
+- `0x5195b0` : `public: void __thiscall ChangeModelMgr::ActorEnterWorld(class ClientActor *)`
+- `0x6981d0` : `public: void __thiscall MapEditManager::AddCmd(struct MAP_EDIT_CMD_DATA,bool)`
+- `0x698510` : `public: void __thiscall MapEditManager::AddCmdByClient(int,struct MAP_EDIT_CMD_DATA,bool)`
+- `0xdb9f0` : `private: void __thiscall UIFrameManager::AddController(class DevUINode *,class fairygui::GComponent *)`
+- `0x4adf00` : `public: int __thiscall MINIW::HotfixProcessMgr::AddDecompressProcess(class core::basic_string<char,class core::StringStorageDefault<char> >,unsigned int)`
+- `0x4ae0c0` : `public: int __thiscall MINIW::HotfixProcessMgr::AddDownloadProcess(class core::basic_string<char,class core::StringStorageDefault<char> >,unsigned int)`
+- `0x553e60` : `public: class DevUINode * __thiscall UIEditorManager::AddNodeByTemplate(class DevUINode *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x55e190` : `public: bool __thiscall UIProjectLibManager::AddProject(enum UILIBTYPE,class UIProject *,bool)`
+- `0x74eb10` : `public: void __thiscall ArchiveTempMgr::AddSig(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x74eb50` : `public: void __thiscall ArchiveTempMgr::AddUin2HistoryList(__int64,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xf3740` : `public: bool __thiscall MINIW::ClientInfo::AdvertisementsLoadStatus(int,int)`
+- `0xdbf50` : `public: bool __thiscall MINIW::ClientManager::AdvertisementsLoadStatus(int,int)`
+- `0xf3760` : `public: void __thiscall MINIW::ClientInfo::AdvertisementsPreLoad(int,int)`
+- `0xdbf70` : `public: void __thiscall MINIW::ClientManager::AdvertisementsPreLoad(int,int)`
+- `0xd3740` : `public: void __thiscall MINIW::ClientApp::AfterDnsConvert(void)`
+- `0x4a2b60` : `private: void __thiscall MINIW::HotfixPkgLoader::AllPkgsCleanUp(void)`
+- `0x513a30` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudFail(int,char const *,char const *)`
+- `0x513b70` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudIndexArea(char const *,int,bool,char const *,char const *)`
+- `0x513cb0` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudIndexAreaFail(int,char const *,int,bool)`
+- `0x513df0` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudIndexFail(int,char const *,int,bool)`
+- `0x513f30` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudIntValue(int,char const *,char const *,double)`
+- `0x514070` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudIntValue(int,char const *,char const *,double,int,bool)`
+- `0x5141c0` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudStringValue(int,char const *,char const *,char const *)`
+- `0x514300` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudValuesArea(char const *,int,bool,int,int,char const *,char const *)`
+- `0x514440` : `public: virtual int __thiscall TriggerScriptMgr::AnsycCloudValuesAreaFail(int,char const *,int,bool,int,int)`
+- `0x514580` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall TriggerScriptMgr::AnsycGlobalValue(int,char const *,char const *,char const *)`
+- `0xd38d0` : `public: virtual void __thiscall MINIW::ClientApp::AppExit(void)`
+- `0xd3ba0` : `public: virtual void __thiscall MINIW::ClientApp::AppInit(void)`
+- `0x4a2ed0` : `private: void __thiscall MINIW::HotfixPkgLoader::AskForFullPkg(void)`
+- `0x4a38b0` : `private: void __thiscall MINIW::HotfixPkgLoader::AskForHotfix(void)`
+- `0x553ec0` : `public: void __thiscall UIEditorManager::AsyncSaveProject(void)`
+- `0x553f30` : `public: void __thiscall UIEditorManager::AsyncSaveProjectOk(void)`
+- `0x60af70` : `public: void __thiscall FmodSoundSystemEX::AudioEncodeCallBack(int,char const *,char const *)`
+- `0xfbc40` : `public: void __thiscall MINIW::ClientInfo_PC::AuthSessionTicketFromServer(void)`
+- `0xc55090` : `public: static int const StatisticRainforest::BALDACHINE_ENTER`
+- `0x5dab10` : `public: void __thiscall MINIW::ModFileManager::BeginDownloadAllFile(void)`
+- `0xd3fe0` : `public: virtual void __thiscall MINIW::ClientApp::BeginPlay(void)`
+- `0x5fd980` : `public: bool __thiscall MapEditManager::BlockHasDirection(int)`
+- `0xc550ac` : `public: static int const StatisticRainforest::CHECK_ENTER_BLOCK_NUM_LIMIT`
+- `0xc55080` : `public: static int const StatisticTerrgen::CHECK_ENTER_BLOCK_NUM_LIMIT`
+- `0xec1b3c` : `public: static char const * const Mini::HttpReportMgr::CLEARKEY`
+- `0x5b55d0` : `public: static void __cdecl ModManager::CalModEncryptMd5(char * const,class GameMod *)`
+- `0x7db910` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl OWorldUtils::CalcWorldSig(int,int,unsigned int)`
+- `0x5147e0` : `public: char const * __thiscall TriggerScriptMgr::CallDevApi(char const *,char const *,int,char const *)`
+- `0x514810` : `public: virtual bool __thiscall TriggerScriptMgr::CallDevScript(char const *,int)`
+- `0x5e7b90` : `private: void __thiscall CustomPicMgr::CallLua(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,int,int)`
+- `0x514830` : `public: bool __thiscall TriggerScriptMgr::CallModuleFunction(char const *,char const *)`
+- `0x514850` : `public: virtual bool __cdecl TriggerScriptMgr::CallModuleFunction(char const *,char const *,char const *,...)`
+- `0x6dbb20` : `public: bool __thiscall MapConvertMgr::CanOpenContainerForCopiedMap(__int64,int)`
+- `0x6988f0` : `public: bool __thiscall MapEditManager::CanRecoverCmd(void)`
+- `0x698920` : `public: bool __thiscall MapEditManager::CanRevokeCmd(void)`
+- `0x698960` : `public: bool __thiscall MapEditManager::CancelSelectArea(void)`
+- `0x698a00` : `public: void __thiscall MapEditManager::CancelSelectEndPos(void)`
+- `0x10cba0` : `public: void __thiscall UIProjectLibManager::ChangeUIBuyUin(__int64,int)`
+- `0x55e1c0` : `public: void __thiscall UIProjectLibManager::ChangeUIOwnerUin(__int64,int)`
+- `0x77b7f0` : `public: bool __thiscall WorldArchiveMgr::ChangeWorldToEditorSceneWorld(__int64)`
+- `0x698a50` : `public: int __thiscall MapEditManager::CharToInt(char *)`
+- `0xf3780` : `public: virtual bool __thiscall MINIW::ClientInfo::CheckAppExist(char const *)const `
+- `0xfbd50` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::CheckAppExist(char const *)const `
+- `0xf3780` : `public: virtual bool __thiscall MINIW::ClientInfo::CheckAppInstall(char const *)const `
+- `0xfbd70` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::CheckAppInstall(char const *)const `
+- `0x698a70` : `public: void __thiscall MapEditManager::CheckCmd(class std::vector<struct MAP_EDIT_CMD_DATA,class std::allocator<struct MAP_EDIT_CMD_DATA> > *,int &,struct MAP_EDIT_CMD_DATA *,int)`
+- `0x1429a0` : `public: void __thiscall MINIW::AppUpdateScene::CheckColdUpdate(void)`
+- `0x514c20` : `public: virtual int __thiscall TriggerScriptMgr::CheckCurrentPluginidInMap(char const *,char const *,int)`
+- `0xd6030` : `public: bool __thiscall MINIW::ClientInfo::CheckDouYinToken(void)`
+- `0x755e20` : `public: bool __thiscall ClientCSOWorld::CheckDownloadRecMatch(__int64,struct MapInfoHttp const &)`
+- `0x698ef0` : `public: bool __thiscall MapEditManager::CheckEditParam(struct MAP_EDIT_PARAM *)`
+- `0x4a4420` : `public: void __thiscall MINIW::HotfixPkgLoader::CheckFileMd5(void)`
+- `0xfbd90` : `public: void __thiscall MINIW::ClientInfo_PC::CheckHasAntiPlugin(bool &,class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > &)`
+- `0x1429d0` : `public: void __thiscall MINIW::AppUpdateScene::CheckHotfixUpdate(void)`
+- `0xce3d0` : `private: void __thiscall MINIW::ClientLogin::CheckMainDataFiles(void)`
+- `0xdb740` : `public: int __thiscall MINIW::ClientInfo::CheckNotificationPermission(void)`
+- `0x7dba20` : `public: static bool __cdecl OWorldUtils::CheckOWorldDirs(__int64,int,bool)`
+- `0x514c50` : `public: virtual int __thiscall TriggerScriptMgr::CheckOriginPluginidInMap(char const *,char const *,int)`
+- `0xf3790` : `public: bool __thiscall MINIW::ClientInfo::CheckOverseasGrayVer(void)`
+- `0xf3850` : `public: bool __thiscall MINIW::ClientInfo::CheckOverseasVer(void)`
+- `0xc2190` : `public: int __thiscall MINIW::ClientInfo::CheckSouGouInputState(void)`
+- `0x7dbf60` : `public: static bool __cdecl OWorldUtils::CheckTempOWorldDirs(__int64,int)`
+- `0x16d000` : `public: virtual void __thiscall ClientGameManager::CheckWindowLostFocus(void)`
+- `0x7dc0f0` : `public: static bool __cdecl OWorldUtils::CheckWorldSig(struct tagOWorld const *)`
+- `0x4a45f0` : `private: void __thiscall MINIW::HotfixPkgLoader::CheckoutPackage(void)`
+- `0x74ebf0` : `private: void __thiscall ArchiveTempMgr::Clear(void)`
+- `0x5196a0` : `public: void __thiscall ChangeModelMgr::Clear(void)`
+- `0x4e5ff0` : `public: void __thiscall SimulateMgr::ClearAll(void)`
+- `0x698f60` : `public: void __thiscall MapEditManager::ClearBlocks(void)`
+- `0x698f80` : `public: void __thiscall MapEditManager::ClearCmdData(struct MAP_EDIT_CMD_DATA *,bool)`
+- `0x699210` : `public: void __thiscall MapEditManager::ClearCmdDatas(void)`
+- `0x6993f0` : `public: void __thiscall MapEditManager::ClearCopyBlocks(void)`
+- `0x13e520` : `public: static void __cdecl MINIW::ClientLogin::ClearHistoryUpdate(void)`
+- `0x7dc4c0` : `public: static void __cdecl OWorldUtils::ClearMainDataFileStatus(void)`
+- `0x699400` : `public: void __thiscall MapEditManager::ClearPreview(void)`
+- `0x714c30` : `public: void __thiscall ClientBuddyMgr::ClearWatchBuddy(void)`
+- `0x54f990` : `public: void __thiscall UIFrameManager::CloseFrame(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x2a4140` : `void __cdecl MINIW::WIN_UTIL::ClosePCCrashHander(void)`
+- `0x553f40` : `public: void __thiscall UIEditorManager::CloseProject(void)`
+- `0xce3d0` : `public: void __thiscall Rainbow::SentryModule::CloseSentry(void)`
+- `0x570f30` : `public: void __thiscall ArchiveManager::CloudServerSaveLibvarCloudData(int,__int64)`
+- `0x699410` : `public: void __thiscall MapEditManager::CmdDataCompress(struct MAP_EDIT_CMD_DATA *)`
+- `0x69a180` : `public: void __thiscall MapEditManager::CmdDataDecompress(struct MAP_EDIT_CMD_DATA *)`
+- `0x7373b0` : `private: void __thiscall StatisticTerrgen::CollectChunkBiome(class Chunk *)`
+- `0x2a7690` : `public: static char const * __cdecl AbsCsv::ColumnLang(class MINIW::CSVParser::TableLine const &,char const *)`
+- `0x7a5020` : `public: void __thiscall StringLoaderManager::CompressAndUpLoad(__int64,int)`
+- `0x755f50` : `public: __int64 __thiscall ClientCSOWorld::ContinueDownloadMap(struct MapInfoHttp const &)`
+- `0x6dbbc0` : `public: void __thiscall MapConvertMgr::ConvertBlockFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64,int)`
+- `0x6dbda0` : `public: int __thiscall MapConvertMgr::ConvertBlockProject(__int64,int)`
+- `0x4a4cc0` : `private: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::HotfixPkgLoader::ConvertOsType(class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0x69ab10` : `public: bool __thiscall MapEditManager::CopyBlockData(class WCoord,class WCoord)`
+- `0x69ada0` : `public: void __thiscall MapEditManager::CopyEditParam(void)`
+- `0x793500` : `void __cdecl CopyMyWorldData(struct WorldDesc *,struct tagOWorld const &)`
+- `0x553f80` : `public: class DevUINode * __thiscall UIEditorManager::CopyNode2Add(class DevUINode *,class DevUINode *)`
+- `0x554050` : `public: class DevUINode * __thiscall UIEditorManager::CopyNode2Add(class UIProject *,class DevUINode *,class DevUINode *)`
+- `0x554180` : `public: class DevUINode * __thiscall UIEditorManager::CopyNode2AddOfficial(class UIProject *,class DevUINode *,class DevUINode *)`
+- `0x55f250` : `public: class UIProject * __thiscall UIProjectLibManager::CopyProject(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *)`
+- `0x55f590` : `public: bool __thiscall UIProjectLibManager::CopyProjectBetweenLib(enum UILIBTYPE,enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x55fa50` : `public: void __thiscall UIProjectLibManager::CopyThumbnail2Res(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5e1960` : `public: class Dev3DUIGLoader * __thiscall Dev3DUIManager::Create3dGLoader(class World *,class WCoord,class Rainbow::Vector3f,int,int,int,int,int)`
+- `0x74ec20` : `public: void __thiscall ArchiveTempMgr::Create(__int64,int,int)`
+- `0xd4210` : `public: virtual void __thiscall MINIW::ClientApp::CreateClientLogin(void)`
+- `0x5e1a50` : `public: class Dev3DUIFrame * __thiscall Dev3DUIManager::CreateFrame(class World *,class WCoord,int,int,int,int,int)`
+- `0x4e6000` : `public: void __thiscall SimulateMgr::CreateMultiSims(int)`
+- `0x5542b0` : `public: class DevUINode * __thiscall UIEditorManager::CreateNode(class DevUINode *,char const *)`
+- `0x554380` : `public: class UIProject * __thiscall UIEditorManager::CreateProjectByNode(enum UILIBTYPE,class DevUINode *,char const *)`
+- `0x54f9a0` : `private: class fairygui::GObject * __thiscall UIFrameManager::CreateRealObjectByNode(class DevUINode *)`
+- `0x5e7bd0` : `public: class Rainbow::SequenceTexture * __thiscall CustomPicMgr::CreateSeqTextureFromCustomFile(char const *)`
+- `0x5e7bf0` : `public: class Rainbow::SequenceTexture * __thiscall CustomPicMgr::CreateSeqTextureFromCustomMiniFile(char const *)`
+- `0x60afa0` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::CreateSoundFromFile(class FMOD::System *,char const *,unsigned int)`
+- `0x7dc4d0` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl OWorldUtils::CreateTempSig(__int64,__int64,__int64)`
+- `0x5e1b30` : `public: class Dev3DUITexture * __thiscall Dev3DUIManager::CreateTexture(class World *,class WCoord,class Rainbow::Vector3f,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int,int)`
+- `0x5e1c90` : `public: class Dev3DUIVideo * __thiscall Dev3DUIManager::CreateVideo(__int64,enum UITOOLVIDEOTYPE,class World *,class WCoord,int,int,int,int,int)`
+- `0x5e1d80` : `public: class Dev3DUIVideoEX * __thiscall Dev3DUIManager::CreateVideoEX(class World *,class WCoord,class Rainbow::Vector3f,int,int,int,int,int)`
+- `0x5e1e80` : `public: class Dev3DUIVideoLocalEX * __thiscall Dev3DUIManager::CreateVideoLocalEX(class World *,class WCoord,class Rainbow::Vector3f,int,int,int,int,int)`
+- `0x5e1f80` : `public: class Dev3DUIVideoNetEX * __thiscall Dev3DUIManager::CreateVideoNetEX(class World *,class WCoord,class Rainbow::Vector3f,int,int,int,int,int)`
+- `0x7dc780` : `public: static void __cdecl OWorldUtils::CreateWorldSig(struct tagOWorld *)`
+- `0xec1b34` : `public: static char const * const Mini::HttpReportMgr::DATAIDKEY`
+- `0xec1be8` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Mini::HttpReportMgr::DATAURL`
+- `0xc4d12c` : `private: static int const cocos2d::SpriteBatchNode::DEFAULT_CAPACITY`
+- `0x55fbf0` : `public: void __thiscall UIProjectLibManager::DealWithModProjFile(__int64)`
+- `0x5b57e0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModManager::DecryptAsString(class GameMod *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5e2080` : `public: bool __thiscall Dev3DUIManager::DeleteById(int)`
+- `0x7dc8c0` : `public: static void __cdecl OWorldUtils::DeleteCacheDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7dc8c0` : `public: static void __cdecl OWorldUtils::DeleteCacheFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::DeleteMemFile(char const *)`
+- `0x514c80` : `public: void __thiscall TriggerScriptMgr::DeleteModPacket(char const *)`
+- `0x5544c0` : `public: void __thiscall UIEditorManager::DeleteNode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x554580` : `public: void __thiscall UIEditorManager::DeleteNodeFromList(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x560570` : `public: void __thiscall UIProjectLibManager::DeleteProject(int,int)`
+- `0x5605a0` : `public: void __thiscall UIProjectLibManager::DeleteProject(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x4a4dd0` : `void __cdecl MINIW::DestoryHotfixProcessMgr(void)`
+- `0xe7de0` : `public: static void __cdecl Rainbow::Singleton<class ChangeModelMgr>::Destroy(void)`
+- `0xfbe20` : `public: static void __cdecl Rainbow::Singleton<class FunnyCore>::Destroy(void)`
+- `0xd4280` : `public: static void __cdecl Rainbow::Singleton<class Mini::MmkvMgr>::Destroy(void)`
+- `0xfbe60` : `public: static void __cdecl Rainbow::Singleton<class SnapshotForPC>::Destroy(void)`
+- `0xfbea0` : `public: static void __cdecl Rainbow::Singleton<class StringLoaderManager>::Destroy(void)`
+- `0x74edb0` : `public: static void __cdecl ArchiveTempMgr::Destroy(void)`
+- `0x5e2100` : `public: static void __cdecl Dev3DUIManager::Destroy(void)`
+- `0x617290` : `public: static void __cdecl MidiFileInfo::Destroy(void)`
+- `0x830810` : `public: static void __cdecl MultiLocalMgr::Destroy(void)`
+- `0x6f5620` : `public: static void __cdecl MusicItemLogical::Destroy(void)`
+- `0x12c270` : `public: static void __cdecl StatisticTerrgen::Destroy(void)`
+- `0x514cb0` : `public: void __thiscall TriggerScriptMgr::Destroy(void)`
+- `0x554700` : `public: static void __cdecl UIEditorManager::Destroy(void)`
+- `0x5605c0` : `public: static void __cdecl UIProjectLibManager::Destroy(void)`
+- `0x295950` : `public: static void __cdecl Rainbow::WindowsCrashHandler::Destroy(void)`
+- `0x101bd0` : `void __cdecl MINIW::DestroyClientInfo(void)`
+- `0x7c3b50` : `public: __int64 __thiscall OWorldList::DetermineDownloadArchiveWorldDest(struct MapInfoHttp const &,__int64,bool)`
+- `0x756060` : `protected: __int64 __thiscall ClientCSOWorld::DetermineDownloadDest(struct MapInfoHttp const &,bool)`
+- `0x7c4b20` : `public: __int64 __thiscall OWorldList::DetermineDownloadDevTempDest(struct MapInfoHttp const &)`
+- `0x7c5430` : `public: __int64 __thiscall OWorldList::DetermineDownloadHomegardenDest(struct MapInfoHttp const &)`
+- `0x7c5d30` : `public: __int64 __thiscall OWorldList::DetermineDownloadRecreationWorldDest(struct MapInfoHttp const &,__int64)`
+- `0x514d40` : `public: virtual char const * __thiscall TriggerScriptMgr::Dev2GameCall(char const *,char const *,char const *)`
+- `0xf38b0` : `public: void __thiscall MINIW::ClientInfo::Dev2GameCallAsync(int,char const *,char const *,char const *,bool)`
+- `0x514ee0` : `public: virtual char const * __thiscall TriggerScriptMgr::Dev2GameMsg(char const *,int)`
+- `0xd42c0` : `public: virtual void __thiscall MINIW::ClientApp::DevUISetIconByResIdExProxy(class fairygui::GLoader *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x54f9e0` : `private: bool __thiscall UIFrameManager::DisableControllerTween(class fairygui::GComponent *,bool)`
+- `0xd4350` : `public: void __thiscall MINIW::ClientApp::DisptchHotfix(void)`
+- `0x5dab80` : `public: void __thiscall MINIW::ModFileManager::DownLoadModFileByPath(char *)`
+- `0x7566e0` : `public: __int64 __thiscall ClientCSOWorld::DownloadMap(struct MapInfoHttp const &,bool,bool,__int64,bool)`
+- `0x7a5a40` : `public: bool __thiscall StringLoaderManager::DownloadMap(__int64)`
+- `0xfab338` : `private: static int StatisticRainforest::ENTER_TICK_COUNT`
+- `0xfabab4` : `private: static int StatisticTerrgen::ENTER_TICK_COUNT`
+- `0xdaf70` : `public: bool __thiscall MapEditManager::EditParamIsChanged(void)`
+- `0x5b59f0` : `public: static bool __cdecl ModManager::EncryptWithMd5(char *,int,struct dynamic_array<unsigned char,0> &,class core::basic_string<char,class core::StringStorageDefault<char> > &)`
+- `0xf38c0` : `public: void __thiscall MINIW::ClientInfo::EndTraceRoute(void)`
+- `0x560600` : `public: bool __thiscall UIProjectLibManager::EnterLibrary(int,enum UILIB_ENTRYTYPE,__int64)`
+- `0x514fb0` : `public: void __thiscall TriggerScriptMgr::EnterSupportScripts(__int64)`
+- `0xd4360` : `public: void __thiscall MINIW::ClientApp::ExcuteBasePkgHotfix(void)`
+- `0x69ae00` : `public: bool __thiscall MapEditManager::ExcuteCmd(bool)`
+- `0x69b500` : `public: bool __thiscall MapEditManager::ExcuteCmdByClient(class ClientPlayer *,struct MAP_EDIT_PARAM *,struct MAP_EDIT_POS *,bool)`
+- `0x69b880` : `public: bool __thiscall MapEditManager::ExcuteCmdWithRBClicked(void)`
+- `0x69b8a0` : `public: bool __thiscall MapEditManager::ExcutePasteCmd(class std::vector<struct MapEdittPreBlocksData,class std::allocator<struct MapEdittPreBlocksData> >)`
+- `0xd52f0` : `public: void __thiscall MINIW::ClientApp::ExcuteUniverseBasePkgHotfix(void)`
+- `0x757230` : `public: bool __thiscall ClientCSOWorld::FillDownloadRec(__int64,struct MapInfoHttp const &)`
+- `0x7c7d80` : `public: void __thiscall OWorldList::FillWorldByMapInfo(struct tagOWorld *,struct MapInfoHttp const &,__int64)`
+- `0x7e95f0` : `public: void __thiscall KeywordFilterMgr::Filter(class core::basic_string<char,class core::StringStorageDefault<char> > &,bool,bool)`
+- `0x5e2140` : `public: class Dev3DUIBase * __thiscall Dev3DUIManager::FindById(int)`
+- `0x5608f0` : `private: class UIProjectLib * __thiscall UIProjectLibManager::FindLibByIndex(int)`
+- `0x560920` : `private: class UIProjectLib * __thiscall UIProjectLibManager::FindLibByType(enum UILIBTYPE)`
+- `0x554740` : `public: class DevUINode * __thiscall UIEditorManager::FindNode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x560980` : `public: class DevUINode * __thiscall UIProjectLibManager::FindNodeById(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x54fa00` : `public: class fairygui::GObject * __thiscall UIFrameManager::FindObject(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x54fa20` : `public: class fairygui::GObject * __thiscall UIFrameManager::FindObject(char const *,enum UICOMPONENTTYPE &)`
+- `0x4ae2a0` : `public: void __thiscall MINIW::HotfixProcessMgr::FinishDownloadProcess(int)`
+- `0x5b5a80` : `public: void __thiscall ModManager::FlushMapMod(char const *)`
+- `0xf38d0` : `public: virtual void __thiscall MINIW::ClientInfo::FmodSoundSystemEXReleaseRes(void)`
+- `0x830850` : `public: bool __thiscall MultiLocalMgr::FontsCfgIsEmpty(void)`
+- `0xc55094` : `public: static int const StatisticRainforest::GOD_TEMPLE_ACTIVE`
+- `0xc55098` : `public: static int const StatisticRainforest::GOD_TEMPLE_ENTER`
+- `0xc5509c` : `public: static int const StatisticRainforest::GOD_TEMPLE_EXIT`
+- `0x515000` : `public: char const * __thiscall TriggerScriptMgr::Game2DevCall(char const *,char const *,int,char const *)`
+- `0x515030` : `public: void __thiscall TriggerScriptMgr::Game2DevMsg(char const *,int)`
+- `0xd5360` : `public: virtual void __thiscall MINIW::ClientApp::GameExit(bool)`
+- `0xdbf90` : `public: void __thiscall MINIW::ClientManager::GameExit(bool)`
+- `0x5e7de0` : `public: int __thiscall CustomPicMgr::GenCustomThumbnail(char const *,char const *,int,int)`
+- `0x7854f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::GenNewWorldBackupId(void)`
+- `0x7855c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::GenNewWorldBackupZipPath(struct WorldBackupInfo const &)`
+- `0x59e740` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::GenerateNewUUIDString(void)`
+- `0x7ba450` : `class AccountFBData & __cdecl GetAccountFBData(void)`
+- `0x7ba450` : `class AccountFBData * __cdecl GetAccountFBDataPtr(void)`
+- `0x7432a0` : `class AchievementManager & __cdecl GetAchievementManager(void)`
+- `0x7432b0` : `class AchievementManager * __cdecl GetAchievementManagerPtr(void)`
+- `0x797510` : `class MINIW::AdventureReportMgr & __cdecl MINIW::GetAdventureReportMgr(void)`
+- `0x797520` : `class MINIW::AdventureReportMgr * __cdecl MINIW::GetAdventureReportMgrPtr(void)`
+- `0x5dad60` : `public: int __thiscall MINIW::ModFileManager::GetAllModFileSumSize(void)`
+- `0x7dc950` : `public: static class std::vector<__int64,class std::allocator<__int64> > __cdecl OWorldUtils::GetAllOwIdWithPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf38e0` : `public: int __thiscall MINIW::ClientInfo::GetAppAbi(void)`
+- `0xf38f0` : `public: virtual int __thiscall MINIW::ClientInfo::GetAppId(void)`
+- `0xdbfa0` : `public: int __thiscall MINIW::ClientManager::GetAppId(void)`
+- `0x4a5050` : `public: static int __cdecl MINIW::HotfixPkgLoader::GetAppInsidePkgVersion(char const *)`
+- `0xf3940` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetAppReportSessionId(void)`
+- `0xf3960` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetAppStartTime(void)`
+- `0xd5480` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetApplicationRunPath(void)`
+- `0xfbee0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo_PC::GetApplicationRunPath(void)`
+- `0x571870` : `class ArchiveManager & __cdecl GetArchiveManager(void)`
+- `0x571880` : `class ArchiveManager * __cdecl GetArchiveManagerPtr(void)`
+- `0x5e8110` : `public: class Rainbow::SharePtr<class Rainbow::Asset> __thiscall CustomPicMgr::GetAssetByCustomFile(char const *)`
+- `0x69bb40` : `public: class WCoord __thiscall MapEditManager::GetBeginPos(void)`
+- `0x2aa470` : `public: virtual struct BlockDef * __thiscall BlockDefCsv::GetBlockDef(int)`
+- `0x2aa4b0` : `public: virtual int __thiscall BlockDefCsv::GetBlockDefCount(void)const `
+- `0x5e2170` : `public: class Dev3DUIBase * __thiscall Dev3DUIManager::GetByIndex(int)`
+- `0xf3990` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetCPUModel(void)`
+- `0x69bb60` : `public: class WCoord __thiscall MapEditManager::GetCenterPos(void)`
+- `0x70c530` : `class ClientAccountMgr & __cdecl GetClientAccountMgr(void)`
+- `0x70c530` : `class ClientAccountMgr * __cdecl GetClientAccountMgrPtr(void)`
+- `0xd54b0` : `class MINIW::ClientApp & __cdecl MINIW::GetClientApp(void)`
+- `0x715030` : `class ClientBuddyMgr & __cdecl GetClientBuddyMgr(void)`
+- `0x715030` : `class ClientBuddyMgr * __cdecl GetClientBuddyMgrPtr(void)`
+- `0x16d0a0` : `class ClientGameManager & __cdecl GetClientGameManager(void)`
+- `0x16d0b0` : `class ClientGameManager * __cdecl GetClientGameManagerPtr(void)`
+- `0x101c00` : `class MINIW::ClientInfo * __cdecl MINIW::GetClientInfo(void)`
+- `0xd54c0` : `public: class MINIW::ClientLogin * __thiscall MINIW::ClientApp::GetClientLogin(void)`
+- `0xd54d0` : `public: virtual int __thiscall MINIW::ClientInfo::GetClientVersion(void)`
+- `0xd54e0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetClientVersionStr(void)`
+- `0x515050` : `public: int __thiscall TriggerScriptMgr::GetCloudIndexValue(int,char const *,int,bool)`
+- `0x5150a0` : `public: int __thiscall TriggerScriptMgr::GetCloudValue(int,char const *,char const *)`
+- `0x69bb80` : `public: class MapEditCmdBase * __thiscall MapEditManager::GetCmd(enum MAP_EDIT_HANDLE_TYPE)`
+- `0xdd560` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::ClientVersion::GetCompileVersion(void)`
+- `0xd5520` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetCompileVersionStr(void)`
+- `0x322cf0` : `public: int __thiscall Dev3DUIManager::GetCount(void)`
+- `0xf3a40` : `public: virtual int __thiscall MINIW::ClientInfo::GetCreateRoomPathType(void)`
+- `0x69bb90` : `public: class std::vector<int,class std::allocator<int> > __thiscall MapEditManager::GetCurAreaBlcokIds(void)`
+- `0x69bcf0` : `public: int __thiscall MapEditManager::GetCurAreaBlockIdByIndex(int)`
+- `0x69bd20` : `public: int __thiscall MapEditManager::GetCurAreaBlockNum(void)`
+- `0x14e150` : `public: struct MINIW::HotfixProcessMgr::DecompressProcess & __thiscall MINIW::HotfixProcessMgr::GetCurDecompressProcess(void)`
+- `0x14e160` : `public: struct MINIW::HotfixProcessMgr::DownloadProcess & __thiscall MINIW::HotfixProcessMgr::GetCurDownloadProcess(void)`
+- `0xdb700` : `public: struct MAP_EDIT_PARAM * __thiscall MapEditManager::GetCurEditParam(void)`
+- `0xd5560` : `public: char const * __thiscall ModManager::GetCurWorldModRoot(void)`
+- `0xd5580` : `public: int __thiscall ModManager::GetCustomBiome(void)const `
+- `0x5e8400` : `class CustomPicMgr & __cdecl GetCustomPicMgr(void)`
+- `0x5e8410` : `class CustomPicMgr * __cdecl GetCustomPicMgrPtr(void)`
+- `0xdb760` : `public: int __thiscall MINIW::HotfixProcessMgr::GetDecompressProcessCount(void)`
+- `0x14e170` : `public: struct dynamic_array<struct MINIW::HotfixProcessMgr::DecompressProcess,0> & __thiscall MINIW::HotfixProcessMgr::GetDecompressProcessList(void)`
+- `0x14e150` : `public: struct MINIW::HotfixProcessMgr::DecompressProcess const & __thiscall MINIW::HotfixProcessMgr::GetDecompressRunningProcess(void)`
+- `0x359da0` : `class DefManager & __cdecl GetDefManager(void)`
+- `0xf3a50` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetDefStringById(int)`
+- `0xf3aa0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetDeviceCountry(void)`
+- `0xf3ac0` : `public: virtual int __thiscall MINIW::ClientInfo::GetDeviceFirstTime(void)`
+- `0xf3ad0` : `public: virtual int __thiscall MINIW::ClientInfo::GetDeviceFirstVisit(void)`
+- `0x1067f0` : `class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl MINIW::GetDeviceId(void)`
+- `0xf3ae0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetDeviceIp(void)`
+- `0xf3b00` : `public: virtual int __thiscall MINIW::ClientInfo::GetDeviceLastTime(void)`
+- `0x7dcca0` : `public: static int __cdecl OWorldUtils::GetDirSize(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x14e160` : `public: struct MINIW::HotfixProcessMgr::DownloadProcess const & __thiscall MINIW::HotfixProcessMgr::GetDownLoadRuningProcess(void)`
+- `0xd5590` : `public: class Rainbow::Http::DownLoadFileTask * __thiscall MINIW::HotfixPkgLoader::GetDownloadFileTask(void)`
+- `0xdb7f0` : `public: class std::map<int,__int64,struct std::less<int>,class std::allocator<struct std::pair<int const ,__int64> > > & __thiscall StringLoaderManager::GetDownloadList(void)`
+- `0xf5940` : `public: int __thiscall MINIW::HotfixProcessMgr::GetDownloadProcessCount(void)`
+- `0xca1a0` : `public: struct dynamic_array<struct MINIW::HotfixProcessMgr::DownloadProcess,0> & __thiscall MINIW::HotfixProcessMgr::GetDownloadProcessList(void)`
+- `0x554760` : `private: class cocos2d::NodeDrawItem * __thiscall UIEditorManager::GetDrawItemByNode(class fairygui::GObject *)`
+- `0xd55a0` : `public: class UIProject * __thiscall UIEditorManager::GetEditingProject(void)`
+- `0x53bd00` : `class EditorLang & __cdecl GetEditorLang(void)`
+- `0x53bd00` : `class EditorLang * __cdecl GetEditorLangPtr(void)`
+- `0xf3b10` : `public: virtual int __thiscall MINIW::ClientInfo::GetEditorSceneSwitch(void)`
+- `0x69bd80` : `public: class WCoord __thiscall MapEditManager::GetEndPos(void)`
+- `0xd55b0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetEngineVersionStr(void)`
+- `0x4a5430` : `public: char const * __thiscall MINIW::HotfixPkgLoader::GetErrorCodeStr(enum MINIW::HotfixPkgLoader::LoaderErrorCode)`
+- `0xd55f0` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::HotfixPkgLoader::GetErrorMsg(void)`
+- `0xd5610` : `public: struct dynamic_array<class core::basic_string<char,class core::StringStorageDefault<char> >,0> __thiscall MINIW::HotfixPkgLoader::GetFilePrefix(void)`
+- `0x7dcd30` : `public: static int __cdecl OWorldUtils::GetFileSize(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x60b840` : `class FmodSoundSystemEX & __cdecl GetFmodSoundSystemEX(void)`
+- `0x60b840` : `class FmodSoundSystemEX * __cdecl GetFmodSoundSystemEXPtr(void)`
+- `0xd5660` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall MultiLocalMgr::GetFontsPath(void)`
+- `0xd5670` : `public: virtual unsigned int __thiscall MINIW::ClientApp::GetFrameCount(void)`
+- `0xd5680` : `public: float __thiscall MINIW::ClientApp::GetFrameTime(void)`
+- `0x4a5450` : `private: int __thiscall MINIW::HotfixPkgLoader::GetFullPkgVersion(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::GetFunnyCoreLoginAccountInfo(void)`
+- `0xfc080` : `public: void __thiscall MINIW::ClientInfo_PC::GetFunnyCoreLoginAccountInfo(void)`
+- `0xdbff0` : `public: void __thiscall MINIW::ClientManager::GetFunnyCoreLoginAccountInfo(void)`
+- `0xd5690` : `public: virtual void (__cdecl*& __thiscall MINIW::ClientInfo::GetGameAPICallback(void))(int,char const *)`
+- `0x101730` : `class MINIW::GameInfo & __cdecl MINIW::GetGameInfo(void)`
+- `0x1138b0` : `class GameRuntime & __cdecl GetGameRuntime(void)`
+- `0x1138b0` : `class GameRuntime * __cdecl GetGameRuntimePtr(void)`
+- `0xf3b30` : `public: virtual int __thiscall MINIW::ClientInfo::GetGameVersionIntForClientInfo(void)`
+- `0xd56a0` : `public: class TriggerGlobalData * __thiscall TriggerScriptMgr::GetGlobalDataMgr(void)`
+- `0x833800` : `public: unsigned int __thiscall SnapshotForGame::GetHashMd5(__int64,int)`
+- `0x833900` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall SnapshotForGame::GetHashPath(__int64,int,int)`
+- `0x85b390` : `class HomeCsvManager & __cdecl GetHomeCsvManager(void)`
+- `0x31de70` : `class HomeCsvManagerProxy * __cdecl GetHomeCsvManagerProxy(void)`
+- `0x142b30` : `public: class MINIW::HotFixTipsWindow * __thiscall MINIW::AppUpdateScene::GetHotFixTipsWindow(void)`
+- `0x4a5590` : `class MINIW::HotfixProcessMgr & __cdecl MINIW::GetHotfixProcessMgr(void)`
+- `0x46d320` : `class Mini::HttpReportMgr & __cdecl Mini::GetHttpReportMgr(void)`
+- `0xfc3a0` : `public: class std::vector<__int64,class std::allocator<__int64> > & __thiscall StringLoaderManager::GetIDList(void)`
+- `0xe82a0` : `class IWorldConfig & __cdecl GetIWorldConfig(void)`
+- `0xe82a0` : `class IWorldConfig * __cdecl GetIWorldConfigPtr(void)`
+- `0xd56b0` : `public: int __thiscall CustomPicMgr::GetImageLoadPlan(void)`
+- `0x60b860` : `public: static bool __cdecl FmodSoundSystemEX::GetInitState(void)`
+- `0xe82e0` : `public: static class ChangeModelMgr & __cdecl Rainbow::Singleton<class ChangeModelMgr>::GetInstance(void)`
+- `0xfc3b0` : `public: static class FunnyCore & __cdecl Rainbow::Singleton<class FunnyCore>::GetInstance(void)`
+- `0xd56c0` : `public: static class Mini::MmkvMgr & __cdecl Rainbow::Singleton<class Mini::MmkvMgr>::GetInstance(void)`
+- `0xfc3c0` : `public: static class SnapshotForPC & __cdecl Rainbow::Singleton<class SnapshotForPC>::GetInstance(void)`
+- `0xfc3d0` : `public: static class StringLoaderManager & __cdecl Rainbow::Singleton<class StringLoaderManager>::GetInstance(void)`
+- `0x7ba450` : `public: static class AccountFBData & __cdecl AccountFBData::GetInstance(void)`
+- `0x7432a0` : `public: static class AchievementManager & __cdecl AchievementManager::GetInstance(void)`
+- `0x797510` : `public: static class MINIW::AdventureReportMgr & __cdecl MINIW::AdventureReportMgr::GetInstance(void)`
+- `0x70c530` : `public: static class ClientAccountMgr & __cdecl ClientAccountMgr::GetInstance(void)`
+- `0x715030` : `public: static class ClientBuddyMgr & __cdecl ClientBuddyMgr::GetInstance(void)`
+- `0x60b840` : `public: static class FmodSoundSystemEX & __cdecl FmodSoundSystemEX::GetInstance(void)`
+- `0x69bda0` : `public: static class MapEditManager & __cdecl MapEditManager::GetInstance(void)`
+- `0x59e890` : `public: static class ModEditorManager & __cdecl ModEditorManager::GetInstance(void)`
+- `0x5dade0` : `public: static class MINIW::ModFileManager & __cdecl MINIW::ModFileManager::GetInstance(void)`
+- `0x5b6ce0` : `public: static class ModManager & __cdecl ModManager::GetInstance(void)`
+- `0x7c8030` : `public: static class OWorldList & __cdecl OWorldList::GetInstance(void)`
+- `0x151d80` : `public: static class PlatformUtility & __cdecl PlatformUtility::GetInstance(void)`
+- `0x833ac0` : `public: static class SnapshotForGame & __cdecl SnapshotForGame::GetInstance(void)`
+- `0x836a80` : `public: static class SnapshotForShare & __cdecl SnapshotForShare::GetInstance(void)`
+- `0x8377f0` : `public: static class SnapshotMgr & __cdecl SnapshotMgr::GetInstance(void)`
+- `0x4b93e0` : `public: static class SpringFestivalActivityMgr & __cdecl SpringFestivalActivityMgr::GetInstance(void)`
+- `0x5150f0` : `public: static class TriggerScriptMgr & __cdecl TriggerScriptMgr::GetInstance(void)`
+- `0x7b4060` : `public: static class WorldStringManager & __cdecl WorldStringManager::GetInstance(void)`
+- `0xe82e0` : `public: static class ChangeModelMgr * __cdecl Rainbow::Singleton<class ChangeModelMgr>::GetInstancePtr(void)`
+- `0xfc3b0` : `public: static class FunnyCore * __cdecl Rainbow::Singleton<class FunnyCore>::GetInstancePtr(void)`
+- `0xd56c0` : `public: static class Mini::MmkvMgr * __cdecl Rainbow::Singleton<class Mini::MmkvMgr>::GetInstancePtr(void)`
+- `0xfc3c0` : `public: static class SnapshotForPC * __cdecl Rainbow::Singleton<class SnapshotForPC>::GetInstancePtr(void)`
+- `0xfc3d0` : `public: static class StringLoaderManager * __cdecl Rainbow::Singleton<class StringLoaderManager>::GetInstancePtr(void)`
+- `0x7432a0` : `public: static class AchievementManager * __cdecl AchievementManager::GetInstancePtr(void)`
+- `0x797510` : `public: static class MINIW::AdventureReportMgr * __cdecl MINIW::AdventureReportMgr::GetInstancePtr(void)`
+- `0x74f130` : `public: static class ArchiveTempMgr * __cdecl ArchiveTempMgr::GetInstancePtr(void)`
+- `0x70c530` : `public: static class ClientAccountMgr * __cdecl ClientAccountMgr::GetInstancePtr(void)`
+- `0x715030` : `public: static class ClientBuddyMgr * __cdecl ClientBuddyMgr::GetInstancePtr(void)`
+- `0x60b840` : `public: static class FmodSoundSystemEX * __cdecl FmodSoundSystemEX::GetInstancePtr(void)`
+- `0x46d340` : `public: static class Mini::HttpReportMgr * __cdecl Mini::HttpReportMgr::GetInstancePtr(void)`
+- `0x6dc080` : `public: static class MapConvertMgr * __cdecl MapConvertMgr::GetInstancePtr(void)`
+- `0x69bda0` : `public: static class MapEditManager * __cdecl MapEditManager::GetInstancePtr(void)`
+- `0x59e890` : `public: static class ModEditorManager * __cdecl ModEditorManager::GetInstancePtr(void)`
+- `0x5dade0` : `public: static class MINIW::ModFileManager * __cdecl MINIW::ModFileManager::GetInstancePtr(void)`
+- `0x5b6ce0` : `public: static class ModManager * __cdecl ModManager::GetInstancePtr(void)`
+- `0x7c8030` : `public: static class OWorldList * __cdecl OWorldList::GetInstancePtr(void)`
+- `0x151d90` : `public: static class PlatformUtility * __cdecl PlatformUtility::GetInstancePtr(void)`
+- `0x833ac0` : `public: static class SnapshotForGame * __cdecl SnapshotForGame::GetInstancePtr(void)`
+- `0x836a80` : `public: static class SnapshotForShare * __cdecl SnapshotForShare::GetInstancePtr(void)`
+- `0x8377f0` : `public: static class SnapshotMgr * __cdecl SnapshotMgr::GetInstancePtr(void)`
+- `0x4b93e0` : `public: static class SpringFestivalActivityMgr * __cdecl SpringFestivalActivityMgr::GetInstancePtr(void)`
+- `0x515100` : `public: static class TriggerScriptMgr * __cdecl TriggerScriptMgr::GetInstancePtr(void)`
+- `0x7b4060` : `public: static class WorldStringManager * __cdecl WorldStringManager::GetInstancePtr(void)`
+- `0x69bdc0` : `public: bool __thiscall MapEditManager::GetIsCopyedArea(void)`
+- `0xd56d0` : `public: bool __thiscall MINIW::HotfixPkgLoader::GetIsDownloadOnce(void)`
+- `0xd56e0` : `public: bool __thiscall UIEditorManager::GetIsSaving(void)`
+- `0x69bdf0` : `public: bool __thiscall MapEditManager::GetIsSelectArea(void)`
+- `0xdb9e0` : `public: bool __thiscall MapEditManager::GetIsStartEdit(void)`
+- `0x5b6d00` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModManager::GetJsonContent(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7e9610` : `class KeywordFilterMgr & __cdecl GetKeywordFilterMgr(void)`
+- `0x7e9610` : `class KeywordFilterMgr * __cdecl GetKeywordFilterMgrPtr(void)`
+- `0x830860` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MultiLocalMgr::GetLangCsvPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x495670` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::HotFixTipsConfig::GetLangTipsStrByStrID(int,enum MINIW::HotFixTipsLangItem::LANG_TYPE)`
+- `0x31a0c0` : `public: class std::vector<struct GameLanguage const *,class std::allocator<struct GameLanguage const *> > const __thiscall GameLanguageCsv::GetLanguages(void)`
+- `0x79c640` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ReportCrashMgr::GetLastReport(void)`
+- `0x5608f0` : `public: class UIProjectLib * __thiscall UIProjectLibManager::GetLibByIndex(int)`
+- `0x560ba0` : `public: class UIProjectLib * __thiscall UIProjectLibManager::GetLibByType(enum UILIBTYPE)`
+- `0xd56f0` : `public: int __thiscall UIProjectLibManager::GetLibCount(void)`
+- `0xd5700` : `public: enum MINIW::HotfixPkgLoader::LoaderStatus __thiscall MINIW::HotfixPkgLoader::GetLoadStatus(void)const `
+- `0xd5710` : `public: enum MINIW::HotfixPkgLoader::LoaderErrorCode __thiscall MINIW::HotfixPkgLoader::GetLoaderErrorCode(void)const `
+- `0xf3b50` : `public: void __thiscall MINIW::ClientInfo::GetLoginStatusData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0xd5720` : `public: bool __thiscall CustomPicMgr::GetLowQualityTexture(void)`
+- `0x150850` : `class LuaInterface & __cdecl GetLuaInterface(void)`
+- `0x150850` : `class LuaInterface * __cdecl GetLuaInterfacePtr(void)`
+- `0x6dc080` : `class MapConvertMgr & __cdecl GetMapConvertMgr(void)`
+- `0x6dc080` : `class MapConvertMgr * __cdecl GetMapConvertMgrPtr(void)`
+- `0x7dcdc0` : `public: static struct OWorldUtils::MapDirs * __cdecl OWorldUtils::GetMapDirList(enum OWorldUtils::MapType)`
+- `0x69bda0` : `class MapEditManager & __cdecl GetMapEditManager(void)`
+- `0x69bda0` : `class MapEditManager * __cdecl GetMapEditManagerPtr(void)`
+- `0xfc3e0` : `public: class std::map<__int64,struct FMapInfo *,struct std::less<__int64>,class std::allocator<struct std::pair<__int64 const ,struct FMapInfo *> > > & __thiscall StringLoaderManager::GetMapList(void)`
+- `0xee630` : `class MiniWorldPreferences & __cdecl GetMiniWorldPreferences(void)`
+- `0x59e890` : `class ModEditorManager & __cdecl GetModEditorManager(void)`
+- `0x59e890` : `class ModEditorManager * __cdecl GetModEditorManagerPtr(void)`
+- `0x5dade0` : `class MINIW::ModFileManager & __cdecl MINIW::GetModFileManager(void)`
+- `0x5dadf0` : `class MINIW::ModFileManager * __cdecl MINIW::GetModFileManagerPtr(void)`
+- `0x5b6ce0` : `class ModManager & __cdecl GetModManager(void)`
+- `0x5b6ce0` : `class ModManager * __cdecl GetModManagerPtr(void)`
+- `0x483710` : `class Rainbow::ModuleResManager & __cdecl Rainbow::GetModuleResManager(void)`
+- `0xd5730` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetNewWeGameSessionId(void)`
+- `0xd5750` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetNewWeGameUsernames(void)`
+- `0x4a5620` : `public: int __thiscall MINIW::HotfixPkgLoader::GetNewestVersion(void)`
+- `0x2959c0` : `public: class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > __thiscall Rainbow::WindowsCrashHandler::GetNextDumpId(void)`
+- `0x71a270` : `public: static struct UrlInfo & __cdecl ClientUrl::GetNextUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x71a290` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ClientUrl::GetNextUrlString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x54fca0` : `public: class DevUINode * __thiscall UIFrameManager::GetNodeByObjectId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5b6f00` : `public: void __thiscall ModManager::GetNotDefaultModMaterialUUID(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,int &)`
+- `0x7c8050` : `public: struct tagOWorld * __thiscall OWorldList::GetOWorldByType(int,int)`
+- `0x7c8030` : `class OWorldList & __cdecl GetOWorldList(void)`
+- `0x7c8030` : `class OWorldList * __cdecl GetOWorldListPtr(void)`
+- `0x4c5c20` : `class OnlineService & __cdecl GetOnlineService(void)`
+- `0x4c5c20` : `class OnlineService * __cdecl GetOnlineServicePtr(void)`
+- `0xf3cd0` : `public: virtual char const * __thiscall MINIW::ClientInfo::GetPCDesktopDir(void)`
+- `0xfc3f0` : `public: virtual char const * __thiscall MINIW::ClientInfo_PC::GetPCDesktopDir(void)`
+- `0x4a5810` : `private: int __thiscall MINIW::HotfixPkgLoader::GetPatchPkgVersion(void)`
+- `0x833ad0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall SnapshotForGame::GetPicDir(__int64,int)`
+- `0x833c60` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall SnapshotForGame::GetPicPath(__int64,int,int)`
+- `0x4a5950` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::HotfixPkgLoader::GetPkgFileName(void)const `
+- `0x4a5970` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::HotfixPkgLoader::GetPkgName(void)const `
+- `0xd5770` : `public: int __thiscall MINIW::HotfixPkgLoader::GetPkgVersion(void)`
+- `0xf3f00` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetPkgsVersionStr(void)`
+- `0x4f2b70` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const __thiscall DeveloperSystem::GetPluginName(void)`
+- `0x392d80` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const __thiscall MiniBuzzSytem::GetPluginName(void)`
+- `0x79f450` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const __thiscall MiniReportSystem::GetPluginName(void)`
+- `0x6fa1a0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const __thiscall NewYearSystem::GetPluginName(void)`
+- `0xd5780` : `public: int __thiscall MINIW::HotfixPkgLoader::GetPriority(void)`
+- `0x560bb0` : `public: class UIProject * __thiscall UIProjectLibManager::GetProjcet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x560c90` : `public: class UIProject * __thiscall UIProjectLibManager::GetProjcet(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x560cc0` : `public: class UIProject * __thiscall UIProjectLibManager::GetProjcetByIndex(enum UILIBTYPE,int)`
+- `0x560cf0` : `public: int __thiscall UIProjectLibManager::GetProjectCount(enum UILIBTYPE)`
+- `0x560d10` : `public: int __thiscall UIProjectLibManager::GetProjectCountOnly(__int64)`
+- `0xdd650` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MINIW::ClientVersion::GetProjectVersion(void)`
+- `0x2959e0` : `public: void __thiscall Rainbow::WindowsCrashHandler::GetReportParams(class std::map<class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >,class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >,struct std::less<class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > >,class std::allocator<struct std::pair<class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > const ,class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > > > > &)`
+- `0x79c970` : `private: char const * __thiscall MINIW::ReportCrashMgr::GetReportString(class jsonxx::Object const &)`
+- `0x4d3c80` : `class RoomManager & __cdecl GetRoomManager(void)`
+- `0x4d3c80` : `class RoomManager * __cdecl GetRoomManagerPtr(void)`
+- `0xd5480` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetRoomServerUrl(void)`
+- `0x2a5300` : `private: class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> > __thiscall Rainbow::SentryModule::GetRunDir(void)`
+- `0xf3fb0` : `public: virtual int __thiscall MINIW::ClientInfo::GetSandBoxVersion(void)`
+- `0xf3fc0` : `public: virtual __int64 __thiscall MINIW::ClientInfo::GetServerAppID(void)`
+- `0x71a2c0` : `public: static class multiple_hash_map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct ClientUrl::UrlPool> & __cdecl ClientUrl::GetServerUrls(void)`
+- `0x74f330` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ArchiveTempMgr::GetSig(__int64)`
+- `0x5e4120` : `public: static class FmodSoundSystemEX * __cdecl FmodSoundSystemEX::GetSingletonPtr(void)`
+- `0xd5790` : `public: static class TriggerScriptMgr * __cdecl TriggerScriptMgr::GetSingletonPtr(void)`
+- `0x8377f0` : `class SnapshotMgr & __cdecl GetSnapshotMgr(void)`
+- `0x837800` : `class SnapshotMgr * __cdecl GetSnapshotMgrPtr(void)`
+- `0x4b93e0` : `class SpringFestivalActivityMgr & __cdecl GetSpringFestivalActivityMgr(void)`
+- `0x4b93f0` : `class SpringFestivalActivityMgr * __cdecl GetSpringFestivalActivityMgrPtr(void)`
+- `0x722250` : `class StatisticRainforest & __cdecl GetStatisticRainforest(void)`
+- `0x722250` : `class StatisticRainforest * __cdecl GetStatisticRainforestPtr(void)`
+- `0x732580` : `class StatisticsManager & __cdecl GetStatisticsManager(void)`
+- `0xd5580` : `public: enum MINIW::EAppUpdateStatus __thiscall MINIW::AppUpdateScene::GetStatus(void)`
+- `0x142b40` : `public: enum MINIW::HotFixTipsLangItem::LANG_TYPE __thiscall MINIW::AppUpdateScene::GetSystemDefaultLang(void)`
+- `0xf3fd0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::GetTargetPkgsVersionStr(void)`
+- `0x74f380` : `public: void __thiscall ArchiveTempMgr::GetTempHistoryUinList(class std::vector<int,class std::allocator<int> > &)`
+- `0x5e84a0` : `private: class Rainbow::SequenceTexture * __thiscall CustomPicMgr::GetTextureDataFromFile(char const *,bool)`
+- `0x5e8830` : `public: bool __thiscall CustomPicMgr::GetTextureWHFromCustomPicFile(char const *,int &,int &)`
+- `0x5150f0` : `class TriggerScriptMgr & __cdecl GetTriggerScriptMgr(void)`
+- `0x515110` : `class TriggerScriptMgr * __cdecl GetTriggerScriptMgrPtr(void)`
+- `0xdd770` : `public: static char const * __cdecl MINIW::ClientVersion::GetTypeString(void)`
+- `0x13e530` : `public: static char const * __cdecl MINIW::HotFixTipsConfig::GetTypeString(void)`
+- `0x54fdc0` : `class UIFrameManager & __cdecl GetUIFrameManager(void)`
+- `0x54fdc0` : `class UIFrameManager * __cdecl GetUIFrameManagerPtr(void)`
+- `0x6dc0c0` : `public: int __thiscall MapConvertMgr::GetUinFromWorldToolsInfoFile(__int64)`
+- `0x298370` : `public: void __thiscall FunnyCore::GetUnFunnyCoreLoginInformation(void)`
+- `0xca1a0` : `public: class std::map<int,struct UpDownWorldInfo,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct UpDownWorldInfo> > > & __thiscall ClientCSOWorld::GetUpdownWorldInfos(void)`
+- `0xfc610` : `public: class std::map<int,__int64,struct std::less<int>,class std::allocator<struct std::pair<int const ,__int64> > > & __thiscall StringLoaderManager::GetUploadList(void)`
+- `0xd58e0` : `public: class std::vector<struct UploadTempFileInfo,class std::allocator<struct UploadTempFileInfo> > & __thiscall ClientCSOWorld::GetUploadTempFileInfos(void)`
+- `0x71a2d0` : `public: static struct UrlInfo & __cdecl ClientUrl::GetUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x71a330` : `public: static struct UrlInfo & __cdecl ClientUrl::GetUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x71a520` : `public: static class std::vector<struct UrlInfo,class std::allocator<struct UrlInfo> > __cdecl ClientUrl::GetUrlList(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x71a5b0` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ClientUrl::GetUrlListToLua(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x71a880` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ClientUrl::GetUrlString(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x298a10` : `public: void __thiscall FunnyCore::GetUserLoginInformation(void)`
+- `0xd58f0` : `public: virtual char const * __thiscall MINIW::ClientInfo::GetUserType(void)const `
+- `0xfc620` : `public: virtual char const * __thiscall MINIW::ClientInfo_PC::GetUserType(void)const `
+- `0xfc630` : `public: struct HWND__ * __thiscall MINIW::ClientInfo_PC::GetWebHwnd(void)const `
+- `0x77bab0` : `class WorldArchiveMgr & __cdecl GetWorldArchiveMgr(void)`
+- `0x77bab0` : `class WorldArchiveMgr * __cdecl GetWorldArchiveMgrPtr(void)`
+- `0x785670` : `class WorldBackupMgr & __cdecl GetWorldBackupMgr(void)`
+- `0x785670` : `class WorldBackupMgr * __cdecl GetWorldBackupMgrPtr(void)`
+- `0x7c9d80` : `public: int __thiscall OWorldList::GetWorldNumByType(int)`
+- `0x7b4060` : `class WorldStringManager & __cdecl GetWorldStringManager(void)`
+- `0x7b4060` : `class WorldStringManager * __cdecl GetWorldStringManagerPtr(void)`
+- `0x7c9dd0` : `public: int __thiscall OWorldList::GetWorldTypeFromMapInfo(struct MapInfoHttp const &)`
+- `0xec2778` : `public: static char const * const MINIW::HotfixPkgLoader::HOTFIX_DOWNLOAD_CACHE_PATH`
+- `0xec2774` : `public: static char const * const MINIW::HotfixPkgLoader::HOTFIX_USEAGE_PATH`
+- `0xd5900` : `public: void __thiscall MINIW::ClientApp::HandleEvents(void)`
+- `0x5547d0` : `private: void __thiscall UIEditorManager::HandleTexure2D(class Rainbow::SharePtr<class Rainbow::Texture2D>,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class fairygui::GLoader *)`
+- `0x5196f0` : `public: bool __thiscall ChangeModelMgr::HasActorModel(__int64)`
+- `0x54fde0` : `public: bool __thiscall UIFrameManager::HasControllerPage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x6dedb0` : `public: bool __thiscall CustommodelParse::HaveCustommodel(char const *)`
+- `0xd5910` : `public: virtual bool __thiscall MINIW::ClientInfo::IgnorCMCheck(void)`
+- `0x5b7f50` : `private: int __thiscall ModManager::IncrementAllocatedId(enum CustomType)`
+- `0x60b870` : `public: virtual bool __thiscall FmodSoundSystemEX::Init(void)`
+- `0x69be20` : `public: void __thiscall MapEditManager::Init(void)`
+- `0x79df80` : `public: void __thiscall MINIW::ReportCrashMgr::Init(void)`
+- `0x5151a0` : `public: void __thiscall TriggerScriptMgr::Init(char const *)`
+- `0x295eb0` : `public: void __thiscall Rainbow::WindowsCrashHandler::Init(void)`
+- `0xf4080` : `public: bool __thiscall MINIW::ClientInfo::InitAdvertisementsSDK(int)`
+- `0xdc000` : `public: bool __thiscall MINIW::ClientManager::InitAdvertisementsSDK(int)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::InitAntiaddictionMgr(void)`
+- `0xfc640` : `public: virtual void __thiscall MINIW::ClientInfo_PC::InitAntiaddictionMgr(void)`
+- `0x2a41e0` : `void __cdecl MINIW::WIN_UTIL::InitApplicationCrashHandler(void)`
+- `0x519730` : `public: bool __thiscall ChangeModelMgr::InitAvatorBaseModel(__int64)`
+- `0x7a6340` : `public: void __thiscall StringLoaderManager::InitComletedList(char const *,class std::map<__int64,int,struct std::less<__int64>,class std::allocator<struct std::pair<__int64 const ,int> > > &)`
+- `0x2a47e0` : `void __cdecl MINIW::WIN_UTIL::InitCoreDumpExe(void)`
+- `0x519790` : `private: void __thiscall ChangeModelMgr::InitCustomModel(class ClientActorProjectile *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x830aa0` : `public: void __thiscall MultiLocalMgr::InitFontsCfg(void)`
+- `0xd5920` : `public: void __thiscall MINIW::ClientApp::InitGameData(void)`
+- `0x13e540` : `public: void __thiscall MINIW::ClientLogin::InitGameDataStep(class LoadStepCounter &)`
+- `0x13e860` : `public: bool __thiscall MINIW::ClientLogin::InitGameLuaEnv(void)`
+- `0x142c40` : `private: void __thiscall MINIW::AppUpdateScene::InitLocalLangConfig(void)`
+- `0x728880` : `public: static void __cdecl MapComparator::InitMgr(char const *)`
+- `0x554b70` : `public: void __thiscall UIEditorManager::InitNodeList(class DevUINode *)`
+- `0x13eb90` : `public: void __thiscall MINIW::ClientLogin::InitOsEnvInfo(void)`
+- `0x2a4920` : `void __cdecl MINIW::WIN_UTIL::InitPCCrashHander(void)`
+- `0x13ec90` : `private: void __thiscall MINIW::ClientLogin::InitPayLoadParam(void)`
+- `0xd5930` : `public: bool __thiscall MINIW::ClientApp::InitPhysXMgr(void)`
+- `0x2a54d0` : `public: void __thiscall Rainbow::SentryModule::InitSentry(void)`
+- `0x13eca0` : `public: bool __thiscall MINIW::ClientLogin::InitSubproject(void)`
+- `0x5151e0` : `public: void __thiscall TriggerScriptMgr::InitSupportScripts(void)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::InitThirdWindows(void)`
+- `0xfc650` : `public: virtual void __thiscall MINIW::ClientInfo_PC::InitThirdWindows(void)`
+- `0xd5940` : `public: bool __thiscall MINIW::ClientApp::InitTriggerScriptMgr(void)`
+- `0x2990b0` : `public: bool __thiscall FunnyCore::InitUnFunnyCoreSDK(void)`
+- `0x13ed10` : `public: virtual void __thiscall MINIW::ClientLogin::InitUserTypePointer(void)`
+- `0x2a58b0` : `private: void __thiscall Rainbow::SentryModule::Initialize(void)`
+- `0x515220` : `public: void __thiscall TriggerScriptMgr::Initialize(class MINIW::ScriptVM *)`
+- `0x519840` : `private: void __thiscall ChangeModelMgr::InittFullyCustomModel(class ClientActorProjectile *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5199b0` : `private: void __thiscall ChangeModelMgr::InitttOffcialModel(class ClientActorProjectile *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7c9e90` : `private: void __thiscall OWorldList::InsertOWList(struct tagCSMyOWList &,struct tagOWorld const &)`
+- `0x4d5db0` : `public: void __thiscall RoomManager::InsertRoomDescToRoomList(struct RoomDesc *,bool)`
+- `0x4f2bb0` : `public: virtual void __thiscall DeveloperSystem::Install(void)`
+- `0x392dc0` : `public: virtual void __thiscall MiniBuzzSytem::Install(void)`
+- `0x79f4a0` : `public: virtual void __thiscall MiniReportSystem::Install(void)`
+- `0x6fa1e0` : `public: virtual void __thiscall NewYearSystem::Install(void)`
+- `0x4a5990` : `public: void __thiscall MINIW::HotfixPkgLoader::InstallPackage(void)`
+- `0x69bf00` : `public: void __thiscall MapEditManager::IntToChar(int,char *,int)`
+- `0xf40a0` : `public: virtual bool __thiscall MINIW::ClientInfo::IsAchievementManagerValid(void)`
+- `0x4ae2c0` : `public: bool __thiscall MINIW::HotfixProcessMgr::IsAllDone(void)`
+- `0x5dae80` : `public: bool __thiscall MINIW::ModFileManager::IsAllFileDownloadComplete(void)`
+- `0xf40b0` : `public: virtual bool __thiscall MINIW::ClientInfo::IsArchiveMapCollaborationMode(void)`
+- `0x79dfd0` : `private: bool __thiscall MINIW::ReportCrashMgr::IsCanReport(void)`
+- `0x79e060` : `public: static bool __cdecl MINIW::ReportCrashMgr::IsCrashSightPlatform(int)`
+- `0x5b80e0` : `public: bool __thiscall ModManager::IsCurrentBlockBeyondLimit(void)`
+- `0x70d780` : `public: bool __thiscall ClientAccountMgr::IsCurrentUserOuterChecker(void)`
+- `0xf40e0` : `public: virtual bool __thiscall MINIW::ClientInfo::IsCurrentUserOuterChecker(void)`
+- `0xdc020` : `public: bool __thiscall MINIW::ClientManager::IsCurrentUserOuterChecker(void)`
+- `0x4ae2e0` : `public: bool __thiscall MINIW::HotfixProcessMgr::IsDeCompressProssFinish(void)`
+- `0xd6030` : `public: bool __thiscall MINIW::ClientInfo::IsDevBuild(void)`
+- `0x4ae2f0` : `public: bool __thiscall MINIW::HotfixProcessMgr::IsDownloadProssFinish(void)`
+- `0x5daf00` : `public: int __thiscall MINIW::ModFileManager::IsFileExistedForDownload(char *)`
+- `0x833eb0` : `public: bool __thiscall SnapshotForGame::IsFileModify(struct MapIntroData *)`
+- `0x5daf40` : `public: bool __thiscall MINIW::ModFileManager::IsLoadCompletedByPath(char *)`
+- `0x834040` : `public: bool __thiscall SnapshotForGame::IsLocalFileModify(int)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo::IsNeedAntiAddictionTip(void)`
+- `0x631050` : `public: bool __thiscall MapEditManager::IsPlayerCtrlExist(void)`
+- `0x74f650` : `public: bool __thiscall ArchiveTempMgr::IsUinInHistoryList(__int64,int)`
+- `0x571910` : `public: bool __thiscall ArchiveManager::IsUsedDownloadedCM(__int64)`
+- `0x74f6a0` : `public: bool __thiscall ArchiveTempMgr::IsUsedDownloadedCM(__int64)`
+- `0x750ef0` : `public: bool __thiscall ArchiveTempMgr::IsUsedDownloadedModpkg(__int64)`
+- `0x7375f0` : `public: bool __thiscall StatisticTerrgen::IsValidBiome(enum BIOME_TYPE)`
+- `0x560ed0` : `public: void __thiscall UIProjectLibManager::LeaveLibrary(void)`
+- `0x4c60e0` : `public: void __thiscall OnlineService::LeaveRentRoom(int,int)`
+- `0x515550` : `public: virtual void __thiscall TriggerScriptMgr::ListenTo(char const *,int,int)`
+- `0x7513c0` : `public: bool __thiscall ArchiveTempMgr::Load(__int64,int)`
+- `0xdd780` : `public: void __thiscall MINIW::ClientVersion::LoadClientVersion(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x71ded0` : `public: static bool __cdecl MiniConfLoad::LoadConf(class jsonxx::Object &,char const *,char const *,char const *)`
+- `0x71dfd0` : `public: static bool __cdecl MiniConfLoad::LoadConf(class jsonxx::Object &,char const *)`
+- `0x71dff0` : `public: static bool __cdecl MiniConfLoad::LoadConf(class Rainbow::XMLData &,char const *,char const *,char const *)`
+- `0x71e050` : `public: static bool __cdecl MiniConfLoad::LoadConf(class Rainbow::XMLData &,char const *)`
+- `0x49dc30` : `public: void __thiscall MINIW::HotFixTipsConfig::LoadConfigFile(void)`
+- `0x515620` : `public: bool __thiscall TriggerScriptMgr::LoadContent(char const *,int)`
+- `0x71e0b0` : `public: static bool __cdecl MiniConfLoad::LoadCsv(class MINIW::CSVParser &,char const *,char const *,char const *,bool)`
+- `0x71e110` : `public: static bool __cdecl MiniConfLoad::LoadCsv(class MINIW::CSVParser &,char const *,bool)`
+- `0x515640` : `public: virtual bool __thiscall TriggerScriptMgr::LoadDebugFile(char const *,char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0xce3d0` : `public: void __thiscall TriggerScriptMgr::LoadDefaultDevGameTpl(void)`
+- `0x7a6860` : `public: bool __thiscall StringLoaderManager::LoadListFile(char const *)`
+- `0x515660` : `public: bool __thiscall TriggerScriptMgr::LoadModPacket(char const *,struct ModPacketLoadInfo const &)`
+- `0x142e20` : `public: void __thiscall MINIW::AppUpdateScene::LoadNativePkg(void)`
+- `0x13eda0` : `public: bool __thiscall MINIW::ClientLogin::LoadNativePkg(void)`
+- `0xef800` : `public: bool __thiscall TriggerScriptMgr::LoadPackage(char const *,int)`
+- `0x515680` : `public: bool __thiscall TriggerScriptMgr::LoadPluginAllocated(struct PluginAllocatedInfo const &)`
+- `0x5156a0` : `public: virtual void __thiscall TriggerScriptMgr::LoadPreDefinedScripts(bool)`
+- `0x554c70` : `public: class UIProject * __thiscall UIEditorManager::LoadProject(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x560ef0` : `public: class UIProject * __thiscall UIProjectLibManager::LoadProject(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xd5990` : `public: bool __thiscall MINIW::ClientApp::LoadScriptTOC(char const *)`
+- `0x5156c0` : `public: bool __thiscall TriggerScriptMgr::LoadScriptTOC(class MINIW::ScriptVM *,char const *,bool)`
+- `0x71a8b0` : `private: static bool __cdecl ClientUrl::LoadServerCountry(void)`
+- `0x71aee0` : `private: static bool __cdecl ClientUrl::LoadServerFile(int,char const *)`
+- `0x71b320` : `private: static bool __cdecl ClientUrl::LoadServerFileTemp(int,char const *)`
+- `0x71bae0` : `public: static void __cdecl ClientUrl::LoadServerUrl(void)`
+- `0x71bb80` : `private: static bool __cdecl ClientUrl::LoadServerZone(void)`
+- `0x515b10` : `public: void __thiscall TriggerScriptMgr::LoadSupportScripts(__int64)`
+- `0x554c90` : `public: bool __thiscall UIEditorManager::LoadUIProject(char const *)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::LoadWorldString(void)`
+- `0xfc6a0` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::LoadWorldString(void)`
+- `0x7a6da0` : `public: bool __thiscall StringLoaderManager::LoadWorldString(__int64,int)`
+- `0x13ef10` : `public: bool __thiscall MINIW::ClientLogin::LoginStep1(void)`
+- `0x515b90` : `private: bool __thiscall TriggerScriptMgr::LuaInitSystem(__int64)`
+- `0x2991d0` : `public: void __thiscall FunnyCore::MGLogin4399(class std::function<void __cdecl(void)>)`
+- `0x299310` : `public: void __thiscall FunnyCore::MGLogout4399(void)`
+- `0x758840` : `protected: void __thiscall ClientCSOWorld::MakeCloudArchiveDefaultUpDownWorldInfo(struct UpDownWorldInfo &,struct tagOWorld const *)`
+- `0x8342b0` : `unsigned int __cdecl MapMd5Hash(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x837890` : `public: virtual unsigned int __thiscall SnapshotMgr::MapMd5Hash(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x4a6070` : `private: void __thiscall MINIW::HotfixPkgLoader::MergePkg(void)`
+- `0xdaf70` : `public: static bool __cdecl MINIW::ClientVersion::MightContainPPtr(void)`
+- `0xdaf70` : `public: static bool __cdecl MINIW::HotFixTipsConfig::MightContainPPtr(void)`
+- `0xea450` : `private: int __thiscall CustomPicMgr::MixOnePixel(int,int)`
+- `0x5e8c50` : `private: unsigned int __thiscall CustomPicMgr::MixPixel(unsigned int,unsigned int)`
+- `0xdaf70` : `public: bool __thiscall MINIW::ClientInfo_PC::MoveWindowToTop(void)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::NewMiniUIUpdate(float)`
+- `0x560f20` : `public: class UIProject * __thiscall UIProjectLibManager::NewProject(enum UILIBTYPE)`
+- `0x4ae300` : `public: void __thiscall MINIW::HotfixProcessMgr::NextDeCompressProcess(void)`
+- `0x4ae310` : `public: void __thiscall MINIW::HotfixProcessMgr::NextDownloadProcess(void)`
+- `0x4c6200` : `public: void __thiscall OnlineService::NoticeRentStatusTime(int,int)`
+- `0x7862f0` : `protected: void __thiscall WorldBackupMgr::OMapWorkInfoFinished(unsigned int)`
+- `0xc5507c` : `public: static int const StatisticTerrgen::OWTYPE_ADVENTURE`
+- `0x5b80f0` : `public: void __thiscall ModManager::OnAllocBlockNewId(unsigned int &)`
+- `0xd60b0` : `public: virtual void __thiscall MINIW::ClientApp::OnBackPressed(void)`
+- `0x77bb60` : `public: void __thiscall WorldArchiveMgr::OnBlockChangedByManual(void)`
+- `0x54fef0` : `private: void __thiscall UIFrameManager::OnClickEvent(class fairygui::FUIEventContext *)`
+- `0xd61c0` : `public: virtual bool __thiscall MINIW::ClientApp::OnCloseConfirm(void)`
+- `0xd6200` : `protected: void __thiscall MINIW::ClientApp::OnCmd(char const *,class Rainbow::ConsoleOutputDevice *)`
+- `0x5e21a0` : `private: void __thiscall Dev3DUIManager::OnCreate(class Dev3DUIBase *)`
+- `0x519a60` : `public: void __thiscall ChangeModelMgr::OnDestroy(void)`
+- `0x515f70` : `public: void __thiscall TriggerScriptMgr::OnDestroy(void)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::OnDeviceChangeCb(void)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo_PC::OnDeviceChangeCb(void)`
+- `0x4a67c0` : `private: static void __cdecl MINIW::HotfixPkgLoader::OnDownLoadPrcessBegin(class Rainbow::Http::DownLoadFileTask *)`
+- `0x4a67e0` : `private: static void __cdecl MINIW::HotfixPkgLoader::OnDownloadFinish(bool,class Rainbow::Http::DownLoadFileTask *)`
+- `0x4a6ad0` : `private: static void __cdecl MINIW::HotfixPkgLoader::OnDownloadProcess(class Rainbow::Http::DownLoadFileTask *)`
+- `0x60ba40` : `private: void __thiscall FmodSoundSystemEX::OnEncodeTaskCompleted(class AudioEncodeAsyncTask *)`
+- `0xce3d0` : `public: void __thiscall Dev3DUIManager::OnEnterWorld(void)`
+- `0x4a6b20` : `private: static void __cdecl MINIW::HotfixPkgLoader::OnFullPkgRequestFinish(bool,class Rainbow::Http::WebRequest *)`
+- `0x550090` : `private: void __thiscall UIFrameManager::OnGainLostFocus(class fairygui::FUIEventContext *,bool)`
+- `0x571930` : `public: void __thiscall ArchiveManager::OnGameModeChange(int)`
+- `0x519aa0` : `public: void __thiscall ChangeModelMgr::OnGameModeChange(int)`
+- `0x515f80` : `public: void __thiscall TriggerScriptMgr::OnGameModeChange(int)`
+- `0x550480` : `private: void __thiscall UIFrameManager::OnHide(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x4a7790` : `private: void __thiscall MINIW::HotfixPkgLoader::OnHotfixPkgMergeFailed(class Rainbow::EventContent const *)`
+- `0x4a77c0` : `private: void __thiscall MINIW::HotfixPkgLoader::OnHotfixPkgMergeFinish(class Rainbow::EventContent const *)`
+- `0x4a7cf0` : `private: static void __cdecl MINIW::HotfixPkgLoader::OnHotfixPkgRequestFinish(bool,class Rainbow::Http::WebRequest *)`
+- `0x519b40` : `public: void __thiscall ChangeModelMgr::OnInit(void)`
+- `0x516000` : `public: void __thiscall TriggerScriptMgr::OnInit(void)`
+- `0x2993b0` : `public: static void __cdecl FunnyCore::OnInitResultCallback(char const *)`
+- `0x571940` : `public: void __thiscall ArchiveManager::OnLeaveWorld(void)`
+- `0x5e21e0` : `public: void __thiscall Dev3DUIManager::OnLeaveWorld(void)`
+- `0x2994d0` : `public: static void __cdecl FunnyCore::OnLoginCallBack(char const *)`
+- `0xd65b0` : `protected: virtual void __thiscall MINIW::ClientApp::OnParseCmdStr(char const *)`
+- `0xd6970` : `public: virtual void __thiscall MINIW::ClientApp::OnPause(void)`
+- `0x2996c0` : `public: static void __cdecl FunnyCore::OnPayResultCallBack(int)`
+- `0xd6b50` : `public: virtual void __thiscall MINIW::ClientApp::OnResume(void)`
+- `0x571970` : `public: void __thiscall ArchiveManager::OnSaveCloudServerSaveLibvarCloudDataRsp(bool,int,__int64)`
+- `0x550550` : `private: void __thiscall UIFrameManager::OnShow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientLogin::OnStartSandbox(void)`
+- `0x143460` : `public: void __thiscall MINIW::AppUpdateScene::OnTick(float)`
+- `0xce3d0` : `public: void __thiscall ArchiveManager::OnTick(void)`
+- `0xd6c60` : `protected: virtual void __thiscall MINIW::ClientApp::OnTick(float)`
+- `0x4a88d0` : `private: void __thiscall MINIW::HotfixPkgLoader::OnTick(float)`
+- `0x144e50` : `public: void __thiscall MINIW::LaunchScene::OnTick(float)`
+- `0xce3d0` : `public: void __thiscall TriggerScriptMgr::OnTick(void)`
+- `0x550620` : `private: void __thiscall UIFrameManager::OnTouchBegin(class fairygui::FUIEventContext *)`
+- `0x550900` : `private: void __thiscall UIFrameManager::OnTouchEnd(class fairygui::FUIEventContext *)`
+- `0x550ac0` : `public: void __thiscall UIFrameManager::OnTriggerEvent(int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xdba40` : `private: void __thiscall UIFrameManager::OnUIEventType_Changed(class fairygui::FUIEventContext *)`
+- `0xdba40` : `public: void __thiscall TriggerScriptMgr::OnUpdate(float)`
+- `0x143a60` : `public: static void __cdecl MINIW::AppUpdateScene::OnWinSize(int,int)`
+- `0xd7360` : `public: virtual int __thiscall MINIW::ClientInfo::OpenCommunityProcess(char const *,int)`
+- `0xfc760` : `public: virtual int __thiscall MINIW::ClientInfo_PC::OpenCommunityProcess(char const *,int)`
+- `0x550ee0` : `public: class fairygui::GComponent * __thiscall UIFrameManager::OpenFrame(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x32b490` : `void __cdecl OpenMiniModuleToLuaStep1(struct lua_State *)`
+- `0x32b4b0` : `void __cdecl OpenMiniModuleToLuaStep2(struct lua_State *)`
+- `0x32b4d0` : `void __cdecl OpenMiniModuleToLuaStep3(struct lua_State *)`
+- `0x32b4f0` : `void __cdecl OpenMiniModuleToLuaStep4(struct lua_State *)`
+- `0x32b510` : `void __cdecl OpenMiniModuleToLuaStep5(struct lua_State *)`
+- `0x32b530` : `void __cdecl OpenMiniModuleToLuaStep6(struct lua_State *)`
+- `0xf40f0` : `public: int __thiscall MINIW::ClientInfo::OpenMyie(char const *)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::OpenNotificationPermission(void)`
+- `0x554d50` : `public: bool __thiscall UIEditorManager::OpenProject(enum UIPROJECT_HANDLE_MODE,enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x6fb630` : `public: void __thiscall AccountData::OperationAccountItem(int,int)`
+- `0x6fb670` : `public: void __thiscall AccountData::OperationUnlockHorse(int,int)`
+- `0x6fb6b0` : `public: void __thiscall AccountData::OperationUnlockItemFlag(int)`
+- `0x6fb6e0` : `public: void __thiscall AccountData::OperationUnlockRole(char,int)`
+- `0x6fb730` : `public: void __thiscall AccountData::OperationVipInfo(int,int,int)`
+- `0x69bf20` : `public: void __thiscall MapEditManager::OrganizeEditParam(void)`
+- `0x6def40` : `public: bool __thiscall GlobalSetParse::Parse(char const *)`
+- `0x550f10` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall UIFrameManager::ParseProjectIdByObjectId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x758940` : `public: __int64 __thiscall ClientCSOWorld::PauseDownloadMap(struct MapInfoHttp const &)`
+- `0x5550e0` : `private: void __thiscall UIEditorManager::PicSizeCompress(class Rainbow::ImageReference const &,class Rainbow::Image &)`
+- `0x60bb10` : `private: bool __thiscall FmodSoundSystemEX::PlaySoundPitchDspEX(class FMOD::Sound *,class FMOD::ChannelGroup *,float,bool,float,class FMOD::Channel * *,class Rainbow::AudioGroup * *)`
+- `0xd7370` : `public: void __thiscall MINIW::ClientApp::PostHotfix(bool)`
+- `0x13f1c0` : `public: void __thiscall MINIW::ClientLogin::PostHotfix(bool)`
+- `0x13f590` : `public: void __thiscall MINIW::ClientLogin::PreLoadFirstConfig(void)`
+- `0x4e60d0` : `public: int __thiscall SimulateMgr::ProcessBullteChat(void *,int)`
+- `0x5160c0` : `public: void __thiscall TriggerScriptMgr::PushScript(int,struct ScriptLoadInfo const &)`
+- `0xdaf70` : `public: bool __thiscall MINIW::ClientInfo_PC::Quit(void)`
+- `0x5160f0` : `public: void __thiscall TriggerScriptMgr::QuitSupportScripts(void)`
+- `0xc550a4` : `public: static int const StatisticRainforest::RAINFOREST_ANIMAL`
+- `0xc550a8` : `public: static int const StatisticRainforest::RAINFOREST_BLOCK_USED`
+- `0xc55088` : `public: static int const StatisticRainforest::RAINFOREST_ENTER`
+- `0xc5508c` : `public: static int const StatisticRainforest::RAINFOREST_EXIT`
+- `0xc550a0` : `public: static int const StatisticRainforest::RAINFOREST_PROP_GET`
+- `0xc55084` : `public: static int const StatisticRainforest::RAINFOREST_TERRGEN_GENERATE`
+- `0xec1b1c` : `public: static char const * const Mini::HttpReportMgr::REPORTDATAID`
+- `0xec1b18` : `public: static char const * const Mini::HttpReportMgr::REPORTID`
+- `0xec1b24` : `public: static char const * const Mini::HttpReportMgr::REPORTTASKDATAID`
+- `0xec1b28` : `public: static char const * const Mini::HttpReportMgr::REPORTTASKREPEATID`
+- `0xec1b20` : `public: static char const * const Mini::HttpReportMgr::REPORTTASKURLID`
+- `0xc4d118` : `public: static int const Mini::HttpReportMgr::REPORT_SHEET_NAME`
+- `0x751a00` : `public: void __thiscall ArchiveTempMgr::ReWritePlayerInfo(int,int,__int64)`
+- `0xf4100` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::ReadMemFile(char const *,char const *)`
+- `0x69bf50` : `public: bool __thiscall MapEditManager::RecoverCmd(struct MAP_EDIT_CMD_DATA *)`
+- `0x69c2f0` : `public: bool __thiscall MapEditManager::RecoverCmd(void)`
+- `0x69c340` : `public: bool __thiscall MapEditManager::RecoverCmdByClient(int)`
+- `0x516150` : `public: virtual void __thiscall TriggerScriptMgr::Reg(char const *,char const *,int,int)`
+- `0x5162c0` : `public: void __thiscall TriggerScriptMgr::RegListen(char const *)`
+- `0x16d160` : `public: virtual void __thiscall ClientGameManager::RegisterInputHandler(void)`
+- `0x7a6e60` : `public: void __thiscall StringLoaderManager::Release(void)`
+- `0x5510f0` : `public: void __thiscall UIFrameManager::ReleaseAllFrame(void)`
+- `0x60bbf0` : `public: void __thiscall FmodSoundSystemEX::ReleaseFmodSound(class FMOD::Sound *)`
+- `0x551140` : `public: void __thiscall UIFrameManager::ReleaseFrame(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5e8c70` : `public: void __thiscall CustomPicMgr::ReleaseHuires(char const *)`
+- `0x560f50` : `private: void __thiscall UIProjectLibManager::ReleaseLib(void)`
+- `0x560fb0` : `public: bool __thiscall UIProjectLibManager::ReleaseLib(enum UILIBTYPE)`
+- `0x5162e0` : `public: void __thiscall TriggerScriptMgr::ReleaseRealSupportScripts(void)`
+- `0x60bc30` : `public: void __thiscall FmodSoundSystemEX::ReleaseRes(void)`
+- `0x515f70` : `public: void __thiscall TriggerScriptMgr::ReleaseSupportScripts(void)`
+- `0x8316f0` : `private: void __thiscall MultiLocalMgr::ReloadCheckList(void)`
+- `0x561060` : `public: bool __thiscall UIProjectLibManager::RemoteRoomEnterLibrary(int,int,__int64,__int64)`
+- `0x516380` : `public: int __thiscall TriggerScriptMgr::RemoveCloudValue(int,char const *,char const *)`
+- `0x4a8b10` : `public: void __thiscall MINIW::HotfixPkgLoader::RemoveErrorFile(enum MINIW::HotfixPkgLoader::LoaderErrorCode)`
+- `0xd73b0` : `public: void __thiscall ClientCSOWorld::RemoveHttptask(int)`
+- `0x4a8c20` : `public: void __thiscall MINIW::HotfixPkgLoader::ReportDataToServer(void)`
+- `0x4a8e30` : `private: void __thiscall MINIW::HotfixPkgLoader::ReportDataToServerInternal(class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > &,class core::basic_string<char,class core::StringStorageDefault<char> > &,int,int,unsigned __int64,unsigned __int64,int,int,int,int)`
+- `0x4d8520` : `public: void __thiscall RoomManager::ReqReEnterRoom(int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x299720` : `public: void __thiscall FunnyCore::RequestPayforProduct(int,char const *,float,int,char const *)`
+- `0x299850` : `public: void __thiscall FunnyCore::RequestPayforProductNew(char const *,char const *,float,char const *)`
+- `0x4a9a50` : `public: void __thiscall MINIW::HotfixPkgLoader::RequestPkg(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::RequestReview(void)`
+- `0xfcb20` : `public: void __thiscall MINIW::ClientInfo_PC::RequiredAuthSessionTicket(void)`
+- `0x4d85d0` : `public: void __thiscall RoomManager::ResetConfigPulled(void)`
+- `0x69c750` : `public: bool __thiscall MapEditManager::RevokeCmd(struct MAP_EDIT_CMD_DATA *)`
+- `0x69cb90` : `public: bool __thiscall MapEditManager::RevokeCmd(void)`
+- `0x69cbe0` : `public: bool __thiscall MapEditManager::RevokeCmdByClient(int)`
+- `0xec1b2c` : `public: static char const * const Mini::HttpReportMgr::STANDDATAID`
+- `0xec1b38` : `public: static char const * const Mini::HttpReportMgr::STANDDATAIDKEY`
+- `0xec1bd0` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Mini::HttpReportMgr::STANDDATAURL`
+- `0xec1c00` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Mini::HttpReportMgr::STANDDATAURLZIP`
+- `0x751d20` : `public: bool __thiscall ArchiveTempMgr::Save(void)`
+- `0xdd9a0` : `public: void __thiscall MINIW::ClientVersion::SaveClientVersion(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x5551c0` : `public: void __thiscall UIEditorManager::SaveProject(void)`
+- `0x561180` : `public: void __thiscall UIProjectLibManager::SaveProject(enum UILIBTYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class UIProject *)`
+- `0xce3d0` : `public: void __thiscall TriggerScriptMgr::SaveSS2OBS(void)`
+- `0xdaf70` : `public: bool __thiscall UIEditorManager::SaveUIProject(void)`
+- `0x6dc7b0` : `public: int __thiscall MapConvertMgr::SaveWorldToolsInfoFile(__int64)`
+- `0x7dd120` : `public: static struct OWorldUtils::ScanResult * __cdecl OWorldUtils::ScanDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0xd74f0` : `public: virtual void __thiscall MINIW::ClientInfo::ScanedAntiPlugin(class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >)`
+- `0xfcb30` : `public: virtual void __thiscall MINIW::ClientInfo_PC::ScanedAntiPlugin(class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::SceneManagerDoFrame(void)`
+- `0xf4130` : `public: void __thiscall MINIW::ClientInfo::ScreenCaptureCallback(char const *)`
+- `0x551180` : `public: void __thiscall UIFrameManager::SelectControllerPage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)`
+- `0x551220` : `public: bool __thiscall UIFrameManager::SelectControllerPageByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x551400` : `public: void __thiscall UIFrameManager::SelectControllerPageWithTween(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,float,int)`
+- `0x551490` : `public: bool __thiscall UIFrameManager::SelectControllerPageWithTweenByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float,int)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::SendLuaErrMsg(char const *)`
+- `0x4e6910` : `private: void __thiscall SimulateMgr::SendMsg(__int64,enum game::common::ePBMsgCode,class google::protobuf::Message const &)`
+- `0xfcc00` : `public: void __thiscall MINIW::ClientInfo_PC::SendProductPayInfoToFunnyCore(int,char const *,float,int,char const *)`
+- `0xfcc30` : `public: void __thiscall MINIW::ClientInfo_PC::SendProductPayInfoToFunnyCoreNew(char const *,char const *,float,char const *)`
+- `0xfcc60` : `public: void __thiscall MINIW::ClientInfo_PC::SendProductPayInfoToSteam(int,char *,float)`
+- `0xfccc0` : `public: void __thiscall MINIW::ClientInfo_PC::SendProductPayInfoToWeGameSDK(int,char *,float)`
+- `0xfcd20` : `public: void __thiscall MINIW::ClientInfo_PC::SendProductPayInfoToWeGameSDKNew(int,char const *,float,char const *,char const *)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::SendPvpStatisticsEvent(class jsonxx::Object const &)`
+- `0x2a65c0` : `public: void __thiscall Rainbow::SentryModule::SendSentryEvent(char const *)`
+- `0xd7540` : `public: void __thiscall MINIW::ClientInfo::SetAccount(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf4240` : `protected: void __thiscall MINIW::ClientInfo::SetApiId(int)`
+- `0x79e090` : `public: void __thiscall MINIW::ReportCrashMgr::SetApiId(int)`
+- `0xeaea0` : `public: void __thiscall MINIW::ClientInfo::SetAppState(enum MINIW::APP_STATE_TYPE)`
+- `0x69cff0` : `public: void __thiscall MapEditManager::SetAreaSize(void)`
+- `0x69d100` : `public: void __thiscall MapEditManager::SetBeginPos(class WCoord,bool)`
+- `0x69d140` : `public: void __thiscall MapEditManager::SetCenterPos(bool)`
+- `0x101c70` : `void __cdecl MINIW::SetClientInfo(class MINIW::ClientInfo *)`
+- `0x5163d0` : `public: int __thiscall TriggerScriptMgr::SetCloudIntValue(int,char const *,char const *,double)`
+- `0x516430` : `public: int __thiscall TriggerScriptMgr::SetCloudStringValue(int,char const *,char const *,char const *)`
+- `0x5552b0` : `public: bool __thiscall UIEditorManager::SetComponent2Global(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum UICOMPONENTTYPE,int)`
+- `0x551670` : `private: void __thiscall UIFrameManager::SetComponentGearTweenDuration(class fairygui::GComponent *,float,int)`
+- `0xd75d0` : `public: void __thiscall ModManager::SetCurWorldModRoot(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x13f5c0` : `private: void __thiscall MINIW::ClientLogin::SetDevelopmentVersion(void)`
+- `0xf42d0` : `public: virtual void __thiscall MINIW::ClientInfo::SetDeviceRegisterInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4a9d10` : `public: void __thiscall MINIW::HotfixPkgLoader::SetDownloadEndTime(void)`
+- `0xd7600` : `public: void __thiscall MINIW::HotfixPkgLoader::SetDownloadFileTask(class Rainbow::Http::DownLoadFileTask *)`
+- `0x69d470` : `public: void __thiscall MapEditManager::SetEndPos(class WCoord,bool)`
+- `0xd7610` : `private: void __thiscall MINIW::ClientApp::SetFPS(int)`
+- `0x5e8e00` : `public: void __thiscall CustomPicMgr::SetFileStatus(char const *,int)`
+- `0xd78b0` : `public: virtual void __thiscall MINIW::ClientInfo::SetGameAPICallback(void (__cdecl*)(int,char const *))`
+- `0x5517c0` : `private: void __thiscall UIFrameManager::SetGearTweenDuration(class fairygui::GearBase *,float,int)`
+- `0xd78c0` : `public: void __thiscall CustomPicMgr::SetImageLoadPlan(int)`
+- `0x143aa0` : `private: void __thiscall MINIW::AppUpdateScene::SetInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x69d4b0` : `public: void __thiscall MapEditManager::SetIsStartEdit(bool)`
+- `0x79e160` : `public: void __thiscall MINIW::ReportCrashMgr::SetLastReport(class jsonxx::Object const &)`
+- `0x571b60` : `public: bool __thiscall ArchiveManager::SetLibvarCloudData(__int64,int,char const *)`
+- `0xd78d0` : `public: void __thiscall MINIW::ClientApp::SetLimitFPS(bool)`
+- `0xd78f0` : `public: void __thiscall MINIW::ClientApp::SetLimitFPSFromLua(bool,int)`
+- `0xd7920` : `public: void __thiscall MINIW::HotfixPkgLoader::SetLoadStatus(enum MINIW::HotfixPkgLoader::LoaderStatus)`
+- `0xd7930` : `public: void __thiscall CustomPicMgr::SetLowQualityTexture(bool)`
+- `0xd7940` : `public: void __thiscall MINIW::ClientInfo::SetOpenstring(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7cb990` : `public: void __thiscall OWorldList::SetPriorityDownWorldId(__int64)`
+- `0x143b70` : `private: void __thiscall MINIW::AppUpdateScene::SetProgressVisible(bool)`
+- `0x16fe30` : `public: void __thiscall UIProjectLibManager::SetRemoteRoomLibDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xfcd80` : `public: void __thiscall MINIW::ClientInfo_PC::SetScreenSize(int,int)`
+- `0xdb9f0` : `public: void __thiscall SnapshotMgr::SetSize(int,int)`
+- `0x143cd0` : `public: void __thiscall MINIW::AppUpdateScene::SetStatus(enum MINIW::EAppUpdateStatus)`
+- `0x5e8fa0` : `public: void __thiscall CustomPicMgr::SetTextureFromGLoader(class fairygui::GLoader *,char const *)`
+- `0x79e4c0` : `public: void __thiscall MINIW::ReportCrashMgr::SetUin(int)`
+- `0xd7970` : `public: void __thiscall MINIW::ClientApp::SetUserTypePointer(void)`
+- `0x79e590` : `public: void __thiscall MINIW::ReportCrashMgr::SetUserValue(char const *,char const *)`
+- `0x79e5c0` : `public: void __thiscall MINIW::ReportCrashMgr::SetWorldId(__int64)`
+- `0x5517f0` : `private: void __thiscall UIFrameManager::SetupAfterAdd(class DevUINode *,class fairygui::GObject *,bool)`
+- `0x5e2230` : `public: void __thiscall Dev3DUIManager::ShowSelectViewById(int)`
+- `0x143ce0` : `private: void __thiscall MINIW::AppUpdateScene::ShowTipsWindow(enum MINIW::HotfixPkgLoader::LoaderErrorCode,class core::basic_string<char,class core::StringStorageDefault<char> >,class std::function<void __cdecl(void)>)`
+- `0xce3d0` : `private: void __thiscall Rainbow::SentryModule::ShutDown(void)`
+- `0xf4360` : `public: virtual void __cdecl MINIW::ClientInfo::SimpleSLOG(char const *,...)`
+- `0x555300` : `private: void __thiscall UIEditorManager::SnapShot2Node(class fairygui::GObject *,int,int,class std::function<void __cdecl(class Rainbow::SharePtr<class Rainbow::Texture2D>)>)`
+- `0x5558c0` : `public: void __thiscall UIEditorManager::SnapShot2Node(class fairygui::GObject *,class fairygui::GLoader *,int,int,int,int)`
+- `0x555cf0` : `public: void __thiscall UIEditorManager::SnapShot2Node(class fairygui::GObject *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,int,int)`
+- `0xd7de0` : `public: void __thiscall MINIW::ClientApp::SomeInitAfterCsvLoad(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientLogin::SomeInitAfterCsvLoad(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::SoundSystemTick(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::SoundSystemUpdate(void)`
+- `0xd7e00` : `public: void __thiscall MINIW::ClientApp::StartAppUpdate(bool)`
+- `0x13ff50` : `public: void __thiscall MINIW::ClientLogin::StartAppUpdate(bool)`
+- `0xd7e10` : `public: void __thiscall MINIW::ClientApp::StartDnsConvert(void)`
+- `0x13ffd0` : `public: void __thiscall MINIW::ClientLogin::StartDnsConvert(void)`
+- `0x4a9d30` : `private: void __thiscall MINIW::HotfixPkgLoader::StartDownloadPkg(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,int)`
+- `0x1400e0` : `public: virtual void __thiscall MINIW::ClientLogin::StartHotfix(bool)`
+- `0xd7e40` : `public: void __thiscall MINIW::ClientApp::StartHotfixUpdate(void)`
+- `0x140130` : `public: void __thiscall MINIW::ClientLogin::StartLaunch(bool)`
+- `0x7a7000` : `public: void __thiscall StringLoaderManager::StartLoading(void)`
+- `0x140160` : `public: virtual void __thiscall MINIW::ClientLogin::StartSandbox(void)`
+- `0xf4380` : `public: void __thiscall MINIW::ClientInfo::StartTraceRouteInfo(char const *,char const *,char const *,char const *)`
+- `0x1402d0` : `public: void __thiscall MINIW::ClientLogin::StartUniverseAppUpdate(bool,bool)`
+- `0x140330` : `public: virtual void __thiscall MINIW::ClientLogin::StartUniverseHotfix(void)`
+- `0xd7e50` : `public: void __thiscall MINIW::ClientApp::StartUpdate(void)`
+- `0x72ca70` : `public: void __thiscall ResultStatistics::Statistic(char const *)`
+- `0x732670` : `public: virtual void __thiscall StatisticsManager::StatisticsGameLoadAction(enum StatisticsActionId)`
+- `0x732990` : `public: virtual void __thiscall StatisticsTools::StatisticsGameLoadAction(enum StatisticsActionId)`
+- `0xfcde0` : `public: bool __thiscall MINIW::ClientInfo_PC::SteamAuthorizeResult(void)`
+- `0xfce00` : `public: void __thiscall MINIW::ClientInfo_PC::SteamPayComplete(void)`
+- `0xfce10` : `public: bool __thiscall MINIW::ClientInfo_PC::SteamTranWindowClose(void)`
+- `0x551850` : `private: class fairygui::GComponent * __thiscall UIFrameManager::StructureFrameByProject(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x555f40` : `private: void __thiscall UIEditorManager::StructureNodeTree(void)`
+- `0x551d00` : `private: class fairygui::GComponent * __thiscall UIFrameManager::StructureOuterComponentByNode(class DevUINode *)`
+- `0x552240` : `private: class fairygui::GComponent * __thiscall UIFrameManager::StructureRootGComponent(class DevUINode *)`
+- `0x831940` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MultiLocalMgr::SwitchFilePathForLanguage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xec1b30` : `public: static char const * const Mini::HttpReportMgr::TASKIDKEY`
+- `0xc55078` : `public: static int const StatisticTerrgen::TERRGEN_GENERATE`
+- `0x69d4c0` : `public: void __thiscall MapEditManager::Tick(void)`
+- `0x4e6a20` : `public: void __thiscall SimulateMgr::Tick(unsigned int)`
+- `0x516490` : `public: void __thiscall TriggerScriptMgr::TickSupportScripts(void)`
+- `0x31c2a0` : `private: int __thiscall GameZoneCsv::TimeDiffToMinute(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4aa270` : `class core::basic_string<char,class core::StringStorageDefault<char> > __cdecl MINIW::ToPkgDownloadFullFile(char const *)`
+- `0xd6030` : `public: bool __thiscall MapConvertMgr::ToolIsOpen(void)`
+- `0x5164e0` : `public: virtual int __thiscall TriggerScriptMgr::TransfomPluginidCurrent2Origin(char const *,char const *,int)`
+- `0x516510` : `public: virtual int __thiscall TriggerScriptMgr::TransfomPluginidOrigin2Current(char const *,char const *,int)`
+- `0x516540` : `public: void __thiscall TriggerScriptMgr::Trigger(char const *,int,void *)`
+- `0x516560` : `public: void __thiscall TriggerScriptMgr::TriggerEvent(char const *,void *)`
+- `0x571bf0` : `public: void __thiscall ArchiveManager::UgcModeLoadCloudVar(int)`
+- `0x5720f0` : `public: void __thiscall ArchiveManager::UgcModeSaveCloudVar(int,bool)`
+- `0xf43a0` : `public: void __thiscall MINIW::ClientInfo::UiBreakAllLoad(void)`
+- `0x4aa3f0` : `public: void __thiscall MINIW::HotfixPkgLoader::UncompressPkg(void)`
+- `0x7a7090` : `public: void __thiscall StringLoaderManager::UncompressZip(__int64,int)`
+- `0x4f3080` : `public: virtual void __thiscall DeveloperSystem::Uninstall(void)`
+- `0x393290` : `public: virtual void __thiscall MiniBuzzSytem::Uninstall(void)`
+- `0x79f7f0` : `public: virtual void __thiscall MiniReportSystem::Uninstall(void)`
+- `0x6fa530` : `public: virtual void __thiscall NewYearSystem::Uninstall(void)`
+- `0x516580` : `public: void __thiscall TriggerScriptMgr::UnregAllListen(void)`
+- `0x516590` : `public: void __thiscall TriggerScriptMgr::UnregListen(char const *)`
+- `0x5e2270` : `public: void __thiscall Dev3DUIManager::Update(float)`
+- `0x72d570` : `public: void __thiscall UpdateArchiveManager::UpdateArchives(void)`
+- `0x69d540` : `public: bool __thiscall MapEditManager::UpdateCurPos(void)`
+- `0x4ae320` : `public: void __thiscall MINIW::HotfixProcessMgr::UpdateDecompressProcess(int,int)`
+- `0x4ae340` : `public: void __thiscall MINIW::HotfixProcessMgr::UpdateDownLoadProcess(int,int,int)`
+- `0x5165b0` : `public: int __thiscall TriggerScriptMgr::UpdateGlobalValue(int,char const *,char const *)`
+- `0x77bc00` : `public: int __thiscall WorldArchiveMgr::UpdateLastBlockChangeTime(__int64)`
+- `0x7a7580` : `public: void __thiscall StringLoaderManager::UpdateLoadFailFile(__int64,int,bool)`
+- `0x7a8200` : `public: void __thiscall StringLoaderManager::UpdateLoadSuccFile(__int64,int)`
+- `0x69d700` : `public: void __thiscall MapEditManager::UpdatePreview(void)`
+- `0x4c6840` : `public: void __thiscall OnlineService::UpdateRentStateMsg(int)`
+- `0x71bfc0` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ClientUrl::UrlInfoToUrl(struct UrlInfo const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x70e6b0` : `public: void __thiscall ClientAccountMgr::VipInfoFromQQLoginInfo(struct VipInfo &,struct tagQQLoginInfo const &)`
+- `0xfce20` : `public: void __thiscall MINIW::ClientInfo_PC::WeGamePayComplete(void)`
+- `0xfce30` : `public: bool __thiscall MINIW::ClientInfo_PC::WeGamePayWindowShow(void)`
+- `0xf43b0` : `public: bool __thiscall MINIW::ClientInfo::WriteMemFile(char const *,char const *,char const *)`
+- `0xdc070` : `public: bool __thiscall MINIW::ClientManager::WriteMemFile(char const *,char const *,char const *)`
+- `0x552ae0` : `private: void __thiscall UIFrameManager::_Init(void)`
+- `0x786730` : `public: void __thiscall WorldBackupMgr::abortBackupOMapByOwid(__int64)`
+- `0x786880` : `public: void __thiscall WorldBackupMgr::abortBackupOMapByTask(int)`
+- `0x7cc590` : `public: void __thiscall OWorldList::abortOpenWorld(__int64)`
+- `0x7869f0` : `public: void __thiscall WorldBackupMgr::abortUpload(int)`
+- `0x46e330` : `private: void __thiscall Mini::HttpReportMgr::active(void)`
+- `0x79fd60` : `public: unsigned int __thiscall Mini::MmkvMgr::actualSize(char const *,int)`
+- `0x2aa550` : `public: struct BlockDef * __thiscall BlockDefCsv::add(int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x31fcc0` : `public: void __thiscall ItemDefCsv::add(int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,short)`
+- `0x326de0` : `public: void __thiscall MonsterCsv::add(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x33a7f0` : `public: void __thiscall ToolDefCsv::add(int,int)`
+- `0x6fbfe0` : `public: void __thiscall AccountData::addAccountItem(int,int)`
+- `0x6fc070` : `public: void __thiscall AccountData::addAlreadyBuyNum(int,int)`
+- `0x573720` : `public: bool __thiscall ArchiveManager::addArchDataByJson(__int64,char const *)`
+- `0x5738f0` : `public: bool __thiscall ArchiveManager::addArchDataInfo(__int64,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0x77be80` : `public: bool __thiscall WorldArchiveMgr::addAttentionIds(__int64)`
+- `0x59e980` : `public: struct BlockDef * __thiscall ModEditorManager::addBlockDef(int,bool)`
+- `0x59eaa0` : `public: struct BlockDef * __thiscall ModEditorManager::addBlockDefEx(int,bool,char const *)`
+- `0x59ec40` : `public: struct ItemDef * __thiscall ModEditorManager::addBlockItemDef(int,int)`
+- `0xce3d0` : `public: void __thiscall ARInterface::addBodyAR3DRenderer(void)`
+- `0x51ad10` : `public: void __thiscall ChangeModelMgr::addChangeActor(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x6fc0f0` : `public: void __thiscall AccountData::addCollectUin(int)`
+- `0x59eed0` : `public: struct CraftingDef * __thiscall ModEditorManager::addCraftingDef(int,bool)`
+- `0x59f140` : `public: struct CraftingDef * __thiscall ModEditorManager::addCraftingDefEx(int,bool,char const *)`
+- `0x46e3c0` : `private: void __thiscall Mini::HttpReportMgr::addData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7cc640` : `public: void __thiscall OWorldList::addDevTempOWList(struct tagOWorld &)`
+- `0x7cc7c0` : `public: void __thiscall OWorldList::addDirtyUinOWID(__int64)`
+- `0x77bf50` : `public: void __thiscall WorldArchiveMgr::addDirtyUinOWID(__int64)`
+- `0x758d70` : `public: void __thiscall ClientCSOWorld::addDownloadServer(char const *)`
+- `0x5b9270` : `public: int __thiscall ModManager::addEquipStatus(int)`
+- `0x7153c0` : `public: void __thiscall ClientBuddyMgr::addFans(int,char *,int,char,struct VipInfo,int)`
+- `0x715420` : `public: void __thiscall ClientBuddyMgr::addFans(struct tagBuddyInfoEx)`
+- `0x7bae00` : `public: void __thiscall AccountFBData::addFeedBack(void)`
+- `0x70ed70` : `public: void __thiscall ClientAccountMgr::addFeedBack(void)`
+- `0x60c400` : `public: void __thiscall FmodSoundSystemEX::addFmodSoundInfo(struct FmodSoundInfo &)`
+- `0x59f400` : `public: void __thiscall ModEditorManager::addFoodDef(int,int)`
+- `0x7155c0` : `public: void __thiscall ClientBuddyMgr::addFriendChat(int,char *)`
+- `0x7158b0` : `public: void __thiscall ClientBuddyMgr::addFriendChestData(int,int,int)`
+- `0x715920` : `public: void __thiscall ClientBuddyMgr::addFriendChestWater(int,int)`
+- `0x7159b0` : `public: void __thiscall ClientBuddyMgr::addFriendChestWorms(int,int)`
+- `0x59f4d0` : `public: struct FurnaceDef * __thiscall ModEditorManager::addFurnaceDef(int,bool)`
+- `0x59f760` : `public: struct FurnaceDef * __thiscall ModEditorManager::addFurnaceDefEx(int,bool,char const *)`
+- `0x16d280` : `public: void __thiscall ClientGameManager::addGame(char const *,class ClientGame *)`
+- `0xf4560` : `public: void __thiscall MINIW::ClientInfo::addGame(char const *,class ClientGame *)`
+- `0x7bae10` : `public: void __thiscall AccountFBData::addGradeOW(__int64)`
+- `0x59fa30` : `public: void __thiscall ModEditorManager::addGunDef(int,int)`
+- `0x4da2d0` : `public: struct RoomDesc * __thiscall RoomManager::addHttpNormalRoomDesc(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x59fbd0` : `public: struct ItemDef * __thiscall ModEditorManager::addItemDef(int,bool)`
+- `0x59fe70` : `public: struct ItemDef * __thiscall ModEditorManager::addItemDefEx(int,bool,char const *)`
+- `0x5a0160` : `public: void __thiscall ModEditorManager::addItemEquipDef(int,int)`
+- `0x77bf70` : `public: void __thiscall WorldArchiveMgr::addLoadWorldData(__int64,__int64,int)`
+- `0x5b98a0` : `public: bool __thiscall ModManager::addMapModByUUID(char const *,__int64,bool)`
+- `0x5b9b10` : `public: void __thiscall ModManager::addMapUseDownloadRes(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum ResourceDefineType)`
+- `0x6fc130` : `public: void __thiscall AccountData::addMiniBean(int)`
+- `0xce3d0` : `private: void __thiscall ClientAccountMgr::addMiniCaptain(void)`
+- `0x6fc190` : `public: void __thiscall AccountData::addMiniCoin(int)`
+- `0x51ae60` : `public: void __thiscall ChangeModelMgr::addModelData(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5a02f0` : `public: struct MonsterDef * __thiscall ModEditorManager::addMonsterDef(int,bool)`
+- `0x5a0550` : `public: struct MonsterDef * __thiscall ModEditorManager::addMonsterDefEx(int,bool,char const *)`
+- `0x70ed80` : `public: void __thiscall ClientAccountMgr::addMyChat(int,char *)`
+- `0x793880` : `public: void __thiscall WorldList::addMyWorld(struct tagOWorld const &)`
+- `0x715a40` : `public: void __thiscall ClientBuddyMgr::addNewChatUin(int)`
+- `0x6fc1f0` : `public: void __thiscall AccountData::addNickModify(void)`
+- `0x60c4e0` : `public: void __thiscall FmodSoundSystemEX::addNoteSoundInfo(struct NoteSoundInfo &)`
+- `0x5a0830` : `public: struct NpcPlotDef * __thiscall ModEditorManager::addNpcPlotDef(int,bool)`
+- `0x5a0a90` : `public: struct NpcPlotDef * __thiscall ModEditorManager::addNpcPlotDefEx(int,bool,char const *)`
+- `0x5a0d40` : `public: struct NpcTaskDef * __thiscall ModEditorManager::addNpcTaskDef(int,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x6fc210` : `public: void __thiscall AccountData::addOWScore(__int64,float)`
+- `0x70eda0` : `public: void __thiscall ClientAccountMgr::addOWScore(__int64,float)`
+- `0xf4580` : `public: virtual void __thiscall MINIW::ClientInfo::addOWScore(__int64,float)`
+- `0x7ed100` : `public: void __thiscall KeywordFilterMgr::addOneFilterString2(char * &,int,int,int)`
+- `0x7ed120` : `public: void __thiscall KeywordFilterMgr::addOneFilterString(class core::basic_string<char,class core::StringStorageDefault<char> > &,int,int)`
+- `0x5a1240` : `public: void __thiscall ModEditorManager::addPhysicsActorDef(int,int)`
+- `0x5a13b0` : `public: struct PhysicsMaterialDef * __thiscall ModEditorManager::addPhysicsMaterialDef(int,bool)`
+- `0x5a1730` : `public: void __thiscall ModEditorManager::addProjectileDef(int,int)`
+- `0x4da420` : `public: void __thiscall RoomManager::addRentHostAddress(char const *,char const *,unsigned short)`
+- `0x4da440` : `public: bool __thiscall RoomManager::addRoomDesc(struct RoomDesc *)`
+- `0x4b9850` : `public: void __thiscall SpringFestivalActivityMgr::addSFActivity(int,int,int,int,bool)`
+- `0x6fc2c0` : `public: bool __thiscall AccountData::addSkilledPoint(int,int)`
+- `0x46e530` : `private: void __thiscall Mini::HttpReportMgr::addStandData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x46e6a0` : `private: void __thiscall Mini::HttpReportMgr::addTask(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5a1900` : `public: void __thiscall ModEditorManager::addToolDef(int,int)`
+- `0x70edf0` : `public: void __thiscall ClientAccountMgr::addWater(int,int)`
+- `0x7cc7f0` : `public: bool __thiscall OWorldList::addWorld(struct tagOWorld *)`
+- `0xce3d0` : `public: void __thiscall ARInterface::addWorldARRenderer(void)`
+- `0xce3d0` : `public: void __thiscall ARInterface::addWorldBodyARRenderer(void)`
+- `0x70ee10` : `public: void __thiscall ClientAccountMgr::addWorms(int,int)`
+- `0x79fd80` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > __thiscall Mini::MmkvMgr::allKeys(char const *,int)`
+- `0x5b9d30` : `public: unsigned int __thiscall ModManager::allocateNewId(enum CustomType,class GameMod *)`
+- `0x5ba050` : `public: unsigned int __thiscall ModManager::allocateNewIdForCurMap(enum CustomType)`
+- `0x7cc890` : `public: bool __thiscall OWorldList::alterWorldType(__int64,int,int)`
+- `0x10cba0` : `public: void __thiscall ClientBuddyMgr::answerAddBuddy(int,char const *,bool)`
+- `0x732aa0` : `public: virtual void __thiscall StatisticsTools::appStartup(void)`
+- `0xf45b0` : `public: virtual void __thiscall MINIW::ClientInfo::appalyGameSetData(bool)`
+- `0x831b60` : `private: void __thiscall MultiLocalMgr::appendLanguagePath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const *)`
+- `0x831da0` : `private: void __thiscall MultiLocalMgr::appendZonePath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const *)`
+- `0x16d350` : `public: virtual void __thiscall ClientGameManager::applayGameSetData(bool)`
+- `0x732bb0` : `public: virtual void __thiscall StatisticsTools::appleGameEvent(int,char const *)`
+- `0x16d370` : `public: virtual void __thiscall ClientGameManager::applyGameSetData(bool)`
+- `0x16d380` : `public: void __thiscall ClientGameManager::applyScreenBright(void)`
+- `0xf45c0` : `public: void __thiscall MINIW::ClientInfo::applyScreenBright(void)`
+- `0x732bf0` : `public: virtual void __thiscall StatisticsTools::appsFlyer(char const *,char const *,char const *,char const *,char const *,char const *,char const *)`
+- `0x5167e0` : `public: int __thiscall TriggerScriptMgr::automaticBykey(int,char const *,char const *,double)`
+- `0x46eb40` : `private: unsigned char * __thiscall Mini::HttpReportMgr::b64_decode(char const *,unsigned int)`
+- `0x46eb60` : `private: unsigned char * __thiscall Mini::HttpReportMgr::b64_decode_ex(char const *,unsigned int,unsigned int *)`
+- `0x46ed70` : `private: char * __thiscall Mini::HttpReportMgr::b64_encode(unsigned char const *,unsigned int)`
+- `0x46ef60` : `public: void __thiscall Mini::HttpReportMgr::backToPrimaryMMKVConfig(void)`
+- `0x7cced0` : `public: void __thiscall OWorldList::banOWorld(__int64,int,bool)`
+- `0x7b4290` : `public: int __thiscall WorldStringManager::batch_begin(enum SAVEFILETYPE const &,__int64 const &,int)`
+- `0x7b4620` : `public: int __thiscall WorldStringManager::batch_end(enum SAVEFILETYPE const &,__int64 const &,int)`
+- `0x7b47f0` : `public: int __thiscall WorldStringManager::batch_insert(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum SAVEFILETYPE const &,__int64 const &,int)`
+- `0x7bae60` : `public: void __thiscall AccountFBData::beforeSwitchAccount(void)`
+- `0x7ccf30` : `public: void __thiscall OWorldList::beforeSwitchAccount(void)`
+- `0x53f760` : `public: class cocos2d::Ref * * __thiscall cocos2d::__Array::begin(void)`
+- `0x6fc350` : `public: void __thiscall AccountData::buyRoleSkin(int,int)`
+- `0x46ef70` : `private: void __thiscall Mini::HttpReportMgr::cacheData(char const *)`
+- `0x46f1a0` : `private: void __thiscall Mini::HttpReportMgr::cacheStandData(char const *)`
+- `0x46f3d0` : `private: void __thiscall Mini::HttpReportMgr::cacheTask(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,char const *,int)`
+- `0xdaaa0` : `public: unsigned int __thiscall AccountFBData::calUinEncoded(int)`
+- `0x837ae0` : `public: bool __thiscall SnapshotMgr::calculateAndSavePicSizeFB(char const *,char const *)`
+- `0xdaac0` : `public: virtual bool __thiscall MINIW::ClientInfo::canDoFrame(void)`
+- `0x70ee30` : `public: bool __thiscall ClientAccountMgr::canEditMod(__int64)`
+- `0xf45d0` : `public: bool __thiscall MINIW::ClientInfo::canShowARCameraBackground(void)`
+- `0x53f770` : `public: long __thiscall cocos2d::__Array::capacity(void)const `
+- `0x7b4f30` : `private: void __thiscall WorldStringManager::changWorldId(void)`
+- `0x51b130` : `public: void __thiscall ChangeModelMgr::changeActorBodyModel(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51b440` : `public: void __thiscall ChangeModelMgr::changeActorModel(class ClientActor *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x51b8d0` : `public: void __thiscall ChangeModelMgr::changeAvatarModelActor(class ActorBody *,__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51bad0` : `public: void __thiscall ChangeModelMgr::changeBlockModelActor(class ActorBody *,int,float)`
+- `0x51bb30` : `public: void __thiscall ChangeModelMgr::changeCoustomModelActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51bc40` : `public: void __thiscall ChangeModelMgr::changeCustomActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51bd30` : `public: bool __thiscall ChangeModelMgr::changeCustomModel(__int64,char const *,bool)`
+- `0x51bf70` : `public: void __thiscall ChangeModelMgr::changeFullyCustomActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51c080` : `public: void __thiscall ChangeModelMgr::changeItemModelActor(class ActorBody *,int,float)`
+- `0x7cd0b0` : `public: bool __thiscall OWorldList::changeMaxPlayers(__int64,int)`
+- `0x51c4c0` : `public: void __thiscall ChangeModelMgr::changeMobModelActor(class ActorBody *,int,float)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::changeNetState(int)`
+- `0x7cd130` : `public: bool __thiscall OWorldList::changeOWorldCloudArchive(__int64,int)`
+- `0x7cd1b0` : `public: bool __thiscall OWorldList::changeOWorldName(__int64,char const *)`
+- `0x7cd250` : `public: bool __thiscall OWorldList::changeOWorldRemoveAudit(__int64,int)`
+- `0x7cd2d0` : `public: bool __thiscall OWorldList::changeOWorldWsize(__int64,unsigned int)`
+- `0x51c920` : `public: void __thiscall ChangeModelMgr::changeOffcialModelActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51ca30` : `public: void __thiscall ChangeModelMgr::changePlayerShopAvatarModelActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51ca70` : `public: void __thiscall ChangeModelMgr::changeProjectModel(class ClientActorProjectile *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x51d5f0` : `public: void __thiscall ChangeModelMgr::changeRoleModelActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x51d690` : `public: void __thiscall ChangeModelMgr::changeSkinModelActor(class ActorBody *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,float)`
+- `0x6172d0` : `public: void __thiscall MidiFileInfo::changeTrackInstrument(char const *,int,int,class std::basic_ostringstream<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0x573d50` : `private: void __thiscall ArchiveManager::checkAllSaveItemCanGet(struct FBSave::RoleArchData const *)`
+- `0x573ed0` : `private: bool __thiscall ArchiveManager::checkArchiveMd5(__int64,char const *)`
+- `0x797730` : `public: bool __thiscall MINIW::AdventureReportMgr::checkCanReport(void)`
+- `0xf45e0` : `public: char const * __thiscall MINIW::ClientInfo::checkCmd(char const *)`
+- `0xdaae0` : `private: bool __thiscall MINIW::ClientApp::checkDebuggerRunning(void)`
+- `0x835ed0` : `public: void __thiscall SnapshotForPC::checkDirectory(void)`
+- `0xce3d0` : `public: void __thiscall ClientDnsMgr::checkDns(void)`
+- `0xdad30` : `private: bool __thiscall MINIW::ClientApp::checkDoubleOpenings(void)`
+- `0x51d750` : `public: void __thiscall ChangeModelMgr::checkDownModel(void)`
+- `0x5db210` : `public: virtual void __thiscall MINIW::ModFileManager::checkInitialMod(char const *)`
+- `0xd6030` : `private: bool __thiscall MINIW::ClientApp::checkInsidePkgCompress(void)`
+- `0xdaf40` : `public: virtual bool __thiscall MINIW::ClientApp::checkIsGMWhiteListMember(void)`
+- `0x5740d0` : `private: bool __thiscall ArchiveManager::checkItemCanGet(class flatbuffers::Vector<struct flatbuffers::Offset<struct FBSave::ItemIndexGrid> > const *)`
+- `0xe81b0` : `public: bool __thiscall ItemDefCsv::checkItemCrc(int)`
+- `0x5ba0b0` : `public: static bool __cdecl ModManager::checkListFileModify(class jsonxx::Object &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)`
+- `0x77c110` : `public: int __thiscall WorldArchiveMgr::checkLoadWorld(__int64)`
+- `0x5dc710` : `public: bool __thiscall MINIW::ModFileManager::checkModExist(char const *)`
+- `0x7cd350` : `public: void __thiscall OWorldList::checkOWAuthorUin(__int64,int &)`
+- `0x6173b0` : `public: bool __thiscall MidiFileInfo::checkReadFile(char const *)`
+- `0x4da560` : `public: bool __thiscall RoomManager::checkRoomServerLogin(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::checkSIGUSR2(void)`
+- `0xf3780` : `public: bool __thiscall WXGameLiveManager::checkSupport(int)`
+- `0x60c590` : `public: void __thiscall FmodSoundSystemEX::checkTriggerSound2D(float)`
+- `0xdaf50` : `public: bool __thiscall AccountFBData::checkUinValid(int)`
+- `0xd6030` : `private: bool __thiscall MINIW::ClientApp::checkUnderVM(void)`
+- `0x5ba450` : `public: void __thiscall ModManager::checkUserModDir(void)`
+- `0x5dc890` : `public: bool __thiscall MINIW::ModFileManager::checkUserdefault(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xdaf70` : `private: bool __thiscall MINIW::ClientApp::checkVMPValid(void)`
+- `0x797770` : `public: int __thiscall MINIW::AdventureReportMgr::checkValidNum(int,int,int)`
+- `0x786aa0` : `public: bool __thiscall WorldBackupMgr::checkWorldHasBackup(__int64)`
+- `0x16d390` : `public: virtual void __thiscall ClientGameManager::chkRoomTicks(void)`
+- `0x732c20` : `public: virtual void __thiscall StatisticsTools::chooseRole(char const *,char const *,int)`
+- `0x31a4d0` : `public: struct GameLanguage const & __thiscall GameLanguageCsv::cidLanguage(int)`
+- `0x7591f0` : `public: void __thiscall ClientCSOWorld::cleanupDownload(__int64,int)`
+- `0x759400` : `public: void __thiscall ClientCSOWorld::cleanupUpload(__int64,int)`
+- `0x7490b0` : `public: void __thiscall AchievementManager::clear(void)`
+- `0x793940` : `private: void __thiscall WorldList::clear(void)`
+- `0x6fc470` : `public: void __thiscall AccountData::clearAccountData(void)`
+- `0x79fda0` : `public: void __thiscall Mini::MmkvMgr::clearAll(char const *,int)`
+- `0x46f720` : `public: void __thiscall Mini::HttpReportMgr::clearAllData(void)`
+- `0x77c160` : `public: void __thiscall WorldArchiveMgr::clearAttentionOW(void)`
+- `0x5a1b30` : `public: void __thiscall ModEditorManager::clearBiomeDef(void)`
+- `0x7978e0` : `public: void __thiscall MINIW::AdventureReportMgr::clearCollectMap(int)`
+- `0x797970` : `public: void __thiscall MINIW::AdventureReportMgr::clearConsumeMap(int)`
+- `0x715b20` : `public: void __thiscall ClientBuddyMgr::clearCurChatBuddyNoReadNum(int)`
+- `0x16d3f0` : `public: virtual void __thiscall ClientGameManager::clearCurGame(void)`
+- `0x7cd3c0` : `public: void __thiscall OWorldList::clearDirtyUinOWID(void)`
+- `0x77c170` : `public: void __thiscall WorldArchiveMgr::clearDirtyUinOWID(void)`
+- `0x5bb3d0` : `public: void __thiscall ModManager::clearDisableWorldMods(void)`
+- `0x71c440` : `public: static void __cdecl ClientUrl::clearDynamic(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xc2190` : `public: int __thiscall MINIW::ClientInfo::clearErrorProtectCountPatch(void)`
+- `0x77c180` : `public: void __thiscall WorldArchiveMgr::clearExceptOW(void)`
+- `0x7bae70` : `public: void __thiscall AccountFBData::clearFeedBack(void)`
+- `0x46f800` : `public: void __thiscall Mini::HttpReportMgr::clearGameSessionId(void)`
+- `0x7bae80` : `public: void __thiscall AccountFBData::clearGrade(void)`
+- `0x4da620` : `public: void __thiscall RoomManager::clearHotRoomList(void)`
+- `0x5bb400` : `public: void __thiscall ModManager::clearModAllocatedIDInfo(void)`
+- `0x5bb5a0` : `public: void __thiscall ModManager::clearModsPkgData(void)`
+- `0x5a1b40` : `public: void __thiscall ModEditorManager::clearMonsterAIID(int)`
+- `0x797a00` : `public: void __thiscall MINIW::AdventureReportMgr::clearMonsterKillMap(void)`
+- `0x4da690` : `public: void __thiscall RoomManager::clearNearbyRoomList(void)`
+- `0x715b70` : `public: void __thiscall ClientBuddyMgr::clearNoReadMsgForUin(int)`
+- `0x5a1b60` : `public: void __thiscall ModEditorManager::clearOreDef(void)`
+- `0x6e23f0` : `public: void __thiscall FileAndDirInfo::clearPath(void)`
+- `0x4da6f0` : `public: void __thiscall RoomManager::clearRecentlyOpenedOwnerRoomList(void)`
+- `0x6fc490` : `public: void __thiscall AccountData::clearRole(void)`
+- `0x4da750` : `public: void __thiscall RoomManager::clearRoomList(void)`
+- `0x4b9980` : `public: bool __thiscall SpringFestivalActivityMgr::clearSpringFestivalActivityFBS(int,int)`
+- `0x60c610` : `private: void __thiscall FmodSoundSystemEX::clearTasks(void)`
+- `0x2aaa80` : `public: void __thiscall BlockDefCsv::clearTempDef(void)`
+- `0x77c190` : `public: void __thiscall WorldArchiveMgr::clearWatchOW(void)`
+- `0x516870` : `public: int __thiscall TriggerScriptMgr::clearlist(int,char const *)`
+- `0xf4640` : `public: virtual void __thiscall MINIW::ClientInfo::clickCopy(char const *)`
+- `0xf4660` : `public: void __thiscall MINIW::ClientInfo::clientLog(char const *)`
+- `0xf4760` : `public: virtual int __thiscall MINIW::ClientInfo::clientVersion(void)`
+- `0xdc090` : `public: int __thiscall MINIW::ClientManager::clientVersion(void)`
+- `0xf4770` : `public: virtual int __thiscall MINIW::ClientInfo::clientVersionFromStr(char const *)`
+- `0xdc0a0` : `public: int __thiscall MINIW::ClientManager::clientVersionFromStr(char const *)`
+- `0xf4990` : `public: virtual char const * __thiscall MINIW::ClientInfo::clientVersionStr(void)`
+- `0xf4a40` : `public: virtual char * __thiscall MINIW::ClientInfo::clientVersionToStr(int)`
+- `0xc2190` : `public: class cocos2d::Action * __thiscall cocos2d::ActionInterval::clone(void)const `
+- `0xc2190` : `public: class cocos2d::Clonable * __thiscall cocos2d::ActionInterval::clone(void)const `
+- `0xc2190` : `public: class cocos2d::FiniteTimeAction * __thiscall cocos2d::ActionInterval::clone(void)const `
+- `0xdaf80` : `public: class cocos2d::Action * __thiscall cocos2d::ResizeTo::clone(void)const `
+- `0xdaf80` : `public: class cocos2d::ActionInterval * __thiscall cocos2d::ResizeTo::clone(void)const `
+- `0xdaf90` : `public: class cocos2d::Clonable * __thiscall cocos2d::ResizeTo::clone(void)const `
+- `0xdaf80` : `public: class cocos2d::FiniteTimeAction * __thiscall cocos2d::ResizeTo::clone(void)const `
+- `0x53f780` : `public: class cocos2d::Clonable * __thiscall cocos2d::__Array::clone(void)const `
+- `0x7cd3d0` : `public: bool __thiscall OWorldList::cloudServerReloadOwDesc(__int64,int)`
+- `0xe9560` : `public: int __thiscall GameLanguageCsv::code2id(char const *)`
+- `0x31a650` : `public: struct GameLanguage const & __thiscall GameLanguageCsv::codeLanguage(char const *)`
+- `0x797a10` : `public: virtual void __thiscall MINIW::AdventureReportMgr::collectItem(int,int,int,int)`
+- `0x5dca40` : `public: void __thiscall MINIW::ModFileManager::compatibleOldUserdefault(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x797b30` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::AdventureReportMgr::composePlayerPositionInfo(int)`
+- `0x797dd0` : `private: void __thiscall MINIW::AdventureReportMgr::composePubilicData(struct Mini::MiniStandInData *,int)`
+- `0x797f50` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::AdventureReportMgr::composeRoomInfo(void)`
+- `0x7980f0` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::AdventureReportMgr::composeSurvivalInfo(int)`
+- `0x798270` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::AdventureReportMgr::composeWorldTimeInfo(void)`
+- `0x7983d0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::consumeItem(int,int,int,int)`
+- `0x31a830` : `public: bool __thiscall GameLanguageCsv::containsCode(char const *)`
+- `0x31a9d0` : `public: bool __thiscall GameLanguageCsv::containsId(int)`
+- `0x79fdc0` : `public: bool __thiscall Mini::MmkvMgr::containsKey(char const *,char const *,int)`
+- `0x7cd6a0` : `public: void __thiscall OWorldList::continueDownloadOWorld(__int64)`
+- `0x77c200` : `public: void __thiscall WorldArchiveMgr::continueDownloadWorld(__int64)`
+- `0x7cd8a0` : `public: void __thiscall OWorldList::continueOpenWorld(__int64)`
+- `0x5bb6b0` : `public: void __thiscall ModManager::copyCustomModelFileByMod(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,enum ResourceDefineType,int)`
+- `0x5bbf40` : `public: void __thiscall ModManager::copyCustomModelFileByModDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool,enum ResourceDefineType,class GameMod *,__int64)`
+- `0x60c680` : `public: void __thiscall FmodSoundSystemEX::copyDlsFile(void)`
+- `0x5dcd10` : `public: virtual bool __thiscall MINIW::ModFileManager::copyFileFromPkgToStdio(char const *,char const *)`
+- `0x5bcb50` : `public: void __thiscall ModManager::copyFullyBoneModelFileByMod(__int64,class FullyCustomModel *,class FullyCustomBoneData *,int)`
+- `0x5bcec0` : `public: void __thiscall ModManager::copyFullyBoneModelFileByModDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class FullyCustomModel *,class GameMod *,class FullyCustomBoneData *,__int64)`
+- `0x5bd410` : `public: void __thiscall ModManager::copyFullyModelFileByMod(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x5bd880` : `public: void __thiscall ModManager::copyFullyModelFileByModDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class GameMod *,__int64)`
+- `0x5bdfa0` : `public: void __thiscall ModManager::copyImportModelFileByMod(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x5be450` : `public: void __thiscall ModManager::copyImportModelFileByModDir(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class GameMod *,__int64)`
+- `0x5beb30` : `public: bool __thiscall ModManager::copyModFromLibraryToWorld(char const *,__int64,int)`
+- `0x5bf3e0` : `public: void __thiscall ModManager::copyModFromWroldToLibrary(char const *,__int64)`
+- `0x53f790` : `public: long __thiscall cocos2d::__Array::count(void)const `
+- `0x31c4e0` : `public: struct STGameZone * __thiscall GameZoneCsv::countryGameZone(char const *)`
+- `0x140cc0` : `public: static class MINIW::AppUpdateScene * __cdecl MINIW::AppUpdateScene::create(void)`
+- `0x51dc60` : `public: static class ChangeModelMgr * __cdecl ChangeModelMgr::create(void)`
+- `0x140f30` : `public: static class MINIW::LaunchScene * __cdecl MINIW::LaunchScene::create(void)`
+- `0x5bf5d0` : `public: void __thiscall ModManager::createBlockMaterialById(int)`
+- `0x786f10` : `public: bool __thiscall WorldBackupMgr::createCloudServerBackup(__int64,char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int)`
+- `0x2a6900` : `public: void __thiscall Rainbow::SentryModule::createCustomLogFile(int)`
+- `0x7bae90` : `public: void __thiscall AccountFBData::createEvent(void)`
+- `0x749110` : `public: void __thiscall AchievementManager::createEvent(void)`
+- `0x574140` : `public: void __thiscall ArchiveManager::createEvent(void)`
+- `0x753c20` : `public: void __thiscall ArchiveTempMgr::createEvent(void)`
+- `0x51dcf0` : `public: void __thiscall ChangeModelMgr::createEvent(void)`
+- `0x70ee90` : `public: void __thiscall ClientAccountMgr::createEvent(void)`
+- `0x46f8b0` : `public: void __thiscall Mini::HttpReportMgr::createEvent(void)`
+- `0x7ed2d0` : `public: void __thiscall KeywordFilterMgr::createEvent(void)`
+- `0x69da50` : `public: void __thiscall MapEditManager::createEvent(void)`
+- `0x5bf860` : `public: void __thiscall ModManager::createEvent(void)`
+- `0x7cda20` : `public: void __thiscall OWorldList::createEvent(void)`
+- `0x4c6a90` : `public: void __thiscall OnlineService::createEvent(void)`
+- `0x4da7d0` : `public: void __thiscall RoomManager::createEvent(void)`
+- `0x834840` : `public: void __thiscall SnapshotForGame::createEvent(void)`
+- `0x5168b0` : `public: void __thiscall TriggerScriptMgr::createEvent(void)`
+- `0x561380` : `public: void __thiscall UIProjectLibManager::createEvent(void)`
+- `0x77c220` : `public: void __thiscall WorldArchiveMgr::createEvent(void)`
+- `0x7b5620` : `public: void __thiscall WorldStringManager::createEvent(void)`
+- `0x60c840` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::createFmodSoundFromFile(class FMOD::System *,char const *,unsigned int)`
+- `0x5c13c0` : `public: bool __thiscall ModManager::createGameModByUUID(char const *,int)`
+- `0x53be30` : `public: struct LangDesc * __thiscall EditorLang::createLangDesc(char const *)`
+- `0x53bed0` : `public: bool __thiscall EditorLang::createLangFile(__int64,char const *)`
+- `0x60ca60` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::createMidiMusicNoteSound(class FMOD::System *,int,int,int)`
+- `0x60cd30` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::createMidiSoundFromFile(class FMOD::System *,char const *,unsigned int)`
+- `0x60cf80` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::createMidiSoundFromFile(class FMOD::System *,char const *,unsigned int,int,int)`
+- `0x16d680` : `public: virtual void __thiscall ClientGameManager::createNetHandlerRegister(void)`
+- `0x77c8a0` : `public: void __thiscall WorldArchiveMgr::createNewbieWorld(int,int)`
+- `0x5a1b70` : `public: int __thiscall ModEditorManager::createNpcShop(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x787bc0` : `public: enum eOnelineMapBackupCode __thiscall WorldBackupMgr::createOnlineMapBackup(int &,struct MapInfoHttp const &,char const *)`
+- `0x5a1f30` : `public: int __thiscall ModEditorManager::createPackGift(void)`
+- `0x4dcae0` : `public: void __thiscall RoomManager::createRoom(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,int,bool,int,int,int)`
+- `0x732c40` : `public: virtual void __thiscall StatisticsTools::createRoom(bool,int,bool,int,int,char const *,char const *)`
+- `0x4dccd0` : `public: void __thiscall RoomManager::createRoomEx(class CreateRoomParam const &)`
+- `0x7cec70` : `public: bool __thiscall OWorldList::createSavedWorld(__int64,char const *,int,int,char const *,int)`
+- `0x77c8e0` : `public: void __thiscall WorldArchiveMgr::createSelectRoleWorld(void)`
+- `0x4e6cc0` : `private: class SimPlayer * __thiscall SimulateMgr::createSimPlayer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x4e71e0` : `private: void __thiscall SimulateMgr::createSimPlayer(void)`
+- `0x60d250` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::createSound2D(char const *)`
+- `0x60d290` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::createSoundByStream(char const *)`
+- `0x7333e0` : `public: virtual class jsonxx::Object * __thiscall StatisticsTools::createStatisticsJsonObj(void)`
+- `0x5a1f70` : `public: int __thiscall ModEditorManager::createStatus(int,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5a2220` : `public: int __thiscall ModEditorManager::createStatusEx(int,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7ceeb0` : `public: __int64 __thiscall OWorldList::createTempWorld(struct tagOWorld const &)`
+- `0x7cf060` : `public: __int64 __thiscall OWorldList::createWorld(struct tagOWorld const &,__int64)`
+- `0x7884f0` : `public: bool __thiscall WorldBackupMgr::createWorldBackup(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x7885b0` : `public: bool __thiscall WorldBackupMgr::createWorldBackupOutPath(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,bool)`
+- `0x7cf3c0` : `public: __int64 __thiscall OWorldList::createWorldBeforeDownload(__int64,struct tagOWorld *,int,struct MapInfoHttp const &,bool)`
+- `0x77c9a0` : `public: __int64 __thiscall WorldArchiveMgr::createWorldByDocument(int,__int64,int,char *)`
+- `0x7cfb60` : `public: __int64 __thiscall OWorldList::createWorldByID(struct tagOWorld const &,int)`
+- `0x7cfd20` : `public: __int64 __thiscall OWorldList::createWorldRecord(void)`
+- `0x6dc7c0` : `public: int __thiscall MapConvertMgr::createWorldTools(__int64,char const *)`
+- `0xf4a80` : `public: void __thiscall MINIW::ClientInfo::cropARAvatarPhoto(char const *,int)`
+- `0x46ffb0` : `public: void __thiscall Mini::HttpReportMgr::customReport(char const *,char const *)`
+- `0x7a2810` : `public: int __thiscall SnapshotMgr::cutPic(char const *,char const *,int,int)`
+- `0x837f70` : `public: int __thiscall SnapshotMgr::cutPicMaxSize(char const *,char const *,int,int)`
+- `0x470170` : `private: void __thiscall Mini::HttpReportMgr::data2Task(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > *)`
+- `0x5c16b0` : `public: bool __thiscall ModManager::dealWithModPkgFile(__int64,int)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::debugBreak(void)`
+- `0x51f190` : `private: char * __thiscall ChangeModelMgr::decrypt(char *,unsigned int,unsigned int *)`
+- `0x4709a0` : `private: char * __thiscall Mini::HttpReportMgr::decrypt(char const *,unsigned int,unsigned int *)`
+- `0x51f190` : `public: char * __thiscall MINIW::ModFileManager::decrypt(char const *,unsigned int,unsigned int *)`
+- `0x5c24e0` : `public: static bool __cdecl ModManager::decryptModobj(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x6fc4b0` : `public: void __thiscall AccountData::delCollectUin(int)`
+- `0x7d0400` : `public: bool __thiscall OWorldList::delDevTempOwList(__int64)`
+- `0x7d04a0` : `public: void __thiscall OWorldList::delDirtyUinOWID(__int64)`
+- `0x77cf00` : `public: void __thiscall WorldArchiveMgr::delDirtyUinOWID(__int64)`
+- `0x77cf20` : `public: void __thiscall WorldArchiveMgr::delLoadWorldData(__int64)`
+- `0x5a25a0` : `public: bool __thiscall ModEditorManager::delModSlotFile(int,int)`
+- `0x5a2b50` : `public: bool __thiscall ModEditorManager::delModSlotFileById(int,int,__int64,int)`
+- `0x6fc500` : `public: void __thiscall AccountData::delOWScore(__int64)`
+- `0x77d020` : `public: void __thiscall WorldArchiveMgr::delOwComment(int)`
+- `0x5c27d0` : `public: bool __thiscall ModManager::deleteCurrMapModByUUID(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7d04c0` : `private: int __thiscall OWorldList::deleteExistsOwids(class std::set<__int64,struct std::less<__int64>,class std::allocator<__int64> > &,struct tagCSMyOWList const *)`
+- `0x5dce00` : `public: void __thiscall MINIW::ModFileManager::deleteFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5c2970` : `public: bool __thiscall ModManager::deleteMapMaterialModByUUID(char const *,__int64)`
+- `0x5c2c40` : `private: void __thiscall ModManager::deleteMapModPacketForDeveloper(char const *)`
+- `0x7d0550` : `public: bool __thiscall OWorldList::deleteWorld(__int64,int)`
+- `0x7338f0` : `public: virtual void __thiscall StatisticsTools::deleteWorld(__int64,__int64,int)`
+- `0x789290` : `public: void __thiscall WorldBackupMgr::deleteWorldAllBackups(__int64)`
+- `0x789420` : `public: void __thiscall WorldBackupMgr::deleteWorldBackup(struct WorldBackupInfo const &)`
+- `0x789650` : `public: void __thiscall WorldBackupMgr::deleteWorldBackupByFilePath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7939c0` : `public: void __thiscall WorldList::deleteWorldDesc(__int64)`
+- `0xf5220` : `public: virtual void __thiscall MINIW::ClientInfo::destroy(void)`
+- `0xfd410` : `public: virtual void __thiscall MINIW::ClientInfo_PC::destroy(void)`
+- `0x151e20` : `public: static void __cdecl PlatformUtility::destroy(void)`
+- `0xce3d0` : `public: static void __cdecl ARInterface::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl AvatarDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl BlockDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl BotConversationsDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl CustommodelParse::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl FileAndDirInfo::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl GameLanguageCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl GameZoneCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl GlobalSetParse::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl ItemDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl MonsterCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl ResourcePackDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl RoleSkinCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl SimulateMgr::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl SkinActCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl StatisticsTools::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl StringDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl SummonDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl SurviveObjectiveDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl SurviveTaskDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl ToolDefCsv::destroyInstance(void)`
+- `0xce3d0` : `public: static void __cdecl WXGameLiveManager::destroyInstance(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::diagnoseNetwork(void)`
+- `0x16d780` : `public: virtual void __thiscall ClientGameManager::disableChkRoomTicks(bool)`
+- `0xce3d0` : `public: void __thiscall ARInterface::disableOrientationListener(void)`
+- `0x60d300` : `public: int __thiscall FmodSoundSystemEX::doAudioEncodeAsync(char const *,char const *)`
+- `0x77d0c0` : `public: __int64 __thiscall WorldArchiveMgr::doCreateWorld(struct tagOWorld *,__int64,char const *,bool,bool)`
+- `0x77d560` : `public: __int64 __thiscall WorldArchiveMgr::doCreateWorldEx(struct tagOWorld *,__int64,char const *,bool,bool,bool)`
+- `0x710130` : `public: __int64 __thiscall ClientAccountMgr::doCreateWorldForEducation(struct tagOWorld *,__int64,char const *)`
+- `0x77dac0` : `public: __int64 __thiscall WorldArchiveMgr::doCreateWorldForEducation(struct tagOWorld *,__int64,char const *)`
+- `0x77dae0` : `public: __int64 __thiscall WorldArchiveMgr::doEditWorldType(struct tagOWorld *,__int64,char const *,bool,bool,bool)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::doFrame(void)`
+- `0xfd450` : `public: virtual void __thiscall MINIW::ClientInfo_PC::doFrame(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::doLogin4399NewSDK(void)`
+- `0xfd620` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::doLogin4399NewSDK(void)`
+- `0x7984f0` : `public: void __thiscall MINIW::AdventureReportMgr::doReport(struct Mini::MiniStandInData *,int)`
+- `0x838300` : `public: void __thiscall SnapshotMgr::doSnapshot(char const *,int,int)`
+- `0x8384c0` : `public: void __thiscall SnapshotMgr::doSnapshotWithCompress(char const *,int,int,int,int,int)`
+- `0x5c2c60` : `public: void __thiscall ModManager::downLoadModFile(char const *)`
+- `0x759650` : `public: int __thiscall ClientCSOWorld::downloadFail(struct UpDownWorldInfo &,bool)`
+- `0x7a8dc0` : `public: void __thiscall StringLoaderManager::downloadProgress(int,int)`
+- `0x7599b0` : `public: void __thiscall ClientCSOWorld::downloadSucceed(struct UpDownWorldInfo &)`
+- `0x5c2cf0` : `public: void __thiscall ModManager::enableClearMapDefaultOreWorld(void)`
+- `0xdb1c0` : `private: bool __thiscall MINIW::ClientApp::enableNewAppUpdate(void)`
+- `0xce3d0` : `public: void __thiscall ARInterface::enableOrientationListener(void)`
+- `0x51f220` : `private: char * __thiscall ChangeModelMgr::encrypt(char *,unsigned int *)`
+- `0x470ac0` : `private: char * __thiscall Mini::HttpReportMgr::encrypt(char const *,unsigned int *)`
+- `0x51f220` : `public: char * __thiscall MINIW::ModFileManager::encrypt(char const *,unsigned int *)`
+- `0x5c2f80` : `public: void __thiscall ModManager::encryptMod(class GameMod *,bool)`
+- `0x5c3080` : `public: void __thiscall ModManager::encryptModAll(bool)`
+- `0x5c3220` : `public: bool __thiscall ModManager::encryptModByUUIDHint(char const *,bool)`
+- `0x53f7a0` : `public: class cocos2d::Ref * * __thiscall cocos2d::__Array::end(void)`
+- `0x710150` : `public: void __thiscall ClientAccountMgr::enterGame2New(void)`
+- `0x7101c0` : `public: void __thiscall ClientAccountMgr::enterGame(void)`
+- `0x7d06f0` : `public: bool __thiscall OWorldList::enterWorld(__int64)`
+- `0x4b9bc0` : `public: void __thiscall SpringFestivalActivityMgr::enterWorld(int,int)`
+- `0x733c80` : `public: virtual void __thiscall StatisticsTools::enterWorld(__int64,__int64,int)`
+- `0x7a8f60` : `public: void __thiscall StringLoaderManager::execFinalCommand(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::executeCommand(void)`
+- `0x734010` : `public: virtual void __thiscall StatisticsTools::expenseMiniCoin(char *,int,float)`
+- `0x53f7b0` : `public: void __thiscall cocos2d::__Array::fastSetObject(class cocos2d::Ref *,long)`
+- `0x6e24d0` : `public: static __int64 __cdecl FileAndDirInfo::fileSize(char const *)`
+- `0x5c3350` : `public: void __thiscall ModManager::filterRepetedMod(class GameMod *,bool)`
+- `0x78b2c0` : `protected: class BackupOMapWorkInfo * __thiscall WorldBackupMgr::findBackupOMapWorkInfoByOwid(__int64)`
+- `0x78b330` : `protected: class BackupOMapWorkInfo * __thiscall WorldBackupMgr::findBackupOMapWorkInfoByTask(unsigned int)`
+- `0xf40f0` : `public: class BuddyInfo * __thiscall ClientBuddyMgr::findBuddy(int)`
+- `0x715c60` : `public: struct tagBuddyInfoEx * __thiscall ClientBuddyMgr::findBuddyByUin(int)`
+- `0x331a30` : `public: struct RoleSkinDef * __thiscall RoleSkinCsv::findByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7d0b30` : `public: struct tagOWorld * __thiscall OWorldList::findDTWorldDesc(__int64)`
+- `0x7d0b90` : `public: int __thiscall OWorldList::findDTWorldIndex(__int64)`
+- `0x7d0be0` : `public: struct tagOWorld * __thiscall OWorldList::findHGWorldDesc(__int64)`
+- `0x7d0c30` : `private: int __thiscall OWorldList::findHGWorldIndex(__int64)`
+- `0x101990` : `public: virtual bool __thiscall HomeCsvManagerProxy::findHomeItemDefFunctionId(int,int)`
+- `0x5c3760` : `public: struct ItemInfo * __thiscall ModManager::findMapUseDownloadRes(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64)`
+- `0x5c3830` : `public: struct GameModDesc * __thiscall ModManager::findModDescFromLibrary(char const *)`
+- `0x5c3920` : `public: class GameMod * __thiscall ModManager::findModFromLibrary(char const *)`
+- `0x4dd1f0` : `public: int __thiscall RoomManager::findNearByRoom(int)`
+- `0x4dd230` : `public: struct RoomDesc * __thiscall RoomManager::findRecentlyOpendOwnerRoom(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4dd2f0` : `public: struct RoomDesc * __thiscall RoomManager::findRoom(int)`
+- `0x710230` : `public: struct WorldDesc * __thiscall ClientAccountMgr::findWorldDesc(__int64)`
+- `0xf52a0` : `public: virtual struct WorldDesc * __thiscall MINIW::ClientInfo::findWorldDesc(__int64)`
+- `0x7d0c70` : `public: struct tagOWorld * __thiscall OWorldList::findWorldDesc(__int64)`
+- `0x77dfb0` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::findWorldDesc(__int64)`
+- `0x793a30` : `public: struct WorldDesc * __thiscall WorldList::findWorldDesc(__int64,bool)`
+- `0x77dfe0` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::findWorldDescIncludeFromowid(__int64)`
+- `0x793ab0` : `public: struct WorldDesc * __thiscall WorldList::findWorldDescIncludeFromowid(__int64)`
+- `0x7d0ce0` : `public: struct tagOWorld * __thiscall OWorldList::findWorldDescNoDevTemp(__int64)`
+- `0x7d0d50` : `private: int __thiscall OWorldList::findWorldIndex(__int64,int)`
+- `0xf52c0` : `public: virtual void __thiscall MINIW::ClientInfo::finishTask(int,char const *)`
+- `0x470d10` : `public: void __thiscall Mini::HttpReportMgr::finishTask(class Mini::ReportTask *,bool)`
+- `0x31aa50` : `public: struct GameLanguage const & __thiscall GameLanguageCsv::flagLanguage(char const *)`
+- `0x5c3b90` : `public: void __thiscall ModManager::flushMods(void)`
+- `0x5c4120` : `public: void __thiscall ModManager::flushModsWithType(bool)`
+- `0x575b80` : `public: void __thiscall ArchiveManager::forceUpdateVarlib(int)`
+- `0x5c5940` : `public: int __thiscall ModManager::foreignActorId2InnerId(struct MonsterDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c59d0` : `public: int __thiscall ModManager::foreignBlockId2InnerId(struct BlockDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c5a80` : `public: int __thiscall ModManager::foreignCraftingId2InnerId(struct CraftingDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c5b10` : `public: int __thiscall ModManager::foreignFurnaceId2InnerId(struct FurnaceDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c5b90` : `public: int __thiscall ModManager::foreignItemId2InnerId(struct ItemDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c5c20` : `public: int __thiscall ModManager::foreignNpcPlotId2InnerId(struct NpcPlotDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c5ca0` : `public: int __thiscall ModManager::foreignNpcTaskId2InnerId(struct NpcTaskDef const *,unsigned int,int,class GameMod *,int)`
+- `0x5c5d20` : `public: int __thiscall ModManager::foreignStatusId2InnerId(struct BuffDef const *,unsigned int,int,class GameMod *)`
+- `0x75a250` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientCSOWorld::formatMapDownloadUrl(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xdb6d0` : `public: bool __thiscall ModManager::fristLoginByLoadModMap(void)`
+- `0x5a3710` : `public: bool __thiscall ModEditorManager::fwriteJsonToFile(class jsonxx::Object &,char const *,bool)`
+- `0xeeedb8` : `unsigned short g_nHomeGardenKeyCode`
+- `0xeeedbc` : `unsigned short g_nHomeGardenSaveVersion`
+- `0x734040` : `public: virtual void __cdecl StatisticsTools::gameAction(enum StatisticsActionId,int,...)`
+- `0x734b20` : `public: virtual void __thiscall StatisticsTools::gameEvent(char const *,char const *,char const *,char const *,char const *,char const *,char const *)`
+- `0x734b60` : `public: virtual void __thiscall StatisticsTools::gameOpenSplash(void)`
+- `0x75a730` : `public: void __thiscall ClientCSOWorld::genS2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0x471670` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::generateFriendSessionId(void)`
+- `0x471890` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::generateGameSessionId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x471970` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::generateGameSessionSeed(void)`
+- `0x2a8d00` : `public: struct AvatarDef const * __thiscall AvatarDefCsv::get(int)`
+- `0x2aaaa0` : `public: struct BlockDef * __thiscall BlockDefCsv::get(int,bool)`
+- `0x2ad520` : `public: struct BotConversationsDef const * __thiscall BotConversationsDefCsv::get(unsigned int)`
+- `0x320490` : `public: struct ItemDef * __thiscall ItemDefCsv::get(int,bool)`
+- `0x327660` : `public: struct MonsterDef * __thiscall MonsterCsv::get(int,bool,bool)`
+- `0x330380` : `public: struct ResourcePackDef const * __thiscall ResourcePackDefCsv::get(int)`
+- `0x331af0` : `public: struct RoleSkinDef * __thiscall RoleSkinCsv::get(int)`
+- `0x3374a0` : `public: char const * __thiscall StringDefCsv::get(int)`
+- `0x2a8d00` : `public: struct SummonDef const * __thiscall SummonDefCsv::get(int)`
+- `0x2ad520` : `public: struct SurviveObjectiveDef const * __thiscall SurviveObjectiveDefCsv::get(unsigned int)`
+- `0x2ad520` : `public: struct SurviveTaskDef const * __thiscall SurviveTaskDefCsv::get(unsigned int)`
+- `0x33acb0` : `public: struct ToolDef const * __thiscall ToolDefCsv::get(int)`
+- `0x1912c0` : `public: struct tagAccontInfo * __thiscall AccountFBData::getAccInfo(void)`
+- `0xf5350` : `public: virtual int __thiscall MINIW::ClientInfo::getAccontUin(void)`
+- `0xdc0c0` : `public: int __thiscall MINIW::ClientManager::getAccontUin(void)`
+- `0xdb6e0` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getAccount(void)`
+- `0x74abe0` : `public: struct AchievementInfo const * __thiscall AchievementManager::getAccountAchievementInfo(int,int)`
+- `0x7bb0b0` : `public: int __thiscall AccountFBData::getAccountCreateTime(void)`
+- `0xf5360` : `public: virtual int __thiscall MINIW::ClientInfo::getAccountCreateTime(void)`
+- `0x48e7e0` : `public: class AccountData * __thiscall ClientAccountMgr::getAccountData(void)`
+- `0xf5370` : `public: virtual int __thiscall MINIW::ClientInfo::getAccountFBDataAccountUin(void)`
+- `0xdb700` : `public: struct tagAccontInfo * __thiscall ClientAccountMgr::getAccountInfo(void)`
+- `0xf5380` : `public: virtual struct tagAccontInfo * __thiscall MINIW::ClientInfo::getAccountInfo(void)`
+- `0xdc0d0` : `public: struct tagAccontInfo * __thiscall MINIW::ClientManager::getAccountInfo(void)`
+- `0x6fc580` : `public: struct AccountItem const * __thiscall AccountData::getAccountItem(int)`
+- `0x6fc5b0` : `public: struct AccountItem const * __thiscall AccountData::getAccountItemById(int)`
+- `0x6fc5f0` : `public: int __thiscall AccountData::getAccountItemNum(int)`
+- `0x710250` : `public: char const * __thiscall ClientAccountMgr::getAccountName(void)`
+- `0xf5390` : `public: virtual struct VipInfo const & __thiscall MINIW::ClientInfo::getAccountVipInfo(void)`
+- `0xd5480` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientApp::getAceInfo(void)`
+- `0x74acb0` : `public: int __thiscall AchievementManager::getAchievementArryNum(int,int)`
+- `0x74ad50` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall AchievementManager::getAchievementCompleteDate(int,int)`
+- `0x74aec0` : `public: struct AchievementDef const * __thiscall AchievementManager::getAchievementDef(int)`
+- `0x710380` : `public: int __thiscall ClientAccountMgr::getAchievementFinishNum(void)`
+- `0x74af10` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall AchievementManager::getAchievementIDsByGroup(int)`
+- `0x7103b0` : `public: int const __thiscall ClientAccountMgr::getAchievementPoints(void)`
+- `0x74b030` : `public: int __thiscall AchievementManager::getAchievementRewardState(int,int)`
+- `0xf53a0` : `public: virtual int __thiscall MINIW::ClientInfo::getAchievementRewardState(int,int)`
+- `0x74b0d0` : `public: int __thiscall AchievementManager::getAchievementSize(void)`
+- `0x74b0f0` : `public: int __thiscall AchievementManager::getAchievementState(int,int)`
+- `0xf53c0` : `public: virtual int __thiscall MINIW::ClientInfo::getAchievementState(int,int)`
+- `0x6fc630` : `public: int __thiscall AccountData::getActivityGift(void)`
+- `0x6fc640` : `public: int __thiscall AccountData::getActivityGiftTime(void)`
+- `0x5a39d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getActorForeignIds(struct MonsterDef const *)`
+- `0x5c5db0` : `public: int __thiscall ModManager::getActorIdInnerId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,unsigned int,int)`
+- `0xd5480` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getAllAccountInfos(void)`
+- `0xdc0e0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientManager::getAllAccountInfos(void)`
+- `0xdb710` : `public: class std::vector<struct ArchDataInfo *,class std::allocator<struct ArchDataInfo *> > & __thiscall ArchiveManager::getAllDataInfo(void)`
+- `0x7d0e00` : `private: class std::vector<__int64,class std::allocator<__int64> > __thiscall OWorldList::getAllHGWorldId(void)`
+- `0x5c5e60` : `public: int __thiscall ModManager::getAllModCount(void)`
+- `0x5dce80` : `public: class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > > & __thiscall MINIW::ModFileManager::getAllModsPath(char const *)`
+- `0xdb710` : `public: class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > > & __thiscall MINIW::ModFileManager::getAllModsPath(void)`
+- `0x7d1110` : `private: class std::vector<__int64,class std::allocator<__int64> > __thiscall OWorldList::getAllOwId(void)`
+- `0x5c5e70` : `public: unsigned int __thiscall ModManager::getAllocateId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum CustomType,class GameMod *,enum ParseModType)`
+- `0x6fc650` : `public: int __thiscall AccountData::getAlreadyBuyNum(int)`
+- `0xf53e0` : `public: virtual int __thiscall MINIW::ClientInfo::getApiId(void)`
+- `0xdc100` : `public: int __thiscall MINIW::ClientManager::getApiId(void)`
+- `0xf3fc0` : `public: virtual __int64 __thiscall MINIW::ClientInfo::getAppId(void)`
+- `0xf53f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getAppPlatformName(void)`
+- `0xdb700` : `public: enum MINIW::APP_STATE_TYPE __thiscall MINIW::ClientInfo::getAppState(void)`
+- `0xdb740` : `public: virtual int __thiscall MINIW::ClientInfo::getApplyId(void)`
+- `0x575bb0` : `public: struct ArchDataInfo * __thiscall ArchiveManager::getArchDataInfo(int)`
+- `0x575be0` : `public: struct ArchDataInfo * __thiscall ArchiveManager::getArchDataInfoByOwid(__int64)`
+- `0xdb720` : `public: int __thiscall ArchiveManager::getArchDataInfosSize(void)`
+- `0xdb730` : `public: bool __thiscall ArchiveManager::getArchiveItemNotGet(void)`
+- `0x7103c0` : `public: int __thiscall ClientAccountMgr::getArchiveLang(void)`
+- `0xf5510` : `public: virtual int __thiscall MINIW::ClientInfo::getArchiveLang(void)`
+- `0xdc110` : `public: int __thiscall MINIW::ClientManager::getArchiveLang(void)`
+- `0x77e010` : `public: int __thiscall WorldArchiveMgr::getArchiveLang(void)`
+- `0x31c6d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall GameZoneCsv::getAreaFlag(char const *)`
+- `0xea190` : `public: int __thiscall WorldArchiveMgr::getAttentionOwNum(void)`
+- `0x77e350` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::getAttentionWorldDesc(int)`
+- `0xdb740` : `public: virtual int __thiscall MINIW::ClientInfo::getAudit(void)`
+- `0xfd640` : `public: virtual int __thiscall MINIW::ClientInfo_PC::getAudit(void)`
+- `0xdb750` : `public: int __thiscall MusicItemLogical::getAutoPianoPlayState(void)`
+- `0x320520` : `public: struct ItemDef * __thiscall ItemDefCsv::getAutoUseForeignID(int)`
+- `0x51f2d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ChangeModelMgr::getAvatorByid(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x51f3e0` : `public: int __thiscall ChangeModelMgr::getAvatorCount(void)`
+- `0x51f440` : `public: char const * __thiscall ChangeModelMgr::getAvatorData(int)`
+- `0x6fc690` : `public: int __thiscall AccountData::getBagSize(void)`
+- `0x60d4d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall FmodSoundSystemEX::getBigFileMd5ByPath(char const *,bool)`
+- `0x5a3b20` : `public: struct BiomeDef * __thiscall ModEditorManager::getBiomeDef(int)`
+- `0x5a3b40` : `public: struct BiomeDef * __thiscall ModEditorManager::getBiomeDefByID(int)`
+- `0x737790` : `private: static int __cdecl StatisticTerrgen::getBiomeInt(enum BIOME_TYPE)`
+- `0x5c6400` : `public: int __thiscall ModManager::getBiomeModCount(void)`
+- `0x5c6430` : `public: int __thiscall ModManager::getBlockCount(void)`
+- `0x5c6460` : `public: int __thiscall ModManager::getBlockCountEx(void)`
+- `0x5a3b60` : `public: struct BlockDef * __thiscall ModEditorManager::getBlockDef(int)`
+- `0x5a3b70` : `public: struct BlockDef * __thiscall ModEditorManager::getBlockDefById(int)`
+- `0x5a3b90` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getBlockForeignIds(struct BlockDef const *)`
+- `0x5a3d40` : `public: struct ItemDef * __thiscall ModEditorManager::getBlockItemDefById(int)`
+- `0x7bb0c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall AccountFBData::getBlueVipIconStr(int)`
+- `0x7103d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientAccountMgr::getBlueVipIconStr(int)`
+- `0x79fde0` : `public: bool __thiscall Mini::MmkvMgr::getBool(char const *,char const *,int)`
+- `0x2ad5a0` : `public: struct BotConversationsDef const * __thiscall BotConversationsDefCsv::getBotConversationsDefByIndex(int)`
+- `0xf5cb0` : `public: int __thiscall BotConversationsDefCsv::getBotConversationsDefNum(void)`
+- `0x715d10` : `public: void __thiscall ClientBuddyMgr::getBuddiesFBSave(class flatbuffers::FlatBufferBuilder &,struct flatbuffers::Offset<class flatbuffers::Vector<struct flatbuffers::Offset<struct FBSave::BuddyInfo> > > &)`
+- `0x715f10` : `public: struct BuddyDetail * __thiscall ClientBuddyMgr::getBuddyDetail(int)`
+- `0x715f30` : `public: struct BuddyDetail * __thiscall ClientBuddyMgr::getBuddyDetailByUin(int)`
+- `0x715f90` : `public: struct BuddyDetail * __thiscall ClientBuddyMgr::getBuddyDetailByYvID(int)`
+- `0x715ff0` : `public: struct NearbyPlayerInfo __thiscall ClientBuddyMgr::getBuddyFindInfo(int)`
+- `0x716010` : `public: int __thiscall ClientBuddyMgr::getBuddyFindNum(void)`
+- `0x7103f0` : `private: struct tagBuddyInfoEx * __thiscall ClientAccountMgr::getBuddyInfo(int)`
+- `0x710420` : `public: int __thiscall ClientAccountMgr::getBuddyNum(void)`
+- `0x716020` : `public: int __thiscall ClientBuddyMgr::getBuddyNum(void)`
+- `0x320640` : `public: struct MonsterDef const * __thiscall MonsterCsv::getByIndex(int)`
+- `0x2a9940` : `public: struct ResourcePackDef const * __thiscall ResourcePackDefCsv::getByIndex(int)`
+- `0x320640` : `public: struct RoleSkinDef * __thiscall RoleSkinCsv::getByIndex(int)`
+- `0x2ad5a0` : `public: struct ToolDef const * __thiscall ToolDefCsv::getByIndex(int)`
+- `0x335360` : `public: struct SkinActDef * __thiscall SkinActCsv::getBySeqIdAndSkinId(int,int)`
+- `0x16d790` : `public: virtual bool __thiscall ClientGameManager::getCMURL(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,__int64 &)`
+- `0xc2190` : `public: char const * __thiscall MINIW::ClientInfo::getCacheDir(void)const `
+- `0xf5520` : `public: int __thiscall MINIW::ClientInfo::getChannelId(void)`
+- `0x7160b0` : `public: struct BuddyChatMsg __thiscall ClientBuddyMgr::getChatMsg(int)`
+- `0x7160e0` : `public: int __thiscall ClientBuddyMgr::getChatMsgNum(void)`
+- `0x7160f0` : `public: int __thiscall ClientBuddyMgr::getChatMsgNumForUin(int)`
+- `0x716130` : `public: int __thiscall ClientBuddyMgr::getChatNoReadMsgNumForUin(int)`
+- `0xd5480` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getChooseFilePath(void)`
+- `0xd5480` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo_PC::getChooseFilePath(void)`
+- `0x2a8d90` : `public: virtual char const * __thiscall AvatarDefCsv::getClassName(void)`
+- `0x2aaae0` : `public: virtual char const * __thiscall BlockDefCsv::getClassName(void)`
+- `0x2ad5d0` : `public: virtual char const * __thiscall BotConversationsDefCsv::getClassName(void)`
+- `0x31ad70` : `public: virtual char const * __thiscall GameLanguageCsv::getClassName(void)`
+- `0x31c860` : `public: virtual char const * __thiscall GameZoneCsv::getClassName(void)`
+- `0x320590` : `public: virtual char const * __thiscall ItemDefCsv::getClassName(void)`
+- `0x327740` : `public: virtual char const * __thiscall MonsterCsv::getClassName(void)`
+- `0x330470` : `public: virtual char const * __thiscall ResourcePackDefCsv::getClassName(void)`
+- `0x331b30` : `public: virtual char const * __thiscall RoleSkinCsv::getClassName(void)`
+- `0x3353f0` : `public: virtual char const * __thiscall SkinActCsv::getClassName(void)`
+- `0x337530` : `public: virtual char const * __thiscall StringDefCsv::getClassName(void)`
+- `0x337e80` : `public: virtual char const * __thiscall SummonDefCsv::getClassName(void)`
+- `0x338770` : `public: virtual char const * __thiscall SurviveObjectiveDefCsv::getClassName(void)`
+- `0x339250` : `public: virtual char const * __thiscall SurviveTaskDefCsv::getClassName(void)`
+- `0x33ad50` : `public: virtual char const * __thiscall ToolDefCsv::getClassName(void)`
+- `0xc2190` : `public: unsigned int __thiscall MINIW::ClientInfo::getClearColorValue(void)`
+- `0xf5570` : `public: char const * __thiscall MINIW::ClientInfo::getClientBuildTime(void)`
+- `0xdb760` : `public: class ClientCSOWorld * __thiscall OWorldList::getClientCSOWorld(void)`
+- `0xf5580` : `public: int __thiscall MINIW::ClientInfo::getClientFPS(void)`
+- `0xf5590` : `public: virtual void __thiscall MINIW::ClientInfo::getClientWindowSize(int &,int &)`
+- `0xf55d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getClipBoard(void)`
+- `0xf40f0` : `public: class BuddyInfo * __thiscall ClientBuddyMgr::getCloseBuddy(int)`
+- `0x4dd330` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall RoomManager::getCloudServerAuth(void)`
+- `0x4dd350` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall RoomManager::getCloudServerRoomExtraData(void)`
+- `0x31ad80` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const __thiscall GameLanguageCsv::getCodes(void)`
+- `0x6fc6a0` : `public: int __thiscall AccountData::getCollectUinNum(void)`
+- `0xdb740` : `public: enum MINIW::CONTROL_MODE __thiscall MINIW::ClientInfo::getContrlMode(void)`
+- `0x31c870` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall GameZoneCsv::getCountryCode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const *)`
+- `0xfd670` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo_PC::getCountryFromIpAddress(char const *)`
+- `0x5c6470` : `public: int __thiscall ModManager::getCraftCount(void)`
+- `0x5a3d60` : `public: struct CraftingDef * __thiscall ModEditorManager::getCraftingDef(int)`
+- `0x5a3d80` : `public: struct CraftingDef * __thiscall ModEditorManager::getCraftingDefById(int)`
+- `0x5a3da0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getCraftingForeignIds(struct CraftingDef const *)`
+- `0x4dd360` : `public: int __thiscall RoomManager::getCreateRoomPathType(void)`
+- `0x710430` : `public: int __thiscall ClientAccountMgr::getCredit(void)`
+- `0x716180` : `public: int __thiscall ClientBuddyMgr::getCreditNumToday(void)`
+- `0x4dd370` : `public: int __thiscall RoomManager::getCurConnectWorldHostUin(void)`
+- `0xdb700` : `public: struct MAP_EDIT_PARAM * __thiscall MapEditManager::getCurEditParam(void)`
+- `0xdb770` : `public: class ClientGame * __thiscall ClientGameManager::getCurGame(void)`
+- `0xf55f0` : `public: virtual class ClientGame * __thiscall MINIW::ClientInfo::getCurGame(void)`
+- `0xdb770` : `public: int __thiscall RoomManager::getCurGameType(void)`
+- `0x710440` : `public: int __thiscall ClientAccountMgr::getCurGuideLevel(void)`
+- `0xf5600` : `public: virtual int __thiscall MINIW::ClientInfo::getCurGuideLevel(void)`
+- `0x710450` : `public: int __thiscall ClientAccountMgr::getCurGuideStep(void)`
+- `0xf5610` : `public: virtual int __thiscall MINIW::ClientInfo::getCurGuideStep(void)`
+- `0xdc120` : `public: int __thiscall MINIW::ClientManager::getCurGuideStep(void)`
+- `0x4dd400` : `public: struct RoomDesc * __thiscall RoomManager::getCurHostRoom(void)`
+- `0x710460` : `public: int __thiscall ClientAccountMgr::getCurNoviceGuideTask(void)`
+- `0xdb780` : `public: int __thiscall ClientAccountMgr::getCurRoomOwner(void)`
+- `0xf5620` : `public: virtual int __thiscall MINIW::ClientInfo::getCurRoomOwner(void)`
+- `0x716240` : `public: int __thiscall AchievementManager::getCurTrackID(void)`
+- `0xdb790` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModManager::getCurUserModVersion(void)`
+- `0x710500` : `public: struct WorldDesc * __thiscall ClientAccountMgr::getCurWorldDesc(void)`
+- `0xf5630` : `public: virtual struct WorldDesc * __thiscall MINIW::ClientInfo::getCurWorldDesc(void)`
+- `0x77e360` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::getCurWorldDesc(void)`
+- `0x710510` : `public: __int64 __thiscall ClientAccountMgr::getCurWorldId(void)`
+- `0xf5640` : `public: virtual __int64 __thiscall MINIW::ClientInfo::getCurWorldId(void)`
+- `0xdc130` : `public: __int64 __thiscall MINIW::ClientManager::getCurWorldId(void)`
+- `0x5c64a0` : `public: __int64 __thiscall ModManager::getCurWorldId(void)`
+- `0x77e390` : `public: __int64 __thiscall WorldArchiveMgr::getCurWorldId(void)`
+- `0x77e3a0` : `public: int __thiscall WorldArchiveMgr::getCurWorldPassPortEndTime(__int64)`
+- `0x77e3f0` : `public: bool __thiscall WorldArchiveMgr::getCurWorldRecordButton(void)`
+- `0x77e410` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldArchiveMgr::getCurWorldSeed(void)`
+- `0x5c64c0` : `public: int __thiscall ModManager::getCurWorldSpecialType(void)`
+- `0x5a3ef0` : `public: class GameMod * __thiscall ModEditorManager::getCurrentEditMod(void)`
+- `0x5a3f00` : `public: struct GameModDesc * __thiscall ModEditorManager::getCurrentEditModDesc(void)`
+- `0xf3fc0` : `public: virtual __int64 __thiscall MINIW::ClientInfo::getCurrentGameMapId(void)`
+- `0x5a3f10` : `public: int __thiscall ModEditorManager::getCustomBioemCount(void)`
+- `0x5a3f30` : `public: int __thiscall ModEditorManager::getCustomBlockCount(void)`
+- `0x5a3f50` : `public: int __thiscall ModEditorManager::getCustomCraftingCount(void)`
+- `0x5a3f70` : `public: int __thiscall ModEditorManager::getCustomFurnaceCount(void)`
+- `0x5a3f90` : `public: int __thiscall ModEditorManager::getCustomItemCount(void)`
+- `0x5a3fb0` : `public: int __thiscall ModEditorManager::getCustomMonsterCount(void)`
+- `0x5a3fd0` : `public: int __thiscall ModEditorManager::getCustomNpcPlotCount(void)`
+- `0x5a3ff0` : `public: int __thiscall ModEditorManager::getCustomNpcShopCount(void)`
+- `0x5a4010` : `public: int __thiscall ModEditorManager::getCustomNpcTaskCount(void)`
+- `0x5a4030` : `public: int __thiscall ModEditorManager::getCustomOreCount(void)`
+- `0x5a4050` : `public: int __thiscall ModEditorManager::getCustomPhysicsMaterialCount(void)`
+- `0x5a4070` : `public: int __thiscall ModEditorManager::getCustomStatusCount(void)`
+- `0x720610` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientDnsMgr::getDNSStaticsStr(void)`
+- `0xdb7c0` : `public: struct tagCSMyOWList * __thiscall OWorldList::getDTOWList(void)`
+- `0x49b710` : `public: class WorldList * __thiscall WorldArchiveMgr::getDTWorldList(void)`
+- `0xf5650` : `public: virtual char const * __thiscall MINIW::ClientInfo::getDataDir(void)`
+- `0xc2190` : `public: int __thiscall MINIW::ClientInfo::getDataTransferState(void)`
+- `0xc2190` : `public: int __thiscall MINIW::ClientInfo::getDeltaTime(void)`
+- `0xdb7d0` : `public: class std::vector<class cocos2d::Sprite *,class std::allocator<class cocos2d::Sprite *> > const & __thiscall cocos2d::SpriteBatchNode::getDescendants(void)const `
+- `0xf5660` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getDeviceID(void)`
+- `0xdc150` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientManager::getDeviceID(void)`
+- `0xf5710` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getDeviceToken(void)`
+- `0xf5730` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getDeviceVender(void)`
+- `0x710520` : `public: int __thiscall ClientAccountMgr::getDiamond(void)`
+- `0x6e2550` : `public: struct DirInfo * __thiscall FileAndDirInfo::getDirIndex(int)`
+- `0x6e2590` : `public: int __thiscall FileAndDirInfo::getDircount(void)`
+- `0x60d6d0` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall FmodSoundSystemEX::getDlsFullPath(void)`
+- `0xf5750` : `public: bool __thiscall MINIW::ClientInfo::getDocumentsFile(char const *,char const *)`
+- `0x79fe00` : `public: double __thiscall Mini::MmkvMgr::getDouble(char const *,char const *,int)`
+- `0x793b20` : `public: int __thiscall WorldList::getDownRecordNum(void)`
+- `0x75ab80` : `public: void __thiscall ClientCSOWorld::getDownWorldBtnState(struct MapInfoHttp const &,enum DownBtnType &,int &,bool &,bool &,__int64 &)`
+- `0x75ae70` : `public: void __thiscall ClientCSOWorld::getDownWorldBtnState(struct MapInfoHttp const &,enum DownBtnType &,int &,bool &)`
+- `0x793b60` : `public: int __thiscall WorldList::getDownWorldNum(void)`
+- `0x75b0b0` : `public: void __thiscall ClientCSOWorld::getDownloadDevTempWorldState(struct MapInfoHttp const &,enum DownBtnType &,int &,bool &)`
+- `0x75b1d0` : `public: int __thiscall ClientCSOWorld::getDownloadHGWorldState(struct MapInfoHttp const &)`
+- `0x7a9260` : `public: char const * __thiscall StringLoaderManager::getDownloadServer(char const *,int)`
+- `0x75b280` : `public: int __thiscall ClientCSOWorld::getDownloadServerNum(void)`
+- `0x14e170` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const & __thiscall ClientCSOWorld::getDownloadServers(void)`
+- `0x77e480` : `public: __int64 __thiscall WorldArchiveMgr::getEducationDefaultWorldId(void)`
+- `0xdaf70` : `public: bool __thiscall ModManager::getEncryptFlag(void)`
+- `0xdaf70` : `private: bool __thiscall ArchiveManager::getEnctypted(void)`
+- `0xee730` : `public: class core::basic_string<char,class core::StringStorageDefault<char> > __thiscall MiniWorldPreferences::getEnterHashValue(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0xf5770` : `public: virtual char const * __thiscall MINIW::ClientInfo::getEnterParam(char const *)`
+- `0xdc170` : `public: char const * __thiscall MINIW::ClientManager::getEnterParam(char const *)`
+- `0xc2190` : `public: virtual int __thiscall MINIW::ClientInfo::getEnterPlayerNum(void)`
+- `0x5c64e0` : `public: int __thiscall ModManager::getExPortInnerId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getFamrInfoDefNum(void)`
+- `0x710530` : `public: struct FansData * __thiscall ClientAccountMgr::getFansInfo(int,int)`
+- `0x7161a0` : `public: struct FansData * __thiscall ClientBuddyMgr::getFansInfo(int,int)`
+- `0x710550` : `public: int __thiscall ClientAccountMgr::getFansMsgNum(void)`
+- `0x716210` : `public: int __thiscall ClientBuddyMgr::getFansMsgNum(void)`
+- `0x710560` : `public: int __thiscall ClientAccountMgr::getFansNum(void)`
+- `0xf40f0` : `public: virtual struct FarmInfoDef const * __thiscall HomeCsvManagerProxy::getFarmInfoDef(int)`
+- `0xf5940` : `public: virtual int __thiscall MINIW::ClientInfo::getFcmRate(void)`
+- `0xfdbd0` : `public: virtual int __thiscall MINIW::ClientInfo_PC::getFcmRate(void)`
+- `0xdb7e0` : `public: int __thiscall AccountFBData::getFeedBack(void)`
+- `0x710570` : `public: int __thiscall ClientAccountMgr::getFeedBack(void)`
+- `0x6e25b0` : `public: struct MapFileInfo * __thiscall FileAndDirInfo::getFileIndex(int)`
+- `0x53c200` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall EditorLang::getFilePath(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x316380` : `public: virtual void __thiscall DefaultCsvLoadConfig::getFilterStringPath(char * const)`
+- `0x316380` : `public: virtual void __thiscall OverseasCsvLoadConfig::getFilterStringPath(char * const)`
+- `0xdb930` : `public: int __thiscall AccountData::getFirstSeventDayGift(void)`
+- `0xd54d0` : `public: int __thiscall AccountData::getFirstSeventDayTimeGift(void)`
+- `0x79fe20` : `public: float __thiscall Mini::MmkvMgr::getFloat(char const *,char const *,int)`
+- `0xf5950` : `public: virtual int __thiscall MINIW::ClientInfo::getFlowLevel(void)`
+- `0x710580` : `public: int __thiscall ClientAccountMgr::getFlower(void)`
+- `0x60d790` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::getFmodSoundResource(class Rainbow::FixedString const &,int,bool,float,int,int)`
+- `0x5a4090` : `public: struct FoodDef * __thiscall ModEditorManager::getFoodDefById(int)`
+- `0x4dd460` : `public: int __thiscall RoomManager::getForeRoomUin(void)`
+- `0xf5960` : `public: virtual int __thiscall MINIW::ClientInfo::getFps(void)`
+- `0xf5980` : `public: virtual unsigned int __thiscall MINIW::ClientInfo::getFrameCount(void)`
+- `0x4e7320` : `private: int __thiscall SimulateMgr::getFreeSimUin(void)`
+- `0x716250` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientBuddyMgr::getFriendChat(int)`
+- `0x7163b0` : `public: int __thiscall ClientBuddyMgr::getFriendChestWater(int)`
+- `0x716410` : `public: int __thiscall ClientBuddyMgr::getFriendChestWorms(int)`
+- `0xf5b40` : `public: int __thiscall SurviveObjectiveDefCsv::getFrontSize(void)`
+- `0x339260` : `public: int __thiscall SurviveTaskDefCsv::getFrontSize(void)`
+- `0x338780` : `public: int __thiscall SurviveObjectiveDefCsv::getFrontTaskNum(unsigned int)`
+- `0x339270` : `public: int __thiscall SurviveTaskDefCsv::getFrontTaskNum(unsigned int)`
+- `0x617630` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MidiFileInfo::getFullPath(char const *)`
+- `0x5c65a0` : `public: int __thiscall ModManager::getFurnaceCount(void)`
+- `0x5a40b0` : `public: struct FurnaceDef * __thiscall ModEditorManager::getFurnaceDef(int)`
+- `0x5a40d0` : `public: struct FurnaceDef * __thiscall ModEditorManager::getFurnaceDefById(int)`
+- `0x5a40f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getFurnaceForeignIds(struct FurnaceDef const *)`
+- `0x471bb0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::getGUidMD5(void)`
+- `0x16d840` : `public: class ClientGame * __thiscall ClientGameManager::getGame(char const *)`
+- `0xf5990` : `public: class ClientGame * __thiscall MINIW::ClientInfo::getGame(char const *)`
+- `0xf59b0` : `public: virtual int __thiscall MINIW::ClientInfo::getGameData(char const *)`
+- `0xdc190` : `public: int __thiscall MINIW::ClientManager::getGameData(char const *)`
+- `0x5c65d0` : `public: int __thiscall ModManager::getGameModActorCount(class GameMod *)`
+- `0x5c65e0` : `public: int __thiscall ModManager::getGameModBiomeCount(class GameMod *)`
+- `0x5c65f0` : `public: int __thiscall ModManager::getGameModBlockCount(class GameMod *)`
+- `0x5c6600` : `public: int __thiscall ModManager::getGameModCraftCount(class GameMod *)`
+- `0x5c6610` : `public: int __thiscall ModManager::getGameModFurnaceCount(class GameMod *)`
+- `0x5c6620` : `public: int __thiscall ModManager::getGameModItemCount(class GameMod *)`
+- `0x5c6630` : `public: int __thiscall ModManager::getGameModNpcPlotCount(class GameMod *)`
+- `0x5c6640` : `public: int __thiscall ModManager::getGameModNpcShopCount(class GameMod *)`
+- `0x5c6660` : `public: int __thiscall ModManager::getGameModNpcTaskCount(class GameMod *)`
+- `0x5c6670` : `public: int __thiscall ModManager::getGameModStatusCount(class GameMod *)`
+- `0x4720b0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::getGameSessionId(void)`
+- `0xea190` : `public: int __thiscall GameZoneCsv::getGameZoneCount(void)`
+- `0x6fc6b0` : `public: int __thiscall AccountData::getGenuisLv(char)`
+- `0x710590` : `public: int __thiscall ClientAccountMgr::getGenuisLv(char)`
+- `0xf59c0` : `public: virtual int __thiscall MINIW::ClientInfo::getGenuisLv(char)`
+- `0xdc1a0` : `public: int __thiscall MINIW::ClientManager::getGenuisLv(char)`
+- `0x5a4280` : `public: struct GunDef * __thiscall ModEditorManager::getGunDefById(int)`
+- `0xdb7f0` : `public: struct tagCSMyOWList * __thiscall OWorldList::getHGOWList(void)`
+- `0x77e4a0` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::getHGWorld(void)`
+- `0x75b2a0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientCSOWorld::getHGWorldDataPath(__int64)`
+- `0x549f90` : `public: class WorldList * __thiscall WorldArchiveMgr::getHGWorldList(void)`
+- `0xca1a0` : `public: class core::hash_map<class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> >,struct core::hash<class core::basic_string<char,class core::StringStorageDefault<char> > >,struct std::equal_to<class core::basic_string<char,class core::StringStorageDefault<char> > > > & __thiscall MiniWorldPreferences::getHash(void)`
+- `0xdb800` : `public: virtual unsigned int __thiscall SnapshotMgr::getHashMD5(void)`
+- `0x732690` : `public: virtual unsigned int __thiscall StatisticsManager::getHashMD5(void)`
+- `0xf5cb0` : `public: int __thiscall ClientAccountMgr::getHeadFrameId(void)`
+- `0xf59e0` : `public: virtual int __thiscall MINIW::ClientInfo::getHeadFrameId(void)`
+- `0xdc1c0` : `public: int __thiscall MINIW::ClientManager::getHeadFrameId(void)`
+- `0x7105a0` : `public: int __thiscall ClientAccountMgr::getHeadModel(void)`
+- `0xf59f0` : `public: virtual int __thiscall MINIW::ClientInfo::getHeadModel(void)`
+- `0x7bb3e0` : `public: int __thiscall AccountFBData::getHistoryResetTime(void)`
+- `0xf40f0` : `public: virtual struct HomeAnimalDef const * __thiscall HomeCsvManagerProxy::getHomeAnimalDef(int)`
+- `0xf40f0` : `public: virtual struct HomeBuildDef const * __thiscall HomeCsvManagerProxy::getHomeBuildDefById(int)`
+- `0xf40f0` : `public: virtual struct HomeBuildDef const * __thiscall HomeCsvManagerProxy::getHomeBuildDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeBuildDefNum(void)`
+- `0xd7360` : `public: virtual struct HomeChunkInfoDef const * __thiscall HomeCsvManagerProxy::getHomeChunkDef(int,int)`
+- `0xf9470` : `public: virtual void __thiscall HomeCsvManagerProxy::getHomeChunksByChunkID(int,int,class std::vector<struct HomeChunkListInfo,class std::allocator<struct HomeChunkListInfo> > &,class std::vector<struct HomeChunkListInfo,class std::allocator<struct HomeChunkListInfo> > *)`
+- `0xf40f0` : `public: virtual struct HomeCropsSeedDef const * __thiscall HomeCsvManagerProxy::getHomeCropsSeedDef(int)`
+- `0xf40f0` : `public: virtual struct HomeDrawDef const * __thiscall HomeCsvManagerProxy::getHomeDrawDefById(int)`
+- `0xf40f0` : `public: virtual struct HomeDrawDef const * __thiscall HomeCsvManagerProxy::getHomeDrawDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeDrawDefNum(void)`
+- `0xf5a00` : `public: virtual unsigned short __thiscall MINIW::ClientInfo::getHomeGardenKeyCode(void)`
+- `0xf5a10` : `public: virtual unsigned short __thiscall MINIW::ClientInfo::getHomeGardenSaveVersion(void)`
+- `0xf40f0` : `public: virtual struct HomeItemDef const * __thiscall HomeCsvManagerProxy::getHomeItemDef(int)`
+- `0xf40f0` : `public: virtual struct HomeItemDef const * __thiscall HomeCsvManagerProxy::getHomeItemDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeItemDefDefNum(void)`
+- `0xf40f0` : `public: virtual struct HomeItemUnlockDef const * __thiscall HomeCsvManagerProxy::getHomeItemUnlockDefById(int)`
+- `0xf40f0` : `public: virtual struct HomeItemUnlockDef const * __thiscall HomeCsvManagerProxy::getHomeItemUnlockDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeItemUnlockDefNum(void)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeLandMaxX(void)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeLandMaxZ(void)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeLevelDefNum(void)`
+- `0xf40f0` : `public: virtual struct HomeLvDef const * __thiscall HomeCsvManagerProxy::getHomeLvDef(int)`
+- `0xf40f0` : `public: virtual struct HomeMysticalDef const * __thiscall HomeCsvManagerProxy::getHomeMystiaclDef(int)`
+- `0xd7360` : `public: virtual struct HomeNpcInfo const * __thiscall HomeCsvManagerProxy::getHomeNpcDef(int,int)`
+- `0x101990` : `public: virtual bool __thiscall HomeCsvManagerProxy::getHomeNpcDef(class std::vector<struct HomeNpcInfo,class std::allocator<struct HomeNpcInfo> > &,int)`
+- `0xd7360` : `public: virtual struct HomeNpcInfo const * __thiscall HomeCsvManagerProxy::getHomeNpcDefByIndex(int,int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeNpcDefNum(void)`
+- `0xd7360` : `public: virtual struct AwardPackDef const * __thiscall HomeCsvManagerProxy::getHomePackAwardDefByIndex(int,int)`
+- `0xf40f0` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomePackDef(int)`
+- `0xf40f0` : `public: virtual struct HomeProducerDef * __thiscall HomeCsvManagerProxy::getHomeProducerDef(int)`
+- `0xf40f0` : `public: virtual struct HomeProducerDef * __thiscall HomeCsvManagerProxy::getHomeProducerDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeProducerDefNum(void)`
+- `0xf40f0` : `public: virtual struct HomeRanchDef const * __thiscall HomeCsvManagerProxy::getHomeRanchDef(int)`
+- `0xf9730` : `public: virtual bool __thiscall HomeCsvManagerProxy::getHomeRegionChunkPos(int,int &,int &)`
+- `0xf40f0` : `public: virtual struct HomeTabDef const * __thiscall HomeCsvManagerProxy::getHomeTabDefById(int)`
+- `0xf40f0` : `public: virtual struct HomeTabDef const * __thiscall HomeCsvManagerProxy::getHomeTabDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeTabDefNum(void)`
+- `0xf40f0` : `public: virtual struct HomeTaskDef * __thiscall HomeCsvManagerProxy::getHomeTaskDef(int)`
+- `0xf40f0` : `public: virtual struct HomeTaskDef * __thiscall HomeCsvManagerProxy::getHomeTaskDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeTaskDefNum(void)`
+- `0xf40f0` : `public: virtual struct HomeTraderDef const * __thiscall HomeCsvManagerProxy::getHomeTraderDefById(int)`
+- `0xf40f0` : `public: virtual struct HomeTraderDef const * __thiscall HomeCsvManagerProxy::getHomeTraderDefByIndex(int)`
+- `0xc2190` : `public: virtual int __thiscall HomeCsvManagerProxy::getHomeTraderDefNum(void)`
+- `0x6fc6f0` : `public: struct UnlockHorse * __thiscall AccountData::getHorse(int)`
+- `0x6fc700` : `public: int __thiscall AccountData::getHorseLevel(int)`
+- `0x6fc740` : `public: int __thiscall AccountData::getHorseNum(void)`
+- `0x4dd470` : `public: struct HotRoomDesc * __thiscall RoomManager::getHotRoomDesc(int)`
+- `0xf5a20` : `public: char const * __thiscall MINIW::ClientInfo::getHotkeyName(int)`
+- `0xdb810` : `public: virtual void * __thiscall MINIW::ClientInfo::getHwnd(void)`
+- `0x16d960` : `public: virtual class IClientGameInterface * __thiscall ClientGameManager::getICurGame(enum GameType)`
+- `0x16d9f0` : `public: virtual class IClientGameInterface * __thiscall ClientGameManager::getIGame(char const *)`
+- `0x16da10` : `public: virtual class IClientGameInterface * __thiscall ClientGameManager::getILoadingGame(void)`
+- `0x5c6690` : `public: int __thiscall ModManager::getIdBase(enum CustomType)`
+- `0x327750` : `public: struct MonsterDef * __thiscall MonsterCsv::getIgnoreEditPlugin(int,bool)`
+- `0xf5a40` : `public: int __thiscall MINIW::ClientInfo::getImsi(void)`
+- `0x516bd0` : `public: int __thiscall TriggerScriptMgr::getIndexArea(int,char const *,bool,int)`
+- `0xddee0` : `public: static class ARInterface * __cdecl ARInterface::getInstance(void)`
+- `0x7ba450` : `public: static class AccountFBData * __cdecl AccountFBData::getInstance(void)`
+- `0x2a8da0` : `public: static class AvatarDefCsv * __cdecl AvatarDefCsv::getInstance(void)`
+- `0x2aaaf0` : `public: static class BlockDefCsv * __cdecl BlockDefCsv::getInstance(void)`
+- `0x2ad5e0` : `public: static class BotConversationsDefCsv * __cdecl BotConversationsDefCsv::getInstance(void)`
+- `0x7204f0` : `public: static class ClientDnsMgr * __cdecl ClientDnsMgr::getInstance(void)`
+- `0x16d0b0` : `public: static class ClientGameManager * __cdecl ClientGameManager::getInstance(void)`
+- `0x6e25f0` : `public: static class CustommodelParse * __cdecl CustommodelParse::getInstance(void)`
+- `0x6e2630` : `public: static class FileAndDirInfo * __cdecl FileAndDirInfo::getInstance(void)`
+- `0x31ae60` : `public: static class GameLanguageCsv * __cdecl GameLanguageCsv::getInstance(void)`
+- `0x31c890` : `public: static class GameZoneCsv * __cdecl GameZoneCsv::getInstance(void)`
+- `0x6e2680` : `public: static class GlobalSetParse * __cdecl GlobalSetParse::getInstance(void)`
+- `0x3205a0` : `public: static class ItemDefCsv * __cdecl ItemDefCsv::getInstance(void)`
+- `0x3277a0` : `public: static class MonsterCsv * __cdecl MonsterCsv::getInstance(void)`
+- `0x7c8030` : `public: static class OWorldList * __cdecl OWorldList::getInstance(void)`
+- `0x330480` : `public: static class ResourcePackDefCsv * __cdecl ResourcePackDefCsv::getInstance(void)`
+- `0x331b40` : `public: static class RoleSkinCsv * __cdecl RoleSkinCsv::getInstance(void)`
+- `0x4e7340` : `public: static class SimulateMgr * __cdecl SimulateMgr::getInstance(void)`
+- `0x335400` : `public: static class SkinActCsv * __cdecl SkinActCsv::getInstance(void)`
+- `0x737900` : `public: static class StatisticTerrgen * __cdecl StatisticTerrgen::getInstance(void)`
+- `0x734c70` : `public: static class StatisticsTools * __cdecl StatisticsTools::getInstance(void)`
+- `0x337540` : `public: static class StringDefCsv * __cdecl StringDefCsv::getInstance(void)`
+- `0x337e90` : `public: static class SummonDefCsv * __cdecl SummonDefCsv::getInstance(void)`
+- `0x3387c0` : `public: static class SurviveObjectiveDefCsv * __cdecl SurviveObjectiveDefCsv::getInstance(void)`
+- `0x3392d0` : `public: static class SurviveTaskDefCsv * __cdecl SurviveTaskDefCsv::getInstance(void)`
+- `0x33ad60` : `public: static class ToolDefCsv * __cdecl ToolDefCsv::getInstance(void)`
+- `0x4c4c00` : `public: static class WXGameLiveManager * __cdecl WXGameLiveManager::getInstance(void)`
+- `0x6179a0` : `public: int __thiscall MidiFileInfo::getInstrumentCode(char const *,int)`
+- `0x79fe40` : `public: int __thiscall Mini::MmkvMgr::getInt(char const *,char const *,int)`
+- `0x4dd4a0` : `public: bool __thiscall RoomManager::getIsHostReady(void)`
+- `0xdb820` : `public: bool __thiscall MINIW::ClientInfo::getIsIpv6Env(void)`
+- `0xdb830` : `public: bool __thiscall MusicItemLogical::getIsMusicState(void)`
+- `0xd6030` : `public: bool __thiscall MINIW::ClientInfo::getIsOverseasGrayVer(void)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo::getIsOverseasVer(void)`
+- `0x798850` : `private: int __thiscall MINIW::AdventureReportMgr::getIsOwnMap(void)`
+- `0x722510` : `private: static int __cdecl StatisticRainforest::getIsOwnMap(void)`
+- `0x737990` : `private: static int __cdecl StatisticTerrgen::getIsOwnMap(void)`
+- `0x5c6750` : `public: int __thiscall ModManager::getItemAllocatedID(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5c67c0` : `public: int __thiscall ModManager::getItemCount(void)`
+- `0x5c67f0` : `public: int __thiscall ModManager::getItemCountEx(void)`
+- `0x5a42a0` : `public: struct ItemDef * __thiscall ModEditorManager::getItemDef(int)`
+- `0x5a42c0` : `public: struct ItemDef * __thiscall ModEditorManager::getItemDefById(int)`
+- `0x5a4350` : `public: struct ItemEquipDef * __thiscall ModEditorManager::getItemEquipDefById(int)`
+- `0x5a4370` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getItemForeignIds(struct ItemDef const *)`
+- `0x5c6800` : `public: int __thiscall ModManager::getItemInnerId(int)`
+- `0x5a44c0` : `public: struct ItemSkillDef * __thiscall ModEditorManager::getItemSkillDefById(int)`
+- `0x3205c0` : `public: bool __thiscall ItemDefCsv::getItemsByGroup(int,class std::vector<int,class std::allocator<int> > &)`
+- `0x4dd4d0` : `public: struct RoomDesc * __thiscall RoomManager::getIthRoom(int)`
+- `0xf5a90` : `public: virtual int __thiscall MINIW::ClientInfo::getLang(void)`
+- `0x53c310` : `public: struct LangDesc * __thiscall EditorLang::getLangByKey(__int64,__int64,char const *)`
+- `0x831ef0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MultiLocalMgr::getLangResPath(void)`
+- `0xf5aa0` : `public: bool __thiscall MINIW::ClientInfo::getLanguageCfgLoadRet(void)`
+- `0xf5ab0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getLanguageCode(void)`
+- `0xf5ad0` : `public: int __thiscall MINIW::ClientInfo::getLanguageId(void)`
+- `0x617a50` : `public: int __thiscall MidiFileInfo::getLastNoteTick(char const *)`
+- `0x53f7d0` : `public: class cocos2d::Ref * __thiscall cocos2d::__Array::getLastObject(void)`
+- `0xd5480` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getLastUpdateTime(void)`
+- `0x5c6950` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ModManager::getLibraryModsDir(bool,int)`
+- `0x5c6a00` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ModManager::getListFileByPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x31ae70` : `protected: virtual class ICsvLoadConfig * __thiscall GameLanguageCsv::getLoadConf(void)`
+- `0x31ae70` : `public: virtual class ICsvLoadConfig * __thiscall GameZoneCsv::getLoadConf(void)`
+- `0x16da20` : `public: class ClientGame * __thiscall ClientGameManager::getLoadingGame(void)`
+- `0xf5ae0` : `public: virtual class ClientGame * __thiscall MINIW::ClientInfo::getLoadingGame(void)`
+- `0xdb840` : `public: virtual class Clock * __thiscall MINIW::ClientInfo::getLogicalClock(void)`
+- `0x79fe60` : `public: __int64 __thiscall Mini::MmkvMgr::getLong(char const *,char const *,int)`
+- `0x16da30` : `public: class MpGameSurvive * __thiscall ClientGameManager::getMPGame(void)`
+- `0xdb700` : `public: int __thiscall GlobalSetParse::getMakeLong(void)`
+- `0x5c6ac0` : `public: char const * __thiscall ModManager::getMapDefaultModUUID(void)const `
+- `0x5c6ad0` : `public: int __thiscall ModManager::getMapHadLoadModNum(__int64,int)`
+- `0x7225a0` : `private: static __int64 __cdecl StatisticRainforest::getMapId(void)`
+- `0x7225a0` : `private: static __int64 __cdecl StatisticTerrgen::getMapId(void)`
+- `0x5c71a0` : `public: class GameMod * __thiscall ModManager::getMapModByIndex(int)`
+- `0x5c71c0` : `public: class GameMod * __thiscall ModManager::getMapModByUUID(char const *)`
+- `0x5c72c0` : `public: int __thiscall ModManager::getMapModCount(void)`
+- `0x5c72d0` : `public: struct GameModDesc * __thiscall ModManager::getMapModDescByIndex(int)`
+- `0x5c72f0` : `public: struct GameModDesc * __thiscall ModManager::getMapModDescByUUID(char const *)`
+- `0x7105e0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientAccountMgr::getMapPath(__int64,int)`
+- `0x77e4d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldArchiveMgr::getMapPath(__int64,int)`
+- `0x7dd630` : `public: static int __cdecl OWorldUtils::getMapReviveSet(__int64)`
+- `0x16db40` : `public: virtual int __thiscall ClientGameManager::getMapSceneLoadMaxProgress(void)`
+- `0x16db50` : `public: virtual int __thiscall ClientGameManager::getMapSceneLoadProgress(void)`
+- `0x16db60` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientGameManager::getMapSceneLoadTips(void)`
+- `0x75b330` : `public: char const * __thiscall ClientCSOWorld::getMapServer(void)`
+- `0x7dd890` : `public: static int __cdecl OWorldUtils::getMapSize(__int64)`
+- `0x7dd8f0` : `public: static int __cdecl OWorldUtils::getMapSizeWithoutZip(__int64)`
+- `0x798900` : `private: int __thiscall MINIW::AdventureReportMgr::getMapState(void)`
+- `0x2aab10` : `public: int __thiscall BlockDefCsv::getMaxID(void)`
+- `0x33ad70` : `public: class std::map<int,int,struct std::less<int>,class std::allocator<struct std::pair<int const ,int> > > & __thiscall ToolDefCsv::getMineToolIcon(void)`
+- `0x6fc750` : `public: int __thiscall AccountData::getMiniBean(void)`
+- `0xf4100` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getMiniCode(__int64)`
+- `0x6fc760` : `public: int __thiscall AccountData::getMiniCoin(void)`
+- `0x3163a0` : `public: virtual void __thiscall DefaultCsvLoadConfig::getMiniCoinPath(char * const)`
+- `0x32b880` : `public: virtual void __thiscall OverseasCsvLoadConfig::getMiniCoinPath(char * const)`
+- `0xf5ad0` : `public: int __thiscall MINIW::ClientInfo::getMobileLang(void)`
+- `0xf5af0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getMobilePhoneInfo(void)`
+- `0x5c7370` : `public: class GameMod * __thiscall ModManager::getMod(int)`
+- `0x5c73a0` : `public: class GameMod * __thiscall ModManager::getModByUUID(char const *)`
+- `0x5c7510` : `public: struct GameModDesc * __thiscall ModManager::getModDesc(int)`
+- `0x5c7530` : `public: struct GameModDesc * __thiscall ModManager::getModDescByUUID(char const *)`
+- `0x5dd1d0` : `public: struct MINIW::MdirScaner * __thiscall MINIW::ModFileManager::getModFile(char const *)`
+- `0x5a44e0` : `public: struct ModModelDef * __thiscall ModEditorManager::getModModelDef(int)`
+- `0x5a4570` : `public: struct ModModelDef * __thiscall ModEditorManager::getModModelDefByIndex(int)`
+- `0x5a45a0` : `public: int __thiscall ModEditorManager::getModModelDefCount(void)`
+- `0x5c7630` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModManager::getModRootByCustomRes(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5dd370` : `public: float __thiscall MINIW::ModFileManager::getModSize(char const *)`
+- `0x16db80` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientGameManager::getModURL(void)const `
+- `0x5c7820` : `public: void __thiscall ModManager::getModsFilterListByPath(char const *,class std::vector<struct ModManager::ModAbbrRef,class std::allocator<struct ModManager::ModAbbrRef> > &,bool,__int64)`
+- `0x5a45b0` : `public: int __thiscall ModEditorManager::getMonsterAINum(int)`
+- `0x5a46e0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getMonsterAIString(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5a49c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getMonsterAllAIString(int)`
+- `0x5c81c0` : `public: int __thiscall ModManager::getMonsterCount(void)`
+- `0x5c81f0` : `public: int __thiscall ModManager::getMonsterCountEx(void)`
+- `0x5a4b20` : `public: struct MonsterDef * __thiscall ModEditorManager::getMonsterDef(int)`
+- `0x5a4b40` : `public: struct MonsterDef * __thiscall ModEditorManager::getMonsterDefById(int)`
+- `0x5c8200` : `public: int __thiscall ModManager::getMonsterIdByName(char const *)`
+- `0x3277b0` : `public: class DefDataTable<struct MonsterDef> & __thiscall MonsterCsv::getMonsters(void)`
+- `0x4e8680` : `public: float __thiscall GameServerConfig::getMoveSpeedCheck(void)`
+- `0x710610` : `public: int __thiscall ClientAccountMgr::getMultiPlayer(void)`
+- `0xf5b10` : `public: virtual int __thiscall MINIW::ClientInfo::getMultiPlayer(void)`
+- `0xdc1d0` : `public: int __thiscall MINIW::ClientManager::getMultiPlayer(void)`
+- `0xdb850` : `public: int __thiscall RoomManager::getMultiPlayer(void)`
+- `0xdb860` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MusicItemLogical::getMusicMidRes(void)`
+- `0xdb880` : `public: bool __thiscall MusicItemLogical::getMusicOpenView(void)`
+- `0x793ba0` : `public: int __thiscall WorldList::getMyCreateRecordNum(void)`
+- `0x793be0` : `public: int __thiscall WorldList::getMyCreateWorldNum(void)`
+- `0x7d14f0` : `public: bool __thiscall OWorldList::getMyNewOWorld(struct tagOWorld *)`
+- `0xdb920` : `public: class WorldListPlayedRecently * __thiscall ClientAccountMgr::getMyRecentlyOpenedWorldList(void)`
+- `0x710620` : `public: class WorldList * __thiscall ClientAccountMgr::getMyWorldList(void)`
+- `0xdb800` : `public: class WorldList * __thiscall WorldArchiveMgr::getMyWorldList(void)`
+- `0x2a8db0` : `public: virtual char const * __thiscall AvatarDefCsv::getName(void)`
+- `0x2aab20` : `protected: virtual char const * __thiscall BlockDefCsv::getName(void)`
+- `0x2ad5f0` : `protected: virtual char const * __thiscall BotConversationsDefCsv::getName(void)`
+- `0x31ae80` : `protected: virtual char const * __thiscall GameLanguageCsv::getName(void)`
+- `0x31c8a0` : `protected: virtual char const * __thiscall GameZoneCsv::getName(void)`
+- `0x320610` : `protected: virtual char const * __thiscall ItemDefCsv::getName(void)`
+- `0x3277c0` : `public: virtual char const * __thiscall MonsterCsv::getName(void)`
+- `0x330490` : `protected: virtual char const * __thiscall ResourcePackDefCsv::getName(void)`
+- `0x331b60` : `protected: virtual char const * __thiscall RoleSkinCsv::getName(void)`
+- `0x335410` : `protected: virtual char const * __thiscall SkinActCsv::getName(void)`
+- `0x337550` : `protected: virtual char const * __thiscall StringDefCsv::getName(void)`
+- `0x337ea0` : `public: virtual char const * __thiscall SummonDefCsv::getName(void)`
+- `0x3387d0` : `protected: virtual char const * __thiscall SurviveObjectiveDefCsv::getName(void)`
+- `0x3392e0` : `protected: virtual char const * __thiscall SurviveTaskDefCsv::getName(void)`
+- `0x33ad80` : `protected: virtual char const * __thiscall ToolDefCsv::getName(void)`
+- `0xdb890` : `public: bool __thiscall RoomManager::getNearbySwitch(void)`
+- `0x575f10` : `public: bool __thiscall ArchiveManager::getNeedSyncArchive(void)`
+- `0x576020` : `public: bool __thiscall ArchiveManager::getNeedSyncPlayerAttr(int)`
+- `0xf5b20` : `public: virtual bool __thiscall MINIW::ClientInfo::getNeedSyncPlayerAttr(int)`
+- `0x4dd500` : `public: int __thiscall RoomManager::getNetIsp(void)`
+- `0x4dd510` : `public: int __thiscall RoomManager::getNetProvince(void)`
+- `0x798940` : `private: int __thiscall MINIW::AdventureReportMgr::getNetType(void)`
+- `0x4720d0` : `public: int __thiscall Mini::HttpReportMgr::getNetWorkState(bool)`
+- `0xf5b40` : `public: int __thiscall MINIW::ClientInfo::getNetworkSignal(void)`
+- `0xf5b50` : `public: virtual int __thiscall MINIW::ClientInfo::getNetworkState(bool)`
+- `0x716470` : `public: int __thiscall ClientBuddyMgr::getNewChatType(void)`
+- `0xdb8a0` : `public: int __thiscall MINIW::ClientInfo::getNewWeGameTag(void)`
+- `0x6fc770` : `public: int __thiscall AccountData::getNickModify(void)`
+- `0xd5780` : `public: int __thiscall AccountData::getNickModifyCost(void)`
+- `0x710630` : `public: char const * __thiscall ClientAccountMgr::getNickName(void)`
+- `0xf5b90` : `public: virtual char const * __thiscall MINIW::ClientInfo::getNickName(void)`
+- `0xdc1e0` : `public: char const * __thiscall MINIW::ClientManager::getNickName(void)`
+- `0xf40f0` : `public: class BuddyInfo * __thiscall ClientBuddyMgr::getNormalBuddy(int)`
+- `0xc2190` : `public: int __thiscall MINIW::ClientInfo::getNormalSceneRendererClearFlags(void)`
+- `0x710650` : `public: bool __thiscall ClientAccountMgr::getNoviceGuideState(char const *)`
+- `0x710700` : `public: int __thiscall ClientAccountMgr::getNoviceGuideStateInt(char const *)`
+- `0x5a4b60` : `public: struct NpcPlotDef * __thiscall ModEditorManager::getNpcPlotDef(int)`
+- `0x5a4b80` : `public: struct NpcPlotDef * __thiscall ModEditorManager::getNpcPlotDefById(int)`
+- `0x5a4ba0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getNpcPlotForeignIds(struct NpcPlotDef const *)`
+- `0x5a4e50` : `public: void __thiscall ModEditorManager::getNpcPlotIDsAll(class std::set<int,struct std::less<int>,class std::allocator<int> > &)`
+- `0x5c8270` : `public: void __thiscall ModManager::getNpcPlotIDsAll(class std::set<int,struct std::less<int>,class std::allocator<int> > &)`
+- `0x5c83c0` : `public: void __thiscall ModManager::getNpcShopChangeConfigStatus(char const *,class std::map<int,class std::vector<int,class std::allocator<int> >,struct std::less<int>,class std::allocator<struct std::pair<int const ,class std::vector<int,class std::allocator<int> > > > > &)`
+- `0x5a4f80` : `public: struct NpcShopDef * __thiscall ModEditorManager::getNpcShopDef(int)`
+- `0x5a4fa0` : `public: struct NpcShopDef * __thiscall ModEditorManager::getNpcShopDefById(int)`
+- `0x5a4fc0` : `public: void __thiscall ModEditorManager::getNpcShopIDsAll(class std::set<int,struct std::less<int>,class std::allocator<int> > &)`
+- `0x5c8c00` : `public: void __thiscall ModManager::getNpcShopIDsAll(class std::set<int,struct std::less<int>,class std::allocator<int> > &)`
+- `0x5a50f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getNpcShopKeys(int)`
+- `0x5c8d40` : `public: int __thiscall ModManager::getNpcShopRealId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x5a5300` : `public: struct NpcTaskDef * __thiscall ModEditorManager::getNpcTaskDef(int)`
+- `0x5a5320` : `public: struct NpcTaskDef * __thiscall ModEditorManager::getNpcTaskDefById(int)`
+- `0x5a5340` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getNpcTaskForeignIds(struct NpcTaskDef const *)`
+- `0x5a55f0` : `public: void __thiscall ModEditorManager::getNpcTaskIDsAll(class std::set<int,struct std::less<int>,class std::allocator<int> > &)`
+- `0x5c8df0` : `public: void __thiscall ModManager::getNpcTaskIDsAll(class std::set<int,struct std::less<int>,class std::allocator<int> > &)`
+- `0x2a8dc0` : `public: int __thiscall AvatarDefCsv::getNum(void)`
+- `0x2aab30` : `public: int __thiscall BlockDefCsv::getNum(void)`
+- `0x320620` : `public: int __thiscall ItemDefCsv::getNum(void)`
+- `0x320620` : `public: int __thiscall MonsterCsv::getNum(void)`
+- `0x2a8dc0` : `public: int __thiscall ResourcePackDefCsv::getNum(void)`
+- `0x320620` : `public: int __thiscall RoleSkinCsv::getNum(void)`
+- `0x2a8dc0` : `public: int __thiscall SkinActCsv::getNum(void)`
+- `0x2a8dc0` : `public: int __thiscall SummonDefCsv::getNum(void)`
+- `0x2a8dc0` : `public: int __thiscall ToolDefCsv::getNum(void)`
+- `0x716530` : `public: int __thiscall ClientBuddyMgr::getNumCloseBuddy(void)`
+- `0x4dd520` : `public: int __thiscall RoomManager::getNumHotRoom(void)`
+- `0xc2190` : `public: int __thiscall ClientBuddyMgr::getNumNormalBuddy(void)`
+- `0x793c20` : `public: int __thiscall WorldList::getNumOpenWorld(void)`
+- `0x77e710` : `public: int __thiscall WorldArchiveMgr::getNumOwCommentList(void)`
+- `0x4dd530` : `public: int __thiscall RoomManager::getNumRecentlyOpendOwnerRoom(void)`
+- `0x322cf0` : `public: int __thiscall RoomManager::getNumRoom(void)`
+- `0x613840` : `public: int __thiscall WorldList::getNumWorld(void)`
+- `0x6fc780` : `public: int __thiscall AccountData::getOWHighestScore(void)`
+- `0xc2190` : `public: virtual struct tagCSMyOWList * __thiscall MINIW::ClientInfo::getOWList(void)`
+- `0xdb8b0` : `public: struct tagCSMyOWList * __thiscall OWorldList::getOWList(void)`
+- `0x6fc7c0` : `public: int __thiscall AccountData::getOWScore(__int64)`
+- `0xf3fc0` : `public: virtual __int64 __thiscall MINIW::ClientInfo::getOWlistUinOWID(void)`
+- `0x7bb3f0` : `public: class std::vector<__int64,class std::allocator<__int64> > __thiscall AccountFBData::getOWorldIds(void)`
+- `0x53f7f0` : `public: class cocos2d::Ref * __thiscall cocos2d::__Array::getObjectAtIndex(long)`
+- `0x16da20` : `public: int __thiscall WorldArchiveMgr::getOffsetOwComment(void)`
+- `0x7107b0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientAccountMgr::getOneMapPath(__int64,int)`
+- `0x77e730` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldArchiveMgr::getOneMapPath(__int64,int)`
+- `0x78b370` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getOnlineMapBackWorkDirPath(struct MapInfoHttp const &)`
+- `0x78b4c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getOnlineMapBackWorkZipPath(struct MapInfoHttp const &)`
+- `0x78b650` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getOnlineMapBackWorkZipUncompressDir(struct MapInfoHttp const &)`
+- `0xdb8c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getOpenstring(void)`
+- `0x5a5720` : `public: struct OreDef * __thiscall ModEditorManager::getOreDef(int)`
+- `0x5a5740` : `public: struct OreDef * __thiscall ModEditorManager::getOreDefByID(int)`
+- `0x5c8f40` : `public: int __thiscall ModManager::getOreModCount(void)`
+- `0x2aab40` : `public: struct BlockDef const * __thiscall BlockDefCsv::getOrigin(int)`
+- `0x320640` : `public: struct ItemDef * __thiscall ItemDefCsv::getOrigin(int)`
+- `0x2b2b60` : `public: struct MonsterDef * __thiscall MonsterCsv::getOriginal(int)`
+- `0x7d15e0` : `public: bool __thiscall OWorldList::getOthersOWorld(struct tagOWorld *)`
+- `0x77e990` : `public: struct OworldCommentInfo * __thiscall WorldArchiveMgr::getOwCommentInfo(int)`
+- `0x5c8f70` : `public: __int64 __thiscall ModManager::getOwidByRootPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5a5760` : `public: struct PackGiftDef * __thiscall ModEditorManager::getPackGiftDef(int)`
+- `0x5a5780` : `public: struct PackGiftDef * __thiscall ModEditorManager::getPackGiftDefByItemID(int)`
+- `0x836b10` : `public: char const * __thiscall SnapshotForShare::getParam(int)`
+- `0xdb8e0` : `public: virtual float __thiscall MINIW::ClientInfo::getPartialTick(void)`
+- `0x7bb410` : `public: char * __thiscall AccountFBData::getPasswd(void)`
+- `0xdb8f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getPassword(void)`
+- `0x2a76f0` : `protected: virtual void __thiscall AbsCsv::getPath(char * const)`
+- `0x316480` : `public: virtual void __thiscall DefaultCsvLoadConfig::getPath(char const *,char * const)`
+- `0x316480` : `public: virtual void __thiscall OverseasCsvLoadConfig::getPath(char const *,char * const)`
+- `0x6fc810` : `public: char const * __thiscall AccountData::getPayExtendParams(int)`
+- `0x5a57c0` : `public: int __thiscall ModEditorManager::getPhysicsActorCount(void)`
+- `0x5a57e0` : `public: struct PhysicsActorDef * __thiscall ModEditorManager::getPhysicsActorDef(int)`
+- `0x5a5800` : `public: struct PhysicsActorDef * __thiscall ModEditorManager::getPhysicsActorDefById(int)`
+- `0x5a5820` : `public: struct PhysicsMaterialDef * __thiscall ModEditorManager::getPhysicsMaterialDef(int)`
+- `0x5a5840` : `public: struct PhysicsMaterialDef * __thiscall ModEditorManager::getPhysicsMaterialDefById(int)`
+- `0xdb910` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall SnapshotMgr::getPicMD5(void)`
+- `0xf5ba0` : `public: virtual enum PLATFORM_TYPE __thiscall MINIW::ClientInfo::getPlatform(void)`
+- `0xdb740` : `public: virtual enum PLATFORM_TYPE __thiscall MINIW::ClientInfo_PC::getPlatform(void)`
+- `0xdc1f0` : `public: enum PLATFORM_TYPE __thiscall MINIW::ClientManager::getPlatform(void)`
+- `0xf5b40` : `public: virtual int __thiscall MINIW::ClientInfo::getPlatformId(void)`
+- `0xf5b40` : `public: virtual int __thiscall MINIW::ClientInfo_PC::getPlatformId(void)`
+- `0xf5bb0` : `public: virtual char const * __thiscall MINIW::ClientInfo::getPlatformStr(void)`
+- `0xfdc00` : `public: virtual char const * __thiscall MINIW::ClientInfo_PC::getPlatformStr(void)`
+- `0x716540` : `public: void __thiscall ClientBuddyMgr::getPlayHistoryData(class flatbuffers::FlatBufferBuilder &,class std::vector<struct flatbuffers::Offset<struct FBSave::FriendHomeChest>,class std::allocator<struct flatbuffers::Offset<struct FBSave::FriendHomeChest> > > &,class std::vector<struct flatbuffers::Offset<struct FBSave::FriendChat>,class std::allocator<struct flatbuffers::Offset<struct FBSave::FriendChat> > > &,class std::vector<struct flatbuffers::Offset<struct FBSave::FansInfo>,class std::allocator<struct flatbuffers::Offset<struct FBSave::FansInfo> > > &)`
+- `0x617b00` : `public: int __thiscall MidiFileInfo::getPlayTime(char const *)`
+- `0xf5c00` : `public: virtual int __thiscall MINIW::ClientInfo::getPlayerPermits(int,int)`
+- `0x5c91e0` : `public: int __thiscall ModManager::getPlotCount(void)`
+- `0xdb920` : `public: class MapEditPreview * __thiscall MapEditManager::getPreView(void)`
+- `0x4720f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::getPrevGameSession(void)`
+- `0xf5c20` : `public: int __thiscall MINIW::ClientInfo::getProductionId(void)`
+- `0x5a5860` : `public: struct ProjectileDef * __thiscall ModEditorManager::getProjectileDefById(int)`
+- `0x6fc830` : `public: struct tagQQLoginInfo const & __thiscall AccountData::getQQLoginInfo(void)`
+- `0x4dd540` : `public: int __thiscall RoomManager::getRSLatestVersion(void)`
+- `0x4dd550` : `public: int __thiscall RoomManager::getRSMaxVersion(void)`
+- `0x4dd560` : `public: int __thiscall RoomManager::getRSMinVersion(void)`
+- `0x3164a0` : `public: virtual void __thiscall DefaultCsvLoadConfig::getRandomNamePath(char * const)`
+- `0x3164a0` : `public: virtual void __thiscall OverseasCsvLoadConfig::getRandomNamePath(char * const)`
+- `0x2aab80` : `private: struct BlockDef * __thiscall BlockDefCsv::getRaw(int,bool)`
+- `0x617b50` : `public: int __thiscall MidiFileInfo::getRealTracks(char const *)`
+- `0x4dd570` : `public: struct RoomDesc * __thiscall RoomManager::getRecentlyOpendOwnerIthRoom(int)`
+- `0x793c50` : `public: __int64 __thiscall WorldList::getRecentlyOpenedWorldId(void)`
+- `0xdb930` : `public: virtual enum GAME_RELOAD_TYPE __thiscall ClientGameManager::getReloadGameType(void)`
+- `0xdb940` : `public: virtual bool __thiscall MINIW::ClientInfo::getRentServer(void)`
+- `0x78b7d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getRepackBackupDirPath(struct WorldBackupInfo const &)`
+- `0x78b860` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getRepackBackupZipPath(struct WorldBackupInfo const &)`
+- `0xefb10` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientDnsMgr::getResolveDnsFriendip(void)`
+- `0x720630` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientDnsMgr::getResolveDnsInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xefb30` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientDnsMgr::getResolveDnsRoomip(void)`
+- `0x7107e0` : `public: char const * __thiscall ClientAccountMgr::getRoleCustomSkin(void)`
+- `0xf5c70` : `public: virtual char const * __thiscall MINIW::ClientInfo::getRoleCustomSkin(void)`
+- `0x710800` : `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall ClientAccountMgr::getRoleIcon(int)`
+- `0x710820` : `public: char const __thiscall ClientAccountMgr::getRoleModel(void)`
+- `0xf5c80` : `public: virtual char const __thiscall MINIW::ClientInfo::getRoleModel(void)`
+- `0x710830` : `public: int __thiscall ClientAccountMgr::getRoleSkinModel(void)`
+- `0xf5c90` : `public: virtual int const __thiscall MINIW::ClientInfo::getRoleSkinModel(void)`
+- `0xf5ca0` : `public: virtual int __thiscall MINIW::ClientInfo::getRoomHostType(void)`
+- `0x7989b0` : `private: int __thiscall MINIW::AdventureReportMgr::getRoomId(void)`
+- `0x4dd5a0` : `public: int __thiscall RoomManager::getRoomListEarliestCreateTime(void)`
+- `0x4dd5d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall RoomManager::getRoomServerUrl(void)`
+- `0xdb950` : `public: struct tagRoomInfo & __thiscall RoomManager::getRoominfo(void)`
+- `0xca1a0` : `public: class jsonxx::Object const & __thiscall GameServerConfig::getRootObject(void)`
+- `0x6e26e0` : `public: int __thiscall GlobalSetParse::getRuleOptionVal(int)`
+- `0xdb960` : `public: virtual double __thiscall TriggerScriptMgr::getRuntime(void)`
+- `0x75b500` : `public: void __thiscall ClientCSOWorld::getS2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0x4b9be0` : `public: struct SFActivityInfo * __thiscall SpringFestivalActivityMgr::getSFActivityInfoListData(int)`
+- `0x4b9c10` : `public: int __thiscall SpringFestivalActivityMgr::getSFActivityInfoListNum(void)`
+- `0x4b9c20` : `public: bool __thiscall SpringFestivalActivityMgr::getSFActivityState(void)`
+- `0xf5cb0` : `public: int __thiscall MINIW::ClientInfo::getSandoxEngineState(void)`
+- `0x7b5a90` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldStringManager::getSaveFilePath(enum SAVEFILETYPE,int)`
+- `0xf5cc0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getSchemeJson(void)`
+- `0x4c6cb0` : `public: float __thiscall OnlineService::getScriptVar(int)`
+- `0x77e9b0` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::getSearchMapResult(int)`
+- `0x77e9c0` : `public: int __thiscall WorldArchiveMgr::getSearchedMapNum(void)`
+- `0x5c9210` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall ModManager::getSelecedMods(void)`
+- `0x710840` : `public: struct tagBuddyInfo __thiscall ClientAccountMgr::getSelfBuddyInfo(void)`
+- `0x710870` : `public: struct tagBuddyInfoEx __thiscall ClientAccountMgr::getSelfBuddyInfoEx(void)`
+- `0x4dd680` : `public: int __thiscall RoomManager::getSelfPing(void)`
+- `0x16da20` : `public: int __thiscall AccountData::getServerOrderId(void)`
+- `0x4721c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::getSession_id(void)`
+- `0xd54c0` : `public: int __thiscall AccountData::getSevenDayGiftFlag(void)`
+- `0xf5ce0` : `public: virtual int __thiscall MINIW::ClientInfo::getSeverProxyOwindex(void)`
+- `0xc2190` : `public: int __thiscall RoomManager::getSeverProxyOwindex(void)`
+- `0xf5cf0` : `public: char const * __thiscall MINIW::ClientInfo::getShareLink(void)`
+- `0x5e8400` : `public: static class CustomPicMgr * __cdecl CustomPicMgr::getSingleton(void)`
+- `0x5e22b0` : `public: static class Dev3DUIManager * __cdecl Dev3DUIManager::getSingleton(void)`
+- `0x617b80` : `public: static class MidiFileInfo * __cdecl MidiFileInfo::getSingleton(void)`
+- `0x8320a0` : `public: static class MultiLocalMgr * __cdecl MultiLocalMgr::getSingleton(void)`
+- `0x6f6c80` : `public: static class MusicItemLogical * __cdecl MusicItemLogical::getSingleton(void)`
+- `0x5568e0` : `public: static class UIEditorManager * __cdecl UIEditorManager::getSingleton(void)`
+- `0x54fdc0` : `public: static class UIFrameManager * __cdecl UIFrameManager::getSingleton(void)`
+- `0x5615d0` : `public: static class UIProjectLibManager * __cdecl UIProjectLibManager::getSingleton(void)`
+- `0x296220` : `public: static class Rainbow::WindowsCrashHandler * __cdecl Rainbow::WindowsCrashHandler::getSingleton(void)`
+- `0x571870` : `public: static class ArchiveManager * __cdecl ArchiveManager::getSingletonPtr(void)`
+- `0x6fc840` : `public: int __thiscall AccountData::getSkilledPoint(int)`
+- `0x6fc860` : `public: int __thiscall AccountData::getSkinTime(int)`
+- `0x834c60` : `public: unsigned int __thiscall SnapshotForGame::getSnapshotMd5(int)`
+- `0xdb970` : `public: class SnapshotMgr * __thiscall MINIW::ClientInfo::getSnapshotMgr(void)`
+- `0x834cc0` : `public: char const * __thiscall SnapshotForGame::getSnapshotPath(int)`
+- `0x838660` : `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall SnapshotMgr::getSnapshotTexture(__int64,int)`
+- `0x60da50` : `public: unsigned int __thiscall FmodSoundSystemEX::getSound2DDurationByPath(char const *)`
+- `0x60db30` : `public: char * __thiscall FmodSoundSystemEX::getSoundBuff(char *,int &)`
+- `0x60db80` : `public: enum FMOD_OPENSTATE __thiscall FmodSoundSystemEX::getSoundOpenState(class FMOD::Sound *)`
+- `0x60dbc0` : `public: class FMOD::Sound * __thiscall FmodSoundSystemEX::getSoundResourceByPitch(class Rainbow::FixedString const &,enum SoundTypeEX,bool,float)`
+- `0x60ded0` : `public: float __thiscall FmodSoundSystemEX::getSoundVolume(void)`
+- `0x5c9220` : `public: int __thiscall ModManager::getStatusCount(void)`
+- `0x5c9250` : `public: int __thiscall ModManager::getStatusCountEx(void)`
+- `0x5a5880` : `public: struct BuffDef * __thiscall ModEditorManager::getStatusDef(int)`
+- `0x5a58a0` : `public: struct BuffDef * __thiscall ModEditorManager::getStatusDefById(int)`
+- `0x5a58c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::getStatusForeignIds(struct BuffDef const *)`
+- `0x5c9260` : `public: int __thiscall ModManager::getStatusIdByEquipId(int)`
+- `0xfdc30` : `public: char const * __thiscall MINIW::ClientInfo_PC::getSteamFinishOrderString(void)`
+- `0xfdc40` : `public: char const * __thiscall MINIW::ClientInfo_PC::getSteamQueryOrderString(void)`
+- `0x79fe80` : `public: bool __thiscall Mini::MmkvMgr::getString(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,char const *,int)`
+- `0x337560` : `private: char const * __thiscall StringDefCsv::getSubName(void)`
+- `0x337570` : `public: void __thiscall StringDefCsv::getSubPath(char * const)`
+- `0x5c9290` : `public: char const * __thiscall ModManager::getSurvivalMapDefaultModUUID(void)const `
+- `0x2ad5a0` : `public: struct SurviveObjectiveDef const * __thiscall SurviveObjectiveDefCsv::getSurviveObjectiveDefByIndex(int)`
+- `0xf5cb0` : `public: int __thiscall SurviveObjectiveDefCsv::getSurviveObjectiveDefCsvNum(void)`
+- `0x2ad5a0` : `public: struct SurviveTaskDef const * __thiscall SurviveTaskDefCsv::getSurviveTaskDefByIndex(int)`
+- `0xf5cb0` : `public: int __thiscall SurviveTaskDefCsv::getSurviveTaskDefCsvNum(void)`
+- `0xd5480` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getSvnUserName(void)`
+- `0x710890` : `public: unsigned int __thiscall ClientAccountMgr::getSvrTime(bool)`
+- `0xf5d00` : `public: virtual unsigned int __thiscall MINIW::ClientInfo::getSvrTime(bool)`
+- `0xdc200` : `public: unsigned int __thiscall MINIW::ClientManager::getSvrTime(void)`
+- `0x4721e0` : `public: class Mini::ReportTask * __thiscall Mini::HttpReportMgr::getTask(void)`
+- `0x472280` : `private: class Mini::ReportTask * __thiscall Mini::HttpReportMgr::getTaskFromCache(void)`
+- `0x472420` : `private: class Mini::ReportTask * __thiscall Mini::HttpReportMgr::getTaskFromMmkv(void)`
+- `0x3392f0` : `public: class std::vector<int,class std::allocator<int> > __thiscall SurviveTaskDefCsv::getTaskListByObjectiveID(int)const `
+- `0x7d1900` : `public: int __thiscall OWorldList::getTerrainTypeByFile(__int64,int)`
+- `0xdb980` : `public: class cocos2d::TextureAtlas * __thiscall cocos2d::SpriteBatchNode::getTextureAtlas(void)`
+- `0x617c20` : `public: int __thiscall MidiFileInfo::getThemeTrackID(char const *)`
+- `0x617dc0` : `public: int __thiscall MidiFileInfo::getTicks(char const *)`
+- `0x31c8b0` : `public: int __thiscall GameZoneCsv::getTimeZone(char const *)`
+- `0x5a5a50` : `public: struct ToolDef * __thiscall ModEditorManager::getToolDefById(int)`
+- `0x31e4d0` : `public: class DefDataTable<struct ToolDef> & __thiscall ToolDefCsv::getToolTable(void)`
+- `0x74b190` : `public: int __thiscall AchievementManager::getTotalGameStatistics(int,int)`
+- `0x617df0` : `public: int __thiscall MidiFileInfo::getTrackId(int)`
+- `0x617e10` : `public: int __thiscall MidiFileInfo::getTracks(char const *)`
+- `0x16dbc0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientGameManager::getUIURL(void)const `
+- `0xf5940` : `public: int __thiscall AccountFBData::getUin(void)`
+- `0x7108d0` : `public: int __thiscall ClientAccountMgr::getUin(void)`
+- `0xf5350` : `public: virtual int __thiscall MINIW::ClientInfo::getUin(void)`
+- `0xea450` : `private: int __thiscall OWorldList::getUinFromOWID(__int64)`
+- `0xea460` : `public: static int __cdecl OWorldUtils::getUinFromOWID(__int64)`
+- `0x7d19e0` : `public: __int64 __thiscall OWorldList::getUinOWID(void)`
+- `0x472830` : `public: int __thiscall Mini::HttpReportMgr::getUinRegTime(void)`
+- `0x75b550` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientCSOWorld::getUploadTempPreUrl(int)`
+- `0xf5d20` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getUploadTempPreUrl(int)`
+- `0xf5d50` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::getUserAccountInfo(void)`
+- `0xdc220` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientManager::getUserAccountInfo(void)`
+- `0x5c92a0` : `public: char const * __thiscall ModManager::getUserDefaultModUUID(void)const `
+- `0xdb990` : `public: unsigned int __thiscall ModManager::getUserModNewIdAllocated(void)`
+- `0x516c20` : `public: int __thiscall TriggerScriptMgr::getValueArea(int,char const *,bool,int,int,int)`
+- `0x79fea0` : `public: bool __thiscall Mini::MmkvMgr::getVector(char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,char const *,int)`
+- `0x5c9210` : `public: struct VipInfo const & __thiscall AccountData::getVipInfo(void)`
+- `0x716a10` : `public: struct VipInfo __thiscall ClientBuddyMgr::getVipInfo(int)`
+- `0x6fc8a0` : `public: int __thiscall AccountData::getVipLevel(void)`
+- `0x6fc8b0` : `public: int __thiscall AccountData::getVipType(void)`
+- `0x31c9f0` : `public: int __thiscall GameZoneCsv::getVoiceZone(char const *)`
+- `0x77e9d0` : `public: struct WorldDesc * __thiscall WorldArchiveMgr::getWarchOwDesc(int)`
+- `0x716aa0` : `public: class BuddyInfo * __thiscall ClientBuddyMgr::getWatchBuddyInfo(void)`
+- `0xf5940` : `public: int __thiscall WorldArchiveMgr::getWatchOWOffset(void)`
+- `0x77e9e0` : `public: int __thiscall WorldArchiveMgr::getWatchOwNum(void)`
+- `0x7108e0` : `public: int __thiscall ClientAccountMgr::getWater(int)`
+- `0xdb740` : `public: virtual int __thiscall MINIW::ClientInfo::getWdescGuest_Uin(void)`
+- `0xc2190` : `public: virtual int __thiscall MINIW::ClientInfo::getWdescUPAdd(void)`
+- `0xdb740` : `public: virtual int __thiscall MINIW::ClientInfo::getWdescUPDel(void)`
+- `0xf5d70` : `public: virtual int __thiscall MINIW::ClientInfo::getWdescUPUpdate(void)`
+- `0xfdc50` : `public: char const * __thiscall MINIW::ClientInfo_PC::getWeGameFinishOrderString(void)`
+- `0xfdc60` : `public: bool __thiscall MINIW::ClientInfo_PC::getWeGamePayformentResult(void)`
+- `0xfdc70` : `public: char const * __thiscall MINIW::ClientInfo_PC::getWeGameQueryOrderString(void)`
+- `0x78b8f0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getWorldBackupDir(__int64)`
+- `0x78b980` : `public: struct WorldBackupInfo const & __thiscall WorldBackupMgr::getWorldBackupInfo(int)`
+- `0x78b990` : `public: int __thiscall WorldBackupMgr::getWorldBackupInfoNum(void)`
+- `0x78b9b0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::getWorldBackupThumbPathByZipPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x75b860` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ClientCSOWorld::getWorldDataPath(__int64)`
+- `0x793cc0` : `public: struct WorldDesc * __thiscall WorldList::getWorldDesc(int)`
+- `0x793cf0` : `public: int __thiscall WorldList::getWorldGameLabel(int)`
+- `0x7d1ae0` : `public: char const * __thiscall OWorldList::getWorldIdByFromowid(char const *)`
+- `0x5c92b0` : `public: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl ModManager::getWorldModsDir(__int64,bool)`
+- `0x78bb80` : `public: int __thiscall WorldBackupMgr::getWorldOrdinaryBackupInfoNum(void)`
+- `0x77e9f0` : `public: int __thiscall WorldArchiveMgr::getWorldSupportLang(__int64)`
+- `0x7d1e50` : `public: int __thiscall OWorldList::getWorldType(__int64)`
+- `0xf5d80` : `public: char const * __thiscall MINIW::ClientInfo::getWorldidByIntentFromowid(char const *)`
+- `0x710900` : `public: int __thiscall ClientAccountMgr::getWorms(int)`
+- `0x472840` : `private: unsigned int * __thiscall Mini::HttpReportMgr::getXXTeaKey(void)`
+- `0xfdc80` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo_PC::get_rail_platform(void)`
+- `0x14e170` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall FileAndDirInfo::getdirs(void)`
+- `0x6e2760` : `public: int __thiscall FileAndDirInfo::getfilecount(void)`
+- `0xdb710` : `public: class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > & __thiscall FileAndDirInfo::getfiles(void)`
+- `0x737a40` : `private: static void __cdecl StatisticTerrgen::getgameLabelStr(int,char * const)`
+- `0x737a70` : `private: static void __cdecl StatisticTerrgen::getmapTypeStr(int,char * const)`
+- `0xfdca0` : `public: void __thiscall MINIW::ClientInfo_PC::go360PayUrl(char const *)`
+- `0x16dbe0` : `public: virtual void __thiscall ClientGameManager::gotoGame(char const *,enum GAME_RELOAD_TYPE)`
+- `0xf5da0` : `public: void __thiscall MINIW::ClientInfo::gotoGame(char const *,enum GAME_RELOAD_TYPE)`
+- `0x4dd690` : `public: void __thiscall RoomManager::handelNearByRoomList(void)`
+- `0x74b1f0` : `public: void __thiscall AchievementManager::handleAchievementInit2Client(class game::hc::PB_AchievementSyncHC &)`
+- `0x74b4a0` : `public: void __thiscall AchievementManager::handleAchievementUpdate2Client(class game::hc::PB_AchievementSyncHC &)`
+- `0x748dc0` : `public: void __thiscall AchievementManager::handleAchievementUpdate2Host(class game::ch::PB_AchievementUpdateCH &)`
+- `0x576040` : `public: void __thiscall ArchiveManager::handlePlayerArch2Client(class MpGameSurviveNetHandler *,struct PB_PACKDATA_CLIENT const &)`
+- `0xf5db0` : `public: virtual void __thiscall MINIW::ClientInfo::handlePlayerArch2Client(class MpGameSurviveNetHandler *,struct PB_PACKDATA_CLIENT const &)`
+- `0xee8e0` : `public: bool __thiscall MiniWorldPreferences::has(class core::basic_string<char,class core::StringStorageDefault<char> >)`
+- `0x51f500` : `public: bool __thiscall ChangeModelMgr::hasAvatordata(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf5dd0` : `public: virtual bool __thiscall MINIW::ClientInfo::hasGameData(char const *)`
+- `0xdb9e0` : `public: bool __thiscall MINIW::ClientInfo::hasLoadGameVersionXml(void)`
+- `0xdb9e0` : `public: bool __thiscall AbsCsv::hasLoaded(void)`
+- `0x51f590` : `public: bool __thiscall ChangeModelMgr::hasMeshBlock(int)`
+- `0x7225d0` : `private: bool __thiscall StatisticRainforest::hasRainForestBiome(class Chunk *)`
+- `0xd6030` : `public: bool __thiscall MINIW::ClientInfo::hasSIGUSR2(void)`
+- `0x101990` : `public: bool __thiscall SnapshotMgr::hasSnapshot(__int64)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::hostAutoExit(void)`
+- `0xea4c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const & __thiscall GameLanguageCsv::id2code(int)`
+- `0x31cb30` : `public: struct STGameZone * __thiscall GameZoneCsv::idGameZone(int)`
+- `0x31ae90` : `public: struct GameLanguage const & __thiscall GameLanguageCsv::idLanguage(int)`
+- `0x5c97c0` : `public: int __thiscall ModManager::idValidate(int,int,class GameMod *,int)`
+- `0x31cb80` : `public: struct STGameZone * __thiscall GameZoneCsv::indexGameZone(unsigned int)`
+- `0x53f810` : `public: long __thiscall cocos2d::__Array::indexOfObject(class cocos2d::Ref *)const `
+- `0x6fc8c0` : `public: void __thiscall AccountData::init(void)`
+- `0x7bb5b0` : `public: void __thiscall AccountFBData::init(void)`
+- `0x7989f0` : `public: void __thiscall MINIW::AdventureReportMgr::init(void)`
+- `0x1442d0` : `public: virtual bool __thiscall MINIW::AppUpdateScene::init(void)`
+- `0x472850` : `private: void __thiscall Mini::HttpReportMgr::init(void)`
+- `0x145070` : `public: virtual bool __thiscall MINIW::LaunchScene::init(void)`
+- `0x79fec0` : `public: void __thiscall Mini::MmkvMgr::init(char const *)`
+- `0x5c9b30` : `public: void __thiscall ModManager::init(void)`
+- `0x6f6d10` : `public: void __thiscall MusicItemLogical::init(void)`
+- `0x4e7360` : `private: void __thiscall SimulateMgr::init(void)`
+- `0xc2190` : `public: int __thiscall WXGameLiveManager::init(void)`
+- `0x74b810` : `public: int __thiscall AchievementManager::initAchievementState(struct AchievementDef const *)`
+- `0x77ea60` : `public: void __thiscall WorldArchiveMgr::initAttentionIds(void)`
+- `0x51f620` : `private: void __thiscall ChangeModelMgr::initAvatarModel(class ClientActorProjectile *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo::initGameData(void)`
+- `0xfe190` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::initGameData(void)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::initGameDataStep(class LoadStepCounter &)`
+- `0xdaf70` : `public: bool __thiscall MINIW::ClientInfo::initGameStatistics(void)`
+- `0xdaf70` : `public: bool __thiscall MINIW::ClientInfo::initGameUI(void)`
+- `0xeea10` : `public: bool __thiscall MiniWorldPreferences::initHashParam(char const *)`
+- `0x710920` : `public: void __thiscall ClientAccountMgr::initHistoryData(void)`
+- `0xf5df0` : `public: bool __thiscall MINIW::ClientInfo::initJsonParam(char const *)`
+- `0xf5ed0` : `public: virtual void __thiscall MINIW::ClientInfo::initLanguage(void)`
+- `0x472a60` : `public: void __thiscall Mini::HttpReportMgr::initLog(void)`
+- `0x51f800` : `private: void __thiscall ChangeModelMgr::initMonsterAvatarModel(class ClientActorProjectile *,int)`
+- `0x793d20` : `public: void __thiscall WorldList::initMy(struct tagCSMyOWList const &)`
+- `0x71c530` : `public: static void __cdecl ClientUrl::initOnLoad(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xfc650` : `public: void __thiscall MINIW::ClientInfo_PC::initParentWebWindow(void)`
+- `0x798a20` : `public: void __thiscall MINIW::AdventureReportMgr::initReport(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::initReportData(void)`
+- `0x710a00` : `private: void __thiscall ClientAccountMgr::initSelfBuddyInfo(void)`
+- `0x51f950` : `private: void __thiscall ChangeModelMgr::initSkinModel(class ClientActorProjectile *,int)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::initSuccess(void)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo_PC::initSuccess(void)`
+- `0xfc650` : `private: void __thiscall MINIW::ClientInfo_PC::initThirdPartInfo(void)`
+- `0x472aa0` : `public: void __thiscall Mini::HttpReportMgr::initUrl(void)`
+- `0x5ca440` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModManager::innerId2Key(int,int)`
+- `0x7bb670` : `public: void __thiscall AccountFBData::inserUinHistory(void)`
+- `0x7bb6c0` : `public: void __thiscall AccountFBData::inserUpServerWorlds(__int64,enum UPWDESC_TYPE)`
+- `0x7b5c30` : `public: virtual void __thiscall WorldStringManager::insert(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum SAVEFILETYPE,__int64,int)`
+- `0x7b5dc0` : `private: void __thiscall WorldStringManager::insertAsync(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,enum SAVEFILETYPE,__int64,int)`
+- `0x7b5f70` : `private: void __thiscall WorldStringManager::insertSync(char const *,char const *,enum SAVEFILETYPE,__int64,int)`
+- `0xfabab0` : `private: static class StatisticTerrgen * StatisticTerrgen::instance`
+- `0x7b6a70` : `private: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldStringManager::intToString(int)`
+- `0xdb9a0` : `public: bool __thiscall MINIW::ClientInfo::is4399LoginSuccess(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::is7k7kVip(void)`
+- `0xfe4a0` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::is7k7kVip(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::is7k7kYearVip(void)`
+- `0xfe4e0` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::is7k7kYearVip(void)`
+- `0x6fc960` : `public: bool __thiscall AccountData::isActivity(void)`
+- `0xf6710` : `public: bool __thiscall MINIW::ClientInfo::isAdult(void)`
+- `0xdaf70` : `public: bool __thiscall PlatformUtility::isAdvanceBuild(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isAndroid(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isAndroid(void)`
+- `0xd6030` : `public: bool __thiscall MINIW::ClientInfo::isAppFront(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isApple(void)const `
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isApple(void)`
+- `0x77eb90` : `public: bool __thiscall WorldArchiveMgr::isAttentionWorld(__int64)`
+- `0x710aa0` : `public: bool __thiscall ClientAccountMgr::isBindAccount(void)`
+- `0x710ab0` : `public: bool __thiscall ClientAccountMgr::isBindTPAccount(void)`
+- `0x716ad0` : `public: bool __thiscall ClientBuddyMgr::isBuddy(int)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isClosing(void)`
+- `0x6fc970` : `public: bool __thiscall AccountData::isCollectUin(int)`
+- `0x77ebe0` : `public: bool __thiscall WorldArchiveMgr::isCreateFromDevTempWorld(__int64)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isDebug(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isDebugRender(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isDevBuild(void)`
+- `0x7d1f50` : `public: bool __thiscall OWorldList::isDevTempOworld(struct tagOWorld &)`
+- `0x6e27b0` : `public: static bool __cdecl FileAndDirInfo::isDir(char const *)`
+- `0x7209c0` : `public: bool __thiscall ClientDnsMgr::isDnsConvertFinish(void)`
+- `0x75b8f0` : `public: bool __thiscall ClientCSOWorld::isDownloading(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isEditorEditingMode(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::isEditorEditingMode(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isEditorMode(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::isEditorMode(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isEducationLiteGame(void)`
+- `0xdc240` : `public: bool __thiscall MINIW::ClientManager::isEducationLiteGame(void)`
+- `0x834d90` : `public: bool __thiscall SnapshotForGame::isExistIntroImg(__int64,int)`
+- `0x5ca660` : `public: bool __thiscall ModManager::isExistMod(__int64,bool)`
+- `0x60df00` : `public: bool __thiscall FmodSoundSystemEX::isExitsStreamSound(class Rainbow::ISound *)`
+- `0x7eeed0` : `public: void __thiscall KeywordFilterMgr::isFilter(bool &,class core::basic_string<char,class core::StringStorageDefault<char> > &,bool)`
+- `0xf6720` : `public: virtual bool __thiscall MINIW::ClientInfo::isFirstEnterGame(void)`
+- `0xd6030` : `public: bool __thiscall ClientAccountMgr::isFreeze(void)`
+- `0xf6730` : `public: bool __thiscall MINIW::ClientInfo::isFullscreen(void)`
+- `0xdb9b0` : `public: bool __thiscall ClientAccountMgr::isGMMode(void)`
+- `0xf6ba0` : `public: virtual bool __thiscall MINIW::ClientInfo::isGMMode(void)`
+- `0xdc250` : `public: bool __thiscall MINIW::ClientManager::isGMMode(void)`
+- `0xd6030` : `public: bool __thiscall ClientCSOWorld::isGmCommandsEnabled(void)`
+- `0xf6bb0` : `public: virtual bool __thiscall MINIW::ClientInfo::isGooglePlay(void)`
+- `0x710ad0` : `public: bool __thiscall ClientAccountMgr::isGradeOW(__int64)`
+- `0x7bb7a0` : `public: bool __thiscall AccountFBData::isGradedOW(__int64)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isHarmony(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isHarmony(void)`
+- `0x16e370` : `public: virtual bool __thiscall ClientGameManager::isInGame(void)`
+- `0xf6be0` : `public: virtual bool __thiscall MINIW::ClientInfo::isInGame(void)`
+- `0x77ec50` : `public: bool __thiscall WorldArchiveMgr::isInMyWorld(__int64,__int64,int)`
+- `0xf6bf0` : `public: virtual bool __thiscall MINIW::ClientInfo::isItemBan(int)`
+- `0x6fc9b0` : `public: bool __thiscall AccountData::isItemSeriesAward(int)`
+- `0x6fca10` : `public: bool __thiscall AccountData::isItemUnlock(int)`
+- `0x16e440` : `public: virtual bool __thiscall ClientGameManager::isJudgeOrSpectator(int,int)`
+- `0x5cb390` : `public: int __thiscall ModManager::isLoadCompleted(char const *)`
+- `0x5cb420` : `private: bool __thiscall ModManager::isLoadedCustomResByMod(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5cb4e0` : `public: bool __thiscall ModManager::isLoadedMapUseDownloadRes(__int64)`
+- `0x710af0` : `public: bool __thiscall ClientAccountMgr::isLogin(void)`
+- `0x16e4b0` : `public: virtual bool __thiscall ClientGameManager::isMapSceneLoadFinish(void)`
+- `0x617e50` : `public: bool __thiscall MidiFileInfo::isMidiFile(char const *)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isMobile(void)const `
+- `0xd6030` : `public: virtual bool __thiscall PlatformUtility::isMobile(void)`
+- `0xdb9c0` : `public: bool __thiscall ModEditorManager::isModEditing(void)`
+- `0x5cb510` : `public: int __thiscall ModManager::isModExisted(char const *)`
+- `0x838840` : `public: bool __thiscall SnapshotMgr::isModifyThumbLocalFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5cb590` : `private: bool __thiscall ModManager::isNeedForceSaveId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x722630` : `private: bool __thiscall StatisticRainforest::isNeedReportMonsterId(int)const `
+- `0x716b20` : `public: bool __thiscall ClientBuddyMgr::isNewChatUin(int)`
+- `0x716b60` : `public: bool __thiscall ClientBuddyMgr::isNewsBuddyChatType(void)`
+- `0x7bb7e0` : `public: bool __thiscall AccountFBData::isOWSnapLocked(__int64)`
+- `0x710b00` : `public: bool __thiscall ClientAccountMgr::isOWSnapLocked(__int64)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::isPC(void)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::isPC(void)`
+- `0xdaf70` : `public: bool __thiscall PlatformUtility::isPC(void)`
+- `0x6fca70` : `public: bool __thiscall AccountData::isPaying(void)`
+- `0xfe520` : `public: bool __thiscall MINIW::ClientInfo_PC::isPcSightMode(void)`
+- `0xf6c10` : `public: virtual bool __thiscall MINIW::ClientInfo::isPersonalCloudServer(void)`
+- `0xdc270` : `public: bool __thiscall MINIW::ClientManager::isPersonalCloudServer(void)`
+- `0x716c60` : `public: bool __thiscall ClientBuddyMgr::isPlayHistoryDataCharge(void)`
+- `0xf6c60` : `public: virtual bool __thiscall MINIW::ClientInfo::isPureServer(void)`
+- `0xdc290` : `public: bool __thiscall MINIW::ClientManager::isPureServer(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isPureServer(void)`
+- `0xf6c70` : `public: bool __thiscall MINIW::ClientInfo::isQQGamePcApi(int)`
+- `0xdc2b0` : `public: bool __thiscall MINIW::ClientManager::isQQGamePcApi(int)`
+- `0x75b930` : `public: bool __thiscall ClientCSOWorld::isQQMap(__int64)`
+- `0x716c70` : `public: bool __thiscall ClientBuddyMgr::isRandomFriend(int)`
+- `0xdb9d0` : `public: virtual bool __thiscall MINIW::ClientInfo::isRentRoom(void)`
+- `0xdb940` : `public: virtual bool __thiscall MINIW::ClientInfo::isRentServerMode(void)`
+- `0x710b20` : `public: bool __thiscall ClientAccountMgr::isSameDay(int,int,bool)`
+- `0x710bc0` : `public: bool __thiscall ClientAccountMgr::isSameWeek(int,int)`
+- `0x77ed50` : `public: bool __thiscall WorldArchiveMgr::isSearchMapFinished(int)`
+- `0x74b840` : `public: bool __thiscall AchievementManager::isShareAchievement(int)`
+- `0xf6cb0` : `public: virtual bool __thiscall MINIW::ClientInfo::isSharingOWorld(void)`
+- `0xf6cc0` : `public: bool __thiscall MINIW::ClientInfo::isSingleGame(void)`
+- `0x834f30` : `public: bool __thiscall SnapshotForGame::isSnapshotFinished(void)`
+- `0x835f90` : `public: bool __thiscall SnapshotForPC::isSnapshotFinished(void)`
+- `0x836b20` : `public: bool __thiscall SnapshotForShare::isSnapshotFinished(void)`
+- `0x838880` : `public: virtual bool __thiscall SnapshotMgr::isSnapshotFinished(void)`
+- `0xf9730` : `public: bool __thiscall SnapshotMgr::isSnapshotTextureExist(__int64,int)`
+- `0x798a80` : `public: bool __thiscall MINIW::AdventureReportMgr::isSpecialNight(void)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo::isStartingRoom(void)`
+- `0xf6c60` : `public: virtual bool __thiscall MINIW::ClientInfo::isStudioServer(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isStuioServer(void)`
+- `0xddf10` : `public: bool __thiscall ARInterface::isSupportable(void)`
+- `0xdb9e0` : `public: bool __thiscall SnapshotMgr::isTakingSnapshot(void)`
+- `0xd6030` : `public: bool __thiscall PlatformUtility::isTestScriptCamera(void)`
+- `0x576140` : `public: bool __thiscall ArchiveManager::isUGCModeMap(void)`
+- `0xd6030` : `public: bool __thiscall OWorldList::isUploadingBusy(void)`
+- `0xd6030` : `public: bool __thiscall AchievementManager::isValid(void)`
+- `0x79fee0` : `public: bool __thiscall Mini::MmkvMgr::isValid(void)`
+- `0x7d1f70` : `public: bool __thiscall OWorldList::isWorldRecordHaveCamera(__int64)`
+- `0x734c80` : `public: virtual void __thiscall StatisticsTools::joinRoom(bool,int,int,char const *,char const *,char const *)`
+- `0x7326b0` : `public: virtual void __thiscall StatisticsManager::joinRoomSucceed(int)`
+- `0x735410` : `public: virtual void __thiscall StatisticsTools::joinRoomSucceed(int)`
+- `0xf6d10` : `public: void __thiscall MINIW::ClientInfo::judgeFirstEnter(void)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::jumpToOppoGameCenter(void)`
+- `0xce3d0` : `private: void __thiscall SimulateMgr::keepBreath(void)`
+- `0x5cb610` : `public: int __thiscall ModManager::key2InnerId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,int,class GameMod *)`
+- `0x798aa0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::killMonster(int,__int64)`
+- `0x53f7d0` : `public: class cocos2d::Ref * __thiscall cocos2d::__Array::lastObject(void)`
+- `0x735a60` : `public: virtual void __thiscall StatisticsTools::launchGame(int)`
+- `0x4b9c30` : `public: void __thiscall SpringFestivalActivityMgr::leaveWorld(void)`
+- `0x6e27c0` : `public: void __thiscall FileAndDirInfo::listDirs(char const *,bool)`
+- `0x60df70` : `public: void __thiscall FmodSoundSystemEX::listEvent(void)`
+- `0x6e3160` : `public: void __thiscall FileAndDirInfo::listFiles(char const *,bool)`
+- `0x552d80` : `private: void __thiscall UIFrameManager::listenEvent(void)`
+- `0x2a7720` : `public: bool __thiscall AbsCsv::load(void)`
+- `0x5a5a70` : `public: void __thiscall ModEditorManager::load(void)`
+- `0x722860` : `public: virtual void __thiscall StatisticRainforest::load(struct WorldMapData *)`
+- `0x3375a0` : `public: bool __thiscall StringDefCsv::load(void)`
+- `0x6fca80` : `public: bool __thiscall AccountData::loadAccountData2New(int)`
+- `0x6fce10` : `public: bool __thiscall AccountData::loadAccountData(int)`
+- `0x6fd820` : `public: void __thiscall AccountData::loadAccountDataFromBillData(struct tagAccBillData *,int)`
+- `0x6fdc50` : `public: void __thiscall AccountData::loadActivityData(struct tagNationalDayData *)`
+- `0x716cc0` : `public: void __thiscall ClientBuddyMgr::loadBuddyData(int,struct FBSave::Account const *)`
+- `0x832140` : `private: bool __thiscall MultiLocalMgr::loadConf(char const *)`
+- `0x832770` : `public: void __thiscall MultiLocalMgr::loadConf(void)`
+- `0x7d2050` : `public: bool __thiscall OWorldList::loadDTWorldDesc(__int64)`
+- `0xf6d60` : `public: void __thiscall MINIW::ClientInfo::loadDeveloerInfo(void)`
+- `0xf6d70` : `public: void __thiscall MINIW::ClientInfo::loadDeveloperGame(void)`
+- `0x5cbd20` : `private: bool __thiscall ModManager::loadDeveloperPluginAllocated(char const *)`
+- `0x75b990` : `public: bool __thiscall ClientCSOWorld::loadDownloadWorldInfo(__int64,int,struct UpDownWorldInfo &)`
+- `0x833050` : `private: bool __thiscall MultiLocalMgr::loadFontsCfg(char const *)`
+- `0x7d2110` : `public: int __thiscall OWorldList::loadHGWorldData(void)`
+- `0x53c590` : `public: bool __thiscall EditorLang::loadLangFile(__int64,char const *,char const *)`
+- `0xdaf70` : `public: bool __thiscall WXGameLiveManager::loadLiveView(void)`
+- `0x5cbfc0` : `public: void __thiscall ModManager::loadMapMod(char const *,enum LoadModFlags,bool)`
+- `0x5cc280` : `private: void __thiscall ModManager::loadMapModMaterial(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0x5cc4d0` : `private: bool __thiscall ModManager::loadMapModPacketForDeveloper(class GameMod *)`
+- `0x5cc820` : `public: void __thiscall ModManager::loadMapUseDownloadRes(__int64,int)`
+- `0x5cca20` : `public: void __thiscall ModManager::loadMapUseDownloadResByPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5ccec0` : `public: bool __thiscall ModManager::loadModByName(char const *)`
+- `0x5cd050` : `public: void __thiscall ModManager::loadModCustomRes(int)`
+- `0x5a5b50` : `public: bool __thiscall ModEditorManager::loadModModelCSV(char const *)`
+- `0x5cd0a0` : `public: bool __thiscall ModManager::loadMod_Minicode(char const *)`
+- `0x8388a0` : `public: virtual bool __thiscall SnapshotMgr::loadMyWorldThumb(__int64,int)`
+- `0x145790` : `public: void __thiscall MINIW::LaunchScene::loadNative(bool)`
+- `0x141000` : `private: bool __thiscall MINIW::ClientLogin::loadNativePkg(bool,bool)`
+- `0x7d2430` : `public: bool __thiscall OWorldList::loadOWDesc(struct tagOWorld &,__int64,int,bool)`
+- `0x7d28f0` : `private: bool __thiscall OWorldList::loadOWDescBackUpFromPath(struct tagOWorld &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7d2d10` : `public: bool __thiscall OWorldList::loadOWDescByPath(struct tagOWorld &,char const *)`
+- `0x7d3040` : `public: bool __thiscall OWorldList::loadOWDescFromPath(struct tagOWorld &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7d3970` : `public: void __thiscall OWorldList::loadOWList(class std::vector<__int64,class std::allocator<__int64> > *,struct tagAccontInfo *)`
+- `0x7d3c00` : `public: void __thiscall OWorldList::loadOWListFromLocal(struct tagCSMyOWList &,int)`
+- `0x7d3dd0` : `private: bool __thiscall OWorldList::loadOWMultiLang(struct tagOWorld &,__int64,int)`
+- `0x7d3ef0` : `private: bool __thiscall OWorldList::loadOWMultiLangFromPath(struct tagOWorld &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x716f70` : `public: void __thiscall ClientBuddyMgr::loadPlayHistoryData(struct FBSave::PlayHistory const *)`
+- `0x576230` : `public: bool __thiscall ArchiveManager::loadRoleArchData(class ClientPlayer *,__int64)`
+- `0x74b870` : `public: bool __thiscall AchievementManager::loadRoleWorldAchievementsFromData(int,void const *,int)`
+- `0x5cd290` : `public: bool __thiscall ModManager::loadSelectModsFromLib(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &)`
+- `0x7ddba0` : `public: static int __cdecl OWorldUtils::loadSetPay(__int64)`
+- `0x6fdc70` : `public: void __thiscall AccountData::loadShopInfo(struct tagAccountShopTbl const &)`
+- `0x4b9c50` : `public: bool __thiscall SpringFestivalActivityMgr::loadSpringFestivalActivityFBS(int,int)`
+- `0x7bb820` : `public: int __thiscall AccountFBData::loadUinData(int)`
+- `0x7bc280` : `public: int __thiscall AccountFBData::loadUinHistory(void)`
+- `0x75c220` : `public: bool __thiscall ClientCSOWorld::loadUploadWorldInfo(__int64,int,struct UpDownWorldInfo &)`
+- `0x6fe040` : `public: void __thiscall AccountData::loadVipData(struct tagQQLoginInfo *)`
+- `0x74bce0` : `public: bool __thiscall AchievementManager::loadWorldAchievements(__int64,int)`
+- `0x74be30` : `public: bool __thiscall AchievementManager::loadWorldAchievementsFromData(void const *,int)`
+- `0x78c5f0` : `protected: bool __thiscall WorldBackupMgr::loadWorldBackupInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct WorldBackupInfo &)`
+- `0x78cb00` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::loadWorldBackupInfoJsonStr(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x78cbe0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall WorldBackupMgr::loadWorldBackupInfos(__int64)`
+- `0x5cd4d0` : `public: bool __thiscall ModManager::loadWorldMods(__int64,enum LoadModFlags)`
+- `0x5cdbf0` : `public: bool __thiscall ModManager::loadWorldModsFromDir(char const *,enum LoadModFlags,__int64)`
+- `0x5ce180` : `public: bool __thiscall ModManager::loadWorldModsFromPkg(char const *,enum LoadModFlags,bool,__int64)`
+- `0x5dd3a0` : `public: int __thiscall MINIW::ModFileManager::loadedModSize(char const *)`
+- `0x71e1b0` : `private: static char * __cdecl MiniConfLoad::loadfile(char const *,char const *,char const *,int *)`
+- `0x7d4110` : `public: bool __thiscall OWorldList::lockOWorld(__int64)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::logFabric(char const *)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::login4399NewSDK(void)`
+- `0xfe5c0` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::login4399NewSDK(void)`
+- `0x4ddb30` : `public: bool __thiscall RoomManager::loginRoomServer(bool,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::logout4399NewSDK(void)`
+- `0xfe610` : `public: virtual void __thiscall MINIW::ClientInfo_PC::logout4399NewSDK(void)`
+- `0xf6d80` : `public: void __thiscall MINIW::ClientInfo::logout(void)`
+- `0x4dde00` : `public: void __thiscall RoomManager::logoutRoomServer(void)`
+- `0xdb9f0` : `public: virtual void __thiscall MINIW::ClientInfo::luaLoginCallback(int,char const *)`
+- `0xdb9f0` : `public: virtual void __thiscall MINIW::ClientInfo_PC::luaLoginCallback(int,char const *)`
+- `0xdb9f0` : `public: void __thiscall MINIW::ClientManager::luaLoginCallback(int,char const *)`
+- `0xecd550` : `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > ModEditorManager::m_CurrentRequestFilePath`
+- `0xf98490` : `private: static bool FmodSoundSystemEX::m_bIsInit`
+- `0xfabb88` : `private: static class std::map<unsigned int,int,struct std::less<unsigned int>,class std::allocator<struct std::pair<unsigned int const ,int> > > StatisticTerrgen::m_generateMonster`
+- `0xfabb9c` : `private: static class std::map<unsigned char,class WCoord,struct std::less<unsigned char>,class std::allocator<struct std::pair<unsigned char const ,class WCoord> > > StatisticTerrgen::m_generateTerrgen`
+- `0xf80528` : `private: static int FunnyCore::m_iPayResultCode`
+- `0xeb6d0c` : `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > FunnyCore::m_initCallbackResult`
+- `0xf80558` : `private: static class std::function<void __cdecl(void)> FunnyCore::m_init_callback`
+- `0xeb6d3c` : `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > FunnyCore::m_loginCallBackResult`
+- `0xfacde0` : `private: static class ArchiveTempMgr * ArchiveTempMgr::m_pInstance`
+- `0xf963c0` : `private: static class Dev3DUIManager * Dev3DUIManager::m_pInstance`
+- `0xf9864c` : `private: static class MidiFileInfo * MidiFileInfo::m_pInstance`
+- `0xfb0870` : `private: static class MultiLocalMgr * MultiLocalMgr::m_pInstance`
+- `0xfa9dd8` : `private: static class MusicItemLogical * MusicItemLogical::m_pInstance`
+- `0xf91760` : `private: static class UIEditorManager * UIEditorManager::m_pInstance`
+- `0xf91a70` : `private: static class UIProjectLibManager * UIProjectLibManager::m_pInstance`
+- `0xf7ff80` : `private: static class Rainbow::WindowsCrashHandler * Rainbow::WindowsCrashHandler::m_pInstance`
+- `0xeb6d24` : `private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > FunnyCore::m_pProduectID`
+- `0xfabab8` : `private: static class std::map<unsigned char,class WCoord,struct std::less<unsigned char>,class std::allocator<struct std::pair<unsigned char const ,class WCoord> > > StatisticTerrgen::m_reportTerrgen`
+- `0xf80530` : `private: static class std::function<void __cdecl(void)> FunnyCore::m_unfunnycore_login_callback`
+- `0x77ed70` : `public: __int64 __thiscall WorldArchiveMgr::makeDownloadedCloudArchiveValid(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x576c50` : `public: bool __thiscall ArchiveManager::mapIsUpload(__int64)`
+- `0x16e4c0` : `public: virtual void __thiscall ClientGameManager::mapSceneLoadFinish(void)`
+- `0x5ce490` : `public: void __thiscall ModManager::markForAddMod(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x717800` : `public: bool __thiscall ClientBuddyMgr::memoOWorld(__int64,char const *)`
+- `0x7d41d0` : `public: bool __thiscall OWorldList::memoOWorld(__int64,char *)`
+- `0x736350` : `public: virtual void __thiscall StatisticsTools::miniworksDownMap(__int64,int,int,char const *,int)`
+- `0xdba40` : `public: void __thiscall Mini::HttpReportMgr::mmkvTest1(bool)`
+- `0x5ce5c0` : `public: bool __thiscall ModManager::modifyModTimeStamp(char const *,char const *,long)`
+- `0x5dd5f0` : `public: void __thiscall MINIW::ModFileManager::mountMod(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xf73624` : `protected: static class ChangeModelMgr * Rainbow::Singleton<class ChangeModelMgr>::ms_Singleton`
+- `0xf75394` : `protected: static class FunnyCore * Rainbow::Singleton<class FunnyCore>::ms_Singleton`
+- `0xf72660` : `protected: static class Mini::MmkvMgr * Rainbow::Singleton<class Mini::MmkvMgr>::ms_Singleton`
+- `0xf75390` : `protected: static class SnapshotForPC * Rainbow::Singleton<class SnapshotForPC>::ms_Singleton`
+- `0xf75398` : `protected: static class StringLoaderManager * Rainbow::Singleton<class StringLoaderManager>::ms_Singleton`
+- `0xf97430` : `public: static bool CustomPicMgr::ms_bLowQualityTexture`
+- `0xed0b20` : `public: static int CustomPicMgr::ms_imageLoadPlan`
+- `0x4dde40` : `public: void __thiscall RoomManager::needGetRoomPic(bool)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::needQuit(void)`
+- `0xfe630` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::needQuit(void)`
+- `0x74c5a0` : `public: bool __thiscall AchievementManager::needSave(void)`
+- `0x138470` : `public: virtual bool __thiscall StatisticRainforest::needSave(void)const `
+- `0x7a95d0` : `public: void __thiscall StringLoaderManager::nextDownloadMap(__int64)`
+- `0x51fb70` : `public: void __thiscall ChangeModelMgr::notifiyModel(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4ba0d0` : `public: void __thiscall SpringFestivalActivityMgr::notifySFActivity2Tracking(int,int,int)`
+- `0x6fe090` : `public: void __thiscall AccountData::notifyServerClearCharge(void)`
+- `0x75c3c0` : `public: void __thiscall ClientCSOWorld::notifyServerDownloadFinish(__int64,__int64)`
+- `0x78dad0` : `public: void __thiscall WorldBackupMgr::oMapDownloadEnded(bool,class Rainbow::Http::DownLoadFileTask *)`
+- `0x78dd70` : `public: void __thiscall WorldBackupMgr::oMapDownloadProgress(class Rainbow::Http::DownLoadFileTask *)`
+- `0x53f7f0` : `public: class cocos2d::Ref * __thiscall cocos2d::__Array::objectAtIndex(long)`
+- `0x78de40` : `protected: void __thiscall WorldBackupMgr::onBackupOMapCreateBackup(unsigned int)`
+- `0x78e690` : `protected: void __thiscall WorldBackupMgr::onBackupOMapUncompress(unsigned int)`
+- `0x4c4c50` : `public: void __thiscall WXGameLiveManager::onBeginLiveShow(void)`
+- `0x74c5d0` : `private: void __thiscall AchievementManager::onBossDie(int,int)`
+- `0x71cb50` : `public: static void __cdecl ClientUrl::onChangeCountry(void)`
+- `0x7368d0` : `public: virtual void __thiscall StatisticsTools::onChargeSuccess(char const *)`
+- `0xce3d0` : `public: virtual void __thiscall AvatarDefCsv::onClear(void)`
+- `0x2aac20` : `public: virtual void __thiscall BlockDefCsv::onClear(void)`
+- `0x2ad600` : `public: virtual void __thiscall BotConversationsDefCsv::onClear(void)`
+- `0x31af10` : `public: virtual void __thiscall GameLanguageCsv::onClear(void)`
+- `0x31cbb0` : `public: virtual void __thiscall GameZoneCsv::onClear(void)`
+- `0xce3d0` : `public: virtual void __thiscall ItemDefCsv::onClear(void)`
+- `0xce3d0` : `public: virtual void __thiscall MonsterCsv::onClear(void)`
+- `0x3304a0` : `public: virtual void __thiscall ResourcePackDefCsv::onClear(void)`
+- `0xce3d0` : `public: virtual void __thiscall RoleSkinCsv::onClear(void)`
+- `0xce3d0` : `public: virtual void __thiscall SkinActCsv::onClear(void)`
+- `0x3377f0` : `public: virtual void __thiscall StringDefCsv::onClear(void)`
+- `0xce3d0` : `public: virtual void __thiscall SummonDefCsv::onClear(void)`
+- `0x3387e0` : `public: virtual void __thiscall SurviveObjectiveDefCsv::onClear(void)`
+- `0x3393a0` : `public: virtual void __thiscall SurviveTaskDefCsv::onClear(void)`
+- `0xce3d0` : `public: virtual void __thiscall ToolDefCsv::onClear(void)`
+- `0x722b30` : `public: virtual void __thiscall StatisticRainforest::onCondition_AddBlock(int,int)`
+- `0x722b50` : `public: virtual void __thiscall StatisticRainforest::onCondition_BaldachineGenerate(class WCoord const &,class WCoord const &,bool)`
+- `0x722ba0` : `public: virtual void __thiscall StatisticRainforest::onCondition_GetProp(int,int)`
+- `0x722f50` : `public: virtual void __thiscall StatisticRainforest::onCondition_MonsterKillPlayer(int)`
+- `0x737aa0` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerAttackMonster(int,class ClientActor *,int)`
+- `0x737be0` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerDie(class World *)`
+- `0x737ca0` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerEnterGame(void)`
+- `0x722fc0` : `public: virtual void __thiscall StatisticRainforest::onCondition_PlayerExitGame(void)`
+- `0x737ce0` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerExitGame(void)`
+- `0x737dc0` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerGenerateMonster(int,class ClientActor *)`
+- `0x723160` : `public: virtual void __thiscall StatisticRainforest::onCondition_PlayerKillMonster(int)`
+- `0x737f20` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerKillMonster(int,int)`
+- `0x7231d0` : `public: virtual void __thiscall StatisticRainforest::onCondition_PlayerMove(class World *,int,class WCoord const &)`
+- `0x737f60` : `public: virtual void __thiscall StatisticTerrgen::onCondition_PlayerMove(class World *,int,class WCoord const &)`
+- `0x723380` : `public: virtual void __thiscall StatisticRainforest::onCondition_RemoveBlock(int,int)`
+- `0x738160` : `public: virtual void __thiscall StatisticTerrgen::onCondition_ReportChunkBiome(void)`
+- `0x738180` : `public: virtual void __thiscall StatisticTerrgen::onCondition_ReportChunkMonster(void)`
+- `0x7233a0` : `public: virtual void __thiscall StatisticRainforest::onCondition_TempleGenerate(class WCoord const &,class WCoord const &)`
+- `0x137f60` : `public: virtual void __thiscall StatisticsManager::onCondition_TempleGenerate(class WCoord const &,class WCoord const &)`
+- `0x723400` : `public: virtual void __thiscall StatisticRainforest::onCondition_TerrgenGenerate(class Chunk *)`
+- `0x7381b0` : `public: virtual void __thiscall StatisticTerrgen::onCondition_TerrgenGenerate(class Chunk *)`
+- `0x8334f0` : `public: void __thiscall MultiLocalMgr::onCountry(void)`
+- `0x7d42d0` : `public: void __thiscall OWorldList::onDownloadFailed(__int64)`
+- `0x4c4c60` : `public: void __thiscall WXGameLiveManager::onEndedLiveShow(void)`
+- `0x1460b0` : `public: virtual void __thiscall MINIW::LaunchScene::onEnter(void)`
+- `0xf9470` : `public: void __thiscall AchievementManager::onEnterWorld(__int64,int,unsigned int)`
+- `0x4dde70` : `public: void __thiscall RoomManager::onGetHotRoomHttp(int,struct HotRoomDesc *,int,int)`
+- `0x4de120` : `public: void __thiscall RoomManager::onGetManorRoom(int,struct RoomDesc)`
+- `0x4de190` : `private: void __thiscall RoomManager::onGetRoomList(class google::protobuf::RepeatedPtrField<class game::room::PB_RoomInfo> const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4de540` : `public: void __thiscall RoomManager::onGetRoomListHttp(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct RoomDesc *,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4dea80` : `public: void __thiscall RoomManager::onGetServerInfoHttp(int,int,int,int,int)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::onGetSnapshot(void)`
+- `0xfe730` : `public: virtual void __thiscall MINIW::ClientInfo_PC::onGetSnapshot(void)`
+- `0x7b6c50` : `public: virtual void __thiscall WorldStringManager::onIOAsyncCmd(void *)`
+- `0xf6da0` : `public: static void __cdecl MINIW::ClientInfo::onImagePicked(bool)`
+- `0x5a6110` : `public: static void __cdecl ModEditorManager::onImagePicked(bool)`
+- `0x69e0a0` : `public: int __thiscall MapEditManager::onInputEvent(struct Rainbow::InputEvent const &)`
+- `0x4deae0` : `public: virtual void __thiscall RoomManager::onJoinRoomReqRes(class game::room::PB_JoinRoomRes const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x31cc90` : `public: void __thiscall GameZoneCsv::onLangRefresh(void)`
+- `0x8334f0` : `public: void __thiscall MultiLocalMgr::onLanguage(void)`
+- `0x4dec30` : `public: virtual void __thiscall RoomManager::onLastPing(int,bool)`
+- `0x31afa0` : `private: bool __thiscall GameLanguageCsv::onLoad(struct GameLanguage *)`
+- `0xf6db0` : `public: void __thiscall MINIW::ClientInfo::onLoadGameVersionXmlAfterDownload(char const *)`
+- `0xf6eb0` : `public: virtual void __thiscall MINIW::ClientInfo::onLoadGameVersionXmlAfterDownload(class Rainbow::XMLData &)`
+- `0xfe960` : `private: virtual void __thiscall MINIW::ClientInfo_PC::onLoadGameVersionXmlAfterDownload(class Rainbow::XMLData &)`
+- `0x576d80` : `public: void __thiscall ArchiveManager::onLoadRoleCloudLibVar(int,__int64,void const *,int)`
+- `0x74c610` : `public: void __thiscall AchievementManager::onLoadRoleWorldAchievements(int,__int64,void const *,int)`
+- `0x7bc880` : `public: void __thiscall AccountFBData::onLogin(int)`
+- `0x7d4350` : `public: void __thiscall OWorldList::onLogin(int)`
+- `0xce3d0` : `public: void __thiscall SnapshotForGame::onLostDevice(void)`
+- `0xce3d0` : `public: void __thiscall SnapshotForPC::onLostDevice(void)`
+- `0xce3d0` : `public: void __thiscall SnapshotForShare::onLostDevice(void)`
+- `0xce3d0` : `public: void __thiscall SnapshotMgr::onLostDevice(void)`
+- `0x4deca0` : `public: virtual void __thiscall RoomManager::onNearByGetRoomsRes(class game::room::PB_GetRoomsInfoRes const &)`
+- `0xf6ed0` : `public: void __thiscall MINIW::ClientInfo::onNewIntent(char const *)`
+- `0x2a8dd0` : `public: virtual void __thiscall AvatarDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x2aacb0` : `public: virtual void __thiscall BlockDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x2ad610` : `public: virtual void __thiscall BotConversationsDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x31b0d0` : `public: virtual void __thiscall GameLanguageCsv::onParse(class MINIW::CSVParser &)`
+- `0x31cf90` : `public: virtual void __thiscall GameZoneCsv::onParse(class MINIW::CSVParser &)`
+- `0x320800` : `public: virtual void __thiscall ItemDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x3277d0` : `public: virtual void __thiscall MonsterCsv::onParse(class MINIW::CSVParser &)`
+- `0x3304b0` : `public: virtual void __thiscall ResourcePackDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x331b70` : `public: virtual void __thiscall RoleSkinCsv::onParse(class MINIW::CSVParser &)`
+- `0x335420` : `public: virtual void __thiscall SkinActCsv::onParse(class MINIW::CSVParser &)`
+- `0x337820` : `public: virtual void __thiscall StringDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x337eb0` : `public: virtual void __thiscall SummonDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x3387f0` : `public: virtual void __thiscall SurviveObjectiveDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x3393b0` : `public: virtual void __thiscall SurviveTaskDefCsv::onParse(class MINIW::CSVParser &)`
+- `0x33ad90` : `public: virtual void __thiscall ToolDefCsv::onParse(class MINIW::CSVParser &)`
+- `0xf70e0` : `public: virtual bool __thiscall MINIW::ClientInfo::onParseKVHash(void)`
+- `0xfea10` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::onParseKVHash(void)`
+- `0xd6030` : `public: virtual bool __thiscall MINIW::ClientInfo::onPause(void)`
+- `0x60eb10` : `public: void __thiscall FmodSoundSystemEX::onPause(void)`
+- `0x472ff0` : `public: void __thiscall Mini::HttpReportMgr::onPause(void)`
+- `0xdba40` : `public: void __thiscall AchievementManager::onPlayerLeaveAch(int)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::onPostStatisticsGameEvent(char const *)`
+- `0xfec70` : `public: virtual void __thiscall MINIW::ClientInfo_PC::onPostStatisticsGameEvent(char const *)`
+- `0x4df210` : `public: virtual void __thiscall RoomManager::onRSGetRoomsRes(class game::room::PB_GetRoomsInfoRes const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4df3a0` : `public: virtual void __thiscall RoomManager::onRSLoginRes(class game::room::PB_LoginRoomServerRes const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x144a00` : `private: void __thiscall MINIW::AppUpdateScene::onReloadAssets(class fairygui::FUIEventContext *)`
+- `0xf7a00` : `public: virtual bool __thiscall MINIW::ClientInfo::onResetRender(int,int)`
+- `0x4df540` : `public: void __thiscall RoomManager::onRespJoinRentRoomHttp(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,char const *)`
+- `0x4df910` : `public: void __thiscall RoomManager::onRespJoinRoomHttp(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xce3d0` : `public: void __thiscall SnapshotForGame::onRestoreDevice(void)`
+- `0xce3d0` : `public: void __thiscall SnapshotForPC::onRestoreDevice(void)`
+- `0xce3d0` : `public: void __thiscall SnapshotForShare::onRestoreDevice(void)`
+- `0xce3d0` : `public: void __thiscall SnapshotMgr::onRestoreDevice(void)`
+- `0x60eb50` : `public: void __thiscall FmodSoundSystemEX::onResume(void)`
+- `0x473000` : `public: void __thiscall Mini::HttpReportMgr::onResume(void)`
+- `0x4dfda0` : `public: void __thiscall RoomManager::onRoomAudioConfigUploaded(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64)`
+- `0x4dfe40` : `public: void __thiscall RoomManager::onRoomIntrosUploaded(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4dfee0` : `public: void __thiscall RoomManager::onRoomModelsUploaded(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64)`
+- `0x4dff80` : `public: void __thiscall RoomManager::onRoomModsUploaded(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e0020` : `public: void __thiscall RoomManager::onRoomThumbnailUploaded(int)`
+- `0x4e0050` : `public: void __thiscall RoomManager::onRoomUILibsUploaded(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x74c740` : `public: void __thiscall AchievementManager::onSaveAchievementsByUinResp(bool,int,__int64)`
+- `0xdba50` : `public: virtual bool __thiscall MINIW::ClientInfo::onShowAudioPicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0xfede0` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::onShowAudioPicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0xdba90` : `public: virtual bool __thiscall MINIW::ClientInfo::onShowImagePicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,bool,int,int)`
+- `0xff400` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::onShowImagePicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,bool,int,int)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::onStartRunning(void)`
+- `0x16e4e0` : `public: virtual void __thiscall ClientGameManager::onStop(void)`
+- `0x473210` : `public: void __thiscall Mini::HttpReportMgr::onStop(void)`
+- `0x4c4c70` : `public: void __thiscall WXGameLiveManager::onSupportCallback(bool)`
+- `0x7bc8a0` : `public: void __thiscall AccountFBData::onSwitchAccountSucceed(int)`
+- `0xf7cc0` : `public: virtual void __thiscall MINIW::ClientInfo::onSwitchAccountSucceed(int)`
+- `0x75c5a0` : `public: bool __thiscall ClientCSOWorld::onSyncMyWorldFromServer(struct MapInfoHttp const &)`
+- `0x75cdd0` : `public: bool __thiscall ClientCSOWorld::onSyncMyWorldFromServerFinish(void)`
+- `0x75cee0` : `public: bool __thiscall ClientCSOWorld::onSyncOtherUserWorldInfoFromServer(__int64,int,int,int,int)`
+- `0xf7ce0` : `public: virtual void __thiscall MINIW::ClientInfo::onTakeARAvatar(char const *,int)`
+- `0x4ba160` : `public: void __thiscall SpringFestivalActivityMgr::onTick(float)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::onUinLogin(int)`
+- `0x4e00f0` : `public: void __thiscall RoomManager::onUpdateNearByHttp(int,struct RoomDesc *,int)`
+- `0xf7e10` : `public: void __thiscall MINIW::ClientInfo::onUpdateNetworkState(int)`
+- `0x7d44a0` : `public: void __thiscall OWorldList::onUploadDownloadChecking(__int64)`
+- `0x7d4510` : `public: void __thiscall OWorldList::onUploadDownloadFailed(__int64)`
+- `0x7d4530` : `public: void __thiscall OWorldList::onUploadDownloadProgress(__int64,int,int)`
+- `0x7d45d0` : `public: void __thiscall OWorldList::onUploadFailed(__int64)`
+- `0x5a6250` : `public: void __thiscall ModEditorManager::onleaveEditCurrentMod(void)`
+- `0xf7e20` : `public: bool __thiscall MINIW::ClientInfo::openMiniProgram(void)`
+- `0xf7e30` : `public: bool __thiscall MINIW::ClientInfo::openMiniProgramWithType(int)`
+- `0x7d4610` : `public: bool __thiscall OWorldList::openOWorld(__int64,int,int,char const *,char const *,int,char,char const *,char const *,int,int,int,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xffb50` : `public: bool __thiscall MINIW::ClientInfo_PC::openPcPay(void)`
+- `0x7d5130` : `public: bool __thiscall OWorldList::openRentDebugOWorld(__int64,int,int,char const *)`
+- `0x473430` : `public: void __thiscall Mini::HttpReportMgr::outputLog(struct Mini::StandData *)`
+- `0x4e0200` : `public: bool __thiscall RoomManager::parseHttpNormalRoomDesc(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct RoomDesc *)`
+- `0x5ce7c0` : `public: bool __thiscall ModManager::parseMod(bool,class GameMod *,enum ParseModType,enum LoadModFlags)`
+- `0x5ceb80` : `public: void __thiscall ModManager::parseModAllocatedID(void)`
+- `0xef800` : `private: bool __thiscall MiniWorldPreferences::parseOptionsParam(class core::basic_string<char,class core::StringStorageDefault<char> > const &,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xf7e50` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::parseTextFromLanguageJson(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0xc2190` : `public: virtual int __thiscall MINIW::ClientInfo::patchVersion(void)`
+- `0x7d5750` : `public: void __thiscall OWorldList::pauseAll(void)`
+- `0x7d58c0` : `public: void __thiscall OWorldList::pauseDownloadOWorld(struct tagOWorld *)`
+- `0x7d5930` : `public: void __thiscall OWorldList::pauseDownloadOWorld(__int64)`
+- `0x77f320` : `public: void __thiscall WorldArchiveMgr::pauseDownloadWorld(__int64)`
+- `0x7d59b0` : `public: void __thiscall OWorldList::pauseOpenWorld(__int64)`
+- `0x60eb90` : `public: void __thiscall FmodSoundSystemEX::pauseTriggerSound(bool)`
+- `0x77f340` : `public: void __thiscall WorldArchiveMgr::performResumeUpdateMyWorldList(void)`
+- `0x7d5b20` : `public: void __thiscall OWorldList::performScanHGOwId(void)`
+- `0x7d5b30` : `public: void __thiscall OWorldList::performScanOwId(int)`
+- `0x60ebc0` : `public: class Rainbow::ISound * __thiscall FmodSoundSystemEX::playFmodSound2D(class Rainbow::FixedString const &,struct FmodSoundInfo3D const &,float)`
+- `0x60ed80` : `public: class Rainbow::ISound * __thiscall FmodSoundSystemEX::playFmodSound3DControl(class Rainbow::FixedString const &,struct FmodSoundInfo3D const &,float)`
+- `0x60eff0` : `public: class Rainbow::ISound * __thiscall FmodSoundSystemEX::playMidiMusicNote(__int64,int,int,float,int)`
+- `0x60f1c0` : `public: class FMOD::Channel * __thiscall FmodSoundSystemEX::playMusic(class FMOD::Sound *,bool,float,int)`
+- `0x60f280` : `public: class Rainbow::ISound * __thiscall FmodSoundSystemEX::playSound3DControlEX(class Rainbow::FixedString const &,struct Rainbow::SoundCreateInfo3D const &,float)`
+- `0x60f480` : `public: class Rainbow::ISound * __thiscall FmodSoundSystemEX::playSound3DWithData(unsigned char *,int,struct FmodSoundInfo3D const &,enum FMOD_RESULT (__stdcall*)(struct FMOD_CHANNELCONTROL *,enum FMOD_CHANNELCONTROL_TYPE,enum FMOD_CHANNELCONTROL_CALLBACK_TYPE,void *,void *),void *)`
+- `0x60f7b0` : `public: void __thiscall FmodSoundSystemEX::playTriggerFmodSound2D(char const *,float,float,bool)`
+- `0x60f890` : `public: void __thiscall FmodSoundSystemEX::playTriggerMidiSound2D(char const *,int,int,float,float,bool)`
+- `0x7368f0` : `public: virtual void __thiscall StatisticsTools::post(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x78eba0` : `protected: void __thiscall WorldBackupMgr::postBackupOMapWorkProgress(unsigned int,enum eBackupOMapWorkStep,int)`
+- `0x78f1a0` : `protected: void __thiscall WorldBackupMgr::postBackupOMapWorkResult(unsigned int,enum eBackupOMapWorkStep,enum eOnelineMapBackupCode,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x77f380` : `public: __int64 __thiscall WorldArchiveMgr::preCreateWorldByTemp(__int64)`
+- `0xdbad0` : `private: bool __thiscall MINIW::ClientApp::preOpenMicroMini(void)`
+- `0x4e7400` : `private: void __thiscall SimulateMgr::processBullteChatMsg(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x31d950` : `private: bool __thiscall GameZoneCsv::push(struct STGameZone *)`
+- `0xf8460` : `public: void __thiscall MINIW::ClientInfo::pushCommand(int,char const *,char const *,char const *,char const *,char const *)`
+- `0x7178a0` : `public: void __thiscall ClientBuddyMgr::randomFriendChestData(void)`
+- `0x4e75d0` : `private: void __thiscall SimulateMgr::randomMove(unsigned int)`
+- `0x53f820` : `public: class cocos2d::Ref * __thiscall cocos2d::__Array::randomObject(void)`
+- `0x717990` : `public: void __thiscall ClientBuddyMgr::randomOneFriendChestData(int)`
+- `0x5d1320` : `public: bool __thiscall ModManager::reEncryptPkgMod(__int64)`
+- `0x4e04f0` : `public: static bool __cdecl RoomManager::reEncryptRes(__int64,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x473590` : `private: void __thiscall Mini::HttpReportMgr::readCache(void)`
+- `0xf5d20` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::readDocumentsFile(char const *)`
+- `0xdc2d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientManager::readDocumentsFile(char const *)`
+- `0x5dd620` : `public: char * __thiscall MINIW::ModFileManager::readFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x5dd690` : `public: void * __thiscall MINIW::ModFileManager::readFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7b6d80` : `private: class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > > __thiscall WorldStringManager::readFile(enum SAVEFILETYPE,int)`
+- `0x5dd880` : `public: class Rainbow::SharePtr<class Rainbow::DataStream> __thiscall MINIW::ModFileManager::readFileAsStream(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5dd900` : `public: char * __thiscall MINIW::ModFileManager::readFileByPath(char const *,bool)`
+- `0xf84c0` : `public: void __thiscall MINIW::ClientInfo::readUIThemeConfig(char const *)`
+- `0x7d5fc0` : `public: void __thiscall OWorldList::readWorldDesc(struct tagOWorld &,char const *,__int64)`
+- `0x51fe80` : `public: bool __thiscall ChangeModelMgr::recoverinitialModel(__int64)`
+- `0x5ddac0` : `public: void __thiscall MINIW::ModFileManager::refreshAllModsPath(char const *)`
+- `0x716cc0` : `public: void __thiscall ClientBuddyMgr::refreshBuddyData(int,struct FBSave::Account const *)`
+- `0x798be0` : `private: void __thiscall MINIW::AdventureReportMgr::regEatFoodEvent(void)`
+- `0xce3d0` : `public: void __thiscall Mini::HttpReportMgr::release(void)`
+- `0x16e500` : `public: virtual void __thiscall ClientGameManager::releaseGameData(void)`
+- `0xf9070` : `public: virtual void __thiscall MINIW::ClientInfo::releaseGameData(void)`
+- `0xffd90` : `public: virtual void __thiscall MINIW::ClientInfo_PC::releaseGameData(void)`
+- `0x53c9e0` : `public: void __thiscall EditorLang::releaseWorld(class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct LangDesc *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct LangDesc *> > > &)`
+- `0x577520` : `public: bool __thiscall ArchiveManager::reloadArchDataInfos(void)`
+- `0x577df0` : `private: void __thiscall ArchiveManager::reloadArchiveEntity(__int64,struct FBSave::RoleArchData const *)`
+- `0x5d16b0` : `public: void __thiscall ModManager::reloadCustomMods(char const *)`
+- `0x7d6b60` : `public: bool __thiscall OWorldList::reloadOWDesc(__int64)`
+- `0x7bc8b0` : `public: void __thiscall AccountFBData::reloadOWorldIds(struct tagCSMyOWList const *)`
+- `0x7b7610` : `public: virtual void __thiscall WorldStringManager::remove(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum SAVEFILETYPE,__int64,int)`
+- `0x7bc940` : `public: void __thiscall AccountFBData::removeAccAndHistoryArchiveByUin(int)`
+- `0x578640` : `public: bool __thiscall ArchiveManager::removeArchDataInfo(int)`
+- `0x578820` : `public: bool __thiscall ArchiveManager::removeArchDataInfoByOwid(__int64)`
+- `0x7b7750` : `private: void __thiscall WorldStringManager::removeAsync(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,enum SAVEFILETYPE,__int64,int)`
+- `0x77f410` : `public: void __thiscall WorldArchiveMgr::removeAttentionIds(__int64)`
+- `0x5200b0` : `public: void __thiscall ChangeModelMgr::removeAvatorByName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x520160` : `public: void __thiscall ChangeModelMgr::removeChangeModelActor(__int64)`
+- `0x322020` : `public: void __thiscall ItemDefCsv::removeCustom(int,int,bool,int)`
+- `0x2ac740` : `public: void __thiscall BlockDefCsv::removeDef(int)`
+- `0x710ce0` : `public: void __thiscall ClientAccountMgr::removeFans(int)`
+- `0x717a40` : `public: void __thiscall ClientBuddyMgr::removeFans(int)`
+- `0x7b78d0` : `public: void __thiscall WorldStringManager::removeFile(enum SAVEFILETYPE)`
+- `0x7b7940` : `private: void __thiscall WorldStringManager::removeFileAsync(enum SAVEFILETYPE)`
+- `0x7b7a70` : `private: void __thiscall WorldStringManager::removeFileSync(enum SAVEFILETYPE)`
+- `0x717a90` : `public: void __thiscall ClientBuddyMgr::removeFriendChat(int)`
+- `0x717b50` : `public: void __thiscall ClientBuddyMgr::removeFriendChestData(int)`
+- `0x16e590` : `public: bool __thiscall ClientGameManager::removeGame(class ClientGame *)`
+- `0x4e7690` : `private: void __thiscall SimulateMgr::removeLastBullteSimPlayer(void)`
+- `0x717bb0` : `public: int __thiscall ClientBuddyMgr::removeNewChatUin(int)`
+- `0x717c10` : `public: void __thiscall ClientBuddyMgr::removeOneBuddy(int)`
+- `0x5a6290` : `public: void __thiscall ModEditorManager::removePackGiftDef(int)`
+- `0x5a62b0` : `public: void __thiscall ModEditorManager::removePackGiftDefByItemID(int)`
+- `0xce3d0` : `public: void __thiscall ARInterface::removeRenderer(void)`
+- `0x4e0660` : `public: void __thiscall RoomManager::removeRoomDesc(struct RoomDesc *)`
+- `0x77f560` : `private: void __thiscall WorldArchiveMgr::removeSameWatchOw(__int64)`
+- `0x7b7f30` : `public: void __thiscall WorldStringManager::removeSimilarString(enum SAVEFILETYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7b8060` : `private: void __thiscall WorldStringManager::removeSimilarStringAsync(enum SAVEFILETYPE,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0x7b81d0` : `private: void __thiscall WorldStringManager::removeSimilarStringSync(enum SAVEFILETYPE,char const *)`
+- `0x834f40` : `public: bool __thiscall SnapshotForGame::removeSnapshotByIndex(int)`
+- `0x7b8980` : `private: void __thiscall WorldStringManager::removeSync(char const *,enum SAVEFILETYPE,__int64,int)`
+- `0x2ac7b0` : `public: void __thiscall BlockDefCsv::removeTempDef(int)`
+- `0x7bc9f0` : `public: void __thiscall AccountFBData::removeUinHistory(int)`
+- `0x4aa840` : `public: void __thiscall MINIW::HotfixPkgLoader::removeUseagePackage(void)`
+- `0x79fef0` : `public: void __thiscall Mini::MmkvMgr::removeValueForKey(char const *,char const *,int)`
+- `0x79ff10` : `public: void __thiscall Mini::MmkvMgr::removeValuesForKeys(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &,char const *,int)`
+- `0x78f8b0` : `public: bool __thiscall WorldBackupMgr::repackWorldBackup(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)`
+- `0x473740` : `public: void __thiscall Mini::HttpReportMgr::report(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x798f60` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportAddExp(int,int,int)`
+- `0x7990f0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportAllPlayerSleep(void)`
+- `0x799210` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportCollectItemPeriodic(void)`
+- `0x473760` : `public: void __thiscall Mini::HttpReportMgr::reportConstantInfo(void)`
+- `0x7999f0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportConsumeExp(int,int,int)`
+- `0x799b80` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportConsumeItemPeriodic(void)`
+- `0x79a360` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportCookFinish(int)`
+- `0x79a550` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportCookFinish(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x736910` : `public: virtual void __thiscall StatisticsTools::reportFirebaseAnalytic(char const *,char const *)`
+- `0x473bc0` : `public: void __thiscall Mini::HttpReportMgr::reportJankInfo(bool)`
+- `0x723930` : `public: virtual void __thiscall StatisticRainforest::reportKillBossByOldInterface(int)`
+- `0x79a6e0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportKillCreatureImmediately(int)`
+- `0x79a820` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportKillCreaturePeriodic(void)`
+- `0x79ac70` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportNightEnter(void)`
+- `0x79ad90` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportNpcEvent(bool)`
+- `0x474580` : `public: void __thiscall Mini::HttpReportMgr::reportOnceImmediately(void)`
+- `0x4745c0` : `public: void __thiscall Mini::HttpReportMgr::reportOverseaAppActive(void)`
+- `0x4746f0` : `public: void __thiscall Mini::HttpReportMgr::reportOverseaEngineFinish(void)`
+- `0x474820` : `public: void __thiscall Mini::HttpReportMgr::reportOverseaEngineInit(void)`
+- `0x474950` : `public: void __thiscall Mini::HttpReportMgr::reportOverseaGamePause(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64)`
+- `0x474c60` : `public: void __thiscall Mini::HttpReportMgr::reportOverseaGameResume(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64)`
+- `0x79aec0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportPlayerDie(int,int)`
+- `0x474e50` : `public: void __thiscall Mini::HttpReportMgr::reportPost(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x474e70` : `public: void __thiscall Mini::HttpReportMgr::reportPostJson3(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x736930` : `public: static void __cdecl StatisticsTools::reportStatisticsJson(char const *)`
+- `0x79b2e0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportTaskComplete(int)`
+- `0x79b490` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportTaskStart(int)`
+- `0x79b5e0` : `public: virtual void __thiscall MINIW::AdventureReportMgr::reportVoidAttack(int)`
+- `0x75d680` : `public: bool __thiscall ClientCSOWorld::reqAfterUpload(__int64)`
+- `0x77f620` : `public: bool __thiscall WorldArchiveMgr::reqDeleteDevTempWorld(__int64)`
+- `0x75e7d0` : `public: bool __thiscall ClientCSOWorld::reqDeleteUpload(__int64,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)`
+- `0x75edb0` : `public: bool __thiscall ClientCSOWorld::reqDownload(__int64,bool,int)`
+- `0x75edd0` : `public: bool __thiscall ClientCSOWorld::reqDownloadNormal(__int64,bool,int)`
+- `0x75f650` : `public: bool __thiscall ClientCSOWorld::reqPreUpload(__int64,int,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x760570` : `public: void __thiscall ClientCSOWorld::reqPreUploadTempFile(struct UploadTempFileInfo &)`
+- `0xf9730` : `public: bool __thiscall ClientCSOWorld::reqSetMapBlack(__int64,bool)`
+- `0xf9730` : `public: bool __thiscall ClientCSOWorld::reqSetMapChosen(__int64,bool)`
+- `0x760a10` : `public: bool __thiscall ClientCSOWorld::reqStopDownload(__int64,bool)`
+- `0x760b60` : `public: bool __thiscall ClientCSOWorld::reqStopUpload(__int64,bool)`
+- `0x760c00` : `public: bool __thiscall ClientCSOWorld::reqUpload(__int64)`
+- `0x761350` : `public: void __thiscall ClientCSOWorld::reqUploadTempFile(struct UploadTempFileInfo &)`
+- `0x77f670` : `public: void __thiscall WorldArchiveMgr::requestAbortOpenWorld(__int64)`
+- `0x77f690` : `public: void __thiscall WorldArchiveMgr::requestBanWorld(__int64,int,bool)`
+- `0xdb9f0` : `public: void __thiscall ClientBuddyMgr::requestBuddyChg(int,int)`
+- `0x77f6b0` : `public: bool __thiscall WorldArchiveMgr::requestChangeOWorldCloudArchive(__int64,int)`
+- `0x77f700` : `public: bool __thiscall WorldArchiveMgr::requestChangeOWorldName(__int64,char const *)`
+- `0x77f720` : `public: bool __thiscall WorldArchiveMgr::requestChangeOWorldRemoveAudit(__int64,int)`
+- `0x5a62e0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::requestChooseModIcon(void)`
+- `0x4e06b0` : `public: bool __thiscall RoomManager::requestConnectRentWorld(int,char const *,int,int,int,char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e0870` : `public: bool __thiscall RoomManager::requestConnectWorld(int,char const *,int,int,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e0a80` : `public: bool __thiscall RoomManager::requestConnectWorld(int,char const *,int,int,int,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e0b30` : `public: bool __thiscall RoomManager::requestConnectWorldByDesc(struct RoomDesc *,char const *,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e0c30` : `public: bool __thiscall RoomManager::requestConnectWorldByDesc(struct RoomDesc *,char const *,int,bool,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x77f770` : `public: void __thiscall WorldArchiveMgr::requestContinueOpenWorld(__int64)`
+- `0x77f790` : `public: __int64 __thiscall WorldArchiveMgr::requestCopyExistWorld(__int64)`
+- `0x5a6550` : `public: bool __thiscall ModEditorManager::requestCreateMod(char *,char *,char *,bool,bool,int)`
+- `0x5a7040` : `public: bool __thiscall ModEditorManager::requestCreateTempMapMod(void)`
+- `0x77fbc0` : `public: bool __thiscall WorldArchiveMgr::requestCreateWorld(int,char const *,int,char const *,int,int,int,unsigned __int64,unsigned int,char const *,int,int)`
+- `0x77fe20` : `public: bool __thiscall WorldArchiveMgr::requestCreateWorld(int,char const *,int,char const *,int,int,int,unsigned __int64,unsigned int,bool,int,int)`
+- `0x77ffc0` : `public: int __thiscall WorldArchiveMgr::requestCreateWorldByDevTemp(__int64,__int64,char const *,int,char const *)`
+- `0x780890` : `public: __int64 __thiscall WorldArchiveMgr::requestCreateWorldByEducation(int,int,int,char const *,int,int,int,unsigned int,int,int)`
+- `0x7808a0` : `public: int __thiscall WorldArchiveMgr::requestCreateWorldByTemp(__int64,__int64,char const *,int,char const *)`
+- `0x781100` : `public: void __thiscall WorldArchiveMgr::requestCreateWorldByTempAsync(__int64,char const *)`
+- `0x781140` : `public: __int64 __thiscall WorldArchiveMgr::requestCreateWorldMap(int,char const *,int,int,int,int,unsigned __int64)`
+- `0x781460` : `public: __int64 __thiscall WorldArchiveMgr::requestCreateWorldNotEnter(int,char const *,int,char const *,int,int,int,unsigned __int64,unsigned int,char const *,int,int,bool)`
+- `0x781960` : `public: __int64 __thiscall WorldArchiveMgr::requestCreateWorldNotEnter(int,char const *,int,char const *,int,int,int,unsigned __int64,unsigned int,bool,int,int,bool)`
+- `0x5d1aa0` : `public: void __thiscall ModManager::requestDeleteModByPath(char const *)`
+- `0x781e40` : `public: bool __thiscall WorldArchiveMgr::requestDeleteWorld(__int64)`
+- `0x781f20` : `public: bool __thiscall WorldArchiveMgr::requestDownWorld(__int64,int)`
+- `0x5a7af0` : `public: bool __thiscall ModEditorManager::requestEditMod(struct GameModDesc *,class GameMod *)`
+- `0x710d00` : `public: bool __thiscall ClientAccountMgr::requestEnterGame2New(bool)`
+- `0x7822c0` : `public: bool __thiscall WorldArchiveMgr::requestEnterWorld(__int64,bool,int,bool)`
+- `0x782310` : `public: bool __thiscall WorldArchiveMgr::requestEnterWorld(__int64,bool,int,int,int,int)`
+- `0x4e0ce0` : `public: bool __thiscall RoomManager::requestHotRoomList(int,int,int)`
+- `0x5a7c30` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::requestImportPngTexture(char *)`
+- `0x4e0e40` : `public: bool __thiscall RoomManager::requestJoinRentWorld(int,char const *)`
+- `0x4e0ff0` : `public: bool __thiscall RoomManager::requestJoinWorld(int)`
+- `0xef800` : `public: bool __thiscall WorldArchiveMgr::requestLoadWorld(__int64)`
+- `0x782df0` : `public: bool __thiscall WorldArchiveMgr::requestLockOWorld(__int64)`
+- `0x4e1200` : `public: bool __thiscall RoomManager::requestManorRoomInfoByUin(int)`
+- `0x782e10` : `public: bool __thiscall WorldArchiveMgr::requestMemoOWorld(__int64,char const *)`
+- `0x5201b0` : `public: void __thiscall ChangeModelMgr::requestModel(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x782e30` : `public: bool __thiscall WorldArchiveMgr::requestOpenOWorld(__int64,int,int,char const *,char const *,int,char,char const *,char const *,int,int,int,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x782f70` : `public: bool __thiscall WorldArchiveMgr::requestOpenOWorld_DeleteCloudArchive(__int64,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x783050` : `public: bool __thiscall WorldArchiveMgr::requestOpenRentDebugOWorld(__int64,int,int,char const *)`
+- `0x783090` : `public: void __thiscall WorldArchiveMgr::requestPauseOpenWorld(__int64)`
+- `0x5a7e70` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall ModEditorManager::requestReplaceModIcon(void)`
+- `0x4e12c0` : `public: bool __thiscall RoomManager::requestRoomKickAll(bool)`
+- `0x4e15e0` : `public: bool __thiscall RoomManager::requestRoomKickPlayer(int)`
+- `0x4e1620` : `public: bool __thiscall RoomManager::requestRoomList(int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e1920` : `public: bool __thiscall RoomManager::requestRoomListByCollect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e1a70` : `public: bool __thiscall RoomManager::requestRoomListByUin(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x835080` : `public: void __thiscall SnapshotForGame::requestSaveSnapshot(int,int,bool)`
+- `0x8350b0` : `public: void __thiscall SnapshotForGame::requestSaveSnapshot(void)`
+- `0x835fa0` : `public: void __thiscall SnapshotForPC::requestSaveSnapshot(void)`
+- `0x836b30` : `public: void __thiscall SnapshotForShare::requestSaveSnapshot(int)`
+- `0x836c40` : `public: void __thiscall SnapshotForShare::requestSaveSnapshot(int,int,bool)`
+- `0x838a00` : `public: void __thiscall SnapshotMgr::requestSnapshot(int,int,bool)`
+- `0x838a40` : `public: void __thiscall SnapshotMgr::requestSnapshot(void)`
+- `0x74c850` : `public: void __thiscall AchievementManager::reset(int)`
+- `0x79b720` : `public: void __thiscall MINIW::AdventureReportMgr::reset(void)`
+- `0x4ba3b0` : `public: void __thiscall SpringFestivalActivityMgr::reset(void)`
+- `0x5d1de0` : `public: void __thiscall ModManager::resetAllocatedIdBase(void)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::resetApiId(void)`
+- `0x578a30` : `public: bool __thiscall ArchiveManager::resetArchDataInfoUploadFlag(__int64,bool)`
+- `0x7830b0` : `public: void __thiscall WorldArchiveMgr::resetCurWorld(void)`
+- `0x7830d0` : `public: void __thiscall WorldArchiveMgr::resetCurWorldPassPortEndTime(void)`
+- `0x5a80c0` : `public: void __thiscall ModEditorManager::resetCurrentEditMod(void)`
+- `0x736f50` : `private: void __thiscall StatisticsTools::resetJoinRoomExParam(void)`
+- `0x579840` : `private: bool __thiscall ArchiveManager::resetListFile(struct ArchDataInfo *,enum ArchiveManager::ArchinfoOpType)`
+- `0x5a8110` : `public: void __thiscall ModEditorManager::resetNpcShopSkuLeftCount(int)`
+- `0x761620` : `public: void __thiscall ClientCSOWorld::resetOpenStatusOfShareWorlds(void)`
+- `0x7d6d30` : `public: void __thiscall OWorldList::resetOpenStatusOfShareWorlds(void)`
+- `0x836d50` : `public: void __thiscall SnapshotForShare::resetSnapshotState(void)`
+- `0x5a8470` : `public: bool __thiscall ModEditorManager::resetUserModListFile(char const *,char const *,bool,char const *,bool)`
+- `0x761730` : `public: void __thiscall ClientCSOWorld::respAfterUpload(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct UpDownWorldInfo &)`
+- `0x762240` : `public: void __thiscall ClientCSOWorld::respDownload(int,int,struct UpDownWorldInfo &,int)`
+- `0x762df0` : `public: void __thiscall ClientCSOWorld::respPreUpload(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct UpDownWorldInfo &)`
+- `0x7633e0` : `public: void __thiscall ClientCSOWorld::respPreUploadTempFile(struct UploadTempFileInfo &,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7830e0` : `public: void __thiscall WorldArchiveMgr::respSearchMap(int,struct tagOWWatchRes *)`
+- `0x764840` : `public: void __thiscall ClientCSOWorld::respUpload(int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct UpDownWorldInfo &)`
+- `0x765110` : `public: void __thiscall ClientCSOWorld::respUploadTempFile(struct UploadTempFileInfo &,int,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x5d1e00` : `public: bool __thiscall ModManager::restoreOfficalMod(char const *)`
+- `0x790b90` : `public: bool __thiscall WorldBackupMgr::restoreWorldBackup(struct WorldBackupInfo const &,__int64)`
+- `0x791560` : `public: bool __thiscall WorldBackupMgr::restoreWorldBackupByFilePath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)`
+- `0x791610` : `public: __int64 __thiscall WorldBackupMgr::restoreWorldBackupGenNewOwid(struct WorldBackupInfo const &,__int64)`
+- `0x7920a0` : `public: __int64 __thiscall WorldBackupMgr::restoreWorldBackupGenNewOwidByFilePath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,__int64)`
+- `0x753ee0` : `public: void __thiscall ArchiveTempMgr::retgisterCheckUinFunc(class WorldManager *)`
+- `0x5a9480` : `public: struct BiomeDef * __thiscall ModEditorManager::retriveTempBiomeDef(int,int)`
+- `0x5a98e0` : `public: struct OreDef * __thiscall ModEditorManager::retriveTempOreDef(int)`
+- `0x5d24d0` : `private: void __thiscall ModManager::rewriteUserModListFile(char const *)`
+- `0xf814a8` : `private: static int AbsCsv::s_CurLanguage`
+- `0xf732b0` : `private: static bool ARInterface::s_HasCheckAREngineSupportable`
+- `0xf732b1` : `private: static bool ARInterface::s_IsAREngineSupportable`
+- `0x6fe0a0` : `public: void __thiscall AccountData::save(void)`
+- `0x520320` : `public: void __thiscall ChangeModelMgr::save(void)`
+- `0x7239d0` : `public: virtual void __thiscall StatisticRainforest::save(struct WorldMapData *)`
+- `0x6fe0c0` : `public: bool __thiscall AccountData::saveAccountData(int)`
+- `0x6ff7d0` : `public: void __thiscall AccountData::saveAccountDataToBillData(struct tagAccBillData *)`
+- `0x57a260` : `public: void __thiscall ArchiveManager::saveAllPlayerArchDataByLeave(void)`
+- `0x5a9a20` : `public: bool __thiscall ModEditorManager::saveAllocatedIds(char const *)`
+- `0x57a2c0` : `public: void __thiscall ArchiveManager::saveArchDataByLeave(class ClientPlayer *)`
+- `0x57a390` : `public: void __thiscall ArchiveManager::saveArchDataByTicks(class ClientPlayer *,int,bool,char const *)`
+- `0x5209c0` : `public: void __thiscall ChangeModelMgr::saveAvatorDataInMap(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x838c60` : `public: virtual void __thiscall SnapshotMgr::saveCurSnapshot(__int64,int)`
+- `0x7b8d90` : `private: void __thiscall WorldStringManager::saveFile(enum SAVEFILETYPE,int,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > >)`
+- `0x53cb10` : `public: bool __thiscall EditorLang::saveLangFile(__int64)`
+- `0x5d2de0` : `public: void __thiscall ModManager::saveMapUseDownloadRes(__int64)`
+- `0x5d3260` : `public: bool __thiscall ModManager::saveModPreview(char const *,int)`
+- `0x5a9a50` : `public: void __thiscall ModEditorManager::saveMonsterAIID(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7d75a0` : `public: bool __thiscall OWorldList::saveOWDesc(__int64)`
+- `0x7d7950` : `public: bool __thiscall OWorldList::saveOWDescBackUpToDir(struct tagOWorld &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7d7ad0` : `public: bool __thiscall OWorldList::saveOWDescToDir(struct tagOWorld &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x7d8350` : `public: bool __thiscall OWorldList::saveOWList(void)`
+- `0x7d84d0` : `public: bool __thiscall OWorldList::saveOWMultiLang(struct tagOWorld &)`
+- `0x57a490` : `public: bool __thiscall ArchiveManager::saveRoleArchData(class ClientPlayer *,__int64,int,char const *)`
+- `0x7ddcd0` : `public: static bool __cdecl OWorldUtils::saveSetPay(__int64,int,int)`
+- `0x8351a0` : `public: bool __thiscall SnapshotForGame::saveSnapshot(int)`
+- `0x8360a0` : `public: bool __thiscall SnapshotForPC::saveSnapshot(char const *)`
+- `0x836d60` : `public: bool __thiscall SnapshotForShare::saveSnapshot(char const *)`
+- `0x835900` : `public: bool __thiscall SnapshotForGame::saveSnapshotByPath(char const *)`
+- `0x4ba4b0` : `public: bool __thiscall SpringFestivalActivityMgr::saveSpringFestivalActivityFBS(void)`
+- `0x7d87c0` : `public: void __thiscall OWorldList::saveTerrainTypeFile(__int64,int,int)`
+- `0x53cb70` : `public: void __thiscall EditorLang::saveTriggerLangFile(__int64,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct LangDesc *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct LangDesc *> > > &)`
+- `0x7bca50` : `public: bool __thiscall AccountFBData::saveUinData(void)`
+- `0xf9080` : `public: virtual bool __thiscall MINIW::ClientInfo::saveUinData(void)`
+- `0x7bd4c0` : `public: bool __thiscall AccountFBData::saveUinHistory(void)`
+- `0x7bdc20` : `public: bool __thiscall AccountFBData::saveUinPackData(void)`
+- `0xf9090` : `public: void __thiscall MINIW::ClientInfo::saveUserAccountInfo(char const *)`
+- `0xdc2f0` : `public: void __thiscall MINIW::ClientManager::saveUserAccountInfo(char const *)`
+- `0x74cad0` : `public: bool __thiscall AchievementManager::saveWorldAchievements(__int64,class ChunkIOMgr *,int)`
+- `0x783330` : `public: __int64 __thiscall WorldArchiveMgr::saveWorldForNewMap(void)`
+- `0x53ce70` : `public: bool __thiscall EditorLang::saveWorldLangMap(__int64,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct LangDesc *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,struct LangDesc *> > > &)`
+- `0x711210` : `public: void __thiscall ClientAccountMgr::saveWorldModeDiff(__int64,bool)`
+- `0xf90b0` : `public: virtual void __thiscall MINIW::ClientInfo::saveWorldModeDiff(__int64,bool)`
+- `0x7834c0` : `public: void __thiscall WorldArchiveMgr::saveWorldModeDiff(__int64,bool)`
+- `0xf90d0` : `public: void __thiscall MINIW::ClientInfo::scaleForeignFont(void)`
+- `0x5ddfe0` : `public: void __thiscall MINIW::ModFileManager::scanFolder(char const *,char const *,class Rainbow::DirVisitorScaner *)`
+- `0x5de050` : `public: void __thiscall MINIW::ModFileManager::scanFolder(char const *,class Rainbow::DirVisitorScaner *)`
+- `0xf9170` : `public: void __thiscall MINIW::ClientInfo::scanImage(char const *)`
+- `0x5de0d0` : `public: void __thiscall MINIW::ModFileManager::scanOneLevel(char const *,struct MINIW::MdirScaner *,bool)`
+- `0x736f90` : `public: virtual void __thiscall StatisticsTools::send(bool,bool,bool)`
+- `0xf4100` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::sendHttpGet(char const *,bool)`
+- `0x100060` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo_PC::sendHttpGet(char const *,bool)`
+- `0xdb9f0` : `public: void __thiscall ClientBuddyMgr::sendPrivateChat(int,char const *)`
+- `0x4e1c70` : `public: void __thiscall RoomManager::sendPvpCompetitionIdToHost(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x1003c0` : `public: void __thiscall MINIW::ClientInfo_PC::sendRecordInfoByMonitor(char *)`
+- `0x4c6ce0` : `public: void __thiscall OnlineService::sendScriptVars2Client(void)`
+- `0x474e90` : `public: void __thiscall Mini::HttpReportMgr::sendStatistics(void)`
+- `0x4e2780` : `public: void __thiscall RoomManager::sendToClientKickInfo(int,int)`
+- `0x4e2840` : `public: void __thiscall RoomManager::sendToRentClientKickInfo(int,int,int)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::sendUIEvent(char const *)`
+- `0xd6030` : `public: bool __thiscall ARInterface::set2D(void)`
+- `0xd6030` : `public: bool __thiscall ARInterface::set3D(void)`
+- `0xdbca0` : `public: void __thiscall MINIW::ClientInfo::set4399LoginSuccessFlag(bool)`
+- `0x79ff30` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,char const *,char const *,int)`
+- `0x79ff50` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,char const *,int)`
+- `0x79ff70` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > const &,char const *,int)`
+- `0x79ff90` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,int,char const *,int)`
+- `0x79ffb0` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,float,char const *,int)`
+- `0x79ffe0` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,double,char const *,int)`
+- `0x7a0010` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,__int64,char const *,int)`
+- `0x7a0030` : `public: bool __thiscall Mini::MmkvMgr::set(char const *,bool,char const *,int)`
+- `0x711230` : `public: void __thiscall ClientAccountMgr::setAccount(int,char const *,char const *,char const *)`
+- `0xf9190` : `public: void __thiscall MINIW::ClientInfo::setAccount(int,char const *,char const *,char const *)`
+- `0x711670` : `public: void __thiscall ClientAccountMgr::setAccountEx(int,char const *,char const *,char const *)`
+- `0xf91b0` : `public: void __thiscall MINIW::ClientInfo::setAccountEx(int,char const *,char const *,char const *)`
+- `0xf9470` : `public: void __thiscall AchievementManager::setAchievementArryNum(int,int,int,int)`
+- `0x7bdd50` : `public: void __thiscall AccountFBData::setAchievementDirty(void)`
+- `0x74cb10` : `public: void __thiscall AchievementManager::setAchievementRewardState(int,int,int)`
+- `0xf91d0` : `public: virtual void __thiscall MINIW::ClientInfo::setAchievementRewardState(int,int,int)`
+- `0x74cc20` : `public: void __thiscall AchievementManager::setAchievementState(int,int,int)`
+- `0x4baa00` : `public: void __thiscall SpringFestivalActivityMgr::setActivityState(bool)`
+- `0x5a9ae0` : `public: bool __thiscall ModEditorManager::setActorForeignId(struct MonsterDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf91f0` : `public: void __thiscall MINIW::ClientInfo::setAdult(bool)`
+- `0xdbcb0` : `public: void __thiscall ArchiveManager::setArchiveItemNotGet(bool)`
+- `0x783550` : `public: void __thiscall WorldArchiveMgr::setArchiveLang(__int64,int)`
+- `0xdbcc0` : `public: void __thiscall MusicItemLogical::setAutoPianoPlayState(int)`
+- `0xdba40` : `public: void __thiscall SnapshotMgr::setAvatarShot(bool)`
+- `0x474ec0` : `public: void __thiscall Mini::HttpReportMgr::setBizInfo(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5a9b90` : `public: bool __thiscall ModEditorManager::setBlockForeignId(struct BlockDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf9200` : `public: void __thiscall MINIW::ClientInfo::setBlockNode(class Rainbow::UILib::ModelView *,int,int,float)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::setBlockedLogLevel(int)`
+- `0xf9450` : `public: void __thiscall MINIW::ClientInfo::setBrowserAdCanShow(bool)`
+- `0xdc310` : `public: void __thiscall MINIW::ClientManager::setBrowserAdCanShow(bool)`
+- `0x717d00` : `public: void __thiscall ClientBuddyMgr::setBuddyChatMsg(struct tagOfflineChatDetail *)`
+- `0x717ed0` : `public: void __thiscall ClientBuddyMgr::setBuddyDetail(struct tagBuddy)`
+- `0x16e620` : `public: virtual void __thiscall ClientGameManager::setCMURL(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,__int64)`
+- `0x7eef00` : `public: void __thiscall KeywordFilterMgr::setCheckPingyin(void)`
+- `0xf9470` : `public: virtual void __thiscall MINIW::ClientInfo::setClearColor(float,float,float,float)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::setClickEffectEnabled(bool)`
+- `0x57adc0` : `public: void __thiscall ArchiveManager::setClientVarData(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x4e2900` : `public: void __thiscall RoomManager::setCloudServerAuth(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e2990` : `public: void __thiscall RoomManager::setCloudServerRoomExtraData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::setCmdParam(char const *)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo_PC::setCmdParam(char const *)`
+- `0x4baa10` : `public: void __thiscall SpringFestivalActivityMgr::setConditionProgress(int,int,int)`
+- `0x475180` : `public: void __thiscall Mini::HttpReportMgr::setCountry(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5a9c60` : `public: bool __thiscall ModEditorManager::setCraftingForeignId(struct CraftingDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e29c0` : `public: void __thiscall RoomManager::setCreateRoomPathType(int)`
+- `0x16e720` : `public: void __thiscall ClientGameManager::setCurGame(class ClientGame *)`
+- `0x711790` : `public: void __thiscall ClientAccountMgr::setCurGuideLevel(int)`
+- `0x7117a0` : `public: void __thiscall ClientAccountMgr::setCurGuideStep(int)`
+- `0x7117b0` : `public: void __thiscall ClientAccountMgr::setCurNoviceGuideTask(int)`
+- `0x835a80` : `public: void __thiscall SnapshotForGame::setCurOwid(__int64,int)`
+- `0xdbcd0` : `public: void __thiscall ClientAccountMgr::setCurRoomOwner(int)`
+- `0xf9480` : `public: virtual void __thiscall MINIW::ClientInfo::setCurRoomOwner(int)`
+- `0x4af870` : `public: void __thiscall AchievementManager::setCurTrackID(int)`
+- `0x4752b0` : `public: void __thiscall Mini::HttpReportMgr::setCurWorldId(__int64)`
+- `0xdbce0` : `public: void __thiscall WorldArchiveMgr::setCurWorldId(__int64)`
+- `0x783590` : `public: bool __thiscall WorldArchiveMgr::setCurWorldName(char const *)`
+- `0x7835e0` : `public: void __thiscall WorldArchiveMgr::setCurWorldPassPortEndTime(__int64,int)`
+- `0x7836b0` : `public: void __thiscall WorldArchiveMgr::setCurWorldRecordButton(bool)`
+- `0x5de1f0` : `public: void __thiscall MINIW::ModFileManager::setCurrModPath(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x6f7d80` : `public: void __thiscall MusicItemLogical::setDanceMob(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0xf94a0` : `public: virtual void __thiscall MINIW::ClientInfo::setDataDir(char const *)`
+- `0x7d88f0` : `public: void __thiscall OWorldList::setDevTempListDirty(__int64,enum UPWDESC_TYPE)`
+- `0x4752d0` : `public: void __thiscall Mini::HttpReportMgr::setDeviceInfo(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5d4f10` : `public: void __thiscall ModManager::setDisableWorldMod(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,bool)`
+- `0x7eef10` : `public: void __thiscall KeywordFilterMgr::setDivideTokens(class core::basic_string<char,class core::StringStorageDefault<char> >,class core::basic_string<char,class core::StringStorageDefault<char> > const &)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::setDownloadOrder(bool)`
+- `0xf95e0` : `public: void __thiscall MINIW::ClientInfo::setDownloadStop(bool)`
+- `0x71cdc0` : `public: static struct ClientUrl::UrlPool & __cdecl ClientUrl::setDynamic(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x71cf40` : `public: static bool __cdecl ClientUrl::setDynamic(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct UrlInfo const &)`
+- `0xdbcd0` : `public: void __thiscall Mini::HttpReportMgr::setEnv(int)`
+- `0x475850` : `public: void __thiscall Mini::HttpReportMgr::setExpInfo(char *,char *,char *)`
+- `0xe1060` : `public: void __thiscall MINIW::ClientInfo::setFcmRate(int)`
+- `0xf9600` : `public: virtual void __thiscall MINIW::ClientInfo::setFlowLevel(int)`
+- `0x60fa00` : `public: void __thiscall FmodSoundSystemEX::setFmodSoundSystem(float)`
+- `0x60faf0` : `public: void __thiscall FmodSoundSystemEX::setFmodSoundVolume(float)`
+- `0x7836f0` : `public: void __thiscall WorldArchiveMgr::setForceOpenWorldType(__int64,int)`
+- `0x4e29d0` : `public: void __thiscall RoomManager::setForeRoomUin(int)`
+- `0xd6030` : `public: bool __thiscall ARInterface::setFrontCamera(void)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::setFullscreen(bool)`
+- `0x100460` : `public: virtual void __thiscall MINIW::ClientInfo_PC::setFullscreen(bool)`
+- `0x5a9d10` : `public: bool __thiscall ModEditorManager::setFurnaceForeignId(struct FurnaceDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xdbd00` : `public: void __thiscall ClientAccountMgr::setGMMode(bool)`
+- `0xf9610` : `public: virtual void __thiscall MINIW::ClientInfo::setGMMode(bool)`
+- `0xf9630` : `public: virtual void __thiscall MINIW::ClientInfo::setGameData(char const *,int)`
+- `0x7d8920` : `public: void __thiscall OWorldList::setHGWorldListDirty(__int64,bool,enum UPWDESC_TYPE)`
+- `0xdb9f0` : `public: virtual void __thiscall MINIW::ClientInfo::setHashParam(char const *,char const *)`
+- `0x711820` : `public: void __thiscall ClientAccountMgr::setHeadFrameId(int)`
+- `0x7bdd60` : `public: void __thiscall AccountFBData::setHistoryResetTime(int)`
+- `0x4e8690` : `private: void __thiscall GameServerConfig::setInited(void)`
+- `0x7eefa0` : `public: void __thiscall KeywordFilterMgr::setInvalidCode(char * &)`
+- `0x7eefc0` : `public: void __thiscall KeywordFilterMgr::setInvalidCodes(class core::basic_string<char,class core::StringStorageDefault<char> > const &,int)`
+- `0x4758d0` : `public: void __thiscall Mini::HttpReportMgr::setIp(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e29f0` : `public: void __thiscall RoomManager::setIsDangerNight(unsigned short)`
+- `0xdbd10` : `public: void __thiscall MINIW::ClientInfo::setIsIpv6Env(bool)`
+- `0xdbd20` : `public: void __thiscall MusicItemLogical::setIsMusicState(bool)`
+- `0x475960` : `public: void __thiscall Mini::HttpReportMgr::setIsRemoteMode(bool)`
+- `0x5d4f30` : `public: void __thiscall ModManager::setItemForeignAndInnerId(int,int,class GameMod *)`
+- `0x5a9de0` : `public: bool __thiscall ModEditorManager::setItemForeignId(struct ItemDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x736fb0` : `private: void __thiscall StatisticsTools::setJoinRoomExParam(bool,int,char const *,char const *,char const *)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::setKeepOriginImage(bool)`
+- `0xf9640` : `public: virtual void __thiscall MINIW::ClientInfo::setLang(int)`
+- `0x475970` : `public: void __thiscall Mini::HttpReportMgr::setLang(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x2a7890` : `public: static void __cdecl AbsCsv::setLanguage(int)`
+- `0xf9650` : `public: void __thiscall MINIW::ClientInfo::setLanguageCfgLoadRet(bool)`
+- `0xf9660` : `public: void __thiscall MINIW::ClientInfo::setLanguageId(int)`
+- `0x60fb30` : `public: void __thiscall FmodSoundSystemEX::setListener(class Rainbow::Vector3f const *,class Rainbow::Vector3f const *,class Rainbow::Vector3f const *,class Rainbow::Vector3f const *)`
+- `0x16e810` : `public: void __thiscall ClientGameManager::setLoadingGame(class ClientGame *)`
+- `0x475a50` : `public: void __thiscall Mini::HttpReportMgr::setLoginType(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x475ae0` : `public: void __thiscall Mini::HttpReportMgr::setLoginUid(int)`
+- `0x16e820` : `public: virtual void __thiscall ClientGameManager::setMapSceneLoadProgress(int,int)`
+- `0x16e840` : `public: virtual void __thiscall ClientGameManager::setMapSceneLoadTips(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x765c20` : `public: void __thiscall ClientCSOWorld::setMapServer(char const *)`
+- `0xdba40` : `public: void __thiscall ARInterface::setMaskThreshold(float)`
+- `0xdbd30` : `public: void __thiscall MapEditManager::setMaxCmdDataSize(int)`
+- `0xdba40` : `public: void __thiscall ARInterface::setMaxGradientBottom(float)`
+- `0x6ffa00` : `public: void __thiscall AccountData::setMiniBean(int)`
+- `0x475af0` : `public: void __thiscall Mini::HttpReportMgr::setMmkvMgr(class Mini::MmkvMgr *)`
+- `0xf9680` : `public: void __thiscall MINIW::ClientInfo::setMobileLang(int)`
+- `0x16e8d0` : `public: void __thiscall ClientGameManager::setModURL(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x783730` : `public: void __thiscall WorldArchiveMgr::setMultiLangDesc(__int64,char const *)`
+- `0x783780` : `public: void __thiscall WorldArchiveMgr::setMultiLangName(__int64,char const *)`
+- `0xdbd40` : `public: void __thiscall RoomManager::setMultiPlayer(enum GAME_NET_MP_GAME_TYPE)`
+- `0xdbd50` : `public: void __thiscall MusicItemLogical::setMusicMidRes(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xdbde0` : `public: void __thiscall MusicItemLogical::setMusicOpenView(bool)`
+- `0x60fb60` : `public: void __thiscall FmodSoundSystemEX::setMute(bool)`
+- `0x4e2a20` : `public: void __thiscall RoomManager::setNearbySwitch(bool)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::setNetState(void)`
+- `0x5d5010` : `private: void __thiscall ModManager::setNotNeedForceSave(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x711840` : `public: void __thiscall ClientAccountMgr::setNoviceGuideState(char const *,bool)`
+- `0x7118c0` : `public: void __thiscall ClientAccountMgr::setNoviceGuideStateInt(char const *,int)`
+- `0x5a9e90` : `public: bool __thiscall ModEditorManager::setNpcPlotForeignId(struct NpcPlotDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5d5080` : `public: void __thiscall ModManager::setNpcShopChangeConfigStatus(char const *,class std::map<int,class std::vector<int,class std::allocator<int> >,struct std::less<int>,class std::allocator<struct std::pair<int const ,class std::vector<int,class std::allocator<int> > > > > const &)`
+- `0x5a9f50` : `public: bool __thiscall ModEditorManager::setNpcShopInfo(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x5d5a70` : `public: void __thiscall ModManager::setNpcShopRealId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x5ab3d0` : `public: bool __thiscall ModEditorManager::setNpcTaskForeignId(struct NpcTaskDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7bdd80` : `public: void __thiscall AccountFBData::setOWSnapLock(__int64,bool)`
+- `0x711940` : `public: void __thiscall ClientAccountMgr::setOWSnapLock(__int64,bool)`
+- `0x7184b0` : `public: void __thiscall ClientBuddyMgr::setOneBuddyDetail(struct tagBuddyInfoEx)`
+- `0xf96b0` : `public: void __thiscall MINIW::ClientInfo::setOneKeyBindCode(char const *,int)`
+- `0xdba40` : `public: void __thiscall MINIW::ClientInfo::setOverlayRenderMode(bool)`
+- `0xdb9f0` : `public: void __thiscall SnapshotForShare::setParam(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xf96d0` : `public: virtual void __thiscall MINIW::ClientInfo::setPartialTick(float)`
+- `0xdbdf0` : `public: void __thiscall MINIW::ClientInfo::setPassword(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf96f0` : `public: virtual void __thiscall MINIW::ClientInfo::setPause(bool)`
+- `0xf9730` : `public: bool __thiscall MINIW::ClientInfo::setPayExtendParamsByQQ(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0xdc330` : `public: bool __thiscall MINIW::ClientManager::setPayExtendParamsByQQ(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &)`
+- `0xf5d20` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::setPayExtendParamsToSdk(int)`
+- `0xdc2d0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientManager::setPayExtendParamsToSdk(int)`
+- `0x6ffa40` : `public: void __thiscall AccountData::setPayExtendParamsToServer(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xce3d0` : `public: void __thiscall ARInterface::setPortrait(void)`
+- `0xd6030` : `public: bool __thiscall ARInterface::setRearCamera(void)`
+- `0x475b40` : `public: void __thiscall Mini::HttpReportMgr::setReferrer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf9740` : `public: virtual void __thiscall MINIW::ClientInfo::setRenderCamera(class Rainbow::Camera *)`
+- `0xdba40` : `public: void __thiscall ARInterface::setRenderCameraBg(bool)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::setRenderContent(class Rainbow::GameScene *)`
+- `0xf9780` : `public: void __thiscall MINIW::ClientInfo::setRentLuaLogFlag(int)`
+- `0xf9890` : `public: virtual void __thiscall MINIW::ClientInfo::setRentServer(bool)`
+- `0x475bd0` : `public: void __thiscall Mini::HttpReportMgr::setResourceVer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x475c60` : `public: void __thiscall Mini::HttpReportMgr::setRun(bool)`
+- `0x765c50` : `public: void __thiscall ClientCSOWorld::setS2(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0xce3d0` : `public: void __thiscall MINIW::ClientInfo::setSIGUSR2(void)`
+- `0xf98a0` : `public: virtual void __thiscall MINIW::ClientInfo::setSandboxEngineState(int)`
+- `0xdba40` : `public: void __thiscall ARInterface::setSaveSDKData(bool)`
+- `0x4c6e20` : `public: void __thiscall OnlineService::setScriptVar(int,float)`
+- `0x2a7410` : `public: union sentry_value_u __thiscall Rainbow::SentryModule::setSentryUser(void)`
+- `0xdba40` : `public: void __thiscall RoomManager::setSeverProxyOwindex(int)`
+- `0xdba40` : `public: void __thiscall ARInterface::setShowDebugDrawing(bool)`
+- `0xdba40` : `public: void __thiscall ARInterface::setShowSpecialBg(bool)`
+- `0x839070` : `public: class Rainbow::SharePtr<class Rainbow::Texture2D> __thiscall SnapshotMgr::setSnapshotData(__int64,void const *,unsigned int)`
+- `0x60fba0` : `public: void __thiscall FmodSoundSystemEX::setSoundVolume(float)`
+- `0xdba40` : `public: virtual void __thiscall MINIW::ClientInfo::setStartingRoom(bool)`
+- `0x5ab490` : `public: bool __thiscall ModEditorManager::setStatusForeignId(struct BuffDef *,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x6f7ee0` : `public: void __thiscall MusicItemLogical::setStopDanceMob(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0x7837d0` : `public: void __thiscall WorldArchiveMgr::setSupportLang(__int64,int)`
+- `0xdbe80` : `public: void __thiscall cocos2d::SpriteBatchNode::setTextureAtlas(class cocos2d::TextureAtlas *)`
+- `0x618030` : `public: bool __thiscall MidiFileInfo::setThemeTrackID(char const *,int)`
+- `0x74cd80` : `public: void __thiscall AchievementManager::setTotalGameStatistics(int,int,int)`
+- `0x475c80` : `public: void __thiscall Mini::HttpReportMgr::setTraceid(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x6183d0` : `public: bool __thiscall MidiFileInfo::setTrackInstrument(char const *,int,int,char const *)`
+- `0x60fbe0` : `public: void __thiscall FmodSoundSystemEX::setTriggerSoundPosition(unsigned int)`
+- `0x7bde20` : `public: void __thiscall AccountFBData::setUinCollectionDirty(void)`
+- `0xdbec0` : `public: void __thiscall AccountFBData::setUinEncoded(int)`
+- `0x475d10` : `public: void __thiscall Mini::HttpReportMgr::setUinRegTime(int)`
+- `0x5d5d20` : `public: void __thiscall ModManager::setUserModAllocatedId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,unsigned int)`
+- `0xdbee0` : `public: void __thiscall ModManager::setUserModNewIdAllocated(unsigned int)`
+- `0x7d8950` : `public: void __thiscall OWorldList::setWorldListDirty(__int64,bool,enum UPWDESC_TYPE)`
+- `0x7d89a0` : `public: void __thiscall OWorldList::setWorldListDirtyEx(struct tagOWorld &,bool,enum UPWDESC_TYPE)`
+- `0xf98b0` : `public: bool __thiscall MINIW::ClientInfo::showARCameraQRScannerforSkin(void)`
+- `0xf98c0` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall MINIW::ClientInfo::showAudioPicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)`
+- `0xf9a50` : `public: virtual bool __thiscall MINIW::ClientInfo::showFilePicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x1006a0` : `public: virtual bool __thiscall MINIW::ClientInfo_PC::showFilePicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0xf9b20` : `public: int __thiscall MINIW::ClientInfo::showImagePicker(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int,bool,int,int)`
+- `0x718700` : `private: void __thiscall ClientBuddyMgr::sortBuddyList(void)`
+- `0x475d40` : `private: void __thiscall Mini::HttpReportMgr::standData2Task(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > *)`
+- `0x476580` : `public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::standReport(struct Mini::MiniStandInData *)`
+- `0x479820` : `public: virtual class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Mini::HttpReportMgr::standReportEvent(__int64,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > > const &)`
+- `0x711960` : `public: void __thiscall ClientAccountMgr::startDirectGame(void)`
+- `0xf9bd0` : `public: void __thiscall MINIW::ClientInfo::startDirectGame(void)`
+- `0x7209d0` : `public: void __thiscall ClientDnsMgr::startDns(void)`
+- `0x7d8ab0` : `public: void __thiscall OWorldList::startDownloadOWorld(__int64,bool)`
+- `0x7d8cb0` : `public: void __thiscall OWorldList::startGameRecord(__int64)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo::startServerRoom(void)`
+- `0xce3d0` : `public: void __thiscall Mini::HttpReportMgr::startThread(void)`
+- `0x47a1d0` : `public: void __thiscall Mini::HttpReportMgr::staticReportPlayerDie(int,int,int)`
+- `0x723d80` : `public: static void __cdecl StatisticRainforest::statisticToWorld(int,char const *,char const *,char const *,char const *,char const *,char const *,char const *)`
+- `0x738270` : `public: static void __cdecl StatisticTerrgen::statisticToWorld(int,char const *,char const *,char const *,char const *,char const *,char const *,char const *,char const *,char const *)`
+- `0x738560` : `public: static void __cdecl StatisticTerrgen::statisticToWorldEnterExitGame(int,char const *,char const *)`
+- `0x723df0` : `public: static void __cdecl StatisticRainforest::statisticToWorldWithCommonParams(int,char const *,char const *)`
+- `0x738780` : `public: static void __cdecl StatisticTerrgen::statisticToWorldWithCommonParams(int,char const *,char const *,enum BIOME_TYPE,char *)`
+- `0x738d50` : `public: static void __cdecl StatisticTerrgen::statisticToWorldWithMonster(int,char const *,char const *,int,int)`
+- `0x47afa0` : `public: void __thiscall Mini::HttpReportMgr::statisticsEnterExitGame(int,char const *,char const *,char const *)`
+- `0x47b1c0` : `public: void __thiscall Mini::HttpReportMgr::statisticsGameMonster(int,char const *,char const *,char const *,char const *,int)`
+- `0x74ce20` : `private: void __thiscall AchievementManager::statisticsOnAchieve(int)`
+- `0x7d8cd0` : `public: void __thiscall OWorldList::stopGameRecord(void)`
+- `0x60fc10` : `public: void __thiscall FmodSoundSystemEX::stopMidiMusicNote(__int64,int,int)`
+- `0xdaf70` : `public: virtual bool __thiscall MINIW::ClientInfo::stopServerRoom(void)`
+- `0xce3d0` : `public: void __thiscall Mini::HttpReportMgr::stopThread(void)`
+- `0x60fc80` : `public: void __thiscall FmodSoundSystemEX::stopTriggerSound(void)`
+- `0x4baaf0` : `public: void __thiscall SpringFestivalActivityMgr::subscribeEvents(void)`
+- `0x53f830` : `public: void __thiscall cocos2d::__Array::swap(long,long)`
+- `0x7d8ce0` : `public: bool __thiscall OWorldList::switchAccountSaveOWorld(int,int)`
+- `0x7d9f80` : `public: void __thiscall OWorldList::switchAccountSucceed(int)`
+- `0xce3d0` : `public: void __thiscall ARInterface::switchShowDebugDrawing(void)`
+- `0x79b750` : `public: virtual void __thiscall MINIW::AdventureReportMgr::syncAdventureReportRef(class jsonxx::Object &,int)`
+- `0xdba40` : `public: void __thiscall AchievementManager::syncData(int)`
+- `0x7d9fd0` : `public: bool __thiscall OWorldList::syncMyWorldFromServerFinish(void)`
+- `0x57af40` : `public: bool __thiscall ArchiveManager::syncPlayerArch2Host(__int64)`
+- `0xf9be0` : `public: virtual bool __thiscall MINIW::ClientInfo::syncPlayerArch2Host(__int64)`
+- `0x4c6f10` : `public: bool __thiscall OnlineService::syncSSTaskToAll(int,char const *)`
+- `0x4c6fd0` : `public: bool __thiscall OnlineService::syncSSTaskToHost(int,char const *)`
+- `0x4c70e0` : `public: bool __thiscall OnlineService::syncSSTaskToPlayer(int,int,char const *)`
+- `0x783810` : `public: void __thiscall WorldArchiveMgr::syncWorldDesc(__int64,char)`
+- `0xf9c00` : `public: void __thiscall MINIW::ClientInfo::takeARCameraAvatar(char const *,int,bool)`
+- `0x7921a0` : `public: void __thiscall WorldBackupMgr::taskEnded(unsigned int)`
+- `0x47b4c0` : `public: void __thiscall Mini::HttpReportMgr::temporaryFobiddenMMkv(void)`
+- `0x7bde50` : `public: void __thiscall AccountFBData::tick(void)`
+- `0x74cf60` : `public: void __thiscall AchievementManager::tick(void)`
+- `0x79b800` : `public: virtual void __thiscall MINIW::AdventureReportMgr::tick(void)`
+- `0xce3d0` : `public: virtual void __thiscall MINIW::ClientInfo::tick(void)`
+- `0x100e70` : `public: virtual void __thiscall MINIW::ClientInfo_PC::tick(void)`
+- `0x4e7810` : `private: void __thiscall SimulateMgr::tickBulltePlayer(unsigned int)`
+- `0x7dac50` : `public: void __thiscall OWorldList::tickOWReqDownload(void)`
+- `0xf9c20` : `public: virtual float __thiscall MINIW::ClientInfo::timeAntiaddictionStartup(void)`
+- `0xf9c20` : `public: float __thiscall MINIW::ClientInfo::timeSinceStartup(void)`
+- `0x737030` : `public: static void __cdecl StatisticsTools::toLuaOpen(void)`
+- `0x520a50` : `public: void __thiscall ChangeModelMgr::toggleMapMode(void)`
+- `0x7838b0` : `public: bool __thiscall WorldArchiveMgr::toggleWorldType(__int64)`
+- `0x5de220` : `public: void __thiscall MINIW::ModFileManager::toloadMod(char const *)`
+- `0x5de480` : `public: int __thiscall MINIW::ModFileManager::toloadModSize(char const *)`
+- `0x7a0050` : `public: unsigned int __thiscall Mini::MmkvMgr::totalSize(char const *,int)`
+- `0x7a0070` : `public: void __thiscall Mini::MmkvMgr::trim(char const *,int)`
+- `0x5d5fd0` : `public: struct BiomeDef * __thiscall ModManager::tryGetBiomeDef(int)`
+- `0x5d6080` : `public: struct BiomeDef * __thiscall ModManager::tryGetBiomeDefByIndex(int)`
+- `0x5d6150` : `public: struct BlockDef * __thiscall ModManager::tryGetBlockDef(int)`
+- `0x5d6210` : `public: struct BlockDef * __thiscall ModManager::tryGetBlockDefByIndex(int)`
+- `0x5d62e0` : `public: struct BlockDef * __thiscall ModManager::tryGetBlockDefByIndexEx(int)`
+- `0x5d63a0` : `public: struct BuffDef * __thiscall ModManager::tryGetBuffDef(int)`
+- `0x5d6430` : `public: struct CraftingDef * __thiscall ModManager::tryGetCraftingDef(int)`
+- `0x5d64e0` : `public: struct CraftingDef * __thiscall ModManager::tryGetCraftingDefByIndex(int)`
+- `0x5d6540` : `public: char const * __thiscall ModManager::tryGetDestroyTexture(void)`
+- `0x5d6560` : `public: char const * __thiscall ModManager::tryGetDestroyTexturePath(void)`
+- `0x5d6580` : `public: struct FoodDef * __thiscall ModManager::tryGetFoodDef(int)`
+- `0x5d6610` : `public: struct FurnaceDef * __thiscall ModManager::tryGetFurnaceDef(int)`
+- `0x5d66c0` : `public: struct FurnaceDef * __thiscall ModManager::tryGetFurnaceDefByIndex(int)`
+- `0x5d6720` : `public: struct GunDef * __thiscall ModManager::tryGetGunDef(int)`
+- `0x5d67b0` : `public: struct HorseDef * __thiscall ModManager::tryGetHorseDef(int)`
+- `0x5d6840` : `public: struct ItemDef * __thiscall ModManager::tryGetItemDef(int)`
+- `0x5d6900` : `public: struct ItemDef * __thiscall ModManager::tryGetItemDefByIndex(int)`
+- `0x5d69d0` : `public: struct ItemDef * __thiscall ModManager::tryGetItemDefByIndexEx(int)`
+- `0x5d6a90` : `public: struct ItemEquipDef * __thiscall ModManager::tryGetItemEquipDef(int)`
+- `0x5d6b20` : `public: struct ItemSkillDef * __thiscall ModManager::tryGetItemSkillDef(int)`
+- `0x5d6bd0` : `public: struct MinicodeMonsterDef * __thiscall ModManager::tryGetMinicodeMonsterDef(int)`
+- `0x5d6c20` : `public: struct MonsterDef * __thiscall ModManager::tryGetMonsterDef(int,bool)`
+- `0x5d6cd0` : `public: struct MonsterDef * __thiscall ModManager::tryGetMonsterDefByIndex(int)`
+- `0x5d6da0` : `public: struct MonsterDef * __thiscall ModManager::tryGetMonsterDefByIndexEx(int)`
+- `0x5d6e60` : `public: struct NpcPlotDef * __thiscall ModManager::tryGetNpcPlotDef(int)`
+- `0x5d6f10` : `public: struct NpcPlotDef * __thiscall ModManager::tryGetNpcPlotDefByIndex(int)`
+- `0x5d6f70` : `public: struct NpcShopDef * __thiscall ModManager::tryGetNpcShopDef(int)`
+- `0x5d7010` : `public: struct NpcTaskDef * __thiscall ModManager::tryGetNpcTaskDef(int)`
+- `0x5d70c0` : `public: struct NpcTaskDef * __thiscall ModManager::tryGetNpcTaskDefAnyway(int)`
+- `0x5d7160` : `public: struct OreDef * __thiscall ModManager::tryGetOreDef(int)`
+- `0x5d7210` : `public: struct OreDef * __thiscall ModManager::tryGetOreDefByIndex(int)`
+- `0x5d72e0` : `public: struct PackGiftDef * __thiscall ModManager::tryGetPackGiftDef(int)`
+- `0x5d7380` : `public: struct PhysicsActorDef * __thiscall ModManager::tryGetPhysicsActorDef(int)`
+- `0x5d7430` : `public: struct PhysicsMaterialDef * __thiscall ModManager::tryGetPhysicsMaterialDef(int)`
+- `0x5d74d0` : `public: struct ProjectileDef * __thiscall ModManager::tryGetProjectileDef(int)`
+- `0x5d7560` : `public: struct BuffDef * __thiscall ModManager::tryGetStatusDef(int)`
+- `0x5d7610` : `public: struct BuffDef * __thiscall ModManager::tryGetStatusDefByIndex(int)`
+- `0x5d7650` : `public: struct BuffDef * __thiscall ModManager::tryGetStatusDefByIndexEx(int)`
+- `0x5d7690` : `public: struct BuffDef * __thiscall ModManager::tryGetStatusDefEx(int)`
+- `0x5d7720` : `public: struct ToolDef * __thiscall ModManager::tryGetToolDef(int)`
+- `0x5d77b0` : `public: char const * __thiscall ModManager::tryGetWorldEventScript(void)`
+- `0x4e2a30` : `public: void __thiscall RoomManager::tryRoomServerLoginHttp(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x552fa0` : `private: void __thiscall UIFrameManager::unListenEvent(void)`
+- `0x5d77d0` : `public: bool __thiscall ModManager::unLoadCurMods(__int64,bool)`
+- `0x5d7cd0` : `public: bool __thiscall ModManager::unLoadCurMods(bool)`
+- `0x5de5d0` : `public: void __thiscall MINIW::ModFileManager::unMountMod(void)`
+- `0x792230` : `protected: bool __thiscall WorldBackupMgr::uncompressWorldBackup(struct WorldBackupInfo const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > &,struct tagOWorld &)`
+- `0x7119f0` : `public: bool __thiscall ClientAccountMgr::uniAchievementFinish(int)`
+- `0x4bb1e0` : `public: void __thiscall SpringFestivalActivityMgr::uninstallEvent(void)`
+- `0xce3d0` : `private: void __thiscall ModManager::unloadMapModPacketForDeveloper(void)`
+- `0x6ffae0` : `public: void __thiscall AccountData::unlockRole(char)`
+- `0x765ca0` : `public: int __thiscall ClientCSOWorld::unzipFile2StdioDir(char const *,char const *)`
+- `0x765f70` : `public: int __thiscall ClientCSOWorld::unzipFile2StdioDirAndDecrypt(char const *,char const *,char const *)`
+- `0x74cfd0` : `public: void __thiscall AchievementManager::update2Client(void)`
+- `0x74d010` : `public: void __thiscall AchievementManager::update2Server(void)`
+- `0x144af0` : `public: virtual void __thiscall MINIW::AppUpdateScene::update(float)`
+- `0x5e9120` : `public: void __thiscall CustomPicMgr::update(float)`
+- `0x60fca0` : `public: void __thiscall FmodSoundSystemEX::update(float)`
+- `0x47b4d0` : `public: void __thiscall Mini::HttpReportMgr::update(float)`
+- `0x1461b0` : `public: virtual void __thiscall MINIW::LaunchScene::update(float)`
+- `0x835ab0` : `public: void __thiscall SnapshotForGame::update(void)`
+- `0x8363e0` : `public: void __thiscall SnapshotForPC::update(void)`
+- `0x836e60` : `public: void __thiscall SnapshotForShare::update(void)`
+- `0x839090` : `public: void __thiscall SnapshotMgr::update(void)`
+- `0x74d510` : `private: void __thiscall AchievementManager::updateAccountAchievement(int,struct AchievementInfo &)`
+- `0x520a80` : `public: void __thiscall ChangeModelMgr::updateAllActor2Client(int)`
+- `0x520c20` : `public: void __thiscall ChangeModelMgr::updateBodyByFullyCustomModel(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x47b670` : `public: void __thiscall Mini::HttpReportMgr::updateClearKey(char const *)`
+- `0x8391c0` : `private: void __thiscall SnapshotMgr::updateCurSnapshotData(class Rainbow::Image const &)`
+- `0x783930` : `public: void __thiscall WorldArchiveMgr::updateDTWorld(__int64)`
+- `0x7839a0` : `public: void __thiscall WorldArchiveMgr::updateDTWorldList(void)`
+- `0x47b6c0` : `public: void __thiscall Mini::HttpReportMgr::updateEncrytData(bool)`
+- `0x7a9630` : `public: void __thiscall StringLoaderManager::updateFailedList(__int64,bool)`
+- `0x47b6d0` : `public: void __thiscall Mini::HttpReportMgr::updateFilterOldReport(bool)`
+- `0x47b6e0` : `public: void __thiscall Mini::HttpReportMgr::updateFilterSceneID(char const *)`
+- `0x47b910` : `public: void __thiscall Mini::HttpReportMgr::updateFilterStandardReport(bool)`
+- `0x711a30` : `public: void __thiscall ClientAccountMgr::updateFromAccInfo(void)`
+- `0x47b920` : `public: void __thiscall Mini::HttpReportMgr::updateGameSessionId(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x7839c0` : `public: void __thiscall WorldArchiveMgr::updateHGWorld(__int64)`
+- `0x783a00` : `public: void __thiscall WorldArchiveMgr::updateHGWorldList(void)`
+- `0x7a96b0` : `public: void __thiscall StringLoaderManager::updateLoadedList(int,__int64)`
+- `0x16e9c0` : `public: virtual void __thiscall ClientGameManager::updateLoadingGame(void)`
+- `0x47ba50` : `public: void __thiscall Mini::HttpReportMgr::updateMaxCache(int)`
+- `0x47ba60` : `public: void __thiscall Mini::HttpReportMgr::updateMmkvCacheNum(int)`
+- `0x47ba70` : `public: void __thiscall Mini::HttpReportMgr::updateMmkvCacheTime(int)`
+- `0x5d7d00` : `public: void __thiscall ModManager::updateModList(bool)`
+- `0x793e10` : `public: void __thiscall WorldList::updateMy(struct tagCSMyOWList const &)`
+- `0x783a20` : `public: void __thiscall WorldArchiveMgr::updateMyWorld(__int64)`
+- `0x783a90` : `public: void __thiscall WorldArchiveMgr::updateMyWorldList(bool)`
+- `0x2ac7d0` : `public: void __thiscall BlockDefCsv::updateName(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x783ad0` : `public: void __thiscall WorldArchiveMgr::updateOwCommentList(struct tagOwCommentListRes)`
+- `0x47ba80` : `public: void __thiscall Mini::HttpReportMgr::updateRepeatTimes(int)`
+- `0x4e2ae0` : `public: void __thiscall RoomManager::updateRoomDesc(int,struct RoomDesc *)`
+- `0x47ba90` : `public: void __thiscall Mini::HttpReportMgr::updateSendTime(int)`
+- `0x74d580` : `public: void __thiscall AchievementManager::updateShareAchievement(struct AchievementInfo const &)`
+- `0x839340` : `private: void __thiscall SnapshotMgr::updateSnapshot(class Rainbow::Image const &)`
+- `0x8396f0` : `public: bool __thiscall SnapshotMgr::updateSnapshotInfo(__int64)`
+- `0x711ae0` : `public: void __thiscall ClientAccountMgr::updateSvrTime(unsigned int,bool)`
+- `0xf9c30` : `public: virtual void __thiscall MINIW::ClientInfo::updateSvrTime(unsigned int,bool)`
+- `0x7bde70` : `public: void __thiscall AccountFBData::updateUinAchievement(int,struct tagAchievement *)`
+- `0x7db1e0` : `public: bool __thiscall OWorldList::updateWorldAfterDownload(bool,struct UpDownWorldInfo const &)`
+- `0x793f70` : `public: void __thiscall WorldList::updateWorldShare(__int64,int,int)`
+- `0x101200` : `public: void __thiscall MINIW::ClientInfo_PC::update_rail_session_ticket(void)`
+- `0x6ffb40` : `public: void __thiscall AccountData::upgradeGenuisLv(char,int)`
+- `0x792930` : `public: int __thiscall WorldBackupMgr::uploadBackupFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x4e2b10` : `public: void __thiscall RoomManager::uploadClientInfoToCloudServer(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x7db4f0` : `public: void __thiscall OWorldList::uploadDevTempWorldOK(__int64)`
+- `0x783d00` : `public: void __thiscall WorldArchiveMgr::uploadDevTempWorldOK(__int64)`
+- `0x4e2c20` : `public: void __thiscall RoomManager::uploadRoomAudioConfig(__int64,int)`
+- `0x4e2f30` : `public: void __thiscall RoomManager::uploadRoomIntros(__int64,int)`
+- `0x4e35b0` : `public: void __thiscall RoomManager::uploadRoomModels(__int64,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)`
+- `0x4e37a0` : `public: void __thiscall RoomManager::uploadRoomMods(__int64,int)`
+- `0x4e3fd0` : `public: void __thiscall RoomManager::uploadRoomThumbnail(__int64,int)`
+- `0x4e4000` : `public: void __thiscall RoomManager::uploadRoomUILibs(__int64,int)`
+- `0x766240` : `public: bool __thiscall ClientCSOWorld::uploadTempFile(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::function<void __cdecl(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)> const &)`
+- `0x7666d0` : `public: void __thiscall ClientCSOWorld::uploadTempFileFinish(struct UploadTempFileInfo &,int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)`
+- `0x6f8040` : `public: void __thiscall MusicItemLogical::useMusicYuePu(int,int,int)`
+- `0xf9c50` : `public: bool __thiscall MINIW::ClientInfo::useTpRealNameAuth(void)`
+- `0x31b850` : `protected: virtual bool __thiscall GameLanguageCsv::utf8File(bool)`
+- `0x31b850` : `public: virtual bool __thiscall GameZoneCsv::utf8File(bool)`
+- `0x711b10` : `public: void __thiscall ClientAccountMgr::validateName(char *)`
+- `0xf9c90` : `public: virtual void __thiscall MINIW::ClientInfo::validateName(char *)`
+- `0xf9cb0` : `public: void __thiscall MINIW::ClientInfo::vibrate(int)`
+- `0xdaf70` : `public: virtual bool __thiscall DefaultCsvLoadConfig::withUTF8(void)`
+- `0xdaf70` : `public: virtual bool __thiscall OverseasCsvLoadConfig::withUTF8(void)`
+- `0x5d80b0` : `public: bool __thiscall ModManager::writeAllocatedIdJson(void)`
+- `0x5d9e80` : `public: bool __thiscall ModManager::writeAuthorInfo2Map(__int64)`
+- `0xf5750` : `public: bool __thiscall MINIW::ClientInfo::writeDocumentsFile(char const *,char const *)`
+- `0xdc350` : `public: bool __thiscall MINIW::ClientManager::writeDocumentsFile(char const *,char const *)`
+- `0x6184d0` : `public: void __thiscall MidiFileInfo::writeFile(char const *)`
+- `0x5da370` : `public: bool __thiscall ModManager::writeModsInfoToFile(__int64)`
+- `0x6185a0` : `public: void __thiscall MidiFileInfo::writeOneNote(int,int,class std::basic_ostringstream<char,struct std::char_traits<char>,class std::allocator<char> > &,int)`
+- `0x618670` : `public: void __thiscall MidiFileInfo::writeOneNote(int,int,char const *,int)`
+- `0x47baa0` : `private: void __thiscall Mini::HttpReportMgr::xxtea_decrypt(unsigned int *,unsigned int,unsigned int *)`
+- `0x47bbb0` : `private: void __thiscall Mini::HttpReportMgr::xxtea_encrypt(unsigned int *,unsigned int,unsigned int *)`
+- `0x47bcc0` : `private: int __thiscall Mini::HttpReportMgr::xxtea_need_size(int)`
+- `0x7669b0` : `public: int __thiscall ClientCSOWorld::zipStdioDir2File(char const *,char const *)`
+- `0x766ea0` : `public: int __thiscall ClientCSOWorld::zipStdioDir2FileAndEncrypt(char const *,char const *,char const *)`
+- `0x2a40e0` : `_WinMainEntry@16`
+- `0xdddd0` : `dump_lua_stacktrace`
