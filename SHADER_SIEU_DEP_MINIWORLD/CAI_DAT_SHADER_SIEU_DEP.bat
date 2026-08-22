@@ -10,5 +10,5 @@ echo ======================================================================
 echo.
 
 python "%~dp0build_ultra_shaders.py"
-python "%~dp0repack_dx_res_with_ultra_shaders.py"
+python "%~dp0repack_dx_res_perfect.py"
 pause
