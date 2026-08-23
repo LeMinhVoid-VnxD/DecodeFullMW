@@ -55,7 +55,6 @@ class MiniWorldStudioApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("MiniWorld Studio - All-in-One Professional Master Suite")
-        self.geometry("1100 biographicalx720")
         self.geometry("1120x740")
         self.minsize(980, 640)
         self.configure(bg=BG_DARK)
